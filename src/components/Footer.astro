@@ -6,6 +6,7 @@ const year = new Date().getFullYear();
 		<div>
 			<a class="brand" href="/">PESCAMAPA</a>
 			<p>Destinos, especies y guías para pescar en Argentina.</p>
+			<p class="firma">Un proyecto de <span>Cheyenne Justiniano</span></p>
 		</div>
 		<nav aria-label="Pie">
 			<a href="/#destinos">Destinos</a>
@@ -25,6 +26,8 @@ const year = new Date().getFullYear();
 	footer { background: var(--forest); color: var(--on-dark); padding: 56px 0 28px; margin-top: 0; }
 	.inner { display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
 	.brand { font: 800 18px var(--font-head); color: var(--white); text-decoration: none; }
+	.firma { font-size: 13px; letter-spacing: 0.02em; margin: 18px 0 0; }
+	.firma span { color: var(--lime); font-weight: 600; }
 	nav { display: flex; gap: 20px; }
 	nav a { text-decoration: none; }
 	.legal { font-size: 13px; border-top: 1px solid rgb(255 255 255 / 0.12); padding-top: 18px; margin-top: 24px; }
