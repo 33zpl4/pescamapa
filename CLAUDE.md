@@ -45,10 +45,42 @@ Los reglamentos cambian y en este nicho el lector se cobra un error. Por eso:
 - Copy rioplatense (voseo: encontrá, querés, consultá). Nunca "vosotros".
 - Cada fuente lleva `consultada:`; las oficiales, `oficial: true`.
 
+## Idiomas
+
+Español (rioplatense) en la raíz, portugués de Brasil en `/pt/`, inglés en
+`/en/`. Las páginas de cada idioma son envoltorios de 2 líneas sobre las
+vistas compartidas de `src/vistas/`; los textos de interfaz están en
+`src/i18n/ui.ts` (una clave faltante en pt/en es error de tipos).
+
+- Una traducción es otro archivo con la misma `clave` y su `idioma`
+  (`src/content/destinos/pt/goya.md`). Slug propio por idioma
+  (`pesca-em-goya`, `fishing-in-goya`).
+- **El español es la fuente**: una traducción no agrega ni cambia datos, y
+  no puede estar `publicado` si la versión en español no lo está (falla el
+  build). Las marcas internas siguen siendo `PENDIENTE:` en todo idioma.
+- hreflang: `es` (todo hispanohablante), `pt-BR`, `en`, y `x-default` → es.
+  El selector ES·PT·EN lleva a la misma página traducida, o al inicio del
+  idioma si no existe.
+
+## Tipografía y fotos
+
+Tres fuentes, tres trabajos (no sumar más): **Playfair Display** para
+titulares (itálica = énfasis), **Outfit** para texto e interfaz, **Bebas
+Neue** para la marca y etiquetas (eyebrows, pills, numeración).
+
+Fotos solo de Wikimedia Commons con licencias libres (CC0, PD, CC BY, CC
+BY-SA), nunca de Google: `scripts/commons.py` vía el workflow `fotos.yml`
+(candidatas → rama `fotos-candidatas`; elegidas en
+`scripts/fotos-elegidas.json` → `src/assets/fotos/` + créditos en
+`src/data/fotos.json`). El crédito se muestra sobre la foto y en
+`/creditos/`; una foto sin crédito rompe el build.
+
 ## URLs
 
-`/<region>/<provincia>/<slug>/` (estables, sin fechas), `/especies/<id>/`,
-`/mapa/`. `trailingSlash: 'always'`. Cambiar una URL publicada exige una
+`[/pt|/en]/<region>/<provincia>/<slug>/` (estables, sin fechas),
+`/especies/<clave>/` (`/pt/especies/`, `/en/species/`), `/mapa/`
+(`/pt/mapa/`, `/en/map/`), `/creditos/` (`/en/credits/`). Rutas en
+`src/lib/rutas.ts`; `src/lib/borradores.mjs` las replica para el sitemap. `trailingSlash: 'always'`. Cambiar una URL publicada exige una
 redirección; nunca romperla.
 
 ## Mapa

@@ -1,5 +1,7 @@
 ---
 estado: borrador
+idioma: es
+clave: dorado
 nombre: Dorado
 cientifico: "Salminus brasiliensis"
 title: "Dorado: dónde y cuándo pescarlo en Argentina"

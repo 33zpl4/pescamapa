@@ -1,5 +1,7 @@
 ---
 estado: borrador
+idioma: es
+clave: goya
 nombre: Goya
 region: litoral
 provincia: corrientes

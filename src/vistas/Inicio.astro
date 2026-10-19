@@ -1,0 +1,234 @@
+---
+// Home, shared by /, /pt/ and /en/.
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import Mapa, { type Pin } from '../components/Mapa.astro';
+import Foto from '../components/Foto.astro';
+import MapaHero, { type PuntoHero } from '../components/MapaHero.astro';
+import Curvas from '../components/Curvas.astro';
+import proximos from '../data/proximos.json';
+import { REGIONES, PROVINCIAS, urlDestino, urlMapa } from '../lib/rutas';
+import { foto } from '../lib/fotos';
+import { alternasInicio, especieEn } from '../lib/traducciones';
+import { META, ETIQUETAS, traductor, type Idioma } from '../i18n/ui';
+
+interface Props { idioma: Idioma }
+const { idioma } = Astro.props;
+const t = traductor(idioma);
+
+// One card per destination: this language's version, else the Spanish one.
+const todos = await getCollection('destinos');
+const claves = [...new Set(todos.map((d) => d.data.clave))];
+const destinos = claves.map((c) => todos.find((d) => d.data.clave === c && d.data.idioma === idioma) ?? todos.find((d) => d.data.clave === c && d.data.idioma === 'es')!);
+const nombresEspecie = new Map<string, string>();
+for (const d of destinos) for (const e of d.data.especies) nombresEspecie.set(e.id, (await especieEn(e.id, idioma)).data.nombre);
+
+const pins: Pin[] = [
+	...destinos.map((d) => ({ nombre: d.data.nombre, coordenadas: d.data.coordenadas, url: urlDestino(d.data), detalle: PROVINCIAS[d.data.provincia], tipo: 'destino' as const })),
+	...proximos.map((p) => ({ nombre: p.nombre[idioma], coordenadas: p.coordenadas as [number, number], detalle: p.provincia, tipo: 'proximo' as const })),
+];
+const puntosHero: PuntoHero[] = [
+	...proximos.map((p) => ({ nombre: p.nombre[idioma], coordenadas: p.coordenadas as [number, number] })),
+	...destinos.map((d) => ({ nombre: d.data.nombre, coordenadas: d.data.coordenadas, url: urlDestino(d.data), destacado: true })),
+];
+const primera = destinos[0];
+const textosMapa = { guia: t('mapa.popup.guia'), pronto: t('mapa.popup.pronto'), sinjs: t('mapa.sinjs') };
+
+const jsonld = [
+	{
+		'@context': 'https://schema.org',
+		'@type': 'WebSite',
+		name: 'Pescamapa',
+		url: new URL(Astro.url.pathname, Astro.site).href,
+		inLanguage: META[idioma].html,
+		description: t('marca.lema'),
+		creator: { '@type': 'Person', name: 'Cheyenne Justiniano' },
+	},
+];
+---
+<Base idioma={idioma} title={t('inicio.title')} description={t('inicio.description')} alternas={alternasInicio()} jsonld={jsonld} headerOscuro>
+	<section class="hero on-dark">
+		<Curvas />
+		<div class="shell hero-grid">
+			<div class="hero-text">
+				<div class="eyebrow">{t('inicio.eyebrow')}</div>
+				<h1>{t('inicio.h1a')}<br />{t('inicio.h1b')}<br /><em>{t('inicio.h1c')}</em></h1>
+				<p class="copy">{t('inicio.copy')}</p>
+				<div class="actions">
+					<a class="button primary" href="#destinos">{t('inicio.explorar')}</a>
+					<a class="button secondary" href={urlMapa(idioma)}>{t('inicio.vermapa')}</a>
+				</div>
+				<ul class="stats">
+					<li><strong>{t('inicio.stat1a')}</strong>{t('inicio.stat1b')}</li>
+					<li><strong>{t('inicio.stat2a')}</strong>{t('inicio.stat2b')}</li>
+					<li><strong>{t('inicio.stat3a')}</strong>{t('inicio.stat3b')}</li>
+				</ul>
+			</div>
+			<div class="hero-map">
+				<MapaHero puntos={puntosHero} etiqueta={t('inicio.hero.mapa')} />
+				<div class="tag tag-top"><strong>{t('inicio.tag1.h')}</strong>{t('inicio.tag1.p')}</div>
+				{primera && <a class="tag tag-bottom" href={urlDestino(primera.data)}><strong>{t('inicio.tag2.h')}</strong>{t('inicio.tag2.p')}</a>}
+				<span class="map-note">{t('inicio.hero.nota')}</span>
+			</div>
+		</div>
+	</section>
+
+	<div class="strip">
+		<div class="shell strip-inner">
+			<span>✳ {t('inicio.strip1')}</span>
+			<span>✳ {t('inicio.strip2')}</span>
+			<span>✳ {t('inicio.strip3')}</span>
+		</div>
+	</div>
+
+	<section id="destinos" class="section">
+		<div class="shell">
+			<div class="head">
+				<div>
+					<div class="eyebrow">{t('inicio.destinos.eyebrow')}</div>
+					<h2>{t('inicio.destinos.h2')}</h2>
+				</div>
+				<p>{t('inicio.destinos.p')}</p>
+			</div>
+			<div class="grid">
+				{destinos.map((d) => (
+					<a class="card live" href={urlDestino(d.data)} hreflang={META[d.data.idioma].html}>
+						<div class="img river">
+							{foto(d.data.foto) && <Foto foto={foto(d.data.foto)!} alt={`${d.data.nombre}, ${PROVINCIAS[d.data.provincia]}`} sizes="(max-width: 700px) 100vw, 380px" class="cover" prioridad enlaces={false} etiqueta={t('foto')} />}
+							<span class="pill">{REGIONES[d.data.region][idioma].toUpperCase()} · {PROVINCIAS[d.data.provincia].toUpperCase()}</span>
+						</div>
+						<div class="body">
+							<h3>{d.data.nombre}</h3>
+							<p>{d.data.bajada}</p>
+							<ul class="chips">{d.data.especies.map((e) => <li>{nombresEspecie.get(e.id)}</li>)}</ul>
+						</div>
+						<div class="foot"><span>{d.data.estado === 'borrador' ? t('inicio.guia.borrador') : t('inicio.guia')}</span><span class="arrow" aria-hidden="true">↗</span></div>
+					</a>
+				))}
+				{proximos.map((p) => (
+					<article class="card soon">
+						<div class={`img ${p.region}`}>
+							{foto(p.id) && <Foto foto={foto(p.id)!} alt={`${p.nombre[idioma]}, ${p.provincia}`} sizes="(max-width: 700px) 100vw, 380px" class="cover" etiqueta={t('foto')} />}
+							<span class="pill">{REGIONES[p.region][idioma].toUpperCase()} · {p.provincia.toUpperCase()}</span>
+						</div>
+						<div class="body">
+							<div class="loc">{p.agua[idioma]}</div>
+							<h3>{p.nombre[idioma]}</h3>
+							<ul class="chips">{p.especies.map((e) => <li>{ETIQUETAS[e][idioma]}</li>)}</ul>
+						</div>
+						<div class="foot"><span>{t('inicio.proximamente')}</span></div>
+					</article>
+				))}
+			</div>
+			<p class="note">{t('inicio.nota')}</p>
+		</div>
+	</section>
+
+	<section class="section map-section">
+		<div class="shell map-grid">
+			<div>
+				<div class="eyebrow">{t('inicio.mapa.eyebrow')}</div>
+				<h2>{t('inicio.mapa.h2')}</h2>
+				<p>{t('inicio.mapa.p')}</p>
+				<a class="button dark" href={urlMapa(idioma)}>{t('inicio.mapa.cta')}</a>
+			</div>
+			<Mapa pins={pins} alto="460px" etiqueta={t('mapa.etiqueta')} textos={textosMapa} />
+		</div>
+	</section>
+
+	<section class="section">
+		<div class="shell">
+			<div class="head">
+				<div>
+					<div class="eyebrow">{t('inicio.prop.eyebrow')}</div>
+					<h2>{t('inicio.prop.h2')}</h2>
+				</div>
+			</div>
+			<div class="purpose">
+				<article><div class="num">{t('inicio.prop1.n')}</div><h3>{t('inicio.prop1.h')}</h3><p>{t('inicio.prop1.p')}</p></article>
+				<article><div class="num">{t('inicio.prop2.n')}</div><h3>{t('inicio.prop2.h')}</h3><p>{t('inicio.prop2.p')}</p></article>
+				<article><div class="num">{t('inicio.prop3.n')}</div><h3>{t('inicio.prop3.h')}</h3><p>{t('inicio.prop3.p')}</p></article>
+			</div>
+		</div>
+	</section>
+
+	<section id="prestadores" class="section join">
+		<div class="shell join-inner">
+			<div>
+				<div class="eyebrow">{t('inicio.prest.eyebrow')}</div>
+				<h2>{t('inicio.prest.h2')}</h2>
+				<p>{t('inicio.prest.p')}</p>
+			</div>
+		</div>
+	</section>
+</Base>
+
+<style>
+	.hero { background: radial-gradient(ellipse at 75% 40%, #24443a 0%, var(--forest) 60%); color: var(--white); padding: 130px 0 64px; position: relative; overflow: hidden; }
+	.hero-grid { position: relative; display: grid; grid-template-columns: 1.05fr 0.95fr; gap: clamp(24px, 4vw, 56px); align-items: center; }
+	.hero h1 { font-size: clamp(46px, 6.4vw, 84px); line-height: 0.98; margin: 22px 0; }
+	.hero h1 em { font-style: normal; color: var(--lime); }
+	.copy { color: var(--on-dark); font-size: 18px; max-width: 520px; }
+	.actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 30px; }
+	.stats { display: flex; flex-wrap: wrap; gap: 28px; list-style: none; padding: 0; margin: 48px 0 0; color: var(--on-dark); font-size: 13px; }
+	.stats li { border-left: 1px solid rgb(255 255 255 / 0.2); padding-left: 13px; }
+	.stats strong { display: block; color: var(--white); font: 600 16px var(--font-body); }
+	.hero-map { position: relative; max-width: 440px; justify-self: center; width: 100%; }
+	.tag { position: absolute; background: var(--paper); color: var(--ink); border-radius: 12px; padding: 12px 15px; box-shadow: 0 14px 34px rgb(5 15 12 / 0.45); font-size: 13px; text-decoration: none; line-height: 1.4; }
+	.tag strong { display: block; font: italic 600 17px var(--font-head); }
+	.tag-top { right: -6%; top: 9%; }
+	.tag-bottom { left: -8%; bottom: 14%; transition: transform 0.2s; }
+	.tag-bottom:hover { transform: translateY(-3px); }
+	.map-note { position: absolute; right: 0; bottom: 0; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: rgb(255 255 255 / 0.45); }
+	@media (max-width: 900px) {
+		.hero { padding-top: 110px; }
+		.hero-grid { grid-template-columns: 1fr; }
+		.hero-map { max-width: 360px; }
+		.tag-top { right: 0; }
+		.tag-bottom { left: 0; }
+	}
+
+	.strip { background: var(--lime); color: var(--forest); padding: 15px 0 13px; font: 400 18px/1 var(--font-label); letter-spacing: 0.08em; }
+	.strip-inner { display: flex; justify-content: space-between; gap: 12px 24px; flex-wrap: wrap; }
+
+	.section { padding: clamp(56px, 9vw, 94px) 0; }
+	.head { display: flex; justify-content: space-between; align-items: end; gap: 30px; flex-wrap: wrap; margin-bottom: 34px; }
+	.head h2 { font-size: clamp(32px, 4vw, 48px); margin: 12px 0 0; }
+	.head p { max-width: 400px; color: var(--muted); margin: 0; }
+
+	.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); gap: 17px; margin-bottom: 20px; }
+	.card { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; display: flex; flex-direction: column; text-decoration: none; }
+	.card.live { transition: transform 0.22s, box-shadow 0.22s; border-color: var(--forest); }
+	.card.live:hover { transform: translateY(-4px); box-shadow: 0 18px 38px rgb(23 37 28 / 0.08); }
+	.card.soon .body, .card.soon .foot { opacity: 0.8; }
+	.img { height: 170px; position: relative; background: var(--moss); }
+	.img.river, .img.litoral { background: linear-gradient(170deg, transparent 48%, #8aa49a 49%, #2d5146 100%), linear-gradient(130deg, #6e7d5e 0 34%, #283d31 35% 54%, #a9a783 55% 66%, #314538 67%); }
+	.img.patagonia { background: linear-gradient(180deg, #aabbb1 0 37%, #658277 38% 50%, #56716c 51% 64%, #263d34 65%); }
+	.img.pampa { background: linear-gradient(180deg, #abb9ad 0 45%, #607d6d 46% 58%, #8b9d82 59% 64%, #c2b68a 65%); }
+	.img.costa { background: linear-gradient(178deg, #a7b9b4 0 42%, #718e8c 43% 62%, #d5c9a9 63% 69%, #405649 70%); }
+	.img :global(.cover) { position: absolute; inset: 0; }
+	.card.soon .img :global(img) { filter: saturate(0.75); }
+	.pill { z-index: 1; position: absolute; left: 14px; top: 14px; background: var(--paper); padding: 6px 11px 4px; border-radius: 99px; font: 400 14px/1 var(--font-label); letter-spacing: 0.08em; }
+	.body { padding: 18px 19px; flex: 1; display: flex; flex-direction: column; gap: 4px; }
+	.body h3 { font-size: 22px; margin: 4px 0 6px; }
+	.body p { font-size: 14px; color: var(--muted); }
+	.body .chips { margin-top: auto; }
+	.loc { font: 400 15px/1 var(--font-label); letter-spacing: 0.1em; color: var(--muted); }
+	.foot { border-top: 1px solid var(--line); padding: 12px 19px; display: flex; justify-content: space-between; font-size: 13px; color: var(--muted); }
+	.arrow { color: var(--forest); font-weight: 700; }
+
+	.map-section { background: var(--cream); }
+	.map-grid { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: clamp(28px, 5vw, 54px); align-items: center; }
+	.map-grid h2 { font-size: clamp(34px, 4vw, 52px); margin: 14px 0 18px; }
+	.map-grid p { color: var(--muted); max-width: 440px; }
+	@media (max-width: 860px) { .map-grid { grid-template-columns: 1fr; } }
+
+	.purpose { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 17px; }
+	.purpose article { border-top: 2px solid var(--forest); padding-top: 18px; }
+	.num { font: 400 17px var(--font-label); color: var(--olive); letter-spacing: 0.1em; margin-bottom: 10px; }
+	.purpose p { color: var(--muted); }
+
+	.join { background: var(--lime); }
+	.join h2 { font-size: clamp(30px, 4vw, 46px); margin-top: 12px; }
+	.join-inner { max-width: 760px; }
+</style>

@@ -1,0 +1,190 @@
+---
+// Destination guide, shared by every language (the entry carries `idioma`).
+import { render, type CollectionEntry } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import Mapa from '../components/Mapa.astro';
+import Foto from '../components/Foto.astro';
+import { foto } from '../lib/fotos';
+import { REGIONES, PROVINCIAS, urlDestino, urlEspecie, urlInicio, fecha } from '../lib/rutas';
+import { sinPendientes } from '../lib/pendientes';
+import { alternasDestino, especieEn, fuentePublicada } from '../lib/traducciones';
+import { META, traductor } from '../i18n/ui';
+
+interface Props { entry: CollectionEntry<'destinos'> }
+const { entry } = Astro.props;
+const d = entry.data;
+const idioma = d.idioma;
+const t = traductor(idioma);
+sinPendientes(entry.id, d.estado, entry.body, d.temporada, d.faqs, d.aguas, d.reglamento);
+await fuentePublicada('destinos', d.clave, idioma, d.estado);
+
+const { Content } = await render(entry);
+const portada = foto(d.foto);
+const especies = await Promise.all(d.especies.map((e) => especieEn(e.id, idioma)));
+const alternas = await alternasDestino(d);
+const url = new URL(urlDestino(d), Astro.site).href;
+const region = REGIONES[d.region][idioma];
+const provincia = PROVINCIAS[d.provincia] ?? d.provincia;
+const migas = [
+	{ nombre: t('ficha.inicio'), url: urlInicio(idioma) },
+	{ nombre: region, url: null },
+	{ nombre: provincia, url: null },
+	{ nombre: d.nombre, url: urlDestino(d) },
+];
+const faqsListas = d.faqs.filter((f) => !f.respuesta.includes('PENDIENTE'));
+const textosMapa = { guia: t('mapa.popup.guia'), pronto: t('mapa.popup.pronto'), sinjs: t('mapa.sinjs') };
+
+const jsonld = [
+	{
+		'@context': 'https://schema.org',
+		'@type': 'TouristDestination',
+		name: `${d.nombre}, ${provincia}`,
+		description: d.description,
+		url,
+		geo: { '@type': 'GeoCoordinates', latitude: d.coordenadas[0], longitude: d.coordenadas[1] },
+		containedInPlace: { '@type': 'AdministrativeArea', name: `${provincia}, Argentina` },
+		touristType: d.modalidades,
+		inLanguage: META[idioma].html,
+	},
+	{
+		'@context': 'https://schema.org',
+		'@type': 'BreadcrumbList',
+		itemListElement: migas.map((m, i) => ({
+			'@type': 'ListItem',
+			position: i + 1,
+			name: m.nombre,
+			...(m.url ? { item: new URL(m.url, Astro.site).href } : {}),
+		})),
+	},
+	...(faqsListas.length
+		? [{
+			'@context': 'https://schema.org',
+			'@type': 'FAQPage',
+			mainEntity: faqsListas.map((f) => ({ '@type': 'Question', name: f.pregunta, acceptedAnswer: { '@type': 'Answer', text: f.respuesta } })),
+		}]
+		: []),
+];
+
+const pins = [
+	{ nombre: d.nombre, coordenadas: d.coordenadas, tipo: 'destino' as const, detalle: provincia },
+	...d.aguas.filter((a) => a.coordenadas).map((a) => ({ nombre: a.nombre, coordenadas: a.coordenadas!, tipo: 'agua' as const })),
+];
+---
+<Base idioma={idioma} title={d.title} description={d.description} alternas={alternas} borrador={d.estado !== 'publicado'} jsonld={jsonld}>
+	<article>
+		<header class="top">
+			<div class="shell">
+				<nav aria-label={t('ficha.migas')} class="migas">
+					<ol>{migas.map((m, i) => <li>{m.url && i < migas.length - 1 ? <a href={m.url}>{m.nombre}</a> : <span aria-current={i === migas.length - 1 ? 'page' : undefined}>{m.nombre}</span>}</li>)}</ol>
+				</nav>
+				<h1>{d.h1}</h1>
+				<p class="bajada">{d.bajada}</p>
+				<p class="confianza">
+					{t('ficha.por')} {d.autor} · {t('ficha.actualizado')} <time datetime={d.actualizado.toISOString().slice(0, 10)}>{fecha(d.actualizado, idioma)}</time> ·
+					{d.reglamento.verificado
+						? <>{t('ficha.verificado')} {fecha(d.reglamento.verificado, idioma)}</>
+						: <strong>{t('ficha.sinverificar')}</strong>}
+				</p>
+			</div>
+		</header>
+
+		<section class="shell resumen" aria-label={t('ficha.resumen')}>
+			<dl>
+				<div><dt>{t('ficha.especies')}</dt><dd><ul class="chips">{especies.map((e) => <li><a href={urlEspecie(e.data.clave, idioma)}>{e.data.nombre}</a></li>)}</ul></dd></div>
+				<div><dt>{t('ficha.modalidades')}</dt><dd>{d.modalidades.join(' · ')}</dd></div>
+				<div><dt>{t('ficha.cuando')}</dt><dd>{d.epoca}</dd></div>
+				<div><dt>{t('ficha.guias')}</dt><dd><a href="#prestadores">{t('ficha.prestadores.link')}</a></dd></div>
+			</dl>
+		</section>
+
+		<div class="shell layout">
+			<div class="prose">
+				<Content />
+
+				{d.temporada.length > 0 && (
+					<>
+						<h2 id="temporada">{t('ficha.calendario')}</h2>
+						<table>
+							<thead><tr><th scope="col">{t('ficha.epoca')}</th><th scope="col">{t('ficha.que')}</th></tr></thead>
+							<tbody>{d.temporada.map((x) => <tr><td>{x.meses}</td><td>{x.que}</td></tr>)}</tbody>
+						</table>
+					</>
+				)}
+
+				<h2 id="reglamento">{t('ficha.reglamento')}</h2>
+				<div class="regla">
+					<p>{d.reglamento.resumen}</p>
+					<p><strong>{t('ficha.autoridad')}:</strong> {d.reglamento.url ? <a href={d.reglamento.url} rel="noopener">{d.reglamento.autoridad}</a> : d.reglamento.autoridad}</p>
+					<p class="note">{d.reglamento.verificado ? `${t('ficha.ultima')} ${fecha(d.reglamento.verificado, idioma)}.` : t('ficha.noverificado')} {t('ficha.cambian')}</p>
+				</div>
+
+				<h2 id="prestadores">{t('ficha.prestadores.h2')}</h2>
+				<p class="note">{t('ficha.prestadores.p', { lugar: d.nombre })}</p>
+
+				{d.faqs.length > 0 && (
+					<>
+						<h2 id="preguntas">{t('ficha.faqs')}</h2>
+						{d.faqs.map((f) => <details><summary>{f.pregunta}</summary><p>{f.respuesta}</p></details>)}
+					</>
+				)}
+
+				{d.fuentes.length > 0 && (
+					<>
+						<h2 id="fuentes">{t('ficha.fuentes')}</h2>
+						<ul class="fuentes">
+							{d.fuentes.map((f) => <li><a href={f.url} rel="noopener">{f.nombre}</a>{f.oficial && <span class="ofi">{t('ficha.oficial')}</span>} <span class="note">{t('ficha.consultada')} {fecha(f.consultada, idioma)}</span></li>)}
+						</ul>
+					</>
+				)}
+			</div>
+
+			<aside class="aside">
+				{portada && <Foto foto={portada} alt={`${d.nombre}, ${provincia}`} sizes="(max-width: 960px) 100vw, 400px" class="portada" prioridad etiqueta={t('foto')} />}
+				<h2 class="visually-hidden">{t('ficha.mapa')}</h2>
+				<Mapa pins={pins} centro={d.coordenadas} zoom={10} alto="420px" etiqueta={`${t('ficha.mapa.de')} ${d.nombre}`} textos={textosMapa} />
+				<p class="note">{t('mapa.orientativo')}</p>
+				{d.aguas.length > 0 && (
+					<ul class="aguas">{d.aguas.map((a) => <li><strong>{a.nombre}</strong><span>{a.nota}</span></li>)}</ul>
+				)}
+			</aside>
+		</div>
+	</article>
+</Base>
+
+<style>
+	.top { background: var(--forest); color: var(--white); padding: 40px 0 44px; }
+	.migas ol { list-style: none; display: flex; flex-wrap: wrap; gap: 6px; padding: 0; margin: 0 0 24px; font-size: 13px; color: var(--on-dark); }
+	.migas li + li::before { content: '›'; margin-right: 6px; }
+	.top h1 { font-size: clamp(30px, 4.6vw, 52px); max-width: 900px; }
+	.bajada { font-size: 18px; color: var(--on-dark); max-width: 720px; }
+	.confianza { font-size: 13px; color: var(--on-dark); margin: 0; }
+	.confianza strong { color: var(--lime); }
+
+	.resumen dl { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap: 0; margin: -22px 0 0; background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); position: relative; }
+	.resumen dl > div { padding: 18px 20px; border-right: 1px solid var(--line); }
+	.resumen dt { font: 400 16px/1 var(--font-label); letter-spacing: 0.1em; color: var(--muted); margin-bottom: 8px; }
+	.resumen dd { margin: 0; font-size: 15px; }
+
+	.layout { display: grid; grid-template-columns: minmax(0, 1fr) 400px; gap: 48px; padding-block: 48px 80px; align-items: start; }
+	.aside { position: sticky; top: 20px; }
+	.aside :global(.portada) { aspect-ratio: 4 / 3; border-radius: var(--radius); margin-bottom: 16px; }
+	@media (max-width: 960px) { .layout { grid-template-columns: 1fr; } .aside { position: static; order: -1; } }
+
+	.prose { max-width: 720px; }
+	.prose :global(h2) { font-size: clamp(24px, 3vw, 32px); margin-top: 1.6em; }
+	.prose :global(blockquote) { margin: 1em 0; padding: 12px 16px; background: var(--warn-bg); border-left: 3px solid var(--warn-line); border-radius: 6px; font-size: 14px; }
+	.prose :global(blockquote p) { margin: 0; }
+	table { width: 100%; border-collapse: collapse; font-size: 15px; }
+	th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+	th { font: 400 15px/1 var(--font-label); letter-spacing: 0.1em; color: var(--muted); }
+	.regla { background: var(--cream); border-radius: var(--radius); padding: 18px 20px; }
+	details { border-bottom: 1px solid var(--line); padding: 12px 0; }
+	summary { cursor: pointer; font-weight: 700; }
+	details p { margin: 10px 0 0; }
+	.fuentes { padding-left: 18px; font-size: 14px; }
+	.fuentes li { margin-bottom: 6px; }
+	.ofi { font-size: 11px; background: var(--lime); border-radius: 99px; padding: 2px 8px; margin-left: 6px; font-weight: 700; }
+	.aguas { list-style: none; padding: 0; margin: 16px 0 0; font-size: 14px; }
+	.aguas li { border-top: 1px solid var(--line); padding: 10px 0; display: grid; gap: 2px; }
+	.aguas span { color: var(--muted); }
+</style>

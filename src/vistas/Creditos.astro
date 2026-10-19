@@ -1,0 +1,31 @@
+---
+import Base from '../layouts/Base.astro';
+import { todosLosCreditos } from '../lib/fotos';
+import { alternasCreditos } from '../lib/traducciones';
+import { traductor, type Idioma } from '../i18n/ui';
+
+interface Props { idioma: Idioma }
+const { idioma } = Astro.props;
+const t = traductor(idioma);
+const creditos = todosLosCreditos();
+---
+<Base idioma={idioma} title={t('creditos.title')} description={t('creditos.description')} alternas={alternasCreditos()}>
+	<div class="shell wrap">
+		<h1>{t('creditos.h1')}</h1>
+		<p>{t('creditos.p')}</p>
+		<ul>
+			{creditos.map(([, c]) => (
+				<li>
+					<a href={c.pagina} rel="noopener">{c.archivo.replace(/^File:/, '')}</a>, {t('creditos.de')} {c.autor}.
+					{t('creditos.licencia')}: {c.licencia_url ? <a href={c.licencia_url} rel="noopener license">{c.licencia}</a> : c.licencia}.
+					<span class="note">{t('creditos.editada')}</span>
+				</li>
+			))}
+		</ul>
+	</div>
+</Base>
+
+<style>
+	.wrap { padding-block: 40px 80px; max-width: 860px; }
+	li { margin-bottom: 10px; }
+</style>

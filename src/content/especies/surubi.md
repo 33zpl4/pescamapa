@@ -1,5 +1,7 @@
 ---
 estado: borrador
+idioma: es
+clave: surubi
 nombre: Surubí
 cientifico: "Pseudoplatystoma corruscans"
 title: "Surubí: dónde y cuándo pescarlo en Argentina"

@@ -4,11 +4,11 @@
 // policy requires the attribution; move to a paid/own tile source before
 // traffic grows — see docs/decisiones.md).
 export interface Pin { nombre: string; coordenadas: [number, number]; url?: string; detalle?: string; tipo: 'destino' | 'proximo' | 'agua' }
-interface Props { pins: Pin[]; centro?: [number, number]; zoom?: number; alto?: string; etiqueta: string }
-const { pins, centro = [-38.5, -63.5], zoom = 4, alto = '560px', etiqueta } = Astro.props;
+interface Props { pins: Pin[]; centro?: [number, number]; zoom?: number; alto?: string; etiqueta: string; textos: { guia: string; pronto: string; sinjs: string } }
+const { pins, centro = [-38.5, -63.5], zoom = 4, alto = '560px', etiqueta, textos } = Astro.props;
 ---
-<div class="mapa" role="region" aria-label={etiqueta} style={`--alto:${alto}`} data-pins={JSON.stringify(pins)} data-centro={JSON.stringify(centro)} data-zoom={zoom}></div>
-<noscript><p class="note">El mapa necesita JavaScript. Los destinos están listados en esta misma página.</p></noscript>
+<div class="mapa" role="region" aria-label={etiqueta} style={`--alto:${alto}`} data-pins={JSON.stringify(pins)} data-centro={JSON.stringify(centro)} data-zoom={zoom} data-guia={textos.guia} data-pronto={textos.pronto}></div>
+<noscript><p class="note">{textos.sinjs}</p></noscript>
 
 <script>
 	import L from 'leaflet';
@@ -36,10 +36,10 @@ const { pins, centro = [-38.5, -63.5], zoom = 4, alto = '560px', etiqueta } = As
 			if (p.detalle) t.append(document.createElement('br'), p.detalle);
 			if (p.url) {
 				const a = document.createElement('a');
-				a.href = p.url; a.textContent = 'Ver la guía →';
+				a.href = p.url; a.textContent = el.dataset.guia!;
 				t.append(document.createElement('br'), a);
 			} else if (p.tipo === 'proximo') {
-				t.append(document.createElement('br'), 'Próximamente');
+				t.append(document.createElement('br'), el.dataset.pronto!);
 			}
 			m.bindPopup(t);
 		}

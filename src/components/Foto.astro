@@ -6,16 +6,16 @@ import type { Foto } from '../lib/fotos';
 
 // `enlaces={false}` when the photo sits inside a link (no nested <a>); the
 // full links are on /creditos/.
-interface Props { foto: Foto; alt: string; sizes: string; class?: string; prioridad?: boolean; enlaces?: boolean }
-const { foto, alt, sizes, class: cls, prioridad = false, enlaces = true } = Astro.props;
+interface Props { foto: Foto; alt: string; sizes: string; class?: string; prioridad?: boolean; enlaces?: boolean; etiqueta?: string }
+const { foto, alt, sizes, class: cls, prioridad = false, enlaces = true, etiqueta = 'Foto' } = Astro.props;
 const c = foto.credito;
 ---
 <figure class:list={['foto', cls]}>
 	<Image src={foto.src} alt={alt} widths={[400, 800, 1200]} sizes={sizes} format="webp" quality={72} loading={prioridad ? 'eager' : 'lazy'} />
 	<figcaption>
 		{enlaces
-			? <>Foto: <a href={c.pagina} rel="noopener">{c.autor}</a>, {c.licencia_url ? <a href={c.licencia_url} rel="noopener license">{c.licencia}</a> : c.licencia}</>
-			: <>Foto: {c.autor}, {c.licencia}</>}
+			? <>{etiqueta}: <a href={c.pagina} rel="noopener">{c.autor}</a>, {c.licencia_url ? <a href={c.licencia_url} rel="noopener license">{c.licencia}</a> : c.licencia}</>
+			: <>{etiqueta}: {c.autor}, {c.licencia}</>}
 	</figcaption>
 </figure>
 

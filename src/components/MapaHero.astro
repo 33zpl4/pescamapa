@@ -1,0 +1,77 @@
+---
+// Hero map: Argentina's real outline (Natural Earth via world-atlas,
+// projected at build time — no JavaScript, no tiles) with the destinations
+// from the data files. Illustrative, not cartography for navigation.
+// Malvinas are drawn as part of Argentina, as Argentine maps do.
+import world from 'world-atlas/countries-50m.json';
+import { feature } from 'topojson-client';
+import { geoPath, geoTransverseMercator } from 'd3-geo';
+import type { FeatureCollection, Geometry } from 'geojson';
+
+export interface PuntoHero { nombre: string; coordenadas: [number, number]; url?: string; destacado?: boolean }
+interface Props { puntos: PuntoHero[]; etiqueta: string }
+const { puntos, etiqueta } = Astro.props;
+
+const W = 420;
+const H = 640;
+const todos = feature(world as any, (world as any).objects.countries) as unknown as FeatureCollection<Geometry, { name: string }>;
+const pais = (ids: string[]) => ({ type: 'FeatureCollection' as const, features: todos.features.filter((f) => ids.includes(String(f.id))) });
+const argentina = pais(['032', '238']);
+const vecinos = pais(['152', '858', '600', '068', '076']);
+
+const proj = geoTransverseMercator().rotate([64, 0]).fitExtent([[24, 12], [W - 24, H - 12]], pais(['032']));
+const path = geoPath(proj);
+
+// Main rivers of the Litoral, hand-traced from town coordinates (lat, lon).
+const RIOS: [number, number][][] = [
+	[[-25.6, -54.6], [-27.37, -55.9], [-27.58, -56.68], [-27.47, -58.83], [-28.5, -59.05], [-29.14, -59.3], [-30.0, -59.55], [-30.74, -59.65], [-31.73, -60.52], [-32.95, -60.64], [-33.68, -59.66], [-34.2, -58.9], [-34.6, -58.2]],
+	[[-27.5, -55.5], [-28.6, -56.0], [-29.7, -57.1], [-30.3, -57.6], [-31.2, -57.93], [-32.22, -58.13], [-33.1, -58.4], [-34.0, -58.4]],
+	[[-26.3, -58.2], [-27.0, -58.4], [-27.47, -58.83]],
+];
+const linea = (pts: [number, number][]) => path({ type: 'LineString', coordinates: pts.map(([la, lo]) => [lo, la]) }) ?? '';
+
+const marcas = puntos.map((p) => {
+	const [x, y] = proj([p.coordenadas[1], p.coordenadas[0]])!;
+	return { ...p, x: Math.round(x * 10) / 10, y: Math.round(y * 10) / 10 };
+});
+---
+<svg class="mapa-hero" viewBox={`0 0 ${W} ${H}`} role="img" aria-label={etiqueta}>
+	<defs>
+		<radialGradient id="mh-glow" cx="50%" cy="50%" r="50%">
+			<stop offset="0%" stop-color="var(--lime)" stop-opacity="0.55" />
+			<stop offset="100%" stop-color="var(--lime)" stop-opacity="0" />
+		</radialGradient>
+	</defs>
+	<path class="vecinos" d={path(vecinos) ?? ''} />
+	<path class="pais" d={path(argentina) ?? ''} />
+	{RIOS.map((r) => <path class="rio" d={linea(r)} />)}
+	{marcas.filter((m) => !m.destacado).map((m) => (
+		<g class="punto">
+			<title>{m.nombre}</title>
+			<circle cx={m.x} cy={m.y} r="5" />
+		</g>
+	))}
+	{marcas.filter((m) => m.destacado).map((m) => (
+		<a href={m.url} class="destacado">
+			<title>{m.nombre}</title>
+			<circle class="halo" cx={m.x} cy={m.y} r="22" fill="url(#mh-glow)" />
+			<circle class="pulso" cx={m.x} cy={m.y} r="8" />
+			<circle class="nucleo" cx={m.x} cy={m.y} r="7" />
+			<text x={m.x + 14} y={m.y + 5}>{m.nombre}</text>
+		</a>
+	))}
+</svg>
+
+<style>
+	.mapa-hero { width: 100%; height: auto; display: block; overflow: visible; }
+	.vecinos { fill: rgb(255 255 255 / 0.03); stroke: rgb(255 255 255 / 0.12); stroke-width: 0.8; }
+	.pais { fill: rgb(216 228 106 / 0.08); stroke: var(--lime); stroke-width: 1.4; stroke-linejoin: round; }
+	.rio { fill: none; stroke: #7fb3b0; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; opacity: 0.85; }
+	.punto circle { fill: var(--cream); stroke: var(--forest); stroke-width: 2; }
+	.nucleo { fill: var(--orange); stroke: var(--paper); stroke-width: 2.5; }
+	.pulso { fill: none; stroke: var(--orange); stroke-width: 2; transform-box: fill-box; transform-origin: center; animation: pulso 2.4s ease-out infinite; }
+	.destacado text { fill: var(--white); font: 400 22px var(--font-label); letter-spacing: 0.06em; paint-order: stroke; stroke: var(--forest); stroke-width: 4px; }
+	.destacado:hover text, .destacado:focus text { fill: var(--lime); }
+	@keyframes pulso { from { transform: scale(1); opacity: 0.9; } to { transform: scale(3.2); opacity: 0; } }
+	@media (prefers-reduced-motion: reduce) { .pulso { animation: none; } }
+</style>

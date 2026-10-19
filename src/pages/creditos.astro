@@ -1,25 +1,4 @@
 ---
-import Base from '../layouts/Base.astro';
-import { todosLosCreditos } from '../lib/fotos';
-const creditos = todosLosCreditos();
+import Creditos from '../vistas/Creditos.astro';
 ---
-<Base title="Créditos de fotos | Pescamapa" description="Autores y licencias de las fotos que usa Pescamapa. Todas provienen de Wikimedia Commons con licencias libres que permiten su uso con atribución.">
-	<div class="shell wrap">
-		<h1>Créditos de fotos</h1>
-		<p>Las fotos de Pescamapa provienen de <a href="https://commons.wikimedia.org/">Wikimedia Commons</a> y se usan según sus licencias libres. Gracias a sus autores.</p>
-		<ul>
-			{creditos.map(([, c]) => (
-				<li>
-					<a href={c.pagina} rel="noopener">{c.archivo.replace(/^File:/, '')}</a>, de {c.autor}.
-					Licencia: {c.licencia_url ? <a href={c.licencia_url} rel="noopener license">{c.licencia}</a> : c.licencia}.
-					<span class="note">Redimensionada y recortada.</span>
-				</li>
-			))}
-		</ul>
-	</div>
-</Base>
-
-<style>
-	.wrap { padding-block: 40px 80px; max-width: 860px; }
-	li { margin-bottom: 10px; }
-</style>
+<Creditos idioma="es" />

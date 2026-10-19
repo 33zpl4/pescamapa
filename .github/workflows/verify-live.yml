@@ -36,7 +36,10 @@ jobs:
             if [[ "$code" == "$2" ]]; then echo "✓ $code $1"; else echo "✖ $code $1 (esperado $2)"; fail=1; fi
           }
           check "$SITE/" 200
+          check "$SITE/pt/" 200
+          check "$SITE/en/" 200
           check "$SITE/mapa/" 200
+          check "$SITE/en/map/" 200
           check "$SITE/sitemap-index.xml" 200
           check "$SITE/robots.txt" 200
           check "$SITE/esto-no-existe/" 404
@@ -46,10 +49,11 @@ jobs:
 
           # Every destination: drafts must be noindex and absent from the sitemap.
           curl -sS -m 30 "$SITE/sitemap-0.xml" -o sitemap.xml
-          for f in src/content/destinos/*.md; do
+          for f in $(find src/content/destinos -name '*.md'); do
             fm=$(sed -n '2,/^---$/p' "$f")
             get() { echo "$fm" | sed -n "s/^$1: *\"\{0,1\}\([^\"]*\)\"\{0,1\}$/\1/p" | head -1; }
-            path="/$(get region)/$(get provincia)/$(get slug)/"
+            idioma=$(get idioma); pre=""; [[ "$idioma" == "pt" ]] && pre="/pt"; [[ "$idioma" == "en" ]] && pre="/en"
+            path="$pre/$(get region)/$(get provincia)/$(get slug)/"
             curl -sS -m 30 "$SITE$path" -o page.html
             if [[ "$(get estado)" == "publicado" ]]; then
               grep -q 'name="robots" content="noindex"' page.html && { echo "✖ $path publicado pero noindex"; fail=1; }
@@ -59,6 +63,7 @@ jobs:
               grep -q "$path" sitemap.xml && { echo "✖ $path borrador dentro del sitemap"; fail=1; }
             fi
             grep -q '"@type":"TouristDestination"' page.html || { echo "✖ $path sin JSON-LD"; fail=1; }
+            grep -q 'hreflang="x-default"' page.html || { echo "✖ $path sin hreflang"; fail=1; }
             echo "✓ $path ($(get estado))"
           done
           exit $fail

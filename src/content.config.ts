@@ -25,6 +25,12 @@ const faq = z.object({ pregunta: z.string(), respuesta: z.string() });
 
 const estado = z.enum(['borrador', 'publicado']);
 
+// Translations are separate files sharing a `clave`. Spanish is the source:
+// a translation may not be published while the Spanish page isn't (checked
+// in the page templates, which see both).
+const idioma = z.enum(['es', 'pt', 'en']).default('es');
+const clave = z.string().regex(/^[a-z0-9-]+$/);
+
 // Pages that publish must prove their facts; drafts may not yet.
 function confiable(d: { estado: string; fuentes: z.infer<typeof fuente>[]; reglamento?: { verificado?: Date } }, ctx: z.RefinementCtx) {
 	if (d.estado !== 'publicado') return;
@@ -45,6 +51,8 @@ const destinos = defineCollection({
 	schema: z
 		.object({
 			estado,
+			idioma,
+			clave,
 			nombre: z.string(),
 			// Stable URL, no dates: /<region>/<provincia>/<slug>/
 			region: z.enum(['litoral', 'patagonia', 'pampa', 'costa', 'centro-norte']),
@@ -57,6 +65,7 @@ const destinos = defineCollection({
 			h1: z.string(),
 			bajada: z.string(),
 			coordenadas: z.tuple([z.number(), z.number()]),
+			// Spanish species ids (= their clave); templates resolve the translation.
 			especies: z.array(reference('especies')).min(1),
 			modalidades: z.array(z.string()).min(1),
 			epoca: z.string(),
@@ -81,6 +90,8 @@ const especies = defineCollection({
 	schema: z
 		.object({
 			estado,
+			idioma,
+			clave,
 			nombre: z.string(),
 			cientifico: z.string(),
 			title: z.string().max(65),

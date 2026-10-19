@@ -1,34 +1,41 @@
 ---
 // One <head> for every page: title, description, canonical, social preview,
-// hreflang and JSON-LD. Drafts get noindex and a visible banner.
+// hreflang (from `alternas`) and JSON-LD. Drafts get noindex and a banner.
 import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import { META, traductor, type Idioma } from '../i18n/ui';
+import type { Alternas } from '../lib/traducciones';
 
 interface Props {
+	idioma: Idioma;
 	title: string;
 	description: string;
+	alternas?: Alternas;
 	borrador?: boolean;
 	jsonld?: object[];
 	headerOscuro?: boolean;
 }
-const { title, description, borrador = false, jsonld = [], headerOscuro = false } = Astro.props;
+const { idioma, title, description, alternas = {}, borrador = false, jsonld = [], headerOscuro = false } = Astro.props;
+const t = traductor(idioma);
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
+const abs = (u: string) => new URL(u, Astro.site).href;
+const xDefault = alternas.es ?? canonical;
 ---
 <!doctype html>
-<html lang="es-AR">
+<html lang={META[idioma].html}>
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width,initial-scale=1" />
 		<title>{title}</title>
 		<meta name="description" content={description} />
 		<link rel="canonical" href={canonical} />
-		<link rel="alternate" hreflang="es" href={canonical} />
-		<link rel="alternate" hreflang="x-default" href={canonical} />
+		{Object.entries(alternas).map(([i, u]) => <link rel="alternate" hreflang={META[i as Idioma].hreflang} href={abs(u!)} />)}
+		{Object.keys(alternas).length > 1 && <link rel="alternate" hreflang="x-default" href={abs(xDefault)} />}
 		{borrador && <meta name="robots" content="noindex" />}
 		<meta property="og:type" content="website" />
 		<meta property="og:site_name" content="Pescamapa" />
-		<meta property="og:locale" content="es_AR" />
+		<meta property="og:locale" content={META[idioma].og} />
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
 		<meta property="og:url" content={canonical} />
@@ -41,16 +48,14 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href;
 	<body>
 		{borrador && (
 			<div class="borrador" role="note">
-				<div class="shell">
-					<strong>Ficha en construcción.</strong> Hay datos pendientes de verificación; no la uses todavía para planificar un viaje.
-				</div>
+				<div class="shell"><strong>{t('borrador.titulo')}</strong> {t('borrador.texto')}</div>
 			</div>
 		)}
-		<Header oscuro={headerOscuro} />
+		<Header idioma={idioma} alternas={alternas} oscuro={headerOscuro} />
 		<main id="contenido">
 			<slot />
 		</main>
-		<Footer />
+		<Footer idioma={idioma} />
 	</body>
 </html>
 
