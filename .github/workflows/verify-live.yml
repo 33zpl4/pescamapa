@@ -1,0 +1,64 @@
+name: Verify live site
+
+# Read-only check of what pescamapa.com actually serves (the Claude sandbox
+# can't reach it). Cloudflare deploys main on its own; this answers "is it
+# live and correct" from the served bytes: domain, www redirect, drafts
+# noindexed and out of the sitemap, JSON-LD present.
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 9 * * 1"
+  push:
+    branches: [main, claude/wordpress-studio-agentic-9i5h7t]
+    paths:
+      - ".github/workflows/verify-live.yml"
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    env:
+      SITE: https://pescamapa.com
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: DNS
+        run: |
+          echo "== NS";   dig +short NS pescamapa.com
+          echo "== A";    dig +short A pescamapa.com
+          echo "== www";  dig +short AAAA www.pescamapa.com
+
+      - name: Served pages
+        run: |
+          fail=0
+          check() { # url expected-status
+            code=$(curl -sS -m 30 -o /dev/null -w '%{http_code}' "$1")
+            if [[ "$code" == "$2" ]]; then echo "✓ $code $1"; else echo "✖ $code $1 (esperado $2)"; fail=1; fi
+          }
+          check "$SITE/" 200
+          check "$SITE/mapa/" 200
+          check "$SITE/sitemap-index.xml" 200
+          check "$SITE/robots.txt" 200
+          check "$SITE/esto-no-existe/" 404
+
+          loc=$(curl -sS -m 30 -o /dev/null -w '%{http_code} %{redirect_url}' "https://www.pescamapa.com/mapa/")
+          if [[ "$loc" =~ ^30[178]\ https://pescamapa\.com/mapa/ ]]; then echo "✓ www → $loc"; else echo "✖ www redirect: $loc"; fail=1; fi
+
+          # Every destination: drafts must be noindex and absent from the sitemap.
+          curl -sS -m 30 "$SITE/sitemap-0.xml" -o sitemap.xml
+          for f in src/content/destinos/*.md; do
+            fm=$(sed -n '2,/^---$/p' "$f")
+            get() { echo "$fm" | sed -n "s/^$1: *\"\{0,1\}\([^\"]*\)\"\{0,1\}$/\1/p" | head -1; }
+            path="/$(get region)/$(get provincia)/$(get slug)/"
+            curl -sS -m 30 "$SITE$path" -o page.html
+            if [[ "$(get estado)" == "publicado" ]]; then
+              grep -q 'name="robots" content="noindex"' page.html && { echo "✖ $path publicado pero noindex"; fail=1; }
+              grep -q "$path" sitemap.xml || { echo "✖ $path publicado y fuera del sitemap"; fail=1; }
+            else
+              grep -q 'name="robots" content="noindex"' page.html || { echo "✖ $path borrador SIN noindex"; fail=1; }
+              grep -q "$path" sitemap.xml && { echo "✖ $path borrador dentro del sitemap"; fail=1; }
+            fi
+            grep -q '"@type":"TouristDestination"' page.html || { echo "✖ $path sin JSON-LD"; fail=1; }
+            echo "✓ $path ($(get estado))"
+          done
+          exit $fail
