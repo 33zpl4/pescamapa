@@ -1,0 +1,14 @@
+---
+import { getCollection } from 'astro:content';
+import Destino from '../../../../vistas/Destino.astro';
+
+export async function getStaticPaths() {
+	const destinos = await getCollection('destinos', (e) => e.data.idioma === 'en');
+	return destinos.map((entry) => ({
+		params: { region: entry.data.region, provincia: entry.data.provincia, slug: entry.data.slug },
+		props: { entry },
+	}));
+}
+const { entry } = Astro.props;
+---
+<Destino entry={entry} />

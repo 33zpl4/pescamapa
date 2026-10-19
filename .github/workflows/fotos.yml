@@ -1,0 +1,63 @@
+name: Fotos (Wikimedia Commons)
+
+# The sandbox can't reach Wikimedia; the runner can.
+#   candidatas → thumbnails + credits pushed to the `fotos-candidatas` branch
+#                for review (that branch is scratch, never merged).
+#   bajar      → the picked files (scripts/fotos-elegidas.json) downloaded
+#                into src/assets/fotos/ with credits in src/data/fotos.json,
+#                committed to the branch that ran it.
+
+on:
+  workflow_dispatch:
+    inputs:
+      modo:
+        description: "candidatas | bajar"
+        required: true
+        default: candidatas
+      lugares:
+        description: "solo estos lugares (separados por espacio); vacío = todos"
+        required: false
+  push:
+    branches: [claude/wordpress-studio-agentic-9i5h7t]
+    paths:
+      - "scripts/commons.py"
+      - "scripts/fotos-elegidas.json"
+
+permissions:
+  contents: write
+
+jobs:
+  fotos:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Decide mode
+        id: modo
+        run: |
+          if [[ -n "${{ github.event.inputs.modo }}" ]]; then m="${{ github.event.inputs.modo }}"
+          elif [[ -f scripts/fotos-elegidas.json ]]; then m=bajar
+          else m=candidatas; fi
+          echo "modo=$m" >> "$GITHUB_OUTPUT"; echo "modo: $m"
+
+      - name: Candidatas
+        if: steps.modo.outputs.modo == 'candidatas'
+        run: |
+          python3 scripts/commons.py candidatas ${{ github.event.inputs.lugares }}
+          git config user.name "Claude"
+          git config user.email "noreply@anthropic.com"
+          git checkout --orphan fotos-candidatas
+          git rm -rq --cached .
+          git add candidatas
+          git commit -qm "Candidatas de Wikimedia Commons"
+          git push -f origin fotos-candidatas
+
+      - name: Bajar elegidas
+        if: steps.modo.outputs.modo == 'bajar'
+        run: |
+          python3 scripts/commons.py bajar scripts/fotos-elegidas.json
+          git config user.name "Claude"
+          git config user.email "noreply@anthropic.com"
+          git add src/assets/fotos src/data/fotos.json
+          git commit -qm "Fotos elegidas desde Wikimedia Commons, con créditos" || echo "sin cambios"
+          git push origin HEAD:${{ github.ref_name }}

@@ -1,15 +1,30 @@
 ---
-interface Props { oscuro?: boolean }
-const { oscuro = false } = Astro.props;
+// The language toggle links to the same page in the other language when a
+// translation exists, otherwise to that language's home.
+import { IDIOMAS, META, traductor, type Idioma } from '../i18n/ui';
+import { urlInicio, urlMapa } from '../lib/rutas';
+import type { Alternas } from '../lib/traducciones';
+
+interface Props { idioma: Idioma; alternas: Alternas; oscuro?: boolean }
+const { idioma, alternas, oscuro = false } = Astro.props;
+const t = traductor(idioma);
+const inicio = urlInicio(idioma);
 ---
 <header class:list={['nav', { oscuro }]}>
 	<div class="shell inner">
-		<a class="brand" href="/" aria-label="Pescamapa, inicio"><span class="mark" aria-hidden="true">↗</span> PESCAMAPA</a>
-		<nav aria-label="Principal">
-			<a href="/#destinos">Destinos</a>
-			<a href="/mapa/">Mapa</a>
-			<a class="cta" href="/#prestadores">Para prestadores</a>
-		</nav>
+		<a class="brand" href={inicio} aria-label={`Pescamapa — ${t('ficha.inicio')}`}><span class="mark" aria-hidden="true">↗</span> PESCAMAPA</a>
+		<div class="right">
+			<nav aria-label="Principal">
+				<a class="opt" href={`${inicio}#destinos`}>{t('nav.destinos')}</a>
+				<a class="opt" href={urlMapa(idioma)}>{t('nav.mapa')}</a>
+				<a class="cta" href={`${inicio}#prestadores`}>{t('nav.prestadores')}</a>
+			</nav>
+			<nav class="idiomas" aria-label={t('nav.idioma')}>
+				{IDIOMAS.map((i) => (
+					<a href={alternas[i] ?? urlInicio(i)} hreflang={META[i].html} lang={META[i].html} title={META[i].nombre} aria-current={i === idioma ? 'true' : undefined}>{META[i].corto}</a>
+				))}
+			</nav>
+		</div>
 	</div>
 </header>
 
@@ -17,11 +32,18 @@ const { oscuro = false } = Astro.props;
 	.nav { border-bottom: 1px solid var(--line); background: var(--paper); }
 	.nav.oscuro { position: absolute; inset: 0 0 auto; z-index: 4; background: transparent; border-color: rgb(255 255 255 / 0.16); color: var(--white); }
 	.inner { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
-	.brand { font: 800 18px var(--font-head); letter-spacing: -0.03em; display: flex; align-items: center; gap: 10px; text-decoration: none; }
-	.mark { width: 30px; height: 30px; border-radius: 50%; background: var(--lime); color: var(--forest); display: grid; place-items: center; font-size: 17px; }
+	.brand { font: 400 27px/1 var(--font-label); letter-spacing: 0.06em; display: flex; align-items: center; gap: 10px; text-decoration: none; }
+	.mark { width: 30px; height: 30px; border-radius: 50%; background: var(--lime); color: var(--forest); display: grid; place-items: center; font: 600 17px var(--font-body); }
+	.right { display: flex; align-items: center; gap: clamp(12px, 2.5vw, 26px); }
 	nav { display: flex; gap: clamp(14px, 3vw, 30px); align-items: center; font-size: 14px; }
 	nav a { text-decoration: none; }
 	nav a:hover { text-decoration: underline; text-underline-offset: 4px; }
 	.cta { padding: 10px 16px; border-radius: 99px; background: var(--lime); color: var(--forest); font-weight: 700; }
-	@media (max-width: 640px) { nav a:not(.cta):first-child { display: none; } .cta { padding: 8px 12px; } }
+	.idiomas { gap: 2px; font: 400 15px/1 var(--font-label); letter-spacing: 0.1em; border: 1px solid currentColor; border-radius: 99px; padding: 3px; opacity: 0.9; }
+	.idiomas a { padding: 5px 8px; border-radius: 99px; }
+	.idiomas a[aria-current] { background: var(--forest); color: var(--white); }
+	.oscuro .idiomas a[aria-current] { background: var(--lime); color: var(--forest); }
+	.idiomas a:hover { text-decoration: none; }
+	@media (max-width: 760px) { .opt { display: none; } .cta { padding: 8px 12px; font-size: 13px; } }
+	@media (max-width: 420px) { .cta { display: none; } }
 </style>

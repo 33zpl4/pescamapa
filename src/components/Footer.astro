@@ -1,34 +1,39 @@
 ---
+import { traductor, type Idioma } from '../i18n/ui';
+import { urlInicio, urlMapa, urlCreditos } from '../lib/rutas';
+
+interface Props { idioma: Idioma }
+const { idioma } = Astro.props;
+const t = traductor(idioma);
+const inicio = urlInicio(idioma);
 const year = new Date().getFullYear();
 ---
 <footer>
 	<div class="shell inner">
 		<div>
-			<a class="brand" href="/">PESCAMAPA</a>
-			<p>Destinos, especies y guías para pescar en Argentina.</p>
-			<p class="firma">Un proyecto de <span>Cheyenne Justiniano</span></p>
+			<a class="brand" href={inicio}>PESCAMAPA</a>
+			<p>{t('marca.lema')}</p>
+			<p class="firma">{t('pie.firma')} <span>Cheyenne Justiniano</span></p>
 		</div>
 		<nav aria-label="Pie">
-			<a href="/#destinos">Destinos</a>
-			<a href="/mapa/">Mapa</a>
-			<a href="/#prestadores">Prestadores</a>
+			<a href={`${inicio}#destinos`}>{t('nav.destinos')}</a>
+			<a href={urlMapa(idioma)}>{t('nav.mapa')}</a>
+			<a href={`${inicio}#prestadores`}>{t('pie.prestadores')}</a>
+			<a href={urlCreditos(idioma)}>{t('nav.creditos')}</a>
 		</nav>
 	</div>
 	<div class="shell">
-		<p class="legal">
-			Información orientativa. La pesca deportiva se rige por reglamentos provinciales, permisos y condiciones de cada ambiente.
-			Consultá la autoridad de aplicación y prestadores habilitados antes de viajar. © {year} Pescamapa
-		</p>
+		<p class="legal">{t('pie.legal')} © {year} Pescamapa</p>
 	</div>
 </footer>
 
 <style>
 	footer { background: var(--forest); color: var(--on-dark); padding: 56px 0 28px; margin-top: 0; }
 	.inner { display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
-	.brand { font: 800 18px var(--font-head); color: var(--white); text-decoration: none; }
+	.brand { font: 400 30px/1 var(--font-label); letter-spacing: 0.06em; color: var(--white); text-decoration: none; }
 	.firma { font-size: 13px; letter-spacing: 0.02em; margin: 18px 0 0; }
-	.firma span { color: var(--lime); font-weight: 600; }
-	nav { display: flex; gap: 20px; }
+	.firma span { color: var(--lime); font: italic 600 18px var(--font-head); }
+	nav { display: flex; gap: 20px; flex-wrap: wrap; }
 	nav a { text-decoration: none; }
 	.legal { font-size: 13px; border-top: 1px solid rgb(255 255 255 / 0.12); padding-top: 18px; margin-top: 24px; }
 </style>

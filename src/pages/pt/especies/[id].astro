@@ -1,0 +1,11 @@
+---
+import { getCollection } from 'astro:content';
+import Especie from '../../../vistas/Especie.astro';
+
+export async function getStaticPaths() {
+	const especies = await getCollection('especies', (e) => e.data.idioma === 'pt');
+	return especies.map((entry) => ({ params: { id: entry.data.clave }, props: { entry } }));
+}
+const { entry } = Astro.props;
+---
+<Especie entry={entry} />
