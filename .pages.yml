@@ -17,9 +17,9 @@ content:
   type: collection
   path: src/content/proximos
   filename: '{primary}.md'
-  description: 'Ciudades que se anuncian en el inicio y en el mapa antes de tener guía. El nombre del archivo es la clave:
-    cuando se publique una guía con la misma clave, esta tarjeta se oculta sola. El nombre de archivo se genera del nombre
-    (ej. "paso-de-la-patria").'
+  description: 'Ciudades que se anuncian en el inicio y en el mapa antes de tener guía. Un solo formulario para los tres idiomas:
+    la foto y la ubicación valen para todos; los nombres en portugués e inglés solo si cambian. Cuando se crea una guía con
+    la misma clave que el nombre de este archivo, la tarjeta se oculta sola.'
   view:
     fields:
     - nombre
@@ -52,17 +52,12 @@ content:
     type: select
     required: true
     options:
-      values: &id001
-      - value: litoral
-        label: Litoral
-      - value: patagonia
-        label: Patagonia
-      - value: pampa
-        label: Pampa y lagunas
-      - value: costa
-        label: Costa atlántica
-      - value: centro-norte
-        label: Centro y norte
+      values:
+      - litoral
+      - patagonia
+      - pampa
+      - costa
+      - centro-norte
   - name: agua
     label: Río, lago o zona (español)
     type: string
@@ -79,28 +74,17 @@ content:
     list: true
     options:
       values:
-      - value: dorado
-        label: Dorado
-      - value: surubi
-        label: Surubí
-      - value: pacu
-        label: Pacú
-      - value: boga
-        label: Boga
-      - value: variada
-        label: Pesca variada
-      - value: trucha
-        label: Trucha
-      - value: mosca
-        label: Mosca
-      - value: trucha-marron-anadroma
-        label: Trucha marrón anádroma
-      - value: pejerrey
-        label: Pejerrey
-      - value: tararira
-        label: Tararira
-      - value: mar
-        label: Pesca de mar
+      - dorado
+      - surubi
+      - pacu
+      - boga
+      - variada
+      - trucha
+      - mosca
+      - trucha-marron-anadroma
+      - pejerrey
+      - tararira
+      - mar
   - name: lat
     label: Latitud (ej. -27.32)
     type: number
@@ -111,18 +95,24 @@ content:
     type: number
     required: true
     description: El segundo número.
-  - &id002
-    name: foto
-    label: Foto
+  - name: foto
+    label: Foto (vale para los tres idiomas)
     type: image
-    description: Subí una foto horizontal (mín. 1200 px de ancho). Las fotos de Wikimedia ya cargadas aparecen como nombre
-      corto (ej. goya).
-  - &id003
-    name: foto_credito
-    label: Crédito de la foto
+    description: Horizontal, mínimo 1200 px de ancho. Se optimiza sola. Solo fotos propias o con permiso de quien la sacó;
+      nunca de Google.
+  - name: foto_autor
+    label: Autor de la foto
     type: string
-    description: 'Obligatorio si subís una foto propia o de un tercero: "Foto: Nombre Apellido". Solo fotos con permiso del
-      autor.'
+    description: 'Nombre y apellido de quien la sacó. Si es tuya, tu nombre. En la web se ve como "Foto: Nombre Apellido".
+      Obligatorio para fotos subidas.'
+  - name: foto_origen
+    label: Origen de la foto
+    type: select
+    options:
+      values:
+      - propia
+      - cedida
+    description: propia = la sacaste vos · cedida = te la pasó alguien que te dio permiso para publicarla.
   - name: orden
     label: Orden en la lista (1, 2, 3…)
     type: number
@@ -131,8 +121,8 @@ content:
   type: collection
   path: src/content/destinos/es
   filename: '{fields.clave}.md'
-  description: Una guía de destino por archivo. Para traducir, creá el mismo destino en la otra carpeta de idioma con la misma
-    "Clave".
+  description: Una guía por archivo. Acá se cargan también la foto, la ubicación, la región y las especies, que valen para
+    los tres idiomas. Para traducir, creá la misma guía en Português / English con la misma "Clave".
   view:
     fields:
     - nombre
@@ -154,11 +144,11 @@ content:
     required: true
     default: borrador
     options:
-      values: &id004
-      - value: borrador
-        label: Borrador (visible, pero Google no la indexa)
-      - value: publicado
-        label: Publicado (exige reglamento verificado y cero PENDIENTE)
+      values:
+      - borrador
+      - publicado
+    description: borrador = visible con cartel "en construcción", Google no la indexa · publicado = exige fuente oficial,
+      reglamento verificado (fecha) y ninguna línea PENDIENTE; si falta algo, el cambio no se publica.
   - name: nombre
     label: Nombre del lugar
     type: string
@@ -167,59 +157,86 @@ content:
     label: Clave (identificador, sin espacios ni tildes)
     type: string
     required: true
-    pattern:
-      regex: ^[a-z0-9-]+$
-      message: 'Solo minúsculas, números y guiones. Ej: paso-de-la-patria'
     description: Igual en los tres idiomas. Si existe un "Próximo destino" con este mismo nombre de archivo, su tarjeta desaparece
-      sola.
+      sola. Solo minúsculas, números y guiones (ej. paso-de-la-patria).
   - name: slug
     label: Dirección web (final de la URL)
     type: string
     required: true
-    pattern:
-      regex: ^[a-z0-9-]+$
-      message: Solo minúsculas, números y guiones.
-    description: 'Ej: pesca-en-esquina. No la cambies una vez publicada.'
+    description: 'Ej: pesca-en-esquina. No la cambies una vez publicada. Solo minúsculas, números y guiones.'
   - name: region
-    label: Región
-    type: select
-    required: true
-    options:
-      values: *id001
-  - name: provincia
-    label: Provincia (en la URL)
+    label: Región (vale para los tres idiomas)
     type: select
     required: true
     options:
       values:
-      - value: corrientes
-        label: Corrientes
-      - value: entre-rios
-        label: Entre Ríos
-      - value: santa-fe
-        label: Santa Fe
-      - value: neuquen
-        label: Neuquén
-      - value: tierra-del-fuego
-        label: Tierra del Fuego
-      - value: buenos-aires
-        label: Buenos Aires
-  - *id002
-  - *id003
+      - litoral
+      - patagonia
+      - pampa
+      - costa
+      - centro-norte
+  - name: provincia
+    label: Provincia (en la URL) (vale para los tres idiomas)
+    type: select
+    required: true
+    options:
+      values:
+      - corrientes
+      - entre-rios
+      - santa-fe
+      - neuquen
+      - tierra-del-fuego
+      - buenos-aires
+  - name: lat
+    label: Latitud (vale para los tres idiomas; ej. -29.14)
+    type: number
+    required: true
+    description: Clic derecho en Google Maps sobre el lugar → el primer número.
+  - name: lon
+    label: Longitud (vale para los tres idiomas; ej. -59.26)
+    type: number
+    required: true
+    description: El segundo número.
+  - name: especies
+    label: Especies (vale para los tres idiomas)
+    type: select
+    list: true
+    required: true
+    options:
+      values:
+      - surubi
+      - dorado
+  - name: foto
+    label: Foto (vale para los tres idiomas)
+    type: image
+    description: Horizontal, mínimo 1200 px de ancho. Se optimiza sola. Solo fotos propias o con permiso de quien la sacó;
+      nunca de Google.
+  - name: foto_autor
+    label: Autor de la foto
+    type: string
+    description: 'Nombre y apellido de quien la sacó. Si es tuya, tu nombre. En la web se ve como "Foto: Nombre Apellido".
+      Obligatorio para fotos subidas.'
+  - name: foto_origen
+    label: Origen de la foto
+    type: select
+    options:
+      values:
+      - propia
+      - cedida
+    description: propia = la sacaste vos · cedida = te la pasó alguien que te dio permiso para publicarla.
   - name: title
     label: Título para Google (máx. 65 caracteres)
     type: string
     required: true
-    pattern:
-      regex: ^.{1,65}$
-      message: Máximo 65 caracteres
+    options:
+      maxlength: 65
   - name: description
     label: Descripción para Google (70 a 160 caracteres)
     type: text
     required: true
-    pattern:
-      regex: ^[\s\S]{70,160}$
-      message: Entre 70 y 160 caracteres
+    options:
+      minlength: 70
+      maxlength: 160
   - name: h1
     label: Titular de la página
     type: string
@@ -228,27 +245,6 @@ content:
     label: Subtítulo (también va en la tarjeta del inicio)
     type: text
     required: true
-  - name: lat
-    label: Latitud (ej. -29.14)
-    type: number
-    required: true
-    description: Clic derecho en Google Maps sobre el lugar → el primer número.
-  - name: lon
-    label: Longitud (ej. -59.26)
-    type: number
-    required: true
-    description: El segundo número.
-  - name: especies
-    label: Especies
-    type: select
-    list: true
-    required: true
-    options:
-      values: &id005
-      - value: surubi
-        label: Surubí
-      - value: dorado
-        label: Dorado
   - name: modalidades
     label: Modalidades
     type: string
@@ -323,8 +319,7 @@ content:
       label: Respuesta
       type: text
       required: true
-  - &id006
-    name: fuentes
+  - name: fuentes
     label: Fuentes
     type: object
     list: true
@@ -363,8 +358,8 @@ content:
   type: collection
   path: src/content/destinos/pt
   filename: '{fields.clave}.md'
-  description: Una guía de destino por archivo. Para traducir, creá el mismo destino en la otra carpeta de idioma con la misma
-    "Clave".
+  description: 'Traducción de una guía en español: misma "Clave". La foto, la ubicación, la región, la provincia y las especies
+    se cargan una sola vez en la versión en español y valen para los tres idiomas: cambialas ahí.'
   view:
     fields:
     - nombre
@@ -386,7 +381,11 @@ content:
     required: true
     default: borrador
     options:
-      values: *id004
+      values:
+      - borrador
+      - publicado
+    description: borrador = visible con cartel "en construcción", Google no la indexa · publicado = exige fuente oficial,
+      reglamento verificado (fecha) y ninguna línea PENDIENTE; si falta algo, el cambio no se publica.
   - name: nombre
     label: Nombre del lugar
     type: string
@@ -395,59 +394,26 @@ content:
     label: Clave (identificador, sin espacios ni tildes)
     type: string
     required: true
-    pattern:
-      regex: ^[a-z0-9-]+$
-      message: 'Solo minúsculas, números y guiones. Ej: paso-de-la-patria'
     description: Igual en los tres idiomas. Si existe un "Próximo destino" con este mismo nombre de archivo, su tarjeta desaparece
-      sola.
+      sola. Solo minúsculas, números y guiones (ej. paso-de-la-patria).
   - name: slug
     label: Dirección web (final de la URL)
     type: string
     required: true
-    pattern:
-      regex: ^[a-z0-9-]+$
-      message: Solo minúsculas, números y guiones.
-    description: 'Ej: pesca-em-esquina. No la cambies una vez publicada.'
-  - name: region
-    label: Región
-    type: select
-    required: true
-    options:
-      values: *id001
-  - name: provincia
-    label: Provincia (en la URL)
-    type: select
-    required: true
-    options:
-      values:
-      - value: corrientes
-        label: Corrientes
-      - value: entre-rios
-        label: Entre Ríos
-      - value: santa-fe
-        label: Santa Fe
-      - value: neuquen
-        label: Neuquén
-      - value: tierra-del-fuego
-        label: Tierra del Fuego
-      - value: buenos-aires
-        label: Buenos Aires
-  - *id002
-  - *id003
+    description: 'Ej: pesca-em-esquina. No la cambies una vez publicada. Solo minúsculas, números y guiones.'
   - name: title
     label: Título para Google (máx. 65 caracteres)
     type: string
     required: true
-    pattern:
-      regex: ^.{1,65}$
-      message: Máximo 65 caracteres
+    options:
+      maxlength: 65
   - name: description
     label: Descripción para Google (70 a 160 caracteres)
     type: text
     required: true
-    pattern:
-      regex: ^[\s\S]{70,160}$
-      message: Entre 70 y 160 caracteres
+    options:
+      minlength: 70
+      maxlength: 160
   - name: h1
     label: Titular de la página
     type: string
@@ -456,23 +422,6 @@ content:
     label: Subtítulo (también va en la tarjeta del inicio)
     type: text
     required: true
-  - name: lat
-    label: Latitud (ej. -29.14)
-    type: number
-    required: true
-    description: Clic derecho en Google Maps sobre el lugar → el primer número.
-  - name: lon
-    label: Longitud (ej. -59.26)
-    type: number
-    required: true
-    description: El segundo número.
-  - name: especies
-    label: Especies
-    type: select
-    list: true
-    required: true
-    options:
-      values: *id005
   - name: modalidades
     label: Modalidades
     type: string
@@ -547,7 +496,26 @@ content:
       label: Respuesta
       type: text
       required: true
-  - *id006
+  - name: fuentes
+    label: Fuentes
+    type: object
+    list: true
+    fields:
+    - name: nombre
+      label: Nombre de la fuente
+      type: string
+      required: true
+    - name: url
+      label: Enlace
+      type: string
+      required: true
+    - name: oficial
+      label: ¿Es oficial (gobierno, municipio, organismo)?
+      type: boolean
+    - name: consultada
+      label: Fecha de consulta
+      type: date
+      required: true
   - name: actualizado
     label: Última actualización
     type: date
@@ -567,8 +535,8 @@ content:
   type: collection
   path: src/content/destinos/en
   filename: '{fields.clave}.md'
-  description: Una guía de destino por archivo. Para traducir, creá el mismo destino en la otra carpeta de idioma con la misma
-    "Clave".
+  description: 'Traducción de una guía en español: misma "Clave". La foto, la ubicación, la región, la provincia y las especies
+    se cargan una sola vez en la versión en español y valen para los tres idiomas: cambialas ahí.'
   view:
     fields:
     - nombre
@@ -590,7 +558,11 @@ content:
     required: true
     default: borrador
     options:
-      values: *id004
+      values:
+      - borrador
+      - publicado
+    description: borrador = visible con cartel "en construcción", Google no la indexa · publicado = exige fuente oficial,
+      reglamento verificado (fecha) y ninguna línea PENDIENTE; si falta algo, el cambio no se publica.
   - name: nombre
     label: Nombre del lugar
     type: string
@@ -599,59 +571,26 @@ content:
     label: Clave (identificador, sin espacios ni tildes)
     type: string
     required: true
-    pattern:
-      regex: ^[a-z0-9-]+$
-      message: 'Solo minúsculas, números y guiones. Ej: paso-de-la-patria'
     description: Igual en los tres idiomas. Si existe un "Próximo destino" con este mismo nombre de archivo, su tarjeta desaparece
-      sola.
+      sola. Solo minúsculas, números y guiones (ej. paso-de-la-patria).
   - name: slug
     label: Dirección web (final de la URL)
     type: string
     required: true
-    pattern:
-      regex: ^[a-z0-9-]+$
-      message: Solo minúsculas, números y guiones.
-    description: 'Ej: fishing-in-esquina. No la cambies una vez publicada.'
-  - name: region
-    label: Región
-    type: select
-    required: true
-    options:
-      values: *id001
-  - name: provincia
-    label: Provincia (en la URL)
-    type: select
-    required: true
-    options:
-      values:
-      - value: corrientes
-        label: Corrientes
-      - value: entre-rios
-        label: Entre Ríos
-      - value: santa-fe
-        label: Santa Fe
-      - value: neuquen
-        label: Neuquén
-      - value: tierra-del-fuego
-        label: Tierra del Fuego
-      - value: buenos-aires
-        label: Buenos Aires
-  - *id002
-  - *id003
+    description: 'Ej: fishing-in-esquina. No la cambies una vez publicada. Solo minúsculas, números y guiones.'
   - name: title
     label: Título para Google (máx. 65 caracteres)
     type: string
     required: true
-    pattern:
-      regex: ^.{1,65}$
-      message: Máximo 65 caracteres
+    options:
+      maxlength: 65
   - name: description
     label: Descripción para Google (70 a 160 caracteres)
     type: text
     required: true
-    pattern:
-      regex: ^[\s\S]{70,160}$
-      message: Entre 70 y 160 caracteres
+    options:
+      minlength: 70
+      maxlength: 160
   - name: h1
     label: Titular de la página
     type: string
@@ -660,23 +599,6 @@ content:
     label: Subtítulo (también va en la tarjeta del inicio)
     type: text
     required: true
-  - name: lat
-    label: Latitud (ej. -29.14)
-    type: number
-    required: true
-    description: Clic derecho en Google Maps sobre el lugar → el primer número.
-  - name: lon
-    label: Longitud (ej. -59.26)
-    type: number
-    required: true
-    description: El segundo número.
-  - name: especies
-    label: Especies
-    type: select
-    list: true
-    required: true
-    options:
-      values: *id005
   - name: modalidades
     label: Modalidades
     type: string
@@ -751,7 +673,26 @@ content:
       label: Respuesta
       type: text
       required: true
-  - *id006
+  - name: fuentes
+    label: Fuentes
+    type: object
+    list: true
+    fields:
+    - name: nombre
+      label: Nombre de la fuente
+      type: string
+      required: true
+    - name: url
+      label: Enlace
+      type: string
+      required: true
+    - name: oficial
+      label: ¿Es oficial (gobierno, municipio, organismo)?
+      type: boolean
+    - name: consultada
+      label: Fecha de consulta
+      type: date
+      required: true
   - name: actualizado
     label: Última actualización
     type: date
@@ -788,7 +729,11 @@ content:
     required: true
     default: borrador
     options:
-      values: *id004
+      values:
+      - borrador
+      - publicado
+    description: borrador = visible con cartel "en construcción", Google no la indexa · publicado = exige fuente oficial,
+      reglamento verificado (fecha) y ninguna línea PENDIENTE; si falta algo, el cambio no se publica.
   - name: nombre
     label: Nombre común
     type: string
@@ -797,9 +742,7 @@ content:
     label: Clave (igual en los tres idiomas)
     type: string
     required: true
-    pattern:
-      regex: ^[a-z0-9-]+$
-      message: Solo minúsculas, números y guiones.
+    description: Solo minúsculas, números y guiones (ej. paso-de-la-patria).
   - name: cientifico
     label: Nombre científico
     type: string
@@ -808,21 +751,39 @@ content:
     label: Título para Google (máx. 65)
     type: string
     required: true
-    pattern:
-      regex: ^.{1,65}$
-      message: Máximo 65 caracteres
+    options:
+      maxlength: 65
   - name: description
     label: Descripción para Google (70 a 160)
     type: text
     required: true
-    pattern:
-      regex: ^[\s\S]{70,160}$
-      message: Entre 70 y 160 caracteres
+    options:
+      minlength: 70
+      maxlength: 160
   - name: resumen
     label: Resumen (subtítulo)
     type: text
     required: true
-  - *id006
+  - name: fuentes
+    label: Fuentes
+    type: object
+    list: true
+    fields:
+    - name: nombre
+      label: Nombre de la fuente
+      type: string
+      required: true
+    - name: url
+      label: Enlace
+      type: string
+      required: true
+    - name: oficial
+      label: ¿Es oficial (gobierno, municipio, organismo)?
+      type: boolean
+    - name: consultada
+      label: Fecha de consulta
+      type: date
+      required: true
   - name: actualizado
     label: Última actualización
     type: date
@@ -852,7 +813,11 @@ content:
     required: true
     default: borrador
     options:
-      values: *id004
+      values:
+      - borrador
+      - publicado
+    description: borrador = visible con cartel "en construcción", Google no la indexa · publicado = exige fuente oficial,
+      reglamento verificado (fecha) y ninguna línea PENDIENTE; si falta algo, el cambio no se publica.
   - name: nombre
     label: Nombre común
     type: string
@@ -861,9 +826,7 @@ content:
     label: Clave (igual en los tres idiomas)
     type: string
     required: true
-    pattern:
-      regex: ^[a-z0-9-]+$
-      message: Solo minúsculas, números y guiones.
+    description: Solo minúsculas, números y guiones (ej. paso-de-la-patria).
   - name: cientifico
     label: Nombre científico
     type: string
@@ -872,21 +835,39 @@ content:
     label: Título para Google (máx. 65)
     type: string
     required: true
-    pattern:
-      regex: ^.{1,65}$
-      message: Máximo 65 caracteres
+    options:
+      maxlength: 65
   - name: description
     label: Descripción para Google (70 a 160)
     type: text
     required: true
-    pattern:
-      regex: ^[\s\S]{70,160}$
-      message: Entre 70 y 160 caracteres
+    options:
+      minlength: 70
+      maxlength: 160
   - name: resumen
     label: Resumen (subtítulo)
     type: text
     required: true
-  - *id006
+  - name: fuentes
+    label: Fuentes
+    type: object
+    list: true
+    fields:
+    - name: nombre
+      label: Nombre de la fuente
+      type: string
+      required: true
+    - name: url
+      label: Enlace
+      type: string
+      required: true
+    - name: oficial
+      label: ¿Es oficial (gobierno, municipio, organismo)?
+      type: boolean
+    - name: consultada
+      label: Fecha de consulta
+      type: date
+      required: true
   - name: actualizado
     label: Última actualización
     type: date
@@ -916,7 +897,11 @@ content:
     required: true
     default: borrador
     options:
-      values: *id004
+      values:
+      - borrador
+      - publicado
+    description: borrador = visible con cartel "en construcción", Google no la indexa · publicado = exige fuente oficial,
+      reglamento verificado (fecha) y ninguna línea PENDIENTE; si falta algo, el cambio no se publica.
   - name: nombre
     label: Nombre común
     type: string
@@ -925,9 +910,7 @@ content:
     label: Clave (igual en los tres idiomas)
     type: string
     required: true
-    pattern:
-      regex: ^[a-z0-9-]+$
-      message: Solo minúsculas, números y guiones.
+    description: Solo minúsculas, números y guiones (ej. paso-de-la-patria).
   - name: cientifico
     label: Nombre científico
     type: string
@@ -936,21 +919,39 @@ content:
     label: Título para Google (máx. 65)
     type: string
     required: true
-    pattern:
-      regex: ^.{1,65}$
-      message: Máximo 65 caracteres
+    options:
+      maxlength: 65
   - name: description
     label: Descripción para Google (70 a 160)
     type: text
     required: true
-    pattern:
-      regex: ^[\s\S]{70,160}$
-      message: Entre 70 y 160 caracteres
+    options:
+      minlength: 70
+      maxlength: 160
   - name: resumen
     label: Resumen (subtítulo)
     type: text
     required: true
-  - *id006
+  - name: fuentes
+    label: Fuentes
+    type: object
+    list: true
+    fields:
+    - name: nombre
+      label: Nombre de la fuente
+      type: string
+      required: true
+    - name: url
+      label: Enlace
+      type: string
+      required: true
+    - name: oficial
+      label: ¿Es oficial (gobierno, municipio, organismo)?
+      type: boolean
+    - name: consultada
+      label: Fecha de consulta
+      type: date
+      required: true
   - name: actualizado
     label: Última actualización
     type: date

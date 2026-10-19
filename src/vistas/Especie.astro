@@ -2,6 +2,7 @@
 // Species page, shared by every language.
 import { getCollection, render, type CollectionEntry } from 'astro:content';
 import Base from '../layouts/Base.astro';
+import { getDestinos } from '../lib/destinos';
 import { PROVINCIAS, urlDestino } from '../lib/rutas';
 import { sinPendientes } from '../lib/pendientes';
 import { alternasEspecie, fuentePublicada } from '../lib/traducciones';
@@ -16,7 +17,7 @@ sinPendientes(entry.id, e.estado, entry.body);
 await fuentePublicada('especies', e.clave, idioma, e.estado);
 const { Content } = await render(entry);
 // Species → destinations in this language (Spanish when not translated yet).
-const todos = await getCollection('destinos');
+const todos = await getDestinos();
 const conEspecie = todos.filter((d) => d.data.especies.some((r) => r.id === e.clave));
 const claves = [...new Set(conEspecie.map((d) => d.data.clave))];
 const destinos = claves.map((c) => conEspecie.find((d) => d.data.clave === c && d.data.idioma === idioma) ?? conEspecie.find((d) => d.data.clave === c && d.data.idioma === 'es')!);

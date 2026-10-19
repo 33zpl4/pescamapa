@@ -33,9 +33,14 @@ const lista = <T extends z.ZodType>(s: T) => z.preprocess(vacio, z.array(s).defa
 const lat = z.number().min(-56).max(-21);
 const lon = z.number().min(-74).max(-53);
 
-// Photo: a Commons key from src/data/fotos.json, or a file uploaded from the
-// editor (src/assets/fotos/…) with its credit in `foto_credito`.
-const foto = { foto: opcional(z.string()), foto_credito: opcional(z.string()) };
+// Photo: a Commons file (credit in src/data/fotos.json) or one uploaded from
+// the editor, credited by `foto_autor`; `foto_origen` records whether it is
+// the editor's own or lent with the author's permission.
+const foto = {
+	foto: opcional(z.string()),
+	foto_autor: opcional(z.string()),
+	foto_origen: opcional(z.enum(['propia', 'cedida'])),
+};
 
 const estado = z.enum(['borrador', 'publicado']);
 
@@ -68,19 +73,19 @@ const destinos = defineCollection({
 			idioma,
 			clave,
 			nombre: z.string(),
-			// Stable URL, no dates: /<region>/<provincia>/<slug>/
-			region: z.enum(['litoral', 'patagonia', 'pampa', 'costa', 'centro-norte']),
-			provincia: z.string(),
 			slug: z.string().regex(/^[a-z0-9-]+$/),
+			// Shared by every language: set on the Spanish file only, the
+			// translations inherit them (src/lib/destinos.ts).
+			region: opcional(z.enum(['litoral', 'patagonia', 'pampa', 'costa', 'centro-norte'])),
+			provincia: opcional(z.string()),
+			lat: opcional(lat),
+			lon: opcional(lon),
+			especies: lista(reference('especies')),
 			...foto,
 			title: z.string().max(65),
 			description: z.string().min(70).max(160),
 			h1: z.string(),
 			bajada: z.string(),
-			lat,
-			lon,
-			// Spanish species ids (= their clave); templates resolve the translation.
-			especies: z.array(reference('especies')).min(1),
 			modalidades: z.array(z.string()).min(1),
 			epoca: z.string(),
 			aguas: lista(z.object({ nombre: z.string(), lat: opcional(lat), lon: opcional(lon), nota: z.string() })),
@@ -97,11 +102,13 @@ const destinos = defineCollection({
 			autor: z.string(),
 		})
 		.superRefine(confiable)
-		.transform((d) => ({
-			...d,
-			coordenadas: [d.lat, d.lon] as [number, number],
-			aguas: d.aguas.map((a) => ({ ...a, coordenadas: a.lat != null && a.lon != null ? ([a.lat, a.lon] as [number, number]) : undefined })),
-		})),
+		.superRefine((d, ctx) => {
+			if (d.idioma !== 'es') return;
+			for (const k of ['region', 'provincia', 'lat', 'lon'] as const) {
+				if (d[k] == null) ctx.addIssue({ code: 'custom', message: `falta "${k}" en la versión en español (vale para los tres idiomas)` });
+			}
+			if (!d.especies.length) ctx.addIssue({ code: 'custom', message: 'falta al menos una especie en la versión en español' });
+		}),
 });
 
 const especies = defineCollection({

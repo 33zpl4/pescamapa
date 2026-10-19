@@ -37,10 +37,21 @@ español.
 
 ### Cambiar la foto de una ciudad
 
-1. Abrí la ciudad (en **Próximos destinos** o en **Guías de destino**).
-2. En **Foto**, tocá la imagen, subí la nueva y elegila.
-3. En **Crédito de la foto** escribí quién la sacó: `Foto: Nombre Apellido`.
-4. **Save**.
+**La foto se carga una sola vez y vale para los tres idiomas.** En las guías
+completas se carga en **Guías de destino — Español**; las versiones en
+portugués e inglés no tienen campo de foto y usan la misma. En **Próximos
+destinos** hay un solo formulario para todos los idiomas.
+
+1. Abrí la ciudad.
+2. En **Foto (vale para los tres idiomas)**, tocá la imagen, subí la nueva y elegila.
+3. **Autor de la foto**: nombre y apellido de quien la sacó.
+   - Si la sacaste vos: tu nombre (ej. `Cheyenne Justiniano`).
+   - Si te la pasó un conocido: su nombre (ej. `Ana Gómez`), y antes
+     pedile permiso para publicarla, aunque sea por WhatsApp.
+   - En la web se ve abajo a la derecha de la foto: **Foto: Ana Gómez**.
+4. **Origen de la foto**: `propia` (la sacaste vos) o `cedida` (te dio
+   permiso quien la sacó). No se muestra en la web; queda como registro.
+5. **Save**.
 
 Reglas de fotos:
 
@@ -49,8 +60,8 @@ Reglas de fotos:
 - **Solo fotos con permiso**: propias, de alguien que te la cedió, o con
   licencia libre. **Nunca bajes fotos de Google**: casi todas tienen
   derechos de autor.
-- **Sin crédito, el sitio no se actualiza.** Es a propósito: siempre hay
-  que nombrar al autor.
+- **Sin autor, el sitio no se actualiza.** Es a propósito: siempre hay
+  que nombrar a quien la sacó.
 
 ### Cambiar el titular, el subtítulo o el texto de una guía
 
@@ -62,8 +73,10 @@ En **Guías de destino → Español → Goya**:
   búsqueda. Tienen un límite de caracteres, y el editor avisa si te pasás.
 - **Texto de la guía**: el cuerpo, con negritas, listas y links.
 
-Si cambiás algo importante en español, cambialo también en **Português** y
-**English** (misma ciudad, misma "Clave").
+Los textos se escriben por idioma: si cambiás algo importante en español,
+cambialo también en **Português** y **English** (misma ciudad, misma
+"Clave"). En cambio, **la foto, la ubicación, la región, la provincia y las
+especies se cargan solo en español** y valen para los tres idiomas.
 
 ### Crear una guía completa nueva
 
@@ -96,7 +109,7 @@ Una traducción no puede publicarse antes que la versión en español.
 
 1. Esperá 3 minutos y recargá la página con Ctrl+Shift+R.
 2. Si sigue igual, lo más probable es que falte un dato obligatorio: una
-   foto sin crédito, "Publicado" sin reglamento verificado o una descripción
+   foto sin autor, "Publicado" sin reglamento verificado o una descripción
    demasiado corta o larga. Revisá el último cambio que guardaste.
 3. Si no lo encontrás, avisá: el error queda registrado y se ve exactamente
    qué campo falta.

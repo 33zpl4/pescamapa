@@ -26,8 +26,15 @@ no técnica (guía para ellos: `docs/guia-editor.md`). Guardar = commit a
   esquema todo opcional pasa por `opcional()` / `lista()`.
 - Coordenadas como `lat` / `lon` sueltos (el esquema arma `coordenadas`).
 - `foto` = ruta de archivo (`src/assets/fotos/x.jpg`); se resuelve por
-  nombre. Crédito: `src/data/fotos.json` (Commons) o `foto_credito`
-  (subidas). Sin crédito, el build falla con un mensaje para el editor.
+  nombre. Crédito: `src/data/fotos.json` (Commons) o `foto_autor` (+
+  `foto_origen`: propia | cedida) para subidas. Sin crédito, el build falla
+  con un mensaje para el editor.
+- **Datos compartidos se cargan una vez, en español**: región, provincia,
+  lat/lon, especies y foto de un destino viven solo en `destinos/es/`; pt y
+  en los heredan por `clave` (`src/lib/destinos.ts` — usar siempre
+  `getDestinos()`, nunca `getCollection('destinos')`). Los formularios pt/en
+  no tienen esos campos. `borradores.mjs` y `verify-live.yml` replican la
+  herencia para armar las URLs.
 - Contenido por idioma en carpetas: `destinos/{es,pt,en}/`,
   `especies/{es,pt,en}/`. Próximos destinos: un archivo por lugar en
   `src/content/proximos/`; se ocultan solos cuando existe una guía con la
