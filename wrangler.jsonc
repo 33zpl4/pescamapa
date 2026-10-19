@@ -5,6 +5,9 @@
   "name": "pescamapa",
   "compatibility_date": "2026-10-01",
   "build": { "command": "npm run build" },
+  // Worker Previews: Cloudflare builds every non-production branch with
+  // `wrangler preview`, which refuses to run without this block.
+  "previews": {},
   "assets": {
     "directory": "./dist",
     "not_found_handling": "404-page",
