@@ -44,8 +44,8 @@ jobs:
         if: steps.modo.outputs.modo == 'candidatas'
         run: |
           python3 scripts/commons.py candidatas ${{ github.event.inputs.lugares }}
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config user.name "Claude"
+          git config user.email "noreply@anthropic.com"
           git checkout --orphan fotos-candidatas
           git rm -rq --cached .
           git add candidatas
@@ -56,8 +56,8 @@ jobs:
         if: steps.modo.outputs.modo == 'bajar'
         run: |
           python3 scripts/commons.py bajar scripts/fotos-elegidas.json
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config user.name "Claude"
+          git config user.email "noreply@anthropic.com"
           git add src/assets/fotos src/data/fotos.json
           git commit -qm "Fotos elegidas desde Wikimedia Commons, con créditos" || echo "sin cambios"
           git push origin HEAD:${{ github.ref_name }}
