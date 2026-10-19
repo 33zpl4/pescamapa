@@ -1,0 +1,13 @@
+// Cloudflare Workers (static assets). The dashboard's deploy command is
+// `npx wrangler deploy`; it runs the build below first, then uploads dist/.
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "pescamapa",
+  "compatibility_date": "2026-10-01",
+  "build": { "command": "npm run build" },
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "404-page",
+    "html_handling": "auto-trailing-slash"
+  }
+}

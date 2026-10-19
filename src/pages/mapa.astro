@@ -1,0 +1,31 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import Mapa, { type Pin } from '../components/Mapa.astro';
+import proximos from '../data/proximos.json';
+import { PROVINCIAS, urlDestino } from '../lib/rutas';
+
+const destinos = await getCollection('destinos');
+const pins: Pin[] = [
+	...destinos.map((d) => ({ nombre: d.data.nombre, coordenadas: d.data.coordenadas, url: urlDestino(d.data), detalle: PROVINCIAS[d.data.provincia], tipo: 'destino' as const })),
+	...proximos.map((p) => ({ nombre: p.nombre, coordenadas: p.coordenadas as [number, number], detalle: p.provincia, tipo: 'proximo' as const })),
+];
+---
+<Base title="Mapa de pesca en Argentina: destinos por región y especie | Pescamapa" description="Mapa interactivo de destinos de pesca deportiva en Argentina: Litoral, Patagonia, lagunas y costa. Tocá un punto para ver especies, temporada y la guía.">
+	<div class="shell wrap">
+		<h1>Mapa de pesca en Argentina</h1>
+		<p class="note">Naranja: guías publicadas o en construcción. Gris: próximos destinos. Mapa orientativo, no apto para navegación.</p>
+		<Mapa pins={pins} alto="min(75vh, 720px)" etiqueta="Mapa de destinos de pesca en Argentina" />
+		<h2>Destinos</h2>
+		<ul class="lista">
+			{destinos.map((d) => <li><a href={urlDestino(d.data)}>{d.data.nombre}</a>, {PROVINCIAS[d.data.provincia]}</li>)}
+			{proximos.map((p) => <li>{p.nombre}, {p.provincia} <span class="note">(próximamente)</span></li>)}
+		</ul>
+	</div>
+</Base>
+
+<style>
+	.wrap { padding-block: 32px 72px; }
+	h1 { font-size: clamp(30px, 4vw, 44px); }
+	.lista { columns: 2 260px; padding-left: 18px; }
+</style>
