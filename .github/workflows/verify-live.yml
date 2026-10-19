@@ -36,6 +36,7 @@ jobs:
             if [[ "$code" == "$2" ]]; then echo "✓ $code $1"; else echo "✖ $code $1 (esperado $2)"; fail=1; fi
           }
           check "$SITE/" 200
+          echo "build servido: $(curl -sS -m 30 "$SITE/" | grep -o 'data-build="[^"]*"' | head -1)"
           check "$SITE/pt/" 200
           check "$SITE/en/" 200
           check "$SITE/mapa/" 200

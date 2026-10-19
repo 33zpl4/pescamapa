@@ -21,9 +21,11 @@ const t = traductor(idioma);
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
 const abs = (u: string) => new URL(u, Astro.site).href;
 const xDefault = alternas.es ?? canonical;
+// Build time stamped on every page: tells at a glance whether a deploy is live.
+const build = new Date().toISOString();
 ---
 <!doctype html>
-<html lang={META[idioma].html}>
+<html lang={META[idioma].html} data-build={build}>
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width,initial-scale=1" />
