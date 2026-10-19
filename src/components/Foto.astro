@@ -13,9 +13,9 @@ const c = foto.credito;
 <figure class:list={['foto', cls]}>
 	<Image src={foto.src} alt={alt} widths={[400, 800, 1200]} sizes={sizes} format="webp" quality={72} loading={prioridad ? 'eager' : 'lazy'} />
 	<figcaption>
-		{enlaces
-			? <>{etiqueta}: <a href={c.pagina} rel="noopener">{c.autor}</a>, {c.licencia_url ? <a href={c.licencia_url} rel="noopener license">{c.licencia}</a> : c.licencia}</>
-			: <>{etiqueta}: {c.autor}, {c.licencia}</>}
+		{enlaces && c.pagina
+			? <>{etiqueta}: <a href={c.pagina} rel="noopener">{c.autor}</a>{c.licencia && <>, {c.licencia_url ? <a href={c.licencia_url} rel="noopener license">{c.licencia}</a> : c.licencia}</>}</>
+			: <>{etiqueta}: {c.autor}{c.licencia && `, ${c.licencia}`}</>}
 	</figcaption>
 </figure>
 

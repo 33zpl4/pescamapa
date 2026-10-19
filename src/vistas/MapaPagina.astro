@@ -3,9 +3,8 @@
 import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import Mapa, { type Pin } from '../components/Mapa.astro';
-import proximos from '../data/proximos.json';
 import { PROVINCIAS, urlDestino } from '../lib/rutas';
-import { alternasMapa } from '../lib/traducciones';
+import { alternasMapa, proximosVisibles } from '../lib/traducciones';
 import { traductor, type Idioma } from '../i18n/ui';
 
 interface Props { idioma: Idioma }
@@ -14,9 +13,10 @@ const t = traductor(idioma);
 const todos = await getCollection('destinos');
 const claves = [...new Set(todos.map((d) => d.data.clave))];
 const destinos = claves.map((c) => todos.find((d) => d.data.clave === c && d.data.idioma === idioma) ?? todos.find((d) => d.data.clave === c && d.data.idioma === 'es')!);
+const proximos = await proximosVisibles(idioma);
 const pins: Pin[] = [
 	...destinos.map((d) => ({ nombre: d.data.nombre, coordenadas: d.data.coordenadas, url: urlDestino(d.data), detalle: PROVINCIAS[d.data.provincia], tipo: 'destino' as const })),
-	...proximos.map((p) => ({ nombre: p.nombre[idioma], coordenadas: p.coordenadas as [number, number], detalle: p.provincia, tipo: 'proximo' as const })),
+	...proximos.map((p) => ({ nombre: p.nombre, coordenadas: p.coordenadas, detalle: p.provincia, tipo: 'proximo' as const })),
 ];
 const textos = { guia: t('mapa.popup.guia'), pronto: t('mapa.popup.pronto'), sinjs: t('mapa.sinjs') };
 ---
@@ -28,7 +28,7 @@ const textos = { guia: t('mapa.popup.guia'), pronto: t('mapa.popup.pronto'), sin
 		<h2>{t('mapa.destinos')}</h2>
 		<ul class="lista">
 			{destinos.map((d) => <li><a href={urlDestino(d.data)}>{d.data.nombre}</a>, {PROVINCIAS[d.data.provincia]}</li>)}
-			{proximos.map((p) => <li>{p.nombre[idioma]}, {p.provincia} <span class="note">{t('mapa.proximamente')}</span></li>)}
+			{proximos.map((p) => <li>{p.nombre}, {p.provincia} <span class="note">{t('mapa.proximamente')}</span></li>)}
 		</ul>
 	</div>
 </Base>

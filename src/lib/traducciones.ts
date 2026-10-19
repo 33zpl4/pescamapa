@@ -36,3 +36,23 @@ export async function fuentePublicada(coleccion: 'destinos' | 'especies', clave:
 		throw new Error(`${coleccion}/${clave} (${idioma}) está publicado pero la versión en español no`);
 	}
 }
+
+// "Coming soon" places in this language, ordered, minus any that already
+// have a full guide (same file name as the guide's `clave`).
+export async function proximosVisibles(idioma: Idioma) {
+	const guias = new Set((await getCollection('destinos')).map((d) => d.data.clave));
+	return (await getCollection('proximos'))
+		.filter((p) => !guias.has(p.id))
+		.sort((a, b) => a.data.orden - b.data.orden)
+		.map((p) => ({
+			id: p.id,
+			nombre: p.data.nombres[idioma],
+			agua: p.data.aguaPorIdioma[idioma],
+			provincia: p.data.provincia,
+			region: p.data.region,
+			especies: p.data.especies,
+			coordenadas: p.data.coordenadas,
+			foto: p.data.foto,
+			foto_credito: p.data.foto_credito,
+		}));
+}

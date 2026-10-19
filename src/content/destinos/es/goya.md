@@ -6,18 +6,20 @@ nombre: Goya
 region: litoral
 provincia: corrientes
 slug: pesca-en-goya
-foto: goya
+foto: src/assets/fotos/goya.jpg
 title: "Pesca en Goya, Corrientes: surubí, Isoró y temporadas"
 description: "Guía para pescar en Goya, la cuna del surubí: Paraná, riacho e Isoró, especies, cuándo ir, licencia, guías y la Fiesta Nacional del Surubí 2027."
 h1: "Pesca deportiva en Goya, Corrientes: surubí, riachos y humedales del Isoró"
 bajada: "La Fiesta Nacional del Surubí le dio fama. El Paraná, el riacho Goya y los humedales del Isoró le dan pesca las cuatro estaciones, si sabés leer el río."
-coordenadas: [-29.14, -59.26]
+lat: -29.14
+lon: -59.26
 especies: [surubi, dorado]
 modalidades: ["Embarcada con guía", "Spinning y baitcast", "Trolling", "Mosca", "Costa en sectores habilitados"]
 epoca: "Las cuatro estaciones, según altura del río, clima y vedas"
 aguas:
   - nombre: "Río Paraná y riacho Goya"
-    coordenadas: [-29.15, -59.27]
+    lat: -29.15
+    lon: -59.27
     nota: "Pesca fluvial y navegación. El punto de salida depende del guía y de las condiciones del día. El riacho es un brazo del Paraná: en bajantes extremas llegó a secarse."
   - nombre: "Sistema Paraná–Isoró"
     nota: "Riachos, lagunas, esteros y bañados conectados al Paraná: humedal protegido y zona de reproducción de peces. Antes de pescar ahí, consultá permisos y zonas con Recursos Naturales y Turismo."

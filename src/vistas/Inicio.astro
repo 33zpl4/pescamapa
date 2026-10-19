@@ -6,15 +6,16 @@ import Mapa, { type Pin } from '../components/Mapa.astro';
 import Foto from '../components/Foto.astro';
 import MapaHero, { type PuntoHero } from '../components/MapaHero.astro';
 import Curvas from '../components/Curvas.astro';
-import proximos from '../data/proximos.json';
 import { REGIONES, PROVINCIAS, urlDestino, urlMapa } from '../lib/rutas';
 import { foto } from '../lib/fotos';
-import { alternasInicio, especieEn } from '../lib/traducciones';
+import { alternasInicio, especieEn, proximosVisibles } from '../lib/traducciones';
 import { META, ETIQUETAS, traductor, type Idioma } from '../i18n/ui';
 
 interface Props { idioma: Idioma }
 const { idioma } = Astro.props;
 const t = traductor(idioma);
+
+const proximos = await proximosVisibles(idioma);
 
 // One card per destination: this language's version, else the Spanish one.
 const todos = await getCollection('destinos');
@@ -25,10 +26,10 @@ for (const d of destinos) for (const e of d.data.especies) nombresEspecie.set(e.
 
 const pins: Pin[] = [
 	...destinos.map((d) => ({ nombre: d.data.nombre, coordenadas: d.data.coordenadas, url: urlDestino(d.data), detalle: PROVINCIAS[d.data.provincia], tipo: 'destino' as const })),
-	...proximos.map((p) => ({ nombre: p.nombre[idioma], coordenadas: p.coordenadas as [number, number], detalle: p.provincia, tipo: 'proximo' as const })),
+	...proximos.map((p) => ({ nombre: p.nombre, coordenadas: p.coordenadas, detalle: p.provincia, tipo: 'proximo' as const })),
 ];
 const puntosHero: PuntoHero[] = [
-	...proximos.map((p) => ({ nombre: p.nombre[idioma], coordenadas: p.coordenadas as [number, number] })),
+	...proximos.map((p) => ({ nombre: p.nombre, coordenadas: p.coordenadas })),
 	...destinos.map((d) => ({ nombre: d.data.nombre, coordenadas: d.data.coordenadas, url: urlDestino(d.data), destacado: true })),
 ];
 const primera = destinos[0];
@@ -94,7 +95,7 @@ const jsonld = [
 				{destinos.map((d) => (
 					<a class="card live" href={urlDestino(d.data)} hreflang={META[d.data.idioma].html}>
 						<div class="img river">
-							{foto(d.data.foto) && <Foto foto={foto(d.data.foto)!} alt={`${d.data.nombre}, ${PROVINCIAS[d.data.provincia]}`} sizes="(max-width: 700px) 100vw, 380px" class="cover" prioridad enlaces={false} etiqueta={t('foto')} />}
+							{foto(d.data.foto, d.data.foto_credito) && <Foto foto={foto(d.data.foto, d.data.foto_credito)!} alt={`${d.data.nombre}, ${PROVINCIAS[d.data.provincia]}`} sizes="(max-width: 700px) 100vw, 380px" class="cover" prioridad enlaces={false} etiqueta={t('foto')} />}
 							<span class="pill">{REGIONES[d.data.region][idioma].toUpperCase()} · {PROVINCIAS[d.data.provincia].toUpperCase()}</span>
 						</div>
 						<div class="body">
@@ -108,13 +109,13 @@ const jsonld = [
 				{proximos.map((p) => (
 					<article class="card soon">
 						<div class={`img ${p.region}`}>
-							{foto(p.id) && <Foto foto={foto(p.id)!} alt={`${p.nombre[idioma]}, ${p.provincia}`} sizes="(max-width: 700px) 100vw, 380px" class="cover" etiqueta={t('foto')} />}
+							{foto(p.foto, p.foto_credito) && <Foto foto={foto(p.foto, p.foto_credito)!} alt={`${p.nombre}, ${p.provincia}`} sizes="(max-width: 700px) 100vw, 380px" class="cover" etiqueta={t('foto')} />}
 							<span class="pill">{REGIONES[p.region][idioma].toUpperCase()} · {p.provincia.toUpperCase()}</span>
 						</div>
 						<div class="body">
-							<div class="loc">{p.agua[idioma]}</div>
-							<h3>{p.nombre[idioma]}</h3>
-							<ul class="chips">{p.especies.map((e) => <li>{ETIQUETAS[e][idioma]}</li>)}</ul>
+							<div class="loc">{p.agua}</div>
+							<h3>{p.nombre}</h3>
+							<ul class="chips">{p.especies.map((e) => <li>{ETIQUETAS[e]?.[idioma] ?? e}</li>)}</ul>
 						</div>
 						<div class="foot"><span>{t('inicio.proximamente')}</span></div>
 					</article>

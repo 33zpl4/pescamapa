@@ -19,7 +19,7 @@ sinPendientes(entry.id, d.estado, entry.body, d.temporada, d.faqs, d.aguas, d.re
 await fuentePublicada('destinos', d.clave, idioma, d.estado);
 
 const { Content } = await render(entry);
-const portada = foto(d.foto);
+const portada = foto(d.foto, d.foto_credito);
 const especies = await Promise.all(d.especies.map((e) => especieEn(e.id, idioma)));
 const alternas = await alternasDestino(d);
 const url = new URL(urlDestino(d), Astro.site).href;

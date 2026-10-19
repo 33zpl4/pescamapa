@@ -23,6 +23,20 @@ const fuente = z.object({
 
 const faq = z.object({ pregunta: z.string(), respuesta: z.string() });
 
+// The web editor (Pages CMS, see .pages.yml) saves untouched optional fields
+// as "" or null; treat both as absent so a blank field never breaks a build.
+const vacio = (v: unknown) => (v === '' || v === null ? undefined : v);
+const opcional = <T extends z.ZodType>(s: T) => z.preprocess(vacio, s.optional());
+const lista = <T extends z.ZodType>(s: T) => z.preprocess(vacio, z.array(s).default([]));
+
+// Coordinates are edited as two plain numbers; code reads `coordenadas`.
+const lat = z.number().min(-56).max(-21);
+const lon = z.number().min(-74).max(-53);
+
+// Photo: a Commons key from src/data/fotos.json, or a file uploaded from the
+// editor (src/assets/fotos/…) with its credit in `foto_credito`.
+const foto = { foto: opcional(z.string()), foto_credito: opcional(z.string()) };
+
 const estado = z.enum(['borrador', 'publicado']);
 
 // Translations are separate files sharing a `clave`. Spanish is the source:
@@ -58,31 +72,36 @@ const destinos = defineCollection({
 			region: z.enum(['litoral', 'patagonia', 'pampa', 'costa', 'centro-norte']),
 			provincia: z.string(),
 			slug: z.string().regex(/^[a-z0-9-]+$/),
-			// Key in src/data/fotos.json / src/assets/fotos/<foto>.jpg (free licence + credit).
-			foto: z.string().optional(),
+			...foto,
 			title: z.string().max(65),
 			description: z.string().min(70).max(160),
 			h1: z.string(),
 			bajada: z.string(),
-			coordenadas: z.tuple([z.number(), z.number()]),
+			lat,
+			lon,
 			// Spanish species ids (= their clave); templates resolve the translation.
 			especies: z.array(reference('especies')).min(1),
 			modalidades: z.array(z.string()).min(1),
 			epoca: z.string(),
-			aguas: z.array(z.object({ nombre: z.string(), coordenadas: z.tuple([z.number(), z.number()]).optional(), nota: z.string() })).default([]),
-			temporada: z.array(z.object({ meses: z.string(), que: z.string() })).default([]),
+			aguas: lista(z.object({ nombre: z.string(), lat: opcional(lat), lon: opcional(lon), nota: z.string() })),
+			temporada: lista(z.object({ meses: z.string(), que: z.string() })),
 			reglamento: z.object({
 				autoridad: z.string(),
-				url: z.url().optional(),
-				verificado: z.coerce.date().optional(),
+				url: opcional(z.url()),
+				verificado: opcional(z.coerce.date()),
 				resumen: z.string(),
 			}),
-			faqs: z.array(faq).default([]),
-			fuentes: z.array(fuente).default([]),
+			faqs: lista(faq),
+			fuentes: lista(fuente),
 			actualizado: z.coerce.date(),
 			autor: z.string(),
 		})
-		.superRefine(confiable),
+		.superRefine(confiable)
+		.transform((d) => ({
+			...d,
+			coordenadas: [d.lat, d.lon] as [number, number],
+			aguas: d.aguas.map((a) => ({ ...a, coordenadas: a.lat != null && a.lon != null ? ([a.lat, a.lon] as [number, number]) : undefined })),
+		})),
 });
 
 const especies = defineCollection({
@@ -97,10 +116,38 @@ const especies = defineCollection({
 			title: z.string().max(65),
 			description: z.string().min(70).max(160),
 			resumen: z.string(),
-			fuentes: z.array(fuente).default([]),
+			fuentes: lista(fuente),
 			actualizado: z.coerce.date(),
 		})
 		.superRefine(confiable),
 });
 
-export const collections = { destinos, especies };
+// Destinations announced as "coming soon": one small file per place. When a
+// full guide with the same `clave` exists, the planned card disappears.
+const proximos = defineCollection({
+	loader: glob({ pattern: '*.md', base: './src/content/proximos' }),
+	schema: z
+		.object({
+			nombre: z.string(),
+			nombre_pt: opcional(z.string()),
+			nombre_en: opcional(z.string()),
+			provincia: z.string(),
+			region: z.enum(['litoral', 'patagonia', 'pampa', 'costa', 'centro-norte']),
+			agua: z.string(),
+			agua_pt: opcional(z.string()),
+			agua_en: opcional(z.string()),
+			especies: lista(z.string()),
+			lat,
+			lon,
+			...foto,
+			orden: z.preprocess(vacio, z.number().default(99)),
+		})
+		.transform((p) => ({
+			...p,
+			coordenadas: [p.lat, p.lon] as [number, number],
+			nombres: { es: p.nombre, pt: p.nombre_pt ?? p.nombre, en: p.nombre_en ?? p.nombre },
+			aguaPorIdioma: { es: p.agua, pt: p.agua_pt ?? p.agua, en: p.agua_en ?? p.agua },
+		})),
+});
+
+export const collections = { destinos, especies, proximos };
