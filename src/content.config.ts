@@ -50,6 +50,8 @@ const destinos = defineCollection({
 			region: z.enum(['litoral', 'patagonia', 'pampa', 'costa', 'centro-norte']),
 			provincia: z.string(),
 			slug: z.string().regex(/^[a-z0-9-]+$/),
+			// Key in src/data/fotos.json / src/assets/fotos/<foto>.jpg (free licence + credit).
+			foto: z.string().optional(),
 			title: z.string().max(65),
 			description: z.string().min(70).max(160),
 			h1: z.string(),

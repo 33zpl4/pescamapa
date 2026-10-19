@@ -2,6 +2,8 @@
 import { getCollection, getEntries, render } from 'astro:content';
 import Base from '../../../layouts/Base.astro';
 import Mapa from '../../../components/Mapa.astro';
+import Foto from '../../../components/Foto.astro';
+import { foto } from '../../../lib/fotos';
 import { REGIONES, PROVINCIAS, urlDestino, urlEspecie, fecha } from '../../../lib/rutas';
 import { sinPendientes } from '../../../lib/pendientes';
 
@@ -18,6 +20,7 @@ const d = entry.data;
 sinPendientes(entry.id, d.estado, entry.body, d.temporada, d.faqs, d.aguas, d.reglamento);
 
 const { Content } = await render(entry);
+const portada = foto(d.foto);
 const especies = await getEntries(d.especies);
 const url = new URL(urlDestino(d), Astro.site).href;
 const region = REGIONES[d.region];
@@ -134,6 +137,7 @@ const pins = [
 			</div>
 
 			<aside class="aside">
+				{portada && <Foto foto={portada} alt={`${d.nombre}, ${provincia}`} sizes="(max-width: 960px) 100vw, 400px" class="portada" prioridad />}
 				<h2 class="visually-hidden">Mapa</h2>
 				<Mapa pins={pins} centro={d.coordenadas} zoom={10} alto="420px" etiqueta={`Mapa de las aguas de ${d.nombre}`} />
 				<p class="note">Mapa orientativo, no apto para navegación.</p>
@@ -161,6 +165,7 @@ const pins = [
 
 	.layout { display: grid; grid-template-columns: minmax(0, 1fr) 400px; gap: 48px; padding-block: 48px 80px; align-items: start; }
 	.aside { position: sticky; top: 20px; }
+	.aside :global(.portada) { aspect-ratio: 4 / 3; border-radius: var(--radius); margin-bottom: 16px; }
 	@media (max-width: 960px) { .layout { grid-template-columns: 1fr; } .aside { position: static; order: -1; } }
 
 	.prose { max-width: 720px; }

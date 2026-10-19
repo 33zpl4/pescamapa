@@ -1,0 +1,32 @@
+---
+// A Commons photo with its attribution overlaid (CC BY-SA requires it
+// wherever the photo appears).
+import { Image } from 'astro:assets';
+import type { Foto } from '../lib/fotos';
+
+// `enlaces={false}` when the photo sits inside a link (no nested <a>); the
+// full links are on /creditos/.
+interface Props { foto: Foto; alt: string; sizes: string; class?: string; prioridad?: boolean; enlaces?: boolean }
+const { foto, alt, sizes, class: cls, prioridad = false, enlaces = true } = Astro.props;
+const c = foto.credito;
+---
+<figure class:list={['foto', cls]}>
+	<Image src={foto.src} alt={alt} widths={[400, 800, 1200]} sizes={sizes} format="webp" quality={72} loading={prioridad ? 'eager' : 'lazy'} />
+	<figcaption>
+		{enlaces
+			? <>Foto: <a href={c.pagina} rel="noopener">{c.autor}</a>, {c.licencia_url ? <a href={c.licencia_url} rel="noopener license">{c.licencia}</a> : c.licencia}</>
+			: <>Foto: {c.autor}, {c.licencia}</>}
+	</figcaption>
+</figure>
+
+<style>
+	.foto { position: relative; margin: 0; overflow: hidden; }
+	.foto img { display: block; width: 100%; height: 100%; object-fit: cover; }
+	figcaption {
+		position: absolute; right: 0; bottom: 0; max-width: 100%;
+		padding: 3px 8px; font-size: 10px; line-height: 1.4;
+		color: var(--white); background: rgb(17 37 31 / 0.72);
+		border-top-left-radius: 6px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+	}
+	figcaption a { color: inherit; }
+</style>

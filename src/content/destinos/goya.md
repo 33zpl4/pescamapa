@@ -4,6 +4,7 @@ nombre: Goya
 region: litoral
 provincia: corrientes
 slug: pesca-en-goya
+foto: goya
 title: "Pesca en Goya, Corrientes: surubí, Isoró y temporadas"
 description: "Guía para pescar en Goya, la cuna del surubí: Paraná, riacho e Isoró, especies, cuándo ir, licencia, guías y la Fiesta Nacional del Surubí 2027."
 h1: "Pesca deportiva en Goya, Corrientes: surubí, riachos y humedales del Isoró"

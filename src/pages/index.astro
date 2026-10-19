@@ -3,7 +3,9 @@ import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import Mapa, { type Pin } from '../components/Mapa.astro';
 import proximos from '../data/proximos.json';
+import Foto from '../components/Foto.astro';
 import { REGIONES, PROVINCIAS, urlDestino } from '../lib/rutas';
+import { foto } from '../lib/fotos';
 
 const destinos = await getCollection('destinos');
 const especies = new Map((await getCollection('especies')).map((e) => [e.id, e.data.nombre]));
@@ -68,7 +70,10 @@ const jsonld = [
 			<div class="grid">
 				{destinos.map((d) => (
 					<a class="card live" href={urlDestino(d.data)}>
-						<div class="img river"><span class="pill">{REGIONES[d.data.region].toUpperCase()} · {PROVINCIAS[d.data.provincia].toUpperCase()}</span></div>
+						<div class="img river">
+							{foto(d.data.foto) && <Foto foto={foto(d.data.foto)!} alt={`${d.data.nombre}, ${PROVINCIAS[d.data.provincia]}`} sizes="(max-width: 700px) 100vw, 380px" class="cover" prioridad enlaces={false} />}
+							<span class="pill">{REGIONES[d.data.region].toUpperCase()} · {PROVINCIAS[d.data.provincia].toUpperCase()}</span>
+						</div>
 						<div class="body">
 							<h3>{d.data.nombre}</h3>
 							<p>{d.data.bajada}</p>
@@ -79,7 +84,10 @@ const jsonld = [
 				))}
 				{proximos.map((p) => (
 					<article class="card soon">
-						<div class={`img ${p.region}`}><span class="pill">{REGIONES[p.region].toUpperCase()} · {p.provincia.toUpperCase()}</span></div>
+						<div class={`img ${p.region}`}>
+							{foto(p.id) && <Foto foto={foto(p.id)!} alt={`${p.nombre}, ${p.provincia}`} sizes="(max-width: 700px) 100vw, 380px" class="cover" />}
+							<span class="pill">{REGIONES[p.region].toUpperCase()} · {p.provincia.toUpperCase()}</span>
+						</div>
 						<div class="body">
 							<div class="loc">{p.agua}</div>
 							<h3>{p.nombre}</h3>
@@ -159,13 +167,15 @@ const jsonld = [
 	.card { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; display: flex; flex-direction: column; text-decoration: none; }
 	.card.live { transition: transform 0.22s, box-shadow 0.22s; border-color: var(--forest); }
 	.card.live:hover { transform: translateY(-4px); box-shadow: 0 18px 38px rgb(23 37 28 / 0.08); }
-	.card.soon { opacity: 0.8; }
+	.card.soon .body, .card.soon .foot { opacity: 0.8; }
 	.img { height: 170px; position: relative; background: var(--moss); }
 	.img.river, .img.litoral { background: linear-gradient(170deg, transparent 48%, #8aa49a 49%, #2d5146 100%), linear-gradient(130deg, #6e7d5e 0 34%, #283d31 35% 54%, #a9a783 55% 66%, #314538 67%); }
 	.img.patagonia { background: linear-gradient(180deg, #aabbb1 0 37%, #658277 38% 50%, #56716c 51% 64%, #263d34 65%); }
 	.img.pampa { background: linear-gradient(180deg, #abb9ad 0 45%, #607d6d 46% 58%, #8b9d82 59% 64%, #c2b68a 65%); }
 	.img.costa { background: linear-gradient(178deg, #a7b9b4 0 42%, #718e8c 43% 62%, #d5c9a9 63% 69%, #405649 70%); }
-	.pill { position: absolute; left: 14px; top: 14px; background: var(--paper); padding: 6px 10px; border-radius: 99px; font-size: 10px; font-weight: 700; letter-spacing: 0.04em; }
+	.img :global(.cover) { position: absolute; inset: 0; }
+	.card.soon .img :global(img) { filter: saturate(0.75); }
+	.pill { z-index: 1; position: absolute; left: 14px; top: 14px; background: var(--paper); padding: 6px 10px; border-radius: 99px; font-size: 10px; font-weight: 700; letter-spacing: 0.04em; }
 	.body { padding: 18px 19px; flex: 1; display: flex; flex-direction: column; gap: 4px; }
 	.body h3 { font-size: 22px; margin: 4px 0 6px; }
 	.body p { font-size: 14px; color: var(--muted); }
