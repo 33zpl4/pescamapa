@@ -3,7 +3,7 @@
 
 Runs on a GitHub runner (the Claude sandbox can't reach Wikimedia):
 
-    python3 scripts/commons.py candidatas            # thumbs + metadata to review
+    python3 scripts/commons.py candidatas [lugar…]   # thumbs + metadata to review
     python3 scripts/commons.py bajar picks.json      # chosen files → src/assets/fotos/
 
 Only licences that allow commercial use are accepted (CC0, public domain,
@@ -26,11 +26,11 @@ ROOT = Path(__file__).resolve().parent.parent
 FREE = re.compile(r"^(cc0|public domain|pd|cc by(-sa)? \d)", re.I)
 
 LUGARES = {
-    "goya": ["Goya Corrientes", "Riacho Goya", "Goya Argentina río Paraná"],
+    "goya": ["Goya Corrientes", "Riacho Goya", "Goya Argentina río Paraná", "Costanera Goya", "Puerto Goya", "Isoró"],
     "paso-de-la-patria": ["Paso de la Patria"],
     "esquina": ["Esquina Corrientes", "Esquina Argentina río"],
     "la-paz": ["La Paz Entre Ríos"],
-    "reconquista": ["Reconquista Santa Fe", "Jaaukanigás"],
+    "reconquista": ["Reconquista Santa Fe", "Jaaukanigás", "Puerto Reconquista", "Río Paraná Santa Fe isla", "San Javier Santa Fe río"],
     "concordia": ["Concordia Entre Ríos", "Salto Grande Concordia"],
     "san-martin-junin": ["San Martín de los Andes", "Lago Lácar", "Río Chimehuín"],
     "rio-grande": ["Río Grande Tierra del Fuego"],
@@ -80,11 +80,13 @@ def ficha(page):
     }
 
 
-def candidatas():
+def candidatas(solo=()):
     out_dir = ROOT / "candidatas"
     out_dir.mkdir(exist_ok=True)
     todo = {}
     for lugar, queries in LUGARES.items():
+        if solo and lugar not in solo:
+            continue
         vistos, lista = set(), []
         for q in queries:
             data = get({
@@ -100,7 +102,7 @@ def candidatas():
                 if not FREE.match(f["licencia"]) or f["ancho"] < 1200 or f["ancho"] <= f["alto"]:
                     continue
                 lista.append(f)
-        lista = lista[:8]
+        lista = lista[:12]
         for i, f in enumerate(lista):
             f["n"] = i
             download(f["thumb"], out_dir / f"{lugar}-{i}.jpg")
@@ -129,7 +131,7 @@ def bajar(picks_file):
 
 if __name__ == "__main__":
     if sys.argv[1:2] == ["candidatas"]:
-        candidatas()
+        candidatas(sys.argv[2:])
     elif sys.argv[1:2] == ["bajar"] and len(sys.argv) == 3:
         bajar(sys.argv[2])
     else:
