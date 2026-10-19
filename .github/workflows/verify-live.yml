@@ -53,7 +53,10 @@ jobs:
             fm=$(sed -n '2,/^---$/p' "$f")
             get() { echo "$fm" | sed -n "s/^$1: *\"\{0,1\}\([^\"]*\)\"\{0,1\}$/\1/p" | head -1; }
             idioma=$(get idioma); pre=""; [[ "$idioma" == "pt" ]] && pre="/pt"; [[ "$idioma" == "en" ]] && pre="/en"
-            path="$pre/$(get region)/$(get provincia)/$(get slug)/"
+            # region/provincia live on the Spanish file with the same clave.
+            es=$(grep -l "^clave: $(get clave)$" src/content/destinos/es/*.md | head -1)
+            region=$(sed -n 's/^region: *//p' "$es" | head -1); provincia=$(sed -n 's/^provincia: *//p' "$es" | head -1)
+            path="$pre/$region/$provincia/$(get slug)/"
             curl -sS -m 30 "$SITE$path" -o page.html
             if [[ "$(get estado)" == "publicado" ]]; then
               grep -q 'name="robots" content="noindex"' page.html && { echo "✖ $path publicado pero noindex"; fail=1; }

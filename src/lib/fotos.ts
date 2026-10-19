@@ -1,11 +1,15 @@
-// Photos with their credits. Files come from Wikimedia Commons via
-// scripts/commons.py (free licences only); fotos.json holds author, licence
-// and source for each. A photo without a credit entry is a build error:
-// CC BY / BY-SA require attribution wherever the photo is shown.
+// Photos with their credits. Two sources:
+// - Wikimedia Commons (scripts/commons.py): the key names the file in
+//   src/assets/fotos/ and its author/licence entry in src/data/fotos.json.
+// - Uploaded from the web editor: the field holds the file path and the
+//   entry's `foto_autor` names who took it (shown as "Foto: Ana Gómez").
+// A photo with no credit from either source is a build error: CC BY / BY-SA
+// require attribution, and our own photos deserve it too.
 import type { ImageMetadata } from 'astro';
 import creditos from '../data/fotos.json';
 
-const archivos = import.meta.glob<{ default: ImageMetadata }>('../assets/fotos/*.jpg', { eager: true });
+const archivos = import.meta.glob<{ default: ImageMetadata }>('../assets/fotos/*.{jpg,jpeg,png,webp,JPG,JPEG,PNG,WEBP}', { eager: true });
+const porNombre = new Map(Object.entries(archivos).map(([ruta, mod]) => [ruta.split('/').pop()!.replace(/\.[^.]+$/, ''), mod.default]));
 
 export interface Credito {
 	archivo: string;
@@ -18,13 +22,18 @@ export interface Credito {
 
 export interface Foto { src: ImageMetadata; credito: Credito }
 
-export function foto(id?: string): Foto | undefined {
-	if (!id) return undefined;
-	const mod = archivos[`../assets/fotos/${id}.jpg`];
-	if (!mod) throw new Error(`falta src/assets/fotos/${id}.jpg`);
-	const credito = (creditos as Record<string, Credito>)[id];
-	if (!credito) throw new Error(`la foto ${id} no tiene crédito en src/data/fotos.json`);
-	return { src: mod.default, credito };
+const COMMONS = creditos as Record<string, Credito>;
+
+export function foto(ref?: string, autor?: string): Foto | undefined {
+	if (!ref) return undefined;
+	const clave = ref.split('/').pop()!.replace(/\.[^.]+$/, '');
+	const src = porNombre.get(clave);
+	if (!src) throw new Error(`no encuentro la foto "${ref}" en src/assets/fotos/`);
+	const credito = COMMONS[clave] ?? (autor
+		? { archivo: clave, pagina: '', autor: autor.replace(/^foto:\s*/i, ''), licencia: '', licencia_url: '', descripcion: '' }
+		: undefined);
+	if (!credito) throw new Error(`la foto "${ref}" no tiene autor: completá "Autor de la foto" en el editor`);
+	return { src, credito };
 }
 
-export const todosLosCreditos = () => Object.entries(creditos as Record<string, Credito>);
+export const todosLosCreditos = () => Object.entries(COMMONS);

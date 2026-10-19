@@ -14,6 +14,34 @@ inicio y enlaces especie↔destino salen de esos campos. Nunca se escribe un
 dato dos veces; si hace falta en otro lado, se agrega un campo al esquema
 (`src/content.config.ts`).
 
+## Editor web (Pages CMS)
+
+`.pages.yml` define los formularios de app.pagescms.org, donde edita gente
+no técnica (guía para ellos: `docs/guia-editor.md`). Guardar = commit a
+`main` = Cloudflare rebuild. Consecuencias para el código:
+
+- **Los nombres de campo de `.pages.yml` y del esquema son un contrato**:
+  renombrar uno exige cambiar los dos y migrar los archivos.
+- El editor guarda campos opcionales vacíos como `""` o `null`: en el
+  esquema todo opcional pasa por `opcional()` / `lista()`.
+- Coordenadas como `lat` / `lon` sueltos (el esquema arma `coordenadas`).
+- `foto` = ruta de archivo (`src/assets/fotos/x.jpg`); se resuelve por
+  nombre. Crédito: `src/data/fotos.json` (Commons) o `foto_autor` (+
+  `foto_origen`: propia | cedida) para subidas. Sin crédito, el build falla
+  con un mensaje para el editor.
+- **Datos compartidos se cargan una vez, en español**: región, provincia,
+  lat/lon, especies y foto de un destino viven solo en `destinos/es/`; pt y
+  en los heredan por `clave` (`src/lib/destinos.ts` — usar siempre
+  `getDestinos()`, nunca `getCollection('destinos')`). Los formularios pt/en
+  no tienen esos campos. `borradores.mjs` y `verify-live.yml` replican la
+  herencia para armar las URLs.
+- Contenido por idioma en carpetas: `destinos/{es,pt,en}/`,
+  `especies/{es,pt,en}/`. Próximos destinos: un archivo por lugar en
+  `src/content/proximos/`; se ocultan solos cuando existe una guía con la
+  misma `clave` que el nombre del archivo.
+- Una especie nueva necesita sumarse a las opciones de `.pages.yml`
+  (selector) y a `ETIQUETAS` en `src/i18n/ui.ts` si se usa en próximos.
+
 ## Confianza (la ventaja contra los portales genéricos)
 
 Los reglamentos cambian y en este nicho el lector se cobra un error. Por eso:
@@ -53,7 +81,7 @@ vistas compartidas de `src/vistas/`; los textos de interfaz están en
 `src/i18n/ui.ts` (una clave faltante en pt/en es error de tipos).
 
 - Una traducción es otro archivo con la misma `clave` y su `idioma`
-  (`src/content/destinos/pt/goya.md`). Slug propio por idioma
+  (`src/content/destinos/pt/goya.md`; el español en `destinos/es/`). Slug propio por idioma
   (`pesca-em-goya`, `fishing-in-goya`).
 - **El español es la fuente**: una traducción no agrega ni cambia datos, y
   no puede estar `publicado` si la versión en español no lo está (falla el

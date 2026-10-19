@@ -17,9 +17,11 @@ const archivos = (dir) => readdirSync(dir, { recursive: true }).filter((f) => f.
 
 export function borradores() {
 	const out = [];
-	for (const f of archivos('src/content/destinos')) {
-		const d = front(f);
-		if (d.estado !== 'publicado') out.push(`${PREFIJO[d.idioma]}/${d.region}/${d.provincia}/${d.slug}/`);
+	const destinos = archivos('src/content/destinos').map(front);
+	for (const d of destinos) {
+		// region/provincia live on the Spanish file only (src/lib/destinos.ts).
+		const es = destinos.find((x) => x.clave === d.clave && x.idioma === 'es') ?? d;
+		if (d.estado !== 'publicado') out.push(`${PREFIJO[d.idioma]}/${es.region}/${es.provincia}/${d.slug}/`);
 	}
 	for (const f of archivos('src/content/especies')) {
 		const e = front(f);

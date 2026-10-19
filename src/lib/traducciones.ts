@@ -1,5 +1,6 @@
 // Links between language versions of the same page (shared `clave`).
-import { getCollection, type CollectionEntry } from 'astro:content';
+import { getCollection } from 'astro:content';
+import { getDestinos, type DatosDestino } from './destinos';
 import { IDIOMAS, type Idioma } from '../i18n/ui';
 import { urlDestino, urlEspecie, urlInicio, urlMapa, urlCreditos } from './rutas';
 
@@ -12,8 +13,8 @@ export const alternasInicio = () => alternasFijas(urlInicio);
 export const alternasMapa = () => alternasFijas(urlMapa);
 export const alternasCreditos = () => alternasFijas(urlCreditos);
 
-export async function alternasDestino(d: CollectionEntry<'destinos'>['data']): Promise<Alternas> {
-	const hermanos = (await getCollection('destinos')).filter((e) => e.data.clave === d.clave);
+export async function alternasDestino(d: DatosDestino): Promise<Alternas> {
+	const hermanos = (await getDestinos()).filter((e) => e.data.clave === d.clave);
 	return Object.fromEntries(hermanos.map((e) => [e.data.idioma, urlDestino(e.data)]));
 }
 
@@ -35,4 +36,24 @@ export async function fuentePublicada(coleccion: 'destinos' | 'especies', clave:
 	if (fuente?.data.estado !== 'publicado') {
 		throw new Error(`${coleccion}/${clave} (${idioma}) está publicado pero la versión en español no`);
 	}
+}
+
+// "Coming soon" places in this language, ordered, minus any that already
+// have a full guide (same file name as the guide's `clave`).
+export async function proximosVisibles(idioma: Idioma) {
+	const guias = new Set((await getDestinos()).map((d) => d.data.clave));
+	return (await getCollection('proximos'))
+		.filter((p) => !guias.has(p.id))
+		.sort((a, b) => a.data.orden - b.data.orden)
+		.map((p) => ({
+			id: p.id,
+			nombre: p.data.nombres[idioma],
+			agua: p.data.aguaPorIdioma[idioma],
+			provincia: p.data.provincia,
+			region: p.data.region,
+			especies: p.data.especies,
+			coordenadas: p.data.coordenadas,
+			foto: p.data.foto,
+			foto_autor: p.data.foto_autor,
+		}));
 }

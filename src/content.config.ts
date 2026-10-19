@@ -23,6 +23,25 @@ const fuente = z.object({
 
 const faq = z.object({ pregunta: z.string(), respuesta: z.string() });
 
+// The web editor (Pages CMS, see .pages.yml) saves untouched optional fields
+// as "" or null; treat both as absent so a blank field never breaks a build.
+const vacio = (v: unknown) => (v === '' || v === null ? undefined : v);
+const opcional = <T extends z.ZodType>(s: T) => z.preprocess(vacio, s.optional());
+const lista = <T extends z.ZodType>(s: T) => z.preprocess(vacio, z.array(s).default([]));
+
+// Coordinates are edited as two plain numbers; code reads `coordenadas`.
+const lat = z.number().min(-56).max(-21);
+const lon = z.number().min(-74).max(-53);
+
+// Photo: a Commons file (credit in src/data/fotos.json) or one uploaded from
+// the editor, credited by `foto_autor`; `foto_origen` records whether it is
+// the editor's own or lent with the author's permission.
+const foto = {
+	foto: opcional(z.string()),
+	foto_autor: opcional(z.string()),
+	foto_origen: opcional(z.enum(['propia', 'cedida'])),
+};
+
 const estado = z.enum(['borrador', 'publicado']);
 
 // Translations are separate files sharing a `clave`. Spanish is the source:
@@ -54,35 +73,42 @@ const destinos = defineCollection({
 			idioma,
 			clave,
 			nombre: z.string(),
-			// Stable URL, no dates: /<region>/<provincia>/<slug>/
-			region: z.enum(['litoral', 'patagonia', 'pampa', 'costa', 'centro-norte']),
-			provincia: z.string(),
 			slug: z.string().regex(/^[a-z0-9-]+$/),
-			// Key in src/data/fotos.json / src/assets/fotos/<foto>.jpg (free licence + credit).
-			foto: z.string().optional(),
+			// Shared by every language: set on the Spanish file only, the
+			// translations inherit them (src/lib/destinos.ts).
+			region: opcional(z.enum(['litoral', 'patagonia', 'pampa', 'costa', 'centro-norte'])),
+			provincia: opcional(z.string()),
+			lat: opcional(lat),
+			lon: opcional(lon),
+			especies: lista(reference('especies')),
+			...foto,
 			title: z.string().max(65),
 			description: z.string().min(70).max(160),
 			h1: z.string(),
 			bajada: z.string(),
-			coordenadas: z.tuple([z.number(), z.number()]),
-			// Spanish species ids (= their clave); templates resolve the translation.
-			especies: z.array(reference('especies')).min(1),
 			modalidades: z.array(z.string()).min(1),
 			epoca: z.string(),
-			aguas: z.array(z.object({ nombre: z.string(), coordenadas: z.tuple([z.number(), z.number()]).optional(), nota: z.string() })).default([]),
-			temporada: z.array(z.object({ meses: z.string(), que: z.string() })).default([]),
+			aguas: lista(z.object({ nombre: z.string(), lat: opcional(lat), lon: opcional(lon), nota: z.string() })),
+			temporada: lista(z.object({ meses: z.string(), que: z.string() })),
 			reglamento: z.object({
 				autoridad: z.string(),
-				url: z.url().optional(),
-				verificado: z.coerce.date().optional(),
+				url: opcional(z.url()),
+				verificado: opcional(z.coerce.date()),
 				resumen: z.string(),
 			}),
-			faqs: z.array(faq).default([]),
-			fuentes: z.array(fuente).default([]),
+			faqs: lista(faq),
+			fuentes: lista(fuente),
 			actualizado: z.coerce.date(),
 			autor: z.string(),
 		})
-		.superRefine(confiable),
+		.superRefine(confiable)
+		.superRefine((d, ctx) => {
+			if (d.idioma !== 'es') return;
+			for (const k of ['region', 'provincia', 'lat', 'lon'] as const) {
+				if (d[k] == null) ctx.addIssue({ code: 'custom', message: `falta "${k}" en la versión en español (vale para los tres idiomas)` });
+			}
+			if (!d.especies.length) ctx.addIssue({ code: 'custom', message: 'falta al menos una especie en la versión en español' });
+		}),
 });
 
 const especies = defineCollection({
@@ -97,10 +123,38 @@ const especies = defineCollection({
 			title: z.string().max(65),
 			description: z.string().min(70).max(160),
 			resumen: z.string(),
-			fuentes: z.array(fuente).default([]),
+			fuentes: lista(fuente),
 			actualizado: z.coerce.date(),
 		})
 		.superRefine(confiable),
 });
 
-export const collections = { destinos, especies };
+// Destinations announced as "coming soon": one small file per place. When a
+// full guide with the same `clave` exists, the planned card disappears.
+const proximos = defineCollection({
+	loader: glob({ pattern: '*.md', base: './src/content/proximos' }),
+	schema: z
+		.object({
+			nombre: z.string(),
+			nombre_pt: opcional(z.string()),
+			nombre_en: opcional(z.string()),
+			provincia: z.string(),
+			region: z.enum(['litoral', 'patagonia', 'pampa', 'costa', 'centro-norte']),
+			agua: z.string(),
+			agua_pt: opcional(z.string()),
+			agua_en: opcional(z.string()),
+			especies: lista(z.string()),
+			lat,
+			lon,
+			...foto,
+			orden: z.preprocess(vacio, z.number().default(99)),
+		})
+		.transform((p) => ({
+			...p,
+			coordenadas: [p.lat, p.lon] as [number, number],
+			nombres: { es: p.nombre, pt: p.nombre_pt ?? p.nombre, en: p.nombre_en ?? p.nombre },
+			aguaPorIdioma: { es: p.agua, pt: p.agua_pt ?? p.agua, en: p.agua_en ?? p.agua },
+		})),
+});
+
+export const collections = { destinos, especies, proximos };

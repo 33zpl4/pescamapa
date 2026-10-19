@@ -1,6 +1,7 @@
 ---
 // Destination guide, shared by every language (the entry carries `idioma`).
-import { render, type CollectionEntry } from 'astro:content';
+import { render } from 'astro:content';
+import type { Destino } from '../lib/destinos';
 import Base from '../layouts/Base.astro';
 import Mapa from '../components/Mapa.astro';
 import Foto from '../components/Foto.astro';
@@ -10,7 +11,7 @@ import { sinPendientes } from '../lib/pendientes';
 import { alternasDestino, especieEn, fuentePublicada } from '../lib/traducciones';
 import { META, traductor } from '../i18n/ui';
 
-interface Props { entry: CollectionEntry<'destinos'> }
+interface Props { entry: Destino }
 const { entry } = Astro.props;
 const d = entry.data;
 const idioma = d.idioma;
@@ -18,8 +19,8 @@ const t = traductor(idioma);
 sinPendientes(entry.id, d.estado, entry.body, d.temporada, d.faqs, d.aguas, d.reglamento);
 await fuentePublicada('destinos', d.clave, idioma, d.estado);
 
-const { Content } = await render(entry);
-const portada = foto(d.foto);
+const { Content } = await render(entry as Parameters<typeof render>[0]);
+const portada = foto(d.foto, d.foto_autor);
 const especies = await Promise.all(d.especies.map((e) => especieEn(e.id, idioma)));
 const alternas = await alternasDestino(d);
 const url = new URL(urlDestino(d), Astro.site).href;

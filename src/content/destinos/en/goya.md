@@ -3,21 +3,17 @@ estado: borrador
 idioma: en
 clave: goya
 nombre: Goya
-region: litoral
-provincia: corrientes
 slug: fishing-in-goya
-foto: goya
 title: "Fishing in Goya, Corrientes: surubí, Isoró and seasons"
 description: "A guide to fishing Goya, home of the surubí: the Paraná, the riacho and Isoró, species, when to go, licences, guides and the 2027 National Surubí Festival."
 h1: "Sport fishing in Goya, Corrientes: surubí, side channels and the Isoró wetlands"
 bajada: "The National Surubí Festival made Goya famous. The Paraná, the Goya side channel and the Isoró wetlands keep it fishable in every season, if you can read the river."
-coordenadas: [-29.14, -59.26]
-especies: [surubi, dorado]
 modalidades: ["Guided boat fishing", "Spinning and baitcasting", "Trolling", "Fly fishing", "Bank fishing in permitted areas"]
 epoca: "All four seasons, depending on river level, weather and closures"
 aguas:
   - nombre: "Paraná River and riacho Goya"
-    coordenadas: [-29.15, -59.27]
+    lat: -29.15
+    lon: -59.27
     nota: "River fishing and boating. The launch point depends on the guide and the day’s conditions. The riacho is an arm of the Paraná: in extreme low water it has run dry."
   - nombre: "Paraná–Isoró system"
     nota: "Side channels, lagoons, marshes and swamps linked to the Paraná: a protected wetland and fish breeding area. Before fishing there, check permits and zones with the Natural Resources and Tourism offices."

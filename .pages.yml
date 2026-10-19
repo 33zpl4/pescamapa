@@ -1,0 +1,961 @@
+# Pages CMS (app.pagescms.org): the browser editor for Pescamapa.
+# Saving in the editor = a commit to this repo = Cloudflare rebuilds the
+# site. The build validates everything (src/content.config.ts): a bad field
+# leaves the previous version online instead of breaking the site.
+# Field names here must match the schema; see docs/guia-editor.md.
+media:
+  input: src/assets/fotos
+  output: src/assets/fotos
+  extensions:
+  - jpg
+  - jpeg
+  - png
+  - webp
+content:
+- name: proximos
+  label: Próximos destinos (tarjetas "Próximamente")
+  type: collection
+  path: src/content/proximos
+  filename: '{primary}.md'
+  description: 'Ciudades que se anuncian en el inicio y en el mapa antes de tener guía. Un solo formulario para los tres idiomas:
+    la foto y la ubicación valen para todos; los nombres en portugués e inglés solo si cambian. Cuando se crea una guía con
+    la misma clave que el nombre de este archivo, la tarjeta se oculta sola.'
+  view:
+    fields:
+    - nombre
+    - provincia
+    - orden
+    primary: nombre
+    sort:
+    - orden
+    - nombre
+    default:
+      sort: orden
+      order: asc
+  fields:
+  - name: nombre
+    label: Nombre (español)
+    type: string
+    required: true
+  - name: nombre_pt
+    label: Nombre en portugués (si cambia)
+    type: string
+  - name: nombre_en
+    label: Nombre en inglés (si cambia)
+    type: string
+  - name: provincia
+    label: Provincia
+    type: string
+    required: true
+  - name: region
+    label: Región
+    type: select
+    required: true
+    options:
+      values:
+      - litoral
+      - patagonia
+      - pampa
+      - costa
+      - centro-norte
+  - name: agua
+    label: Río, lago o zona (español)
+    type: string
+    required: true
+  - name: agua_pt
+    label: Río/zona en portugués (si cambia)
+    type: string
+  - name: agua_en
+    label: Río/zona en inglés (si cambia)
+    type: string
+  - name: especies
+    label: Especies y modalidades (etiquetas)
+    type: select
+    list: true
+    options:
+      values:
+      - dorado
+      - surubi
+      - pacu
+      - boga
+      - variada
+      - trucha
+      - mosca
+      - trucha-marron-anadroma
+      - pejerrey
+      - tararira
+      - mar
+  - name: lat
+    label: Latitud (ej. -27.32)
+    type: number
+    required: true
+    description: Clic derecho en Google Maps sobre la ciudad → el primer número.
+  - name: lon
+    label: Longitud (ej. -58.57)
+    type: number
+    required: true
+    description: El segundo número.
+  - name: foto
+    label: Foto (vale para los tres idiomas)
+    type: image
+    description: Horizontal, mínimo 1200 px de ancho. Se optimiza sola. Solo fotos propias o con permiso de quien la sacó;
+      nunca de Google.
+  - name: foto_autor
+    label: Autor de la foto
+    type: string
+    description: 'Nombre y apellido de quien la sacó. Si es tuya, tu nombre. En la web se ve como "Foto: Nombre Apellido".
+      Obligatorio para fotos subidas.'
+  - name: foto_origen
+    label: Origen de la foto
+    type: select
+    options:
+      values:
+      - propia
+      - cedida
+    description: propia = la sacaste vos · cedida = te la pasó alguien que te dio permiso para publicarla.
+  - name: orden
+    label: Orden en la lista (1, 2, 3…)
+    type: number
+- name: destinos-es
+  label: Guías de destino — Español
+  type: collection
+  path: src/content/destinos/es
+  filename: '{fields.clave}.md'
+  description: Una guía por archivo. Acá se cargan también la foto, la ubicación, la región y las especies, que valen para
+    los tres idiomas. Para traducir, creá la misma guía en Português / English con la misma "Clave".
+  view:
+    fields:
+    - nombre
+    - estado
+    - actualizado
+    primary: nombre
+    sort:
+    - nombre
+    - actualizado
+  fields:
+  - name: idioma
+    label: Idioma
+    type: string
+    hidden: true
+    default: es
+  - name: estado
+    label: Estado
+    type: select
+    required: true
+    default: borrador
+    options:
+      values:
+      - borrador
+      - publicado
+    description: borrador = visible con cartel "en construcción", Google no la indexa · publicado = exige fuente oficial,
+      reglamento verificado (fecha) y ninguna línea PENDIENTE; si falta algo, el cambio no se publica.
+  - name: nombre
+    label: Nombre del lugar
+    type: string
+    required: true
+  - name: clave
+    label: Clave (identificador, sin espacios ni tildes)
+    type: string
+    required: true
+    description: Igual en los tres idiomas. Si existe un "Próximo destino" con este mismo nombre de archivo, su tarjeta desaparece
+      sola. Solo minúsculas, números y guiones (ej. paso-de-la-patria).
+  - name: slug
+    label: Dirección web (final de la URL)
+    type: string
+    required: true
+    description: 'Ej: pesca-en-esquina. No la cambies una vez publicada. Solo minúsculas, números y guiones.'
+  - name: region
+    label: Región (vale para los tres idiomas)
+    type: select
+    required: true
+    options:
+      values:
+      - litoral
+      - patagonia
+      - pampa
+      - costa
+      - centro-norte
+  - name: provincia
+    label: Provincia (en la URL) (vale para los tres idiomas)
+    type: select
+    required: true
+    options:
+      values:
+      - corrientes
+      - entre-rios
+      - santa-fe
+      - neuquen
+      - tierra-del-fuego
+      - buenos-aires
+  - name: lat
+    label: Latitud (vale para los tres idiomas; ej. -29.14)
+    type: number
+    required: true
+    description: Clic derecho en Google Maps sobre el lugar → el primer número.
+  - name: lon
+    label: Longitud (vale para los tres idiomas; ej. -59.26)
+    type: number
+    required: true
+    description: El segundo número.
+  - name: especies
+    label: Especies (vale para los tres idiomas)
+    type: select
+    list: true
+    required: true
+    options:
+      values:
+      - surubi
+      - dorado
+  - name: foto
+    label: Foto (vale para los tres idiomas)
+    type: image
+    description: Horizontal, mínimo 1200 px de ancho. Se optimiza sola. Solo fotos propias o con permiso de quien la sacó;
+      nunca de Google.
+  - name: foto_autor
+    label: Autor de la foto
+    type: string
+    description: 'Nombre y apellido de quien la sacó. Si es tuya, tu nombre. En la web se ve como "Foto: Nombre Apellido".
+      Obligatorio para fotos subidas.'
+  - name: foto_origen
+    label: Origen de la foto
+    type: select
+    options:
+      values:
+      - propia
+      - cedida
+    description: propia = la sacaste vos · cedida = te la pasó alguien que te dio permiso para publicarla.
+  - name: title
+    label: Título para Google (máx. 65 caracteres)
+    type: string
+    required: true
+    options:
+      maxlength: 65
+  - name: description
+    label: Descripción para Google (70 a 160 caracteres)
+    type: text
+    required: true
+    options:
+      minlength: 70
+      maxlength: 160
+  - name: h1
+    label: Titular de la página
+    type: string
+    required: true
+  - name: bajada
+    label: Subtítulo (también va en la tarjeta del inicio)
+    type: text
+    required: true
+  - name: modalidades
+    label: Modalidades
+    type: string
+    list: true
+    required: true
+  - name: epoca
+    label: Cuándo ir (una línea)
+    type: string
+    required: true
+  - name: aguas
+    label: Aguas (ríos, lagunas, zonas)
+    type: object
+    list: true
+    fields:
+    - name: nombre
+      label: Nombre
+      type: string
+      required: true
+    - name: nota
+      label: Descripción
+      type: text
+      required: true
+    - name: lat
+      label: Latitud (opcional; solo zonas generales, nunca un pesquero exacto)
+      type: number
+    - name: lon
+      label: Longitud (opcional)
+      type: number
+  - name: temporada
+    label: Calendario
+    type: object
+    list: true
+    fields:
+    - name: meses
+      label: Época
+      type: string
+      required: true
+    - name: que
+      label: Qué esperar
+      type: text
+      required: true
+  - name: reglamento
+    label: Reglamento
+    type: object
+    fields:
+    - name: autoridad
+      label: Autoridad
+      type: string
+      required: true
+    - name: url
+      label: Enlace oficial
+      type: string
+    - name: verificado
+      label: Fecha en que una persona verificó el reglamento vigente
+      type: date
+      description: Dejar vacío hasta confirmarlo con la autoridad. Sin esta fecha (o con más de un año) la guía no se puede
+        publicar.
+    - name: resumen
+      label: Resumen
+      type: text
+      required: true
+  - name: faqs
+    label: Preguntas frecuentes
+    type: object
+    list: true
+    fields:
+    - name: pregunta
+      label: Pregunta
+      type: string
+      required: true
+    - name: respuesta
+      label: Respuesta
+      type: text
+      required: true
+  - name: fuentes
+    label: Fuentes
+    type: object
+    list: true
+    fields:
+    - name: nombre
+      label: Nombre de la fuente
+      type: string
+      required: true
+    - name: url
+      label: Enlace
+      type: string
+      required: true
+    - name: oficial
+      label: ¿Es oficial (gobierno, municipio, organismo)?
+      type: boolean
+    - name: consultada
+      label: Fecha de consulta
+      type: date
+      required: true
+  - name: actualizado
+    label: Última actualización
+    type: date
+    required: true
+  - name: autor
+    label: Autor
+    type: string
+    required: true
+    default: Equipo Pescamapa
+  - name: body
+    label: Texto de la guía
+    type: rich-text
+    description: Para marcar algo que falta verificar, escribí una línea que empiece con "PENDIENTE:". Mientras haya alguna,
+      la guía no se puede publicar.
+- name: destinos-pt
+  label: Guías de destino — Português
+  type: collection
+  path: src/content/destinos/pt
+  filename: '{fields.clave}.md'
+  description: 'Traducción de una guía en español: misma "Clave". La foto, la ubicación, la región, la provincia y las especies
+    se cargan una sola vez en la versión en español y valen para los tres idiomas: cambialas ahí.'
+  view:
+    fields:
+    - nombre
+    - estado
+    - actualizado
+    primary: nombre
+    sort:
+    - nombre
+    - actualizado
+  fields:
+  - name: idioma
+    label: Idioma
+    type: string
+    hidden: true
+    default: pt
+  - name: estado
+    label: Estado
+    type: select
+    required: true
+    default: borrador
+    options:
+      values:
+      - borrador
+      - publicado
+    description: borrador = visible con cartel "en construcción", Google no la indexa · publicado = exige fuente oficial,
+      reglamento verificado (fecha) y ninguna línea PENDIENTE; si falta algo, el cambio no se publica.
+  - name: nombre
+    label: Nombre del lugar
+    type: string
+    required: true
+  - name: clave
+    label: Clave (identificador, sin espacios ni tildes)
+    type: string
+    required: true
+    description: Igual en los tres idiomas. Si existe un "Próximo destino" con este mismo nombre de archivo, su tarjeta desaparece
+      sola. Solo minúsculas, números y guiones (ej. paso-de-la-patria).
+  - name: slug
+    label: Dirección web (final de la URL)
+    type: string
+    required: true
+    description: 'Ej: pesca-em-esquina. No la cambies una vez publicada. Solo minúsculas, números y guiones.'
+  - name: title
+    label: Título para Google (máx. 65 caracteres)
+    type: string
+    required: true
+    options:
+      maxlength: 65
+  - name: description
+    label: Descripción para Google (70 a 160 caracteres)
+    type: text
+    required: true
+    options:
+      minlength: 70
+      maxlength: 160
+  - name: h1
+    label: Titular de la página
+    type: string
+    required: true
+  - name: bajada
+    label: Subtítulo (también va en la tarjeta del inicio)
+    type: text
+    required: true
+  - name: modalidades
+    label: Modalidades
+    type: string
+    list: true
+    required: true
+  - name: epoca
+    label: Cuándo ir (una línea)
+    type: string
+    required: true
+  - name: aguas
+    label: Aguas (ríos, lagunas, zonas)
+    type: object
+    list: true
+    fields:
+    - name: nombre
+      label: Nombre
+      type: string
+      required: true
+    - name: nota
+      label: Descripción
+      type: text
+      required: true
+    - name: lat
+      label: Latitud (opcional; solo zonas generales, nunca un pesquero exacto)
+      type: number
+    - name: lon
+      label: Longitud (opcional)
+      type: number
+  - name: temporada
+    label: Calendario
+    type: object
+    list: true
+    fields:
+    - name: meses
+      label: Época
+      type: string
+      required: true
+    - name: que
+      label: Qué esperar
+      type: text
+      required: true
+  - name: reglamento
+    label: Reglamento
+    type: object
+    fields:
+    - name: autoridad
+      label: Autoridad
+      type: string
+      required: true
+    - name: url
+      label: Enlace oficial
+      type: string
+    - name: verificado
+      label: Fecha en que una persona verificó el reglamento vigente
+      type: date
+      description: Dejar vacío hasta confirmarlo con la autoridad. Sin esta fecha (o con más de un año) la guía no se puede
+        publicar.
+    - name: resumen
+      label: Resumen
+      type: text
+      required: true
+  - name: faqs
+    label: Preguntas frecuentes
+    type: object
+    list: true
+    fields:
+    - name: pregunta
+      label: Pregunta
+      type: string
+      required: true
+    - name: respuesta
+      label: Respuesta
+      type: text
+      required: true
+  - name: fuentes
+    label: Fuentes
+    type: object
+    list: true
+    fields:
+    - name: nombre
+      label: Nombre de la fuente
+      type: string
+      required: true
+    - name: url
+      label: Enlace
+      type: string
+      required: true
+    - name: oficial
+      label: ¿Es oficial (gobierno, municipio, organismo)?
+      type: boolean
+    - name: consultada
+      label: Fecha de consulta
+      type: date
+      required: true
+  - name: actualizado
+    label: Última actualización
+    type: date
+    required: true
+  - name: autor
+    label: Autor
+    type: string
+    required: true
+    default: Equipe Pescamapa
+  - name: body
+    label: Texto de la guía
+    type: rich-text
+    description: Para marcar algo que falta verificar, escribí una línea que empiece con "PENDIENTE:". Mientras haya alguna,
+      la guía no se puede publicar.
+- name: destinos-en
+  label: Guías de destino — English
+  type: collection
+  path: src/content/destinos/en
+  filename: '{fields.clave}.md'
+  description: 'Traducción de una guía en español: misma "Clave". La foto, la ubicación, la región, la provincia y las especies
+    se cargan una sola vez en la versión en español y valen para los tres idiomas: cambialas ahí.'
+  view:
+    fields:
+    - nombre
+    - estado
+    - actualizado
+    primary: nombre
+    sort:
+    - nombre
+    - actualizado
+  fields:
+  - name: idioma
+    label: Idioma
+    type: string
+    hidden: true
+    default: en
+  - name: estado
+    label: Estado
+    type: select
+    required: true
+    default: borrador
+    options:
+      values:
+      - borrador
+      - publicado
+    description: borrador = visible con cartel "en construcción", Google no la indexa · publicado = exige fuente oficial,
+      reglamento verificado (fecha) y ninguna línea PENDIENTE; si falta algo, el cambio no se publica.
+  - name: nombre
+    label: Nombre del lugar
+    type: string
+    required: true
+  - name: clave
+    label: Clave (identificador, sin espacios ni tildes)
+    type: string
+    required: true
+    description: Igual en los tres idiomas. Si existe un "Próximo destino" con este mismo nombre de archivo, su tarjeta desaparece
+      sola. Solo minúsculas, números y guiones (ej. paso-de-la-patria).
+  - name: slug
+    label: Dirección web (final de la URL)
+    type: string
+    required: true
+    description: 'Ej: fishing-in-esquina. No la cambies una vez publicada. Solo minúsculas, números y guiones.'
+  - name: title
+    label: Título para Google (máx. 65 caracteres)
+    type: string
+    required: true
+    options:
+      maxlength: 65
+  - name: description
+    label: Descripción para Google (70 a 160 caracteres)
+    type: text
+    required: true
+    options:
+      minlength: 70
+      maxlength: 160
+  - name: h1
+    label: Titular de la página
+    type: string
+    required: true
+  - name: bajada
+    label: Subtítulo (también va en la tarjeta del inicio)
+    type: text
+    required: true
+  - name: modalidades
+    label: Modalidades
+    type: string
+    list: true
+    required: true
+  - name: epoca
+    label: Cuándo ir (una línea)
+    type: string
+    required: true
+  - name: aguas
+    label: Aguas (ríos, lagunas, zonas)
+    type: object
+    list: true
+    fields:
+    - name: nombre
+      label: Nombre
+      type: string
+      required: true
+    - name: nota
+      label: Descripción
+      type: text
+      required: true
+    - name: lat
+      label: Latitud (opcional; solo zonas generales, nunca un pesquero exacto)
+      type: number
+    - name: lon
+      label: Longitud (opcional)
+      type: number
+  - name: temporada
+    label: Calendario
+    type: object
+    list: true
+    fields:
+    - name: meses
+      label: Época
+      type: string
+      required: true
+    - name: que
+      label: Qué esperar
+      type: text
+      required: true
+  - name: reglamento
+    label: Reglamento
+    type: object
+    fields:
+    - name: autoridad
+      label: Autoridad
+      type: string
+      required: true
+    - name: url
+      label: Enlace oficial
+      type: string
+    - name: verificado
+      label: Fecha en que una persona verificó el reglamento vigente
+      type: date
+      description: Dejar vacío hasta confirmarlo con la autoridad. Sin esta fecha (o con más de un año) la guía no se puede
+        publicar.
+    - name: resumen
+      label: Resumen
+      type: text
+      required: true
+  - name: faqs
+    label: Preguntas frecuentes
+    type: object
+    list: true
+    fields:
+    - name: pregunta
+      label: Pregunta
+      type: string
+      required: true
+    - name: respuesta
+      label: Respuesta
+      type: text
+      required: true
+  - name: fuentes
+    label: Fuentes
+    type: object
+    list: true
+    fields:
+    - name: nombre
+      label: Nombre de la fuente
+      type: string
+      required: true
+    - name: url
+      label: Enlace
+      type: string
+      required: true
+    - name: oficial
+      label: ¿Es oficial (gobierno, municipio, organismo)?
+      type: boolean
+    - name: consultada
+      label: Fecha de consulta
+      type: date
+      required: true
+  - name: actualizado
+    label: Última actualización
+    type: date
+    required: true
+  - name: autor
+    label: Autor
+    type: string
+    required: true
+    default: Pescamapa team
+  - name: body
+    label: Texto de la guía
+    type: rich-text
+    description: Para marcar algo que falta verificar, escribí una línea que empiece con "PENDIENTE:". Mientras haya alguna,
+      la guía no se puede publicar.
+- name: especies-es
+  label: Especies — Español
+  type: collection
+  path: src/content/especies/es
+  filename: '{fields.clave}.md'
+  view:
+    fields:
+    - nombre
+    - estado
+    primary: nombre
+  fields:
+  - name: idioma
+    label: Idioma
+    type: string
+    hidden: true
+    default: es
+  - name: estado
+    label: Estado
+    type: select
+    required: true
+    default: borrador
+    options:
+      values:
+      - borrador
+      - publicado
+    description: borrador = visible con cartel "en construcción", Google no la indexa · publicado = exige fuente oficial,
+      reglamento verificado (fecha) y ninguna línea PENDIENTE; si falta algo, el cambio no se publica.
+  - name: nombre
+    label: Nombre común
+    type: string
+    required: true
+  - name: clave
+    label: Clave (igual en los tres idiomas)
+    type: string
+    required: true
+    description: Solo minúsculas, números y guiones (ej. paso-de-la-patria).
+  - name: cientifico
+    label: Nombre científico
+    type: string
+    required: true
+  - name: title
+    label: Título para Google (máx. 65)
+    type: string
+    required: true
+    options:
+      maxlength: 65
+  - name: description
+    label: Descripción para Google (70 a 160)
+    type: text
+    required: true
+    options:
+      minlength: 70
+      maxlength: 160
+  - name: resumen
+    label: Resumen (subtítulo)
+    type: text
+    required: true
+  - name: fuentes
+    label: Fuentes
+    type: object
+    list: true
+    fields:
+    - name: nombre
+      label: Nombre de la fuente
+      type: string
+      required: true
+    - name: url
+      label: Enlace
+      type: string
+      required: true
+    - name: oficial
+      label: ¿Es oficial (gobierno, municipio, organismo)?
+      type: boolean
+    - name: consultada
+      label: Fecha de consulta
+      type: date
+      required: true
+  - name: actualizado
+    label: Última actualización
+    type: date
+    required: true
+  - name: body
+    label: Texto
+    type: rich-text
+- name: especies-pt
+  label: Especies — Português
+  type: collection
+  path: src/content/especies/pt
+  filename: '{fields.clave}.md'
+  view:
+    fields:
+    - nombre
+    - estado
+    primary: nombre
+  fields:
+  - name: idioma
+    label: Idioma
+    type: string
+    hidden: true
+    default: pt
+  - name: estado
+    label: Estado
+    type: select
+    required: true
+    default: borrador
+    options:
+      values:
+      - borrador
+      - publicado
+    description: borrador = visible con cartel "en construcción", Google no la indexa · publicado = exige fuente oficial,
+      reglamento verificado (fecha) y ninguna línea PENDIENTE; si falta algo, el cambio no se publica.
+  - name: nombre
+    label: Nombre común
+    type: string
+    required: true
+  - name: clave
+    label: Clave (igual en los tres idiomas)
+    type: string
+    required: true
+    description: Solo minúsculas, números y guiones (ej. paso-de-la-patria).
+  - name: cientifico
+    label: Nombre científico
+    type: string
+    required: true
+  - name: title
+    label: Título para Google (máx. 65)
+    type: string
+    required: true
+    options:
+      maxlength: 65
+  - name: description
+    label: Descripción para Google (70 a 160)
+    type: text
+    required: true
+    options:
+      minlength: 70
+      maxlength: 160
+  - name: resumen
+    label: Resumen (subtítulo)
+    type: text
+    required: true
+  - name: fuentes
+    label: Fuentes
+    type: object
+    list: true
+    fields:
+    - name: nombre
+      label: Nombre de la fuente
+      type: string
+      required: true
+    - name: url
+      label: Enlace
+      type: string
+      required: true
+    - name: oficial
+      label: ¿Es oficial (gobierno, municipio, organismo)?
+      type: boolean
+    - name: consultada
+      label: Fecha de consulta
+      type: date
+      required: true
+  - name: actualizado
+    label: Última actualización
+    type: date
+    required: true
+  - name: body
+    label: Texto
+    type: rich-text
+- name: especies-en
+  label: Especies — English
+  type: collection
+  path: src/content/especies/en
+  filename: '{fields.clave}.md'
+  view:
+    fields:
+    - nombre
+    - estado
+    primary: nombre
+  fields:
+  - name: idioma
+    label: Idioma
+    type: string
+    hidden: true
+    default: en
+  - name: estado
+    label: Estado
+    type: select
+    required: true
+    default: borrador
+    options:
+      values:
+      - borrador
+      - publicado
+    description: borrador = visible con cartel "en construcción", Google no la indexa · publicado = exige fuente oficial,
+      reglamento verificado (fecha) y ninguna línea PENDIENTE; si falta algo, el cambio no se publica.
+  - name: nombre
+    label: Nombre común
+    type: string
+    required: true
+  - name: clave
+    label: Clave (igual en los tres idiomas)
+    type: string
+    required: true
+    description: Solo minúsculas, números y guiones (ej. paso-de-la-patria).
+  - name: cientifico
+    label: Nombre científico
+    type: string
+    required: true
+  - name: title
+    label: Título para Google (máx. 65)
+    type: string
+    required: true
+    options:
+      maxlength: 65
+  - name: description
+    label: Descripción para Google (70 a 160)
+    type: text
+    required: true
+    options:
+      minlength: 70
+      maxlength: 160
+  - name: resumen
+    label: Resumen (subtítulo)
+    type: text
+    required: true
+  - name: fuentes
+    label: Fuentes
+    type: object
+    list: true
+    fields:
+    - name: nombre
+      label: Nombre de la fuente
+      type: string
+      required: true
+    - name: url
+      label: Enlace
+      type: string
+      required: true
+    - name: oficial
+      label: ¿Es oficial (gobierno, municipio, organismo)?
+      type: boolean
+    - name: consultada
+      label: Fecha de consulta
+      type: date
+      required: true
+  - name: actualizado
+    label: Última actualización
+    type: date
+    required: true
+  - name: body
+    label: Texto
+    type: rich-text
