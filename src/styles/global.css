@@ -1,0 +1,75 @@
+/* Pescamapa — tokens and base. Palette and type come from the first
+   prototype (forest / cream / lime, Manrope + DM Sans). Every colour used in
+   components is a token defined here. */
+@import '@fontsource-variable/manrope';
+@import '@fontsource-variable/dm-sans';
+
+:root {
+	--ink: #14251f;
+	--forest: #11251f;
+	--moss: #344a3d;
+	--cream: #f4f2e9;
+	--paper: #fbfaf6;
+	--white: #ffffff;
+	--line: #d9ddd2;
+	--muted: #5f685e;
+	--orange: #ee7a48;
+	--lime: #d8e46a;
+	--olive: #5e6b33;
+	--warn-bg: #fff4d6;
+	--warn-line: #e8c56a;
+	--on-dark: #cbd3c9;
+
+	--font-head: 'Manrope Variable', system-ui, sans-serif;
+	--font-body: 'DM Sans Variable', system-ui, sans-serif;
+
+	--shell: 1180px;
+	--gutter: clamp(16px, 4vw, 34px);
+	--radius: 16px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+	margin: 0;
+	color: var(--ink);
+	background: var(--paper);
+	font: 16px/1.6 var(--font-body);
+	-webkit-font-smoothing: antialiased;
+}
+h1, h2, h3, h4 { font-family: var(--font-head); letter-spacing: -0.035em; line-height: 1.1; margin: 0 0 0.5em; }
+p { margin: 0 0 1em; }
+a { color: inherit; }
+img { max-width: 100%; height: auto; }
+
+.shell { max-width: var(--shell); margin-inline: auto; padding-inline: var(--gutter); }
+
+.eyebrow {
+	display: flex; gap: 10px; align-items: center;
+	font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase;
+	color: var(--olive);
+}
+.eyebrow::before { content: ''; width: 24px; height: 1px; background: currentColor; }
+.on-dark .eyebrow { color: var(--lime); }
+
+.button {
+	display: inline-flex; align-items: center; gap: 12px;
+	border-radius: 99px; padding: 14px 20px;
+	font-weight: 700; font-size: 14px; text-decoration: none;
+	transition: transform 0.2s;
+}
+.button:hover { transform: translateY(-2px); }
+.button.primary { background: var(--lime); color: var(--forest); }
+.button.secondary { border: 1px solid rgb(255 255 255 / 0.3); color: var(--white); }
+.button.dark { background: var(--forest); color: var(--white); }
+
+.chips { display: flex; flex-wrap: wrap; gap: 6px; padding: 0; margin: 0; list-style: none; }
+.chips li, .chips a {
+	font-size: 12px; background: var(--cream); padding: 6px 10px; border-radius: 99px; color: var(--moss); text-decoration: none;
+}
+
+.note { font-size: 13px; color: var(--muted); }
+
+.visually-hidden {
+	position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap;
+}

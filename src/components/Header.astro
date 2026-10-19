@@ -1,0 +1,27 @@
+---
+interface Props { oscuro?: boolean }
+const { oscuro = false } = Astro.props;
+---
+<header class:list={['nav', { oscuro }]}>
+	<div class="shell inner">
+		<a class="brand" href="/" aria-label="Pescamapa, inicio"><span class="mark" aria-hidden="true">↗</span> PESCAMAPA</a>
+		<nav aria-label="Principal">
+			<a href="/#destinos">Destinos</a>
+			<a href="/mapa/">Mapa</a>
+			<a class="cta" href="/#prestadores">Para prestadores</a>
+		</nav>
+	</div>
+</header>
+
+<style>
+	.nav { border-bottom: 1px solid var(--line); background: var(--paper); }
+	.nav.oscuro { position: absolute; inset: 0 0 auto; z-index: 4; background: transparent; border-color: rgb(255 255 255 / 0.16); color: var(--white); }
+	.inner { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+	.brand { font: 800 18px var(--font-head); letter-spacing: -0.03em; display: flex; align-items: center; gap: 10px; text-decoration: none; }
+	.mark { width: 30px; height: 30px; border-radius: 50%; background: var(--lime); color: var(--forest); display: grid; place-items: center; font-size: 17px; }
+	nav { display: flex; gap: clamp(14px, 3vw, 30px); align-items: center; font-size: 14px; }
+	nav a { text-decoration: none; }
+	nav a:hover { text-decoration: underline; text-underline-offset: 4px; }
+	.cta { padding: 10px 16px; border-radius: 99px; background: var(--lime); color: var(--forest); font-weight: 700; }
+	@media (max-width: 640px) { nav a:not(.cta):first-child { display: none; } .cta { padding: 8px 12px; } }
+</style>

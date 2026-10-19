@@ -1,0 +1,51 @@
+---
+// Interactive map. Pins come from the data files: live destinations link to
+// their page, planned ones show as muted pins. Tiles: OpenStreetMap (usage
+// policy requires the attribution; move to a paid/own tile source before
+// traffic grows — see docs/decisiones.md).
+export interface Pin { nombre: string; coordenadas: [number, number]; url?: string; detalle?: string; tipo: 'destino' | 'proximo' | 'agua' }
+interface Props { pins: Pin[]; centro?: [number, number]; zoom?: number; alto?: string; etiqueta: string }
+const { pins, centro = [-38.5, -63.5], zoom = 4, alto = '560px', etiqueta } = Astro.props;
+---
+<div class="mapa" role="region" aria-label={etiqueta} style={`--alto:${alto}`} data-pins={JSON.stringify(pins)} data-centro={JSON.stringify(centro)} data-zoom={zoom}></div>
+<noscript><p class="note">El mapa necesita JavaScript. Los destinos están listados en esta misma página.</p></noscript>
+
+<script>
+	import L from 'leaflet';
+	import 'leaflet/dist/leaflet.css';
+
+	const colores = { destino: '#ee7a48', proximo: '#7d8a7a', agua: '#3f7f8c' };
+
+	for (const el of document.querySelectorAll<HTMLElement>('.mapa')) {
+		const pins = JSON.parse(el.dataset.pins!);
+		const map = L.map(el, { scrollWheelZoom: false }).setView(JSON.parse(el.dataset.centro!), Number(el.dataset.zoom));
+		L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+			maxZoom: 18,
+			attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+		}).addTo(map);
+		for (const p of pins) {
+			const m = L.circleMarker(p.coordenadas, {
+				radius: p.tipo === 'destino' ? 10 : 7,
+				color: '#fbfaf6', weight: 3, fillOpacity: 1,
+				fillColor: colores[p.tipo as keyof typeof colores],
+			}).addTo(map);
+			const t = document.createElement('div');
+			const b = document.createElement('strong');
+			b.textContent = p.nombre;
+			t.append(b);
+			if (p.detalle) t.append(document.createElement('br'), p.detalle);
+			if (p.url) {
+				const a = document.createElement('a');
+				a.href = p.url; a.textContent = 'Ver la guía →';
+				t.append(document.createElement('br'), a);
+			} else if (p.tipo === 'proximo') {
+				t.append(document.createElement('br'), 'Próximamente');
+			}
+			m.bindPopup(t);
+		}
+	}
+</script>
+
+<style>
+	.mapa { height: var(--alto); border-radius: var(--radius); overflow: hidden; background: var(--cream); z-index: 0; }
+</style>
