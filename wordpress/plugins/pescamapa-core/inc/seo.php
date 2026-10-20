@@ -5,7 +5,8 @@
  *   - title, description, canonical, hreflang (es, pt-BR, en, x-default → es)
  *   - Open Graph
  *   - noindex only on the 404 page; every published ficha is indexable
- *   - JSON-LD: WebSite (home), TouristDestination + BreadcrumbList + FAQPage
+ *   - JSON-LD: WebSite (home), TouristDestination + BreadcrumbList + FAQPage,
+ *     Article + BreadcrumbList (interviews)
  *   - core sitemap: guides, species and the fixed views
  */
 
@@ -64,6 +65,19 @@ function pm_seo(): array {
 		$s['title']       = $e['seo_title'] ?: $e['nombre'];
 		$s['description'] = $e['seo_description'];
 		$s['alternas']    = pm_alternas_especie( $e['clave'] );
+	} elseif ( 'entrevistas' === $vista ) {
+		$s['title']       = pm_t( 'entrevistas.title' );
+		$s['description'] = pm_t( 'entrevistas.description' );
+		$s['alternas']    = pm_alternas_fijas( 'pm_url_entrevistas' );
+	} elseif ( 'entrevista' === $vista ) {
+		$e = pm_entrevista( get_queried_object_id() );
+		$s['title']       = $e['seo_title'] ?: $e['titulo'];
+		$s['description'] = $e['seo_description'] ?: $e['bajada'];
+		$s['alternas']    = pm_alternas_entrevista( $e['clave'] );
+		$s['jsonld']      = pm_jsonld_entrevista( $e );
+		if ( $e['foto'] ) {
+			$s['imagen'] = wp_get_attachment_image_url( $e['foto'], 'large' );
+		}
 	} elseif ( is_404() ) {
 		$s['title']    = 'Página no encontrada | Pescamapa';
 		$s['noindex'] = true;
@@ -162,7 +176,7 @@ add_filter( 'wp_sitemaps_add_provider', function ( $provider, $name ) {
 }, 10, 2 );
 
 add_filter( 'wp_sitemaps_post_types', function ( $tipos ) {
-	unset( $tipos['pm_proximo'], $tipos['attachment'] );
+	unset( $tipos['pm_proximo'], $tipos['pm_prestador'], $tipos['pm_consulta'], $tipos['attachment'] );
 	return $tipos;
 } );
 

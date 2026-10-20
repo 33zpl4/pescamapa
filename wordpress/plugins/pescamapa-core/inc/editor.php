@@ -28,7 +28,7 @@ add_action( 'pre_get_posts', function ( $q ) {
 	if ( ! is_admin() || ! $q->is_main_query() || ! pm_es_editor() ) {
 		return;
 	}
-	if ( in_array( $q->get( 'post_type' ), [ 'pm_destino', 'pm_especie' ], true ) ) {
+	if ( in_array( $q->get( 'post_type' ), PM_TIPOS_IDIOMA, true ) ) {
 		$q->set( 'meta_query', [
 			'relation' => 'OR',
 			[ 'key' => 'idioma', 'value' => 'es' ],
@@ -41,7 +41,7 @@ add_action( 'pre_get_posts', function ( $q ) {
 add_filter( 'map_meta_cap', function ( $caps, $cap, $user_id, $args ) {
 	if ( in_array( $cap, [ 'edit_post', 'delete_post' ], true ) && ! empty( $args[0] ) && ! user_can( $user_id, 'manage_options' ) ) {
 		$p = get_post( (int) $args[0] );
-		if ( $p && in_array( $p->post_type, [ 'pm_destino', 'pm_especie' ], true ) && 'es' !== pm_idioma_de( $p->ID ) ) {
+		if ( $p && in_array( $p->post_type, PM_TIPOS_IDIOMA, true ) && 'es' !== pm_idioma_de( $p->ID ) ) {
 			return [ 'do_not_allow' ];
 		}
 	}
@@ -72,7 +72,7 @@ add_action( 'acf/save_post', function ( $post_id ) {
 	}
 	$post_id = (int) $post_id;
 	$tipo    = get_post_type( $post_id );
-	if ( ! in_array( $tipo, [ 'pm_destino', 'pm_especie' ], true ) ) {
+	if ( ! in_array( $tipo, PM_TIPOS_IDIOMA, true ) ) {
 		return;
 	}
 	if ( '' === (string) get_post_meta( $post_id, 'idioma', true ) ) {
@@ -108,7 +108,7 @@ function pm_traducciones_pendientes( int $es_id ): array {
 	return $out;
 }
 
-foreach ( [ 'pm_destino', 'pm_especie' ] as $tipo ) {
+foreach ( PM_TIPOS_IDIOMA as $tipo ) {
 	add_filter( "manage_{$tipo}_posts_columns", function ( $cols ) {
 		if ( current_user_can( 'manage_options' ) ) {
 			$cols['pm_trad'] = 'Traducciones';
@@ -127,7 +127,7 @@ foreach ( [ 'pm_destino', 'pm_especie' ] as $tipo ) {
 // --- Simple body: only basic blocks ---------------------------------------------
 
 add_filter( 'allowed_block_types_all', function ( $permitidos, $contexto ) {
-	if ( pm_es_editor() && in_array( $contexto->post->post_type ?? '', [ 'pm_destino', 'pm_especie' ], true ) ) {
+	if ( pm_es_editor() && in_array( $contexto->post->post_type ?? '', PM_TIPOS_IDIOMA, true ) ) {
 		return [ 'core/paragraph', 'core/heading', 'core/list', 'core/list-item', 'core/quote', 'core/image' ];
 	}
 	return $permitidos;

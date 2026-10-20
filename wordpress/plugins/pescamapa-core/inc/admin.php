@@ -6,7 +6,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-foreach ( [ 'pm_destino', 'pm_especie' ] as $tipo ) {
+foreach ( PM_TIPOS_IDIOMA as $tipo ) {
 	add_filter( "manage_{$tipo}_posts_columns", function ( $cols ) {
 		$nuevas = [];
 		foreach ( $cols as $k => $v ) {
@@ -44,7 +44,7 @@ add_action( 'manage_pm_proximo_posts_custom_column', function ( $col, $id ) {
 
 // Filter lists by language.
 add_action( 'restrict_manage_posts', function ( $tipo ) {
-	if ( ! in_array( $tipo, [ 'pm_destino', 'pm_especie' ], true ) ) {
+	if ( ! in_array( $tipo, PM_TIPOS_IDIOMA, true ) ) {
 		return;
 	}
 	$actual = $_GET['pm_idioma'] ?? '';

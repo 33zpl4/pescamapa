@@ -43,6 +43,8 @@ jobs:
           check /mapa/ 200 'class="mapa"'
           check /en/map/ 200 'class="mapa"'
           check /creditos/ 200
+          check /entrevistas/ 200 'v-entrevistas'
+          check /en/interviews/ 200 'v-entrevistas'
           check /robots.txt 200 'Sitemap'
           check /wp-sitemap.xml 200 'vistas'
           check /esto-no-existe/ 404
@@ -51,7 +53,13 @@ jobs:
             grep -q 'hreflang="x-default"' page.html || { echo "✖ $p sin hreflang"; fail=1; }
             grep -qE "name=[\"']robots[\"'][^>]*noindex" page.html && { echo "✖ $p tiene noindex"; fail=1; }
             grep -q 'PENDIENTE' page.html && { echo "✖ $p muestra una nota PENDIENTE"; fail=1; }
+            grep -q 'admin-post.php' page.html || { echo "✖ $p sin formulario de consulta"; fail=1; }
           done
+          # Esquina exists once esquina-2026-10-20 ran (Spanish first).
+          code=$(curl -sS -m 30 -o page.html -w '%{http_code}' "$SITE/litoral/corrientes/pesca-en-esquina/")
+          if [[ "$code" == 200 ]]; then
+            grep -q 'PENDIENTE' page.html && { echo "✖ Esquina muestra una nota PENDIENTE"; fail=1; } || echo "✓ 200 Esquina"
+          else echo "· Esquina: $code (¿falta correr el script?)"; fi
           loc=$(curl -sS -m 30 -o /dev/null -w '%{http_code} %{redirect_url}' "https://www.pescamapa.com/mapa/")
           if [[ "$loc" =~ ^30[178]\ https://pescamapa\.com/mapa/ ]]; then echo "✓ www → $loc"; else echo "✖ www redirect: $loc"; fail=1; fi
           exit $fail

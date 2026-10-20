@@ -40,6 +40,9 @@ const PM_PROVINCIAS = [
 	'tucuman'          => 'Tucumán',
 ];
 
+/** Types written per language (one post per language, shared `clave`). */
+const PM_TIPOS_IDIOMA = [ 'pm_destino', 'pm_especie', 'pm_entrevista' ];
+
 function pm_registrar_tipos(): void {
 	register_post_type( 'pm_destino', [
 		'labels'       => [
@@ -95,6 +98,66 @@ function pm_registrar_tipos(): void {
 		'supports'     => [ 'title', 'thumbnail' ],
 		'rewrite'      => false,
 	] );
+
+	register_post_type( 'pm_entrevista', [
+		'labels'       => [
+			'name'          => 'Entrevistas',
+			'singular_name' => 'Entrevista',
+			'add_new_item'  => 'Nueva entrevista',
+			'edit_item'     => 'Editar entrevista',
+			'menu_name'     => 'Entrevistas',
+		],
+		'description'  => 'Charlas con guías, prestadores y pescadores locales. Las citas aparecen también en la guía del destino.',
+		'public'       => true,
+		'show_in_rest' => true,
+		'menu_icon'    => 'dashicons-format-quote',
+		'menu_position' => 8,
+		'supports'     => [ 'title', 'editor', 'thumbnail', 'revisions' ],
+		'has_archive'  => false,
+		'rewrite'      => false,
+		'query_var'    => 'pm_entrevista',
+	] );
+
+	// Internal: never rendered on its own; published fichas show a card in
+	// the destination guide, without contact data (inquiries come to us).
+	register_post_type( 'pm_prestador', [
+		'labels'       => [
+			'name'          => 'Prestadores',
+			'singular_name' => 'Prestador',
+			'add_new_item'  => 'Nuevo prestador',
+			'edit_item'     => 'Editar prestador',
+			'menu_name'     => 'Prestadores',
+		],
+		'description'  => 'Guías, alojamientos y operadores. El contacto es interno: las consultas de la web llegan a Pescamapa.',
+		'public'       => false,
+		'show_ui'      => true,
+		'show_in_rest' => true,
+		'menu_icon'    => 'dashicons-groups',
+		'menu_position' => 9,
+		'supports'     => [ 'title', 'thumbnail', 'revisions' ],
+		'rewrite'      => false,
+	] );
+
+	// Inquiries sent from the site's forms (inc/consultas.php). Created only by
+	// the form; editors read them and track their state.
+	register_post_type( 'pm_consulta', [
+		'labels'       => [
+			'name'          => 'Consultas',
+			'singular_name' => 'Consulta',
+			'edit_item'     => 'Consulta',
+			'menu_name'     => 'Consultas',
+			'not_found'     => 'Todavía no llegaron consultas.',
+		],
+		'public'       => false,
+		'show_ui'      => true,
+		'show_in_rest' => false,
+		'menu_icon'    => 'dashicons-email-alt',
+		'menu_position' => 4,
+		'supports'     => [ 'title' ],
+		'capabilities' => [ 'create_posts' => 'do_not_allow' ],
+		'map_meta_cap' => true,
+		'rewrite'      => false,
+	] );
 }
 add_action( 'init', 'pm_registrar_tipos' );
 
@@ -112,5 +175,7 @@ function pm_crear_rol_editor(): void {
 		'delete_others_posts'    => true,
 		'delete_published_posts' => true,
 		'read_private_posts'     => true,
+		'edit_private_posts'     => true,
+		'delete_private_posts'   => true,
 	] );
 }

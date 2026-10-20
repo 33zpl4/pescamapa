@@ -1,0 +1,65 @@
+/* Pescamapa theme — hand-written styles for what the Astro site never had
+   (interviews, outfitters, inquiry forms) plus small overrides. Loaded after
+   pescamapa.css, which stays generated. */
+
+/* Hero: the guide card sits next to its pin; the "what do you want to
+   catch" card goes low, away from Goya, so trout/pejerrey don't read as Goya. */
+.v-inicio .hero-map .tag-top { right: auto; top: auto; left: -8%; bottom: 14%; }
+.v-inicio .hero-map .tag-bottom { left: auto; bottom: auto; right: -6%; top: 9%; }
+@media (max-width: 900px) {
+	.v-inicio .hero-map .tag-top { left: 0; }
+	.v-inicio .hero-map .tag-bottom { right: 0; }
+}
+
+/* Forms */
+.pm-trampa { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.consulta { margin-top: 2.2em; }
+.consulta form { display: grid; gap: 14px; background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px; color: var(--ink); }
+.consulta .grilla { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: 14px; }
+.consulta label { display: grid; gap: 6px; font-size: 14px; font-weight: 600; }
+.consulta input, .consulta select, .consulta textarea { font: 400 16px var(--font-body); padding: 10px 12px; border: 1px solid var(--line); border-radius: 10px; background: var(--paper); color: var(--ink); width: 100%; box-sizing: border-box; }
+.consulta button { justify-self: start; border: 0; cursor: pointer; font: 700 16px var(--font-body); }
+.consulta .note { margin: 0; }
+.consulta .sobre { margin: 0; font-size: 14px; }
+.aviso { padding: 14px 16px; border-radius: 10px; font-weight: 600; }
+.aviso.ok { background: var(--lime); color: var(--forest); }
+.aviso.error { background: var(--warn-bg); border: 1px solid var(--warn-line); }
+.v-inicio .join-inner { max-width: 980px; display: grid; gap: 8px; }
+
+/* Quotes from interviews, in the destination guide */
+.citas { display: grid; gap: 16px; }
+.prose .cita { margin: 0; padding: 20px 22px; background: var(--cream); border-radius: var(--radius); }
+.prose .cita blockquote { margin: 0; padding: 0; background: none; border: 0; font: italic 500 19px/1.45 var(--font-head); }
+.cita figcaption { margin-top: 10px; font-size: 14px; color: var(--muted); }
+
+/* Outfitter cards and the "how to choose" list */
+.prestador { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 18px; border: 1px solid var(--line); border-radius: var(--radius); padding: 16px; margin: 16px 0; background: var(--white); }
+.prestador .portada { aspect-ratio: 4 / 3; border-radius: 10px; overflow: hidden; }
+.prestador h3 { margin: 0 0 6px; font-size: 22px; }
+.prestador .tipo { margin: 0; font: 400 15px/1 var(--font-label); letter-spacing: 0.1em; color: var(--olive); }
+.prestador dl { margin: 10px 0; display: grid; gap: 6px; font-size: 14px; }
+.prestador dt { font-weight: 700; display: inline; }
+.prestador dt::after { content: ': '; }
+.prestador dd { display: inline; margin: 0; }
+.prestador .precio { font-weight: 600; }
+@media (max-width: 720px) { .prestador { grid-template-columns: 1fr; } }
+.elegir { background: var(--cream); border-radius: var(--radius); padding: 18px 22px; margin-top: 18px; }
+.elegir h3 { font-size: 21px; }
+.elegir ol { padding-left: 20px; margin: 0; }
+.elegir li { margin-bottom: 8px; }
+
+/* Interviews */
+.v-entrevista .top .eyebrow, .v-entrevistas .top .eyebrow { color: var(--lime); }
+.resumen-citas { background: var(--cream); border-radius: var(--radius); padding: 16px 20px; margin-bottom: 1.4em; }
+.resumen-citas h2 { font-size: 22px; margin: 0 0 8px; }
+.resumen-citas ul { margin: 0; padding-left: 18px; font-style: italic; }
+.v-entrevistas .lista { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); gap: 24px; padding-block: 40px 80px; }
+.v-entrevistas .tarjeta { display: grid; gap: 6px; text-decoration: none; color: var(--ink); }
+.v-entrevistas .tarjeta strong { font: 700 21px/1.2 var(--font-head); }
+.v-entrevistas .quien { font-size: 13px; color: var(--muted); }
+.v-entrevistas .tarjeta .foto { aspect-ratio: 4 / 3; border-radius: var(--radius); overflow: hidden; }
+
+/* Language suggestion (never a redirect) */
+.sugerencia-idioma { position: fixed; left: 50%; bottom: 16px; transform: translateX(-50%); z-index: 50; display: flex; align-items: center; gap: 10px; background: var(--forest); color: var(--white); border-radius: 99px; padding: 8px 8px 8px 18px; box-shadow: 0 10px 30px rgb(5 15 12 / 0.35); font-size: 15px; max-width: calc(100vw - 32px); }
+.sugerencia-idioma a { color: var(--lime); font-weight: 700; }
+.sugerencia-idioma button { background: transparent; color: var(--white); border: 0; font-size: 20px; cursor: pointer; padding: 0 8px; }

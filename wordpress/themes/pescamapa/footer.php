@@ -14,6 +14,7 @@ $inicio = pm_url_inicio( $idioma );
 		<nav aria-label="Pie">
 			<a href="<?php echo esc_url( $inicio . '#destinos' ); ?>"><?php pm_e( 'nav.destinos' ); ?></a>
 			<a href="<?php echo esc_url( pm_url_mapa( $idioma ) ); ?>"><?php pm_e( 'nav.mapa' ); ?></a>
+			<a href="<?php echo esc_url( pm_url_entrevistas( $idioma ) ); ?>"><?php pm_e( 'nav.entrevistas' ); ?></a>
 			<a href="<?php echo esc_url( $inicio . '#prestadores' ); ?>"><?php pm_e( 'pie.prestadores' ); ?></a>
 			<a href="<?php echo esc_url( pm_url_creditos( $idioma ) ); ?>"><?php pm_e( 'nav.creditos' ); ?></a>
 		</nav>
@@ -22,6 +23,38 @@ $inicio = pm_url_inicio( $idioma );
 		<p class="legal"><?php pm_e( 'pie.legal' ); ?> © <?php echo esc_html( gmdate( 'Y' ) ); ?> Pescamapa</p>
 	</div>
 </footer>
+<?php
+// Browser in another of our languages: suggest that version, never redirect
+// (search engines crawl without a language; hreflang does the steering).
+$sugerencias = [];
+foreach ( pm_seo()['alternas'] as $i => $url ) {
+	if ( $i !== $idioma ) {
+		$sugerencias[ $i ] = [ 'url' => $url, 'texto' => pm_t( 'idioma.sugerencia', [], $i ) ];
+	}
+}
+if ( $sugerencias ) : ?>
+<script>
+(() => {
+	const alt = <?php echo wp_json_encode( $sugerencias, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES ); ?>;
+	let visto = null;
+	try { visto = localStorage.getItem('pm-idioma-visto'); } catch (e) {}
+	if (visto) return;
+	const pref = (navigator.languages || [navigator.language]).map((l) => (l || '').slice(0, 2).toLowerCase());
+	const i = pref.find((l) => l === '<?php echo esc_js( $idioma ); ?>' || alt[l]);
+	if (!i || !alt[i]) return;
+	const bar = document.createElement('div');
+	bar.className = 'sugerencia-idioma';
+	bar.lang = i;
+	bar.innerHTML = '<a></a><button type="button" aria-label="×">×</button>';
+	bar.querySelector('a').href = alt[i].url;
+	bar.querySelector('a').textContent = alt[i].texto;
+	const cerrar = () => { try { localStorage.setItem('pm-idioma-visto', '1'); } catch (e) {} };
+	bar.querySelector('a').addEventListener('click', cerrar);
+	bar.querySelector('button').addEventListener('click', () => { cerrar(); bar.remove(); });
+	document.body.append(bar);
+})();
+</script>
+<?php endif; ?>
 <?php wp_footer(); ?>
 </body>
 </html>

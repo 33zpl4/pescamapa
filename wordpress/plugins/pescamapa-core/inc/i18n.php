@@ -53,9 +53,9 @@ function pm_etiqueta( string $clave, ?string $idioma = null ): string {
 // --- URLs ------------------------------------------------------------------
 
 const PM_SEGMENTOS = [
-	'es' => [ 'especies' => 'especies', 'mapa' => 'mapa', 'creditos' => 'creditos' ],
-	'pt' => [ 'especies' => 'especies', 'mapa' => 'mapa', 'creditos' => 'creditos' ],
-	'en' => [ 'especies' => 'species', 'mapa' => 'map', 'creditos' => 'credits' ],
+	'es' => [ 'especies' => 'especies', 'mapa' => 'mapa', 'creditos' => 'creditos', 'entrevistas' => 'entrevistas' ],
+	'pt' => [ 'especies' => 'especies', 'mapa' => 'mapa', 'creditos' => 'creditos', 'entrevistas' => 'entrevistas' ],
+	'en' => [ 'especies' => 'species', 'mapa' => 'map', 'creditos' => 'credits', 'entrevistas' => 'interviews' ],
 ];
 
 function pm_url( string $ruta, string $idioma ): string {
@@ -71,6 +71,9 @@ function pm_url_mapa( string $i ): string {
 }
 function pm_url_creditos( string $i ): string {
 	return pm_url( PM_SEGMENTOS[ $i ]['creditos'], $i );
+}
+function pm_url_entrevistas( string $i ): string {
+	return pm_url( PM_SEGMENTOS[ $i ]['entrevistas'], $i );
 }
 function pm_url_especie( string $clave, string $i ): string {
 	return pm_url( PM_SEGMENTOS[ $i ]['especies'] . '/' . $clave, $i );

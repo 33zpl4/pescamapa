@@ -5,6 +5,7 @@
  *   /especies/<clave>/  /pt/especies/…  /en/species/…
  *   /mapa/  /pt/mapa/  /en/map/
  *   /creditos/  /pt/creditos/  /en/credits/
+ *   /entrevistas/[<slug>/]  /pt/entrevistas/…  /en/interviews/…
  *   /  /pt/  /en/                            home
  * Views without a post (home, map, credits) are rendered by the theme's
  * vistas/<name>.php.
@@ -22,6 +23,8 @@ function pm_registrar_rutas(): void {
 		add_rewrite_rule( "^{$pre}{$seg['especies']}/([^/]+)/?$", "index.php?pm_vista=especie&pm_especie_clave=\$matches[1]&pm_lang={$i}", 'top' );
 		add_rewrite_rule( "^{$pre}{$seg['mapa']}/?$", "index.php?pm_vista=mapa&pm_lang={$i}", 'top' );
 		add_rewrite_rule( "^{$pre}{$seg['creditos']}/?$", "index.php?pm_vista=creditos&pm_lang={$i}", 'top' );
+		add_rewrite_rule( "^{$pre}{$seg['entrevistas']}/?$", "index.php?pm_vista=entrevistas&pm_lang={$i}", 'top' );
+		add_rewrite_rule( "^{$pre}{$seg['entrevistas']}/([^/]+)/?$", "index.php?pm_entrevista=\$matches[1]&pm_lang={$i}", 'top' );
 		if ( 'es' !== $i ) {
 			add_rewrite_rule( "^{$i}/?$", "index.php?pm_vista=inicio&pm_lang={$i}", 'top' );
 		}
@@ -54,6 +57,10 @@ add_filter( 'post_type_link', function ( $url, $post ) {
 	if ( 'pm_especie' === $post->post_type ) {
 		return pm_url_especie( pm_clave_de( $post->ID ), pm_idioma_de( $post->ID ) );
 	}
+	if ( 'pm_entrevista' === $post->post_type ) {
+		$i = pm_idioma_de( $post->ID );
+		return pm_url( PM_SEGMENTOS[ $i ]['entrevistas'] . '/' . $post->post_name, $i );
+	}
 	return $url;
 }, 10, 2 );
 
@@ -67,7 +74,7 @@ function pm_destino_ruta( int $post_id ): ?array {
 
 // Decide the language and the view, and keep URLs canonical.
 add_action( 'template_redirect', function () {
-	if ( is_singular( [ 'pm_destino', 'pm_especie' ] ) ) {
+	if ( is_singular( PM_TIPOS_IDIOMA ) ) {
 		$id = get_queried_object_id();
 		pm_lang( pm_idioma_de( $id ) );
 		// A guide reached through the wrong language prefix or region goes to its real URL.
@@ -83,7 +90,7 @@ add_action( 'template_redirect', function () {
 }, 1 );
 
 add_filter( 'redirect_canonical', function ( $redirect ) {
-	return ( get_query_var( 'pm_vista' ) || is_singular( [ 'pm_destino', 'pm_especie' ] ) ) ? false : $redirect;
+	return ( get_query_var( 'pm_vista' ) || is_singular( PM_TIPOS_IDIOMA ) ) ? false : $redirect;
 } );
 
 /** Name of the custom view for this request, or ''. */
@@ -96,6 +103,9 @@ function pm_vista(): string {
 	}
 	if ( is_singular( 'pm_especie' ) ) {
 		return 'especie';
+	}
+	if ( is_singular( 'pm_entrevista' ) ) {
+		return 'entrevista';
 	}
 	$v = (string) get_query_var( 'pm_vista' );
 	if ( $v ) {
@@ -117,7 +127,7 @@ add_filter( 'template_include', function ( $plantilla ) {
 
 // The virtual views are not "not found" just because no post matched.
 add_filter( 'pre_handle_404', function ( $corto, $query ) {
-	if ( in_array( $query->get( 'pm_vista' ), [ 'inicio', 'mapa', 'creditos' ], true ) ) {
+	if ( in_array( $query->get( 'pm_vista' ), [ 'inicio', 'mapa', 'creditos', 'entrevistas' ], true ) ) {
 		status_header( 200 );
 		return true;
 	}

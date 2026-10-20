@@ -40,6 +40,20 @@ WordPress → Run workflow → `importar = true`. Exporta `src/content` a JSON
 (`wordpress/build/importar.php`): crea lo que falta, actualiza lo que nadie
 tocó y **respeta lo editado en wp-admin**.
 
+**Antes de mergear**: `test-wp.yml` corre en cada PR que toca `wordpress/**`
+(no hay staging): instala un WordPress descartable con SCF, el plugin y el
+tema, crea contenido de prueba (script de Esquina, una entrevista con y sin
+permiso, un prestador), renderiza las páginas, manda una consulta por el
+formulario real y falla ante cualquier warning o fatal de PHP. Mergear solo
+con ese check en verde.
+
+**Cambios de contenido en nombre del dueño** (propagar traducciones, crear
+una guía nueva desde una investigación): un script idempotente en
+`wordpress/scripts/<nombre>.php` y Actions → Run a WordPress script
+(`wp-script.yml`). Nunca pisan a ciegas lo editado en wp-admin. Corridos:
+`goya-2026-10-20` (reglamento de Goya), `esquina-2026-10-20` (guía de
+Esquina, solo español).
+
 Diagnóstico: `probe-wp.yml` (solo lectura: versiones, opciones, log de
 Apache, render desde el propio servidor). Capturas: `capturas.yml` (empuja
 PNGs a la rama `capturas`).
@@ -48,7 +62,8 @@ PNGs a la rama `capturas`).
 
 Igual que en Astro, ahora en WordPress:
 
-- **Tipos**: `pm_destino` (guías), `pm_especie`, `pm_proximo`. Campos con
+- **Tipos**: `pm_destino` (guías), `pm_especie`, `pm_proximo`,
+  `pm_entrevista`, `pm_prestador` (interno), `pm_consulta` (interno). Campos con
   Secure Custom Fields registrados en código (`inc/campos.php`): no se
   editan desde el panel.
 - **Idiomas sin plugin**: un post por idioma con campos `idioma` y `clave`.
@@ -75,9 +90,60 @@ Igual que en Astro, ahora en WordPress:
 - **Mapa del hero**: contorno real precalculado (`data/hero.json`, generado
   por `wordpress/build/generar-datos.mjs`); PHP ubica los puntos con la
   misma proyección.
-- **Estilos**: `assets/pescamapa.css` se genera desde los componentes Astro
-  (`wordpress/build/generar-css.mjs`) mientras convivan los dos sitios.
-  Después del cambio de dominio, se edita directamente.
+- **Estilos**: `assets/pescamapa.css` salió de los componentes Astro
+  (`wordpress/build/generar-css.mjs`); lo nuevo y los ajustes van a mano en
+  `assets/extra.css` (se carga después). Ahí está, por ejemplo, el cambio
+  de lugar de las tarjetas del hero (la de Goya junto a su pin, "¿Qué querés
+  pescar?" abajo, para que trucha/pejerrey no parezcan de Goya).
+- **Idioma del navegador**: nunca redirige (Google rastrea sin idioma;
+  hreflang hace el trabajo). Si el navegador está en otro de nuestros
+  idiomas y la página tiene esa versión, aparece una píldora "Esta página en
+  português →" (`footer.php`), descartable y recordada en `localStorage`.
+
+## Entrevistas, prestadores y consultas (20/10/2026)
+
+Decisiones del dueño: las **entrevistas** a guías y pescadores locales son
+la forma de generar contenido propio que Google y las IA citen; **todas las
+consultas llegan a Pescamapa** (nunca contacto directo al prestador), para
+centralizar los datos y poder cobrar comisión por el negocio que traemos.
+
+- **Entrevistas** (`inc/entrevistas.php`, `vistas/entrevista(s).php`):
+  `/entrevistas/<slug>/` (`/pt/entrevistas/`, `/en/interviews/`) y un
+  índice `/entrevistas/`. Mismo modelo de idiomas que las guías (persona,
+  destino, fecha, permiso y foto solo en español). El cuerpo es la charla;
+  las **citas** (repetidor con tema) aparecen además en la guía del destino,
+  sección "Lo que dicen los que pescan ahí". **Sin la marca "Aceptó que
+  publiquemos…" no hay página (404), ni citas, ni sitemap.** JSON-LD:
+  Article (about/mentions = la persona) + BreadcrumbList. Guía para hacer
+  entrevistas: `docs/entrevistas.md`.
+- **Prestadores** (`inc/prestadores.php`, `parciales/prestador.php`): ficha
+  central e interna con lo que los guías locales dijeron que importa
+  (modalidad, lancha y equipo, qué incluye, temporada, precio con fecha,
+  fotos, referencias) + contacto, estado de la relación y acuerdo comercial.
+  **El contacto nunca se imprime.** Con "Aceptó aparecer", sale como tarjeta
+  en la guía de su destino con botón "Consultar disponibilidad", que
+  precarga el formulario. Etiquetas de opciones en 3 idiomas:
+  `data/ui.json` → `opciones`.
+- **Consultas** (`inc/consultas.php`, `parciales/consulta.php`): formulario
+  "Pedí tu cotización" en cada guía y "Quiero sumarme" para prestadores en
+  el inicio. Se guardan como posts privados (wp-admin → Consultas, con
+  contador de nuevas, enlace a WhatsApp, estado, "derivada a" y notas) y
+  mandan un email a la opción `pm_email_consultas` (o al email del admin).
+  **El email depende de que el servidor envíe correo; el registro en
+  wp-admin es la fuente de verdad.** Antispam: campo trampa, tiempo mínimo
+  y límite por IP.
+- **Guía "Cómo elegir guía"**: lista fija en cada destino (textos
+  `ficha.elegir.*`), armada con las respuestas de Agus y otro operador.
+- **Altura del río**: campo `alturas_url` en la guía (versión en español),
+  enlace junto a la fecha de actualización.
+
+## Panel del editor (rol "Editor de Pescamapa")
+
+`inc/editor.php`: el editor ve solo las fichas en español, sin campos de
+idioma/clave, con bloques simples y un menú corto (Destinos, Especies,
+Próximos, Entrevistas, Prestadores, Consultas, Fotos). Cuando edita en
+español, la columna "Traducciones" (solo admins) marca pt/en como
+desactualizadas; las propagamos con un script.
 
 ## Cambio de dominio (hecho el 20/10/2026)
 

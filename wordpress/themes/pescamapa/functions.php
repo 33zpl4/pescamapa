@@ -20,6 +20,7 @@ add_action( 'wp_enqueue_scripts', function () {
 	$ver = fn( $f ) => (string) filemtime( "$dir/$f" );
 
 	wp_enqueue_style( 'pescamapa', "$uri/assets/pescamapa.css", [], $ver( 'assets/pescamapa.css' ) );
+	wp_enqueue_style( 'pescamapa-extra', "$uri/assets/extra.css", [ 'pescamapa' ], $ver( 'assets/extra.css' ) );
 	wp_register_style( 'leaflet', "$uri/assets/leaflet/leaflet.css", [], '1.9.4' );
 	wp_register_script( 'leaflet', "$uri/assets/leaflet/leaflet.js", [], '1.9.4', [ 'in_footer' => true, 'strategy' => 'defer' ] );
 	wp_register_script( 'pm-mapa', "$uri/assets/mapa.js", [ 'leaflet' ], $ver( 'assets/mapa.js' ), [ 'in_footer' => true, 'strategy' => 'defer' ] );
