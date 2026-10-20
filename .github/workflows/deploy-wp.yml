@@ -123,7 +123,8 @@ jobs:
           check /mapa/ 200 'class="mapa"'
           check /en/map/ 200 'class="mapa"'
           check /creditos/ 200
-          check /wp-sitemap.xml 200
+          # Staging is not indexable, and WordPress turns its sitemap off then.
+          if [[ "$WP_URL" == *"://nuevo."* ]]; then check /wp-sitemap.xml 404; else check /wp-sitemap.xml 200; fi
           check /esto-no-existe/ 404
           CONTENIDO=1
           check /litoral/corrientes/pesca-en-goya/ 200 'TouristDestination'
