@@ -86,7 +86,7 @@ get_header(); ?>
 								<?php endforeach; ?>
 							</ul>
 						</div>
-						<div class="foot"><span><?php pm_e( pm_es_publicado( $d['id'] ) ? 'inicio.guia' : 'inicio.guia.borrador' ); ?></span><span class="arrow" aria-hidden="true">↗</span></div>
+						<div class="foot"><span><?php pm_e( 'inicio.guia' ); ?></span><span class="arrow" aria-hidden="true">↗</span></div>
 					</a>
 				<?php endforeach; ?>
 				<?php foreach ( $proximos as $p ) : ?>

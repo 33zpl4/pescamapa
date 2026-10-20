@@ -3,8 +3,10 @@
 > **`pescamapa.com` es WordPress desde el 20/10/2026** (`wordpress/`). Leé
 > `docs/wordpress.md` antes de tocar el plugin, el tema o el deploy. Lo que
 > sigue describe el sitio Astro (`src/`), que ya no se publica pero sigue
-> siendo la fuente de estilos generados; el modelo de datos y las reglas de
-> confianza son los mismos en los dos.
+> siendo la fuente de estilos generados. **Desde el 20/10/2026 no hay
+> bloqueos de publicación ni carteles de "en construcción"**: la completitud
+> es una guía interna para editores (ver `docs/wordpress.md`); las secciones
+> de abajo sobre `borrador`/build que falla describen solo el sitio Astro.
 
 Pescamapa (pescamapa.com): destinos, especies y guías para pescar en
 Argentina. Sitio Astro estático, publicado en Cloudflare Workers (static

@@ -29,7 +29,7 @@ function pm_campos_comunes( string $tipo ): array {
 		[
 			'key'           => $p . 'chequeo',
 			'name'          => '',
-			'label'         => 'Chequeo de publicación',
+			'label'         => 'Para completar la ficha',
 			'type'          => 'message',
 			'message'       => '',
 			'new_lines'     => '',
@@ -42,20 +42,7 @@ function pm_campos_comunes( string $tipo ): array {
 			'choices'       => [ 'es' => 'Español', 'pt' => 'Português', 'en' => 'English' ],
 			'default_value' => 'es',
 			'required'      => 1,
-			'wrapper'       => [ 'width' => 33 ],
-		],
-		[
-			'key'           => $p . 'estado',
-			'name'          => 'estado',
-			'label'         => 'Estado de la ficha',
-			'type'          => 'select',
-			'choices'       => [
-				'borrador'  => 'Borrador: visible con cartel, Google no la indexa',
-				'publicado' => 'Publicado: exige fuente oficial, reglamento verificado y ningún PENDIENTE',
-			],
-			'default_value' => 'borrador',
-			'required'      => 1,
-			'wrapper'       => [ 'width' => 33 ],
+			'wrapper'       => [ 'width' => 50 ],
 		],
 		[
 			'key'          => $p . 'clave',
@@ -64,7 +51,7 @@ function pm_campos_comunes( string $tipo ): array {
 			'type'         => 'text',
 			'instructions' => 'Identificador igual en los tres idiomas, en minúsculas y sin tildes (ej. goya, paso-de-la-patria). Une las traducciones.',
 			'required'     => 1,
-			'wrapper'      => [ 'width' => 33 ],
+			'wrapper'      => [ 'width' => 50 ],
 		],
 	];
 }
@@ -265,13 +252,13 @@ foreach ( [ 'field_pm_d_chequeo', 'field_pm_e_chequeo' ] as $clave_campo ) {
 	add_filter( "acf/prepare_field/key={$clave_campo}", function ( $field ) {
 		$post_id = (int) ( $_GET['post'] ?? 0 );
 		if ( ! $post_id ) {
-			$field['message'] = 'Guardá la ficha como borrador; acá vas a ver qué le falta para poder publicarla.';
+			$field['message'] = 'Guardá la ficha; acá vas a ver qué conviene completar. Nada de esto bloquea la publicación ni se muestra en la web.';
 			return $field;
 		}
-		$faltan = pm_que_falta_para_publicar( $post_id );
+		$faltan = pm_sugerencias( $post_id );
 		$field['message'] = $faltan
-			? '<strong>Para poder publicarla falta:</strong><ul style="margin:.5em 0 0 1.2em;list-style:disc">' . implode( '', array_map( fn( $f ) => '<li>' . esc_html( $f ) . '</li>', $faltan ) ) . '</ul>'
-			: '✅ Cumple todo lo necesario para publicarse.';
+			? '<strong>Para que la ficha esté completa conviene:</strong><ul style="margin:.5em 0 0 1.2em;list-style:disc">' . implode( '', array_map( fn( $f ) => '<li>' . esc_html( $f ) . '</li>', $faltan ) ) . '</ul><p style="margin-top:.5em;opacity:.7">Es solo una guía interna: la ficha se publica igual y nada de esto aparece en la web.</p>'
+			: '✅ Ficha completa.';
 		return $field;
 	} );
 }

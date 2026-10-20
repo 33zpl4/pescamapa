@@ -17,9 +17,6 @@ $alternas = $seo['alternas'];
 </head>
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
-<?php if ( $seo['borrador'] && ! is_404() ) : ?>
-	<div class="borrador" role="note"><div class="shell"><strong><?php pm_e( 'borrador.titulo' ); ?></strong> <?php pm_e( 'borrador.texto' ); ?></div></div>
-<?php endif; ?>
 <header class="nav<?php echo $oscuro ? ' oscuro' : ''; ?>">
 	<div class="shell inner">
 		<a class="brand" href="<?php echo esc_url( $inicio ); ?>" aria-label="Pescamapa — <?php pm_e( 'ficha.inicio' ); ?>"><span class="mark" aria-hidden="true">↗</span> PESCAMAPA</a>

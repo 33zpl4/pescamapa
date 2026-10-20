@@ -1,44 +1,45 @@
 <?php
 /**
- * Trust rules, same as the Astro build used to enforce:
- * a guide or species can only be "publicado" (indexable) when
- *   - at least one source is official,
- *   - a person verified the current regulation less than a year ago (guides),
- *   - no "PENDIENTE" mark remains in the text or the fields,
- *   - the Spanish version is published (for translations),
- *   - the shared fields and the photo credit are complete (Spanish guides).
- * If any is missing on save, the ficha goes back to "borrador" and the form's
- * "Chequeo de publicación" box lists what is missing. The site never breaks.
+ * Completeness guidance, never a gate. Every guide and species published in
+ * WordPress is public and indexable. What is still missing to make a ficha
+ * complete is listed for editors inside the form ("Para completar la
+ * ficha"), and never shown to visitors:
+ *   - an official source,
+ *   - a regulation check by a person, less than a year old,
+ *   - "PENDIENTE" notes left in the text or fields (they are hidden on the
+ *     public page, see pm_sin_pendientes()),
+ *   - shared fields and the photo credit (Spanish guides),
+ *   - the Spanish version (for translations).
  */
 
 defined( 'ABSPATH' ) || exit;
 
 const PM_VIGENCIA_REGLAMENTO_DIAS = 365;
 
-/** @return string[] human-readable list of what blocks publication. */
-function pm_que_falta_para_publicar( int $post_id ): array {
+/** @return string[] what would make the ficha more complete (for editors). */
+function pm_sugerencias( int $post_id ): array {
 	$tipo = get_post_type( $post_id );
 	if ( ! in_array( $tipo, [ 'pm_destino', 'pm_especie' ], true ) ) {
 		return [];
 	}
-	$faltan = [];
-	$idioma = pm_idioma_de( $post_id );
-	$clave  = pm_clave_de( $post_id );
+	$faltan  = [];
+	$idioma  = pm_idioma_de( $post_id );
+	$clave   = pm_clave_de( $post_id );
 	$fuentes = pm_filas( 'fuentes', $post_id );
 
 	if ( ! array_filter( $fuentes, fn( $f ) => ! empty( $f['oficial'] ) ) ) {
-		$faltan[] = 'Al menos una fuente marcada como oficial.';
+		$faltan[] = 'Sumar al menos una fuente oficial.';
 	}
 
 	$textos = get_post_field( 'post_content', $post_id ) . wp_json_encode( get_post_meta( $post_id ) );
 	if ( str_contains( $textos, 'PENDIENTE' ) ) {
-		$faltan[] = 'Quedan marcas "PENDIENTE" en el texto o en algún campo.';
+		$faltan[] = 'Completar las notas "PENDIENTE" (no se muestran en la web, pero marcan info por cargar).';
 	}
 
 	if ( 'pm_destino' === $tipo ) {
 		$verificado = (string) pm_campo( 'reglamento_verificado', $post_id );
 		if ( ! $verificado ) {
-			$faltan[] = 'La fecha en que una persona verificó el reglamento vigente (pestaña Reglamento).';
+			$faltan[] = 'Verificar el reglamento vigente con la autoridad y cargar la fecha (pestaña Reglamento).';
 		} elseif ( ( time() - strtotime( $verificado ) ) > PM_VIGENCIA_REGLAMENTO_DIAS * DAY_IN_SECONDS ) {
 			$faltan[] = 'Volver a verificar el reglamento: la última verificación tiene más de un año.';
 		}
@@ -52,40 +53,36 @@ function pm_que_falta_para_publicar( int $post_id ): array {
 				$faltan[] = 'Elegir al menos una especie.';
 			}
 			$foto = (int) get_post_thumbnail_id( $post_id );
-			if ( $foto && ! pm_campo( 'foto_autor', $foto ) ) {
-				$faltan[] = 'El autor de la foto destacada (en la biblioteca de medios → la foto → "Autor de la foto").';
+			if ( ! $foto ) {
+				$faltan[] = 'Agregar una foto (Imagen destacada).';
+			} elseif ( ! pm_campo( 'foto_autor', $foto ) ) {
+				$faltan[] = 'Cargar el autor de la foto (biblioteca de medios → la foto → "Autor de la foto").';
 			}
 		}
 	}
 
-	if ( 'es' !== $idioma ) {
-		$fuente = pm_buscar( $tipo, $clave, 'es' );
-		if ( ! $fuente ) {
-			$faltan[] = "No existe la versión en español con la clave \"{$clave}\".";
-		} elseif ( 'publicado' !== pm_campo( 'estado', $fuente->ID ) ) {
-			$faltan[] = 'Publicar primero la versión en español.';
-		}
+	if ( 'es' !== $idioma && ! pm_buscar( $tipo, $clave, 'es' ) ) {
+		$faltan[] = "Crear la versión en español con la clave \"{$clave}\" (de ahí salen la foto y la ubicación).";
 	}
 
-	$desc = (string) pm_campo( 'seo_description', $post_id );
-	if ( mb_strlen( $desc ) < 70 ) {
-		$faltan[] = 'La descripción para Google tiene que tener al menos 70 caracteres.';
+	if ( mb_strlen( (string) pm_campo( 'seo_description', $post_id ) ) < 70 ) {
+		$faltan[] = 'Alargar la descripción para Google (ideal: 70 a 160 caracteres).';
 	}
 
 	return $faltan;
 }
 
-// After the form is saved: a "publicado" that doesn't qualify goes back to draft.
-add_action( 'acf/save_post', function ( $post_id ) {
-	if ( ! is_numeric( $post_id ) || ! in_array( get_post_type( (int) $post_id ), [ 'pm_destino', 'pm_especie' ], true ) ) {
-		return;
-	}
-	if ( 'publicado' === pm_campo( 'estado', (int) $post_id ) && pm_que_falta_para_publicar( (int) $post_id ) ) {
-		update_field( 'estado', 'borrador', (int) $post_id );
-	}
-}, 20 );
-
-/** Is this page indexable? Drafts are visible but noindex. */
-function pm_es_publicado( int $post_id ): bool {
-	return 'publicado' === pm_campo( 'estado', $post_id ) && ! pm_que_falta_para_publicar( $post_id );
+/** Drop rows (FAQs, calendar, waters) that still carry a PENDIENTE note. */
+function pm_sin_pendientes( array $filas ): array {
+	return array_values( array_filter( $filas, fn( $f ) => ! str_contains( wp_json_encode( $f ), 'PENDIENTE' ) ) );
 }
+
+// Public pages never show internal notes: blocks/paragraphs with PENDIENTE go.
+add_filter( 'the_content', function ( $html ) {
+	if ( is_admin() || ! str_contains( $html, 'PENDIENTE' ) ) {
+		return $html;
+	}
+	$html = preg_replace( '#<blockquote\b[^>]*>(?:(?!</blockquote>).)*PENDIENTE(?:(?!</blockquote>).)*</blockquote>#s', '', $html );
+	$html = preg_replace( '#<(p|li)\b[^>]*>(?:(?!</\1>).)*PENDIENTE(?:(?!</\1>).)*</\1>#s', '', $html );
+	return $html;
+}, 20 );

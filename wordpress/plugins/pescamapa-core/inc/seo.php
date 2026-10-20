@@ -4,9 +4,9 @@
  * title, description, languages and draft state, so we print them directly.
  *   - title, description, canonical, hreflang (es, pt-BR, en, x-default → es)
  *   - Open Graph
- *   - noindex for drafts ("borrador") — visible, never indexed
+ *   - noindex only on the 404 page; every published ficha is indexable
  *   - JSON-LD: WebSite (home), TouristDestination + BreadcrumbList + FAQPage
- *   - core sitemap: only published guides/species + the fixed views
+ *   - core sitemap: guides, species and the fixed views
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -27,7 +27,7 @@ function pm_seo(): array {
 		return $s;
 	}
 	$vista = pm_vista();
-	$s = [ 'title' => get_bloginfo( 'name' ), 'description' => pm_t( 'marca.lema' ), 'alternas' => [], 'borrador' => false, 'jsonld' => [] ];
+	$s = [ 'title' => get_bloginfo( 'name' ), 'description' => pm_t( 'marca.lema' ), 'alternas' => [], 'noindex' => false, 'jsonld' => [] ];
 
 	if ( 'inicio' === $vista ) {
 		$s['title']       = pm_t( 'inicio.title' );
@@ -55,7 +55,6 @@ function pm_seo(): array {
 		$s['title']       = $d['seo_title'] ?: $d['nombre'];
 		$s['description'] = $d['seo_description'];
 		$s['alternas']    = pm_alternas_destino( $d['clave'] );
-		$s['borrador']    = ! pm_es_publicado( $d['id'] );
 		$s['jsonld']      = pm_jsonld_destino( $d );
 		if ( $d['foto'] ) {
 			$s['imagen'] = wp_get_attachment_image_url( $d['foto'], 'large' );
@@ -65,10 +64,9 @@ function pm_seo(): array {
 		$s['title']       = $e['seo_title'] ?: $e['nombre'];
 		$s['description'] = $e['seo_description'];
 		$s['alternas']    = pm_alternas_especie( $e['clave'] );
-		$s['borrador']    = ! pm_es_publicado( $e['id'] );
 	} elseif ( is_404() ) {
 		$s['title']    = 'Página no encontrada | Pescamapa';
-		$s['borrador'] = true;
+		$s['noindex'] = true;
 	}
 	return $s;
 }
@@ -100,7 +98,7 @@ function pm_jsonld_destino( array $d ): array {
 			'itemListElement' => array_map( fn( $m, $i ) => [ '@type' => 'ListItem', 'position' => $i + 1 ] + $m, $migas, array_keys( $migas ) ),
 		],
 	];
-	$faqs = array_filter( $d['faqs'], fn( $f ) => ! str_contains( (string) ( $f['respuesta'] ?? '' ), 'PENDIENTE' ) );
+	$faqs = $d['faqs'];
 	if ( $faqs ) {
 		$out[] = [
 			'@context'   => 'https://schema.org',
@@ -116,7 +114,7 @@ add_filter( 'pre_get_document_title', function ( $t ) {
 } );
 
 add_filter( 'wp_robots', function ( $robots ) {
-	if ( pm_seo()['borrador'] ) {
+	if ( pm_seo()['noindex'] ) {
 		$robots['noindex'] = true;
 		unset( $robots['max-image-preview'] );
 	}
@@ -168,13 +166,6 @@ add_filter( 'wp_sitemaps_post_types', function ( $tipos ) {
 	return $tipos;
 } );
 
-// Only published fichas reach the sitemap; drafts stay out.
-add_filter( 'wp_sitemaps_posts_query_args', function ( $args, $tipo ) {
-	if ( in_array( $tipo, [ 'pm_destino', 'pm_especie' ], true ) ) {
-		$args['meta_query'] = [ [ 'key' => 'estado', 'value' => 'publicado' ] ];
-	}
-	return $args;
-}, 10, 2 );
 
 // Fixed views (home, map, credits) in every language.
 add_action( 'init', function () {
