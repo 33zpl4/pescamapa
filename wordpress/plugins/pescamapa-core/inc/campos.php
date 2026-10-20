@@ -41,7 +41,6 @@ function pm_campos_comunes( string $tipo ): array {
 			'type'          => 'select',
 			'choices'       => [ 'es' => 'Español', 'pt' => 'Português', 'en' => 'English' ],
 			'default_value' => 'es',
-			'required'      => 1,
 			'wrapper'       => [ 'width' => 50 ],
 		],
 		[
@@ -50,7 +49,6 @@ function pm_campos_comunes( string $tipo ): array {
 			'label'        => 'Clave',
 			'type'         => 'text',
 			'instructions' => 'Identificador igual en los tres idiomas, en minúsculas y sin tildes (ej. goya, paso-de-la-patria). Une las traducciones.',
-			'required'     => 1,
 			'wrapper'      => [ 'width' => 50 ],
 		],
 	];
@@ -65,10 +63,10 @@ function pm_campo_fuentes( string $tipo ): array {
 		'layout'       => 'table',
 		'button_label' => 'Agregar fuente',
 		'sub_fields'   => [
-			[ 'key' => "field_pm_{$tipo}_fu_nombre", 'name' => 'nombre', 'label' => 'Nombre', 'type' => 'text', 'required' => 1 ],
-			[ 'key' => "field_pm_{$tipo}_fu_url", 'name' => 'url', 'label' => 'Enlace', 'type' => 'url', 'required' => 1 ],
+			[ 'key' => "field_pm_{$tipo}_fu_nombre", 'name' => 'nombre', 'label' => 'Nombre', 'type' => 'text' ],
+			[ 'key' => "field_pm_{$tipo}_fu_url", 'name' => 'url', 'label' => 'Enlace', 'type' => 'url' ],
 			[ 'key' => "field_pm_{$tipo}_fu_oficial", 'name' => 'oficial', 'label' => '¿Oficial?', 'type' => 'true_false', 'ui' => 1 ],
-			[ 'key' => "field_pm_{$tipo}_fu_consultada", 'name' => 'consultada', 'label' => 'Consultada', 'type' => 'date_picker', 'display_format' => 'd/m/Y', 'return_format' => 'Y-m-d', 'required' => 1 ],
+			[ 'key' => "field_pm_{$tipo}_fu_consultada", 'name' => 'consultada', 'label' => 'Consultada', 'type' => 'date_picker', 'display_format' => 'd/m/Y', 'return_format' => 'Y-m-d' ],
 		],
 	];
 }
@@ -81,7 +79,6 @@ function pm_campos_seo( string $tipo ): array {
 			'label'        => 'Título para Google',
 			'type'         => 'text',
 			'maxlength'    => 65,
-			'required'     => 1,
 			'instructions' => 'Máximo 65 caracteres.',
 		],
 		[
@@ -91,7 +88,6 @@ function pm_campos_seo( string $tipo ): array {
 			'type'         => 'textarea',
 			'rows'         => 3,
 			'maxlength'    => 160,
-			'required'     => 1,
 			'instructions' => 'Entre 70 y 160 caracteres: lo que aparece debajo del título en Google.',
 		],
 	];
@@ -127,30 +123,30 @@ add_action( 'acf/include_fields', function () {
 					'message'      => 'Estos datos se cargan <strong>solo en la versión en español</strong> y valen para los tres idiomas. La <strong>foto</strong> es la "Imagen destacada" (columna derecha) de la versión en español.',
 					'conditional_logic' => $en_es,
 				],
-				[ 'key' => 'field_pm_d_region', 'name' => 'region', 'label' => 'Región', 'type' => 'select', 'choices' => pm_opciones_regiones(), 'required' => 1, 'conditional_logic' => $en_es, 'wrapper' => [ 'width' => 50 ] ],
-				[ 'key' => 'field_pm_d_provincia', 'name' => 'provincia', 'label' => 'Provincia', 'type' => 'select', 'choices' => PM_PROVINCIAS, 'required' => 1, 'conditional_logic' => $en_es, 'wrapper' => [ 'width' => 50 ] ],
-				[ 'key' => 'field_pm_d_lat', 'name' => 'lat', 'label' => 'Latitud (ej. -29.14)', 'type' => 'number', 'step' => 'any', 'min' => -56, 'max' => -21, 'required' => 1, 'conditional_logic' => $en_es, 'instructions' => 'Clic derecho en Google Maps sobre el lugar → el primer número.', 'wrapper' => [ 'width' => 50 ] ],
-				[ 'key' => 'field_pm_d_lon', 'name' => 'lon', 'label' => 'Longitud (ej. -59.26)', 'type' => 'number', 'step' => 'any', 'min' => -74, 'max' => -53, 'required' => 1, 'conditional_logic' => $en_es, 'instructions' => 'El segundo número.', 'wrapper' => [ 'width' => 50 ] ],
+				[ 'key' => 'field_pm_d_region', 'name' => 'region', 'label' => 'Región', 'type' => 'select', 'choices' => pm_opciones_regiones(), 'conditional_logic' => $en_es, 'wrapper' => [ 'width' => 50 ] ],
+				[ 'key' => 'field_pm_d_provincia', 'name' => 'provincia', 'label' => 'Provincia', 'type' => 'select', 'choices' => PM_PROVINCIAS, 'conditional_logic' => $en_es, 'wrapper' => [ 'width' => 50 ] ],
+				[ 'key' => 'field_pm_d_lat', 'name' => 'lat', 'label' => 'Latitud (ej. -29.14)', 'type' => 'number', 'step' => 'any', 'min' => -56, 'max' => -21, 'conditional_logic' => $en_es, 'instructions' => 'Clic derecho en Google Maps sobre el lugar → el primer número.', 'wrapper' => [ 'width' => 50 ] ],
+				[ 'key' => 'field_pm_d_lon', 'name' => 'lon', 'label' => 'Longitud (ej. -59.26)', 'type' => 'number', 'step' => 'any', 'min' => -74, 'max' => -53, 'conditional_logic' => $en_es, 'instructions' => 'El segundo número.', 'wrapper' => [ 'width' => 50 ] ],
 				[ 'key' => 'field_pm_d_alturas_url', 'name' => 'alturas_url', 'label' => 'Enlace a la altura del río (oficial, se actualiza solo)', 'type' => 'url', 'conditional_logic' => $en_es, 'instructions' => 'Ej. la página de alturas de Prefectura o del INA para este puerto. Aparece arriba, junto a la fecha.' ],
 				[ 'key' => 'field_pm_d_especies', 'name' => 'especies', 'label' => 'Especies', 'type' => 'checkbox', 'choices' => [], 'layout' => 'horizontal', 'conditional_logic' => $en_es, 'instructions' => 'Las opciones salen de las Especies cargadas en español.' ],
 
 				[ 'key' => 'field_pm_d_tab_textos', 'label' => 'Textos', 'type' => 'tab' ],
-				[ 'key' => 'field_pm_d_h1', 'name' => 'h1', 'label' => 'Titular de la página', 'type' => 'text', 'required' => 1 ],
-				[ 'key' => 'field_pm_d_bajada', 'name' => 'bajada', 'label' => 'Subtítulo (también va en la tarjeta del inicio)', 'type' => 'textarea', 'rows' => 2, 'required' => 1 ],
-				[ 'key' => 'field_pm_d_modalidades', 'name' => 'modalidades', 'label' => 'Modalidades (una por línea)', 'type' => 'textarea', 'rows' => 4, 'required' => 1 ],
-				[ 'key' => 'field_pm_d_epoca', 'name' => 'epoca', 'label' => 'Cuándo ir (una línea)', 'type' => 'text', 'required' => 1 ],
+				[ 'key' => 'field_pm_d_h1', 'name' => 'h1', 'label' => 'Titular de la página', 'type' => 'text' ],
+				[ 'key' => 'field_pm_d_bajada', 'name' => 'bajada', 'label' => 'Subtítulo (también va en la tarjeta del inicio)', 'type' => 'textarea', 'rows' => 2 ],
+				[ 'key' => 'field_pm_d_modalidades', 'name' => 'modalidades', 'label' => 'Modalidades (una por línea)', 'type' => 'textarea', 'rows' => 4 ],
+				[ 'key' => 'field_pm_d_epoca', 'name' => 'epoca', 'label' => 'Cuándo ir (una línea)', 'type' => 'text' ],
 			],
 			pm_campos_seo( 'd' ),
 			[
-				[ 'key' => 'field_pm_d_autor', 'name' => 'autor', 'label' => 'Autor', 'type' => 'text', 'default_value' => 'Equipo Pescamapa', 'required' => 1, 'wrapper' => [ 'width' => 50 ] ],
-				[ 'key' => 'field_pm_d_actualizado', 'name' => 'actualizado', 'label' => 'Última actualización', 'type' => 'date_picker', 'display_format' => 'd/m/Y', 'return_format' => 'Y-m-d', 'required' => 1, 'wrapper' => [ 'width' => 50 ] ],
+				[ 'key' => 'field_pm_d_autor', 'name' => 'autor', 'label' => 'Autor', 'type' => 'text', 'default_value' => 'Equipo Pescamapa', 'wrapper' => [ 'width' => 50 ] ],
+				[ 'key' => 'field_pm_d_actualizado', 'name' => 'actualizado', 'label' => 'Última actualización', 'type' => 'date_picker', 'display_format' => 'd/m/Y', 'return_format' => 'Y-m-d', 'wrapper' => [ 'width' => 50 ] ],
 
 				[ 'key' => 'field_pm_d_tab_agua', 'label' => 'Aguas y calendario', 'type' => 'tab' ],
 				[
 					'key' => 'field_pm_d_aguas', 'name' => 'aguas', 'label' => 'Aguas (ríos, lagunas, zonas)', 'type' => 'repeater', 'layout' => 'block', 'button_label' => 'Agregar agua',
 					'sub_fields' => [
-						[ 'key' => 'field_pm_d_ag_nombre', 'name' => 'nombre', 'label' => 'Nombre', 'type' => 'text', 'required' => 1 ],
-						[ 'key' => 'field_pm_d_ag_nota', 'name' => 'nota', 'label' => 'Descripción', 'type' => 'textarea', 'rows' => 2, 'required' => 1 ],
+						[ 'key' => 'field_pm_d_ag_nombre', 'name' => 'nombre', 'label' => 'Nombre', 'type' => 'text' ],
+						[ 'key' => 'field_pm_d_ag_nota', 'name' => 'nota', 'label' => 'Descripción', 'type' => 'textarea', 'rows' => 2 ],
 						[ 'key' => 'field_pm_d_ag_lat', 'name' => 'lat', 'label' => 'Latitud (opcional; solo zonas generales, nunca un pesquero exacto)', 'type' => 'number', 'step' => 'any', 'wrapper' => [ 'width' => 50 ] ],
 						[ 'key' => 'field_pm_d_ag_lon', 'name' => 'lon', 'label' => 'Longitud (opcional)', 'type' => 'number', 'step' => 'any', 'wrapper' => [ 'width' => 50 ] ],
 					],
@@ -158,23 +154,23 @@ add_action( 'acf/include_fields', function () {
 				[
 					'key' => 'field_pm_d_temporada', 'name' => 'temporada', 'label' => 'Calendario', 'type' => 'repeater', 'layout' => 'table', 'button_label' => 'Agregar época',
 					'sub_fields' => [
-						[ 'key' => 'field_pm_d_te_meses', 'name' => 'meses', 'label' => 'Época', 'type' => 'text', 'required' => 1 ],
-						[ 'key' => 'field_pm_d_te_que', 'name' => 'que', 'label' => 'Qué esperar', 'type' => 'textarea', 'rows' => 2, 'required' => 1 ],
+						[ 'key' => 'field_pm_d_te_meses', 'name' => 'meses', 'label' => 'Época', 'type' => 'text' ],
+						[ 'key' => 'field_pm_d_te_que', 'name' => 'que', 'label' => 'Qué esperar', 'type' => 'textarea', 'rows' => 2 ],
 					],
 				],
 
 				[ 'key' => 'field_pm_d_tab_reglamento', 'label' => 'Reglamento', 'type' => 'tab' ],
-				[ 'key' => 'field_pm_d_reg_autoridad', 'name' => 'reglamento_autoridad', 'label' => 'Autoridad', 'type' => 'text', 'required' => 1 ],
+				[ 'key' => 'field_pm_d_reg_autoridad', 'name' => 'reglamento_autoridad', 'label' => 'Autoridad', 'type' => 'text' ],
 				[ 'key' => 'field_pm_d_reg_url', 'name' => 'reglamento_url', 'label' => 'Enlace oficial', 'type' => 'url' ],
 				[ 'key' => 'field_pm_d_reg_verificado', 'name' => 'reglamento_verificado', 'label' => 'Reglamento verificado el (opcional)', 'type' => 'date_picker', 'display_format' => 'd/m/Y', 'return_format' => 'Y-m-d', 'instructions' => 'Opcional. Si alguien contrastó el reglamento con la autoridad, poné la fecha: la guía muestra "Reglamento verificado el…". Si no, dejalo vacío.' ],
-				[ 'key' => 'field_pm_d_reg_resumen', 'name' => 'reglamento_resumen', 'label' => 'Resumen', 'type' => 'textarea', 'rows' => 4, 'required' => 1 ],
+				[ 'key' => 'field_pm_d_reg_resumen', 'name' => 'reglamento_resumen', 'label' => 'Resumen', 'type' => 'textarea', 'rows' => 4 ],
 
 				[ 'key' => 'field_pm_d_tab_faqs', 'label' => 'Preguntas y fuentes', 'type' => 'tab' ],
 				[
 					'key' => 'field_pm_d_faqs', 'name' => 'faqs', 'label' => 'Preguntas frecuentes', 'type' => 'repeater', 'layout' => 'block', 'button_label' => 'Agregar pregunta',
 					'sub_fields' => [
-						[ 'key' => 'field_pm_d_fq_pregunta', 'name' => 'pregunta', 'label' => 'Pregunta', 'type' => 'text', 'required' => 1 ],
-						[ 'key' => 'field_pm_d_fq_respuesta', 'name' => 'respuesta', 'label' => 'Respuesta', 'type' => 'textarea', 'rows' => 3, 'required' => 1 ],
+						[ 'key' => 'field_pm_d_fq_pregunta', 'name' => 'pregunta', 'label' => 'Pregunta', 'type' => 'text' ],
+						[ 'key' => 'field_pm_d_fq_respuesta', 'name' => 'respuesta', 'label' => 'Respuesta', 'type' => 'textarea', 'rows' => 3 ],
 					],
 				],
 				pm_campo_fuentes( 'd' ),
@@ -191,12 +187,12 @@ add_action( 'acf/include_fields', function () {
 		'fields'   => array_merge(
 			pm_campos_comunes( 'e' ),
 			[
-				[ 'key' => 'field_pm_e_cientifico', 'name' => 'cientifico', 'label' => 'Nombre científico', 'type' => 'text', 'required' => 1 ],
-				[ 'key' => 'field_pm_e_resumen', 'name' => 'resumen', 'label' => 'Resumen (subtítulo)', 'type' => 'textarea', 'rows' => 2, 'required' => 1 ],
+				[ 'key' => 'field_pm_e_cientifico', 'name' => 'cientifico', 'label' => 'Nombre científico', 'type' => 'text' ],
+				[ 'key' => 'field_pm_e_resumen', 'name' => 'resumen', 'label' => 'Resumen (subtítulo)', 'type' => 'textarea', 'rows' => 2 ],
 			],
 			pm_campos_seo( 'e' ),
 			[
-				[ 'key' => 'field_pm_e_actualizado', 'name' => 'actualizado', 'label' => 'Última actualización', 'type' => 'date_picker', 'display_format' => 'd/m/Y', 'return_format' => 'Y-m-d', 'required' => 1 ],
+				[ 'key' => 'field_pm_e_actualizado', 'name' => 'actualizado', 'label' => 'Última actualización', 'type' => 'date_picker', 'display_format' => 'd/m/Y', 'return_format' => 'Y-m-d' ],
 				pm_campo_fuentes( 'e' ),
 			]
 		),
@@ -212,14 +208,14 @@ add_action( 'acf/include_fields', function () {
 			[ 'key' => 'field_pm_p_msg', 'label' => '', 'type' => 'message', 'message' => 'El <strong>título</strong> es el nombre en español. La <strong>foto</strong> es la "Imagen destacada". El "slug" (enlace permanente) es la clave: cuando se publica una guía con la misma clave, esta tarjeta se oculta sola.' ],
 			[ 'key' => 'field_pm_p_nombre_pt', 'name' => 'nombre_pt', 'label' => 'Nombre en portugués (si cambia)', 'type' => 'text', 'wrapper' => [ 'width' => 50 ] ],
 			[ 'key' => 'field_pm_p_nombre_en', 'name' => 'nombre_en', 'label' => 'Nombre en inglés (si cambia)', 'type' => 'text', 'wrapper' => [ 'width' => 50 ] ],
-			[ 'key' => 'field_pm_p_provincia', 'name' => 'provincia', 'label' => 'Provincia', 'type' => 'select', 'choices' => PM_PROVINCIAS, 'required' => 1, 'wrapper' => [ 'width' => 50 ] ],
-			[ 'key' => 'field_pm_p_region', 'name' => 'region', 'label' => 'Región', 'type' => 'select', 'choices' => pm_opciones_regiones(), 'required' => 1, 'wrapper' => [ 'width' => 50 ] ],
-			[ 'key' => 'field_pm_p_agua', 'name' => 'agua', 'label' => 'Río, lago o zona (español)', 'type' => 'text', 'required' => 1 ],
+			[ 'key' => 'field_pm_p_provincia', 'name' => 'provincia', 'label' => 'Provincia', 'type' => 'select', 'choices' => PM_PROVINCIAS, 'wrapper' => [ 'width' => 50 ] ],
+			[ 'key' => 'field_pm_p_region', 'name' => 'region', 'label' => 'Región', 'type' => 'select', 'choices' => pm_opciones_regiones(), 'wrapper' => [ 'width' => 50 ] ],
+			[ 'key' => 'field_pm_p_agua', 'name' => 'agua', 'label' => 'Río, lago o zona (español)', 'type' => 'text' ],
 			[ 'key' => 'field_pm_p_agua_pt', 'name' => 'agua_pt', 'label' => 'Río/zona en portugués (si cambia)', 'type' => 'text', 'wrapper' => [ 'width' => 50 ] ],
 			[ 'key' => 'field_pm_p_agua_en', 'name' => 'agua_en', 'label' => 'Río/zona en inglés (si cambia)', 'type' => 'text', 'wrapper' => [ 'width' => 50 ] ],
 			[ 'key' => 'field_pm_p_especies', 'name' => 'especies', 'label' => 'Especies y modalidades', 'type' => 'checkbox', 'choices' => array_map( fn( $e ) => $e['es'], pm_ui()['etiquetas'] ), 'layout' => 'horizontal' ],
-			[ 'key' => 'field_pm_p_lat', 'name' => 'lat', 'label' => 'Latitud (ej. -27.32)', 'type' => 'number', 'step' => 'any', 'min' => -56, 'max' => -21, 'required' => 1, 'instructions' => 'Clic derecho en Google Maps sobre la ciudad → el primer número.', 'wrapper' => [ 'width' => 33 ] ],
-			[ 'key' => 'field_pm_p_lon', 'name' => 'lon', 'label' => 'Longitud (ej. -58.57)', 'type' => 'number', 'step' => 'any', 'min' => -74, 'max' => -53, 'required' => 1, 'instructions' => 'El segundo número.', 'wrapper' => [ 'width' => 33 ] ],
+			[ 'key' => 'field_pm_p_lat', 'name' => 'lat', 'label' => 'Latitud (ej. -27.32)', 'type' => 'number', 'step' => 'any', 'min' => -56, 'max' => -21, 'instructions' => 'Clic derecho en Google Maps sobre la ciudad → el primer número.', 'wrapper' => [ 'width' => 33 ] ],
+			[ 'key' => 'field_pm_p_lon', 'name' => 'lon', 'label' => 'Longitud (ej. -58.57)', 'type' => 'number', 'step' => 'any', 'min' => -74, 'max' => -53, 'instructions' => 'El segundo número.', 'wrapper' => [ 'width' => 33 ] ],
 			[ 'key' => 'field_pm_p_orden', 'name' => 'orden', 'label' => 'Orden (1, 2, 3…)', 'type' => 'number', 'default_value' => 99, 'wrapper' => [ 'width' => 33 ] ],
 		],
 	] );
@@ -230,11 +226,11 @@ add_action( 'acf/include_fields', function () {
 		'title'    => 'Crédito de la foto',
 		'location' => [ [ [ 'param' => 'attachment', 'operator' => '==', 'value' => 'all' ] ] ],
 		'fields'   => [
-			[ 'key' => 'field_pm_f_autor', 'name' => 'foto_autor', 'label' => 'Autor de la foto', 'type' => 'text', 'instructions' => 'Nombre y apellido de quien la sacó (si es tuya, tu nombre). En la web: "Foto: Nombre Apellido". Obligatorio para publicar.' ],
+			[ 'key' => 'field_pm_f_autor', 'name' => 'foto_autor', 'label' => 'Autor de la foto', 'type' => 'text', 'instructions' => 'Quién la sacó. En la web sale "Foto: Nombre Apellido".' ],
 			[ 'key' => 'field_pm_f_origen', 'name' => 'foto_origen', 'label' => 'Origen', 'type' => 'select', 'choices' => [ 'propia' => 'Propia (la sacaste vos)', 'cedida' => 'Cedida con permiso del autor', 'licencia' => 'Licencia libre (Wikimedia, etc.)' ], 'allow_null' => 1 ],
-			[ 'key' => 'field_pm_f_licencia', 'name' => 'foto_licencia', 'label' => 'Licencia (solo si es libre, ej. CC BY-SA 4.0)', 'type' => 'text' ],
-			[ 'key' => 'field_pm_f_licencia_url', 'name' => 'foto_licencia_url', 'label' => 'Enlace a la licencia', 'type' => 'url' ],
-			[ 'key' => 'field_pm_f_pagina', 'name' => 'foto_pagina', 'label' => 'Página de origen de la foto', 'type' => 'url' ],
+			[ 'key' => 'field_pm_f_licencia', 'name' => 'foto_licencia', 'label' => 'Licencia (solo si es libre, ej. CC BY-SA 4.0)', 'type' => 'text' , 'conditional_logic' => [ [ [ 'field' => 'field_pm_f_origen', 'operator' => '==', 'value' => 'licencia' ] ] ] ],
+			[ 'key' => 'field_pm_f_licencia_url', 'name' => 'foto_licencia_url', 'label' => 'Enlace a la licencia', 'type' => 'url' , 'conditional_logic' => [ [ [ 'field' => 'field_pm_f_origen', 'operator' => '==', 'value' => 'licencia' ] ] ] ],
+			[ 'key' => 'field_pm_f_pagina', 'name' => 'foto_pagina', 'label' => 'Página de origen de la foto', 'type' => 'url' , 'conditional_logic' => [ [ [ 'field' => 'field_pm_f_origen', 'operator' => '==', 'value' => 'licencia' ] ] ] ],
 		],
 	] );
 } );
