@@ -42,6 +42,8 @@
 .prestador dt::after { content: ': '; }
 .prestador dd { display: inline; margin: 0; }
 .prestador .precio { font-weight: 600; }
+.prestador.vista-previa { border: 2px dashed var(--warn-line); background: var(--warn-bg); }
+.prestador .sello { grid-column: 1 / -1; margin: 0; font-size: 13px; font-weight: 600; }
 @media (max-width: 720px) { .prestador { grid-template-columns: 1fr; } }
 .elegir { background: var(--cream); border-radius: var(--radius); padding: 18px 22px; margin-top: 18px; }
 .elegir h3 { font-size: 21px; }

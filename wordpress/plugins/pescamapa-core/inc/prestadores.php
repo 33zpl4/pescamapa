@@ -56,6 +56,8 @@ add_action( 'acf/include_fields', function () {
 			[ 'key' => 'field_pm_r_modalidades', 'name' => 'prest_modalidades', 'label' => 'Modalidades', 'type' => 'checkbox', 'choices' => pm_opciones( 'modalidad' ), 'layout' => 'horizontal' ],
 			[ 'key' => 'field_pm_r_especies', 'name' => 'prest_especies', 'label' => 'Especies', 'type' => 'checkbox', 'choices' => [], 'layout' => 'horizontal' ],
 			[ 'key' => 'field_pm_r_equipo', 'name' => 'equipo', 'label' => 'Lancha y equipo', 'type' => 'checkbox', 'choices' => pm_opciones( 'equipo' ), 'layout' => 'horizontal' ],
+			[ 'key' => 'field_pm_r_lancha', 'name' => 'lancha', 'label' => 'Lancha (se publica)', 'type' => 'text', 'wrapper' => [ 'width' => 50 ], 'instructions' => 'Tipo y largo. Ej. "Tracker de 5,5 m con plataforma de lanzamiento".' ],
+			[ 'key' => 'field_pm_r_motor', 'name' => 'motor', 'label' => 'Motor (se publica)', 'type' => 'text', 'wrapper' => [ 'width' => 50 ], 'instructions' => 'Ej. "Fuera de borda 90 HP + eléctrico de proa".' ],
 			[ 'key' => 'field_pm_r_capacidad', 'name' => 'capacidad', 'label' => 'Pescadores por lancha', 'type' => 'number', 'min' => 1, 'max' => 20, 'wrapper' => [ 'width' => 50 ] ],
 			[ 'key' => 'field_pm_r_temporada', 'name' => 'prest_temporada', 'label' => 'Cuándo trabaja (se publica)', 'type' => 'text', 'wrapper' => [ 'width' => 50 ], 'instructions' => 'Ej. "Todo el año; dorado de septiembre a marzo".' ],
 
@@ -69,6 +71,7 @@ add_action( 'acf/include_fields', function () {
 			[ 'key' => 'field_pm_r_referencias', 'name' => 'referencias', 'label' => 'Referencias', 'type' => 'textarea', 'rows' => 4, 'instructions' => 'Quién lo recomendó, qué dicen otros pescadores, reseñas que viste.' ],
 			[ 'key' => 'field_pm_r_estado', 'name' => 'estado', 'label' => 'Estado', 'type' => 'select', 'choices' => [ 'relevado' => 'Relevado (todavía no hablamos)', 'contactado' => 'Contactado', 'acuerdo' => 'Trabajamos juntos', 'pausado' => 'Pausado' ], 'default_value' => 'relevado', 'wrapper' => [ 'width' => 50 ] ],
 			[ 'key' => 'field_pm_r_comision', 'name' => 'comision', 'label' => 'Acuerdo comercial', 'type' => 'text', 'wrapper' => [ 'width' => 50 ], 'instructions' => 'Ej. "10 % por consulta concretada" (interno).' ],
+			[ 'key' => 'field_pm_r_ejemplo', 'name' => 'datos_ejemplo', 'label' => 'Datos de ejemplo (todavía no confirmados)', 'type' => 'true_false', 'ui' => 1, 'wrapper' => [ 'width' => 50 ], 'instructions' => 'Mientras esté marcado, la ficha NO se publica (aunque haya aceptado aparecer). Destildalo cuando reemplaces todos los datos por los reales.' ],
 			[ 'key' => 'field_pm_r_consentimiento', 'name' => 'prest_consentimiento', 'label' => 'Aceptó aparecer en Pescamapa', 'type' => 'true_false', 'ui' => 1, 'wrapper' => [ 'width' => 50 ] ],
 			[ 'key' => 'field_pm_r_verificado', 'name' => 'verificado', 'label' => 'Datos verificados el', 'type' => 'date_picker', 'display_format' => 'd/m/Y', 'return_format' => 'Y-m-d', 'wrapper' => [ 'width' => 50 ] ],
 			[ 'key' => 'field_pm_r_notas', 'name' => 'notas', 'label' => 'Notas internas', 'type' => 'textarea', 'rows' => 4 ],
@@ -105,6 +108,8 @@ function pm_prestador( int $post_id ): array {
 		'modalidades'    => $lista( 'prest_modalidades' ),
 		'especies'       => $lista( 'prest_especies' ),
 		'equipo'         => $lista( 'equipo' ),
+		'lancha'         => (string) pm_campo( 'lancha', $post_id ),
+		'motor'          => (string) pm_campo( 'motor', $post_id ),
 		'capacidad'      => (int) pm_campo( 'capacidad', $post_id ),
 		'temporada'      => (string) pm_campo( 'prest_temporada', $post_id ),
 		'incluye'        => $lista( 'incluye' ),
@@ -112,18 +117,29 @@ function pm_prestador( int $post_id ): array {
 		'precio_fecha'   => (string) pm_campo( 'precio_fecha', $post_id ),
 		'fotos'          => array_map( 'intval', $lista( 'fotos' ) ) ?: array_filter( [ (int) get_post_thumbnail_id( $post_id ) ] ),
 		'consentimiento' => (bool) pm_campo( 'prest_consentimiento', $post_id ),
+		'ejemplo'        => (bool) pm_campo( 'datos_ejemplo', $post_id ),
 	];
 }
 
-/** Outfitters that agreed to appear in this destination's guide. */
-function pm_prestadores_destino( string $destino ): array {
+/** Public: consented and with real data (not example data). */
+function pm_prestador_publico( array $r ): bool {
+	return $r['consentimiento'] && ! $r['ejemplo'];
+}
+
+/**
+ * Outfitters of a destination. Visitors get only the public ones; editors
+ * (logged in) also see the rest, marked as a preview, so the section can be
+ * filled in place.
+ */
+function pm_prestadores_destino( string $destino, bool $con_borradores = false ): array {
 	$out = [];
 	foreach ( pm_posts( 'pm_prestador' ) as $p ) {
 		$r = pm_prestador( $p->ID );
-		if ( $r['consentimiento'] && $r['destino'] === $destino ) {
+		if ( $r['destino'] === $destino && ( $con_borradores || pm_prestador_publico( $r ) ) ) {
 			$out[] = $r;
 		}
 	}
+	usort( $out, fn( $a, $b ) => pm_prestador_publico( $b ) <=> pm_prestador_publico( $a ) );
 	return $out;
 }
 
@@ -140,6 +156,6 @@ add_action( 'manage_pm_prestador_posts_custom_column', function ( $col, $id ) {
 	} elseif ( 'pm_estado' === $col ) {
 		echo esc_html( (string) pm_campo( 'estado', $id ) );
 	} elseif ( 'pm_visible' === $col ) {
-		echo $r['consentimiento'] ? '✅' : '—';
+		echo pm_prestador_publico( $r ) ? '✅' : esc_html( $r['ejemplo'] ? '🧪 datos de ejemplo' : '— sin permiso' );
 	}
 }, 10, 2 );

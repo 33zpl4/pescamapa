@@ -46,13 +46,17 @@ todas a nosotros (centralizar datos y cobrar comisión más adelante).
 
 ## Pendientes, en orden
 
-1. **Verificar Esquina** (borrador #38 en wp-admin) con el protocolo de abajo y recién ahí publicarla
+1. **Reemplazar los datos de ejemplo de los prestadores** (wp-admin →
+   Prestadores, columna "En la web" = 🧪). Por cada uno: datos reales,
+   permiso para aparecer, destildar "Datos de ejemplo". Sobre todo **lancha,
+   capacidad y motor**, que los guías señalaron como clave.
+2. **Verificar Esquina** (borrador #38 en wp-admin). El reglamento ya tiene
+   lo que investigó el dueño (licencia, categorías, río Corriente solo
+   deportiva, pacú 45 cm); falta leer la página oficial y fijar la fecha de
+   verificación con el protocolo de abajo y recién ahí publicarla
    (y traducirla).
-2. **Primeras entrevistas**: Agus y su papá (Goya). Guía de preguntas en
+3. **Primeras entrevistas**: Agus y su papá (Goya). Guía de preguntas en
    `docs/entrevistas.md`. Hace falta su permiso para nombre, foto y frases.
-3. **Cargar prestadores**: los 10 de Esquina que relevó la investigación
-   (sección 10 de `docs/investigacion/esquina.md`) y los de Goya. Estado
-   "Relevado" hasta hablar con ellos.
 4. **Email de consultas**: confirmar que el servidor envía correo (probar el
    formulario) y fijar el destinatario: `wp option update pm_email_consultas
    <email>`. Si no llega, igual quedan en wp-admin → Consultas.

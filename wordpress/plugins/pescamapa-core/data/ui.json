@@ -204,7 +204,7 @@
 			"ficha.citas.leer": "Leer la entrevista →",
 			"ficha.elegir.h3": "Cómo elegir guía: qué preguntar antes de reservar",
 			"ficha.elegir.1": "Modalidad: ¿trabaja con carnada, spinning/baitcasting o mosca? Elegí al que se especializa en lo que querés hacer.",
-			"ficha.elegir.2": "Lancha y equipo: ¿lancha completa, motor eléctrico, plataforma de lanzamiento, sonda? ¿Presta equipos?",
+			"ficha.elegir.2": "Lancha y equipo: ¿qué lancha es, cuántos pescadores lleva, qué motor tiene (potencia, eléctrico de proa)? ¿Plataforma, sonda? ¿Presta equipos?",
 			"ficha.elegir.3": "Qué incluye: carnada, comida, combustible, alojamiento, traslados. Pedilo por escrito, junto con el precio.",
 			"ficha.elegir.4": "La fecha manda: los meses definen el tipo de pesca. Preguntá qué rinde en tu fecha, con qué altura y temperatura del agua.",
 			"ficha.elegir.5": "El lugar: ubicación del alojamiento, bajada de lancha, distancia a las zonas de pesca y el ambiente en general.",
@@ -244,7 +244,9 @@
 			"entrevista.fecha": "Entrevista del %fecha%",
 			"entrevista.citas": "En pocas palabras",
 			"entrevista.guia": "Guía para pescar en %lugar% →",
-			"idioma.sugerencia": "Esta página está en español →"
+			"idioma.sugerencia": "Esta página está en español →",
+			"prest.lancha": "Lancha",
+			"prest.motor": "Motor"
 		},
 		"pt": {
 			"marca.lema": "Destinos, espécies e guias para pescar na Argentina.",
@@ -362,7 +364,7 @@
 			"ficha.citas.leer": "Ler a entrevista →",
 			"ficha.elegir.h3": "Como escolher um guia: o que perguntar antes de reservar",
 			"ficha.elegir.1": "Modalidade: trabalha com isca natural, spinning/baitcasting ou fly? Escolha quem se especializa no que você quer fazer.",
-			"ficha.elegir.2": "Barco e equipamento: barco completo, motor elétrico, plataforma de arremesso, sonar? Empresta equipamento?",
+			"ficha.elegir.2": "Barco e equipamento: que barco é, quantos pescadores leva, que motor tem (potência, elétrico de proa)? Plataforma, sonar? Empresta equipamento?",
 			"ficha.elegir.3": "O que inclui: isca, refeições, combustível, hospedagem, traslados. Peça por escrito, junto com o preço.",
 			"ficha.elegir.4": "A data manda: os meses definem o tipo de pesca. Pergunte o que rende na sua data, com que nível e temperatura da água.",
 			"ficha.elegir.5": "O lugar: localização da hospedagem, rampa de barcos, distância às áreas de pesca e o ambiente em geral.",
@@ -402,7 +404,9 @@
 			"entrevista.fecha": "Entrevista de %fecha%",
 			"entrevista.citas": "Em poucas palavras",
 			"entrevista.guia": "Guia para pescar em %lugar% →",
-			"idioma.sugerencia": "Esta página em português →"
+			"idioma.sugerencia": "Esta página em português →",
+			"prest.lancha": "Barco",
+			"prest.motor": "Motor"
 		},
 		"en": {
 			"marca.lema": "Destinations, species and guides for fishing in Argentina.",
@@ -520,7 +524,7 @@
 			"ficha.citas.leer": "Read the interview →",
 			"ficha.elegir.h3": "How to choose a guide: what to ask before booking",
 			"ficha.elegir.1": "Style: does the guide fish bait, spinning/baitcasting or fly? Pick one who specialises in what you want to do.",
-			"ficha.elegir.2": "Boat and gear: fully equipped boat, electric motor, casting platform, fish finder? Is tackle provided?",
+			"ficha.elegir.2": "Boat and gear: what boat, how many anglers it takes, which engine (horsepower, bow electric motor)? Casting platform, fish finder? Is tackle provided?",
 			"ficha.elegir.3": "What is included: bait, meals, fuel, lodging, transfers. Get it in writing, with the price.",
 			"ficha.elegir.4": "Timing rules: the month decides the fishing. Ask what works on your dates, at what river level and water temperature.",
 			"ficha.elegir.5": "The place: where the lodging is, boat ramp, distance to the fishing areas and the overall setting.",
@@ -560,7 +564,9 @@
 			"entrevista.fecha": "Interview of %fecha%",
 			"entrevista.citas": "In a nutshell",
 			"entrevista.guia": "Guide to fishing in %lugar% →",
-			"idioma.sugerencia": "This page in English →"
+			"idioma.sugerencia": "This page in English →",
+			"prest.lancha": "Boat",
+			"prest.motor": "Engine"
 		}
 	},
 	"opciones": {
