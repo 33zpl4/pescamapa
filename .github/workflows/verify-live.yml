@@ -54,6 +54,4 @@ jobs:
           done
           loc=$(curl -sS -m 30 -o /dev/null -w '%{http_code} %{redirect_url}' "https://www.pescamapa.com/mapa/")
           if [[ "$loc" =~ ^30[178]\ https://pescamapa\.com/mapa/ ]]; then echo "✓ www → $loc"; else echo "✖ www redirect: $loc"; fail=1; fi
-          staging=$(curl -sS -m 30 -o /dev/null -w '%{http_code} %{redirect_url}' "https://nuevo.pescamapa.com/")
-          echo "   nuevo.pescamapa.com → $staging"
           exit $fail
