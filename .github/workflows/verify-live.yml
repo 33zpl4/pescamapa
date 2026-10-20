@@ -36,7 +36,7 @@ jobs:
           }
           check / 200 'PESCAMAPA'
           echo "   build servido: $(grep -o 'data-build="[^"]*"' page.html | head -1)"
-          grep -q 'name="robots"[^>]*noindex' page.html && { echo "✖ la portada tiene noindex (¿blog_public = 0?)"; fail=1; }
+          grep -qE "name=[\"']robots[\"'][^>]*noindex" page.html && { echo "✖ la portada tiene noindex (¿blog_public = 0?)"; fail=1; }
           check /pt/ 200 'lang="pt-BR"'
           check /en/ 200 'lang="en"'
           check /mapa/ 200 'class="mapa"'
@@ -49,7 +49,7 @@ jobs:
             check "$p" 200 'TouristDestination'
             grep -q 'hreflang="x-default"' page.html || { echo "✖ $p sin hreflang"; fail=1; }
             if grep -q 'Ficha en construcción\|Página em construção\|Guide under construction' page.html; then
-              grep -q 'name="robots"[^>]*noindex' page.html && echo "   borrador con noindex ✓" || { echo "✖ $p borrador SIN noindex"; fail=1; }
+              grep -qE "name=[\"']robots[\"'][^>]*noindex" page.html && echo "   borrador con noindex ✓" || { echo "✖ $p borrador SIN noindex"; fail=1; }
             fi
           done
           loc=$(curl -sS -m 30 -o /dev/null -w '%{http_code} %{redirect_url}' "https://www.pescamapa.com/mapa/")
