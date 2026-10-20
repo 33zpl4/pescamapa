@@ -1,0 +1,42 @@
+name: Add domain alias to the WordPress vhost
+
+# One-off: adds pescamapa.com (and www) as ServerAlias of the aaPanel Apache
+# vhost of the WordPress site, checks the config and reloads Apache.
+# Idempotent; prints the vhost before and after. A backup is kept next to it.
+
+on:
+  workflow_dispatch:
+
+jobs:
+  alias:
+    runs-on: ubuntu-latest
+    steps:
+      - name: SSH setup
+        run: |
+          mkdir -p ~/.ssh
+          printf '%s\n' "${{ secrets.WP_SSH_KEY }}" | tr -d '\r' > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          cat > ~/.ssh/config <<EOF
+          Host wp
+            HostName ${{ secrets.WP_SSH_HOST }}
+            Port ${{ secrets.WP_SSH_PORT }}
+            User ${{ secrets.WP_SSH_USER }}
+            IdentityFile ~/.ssh/deploy_key
+            StrictHostKeyChecking accept-new
+          EOF
+      - name: Alias
+        run: |
+          ssh wp 'bash -s' <<'EOS'
+          set -euo pipefail
+          V=/www/server/panel/vhost/apache/nuevo.pescamapa.com.conf
+          echo "== antes"; grep -nE "VirtualHost|ServerName|ServerAlias|DocumentRoot" "$V"
+          if ! grep -q "ServerAlias.*[[:space:]]pescamapa\.com" "$V"; then
+            cp "$V" "$V.bak-$(date +%Y%m%d%H%M%S)"
+            sed -i -E '/^\s*ServerName\s+/a\    ServerAlias pescamapa.com www.pescamapa.com' "$V"
+          fi
+          echo "== después"; grep -nE "VirtualHost|ServerName|ServerAlias" "$V"
+          /www/server/apache/bin/apachectl -t
+          /www/server/apache/bin/apachectl -k graceful
+          sleep 2
+          curl -sk -o /dev/null -w "pescamapa.com desde el servidor: HTTP %{http_code} → %{redirect_url}\n" --resolve pescamapa.com:443:127.0.0.1 https://pescamapa.com/
+          EOS

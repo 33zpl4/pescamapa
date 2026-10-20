@@ -1,16 +1,15 @@
 name: Verify live site
 
-# Read-only check of what pescamapa.com actually serves (the Claude sandbox
-# can't reach it). Cloudflare deploys main on its own; this answers "is it
-# live and correct" from the served bytes: domain, www redirect, drafts
-# noindexed and out of the sitemap, JSON-LD present.
+# Read-only check of what pescamapa.com serves (WordPress since the domain
+# switch): pages in every language, www redirect, sitemap, drafts noindexed,
+# JSON-LD and hreflang on the guides, and the build stamp being served.
 
 on:
   workflow_dispatch:
   schedule:
     - cron: "17 9 * * 1"
   push:
-    branches: [main, claude/wordpress-studio-agentic-9i5h7t]
+    branches: [main]
     paths:
       - ".github/workflows/verify-live.yml"
 
@@ -20,54 +19,41 @@ jobs:
     env:
       SITE: https://pescamapa.com
     steps:
-      - uses: actions/checkout@v4
-
       - name: DNS
         run: |
-          echo "== NS";   dig +short NS pescamapa.com
-          echo "== A";    dig +short A pescamapa.com
-          echo "== www";  dig +short AAAA www.pescamapa.com
+          echo "== NS";  dig +short NS pescamapa.com
+          echo "== A";   dig +short A pescamapa.com
+          echo "== www"; dig +short AAAA www.pescamapa.com
 
       - name: Served pages
         run: |
           fail=0
-          check() { # url expected-status
-            code=$(curl -sS -m 30 -o /dev/null -w '%{http_code}' "$1")
-            if [[ "$code" == "$2" ]]; then echo "✓ $code $1"; else echo "✖ $code $1 (esperado $2)"; fail=1; fi
+          check() { # path expected-status [must-contain]
+            code=$(curl -sS -m 30 -o page.html -w '%{http_code}' "$SITE$1")
+            if [[ "$code" != "$2" ]]; then echo "✖ $code $1 (esperado $2)"; fail=1; return; fi
+            if [[ -n "${3:-}" ]] && ! grep -q "$3" page.html; then echo "✖ $1 no contiene: $3"; fail=1; return; fi
+            echo "✓ $code $1"
           }
-          check "$SITE/" 200
-          echo "build servido: $(curl -sS -m 30 "$SITE/" | grep -o 'data-build="[^"]*"' | head -1)"
-          check "$SITE/pt/" 200
-          check "$SITE/en/" 200
-          check "$SITE/mapa/" 200
-          check "$SITE/en/map/" 200
-          check "$SITE/sitemap-index.xml" 200
-          check "$SITE/robots.txt" 200
-          check "$SITE/esto-no-existe/" 404
-
+          check / 200 'PESCAMAPA'
+          echo "   build servido: $(grep -o 'data-build="[^"]*"' page.html | head -1)"
+          grep -q 'name="robots"[^>]*noindex' page.html && { echo "✖ la portada tiene noindex (¿blog_public = 0?)"; fail=1; }
+          check /pt/ 200 'lang="pt-BR"'
+          check /en/ 200 'lang="en"'
+          check /mapa/ 200 'class="mapa"'
+          check /en/map/ 200 'class="mapa"'
+          check /creditos/ 200
+          check /robots.txt 200 'Sitemap'
+          check /wp-sitemap.xml 200 'vistas'
+          check /esto-no-existe/ 404
+          for p in /litoral/corrientes/pesca-en-goya/ /pt/litoral/corrientes/pesca-em-goya/ /en/litoral/corrientes/fishing-in-goya/; do
+            check "$p" 200 'TouristDestination'
+            grep -q 'hreflang="x-default"' page.html || { echo "✖ $p sin hreflang"; fail=1; }
+            if grep -q 'Ficha en construcción\|Página em construção\|Guide under construction' page.html; then
+              grep -q 'name="robots"[^>]*noindex' page.html && echo "   borrador con noindex ✓" || { echo "✖ $p borrador SIN noindex"; fail=1; }
+            fi
+          done
           loc=$(curl -sS -m 30 -o /dev/null -w '%{http_code} %{redirect_url}' "https://www.pescamapa.com/mapa/")
           if [[ "$loc" =~ ^30[178]\ https://pescamapa\.com/mapa/ ]]; then echo "✓ www → $loc"; else echo "✖ www redirect: $loc"; fail=1; fi
-
-          # Every destination: drafts must be noindex and absent from the sitemap.
-          curl -sS -m 30 "$SITE/sitemap-0.xml" -o sitemap.xml
-          for f in $(find src/content/destinos -name '*.md'); do
-            fm=$(sed -n '2,/^---$/p' "$f")
-            get() { echo "$fm" | sed -n "s/^$1: *\"\{0,1\}\([^\"]*\)\"\{0,1\}$/\1/p" | head -1; }
-            idioma=$(get idioma); pre=""; [[ "$idioma" == "pt" ]] && pre="/pt"; [[ "$idioma" == "en" ]] && pre="/en"
-            # region/provincia live on the Spanish file with the same clave.
-            es=$(grep -l "^clave: $(get clave)$" src/content/destinos/es/*.md | head -1)
-            region=$(sed -n 's/^region: *//p' "$es" | head -1); provincia=$(sed -n 's/^provincia: *//p' "$es" | head -1)
-            path="$pre/$region/$provincia/$(get slug)/"
-            curl -sS -m 30 "$SITE$path" -o page.html
-            if [[ "$(get estado)" == "publicado" ]]; then
-              grep -q 'name="robots" content="noindex"' page.html && { echo "✖ $path publicado pero noindex"; fail=1; }
-              grep -q "$path" sitemap.xml || { echo "✖ $path publicado y fuera del sitemap"; fail=1; }
-            else
-              grep -q 'name="robots" content="noindex"' page.html || { echo "✖ $path borrador SIN noindex"; fail=1; }
-              grep -q "$path" sitemap.xml && { echo "✖ $path borrador dentro del sitemap"; fail=1; }
-            fi
-            grep -q '"@type":"TouristDestination"' page.html || { echo "✖ $path sin JSON-LD"; fail=1; }
-            grep -q 'hreflang="x-default"' page.html || { echo "✖ $path sin hreflang"; fail=1; }
-            echo "✓ $path ($(get estado))"
-          done
+          staging=$(curl -sS -m 30 -o /dev/null -w '%{http_code} %{redirect_url}' "https://nuevo.pescamapa.com/")
+          echo "   nuevo.pescamapa.com → $staging"
           exit $fail

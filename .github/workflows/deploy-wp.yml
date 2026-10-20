@@ -12,9 +12,7 @@ name: Deploy WordPress
 
 on:
   push:
-    # While the site lives on the staging domain (nuevo.*), the work branch
-    # deploys too. After the switch to pescamapa.com, keep only main.
-    branches: [main, claude/wordpress-studio-agentic-9i5h7t]
+    branches: [main]
     paths:
       - "wordpress/**"
       - ".github/workflows/deploy-wp.yml"
@@ -74,6 +72,13 @@ jobs:
           w theme activate pescamapa
           w option update home "$WP_URL"
           w option update siteurl "$WP_URL"
+          # After the domain switch, links saved with the staging domain follow
+          # (no-op once replaced; guid stays, as WordPress expects).
+          if [[ "$WP_URL" != *"://nuevo."* ]]; then
+            for viejo in https://nuevo.pescamapa.com http://nuevo.pescamapa.com; do
+              w search-replace "$viejo" "$WP_URL" --all-tables-with-prefix --skip-columns=guid --report-changed-only
+            done
+          fi
           w option update blogname "Pescamapa"
           w option update blogdescription "Destinos, especies y guías para pescar en Argentina."
           w option update timezone_string "America/Argentina/Buenos_Aires"
