@@ -1,0 +1,56 @@
+name: Probe WordPress server
+
+# Read-only: checks that GitHub can reach the aaPanel server over SSH and
+# reports what the new WordPress install looks like. Writes nothing.
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [claude/wordpress-studio-agentic-9i5h7t]
+    paths:
+      - ".github/workflows/probe-wp.yml"
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - name: SSH setup
+        run: |
+          mkdir -p ~/.ssh
+          printf '%s\n' "${{ secrets.WP_SSH_KEY }}" | tr -d '\r' > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          cat > ~/.ssh/config <<EOF2
+          Host wp
+            HostName ${{ secrets.WP_SSH_HOST }}
+            Port ${{ secrets.WP_SSH_PORT }}
+            User ${{ secrets.WP_SSH_USER }}
+            IdentityFile ~/.ssh/deploy_key
+            StrictHostKeyChecking accept-new
+            ConnectTimeout 20
+          EOF2
+          echo "runner IP: $(curl -s https://api.ipify.org)"
+          ssh-keygen -y -f ~/.ssh/deploy_key >/dev/null && echo "✓ la clave privada es válida" || echo "✖ la clave privada no se pudo leer (¿se copió completa?)"
+
+      - name: What the server has
+        env:
+          WP: ${{ secrets.WP_PATH }}
+        run: |
+          ssh -v wp true 2>&1 | grep -E "Connecting to|Authenticated|Permission denied|Connection (refused|timed out)|No route" || true
+          ssh wp "WP='$WP' bash -s" <<'EOS'
+          echo "== $(whoami)@$(hostname) · $(. /etc/os-release; echo $PRETTY_NAME)"
+          echo "== php CLI: $(php -v 2>/dev/null | head -1)"
+          ls -d /www/server/php/*/ 2>/dev/null | sed 's#^#   php instalado: #'
+          echo "== wp-cli: $(wp --version --allow-root 2>&1)"
+          echo "== carpeta: $WP"; ls -la "$WP" | head -20
+          echo "== dueño de los archivos: $(stat -c '%U:%G' "$WP/wp-config.php" 2>/dev/null)"
+          cd "$WP" && for k in siteurl home blogname WPLANG permalink_structure; do echo "   $k = $(wp option get $k --allow-root 2>&1 | head -1)"; done
+          echo "== core: $(wp core version --allow-root 2>&1)"
+          echo "== tema activo: $(wp theme list --status=active --field=name --allow-root 2>&1)"
+          echo "== plugins:"; wp plugin list --fields=name,status,version --allow-root 2>&1 | head -20
+          echo "== disco:"; df -h "$WP" | tail -1
+          echo "== apache vhost:"; ls /www/server/panel/vhost/apache/ 2>/dev/null | grep -i pescamapa
+          echo "== apache error log (últimas líneas)"; tail -n 25 /www/wwwlogs/*pescamapa*error* 2>/dev/null | cut -c1-400
+          echo "== render de la portada desde el servidor"
+          curl -sk -o /tmp/pm.html -w 'HTTP %{http_code}\n' --resolve "$(basename $WP):443:127.0.0.1" "https://$(basename $WP)/"; head -c 1500 /tmp/pm.html; echo
+          echo "== wp eval cargando el tema"; cd "$WP" && runuser -u www -- env HOME=/tmp wp eval 'echo "ok\n";' 2>&1 | tail -5
+          EOS

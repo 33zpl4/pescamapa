@@ -1,0 +1,56 @@
+name: Screenshots
+
+# Takes full-page screenshots of a site (default: the WordPress staging) and
+# pushes them to the scratch branch `capturas`, so they can be reviewed from
+# a sandbox that can't reach the site. Read-only towards the site.
+
+on:
+  workflow_dispatch:
+    inputs:
+      base:
+        description: "URL base"
+        default: "https://nuevo.pescamapa.com"
+      rutas:
+        description: "rutas separadas por espacio"
+        default: "/ /pt/ /litoral/corrientes/pesca-en-goya/ /en/litoral/corrientes/fishing-in-goya/ /mapa/ /especies/surubi/ /creditos/"
+
+permissions:
+  contents: write
+
+jobs:
+  shots:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - name: Shoot
+        env:
+          BASE: ${{ github.event.inputs.base }}
+          RUTAS: ${{ github.event.inputs.rutas }}
+        run: |
+          mkdir shots && cd shots && npm init -y >/dev/null && npm i --silent playwright@1 && npx playwright install --with-deps chromium >/dev/null
+          cat > shot.mjs <<'JS'
+          import { chromium } from 'playwright';
+          const b = await chromium.launch();
+          for (const ruta of process.env.RUTAS.split(/\s+/).filter(Boolean)) {
+            for (const [nombre, w] of [['escritorio', 1366], ['movil', 390]]) {
+              const p = await b.newPage({ viewport: { width: w, height: 900 } });
+              await p.goto(process.env.BASE + ruta, { waitUntil: 'networkidle', timeout: 60000 }).catch((e) => console.log(ruta, e.message));
+              await p.evaluate(async () => { for (let y = 0; y < document.body.scrollHeight; y += 600) { window.scrollTo(0, y); await new Promise((r) => setTimeout(r, 120)); } window.scrollTo(0, 0); });
+              await p.waitForTimeout(800);
+              const archivo = `${ruta.replace(/\//g, '_') || '_'}-${nombre}.png`;
+              await p.screenshot({ path: archivo, fullPage: true });
+              console.log('✓', archivo, await p.evaluate(() => document.documentElement.scrollWidth));
+              await p.close();
+            }
+          }
+          await b.close();
+          JS
+          node shot.mjs
+      - name: Push to branch capturas
+        run: |
+          cd shots
+          git init -q && git checkout -q -b capturas
+          git config user.name "Claude" && git config user.email "noreply@anthropic.com"
+          git add *.png && git commit -qm "Capturas de ${{ github.event.inputs.base }}"
+          git push -qf "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" capturas
