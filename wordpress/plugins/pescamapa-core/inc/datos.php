@@ -89,7 +89,7 @@ function pm_destino( int $post_id ): array {
 	];
 }
 
-/** One card per destination: this language's version, else the Spanish one. */
+/** One card per destination: this language's version, else the Spanish one. In publication order. */
 function pm_destinos_lista( string $idioma ): array {
 	$por_clave = [];
 	foreach ( pm_posts( 'pm_destino' ) as $p ) {
@@ -99,6 +99,10 @@ function pm_destinos_lista( string $idioma ): array {
 			$por_clave[ $clave ] = $p->ID;
 		}
 	}
+	// Oldest guide first (Goya, then Esquina…): the order they were published,
+	// taken from the Spanish version so every language lists them the same way.
+	$fecha = fn( $clave ) => (string) get_post_field( 'post_date', pm_buscar( 'pm_destino', $clave, 'es' ) ?? $por_clave[ $clave ] );
+	uksort( $por_clave, fn( $a, $b ) => strcmp( $fecha( $a ), $fecha( $b ) ) );
 	return array_map( 'pm_destino', array_values( $por_clave ) );
 }
 
