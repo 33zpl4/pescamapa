@@ -49,4 +49,8 @@ jobs:
           echo "== plugins:"; wp plugin list --fields=name,status,version --allow-root 2>&1 | head -20
           echo "== disco:"; df -h "$WP" | tail -1
           echo "== apache vhost:"; ls /www/server/panel/vhost/apache/ 2>/dev/null | grep -i pescamapa
+          echo "== apache error log (últimas líneas)"; tail -n 25 /www/wwwlogs/*pescamapa*error* 2>/dev/null | cut -c1-400
+          echo "== render de la portada desde el servidor"
+          curl -sk -o /tmp/pm.html -w 'HTTP %{http_code}\n' --resolve "$(basename $WP):443:127.0.0.1" "https://$(basename $WP)/"; head -c 1500 /tmp/pm.html; echo
+          echo "== wp eval cargando el tema"; cd "$WP" && runuser -u www -- env HOME=/tmp wp eval 'echo "ok\n";' 2>&1 | tail -5
           EOS
