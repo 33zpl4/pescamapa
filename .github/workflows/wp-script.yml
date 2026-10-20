@@ -1,0 +1,41 @@
+name: Run a WordPress script
+
+# Runs wordpress/scripts/<script>.php on the server with `wp eval-file`, as
+# the web user. For content changes we make on the owner's behalf (e.g.
+# propagating Spanish edits to pt/en) and one-off maintenance. Scripts must
+# be idempotent and must not overwrite editors' work blindly.
+
+on:
+  workflow_dispatch:
+    inputs:
+      script:
+        description: "nombre del script en wordpress/scripts (sin .php)"
+        required: true
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    env:
+      WP: ${{ secrets.WP_PATH }}
+      SCRIPT: ${{ github.event.inputs.script }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: SSH setup
+        run: |
+          [[ "$SCRIPT" =~ ^[a-z0-9-]+$ ]] || { echo "nombre de script inválido"; exit 1; }
+          test -f "wordpress/scripts/$SCRIPT.php"
+          mkdir -p ~/.ssh
+          printf '%s\n' "${{ secrets.WP_SSH_KEY }}" | tr -d '\r' > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          cat > ~/.ssh/config <<EOF
+          Host wp
+            HostName ${{ secrets.WP_SSH_HOST }}
+            Port ${{ secrets.WP_SSH_PORT }}
+            User ${{ secrets.WP_SSH_USER }}
+            IdentityFile ~/.ssh/deploy_key
+            StrictHostKeyChecking accept-new
+          EOF
+      - name: Run
+        run: |
+          scp -q "wordpress/scripts/$SCRIPT.php" wp:/tmp/pm-script.php
+          ssh wp "chown www:www /tmp/pm-script.php && cd '$WP' && runuser -u www -- env HOME=/tmp WP_CLI_CACHE_DIR=/tmp/wp-cli-cache-www wp --path='$WP' eval-file /tmp/pm-script.php; s=\$?; rm -f /tmp/pm-script.php; exit \$s"

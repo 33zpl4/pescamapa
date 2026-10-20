@@ -28,6 +28,7 @@ require PM_DIR . 'inc/fotos.php';
 require PM_DIR . 'inc/mapa.php';
 require PM_DIR . 'inc/seo.php';
 require PM_DIR . 'inc/admin.php';
+require PM_DIR . 'inc/editor.php';
 
 register_activation_hook( __FILE__, function () {
 	pm_registrar_tipos();
