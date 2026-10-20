@@ -59,6 +59,8 @@ jobs:
           done
           w eval-file wordpress/scripts/esquina-2026-10-20.php
           w eval-file wordpress/scripts/esquina-2026-10-20.php   # idempotent: second run does nothing
+          # The script leaves Esquina as a draft; publish it here to render it.
+          w post update $(w post list --post_type=pm_destino --post_status=draft --format=ids) --post_status=publish
           w eval '
             $id = wp_insert_post( [ "post_type" => "pm_entrevista", "post_status" => "publish", "post_title" => "Prueba: el río manda", "post_name" => "prueba-el-rio-manda", "post_content" => "<!-- wp:paragraph --><p>Charla de prueba.</p><!-- /wp:paragraph -->" ] );
             foreach ( [ "idioma" => "es", "clave" => "prueba", "persona" => "Persona Prueba", "destino" => "esquina", "fecha" => "20261020", "consentimiento" => 1, "rol" => "Guía de prueba", "bajada" => "Bajada de prueba", "seo_title" => "Prueba", "seo_description" => "Descripción de prueba" ] as $k => $v ) { update_field( $k, $v, $id ); }

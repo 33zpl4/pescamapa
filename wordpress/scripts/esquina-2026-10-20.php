@@ -10,12 +10,16 @@
  * research only saw search summaries, so the regulation is NOT marked as
  * verified.
  *
+ * Created as a DRAFT (owner, 20/10/2026): Esquina stays unpublished until it
+ * passes the verification protocol in docs/estado.md (Recursos Naturales
+ * page read in full, two local guides contacted, log entry).
+ *
  * Idempotent: if a Spanish guide with clave "esquina" exists, it does nothing
  * (edits from then on happen in wp-admin). Portuguese and English come later,
  * once the Spanish text is reviewed (the "Traducciones" column flags them).
  */
 
-if ( pm_buscar( 'pm_destino', 'esquina', 'es' ) ) {
+if ( get_posts( [ 'post_type' => 'pm_destino', 'post_status' => 'any', 'meta_key' => 'clave', 'meta_value' => 'esquina', 'fields' => 'ids' ] ) ) {
 	WP_CLI::log( 'esquina (es) ya existe: no toco nada.' );
 	return;
 }
@@ -59,7 +63,7 @@ $cuerpo = implode( "\n\n", [
 
 $id = wp_insert_post( [
 	'post_type'    => 'pm_destino',
-	'post_status'  => 'publish',
+	'post_status'  => 'draft',
 	'post_title'   => 'Esquina',
 	'post_name'    => 'pesca-en-esquina',
 	'post_content' => wp_slash( $cuerpo ),
@@ -136,4 +140,4 @@ if ( $proximo && get_post_thumbnail_id( $proximo->ID ) ) {
 
 update_post_meta( $id, '_pm_es_editado', time() );
 flush_rewrite_rules( false );
-WP_CLI::success( "Esquina creada (es) #$id: " . get_permalink( $id ) );
+WP_CLI::success( "Esquina creada como borrador (es) #$id: revisala en wp-admin → Destinos." );
