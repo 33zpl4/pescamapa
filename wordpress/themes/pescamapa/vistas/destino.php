@@ -34,11 +34,9 @@ get_header(); ?>
 				<h1><?php echo esc_html( $d['h1'] ?: $d['nombre'] ); ?></h1>
 				<p class="bajada"><?php echo esc_html( $d['bajada'] ); ?></p>
 				<p class="confianza">
-					<?php pm_e( 'ficha.por' ); ?> <?php echo esc_html( $d['autor'] ); ?> · <?php pm_e( 'ficha.actualizado' ); ?> <time datetime="<?php echo esc_attr( $d['actualizado'] ); ?>"><?php echo esc_html( pm_fecha( $d['actualizado'] ) ); ?></time> ·
+					<?php pm_e( 'ficha.por' ); ?> <?php echo esc_html( $d['autor'] ); ?> · <?php pm_e( 'ficha.actualizado' ); ?> <time datetime="<?php echo esc_attr( $d['actualizado'] ); ?>"><?php echo esc_html( pm_fecha( $d['actualizado'] ) ); ?></time>
 					<?php if ( $d['reglamento']['verificado'] ) : ?>
-						<?php pm_e( 'ficha.verificado' ); ?> <?php echo esc_html( pm_fecha( $d['reglamento']['verificado'] ) ); ?>
-					<?php else : ?>
-						<strong><?php pm_e( 'ficha.sinverificar' ); ?></strong>
+						· <?php pm_e( 'ficha.verificado' ); ?> <?php echo esc_html( pm_fecha( $d['reglamento']['verificado'] ) ); ?>
 					<?php endif; ?>
 				</p>
 			</div>
@@ -83,7 +81,7 @@ get_header(); ?>
 						<?php if ( $d['reglamento']['url'] ) : ?><a href="<?php echo esc_url( $d['reglamento']['url'] ); ?>" rel="noopener"><?php echo esc_html( $d['reglamento']['autoridad'] ); ?></a><?php else : echo esc_html( $d['reglamento']['autoridad'] ); endif; ?>
 					</p>
 					<p class="note">
-						<?php echo esc_html( $d['reglamento']['verificado'] ? pm_t( 'ficha.ultima' ) . ' ' . pm_fecha( $d['reglamento']['verificado'] ) . '.' : pm_t( 'ficha.noverificado' ) ); ?>
+						<?php if ( $d['reglamento']['verificado'] ) { echo esc_html( pm_t( 'ficha.ultima' ) . ' ' . pm_fecha( $d['reglamento']['verificado'] ) . '.' ); } ?>
 						<?php pm_e( 'ficha.cambian' ); ?>
 					</p>
 				</div>

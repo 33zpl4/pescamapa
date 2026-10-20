@@ -13,7 +13,7 @@ foreach ( [ 'pm_destino', 'pm_especie' ] as $tipo ) {
 			$nuevas[ $k ] = $v;
 			if ( 'title' === $k ) {
 				$nuevas['pm_idioma'] = 'Idioma';
-				$nuevas['pm_estado'] = 'Ficha';
+				$nuevas['pm_estado'] = 'Completa';
 				$nuevas['pm_clave']  = 'Clave';
 			}
 		}
@@ -23,7 +23,8 @@ foreach ( [ 'pm_destino', 'pm_especie' ] as $tipo ) {
 		if ( 'pm_idioma' === $col ) {
 			echo esc_html( strtoupper( pm_idioma_de( $id ) ) );
 		} elseif ( 'pm_estado' === $col ) {
-			echo pm_es_publicado( $id ) ? '✅ Publicada' : '🟡 Borrador';
+			$n = count( pm_sugerencias( $id ) );
+			echo $n ? esc_html( "Faltan {$n} cosas" ) : '✅';
 		} elseif ( 'pm_clave' === $col ) {
 			echo '<code>' . esc_html( pm_clave_de( $id ) ) . '</code>';
 		}

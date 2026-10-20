@@ -1,7 +1,8 @@
 name: Verify live site
 
 # Read-only check of what pescamapa.com serves (WordPress since the domain
-# switch): pages in every language, www redirect, sitemap, drafts noindexed,
+# switch): pages in every language, www redirect, sitemap, guides indexable
+# with no internal PENDIENTE notes shown,
 # JSON-LD and hreflang on the guides, and the build stamp being served.
 
 on:
@@ -48,9 +49,8 @@ jobs:
           for p in /litoral/corrientes/pesca-en-goya/ /pt/litoral/corrientes/pesca-em-goya/ /en/litoral/corrientes/fishing-in-goya/; do
             check "$p" 200 'TouristDestination'
             grep -q 'hreflang="x-default"' page.html || { echo "✖ $p sin hreflang"; fail=1; }
-            if grep -q 'Ficha en construcción\|Página em construção\|Guide under construction' page.html; then
-              grep -qE "name=[\"']robots[\"'][^>]*noindex" page.html && echo "   borrador con noindex ✓" || { echo "✖ $p borrador SIN noindex"; fail=1; }
-            fi
+            grep -qE "name=[\"']robots[\"'][^>]*noindex" page.html && { echo "✖ $p tiene noindex"; fail=1; }
+            grep -q 'PENDIENTE' page.html && { echo "✖ $p muestra una nota PENDIENTE"; fail=1; }
           done
           loc=$(curl -sS -m 30 -o /dev/null -w '%{http_code} %{redirect_url}' "https://www.pescamapa.com/mapa/")
           if [[ "$loc" =~ ^30[178]\ https://pescamapa\.com/mapa/ ]]; then echo "✓ www → $loc"; else echo "✖ www redirect: $loc"; fail=1; fi

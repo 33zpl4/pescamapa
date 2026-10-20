@@ -53,13 +53,12 @@ function pm_destino( int $post_id ): array {
 	$aguas = array_map( function ( $a ) {
 		$a['coordenadas'] = ( is_numeric( $a['lat'] ?? null ) && is_numeric( $a['lon'] ?? null ) ) ? [ (float) $a['lat'], (float) $a['lon'] ] : null;
 		return $a;
-	}, pm_filas( 'aguas', $post_id ) );
+	}, pm_sin_pendientes( pm_filas( 'aguas', $post_id ) ) );
 
 	return [
 		'id'          => $post_id,
 		'idioma'      => $idioma,
 		'clave'       => $clave,
-		'estado'      => (string) pm_campo( 'estado', $post_id ) ?: 'borrador',
 		'nombre'      => get_the_title( $post_id ),
 		'slug'        => get_post_field( 'post_name', $post_id ),
 		'url'         => get_permalink( $post_id ),
@@ -73,14 +72,14 @@ function pm_destino( int $post_id ): array {
 		'modalidades' => array_values( array_filter( array_map( 'trim', preg_split( '/\R/', (string) pm_campo( 'modalidades', $post_id ) ) ) ) ),
 		'epoca'       => (string) pm_campo( 'epoca', $post_id ),
 		'aguas'       => $aguas,
-		'temporada'   => pm_filas( 'temporada', $post_id ),
+		'temporada'   => pm_sin_pendientes( pm_filas( 'temporada', $post_id ) ),
 		'reglamento'  => [
 			'autoridad'  => (string) pm_campo( 'reglamento_autoridad', $post_id ),
 			'url'        => (string) pm_campo( 'reglamento_url', $post_id ),
 			'verificado' => (string) pm_campo( 'reglamento_verificado', $post_id ),
 			'resumen'    => (string) pm_campo( 'reglamento_resumen', $post_id ),
 		],
-		'faqs'        => pm_filas( 'faqs', $post_id ),
+		'faqs'        => pm_sin_pendientes( pm_filas( 'faqs', $post_id ) ),
 		'fuentes'     => pm_filas( 'fuentes', $post_id ),
 		'seo_title'   => (string) pm_campo( 'seo_title', $post_id ),
 		'seo_description' => (string) pm_campo( 'seo_description', $post_id ),
@@ -118,7 +117,6 @@ function pm_especie( int $post_id ): array {
 		'id'          => $post_id,
 		'idioma'      => pm_idioma_de( $post_id ),
 		'clave'       => pm_clave_de( $post_id ),
-		'estado'      => (string) pm_campo( 'estado', $post_id ) ?: 'borrador',
 		'nombre'      => get_the_title( $post_id ),
 		'url'         => pm_url_especie( pm_clave_de( $post_id ), pm_idioma_de( $post_id ) ),
 		'cientifico'  => (string) pm_campo( 'cientifico', $post_id ),

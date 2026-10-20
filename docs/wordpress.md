@@ -60,13 +60,15 @@ Igual que en Astro, ahora en WordPress:
 - **URLs** (`inc/rutas.php`): `[/pt|/en]/<region>/<provincia>/<slug>/`,
   `/especies/<clave>/` (`/en/species/`), `/mapa/` (`/en/map/`),
   `/creditos/` (`/en/credits/`).
-- **Reglas de publicación** (`inc/reglas.php`): "Publicado" exige fuente
-  oficial, reglamento verificado hace menos de un año, ningún PENDIENTE, la
-  versión en español publicada y foto con autor. Si falta algo, la ficha
-  vuelve sola a borrador y el formulario muestra qué falta. Borrador =
-  visible con cartel + `noindex` + fuera del sitemap.
+- **Completitud, no bloqueos** (`inc/reglas.php`, decisión del 20/10/2026):
+  toda ficha publicada en WordPress es pública e indexable, sin carteles.
+  El formulario muestra "Para completar la ficha" (fuente oficial,
+  reglamento verificado hace menos de un año, notas PENDIENTE, foto con
+  autor, versión en español) solo para los editores. Las notas `PENDIENTE:`
+  (párrafos, citas, filas de calendario/FAQ/aguas) nunca se muestran en la
+  web. La fecha "Reglamento verificado el…" aparece solo cuando existe.
 - **SEO sin plugin** (`inc/seo.php`): título, descripción, canonical,
-  hreflang, Open Graph, JSON-LD y sitemap de WordPress filtrado.
+  hreflang, Open Graph, JSON-LD y sitemap de WordPress (todas las fichas).
 - **Fotos** (`inc/fotos.php`): WordPress genera tamaños y srcset; salen en
   WebP. Crédito en la propia foto (biblioteca de medios → "Autor de la
   foto"), visible sobre la imagen y en `/creditos/`.
