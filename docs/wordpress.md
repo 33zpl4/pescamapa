@@ -58,6 +58,13 @@ También corridos: `prestadores-2026-10-20` (#39–#48, datos de ejemplo),
 `esquina-verificado-2026-10-20`. La fecha "Reglamento verificado" es opcional.
 Actualizá esta lista al correr uno nuevo.
 
+**Revisión de fotos** (`revisar-fotos.yml`, el 1.º de cada mes y a pedido):
+abre un issue "Revisión de fotos — mm/aaaa" (y cierra el anterior) con las
+fotos para mirar: portadas verticales o chicas, sin autor, con nombre poco
+descriptivo, pesadas, imágenes del texto sin descripción y fotos sin usar.
+No bloquea nada; el equipo corrige lo que valga la pena. Licencias: alcanza
+con el autor (las de Commons ya traen su licencia); no hacemos más trámite.
+
 Diagnóstico: `probe-wp.yml` (solo lectura: versiones, opciones, log de
 Apache, render desde el propio servidor). Capturas: `capturas.yml` (empuja
 PNGs a la rama `capturas`).
