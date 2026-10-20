@@ -85,10 +85,10 @@ jobs:
           # (rewrite structure/flush --hard). Same workaround as the factory.
           w option update permalink_structure '/%postname%/'
           w eval 'pm_crear_rol_editor(); flush_rewrite_rules( false );'
-          if ! grep -q 'BEGIN WordPress' .htaccess 2>/dev/null; then
-            printf '%s\n' '# BEGIN WordPress' '<IfModule mod_rewrite.c>' 'RewriteEngine On' 'RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]' 'RewriteBase /' 'RewriteRule ^index\.php$ - [L]' 'RewriteCond %{REQUEST_FILENAME} !-f' 'RewriteCond %{REQUEST_FILENAME} !-d' 'RewriteRule . /index.php [L]' '</IfModule>' '# END WordPress' >> .htaccess
-            chown www:www .htaccess
-          fi
+          # .htaccess is ours: rewritten whole on every deploy (aaPanel's
+          # default has no trailing newline, so appending corrupts it).
+          printf '%s\n' '# Managed by deploy-wp.yml' '# BEGIN WordPress' '<IfModule mod_rewrite.c>' 'RewriteEngine On' 'RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]' 'RewriteBase /' 'RewriteRule ^index\.php$ - [L]' 'RewriteCond %{REQUEST_FILENAME} !-f' 'RewriteCond %{REQUEST_FILENAME} !-d' 'RewriteRule . /index.php [L]' '</IfModule>' '# END WordPress' > .htaccess
+          chown www:www .htaccess && chmod 644 .htaccess
           w config set DISALLOW_FILE_EDIT true --raw --type=constant
           chown www:www wp-config.php && chmod 640 wp-config.php
           echo "== .htaccess"; cat .htaccess
