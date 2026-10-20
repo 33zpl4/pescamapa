@@ -1,10 +1,10 @@
 # pescamapa — guía de sesión
 
-> **Migración en curso a WordPress** (`wordpress/`, staging en
-> `nuevo.pescamapa.com`). Leé `docs/wordpress.md` antes de tocar el plugin,
-> el tema o el deploy. Lo que sigue describe el sitio Astro, que sigue
-> online en `pescamapa.com` hasta el cambio de dominio; el modelo de datos
-> y las reglas de confianza son los mismos en los dos.
+> **`pescamapa.com` es WordPress desde el 20/10/2026** (`wordpress/`). Leé
+> `docs/wordpress.md` antes de tocar el plugin, el tema o el deploy. Lo que
+> sigue describe el sitio Astro (`src/`), que ya no se publica pero sigue
+> siendo la fuente de estilos generados; el modelo de datos y las reglas de
+> confianza son los mismos en los dos.
 
 Pescamapa (pescamapa.com): destinos, especies y guías para pescar en
 Argentina. Sitio Astro estático, publicado en Cloudflare Workers (static

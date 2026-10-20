@@ -1,9 +1,10 @@
 # Pescamapa en WordPress
 
-Desde octubre de 2026 el sitio se migra de Astro a WordPress para poder
-crecer: prestadores con cuenta, directorio, búsquedas y plugins. El sitio
-Astro sigue online en `pescamapa.com` hasta el cambio de dominio, y el
-WordPress vive en **`nuevo.pescamapa.com`** (no indexable).
+Desde el 20/10/2026 **`pescamapa.com` es WordPress** (antes, Astro en
+Cloudflare Workers). El sitio Astro (`src/`) queda en el repo como
+referencia y para generar estilos/datos, pero ya no se publica: el Worker
+`pescamapa` de Cloudflare no tiene dominio. `nuevo.pescamapa.com` sigue
+apuntando al mismo WordPress (alias del vhost).
 
 ## Dónde corre
 
@@ -76,7 +77,7 @@ Igual que en Astro, ahora en WordPress:
   (`wordpress/build/generar-css.mjs`) mientras convivan los dos sitios.
   Después del cambio de dominio, se edita directamente.
 
-## Cambio de dominio (cuando el WordPress esté aprobado)
+## Cambio de dominio (hecho el 20/10/2026)
 
 1. aaPanel → WP Toolkit → el sitio → agregar el dominio `pescamapa.com`.
 2. Cloudflare → Workers & Pages → `pescamapa` → Domains: quitar

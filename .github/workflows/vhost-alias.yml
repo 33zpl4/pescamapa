@@ -6,10 +6,6 @@ name: Add domain alias to the WordPress vhost
 
 on:
   workflow_dispatch:
-  push:
-    branches: [claude/wordpress-studio-agentic-9i5h7t]
-    paths:
-      - ".github/workflows/vhost-alias.yml"
 
 jobs:
   alias:
