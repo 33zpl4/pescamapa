@@ -53,7 +53,7 @@ una guía nueva desde una investigación): un script idempotente en
 (`wp-script.yml`). Nunca pisan a ciegas lo editado en wp-admin. Corridos
 (20/10/2026): `goya-2026-10-20` (reglamento de Goya), `goya-veda-2026-10-20`
 (saca la veda km 1109–1150) y `esquina-2026-10-20` (Esquina, borrador #38).
-Por correr con el PR de prestadores: `prestadores-2026-10-20` y
+También corridos: `prestadores-2026-10-20` (#39–#48, datos de ejemplo) y
 `esquina-reglamento-2026-10-20`.
 Actualizá esta lista al correr uno nuevo.
 
