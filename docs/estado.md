@@ -21,11 +21,10 @@ todas a nosotros (centralizar datos y cobrar comisión más adelante).
   corto. Las traducciones las propagamos nosotros (columna "Traducciones").
 - **Entrevistas, prestadores y consultas** (PR del 20/10/2026, ver
   `docs/wordpress.md` → "Entrevistas, prestadores y consultas").
-- **Esquina**: **borrador, no publicado** (decisión del dueño). El script
-  `wordpress/scripts/esquina-2026-10-20.php` la crea como borrador en
-  español con lo que la investigación pudo respaldar; lo dudoso quedó como
-  notas PENDIENTE. Investigación (solo resúmenes de búsqueda, no páginas
-  abiertas): `docs/investigacion/esquina.md`.
+- **Esquina**: **publicada el 20/10/2026** (2.ª guía, solo español),
+  reglamento verificado por el equipo del dueño el 20/10/2026. Lo dudoso
+  sigue como notas PENDIENTE (no se ven). Investigación:
+  `docs/investigacion/esquina.md`.
 
 ## Decisiones del dueño (no relitigar)
 
@@ -39,7 +38,7 @@ todas a nosotros (centralizar datos y cobrar comisión más adelante).
 | 20/10/2026 | Idioma del navegador: sugerir, nunca redirigir. |
 | 20/10/2026 | Las guías se listan en orden de publicación (Goya 1.ª, Esquina 2.ª…), no alfabético (`pm_destinos_lista`). |
 | 20/10/2026 | Email: Cloudflare Email Routing para `info@pescamapa.com` (en pausa: el routing quedó en "Syncing"; falta destino y regla). Después: `wp option update pm_email_consultas info@pescamapa.com`. |
-| 20/10/2026 | Una guía nueva armada con investigación de escritorio queda en **borrador** hasta pasar el protocolo de verificación (abajo). |
+| 20/10/2026 | La fecha "Reglamento verificado" es **opcional**: se muestra si está, nunca se pide ni bloquea. El protocolo de abajo es una buena práctica, no un requisito para publicar. |
 | 20/10/2026 | Goya está en el Paraná medio (km ~960–990): no lleva vedas extraordinarias del Alto Paraná. |
 | 20/10/2026 | **Vedas: mínimo esfuerzo.** Poco tráfico y mucho mantenimiento. Cada guía lleva un párrafo genérico (vedas por desove y extraordinarias por tramo, cambian cada año) y el enlace a la autoridad. Sin fechas ni kilómetros que haya que perseguir. |
 | antes | Fotos solo de Commons con licencia libre o cedidas con crédito; nunca de Google. Prestadores solo con consentimiento y precios fechados. |
@@ -50,11 +49,7 @@ todas a nosotros (centralizar datos y cobrar comisión más adelante).
    Prestadores, columna "En la web" = 🧪). Por cada uno: datos reales,
    permiso para aparecer, destildar "Datos de ejemplo". Sobre todo **lancha,
    capacidad y motor**, que los guías señalaron como clave.
-2. **Verificar Esquina** (borrador #38 en wp-admin). El reglamento ya tiene
-   lo que investigó el dueño (licencia, categorías, río Corriente solo
-   deportiva, pacú 45 cm); falta leer la página oficial y fijar la fecha de
-   verificación con el protocolo de abajo y recién ahí publicarla
-   (y traducirla).
+2. **Traducir Esquina** a pt/en (hoy solo español).
 3. **Primeras entrevistas**: Agus y su papá (Goya). Guía de preguntas en
    `docs/entrevistas.md`. Hace falta su permiso para nombre, foto y frases.
 4. **Email de consultas**: confirmar que el servidor envía correo (probar el
@@ -68,7 +63,7 @@ todas a nosotros (centralizar datos y cobrar comisión más adelante).
 7. **Fichas de especie faltantes**: pacú, patí, boga, tararira, trucha,
    pejerrey (hoy solo existen dorado y surubí).
 
-## Protocolo para pasar una guía a "verificada" (dueño, 20/10/2026)
+## Protocolo de verificación (opcional, buena práctica)
 
 Los resúmenes de buscadores repiten fórmulas ("se pesca todo el año") y no
 dicen si una disposición sigue vigente ni si un guía sigue activo. Antes de
@@ -89,7 +84,7 @@ Bitácora de verificaciones:
 
 | Fecha | Guía | Quién | Qué se verificó |
 | --- | --- | --- | --- |
-| — | — | — | (todavía ninguna) |
+| 20/10/2026 | Esquina | Equipo del dueño | Reglamento: licencia y categorías, río Corriente solo pesca deportiva, pacú 45 cm, régimen de vedas. |
 
 ## Vedas extraordinarias 2026 (para las guías de Paso de la Patria e Itatí)
 
