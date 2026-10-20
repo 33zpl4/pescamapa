@@ -81,8 +81,14 @@ jobs:
           w option update default_comment_status closed
           # Staging (nuevo.*) is never indexed; the real domain is.
           if [[ "$WP_URL" == *"://nuevo."* ]]; then w option update blog_public 0; else w option update blog_public 1; fi
-          w rewrite structure '/%postname%/' --hard
-          w eval 'pm_crear_rol_editor(); flush_rewrite_rules( true );'
+          # PHP here disables proc_open: no self-relaunching wp-cli commands
+          # (rewrite structure/flush --hard). Same workaround as the factory.
+          w option update permalink_structure '/%postname%/'
+          w eval 'pm_crear_rol_editor(); flush_rewrite_rules( false );'
+          if ! grep -q 'BEGIN WordPress' .htaccess 2>/dev/null; then
+            printf '%s\n' '# BEGIN WordPress' '<IfModule mod_rewrite.c>' 'RewriteEngine On' 'RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]' 'RewriteBase /' 'RewriteRule ^index\.php$ - [L]' 'RewriteCond %{REQUEST_FILENAME} !-f' 'RewriteCond %{REQUEST_FILENAME} !-d' 'RewriteRule . /index.php [L]' '</IfModule>' '# END WordPress' >> .htaccess
+            chown www:www .htaccess
+          fi
           w config set DISALLOW_FILE_EDIT true --raw --type=constant
           chown www:www wp-config.php && chmod 640 wp-config.php
           echo "== .htaccess"; cat .htaccess
