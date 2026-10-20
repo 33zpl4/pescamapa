@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Pescamapa — núcleo
- * Description: Tipos de contenido (destinos, especies, próximos destinos), idiomas, URLs, reglas de publicación, SEO y créditos de fotos de Pescamapa. Versionado en git: no se edita desde el panel.
+ * Description: Tipos de contenido (destinos, especies, próximos destinos, entrevistas, prestadores, consultas), idiomas, URLs, reglas de publicación, SEO y créditos de fotos de Pescamapa. Versionado en git: no se edita desde el panel.
  * Version: 1.0.0
  * Requires PHP: 8.1
  * Requires Plugins: secure-custom-fields
@@ -29,6 +29,9 @@ require PM_DIR . 'inc/mapa.php';
 require PM_DIR . 'inc/seo.php';
 require PM_DIR . 'inc/admin.php';
 require PM_DIR . 'inc/editor.php';
+require PM_DIR . 'inc/entrevistas.php';
+require PM_DIR . 'inc/prestadores.php';
+require PM_DIR . 'inc/consultas.php';
 
 register_activation_hook( __FILE__, function () {
 	pm_registrar_tipos();

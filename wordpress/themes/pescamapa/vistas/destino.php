@@ -12,6 +12,8 @@ $migas     = [
 	[ $provincia, null ],
 	[ $d['nombre'], $d['url'] ],
 ];
+$citas       = pm_citas_destino( $d['clave'], $idioma );
+$prestadores = pm_prestadores_destino( $d['clave'] );
 $pins = [ [ 'nombre' => $d['nombre'], 'coordenadas' => $d['coordenadas'], 'tipo' => 'destino', 'detalle' => $provincia ] ];
 foreach ( $d['aguas'] as $a ) {
 	if ( $a['coordenadas'] ) {
@@ -37,6 +39,9 @@ get_header(); ?>
 					<?php pm_e( 'ficha.por' ); ?> <?php echo esc_html( $d['autor'] ); ?> · <?php pm_e( 'ficha.actualizado' ); ?> <time datetime="<?php echo esc_attr( $d['actualizado'] ); ?>"><?php echo esc_html( pm_fecha( $d['actualizado'] ) ); ?></time>
 					<?php if ( $d['reglamento']['verificado'] ) : ?>
 						· <?php pm_e( 'ficha.verificado' ); ?> <?php echo esc_html( pm_fecha( $d['reglamento']['verificado'] ) ); ?>
+					<?php endif; ?>
+					<?php if ( $d['alturas_url'] ) : ?>
+						· <a href="<?php echo esc_url( $d['alturas_url'] ); ?>" rel="noopener"><?php pm_e( 'ficha.alturas' ); ?></a>
 					<?php endif; ?>
 				</p>
 			</div>
@@ -74,6 +79,18 @@ get_header(); ?>
 					</table>
 				<?php endif; ?>
 
+				<?php if ( $citas ) : ?>
+					<h2 id="voces"><?php pm_e( 'ficha.citas.h2' ); ?></h2>
+					<div class="citas">
+						<?php foreach ( $citas as $c ) : ?>
+							<figure class="cita"<?php echo $c['idioma'] !== $idioma ? ' lang="' . esc_attr( pm_meta_idioma( $c['idioma'] )['html'] ) . '"' : ''; ?>>
+								<blockquote cite="<?php echo esc_url( $c['url'] ); ?>"><p><?php echo esc_html( $c['cita'] ); ?></p></blockquote>
+								<figcaption><strong><?php echo esc_html( $c['persona'] ); ?></strong>, <?php echo esc_html( $c['rol'] ); ?> · <a href="<?php echo esc_url( $c['url'] ); ?>"><?php pm_e( 'ficha.citas.leer' ); ?></a></figcaption>
+							</figure>
+						<?php endforeach; ?>
+					</div>
+				<?php endif; ?>
+
 				<h2 id="reglamento"><?php pm_e( 'ficha.reglamento' ); ?></h2>
 				<div class="regla">
 					<p><?php echo esc_html( $d['reglamento']['resumen'] ); ?></p>
@@ -87,7 +104,18 @@ get_header(); ?>
 				</div>
 
 				<h2 id="prestadores"><?php pm_e( 'ficha.prestadores.h2' ); ?></h2>
-				<p class="note"><?php pm_e( 'ficha.prestadores.p', [ 'lugar' => $d['nombre'] ] ); ?></p>
+				<p><?php pm_e( 'ficha.prestadores.p', [ 'lugar' => $d['nombre'] ] ); ?></p>
+				<?php foreach ( $prestadores as $r ) {
+					get_template_part( 'parciales/prestador', null, $r );
+				} ?>
+				<div class="elegir">
+					<h3><?php pm_e( 'ficha.elegir.h3' ); ?></h3>
+					<ol>
+						<?php for ( $n = 1; $n <= 6; $n++ ) : ?><li><?php pm_e( "ficha.elegir.$n" ); ?></li><?php endfor; ?>
+					</ol>
+					<p class="note"><?php pm_e( 'ficha.elegir.fuente' ); ?></p>
+				</div>
+				<?php get_template_part( 'parciales/consulta', null, [ 'destino' => $d['clave'], 'lugar' => $d['nombre'], 'especies' => $d['especies'] ] ); ?>
 
 				<?php if ( $d['faqs'] ) : ?>
 					<h2 id="preguntas"><?php pm_e( 'ficha.faqs' ); ?></h2>

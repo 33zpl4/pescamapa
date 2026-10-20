@@ -149,7 +149,7 @@
 			"inicio.prop3.p": "Guías y alojamientos con información clara, publicados con su consentimiento y precios con fecha.",
 			"inicio.prest.eyebrow": "Para guías y alojamientos",
 			"inicio.prest.h2": "El buen trabajo local merece encontrarse.",
-			"inicio.prest.p": "Estamos armando la red de prestadores destino por destino. Esta primera versión no toma reservas ni publica servicios comerciales.",
+			"inicio.prest.p": "Si sos guía, tenés un alojamiento u organizás salidas de pesca, sumate: relevamos cada servicio, lo publicamos con tu consentimiento y te pasamos consultas de pescadores.",
 			"mapa.title": "Mapa de pesca en Argentina: destinos por región y especie | Pescamapa",
 			"mapa.description": "Mapa interactivo de destinos de pesca deportiva en Argentina: Litoral, Patagonia, lagunas y costa. Tocá un punto para ver especies, temporada y la guía.",
 			"mapa.h1": "Mapa de pesca en Argentina",
@@ -182,7 +182,7 @@
 			"ficha.noverificado": "Todavía no verificamos el reglamento vigente para esta guía.",
 			"ficha.cambian": "Las normas cambian: confirmá con la autoridad antes de salir.",
 			"ficha.prestadores.h2": "Guías y alojamientos",
-			"ficha.prestadores.p": "Estamos relevando prestadores en %lugar%. Cada ficha se publica con su consentimiento y con precios fechados.",
+			"ficha.prestadores.p": "Contanos qué buscás y te conectamos con guías y alojamientos de %lugar%. Cada ficha se publica con el consentimiento del prestador y con precios fechados.",
 			"ficha.faqs": "Preguntas frecuentes",
 			"ficha.fuentes": "Fuentes",
 			"ficha.oficial": "oficial",
@@ -197,7 +197,54 @@
 			"creditos.p": "Las fotos de Pescamapa provienen de Wikimedia Commons y se usan según sus licencias libres. Gracias a sus autores.",
 			"creditos.de": "de",
 			"creditos.licencia": "Licencia",
-			"creditos.editada": "Redimensionada y recortada."
+			"creditos.editada": "Redimensionada y recortada.",
+			"nav.entrevistas": "Entrevistas",
+			"ficha.alturas": "Altura del río hoy ↗",
+			"ficha.citas.h2": "Lo que dicen los que pescan ahí",
+			"ficha.citas.leer": "Leer la entrevista →",
+			"ficha.elegir.h3": "Cómo elegir guía: qué preguntar antes de reservar",
+			"ficha.elegir.1": "Modalidad: ¿trabaja con carnada, spinning/baitcasting o mosca? Elegí al que se especializa en lo que querés hacer.",
+			"ficha.elegir.2": "Lancha y equipo: ¿lancha completa, motor eléctrico, plataforma de lanzamiento, sonda? ¿Presta equipos?",
+			"ficha.elegir.3": "Qué incluye: carnada, comida, combustible, alojamiento, traslados. Pedilo por escrito, junto con el precio.",
+			"ficha.elegir.4": "La fecha manda: los meses definen el tipo de pesca. Preguntá qué rinde en tu fecha, con qué altura y temperatura del agua.",
+			"ficha.elegir.5": "El lugar: ubicación del alojamiento, bajada de lancha, distancia a las zonas de pesca y el ambiente en general.",
+			"ficha.elegir.6": "Referencias: fotos de salidas recientes y pescadores que hayan ido. Si podés, hablá con el dueño o con quien opera.",
+			"ficha.elegir.fuente": "Lo armamos con lo que nos contaron guías y operadores locales.",
+			"prest.incluye": "Incluye",
+			"prest.equipo": "Lancha y equipo",
+			"prest.modalidades": "Modalidades",
+			"prest.temporada": "Cuándo",
+			"prest.capacidad": "Hasta %n% pescadores por lancha",
+			"prest.precio": "%precio% (precio consultado el %fecha%)",
+			"prest.consultar": "Consultar disponibilidad",
+			"consulta.h2": "Pedí tu cotización",
+			"consulta.p": "Contanos cuándo querés ir y qué querés pescar. Te respondemos con opciones de guías y alojamientos de %lugar%, sin costo.",
+			"consulta.nombre": "Tu nombre",
+			"consulta.contacto": "WhatsApp o email",
+			"consulta.cuando": "¿Cuándo? (fechas o mes)",
+			"consulta.personas": "Pescadores",
+			"consulta.modalidad": "Modalidad",
+			"consulta.especie": "Especie",
+			"consulta.indistinto": "Me da igual",
+			"consulta.mensaje": "Algo más (experiencia, alojamiento, presupuesto)",
+			"consulta.sobre": "Consulta sobre:",
+			"consulta.enviar": "Enviar consulta",
+			"consulta.privacidad": "Usamos tus datos solo para responderte y para pasarle tu consulta a los prestadores que elijas.",
+			"consulta.ok": "¡Gracias! Recibimos tu consulta y te escribimos pronto.",
+			"consulta.error": "No pudimos enviar la consulta. Revisá tu nombre y tu contacto, o probá más tarde.",
+			"inicio.prest.localidad": "Localidad",
+			"inicio.prest.ofrece": "Qué ofrecés (guía, alojamiento, salidas…)",
+			"inicio.prest.enviar": "Quiero sumarme",
+			"entrevistas.title": "Entrevistas con guías y pescadores | Pescamapa",
+			"entrevistas.description": "Lo que saben los que pescan todos los días: guías, prestadores y pescadores de cada destino, con nombre y fecha.",
+			"entrevistas.eyebrow": "Voces locales",
+			"entrevistas.h1": "Entrevistas",
+			"entrevistas.vacio": "Muy pronto: estamos charlando con guías y prestadores de cada destino.",
+			"entrevista.eyebrow": "Entrevista",
+			"entrevista.fecha": "Entrevista del %fecha%",
+			"entrevista.citas": "En pocas palabras",
+			"entrevista.guia": "Guía para pescar en %lugar% →",
+			"idioma.sugerencia": "Esta página está en español →"
 		},
 		"pt": {
 			"marca.lema": "Destinos, espécies e guias para pescar na Argentina.",
@@ -260,7 +307,7 @@
 			"inicio.prop3.p": "Guias e hospedagens com informação clara, publicados com o consentimento deles e preços com data.",
 			"inicio.prest.eyebrow": "Para guias e hospedagens",
 			"inicio.prest.h2": "O bom trabalho local merece ser encontrado.",
-			"inicio.prest.p": "Estamos montando a rede de prestadores destino por destino. Esta primeira versão não faz reservas nem publica serviços comerciais.",
+			"inicio.prest.p": "Se você é guia, tem uma hospedagem ou organiza saídas de pesca, participe: levantamos cada serviço, publicamos com seu consentimento e repassamos consultas de pescadores.",
 			"mapa.title": "Mapa de pesca na Argentina: destinos por região e espécie | Pescamapa",
 			"mapa.description": "Mapa interativo de destinos de pesca esportiva na Argentina: Litoral, Patagônia, lagoas e litoral atlântico. Toque num ponto para ver espécies e o guia.",
 			"mapa.h1": "Mapa de pesca na Argentina",
@@ -293,7 +340,7 @@
 			"ficha.noverificado": "Ainda não verificamos o regulamento vigente para este guia.",
 			"ficha.cambian": "As regras mudam: confirme com a autoridade antes de sair.",
 			"ficha.prestadores.h2": "Guias e hospedagens",
-			"ficha.prestadores.p": "Estamos levantando prestadores em %lugar%. Cada ficha é publicada com o consentimento deles e com preços datados.",
+			"ficha.prestadores.p": "Conte o que você procura e conectamos você com guias e hospedagens em %lugar%. Cada ficha é publicada com o consentimento do prestador e com preços datados.",
 			"ficha.faqs": "Perguntas frequentes",
 			"ficha.fuentes": "Fontes",
 			"ficha.oficial": "oficial",
@@ -308,7 +355,54 @@
 			"creditos.p": "As fotos do Pescamapa vêm do Wikimedia Commons e são usadas de acordo com as suas licenças livres. Obrigado aos autores.",
 			"creditos.de": "de",
 			"creditos.licencia": "Licença",
-			"creditos.editada": "Redimensionada e recortada."
+			"creditos.editada": "Redimensionada e recortada.",
+			"nav.entrevistas": "Entrevistas",
+			"ficha.alturas": "Nível do rio hoje ↗",
+			"ficha.citas.h2": "O que dizem os que pescam lá",
+			"ficha.citas.leer": "Ler a entrevista →",
+			"ficha.elegir.h3": "Como escolher um guia: o que perguntar antes de reservar",
+			"ficha.elegir.1": "Modalidade: trabalha com isca natural, spinning/baitcasting ou fly? Escolha quem se especializa no que você quer fazer.",
+			"ficha.elegir.2": "Barco e equipamento: barco completo, motor elétrico, plataforma de arremesso, sonar? Empresta equipamento?",
+			"ficha.elegir.3": "O que inclui: isca, refeições, combustível, hospedagem, traslados. Peça por escrito, junto com o preço.",
+			"ficha.elegir.4": "A data manda: os meses definem o tipo de pesca. Pergunte o que rende na sua data, com que nível e temperatura da água.",
+			"ficha.elegir.5": "O lugar: localização da hospedagem, rampa de barcos, distância às áreas de pesca e o ambiente em geral.",
+			"ficha.elegir.6": "Referências: fotos de saídas recentes e pescadores que já foram. Se puder, fale com o dono ou com quem opera.",
+			"ficha.elegir.fuente": "Montamos isto com o que nos contaram guias e operadores locais.",
+			"prest.incluye": "Inclui",
+			"prest.equipo": "Barco e equipamento",
+			"prest.modalidades": "Modalidades",
+			"prest.temporada": "Quando",
+			"prest.capacidad": "Até %n% pescadores por barco",
+			"prest.precio": "%precio% (preço consultado em %fecha%)",
+			"prest.consultar": "Consultar disponibilidade",
+			"consulta.h2": "Peça seu orçamento",
+			"consulta.p": "Conte quando quer ir e o que quer pescar. Respondemos com opções de guias e hospedagens em %lugar%, sem custo.",
+			"consulta.nombre": "Seu nome",
+			"consulta.contacto": "WhatsApp ou e-mail",
+			"consulta.cuando": "Quando? (datas ou mês)",
+			"consulta.personas": "Pescadores",
+			"consulta.modalidad": "Modalidade",
+			"consulta.especie": "Espécie",
+			"consulta.indistinto": "Tanto faz",
+			"consulta.mensaje": "Algo mais (experiência, hospedagem, orçamento)",
+			"consulta.sobre": "Consulta sobre:",
+			"consulta.enviar": "Enviar consulta",
+			"consulta.privacidad": "Usamos seus dados só para responder e repassar sua consulta aos prestadores que você escolher.",
+			"consulta.ok": "Obrigado! Recebemos sua consulta e responderemos em breve.",
+			"consulta.error": "Não conseguimos enviar a consulta. Confira seu nome e contato, ou tente mais tarde.",
+			"inicio.prest.localidad": "Localidade",
+			"inicio.prest.ofrece": "O que você oferece (guia, hospedagem, saídas…)",
+			"inicio.prest.enviar": "Quero participar",
+			"entrevistas.title": "Entrevistas com guias e pescadores | Pescamapa",
+			"entrevistas.description": "O que sabem os que pescam todos os dias: guias, prestadores e pescadores de cada destino, com nome e data.",
+			"entrevistas.eyebrow": "Vozes locais",
+			"entrevistas.h1": "Entrevistas",
+			"entrevistas.vacio": "Em breve: estamos conversando com guias e prestadores de cada destino.",
+			"entrevista.eyebrow": "Entrevista",
+			"entrevista.fecha": "Entrevista de %fecha%",
+			"entrevista.citas": "Em poucas palavras",
+			"entrevista.guia": "Guia para pescar em %lugar% →",
+			"idioma.sugerencia": "Esta página em português →"
 		},
 		"en": {
 			"marca.lema": "Destinations, species and guides for fishing in Argentina.",
@@ -371,7 +465,7 @@
 			"inicio.prop3.p": "Guides and lodging with clear information, published with their consent and dated prices.",
 			"inicio.prest.eyebrow": "For guides and lodges",
 			"inicio.prest.h2": "Good local work deserves to be found.",
-			"inicio.prest.p": "We are building the outfitter network destination by destination. This first version takes no bookings and lists no commercial services.",
+			"inicio.prest.p": "If you are a guide, run a lodge or organise fishing trips, join us: we survey each service, publish it with your consent and send you requests from anglers.",
 			"mapa.title": "Fishing map of Argentina: destinations by region and species | Pescamapa",
 			"mapa.description": "Interactive map of sport fishing destinations in Argentina: the Litoral, Patagonia, lagoons and the Atlantic coast. Tap a point to see species and the guide.",
 			"mapa.h1": "Fishing map of Argentina",
@@ -404,7 +498,7 @@
 			"ficha.noverificado": "We have not yet checked the current regulations for this guide.",
 			"ficha.cambian": "Rules change: confirm with the authority before you go.",
 			"ficha.prestadores.h2": "Guides and lodging",
-			"ficha.prestadores.p": "We are surveying outfitters in %lugar%. Each listing is published with their consent and with dated prices.",
+			"ficha.prestadores.p": "Tell us what you are looking for and we will connect you with guides and lodging in %lugar%. Each listing is published with the outfitter’s consent and with dated prices.",
 			"ficha.faqs": "Frequently asked questions",
 			"ficha.fuentes": "Sources",
 			"ficha.oficial": "official",
@@ -419,7 +513,179 @@
 			"creditos.p": "Pescamapa’s photos come from Wikimedia Commons and are used under their free licences. Thanks to their authors.",
 			"creditos.de": "by",
 			"creditos.licencia": "Licence",
-			"creditos.editada": "Resized and cropped."
+			"creditos.editada": "Resized and cropped.",
+			"nav.entrevistas": "Interviews",
+			"ficha.alturas": "River level today ↗",
+			"ficha.citas.h2": "What local anglers say",
+			"ficha.citas.leer": "Read the interview →",
+			"ficha.elegir.h3": "How to choose a guide: what to ask before booking",
+			"ficha.elegir.1": "Style: does the guide fish bait, spinning/baitcasting or fly? Pick one who specialises in what you want to do.",
+			"ficha.elegir.2": "Boat and gear: fully equipped boat, electric motor, casting platform, fish finder? Is tackle provided?",
+			"ficha.elegir.3": "What is included: bait, meals, fuel, lodging, transfers. Get it in writing, with the price.",
+			"ficha.elegir.4": "Timing rules: the month decides the fishing. Ask what works on your dates, at what river level and water temperature.",
+			"ficha.elegir.5": "The place: where the lodging is, boat ramp, distance to the fishing areas and the overall setting.",
+			"ficha.elegir.6": "References: photos of recent trips and anglers who have been. If you can, talk to the owner or operator.",
+			"ficha.elegir.fuente": "Put together from what local guides and operators told us.",
+			"prest.incluye": "Includes",
+			"prest.equipo": "Boat and gear",
+			"prest.modalidades": "Fishing styles",
+			"prest.temporada": "When",
+			"prest.capacidad": "Up to %n% anglers per boat",
+			"prest.precio": "%precio% (price checked on %fecha%)",
+			"prest.consultar": "Ask about availability",
+			"consulta.h2": "Get a quote",
+			"consulta.p": "Tell us when you want to go and what you want to catch. We will reply with guide and lodging options in %lugar%, free of charge.",
+			"consulta.nombre": "Your name",
+			"consulta.contacto": "WhatsApp or email",
+			"consulta.cuando": "When? (dates or month)",
+			"consulta.personas": "Anglers",
+			"consulta.modalidad": "Fishing style",
+			"consulta.especie": "Species",
+			"consulta.indistinto": "No preference",
+			"consulta.mensaje": "Anything else (experience, lodging, budget)",
+			"consulta.sobre": "About:",
+			"consulta.enviar": "Send request",
+			"consulta.privacidad": "We only use your details to reply and to pass your request on to the outfitters you choose.",
+			"consulta.ok": "Thanks! We got your request and will get back to you soon.",
+			"consulta.error": "We could not send your request. Check your name and contact, or try again later.",
+			"inicio.prest.localidad": "Town",
+			"inicio.prest.ofrece": "What you offer (guiding, lodging, trips…)",
+			"inicio.prest.enviar": "I want to join",
+			"entrevistas.title": "Interviews with fishing guides and anglers | Pescamapa",
+			"entrevistas.description": "What people who fish every day know: guides, outfitters and anglers from each destination, named and dated.",
+			"entrevistas.eyebrow": "Local voices",
+			"entrevistas.h1": "Interviews",
+			"entrevistas.vacio": "Coming soon: we are talking to guides and outfitters in each destination.",
+			"entrevista.eyebrow": "Interview",
+			"entrevista.fecha": "Interview of %fecha%",
+			"entrevista.citas": "In a nutshell",
+			"entrevista.guia": "Guide to fishing in %lugar% →",
+			"idioma.sugerencia": "This page in English →"
+		}
+	},
+	"opciones": {
+		"tipo": {
+			"guia": {
+				"es": "Guía de pesca",
+				"pt": "Guia de pesca",
+				"en": "Fishing guide"
+			},
+			"alojamiento": {
+				"es": "Alojamiento",
+				"pt": "Hospedagem",
+				"en": "Lodging"
+			},
+			"operador": {
+				"es": "Paquetes y salidas",
+				"pt": "Pacotes e saídas",
+				"en": "Packages and trips"
+			},
+			"lancha": {
+				"es": "Alquiler de lancha",
+				"pt": "Aluguel de barco",
+				"en": "Boat rental"
+			}
+		},
+		"modalidad": {
+			"carnada": {
+				"es": "Con carnada",
+				"pt": "Com isca natural",
+				"en": "Bait fishing"
+			},
+			"spinning": {
+				"es": "Spinning y baitcasting",
+				"pt": "Spinning e baitcasting",
+				"en": "Spinning and baitcasting"
+			},
+			"mosca": {
+				"es": "Mosca",
+				"pt": "Fly",
+				"en": "Fly fishing"
+			},
+			"trolling": {
+				"es": "Trolling",
+				"pt": "Corrico",
+				"en": "Trolling"
+			},
+			"costa": {
+				"es": "Desde la costa",
+				"pt": "Do barranco",
+				"en": "Shore fishing"
+			}
+		},
+		"equipo": {
+			"lancha": {
+				"es": "Lancha completa",
+				"pt": "Barco completo",
+				"en": "Fully equipped boat"
+			},
+			"motor_electrico": {
+				"es": "Motor eléctrico",
+				"pt": "Motor elétrico",
+				"en": "Electric trolling motor"
+			},
+			"plataforma": {
+				"es": "Plataforma de lanzamiento",
+				"pt": "Plataforma de arremesso",
+				"en": "Casting platform"
+			},
+			"sonda": {
+				"es": "Sonda y GPS",
+				"pt": "Sonar e GPS",
+				"en": "Fish finder and GPS"
+			},
+			"equipos": {
+				"es": "Equipos de pesca prestados",
+				"pt": "Equipamento emprestado",
+				"en": "Tackle provided"
+			},
+			"chalecos": {
+				"es": "Chalecos salvavidas",
+				"pt": "Coletes salva-vidas",
+				"en": "Life jackets"
+			}
+		},
+		"incluye": {
+			"carnada": {
+				"es": "Carnada",
+				"pt": "Isca",
+				"en": "Bait"
+			},
+			"comida": {
+				"es": "Comida",
+				"pt": "Refeições",
+				"en": "Meals"
+			},
+			"bebidas": {
+				"es": "Bebidas",
+				"pt": "Bebidas",
+				"en": "Drinks"
+			},
+			"combustible": {
+				"es": "Combustible",
+				"pt": "Combustível",
+				"en": "Fuel"
+			},
+			"alojamiento": {
+				"es": "Alojamiento",
+				"pt": "Hospedagem",
+				"en": "Lodging"
+			},
+			"traslados": {
+				"es": "Traslados",
+				"pt": "Traslados",
+				"en": "Transfers"
+			},
+			"equipos": {
+				"es": "Equipos de pesca",
+				"pt": "Equipamento de pesca",
+				"en": "Fishing tackle"
+			},
+			"licencia": {
+				"es": "Trámite de licencia",
+				"pt": "Licença de pesca",
+				"en": "Fishing licence"
+			}
 		}
 	}
 }

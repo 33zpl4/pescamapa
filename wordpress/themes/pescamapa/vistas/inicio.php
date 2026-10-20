@@ -5,7 +5,8 @@ defined( 'ABSPATH' ) || exit;
 $idioma   = pm_lang();
 $destinos = pm_destinos_lista( $idioma );
 $proximos = pm_proximos_lista( $idioma );
-$primera  = $destinos[0] ?? null;
+// The hero card names Goya (inicio.tag2.*): link it to Goya, whatever the order.
+$primera  = current( array_filter( $destinos, fn( $d ) => 'goya' === $d['clave'] ) ) ?: ( $destinos[0] ?? null );
 
 $puntos_hero = [];
 foreach ( $proximos as $p ) {
@@ -146,6 +147,24 @@ get_header(); ?>
 				<div class="eyebrow"><?php pm_e( 'inicio.prest.eyebrow' ); ?></div>
 				<h2><?php pm_e( 'inicio.prest.h2' ); ?></h2>
 				<p><?php pm_e( 'inicio.prest.p' ); ?></p>
+			</div>
+			<div id="consulta" class="consulta">
+				<?php if ( 'ok' === pm_consulta_resultado() ) : ?>
+					<p class="aviso ok" role="status"><?php pm_e( 'consulta.ok' ); ?></p>
+				<?php else : ?>
+					<?php if ( 'error' === pm_consulta_resultado() ) : ?><p class="aviso error" role="alert"><?php pm_e( 'consulta.error' ); ?></p><?php endif; ?>
+					<form method="post" action="<?php echo esc_url( pm_consulta_url_envio() ); ?>">
+						<?php echo pm_consulta_ocultos( 'prestador' ); // phpcs:ignore -- escaped inside ?>
+						<div class="grilla">
+							<label><?php pm_e( 'consulta.nombre' ); ?> <input name="nombre" required maxlength="80" autocomplete="name"></label>
+							<label><?php pm_e( 'consulta.contacto' ); ?> <input name="contacto" required maxlength="120" autocomplete="tel"></label>
+							<label><?php pm_e( 'inicio.prest.localidad' ); ?> <input name="localidad" maxlength="80"></label>
+							<label><?php pm_e( 'inicio.prest.ofrece' ); ?> <input name="ofrece" maxlength="200"></label>
+						</div>
+						<button class="button primary" type="submit"><?php pm_e( 'inicio.prest.enviar' ); ?></button>
+						<p class="note"><?php pm_e( 'consulta.privacidad' ); ?></p>
+					</form>
+				<?php endif; ?>
 			</div>
 		</div>
 	</section>

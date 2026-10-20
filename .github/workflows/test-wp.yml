@@ -1,0 +1,113 @@
+name: Test WordPress (throwaway install)
+
+# There is no staging: a PHP fatal in the plugin or theme takes the live site
+# down. Every PR touching wordpress/** runs the plugin and theme on a fresh
+# WordPress (MySQL service + wp server), creates sample content (the Esquina
+# script, an interview, an outfitter), renders the main pages and sends an
+# inquiry through the real form. Fails on any PHP warning or fatal.
+
+on:
+  pull_request:
+    paths: ['wordpress/**', '.github/workflows/test-wp.yml']
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_ROOT_PASSWORD: root
+          MYSQL_DATABASE: wp
+        ports: ['3306:3306']
+        options: --health-cmd="mysqladmin ping -proot" --health-interval=5s --health-timeout=5s --health-retries=20
+    env:
+      WP: /tmp/wp
+      URL: http://localhost:8080
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          extensions: mysqli, gd, mbstring
+          tools: wp-cli
+      - name: Install WordPress + SCF + plugin + theme
+        run: |
+          w() { wp --path="$WP" "$@"; }
+          mkdir -p "$WP"
+          w core download --locale=es_AR --quiet
+          w config create --dbname=wp --dbuser=root --dbpass=root --dbhost=127.0.0.1 --quiet
+          w config set WP_DEBUG true --raw
+          w config set WP_DEBUG_LOG true --raw
+          w config set WP_DEBUG_DISPLAY false --raw
+          w core install --url="$URL" --title=Pescamapa --admin_user=admin --admin_password=admin --admin_email=test@example.com --skip-email --quiet
+          w plugin install secure-custom-fields --activate --quiet
+          cp -r wordpress/plugins/pescamapa-core "$WP/wp-content/plugins/"
+          cp -r wordpress/themes/pescamapa "$WP/wp-content/themes/"
+          echo "test" > "$WP/wp-content/themes/pescamapa/build.txt"
+          w plugin activate pescamapa-core
+          w theme activate pescamapa
+          w option update permalink_structure '/%postname%/'
+          w eval 'flush_rewrite_rules( false );'
+      - name: Sample content
+        run: |
+          w() { wp --path="$WP" "$@"; }
+          for e in dorado:Dorado surubi:Surubí; do
+            id=$(w post create --post_type=pm_especie --post_status=publish --post_title="${e#*:}" --porcelain)
+            w eval "update_field( 'idioma', 'es', $id ); update_field( 'clave', '${e%%:*}', $id );"
+          done
+          w eval-file wordpress/scripts/esquina-2026-10-20.php
+          w eval-file wordpress/scripts/esquina-2026-10-20.php   # idempotent: second run does nothing
+          # The script leaves Esquina as a draft; publish it here to render it.
+          w post update $(w post list --post_type=pm_destino --post_status=draft --format=ids) --post_status=publish
+          w eval '
+            $id = wp_insert_post( [ "post_type" => "pm_entrevista", "post_status" => "publish", "post_title" => "Prueba: el río manda", "post_name" => "prueba-el-rio-manda", "post_content" => "<!-- wp:paragraph --><p>Charla de prueba.</p><!-- /wp:paragraph -->" ] );
+            foreach ( [ "idioma" => "es", "clave" => "prueba", "persona" => "Persona Prueba", "destino" => "esquina", "fecha" => "20261020", "consentimiento" => 1, "rol" => "Guía de prueba", "bajada" => "Bajada de prueba", "seo_title" => "Prueba", "seo_description" => "Descripción de prueba" ] as $k => $v ) { update_field( $k, $v, $id ); }
+            update_field( "citas", [ [ "cita" => "CITA-DE-PRUEBA en Esquina", "tema" => "temporada" ] ], $id );
+            $sin = wp_insert_post( [ "post_type" => "pm_entrevista", "post_status" => "publish", "post_title" => "Sin permiso", "post_name" => "sin-permiso" ] );
+            foreach ( [ "idioma" => "es", "clave" => "sin-permiso", "persona" => "Otra", "destino" => "esquina", "fecha" => "20261020", "consentimiento" => 0, "rol" => "x" ] as $k => $v ) { update_field( $k, $v, $sin ); }
+            update_field( "citas", [ [ "cita" => "CITA-SIN-PERMISO", "tema" => "consejo" ] ], $sin );
+            $r = wp_insert_post( [ "post_type" => "pm_prestador", "post_status" => "publish", "post_title" => "PRESTADOR-DE-PRUEBA" ] );
+            foreach ( [ "tipo" => [ "guia" ], "prest_destino" => "esquina", "prest_modalidades" => [ "mosca" ], "equipo" => [ "motor_electrico" ], "incluye" => [ "carnada", "comida" ], "precio" => "Desde $ 1", "precio_fecha" => "20261020", "prest_consentimiento" => 1, "whatsapp" => "CONTACTO-INTERNO-123" ] as $k => $v ) { update_field( $k, $v, $r ); }
+          '
+      - name: Render pages
+        run: |
+          wp --path="$WP" server --host=localhost --port=8080 > /tmp/server.log 2>&1 &
+          sleep 3
+          fail=0
+          check() { # path status [must-contain] [must-not-contain]
+            code=$(curl -sS -o page.html -w '%{http_code}' "$URL$1")
+            if [[ "$code" != "$2" ]]; then echo "✖ $code $1 (esperado $2)"; fail=1; return; fi
+            if [[ -n "${3:-}" ]] && ! grep -q -- "$3" page.html; then echo "✖ $1 no contiene: $3"; fail=1; return; fi
+            if [[ -n "${4:-}" ]] && grep -q -- "$4" page.html; then echo "✖ $1 contiene: $4"; fail=1; return; fi
+            echo "✓ $code $1"
+          }
+          check / 200 'PESCAMAPA'
+          check /en/ 200 'lang="en"'
+          check /mapa/ 200
+          check /litoral/corrientes/pesca-en-esquina/ 200 'TouristDestination' 'PENDIENTE'
+          check /litoral/corrientes/pesca-en-esquina/ 200 'CITA-DE-PRUEBA' 'CITA-SIN-PERMISO'
+          check /litoral/corrientes/pesca-en-esquina/ 200 'PRESTADOR-DE-PRUEBA' 'CONTACTO-INTERNO-123'
+          check /litoral/corrientes/pesca-en-esquina/ 200 'admin-post.php'
+          check /entrevistas/ 200 'Persona Prueba' 'Sin permiso'
+          check /en/interviews/ 200 'v-entrevistas'
+          check /entrevistas/prueba-el-rio-manda/ 200 '"Article"'
+          check /entrevistas/sin-permiso/ 404
+          check /wp-sitemap.xml 200 'pm_entrevista'
+          # Inquiry through the real form (pm_t in the past: passes the timing check).
+          loc=$(curl -sS -o /dev/null -w '%{http_code} %{redirect_url}' \
+            -d action=pm_consulta -d pm_tipo=viaje -d pm_idioma=es -d pm_destino=esquina \
+            -d pm_volver="$URL/litoral/corrientes/pesca-en-esquina/" -d pm_t=$(( $(date +%s) - 60 )) \
+            -d nombre=Prueba -d contacto=+5493411234567 -d cuando=marzo -d personas=3 \
+            "$URL/wp-admin/admin-post.php")
+          [[ "$loc" == *"consulta=ok"* ]] && echo "✓ consulta → $loc" || { echo "✖ consulta: $loc"; fail=1; }
+          # Honeypot: silently dropped.
+          curl -sS -o /dev/null -d action=pm_consulta -d pm_web=spam -d pm_t=1 -d nombre=Bot -d contacto=bot "$URL/wp-admin/admin-post.php"
+          n=$(wp --path="$WP" post list --post_type=pm_consulta --post_status=private --format=count)
+          [[ "$n" == 1 ]] && echo "✓ 1 consulta guardada" || { echo "✖ consultas guardadas: $n (esperado 1)"; fail=1; }
+          if [[ -f "$WP/wp-content/debug.log" ]]; then
+            echo "== debug.log"; cat "$WP/wp-content/debug.log"
+            grep -qE 'PHP (Fatal|Warning|Parse)' "$WP/wp-content/debug.log" && { echo "✖ errores PHP"; fail=1; }
+          fi
+          exit $fail

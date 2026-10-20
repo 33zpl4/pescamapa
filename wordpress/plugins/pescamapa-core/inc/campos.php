@@ -131,6 +131,7 @@ add_action( 'acf/include_fields', function () {
 				[ 'key' => 'field_pm_d_provincia', 'name' => 'provincia', 'label' => 'Provincia', 'type' => 'select', 'choices' => PM_PROVINCIAS, 'required' => 1, 'conditional_logic' => $en_es, 'wrapper' => [ 'width' => 50 ] ],
 				[ 'key' => 'field_pm_d_lat', 'name' => 'lat', 'label' => 'Latitud (ej. -29.14)', 'type' => 'number', 'step' => 'any', 'min' => -56, 'max' => -21, 'required' => 1, 'conditional_logic' => $en_es, 'instructions' => 'Clic derecho en Google Maps sobre el lugar → el primer número.', 'wrapper' => [ 'width' => 50 ] ],
 				[ 'key' => 'field_pm_d_lon', 'name' => 'lon', 'label' => 'Longitud (ej. -59.26)', 'type' => 'number', 'step' => 'any', 'min' => -74, 'max' => -53, 'required' => 1, 'conditional_logic' => $en_es, 'instructions' => 'El segundo número.', 'wrapper' => [ 'width' => 50 ] ],
+				[ 'key' => 'field_pm_d_alturas_url', 'name' => 'alturas_url', 'label' => 'Enlace a la altura del río (oficial, se actualiza solo)', 'type' => 'url', 'conditional_logic' => $en_es, 'instructions' => 'Ej. la página de alturas de Prefectura o del INA para este puerto. Aparece arriba, junto a la fecha.' ],
 				[ 'key' => 'field_pm_d_especies', 'name' => 'especies', 'label' => 'Especies', 'type' => 'checkbox', 'choices' => [], 'layout' => 'horizontal', 'conditional_logic' => $en_es, 'instructions' => 'Las opciones salen de las Especies cargadas en español.' ],
 
 				[ 'key' => 'field_pm_d_tab_textos', 'label' => 'Textos', 'type' => 'tab' ],

@@ -67,6 +67,7 @@ function pm_destino( int $post_id ): array {
 		'coordenadas' => [ (float) pm_campo( 'lat', $fid ), (float) pm_campo( 'lon', $fid ) ],
 		'especies'    => (array) ( pm_campo( 'especies', $fid ) ?: [] ),
 		'foto'        => (int) get_post_thumbnail_id( $fid ),
+		'alturas_url' => (string) pm_campo( 'alturas_url', $fid ),
 		'h1'          => (string) pm_campo( 'h1', $post_id ),
 		'bajada'      => (string) pm_campo( 'bajada', $post_id ),
 		'modalidades' => array_values( array_filter( array_map( 'trim', preg_split( '/\R/', (string) pm_campo( 'modalidades', $post_id ) ) ) ) ),

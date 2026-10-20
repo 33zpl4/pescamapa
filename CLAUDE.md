@@ -1,6 +1,7 @@
 # pescamapa — guía de sesión
 
-> **`pescamapa.com` es WordPress desde el 20/10/2026** (`wordpress/`). Leé
+> **Empezá por `docs/estado.md`** (dónde quedamos, decisiones del dueño,
+> pendientes). **`pescamapa.com` es WordPress desde el 20/10/2026** (`wordpress/`). Leé
 > `docs/wordpress.md` antes de tocar el plugin, el tema o el deploy. Lo que
 > sigue describe el sitio Astro (`src/`), que ya no se publica pero sigue
 > siendo la fuente de estilos generados. **Desde el 20/10/2026 no hay
