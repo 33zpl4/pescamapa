@@ -60,16 +60,6 @@ add_action( 'pre_get_posts', function ( $q ) {
 	}
 } );
 
-// Editors don't need blog posts, comments or tools.
-add_action( 'admin_menu', function () {
-	if ( current_user_can( 'manage_options' ) ) {
-		return;
-	}
-	remove_menu_page( 'edit.php' );
-	remove_menu_page( 'edit-comments.php' );
-	remove_menu_page( 'tools.php' );
-}, 99 );
-
 // The block editor's featured image box, renamed for what it is here.
 add_filter( 'admin_post_thumbnail_html', function ( $html, $post_id ) {
 	$tipo = get_post_type( $post_id );
