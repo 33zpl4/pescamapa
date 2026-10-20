@@ -166,7 +166,7 @@ add_action( 'acf/include_fields', function () {
 				[ 'key' => 'field_pm_d_tab_reglamento', 'label' => 'Reglamento', 'type' => 'tab' ],
 				[ 'key' => 'field_pm_d_reg_autoridad', 'name' => 'reglamento_autoridad', 'label' => 'Autoridad', 'type' => 'text', 'required' => 1 ],
 				[ 'key' => 'field_pm_d_reg_url', 'name' => 'reglamento_url', 'label' => 'Enlace oficial', 'type' => 'url' ],
-				[ 'key' => 'field_pm_d_reg_verificado', 'name' => 'reglamento_verificado', 'label' => 'Fecha en que una persona verificó el reglamento vigente', 'type' => 'date_picker', 'display_format' => 'd/m/Y', 'return_format' => 'Y-m-d', 'instructions' => 'Vacío hasta confirmarlo con la autoridad. Sin esta fecha (o con más de un año) la guía no se puede publicar.' ],
+				[ 'key' => 'field_pm_d_reg_verificado', 'name' => 'reglamento_verificado', 'label' => 'Reglamento verificado el (opcional)', 'type' => 'date_picker', 'display_format' => 'd/m/Y', 'return_format' => 'Y-m-d', 'instructions' => 'Opcional. Si alguien contrastó el reglamento con la autoridad, poné la fecha: la guía muestra "Reglamento verificado el…". Si no, dejalo vacío.' ],
 				[ 'key' => 'field_pm_d_reg_resumen', 'name' => 'reglamento_resumen', 'label' => 'Resumen', 'type' => 'textarea', 'rows' => 4, 'required' => 1 ],
 
 				[ 'key' => 'field_pm_d_tab_faqs', 'label' => 'Preguntas y fuentes', 'type' => 'tab' ],

@@ -53,8 +53,9 @@ una guía nueva desde una investigación): un script idempotente en
 (`wp-script.yml`). Nunca pisan a ciegas lo editado en wp-admin. Corridos
 (20/10/2026): `goya-2026-10-20` (reglamento de Goya), `goya-veda-2026-10-20`
 (saca la veda km 1109–1150) y `esquina-2026-10-20` (Esquina, borrador #38).
-También corridos: `prestadores-2026-10-20` (#39–#48, datos de ejemplo) y
-`esquina-reglamento-2026-10-20`.
+También corridos: `prestadores-2026-10-20` (#39–#48, datos de ejemplo),
+`esquina-reglamento-2026-10-20`, `esquina-publicar-2026-10-20` y
+`esquina-verificado-2026-10-20`. La fecha "Reglamento verificado" es opcional.
 Actualizá esta lista al correr uno nuevo.
 
 Diagnóstico: `probe-wp.yml` (solo lectura: versiones, opciones, log de
@@ -80,8 +81,7 @@ Igual que en Astro, ahora en WordPress:
   `/creditos/` (`/en/credits/`).
 - **Completitud, no bloqueos** (`inc/reglas.php`, decisión del 20/10/2026):
   toda ficha publicada en WordPress es pública e indexable, sin carteles.
-  El formulario muestra "Para completar la ficha" (fuente oficial,
-  reglamento verificado hace menos de un año, notas PENDIENTE, foto con
+  El formulario muestra "Para completar la ficha" (fuente oficial, notas PENDIENTE, foto con
   autor, versión en español) solo para los editores. Las notas `PENDIENTE:`
   (párrafos, citas, filas de calendario/FAQ/aguas) nunca se muestran en la
   web. La fecha "Reglamento verificado el…" aparece solo cuando existe.

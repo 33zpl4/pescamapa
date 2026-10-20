@@ -3,9 +3,9 @@
  * Completeness guidance, never a gate. Every guide and species published in
  * WordPress is public and indexable. What is still missing to make a ficha
  * complete is listed for editors inside the form ("Para completar la
- * ficha"), and never shown to visitors:
+ * ficha"), and never shown to visitors. The regulation "verified on" date
+ * is optional (owner, 20/10/2026): shown when filled, never asked for.
  *   - an official source,
- *   - a regulation check by a person, less than a year old,
  *   - "PENDIENTE" notes left in the text or fields (they are hidden on the
  *     public page, see pm_sin_pendientes()),
  *   - shared fields and the photo credit (Spanish guides),
@@ -13,8 +13,6 @@
  */
 
 defined( 'ABSPATH' ) || exit;
-
-const PM_VIGENCIA_REGLAMENTO_DIAS = 365;
 
 /** @return string[] what would make the ficha more complete (for editors). */
 function pm_sugerencias( int $post_id ): array {
@@ -37,12 +35,6 @@ function pm_sugerencias( int $post_id ): array {
 	}
 
 	if ( 'pm_destino' === $tipo ) {
-		$verificado = (string) pm_campo( 'reglamento_verificado', $post_id );
-		if ( ! $verificado ) {
-			$faltan[] = 'Verificar el reglamento vigente con la autoridad y cargar la fecha (pestaña Reglamento).';
-		} elseif ( ( time() - strtotime( $verificado ) ) > PM_VIGENCIA_REGLAMENTO_DIAS * DAY_IN_SECONDS ) {
-			$faltan[] = 'Volver a verificar el reglamento: la última verificación tiene más de un año.';
-		}
 		if ( 'es' === $idioma ) {
 			foreach ( [ 'region' => 'la región', 'provincia' => 'la provincia', 'lat' => 'la latitud', 'lon' => 'la longitud' ] as $k => $nombre ) {
 				if ( '' === (string) pm_campo( $k, $post_id ) ) {
