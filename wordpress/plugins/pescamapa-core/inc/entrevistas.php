@@ -38,20 +38,20 @@ add_action( 'acf/include_fields', function () {
 			[
 				[ 'key' => 'field_pm_n_tab_persona', 'label' => 'Persona (vale para los tres idiomas)', 'type' => 'tab', 'conditional_logic' => $solo_es ],
 				[ 'key' => 'field_pm_n_persona_msg', 'label' => '', 'type' => 'message', 'conditional_logic' => $solo_es, 'message' => 'El <strong>título</strong> de la entrevista es el titular de la página (ej. "Agustín López: «En Goya el surubí se busca con el río bajando»"). La <strong>foto</strong> de la persona va en "Imagen destacada" (con su crédito).' ],
-				[ 'key' => 'field_pm_n_persona', 'name' => 'persona', 'label' => 'Nombre de la persona entrevistada', 'type' => 'text', 'required' => 1, 'conditional_logic' => $solo_es, 'wrapper' => [ 'width' => 50 ] ],
+				[ 'key' => 'field_pm_n_persona', 'name' => 'persona', 'label' => 'Nombre de la persona entrevistada', 'type' => 'text', 'conditional_logic' => $solo_es, 'wrapper' => [ 'width' => 50 ] ],
 				[ 'key' => 'field_pm_n_destino', 'name' => 'destino', 'label' => 'Destino', 'type' => 'select', 'choices' => [], 'allow_null' => 1, 'conditional_logic' => $solo_es, 'wrapper' => [ 'width' => 50 ], 'instructions' => 'Sus citas aparecen en la guía de este destino.' ],
-				[ 'key' => 'field_pm_n_fecha', 'name' => 'fecha', 'label' => 'Fecha de la entrevista', 'type' => 'date_picker', 'display_format' => 'd/m/Y', 'return_format' => 'Y-m-d', 'required' => 1, 'conditional_logic' => $solo_es, 'wrapper' => [ 'width' => 50 ] ],
+				[ 'key' => 'field_pm_n_fecha', 'name' => 'fecha', 'label' => 'Fecha de la entrevista', 'type' => 'date_picker', 'display_format' => 'd/m/Y', 'return_format' => 'Y-m-d', 'conditional_logic' => $solo_es, 'wrapper' => [ 'width' => 50 ] ],
 				[ 'key' => 'field_pm_n_consentimiento', 'name' => 'consentimiento', 'label' => 'Aceptó que publiquemos su nombre, foto y frases', 'type' => 'true_false', 'ui' => 1, 'conditional_logic' => $solo_es, 'wrapper' => [ 'width' => 50 ], 'instructions' => 'Sin esta marca la entrevista no se ve en la web (ni sus citas).' ],
 
 				[ 'key' => 'field_pm_n_tab_textos', 'label' => 'Textos', 'type' => 'tab' ],
-				[ 'key' => 'field_pm_n_rol', 'name' => 'rol', 'label' => 'Quién es, en una línea', 'type' => 'text', 'required' => 1, 'instructions' => 'Ej. "Guía de pesca en Goya desde 1998". Va debajo de su nombre en cada cita.' ],
-				[ 'key' => 'field_pm_n_bajada', 'name' => 'bajada', 'label' => 'Subtítulo', 'type' => 'textarea', 'rows' => 2, 'required' => 1 ],
+				[ 'key' => 'field_pm_n_rol', 'name' => 'rol', 'label' => 'Quién es, en una línea', 'type' => 'text', 'instructions' => 'Ej. "Guía de pesca en Goya desde 1998". Va debajo de su nombre en cada cita.' ],
+				[ 'key' => 'field_pm_n_bajada', 'name' => 'bajada', 'label' => 'Subtítulo', 'type' => 'textarea', 'rows' => 2 ],
 				[
 					'key' => 'field_pm_n_citas', 'name' => 'citas', 'label' => 'Citas destacadas', 'type' => 'repeater', 'layout' => 'block', 'button_label' => 'Agregar cita',
 					'instructions' => 'Frases textuales, cortas (1 a 3 oraciones), que respondan algo concreto. Aparecen en la guía del destino.',
 					'sub_fields' => [
-						[ 'key' => 'field_pm_n_ci_cita', 'name' => 'cita', 'label' => 'Cita', 'type' => 'textarea', 'rows' => 2, 'required' => 1 ],
-						[ 'key' => 'field_pm_n_ci_tema', 'name' => 'tema', 'label' => 'Tema', 'type' => 'select', 'choices' => PM_TEMAS_CITA, 'required' => 1 ],
+						[ 'key' => 'field_pm_n_ci_cita', 'name' => 'cita', 'label' => 'Cita', 'type' => 'textarea', 'rows' => 2 ],
+						[ 'key' => 'field_pm_n_ci_tema', 'name' => 'tema', 'label' => 'Tema', 'type' => 'select', 'choices' => PM_TEMAS_CITA ],
 					],
 				],
 			],

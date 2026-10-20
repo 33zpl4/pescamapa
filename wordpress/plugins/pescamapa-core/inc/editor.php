@@ -48,8 +48,9 @@ add_filter( 'map_meta_cap', function ( $caps, $cap, $user_id, $args ) {
 	return $caps;
 }, 10, 4 );
 
-// Fields editors don't need: language, key, translated names.
-const PM_CAMPOS_SOLO_ADMIN = [ 'idioma', 'clave', 'nombre_pt', 'nombre_en', 'agua_pt', 'agua_en' ];
+// Fields editors don't need: language, key, translated names, and the photo
+// licence details (for a photo they only give the author).
+const PM_CAMPOS_SOLO_ADMIN = [ 'idioma', 'clave', 'nombre_pt', 'nombre_en', 'agua_pt', 'agua_en', 'foto_origen', 'foto_licencia', 'foto_licencia_url', 'foto_pagina' ];
 
 add_filter( 'acf/prepare_field', function ( $field ) {
 	if ( ! pm_es_editor() ) {

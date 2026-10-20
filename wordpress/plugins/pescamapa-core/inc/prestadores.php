@@ -40,7 +40,7 @@ add_action( 'acf/include_fields', function () {
 			[ 'key' => 'field_pm_r_msg', 'label' => '', 'type' => 'message', 'message' => 'El <strong>título</strong> es el nombre del servicio (ej. "Pesca con Agus — Goya"). El <strong>contacto</strong> es interno: nunca se publica; las consultas de la web llegan a Pescamapa y nosotros se las pasamos. La ficha aparece en la guía del destino solo si <strong>aceptó aparecer</strong>.' ],
 
 			[ 'key' => 'field_pm_r_tab_quien', 'label' => 'Quién y dónde', 'type' => 'tab' ],
-			[ 'key' => 'field_pm_r_tipo', 'name' => 'tipo', 'label' => 'Qué ofrece', 'type' => 'checkbox', 'choices' => pm_opciones( 'tipo' ), 'layout' => 'horizontal', 'required' => 1 ],
+			[ 'key' => 'field_pm_r_tipo', 'name' => 'tipo', 'label' => 'Qué ofrece', 'type' => 'checkbox', 'choices' => pm_opciones( 'tipo' ), 'layout' => 'horizontal' ],
 			[ 'key' => 'field_pm_r_destino', 'name' => 'prest_destino', 'label' => 'Destino', 'type' => 'select', 'choices' => [], 'allow_null' => 1, 'wrapper' => [ 'width' => 50 ], 'instructions' => 'Si su localidad todavía no tiene guía, dejalo vacío y anotala abajo.' ],
 			[ 'key' => 'field_pm_r_localidad', 'name' => 'localidad', 'label' => 'Localidad', 'type' => 'text', 'wrapper' => [ 'width' => 50 ] ],
 			[ 'key' => 'field_pm_r_descripcion', 'name' => 'descripcion', 'label' => 'En dos líneas (se publica)', 'type' => 'textarea', 'rows' => 3, 'instructions' => 'Cómo trabaja, desde cuándo, qué lo distingue. Sin teléfonos ni redes.' ],
