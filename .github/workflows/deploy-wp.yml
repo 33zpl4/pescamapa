@@ -1,0 +1,128 @@
+name: Deploy WordPress
+
+# Ships the plugin and theme (wordpress/) to the aaPanel server over SSH and
+# applies the site settings with WP-CLI as the web user. Theme and plugin are
+# ours (git); content belongs to WordPress (wp-admin) — a deploy never
+# overwrites content. The one-time migration of the Astro content runs only
+# when dispatched with importar=true, and even then skips anything edited in
+# wp-admin (wordpress/build/importar.php).
+#
+# Secrets: WP_SSH_HOST, WP_SSH_PORT, WP_SSH_USER, WP_SSH_KEY, WP_PATH.
+# Optional: WP_URL (defaults to https://<folder name of WP_PATH>).
+
+on:
+  push:
+    # While the site lives on the staging domain (nuevo.*), the work branch
+    # deploys too. After the switch to pescamapa.com, keep only main.
+    branches: [main, claude/wordpress-studio-agentic-9i5h7t]
+    paths:
+      - "wordpress/**"
+      - ".github/workflows/deploy-wp.yml"
+  workflow_dispatch:
+    inputs:
+      importar:
+        description: "Importar el contenido del sitio Astro (solo crea o actualiza lo no editado en wp-admin)"
+        type: boolean
+        default: false
+
+concurrency:
+  group: deploy-wp
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      WP: ${{ secrets.WP_PATH }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: SSH setup
+        run: |
+          mkdir -p ~/.ssh
+          printf '%s\n' "${{ secrets.WP_SSH_KEY }}" | tr -d '\r' > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          cat > ~/.ssh/config <<EOF
+          Host wp
+            HostName ${{ secrets.WP_SSH_HOST }}
+            Port ${{ secrets.WP_SSH_PORT }}
+            User ${{ secrets.WP_SSH_USER }}
+            IdentityFile ~/.ssh/deploy_key
+            StrictHostKeyChecking accept-new
+            ConnectTimeout 20
+          EOF
+          URL="${{ secrets.WP_URL }}"; [[ -n "$URL" ]] || URL="https://$(basename "$WP")"
+          echo "WP_URL=${URL%/}" >> "$GITHUB_ENV"
+
+      - name: Upload plugin and theme
+        run: |
+          echo "$(date -u +%Y-%m-%dT%H:%M:%SZ) ${GITHUB_SHA::7}" > wordpress/themes/pescamapa/build.txt
+          rsync -az --delete -e ssh wordpress/plugins/pescamapa-core/ "wp:$WP/wp-content/plugins/pescamapa-core/"
+          rsync -az --delete -e ssh wordpress/themes/pescamapa/ "wp:$WP/wp-content/themes/pescamapa/"
+          ssh wp "chown -R www:www '$WP/wp-content/plugins/pescamapa-core' '$WP/wp-content/themes/pescamapa'"
+
+      - name: Configure WordPress
+        run: |
+          ssh wp "WP='$WP' WP_URL='$WP_URL' bash -s" <<'EOS'
+          set -euo pipefail
+          export WP_CLI_CACHE_DIR=/tmp/wp-cli-cache-www
+          w() { runuser -u www -- env HOME=/tmp wp --path="$WP" --skip-themes "$@"; }
+          cd "$WP"
+          w plugin is-installed secure-custom-fields || w plugin install secure-custom-fields
+          w plugin activate secure-custom-fields pescamapa-core
+          for p in akismet hello; do w plugin is-installed $p && w plugin delete $p || true; done
+          w theme activate pescamapa
+          w option update home "$WP_URL"
+          w option update siteurl "$WP_URL"
+          w option update blogname "Pescamapa"
+          w option update blogdescription "Destinos, especies y guías para pescar en Argentina."
+          w option update timezone_string "America/Argentina/Buenos_Aires"
+          w option update date_format "j \\d\\e F \\d\\e Y"
+          w option update default_comment_status closed
+          # Staging (nuevo.*) is never indexed; the real domain is.
+          if [[ "$WP_URL" == *"://nuevo."* ]]; then w option update blog_public 0; else w option update blog_public 1; fi
+          w rewrite structure '/%postname%/' --hard
+          w eval 'pm_crear_rol_editor(); flush_rewrite_rules( true );'
+          w config set DISALLOW_FILE_EDIT true --raw --type=constant
+          chown www:www wp-config.php && chmod 640 wp-config.php
+          echo "== .htaccess"; cat .htaccess
+          echo "== plugins"; w plugin list --fields=name,status,version
+          echo "== tema: $(w theme list --status=active --field=name)"
+          EOS
+
+      - name: Import Astro content (one-time migration)
+        if: github.event.inputs.importar == 'true'
+        run: |
+          npm ci --silent
+          node wordpress/build/exportar-contenido.mjs > contenido.json
+          ssh wp "rm -rf /tmp/pm-import && mkdir -p /tmp/pm-import/fotos"
+          scp -q contenido.json wordpress/build/importar.php wp:/tmp/pm-import/
+          scp -q src/assets/fotos/*.jpg wp:/tmp/pm-import/fotos/
+          ssh wp "chown -R www:www /tmp/pm-import && cd '$WP' && WP_CLI_CACHE_DIR=/tmp/wp-cli-cache-www runuser -u www -- env HOME=/tmp wp --path='$WP' eval-file /tmp/pm-import/importar.php /tmp/pm-import/contenido.json /tmp/pm-import/fotos; rm -rf /tmp/pm-import"
+
+      - name: Verify the served site
+        run: |
+          fail=0
+          check() { # path expected-status [must-contain]
+            code=$(curl -sS -m 30 -o page.html -w '%{http_code}' "$WP_URL$1")
+            if [[ "$code" == 404 && "$2" == 200 && "${CONTENIDO:-}" == 1 ]]; then echo "⚠ 404 $1 (contenido todavía no importado)"; return; fi
+            if [[ "$code" != "$2" ]]; then echo "✖ $code $1 (esperado $2)"; fail=1; return; fi
+            if [[ -n "${3:-}" ]] && ! grep -q "$3" page.html; then echo "✖ $1 no contiene: $3"; fail=1; return; fi
+            echo "✓ $code $1"
+          }
+          check / 200 'PESCAMAPA'
+          echo "   build: $(grep -o 'data-build="[^"]*"' page.html | head -1)"
+          check /pt/ 200 'lang="pt-BR"'
+          check /en/ 200 'lang="en"'
+          check /mapa/ 200 'class="mapa"'
+          check /en/map/ 200 'class="mapa"'
+          check /creditos/ 200
+          check /wp-sitemap.xml 200
+          check /esto-no-existe/ 404
+          CONTENIDO=1
+          check /litoral/corrientes/pesca-en-goya/ 200 'TouristDestination'
+          check /pt/litoral/corrientes/pesca-em-goya/ 200 'hreflang="x-default"'
+          check /en/litoral/corrientes/fishing-in-goya/ 200 'hreflang="es"'
+          check /especies/surubi/ 200
+          check /en/species/dorado/ 200
+          exit $fail
