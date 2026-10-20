@@ -38,30 +38,28 @@ todas a nosotros (centralizar datos y cobrar comisión más adelante).
 | 20/10/2026 | Prioridad de destinos por oportunidad SEO: `docs/seo-oportunidades.md` y wireframes en `docs/seo-guia-wireframes.md` (original: `docs/fuentes/guia-desarrollo-wireframes-seo.docx`). |
 | 20/10/2026 | Idioma del navegador: sugerir, nunca redirigir. |
 | 20/10/2026 | Una guía nueva armada con investigación de escritorio queda en **borrador** hasta pasar el protocolo de verificación (abajo). |
-| 20/10/2026 | Goya está en el Paraná medio (km ~970–990): no lleva vedas extraordinarias del Alto Paraná. |
+| 20/10/2026 | Goya está en el Paraná medio (km ~960–990): no lleva vedas extraordinarias del Alto Paraná. |
+| 20/10/2026 | **Vedas: mínimo esfuerzo.** Poco tráfico y mucho mantenimiento. Cada guía lleva un párrafo genérico (vedas por desove y extraordinarias por tramo, cambian cada año) y el enlace a la autoridad. Sin fechas ni kilómetros que haya que perseguir. |
 | antes | Fotos solo de Commons con licencia libre o cedidas con crédito; nunca de Google. Prestadores solo con consentimiento y precios fechados. |
 
 ## Pendientes, en orden
 
-1. **Scripts a correr** (Actions → Run a WordPress script), si no figuran
-   como corridos en `docs/wordpress.md`: `goya-veda-2026-10-20` (saca la
-   veda km 1109–1150 de Goya) y `esquina-2026-10-20` (Esquina en borrador).
-2. **Verificar Esquina** con el protocolo de abajo y recién ahí publicarla
+1. **Verificar Esquina** (borrador #38 en wp-admin) con el protocolo de abajo y recién ahí publicarla
    (y traducirla).
-3. **Primeras entrevistas**: Agus y su papá (Goya). Guía de preguntas en
+2. **Primeras entrevistas**: Agus y su papá (Goya). Guía de preguntas en
    `docs/entrevistas.md`. Hace falta su permiso para nombre, foto y frases.
-4. **Cargar prestadores**: los 10 de Esquina que relevó la investigación
+3. **Cargar prestadores**: los 10 de Esquina que relevó la investigación
    (sección 10 de `docs/investigacion/esquina.md`) y los de Goya. Estado
    "Relevado" hasta hablar con ellos.
-5. **Email de consultas**: confirmar que el servidor envía correo (probar el
+4. **Email de consultas**: confirmar que el servidor envía correo (probar el
    formulario) y fijar el destinatario: `wp option update pm_email_consultas
    <email>`. Si no llega, igual quedan en wp-admin → Consultas.
-7. **Próximas guías** (matriz SEO): Paso de la Patria → La Paz → San Martín
+5. **Próximas guías** (matriz SEO): Paso de la Patria → La Paz → San Martín
    de los Andes / Junín de los Andes (mosca) → Río Grande → lagunas
    (Junín/Laguna de Gómez, Chascomús, Lobos).
-8. **Eventos con URL estable** (`/eventos/fiesta-nacional-del-surubi/`,
+6. **Eventos con URL estable** (`/eventos/fiesta-nacional-del-surubi/`,
    Fiesta del Pacú, Fiesta del Dorado): todavía no existe el tipo.
-9. **Fichas de especie faltantes**: pacú, patí, boga, tararira, trucha,
+7. **Fichas de especie faltantes**: pacú, patí, boga, tararira, trucha,
    pejerrey (hoy solo existen dorado y surubí).
 
 ## Protocolo para pasar una guía a "verificada" (dueño, 20/10/2026)
@@ -89,12 +87,15 @@ Bitácora de verificaciones:
 
 ## Vedas extraordinarias 2026 (para las guías de Paso de la Patria e Itatí)
 
-Según el dueño (20/10/2026), a confirmar con la disposición al armar esas guías:
+Solo como contexto (por la decisión de "vedas: mínimo esfuerzo", no se
+publican fechas ni km). Según el dueño (20/10/2026):
 - Mayo 2026: km 1232–1238 (Confluencia / "Los Cables"), por concentración de
   surubíes (Disposición 618 de Recursos Naturales).
 - Septiembre 2026: ampliada a km 1180–1239 (riacho INTA → Confluencia,
   jurisdicción de Paso de la Patria), pesca deportiva, comercial y de
   subsistencia, por migración y desove de dorados y sábalos.
+- El km 1109–1150 fue una veda extraordinaria de Chaco (zona Empedrado /
+  Derqui). La Disposición 1054 levantó ambos tramos a fines de septiembre de 2026.
 - Históricamente hubo cortes de emergencia en Itá Ibaté y Yahapé (km ~1100–1160)
   por bajantes. Nada de esto afecta a Goya (km ~970–990) ni a Esquina (km 853).
 
