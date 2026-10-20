@@ -1,0 +1,49 @@
+name: Photo review
+
+# Once a month (and on demand): lists the photos worth a look (vertical or
+# small covers, no author, non-descriptive names, heavy files, unused) and
+# opens an issue "Revisión de fotos" with it, closing the previous one.
+# Read-only towards the site: the team fixes things in wp-admin.
+
+on:
+  schedule:
+    - cron: "17 12 1 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    env:
+      WP: ${{ secrets.WP_PATH }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: SSH setup
+        run: |
+          mkdir -p ~/.ssh
+          printf '%s\n' "${{ secrets.WP_SSH_KEY }}" | tr -d '\r' > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          cat > ~/.ssh/config <<EOF2
+          Host wp
+            HostName ${{ secrets.WP_SSH_HOST }}
+            Port ${{ secrets.WP_SSH_PORT }}
+            User ${{ secrets.WP_SSH_USER }}
+            IdentityFile ~/.ssh/deploy_key
+            StrictHostKeyChecking accept-new
+          EOF2
+      - name: Report
+        run: |
+          scp -q wordpress/scripts/revisar-fotos.php wp:/tmp/pm-fotos.php
+          ssh wp "chown www:www /tmp/pm-fotos.php && cd '$WP' && runuser -u www -- env HOME=/tmp WP_CLI_CACHE_DIR=/tmp/wp-cli-cache-www wp --path='$WP' eval-file /tmp/pm-fotos.php; s=\$?; rm -f /tmp/pm-fotos.php; exit \$s" > reporte.md
+          cat reporte.md >> "$GITHUB_STEP_SUMMARY"
+      - name: Issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          for n in $(gh issue list --state open --search "Revisión de fotos in:title" --json number --jq '.[].number'); do
+            gh issue close "$n" --comment "Reemplazada por la revisión de $(date +%d/%m/%Y)."
+          done
+          gh issue create --title "Revisión de fotos — $(date +%m/%Y)" --body-file reporte.md

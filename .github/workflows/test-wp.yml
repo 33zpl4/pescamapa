@@ -154,6 +154,7 @@ jobs:
           JS
           sed -i 's/^          //' editor.mjs
           node editor.mjs "$URL" "$post" "$foto"
+          w eval-file "$GITHUB_WORKSPACE/wordpress/scripts/revisar-fotos.php" | head -20   # monthly photo report runs clean
           got=$(w post meta get "$post" _thumbnail_id)
           [[ "$got" == "$foto" ]] && echo "✓ el editor reemplazó la foto y guardó" || { echo "✖ foto destacada = $got (esperado $foto)"; exit 1; }
       - uses: actions/upload-artifact@v4

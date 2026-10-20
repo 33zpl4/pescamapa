@@ -36,6 +36,7 @@ todas a nosotros (centralizar datos y cobrar comisión más adelante).
 | 20/10/2026 | "Quotes" = citas de entrevistas (contenido y SEO), no cotizaciones de precio. |
 | 20/10/2026 | Prioridad de destinos por oportunidad SEO: `docs/seo-oportunidades.md` y wireframes en `docs/seo-guia-wireframes.md` (original: `docs/fuentes/guia-desarrollo-wireframes-seo.docx`). |
 | 20/10/2026 | Idioma del navegador: sugerir, nunca redirigir. |
+| 21/10/2026 | Ningún campo del panel es obligatorio: guardar nunca se bloquea. Para una foto alcanza con el autor; nada de trámite de licencias "estilo NYT". Revisión mensual de fotos por issue (`revisar-fotos.yml`). |
 | 20/10/2026 | Las guías se listan en orden de publicación (Goya 1.ª, Esquina 2.ª…), no alfabético (`pm_destinos_lista`). |
 | 20/10/2026 | Email: Cloudflare Email Routing para `info@pescamapa.com` (en pausa: el routing quedó en "Syncing"; falta destino y regla). Después: `wp option update pm_email_consultas info@pescamapa.com`. |
 | 20/10/2026 | La fecha "Reglamento verificado" es **opcional**: se muestra si está, nunca se pide ni bloquea. El protocolo de abajo es una buena práctica, no un requisito para publicar. |
