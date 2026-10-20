@@ -11,6 +11,8 @@
  * aparecer"), with dated prices, as a card with a "Consultar" button.
  *
  * Option labels for the three languages live in data/ui.json → opciones.
+ * Field names that exist in other forms carry a "prest_" prefix: scripts
+ * write fields by name, and SCF resolves a name to the first field it finds.
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -39,7 +41,7 @@ add_action( 'acf/include_fields', function () {
 
 			[ 'key' => 'field_pm_r_tab_quien', 'label' => 'Quién y dónde', 'type' => 'tab' ],
 			[ 'key' => 'field_pm_r_tipo', 'name' => 'tipo', 'label' => 'Qué ofrece', 'type' => 'checkbox', 'choices' => pm_opciones( 'tipo' ), 'layout' => 'horizontal', 'required' => 1 ],
-			[ 'key' => 'field_pm_r_destino', 'name' => 'destino', 'label' => 'Destino', 'type' => 'select', 'choices' => [], 'allow_null' => 1, 'wrapper' => [ 'width' => 50 ], 'instructions' => 'Si su localidad todavía no tiene guía, dejalo vacío y anotala abajo.' ],
+			[ 'key' => 'field_pm_r_destino', 'name' => 'prest_destino', 'label' => 'Destino', 'type' => 'select', 'choices' => [], 'allow_null' => 1, 'wrapper' => [ 'width' => 50 ], 'instructions' => 'Si su localidad todavía no tiene guía, dejalo vacío y anotala abajo.' ],
 			[ 'key' => 'field_pm_r_localidad', 'name' => 'localidad', 'label' => 'Localidad', 'type' => 'text', 'wrapper' => [ 'width' => 50 ] ],
 			[ 'key' => 'field_pm_r_descripcion', 'name' => 'descripcion', 'label' => 'En dos líneas (se publica)', 'type' => 'textarea', 'rows' => 3, 'instructions' => 'Cómo trabaja, desde cuándo, qué lo distingue. Sin teléfonos ni redes.' ],
 
@@ -51,11 +53,11 @@ add_action( 'acf/include_fields', function () {
 			[ 'key' => 'field_pm_r_web', 'name' => 'web', 'label' => 'Web', 'type' => 'url' ],
 
 			[ 'key' => 'field_pm_r_tab_pesca', 'label' => 'Pesca y equipo', 'type' => 'tab' ],
-			[ 'key' => 'field_pm_r_modalidades', 'name' => 'modalidades', 'label' => 'Modalidades', 'type' => 'checkbox', 'choices' => pm_opciones( 'modalidad' ), 'layout' => 'horizontal' ],
-			[ 'key' => 'field_pm_r_especies', 'name' => 'especies', 'label' => 'Especies', 'type' => 'checkbox', 'choices' => [], 'layout' => 'horizontal' ],
+			[ 'key' => 'field_pm_r_modalidades', 'name' => 'prest_modalidades', 'label' => 'Modalidades', 'type' => 'checkbox', 'choices' => pm_opciones( 'modalidad' ), 'layout' => 'horizontal' ],
+			[ 'key' => 'field_pm_r_especies', 'name' => 'prest_especies', 'label' => 'Especies', 'type' => 'checkbox', 'choices' => [], 'layout' => 'horizontal' ],
 			[ 'key' => 'field_pm_r_equipo', 'name' => 'equipo', 'label' => 'Lancha y equipo', 'type' => 'checkbox', 'choices' => pm_opciones( 'equipo' ), 'layout' => 'horizontal' ],
 			[ 'key' => 'field_pm_r_capacidad', 'name' => 'capacidad', 'label' => 'Pescadores por lancha', 'type' => 'number', 'min' => 1, 'max' => 20, 'wrapper' => [ 'width' => 50 ] ],
-			[ 'key' => 'field_pm_r_temporada', 'name' => 'temporada', 'label' => 'Cuándo trabaja (se publica)', 'type' => 'text', 'wrapper' => [ 'width' => 50 ], 'instructions' => 'Ej. "Todo el año; dorado de septiembre a marzo".' ],
+			[ 'key' => 'field_pm_r_temporada', 'name' => 'prest_temporada', 'label' => 'Cuándo trabaja (se publica)', 'type' => 'text', 'wrapper' => [ 'width' => 50 ], 'instructions' => 'Ej. "Todo el año; dorado de septiembre a marzo".' ],
 
 			[ 'key' => 'field_pm_r_tab_paquete', 'label' => 'Paquete y precio', 'type' => 'tab' ],
 			[ 'key' => 'field_pm_r_incluye', 'name' => 'incluye', 'label' => 'Qué incluye', 'type' => 'checkbox', 'choices' => pm_opciones( 'incluye' ), 'layout' => 'horizontal' ],
@@ -67,7 +69,7 @@ add_action( 'acf/include_fields', function () {
 			[ 'key' => 'field_pm_r_referencias', 'name' => 'referencias', 'label' => 'Referencias', 'type' => 'textarea', 'rows' => 4, 'instructions' => 'Quién lo recomendó, qué dicen otros pescadores, reseñas que viste.' ],
 			[ 'key' => 'field_pm_r_estado', 'name' => 'estado', 'label' => 'Estado', 'type' => 'select', 'choices' => [ 'relevado' => 'Relevado (todavía no hablamos)', 'contactado' => 'Contactado', 'acuerdo' => 'Trabajamos juntos', 'pausado' => 'Pausado' ], 'default_value' => 'relevado', 'wrapper' => [ 'width' => 50 ] ],
 			[ 'key' => 'field_pm_r_comision', 'name' => 'comision', 'label' => 'Acuerdo comercial', 'type' => 'text', 'wrapper' => [ 'width' => 50 ], 'instructions' => 'Ej. "10 % por consulta concretada" (interno).' ],
-			[ 'key' => 'field_pm_r_consentimiento', 'name' => 'consentimiento', 'label' => 'Aceptó aparecer en Pescamapa', 'type' => 'true_false', 'ui' => 1, 'wrapper' => [ 'width' => 50 ] ],
+			[ 'key' => 'field_pm_r_consentimiento', 'name' => 'prest_consentimiento', 'label' => 'Aceptó aparecer en Pescamapa', 'type' => 'true_false', 'ui' => 1, 'wrapper' => [ 'width' => 50 ] ],
 			[ 'key' => 'field_pm_r_verificado', 'name' => 'verificado', 'label' => 'Datos verificados el', 'type' => 'date_picker', 'display_format' => 'd/m/Y', 'return_format' => 'Y-m-d', 'wrapper' => [ 'width' => 50 ] ],
 			[ 'key' => 'field_pm_r_notas', 'name' => 'notas', 'label' => 'Notas internas', 'type' => 'textarea', 'rows' => 4 ],
 		],
@@ -97,19 +99,19 @@ function pm_prestador( int $post_id ): array {
 		'id'             => $post_id,
 		'nombre'         => get_the_title( $post_id ),
 		'tipo'           => $lista( 'tipo' ),
-		'destino'        => (string) pm_campo( 'destino', $post_id ),
+		'destino'        => (string) pm_campo( 'prest_destino', $post_id ),
 		'localidad'      => (string) pm_campo( 'localidad', $post_id ),
 		'descripcion'    => (string) pm_campo( 'descripcion', $post_id ),
-		'modalidades'    => $lista( 'modalidades' ),
-		'especies'       => $lista( 'especies' ),
+		'modalidades'    => $lista( 'prest_modalidades' ),
+		'especies'       => $lista( 'prest_especies' ),
 		'equipo'         => $lista( 'equipo' ),
 		'capacidad'      => (int) pm_campo( 'capacidad', $post_id ),
-		'temporada'      => (string) pm_campo( 'temporada', $post_id ),
+		'temporada'      => (string) pm_campo( 'prest_temporada', $post_id ),
 		'incluye'        => $lista( 'incluye' ),
 		'precio'         => (string) pm_campo( 'precio', $post_id ),
 		'precio_fecha'   => (string) pm_campo( 'precio_fecha', $post_id ),
 		'fotos'          => array_map( 'intval', $lista( 'fotos' ) ) ?: array_filter( [ (int) get_post_thumbnail_id( $post_id ) ] ),
-		'consentimiento' => (bool) pm_campo( 'consentimiento', $post_id ),
+		'consentimiento' => (bool) pm_campo( 'prest_consentimiento', $post_id ),
 	];
 }
 

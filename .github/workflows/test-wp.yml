@@ -67,7 +67,7 @@ jobs:
             foreach ( [ "idioma" => "es", "clave" => "sin-permiso", "persona" => "Otra", "destino" => "esquina", "fecha" => "20261020", "consentimiento" => 0, "rol" => "x" ] as $k => $v ) { update_field( $k, $v, $sin ); }
             update_field( "citas", [ [ "cita" => "CITA-SIN-PERMISO", "tema" => "consejo" ] ], $sin );
             $r = wp_insert_post( [ "post_type" => "pm_prestador", "post_status" => "publish", "post_title" => "PRESTADOR-DE-PRUEBA" ] );
-            foreach ( [ "tipo" => [ "guia" ], "destino" => "esquina", "modalidades" => [ "mosca" ], "equipo" => [ "motor_electrico" ], "incluye" => [ "carnada", "comida" ], "precio" => "Desde $ 1", "precio_fecha" => "20261020", "consentimiento" => 1, "whatsapp" => "CONTACTO-INTERNO-123" ] as $k => $v ) { update_field( $k, $v, $r ); }
+            foreach ( [ "tipo" => [ "guia" ], "prest_destino" => "esquina", "prest_modalidades" => [ "mosca" ], "equipo" => [ "motor_electrico" ], "incluye" => [ "carnada", "comida" ], "precio" => "Desde $ 1", "precio_fecha" => "20261020", "prest_consentimiento" => 1, "whatsapp" => "CONTACTO-INTERNO-123" ] as $k => $v ) { update_field( $k, $v, $r ); }
           '
       - name: Render pages
         run: |
