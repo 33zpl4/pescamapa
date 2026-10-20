@@ -13,7 +13,7 @@ $migas     = [
 	[ $d['nombre'], $d['url'] ],
 ];
 $citas       = pm_citas_destino( $d['clave'], $idioma );
-$prestadores = pm_prestadores_destino( $d['clave'] );
+$prestadores = pm_prestadores_destino( $d['clave'], current_user_can( 'edit_posts' ) );
 $pins = [ [ 'nombre' => $d['nombre'], 'coordenadas' => $d['coordenadas'], 'tipo' => 'destino', 'detalle' => $provincia ] ];
 foreach ( $d['aguas'] as $a ) {
 	if ( $a['coordenadas'] ) {

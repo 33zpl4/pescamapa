@@ -53,6 +53,8 @@ una guía nueva desde una investigación): un script idempotente en
 (`wp-script.yml`). Nunca pisan a ciegas lo editado en wp-admin. Corridos
 (20/10/2026): `goya-2026-10-20` (reglamento de Goya), `goya-veda-2026-10-20`
 (saca la veda km 1109–1150) y `esquina-2026-10-20` (Esquina, borrador #38).
+Por correr con el PR de prestadores: `prestadores-2026-10-20` y
+`esquina-reglamento-2026-10-20`.
 Actualizá esta lista al correr uno nuevo.
 
 Diagnóstico: `probe-wp.yml` (solo lectura: versiones, opciones, log de
@@ -121,9 +123,14 @@ centralizar los datos y poder cobrar comisión por el negocio que traemos.
   central e interna con lo que los guías locales dijeron que importa
   (modalidad, lancha y equipo, qué incluye, temporada, precio con fecha,
   fotos, referencias) + contacto, estado de la relación y acuerdo comercial.
-  **El contacto nunca se imprime.** Con "Aceptó aparecer", sale como tarjeta
-  en la guía de su destino con botón "Consultar disponibilidad", que
-  precarga el formulario. Etiquetas de opciones en 3 idiomas:
+  **El contacto nunca se imprime.** Es pública solo con "Aceptó aparecer" y
+  sin la marca **"Datos de ejemplo"**: sale como tarjeta en la guía de su
+  destino (lancha, motor, capacidad, equipo, qué incluye, precio fechado) con
+  botón "Consultar disponibilidad", que precarga el formulario. **Los
+  editores logueados ven también las no públicas**, en la misma guía, como
+  tarjetas punteadas "Vista previa" con enlace a editarlas: así se completa
+  la sección en su lugar. `prestadores-2026-10-20` cargó Goya y Esquina con
+  datos de ejemplo (qué es real y qué no, en "Notas internas" de cada una). Etiquetas de opciones en 3 idiomas:
   `data/ui.json` → `opciones`.
 - **Consultas** (`inc/consultas.php`, `parciales/consulta.php`): formulario
   "Pedí tu cotización" en cada guía y "Quiero sumarme" para prestadores en

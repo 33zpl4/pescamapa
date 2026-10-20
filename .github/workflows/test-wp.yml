@@ -59,6 +59,9 @@ jobs:
           done
           w eval-file wordpress/scripts/esquina-2026-10-20.php
           w eval-file wordpress/scripts/esquina-2026-10-20.php   # idempotent: second run does nothing
+          w eval-file wordpress/scripts/esquina-reglamento-2026-10-20.php
+          w eval-file wordpress/scripts/prestadores-2026-10-20.php
+          w eval-file wordpress/scripts/prestadores-2026-10-20.php   # idempotent
           # The script leaves Esquina as a draft; publish it here to render it.
           w post update $(w post list --post_type=pm_destino --post_status=draft --format=ids) --post_status=publish
           w eval '
@@ -90,6 +93,8 @@ jobs:
           check /litoral/corrientes/pesca-en-esquina/ 200 'CITA-DE-PRUEBA' 'CITA-SIN-PERMISO'
           check /litoral/corrientes/pesca-en-esquina/ 200 'PRESTADOR-DE-PRUEBA' 'CONTACTO-INTERNO-123'
           check /litoral/corrientes/pesca-en-esquina/ 200 'admin-post.php'
+          # Example-data outfitters never reach visitors.
+          check /litoral/corrientes/pesca-en-esquina/ 200 'pacú' 'Don Joaquín River Lodge'
           check /entrevistas/ 200 'Persona Prueba' 'Sin permiso'
           check /en/interviews/ 200 'v-entrevistas'
           check /entrevistas/prueba-el-rio-manda/ 200 '"Article"'
