@@ -14,7 +14,9 @@ Argentina: dónde ir, cuándo, qué dice el reglamento y con qué guía local
 salir, con datos al día y la voz de quienes pescan ahí. **Marca** (color,
 tipografía, componentes): `docs/marca.md`, obligatoria para todo lo que se
 publique; `node wordpress/build/revisar-marca.mjs` la verifica. Contenido
-propio (entrevistas, notas): `docs/contenido.md`.
+propio (entrevistas, notas): `docs/contenido.md`. **Regla de oro** para todo lo que
+se agregue (útil para personas y para LLM: dato concreto, fechado y con fuente,
+arriba, que responde una pregunta real): `docs/estrategia-contenido.md`.
 
 Pescamapa (pescamapa.com): destinos, especies y guías para pescar en
 Argentina. Sitio Astro estático, publicado en Cloudflare Workers (static
