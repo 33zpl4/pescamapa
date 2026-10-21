@@ -62,6 +62,8 @@ jobs:
           w eval-file wordpress/scripts/esquina-2026-10-20.php
           w eval-file wordpress/scripts/esquina-2026-10-20.php   # idempotent: second run does nothing
           w eval-file wordpress/scripts/esquina-reglamento-2026-10-20.php
+          w eval-file wordpress/scripts/flycast-2026-10-21.php
+          w eval-file wordpress/scripts/flycast-2026-10-21.php   # idempotent
           w eval-file wordpress/scripts/prestadores-2026-10-20.php
           w eval-file wordpress/scripts/prestadores-2026-10-20.php   # idempotent
           # The script leaves Esquina as a draft; publish it here to render it.
@@ -109,6 +111,7 @@ jobs:
           check /entrevistas/sin-permiso/ 404
           check /wp-sitemap.xml 200 'pm_entrevista'
           check / 200 'Dónde, cuándo y con quién pescar'
+          check /litoral/corrientes/pesca-en-esquina/ 200 'Mosca (flycast)' 'flycast) (flycast'
           check /robots.txt 200 'Sitemap'
           check /llms.txt 200 'pesca-en-esquina'
           check /llms.txt 200 'prueba-el-rio-manda' 'sin-permiso'
