@@ -1,6 +1,6 @@
 # Estado del proyecto — para retomar en otra sesión
 
-Última actualización: 20/10/2026. Actualizá este archivo al cerrar cada sesión.
+Última actualización: 21/10/2026. Actualizá este archivo al cerrar cada sesión.
 
 ## Objetivo (del dueño)
 
@@ -21,6 +21,11 @@ todas a nosotros (centralizar datos y cobrar comisión más adelante).
   corto. Las traducciones las propagamos nosotros (columna "Traducciones").
 - **Entrevistas, prestadores y consultas** (PR del 20/10/2026, ver
   `docs/wordpress.md` → "Entrevistas, prestadores y consultas").
+- **Panel sin bloqueos** (21/10): ningún campo es obligatorio; el editor
+  ve solo "Autor de la foto". `test-wp` entra como editora, cambia una foto
+  y guarda en cada PR.
+- **Revisión mensual de fotos**: issue automático (`revisar-fotos.yml`); el
+  primero es el #23.
 - **Esquina**: **publicada el 20/10/2026** (2.ª guía, solo español),
   reglamento verificado por el equipo del dueño el 20/10/2026. Lo dudoso
   sigue como notas PENDIENTE (no se ven). Investigación:
@@ -46,6 +51,9 @@ todas a nosotros (centralizar datos y cobrar comisión más adelante).
 
 ## Pendientes, en orden
 
+0. **Foto de Goya**: la socia subió "Experiencia Isoro (1)" (vertical) pero
+   el cambio no llegó a guardarse por el bloqueo de validación, ya
+   corregido. Que lo reintente (ver `docs/guia-editor.md`).
 1. **Reemplazar los datos de ejemplo de los prestadores** (wp-admin →
    Prestadores, columna "En la web" = 🧪). Por cada uno: datos reales,
    permiso para aparecer, destildar "Datos de ejemplo". Sobre todo **lancha,
@@ -103,10 +111,22 @@ publican fechas ni km). Según el dueño (20/10/2026):
 
 ## Otro proyecto del mismo dueño (no mezclar)
 
-Catalina Porras (catalinaporras.com): falta actualizar los secrets
-`WP_PATH=/home/u851435760/domains/catalinaporras.com/public_html` y
-`SITE_URL=https://catalinaporras.com`; el dominio y el email siguen en
-Webnode (pidió el código EPP para transferir).
+La fábrica de sitios (`33zpl4/sites`, Hostinger) tiene su propio
+`docs/estado.md`. Ahí está, por ejemplo, la mudanza de Catalina Porras a
+catalinaporras.com. No usar ese hosting para Pescamapa.
+
+## Mapa de workflows (`.github/workflows/`)
+
+| Workflow | Cuándo | Qué hace |
+| --- | --- | --- |
+| `test-wp.yml` | Cada PR que toca `wordpress/**` | WordPress descartable: páginas, consultas, editora que cambia una foto. **Mergear solo en verde** |
+| `deploy-wp.yml` | Push a `main` con `wordpress/**` | rsync del plugin y el tema, ajustes, verificación |
+| `wp-script.yml` | A mano (`script=`) | Corre `wordpress/scripts/<script>.php` en el servidor |
+| `verify-live.yml` | Semanal y a mano | Revisa lo servido: páginas, hreflang, sin PENDIENTE, formularios, redirección de www |
+| `capturas.yml` | A mano | Capturas de pantalla a la rama `capturas` |
+| `revisar-fotos.yml` | Mensual y a mano | Issue "Revisión de fotos" |
+| `probe-wp.yml` | A mano | Diagnóstico de solo lectura: versiones, log, subida de fotos, validación de formularios |
+| `fotos.yml`, `vhost-alias.yml` | A mano | Candidatas de Commons; alias de vhost (histórico) |
 
 ## Cómo se trabaja
 
