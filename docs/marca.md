@@ -22,6 +22,9 @@ when and who to fish with in Argentina."). Viven en `data/ui.json`
 - Concreto y con fecha: "actualizado el…", "precio al…". Sin superlativos sin
   fuente ("el mejor", "el más grande"); sin "se pesca todo el año" sin matiz.
 - Áreas, no pesqueros: nada de coordenadas exactas.
+- Glosario: **flycast** es el nombre local de la pesca con mosca (sin distinción
+  práctica; fuente: consulta a Gemini del 21/10/2026, sin fuente oficial). Se
+  escribe una sola modalidad, "Mosca (flycast)", no dos.
 - El reglamento y las vedas se enlazan a la autoridad; no se copian fechas.
 - Las personas aparecen con nombre, rol y fecha, y solo con su permiso.
 
