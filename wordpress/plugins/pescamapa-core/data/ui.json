@@ -264,7 +264,8 @@
 			"prest.sin_verificar": "Información pública, todavía sin verificar con el prestador.",
 			"prest.corregir": "¿Es tu negocio? Pedí una corrección o que lo quitemos.",
 			"prest.fuente": "Fuente",
-			"prest.baja_asunto": "Corrección o baja de la ficha: %nombre%"
+			"prest.baja_asunto": "Corrección o baja de la ficha: %nombre%",
+			"ficha.fuentes.consultadas": "Fuentes consultadas (%n%)"
 		},
 		"pt": {
 			"marca.lema": "Onde, quando e com quem pescar na Argentina.",
@@ -442,7 +443,8 @@
 			"prest.sin_verificar": "Informação pública, ainda não verificada com o prestador.",
 			"prest.corregir": "É o seu negócio? Peça uma correção ou a retirada.",
 			"prest.fuente": "Fonte",
-			"prest.baja_asunto": "Correção ou retirada da ficha: %nombre%"
+			"prest.baja_asunto": "Correção ou retirada da ficha: %nombre%",
+			"ficha.fuentes.consultadas": "Fontes consultadas (%n%)"
 		},
 		"en": {
 			"marca.lema": "Where, when and who to fish with in Argentina.",
@@ -620,7 +622,8 @@
 			"prest.sin_verificar": "Public information, not yet checked with the provider.",
 			"prest.corregir": "Is this your business? Ask us to correct or remove it.",
 			"prest.fuente": "Source",
-			"prest.baja_asunto": "Correction or removal of the listing: %nombre%"
+			"prest.baja_asunto": "Correction or removal of the listing: %nombre%",
+			"ficha.fuentes.consultadas": "Sources consulted (%n%)"
 		}
 	},
 	"opciones": {

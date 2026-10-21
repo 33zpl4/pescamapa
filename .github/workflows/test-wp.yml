@@ -126,6 +126,8 @@ jobs:
           check /llms.txt 200 'pesca-en-esquina'
           check /llms.txt 200 'prueba-el-rio-manda' 'sin-permiso'
           check /llms.txt 200 'nota-de-prueba'
+          check /litoral/corrientes/pesca-en-esquina/ 200 'Fuentes consultadas ('
+          check /litoral/corrientes/pesca-en-esquina/ 200 '"citation"'
           check /litoral/corrientes/pesca-en-esquina/ 200 'rel="sponsored noopener"'
           check /litoral/corrientes/pesca-en-esquina/ 200 'MAS-GRATIS'
           check /notas/ 200 'Nota de prueba'
@@ -160,6 +162,8 @@ jobs:
           post=$(w post list --post_type=pm_destino --meta_key=clave --meta_value=esquina --format=ids)
           php -r '$i = imagecreatetruecolor( 1600, 1000 ); imagefill( $i, 0, 0, imagecolorallocate( $i, 30, 80, 60 ) ); imagejpeg( $i, "/tmp/nueva.jpg" );'
           foto=$(w media import /tmp/nueva.jpg --porcelain)
+          fuente_antes=$(w post meta get "$post" fuentes_0_nombre)
+          [[ -n "$fuente_antes" ]] || { echo "✖ la guía de prueba no tiene fuentes cargadas"; exit 1; }
           w eval "update_field( 'foto_autor', 'Tomás Prueba', $foto );"
           mkdir -p /tmp/pw && cd /tmp/pw && npm init -y >/dev/null && npm i -s playwright@1.48.2 >/dev/null && npx playwright install --with-deps chromium >/dev/null
           cat > editor.mjs <<'JS'
@@ -190,6 +194,8 @@ jobs:
           sed -i 's/^          //' editor.mjs
           node editor.mjs "$URL" "$post" "$foto"
           w eval-file "$GITHUB_WORKSPACE/wordpress/scripts/revisar-fotos.php" | head -20   # monthly photo report runs clean
+          fuente_despues=$(w post meta get "$post" fuentes_0_nombre)
+          [[ "$fuente_despues" == "$fuente_antes" ]] && echo "✓ guardar desde el panel no borra las fuentes" || { echo "✖ las fuentes cambiaron al guardar: '$fuente_antes' → '$fuente_despues'"; exit 1; }
           got=$(w post meta get "$post" _thumbnail_id)
           [[ "$got" == "$foto" ]] && echo "✓ el editor reemplazó la foto y guardó" || { echo "✖ foto destacada = $got (esperado $foto)"; exit 1; }
       - uses: actions/upload-artifact@v4

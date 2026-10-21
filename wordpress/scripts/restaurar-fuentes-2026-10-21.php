@@ -7,11 +7,11 @@
  * same position) when that one has values. Only fully blank rows are ever
  * touched; anything with content is left alone. Everything else is reported.
  *
- * DRY RUN while $aplicar is false: prints what it would do, writes nothing.
+ * Dry run first ($aplicar = false) was clean: only Goya (es) had blank rows.
  * Run with wp-script.yml (script = restaurar-fuentes-2026-10-21).
  */
 
-$aplicar = false;
+$aplicar = true;
 
 $repetidores = [ 'pm_destino' => [ 'fuentes', 'faqs', 'aguas', 'temporada', 'mas' ], 'pm_especie' => [ 'fuentes' ] ];
 
