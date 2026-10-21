@@ -68,6 +68,7 @@
 .prestador dd { display: inline; margin: 0; }
 .prestador .precio { font-weight: 600; }
 .prestador .sin-verificar { margin: 0 0 12px; }
+.prestador .oferta { display: inline-block; margin: 0 0 12px; padding: 6px 12px; background: var(--cream); color: var(--moss); border-radius: 10px; font-size: var(--fs-small); font-weight: 600; }
 .prestador .sin-verificar a { color: var(--moss); }
 .prestador.vista-previa { border: 2px dashed var(--warn-line); background: var(--warn-bg); }
 .prestador .sello { grid-column: 1 / -1; margin: 0; font-size: var(--fs-caption); font-weight: 600; }

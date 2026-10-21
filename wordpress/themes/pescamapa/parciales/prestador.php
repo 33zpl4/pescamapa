@@ -36,6 +36,9 @@ $filas = [
 		<?php else : ?>
 			<p class="precio"><?php pm_e( 'prest.precio_consultar' ); ?></p>
 		<?php endif; ?>
+		<?php if ( $oferta = pm_prestador_oferta( $r ) ) : ?>
+			<p class="oferta"><?php pm_e( 'prest.oferta', [ 'oferta' => $oferta ] ); ?></p>
+		<?php endif; ?>
 		<?php if ( ! $r['consentimiento'] && pm_prestador_publico( $r ) ) :
 			$asunto = rawurlencode( pm_t( 'prest.baja_asunto', [ 'nombre' => $r['nombre'] ] ) ); ?>
 			<p class="sin-verificar note">

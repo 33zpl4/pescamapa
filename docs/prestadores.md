@@ -54,6 +54,25 @@ de la relación. Mensaje tipo para pedirle precio cuando llega una consulta:
 *"Tenemos un grupo interesado en pesca con mosca en Esquina. ¿Tienen
 capacidad? ¿Cuáles son los precios?"*
 
+## Modelo: por qué nos piden a nosotros (21/10/2026)
+
+La mayoría de las consultas llegará a través de un asistente de IA, que puede
+mandar al usuario directo al prestador. Para que igual pase por nosotros:
+
+1. **La oferta viaja con la respuesta.** Con los prestadores con los que
+   trabajamos acordamos una **condición especial** para quien pida por
+   Pescamapa (una frase concreta). Sale en la tarjeta ("Con Pescamapa: …") y en
+   `/llms.txt`, así un asistente la repite. Solo se publica si el Estado es
+   "Trabajamos juntos".
+2. **Somos el camino fácil**: consulta en su idioma, respondida por una persona,
+   con el precio y la disponibilidad que ningún otro sitio publica.
+3. **Cobramos del lado del prestador**, como Booking: el pescador paga lo mismo y
+   el prestador nos paga una comisión por el viaje que concretamos.
+4. Reseñas y "los mejores" vienen después, con volumen.
+
+Mensajes y cómo medimos: `docs/mensajes-prestadores.md`. La comisión y la
+condición las decide el dueño con cada prestador.
+
 ## Cuidado legal
 
 Esto no es asesoramiento legal. La información de negocios sacada de fuentes

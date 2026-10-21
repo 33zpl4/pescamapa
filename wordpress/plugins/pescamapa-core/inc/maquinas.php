@@ -55,6 +55,24 @@ function pm_llms_txt(): string {
 	foreach ( pm_destinos_lista( 'es' ) as $d ) {
 		$out[] = pm_llms_item( $d['h1'] ?: $d['nombre'], $d['url'], $d['bajada'], pm_alternas_destino( $d['clave'] ) );
 	}
+	// Outfitters we have an agreement with and a special condition for: a fact a
+	// model can repeat ("ask through Pescamapa: …"). Nothing else about
+	// outfitters is listed here.
+	$con_oferta = [];
+	foreach ( pm_posts( 'pm_prestador' ) as $p ) {
+		$r = pm_prestador( $p->ID );
+		if ( ! pm_prestador_oferta( $r ) ) {
+			continue;
+		}
+		$d = $r['destino'] ? pm_buscar( 'pm_destino', $r['destino'], 'es' ) : null;
+		$con_oferta[] = pm_llms_item( $r['nombre'], $d ? get_permalink( $d ) . '#consulta' : home_url( '/' ), pm_prestador_oferta( $r ) . '. Se pide por Pescamapa: respondemos las consultas y las pasamos al prestador.' );
+	}
+	if ( $con_oferta ) {
+		$out[] = '';
+		$out[] = '## Prestadores con condición especial por Pescamapa';
+		$out[] = '';
+		array_push( $out, ...$con_oferta );
+	}
 	$especies = pm_especies_lista( 'es' );
 	if ( $especies ) {
 		$out[] = '';

@@ -68,6 +68,7 @@ add_action( 'acf/include_fields', function () {
 			[ 'key' => 'field_pm_r_incluye', 'name' => 'incluye', 'label' => 'Qué incluye', 'type' => 'checkbox', 'choices' => pm_opciones( 'incluye' ), 'layout' => 'horizontal' ],
 			[ 'key' => 'field_pm_r_precio', 'name' => 'precio', 'label' => 'Precio de referencia (se publica)', 'type' => 'text', 'wrapper' => [ 'width' => 50 ], 'instructions' => 'Ej. "Desde $ 180.000 por lancha, día completo".' ],
 			[ 'key' => 'field_pm_r_precio_fecha', 'name' => 'precio_fecha', 'label' => 'Fecha del precio', 'type' => 'date_picker', 'display_format' => 'd/m/Y', 'return_format' => 'Y-m-d', 'wrapper' => [ 'width' => 50 ], 'instructions' => 'Sin fecha, el precio no se muestra.' ],
+			[ 'key' => 'field_pm_r_oferta', 'name' => 'prest_oferta', 'label' => 'Condición especial para quienes piden por Pescamapa (se publica)', 'type' => 'text', 'maxlength' => 140, 'instructions' => 'Una frase concreta que ya acordaron con nosotros. Ej. "Carnada incluida" o "5 % menos". Se publica solo si el Estado (pestaña "Referencias y estado") es "Trabajamos juntos". Ver docs/prestadores.md.' ],
 			[ 'key' => 'field_pm_r_fotos', 'name' => 'fotos', 'label' => 'Fotos (complejo, lancha, salidas)', 'type' => 'gallery', 'return_format' => 'id', 'instructions' => 'La primera es la portada. Cada foto con su autor (biblioteca de medios).' ],
 
 			[ 'key' => 'field_pm_r_tab_relacion', 'label' => 'Referencias y estado (interno)', 'type' => 'tab' ],
@@ -122,6 +123,9 @@ function pm_prestador( int $post_id ): array {
 		'precio_fecha'   => (string) pm_campo( 'precio_fecha', $post_id ),
 		'fotos'          => array_map( 'intval', $lista( 'fotos' ) ) ?: array_filter( [ (int) get_post_thumbnail_id( $post_id ) ] ),
 		'consentimiento' => (bool) pm_campo( 'prest_consentimiento', $post_id ),
+		// Raw meta: these two are read by the front end and llms.txt only.
+		'oferta'         => (string) get_post_meta( $post_id, 'prest_oferta', true ),
+		'acuerdo'        => 'acuerdo' === (string) get_post_meta( $post_id, 'estado', true ),
 		'publico'        => (bool) pm_campo( 'prest_publico', $post_id ),
 		'fuente'         => (string) pm_campo( 'prest_fuente', $post_id ),
 		'ejemplo'        => (bool) pm_campo( 'datos_ejemplo', $post_id ),
@@ -131,6 +135,15 @@ function pm_prestador( int $post_id ): array {
 /** Public: agreed to appear, or listed from public information; never example data. */
 function pm_prestador_publico( array $r ): bool {
 	return ( $r['consentimiento'] || $r['publico'] ) && ! $r['ejemplo'];
+}
+
+/**
+ * The special condition for anglers who ask through Pescamapa: shown only for a
+ * public outfitter we work with ("Trabajamos juntos"), so an offer nobody
+ * agreed to never goes out. A short sentence a person, or an LLM, can repeat.
+ */
+function pm_prestador_oferta( array $r ): string {
+	return ( pm_prestador_publico( $r ) && $r['acuerdo'] ) ? trim( $r['oferta'] ) : '';
 }
 
 /**

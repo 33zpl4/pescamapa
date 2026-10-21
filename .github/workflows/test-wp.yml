@@ -83,6 +83,10 @@ jobs:
             update_field( "mas", [ [ "nombre" => "MAS-GRATIS", "url" => "https://example.com/a", "texto" => "Un paseo", "patrocinado" => 0 ], [ "nombre" => "MAS-PAGO", "url" => "https://example.com/b", "texto" => "Un aviso", "patrocinado" => 1 ] ], $esq->ID );
             $pub = wp_insert_post( [ "post_type" => "pm_prestador", "post_status" => "publish", "post_title" => "PRESTADOR-PUBLICO" ] );
             foreach ( [ "tipo" => [ "operador" ], "prest_destino" => "esquina", "prest_publico" => 1, "prest_fuente" => "https://example.com/prestador" ] as $k => $v ) { update_field( $k, $v, $pub ); }
+            $ac = wp_insert_post( [ "post_type" => "pm_prestador", "post_status" => "publish", "post_title" => "PRESTADOR-CON-ACUERDO" ] );
+            foreach ( [ "tipo" => [ "guia" ], "prest_destino" => "esquina", "prest_consentimiento" => 1, "estado" => "acuerdo", "prest_oferta" => "OFERTA-DE-PRUEBA" ] as $k => $v ) { update_field( $k, $v, $ac ); }
+            $sa = wp_insert_post( [ "post_type" => "pm_prestador", "post_status" => "publish", "post_title" => "PRESTADOR-SIN-ACUERDO" ] );
+            foreach ( [ "tipo" => [ "guia" ], "prest_destino" => "esquina", "prest_consentimiento" => 1, "estado" => "contactado", "prest_oferta" => "OFERTA-NO-ACORDADA" ] as $k => $v ) { update_field( $k, $v, $sa ); }
             $no = wp_insert_post( [ "post_type" => "pm_prestador", "post_status" => "publish", "post_title" => "PRESTADOR-NO-PUBLICO" ] );
             foreach ( [ "tipo" => [ "guia" ], "prest_destino" => "esquina" ] as $k => $v ) { update_field( $k, $v, $no ); }
             $r = wp_insert_post( [ "post_type" => "pm_prestador", "post_status" => "publish", "post_title" => "PRESTADOR-DE-PRUEBA" ] );
@@ -113,6 +117,10 @@ jobs:
           check /litoral/corrientes/pesca-en-esquina/ 200 'sin verificar con el prestador'
           check /litoral/corrientes/pesca-en-esquina/ 200 'Precio: a consultar'
           check /llms.txt 200 'se corrigen o se quitan a pedido' 'PRESTADOR-PUBLICO'
+          # Special condition: only for an outfitter we work with.
+          check /litoral/corrientes/pesca-en-esquina/ 200 'Con Pescamapa: OFERTA-DE-PRUEBA' 'OFERTA-NO-ACORDADA'
+          check /llms.txt 200 'Prestadores con condición especial por Pescamapa'
+          check /llms.txt 200 'OFERTA-DE-PRUEBA' 'OFERTA-NO-ACORDADA'
           # Example-data outfitters never reach visitors.
           check /litoral/corrientes/pesca-en-esquina/ 200 'pacú' 'Don Joaquín River Lodge'
           check /entrevistas/ 200 'Persona Prueba' 'Sin permiso'
