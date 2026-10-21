@@ -63,6 +63,7 @@ todas a nosotros (centralizar datos y cobrar comisión más adelante).
 | 21/10/2026 | `info@pescamapa.com` ya enruta (Cloudflare Email Routing). |
 | 21/10/2026 | **Prestadores: listar primero, verificar después.** Se publican con información pública, marcados "sin verificar" y con enlace para corregir o pedir la baja (info@pescamapa.com). Reemplaza "solo con consentimiento". `docs/prestadores.md`. |
 | 21/10/2026 | **Regla de oro**: cada página responde con un dato concreto, fechado y con fuente una pregunta real, arriba y en texto; muchos lectores serán LLM. `docs/estrategia-contenido.md` (prueba de cinco preguntas, preguntas de control mensuales en `docs/preguntas-llm.md`). |
+| 21/10/2026 | **Modelo**: la oferta viaja con la respuesta (condición especial por Pescamapa, publicada en la tarjeta y en llms.txt), somos el camino fácil (idioma, precio, disponibilidad) y cobramos comisión del lado del prestador. Primero Esquina y Goya. `docs/prestadores.md`, `docs/mensajes-prestadores.md`. |
 | antes | Fotos solo de Commons con licencia libre o cedidas con crédito; nunca de Google. Prestadores solo con consentimiento y precios fechados. |
 
 ## Pendientes, en orden
