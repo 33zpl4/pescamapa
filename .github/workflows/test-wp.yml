@@ -64,6 +64,10 @@ jobs:
           w eval-file wordpress/scripts/esquina-reglamento-2026-10-20.php
           w eval-file wordpress/scripts/flycast-2026-10-21.php
           w eval-file wordpress/scripts/flycast-2026-10-21.php   # idempotent
+          w eval-file wordpress/scripts/paso-de-la-patria-2026-10-21.php
+          w eval-file wordpress/scripts/paso-de-la-patria-2026-10-21.php   # idempotent
+          w eval-file wordpress/scripts/reglas-corrientes-2026-10-21.php
+          w eval-file wordpress/scripts/reglas-corrientes-2026-10-21.php   # idempotent
           w eval-file wordpress/scripts/prestadores-2026-10-20.php
           w eval-file wordpress/scripts/prestadores-2026-10-20.php   # idempotent
           # The script leaves Esquina as a draft; publish it here to render it.
@@ -134,6 +138,15 @@ jobs:
           check /llms.txt 200 'pesca-en-esquina'
           check /llms.txt 200 'prueba-el-rio-manda' 'sin-permiso'
           check /llms.txt 200 'nota-de-prueba'
+          check /llms.txt 200 'pesca-en-paso-de-la-patria'
+          # Third guide: rules from the official annex, no internal notes, outfitters labelled.
+          check /litoral/corrientes/pesca-en-paso-de-la-patria/ 200 'Disposición 853/22' 'PENDIENTE'
+          check /litoral/corrientes/pesca-en-paso-de-la-patria/ 200 'un solo ejemplar por embarcación'
+          check /litoral/corrientes/pesca-en-paso-de-la-patria/ 200 'Posada del Paso'
+          check /litoral/corrientes/pesca-en-paso-de-la-patria/ 200 'sin verificar con el prestador'
+          check /litoral/corrientes/pesca-en-paso-de-la-patria/ 200 'TouristDestination'
+          check /pt/litoral/corrientes/pesca-em-paso-de-la-patria/ 200 'Disposição 853/22' 'PENDIENTE'
+          check /litoral/corrientes/pesca-en-esquina/ 200 '¿Qué tallas y cupos rigen en Corrientes?'
           check /litoral/corrientes/pesca-en-esquina/ 200 'Fuentes consultadas ('
           check /litoral/corrientes/pesca-en-esquina/ 200 '"citation"'
           check /litoral/corrientes/pesca-en-esquina/ 200 'rel="sponsored noopener"'
