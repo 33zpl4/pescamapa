@@ -28,12 +28,10 @@ Interno, no se publica.
 
 ## 2. Lo que NO se pudo confirmar (PENDIENTE, no se publica)
 
-- **Tallas, cupos y artes vigentes** para dorado, surubí, pacú, patí y boga. Solo
-  hay documentos viejos (Disposición 853/2022) o una tabla comercial que cita la
-  Disposición 937/2012. No se reproduce nada hasta tener la disposición vigente.
-  *Idea:* es normativa provincial; lo que ya se verificó para Goya y Esquina
-  (`docs/estado.md`, bitácora de verificaciones) puede servir de base, pero hay
-  que confirmar que rige igual en este tramo.
+- **Tallas, cupos y artes**: ver la sección 8 (segunda consulta): hay una
+  disposición oficial en el Boletín Oficial (853/22) que el segundo agente
+  reporta como vigente hasta nuevo acto. **Falta que una persona abra el PDF y
+  contraste la tabla antes de publicarla.**
 - Precio y duración de la licencia; reglas para extranjeros y brasileños.
 - Calendario por especie y mes. Las fuentes comerciales no coinciden (ej. surubí
   "de junio a septiembre"): son orientaciones de prestadores, no evidencia.
@@ -109,3 +107,84 @@ autor) antes de publicar.
    levantamiento (con enlace); dónde se publica la próxima Fiesta del Dorado.
 4. Cargar los prestadores como listado público y contactarlos después.
 5. Armar la guía en español con lo confirmado, y marcar el resto `PENDIENTE`.
+
+## 8. Segunda consulta (21/10/2026): tallas, cupos, vedas, licencia, torneos
+
+Respuesta de otro agente a la pregunta puntual del paso 3. Mismos límites:
+enlaces sin abrir por nosotros; utm quitados. Lo marcado ⚠️ pide revisión humana.
+
+### 8.1 Tallas y cupos: Disposición 853/22 (Boletín Oficial de Corrientes)
+
+- Disposición **853/22** de la Dirección de Recursos Naturales, publicada el
+  **26/12/2022**; rige desde el 24/12/2022 "hasta el dictado de un nuevo acto
+  administrativo que modifique el presente" (no tiene fecha de fin). Texto:
+  https://boletinoficial.corrientes.gob.ar/assets/articulo_adjuntos/7523/original/26-12-2022.pdf
+  (fuente **oficial**). ⚠️ Abrir el PDF y contrastar esta tabla.
+- Permite pesca deportiva todos los días y faculta a la autoridad a ampliar o
+  restringir modalidades por recomendación técnica o concentraciones
+  extraordinarias de peces (es el respaldo del mecanismo de vedas extraordinarias).
+- Tabla reportada (solo tallas **mínimas**; no hay tallas máximas):
+
+| Especie | Talla mín. | Cupo | Devolución |
+| --- | --- | --- | --- |
+| Dorado | — | sin extracción | Obligatoria ("solo pesca y devolución") |
+| Surubí (manchado y atigrado) | — | sin extracción | Obligatoria ("solo pesca y devolución") |
+| Pacú | 45 cm | 1 por licencia y 1 por embarcación | Solo si no cumple talla o cupo |
+| Patí | 70 cm | 2 | Solo si no cumple talla o cupo |
+| Boga | 45 cm | 2 por pescador; máx. 6 por embarcación | Solo si no cumple talla o cupo |
+| Tararira | 30 cm | 5 | Solo si no cumple talla o cupo |
+
+- Las piezas retenidas solo pueden trasladarse dentro de la localidad donde se pescaron.
+- **No encontré excepción** para Paso de la Patria, Goya o Esquina: se presenta
+  para las aguas de Corrientes, a leer junto con cualquier acto posterior.
+- **Coincide** con lo que ya tenemos de Esquina: pacú 45 cm y dorado con devolución.
+- ⚠️ **No coincide** con la nota de `esquina.md` ("surubí 85 cm, Res. 9/2021
+  nacional, no encontré medida de Corrientes"): la 853/22 dice solo pesca y
+  devolución. Manda el texto oficial una vez abierto.
+
+### 8.2 Vedas: mecanismo y antecedentes de 2026
+
+- Mecanismo: la 853/22 respalda las vedas extraordinarias por tramo. **No
+  encontró un calendario oficial de veda de desove** para el Paraná correntino.
+- **Disposición 618 (29/05/2026)**: prohíbe toda pesca entre la Confluencia
+  Paraná–Paraguay y "Los Cables" (km 1232–1238 en los fundamentos). Solo hay una
+  **copia en un medio** (Corrientes al Día, PDF); no se halló en el Boletín.
+- **Septiembre**: medios coinciden en veda desde el 9/9 y ampliación al km
+  1180–1239. ⚠️ **Hay reportes de otros tramos** (km 1109–1150 y km 1140–1208)
+  durante el movimiento del cardumen; el dueño había dicho que el 1109–1150 fue
+  de Chaco. No se resolvió quién lo dispuso. No asumir que 1180–1239 fue el único
+  tramo ni el límite durante todo septiembre.
+- **Disposición 1054**: medios informan el levantamiento desde las **13:00 del
+  29/09/2026** y el regreso de las modalidades de la 853/22. **Sin texto
+  oficial localizado** (solo prensa).
+- Dónde mirar: Boletín Oficial de Corrientes (primario) y recnaturalesctes.gob.ar
+  (no hallaron un listado histórico). Medios y redes avisan, **no sustituyen el
+  acto**.
+- Para la guía se mantiene la decisión del 20/10/2026: párrafo genérico + enlace
+  a la autoridad, sin fechas ni km. Ver la pregunta abierta en "9. Decisiones".
+
+### 8.3 Licencia
+
+Sin cambios: **no encontró** precio ni duración por categoría ni reglas claras
+para extranjeros o brasileños en una fuente oficial. Confirmado: el acuerdo
+regional es para residentes de las provincias firmantes y no reconoce licencias
+brasileñas. Acción: una persona entra a recnaturalesctes.gob.ar y
+licenciasrecursosnaturales.gob.ar, lee las categorías y copia precio y
+duración con fecha.
+
+### 8.4 Torneos
+
+Sin cambios: ni la Fiesta Nacional del Dorado ni el Torneo Apertura tienen fecha
+oficial publicada para la próxima edición.
+
+## 9. Decisiones para el dueño
+
+1. ¿Publicamos la tabla de tallas y cupos de la 853/22 como "Reglas básicas de
+   Corrientes" en las tres guías (Goya, Esquina, Paso de la Patria), con la
+   fuente y la fecha del Boletín, **después** de que una persona abra el PDF?
+   Es el dato más citable que tenemos.
+2. Paso de la Patria está en el centro de las vedas extraordinarias de 2026
+   (km 1180–1239). ¿Se agrega una línea sin fechas ni km tipo "en 2026 hubo
+   vedas extraordinarias en este tramo; consultá las vigentes"? Es un hecho
+   sin mantenimiento y le sirve al lector.
+3. Idioma: ¿español y portugués desde el inicio?
