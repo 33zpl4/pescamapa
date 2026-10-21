@@ -188,3 +188,29 @@ oficial publicada para la próxima edición.
    vedas extraordinarias en este tramo; consultá las vigentes"? Es un hecho
    sin mantenimiento y le sirve al lector.
 3. Idioma: ¿español y portugués desde el inicio?
+
+## 10. Actualización (21/10/2026): Anexo I contrastado con el texto oficial
+
+El dueño pegó la captura y el texto completo del Anexo I de la Disposición 853/22
+(Boletín Oficial de Corrientes, 26/12/2022, firmada por el director de Recursos
+Naturales). **La tabla del punto 8.1 coincide**, y se completan las notas:
+
+- **Pacú**: 1 por licencia vigente y **un solo ejemplar por embarcación**,
+  independientemente de cuántos pescadores haya a bordo.
+- **Boga**: 2 por pescador con licencia vigente y **hasta 6 por embarcación**;
+  si hay más pescadores, se prorratean esos 6.
+- **Movilización**: las especies del anexo solo pueden movilizarse dentro de la
+  localidad donde se pesca; está prohibido el tránsito a otro destino, nacional
+  o internacional.
+- Otras especies del anexo (talla mínima, cupo): armado 45 cm (5); bagre
+  amarillo 25 cm (5); corvina 25 cm (5); mandure 40 cm (5); moncholo 30 cm (5);
+  palometa 20 cm (10); raya 80 cm de diámetro (1); sábalo 40 cm (3); salmón
+  45 cm (2); virreyna 30 cm (5).
+- Sigue sin confirmarse que no haya un acto posterior que la modifique
+  (por eso la guía no muestra "Reglamento verificado el…"). Los medios dijeron
+  que la Disposición 1054 restableció las modalidades de la 853/22.
+
+**Publicado el 21/10/2026**: guía de Paso de la Patria en español y portugués
+(`paso-de-la-patria-2026-10-21`), prestadores como listado con información
+pública, y la pregunta de tallas y cupos agregada a Goya y Esquina
+(`reglas-corrientes-2026-10-21`).

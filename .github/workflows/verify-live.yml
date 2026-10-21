@@ -57,6 +57,12 @@ jobs:
             grep -q 'PENDIENTE' page.html && { echo "✖ $p muestra una nota PENDIENTE"; fail=1; }
             grep -q 'admin-post.php' page.html || { echo "✖ $p sin formulario de consulta"; fail=1; }
           done
+          for p in /litoral/corrientes/pesca-en-paso-de-la-patria/ /pt/litoral/corrientes/pesca-em-paso-de-la-patria/; do
+            check "$p" 200 'TouristDestination'
+            grep -qE "name=[\"']robots[\"'][^>]*noindex" page.html && { echo "✖ $p tiene noindex"; fail=1; }
+            grep -q 'PENDIENTE' page.html && { echo "✖ $p muestra una nota PENDIENTE"; fail=1; }
+          done
+          check /litoral/corrientes/pesca-en-goya/ 200 'Más para hacer'
           # Esquina exists once esquina-2026-10-20 ran (Spanish first).
           code=$(curl -sS -m 30 -o page.html -w '%{http_code}' "$SITE/litoral/corrientes/pesca-en-esquina/")
           if [[ "$code" == 200 ]]; then
