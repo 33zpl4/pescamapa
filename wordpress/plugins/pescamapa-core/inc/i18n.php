@@ -53,9 +53,9 @@ function pm_etiqueta( string $clave, ?string $idioma = null ): string {
 // --- URLs ------------------------------------------------------------------
 
 const PM_SEGMENTOS = [
-	'es' => [ 'especies' => 'especies', 'mapa' => 'mapa', 'creditos' => 'creditos', 'entrevistas' => 'entrevistas' ],
-	'pt' => [ 'especies' => 'especies', 'mapa' => 'mapa', 'creditos' => 'creditos', 'entrevistas' => 'entrevistas' ],
-	'en' => [ 'especies' => 'species', 'mapa' => 'map', 'creditos' => 'credits', 'entrevistas' => 'interviews' ],
+	'es' => [ 'especies' => 'especies', 'mapa' => 'mapa', 'creditos' => 'creditos', 'entrevistas' => 'entrevistas', 'notas' => 'notas' ],
+	'pt' => [ 'especies' => 'especies', 'mapa' => 'mapa', 'creditos' => 'creditos', 'entrevistas' => 'entrevistas', 'notas' => 'notas' ],
+	'en' => [ 'especies' => 'species', 'mapa' => 'map', 'creditos' => 'credits', 'entrevistas' => 'interviews', 'notas' => 'notes' ],
 ];
 
 function pm_url( string $ruta, string $idioma ): string {
@@ -74,6 +74,9 @@ function pm_url_creditos( string $i ): string {
 }
 function pm_url_entrevistas( string $i ): string {
 	return pm_url( PM_SEGMENTOS[ $i ]['entrevistas'], $i );
+}
+function pm_url_notas( string $i ): string {
+	return pm_url( PM_SEGMENTOS[ $i ]['notas'], $i );
 }
 function pm_url_especie( string $clave, string $i ): string {
 	return pm_url( PM_SEGMENTOS[ $i ]['especies'] . '/' . $clave, $i );

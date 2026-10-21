@@ -6,7 +6,7 @@
  *   - Open Graph
  *   - noindex only on the 404 page; every published ficha is indexable
  *   - JSON-LD: WebSite (home), TouristDestination + BreadcrumbList + FAQPage,
- *     Article + BreadcrumbList (interviews)
+ *     Article + BreadcrumbList (interviews, notes)
  *   - core sitemap: guides, species and the fixed views
  */
 
@@ -77,6 +77,19 @@ function pm_seo(): array {
 		$s['jsonld']      = pm_jsonld_entrevista( $e );
 		if ( $e['foto'] ) {
 			$s['imagen'] = wp_get_attachment_image_url( $e['foto'], 'large' );
+		}
+	} elseif ( 'notas' === $vista ) {
+		$s['title']       = pm_t( 'notas.title' );
+		$s['description'] = pm_t( 'notas.description' );
+		$s['alternas']    = pm_alternas_fijas( 'pm_url_notas' );
+	} elseif ( 'nota' === $vista ) {
+		$n = pm_nota( get_queried_object_id() );
+		$s['title']       = $n['seo_title'] ?: $n['titulo'];
+		$s['description'] = $n['seo_description'] ?: $n['bajada'];
+		$s['alternas']    = pm_alternas_nota( $n['clave'] );
+		$s['jsonld']      = pm_jsonld_nota( $n );
+		if ( $n['foto'] ) {
+			$s['imagen'] = wp_get_attachment_image_url( $n['foto'], 'large' );
 		}
 	} elseif ( is_404() ) {
 		$s['title']    = 'Página no encontrada | Pescamapa';

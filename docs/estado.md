@@ -24,6 +24,14 @@ todas a nosotros (centralizar datos y cobrar comisión más adelante).
 - **Panel sin bloqueos** (21/10): ningún campo es obligatorio; el editor
   ve solo "Autor de la foto". `test-wp` entra como editora, cambia una foto
   y guarda en cada PR.
+- **Rama `claude/confident-feynman-4oj6zh` (21/10/2026, sin mergear)**:
+  definición y lema nuevos, `llms.txt` y `robots.txt` (`inc/maquinas.php`),
+  reglas de marca (`docs/marca.md`), tipo **Notas** (`/notas/`),
+  bloque **"Más para hacer"** en las guías (con marca de publicidad),
+  registro de cuándo se concreta una consulta (base de las reseñas,
+  `docs/resenas.md`). Para que Goya muestre el enlace a Bitácora de Viajes y
+  las consultas lleguen a `info@pescamapa.com`, después del merge correr
+  `goya-mas-2026-10-21` y `email-consultas-2026-10-21` con `wp-script.yml`.
 - **Revisión mensual de fotos**: issue automático (`revisar-fotos.yml`); el
   primero es el #23.
 - **Esquina**: **publicada el 20/10/2026** (2.ª guía, solo español),
@@ -47,6 +55,12 @@ todas a nosotros (centralizar datos y cobrar comisión más adelante).
 | 20/10/2026 | La fecha "Reglamento verificado" es **opcional**: se muestra si está, nunca se pide ni bloquea. El protocolo de abajo es una buena práctica, no un requisito para publicar. |
 | 20/10/2026 | Goya está en el Paraná medio (km ~960–990): no lleva vedas extraordinarias del Alto Paraná. |
 | 20/10/2026 | **Vedas: mínimo esfuerzo.** Poco tráfico y mucho mantenimiento. Cada guía lleva un párrafo genérico (vedas por desove y extraordinarias por tramo, cambian cada año) y el enlace a la autoridad. Sin fechas ni kilómetros que haya que perseguir. |
+| 21/10/2026 | **Definición**: "Pescamapa es la guía para pescar en toda la Argentina: dónde ir, cuándo, qué dice el reglamento y con qué guía local salir, con datos al día y la voz de quienes pescan ahí." Lema: "Dónde, cuándo y con quién pescar en Argentina." |
+| 21/10/2026 | Todo lo que se publica respeta `docs/marca.md` (colores, tipografías, tamaños, componentes) y se verifica con `revisar-marca.mjs`. |
+| 21/10/2026 | "Más para hacer" es un bloque repetible por ciudad: hoy el enlace a Bitácora de Viajes (Goya); a futuro, espacio que se puede vender (marcado "Publicidad", `rel="sponsored"`). |
+| 21/10/2026 | Reseñas de prestadores: se prepara la infraestructura (registro de viajes concretados), no se lanzan todavía. Plan en `docs/resenas.md`. |
+| 21/10/2026 | Contenido propio: por ahora se alimenta a mano (enlace + hechos + resúmenes en el chat) y Claude arma citas, notas y entrevistas; la API viene después. `docs/contenido.md`. |
+| 21/10/2026 | `info@pescamapa.com` ya enruta (Cloudflare Email Routing). |
 | antes | Fotos solo de Commons con licencia libre o cedidas con crédito; nunca de Google. Prestadores solo con consentimiento y precios fechados. |
 
 ## Pendientes, en orden
@@ -61,9 +75,10 @@ todas a nosotros (centralizar datos y cobrar comisión más adelante).
 2. **Traducir Esquina** a pt/en (hoy solo español).
 3. **Primeras entrevistas**: Agus y su papá (Goya). Guía de preguntas en
    `docs/entrevistas.md`. Hace falta su permiso para nombre, foto y frases.
-4. **Email de consultas**: confirmar que el servidor envía correo (probar el
-   formulario) y fijar el destinatario: `wp option update pm_email_consultas
-   <email>`. Si no llega, igual quedan en wp-admin → Consultas.
+4. **Email de consultas**: el routing de `info@pescamapa.com` está listo;
+   falta fijar el destinatario (script `email-consultas-2026-10-21`) y
+   confirmar que el servidor envía correo (probar el formulario). Si no llega,
+   igual quedan en wp-admin → Consultas.
 5. **Próximas guías** (matriz SEO): Paso de la Patria → La Paz → San Martín
    de los Andes / Junín de los Andes (mosca) → Río Grande → lagunas
    (Junín/Laguna de Gómez, Chascomús, Lobos).

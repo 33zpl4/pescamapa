@@ -177,6 +177,10 @@ add_action( 'add_meta_boxes_pm_consulta', function ( $post ) {
 			echo '<option value="' . esc_attr( $k ) . '"' . selected( $estado, $k, false ) . '>' . esc_html( $l ) . '</option>';
 		}
 		echo '</select></label></p>';
+		$concretada = (int) get_post_meta( $post->ID, 'concretada_el', true );
+		if ( $concretada ) {
+			echo '<p class="description">Concretada el ' . esc_html( wp_date( 'd/m/Y', $concretada ) ) . '</p>';
+		}
 		$actual = (int) get_post_meta( $post->ID, 'derivada_a', true );
 		echo '<p><label>Derivada a<br><select name="pm_derivada_a" style="width:100%"><option value="0">—</option>';
 		foreach ( get_posts( [ 'post_type' => 'pm_prestador', 'post_status' => 'any', 'posts_per_page' => -1, 'orderby' => 'title', 'order' => 'ASC' ] ) as $p ) {
@@ -193,6 +197,10 @@ add_action( 'save_post_pm_consulta', function ( $id ) {
 	}
 	$estado = sanitize_key( $_POST['pm_estado'] ?? 'nueva' );
 	update_post_meta( $id, 'estado', isset( PM_CONSULTA_ESTADOS[ $estado ] ) ? $estado : 'nueva' );
+	// Review groundwork (docs/resenas.md): remember WHEN a trip became real, once.
+	if ( 'concretada' === $estado && ! get_post_meta( $id, 'concretada_el', true ) ) {
+		update_post_meta( $id, 'concretada_el', time() );
+	}
 	update_post_meta( $id, 'derivada_a', (int) ( $_POST['pm_derivada_a'] ?? 0 ) );
 	update_post_meta( $id, 'notas', sanitize_textarea_field( wp_unslash( $_POST['pm_notas'] ?? '' ) ) );
 } );

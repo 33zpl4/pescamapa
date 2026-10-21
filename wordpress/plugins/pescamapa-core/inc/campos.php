@@ -174,6 +174,18 @@ add_action( 'acf/include_fields', function () {
 					],
 				],
 				pm_campo_fuentes( 'd' ),
+
+				[ 'key' => 'field_pm_d_tab_mas', 'label' => 'Más para hacer', 'type' => 'tab' ],
+				[ 'key' => 'field_pm_d_mas_msg', 'label' => '', 'type' => 'message', 'message' => 'Enlaces a otras cosas para hacer en la zona (excursiones, paseos, otros sitios). Salen al final de la guía, en una sección discreta. Si alguien <strong>paga</strong> por figurar, tildá "Es publicidad": la web lo marca como tal y el enlace va con <code>rel="sponsored"</code>.' ],
+				[
+					'key' => 'field_pm_d_mas', 'name' => 'mas', 'label' => 'Más para hacer', 'type' => 'repeater', 'layout' => 'block', 'button_label' => 'Agregar enlace',
+					'sub_fields' => [
+						[ 'key' => 'field_pm_d_mas_nombre', 'name' => 'nombre', 'label' => 'Nombre', 'type' => 'text', 'wrapper' => [ 'width' => 50 ] ],
+						[ 'key' => 'field_pm_d_mas_url', 'name' => 'url', 'label' => 'Enlace', 'type' => 'url', 'wrapper' => [ 'width' => 50 ] ],
+						[ 'key' => 'field_pm_d_mas_texto', 'name' => 'texto', 'label' => 'Una línea que lo describa', 'type' => 'text', 'maxlength' => 160 ],
+						[ 'key' => 'field_pm_d_mas_pago', 'name' => 'patrocinado', 'label' => 'Es publicidad (pagan por figurar)', 'type' => 'true_false', 'ui' => 1, 'wrapper' => [ 'width' => 50 ] ],
+					],
+				],
 			]
 		),
 	] );
@@ -245,7 +257,7 @@ add_filter( 'acf/load_field/key=field_pm_d_especies', function ( $field ) {
 } );
 
 // The "publication check" message lists what is missing for this post.
-foreach ( [ 'field_pm_d_chequeo', 'field_pm_e_chequeo' ] as $clave_campo ) {
+foreach ( [ 'field_pm_d_chequeo', 'field_pm_e_chequeo', 'field_pm_t_chequeo' ] as $clave_campo ) {
 	add_filter( "acf/prepare_field/key={$clave_campo}", function ( $field ) {
 		$post_id = (int) ( $_GET['post'] ?? 0 );
 		if ( ! $post_id ) {

@@ -9,6 +9,13 @@
 > es una guía interna para editores (ver `docs/wordpress.md`); las secciones
 > de abajo sobre `borrador`/build que falla describen solo el sitio Astro.
 
+**Qué es Pescamapa (una frase, 21/10/2026):** la guía para pescar en toda la
+Argentina: dónde ir, cuándo, qué dice el reglamento y con qué guía local
+salir, con datos al día y la voz de quienes pescan ahí. **Marca** (color,
+tipografía, componentes): `docs/marca.md`, obligatoria para todo lo que se
+publique; `node wordpress/build/revisar-marca.mjs` la verifica. Contenido
+propio (entrevistas, notas): `docs/contenido.md`.
+
 Pescamapa (pescamapa.com): destinos, especies y guías para pescar en
 Argentina. Sitio Astro estático, publicado en Cloudflare Workers (static
 assets). Español rioplatense primero; portugués e inglés después, con su

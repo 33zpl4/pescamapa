@@ -17,7 +17,7 @@ defined( 'ABSPATH' ) || exit;
 /** @return string[] what would make the ficha more complete (for editors). */
 function pm_sugerencias( int $post_id ): array {
 	$tipo = get_post_type( $post_id );
-	if ( ! in_array( $tipo, [ 'pm_destino', 'pm_especie' ], true ) ) {
+	if ( ! in_array( $tipo, [ 'pm_destino', 'pm_especie', 'pm_nota' ], true ) ) {
 		return [];
 	}
 	$faltan  = [];
@@ -25,7 +25,19 @@ function pm_sugerencias( int $post_id ): array {
 	$clave   = pm_clave_de( $post_id );
 	$fuentes = pm_filas( 'fuentes', $post_id );
 
-	if ( ! array_filter( $fuentes, fn( $f ) => ! empty( $f['oficial'] ) ) ) {
+	if ( 'pm_nota' === $tipo ) {
+		if ( ! array_filter( $fuentes, fn( $f ) => ! empty( $f['nombre'] ) ) ) {
+			$faltan[] = 'Sumar al menos una fuente (la entrevista, el video, el enlace de donde salió el dato).';
+		}
+		if ( 'es' === $idioma ) {
+			$foto = (int) get_post_thumbnail_id( $post_id );
+			if ( ! $foto ) {
+				$faltan[] = 'Agregar una foto (Imagen destacada).';
+			} elseif ( ! pm_campo( 'foto_autor', $foto ) ) {
+				$faltan[] = 'Cargar el autor de la foto (biblioteca de medios → la foto → "Autor de la foto").';
+			}
+		}
+	} elseif ( ! array_filter( $fuentes, fn( $f ) => ! empty( $f['oficial'] ) ) ) {
 		$faltan[] = 'Sumar al menos una fuente oficial.';
 	}
 

@@ -55,7 +55,8 @@ una guía nueva desde una investigación): un script idempotente en
 (saca la veda km 1109–1150) y `esquina-2026-10-20` (Esquina, borrador #38).
 También corridos: `prestadores-2026-10-20` (#39–#48, datos de ejemplo),
 `esquina-reglamento-2026-10-20`, `esquina-publicar-2026-10-20` y
-`esquina-verificado-2026-10-20`. La fecha "Reglamento verificado" es opcional.
+`esquina-verificado-2026-10-20`. Preparados el 21/10/2026 (correr después del
+merge): `goya-mas-2026-10-21`, `email-consultas-2026-10-21`. La fecha "Reglamento verificado" es opcional.
 Actualizá esta lista al correr uno nuevo.
 
 **Revisión de fotos** (`revisar-fotos.yml`, el 1.º de cada mes y a pedido):
@@ -151,6 +152,28 @@ centralizar los datos y poder cobrar comisión por el negocio que traemos.
   `ficha.elegir.*`), armada con las respuestas de Agus y otro operador.
 - **Altura del río**: campo `alturas_url` en la guía (versión en español),
   enlace junto a la fecha de actualización.
+
+## Notas, "Más para hacer", llms.txt y marca (21/10/2026)
+
+- **Notas** (`inc/notas.php`, `vistas/nota(s).php`): artículos propios en
+  `/notas/<slug>/` (`/pt/notas/`, `/en/notes/`). Mismo modelo de idiomas que
+  las guías. Cada nota lleva **fuentes públicas** (salen en la página y como
+  `citation` en el JSON-LD) y un campo interno "Material de origen". Los
+  "Datos clave" van en un cuadro arriba del texto. El menú y el sitemap
+  muestran el índice solo cuando hay al menos una nota.
+- **Más para hacer** (campo `mas` de la guía, pestaña propia): lista de
+  enlaces (nombre, enlace, una línea) al final de cada guía. "Es publicidad"
+  agrega el sello y `rel="sponsored"`. Se carga por idioma (la descripción se
+  traduce). Goya: Bitácora de Viajes (`goya-mas-2026-10-21`).
+- **`/llms.txt`** se genera desde los datos (guías, especies, entrevistas con
+  permiso, notas) en `inc/maquinas.php`; no hay archivo estático. **`/robots.txt`**
+  es el virtual de WordPress (con el `Sitemap:` de core) más un `Disallow` para
+  las URL `?consulta=`. **No crear un `robots.txt` físico en la carpeta del
+  sitio**: taparía el virtual. `verify-live.yml` revisa los dos.
+- **Marca**: `docs/marca.md` + `wordpress/build/revisar-marca.mjs` (en
+  `test-wp.yml`). Las citas dentro del texto ya no usan el amarillo de aviso.
+- **Reseñas (preparación)**: al marcar una consulta como "concretada" se
+  guarda la fecha (`concretada_el`). Diseño completo en `docs/resenas.md`.
 
 ## Panel del editor (rol "Editor de Pescamapa")
 

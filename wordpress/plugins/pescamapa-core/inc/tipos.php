@@ -41,7 +41,7 @@ const PM_PROVINCIAS = [
 ];
 
 /** Types written per language (one post per language, shared `clave`). */
-const PM_TIPOS_IDIOMA = [ 'pm_destino', 'pm_especie', 'pm_entrevista' ];
+const PM_TIPOS_IDIOMA = [ 'pm_destino', 'pm_especie', 'pm_entrevista', 'pm_nota' ];
 
 function pm_registrar_tipos(): void {
 	register_post_type( 'pm_destino', [
@@ -116,6 +116,25 @@ function pm_registrar_tipos(): void {
 		'has_archive'  => false,
 		'rewrite'      => false,
 		'query_var'    => 'pm_entrevista',
+	] );
+
+	register_post_type( 'pm_nota', [
+		'labels'       => [
+			'name'          => 'Notas',
+			'singular_name' => 'Nota',
+			'add_new_item'  => 'Nueva nota',
+			'edit_item'     => 'Editar nota',
+			'menu_name'     => 'Notas',
+		],
+		'description'  => 'Artículos propios: datos, técnicas e historias, siempre con sus fuentes.',
+		'public'       => true,
+		'show_in_rest' => true,
+		'menu_icon'    => 'dashicons-edit-page',
+		'menu_position' => 8,
+		'supports'     => [ 'title', 'editor', 'thumbnail', 'revisions' ],
+		'has_archive'  => false,
+		'rewrite'      => false,
+		'query_var'    => 'pm_nota',
 	] );
 
 	// Internal: never rendered on its own; published fichas show a card in
