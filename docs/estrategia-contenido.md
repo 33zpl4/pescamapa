@@ -44,6 +44,26 @@ Lo que cumple eso se cita. Lo que no (superlativos, "los mejores precios",
   entrevistas. Se publican como tendencia o rango con ventana de medición
   ("consultas de oct–dic 2026"), nunca como recuento crudo de tráfico.
 
+## Corolario: simple primero (dueño, 21/10/2026)
+
+Casi todo el tráfico será de LLM, y la gente rara vez navega el sitio. Entonces
+**solo se junta y se construye lo que un LLM puede citar**. Cada guía es:
+
+1. **Cuadro de datos clave** arriba: números, rangos, nombres, fecha y fuente
+   (tallas y cupos, licencia, cómo llegar, eventos, altura del río).
+2. **FAQ visible y en JSON-LD**: unas 10 preguntas reales, cada una con su
+   respuesta corta y su fuente. La investigación de un destino son esas 10
+   preguntas, no 30.
+3. **Prestadores** con nombre, qué ofrecen, lancha/motor/capacidad si son
+   públicos y enlace. Sin precio: "a consultar".
+4. **Voces con nombre** (entrevistas y citas) y **portugués** donde hay vacío.
+
+No se invierte en: infraestructura que nadie va a ver (reseñas más allá de lo ya
+registrado, interruptores de idioma, ajustes visuales finos) ni en verificar a
+mano cada dato menor. **Se verifica a mano solo lo que, si está mal, daña a
+alguien: reglamento, vedas y licencia.** Lo demás se publica con fuente y
+"consultado el…" y se corrige cuando alguien avisa.
+
 ## Fuentes de terceros (agencias, lodges, otros sitios)
 
 Se usan como **pista de que algo existe**, no como texto. Un sitio comercial
