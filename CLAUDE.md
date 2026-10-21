@@ -26,7 +26,7 @@ dato dos veces; si hace falta en otro lado, se agrega un campo al esquema
 ## Editor web (Pages CMS) — histórico, del sitio Astro
 
 `.pages.yml` define los formularios de app.pagescms.org, donde edita gente
-no técnica (guía para ellos: `docs/guia-editor.md`). Guardar = commit a
+no técnica. Guardar = commit a
 `main` = Cloudflare rebuild. Consecuencias para el código:
 
 - **Los nombres de campo de `.pages.yml` y del esquema son un contrato**:
