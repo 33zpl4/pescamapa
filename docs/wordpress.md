@@ -175,6 +175,16 @@ centralizar los datos y poder cobrar comisión por el negocio que traemos.
 - **Reseñas (preparación)**: al marcar una consulta como "concretada" se
   guarda la fecha (`concretada_el`). Diseño completo en `docs/resenas.md`.
 
+**Regla del formulario (21/10/2026):** el código que corre mientras se dibuja el
+formulario de edición (el cuadro "Para completar la ficha" y todo lo que llama
+`pm_sugerencias()`) **no puede usar `get_field()`/`pm_campo()` con
+repetidores**: deja en caché ACF la copia "formateada" y el formulario dibuja
+el repetidor en blanco; al guardar se pisan los datos reales. Pasó con las
+Fuentes de Goya (18 filas vacías, restauradas con `restaurar-fuentes-2026-10-21`).
+Ahí se lee con `get_post_meta()` (`pm_meta_cruda`, `pm_fuentes_crudas`).
+`test-wp.yml` guarda una guía como editora y verifica que sus fuentes
+sigan iguales.
+
 ## Panel del editor (rol "Editor de Pescamapa")
 
 `inc/editor.php`: el editor ve solo las fichas en español, sin campos de

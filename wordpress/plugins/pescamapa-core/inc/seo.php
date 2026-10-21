@@ -125,6 +125,11 @@ function pm_jsonld_destino( array $d ): array {
 			'itemListElement' => array_map( fn( $m, $i ) => [ '@type' => 'ListItem', 'position' => $i + 1 ] + $m, $migas, array_keys( $migas ) ),
 		],
 	];
+	// Sources as structured data (not a long list the reader has to scan).
+	$citas = array_values( array_filter( array_map( fn( $f ) => ! empty( $f['url'] ) ? [ '@type' => 'CreativeWork', 'name' => $f['nombre'], 'url' => $f['url'] ] : null, $d['fuentes'] ) ) );
+	if ( $citas ) {
+		$out[0]['citation'] = $citas;
+	}
 	$faqs = $d['faqs'];
 	if ( $faqs ) {
 		$out[] = [

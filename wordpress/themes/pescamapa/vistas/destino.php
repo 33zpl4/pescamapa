@@ -142,12 +142,14 @@ get_header(); ?>
 				<?php endif; ?>
 
 				<?php if ( $d['fuentes'] ) : ?>
-					<h2 id="fuentes"><?php pm_e( 'ficha.fuentes' ); ?></h2>
+					<details id="fuentes" class="fuentes-det">
+					<summary><?php pm_e( 'ficha.fuentes.consultadas', [ 'n' => (string) count( $d['fuentes'] ) ] ); ?></summary>
 					<ul class="fuentes">
 						<?php foreach ( $d['fuentes'] as $f ) : ?>
-							<li><a href="<?php echo esc_url( $f['url'] ); ?>" rel="noopener"><?php echo esc_html( $f['nombre'] ); ?></a><?php if ( ! empty( $f['oficial'] ) ) : ?><span class="ofi"><?php pm_e( 'ficha.oficial' ); ?></span><?php endif; ?> <span class="note"><?php pm_e( 'ficha.consultada' ); ?> <?php echo esc_html( pm_fecha( $f['consultada'] ) ); ?></span></li>
+							<li><?php if ( ! empty( $f['url'] ) ) : ?><a href="<?php echo esc_url( $f['url'] ); ?>" rel="noopener"><?php echo esc_html( $f['nombre'] ); ?></a><?php else : echo esc_html( $f['nombre'] ); endif; ?><?php if ( ! empty( $f['oficial'] ) ) : ?><span class="ofi"><?php pm_e( 'ficha.oficial' ); ?></span><?php endif; ?> <?php if ( ! empty( $f['consultada'] ) ) : ?> <span class="note"><?php pm_e( 'ficha.consultada' ); ?> <?php echo esc_html( pm_fecha( $f['consultada'] ) ); ?></span><?php endif; ?></li>
 						<?php endforeach; ?>
 					</ul>
+					</details>
 				<?php endif; ?>
 			</div>
 
