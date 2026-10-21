@@ -15,7 +15,7 @@ $filas = [
 ?>
 <article class="prestador<?php echo pm_prestador_publico( $r ) ? '' : ' vista-previa'; ?>">
 	<?php if ( ! pm_prestador_publico( $r ) ) : ?>
-		<p class="sello">Vista previa, solo editores: <?php echo esc_html( $r['ejemplo'] ? 'datos de ejemplo, reemplazalos y destildá "Datos de ejemplo".' : 'falta que acepte aparecer.' ); ?> <a href="<?php echo esc_url( get_edit_post_link( $r['id'] ) ); ?>">Editar</a></p>
+		<p class="sello">Vista previa, solo editores: <?php echo esc_html( $r['ejemplo'] ? 'datos de ejemplo, reemplazalos y destildá "Datos de ejemplo".' : 'marcá "Aceptó aparecer" o "Listado con información pública".' ); ?> <a href="<?php echo esc_url( get_edit_post_link( $r['id'] ) ); ?>">Editar</a></p>
 	<?php endif; ?>
 	<?php if ( $r['fotos'] ) {
 		echo pm_foto( $r['fotos'][0], $r['nombre'], '(max-width: 720px) 100vw, 320px', [ 'clase' => 'portada' ] ); // phpcs:ignore -- escaped inside
@@ -31,7 +31,19 @@ $filas = [
 				<?php endif;
 			endforeach; ?>
 		</dl>
-		<?php if ( $r['precio'] && $r['precio_fecha'] ) : ?><p class="precio"><?php pm_e( 'prest.precio', [ 'precio' => $r['precio'], 'fecha' => pm_fecha( $r['precio_fecha'] ) ] ); ?></p><?php endif; ?>
+		<?php if ( $r['precio'] && $r['precio_fecha'] ) : ?>
+			<p class="precio"><?php pm_e( 'prest.precio', [ 'precio' => $r['precio'], 'fecha' => pm_fecha( $r['precio_fecha'] ) ] ); ?></p>
+		<?php else : ?>
+			<p class="precio"><?php pm_e( 'prest.precio_consultar' ); ?></p>
+		<?php endif; ?>
+		<?php if ( ! $r['consentimiento'] && pm_prestador_publico( $r ) ) :
+			$asunto = rawurlencode( pm_t( 'prest.baja_asunto', [ 'nombre' => $r['nombre'] ] ) ); ?>
+			<p class="sin-verificar note">
+				<?php pm_e( 'prest.sin_verificar' ); ?>
+				<a href="mailto:<?php echo esc_attr( PM_EMAIL_PUBLICO ); ?>?subject=<?php echo $asunto; // phpcs:ignore -- encoded above ?>"><?php pm_e( 'prest.corregir' ); ?></a>
+				<?php if ( $r['fuente'] ) : ?>· <?php pm_e( 'prest.fuente' ); ?>: <a href="<?php echo esc_url( $r['fuente'] ); ?>" rel="noopener nofollow"><?php echo esc_html( preg_replace( '/^www\./', '', (string) wp_parse_url( $r['fuente'], PHP_URL_HOST ) ) ); ?></a><?php endif; ?>
+			</p>
+		<?php endif; ?>
 		<a class="button dark" href="#consulta" data-prestador="<?php echo (int) $r['id']; ?>" data-nombre="<?php echo esc_attr( $r['nombre'] ); ?>"><?php pm_e( 'prest.consultar' ); ?></a>
 	</div>
 </article>
