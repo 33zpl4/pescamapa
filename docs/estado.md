@@ -61,6 +61,8 @@ todas a nosotros (centralizar datos y cobrar comisión más adelante).
 | 21/10/2026 | Reseñas de prestadores: se prepara la infraestructura (registro de viajes concretados), no se lanzan todavía. Plan en `docs/resenas.md`. |
 | 21/10/2026 | Contenido propio: por ahora se alimenta a mano (enlace + hechos + resúmenes en el chat) y Claude arma citas, notas y entrevistas; la API viene después. `docs/contenido.md`. |
 | 21/10/2026 | `info@pescamapa.com` ya enruta (Cloudflare Email Routing). |
+| 21/10/2026 | **Prestadores: listar primero, verificar después.** Se publican con información pública, marcados "sin verificar" y con enlace para corregir o pedir la baja (info@pescamapa.com). Reemplaza "solo con consentimiento". `docs/prestadores.md`. |
+| 21/10/2026 | **Regla de oro**: cada página responde con un dato concreto, fechado y con fuente una pregunta real, arriba y en texto; muchos lectores serán LLM. `docs/estrategia-contenido.md` (prueba de cinco preguntas, preguntas de control mensuales en `docs/preguntas-llm.md`). |
 | antes | Fotos solo de Commons con licencia libre o cedidas con crédito; nunca de Google. Prestadores solo con consentimiento y precios fechados. |
 
 ## Pendientes, en orden

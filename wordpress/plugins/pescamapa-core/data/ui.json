@@ -183,7 +183,7 @@
 			"ficha.noverificado": "Todavía no verificamos el reglamento vigente para esta guía.",
 			"ficha.cambian": "Las normas cambian: confirmá con la autoridad antes de salir.",
 			"ficha.prestadores.h2": "Guías y alojamientos",
-			"ficha.prestadores.p": "Contanos qué buscás y te conectamos con guías y alojamientos de %lugar%. Cada ficha se publica con el consentimiento del prestador y con precios fechados.",
+			"ficha.prestadores.p": "Contanos qué buscás y te conectamos con guías y alojamientos de %lugar%. Armamos las fichas con información pública y las corregimos con cada prestador; los precios, cuando figuran, llevan fecha.",
 			"ficha.faqs": "Preguntas frecuentes",
 			"ficha.fuentes": "Fuentes",
 			"ficha.oficial": "oficial",
@@ -259,7 +259,12 @@
 			"notas.h1": "Notas",
 			"notas.vacio": "Muy pronto: estamos armando las primeras notas.",
 			"nota.datos": "Datos clave",
-			"nota.guia": "Guía para pescar en %lugar% →"
+			"nota.guia": "Guía para pescar en %lugar% →",
+			"prest.precio_consultar": "Precio: a consultar",
+			"prest.sin_verificar": "Información pública, todavía sin verificar con el prestador.",
+			"prest.corregir": "¿Es tu negocio? Pedí una corrección o que lo quitemos.",
+			"prest.fuente": "Fuente",
+			"prest.baja_asunto": "Corrección o baja de la ficha: %nombre%"
 		},
 		"pt": {
 			"marca.lema": "Onde, quando e com quem pescar na Argentina.",
@@ -356,7 +361,7 @@
 			"ficha.noverificado": "Ainda não verificamos o regulamento vigente para este guia.",
 			"ficha.cambian": "As regras mudam: confirme com a autoridade antes de sair.",
 			"ficha.prestadores.h2": "Guias e hospedagens",
-			"ficha.prestadores.p": "Conte o que você procura e conectamos você com guias e hospedagens em %lugar%. Cada ficha é publicada com o consentimento do prestador e com preços datados.",
+			"ficha.prestadores.p": "Conte o que você procura e conectamos você com guias e hospedagens em %lugar%. Montamos as fichas com informação pública e as corrigimos com cada prestador; os preços, quando aparecem, têm data.",
 			"ficha.faqs": "Perguntas frequentes",
 			"ficha.fuentes": "Fontes",
 			"ficha.oficial": "oficial",
@@ -432,7 +437,12 @@
 			"notas.h1": "Notas",
 			"notas.vacio": "Em breve: estamos preparando as primeiras notas.",
 			"nota.datos": "Dados-chave",
-			"nota.guia": "Guia para pescar em %lugar% →"
+			"nota.guia": "Guia para pescar em %lugar% →",
+			"prest.precio_consultar": "Preço: sob consulta",
+			"prest.sin_verificar": "Informação pública, ainda não verificada com o prestador.",
+			"prest.corregir": "É o seu negócio? Peça uma correção ou a retirada.",
+			"prest.fuente": "Fonte",
+			"prest.baja_asunto": "Correção ou retirada da ficha: %nombre%"
 		},
 		"en": {
 			"marca.lema": "Where, when and who to fish with in Argentina.",
@@ -529,7 +539,7 @@
 			"ficha.noverificado": "We have not yet checked the current regulations for this guide.",
 			"ficha.cambian": "Rules change: confirm with the authority before you go.",
 			"ficha.prestadores.h2": "Guides and lodging",
-			"ficha.prestadores.p": "Tell us what you are looking for and we will connect you with guides and lodging in %lugar%. Each listing is published with the outfitter’s consent and with dated prices.",
+			"ficha.prestadores.p": "Tell us what you are looking for and we will connect you with guides and lodging in %lugar%. We build listings from public information and correct them with each provider; prices, when shown, are dated.",
 			"ficha.faqs": "Frequently asked questions",
 			"ficha.fuentes": "Sources",
 			"ficha.oficial": "official",
@@ -605,7 +615,12 @@
 			"notas.h1": "Notes",
 			"notas.vacio": "Coming soon: we are putting together the first notes.",
 			"nota.datos": "Key facts",
-			"nota.guia": "Guide to fishing in %lugar% →"
+			"nota.guia": "Guide to fishing in %lugar% →",
+			"prest.precio_consultar": "Price: on request",
+			"prest.sin_verificar": "Public information, not yet checked with the provider.",
+			"prest.corregir": "Is this your business? Ask us to correct or remove it.",
+			"prest.fuente": "Source",
+			"prest.baja_asunto": "Correction or removal of the listing: %nombre%"
 		}
 	},
 	"opciones": {
@@ -643,9 +658,9 @@
 				"en": "Spinning and baitcasting"
 			},
 			"mosca": {
-				"es": "Mosca",
-				"pt": "Fly",
-				"en": "Fly fishing"
+				"es": "Mosca (flycast)",
+				"pt": "Fly (flycast)",
+				"en": "Fly fishing (flycast)"
 			},
 			"trolling": {
 				"es": "Trolling",

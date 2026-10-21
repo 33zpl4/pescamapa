@@ -62,6 +62,8 @@ jobs:
           w eval-file wordpress/scripts/esquina-2026-10-20.php
           w eval-file wordpress/scripts/esquina-2026-10-20.php   # idempotent: second run does nothing
           w eval-file wordpress/scripts/esquina-reglamento-2026-10-20.php
+          w eval-file wordpress/scripts/flycast-2026-10-21.php
+          w eval-file wordpress/scripts/flycast-2026-10-21.php   # idempotent
           w eval-file wordpress/scripts/prestadores-2026-10-20.php
           w eval-file wordpress/scripts/prestadores-2026-10-20.php   # idempotent
           # The script leaves Esquina as a draft; publish it here to render it.
@@ -79,6 +81,10 @@ jobs:
             update_field( "fuentes", [ [ "nombre" => "FUENTE-DE-PRUEBA", "url" => "https://example.com/fuente", "oficial" => 0, "consultada" => "20261021" ] ], $n );
             $esq = pm_buscar( "pm_destino", "esquina", "es" );
             update_field( "mas", [ [ "nombre" => "MAS-GRATIS", "url" => "https://example.com/a", "texto" => "Un paseo", "patrocinado" => 0 ], [ "nombre" => "MAS-PAGO", "url" => "https://example.com/b", "texto" => "Un aviso", "patrocinado" => 1 ] ], $esq->ID );
+            $pub = wp_insert_post( [ "post_type" => "pm_prestador", "post_status" => "publish", "post_title" => "PRESTADOR-PUBLICO" ] );
+            foreach ( [ "tipo" => [ "operador" ], "prest_destino" => "esquina", "prest_publico" => 1, "prest_fuente" => "https://example.com/prestador" ] as $k => $v ) { update_field( $k, $v, $pub ); }
+            $no = wp_insert_post( [ "post_type" => "pm_prestador", "post_status" => "publish", "post_title" => "PRESTADOR-NO-PUBLICO" ] );
+            foreach ( [ "tipo" => [ "guia" ], "prest_destino" => "esquina" ] as $k => $v ) { update_field( $k, $v, $no ); }
             $r = wp_insert_post( [ "post_type" => "pm_prestador", "post_status" => "publish", "post_title" => "PRESTADOR-DE-PRUEBA" ] );
             foreach ( [ "tipo" => [ "guia" ], "prest_destino" => "esquina", "prest_modalidades" => [ "mosca" ], "equipo" => [ "motor_electrico" ], "incluye" => [ "carnada", "comida" ], "precio" => "Desde $ 1", "precio_fecha" => "20261020", "prest_consentimiento" => 1, "whatsapp" => "CONTACTO-INTERNO-123" ] as $k => $v ) { update_field( $k, $v, $r ); }
           '
@@ -101,6 +107,12 @@ jobs:
           check /litoral/corrientes/pesca-en-esquina/ 200 'CITA-DE-PRUEBA' 'CITA-SIN-PERMISO'
           check /litoral/corrientes/pesca-en-esquina/ 200 'PRESTADOR-DE-PRUEBA' 'CONTACTO-INTERNO-123'
           check /litoral/corrientes/pesca-en-esquina/ 200 'admin-post.php'
+          # Public listing: shown, labelled unverified, with the removal link; no listing flag, no card.
+          check /litoral/corrientes/pesca-en-esquina/ 200 'PRESTADOR-PUBLICO' 'PRESTADOR-NO-PUBLICO'
+          check /litoral/corrientes/pesca-en-esquina/ 200 'mailto:info@pescamapa.com?subject='
+          check /litoral/corrientes/pesca-en-esquina/ 200 'sin verificar con el prestador'
+          check /litoral/corrientes/pesca-en-esquina/ 200 'Precio: a consultar'
+          check /llms.txt 200 'se corrigen o se quitan a pedido' 'PRESTADOR-PUBLICO'
           # Example-data outfitters never reach visitors.
           check /litoral/corrientes/pesca-en-esquina/ 200 'pacú' 'Don Joaquín River Lodge'
           check /entrevistas/ 200 'Persona Prueba' 'Sin permiso'
@@ -109,6 +121,7 @@ jobs:
           check /entrevistas/sin-permiso/ 404
           check /wp-sitemap.xml 200 'pm_entrevista'
           check / 200 'Dónde, cuándo y con quién pescar'
+          check /litoral/corrientes/pesca-en-esquina/ 200 'Mosca (flycast)' 'flycast) (flycast'
           check /robots.txt 200 'Sitemap'
           check /llms.txt 200 'pesca-en-esquina'
           check /llms.txt 200 'prueba-el-rio-manda' 'sin-permiso'

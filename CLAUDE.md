@@ -14,7 +14,9 @@ Argentina: dónde ir, cuándo, qué dice el reglamento y con qué guía local
 salir, con datos al día y la voz de quienes pescan ahí. **Marca** (color,
 tipografía, componentes): `docs/marca.md`, obligatoria para todo lo que se
 publique; `node wordpress/build/revisar-marca.mjs` la verifica. Contenido
-propio (entrevistas, notas): `docs/contenido.md`.
+propio (entrevistas, notas): `docs/contenido.md`. **Regla de oro** para todo lo que
+se agregue (útil para personas y para LLM: dato concreto, fechado y con fuente,
+arriba, que responde una pregunta real): `docs/estrategia-contenido.md`.
 
 Pescamapa (pescamapa.com): destinos, especies y guías para pescar en
 Argentina. Sitio Astro estático, publicado en Cloudflare Workers (static
@@ -81,8 +83,11 @@ Los reglamentos cambian y en este nicho el lector se cobra un error. Por eso:
 - **Áreas, no puntos de pesca.** No publicar coordenadas de pesqueros ni
   presentar un sitio como habilitado sin confirmación oficial. Los pines de
   `aguas` marcan zonas generales.
-- **Prestadores solo con consentimiento** y con fecha de verificación de
-  precios y datos. Datos estructurados de negocio solo con datos confirmados.
+- **Prestadores** (owner, 21/10/2026): se listan con consentimiento **o** como
+  "listado con información pública" (marcado sin verificar, con enlace de
+  corrección/baja); nunca datos de ejemplo, ni contacto, ni fotos ajenas. Precio
+  solo con fecha, si no "a consultar". Datos estructurados de negocio solo con
+  datos confirmados. Reglas completas: `docs/prestadores.md`.
 - **Nada de "se pesca todo el año" sin matiz**: temporada = especie ×
   altura del río × reglamento.
 - Las reglas de un torneo no se trasladan a la pesca recreativa.

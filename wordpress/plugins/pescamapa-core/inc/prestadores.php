@@ -7,8 +7,11 @@
  *
  * Contact data is internal and never printed: every inquiry from the site
  * comes to Pescamapa (inc/consultas.php), and we pass it on. A record shows
- * in the destination guide only with the outfitter's consent ("Aceptó
- * aparecer"), with dated prices, as a card with a "Consultar" button.
+ * in the destination guide as a card with a "Consultar" button when either
+ * the outfitter agreed ("Aceptó aparecer") or we list it from public
+ * information ("Listado con información pública"; owner ruling 21/10/2026,
+ * docs/prestadores.md). The second kind is labelled as unverified and carries
+ * a correction/removal link. Prices show only with a date.
  *
  * Option labels for the three languages live in data/ui.json → opciones.
  * Field names that exist in other forms carry a "prest_" prefix: scripts
@@ -37,7 +40,7 @@ add_action( 'acf/include_fields', function () {
 		'location' => [ [ [ 'param' => 'post_type', 'operator' => '==', 'value' => 'pm_prestador' ] ] ],
 		'position' => 'acf_after_title',
 		'fields'   => [
-			[ 'key' => 'field_pm_r_msg', 'label' => '', 'type' => 'message', 'message' => 'El <strong>título</strong> es el nombre del servicio (ej. "Pesca con Agus — Goya"). El <strong>contacto</strong> es interno: nunca se publica; las consultas de la web llegan a Pescamapa y nosotros se las pasamos. La ficha aparece en la guía del destino solo si <strong>aceptó aparecer</strong>.' ],
+			[ 'key' => 'field_pm_r_msg', 'label' => '', 'type' => 'message', 'message' => 'El <strong>título</strong> es el nombre del servicio (ej. "Pesca con Agus — Goya"). El <strong>contacto</strong> es interno: nunca se publica; las consultas de la web llegan a Pescamapa y nosotros se las pasamos. La ficha aparece en la guía del destino si <strong>aceptó aparecer</strong> o si la cargamos como <strong>listado con información pública</strong> (queda marcada como sin verificar, con un enlace para corregirla o pedir la baja). Reglas: <code>docs/prestadores.md</code>.' ],
 
 			[ 'key' => 'field_pm_r_tab_quien', 'label' => 'Quién y dónde', 'type' => 'tab' ],
 			[ 'key' => 'field_pm_r_tipo', 'name' => 'tipo', 'label' => 'Qué ofrece', 'type' => 'checkbox', 'choices' => pm_opciones( 'tipo' ), 'layout' => 'horizontal' ],
@@ -73,6 +76,8 @@ add_action( 'acf/include_fields', function () {
 			[ 'key' => 'field_pm_r_comision', 'name' => 'comision', 'label' => 'Acuerdo comercial', 'type' => 'text', 'wrapper' => [ 'width' => 50 ], 'instructions' => 'Ej. "10 % por consulta concretada" (interno).' ],
 			[ 'key' => 'field_pm_r_ejemplo', 'name' => 'datos_ejemplo', 'label' => 'Datos de ejemplo (todavía no confirmados)', 'type' => 'true_false', 'ui' => 1, 'wrapper' => [ 'width' => 50 ], 'instructions' => 'Mientras esté marcado, la ficha NO se publica (aunque haya aceptado aparecer). Destildalo cuando reemplaces todos los datos por los reales.' ],
 			[ 'key' => 'field_pm_r_consentimiento', 'name' => 'prest_consentimiento', 'label' => 'Aceptó aparecer en Pescamapa', 'type' => 'true_false', 'ui' => 1, 'wrapper' => [ 'width' => 50 ] ],
+			[ 'key' => 'field_pm_r_publico', 'name' => 'prest_publico', 'label' => 'Listado con información pública (todavía sin su permiso)', 'type' => 'true_false', 'ui' => 1, 'wrapper' => [ 'width' => 50 ], 'instructions' => 'Se publica marcado como "sin verificar", con enlace para corregir o pedir la baja. Solo datos públicos y con nuestras palabras; fotos solo si las tenemos con permiso.' ],
+			[ 'key' => 'field_pm_r_fuente', 'name' => 'prest_fuente', 'label' => 'Fuente de los datos (su web o publicación)', 'type' => 'url', 'wrapper' => [ 'width' => 50 ], 'instructions' => 'Se muestra como enlace. Anotá la fecha en "Datos verificados el".' ],
 			[ 'key' => 'field_pm_r_verificado', 'name' => 'verificado', 'label' => 'Datos verificados el', 'type' => 'date_picker', 'display_format' => 'd/m/Y', 'return_format' => 'Y-m-d', 'wrapper' => [ 'width' => 50 ] ],
 			[ 'key' => 'field_pm_r_notas', 'name' => 'notas', 'label' => 'Notas internas', 'type' => 'textarea', 'rows' => 4 ],
 		],
@@ -117,13 +122,15 @@ function pm_prestador( int $post_id ): array {
 		'precio_fecha'   => (string) pm_campo( 'precio_fecha', $post_id ),
 		'fotos'          => array_map( 'intval', $lista( 'fotos' ) ) ?: array_filter( [ (int) get_post_thumbnail_id( $post_id ) ] ),
 		'consentimiento' => (bool) pm_campo( 'prest_consentimiento', $post_id ),
+		'publico'        => (bool) pm_campo( 'prest_publico', $post_id ),
+		'fuente'         => (string) pm_campo( 'prest_fuente', $post_id ),
 		'ejemplo'        => (bool) pm_campo( 'datos_ejemplo', $post_id ),
 	];
 }
 
-/** Public: consented and with real data (not example data). */
+/** Public: agreed to appear, or listed from public information; never example data. */
 function pm_prestador_publico( array $r ): bool {
-	return $r['consentimiento'] && ! $r['ejemplo'];
+	return ( $r['consentimiento'] || $r['publico'] ) && ! $r['ejemplo'];
 }
 
 /**
@@ -156,6 +163,6 @@ add_action( 'manage_pm_prestador_posts_custom_column', function ( $col, $id ) {
 	} elseif ( 'pm_estado' === $col ) {
 		echo esc_html( (string) pm_campo( 'estado', $id ) );
 	} elseif ( 'pm_visible' === $col ) {
-		echo pm_prestador_publico( $r ) ? '✅' : esc_html( $r['ejemplo'] ? '🧪 datos de ejemplo' : '— sin permiso' );
+		echo $r['ejemplo'] ? esc_html( '🧪 datos de ejemplo' ) : ( $r['consentimiento'] ? '✅' : ( $r['publico'] ? esc_html( '🌐 listado público (sin verificar)' ) : esc_html( '— no se publica' ) ) );
 	}
 }, 10, 2 );

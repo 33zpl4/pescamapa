@@ -54,8 +54,11 @@ Prestadores → el prestador (o "Añadir nuevo"):
 - **Precio**, con su **fecha**. Sin fecha, el precio no se muestra.
 - **Contacto** (pestaña interna): nunca se publica, las consultas llegan a
   nosotros.
-- Para que aparezca en la web, tildá **"Aceptó aparecer"** y **destildá
-  "Datos de ejemplo"**.
+- Para que aparezca en la web: tildá **"Aceptó aparecer"** (si habló con
+  nosotros) o **"Listado con información pública"** (si lo cargamos de su
+  sitio, con la fuente), y **destildá "Datos de ejemplo"**. Los listados
+  públicos salen marcados como sin verificar y con enlace para pedir la baja.
+  Reglas: `docs/prestadores.md`.
 
 Mientras estés logueada, en la guía ves también los que todavía no son
 públicos, como tarjetas punteadas de "Vista previa".
