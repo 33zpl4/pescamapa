@@ -14,6 +14,26 @@
 
 defined( 'ABSPATH' ) || exit;
 
+/**
+ * Raw meta, never get_field(). pm_sugerencias() runs while the editor form is
+ * being drawn (the "Para completar la ficha" box is its first field). Reading a
+ * repeater there with get_field() leaves ACF's cached copy in its *formatted*
+ * shape (rows keyed by name), and the form then draws the repeater with every
+ * cell blank: saving wrote those blanks over the real sources (Goya, 21/10/2026).
+ */
+function pm_meta_cruda( int $post_id, string $nombre ) {
+	return get_post_meta( $post_id, $nombre, true );
+}
+
+/** Rows of the `fuentes` repeater straight from the database: [ [nombre, oficial], … ]. */
+function pm_fuentes_crudas( int $post_id ): array {
+	$out = [];
+	for ( $i = 0, $n = (int) pm_meta_cruda( $post_id, 'fuentes' ); $i < $n; $i++ ) {
+		$out[] = [ 'nombre' => (string) pm_meta_cruda( $post_id, "fuentes_{$i}_nombre" ), 'oficial' => (bool) pm_meta_cruda( $post_id, "fuentes_{$i}_oficial" ) ];
+	}
+	return $out;
+}
+
 /** @return string[] what would make the ficha more complete (for editors). */
 function pm_sugerencias( int $post_id ): array {
 	$tipo = get_post_type( $post_id );
@@ -23,7 +43,7 @@ function pm_sugerencias( int $post_id ): array {
 	$faltan  = [];
 	$idioma  = pm_idioma_de( $post_id );
 	$clave   = pm_clave_de( $post_id );
-	$fuentes = pm_filas( 'fuentes', $post_id );
+	$fuentes = pm_fuentes_crudas( $post_id );
 
 	if ( 'pm_nota' === $tipo ) {
 		if ( ! array_filter( $fuentes, fn( $f ) => ! empty( $f['nombre'] ) ) ) {
@@ -33,7 +53,7 @@ function pm_sugerencias( int $post_id ): array {
 			$foto = (int) get_post_thumbnail_id( $post_id );
 			if ( ! $foto ) {
 				$faltan[] = 'Agregar una foto (Imagen destacada).';
-			} elseif ( ! pm_campo( 'foto_autor', $foto ) ) {
+			} elseif ( ! pm_meta_cruda( $foto, 'foto_autor' ) ) {
 				$faltan[] = 'Cargar el autor de la foto (biblioteca de medios → la foto → "Autor de la foto").';
 			}
 		}
@@ -49,17 +69,17 @@ function pm_sugerencias( int $post_id ): array {
 	if ( 'pm_destino' === $tipo ) {
 		if ( 'es' === $idioma ) {
 			foreach ( [ 'region' => 'la región', 'provincia' => 'la provincia', 'lat' => 'la latitud', 'lon' => 'la longitud' ] as $k => $nombre ) {
-				if ( '' === (string) pm_campo( $k, $post_id ) ) {
+				if ( '' === (string) pm_meta_cruda( $post_id, $k ) ) {
 					$faltan[] = "Completar {$nombre}.";
 				}
 			}
-			if ( ! pm_campo( 'especies', $post_id ) ) {
+			if ( ! pm_meta_cruda( $post_id, 'especies' ) ) {
 				$faltan[] = 'Elegir al menos una especie.';
 			}
 			$foto = (int) get_post_thumbnail_id( $post_id );
 			if ( ! $foto ) {
 				$faltan[] = 'Agregar una foto (Imagen destacada).';
-			} elseif ( ! pm_campo( 'foto_autor', $foto ) ) {
+			} elseif ( ! pm_meta_cruda( $foto, 'foto_autor' ) ) {
 				$faltan[] = 'Cargar el autor de la foto (biblioteca de medios → la foto → "Autor de la foto").';
 			}
 		}
@@ -69,7 +89,7 @@ function pm_sugerencias( int $post_id ): array {
 		$faltan[] = "Crear la versión en español con la clave \"{$clave}\" (de ahí salen la foto y la ubicación).";
 	}
 
-	if ( mb_strlen( (string) pm_campo( 'seo_description', $post_id ) ) < 70 ) {
+	if ( mb_strlen( (string) pm_meta_cruda( $post_id, 'seo_description' ) ) < 70 ) {
 		$faltan[] = 'Alargar la descripción para Google (ideal: 70 a 160 caracteres).';
 	}
 
