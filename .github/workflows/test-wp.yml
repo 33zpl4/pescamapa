@@ -164,6 +164,7 @@ jobs:
           foto=$(w media import /tmp/nueva.jpg --porcelain)
           dump() { w eval 'foreach ( [ "fuentes", "faqs", "aguas", "temporada" ] as $n ) { $c = get_post_meta( '"$post"', $n, true ); $v = get_post_meta( '"$post"', $n . "_0_" . ( "fuentes" === $n ? "nombre" : ( "faqs" === $n ? "pregunta" : ( "aguas" === $n ? "nombre" : "meses" ) ) ), true ); echo "$n: filas=" . var_export( $c, true ) . " primera=" . var_export( $v, true ) . "\n"; }'; }
           echo "== repetidores ANTES"; dump
+          echo "== formulario en el servidor (admin vs editora)"; POST_ID="$post" w eval-file "$GITHUB_WORKSPACE/.github/scripts/formulario.php"
           fuente_antes=$(w post meta get "$post" fuentes_0_nombre || true)
           [[ -n "$fuente_antes" ]] || { echo "✖ la guía de prueba no tiene fuentes cargadas"; exit 1; }
           w eval "update_field( 'foto_autor', 'Tomás Prueba', $foto );"
