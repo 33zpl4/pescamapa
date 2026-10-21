@@ -21,7 +21,7 @@ $resultado = pm_consulta_resultado();
 				<label><?php pm_e( 'consulta.nombre' ); ?> <input name="nombre" required maxlength="80" autocomplete="name"></label>
 				<label><?php pm_e( 'consulta.contacto' ); ?> <input name="contacto" required maxlength="120" autocomplete="tel"></label>
 				<label><?php pm_e( 'consulta.cuando' ); ?> <input name="cuando" maxlength="80"></label>
-				<label><?php pm_e( 'consulta.personas' ); ?> <input name="personas" type="number" min="1" max="99" inputmode="numeric"></label>
+				<label><?php pm_e( 'consulta.personas' ); ?> <input name="personas" type="number" min="1" max="99" value="2" inputmode="numeric"></label>
 				<label><?php pm_e( 'consulta.modalidad' ); ?>
 					<select name="modalidad">
 						<option value=""><?php pm_e( 'consulta.indistinto' ); ?></option>
