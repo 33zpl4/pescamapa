@@ -162,7 +162,9 @@ jobs:
           post=$(w post list --post_type=pm_destino --meta_key=clave --meta_value=esquina --format=ids)
           php -r '$i = imagecreatetruecolor( 1600, 1000 ); imagefill( $i, 0, 0, imagecolorallocate( $i, 30, 80, 60 ) ); imagejpeg( $i, "/tmp/nueva.jpg" );'
           foto=$(w media import /tmp/nueva.jpg --porcelain)
-          fuente_antes=$(w post meta get "$post" fuentes_0_nombre)
+          dump() { w eval 'foreach ( [ "fuentes", "faqs", "aguas", "temporada" ] as $n ) { $c = get_post_meta( '"$post"', $n, true ); $v = get_post_meta( '"$post"', $n . "_0_" . ( "fuentes" === $n ? "nombre" : ( "faqs" === $n ? "pregunta" : ( "aguas" === $n ? "nombre" : "meses" ) ) ), true ); echo "$n: filas=" . var_export( $c, true ) . " primera=" . var_export( $v, true ) . "\n"; }'; }
+          echo "== repetidores ANTES"; dump
+          fuente_antes=$(w post meta get "$post" fuentes_0_nombre || true)
           [[ -n "$fuente_antes" ]] || { echo "✖ la guía de prueba no tiene fuentes cargadas"; exit 1; }
           w eval "update_field( 'foto_autor', 'Tomás Prueba', $foto );"
           mkdir -p /tmp/pw && cd /tmp/pw && npm init -y >/dev/null && npm i -s playwright@1.48.2 >/dev/null && npx playwright install --with-deps chromium >/dev/null
@@ -194,7 +196,8 @@ jobs:
           sed -i 's/^          //' editor.mjs
           node editor.mjs "$URL" "$post" "$foto"
           w eval-file "$GITHUB_WORKSPACE/wordpress/scripts/revisar-fotos.php" | head -20   # monthly photo report runs clean
-          fuente_despues=$(w post meta get "$post" fuentes_0_nombre)
+          echo "== repetidores DESPUÉS"; dump
+          fuente_despues=$(w post meta get "$post" fuentes_0_nombre || true)
           [[ "$fuente_despues" == "$fuente_antes" ]] && echo "✓ guardar desde el panel no borra las fuentes" || { echo "✖ las fuentes cambiaron al guardar: '$fuente_antes' → '$fuente_despues'"; exit 1; }
           got=$(w post meta get "$post" _thumbnail_id)
           [[ "$got" == "$foto" ]] && echo "✓ el editor reemplazó la foto y guardó" || { echo "✖ foto destacada = $got (esperado $foto)"; exit 1; }
