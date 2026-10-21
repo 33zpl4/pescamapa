@@ -31,7 +31,9 @@ require PM_DIR . 'inc/admin.php';
 require PM_DIR . 'inc/editor.php';
 require PM_DIR . 'inc/entrevistas.php';
 require PM_DIR . 'inc/prestadores.php';
+require PM_DIR . 'inc/notas.php';
 require PM_DIR . 'inc/consultas.php';
+require PM_DIR . 'inc/maquinas.php';
 
 register_activation_hook( __FILE__, function () {
 	pm_registrar_tipos();

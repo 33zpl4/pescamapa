@@ -124,6 +124,23 @@ get_header(); ?>
 					<?php endforeach; ?>
 				<?php endif; ?>
 
+				<?php if ( $d['mas'] ) : ?>
+					<h2 id="mas"><?php pm_e( 'ficha.mas.h2', [ 'lugar' => $d['nombre'] ] ); ?></h2>
+					<ul class="mas">
+						<?php foreach ( $d['mas'] as $m ) :
+							$pago = ! empty( $m['patrocinado'] ); ?>
+							<li>
+								<a href="<?php echo esc_url( $m['url'] ); ?>" rel="<?php echo $pago ? 'sponsored noopener' : 'noopener'; ?>">
+									<strong><?php echo esc_html( $m['nombre'] ); ?></strong>
+									<?php if ( ! empty( $m['texto'] ) ) : ?><span class="texto"><?php echo esc_html( $m['texto'] ); ?></span><?php endif; ?>
+									<span class="sitio"><?php echo esc_html( preg_replace( '/^www\./', '', (string) wp_parse_url( $m['url'], PHP_URL_HOST ) ) ); ?> ↗</span>
+								</a>
+								<?php if ( $pago ) : ?><span class="sello-pago"><?php pm_e( 'ficha.mas.patrocinado' ); ?></span><?php endif; ?>
+							</li>
+						<?php endforeach; ?>
+					</ul>
+				<?php endif; ?>
+
 				<?php if ( $d['fuentes'] ) : ?>
 					<h2 id="fuentes"><?php pm_e( 'ficha.fuentes' ); ?></h2>
 					<ul class="fuentes">

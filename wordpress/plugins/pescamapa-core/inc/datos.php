@@ -82,6 +82,7 @@ function pm_destino( int $post_id ): array {
 		],
 		'faqs'        => pm_sin_pendientes( pm_filas( 'faqs', $post_id ) ),
 		'fuentes'     => pm_filas( 'fuentes', $post_id ),
+		'mas'         => array_values( array_filter( pm_sin_pendientes( pm_filas( 'mas', $post_id ) ), fn( $m ) => ! empty( $m['nombre'] ) && ! empty( $m['url'] ) ) ),
 		'seo_title'   => (string) pm_campo( 'seo_title', $post_id ),
 		'seo_description' => (string) pm_campo( 'seo_description', $post_id ),
 		'actualizado' => (string) pm_campo( 'actualizado', $post_id ),

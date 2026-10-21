@@ -17,6 +17,7 @@ Menú de la izquierda:
 | **Especies** | Surubí, dorado… |
 | **Próximos destinos** | Las tarjetas "Próximamente" del inicio y los puntos grises del mapa |
 | **Entrevistas** | Charlas con guías y pescadores (ver `docs/entrevistas.md`) |
+| **Notas** | Artículos propios: datos, técnicas, historias. Siempre con sus fuentes |
 | **Prestadores** | Guías, alojamientos y operadores. El contacto es interno y nunca se publica |
 | **Consultas** | Lo que la gente pide desde la web (cotizaciones, prestadores que se quieren sumar) |
 | **Fotos** | La biblioteca de imágenes |
@@ -69,6 +70,20 @@ notas. El menú muestra cuántas consultas nuevas hay.
 Entrevistas → Añadir. La guía completa (preguntas y cómo cargarla) está en
 `docs/entrevistas.md`. Sin la marca **"Aceptó que publiquemos…"** no se
 publica nada.
+
+### Una nota
+Notas → Añadir. **Título**, **tipo** (datos, cómo se hace, historias) y
+**destino** si es de un lugar. Escribí el texto abajo; arriba cargá
+**Subtítulo**, de 3 a 6 **datos clave** y, en la pestaña **Fuentes**, de dónde
+salió cada cosa (la entrevista, el video, el enlace). En "Material de origen"
+anotá lo que no se publica: quién lo contó y qué falta confirmar. Una cita
+dentro del texto se escribe con el bloque **Cita**. Nada de ubicaciones
+exactas ni fechas de vedas: eso va con enlace a la autoridad.
+
+### Más para hacer (en una guía)
+Destinos → la guía → pestaña **Más para hacer** → Agregar enlace: nombre,
+enlace y una línea. Si alguien paga por figurar, tildá **Es publicidad**: la
+web lo marca como tal.
 
 ### Revisión de fotos
 El 1.º de cada mes llega a GitHub un issue "Revisión de fotos" con lo que

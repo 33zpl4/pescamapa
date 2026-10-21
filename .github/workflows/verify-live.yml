@@ -46,6 +46,8 @@ jobs:
           check /entrevistas/ 200 'v-entrevistas'
           check /en/interviews/ 200 'v-entrevistas'
           check /robots.txt 200 'Sitemap'
+          check /llms.txt 200 'Pescamapa es la guía'
+          grep -q 'pesca-en-goya' page.html || { echo "✖ llms.txt no lista Goya"; fail=1; }
           check /wp-sitemap.xml 200 'vistas'
           check /esto-no-existe/ 404
           for p in /litoral/corrientes/pesca-en-goya/ /pt/litoral/corrientes/pesca-em-goya/ /en/litoral/corrientes/fishing-in-goya/; do

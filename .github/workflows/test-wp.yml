@@ -27,6 +27,8 @@ jobs:
       URL: http://localhost:8080
     steps:
       - uses: actions/checkout@v4
+      - name: Brand rules (docs/marca.md)
+        run: node wordpress/build/revisar-marca.mjs
       - uses: shivammathur/setup-php@v2
         with:
           php-version: '8.3'
@@ -71,6 +73,12 @@ jobs:
             $sin = wp_insert_post( [ "post_type" => "pm_entrevista", "post_status" => "publish", "post_title" => "Sin permiso", "post_name" => "sin-permiso" ] );
             foreach ( [ "idioma" => "es", "clave" => "sin-permiso", "persona" => "Otra", "destino" => "esquina", "fecha" => "20261020", "consentimiento" => 0, "rol" => "x" ] as $k => $v ) { update_field( $k, $v, $sin ); }
             update_field( "citas", [ [ "cita" => "CITA-SIN-PERMISO", "tema" => "consejo" ] ], $sin );
+            $n = wp_insert_post( [ "post_type" => "pm_nota", "post_status" => "publish", "post_title" => "Nota de prueba: el río manda", "post_name" => "nota-de-prueba", "post_content" => "<!-- wp:paragraph --><p>Texto de la nota.</p><!-- /wp:paragraph --><!-- wp:quote --><blockquote class=\"wp-block-quote\"><p>Cita dentro del texto.</p></blockquote><!-- /wp:quote -->" ] );
+            foreach ( [ "idioma" => "es", "clave" => "nota-prueba", "nota_tipo" => "datos", "nota_destino" => "esquina", "nota_fecha" => "20261021", "bajada" => "Bajada de la nota", "seo_title" => "Nota de prueba", "seo_description" => "Descripción de la nota de prueba" ] as $k => $v ) { update_field( $k, $v, $n ); }
+            update_field( "nota_datos", [ [ "dato" => "DATO-CLAVE-DE-PRUEBA" ], [ "dato" => "PENDIENTE: dato sin confirmar" ] ], $n );
+            update_field( "fuentes", [ [ "nombre" => "FUENTE-DE-PRUEBA", "url" => "https://example.com/fuente", "oficial" => 0, "consultada" => "20261021" ] ], $n );
+            $esq = pm_buscar( "pm_destino", "esquina", "es" );
+            update_field( "mas", [ [ "nombre" => "MAS-GRATIS", "url" => "https://example.com/a", "texto" => "Un paseo", "patrocinado" => 0 ], [ "nombre" => "MAS-PAGO", "url" => "https://example.com/b", "texto" => "Un aviso", "patrocinado" => 1 ] ], $esq->ID );
             $r = wp_insert_post( [ "post_type" => "pm_prestador", "post_status" => "publish", "post_title" => "PRESTADOR-DE-PRUEBA" ] );
             foreach ( [ "tipo" => [ "guia" ], "prest_destino" => "esquina", "prest_modalidades" => [ "mosca" ], "equipo" => [ "motor_electrico" ], "incluye" => [ "carnada", "comida" ], "precio" => "Desde $ 1", "precio_fecha" => "20261020", "prest_consentimiento" => 1, "whatsapp" => "CONTACTO-INTERNO-123" ] as $k => $v ) { update_field( $k, $v, $r ); }
           '
@@ -100,6 +108,20 @@ jobs:
           check /entrevistas/prueba-el-rio-manda/ 200 '"Article"'
           check /entrevistas/sin-permiso/ 404
           check /wp-sitemap.xml 200 'pm_entrevista'
+          check / 200 'Dónde, cuándo y con quién pescar'
+          check /robots.txt 200 'Sitemap'
+          check /llms.txt 200 'pesca-en-esquina'
+          check /llms.txt 200 'prueba-el-rio-manda' 'sin-permiso'
+          check /llms.txt 200 'nota-de-prueba'
+          check /litoral/corrientes/pesca-en-esquina/ 200 'rel="sponsored noopener"'
+          check /litoral/corrientes/pesca-en-esquina/ 200 'MAS-GRATIS'
+          check /notas/ 200 'Nota de prueba'
+          check /en/notes/ 200 'v-notas'
+          check /notas/nota-de-prueba/ 200 'DATO-CLAVE-DE-PRUEBA' 'dato sin confirmar'
+          check /notas/nota-de-prueba/ 200 'FUENTE-DE-PRUEBA'
+          check /notas/nota-de-prueba/ 200 '"citation"'
+          check / 200 '/notas/'
+          check /llms.txt 200 'Pescamapa es la guía' 'CONTACTO-INTERNO-123'
           # Inquiry through the real form (pm_t in the past: passes the timing check).
           loc=$(curl -sS -o /dev/null -w '%{http_code} %{redirect_url}' \
             -d action=pm_consulta -d pm_tipo=viaje -d pm_idioma=es -d pm_destino=esquina \

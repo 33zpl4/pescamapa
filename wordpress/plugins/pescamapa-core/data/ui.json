@@ -89,7 +89,8 @@
 	},
 	"textos": {
 		"es": {
-			"marca.lema": "Destinos, especies y guías para pescar en Argentina.",
+			"marca.lema": "Dónde, cuándo y con quién pescar en Argentina.",
+			"marca.definicion": "Pescamapa es la guía para pescar en toda la Argentina: dónde ir, cuándo, qué dice el reglamento y con qué guía local salir, con datos al día y la voz de quienes pescan ahí.",
 			"nav.destinos": "Destinos",
 			"nav.mapa": "Mapa",
 			"nav.prestadores": "Para prestadores",
@@ -101,8 +102,8 @@
 			"borrador.titulo": "Ficha en construcción.",
 			"borrador.texto": "Hay datos pendientes de verificación; no la uses todavía para planificar un viaje.",
 			"foto": "Foto",
-			"inicio.title": "Pescamapa: destinos, especies y guías para pescar en Argentina",
-			"inicio.description": "Encontrá dónde pescar en Argentina: destinos por región y especie, temporadas, reglamentos con fecha de revisión y guías locales. Del surubí del Paraná a la trucha.",
+			"inicio.title": "Pescamapa: dónde, cuándo y con quién pescar en Argentina",
+			"inicio.description": "La guía para pescar en toda la Argentina: dónde ir, cuándo, qué dice el reglamento y con qué guía local salir. Datos al día y la voz de quienes pescan ahí.",
 			"inicio.hero.mapa": "Mapa de Argentina con los destinos de pesca de Pescamapa",
 			"inicio.tag1.h": "¿Qué querés pescar?",
 			"inicio.tag1.p": "Surubí · dorado · trucha · pejerrey",
@@ -235,6 +236,7 @@
 			"inicio.prest.localidad": "Localidad",
 			"inicio.prest.ofrece": "Qué ofrecés (guía, alojamiento, salidas…)",
 			"inicio.prest.enviar": "Quiero sumarme",
+			"inicio.prest.privacidad": "Usamos tus datos solo para contactarte y armar tu ficha. No se publica nada sin tu permiso.",
 			"entrevistas.title": "Entrevistas con guías y pescadores | Pescamapa",
 			"entrevistas.description": "Lo que saben los que pescan todos los días: guías, prestadores y pescadores de cada destino, con nombre y fecha.",
 			"entrevistas.eyebrow": "Voces locales",
@@ -246,10 +248,22 @@
 			"entrevista.guia": "Guía para pescar en %lugar% →",
 			"idioma.sugerencia": "Esta página está en español →",
 			"prest.lancha": "Lancha",
-			"prest.motor": "Motor"
+			"prest.motor": "Motor",
+			"ficha.mas.h2": "Más para hacer en %lugar%",
+			"ficha.mas.patrocinado": "Publicidad",
+			"ficha.mas.visitar": "Visitar el sitio →",
+			"nav.notas": "Notas",
+			"notas.title": "Notas sobre pesca en Argentina | Pescamapa",
+			"notas.description": "Datos, técnicas e historias de la pesca en Argentina, armados con lo que cuentan guías y pescadores y con las fuentes a la vista.",
+			"notas.eyebrow": "Para leer antes de salir",
+			"notas.h1": "Notas",
+			"notas.vacio": "Muy pronto: estamos armando las primeras notas.",
+			"nota.datos": "Datos clave",
+			"nota.guia": "Guía para pescar en %lugar% →"
 		},
 		"pt": {
-			"marca.lema": "Destinos, espécies e guias para pescar na Argentina.",
+			"marca.lema": "Onde, quando e com quem pescar na Argentina.",
+			"marca.definicion": "A Pescamapa é o guia para pescar em toda a Argentina: aonde ir, quando, o que diz o regulamento e com qual guia local sair, com dados atualizados e a voz de quem pesca lá.",
 			"nav.destinos": "Destinos",
 			"nav.mapa": "Mapa",
 			"nav.prestadores": "Para prestadores",
@@ -261,8 +275,8 @@
 			"borrador.titulo": "Página em construção.",
 			"borrador.texto": "Há dados pendentes de verificação; ainda não a use para planejar uma viagem.",
 			"foto": "Foto",
-			"inicio.title": "Pescamapa: destinos, espécies e guias de pesca na Argentina",
-			"inicio.description": "Descubra onde pescar na Argentina: destinos por região e espécie, temporadas, regulamentos com data de revisão e guias locais. Do surubim do Paraná à truta.",
+			"inicio.title": "Pescamapa: onde, quando e com quem pescar na Argentina",
+			"inicio.description": "O guia para pescar em toda a Argentina: aonde ir, quando, o que diz o regulamento e com qual guia local sair. Dados atualizados e a voz de quem pesca lá.",
 			"inicio.hero.mapa": "Mapa da Argentina com os destinos de pesca do Pescamapa",
 			"inicio.tag1.h": "O que você quer pescar?",
 			"inicio.tag1.p": "Surubim · dourado · truta · peixe-rei",
@@ -395,6 +409,7 @@
 			"inicio.prest.localidad": "Localidade",
 			"inicio.prest.ofrece": "O que você oferece (guia, hospedagem, saídas…)",
 			"inicio.prest.enviar": "Quero participar",
+			"inicio.prest.privacidad": "Usamos seus dados só para entrar em contato e montar a sua ficha. Nada é publicado sem a sua permissão.",
 			"entrevistas.title": "Entrevistas com guias e pescadores | Pescamapa",
 			"entrevistas.description": "O que sabem os que pescam todos os dias: guias, prestadores e pescadores de cada destino, com nome e data.",
 			"entrevistas.eyebrow": "Vozes locais",
@@ -406,10 +421,22 @@
 			"entrevista.guia": "Guia para pescar em %lugar% →",
 			"idioma.sugerencia": "Esta página em português →",
 			"prest.lancha": "Barco",
-			"prest.motor": "Motor"
+			"prest.motor": "Motor",
+			"ficha.mas.h2": "Mais para fazer em %lugar%",
+			"ficha.mas.patrocinado": "Publicidade",
+			"ficha.mas.visitar": "Visitar o site →",
+			"nav.notas": "Notas",
+			"notas.title": "Notas sobre pesca na Argentina | Pescamapa",
+			"notas.description": "Dados, técnicas e histórias da pesca na Argentina, feitos com o que contam guias e pescadores e com as fontes à vista.",
+			"notas.eyebrow": "Para ler antes de sair",
+			"notas.h1": "Notas",
+			"notas.vacio": "Em breve: estamos preparando as primeiras notas.",
+			"nota.datos": "Dados-chave",
+			"nota.guia": "Guia para pescar em %lugar% →"
 		},
 		"en": {
-			"marca.lema": "Destinations, species and guides for fishing in Argentina.",
+			"marca.lema": "Where, when and who to fish with in Argentina.",
+			"marca.definicion": "Pescamapa is the guide to fishing all over Argentina: where to go, when, what the rules say and which local guide to book, with current facts and the voices of the people who fish there.",
 			"nav.destinos": "Destinations",
 			"nav.mapa": "Map",
 			"nav.prestadores": "For outfitters",
@@ -421,8 +448,8 @@
 			"borrador.titulo": "Guide under construction.",
 			"borrador.texto": "Some facts are still being verified; don’t use it to plan a trip yet.",
 			"foto": "Photo",
-			"inicio.title": "Pescamapa: fishing destinations, species and guides in Argentina",
-			"inicio.description": "Find where to fish in Argentina: destinations by region and species, seasons, regulations with review dates and local guides. From Paraná surubí to trout.",
+			"inicio.title": "Pescamapa: where, when and who to fish with in Argentina",
+			"inicio.description": "The guide to fishing all over Argentina: where to go, when, what the rules say and which local guide to book. Current facts, told by the people who fish there.",
 			"inicio.hero.mapa": "Map of Argentina with Pescamapa’s fishing destinations",
 			"inicio.tag1.h": "What do you want to catch?",
 			"inicio.tag1.p": "Surubí · golden dorado · trout · pejerrey",
@@ -555,6 +582,7 @@
 			"inicio.prest.localidad": "Town",
 			"inicio.prest.ofrece": "What you offer (guiding, lodging, trips…)",
 			"inicio.prest.enviar": "I want to join",
+			"inicio.prest.privacidad": "We only use your details to contact you and build your listing. Nothing is published without your permission.",
 			"entrevistas.title": "Interviews with fishing guides and anglers | Pescamapa",
 			"entrevistas.description": "What people who fish every day know: guides, outfitters and anglers from each destination, named and dated.",
 			"entrevistas.eyebrow": "Local voices",
@@ -566,7 +594,18 @@
 			"entrevista.guia": "Guide to fishing in %lugar% →",
 			"idioma.sugerencia": "This page in English →",
 			"prest.lancha": "Boat",
-			"prest.motor": "Engine"
+			"prest.motor": "Engine",
+			"ficha.mas.h2": "More to do in %lugar%",
+			"ficha.mas.patrocinado": "Sponsored",
+			"ficha.mas.visitar": "Visit the site →",
+			"nav.notas": "Notes",
+			"notas.title": "Notes on fishing in Argentina | Pescamapa",
+			"notas.description": "Facts, techniques and stories about fishing in Argentina, built from what guides and anglers tell us, with the sources in plain sight.",
+			"notas.eyebrow": "To read before you go",
+			"notas.h1": "Notes",
+			"notas.vacio": "Coming soon: we are putting together the first notes.",
+			"nota.datos": "Key facts",
+			"nota.guia": "Guide to fishing in %lugar% →"
 		}
 	},
 	"opciones": {
@@ -691,6 +730,23 @@
 				"es": "Trámite de licencia",
 				"pt": "Licença de pesca",
 				"en": "Fishing licence"
+			}
+		},
+		"nota_tipo": {
+			"datos": {
+				"es": "Datos y curiosidades",
+				"pt": "Dados e curiosidades",
+				"en": "Facts and curiosities"
+			},
+			"como": {
+				"es": "Cómo se hace",
+				"pt": "Como se faz",
+				"en": "How to"
+			},
+			"historia": {
+				"es": "Historias del río",
+				"pt": "Histórias do rio",
+				"en": "Stories from the river"
 			}
 		}
 	}

@@ -25,6 +25,7 @@ $alternas = $seo['alternas'];
 				<a class="opt" href="<?php echo esc_url( $inicio . '#destinos' ); ?>"><?php pm_e( 'nav.destinos' ); ?></a>
 				<a class="opt" href="<?php echo esc_url( pm_url_mapa( $idioma ) ); ?>"><?php pm_e( 'nav.mapa' ); ?></a>
 				<a class="opt" href="<?php echo esc_url( pm_url_entrevistas( $idioma ) ); ?>"><?php pm_e( 'nav.entrevistas' ); ?></a>
+				<?php if ( pm_hay_notas() ) : ?><a class="opt" href="<?php echo esc_url( pm_url_notas( $idioma ) ); ?>"><?php pm_e( 'nav.notas' ); ?></a><?php endif; ?>
 				<a class="cta" href="<?php echo esc_url( $inicio . '#prestadores' ); ?>"><?php pm_e( 'nav.prestadores' ); ?></a>
 			</nav>
 			<nav class="idiomas" aria-label="<?php pm_e( 'nav.idioma' ); ?>">
