@@ -183,6 +183,10 @@ jobs:
             wp.data.dispatch('core/preferences')?.set('core/edit-post', 'welcomeGuide', false);
             wp.data.dispatch('core/editor').editPost({ featured_media: Number(f) });
           }, foto);
+          const campos = await p.$$eval('[name^="acf[field_pm_d_fuentes]"]', (els) => els.slice(0, 10).map((e) => `${e.name}=${JSON.stringify(e.value)} type=${e.type} visible=${!!(e.offsetWidth || e.offsetHeight)}`));
+          console.log('inputs de fuentes en el formulario:', campos.length, '\n' + campos.join('\n'));
+          const otros = await p.$$eval('[name^="acf[field_pm_d_faqs]"]', (els) => els.slice(0, 3).map((e) => `${e.name}=${JSON.stringify(e.value).slice(0, 40)}`));
+          console.log('inputs de faqs (comparación):\n' + otros.join('\n'));
           await p.keyboard.press('Escape');
           await p.locator('.editor-post-publish-button, .editor-post-publish-button__button').first().click();
           await p.waitForTimeout(6000);
