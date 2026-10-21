@@ -1,7 +1,7 @@
 # pescamapa — guía de sesión
 
 > **Empezá por `docs/estado.md`** (dónde quedamos, decisiones del dueño,
-> pendientes). **`pescamapa.com` es WordPress desde el 20/10/2026** (`wordpress/`). Leé
+> pendientes, mapa de workflows). Guía para quien edita: `docs/guia-editor.md`. **`pescamapa.com` es WordPress desde el 20/10/2026** (`wordpress/`). Leé
 > `docs/wordpress.md` antes de tocar el plugin, el tema o el deploy. Lo que
 > sigue describe el sitio Astro (`src/`), que ya no se publica pero sigue
 > siendo la fuente de estilos generados. **Desde el 20/10/2026 no hay
@@ -23,7 +23,7 @@ inicio y enlaces especie↔destino salen de esos campos. Nunca se escribe un
 dato dos veces; si hace falta en otro lado, se agrega un campo al esquema
 (`src/content.config.ts`).
 
-## Editor web (Pages CMS)
+## Editor web (Pages CMS) — histórico, del sitio Astro
 
 `.pages.yml` define los formularios de app.pagescms.org, donde edita gente
 no técnica (guía para ellos: `docs/guia-editor.md`). Guardar = commit a
