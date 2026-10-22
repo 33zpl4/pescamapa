@@ -11,6 +11,8 @@ $filas = [
 	'prest.equipo'      => array_map( fn( $k ) => pm_opcion( 'equipo', $k ), $r['equipo'] ),
 	'prest.incluye'     => array_map( fn( $k ) => pm_opcion( 'incluye', $k ), $r['incluye'] ),
 	'prest.temporada'   => array_filter( [ $r['temporada'] ] ),
+	'prest.idiomas'     => array_map( fn( $k ) => pm_opcion( 'idioma', $k ), $r['idiomas'] ),
+	'prest.accesible'   => 'si' === $r['accesible'] ? [ '♿ ' . pm_t( 'prest.accesible.si' ) ] : [],
 ];
 ?>
 <article class="prestador<?php echo pm_prestador_publico( $r ) ? '' : ' vista-previa'; ?>">

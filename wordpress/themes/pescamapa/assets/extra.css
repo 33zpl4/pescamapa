@@ -22,10 +22,8 @@
 /* Hero: the guide card sits next to its pin; the "what do you want to
    catch" card goes low, away from Goya, so trout/pejerrey don't read as Goya. */
 .v-inicio .hero-map .tag-top { right: auto; top: auto; left: -8%; bottom: 14%; }
-.v-inicio .hero-map .tag-bottom { left: auto; bottom: auto; right: -6%; top: 9%; }
 @media (max-width: 900px) {
 	.v-inicio .hero-map .tag-top { left: 0; }
-	.v-inicio .hero-map .tag-bottom { right: 0; }
 }
 
 /* Forms */

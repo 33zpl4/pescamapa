@@ -51,6 +51,9 @@ Sirve para dejar anotado qué falta confirmar.
 Prestadores → el prestador (o "Añadir nuevo"):
 - **Lancha, motor, capacidad**, equipo y qué incluye: es lo primero que
   mira un pescador.
+- **Idiomas en que atiende** (marcá los que habla quien guía; ej. portugués si
+  un guía del servicio lo habla) y **Accesibilidad** (Sí si ofrece servicio para
+  personas con movilidad reducida; con "Sí" la tarjeta muestra ♿).
 - **Precio**, con su **fecha**. Sin fecha, el precio no se muestra.
 - **Contacto** (pestaña interna): nunca se publica, las consultas llegan a
   nosotros.

@@ -107,8 +107,6 @@
 			"inicio.hero.mapa": "Mapa de Argentina con los destinos de pesca de Pescamapa",
 			"inicio.tag1.h": "¿Qué querés pescar?",
 			"inicio.tag1.p": "Surubí · dorado · trucha · pejerrey",
-			"inicio.tag2.h": "Primera guía: Goya",
-			"inicio.tag2.p": "La cuna del surubí →",
 			"inicio.hero.nota": "Mapa ilustrativo",
 			"inicio.eyebrow": "El mapa para salir a pescar",
 			"inicio.h1a": "Argentina",
@@ -266,7 +264,10 @@
 			"prest.fuente": "Fuente",
 			"prest.baja_asunto": "Corrección o baja de la ficha: %nombre%",
 			"ficha.fuentes.consultadas": "Fuentes consultadas (%n%)",
-			"prest.oferta": "Con Pescamapa: %oferta%"
+			"prest.oferta": "Con Pescamapa: %oferta%",
+			"prest.idiomas": "Idiomas",
+			"prest.accesible": "Accesibilidad",
+			"prest.accesible.si": "Ofrece servicio accesible"
 		},
 		"pt": {
 			"marca.lema": "Onde, quando e com quem pescar na Argentina.",
@@ -287,8 +288,6 @@
 			"inicio.hero.mapa": "Mapa da Argentina com os destinos de pesca do Pescamapa",
 			"inicio.tag1.h": "O que você quer pescar?",
 			"inicio.tag1.p": "Surubim · dourado · truta · peixe-rei",
-			"inicio.tag2.h": "Primeiro guia: Goya",
-			"inicio.tag2.p": "O berço do surubim →",
 			"inicio.hero.nota": "Mapa ilustrativo",
 			"inicio.eyebrow": "O mapa para sair para pescar",
 			"inicio.h1a": "A Argentina",
@@ -446,7 +445,10 @@
 			"prest.fuente": "Fonte",
 			"prest.baja_asunto": "Correção ou retirada da ficha: %nombre%",
 			"ficha.fuentes.consultadas": "Fontes consultadas (%n%)",
-			"prest.oferta": "Com a Pescamapa: %oferta%"
+			"prest.oferta": "Com a Pescamapa: %oferta%",
+			"prest.idiomas": "Idiomas",
+			"prest.accesible": "Acessibilidade",
+			"prest.accesible.si": "Oferece serviço acessível"
 		},
 		"en": {
 			"marca.lema": "Where, when and who to fish with in Argentina.",
@@ -467,8 +469,6 @@
 			"inicio.hero.mapa": "Map of Argentina with Pescamapa’s fishing destinations",
 			"inicio.tag1.h": "What do you want to catch?",
 			"inicio.tag1.p": "Surubí · golden dorado · trout · pejerrey",
-			"inicio.tag2.h": "First guide: Goya",
-			"inicio.tag2.p": "Home of the surubí →",
 			"inicio.hero.nota": "Illustrative map",
 			"inicio.eyebrow": "The map for going fishing",
 			"inicio.h1a": "Argentina",
@@ -626,7 +626,10 @@
 			"prest.fuente": "Source",
 			"prest.baja_asunto": "Correction or removal of the listing: %nombre%",
 			"ficha.fuentes.consultadas": "Sources consulted (%n%)",
-			"prest.oferta": "With Pescamapa: %oferta%"
+			"prest.oferta": "With Pescamapa: %oferta%",
+			"prest.idiomas": "Languages",
+			"prest.accesible": "Accessibility",
+			"prest.accesible.si": "Accessible service available"
 		}
 	},
 	"opciones": {
@@ -768,6 +771,38 @@
 				"es": "Historias del río",
 				"pt": "Histórias do rio",
 				"en": "Stories from the river"
+			}
+		},
+		"idioma": {
+			"es": {
+				"es": "Español",
+				"pt": "Espanhol",
+				"en": "Spanish"
+			},
+			"pt": {
+				"es": "Portugués",
+				"pt": "Português",
+				"en": "Portuguese"
+			},
+			"en": {
+				"es": "Inglés",
+				"pt": "Inglês",
+				"en": "English"
+			},
+			"fr": {
+				"es": "Francés",
+				"pt": "Francês",
+				"en": "French"
+			},
+			"de": {
+				"es": "Alemán",
+				"pt": "Alemão",
+				"en": "German"
+			},
+			"it": {
+				"es": "Italiano",
+				"pt": "Italiano",
+				"en": "Italian"
 			}
 		}
 	}
