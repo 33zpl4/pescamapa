@@ -8,14 +8,6 @@
 		"accion": "Leer qué cambió; si hay una disposición o veda nueva, actualizar FAQ y reglamento."
 	},
 	{
-		"id": "licencias",
-		"nombre": "Portal de licencias de pesca",
-		"url": "https://licenciasrecursosnaturales.gob.ar",
-		"vigilar": "texto",
-		"afecta": "Precio, duración y categorías de la licencia",
-		"accion": "Copiar precio y duración con fecha a las FAQ de licencia."
-	},
-	{
 		"id": "boletin-853",
 		"nombre": "Boletín Oficial: Disposición 853/22 (tallas y cupos)",
 		"url": "https://boletinoficial.corrientes.gob.ar/assets/articulo_adjuntos/7523/original/26-12-2022.pdf",
@@ -221,6 +213,6 @@
 		"url": "https://recursosnaturales.corrientes.gob.ar/",
 		"vigilar": "texto",
 		"afecta": "Reglamento, vedas y licencia de las tres guías",
-		"accion": "Si responde, es la fuente oficial: leer qué cambió y actualizar reglamento y FAQ. Si no responde varias semanas, confirmar el dominio con Gemini/ChatGPT."
+		"accion": "Responde con 404 en la raíz (22/10/2026): el sitio existe pero esa ruta no. Si sigue así, buscar la ruta vigente con Gemini/ChatGPT o quitarla."
 	}
 ]
