@@ -4,11 +4,11 @@
  * "Página de ejemplo" (page), is in the sitemap and unknown to Google: noise.
  * Sets them to draft (recoverable from the admin; the URLs stop answering). Only the
  * default ones: matched by slug AND by still being the stock text, so a real page that
- * later reuses the slug is never touched. Idempotent. Dry run first ($aplicar = false);
+ * later reuses the slug is never touched. Idempotent. Dry run found exactly the 2 stock pages (#1, #2); applied;
  * run with wp-script.yml (script = paginas-ejemplo-2026-10-22).
  */
 
-$aplicar = false;
+$aplicar = true;
 
 $candidatas = [
 	[ 'post', 'hola-mundo', 'Bienvenido a WordPress' ],
