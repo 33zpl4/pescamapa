@@ -20,6 +20,14 @@ const MAX_GUARDADO = 60_000; // characters of normalized text kept per source, t
 const sha = (x) => createHash('sha256').update(x).digest('hex');
 const dormir = (ms) => new Promise((r) => setTimeout(r, ms));
 
+/** Numeric character references (&#116; / &#x74;): some sites (Cloudflare e-mail protection)
+ *  re-encode e-mail addresses differently on every load, which looked like a change. */
+export function decodificar(t) {
+	return t
+		.replace(/&#(\d+);/g, (_, n) => String.fromCodePoint(Number(n)))
+		.replace(/&#x([0-9a-f]+);/gi, (_, h) => String.fromCodePoint(parseInt(h, 16)));
+}
+
 /** Page text without markup or scripts, whitespace collapsed. */
 export function normalizar(html) {
 	return html
@@ -27,6 +35,7 @@ export function normalizar(html) {
 		.replace(/<(script|style|noscript|svg|iframe)\b[\s\S]*?<\/\1>/gi, ' ')
 		.replace(/<[^>]+>/g, ' ')
 		.replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&').replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&lt;/g, '<').replace(/&gt;/g, '>')
+		.replace(/&#(\d+);|&#x[0-9a-f]+;/gi, (m) => decodificar(m))
 		.replace(/\b\d{1,2}:\d{2}(:\d{2})?\b/g, ' ') // clocks change every load
 		.replace(/\s+/g, ' ')
 		.trim();
@@ -82,7 +91,9 @@ for (const f of fuentes) {
 		if (!previo?.huella) {
 			estado[f.id] = { ...registro, huella, texto: texto.slice(0, MAX_GUARDADO), primeraVez: hoy };
 			nuevas.push(f);
-		} else if (previo.huella !== huella) {
+		} else if ((f.vigilar === 'pdf' || !previo.texto ? previo.huella : sha(normalizar(previo.texto))) !== huella) {
+			// (text sources: the stored copy is re-normalized with today's rules, so a
+			// change in the normalizer itself never shows up as a change in the page)
 			const d = f.vigilar === 'pdf' ? { nuevas: [], quitadas: [] } : diferencias(previo.texto ?? '', texto);
 			cambios.push({ f, d, antes: previo.visto });
 			estado[f.id] = { ...registro, huella, texto: texto.slice(0, MAX_GUARDADO), cambiado: hoy };
