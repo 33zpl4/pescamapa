@@ -9,6 +9,9 @@ name: Weekly report
 # `vigilancia-estado` (never merged, never deployed).
 
 on:
+  push:
+    branches: [main]
+    paths: [".github/workflows/informe-semanal.yml"]
   schedule:
     - cron: "43 11 * * 1"
   workflow_dispatch:
