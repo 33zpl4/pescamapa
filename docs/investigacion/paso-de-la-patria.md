@@ -236,3 +236,10 @@ Por qué no se publica todavía:
 - Falta la categoría de **turista argentino no residente en Corrientes**, que es la que más le sirve al lector de la guía.
 
 Para cerrarlo, preguntar a Gemini/ChatGPT: "¿Cuál es el arancel vigente en 2026 de la licencia de pesca deportiva en Corrientes para un turista argentino no residente (por día y por año), y en qué disposición o página oficial figura? Dame el enlace al Boletín Oficial o al trámite oficial y marcá lo que no pudiste confirmar." O mirar la página de Turismo: `corrientes.tur.ar/tramites-y-permisos/`.
+
+### Respuesta del 22/10/2026 y decisión del dueño
+
+La segunda consulta **no encontró** el arancel de 2026 para turista argentino no residente, ni si existe licencia anual para no residentes, ni un enlace operativo de pago en un dominio `.gob.ar`. `recursosnaturales.corrientes.gob.ar` figura con fallas de servidor.
+
+Decisión (dueño): no se persigue. La guía dice que el precio y la duración se ven al tramitar la licencia y que, si no se puede confirmar online, se pregunta a la guía local o a Recursos Naturales. Quien va con un guía local no necesita resolverlo; el consejo apunta al que va por su cuenta. Texto de las guías: ya dice "el precio y la duración dependen de la categoría y se ven al tramitarla"; solo falta sumarle esa frase de "si no lo ves, preguntá" (cambio de copy pendiente de OK).
+Aviso: el portal `licenciasrecursosnaturales.gob.ar`, citado como fuente en la guía, no resuelve desde GitHub (ENOTFOUND). Revisar esa fuente.
