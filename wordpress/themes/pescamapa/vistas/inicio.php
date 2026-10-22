@@ -5,8 +5,6 @@ defined( 'ABSPATH' ) || exit;
 $idioma   = pm_lang();
 $destinos = pm_destinos_lista( $idioma );
 $proximos = pm_proximos_lista( $idioma );
-// The hero card names Goya (inicio.tag2.*): link it to Goya, whatever the order.
-$primera  = current( array_filter( $destinos, fn( $d ) => 'goya' === $d['clave'] ) ) ?: ( $destinos[0] ?? null );
 
 $puntos_hero = [];
 foreach ( $proximos as $p ) {
@@ -45,9 +43,6 @@ get_header(); ?>
 			<div class="hero-map">
 				<?php echo pm_mapa_hero( $puntos_hero, pm_t( 'inicio.hero.mapa' ) ); // phpcs:ignore -- escaped inside ?>
 				<div class="tag tag-top"><strong><?php pm_e( 'inicio.tag1.h' ); ?></strong><?php pm_e( 'inicio.tag1.p' ); ?></div>
-				<?php if ( $primera ) : ?>
-					<a class="tag tag-bottom" href="<?php echo esc_url( $primera['url'] ); ?>"><strong><?php pm_e( 'inicio.tag2.h' ); ?></strong><?php pm_e( 'inicio.tag2.p' ); ?></a>
-				<?php endif; ?>
 				<span class="map-note"><?php pm_e( 'inicio.hero.nota' ); ?></span>
 			</div>
 		</div>

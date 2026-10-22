@@ -64,6 +64,9 @@ add_action( 'acf/include_fields', function () {
 			[ 'key' => 'field_pm_r_capacidad', 'name' => 'capacidad', 'label' => 'Pescadores por lancha', 'type' => 'number', 'min' => 1, 'max' => 20, 'wrapper' => [ 'width' => 50 ] ],
 			[ 'key' => 'field_pm_r_temporada', 'name' => 'prest_temporada', 'label' => 'Cuándo trabaja (se publica)', 'type' => 'text', 'wrapper' => [ 'width' => 50 ], 'instructions' => 'Ej. "Todo el año; dorado de septiembre a marzo".' ],
 
+			[ 'key' => 'field_pm_r_idiomas', 'name' => 'prest_idiomas', 'label' => 'Idiomas en que atiende (se publica)', 'type' => 'checkbox', 'choices' => [ 'es' => 'Español', 'pt' => 'Portugués', 'en' => 'Inglés', 'fr' => 'Francés', 'de' => 'Alemán', 'it' => 'Italiano' ], 'layout' => 'horizontal', 'instructions' => 'Los idiomas que habla quien guía o atiende. Ej. si un guía del servicio habla portugués, marcá Portugués.' ],
+			[ 'key' => 'field_pm_r_accesible', 'name' => 'prest_accesible', 'label' => 'Accesibilidad (solo se publica si es Sí)', 'type' => 'select', 'choices' => [ '' => 'Sin dato', 'si' => 'Sí, ofrece servicio accesible', 'no' => 'No' ], 'default_value' => '', 'wrapper' => [ 'width' => 50 ], 'instructions' => 'Para personas con movilidad reducida (embarque, muelle, baño). Con "Sí" la tarjeta muestra ♿; "No" queda como dato interno.' ],
+
 			[ 'key' => 'field_pm_r_tab_paquete', 'label' => 'Paquete y precio', 'type' => 'tab' ],
 			[ 'key' => 'field_pm_r_incluye', 'name' => 'incluye', 'label' => 'Qué incluye', 'type' => 'checkbox', 'choices' => pm_opciones( 'incluye' ), 'layout' => 'horizontal' ],
 			[ 'key' => 'field_pm_r_precio', 'name' => 'precio', 'label' => 'Precio de referencia (se publica)', 'type' => 'text', 'wrapper' => [ 'width' => 50 ], 'instructions' => 'Ej. "Desde $ 180.000 por lancha, día completo".' ],
@@ -118,6 +121,8 @@ function pm_prestador( int $post_id ): array {
 		'motor'          => (string) pm_campo( 'motor', $post_id ),
 		'capacidad'      => (int) pm_campo( 'capacidad', $post_id ),
 		'temporada'      => (string) pm_campo( 'prest_temporada', $post_id ),
+		'idiomas'        => $lista( 'prest_idiomas' ),
+		'accesible'      => (string) pm_campo( 'prest_accesible', $post_id ),
 		'incluye'        => $lista( 'incluye' ),
 		'precio'         => (string) pm_campo( 'precio', $post_id ),
 		'precio_fecha'   => (string) pm_campo( 'precio_fecha', $post_id ),
