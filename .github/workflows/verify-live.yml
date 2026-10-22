@@ -62,6 +62,15 @@ jobs:
             grep -qE "name=[\"']robots[\"'][^>]*noindex" page.html && { echo "✖ $p tiene noindex"; fail=1; }
             grep -q 'PENDIENTE' page.html && { echo "✖ $p muestra una nota PENDIENTE"; fail=1; }
           done
+          # La Paz (Entre Ríos): licence fees from the Dirección de Entre Ríos, honest "not confirmed" for sizes.
+          for p in /litoral/entre-rios/pesca-en-la-paz/ /pt/litoral/entre-rios/pesca-em-la-paz/; do
+            check "$p" 200 'TouristDestination'
+            grep -qE "name=[\"']robots[\"'][^>]*noindex" page.html && { echo "✖ $p tiene noindex"; fail=1; }
+            grep -q 'PENDIENTE' page.html && { echo "✖ $p muestra una nota PENDIENTE"; fail=1; }
+            grep -q '24.251,60' page.html || { echo "✖ $p sin el arancel de Entre Ríos"; fail=1; }
+          done
+          # The sample WordPress pages stay unpublished.
+          for p in /hola-mundo/ /pagina-ejemplo/; do check "$p" 404; done
           check /litoral/corrientes/pesca-en-goya/ 200 'Más para hacer'
           # Esquina exists once esquina-2026-10-20 ran (Spanish first).
           code=$(curl -sS -m 30 -o page.html -w '%{http_code}' "$SITE/litoral/corrientes/pesca-en-esquina/")

@@ -262,5 +262,21 @@
 		"vigilar": "estado",
 		"afecta": "La Paz: fiestas y destino",
 		"accion": "Confirmar si responde."
+	},
+	{
+		"id": "er-licencia-tramite",
+		"nombre": "Entre Ríos: trámite de licencia de pesca (portal)",
+		"url": "https://portal.entrerios.gov.ar/pf/tramite/708/obtener-licencia-y-permiso-de-caza-o-pesca-deportiva",
+		"vigilar": "texto",
+		"afecta": "La Paz: licencia y aranceles",
+		"accion": "Si cambia, comparar con los aranceles de la guía de La Paz (P1-P4). Si no responde, el enlace de la guía está roto: corregirlo."
+	},
+	{
+		"id": "er-elonce-aranceles",
+		"nombre": "Elonce: aranceles de caza y pesca de Entre Ríos",
+		"url": "https://www.elonce.com/uid-875603",
+		"vigilar": "estado",
+		"afecta": "La Paz: respaldo de los aranceles",
+		"accion": "Solo avisa si cae."
 	}
 ]
