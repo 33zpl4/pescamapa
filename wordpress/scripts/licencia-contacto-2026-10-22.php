@@ -10,7 +10,7 @@
  * Dry run found 3 answers (Esquina, Goya, Paso de la Patria; es); owner OK, applied. Run with wp-script.yml (script = licencia-contacto-2026-10-22).
  */
 
-$aplicar = false;
+$aplicar = true;
 
 $frase = [
 	'es' => ' Si no ves el precio o no podés tramitarla online, consultá a la venta de licencias de Turismo de Corrientes (3794 909039, ventadelicencias@gmail.com; datos de corrientes.tur.ar, consultados el 22/10/2026) o preguntale a tu guía.',
@@ -22,6 +22,10 @@ $busca = [ 'portal de Recursos Naturales', 'portal de Recursos Naturais', 'Recur
 
 $tocadas = 0;
 foreach ( pm_posts( 'pm_destino' ) as $p ) {
+	// La Paz is in Entre Ríos: the Corrientes Turismo contact does not apply (its guide has its own text).
+	if ( 'la-paz' === pm_clave_de( $p->ID ) ) {
+		continue;
+	}
 	$i     = pm_idioma_de( $p->ID );
 	$filas = pm_filas( 'faqs', $p->ID );
 	$cambio = false;
