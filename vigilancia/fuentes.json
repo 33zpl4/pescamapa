@@ -214,5 +214,53 @@
 		"vigilar": "texto",
 		"afecta": "Reglamento, vedas y licencia de las tres guías",
 		"accion": "Responde con 404 en la raíz (22/10/2026): el sitio existe pero esa ruta no. Si sigue así, buscar la ruta vigente con Gemini/ChatGPT o quitarla."
+	},
+	{
+		"id": "lapaz-turismo",
+		"nombre": "Turismo La Paz (Entre Ríos)",
+		"url": "https://lapazentrerios.tur.ar/",
+		"vigilar": "estado",
+		"afecta": "La Paz: eventos, prestadores",
+		"accion": "Confirmar si responde; si sí, pasar a 'texto'."
+	},
+	{
+		"id": "lapaz-municipio",
+		"nombre": "Municipalidad de La Paz (Entre Ríos)",
+		"url": "https://lapaz.gob.ar/",
+		"vigilar": "estado",
+		"afecta": "La Paz: torneos y habilitaciones",
+		"accion": "Confirmar si responde; si sí, pasar a 'texto'."
+	},
+	{
+		"id": "er-boletin",
+		"nombre": "Boletín Oficial de Entre Ríos",
+		"url": "https://boletinoficial.entrerios.gov.ar/",
+		"vigilar": "estado",
+		"afecta": "La Paz: reglamento y vedas",
+		"accion": "Solo avisa si cae. Las normas nuevas se buscan con Gemini/ChatGPT."
+	},
+	{
+		"id": "er-tramites",
+		"nombre": "Entre Ríos: trámites",
+		"url": "https://www.entrerios.gov.ar/tramites",
+		"vigilar": "estado",
+		"afecta": "La Paz: licencia de pesca",
+		"accion": "URL sin confirmar (adivinada por el agente). Si responde, buscar el trámite de licencia."
+	},
+	{
+		"id": "er-noticias",
+		"nombre": "Noticias del Gobierno de Entre Ríos",
+		"url": "https://noticias.entrerios.gov.ar/",
+		"vigilar": "estado",
+		"afecta": "La Paz: vedas extraordinarias",
+		"accion": "Si responde, pasar a 'texto' y leer avisos de pesca."
+	},
+	{
+		"id": "er-turismo",
+		"nombre": "Turismo Entre Ríos",
+		"url": "https://www.entrerios.tur.ar/",
+		"vigilar": "estado",
+		"afecta": "La Paz: fiestas y destino",
+		"accion": "Confirmar si responde."
 	}
 ]
