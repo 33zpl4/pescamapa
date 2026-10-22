@@ -214,5 +214,13 @@
 		"vigilar": "estado",
 		"afecta": "Fiesta Nacional del Pacú (Esquina)",
 		"accion": "Solo avisa si cae; la portada cambia a diario. Buscar la fiesta con Gemini/ChatGPT cada temporada. URL sin confirmar (lista de banderas de 2021): si no responde, buscar el sitio vigente con Gemini/ChatGPT."
+	},
+	{
+		"id": "recnat-oficial",
+		"nombre": "Recursos Naturales de Corrientes (enlace oficial desde Turismo)",
+		"url": "https://recursosnaturales.corrientes.gob.ar/",
+		"vigilar": "texto",
+		"afecta": "Reglamento, vedas y licencia de las tres guías",
+		"accion": "Si responde, es la fuente oficial: leer qué cambió y actualizar reglamento y FAQ. Si no responde varias semanas, confirmar el dominio con Gemini/ChatGPT."
 	}
 ]
