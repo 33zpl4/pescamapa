@@ -214,3 +214,25 @@ Naturales). **La tabla del punto 8.1 coincide**, y se completan las notas:
 (`paso-de-la-patria-2026-10-21`), prestadores como listado con información
 pública, y la pregunta de tallas y cupos agregada a Goya y Esquina
 (`reglas-corrientes-2026-10-21`).
+
+## Licencia de pesca: aranceles (22/10/2026) — SIN CONFIRMAR, no publicar
+
+Respuesta de Gemini/ChatGPT, consultada el 21/10/2026. **Fuente no oficial**: reproducción de la Disposición 1144/2024 (Dirección de Recursos Naturales de Corrientes) por AICACYP, una cámara del sector. No encontró un texto posterior con aranceles actualizados en el Boletín Oficial.
+
+| Categoría | Duración | Arancel (ARS, 2024) |
+| --- | --- | --- |
+| Pesca de costa (residente en Corrientes) | 1 año | 1.135 |
+| Embarcada a remo (residente) | 1 año | 2.270 |
+| Embarcada a motor (residente) | 1 año | 6.810 |
+| Permiso transitorio (residente) | 1 día | 1.135 |
+| Permiso transitorio (residente) | 2 días | 2.270 |
+| Permiso transitorio (residente) | 3 días | 3.405 |
+| Permiso transitorio (residente) | 4 días | 4.540 |
+| Turista extranjero | 6 días | 3.405 |
+
+Por qué no se publica todavía:
+- La licencia es de verificación manual (regla del dueño): hace falta la disposición oficial o el portal de trámite, no una reproducción.
+- Los montos son de 2024 y los aranceles se ajustan cada año; con la inflación argentina es muy probable que hoy sean otros.
+- Falta la categoría de **turista argentino no residente en Corrientes**, que es la que más le sirve al lector de la guía.
+
+Para cerrarlo, preguntar a Gemini/ChatGPT: "¿Cuál es el arancel vigente en 2026 de la licencia de pesca deportiva en Corrientes para un turista argentino no residente (por día y por año), y en qué disposición o página oficial figura? Dame el enlace al Boletín Oficial o al trámite oficial y marcá lo que no pudiste confirmar." O mirar la página de Turismo: `corrientes.tur.ar/tramites-y-permisos/`.
