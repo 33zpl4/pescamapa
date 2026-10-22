@@ -1,0 +1,53 @@
+name: Weekly report
+
+# Every Monday (and on demand): one GitHub issue "Informe semanal" with
+#  1. Search Console: traffic vs the previous week and what is indexed
+#     (skipped with a note until the secrets exist: docs/vigilancia.md);
+#  2. the watch of the sources our guides depend on (vigilancia/fuentes.json):
+#     what stopped responding and which pages changed, with the sentences that changed.
+# No model is called. The comparison state lives on the scratch branch
+# `vigilancia-estado` (never merged, never deployed).
+
+on:
+  schedule:
+    - cron: "43 11 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  informe:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Previous state
+        run: |
+          git clone -q --depth 1 --branch vigilancia-estado "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" estado 2>/dev/null || {
+            mkdir estado && git -C estado init -q -b vigilancia-estado
+            git -C estado remote add origin "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          }
+      - name: Search Console
+        env:
+          GSC_SERVICE_ACCOUNT: ${{ secrets.GSC_SERVICE_ACCOUNT }}
+          GSC_SITE: ${{ secrets.GSC_SITE }}
+        run: node scripts/informe-gsc.mjs gsc.md
+      - name: Watch sources
+        run: node scripts/vigilar.mjs vigilancia/fuentes.json estado/estado.json vigilancia.md
+      - name: Save state
+        run: |
+          cd estado
+          git config user.name "pescamapa-bot" && git config user.email "bot@pescamapa.com"
+          git add estado.json && git commit -q -m "Vigilancia: estado $(date +%F)" || true
+          git push -q origin HEAD:vigilancia-estado
+      - name: Issue
+        run: |
+          { echo "Informe automático del $(date +%d/%m/%Y). Sin modelos: compara con la semana anterior."; echo; cat gsc.md; echo; cat vigilancia.md; } > informe.md
+          cat informe.md >> "$GITHUB_STEP_SUMMARY"
+          for n in $(gh issue list --state open --search "Informe semanal in:title" --json number --jq '.[].number'); do
+            gh issue close "$n" --comment "Reemplazado por el informe del $(date +%d/%m/%Y)."
+          done
+          gh issue create --title "Informe semanal — $(date +%d/%m/%Y)" --body-file informe.md
