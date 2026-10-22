@@ -44,19 +44,44 @@ function pm_mapa_hero( array $puntos, string $etiqueta ): string {
 	foreach ( $h['rios'] as $r ) {
 		$svg .= '<path class="rio" d="' . esc_attr( $r ) . '"/>';
 	}
-	$destacados = '';
+	// Guides are often close together (Goya, Esquina and La Paz are 14-16 px apart, a label is
+	// 22 px tall): the pins stay exactly where the projection puts them, the labels are spread
+	// vertically (minimum gap) and joined to their pin with a thin line.
+	$guias = [];
 	foreach ( $puntos as $p ) {
 		[ $x, $y ] = pm_proyectar( $p['coordenadas'][0], $p['coordenadas'][1] );
 		$titulo = '<title>' . esc_html( $p['nombre'] ) . '</title>';
 		if ( ! empty( $p['destacado'] ) ) {
-			$destacados .= '<a href="' . esc_url( $p['url'] ) . '" class="destacado">' . $titulo
-				. "<circle class=\"halo\" cx=\"$x\" cy=\"$y\" r=\"22\" fill=\"url(#mh-glow)\"/>"
-				. "<circle class=\"pulso\" cx=\"$x\" cy=\"$y\" r=\"8\"/>"
-				. "<circle class=\"nucleo\" cx=\"$x\" cy=\"$y\" r=\"7\"/>"
-				. '<text x="' . ( $x + 14 ) . '" y="' . ( $y + 5 ) . '">' . esc_html( $p['nombre'] ) . '</text></a>';
+			$guias[] = [ 'x' => $x, 'y' => $y, 'ly' => $y, 'p' => $p, 'titulo' => $titulo ];
 		} else {
 			$svg .= "<g class=\"punto\">{$titulo}<circle cx=\"$x\" cy=\"$y\" r=\"5\"/></g>";
 		}
+	}
+	usort( $guias, fn( $a, $b ) => $a['y'] <=> $b['y'] );
+	$hueco = 24;
+	for ( $vuelta = 0; $vuelta < 40; $vuelta++ ) {
+		$movido = false;
+		for ( $k = 1; $k < count( $guias ); $k++ ) {
+			$falta = $hueco - ( $guias[ $k ]['ly'] - $guias[ $k - 1 ]['ly'] );
+			if ( $falta > 0.1 ) {
+				$guias[ $k - 1 ]['ly'] -= $falta / 2;
+				$guias[ $k ]['ly']     += $falta / 2;
+				$movido = true;
+			}
+		}
+		if ( ! $movido ) {
+			break;
+		}
+	}
+	$destacados = '';
+	foreach ( $guias as $g ) {
+		[ $x, $y, $ly, $p ] = [ $g['x'], $g['y'], round( $g['ly'], 1 ), $g['p'] ];
+		$linea = abs( $ly - $y ) > 3 ? '<line class="guia-linea" x1="' . ( $x + 7 ) . '" y1="' . $y . '" x2="' . ( $x + 12 ) . '" y2="' . ( $ly - 1 ) . '"/>' : '';
+		$destacados .= '<a href="' . esc_url( $p['url'] ) . '" class="destacado">' . $g['titulo'] . $linea
+			. "<circle class=\"halo\" cx=\"$x\" cy=\"$y\" r=\"22\" fill=\"url(#mh-glow)\"/>"
+			. "<circle class=\"pulso\" cx=\"$x\" cy=\"$y\" r=\"8\"/>"
+			. "<circle class=\"nucleo\" cx=\"$x\" cy=\"$y\" r=\"7\"/>"
+			. '<text x="' . ( $x + 14 ) . '" y="' . ( $ly + 5 ) . '">' . esc_html( $p['nombre'] ) . '</text></a>';
 	}
 	return $svg . $destacados . '</svg>';
 }

@@ -203,3 +203,7 @@ desactualizadas; las propagamos con un script.
 4. Correr el deploy (pone home/siteurl y `blog_public = 1`) y en el
    servidor `wp search-replace https://nuevo.pescamapa.com https://pescamapa.com`.
 5. `verify-live.yml` y Search Console con el sitemap `wp-sitemap.xml`.
+
+## Mapa del inicio (22/10/2026)
+
+Se verificó la proyección con las mismas funciones del plugin (`pm_proyectar`): las guías, los próximos destinos y 8 ciudades de referencia (La Quiaca, Ushuaia, Buenos Aires, Mendoza, Posadas, Córdoba, Bariloche, Puerto Madryn) caen donde corresponde sobre el contorno de `data/hero.json`. El defecto que se encontró no era de posición sino de **etiquetas**: Goya, Esquina y La Paz están a 14-16 px y la etiqueta mide 22 px, así que se pisaban. `pm_mapa_hero` ahora reparte las etiquetas en vertical (hueco mínimo de 24 px) y las une al punto con una línea fina (`.guia-linea`, en `extra.css`); el punto no se mueve. Los ríos del mapa son líneas simplificadas (pocos vértices): sirven de referencia, no de cartografía.
