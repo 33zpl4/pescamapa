@@ -12,10 +12,10 @@
  * información pública" (docs/prestadores.md).
  *
  * Idempotent: a guide or outfitter that exists is never touched. Dry run first
- * ($aplicar = false); run with wp-script.yml (script = la-paz-2026-10-22).
+ * (dry run was clean: es + pt + 1 outfitter; applied); run with wp-script.yml (script = la-paz-2026-10-22).
  */
 
-$aplicar = false;
+$aplicar = true;
 $hoy     = '20261022';
 
 function pm_lp_p( string $html ): string {
