@@ -129,9 +129,6 @@ jobs:
           check /litoral/corrientes/pesca-en-esquina/ 200 'Portugués · Inglés'
           check /litoral/corrientes/pesca-en-esquina/ 200 '♿ Ofrece servicio accesible'
           check / 200 'hero-map' 'Primera guía'
-          # Licence button on the guides (es and en).
-          check /litoral/corrientes/pesca-en-esquina/ 200 'recnaturalesctes.gob.ar/login'
-          check /litoral/corrientes/pesca-en-esquina/ 200 'Obtener licencia'
           check /llms.txt 200 'OFERTA-DE-PRUEBA' 'OFERTA-NO-ACORDADA'
           # Example-data outfitters never reach visitors.
           check /litoral/corrientes/pesca-en-esquina/ 200 'pacú' 'Don Joaquín River Lodge'

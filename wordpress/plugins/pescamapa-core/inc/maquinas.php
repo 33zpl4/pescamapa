@@ -17,9 +17,6 @@ defined( 'ABSPATH' ) || exit;
 
 const PM_EMAIL_PUBLICO = 'info@pescamapa.com';
 
-/** Where a fishing licence is obtained in Corrientes (button on the guides; owner, 22/10/2026). */
-const PM_URL_LICENCIA = 'https://www.recnaturalesctes.gob.ar/login';
-
 add_filter( 'robots_txt', function ( $salida, $publico ) {
 	if ( ! $publico ) {
 		return $salida;
