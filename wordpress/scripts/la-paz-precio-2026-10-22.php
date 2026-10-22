@@ -10,7 +10,7 @@
  * run with wp-script.yml (script = la-paz-precio-2026-10-22).
  */
 
-$aplicar = false;
+$aplicar = true;
 
 $lang = [
 	'es' => [
