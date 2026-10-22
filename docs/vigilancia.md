@@ -39,3 +39,10 @@ Solo lo cierto: "revisamos cada semana las fuentes oficiales de las que depende 
 - **Cadencias:** vedas extraordinarias, impredecibles (horas a días; ojo en aguas altas y bajas); veda de desove, anual (se define entre octubre y noviembre); aranceles de licencia, semestral o anual; tallas y cupos (Disposición 853/22), muy estables; torneos, anuales (Goya abril-mayo; Paso de la Patria marzo-abril y agosto; Esquina febrero-marzo).
 - **Sin confirmar:** que `recursosnaturales.corrientes.gob.ar` esté activa (el informe dice que no responde; usamos `recnaturalesctes.gob.ar`); los selectores CSS que sugirió (no los usamos: `vigilar.mjs` compara el texto de la página entera, sin selectores); que las disposiciones menores de Recursos Naturales se publiquen en el cuerpo de los PDF diarios del Boletín.
 - **Boletín Oficial:** su portada cambia a diario, por eso solo se vigila que responda. Las disposiciones nuevas se siguen por la página de etiquetas de decretos y, en las ventanas críticas (octubre-noviembre), con una consulta mensual a Gemini/ChatGPT.
+
+## 6. Primer informe (22/10/2026): qué encontró
+
+- 27 fuentes: 6 sin cambios, 16 registradas (línea base), 5 sin respuesta.
+- **Boletín Oficial de Corrientes** (3 fuentes) manda la cadena de certificados incompleta (`UNABLE_TO_VERIFY_LEAF_SIGNATURE`): el informe las marca caídas aunque el sitio ande. No se desactiva la verificación TLS. Opciones, a decidir: agregar el certificado intermedio del Boletín al workflow (`NODE_EXTRA_CA_CERTS`), o dejar que se lea a mano.
+- **`licenciasrecursosnaturales.gob.ar` no existe (ENOTFOUND)**: la URL del portal de licencias que teníamos es incorrecta o está dada de baja. Pendiente: preguntar a Gemini/ChatGPT cuál es el portal vigente (es dato para las FAQ de licencia).
+- **`esquina.gob.ar` no existe**: probamos `esquinacorrientes.gob.ar` (sin confirmar).
