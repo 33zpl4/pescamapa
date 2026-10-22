@@ -52,7 +52,92 @@ export function diferencias(antes, despues) {
 	};
 }
 
+// Some official servers send their certificate without the intermediate one, so Node
+// answers UNABLE_TO_VERIFY_LEAF_SIGNATURE even though browsers load the site. We do what
+// browsers do: read the issuer's address from the server's own certificate ("CA Issuers"),
+// download that intermediate, and retry with VERIFICATION ON against the system roots plus
+// that intermediate. The first connection only reads the public certificate and sends no
+// request; the page is never fetched over an unverified connection.
+import tls from 'node:tls';
+import https from 'node:https';
+import http from 'node:http';
+import { X509Certificate } from 'node:crypto';
+
+const intermedios = new Map(); // host -> PEM[] found for it
+
+function bajar(url) {
+	return new Promise((resolve, reject) => {
+		(url.startsWith('https') ? https : http)
+			.get(url, { timeout: 15_000 }, (res) => {
+				const partes = [];
+				res.on('data', (c) => partes.push(c));
+				res.on('end', () => resolve(Buffer.concat(partes)));
+			})
+			.on('timeout', function () { this.destroy(new Error('TIMEOUT')); })
+			.on('error', reject);
+	});
+}
+
+const aPem = (der) => `-----BEGIN CERTIFICATE-----\n${der.toString('base64').replace(/(.{64})/g, '$1\n')}\n-----END CERTIFICATE-----\n`;
+const emisor = (cert) => /CA Issuers - URI:(\S+)/.exec(cert.infoAccess ?? '')?.[1];
+
+async function completarCadena(host, puerto = 443) {
+	const clave = `${host}:${puerto}`;
+	if (intermedios.has(clave)) return intermedios.get(clave);
+	const pem = [];
+	try {
+		const hoja = await new Promise((resolve, reject) => {
+			const s = tls.connect({ host, port: puerto, servername: host, rejectUnauthorized: false, timeout: 15_000 }, () => {
+				const c = s.getPeerCertificate(true);
+				s.destroy();
+				resolve(c.raw ? new X509Certificate(c.raw) : null);
+			});
+			s.on('error', reject);
+			s.on('timeout', () => s.destroy(new Error('TIMEOUT')));
+		});
+		let actual = hoja;
+		for (let i = 0; i < 3 && actual; i++) {
+			const url = emisor(actual);
+			if (!url) break;
+			const der = await bajar(url);
+			const sig = new X509Certificate(der);
+			pem.push(aPem(der));
+			if (sig.subject === sig.issuer) break; // reached a root
+			actual = sig;
+		}
+	} catch {
+		// leave what we found; the retry below will fail the same way and be reported
+	}
+	intermedios.set(clave, pem);
+	return pem;
+}
+
+function traerEstricto(url, extra) {
+	return new Promise((resolve) => {
+		const extraEnv = process.env.NODE_EXTRA_CA_CERTS ? [readFileSync(process.env.NODE_EXTRA_CA_CERTS, 'utf8')] : [];
+		const q = https.get(url, { ca: [...tls.rootCertificates, ...extraEnv, ...extra], timeout: 25_000, headers: { 'user-agent': 'Mozilla/5.0 (compatible; PescamapaWatch/1.0; +https://pescamapa.com)', accept: 'text/html,application/pdf,*/*' } }, (res) => {
+			if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
+				res.resume();
+				return resolve(traerEstricto(new URL(res.headers.location, url).href, extra));
+			}
+			const partes = [];
+			res.on('data', (c) => partes.push(c));
+			res.on('end', () => resolve({ status: res.statusCode, buf: Buffer.concat(partes) }));
+		});
+		q.on('timeout', () => q.destroy(new Error('TIMEOUT')));
+		q.on('error', (e) => resolve({ status: 0, error: String(e.code || e.message) }));
+	});
+}
+
 async function traer(url) {
+	const r = await traerBasico(url);
+	if (r.error !== 'UNABLE_TO_VERIFY_LEAF_SIGNATURE' || !url.startsWith('https')) return r;
+	const u = new URL(url);
+	const extra = await completarCadena(u.hostname, Number(u.port) || 443);
+	return extra.length ? traerEstricto(url, extra) : r;
+}
+
+async function traerBasico(url) {
 	const ctl = new AbortController();
 	const t = setTimeout(() => ctl.abort(), 25_000);
 	try {
