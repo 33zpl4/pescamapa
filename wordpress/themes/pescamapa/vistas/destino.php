@@ -97,6 +97,7 @@ get_header(); ?>
 					<p><strong><?php pm_e( 'ficha.autoridad' ); ?>:</strong>
 						<?php if ( $d['reglamento']['url'] ) : ?><a href="<?php echo esc_url( $d['reglamento']['url'] ); ?>" rel="noopener"><?php echo esc_html( $d['reglamento']['autoridad'] ); ?></a><?php else : echo esc_html( $d['reglamento']['autoridad'] ); endif; ?>
 					</p>
+					<p><a class="button dark" href="<?php echo esc_url( PM_URL_LICENCIA ); ?>" rel="noopener"><?php pm_e( 'ficha.licencia.cta' ); ?></a> <span class="note"><?php pm_e( 'ficha.licencia.nota' ); ?></span></p>
 					<p class="note">
 						<?php if ( $d['reglamento']['verificado'] ) { echo esc_html( pm_t( 'ficha.ultima' ) . ' ' . pm_fecha( $d['reglamento']['verificado'] ) . '.' ); } ?>
 						<?php pm_e( 'ficha.cambian' ); ?>
