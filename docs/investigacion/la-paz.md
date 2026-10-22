@@ -40,3 +40,7 @@ Río Paraná, margen izquierda, departamento La Paz. Consecuencia: **no aplican*
 ## 5. Vigilancia
 
 Las direcciones del informe se cargaron en `vigilancia/fuentes.json` como "solo responde" para que el primer informe diga cuáles existen: `lapazentrerios.tur.ar`, `lapaz.gob.ar`, `boletinoficial.entrerios.gov.ar`, `entrerios.gov.ar/tramites`, `noticias.entrerios.gov.ar`, `entrerios.tur.ar`. No hay RSS ni API oficial (según el informe, sin confirmar).
+
+## 6. Fiesta emblema (22/10/2026, afiche oficial enviado por el dueño)
+
+**33.ª Fiesta Provincial del Dorado Entrerriano, La Paz (E.R.), 25 y 26 de septiembre de 2026.** Día 25: 12.º Encuentro de pesca con señuelos. Día 26: 33.º Encuentro de pesca con carnada. Premios y sorteos por más de $40.000.000. Inscripción por modalidad (pagos hasta 31/08: $550.000; después: $600.000), por la web de Turismo La Paz. El informe de Gemini tenía razón con el nombre; la fecha de abril del documento parlamentario era de otra fiesta (la del Surubí) o de una edición vieja. **Criterio del dueño:** "destaca su fiesta…", sin descartar que haya otras (como Goya, que tiene la Fiesta Nacional del Surubí y también un certamen de variada). No se sobre-indexa. Fecha de la próxima edición: sin publicar. Aplicado a las guías con `la-paz-fiesta-2026-10-22`.
