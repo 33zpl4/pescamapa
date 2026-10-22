@@ -32,7 +32,7 @@ function pm_pdp_pendiente( string $texto ): string {
 $fuentes = [
 	[ 'Boletín Oficial de Corrientes: Disposición 853/22 (tallas y cupos)', 'https://boletinoficial.corrientes.gob.ar/assets/articulo_adjuntos/7523/original/26-12-2022.pdf', 1 ],
 	[ 'Recursos Naturales de Corrientes', 'https://www.recnaturalesctes.gob.ar/', 1 ],
-	[ 'Licencias de pesca de Recursos Naturales (trámite online)', 'https://licenciasrecursosnaturales.gob.ar', 1 ],
+	[ 'Ministerio de Turismo de Corrientes: trámites y permisos (licencia de pesca)', 'https://corrientes.tur.ar/tramites-y-permisos/', 1 ],
 	[ 'Ministerio de Turismo de Corrientes: acuerdo regional de licencias (alcance)', 'https://corrientes.tur.ar/corrientes-suscribio-el-acuerdo-regional-para-el-reconocimiento-de-licencias-de-pesca-deportiva-con-devolucion-en-el-litoral/', 1 ],
 	[ 'Ministerio de Turismo de Corrientes: Paso de la Patria', 'https://corrientes.tur.ar/destinos/paso-de-la-patria/', 1 ],
 	[ 'Ministerio de Turismo de Corrientes: cómo llegar por tierra', 'https://corrientes.tur.ar/como-llegar-por-tierra/', 1 ],
