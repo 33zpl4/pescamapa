@@ -210,9 +210,9 @@
 	{
 		"id": "esquina-municipio",
 		"nombre": "Municipalidad de Esquina",
-		"url": "https://esquina.gob.ar/",
+		"url": "http://www.esquinacorrientes.gob.ar",
 		"vigilar": "estado",
 		"afecta": "Fiesta Nacional del Pacú (Esquina)",
-		"accion": "Solo avisa si cae; la portada cambia a diario. Buscar la fiesta con Gemini/ChatGPT cada temporada."
+		"accion": "Solo avisa si cae; la portada cambia a diario. Buscar la fiesta con Gemini/ChatGPT cada temporada. URL sin confirmar (lista de banderas de 2021): si no responde, buscar el sitio vigente con Gemini/ChatGPT."
 	}
 ]
