@@ -7,10 +7,10 @@
  * Appends one sentence with that contact to every FAQ answer, in every guide and
  * language, whose answer still says the licence is done "en el portal de Recursos
  * Naturales" (the licence FAQs). Idempotent: rows that already carry the phone are skipped.
- * Dry run first ($aplicar = false); run with wp-script.yml (script = licencia-contacto-2026-10-22).
+ * Dry run found 3 answers (Esquina, Goya, Paso de la Patria; es); owner OK, applied. Run with wp-script.yml (script = licencia-contacto-2026-10-22).
  */
 
-$aplicar = false;
+$aplicar = true;
 
 $frase = [
 	'es' => ' Si no ves el precio o no podés tramitarla online, consultá a la venta de licencias de Turismo de Corrientes (3794 909039, ventadelicencias@gmail.com; datos de corrientes.tur.ar, consultados el 22/10/2026) o preguntale a tu guía.',
