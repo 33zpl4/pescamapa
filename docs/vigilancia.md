@@ -31,3 +31,11 @@ Agregar un objeto a `fuentes.json` (`id`, `nombre`, `url`, `vigilar`, `afecta`, 
 ## 4. Qué se puede decir en público
 
 Solo lo cierto: "revisamos cada semana las fuentes oficiales de las que depende cada guía" **cuando el informe corra de verdad varias semanas seguidas**. Cada guía ya muestra su fecha de actualización; no prometer un plazo de reacción.
+
+
+## 5. Lo que respondió la investigación (22/10/2026, Gemini/ChatGPT)
+
+- **No hay RSS ni API oficial** en los dominios del Estado correntino: la vigilancia por huella de texto es el camino.
+- **Cadencias:** vedas extraordinarias, impredecibles (horas a días; ojo en aguas altas y bajas); veda de desove, anual (se define entre octubre y noviembre); aranceles de licencia, semestral o anual; tallas y cupos (Disposición 853/22), muy estables; torneos, anuales (Goya abril-mayo; Paso de la Patria marzo-abril y agosto; Esquina febrero-marzo).
+- **Sin confirmar:** que `recursosnaturales.corrientes.gob.ar` esté activa (el informe dice que no responde; usamos `recnaturalesctes.gob.ar`); los selectores CSS que sugirió (no los usamos: `vigilar.mjs` compara el texto de la página entera, sin selectores); que las disposiciones menores de Recursos Naturales se publiquen en el cuerpo de los PDF diarios del Boletín.
+- **Boletín Oficial:** su portada cambia a diario, por eso solo se vigila que responda. Las disposiciones nuevas se siguen por la página de etiquetas de decretos y, en las ventanas críticas (octubre-noviembre), con una consulta mensual a Gemini/ChatGPT.
