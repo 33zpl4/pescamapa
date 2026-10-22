@@ -6,10 +6,10 @@
  *
  * Finds every `fuentes` row of every guide (all languages) whose url contains the dead
  * domain and rewrites only its name and url (other fields stay as they are). Idempotent.
- * Dry run first ($aplicar = false); run with wp-script.yml (script = fuente-licencias-2026-10-22).
+ * Dry run was clean (2 rows: es and pt of Paso de la Patria); applied. Run with wp-script.yml (script = fuente-licencias-2026-10-22).
  */
 
-$aplicar = false;
+$aplicar = true;
 
 $dominio = 'licenciasrecursosnaturales.gob.ar';
 $nuevo   = 'https://corrientes.tur.ar/tramites-y-permisos/';
