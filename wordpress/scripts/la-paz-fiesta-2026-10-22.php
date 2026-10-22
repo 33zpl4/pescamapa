@@ -9,7 +9,7 @@
  * Dry run first ($aplicar = false); run with wp-script.yml (script = la-paz-fiesta-2026-10-22).
  */
 
-$aplicar = false;
+$aplicar = true;
 
 $lang = [
 	'es' => [
