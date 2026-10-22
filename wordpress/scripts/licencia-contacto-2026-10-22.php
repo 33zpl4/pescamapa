@@ -18,16 +18,20 @@ $frase = [
 	'en' => ' If you can\'t see the price or can\'t get it online, ask the Corrientes Tourism licence office (3794 909039, ventadelicencias@gmail.com; details from corrientes.tur.ar, checked 22/10/2026) or ask your guide.',
 ];
 $marca = '3794 909039';
-$busca = [ 'portal de Recursos Naturales', 'portal de Recursos Naturais', 'Recursos Naturales portal', 'Natural Resources portal', 'Recursos Naturales' ];
+$busca = [ 'portal de Recursos Naturales', 'portal de Recursos Naturais', 'Recursos Naturales portal', 'Natural Resources portal', 'Recursos Naturales', 'Recursos Naturais', 'Natural Resources' ];
 
 $tocadas = 0;
 foreach ( pm_posts( 'pm_destino' ) as $p ) {
+	// La Paz is in Entre Ríos: the Corrientes Turismo contact does not apply (its guide has its own text).
+	if ( 'la-paz' === pm_clave_de( $p->ID ) ) {
+		continue;
+	}
 	$i     = pm_idioma_de( $p->ID );
 	$filas = pm_filas( 'faqs', $p->ID );
 	$cambio = false;
 	foreach ( $filas as $k => $f ) {
 		$r = (string) ( $f['respuesta'] ?? '' );
-		if ( ! preg_match( '/licen[cs]/iu', (string) ( $f['pregunta'] ?? '' ) . $r ) || false !== strpos( $r, $marca ) ) {
+		if ( ! preg_match( '/licen[cçs]/iu', (string) ( $f['pregunta'] ?? '' ) . $r ) || false !== strpos( $r, $marca ) ) {
 			continue;
 		}
 		$menciona = false;
@@ -37,7 +41,7 @@ foreach ( pm_posts( 'pm_destino' ) as $p ) {
 				break;
 			}
 		}
-		if ( ! $menciona || ! preg_match( '/portal|online|internet/iu', $r ) ) {
+		if ( ! $menciona || ! preg_match( '/portal|online|internet|internet/iu', $r ) ) {
 			continue;
 		}
 		WP_CLI::log( sprintf( '%s (%s) faq %d «%s»', $p->post_name, $i, $k, mb_substr( (string) $f['pregunta'], 0, 70 ) ) );
