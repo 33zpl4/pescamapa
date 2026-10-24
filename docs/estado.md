@@ -106,7 +106,7 @@ todas a nosotros (centralizar datos y cobrar comisión más adelante).
    (Junín/Laguna de Gómez, Chascomús, Lobos).
 6. **Eventos con URL estable** (`/eventos/fiesta-nacional-del-surubi/`,
    Fiesta del Pacú, Fiesta del Dorado): todavía no existe el tipo.
-7. **Fichas de especie faltantes**: pacú, patí, boga, tararira, trucha,
+7. **Fichas de especie**: dorado y surubí publicadas el 24/10/2026 (es/en/pt; dorado: récord IGFA 25,28 kg con Diario Uno como fuente, tamaño típico 50–75 cm / 2,5–6 kg; surubí: pesca y devolución en Corrientes). Sin citar operadores de viaje (decisión del dueño). Faltan: pacú, patí, boga, tararira, trucha,
    pejerrey (hoy solo existen dorado y surubí).
 
 ## Protocolo de verificación (opcional, buena práctica)
