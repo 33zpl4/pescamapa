@@ -72,6 +72,11 @@ jobs:
           w eval-file /tmp/ogaraity.php
           w eval-file /tmp/ogaraity.php   # idempotent
           [[ "$(w post list --post_type=pm_prestador --title='Apart Ogaraity Hotel' --format=count)" == 1 ]] || { echo '✖ Ogaraity no se creó una sola vez'; exit 1; }
+          sed 's/^\$aplicar = false;/$aplicar = true;/' wordpress/scripts/experiencia-isoro-2026-10-24.php > /tmp/isoro.php
+          w eval-file /tmp/isoro.php
+          w eval-file /tmp/isoro.php   # idempotent: updates the same record
+          [[ "$(w post list --post_type=pm_prestador --title='Experiencia Isoró' --format=count)" == 1 ]] || { echo '✖ Experiencia Isoró no quedó una sola vez'; exit 1; }
+          [[ "$(w post list --post_type=pm_prestador --title='Agus — guía de pesca en Goya' --format=count)" == 0 ]] || { echo '✖ el ejemplo Agus sigue ahí'; exit 1; }
           # The script leaves Esquina as a draft; publish it here to render it.
           w post update $(w post list --post_type=pm_destino --post_status=draft --format=ids) --post_status=publish
           # The sizes-and-quotas FAQ only sees published guides (as on the server).
