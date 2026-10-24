@@ -18,8 +18,19 @@ $aplicar = false;
 $nombre  = 'Apart Ogaraity Hotel';
 $hoy     = '20261024';
 
-if ( get_posts( [ 'post_type' => 'pm_prestador', 'post_status' => 'any', 'title' => $nombre, 'fields' => 'ids' ] ) ) {
-	WP_CLI::success( "$nombre ya existe: no se toca nada." );
+// Any existing record that mentions Ogaraity (the title may differ: "Ogaraity Apart Hotel").
+$existentes = get_posts( [ 'post_type' => 'pm_prestador', 'post_status' => 'any', 's' => 'Ogaraity', 'posts_per_page' => 20 ] );
+foreach ( $existentes as $p ) {
+	$f = [];
+	foreach ( [ 'tipo', 'prest_destino', 'prest_publico', 'prest_consentimiento', 'datos_ejemplo', 'estado', 'prest_fuente', 'incluye', 'prest_idiomas' ] as $k ) {
+		$f[] = $k . '=' . wp_json_encode( get_field( $k, $p->ID ) );
+	}
+	WP_CLI::log( "EXISTE #{$p->ID} '{$p->post_title}' [{$p->post_status}] " . implode( ' ', $f ) );
+	WP_CLI::log( '  descripcion: ' . wp_trim_words( (string) get_field( 'descripcion', $p->ID ), 40 ) );
+	WP_CLI::log( '  fotos: ' . wp_json_encode( get_field( 'fotos', $p->ID ) ) . ' | notas: ' . wp_trim_words( (string) get_field( 'notas', $p->ID ), 25 ) );
+}
+if ( $existentes ) {
+	WP_CLI::success( 'Ya hay una ficha con "Ogaraity": no se crea otra. Decidir si se actualiza esa.' );
 	return;
 }
 $desc = 'Apart hotel en Goya (Av. Millán Medina 7410), con vistas al río según su ficha de Booking, donde figura entre los mejor valorados (octubre de 2026). Organizan excursiones de pesca. Departamentos con cocina equipada, aire acondicionado, baño privado, terraza o balcón y jardín; piscina al aire libre (de temporada), estacionamiento privado y wifi gratis, desayuno disponible; admite mascotas bajo petición. Atienden en español, inglés y portugués.';
