@@ -72,3 +72,26 @@ El dueño pegó cinco respuestas (permiso, reglamento Chimehuín/Malleo, didymo,
 2. *Lo mismo para el lago Lácar y el Huechulafquen, y qué cobra o exige Parques Nacionales (Lanín) por ingreso o permiso.*
 3. *Texto del artículo del reglamento 2026-2027 sobre limpieza de equipos (didymo) y si prohíbe las suelas de fieltro; enlace al PDF.*
 4. *Para cada prestador de la lista de candidatos: ¿el sitio abre?, ¿qué contacto y qué tarifa publica hoy? Solo datos que figuren en su propio sitio.*
+
+## 8. Fuente oficial abierta: Reglamento, Parte Primera (pegado por el dueño, 24/10/2026)
+
+El dueño copió el texto de https://reglamentodepesca.org.ar/reglamento/ (portal interprovincial: Neuquén, Río Negro, Chubut y Parques Nacionales). **Es la primera fuente oficial leída de esta guía.** Dos advertencias:
+
+- **Es la edición 2025-2026**, no la 2026-2027: art. 7 "Se inicia el 01/11/2025 y finaliza el 01/05/2026"; art. 5 los permisos de temporada vencen el 31/10/2026; art. 18 sacrificio en lagos del 01/12/2025 al 31/03/2026. Las fechas y los valores se publican **con su año** (decisión 22/10/2026: un precio pasado se publica con su año).
+- **Falta la Parte Segunda** (Anexos por jurisdicción y ambiente): sin ella no hay reglas de Chimehuín, Malleo, Lácar, etc., ni fechas de cierre por ambiente. Los "31 de mayo" de Gemini siguen sin respaldo.
+
+**Qué se publica (art. citado):**
+
+| Dato | Art. |
+| --- | --- |
+| Permiso personal, con DNI; categorías y valores 2025-2026: residente país $10.000 diario / $20.000 10 días / $40.000 temporada; menores 13-17 temporada $20.000; gratis mayores de 65, jubilados, pensionados, menores de hasta 12 y discapacidad; extranjeros no residentes $50.000 / $140.000 / $280.000; trolling adicional $20.000 / $40.000 / $80.000 | 2, 3 |
+| Los permisos del reglamento valen en Neuquén, Río Negro, Chubut y Parques Nacionales | 4 |
+| Solo de día; un equipo por pescador; un señuelo artificial con un único anzuelo | 6, 13, 16 |
+| Ríos y arroyos (y 200 m de su naciente o desembocadura en un lago): devolución obligatoria, anzuelo simple sin rebaba o aplastada | 17, 23 |
+| Lagos: un ejemplar por día del 01/12 al 31/03 (2025-2026), con excepciones | 18 |
+| Prohibido calzado de vadeo con suela de fieltro; prohibido el plomo en anclas, plomadas y señuelos | 22.18, 22.21 |
+| Desinfección de equipos, embarcaciones y vehículos cuando lo requiera la autoridad; extranjeros con equipos nuevos o desinfectados | 27, 28 |
+
+**Corrige a Gemini:** el fieltro está prohibido (art. 22.21, confirmado) pero el "Artículo 28" y los números de decreto/resolución del informe no se citan: el texto solo dice "cuando lo requiera la autoridad de aplicación". El protocolo con lavandina y salmuera sigue sin fuente abierta.
+
+**Todavía abierto:** valores 2026-2027; Anexo de Neuquén por ambiente; Lanín (Parques Nacionales); prestadores. Ronda 2 §7, preguntas 1 a 4 (la 3 ya no hace falta salvo el protocolo de desinfección). Vigilancia: `reglamento-patagonico` pasa a `texto` en `fuentes.json`: cuando el portal cambie a la edición 2026-2027, actualizar la guía.

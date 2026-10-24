@@ -69,12 +69,13 @@ jobs:
             grep -q 'PENDIENTE' page.html && { echo "✖ $p muestra una nota PENDIENTE"; fail=1; }
             grep -q '24.251,60' page.html || { echo "✖ $p sin el arancel de Entre Ríos"; fail=1; }
           done
-          # San Martín y Junín de los Andes (Neuquén): season opens 1 November; no fees or per-water rules published.
+          # San Martín y Junín de los Andes (Neuquén): season opens 1 November; 2025-2026 reference fees from the regulation, no per-water rules.
           for p in /patagonia/neuquen/pesca-san-martin-junin-de-los-andes/ /en/patagonia/neuquen/fishing-san-martin-junin-de-los-andes/; do
             check "$p" 200 'TouristDestination'
             grep -qE "name=[\"']robots[\"'][^>]*noindex" page.html && { echo "✖ $p tiene noindex"; fail=1; }
             grep -q 'PENDIENTE' page.html && { echo "✖ $p muestra una nota PENDIENTE"; fail=1; }
             grep -q 'cazaypesca.neuquen.gob.ar' page.html || { echo "✖ $p sin el enlace al permiso de Neuquén"; fail=1; }
+            grep -q 'reglamentodepesca.org.ar' page.html || { echo "✖ $p sin el enlace al reglamento patagónico"; fail=1; }
           done
           # The sample WordPress pages stay unpublished.
           for p in /hola-mundo/ /pagina-ejemplo/; do check "$p" 404; done
