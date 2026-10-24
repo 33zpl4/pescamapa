@@ -43,6 +43,10 @@ jobs:
           check /mapa/ 200 'class="mapa"'
           check /en/map/ 200 'class="mapa"'
           check /pique/ 200 'pique-mapa'
+          check /especies/dorado/ 200 '25,28 kg' 'PENDIENTE'
+          check /en/species/dorado/ 200 '25.28 kg' 'PENDIENTE'
+          check /pt/especies/dorado/ 200 '25,28 kg' 'PENDIENTE'
+          check /especies/surubi/ 200 'solo pesca y devolución' 'PENDIENTE'
           check /en/bite-zones/ 200 'pique-mapa'
           check /creditos/ 200
           check /entrevistas/ 200 'v-entrevistas'

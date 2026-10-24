@@ -128,6 +128,7 @@ function pm_especie( int $post_id ): array {
 		'cientifico'  => (string) pm_campo( 'cientifico', $post_id ),
 		'resumen'     => (string) pm_campo( 'resumen', $post_id ),
 		'fuentes'     => pm_filas( 'fuentes', $post_id ),
+		'actualizado' => (string) pm_campo( 'actualizado', $post_id ),
 		'seo_title'   => (string) pm_campo( 'seo_title', $post_id ),
 		'seo_description' => (string) pm_campo( 'seo_description', $post_id ),
 	];
