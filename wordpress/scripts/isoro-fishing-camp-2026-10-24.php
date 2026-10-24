@@ -13,7 +13,7 @@
  * Idempotent: if a record with this name exists it is left alone. Dry run first ($aplicar = false).
  */
 
-$aplicar = false;
+$aplicar = true;
 $nombre  = 'Isoró Fishing Camp';
 $notas   = "BORRADOR OCULTO (24/10/2026). Prestador distinto de Experiencia Isoró. Según el dueño: es uno grande, con un perfil exitoso en Instagram. Falta todo lo demás: qué ofrece, precios, contacto, fotos cedidas y permiso.\n"
 	. "TEXTO RECIBIDO DEL DUEÑO (origen desconocido, posiblemente generado por una IA; NO verificado; varios datos parecen inventados; además lo atribuía a 'Agustin Enrique' y el dueño aclaró que Agus es de Experiencia Isoró):\n"
