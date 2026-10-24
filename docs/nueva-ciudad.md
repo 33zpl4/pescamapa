@@ -1,6 +1,6 @@
 # Cómo sumar una ciudad (receta de las 5 guías hechas)
 
-Hechas: Goya, Esquina, Paso de la Patria (Corrientes), La Paz (Entre Ríos) y San Martín y Junín de los Andes (Neuquén, en rama: `wordpress/scripts/san-martin-junin-2026-10-24.php`, modelo para una guía con poco dato confirmado y es/en). Modelo a copiar: `wordpress/scripts/la-paz-2026-10-22.php` (otra provincia) y `paso-de-la-patria-2026-10-21.php`.
+Hechas: Goya, Esquina, Paso de la Patria (Corrientes), La Paz (Entre Ríos) y San Martín y Junín de los Andes (Neuquén, en vivo el 24/10/2026: `wordpress/scripts/san-martin-junin-2026-10-24.php`, modelo para una guía con poco dato confirmado y es/en). Modelo a copiar: `wordpress/scripts/la-paz-2026-10-22.php` (otra provincia) y `paso-de-la-patria-2026-10-21.php`.
 
 ## Pasos
 
