@@ -1,6 +1,6 @@
 # Estado del proyecto — para retomar en otra sesión
 
-Última actualización: 24/10/2026 (5.ª guía: San Martín y Junín de los Andes, en rama). Actualizá este archivo al cerrar cada sesión.
+Última actualización: 24/10/2026 (5.ª guía: San Martín y Junín de los Andes, en vivo). Actualizá este archivo al cerrar cada sesión.
 
 ## Objetivo (del dueño)
 
@@ -48,7 +48,7 @@ todas a nosotros (centralizar datos y cobrar comisión más adelante).
 - **Siguiente sesión**: sumar ciudades con la receta de `docs/nueva-ciudad.md`. La **zona de pique** (`/pique/`) tiene su MVP construido: ver `docs/pique.md` (falta probarlo en un teléfono real).
 - Pendientes del dueño: captura del mapa del inicio y de La Paz en vivo; ronda 2 de Gemini para Entre Ríos (tallas, cupos, vedas); OK para limpiar URLs muertas de `vigilancia/fuentes.json` (Entre Ríos: `boletinoficial.entrerios.gov.ar`, `entrerios.gov.ar/tramites` eran supuestas); revisar en Search Console el canonical http/https del inicio.
 
-- **5.ª guía: San Martín y Junín de los Andes (Neuquén, es/en), mergeada el 24/10/2026 (PR #55); simulacro limpio (es y en, 10 FAQs y 5 fuentes) y aplicada con `$aplicar = true` en el PR siguiente. Script `san-martin-junin-2026-10-24`. Falta ver la captura real del inicio/mapa. Fuentes: folleto oficial 2025/2026 del Reglamento (Parte Primera, Anexo Neuquén y Anexo Parques Nacionales del Sur, pasados por el dueño) y dos medios para la temporada 2026-2027; **todo dato del reglamento va con su año 2025-2026**. Dossier, auditoría de Gemini y lo no usado: `docs/investigacion/san-martin-junin.md` §7 a §10. **Falta**: la edición 2026-2027 del reglamento (la vigila `reglamento-patagonico` en `vigilancia/fuentes.json`), confirmar con la Intendencia del Lanín si cobra ingreso, y los prestadores (ninguno cargado).
+- **5.ª guía: San Martín y Junín de los Andes (Neuquén, es/en): en vivo desde el 24/10/2026** (PR #55 y #57; guías #94 es y #95 en; `wp-script` corrida 40 y `verify-live` en verde). El dueño confirmó el mismo día que aparece y se ve bien (inicio, mapa y etiqueta). Script `san-martin-junin-2026-10-24`. Fuentes: folleto oficial 2025/2026 del Reglamento (Parte Primera, Anexo Neuquén y Anexo Parques Nacionales del Sur, pasados por el dueño) y dos medios para la temporada 2026-2027; **todo dato del reglamento va con su año 2025-2026**. Dossier, auditoría de Gemini y lo no usado: `docs/investigacion/san-martin-junin.md` §7 a §10. **Falta**: la edición 2026-2027 del reglamento (la vigila `reglamento-patagonico` en `vigilancia/fuentes.json`), confirmar con la Intendencia del Lanín si cobra ingreso, y los prestadores (ninguno cargado).
 - **Alojamientos y prestadores de Goya** (24/10/2026): modelo en `docs/modelo-alojamientos.md`. Publicados: Ogaraity (#46) y Experiencia Isoró (#48), con fotos. **Isoró Fishing Camp** está como borrador oculto (`isoro-fishing-camp-2026-10-24`): solo se sabe que es un operador grande de Goya con un Instagram exitoso; el texto largo que llegó es de origen dudoso y quedó solo en las notas internas. **Próxima sesión**: ver su Instagram, pedirles datos y fotos cedidas, completar y publicar. También: fotos extra con autor, y contactar a Ogaraity e Isoró (condición especial por Pescamapa).
 
 ## Decisiones del dueño (no relitigar)
@@ -102,8 +102,7 @@ todas a nosotros (centralizar datos y cobrar comisión más adelante).
    falta fijar el destinatario (script `email-consultas-2026-10-21`) y
    confirmar que el servidor envía correo (probar el formulario). Si no llega,
    igual quedan en wp-admin → Consultas.
-5. **Próximas guías** (matriz SEO; receta en `docs/nueva-ciudad.md`; hechas Paso de la Patria, La Paz y San Martín/Junín en rama): completar
-   San Martín/Junín con la ronda 1 de Gemini (permiso, reglas por ambiente, Lanín) → Río Grande → lagunas
+5. **Próximas guías** (matriz SEO; receta en `docs/nueva-ciudad.md`; hechas Paso de la Patria, La Paz y San Martín/Junín): Río Grande → lagunas
    (Junín/Laguna de Gómez, Chascomús, Lobos).
 6. **Eventos con URL estable** (`/eventos/fiesta-nacional-del-surubi/`,
    Fiesta del Pacú, Fiesta del Dorado): todavía no existe el tipo.
