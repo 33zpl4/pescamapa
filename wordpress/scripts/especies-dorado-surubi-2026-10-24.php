@@ -32,7 +32,7 @@ function pm_sp_pend( string $t ): string {
 	return "<!-- wp:paragraph -->\n<p>PENDIENTE: {$t}</p>\n<!-- /wp:paragraph -->";
 }
 
-$src_igfa = [ 'nombre' => 'The Angler Company: The Official Golden Dorado World Record (cita el récord all-tackle de IGFA)', 'url' => 'https://theanglercompany.com/blog/golden-dorado-world-record', 'oficial' => 0, 'consultada' => $hoy ];
+$src_igfa = [ 'nombre' => 'The Angler Company: Golden Dorado World Record: Size Guide & Biggest Fish (cita los récords de IGFA; nota de un operador de viajes)', 'url' => 'https://theanglercompany.com/blog/golden-dorado-world-record', 'oficial' => 0, 'consultada' => $hoy ];
 $src_853  = [ 'nombre' => 'Boletín Oficial de Corrientes: Disposición 853/22 (tallas y cupos)', 'url' => 'https://boletinoficial.corrientes.gob.ar/assets/articulo_adjuntos/7523/original/26-12-2022.pdf', 'oficial' => 1, 'consultada' => $hoy ];
 
 $contenido = [
@@ -44,6 +44,10 @@ $contenido = [
 		] ),
 		pm_sp_h( 'Récord mundial del dorado' ),
 		pm_sp_p( 'El récord mundial del dorado en la categoría todo equipo (<em>all-tackle</em>) de la IGFA, la International Game Fish Association, es de <strong>25,28 kg (55 libras y 11 onzas)</strong>. Lo pescó Andre De Button en 2006 en el río Uruguay, en la frontera entre Argentina y Uruguay. La IGFA certifica sus récords con control de la línea y del terminal, pesaje en balanza certificada, fotografías y declaración de testigos. Dato tomado de la nota de The Angler Company, que cita a la IGFA (consultada el 24/10/2026).' ),
+		pm_sp_h( 'Cuánto pesa un dorado' ),
+		pm_sp_p( 'Según The Angler Company, un operador de viajes de pesca, un dorado común pesa entre 2 y 5 kg (51 a 71 cm); uno bueno, de 7 a 9 kg (76 a 91 cm); y uno de trofeo, de 9 a 13 kg (97 a 114 cm). Más de 18 kg es excepcional. Son cifras de un solo operador: faltan las de guías locales de Goya y las de FishBase.' ),
+		pm_sp_h( 'Otros récords y de dónde salió el mayor' ),
+		pm_sp_p( 'La IGFA certificó además el récord con mosca, de 50 libras (unos 22,7 kg), pescado por Mike Sadar en abril de 2012, y varios récords por categoría de línea de entre 43 y 52 libras entre 2022 y 2025 (según la misma nota). El récord general salió de "La Zona", el tramo del río Uruguay justo aguas abajo de la represa de Salto Grande, donde el acceso está limitado a cuatro embarcaciones a la vez.' ),
 		pm_sp_h( 'Reglas para pescarlo' ),
 		pm_sp_p( 'En Corrientes el dorado es <strong>solo pesca y devolución</strong>: no se retiene. Lo dice la Disposición 853/22 de la Dirección de Recursos Naturales (Boletín Oficial de Corrientes, 26 de diciembre de 2022), vigente hasta que otro acto la modifique. Las reglas de otras provincias y las vedas por tramo cambian cada año: mirá la guía de cada destino, preguntale a tu guía o consultá a la autoridad del lugar antes de salir.' ),
 		pm_sp_pend( 'tamaño y peso típicos en el Paraná medio (que lo diga un guía local, con su nombre), máximo biológico (FishBase) y temporada, con fuente.' ),
@@ -56,9 +60,13 @@ $contenido = [
 		] ),
 		pm_sp_h( 'Golden dorado world record' ),
 		pm_sp_p( 'The IGFA (International Game Fish Association) all-tackle world record for the golden dorado is <strong>25.28 kg (55 lb 11 oz)</strong>. Andre De Button caught it in 2006 in the Uruguay River, on the border between Argentina and Uruguay. The IGFA certifies its records with line and leader testing, certified scale weighing, photographs and signed witness statements. Figure taken from The Angler Company article, which cites the IGFA (consulted 24 October 2026).' ),
+		pm_sp_h( 'How big is a golden dorado' ),
+		pm_sp_p( 'According to The Angler Company, a fishing-trip operator, a common golden dorado weighs 2 to 5 kg (5 to 12 lb, 51 to 71 cm); a good one, 7 to 9 kg (76 to 91 cm); and a trophy, 9 to 13 kg (97 to 114 cm). Anything over 18 kg is exceptional. These are figures from a single operator: local guides in Goya and FishBase are still missing.' ),
+		pm_sp_h( 'Other records and where the biggest came from' ),
+		pm_sp_p( 'The IGFA has also certified the fly-fishing record, 50 lb (about 22.7 kg), caught by Mike Sadar in April 2012, and several line-class records between 43 and 52 lb from 2022 to 2025 (according to the same article). The all-tackle record came from "La Zona", the stretch of the Uruguay River just below the Salto Grande dam, where access is limited to four boats at a time.' ),
 		pm_sp_h( 'Rules for fishing it' ),
 		pm_sp_p( 'In Corrientes the golden dorado is <strong>catch and release only</strong>: it cannot be kept. This is set by Disposición 853/22 of the Dirección de Recursos Naturales (Boletín Oficial de Corrientes, 26 December 2022), in force until another act changes it. Rules in other provinces and closed seasons by river stretch change every year: check the guide of each destination, ask your guide or contact the local authority before you go.' ),
-		pm_sp_pend( 'typical size and weight in the middle Paraná (said by a local guide, with their name), biological maximum (FishBase) and season, with sources.' ),
+		pm_sp_pend( 'typical size in Goya said by a local guide (with their name), biological maximum (FishBase) and season, with sources.' ),
 	],
 	'dorado:pt' => [
 		pm_sp_datos( 'Dados-chave', [
@@ -68,6 +76,10 @@ $contenido = [
 		] ),
 		pm_sp_h( 'Recorde mundial do dourado' ),
 		pm_sp_p( 'O recorde mundial do dourado na categoria <em>all-tackle</em> da IGFA, a International Game Fish Association, é de <strong>25,28 kg (55 libras e 11 onças)</strong>. Foi pescado por Andre De Button em 2006 no rio Uruguai, na fronteira entre Argentina e Uruguai. A IGFA certifica seus recordes com verificação da linha e do terminal, pesagem em balança certificada, fotografias e declaração de testemunhas. Dado tirado da matéria da The Angler Company, que cita a IGFA (consultada em 24/10/2026).' ),
+		pm_sp_h( 'Quanto pesa um dourado' ),
+		pm_sp_p( 'Segundo a The Angler Company, uma operadora de viagens de pesca, um dourado comum pesa entre 2 e 5 kg (51 a 71 cm); um bom, de 7 a 9 kg (76 a 91 cm); e um troféu, de 9 a 13 kg (97 a 114 cm). Mais de 18 kg é excepcional. São números de uma só operadora: faltam os de guias locais de Goya e os do FishBase.' ),
+		pm_sp_h( 'Outros recordes e de onde saiu o maior' ),
+		pm_sp_p( 'A IGFA certificou também o recorde com mosca, de 50 libras (cerca de 22,7 kg), pescado por Mike Sadar em abril de 2012, e vários recordes por categoria de linha entre 43 e 52 libras de 2022 a 2025 (segundo a mesma matéria). O recorde geral saiu de "La Zona", o trecho do rio Uruguai logo abaixo da represa de Salto Grande, onde o acesso é limitado a quatro embarcações por vez.' ),
 		pm_sp_h( 'Regras para pescá-lo' ),
 		pm_sp_p( 'Em Corrientes o dourado é <strong>somente pesca e soltura</strong>: não pode ser retido. É o que diz a Disposição 853/22 da Direção de Recursos Naturais (Boletim Oficial de Corrientes, 26 de dezembro de 2022), em vigor até que outro ato a modifique. As regras de outras províncias e as vedas por trecho mudam a cada ano: veja o guia de cada destino, pergunte ao seu guia ou consulte a autoridade local antes de sair.' ),
 		pm_sp_pend( 'tamanho e peso típicos no Paraná médio (dito por um guia local, com o nome dele), máximo biológico (FishBase) e temporada, com fonte.' ),
