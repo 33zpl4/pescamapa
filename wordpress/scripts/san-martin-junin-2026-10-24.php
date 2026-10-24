@@ -16,11 +16,11 @@
  * notes: the 2026-2027 fees and dates, the Parques Nacionales annex (Lácar, Huechulafquen) and
  * any outfitter (no opened source, none listed).
  *
- * Idempotent: a guide that exists is never touched. Dry run first ($aplicar = false);
+ * Idempotent: a guide that exists is never touched. Dry run was clean (es + en, 10 FAQs and 5 sources each; applied);
  * run with wp-script.yml (script = san-martin-junin-2026-10-24).
  */
 
-$aplicar = false;
+$aplicar = true;
 $hoy     = '20261024';
 
 function pm_smj_p( string $html ): string {
