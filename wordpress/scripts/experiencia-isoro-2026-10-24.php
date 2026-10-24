@@ -20,7 +20,7 @@ $hoy     = '20261024';
 $ejemplo = 'Agus — guía de pesca en Goya';
 $nombre  = 'Experiencia Isoró';
 
-$desc = 'Pesca deportiva con devolución y paseos náuticos por la Reserva Natural Isoró y el río Paraná, con base en Goya (la boca del Isoró queda 4 km aguas abajo del puerto). En la reserva, dorado con flycast, baitcast y spinning; en el Paraná, pesca con carnada anclada o a garete, también de noche. Media jornada o jornada completa (11 a 12 horas de pesca). Packs de un día de pesca, o de 1 a 7 noches de alojamiento con días de pesca, con alojamientos que los acompañan, entre ellos Ogaraity Apart Hotel. Atienden por su cuenta, también a quienes no se alojan con ellos. Paseos náuticos de hasta 5 personas para observar aves y fotografiar, de media jornada o de 8 a 10 horas.';
+$desc = 'Pesca deportiva con devolución y paseos náuticos por la Reserva Natural Isoró y el río Paraná, con base en Goya (la boca del Isoró queda 4 km aguas abajo del puerto). En la reserva, dorado con flycast, baitcast y spinning; en el Paraná, pesca con carnada anclada o a garete, también de noche. Media jornada o jornada completa (11 a 12 horas de pesca). Packs de un día de pesca, o de 1 a 7 noches de alojamiento con días de pesca. Paseos náuticos de hasta 5 personas para observar aves y fotografiar, de media jornada o de 8 a 10 horas.';
 $notas = "Fuente: folleto 'Experiencia Isoró | Pesca & Naturaleza' (2026), enviado por el dueño el 24/10/2026. Material del propio prestador; todavía NO hablamos con ellos para el listado.\n"
 	. "CONTACTO INTERNO (no se imprime): Tomás Frattini, WhatsApp +54 3777 603774; Augusto Frattini, WhatsApp +54 11 53840108; tomasfraa@gmail.com; Instagram @tomasfrattini.pesca. ('Agus' = Augusto, según el dueño.)\n"
 	. "Lancha: Astillero La Paz (ALP), modelo Guaycurú 630; butacas o back to back, parabrisas, plataformas de casteo en proa y popa, cajones, luces de navegación. Motor: el folleto no lo dice.\n"
@@ -59,15 +59,15 @@ if ( $existentes ) {
 } else {
 	WP_CLI::log( ( $aplicar ? 'APLICA' : 'SIMULACRO' ) . ": crear '$nombre' (goya, guía y operador, listado público)." );
 }
-// Ogaraity: its fishing trips are its own guide's and Experiencia Isoró's (owner, 24/10/2026).
+// Ogaraity: the public text only says it offers fishing trips; who runs them stays internal (owner, 24/10/2026).
 $oga = get_posts( [ 'post_type' => 'pm_prestador', 'post_status' => 'any', 's' => 'Ogaraity', 'posts_per_page' => 5 ] );
 if ( 1 === count( $oga ) ) {
 	$oga_id   = $oga[0]->ID;
-	$oga_desc = 'Apart hotel en Goya (Av. Millán Medina 7410), con vistas al río según su ficha de Booking, donde figura entre los mejor valorados (octubre de 2026). Ofrece excursiones de pesca con un guía propio y también con Experiencia Isoró, que además atiende por su cuenta. Departamentos con cocina equipada, aire acondicionado, baño privado, terraza o balcón y jardín; piscina al aire libre (de temporada), estacionamiento privado y wifi gratis, desayuno disponible; admite mascotas bajo petición. Atienden en español, inglés y portugués.';
+	$oga_desc = 'Apart hotel en Goya (Av. Millán Medina 7410), con vistas al río según su ficha de Booking, donde figura entre los mejor valorados (octubre de 2026). Ofrece excursiones de pesca. Departamentos con cocina equipada, aire acondicionado, baño privado, terraza o balcón y jardín; piscina al aire libre (de temporada), estacionamiento privado y wifi gratis, desayuno disponible; admite mascotas bajo petición. Atienden en español, inglés y portugués.';
 	WP_CLI::log( ( $aplicar ? 'APLICA' : 'SIMULACRO' ) . ": Ogaraity #$oga_id descripcion → " . wp_trim_words( $oga_desc, 30 ) );
 	if ( $aplicar ) {
 		update_field( 'descripcion', $oga_desc, $oga_id );
-		$ok2 = false !== strpos( (string) get_field( 'descripcion', $oga_id ), 'Experiencia Isoró' );
+		$ok2 = false !== strpos( (string) get_field( 'descripcion', $oga_id ), 'Ofrece excursiones de pesca.' );
 		WP_CLI::log( ( $ok2 ? 'VERIFIED' : 'FALLÓ' ) . ": Ogaraity #$oga_id" );
 		$ok2 || WP_CLI::error( 'Ogaraity: la lectura de vuelta no coincide.' );
 	}
