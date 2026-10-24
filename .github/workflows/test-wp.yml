@@ -190,6 +190,8 @@ jobs:
           check /especies/dorado/ 200 'Récord mundial del dorado' 'PENDIENTE'
           check /especies/dorado/ 200 '25,28 kg'
           check /especies/dorado/ 200 'Fuentes consultadas'
+          check /especies/dorado/ 200 'application/ld+json'
+          check /especies/dorado/ 200 'Dorado: récord mundial, tamaño y reglas' 'Angler'
           check /especies/surubi/ 200 'solo pesca y devolución' 'PENDIENTE'
           # Zona de pique (docs/pique.md): empty state, report through the real endpoint, privacy, delay, abuse limits.
           check /pique/ 200 'pique-mapa' 'reportes en'
