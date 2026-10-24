@@ -68,6 +68,10 @@ jobs:
           w eval-file wordpress/scripts/paso-de-la-patria-2026-10-21.php   # idempotent
           w eval-file wordpress/scripts/prestadores-2026-10-20.php
           w eval-file wordpress/scripts/prestadores-2026-10-20.php   # idempotent
+          sed 's/^\$aplicar = false;/$aplicar = true;/' wordpress/scripts/ogaraity-2026-10-24.php > /tmp/ogaraity.php
+          w eval-file /tmp/ogaraity.php
+          w eval-file /tmp/ogaraity.php   # idempotent
+          [[ "$(w post list --post_type=pm_prestador --title='Apart Ogaraity Hotel' --format=count)" == 1 ]] || { echo '✖ Ogaraity no se creó una sola vez'; exit 1; }
           # The script leaves Esquina as a draft; publish it here to render it.
           w post update $(w post list --post_type=pm_destino --post_status=draft --format=ids) --post_status=publish
           # The sizes-and-quotas FAQ only sees published guides (as on the server).
