@@ -278,5 +278,29 @@
 		"vigilar": "estado",
 		"afecta": "La Paz: respaldo de los aranceles",
 		"accion": "Solo avisa si cae."
+	},
+	{
+		"id": "nqn-permisos",
+		"nombre": "Caza y Pesca de Neuquén: permisos de pesca",
+		"url": "https://cazaypesca.neuquen.gob.ar/permisos",
+		"vigilar": "estado",
+		"afecta": "San Martín y Junín: permiso, valores y enlace de compra",
+		"accion": "Si responde, pasar a 'texto', leer los valores 2026-2027 y publicarlos en la guía (ronda 1, pregunta 1). Si no responde, el enlace de la guía está roto."
+	},
+	{
+		"id": "nqn-folleto-pesca",
+		"nombre": "Neuquén Turismo: folleto digital de pesca 2026",
+		"url": "https://turismo.neuquen.gob.ar/wp-content/uploads/2026/06/Folleto_Pesca_Digital-2026.pdf",
+		"vigilar": "estado",
+		"afecta": "San Martín y Junín: ambientes y reglas por ambiente",
+		"accion": "Si responde, leerlo completo y cargar las reglas por ambiente (ronda 1, preguntas 2 a 4)."
+	},
+	{
+		"id": "nqn-prensa-permisos",
+		"nombre": "Noticias NQN: compra de permisos para la nueva temporada (15/10/2026)",
+		"url": "https://www.noticiasnqn.com.ar/noticias/2026/10/15/356687-neuquen-habilito-la-compra-de-permisos-para-la-nueva-temporada-de-pesca",
+		"vigilar": "estado",
+		"afecta": "San Martín y Junín: respaldo de las fechas de temporada y venta",
+		"accion": "Solo avisa si cae."
 	}
 ]

@@ -1,6 +1,6 @@
 # Estado del proyecto — para retomar en otra sesión
 
-Última actualización: 24/10/2026. Actualizá este archivo al cerrar cada sesión.
+Última actualización: 24/10/2026 (5.ª guía: San Martín y Junín de los Andes, en rama). Actualizá este archivo al cerrar cada sesión.
 
 ## Objetivo (del dueño)
 
@@ -47,6 +47,8 @@ todas a nosotros (centralizar datos y cobrar comisión más adelante).
 - Páginas de ejemplo de WordPress despublicadas (404).
 - **Siguiente sesión**: sumar ciudades con la receta de `docs/nueva-ciudad.md`. La **zona de pique** está decidida y diseñada (`docs/pique.md`) pero **no construida**.
 - Pendientes del dueño: captura del mapa del inicio y de La Paz en vivo; ronda 2 de Gemini para Entre Ríos (tallas, cupos, vedas); OK para limpiar URLs muertas de `vigilancia/fuentes.json` (Entre Ríos: `boletinoficial.entrerios.gov.ar`, `entrerios.gov.ar/tramites` eran supuestas); revisar en Search Console el canonical http/https del inicio.
+
+- **5.ª guía: San Martín y Junín de los Andes (Neuquén, es/en), en rama, sin mergear ni correr** (24/10/2026). Script `san-martin-junin-2026-10-24` (`$aplicar = false`: primero simulacro con `wp-script.yml`, leer el log, después poner `true`, mergear y correr). Dossier y **ronda 1 de preguntas para Gemini** en `docs/investigacion/san-martin-junin.md`. El sandbox no pudo abrir ningún sitio oficial de Neuquén: la guía publica solo lo que dos medios coinciden (venta de permisos desde el 15/10/2026, temporada desde el 1 de noviembre, reglamento patagónico unificado) y dice "no lo podemos confirmar" sobre **valores del permiso y reglas por ambiente**. Sin prestadores. Hasta correr el script, `verify-live` falla en esa guía (esperado).
 
 ## Decisiones del dueño (no relitigar)
 
@@ -96,8 +98,8 @@ todas a nosotros (centralizar datos y cobrar comisión más adelante).
    falta fijar el destinatario (script `email-consultas-2026-10-21`) y
    confirmar que el servidor envía correo (probar el formulario). Si no llega,
    igual quedan en wp-admin → Consultas.
-5. **Próximas guías** (matriz SEO; receta en `docs/nueva-ciudad.md`; hechas Paso de la Patria y La Paz): San Martín
-   de los Andes / Junín de los Andes (mosca) → Río Grande → lagunas
+5. **Próximas guías** (matriz SEO; receta en `docs/nueva-ciudad.md`; hechas Paso de la Patria, La Paz y San Martín/Junín en rama): completar
+   San Martín/Junín con la ronda 1 de Gemini (permiso, reglas por ambiente, Lanín) → Río Grande → lagunas
    (Junín/Laguna de Gómez, Chascomús, Lobos).
 6. **Eventos con URL estable** (`/eventos/fiesta-nacional-del-surubi/`,
    Fiesta del Pacú, Fiesta del Dorado): todavía no existe el tipo.
