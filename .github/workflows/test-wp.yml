@@ -77,6 +77,9 @@ jobs:
           w eval-file /tmp/isoro.php   # idempotent: updates the same record
           [[ "$(w post list --post_type=pm_prestador --title='Experiencia Isoró' --format=count)" == 1 ]] || { echo '✖ Experiencia Isoró no quedó una sola vez'; exit 1; }
           [[ "$(w post list --post_type=pm_prestador --title='Agus — guía de pesca en Goya' --format=count)" == 0 ]] || { echo '✖ el ejemplo Agus sigue ahí'; exit 1; }
+          sed 's/^\$aplicar = false;/$aplicar = true;/' wordpress/scripts/especies-dorado-surubi-2026-10-24.php > /tmp/especies.php
+          w eval-file /tmp/especies.php
+          w eval-file /tmp/especies.php   # idempotent
           # The script leaves Esquina as a draft; publish it here to render it.
           w post update $(w post list --post_type=pm_destino --post_status=draft --format=ids) --post_status=publish
           # The sizes-and-quotas FAQ only sees published guides (as on the server).
@@ -183,6 +186,11 @@ jobs:
           curl -sS -o /dev/null -d action=pm_consulta -d pm_web=spam -d pm_t=1 -d nombre=Bot -d contacto=bot "$URL/wp-admin/admin-post.php"
           n=$(wp --path="$WP" post list --post_type=pm_consulta --post_status=private --format=count)
           [[ "$n" == 1 ]] && echo "✓ 1 consulta guardada" || { echo "✖ consultas guardadas: $n (esperado 1)"; fail=1; }
+          # Species pages: real content, record with its source, the hidden note never shown.
+          check /especies/dorado/ 200 'Récord mundial del dorado' 'PENDIENTE'
+          check /especies/dorado/ 200 '25,28 kg'
+          check /especies/dorado/ 200 'Fuentes consultadas'
+          check /especies/surubi/ 200 'solo pesca y devolución' 'PENDIENTE'
           # Zona de pique (docs/pique.md): empty state, report through the real endpoint, privacy, delay, abuse limits.
           check /pique/ 200 'pique-mapa' 'reportes en'
           check /pique/ 200 'Todavía no hay reportes'

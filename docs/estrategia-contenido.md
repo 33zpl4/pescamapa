@@ -82,3 +82,7 @@ vez por mes se las hacemos a ChatGPT, Gemini y Perplexity y anotamos si nos
 citan, qué dicen y qué dato falta. Lo que no cita define la próxima nota o
 ficha. (Esto lo corre una persona en cada asistente; los resultados se pegan
 en el chat.)
+
+## Qué va en una ficha de especie y qué en una guía (24/10/2026)
+
+La ficha de **especie** (`/especies/dorado/`) habla de la especie: nombre científico, récords con su fuente, tamaños de referencia (publicación científica o IGFA), reglas generales y enlaces a las guías. **Lo local** (tamaños que se pescan en un lugar, temporada, vedas del tramo, prestadores) va en la **guía del destino**. No se mezclan: una cifra de Goya no explica la especie, y una cifra de la especie no describe Goya. Fuente de una ficha de especie: IGFA, FishBase, normas; un operador de viajes solo con su nombre delante.

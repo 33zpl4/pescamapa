@@ -46,7 +46,7 @@ $campos = [
 	'tipo' => [ 'guia', 'operador' ], 'prest_destino' => 'goya', 'localidad' => 'Goya', 'descripcion' => $desc,
 	'prest_modalidades' => [ 'mosca', 'spinning', 'carnada' ], 'prest_especies' => [ 'dorado' ],
 	'lancha' => 'Astillero La Paz (ALP), modelo Guaycurú 630, con plataformas de casteo en proa y popa', 'motor' => '',
-	'prest_temporada' => '', 'equipo' => [ 'plataforma' ], 'incluye' => [],
+	'prest_temporada' => '',
 	'prest_publico' => 1, 'estado' => 'relevado', 'verificado' => $hoy, 'datos_ejemplo' => 0, 'notas' => $notas,
 ];
 
