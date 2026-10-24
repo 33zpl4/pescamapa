@@ -15,7 +15,7 @@
  * Idempotent. Dry run first ($aplicar = false).
  */
 
-$aplicar = false;
+$aplicar = true;
 $hoy     = '20261024';
 
 function pm_sp_p( string $h ): string {
