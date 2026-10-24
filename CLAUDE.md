@@ -11,7 +11,7 @@
 
 **Qué es Pescamapa (una frase, 21/10/2026):** la guía para pescar en toda la
 Argentina: dónde ir, cuándo, qué dice el reglamento y con qué guía local
-salir, con datos al día y la voz de quienes pescan ahí. **Sumar una ciudad:** `docs/nueva-ciudad.md`. **Zona de pique** (decidida, sin construir): `docs/pique.md`. **Marca** (color,
+salir, con datos al día y la voz de quienes pescan ahí. **Sumar una ciudad:** `docs/nueva-ciudad.md`; investigación dirigida con Gemini/ChatGPT: `docs/investigacion/README.md`. **Zona de pique** (decidida, sin construir): `docs/pique.md`. **Marca** (color,
 tipografía, componentes): `docs/marca.md`, obligatoria para todo lo que se
 publique; `node wordpress/build/revisar-marca.mjs` la verifica. Contenido
 propio (entrevistas, notas): `docs/contenido.md`. **Regla de oro** para todo lo que
