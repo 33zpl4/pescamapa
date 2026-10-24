@@ -1,6 +1,6 @@
 # Cómo sumar una ciudad (receta de las 5 guías hechas)
 
-Hechas: Goya, Esquina, Paso de la Patria (Corrientes), La Paz (Entre Ríos) y San Martín y Junín de los Andes (Neuquén, en rama: `wordpress/scripts/san-martin-junin-2026-10-24.php`, modelo para una guía con poco dato confirmado y es/en). Modelo a copiar: `wordpress/scripts/la-paz-2026-10-22.php` (otra provincia) y `paso-de-la-patria-2026-10-21.php`.
+Hechas: Goya, Esquina, Paso de la Patria (Corrientes), La Paz (Entre Ríos) y San Martín y Junín de los Andes (Neuquén, en vivo el 24/10/2026: `wordpress/scripts/san-martin-junin-2026-10-24.php`, modelo para una guía con poco dato confirmado y es/en). Modelo a copiar: `wordpress/scripts/la-paz-2026-10-22.php` (otra provincia) y `paso-de-la-patria-2026-10-21.php`.
 
 ## Pasos
 
@@ -10,7 +10,7 @@ Hechas: Goya, Esquina, Paso de la Patria (Corrientes), La Paz (Entre Ríos) y Sa
 4. **Coordenadas y mapa del inicio**: la ciudad entra al mapa del hero con lat/lon; verificar que cae en su lugar (`docs/wordpress.md` → "Mapa del inicio"). Las etiquetas cercanas se separan solas.
 5. **Vigilancia**: sumar sus fuentes a `vigilancia/fuentes.json` (`docs/vigilancia.md` §3). No sumar URLs adivinadas.
 6. **Verificación en vivo**: agregar la guía a `verify-live.yml` (200, TouristDestination, sin noindex ni PENDIENTE, un dato propio).
-7. **Flujo**: rama → PR → `test-wp.yml` en verde → merge a `main` (deploy automático) → `wp-script.yml` con `script=<nombre>` primero en simulacro, leer el log, después en vivo → `verify-live.yml` → pedir captura al dueño.
+7. **Flujo** (desde el 24/10/2026 lo lanza Claude; el dueño no ejecuta nada): rama → PR → `test-wp.yml` en verde → merge a `main` (deploy automático) → `wp-script.yml` con `script=<nombre>` en simulacro, leer el log → PR de una línea con `$aplicar = true` → en vivo → `verify-live.yml` → pedir captura al dueño. No lanzar dos `wp-script` a la vez: chocan en `/tmp/pm-script.php` del servidor (`Permission denied`).
 
 ## Reglas que ya se aplicaron (no relitigar)
 
