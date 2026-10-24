@@ -15,7 +15,7 @@
  * Dry run first ($aplicar = false); then apply with wp-script.yml (script = experiencia-isoro-2026-10-24).
  */
 
-$aplicar = false;
+$aplicar = true;
 $hoy     = '20261024';
 $ejemplo = 'Agus — guía de pesca en Goya';
 $nombre  = 'Experiencia Isoró';
