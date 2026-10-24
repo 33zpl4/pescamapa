@@ -9,7 +9,9 @@
  * Published (our words, from the brochure): what they offer, where, modalities, jornadas, packs,
  * boat, catch-and-release. NOT published: phones, e-mail, Instagram (internal notes only),
  * prices (none in the brochure), photos (the brochure's belong to them; ask for the ones we may use).
- * Not in the brochure, so left empty: motor, boat length, fishing capacity, season, languages, prices.
+ * Fields someone already filled with possibly real data are NOT touched until the owner confirms them:
+ * precio + fecha (20/10/2026), capacidad, equipo, incluye. Cleared here: motor (a marketing phrase) and
+ * temporada ("Todo el año" needs a nuance). Not in the brochure: boat length, languages.
  * Dry run first ($aplicar = false); then apply with wp-script.yml (script = experiencia-isoro-2026-10-24).
  */
 
@@ -40,8 +42,8 @@ if ( $existentes && ! get_field( 'datos_ejemplo', $existentes[0]->ID ) && $nombr
 $campos = [
 	'tipo' => [ 'guia', 'operador' ], 'prest_destino' => 'goya', 'localidad' => 'Goya', 'descripcion' => $desc,
 	'prest_modalidades' => [ 'mosca', 'spinning', 'carnada' ], 'prest_especies' => [ 'dorado' ],
-	'lancha' => 'Astillero La Paz (ALP), modelo Guaycurú 630, con plataformas de casteo en proa y popa', 'motor' => '', 'capacidad' => '',
-	'equipo' => [ 'plataforma' ], 'incluye' => [], 'precio' => '', 'precio_fecha' => '', 'prest_temporada' => '',
+	'lancha' => 'Astillero La Paz (ALP), modelo Guaycurú 630, con plataformas de casteo en proa y popa', 'motor' => '',
+	'prest_temporada' => '',
 	'prest_publico' => 1, 'estado' => 'relevado', 'verificado' => $hoy, 'datos_ejemplo' => 0, 'notas' => $notas,
 ];
 
