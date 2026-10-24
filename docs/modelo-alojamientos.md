@@ -30,3 +30,13 @@ No se ordena por comisión; se ordena por utilidad. Todo enlace pago se rotula. 
 
 - Apart Ogaraity Hotel (Goya): listado público, `wordpress/scripts/ogaraity-2026-10-24.php`.
 - Pendiente: contactarlo (salidas de pesca, fotos cedidas, precio), y Experiencia Isoro (carpeta "Pesca Mapa" en Drive).
+
+## Reglas de fichas aprendidas con Goya (24/10/2026)
+
+- **Lo que carga Cheyenne tras hablar con el prestador se conserva** (precio con fecha, "Incluye", "Equipo", capacidad): ella los conoce personalmente. Un dato que el folleto del prestador no menciona no se borra por eso.
+- **Experiencia Isoró** (folleto 2026, Tomás y Augusto Frattini) e **Isoró Fishing Camp** (campamento grande, Instagram propio) son **dos prestadores distintos**. Falta cargar el segundo.
+- **Ogaraity** (alojamiento) y **Experiencia Isoró** son independientes y cada uno ofrece excursiones. Para el visitante, cada ficha dice solo que ofrece excursiones: **no hay referencias cruzadas públicas** entre prestadores (quién las hace queda en las notas internas).
+- **Fotos**: la ficha muestra la portada y hasta 3 miniaturas, con autor. El campo "Fotos" no tiene límite y está en la primera pestaña. Las fotos las ceden los prestadores.
+- Al sumar un prestador nuevo, decidir qué datos van en la ficha pública y cuáles se ofrecen por otro canal (consulta por Pescamapa, listado propio) según convenga al visitante y a nosotros.
+- Los folletos de los prestadores son su material, no una fuente verificada por nosotros: sirven de base, con nuestras palabras, y los contactos (teléfonos, mails, Instagram) quedan solo en notas internas.
+- Alojamientos que muestra el folleto de Experiencia Isoró ("Nos acompañan") y todavía no están: Costa Apart & Hotel, Condado Hotel Casino, Cabañas Refugio del Río.

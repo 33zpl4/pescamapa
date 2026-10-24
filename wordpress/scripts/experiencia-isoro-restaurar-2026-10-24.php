@@ -5,7 +5,7 @@
  * on the record. Idempotent. Dry run first ($aplicar = false), then apply with wp-script.yml.
  */
 
-$aplicar = false;
+$aplicar = true;
 $incluye = [ 'carnada', 'comida', 'bebidas', 'combustible', 'traslados', 'equipos', 'licencia' ];
 $equipo  = [ 'lancha', 'motor_electrico', 'sonda', 'equipos', 'chalecos' ];
 $nota    = "\nDueño (24/10/2026): precio, 'Incluye' y 'Equipo' los cargó Cheyenne, que conoce personalmente al prestador. Datos correctos, se conservan (restaurados el 24/10/2026).";
