@@ -42,6 +42,8 @@ jobs:
           check /en/ 200 'lang="en"'
           check /mapa/ 200 'class="mapa"'
           check /en/map/ 200 'class="mapa"'
+          check /pique/ 200 'pique-mapa'
+          check /en/bite-zones/ 200 'pique-mapa'
           check /creditos/ 200
           check /entrevistas/ 200 'v-entrevistas'
           check /en/interviews/ 200 'v-entrevistas'

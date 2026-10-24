@@ -47,6 +47,10 @@ function pm_seo(): array {
 		$s['title']       = pm_t( 'mapa.title' );
 		$s['description'] = pm_t( 'mapa.description' );
 		$s['alternas']    = pm_alternas_fijas( 'pm_url_mapa' );
+	} elseif ( 'pique' === $vista ) {
+		$s['title']       = pm_t( 'pique.title' );
+		$s['description'] = pm_t( 'pique.description' );
+		$s['alternas']    = pm_alternas_fijas( 'pm_url_pique' );
 	} elseif ( 'creditos' === $vista ) {
 		$s['title']       = pm_t( 'creditos.title' );
 		$s['description'] = pm_t( 'creditos.description' );

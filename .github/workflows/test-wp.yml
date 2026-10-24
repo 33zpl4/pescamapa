@@ -174,6 +174,39 @@ jobs:
           curl -sS -o /dev/null -d action=pm_consulta -d pm_web=spam -d pm_t=1 -d nombre=Bot -d contacto=bot "$URL/wp-admin/admin-post.php"
           n=$(wp --path="$WP" post list --post_type=pm_consulta --post_status=private --format=count)
           [[ "$n" == 1 ]] && echo "✓ 1 consulta guardada" || { echo "✖ consultas guardadas: $n (esperado 1)"; fail=1; }
+          # Zona de pique (docs/pique.md): empty state, report through the real endpoint, privacy, delay, abuse limits.
+          check /pique/ 200 'pique-mapa' 'reportes en'
+          check /pique/ 200 'Todavía no hay reportes'
+          check /pique/ 200 'Mapa de destinos'
+          check /pt/pique/ 200 'Zonas de pesca'
+          check /en/bite-zones/ 200 'Bite zones'
+          check /wp-sitemap.xml 200 'wp-sitemap-vistas'
+          check / 200 '/pique/'
+          check /llms.txt 200 'Zonas de pique'
+          pique() { # lat lon especie resultado → body
+            curl -sS -d action=pm_pique -d pm_t=$(( $(date +%s) - 60 )) -d celda_lat="$1" -d celda_lon="$2" -d especie="$3" -d resultado="$4" -d dia=$(date +%Y%m%d) "$URL/wp-admin/admin-post.php"
+          }
+          r=$(pique -2784 -5812 dorado bueno)
+          [[ "$r" == *'"ok":true'* ]] && echo "✓ reporte de pique guardado" || { echo "✖ reporte: $r"; fail=1; }
+          r=$(pique -2784 -5812 dorado bueno)   # same sender, cell, species and day: counted once
+          r=$(pique 0 0 dorado bueno)
+          [[ "$r" == *'"ok":false'* ]] && echo "✓ celda fuera de la Argentina rechazada" || { echo "✖ celda inválida aceptada: $r"; fail=1; }
+          r=$(pique -2784 -5812 ballena bueno)
+          [[ "$r" == *'"ok":false'* ]] && echo "✓ especie inválida rechazada" || { echo "✖ especie inválida aceptada: $r"; fail=1; }
+          curl -sS -o /dev/null -d action=pm_pique -d pm_web=spam -d pm_t=1 -d celda_lat=-2785 -d celda_lon=-5813 -d especie=surubi -d resultado=bueno -d dia=$(date +%Y%m%d) "$URL/wp-admin/admin-post.php"
+          n=$(wp --path="$WP" post list --post_type=pm_reporte --post_status=private --format=count)
+          [[ "$n" == 1 ]] && echo "✓ 1 reporte (duplicado, inválidos y bot descartados)" || { echo "✖ reportes guardados: $n (esperado 1)"; fail=1; }
+          # Privacy: only the cell is stored, never a point; no name.
+          keys=$(wp --path="$WP" eval '$id = get_posts( [ "post_type" => "pm_reporte", "post_status" => "private", "fields" => "ids" ] )[0]; echo implode( ",", array_keys( array_filter( get_post_meta( $id ), fn( $k ) => 0 !== strpos( $k, "_" ), ARRAY_FILTER_USE_KEY ) ) );')
+          [[ "$keys" == "celda,celda_lat,celda_lon,especie,resultado,dia,huella" ]] && echo "✓ solo se guarda la celda ($keys)" || { echo "✖ campos guardados: $keys"; fail=1; }
+          # The 48 h delay: a fresh report is not on the public page.
+          check /pique/ 200 'Todavía no hay reportes'
+          wp --path="$WP" eval '$id = get_posts( [ "post_type" => "pm_reporte", "post_status" => "private", "fields" => "ids" ] )[0]; wp_update_post( [ "ID" => $id, "post_date" => gmdate( "Y-m-d H:i:s", time() - 3 * DAY_IN_SECONDS ), "post_date_gmt" => gmdate( "Y-m-d H:i:s", time() - 3 * DAY_IN_SECONDS ), "edit_date" => true ] ); delete_transient( "pm_pique_celdas" );'
+          check /pique/ 200 '1 reporte en 1 zona' 'Todavía no hay reportes'
+          check /pique/ 200 '&quot;bueno&quot;:1' 'huella'
+          # Hourly limit per sender.
+          limite=0; for i in 1 2 3 4 5 6 7; do r=$(pique -2784 -5812 surubi regular); [[ "$r" == *limite* ]] && limite=1; done
+          [[ "$limite" == 1 ]] && echo "✓ límite por hora" || { echo "✖ no hubo límite por hora"; fail=1; }
           if [[ -f "$WP/wp-content/debug.log" ]]; then
             echo "== debug.log"; cat "$WP/wp-content/debug.log"
             grep -qE 'PHP (Fatal|Warning|Parse)' "$WP/wp-content/debug.log" && { echo "✖ errores PHP"; fail=1; }
