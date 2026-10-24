@@ -1,6 +1,6 @@
 # Estado del proyecto — para retomar en otra sesión
 
-Última actualización: 24/10/2026. Actualizá este archivo al cerrar cada sesión.
+Última actualización: 24/10/2026 (5.ª guía: San Martín y Junín de los Andes, en rama). Actualizá este archivo al cerrar cada sesión.
 
 ## Objetivo (del dueño)
 
@@ -48,6 +48,7 @@ todas a nosotros (centralizar datos y cobrar comisión más adelante).
 - **Siguiente sesión**: sumar ciudades con la receta de `docs/nueva-ciudad.md`. La **zona de pique** (`/pique/`) tiene su MVP construido: ver `docs/pique.md` (falta probarlo en un teléfono real).
 - Pendientes del dueño: captura del mapa del inicio y de La Paz en vivo; ronda 2 de Gemini para Entre Ríos (tallas, cupos, vedas); OK para limpiar URLs muertas de `vigilancia/fuentes.json` (Entre Ríos: `boletinoficial.entrerios.gov.ar`, `entrerios.gov.ar/tramites` eran supuestas); revisar en Search Console el canonical http/https del inicio.
 
+- **5.ª guía: San Martín y Junín de los Andes (Neuquén, es/en), mergeada el 24/10/2026 con el script en simulacro, todavía no publicada** (PR #55). Script `san-martin-junin-2026-10-24` (`$aplicar = false`): correr `wp-script.yml` en simulacro, leer el log, subir un PR con `true`, correrlo en vivo y después `verify-live` (hasta entonces falla en esa guía, esperado). Fuentes: folleto oficial 2025/2026 del Reglamento (Parte Primera, Anexo Neuquén y Anexo Parques Nacionales del Sur, pasados por el dueño) y dos medios para la temporada 2026-2027; **todo dato del reglamento va con su año 2025-2026**. Dossier, auditoría de Gemini y lo no usado: `docs/investigacion/san-martin-junin.md` §7 a §10. **Falta**: la edición 2026-2027 del reglamento (la vigila `reglamento-patagonico` en `vigilancia/fuentes.json`), confirmar con la Intendencia del Lanín si cobra ingreso, y los prestadores (ninguno cargado).
 - **Alojamientos** (24/10/2026): modelo en `docs/modelo-alojamientos.md`; Apart Ogaraity (Goya) cargado como listado público por `ogaraity-2026-10-24` (simulacro hecho, falta aplicar); falta contactarlo y Experiencia Isoro.
 
 ## Decisiones del dueño (no relitigar)
@@ -99,8 +100,8 @@ todas a nosotros (centralizar datos y cobrar comisión más adelante).
    falta fijar el destinatario (script `email-consultas-2026-10-21`) y
    confirmar que el servidor envía correo (probar el formulario). Si no llega,
    igual quedan en wp-admin → Consultas.
-5. **Próximas guías** (matriz SEO; receta en `docs/nueva-ciudad.md`; hechas Paso de la Patria y La Paz): San Martín
-   de los Andes / Junín de los Andes (mosca) → Río Grande → lagunas
+5. **Próximas guías** (matriz SEO; receta en `docs/nueva-ciudad.md`; hechas Paso de la Patria, La Paz y San Martín/Junín en rama): completar
+   San Martín/Junín con la ronda 1 de Gemini (permiso, reglas por ambiente, Lanín) → Río Grande → lagunas
    (Junín/Laguna de Gómez, Chascomús, Lobos).
 6. **Eventos con URL estable** (`/eventos/fiesta-nacional-del-surubi/`,
    Fiesta del Pacú, Fiesta del Dorado): todavía no existe el tipo.

@@ -22,8 +22,8 @@ $busca = [ 'portal de Recursos Naturales', 'portal de Recursos Naturais', 'Recur
 
 $tocadas = 0;
 foreach ( pm_posts( 'pm_destino' ) as $p ) {
-	// La Paz is in Entre Ríos: the Corrientes Turismo contact does not apply (its guide has its own text).
-	if ( 'la-paz' === pm_clave_de( $p->ID ) ) {
+	// La Paz (Entre Ríos) and San Martín y Junín (Neuquén): the Corrientes Turismo contact does not apply (each guide has its own text).
+	if ( in_array( pm_clave_de( $p->ID ), [ 'la-paz', 'san-martin-junin' ], true ) ) {
 		continue;
 	}
 	$i     = pm_idioma_de( $p->ID );

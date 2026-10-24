@@ -16,7 +16,7 @@ que Google y las IA nos citen.
 | Media | **Costa atlántica y embalses** | Fragmentado: solo localidades con buenos datos de prestadores |
 
 **Orden de guías:** Goya ✅ → Esquina → Paso de la Patria → La Paz →
-San Martín de los Andes → Junín de los Andes → Río Grande → lagunas.
+San Martín y Junín de los Andes (guía combinada, 24/10/2026, en rama; modelo 2 de los wireframes) → Río Grande → lagunas.
 
 ## Consultas objetivo (long tail, no genéricas)
 

@@ -1,6 +1,6 @@
-# Cómo sumar una ciudad (receta de las 4 guías hechas)
+# Cómo sumar una ciudad (receta de las 5 guías hechas)
 
-Hechas: Goya, Esquina, Paso de la Patria (Corrientes) y La Paz (Entre Ríos). Modelo a copiar: `wordpress/scripts/la-paz-2026-10-22.php` (otra provincia) y `paso-de-la-patria-2026-10-21.php`.
+Hechas: Goya, Esquina, Paso de la Patria (Corrientes), La Paz (Entre Ríos) y San Martín y Junín de los Andes (Neuquén, en rama: `wordpress/scripts/san-martin-junin-2026-10-24.php`, modelo para una guía con poco dato confirmado y es/en). Modelo a copiar: `wordpress/scripts/la-paz-2026-10-22.php` (otra provincia) y `paso-de-la-patria-2026-10-21.php`.
 
 ## Pasos
 
@@ -21,5 +21,6 @@ Hechas: Goya, Esquina, Paso de la Patria (Corrientes) y La Paz (Entre Ríos). Mo
 
 ## Pendientes de ciudades
 
-- Próximas (matriz SEO, `docs/seo-oportunidades.md`): San Martín de los Andes / Junín de los Andes (mosca) → Río Grande → lagunas (Junín/Laguna de Gómez, Chascomús, Lobos).
+- Próximas (matriz SEO, `docs/seo-oportunidades.md`): Río Grande → lagunas (Junín/Laguna de Gómez, Chascomús, Lobos).
+- San Martín y Junín de los Andes: permiso 2026-2027, reglas por ambiente, Lanín, didymo, cierres y prestadores sin confirmar (ronda 1 en `docs/investigacion/san-martin-junin.md` §4). Aprendizaje: si el sandbox no abre las fuentes, se publica solo lo que coinciden dos medios y el resto va como "no lo podemos confirmar".
 - La Paz: tallas, cupos y vedas vigentes de Entre Ríos sin confirmar (ronda 2 de Gemini en `docs/investigacion/la-paz.md` §4). Esquina sin traducir a pt/en.
