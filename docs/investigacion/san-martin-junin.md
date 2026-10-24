@@ -48,3 +48,27 @@ Se cargaron tres fuentes "solo responde" en `vigilancia/fuentes.json` (`nqn-perm
 ## 6. Mapa y foto
 
 Pin = el de la tarjeta "próximamente" (lat -39.94, lon -71.07, Junín de los Andes); la guía hereda su foto (Commons, "SAN MARTIN DE LOS ANDES LACAR.JPG", crédito en `src/data/fotos.json`). La tarjeta se oculta sola porque la guía usa la misma `clave` (`san-martin-junin`). Verificar en vivo que el pin cae en su lugar y que la etiqueta no pisa a otra.
+
+## 7. Ronda 1: respuestas de Gemini (24/10/2026) y auditoría
+
+El dueño pegó cinco respuestas (permiso, reglamento Chimehuín/Malleo, didymo, fechas por ambiente, prestadores). **Claude no pudo abrir ninguna URL** (el sandbox no resuelve dominios externos), así que ninguna cuenta como "fuente abierta". Lo que se pudo hacer: contrastar las respuestas entre sí y con la regla de `README.md`.
+
+**Qué se usa y qué no**
+
+| Tema | Veredicto | Por qué |
+| --- | --- | --- |
+| Valores del permiso | Sigue **NO CONFIRMADO** | Gemini tampoco los encontró. No se publican (regla 22/10/2026). Ver el sitio oficial al comprar. |
+| Portal del reglamento: `reglamentodepesca.org.ar` | **Se enlaza** desde la guía como lugar donde se consultan las reglas por ambiente | El dominio es el portal interprovincial conocido; pero ningún enlace profundo (PDF, `faq-items/…`) se usa. Abrirlo y confirmar. |
+| Reglas por tramo de Chimehuín y Malleo (La Boca solo mosca, devolución obligatoria, sin plomadas) | **No se publican**; quedan como candidatas | La propia respuesta las llama "históricas, sujetas a ratificación 2026-2027" y marca NO CONFIRMADO el texto vigente. |
+| Fechas por ambiente: cierre extendido al **31/05/2027** (Chimehuín, Malleo, Aluminé, Collón Curá, Lácar, Huechulafquen); lagos Aluminé y Moquehue "todo el año"; Quillén 1/05 | **No se publican** | Contradice la respuesta 2 de la misma ronda (fechas NO CONFIRMADO) y la prensa, que dice 1/05/2027 en ambientes puntuales. Confianza "Alta" con URLs profundas que el agente dijo no poder abrir: patrón conocido (La Paz). Apuntar para ronda 2 con el PDF del reglamento 2026-2027 abierto. |
+| Didymo: decreto 137/12, Disp. 842/12, Res. 571/13, art. 28 del Reglamento, "Resolución 199/2024" en InfoLEG, prohibición de suelas de fieltro desde 1/11/2024 | **Solo la idea general**: el reglamento exige limpiar, desinfectar y secar el equipo entre ambientes | Los números de norma y la prohibición del fieltro no se publican sin abrir el texto (el "199/2024" de APN no cuadra con un reglamento patagónico). El protocolo (lavandina, salmuera, 30 min, 48 h de secado) viene de argentina.gob.ar según Gemini: abrir antes de citar cifras. |
+| Lanín: ingreso al parque / permiso aparte (pregunta 3) | **Sin respuesta** | Reenviar la pregunta 3 sola. |
+| Prestadores | **Ninguno se carga**: son candidatos | Varios enlaces vienen envueltos en `google.com/search?q=` (San Huberto, Nervous Waters, Chime Lodge, la asociación de guías), los correos pueden estar adivinados y ninguna tarifa está confirmada. Los rangos de USD 550-750 y 1.200 son una estimación del agente, no un dato. Regla: abrir el sitio propio de cada uno (`docs/prestadores.md`). |
+
+**Candidatos de prestadores (sin cargar, para abrir sus sitios):** Tipiliuke Lodge, San Huberto Lodge, Northern Patagonia Lodge (Nervous Waters), Patagonia River Guides, Andes Drifters, Chime Lodge, Tres Ríos Lodge, y el directorio de guías de Neuquén. Pendiente de cada uno: sitio abierto, contacto real y tarifa publicada.
+
+**Ronda 2 (pegar en Gemini/ChatGPT, una por vez):**
+1. *Abrí el PDF del Reglamento de Pesca Deportiva Continental Patagónico 2026-2027 en reglamentodepesca.org.ar y transcribime textual lo que dice de los ríos Chimehuín y Malleo: modalidad, devolución, fechas de apertura y cierre. Dame la URL del PDF abierto y su fecha. Si no podés abrirlo, decí NO CONFIRMADO.*
+2. *Lo mismo para el lago Lácar y el Huechulafquen, y qué cobra o exige Parques Nacionales (Lanín) por ingreso o permiso.*
+3. *Texto del artículo del reglamento 2026-2027 sobre limpieza de equipos (didymo) y si prohíbe las suelas de fieltro; enlace al PDF.*
+4. *Para cada prestador de la lista de candidatos: ¿el sitio abre?, ¿qué contacto y qué tarifa publica hoy? Solo datos que figuren en su propio sitio.*
