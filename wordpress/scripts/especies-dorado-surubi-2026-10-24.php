@@ -36,6 +36,15 @@ $src_ref = [ 'nombre' => 'Ringuelet, Aramburu y Alonso de Aramburu (1967), Los p
 $src_igfa_fb = [ 'nombre' => 'Diario Uno: El pez dorado más grande del mundo es de un río argentino y supera los 25 kilos (récord mundial IGFA, 25,28 kg, Andre De Button, 2006)', 'url' => 'https://www.diariouno.com.ar/sociedad/el-pez-dorado-mas-grande-del-mundo-es-un-rio-argentina-supera-los-25-kilos-n1532888', 'oficial' => 0, 'consultada' => $hoy ];
 $src_853  = [ 'nombre' => 'Boletín Oficial de Corrientes: Disposición 853/22 (tallas y cupos)', 'url' => 'https://boletinoficial.corrientes.gob.ar/assets/articulo_adjuntos/7523/original/26-12-2022.pdf', 'oficial' => 1, 'consultada' => $hoy ];
 
+$seo = [
+	'dorado:es'  => [ 'Dorado: récord mundial, tamaño y reglas | Pescamapa', 'El récord mundial del dorado es de 25,28 kg (Andre De Button, río Uruguay, 2006). Cuánto mide y pesa, y la regla de pesca y devolución en Corrientes.', 'Pez de río <em>Salminus brasiliensis</em>: récord mundial, tamaño habitual y reglas de pesca.' ],
+	'dorado:en'  => [ 'Golden dorado: world record, size and rules | Pescamapa', 'The golden dorado world record is 25.28 kg (Andre De Button, Uruguay River, 2006). How big a dorado gets and what the catch-and-release rule says in Corrientes.', 'River fish <em>Salminus brasiliensis</em>: world record, typical size and fishing rules.' ],
+	'dorado:pt'  => [ 'Dourado: recorde mundial, tamanho e regras | Pescamapa', 'O recorde mundial do dourado é de 25,28 kg (Andre De Button, rio Uruguai, 2006). Quanto mede e pesa um dourado e a regra de pesque e solte em Corrientes.', 'Peixe de rio <em>Salminus brasiliensis</em>: recorde mundial, tamanho habitual e regras de pesca.' ],
+	'surubi:es'  => [ 'Surubí: qué es y reglas de pesca en Corrientes | Pescamapa', 'El surubí (Pseudoplatystoma corruscans) en Corrientes es de pesca y devolución, según la Disposición 853/22. Qué dice la norma.', 'Gran bagre de río: en Corrientes solo se pesca y se devuelve.' ],
+	'surubi:en'  => [ 'Surubí catfish: rules for fishing it in Corrientes | Pescamapa', 'The surubí (Pseudoplatystoma corruscans) is catch and release only in Corrientes under Disposición 853/22. What the rule says.', 'Giant river catfish: in Corrientes it is catch and release only.' ],
+	'surubi:pt'  => [ 'Surubi: regras de pesca em Corrientes | Pescamapa', 'O surubi (Pseudoplatystoma corruscans) em Corrientes é de pesque e solte, segundo a Disposição 853/22. O que diz a norma.', 'Grande bagre de rio: em Corrientes só se pesca e se devolve.' ],
+];
+
 $contenido = [
 	'dorado:es' => [
 		pm_sp_datos( 'Datos clave', [
@@ -126,6 +135,9 @@ foreach ( $contenido as $k => $bloques ) {
 	update_field( 'estado', 'publicado', $p->ID );
 	update_field( 'actualizado', $hoy, $p->ID );
 	update_field( 'fuentes', $fuentes, $p->ID );
+	update_field( 'seo_title', $seo[ $k ][0], $p->ID );
+	update_field( 'seo_description', $seo[ $k ][1], $p->ID );
+	update_field( 'resumen', wp_strip_all_tags( $seo[ $k ][2] ), $p->ID );
 	$ok = 'publicado' === get_field( 'estado', $p->ID ) && count( $fuentes ) === count( (array) get_field( 'fuentes', $p->ID ) ) && false !== strpos( get_post_field( 'post_content', $p->ID ), 'datos' );
 	WP_CLI::log( ( $ok ? 'VERIFIED' : 'FALLÓ' ) . ": #{$p->ID} $k" );
 	$ok || WP_CLI::error( "$k: la lectura de vuelta no coincide." );

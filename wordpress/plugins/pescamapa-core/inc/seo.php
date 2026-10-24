@@ -69,6 +69,7 @@ function pm_seo(): array {
 		$s['title']       = $e['seo_title'] ?: $e['nombre'];
 		$s['description'] = $e['seo_description'];
 		$s['alternas']    = pm_alternas_especie( $e['clave'] );
+		$s['jsonld']      = pm_jsonld_especie( $e );
 	} elseif ( 'entrevistas' === $vista ) {
 		$s['title']       = pm_t( 'entrevistas.title' );
 		$s['description'] = pm_t( 'entrevistas.description' );
@@ -100,6 +101,38 @@ function pm_seo(): array {
 		$s['noindex'] = true;
 	}
 	return $s;
+}
+
+function pm_jsonld_especie( array $e ): array {
+	$mod = preg_match( '/^(\d{4})(\d{2})(\d{2})$/', $e['actualizado'], $m ) ? "$m[1]-$m[2]-$m[3]" : $e['actualizado'];
+	$art = [
+		'@context'    => 'https://schema.org',
+		'@type'       => 'Article',
+		'headline'    => $e['seo_title'] ?: $e['nombre'],
+		'description' => $e['seo_description'] ?: $e['resumen'],
+		'url'         => $e['url'],
+		'about'       => array_filter( [ '@type' => 'Taxon', 'name' => $e['cientifico'] ?: null, 'alternateName' => $e['nombre'] ] ),
+		'inLanguage'  => pm_meta_idioma( $e['idioma'] )['html'],
+		'author'      => [ '@type' => 'Organization', 'name' => 'Pescamapa', 'url' => pm_url_inicio( $e['idioma'] ) ],
+	];
+	if ( $mod ) {
+		$art['dateModified'] = $mod;
+	}
+	$citas = array_values( array_filter( array_map( fn( $f ) => ! empty( $f['url'] ) ? [ '@type' => 'CreativeWork', 'name' => $f['nombre'], 'url' => $f['url'] ] : null, $e['fuentes'] ) ) );
+	if ( $citas ) {
+		$art['citation'] = $citas;
+	}
+	return [
+		$art,
+		[
+			'@context'        => 'https://schema.org',
+			'@type'           => 'BreadcrumbList',
+			'itemListElement' => [
+				[ '@type' => 'ListItem', 'position' => 1, 'name' => pm_t( 'ficha.inicio', [], $e['idioma'] ), 'item' => pm_url_inicio( $e['idioma'] ) ],
+				[ '@type' => 'ListItem', 'position' => 2, 'name' => $e['nombre'], 'item' => $e['url'] ],
+			],
+		],
+	];
 }
 
 function pm_jsonld_destino( array $d ): array {
