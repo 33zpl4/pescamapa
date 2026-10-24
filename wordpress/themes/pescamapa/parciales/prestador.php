@@ -19,9 +19,19 @@ $filas = [
 	<?php if ( ! pm_prestador_publico( $r ) ) : ?>
 		<p class="sello">Vista previa, solo editores: <?php echo esc_html( $r['ejemplo'] ? 'datos de ejemplo, reemplazalos y destildá "Datos de ejemplo".' : 'marcá "Aceptó aparecer" o "Listado con información pública".' ); ?> <a href="<?php echo esc_url( get_edit_post_link( $r['id'] ) ); ?>">Editar</a></p>
 	<?php endif; ?>
-	<?php if ( $r['fotos'] ) {
-		echo pm_foto( $r['fotos'][0], $r['nombre'], '(max-width: 720px) 100vw, 320px', [ 'clase' => 'portada' ] ); // phpcs:ignore -- escaped inside
-	} ?>
+	<?php if ( $r['fotos'] ) : ?>
+		<div class="galeria">
+			<?php echo pm_foto( $r['fotos'][0], $r['nombre'], '(max-width: 720px) 100vw, 320px', [ 'clase' => 'portada' ] ); // phpcs:ignore -- escaped inside ?>
+			<?php $mini = array_slice( $r['fotos'], 1, 3 ); ?>
+			<?php if ( $mini ) : ?>
+				<div class="miniaturas">
+					<?php foreach ( $mini as $f ) {
+						echo pm_foto( (int) $f, $r['nombre'], '110px', [ 'clase' => 'mini', 'tamano' => 'medium' ] ); // phpcs:ignore -- escaped inside
+					} ?>
+				</div>
+			<?php endif; ?>
+		</div>
+	<?php endif; ?>
 	<div class="cuerpo">
 		<p class="tipo"><?php echo esc_html( implode( ' · ', array_map( fn( $k ) => pm_opcion( 'tipo', $k ), $r['tipo'] ) ) ); ?></p>
 		<h3><?php echo esc_html( $r['nombre'] ); ?></h3>

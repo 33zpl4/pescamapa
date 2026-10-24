@@ -47,6 +47,7 @@ add_action( 'acf/include_fields', function () {
 			[ 'key' => 'field_pm_r_destino', 'name' => 'prest_destino', 'label' => 'Destino', 'type' => 'select', 'choices' => [], 'allow_null' => 1, 'wrapper' => [ 'width' => 50 ], 'instructions' => 'Si su localidad todavía no tiene guía, dejalo vacío y anotala abajo.' ],
 			[ 'key' => 'field_pm_r_localidad', 'name' => 'localidad', 'label' => 'Localidad', 'type' => 'text', 'wrapper' => [ 'width' => 50 ] ],
 			[ 'key' => 'field_pm_r_descripcion', 'name' => 'descripcion', 'label' => 'En dos líneas (se publica)', 'type' => 'textarea', 'rows' => 3, 'instructions' => 'Cómo trabaja, desde cuándo, qué lo distingue. Sin teléfonos ni redes.' ],
+			[ 'key' => 'field_pm_r_fotos', 'name' => 'fotos', 'label' => 'Fotos (complejo, lancha, salidas)', 'type' => 'gallery', 'return_format' => 'id', 'instructions' => 'Sin límite. La primera es la portada y se muestran hasta 4 en la ficha. Cada foto con su autor (biblioteca de medios).' ],
 
 			[ 'key' => 'field_pm_r_tab_contacto', 'label' => 'Contacto (interno)', 'type' => 'tab' ],
 			[ 'key' => 'field_pm_r_responsable', 'name' => 'responsable', 'label' => 'Dueño o quien opera', 'type' => 'text', 'wrapper' => [ 'width' => 50 ] ],
@@ -72,7 +73,6 @@ add_action( 'acf/include_fields', function () {
 			[ 'key' => 'field_pm_r_precio', 'name' => 'precio', 'label' => 'Precio de referencia (se publica)', 'type' => 'text', 'wrapper' => [ 'width' => 50 ], 'instructions' => 'Ej. "Desde $ 180.000 por lancha, día completo".' ],
 			[ 'key' => 'field_pm_r_precio_fecha', 'name' => 'precio_fecha', 'label' => 'Fecha del precio', 'type' => 'date_picker', 'display_format' => 'd/m/Y', 'return_format' => 'Y-m-d', 'wrapper' => [ 'width' => 50 ], 'instructions' => 'Sin fecha, el precio no se muestra.' ],
 			[ 'key' => 'field_pm_r_oferta', 'name' => 'prest_oferta', 'label' => 'Condición especial para quienes piden por Pescamapa (se publica)', 'type' => 'text', 'maxlength' => 140, 'instructions' => 'Una frase concreta que ya acordaron con nosotros. Ej. "Carnada incluida" o "5 % menos". Se publica solo si el Estado (pestaña "Referencias y estado") es "Trabajamos juntos". Ver docs/prestadores.md.' ],
-			[ 'key' => 'field_pm_r_fotos', 'name' => 'fotos', 'label' => 'Fotos (complejo, lancha, salidas)', 'type' => 'gallery', 'return_format' => 'id', 'instructions' => 'La primera es la portada. Cada foto con su autor (biblioteca de medios).' ],
 
 			[ 'key' => 'field_pm_r_tab_relacion', 'label' => 'Referencias y estado (interno)', 'type' => 'tab' ],
 			[ 'key' => 'field_pm_r_referencias', 'name' => 'referencias', 'label' => 'Referencias', 'type' => 'textarea', 'rows' => 4, 'instructions' => 'Quién lo recomendó, qué dicen otros pescadores, reseñas que viste.' ],
