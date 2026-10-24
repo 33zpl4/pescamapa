@@ -17,7 +17,7 @@
  * (set $aplicar = false), then apply with wp-script.yml (script = ogaraity-2026-10-24).
  */
 
-$aplicar = false;
+$aplicar = true;
 $nombre  = 'Apart Ogaraity Hotel';
 $hoy     = '20261024';
 

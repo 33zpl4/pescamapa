@@ -74,6 +74,7 @@ jobs:
           # The sample WordPress pages stay unpublished.
           for p in /hola-mundo/ /pagina-ejemplo/; do check "$p" 404; done
           check /litoral/corrientes/pesca-en-goya/ 200 'Más para hacer'
+          check /litoral/corrientes/pesca-en-goya/ 200 'Ogaraity Apart Hotel' '3777'
           # Esquina exists once esquina-2026-10-20 ran (Spanish first).
           code=$(curl -sS -m 30 -o page.html -w '%{http_code}' "$SITE/litoral/corrientes/pesca-en-esquina/")
           if [[ "$code" == 200 ]]; then
