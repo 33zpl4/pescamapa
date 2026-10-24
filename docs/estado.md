@@ -1,6 +1,6 @@
 # Estado del proyecto — para retomar en otra sesión
 
-Última actualización: 21/10/2026. Actualizá este archivo al cerrar cada sesión.
+Última actualización: 24/10/2026. Actualizá este archivo al cerrar cada sesión.
 
 ## Objetivo (del dueño)
 
@@ -39,6 +39,15 @@ todas a nosotros (centralizar datos y cobrar comisión más adelante).
   sigue como notas PENDIENTE (no se ven). Investigación:
   `docs/investigacion/esquina.md`.
 
+## Al 24/10/2026 (leer primero)
+
+- **4 guías publicadas**: Goya, Esquina, Paso de la Patria (Corrientes, es/pt/en) y **La Paz, Entre Ríos** (es/pt, con aranceles de la tabla oficial, fiesta y precio 2026). Todo mergeado en `main` y desplegado; `verify-live` en verde. Contacto de licencias de Corrientes (Corrientes Turismo) en todas las guías correntinas.
+- **Informe semanal** (`informe-semanal.yml`): Search Console + vigilancia de fuentes, un issue por lunes. Ya muestra impresiones reales (el sitio rankea). `docs/vigilancia.md`.
+- **Mapa del inicio** verificado (proyección) y con etiquetas separadas (`docs/wordpress.md`).
+- Páginas de ejemplo de WordPress despublicadas (404).
+- **Siguiente sesión**: sumar ciudades con la receta de `docs/nueva-ciudad.md`. La **zona de pique** está decidida y diseñada (`docs/pique.md`) pero **no construida**.
+- Pendientes del dueño: captura del mapa del inicio y de La Paz en vivo; ronda 2 de Gemini para Entre Ríos (tallas, cupos, vedas); OK para limpiar URLs muertas de `vigilancia/fuentes.json` (Entre Ríos: `boletinoficial.entrerios.gov.ar`, `entrerios.gov.ar/tramites` eran supuestas); revisar en Search Console el canonical http/https del inicio.
+
 ## Decisiones del dueño (no relitigar)
 
 | Fecha | Decisión |
@@ -62,6 +71,9 @@ todas a nosotros (centralizar datos y cobrar comisión más adelante).
 | 21/10/2026 | Contenido propio: por ahora se alimenta a mano (enlace + hechos + resúmenes en el chat) y Claude arma citas, notas y entrevistas; la API viene después. `docs/contenido.md`. |
 | 22/10/2026 | Vigilancia semanal automática (Search Console + fuentes que pueden vencer) en un issue por semana, sin modelos. Se dice en público solo cuando lleve varias semanas corriendo. `docs/vigilancia.md`. |
 | 22/10/2026 | **Lo que no se puede verificar online no se persigue.** Si un dato (p. ej. el arancel de la licencia para turista argentino) no está publicado o actualizado en una web oficial, se dice que no lo podemos confirmar y se indica qué hacer (preguntarle a la guía local o consultar a Recursos Naturales). Que las webs públicas estén desactualizadas no es responsabilidad nuestra; no se cavan agujeros. Los aranceles de la licencia no se publican sin fuente oficial vigente. |
+| 22/10/2026 | Frase para las guías cuando un dato no está online: "si no lo ves online, preguntale a tu guía". |
+| 22/10/2026 | Las ciudades tienen varias fiestas: se destaca una sin sobre-indexar. Un precio pasado se publica con su año. |
+| 23/10/2026 | **Zona de pique**: mapa comunitario a ~500 m–1 km (no 10–20 m), alimentado por muchos pescadores y por prestadores, puede lanzarse vacío como invitación. `docs/pique.md`. |
 | 21/10/2026 | `info@pescamapa.com` ya enruta (Cloudflare Email Routing). |
 | 21/10/2026 | **Prestadores: listar primero, verificar después.** Se publican con información pública, marcados "sin verificar" y con enlace para corregir o pedir la baja (info@pescamapa.com). Reemplaza "solo con consentimiento". `docs/prestadores.md`. |
 | 21/10/2026 | **Regla de oro**: cada página responde con un dato concreto, fechado y con fuente una pregunta real, arriba y en texto; muchos lectores serán LLM. `docs/estrategia-contenido.md` (prueba de cinco preguntas, preguntas de control mensuales en `docs/preguntas-llm.md`). |
@@ -84,7 +96,7 @@ todas a nosotros (centralizar datos y cobrar comisión más adelante).
    falta fijar el destinatario (script `email-consultas-2026-10-21`) y
    confirmar que el servidor envía correo (probar el formulario). Si no llega,
    igual quedan en wp-admin → Consultas.
-5. **Próximas guías** (matriz SEO): Paso de la Patria → La Paz → San Martín
+5. **Próximas guías** (matriz SEO; receta en `docs/nueva-ciudad.md`; hechas Paso de la Patria y La Paz): San Martín
    de los Andes / Junín de los Andes (mosca) → Río Grande → lagunas
    (Junín/Laguna de Gómez, Chascomús, Lobos).
 6. **Eventos con URL estable** (`/eventos/fiesta-nacional-del-surubi/`,
