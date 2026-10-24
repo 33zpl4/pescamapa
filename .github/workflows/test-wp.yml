@@ -178,6 +178,7 @@ jobs:
           check /pique/ 200 'pique-mapa' 'reportes en'
           check /pique/ 200 'Todavía no hay reportes'
           check /pique/ 200 'Mapa de destinos'
+          check /pique/ 200 'data-destinos=.*Esquina' ''
           check /pt/pique/ 200 'Zonas de pesca'
           check /en/bite-zones/ 200 'Bite zones'
           check /wp-sitemap.xml 200 'wp-sitemap-vistas'
