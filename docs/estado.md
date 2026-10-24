@@ -48,6 +48,8 @@ todas a nosotros (centralizar datos y cobrar comisión más adelante).
 - **Siguiente sesión**: sumar ciudades con la receta de `docs/nueva-ciudad.md`. La **zona de pique** (`/pique/`) tiene su MVP construido: ver `docs/pique.md` (falta probarlo en un teléfono real).
 - Pendientes del dueño: captura del mapa del inicio y de La Paz en vivo; ronda 2 de Gemini para Entre Ríos (tallas, cupos, vedas); OK para limpiar URLs muertas de `vigilancia/fuentes.json` (Entre Ríos: `boletinoficial.entrerios.gov.ar`, `entrerios.gov.ar/tramites` eran supuestas); revisar en Search Console el canonical http/https del inicio.
 
+- **Alojamientos** (24/10/2026): modelo en `docs/modelo-alojamientos.md`; Apart Ogaraity (Goya) cargado como listado público por `ogaraity-2026-10-24` (simulacro hecho, falta aplicar); falta contactarlo y Experiencia Isoro.
+
 ## Decisiones del dueño (no relitigar)
 
 | Fecha | Decisión |
@@ -73,6 +75,7 @@ todas a nosotros (centralizar datos y cobrar comisión más adelante).
 | 22/10/2026 | **Lo que no se puede verificar online no se persigue.** Si un dato (p. ej. el arancel de la licencia para turista argentino) no está publicado o actualizado en una web oficial, se dice que no lo podemos confirmar y se indica qué hacer (preguntarle a la guía local o consultar a Recursos Naturales). Que las webs públicas estén desactualizadas no es responsabilidad nuestra; no se cavan agujeros. Los aranceles de la licencia no se publican sin fuente oficial vigente. |
 | 22/10/2026 | Frase para las guías cuando un dato no está online: "si no lo ves online, preguntale a tu guía". |
 | 22/10/2026 | Las ciudades tienen varias fiestas: se destaca una sin sobre-indexar. Un precio pasado se publica con su año. |
+| 24/10/2026 | **Alojamientos**: se listan (tipo Alojamiento). Fotos solo cedidas; reseñas y puntaje de Booking no se copian; precio con fecha; cobro: afiliado → comisión directa → destacado, sin maquinaria hasta que haya consultas. `docs/modelo-alojamientos.md`. |
 | 23/10/2026 | **Zona de pique**: mapa comunitario a ~500 m–1 km (no 10–20 m), alimentado por muchos pescadores y por prestadores, puede lanzarse vacío como invitación. `docs/pique.md`. |
 | 21/10/2026 | `info@pescamapa.com` ya enruta (Cloudflare Email Routing). |
 | 21/10/2026 | **Prestadores: listar primero, verificar después.** Se publican con información pública, marcados "sin verificar" y con enlace para corregir o pedir la baja (info@pescamapa.com). Reemplaza "solo con consentimiento". `docs/prestadores.md`. |
