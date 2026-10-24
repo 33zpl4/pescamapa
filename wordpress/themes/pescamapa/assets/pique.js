@@ -5,7 +5,11 @@
 	if (!el || !window.L) return;
 	var PASO = 100; // cells per degree: 0.01° ≈ 1 km
 	var T = JSON.parse(el.dataset.textos);
-	var map = L.map(el, { scrollWheelZoom: false }).setView([-34.5, -60.5], 5);
+	var destinos = JSON.parse(el.dataset.destinos || '[]');
+	var map = L.map(el, { scrollWheelZoom: false });
+	// Opening view: where our guides are (never the whole country); the visitor's own location replaces it below.
+	if (destinos.length) map.fitBounds(L.latLngBounds(destinos.map(function (d) { return d.coordenadas; })).pad(0.4), { maxZoom: 8 });
+	else map.setView([-30, -59], 6);
 	L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 		maxZoom: 18,
 		attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
@@ -33,6 +37,26 @@
 	// At street zoom the real cell shows; the dot would overstate precision.
 	function ajustar() { circulos.forEach(function (d) { d.setStyle({ opacity: map.getZoom() >= 12 ? 0 : 1, fillOpacity: map.getZoom() >= 12 ? 0 : d.options.fillOpacity }); }); }
 	map.on('zoomend', ajustar);
+
+	// Jump to a destination (so nobody has to find Goya on the map).
+	if (destinos.length) {
+		var ir = document.createElement('label');
+		ir.className = 'pique-ir';
+		ir.append(T.ir + ' ');
+		var sl = document.createElement('select');
+		var o0 = new Option(T['ir.elegi'], '');
+		sl.append(o0);
+		destinos.forEach(function (d, i) { sl.append(new Option(d.nombre, String(i))); });
+		sl.addEventListener('change', function () { if (sl.value !== '') map.setView(destinos[Number(sl.value)].coordenadas, 11); });
+		ir.append(sl);
+		el.parentNode.insertBefore(ir, el);
+	}
+	// The visitor's location, if the browser allows it: only the map moves, nothing is sent or chosen.
+	if (navigator.geolocation) {
+		navigator.geolocation.getCurrentPosition(function (p) {
+			map.setView([p.coords.latitude, p.coords.longitude], 11);
+		}, function () {}, { enableHighAccuracy: false, timeout: 8000, maximumAge: 600000 });
+	}
 
 	// Report form
 	var form = document.querySelector('.pique-form form');

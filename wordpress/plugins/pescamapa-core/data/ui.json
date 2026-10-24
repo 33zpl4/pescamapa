@@ -310,7 +310,9 @@
 			"pique.popup.bueno": "con pique: %n%",
 			"pique.popup.ultimo": "Último día: %fecha%",
 			"pique.mapa": "Mapa de destinos",
-			"pique.resumen1": "1 reporte en 1 zona. Último día informado: %fecha%."
+			"pique.resumen1": "1 reporte en 1 zona. Último día informado: %fecha%.",
+			"pique.ir": "Ir a un destino:",
+			"pique.ir.elegi": "Elegí uno…"
 		},
 		"pt": {
 			"marca.lema": "Onde, quando e com quem pescar na Argentina.",
@@ -524,7 +526,9 @@
 			"pique.popup.bueno": "pegou bem: %n%",
 			"pique.popup.ultimo": "Último dia: %fecha%",
 			"pique.mapa": "Mapa de destinos",
-			"pique.resumen1": "1 relato em 1 zona. Último dia informado: %fecha%."
+			"pique.resumen1": "1 relato em 1 zona. Último dia informado: %fecha%.",
+			"pique.ir": "Ir para um destino:",
+			"pique.ir.elegi": "Escolha um…"
 		},
 		"en": {
 			"marca.lema": "Where, when and who to fish with in Argentina.",
@@ -738,7 +742,9 @@
 			"pique.popup.bueno": "good bite: %n%",
 			"pique.popup.ultimo": "Latest day: %fecha%",
 			"pique.mapa": "Destinations map",
-			"pique.resumen1": "1 report in 1 zone. Latest day reported: %fecha%."
+			"pique.resumen1": "1 report in 1 zone. Latest day reported: %fecha%.",
+			"pique.ir": "Go to a destination:",
+			"pique.ir.elegi": "Choose one…"
 		}
 	},
 	"opciones": {

@@ -5,10 +5,11 @@ defined( 'ABSPATH' ) || exit;
 $idioma  = pm_lang();
 $celdas  = pm_pique_celdas_publicas();
 $resumen = pm_pique_resumen();
+$destinos = array_map( fn( $d ) => [ 'nombre' => $d['nombre'], 'coordenadas' => $d['coordenadas'] ], pm_destinos_lista( $idioma ) );
 $hoy     = wp_date( 'Y-m-d' );
 $desde   = wp_date( 'Y-m-d', time() - PM_PIQUE_DIAS_ATRAS * DAY_IN_SECONDS );
 $textos  = [];
-foreach ( [ 'ubicacion', 'sinubicacion', 'zona', 'zonanada', 'gracias', 'error', 'limite', 'popup.reportes', 'popup.reporte1', 'popup.bueno', 'popup.ultimo' ] as $k ) {
+foreach ( [ 'ubicacion', 'sinubicacion', 'ir', 'ir.elegi', 'zona', 'zonanada', 'gracias', 'error', 'limite', 'popup.reportes', 'popup.reporte1', 'popup.bueno', 'popup.ultimo' ] as $k ) {
 	$textos[ $k ] = pm_t( "pique.{$k}" );
 }
 wp_enqueue_style( 'leaflet' );
@@ -26,7 +27,7 @@ get_header(); ?>
 				pm_e( 'pique.vacio' );
 			} ?>
 		</p>
-		<div class="pique-mapa" role="region" aria-label="<?php echo esc_attr( pm_t( 'pique.etiqueta' ) ); ?>" data-celdas="<?php echo esc_attr( wp_json_encode( $celdas ) ); ?>" data-textos="<?php echo esc_attr( wp_json_encode( $textos ) ); ?>" data-envio="<?php echo esc_url( pm_pique_envio_url() ); ?>"></div>
+		<div class="pique-mapa" role="region" aria-label="<?php echo esc_attr( pm_t( 'pique.etiqueta' ) ); ?>" data-celdas="<?php echo esc_attr( wp_json_encode( $celdas ) ); ?>" data-destinos="<?php echo esc_attr( wp_json_encode( array_values( $destinos ) ) ); ?>" data-textos="<?php echo esc_attr( wp_json_encode( $textos ) ); ?>" data-envio="<?php echo esc_url( pm_pique_envio_url() ); ?>"></div>
 		<noscript><p class="note"><?php pm_e( 'mapa.sinjs' ); ?></p></noscript>
 		<p class="note"><?php pm_e( 'pique.leyenda' ); ?></p>
 		<p class="aviso-pique"><?php pm_e( 'pique.aviso' ); ?></p>
