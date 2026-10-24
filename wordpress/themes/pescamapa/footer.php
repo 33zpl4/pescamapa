@@ -14,6 +14,7 @@ $inicio = pm_url_inicio( $idioma );
 		<nav aria-label="Pie">
 			<a href="<?php echo esc_url( $inicio . '#destinos' ); ?>"><?php pm_e( 'nav.destinos' ); ?></a>
 			<a href="<?php echo esc_url( pm_url_mapa( $idioma ) ); ?>"><?php pm_e( 'nav.mapa' ); ?></a>
+			<a href="<?php echo esc_url( pm_url_pique( $idioma ) ); ?>"><?php pm_e( 'nav.pique' ); ?></a>
 			<a href="<?php echo esc_url( pm_url_entrevistas( $idioma ) ); ?>"><?php pm_e( 'nav.entrevistas' ); ?></a>
 			<?php if ( pm_hay_notas() ) : ?><a href="<?php echo esc_url( pm_url_notas( $idioma ) ); ?>"><?php pm_e( 'nav.notas' ); ?></a><?php endif; ?>
 			<a href="<?php echo esc_url( $inicio . '#prestadores' ); ?>"><?php pm_e( 'pie.prestadores' ); ?></a>

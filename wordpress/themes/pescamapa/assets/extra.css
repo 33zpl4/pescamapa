@@ -111,3 +111,18 @@
 
 /* Hero map: leader line from a pin to its spread-out label (inc/mapa.php) */
 .mapa-hero .guia-linea { stroke: var(--lime); stroke-width: 1.2; stroke-linecap: round; opacity: 0.75; }
+
+/* Bite-zone map (vistas/pique.php, assets/pique.js) */
+.v-pique .wrap { padding-block: 32px 72px; max-width: 980px; }
+.v-pique h1 { font-size: clamp(30px, 4vw, 44px); }
+.v-pique .lead { font-size: var(--fs-lead); }
+.v-pique .pique-ir { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; font-size: var(--fs-small); font-weight: 600; }
+.v-pique .pique-ir select { font: 400 var(--fs-body) var(--font-body); padding: 8px 12px; border: 1px solid var(--line); border-radius: 10px; background: var(--paper); color: var(--ink); }
+.v-pique .resumen { font-weight: 600; }
+.v-pique .pique-mapa { height: min(70vh, 640px); border-radius: var(--radius); overflow: hidden; background: var(--cream); z-index: 0; }
+.v-pique .aviso-pique { background: var(--cream); border-radius: var(--radius); padding: 14px 18px; font-size: var(--fs-small); }
+.v-pique .resultados { border: 0; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 8px 22px; }
+.v-pique .resultados legend { font-size: var(--fs-small); font-weight: 600; padding: 0; margin-bottom: 6px; }
+.v-pique .resultados label { display: flex; align-items: center; gap: 8px; font-weight: 400; }
+.v-pique .resultados input { width: auto; }
+.v-pique .pique-form button[disabled] { opacity: 0.5; cursor: not-allowed; }
