@@ -58,6 +58,9 @@
 /* Outfitter cards and the "how to choose" list */
 .prestador { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 18px; border: 1px solid var(--line); border-radius: var(--radius); padding: 16px; margin: 16px 0; background: var(--white); }
 .prestador .portada { aspect-ratio: 4 / 3; border-radius: 10px; overflow: hidden; }
+.prestador .galeria { display: grid; gap: 8px; align-content: start; }
+.prestador .miniaturas { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+.prestador .mini { aspect-ratio: 1; border-radius: 8px; }
 .prestador h3 { margin: 0 0 6px; font-size: var(--fs-h3); }
 .prestador .tipo { margin: 0; font: 400 var(--fs-label)/1 var(--font-label); letter-spacing: 0.1em; color: var(--olive); }
 .prestador dl { margin: 10px 0; display: grid; gap: 6px; font-size: var(--fs-small); }
