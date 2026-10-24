@@ -11,7 +11,8 @@
 | Puntaje y reseñas de Booking | **No se copian** (son de Booking). Se enlaza a la ficha. Las reseñas propias llegan después (`docs/resenas.md`) |
 | Precio | Solo con fecha y ocupación ("para 4, 21–27/12/2026, visto el 24/10/2026"), si no "a consultar" |
 | Teléfono, WhatsApp, email | Internos; las consultas pasan por Pescamapa |
-| "Hace salidas de pesca" | Solo cuando lo confirme el prestador; antes va a las notas internas |
+| "Hace salidas de pesca" | Confirmado por el dueño el 24/10/2026 para Ogaraity; con otros, solo con confirmación |
+| "Uno de los mejor valorados en Booking" | Se puede decir, sin cifra ni reseñas, con fecha |
 
 ## Cómo se cobra (en orden de esfuerzo)
 
