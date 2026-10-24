@@ -45,7 +45,7 @@ todas a nosotros (centralizar datos y cobrar comisión más adelante).
 - **Informe semanal** (`informe-semanal.yml`): Search Console + vigilancia de fuentes, un issue por lunes. Ya muestra impresiones reales (el sitio rankea). `docs/vigilancia.md`.
 - **Mapa del inicio** verificado (proyección) y con etiquetas separadas (`docs/wordpress.md`).
 - Páginas de ejemplo de WordPress despublicadas (404).
-- **Siguiente sesión**: sumar ciudades con la receta de `docs/nueva-ciudad.md`. La **zona de pique** está decidida y diseñada (`docs/pique.md`) pero **no construida**.
+- **Siguiente sesión**: sumar ciudades con la receta de `docs/nueva-ciudad.md`. La **zona de pique** (`/pique/`) tiene su MVP construido: ver `docs/pique.md` (falta probarlo en un teléfono real).
 - Pendientes del dueño: captura del mapa del inicio y de La Paz en vivo; ronda 2 de Gemini para Entre Ríos (tallas, cupos, vedas); OK para limpiar URLs muertas de `vigilancia/fuentes.json` (Entre Ríos: `boletinoficial.entrerios.gov.ar`, `entrerios.gov.ar/tramites` eran supuestas); revisar en Search Console el canonical http/https del inicio.
 
 ## Decisiones del dueño (no relitigar)
