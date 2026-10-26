@@ -45,6 +45,7 @@ jobs:
           check /pique/ 200 'pique-mapa'
           check /armar-viaje/ 200 'name="contacto"'
           check / 200 'armar-viaje'
+          check / 200 'Cheyenne Justiniano</span> y <span>Alberto Ayala'
           # Long-form notes (dorado, surubí) in 3 languages: yearly box, JSON-LD, SEO title, no leftover markers.
           check /notas/cuando-pescar-dorado/ 200 'Al día · vedas y novedades' 'PENDIENTE'
           check /notas/cuando-pescar-dorado/ 200 'application/ld+json'

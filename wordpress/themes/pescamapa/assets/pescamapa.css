@@ -110,7 +110,7 @@ footer {
 	.inner { display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
 	.brand { font: 400 30px/1 var(--font-label); letter-spacing: 0.06em; color: var(--white); text-decoration: none; }
 	.firma { font-size: 13px; letter-spacing: 0.02em; margin: 18px 0 0; }
-	.firma span { color: var(--lime); font: italic 600 18px var(--font-head); }
+	.firma span { color: var(--lime); font: italic 600 15px var(--font-head); }
 	nav { display: flex; gap: 20px; flex-wrap: wrap; }
 	nav a { text-decoration: none; }
 	.legal { font-size: 13px; border-top: 1px solid rgb(255 255 255 / 0.12); padding-top: 18px; margin-top: 24px; }

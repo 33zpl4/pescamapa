@@ -41,7 +41,10 @@ function pm_seo(): array {
 			'url'         => pm_url_inicio( pm_lang() ),
 			'inLanguage'  => pm_meta_idioma()['html'],
 			'description' => pm_t( 'marca.lema' ),
-			'creator'     => [ '@type' => 'Person', 'name' => 'Cheyenne Justiniano' ],
+			'creator'     => [
+				[ '@type' => 'Person', 'name' => 'Cheyenne Justiniano' ],
+				[ '@type' => 'Person', 'name' => 'Alberto Ayala' ],
+			],
 		];
 	} elseif ( 'mapa' === $vista ) {
 		$s['title']       = pm_t( 'mapa.title' );

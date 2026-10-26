@@ -9,7 +9,7 @@ $inicio = pm_url_inicio( $idioma );
 		<div>
 			<a class="brand" href="<?php echo esc_url( $inicio ); ?>">PESCAMAPA</a>
 			<p><?php pm_e( 'marca.lema' ); ?></p>
-			<p class="firma"><?php pm_e( 'pie.firma' ); ?> <span>Cheyenne Justiniano</span></p>
+			<p class="firma"><?php pm_e( 'pie.firma' ); ?> <span>Cheyenne Justiniano</span> <?php pm_e( 'pie.y' ); ?> <span>Alberto Ayala</span></p>
 		</div>
 		<nav aria-label="Pie">
 			<a href="<?php echo esc_url( $inicio . '#destinos' ); ?>"><?php pm_e( 'nav.destinos' ); ?></a>
