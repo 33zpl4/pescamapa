@@ -9,7 +9,7 @@
  * ($aplicar = false); run with wp-script.yml (script = notas-dorado-surubi-2026-10-26).
  */
 
-$aplicar = false;
+$aplicar = true;
 $hoy     = '20261026';
 
 function pm_n_p( string $html ): string {
