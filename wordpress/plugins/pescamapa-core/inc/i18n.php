@@ -53,9 +53,9 @@ function pm_etiqueta( string $clave, ?string $idioma = null ): string {
 // --- URLs ------------------------------------------------------------------
 
 const PM_SEGMENTOS = [
-	'es' => [ 'especies' => 'especies', 'mapa' => 'mapa', 'creditos' => 'creditos', 'entrevistas' => 'entrevistas', 'notas' => 'notas', 'pique' => 'pique', 'viaje' => 'armar-viaje' ],
-	'pt' => [ 'especies' => 'especies', 'mapa' => 'mapa', 'creditos' => 'creditos', 'entrevistas' => 'entrevistas', 'notas' => 'notas', 'pique' => 'pique', 'viaje' => 'planejar-viagem' ],
-	'en' => [ 'especies' => 'species', 'mapa' => 'map', 'creditos' => 'credits', 'entrevistas' => 'interviews', 'notas' => 'notes', 'pique' => 'bite-zones', 'viaje' => 'plan-your-trip' ],
+	'es' => [ 'especies' => 'especies', 'mapa' => 'mapa', 'creditos' => 'creditos', 'entrevistas' => 'entrevistas', 'notas' => 'notas', 'pique' => 'pique', 'viaje' => 'armar-viaje', 'terminos' => 'terminos', 'privacidad' => 'privacidad' ],
+	'pt' => [ 'especies' => 'especies', 'mapa' => 'mapa', 'creditos' => 'creditos', 'entrevistas' => 'entrevistas', 'notas' => 'notas', 'pique' => 'pique', 'viaje' => 'planejar-viagem', 'terminos' => 'termos', 'privacidad' => 'privacidade' ],
+	'en' => [ 'especies' => 'species', 'mapa' => 'map', 'creditos' => 'credits', 'entrevistas' => 'interviews', 'notas' => 'notes', 'pique' => 'bite-zones', 'viaje' => 'plan-your-trip', 'terminos' => 'terms', 'privacidad' => 'privacy' ],
 ];
 
 function pm_url( string $ruta, string $idioma ): string {

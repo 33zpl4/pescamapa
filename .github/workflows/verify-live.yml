@@ -45,6 +45,17 @@ jobs:
           check /pique/ 200 'pique-mapa'
           check /armar-viaje/ 200 'name="contacto"'
           check / 200 'armar-viaje'
+          # Terms of use and privacy policy, 3 languages; linked from the footer and the forms.
+          check /terminos/ 200 'Términos de uso'
+          check /terminos/ 200 'Las fotos pueden estar recortadas'
+          check /privacidad/ 200 'Política de privacidad'
+          check /privacidad/ 200 'info@pescamapa.com'
+          check /en/terms/ 200 'Terms of use'
+          check /en/privacy/ 200 'Privacy policy'
+          check /pt/termos/ 200 'Termos de uso'
+          check /pt/privacidade/ 200 'Política de privacidade'
+          check / 200 '/privacidad/'
+          check /armar-viaje/ 200 'política de privacidad'
           check / 200 'Cheyenne Justiniano</span> y <span>Alberto Ayala'
           # Long-form notes (dorado, surubí) in 3 languages: yearly box, JSON-LD, SEO title, no leftover markers.
           check /notas/cuando-pescar-dorado/ 200 'Al día · vedas y novedades' 'PENDIENTE'

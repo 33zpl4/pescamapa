@@ -58,6 +58,11 @@ function pm_seo(): array {
 		$s['title']       = pm_t( 'viaje.title' );
 		$s['description'] = pm_t( 'viaje.description' );
 		$s['alternas']    = pm_alternas_fijas( 'pm_url_viaje' );
+	} elseif ( 'terminos' === $vista || 'privacidad' === $vista ) {
+		$l                = pm_legal( $vista );
+		$s['title']       = $l['title'] ?? '';
+		$s['description'] = $l['description'] ?? '';
+		$s['alternas']    = pm_alternas_fijas( 'terminos' === $vista ? 'pm_url_terminos' : 'pm_url_privacidad' );
 	} elseif ( 'destino' === $vista ) {
 		$d = pm_destino( get_queried_object_id() );
 		$s['title']       = $d['seo_title'] ?: $d['nombre'];

@@ -176,3 +176,9 @@
 	.v-viaje .viaje-como { position: static; }
 	.v-viaje .viaje-form form { padding: 20px; }
 }
+
+/* Legal pages: terms of use and privacy policy */
+.v-legal .wrap { padding-block: 40px 80px; max-width: var(--measure); }
+.v-legal h2 { font-size: var(--fs-h3); margin: 1.8em 0 0.4em; }
+.v-legal li { margin-bottom: 8px; }
+.pie-legal-enlaces a { margin-left: 14px; }

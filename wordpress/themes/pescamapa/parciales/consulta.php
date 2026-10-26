@@ -44,7 +44,7 @@ $resultado = pm_consulta_resultado();
 			</div>
 			<label><?php pm_e( 'consulta.mensaje' ); ?> <textarea name="mensaje" rows="3" maxlength="2000"></textarea></label>
 			<button class="button dark" type="submit"><?php pm_e( 'consulta.enviar' ); ?></button>
-			<p class="note"><?php pm_e( 'consulta.privacidad' ); ?></p>
+			<p class="note"><?php pm_e( 'consulta.privacidad' ); ?> <?php echo pm_enlace_privacidad(); // phpcs:ignore -- escaped inside ?></p>
 		</form>
 	<?php endif; ?>
 </section>

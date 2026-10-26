@@ -69,7 +69,8 @@
 						"Podemos actualizar estos términos; la fecha de arriba dice cuándo fue la última vez. Se rigen por las leyes de la República Argentina. Para saber cómo cuidamos tus datos, leé la {privacidad}."
 					]
 				}
-			]
+			],
+			"actualizado": "2026-10-26"
 		},
 		"pt": {
 			"title": "Termos de uso | Pescamapa",
@@ -140,7 +141,8 @@
 						"Podemos atualizar estes termos; a data acima indica a última vez. Eles são regidos pelas leis da República Argentina. Para saber como cuidamos dos seus dados, leia a {privacidad}."
 					]
 				}
-			]
+			],
+			"actualizado": "2026-10-26"
 		},
 		"en": {
 			"title": "Terms of use | Pescamapa",
@@ -211,7 +213,8 @@
 						"We may update these terms; the date above says when we last did. They are governed by the laws of the Argentine Republic. To see how we look after your data, read the {privacidad}."
 					]
 				}
-			]
+			],
+			"actualizado": "2026-10-26"
 		}
 	},
 	"privacidad": {
@@ -269,7 +272,8 @@
 						"Si cambiamos algo importante, lo actualizamos acá y cambiamos la fecha de arriba. Las reglas de uso del sitio están en los {terminos}."
 					]
 				}
-			]
+			],
+			"actualizado": "2026-10-26"
 		},
 		"pt": {
 			"title": "Política de privacidade | Pescamapa",
@@ -325,7 +329,8 @@
 						"Se mudarmos algo importante, atualizamos aqui e trocamos a data acima. As regras de uso do site estão nos {terminos}."
 					]
 				}
-			]
+			],
+			"actualizado": "2026-10-26"
 		},
 		"en": {
 			"title": "Privacy policy | Pescamapa",
@@ -381,7 +386,8 @@
 						"If we change something important, we update it here and change the date above. The rules for using the site are in the {terminos}."
 					]
 				}
-			]
+			],
+			"actualizado": "2026-10-26"
 		}
 	}
 }
