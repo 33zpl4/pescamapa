@@ -55,8 +55,7 @@ function pm_foto( int $att, string $alt, string $sizes, array $op = [] ): string
 			$autor = esc_html( $c['autor'] );
 			$lic   = $c['licencia'] ? ', ' . esc_html( $c['licencia'] ) : '';
 		}
-		$editada = $c['licencia'] ? ' · ' . esc_html( pm_t( 'foto.editada' ) ) : '';
-		$credito = "<figcaption>{$etiqueta}: {$autor}{$lic}{$editada}</figcaption>";
+		$credito = "<figcaption>{$etiqueta}: {$autor}{$lic}</figcaption>";
 	}
 	return '<figure class="foto ' . esc_attr( $op['clase'] ) . '">' . $img . $credito . '</figure>';
 }

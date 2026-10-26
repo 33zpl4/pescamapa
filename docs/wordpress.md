@@ -97,7 +97,7 @@ Igual que en Astro, ahora en WordPress:
   hreflang, Open Graph, JSON-LD y sitemap de WordPress (todas las fichas).
 - **Fotos** (`inc/fotos.php`): WordPress genera tamaños y srcset; salen en
   WebP. Crédito en la propia foto (biblioteca de medios → "Autor de la
-  foto"), visible sobre la imagen (con la licencia enlazada y "recortada y redimensionada" si es libre). Ya no hay página de créditos aparte.
+  foto"), visible sobre la imagen (autor y licencia enlazada). Ya no hay página de créditos aparte ni aviso de recorte (decisión del dueño, 26/10/2026).
 - **Mapa del hero**: contorno real precalculado (`data/hero.json`, generado
   por `wordpress/build/generar-datos.mjs`); PHP ubica los puntos con la
   misma proyección.
