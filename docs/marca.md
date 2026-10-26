@@ -7,13 +7,20 @@ alcanza, se cambia acá primero.** Verificación automática:
 
 ## Qué es Pescamapa (una frase)
 
-> Pescamapa es la guía para pescar en toda la Argentina: dónde ir, cuándo,
-> qué dice el reglamento y con qué guía local salir, con datos al día y la
-> voz de quienes pescan ahí.
+> Pescamapa reúne todo lo que necesitás saber antes de ir a pescar a la
+> Argentina: cuándo ir, qué dice el reglamento y con quién salir. Lo
+> investigamos nosotros y mostramos las fuentes. Y si querés, te armamos el
+> viaje.
 
-Lema corto (pie de página y títulos): **"Dónde, cuándo y con quién pescar en
-Argentina."** (pt: "Onde, quando e com quem pescar na Argentina."; en: "Where,
-when and who to fish with in Argentina."). Viven en `data/ui.json`
+(Definición cambiada el 26/10/2026, por decisión del dueño: antes decía
+"la guía para pescar en toda la Argentina…". Se dice lo que ofrecemos con las
+preguntas del pescador, no con nuestras etiquetas internas, y sin superlativos
+sin fuente: "la más completa" se dirá cuando se pueda probar.)
+
+Lema corto (pie de página y títulos): **"Cuándo ir, qué dice el reglamento y
+con quién pescar en Argentina."** (pt: "Quando ir, o que diz o regulamento e
+com quem pescar na Argentina."; en: "When to go, what the rules say and who to
+fish with in Argentina."). Viven en `data/ui.json`
 (`marca.definicion`, `marca.lema`, `inicio.title`, `inicio.description`).
 
 ## Voz
