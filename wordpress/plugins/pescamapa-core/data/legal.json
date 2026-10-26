@@ -1,0 +1,387 @@
+{
+	"terminos": {
+		"es": {
+			"title": "Términos de uso | Pescamapa",
+			"description": "Reglas simples para usar Pescamapa: qué es, qué no garantiza, cómo funcionan los prestadores, los reportes de pique y las fotos.",
+			"h1": "Términos de uso",
+			"secciones": [
+				{
+					"h": "Quiénes somos",
+					"p": [
+						"Pescamapa (pescamapa.com) es un proyecto de Cheyenne Justiniano y Alberto Ayala. Es una guía para pescar en la Argentina: dónde ir, cuándo, qué dice el reglamento y con quién salir. Para cualquier consulta, escribinos a {email}."
+					]
+				},
+				{
+					"h": "La información es orientativa",
+					"p": [
+						"Armamos las guías y las notas con fuentes que mostramos y las fechamos. Aun así, los reglamentos, las vedas, los permisos, los precios y el estado del agua cambian. Antes de salir, confirmá con la autoridad de aplicación de la provincia y con tu guía.",
+						"No garantizamos que la información esté completa ni al día, y no respondemos por decisiones tomadas solo con lo que leíste acá."
+					]
+				},
+				{
+					"h": "Prestadores y viajes",
+					"p": [
+						"Mostramos guías, alojamientos y otros prestadores. Algunos figuran con información pública y están marcados como no verificados; otros trabajan con nosotros.",
+						"Cuando pedís un viaje o una cotización, tu consulta llega a Pescamapa y la pasamos a quien elijas o a quien te recomendemos. El servicio lo presta y lo cobra el prestador: Pescamapa no es parte del contrato entre vos y él, no organiza la salida de pesca y no garantiza el servicio. Pedir una cotización no tiene costo ni compromiso."
+					]
+				},
+				{
+					"h": "Comisiones y enlaces pagos",
+					"p": [
+						"Pescamapa cobra una comisión a los prestadores con los que trabajamos cuando se concreta un viaje; vos pagás lo mismo. No ordenamos ni destacamos por comisión. Todo enlace pago o de afiliado se rotula como publicidad."
+					]
+				},
+				{
+					"h": "Reportes de la zona de pique",
+					"p": [
+						"Los reportes los envían pescadores: no están verificados, se muestran con demora y por zonas de unos 1.000 m, nunca por punto exacto. Son una referencia, no una garantía de pique ni una señal de que un lugar esté habilitado.",
+						"Al enviar un reporte nos autorizás a mostrar su zona, especie, día y resultado, sin tu nombre. Podemos ocultar o borrar cualquier reporte."
+					]
+				},
+				{
+					"h": "Pescá con responsabilidad",
+					"p": [
+						"Respetá el reglamento, las tallas y los cupos, devolvé lo que corresponda y cuidá el ambiente. No uses el sitio para mandar spam, cargar datos falsos o de otras personas, ni para interferir con su funcionamiento."
+					]
+				},
+				{
+					"h": "Textos y fotos",
+					"p": [
+						"Los textos, la organización y los datos propios de Pescamapa están protegidos; podés citarlos con un enlace a la fuente.",
+						"Cada foto lleva el nombre de quien la sacó. Algunas se usan con permiso de su autor y otras bajo licencias libres (por ejemplo, Wikimedia Commons o Unsplash), con el crédito a la vista. Las fotos pueden estar recortadas o redimensionadas para mostrarse en el sitio. Los nombres y las marcas de terceros pertenecen a sus dueños."
+					]
+				},
+				{
+					"h": "Enlaces a otros sitios",
+					"p": [
+						"Enlazamos a fuentes oficiales y a sitios de terceros. No controlamos su contenido ni sus políticas."
+					]
+				},
+				{
+					"h": "Correcciones y bajas",
+					"p": [
+						"Si sos prestador o una persona y querés corregir o sacar algo que publicamos, escribinos a {email} y lo atendemos."
+					]
+				},
+				{
+					"h": "Cambios y ley aplicable",
+					"p": [
+						"Podemos actualizar estos términos; la fecha de arriba dice cuándo fue la última vez. Se rigen por las leyes de la República Argentina. Para saber cómo cuidamos tus datos, leé la {privacidad}."
+					]
+				}
+			]
+		},
+		"pt": {
+			"title": "Termos de uso | Pescamapa",
+			"description": "Regras simples para usar o Pescamapa: o que é, o que não garante, como funcionam os prestadores, os relatos de pique e as fotos.",
+			"h1": "Termos de uso",
+			"secciones": [
+				{
+					"h": "Quem somos",
+					"p": [
+						"O Pescamapa (pescamapa.com) é um projeto de Cheyenne Justiniano e Alberto Ayala. É um guia para pescar na Argentina: aonde ir, quando, o que diz o regulamento e com quem sair. Para qualquer dúvida, escreva para {email}."
+					]
+				},
+				{
+					"h": "A informação é orientativa",
+					"p": [
+						"Montamos os guias e as notas com fontes que mostramos e datamos. Mesmo assim, regulamentos, vedas, licenças, preços e o estado da água mudam. Antes de sair, confirme com a autoridade da província e com o seu guia.",
+						"Não garantimos que a informação esteja completa nem atualizada, e não respondemos por decisões tomadas apenas com o que você leu aqui."
+					]
+				},
+				{
+					"h": "Prestadores e viagens",
+					"p": [
+						"Mostramos guias, hospedagens e outros prestadores. Alguns aparecem com informação pública e estão marcados como não verificados; outros trabalham conosco.",
+						"Quando você pede uma viagem ou um orçamento, a consulta chega ao Pescamapa e a repassamos a quem você escolher ou a quem recomendarmos. O serviço é prestado e cobrado pelo prestador: o Pescamapa não faz parte do contrato entre você e ele, não organiza a pescaria e não garante o serviço. Pedir um orçamento não tem custo nem compromisso."
+					]
+				},
+				{
+					"h": "Comissões e links pagos",
+					"p": [
+						"O Pescamapa cobra uma comissão dos prestadores com quem trabalhamos quando uma viagem se concretiza; você paga o mesmo. Não ordenamos nem destacamos por comissão. Todo link pago ou de afiliado é identificado como publicidade."
+					]
+				},
+				{
+					"h": "Relatos da zona de pique",
+					"p": [
+						"Os relatos são enviados por pescadores: não são verificados, aparecem com atraso e por zonas de cerca de 1.000 m, nunca por ponto exato. São uma referência, não uma garantia de pique nem um sinal de que o local esteja liberado.",
+						"Ao enviar um relato, você nos autoriza a mostrar a zona, a espécie, o dia e o resultado, sem o seu nome. Podemos ocultar ou apagar qualquer relato."
+					]
+				},
+				{
+					"h": "Pesque com responsabilidade",
+					"p": [
+						"Respeite o regulamento, os tamanhos e as cotas, devolva o que for preciso e cuide do ambiente. Não use o site para enviar spam, cadastrar dados falsos ou de outras pessoas, nem para interferir no seu funcionamento."
+					]
+				},
+				{
+					"h": "Textos e fotos",
+					"p": [
+						"Os textos, a organização e os dados próprios do Pescamapa são protegidos; você pode citá-los com um link para a fonte.",
+						"Cada foto leva o nome de quem a tirou. Algumas são usadas com permissão do autor e outras sob licenças livres (por exemplo, Wikimedia Commons ou Unsplash), com o crédito à vista. As fotos podem estar recortadas ou redimensionadas para aparecer no site. Os nomes e as marcas de terceiros pertencem aos seus donos."
+					]
+				},
+				{
+					"h": "Links para outros sites",
+					"p": [
+						"Linkamos fontes oficiais e sites de terceiros. Não controlamos o conteúdo nem as políticas deles."
+					]
+				},
+				{
+					"h": "Correções e remoções",
+					"p": [
+						"Se você é prestador ou pessoa e quer corrigir ou tirar algo que publicamos, escreva para {email} e atenderemos."
+					]
+				},
+				{
+					"h": "Mudanças e lei aplicável",
+					"p": [
+						"Podemos atualizar estes termos; a data acima indica a última vez. Eles são regidos pelas leis da República Argentina. Para saber como cuidamos dos seus dados, leia a {privacidad}."
+					]
+				}
+			]
+		},
+		"en": {
+			"title": "Terms of use | Pescamapa",
+			"description": "Simple rules for using Pescamapa: what it is, what it does not guarantee, how outfitters, bite-zone reports and photos work.",
+			"h1": "Terms of use",
+			"secciones": [
+				{
+					"h": "Who we are",
+					"p": [
+						"Pescamapa (pescamapa.com) is a project of Cheyenne Justiniano and Alberto Ayala. It is a guide to fishing in Argentina: where to go, when, what the rules say and who to go with. For anything, write to {email}."
+					]
+				},
+				{
+					"h": "The information is a guide",
+					"p": [
+						"We build our guides and notes from sources we show, and we date them. Even so, regulations, closed seasons, permits, prices and water conditions change. Before you go, confirm with the provincial authority and with your guide.",
+						"We do not guarantee that the information is complete or up to date, and we are not responsible for decisions made only on what you read here."
+					]
+				},
+				{
+					"h": "Outfitters and trips",
+					"p": [
+						"We show guides, lodges and other providers. Some appear with public information and are marked as unverified; others work with us.",
+						"When you ask for a trip or a quote, your request comes to Pescamapa and we pass it on to whoever you choose or we recommend. The service is provided and charged by the outfitter: Pescamapa is not a party to the contract between you and them, does not run the fishing trip and does not guarantee the service. Asking for a quote has no cost or commitment."
+					]
+				},
+				{
+					"h": "Commissions and paid links",
+					"p": [
+						"Pescamapa charges a commission to the outfitters we work with when a trip goes ahead; you pay the same. We do not rank or feature by commission. Any paid or affiliate link is labelled as advertising."
+					]
+				},
+				{
+					"h": "Bite-zone reports",
+					"p": [
+						"Reports are sent by anglers: they are unverified, shown with a delay and by zones of about 1,000 m, never by exact spot. They are a reference, not a promise of a bite nor a sign that a place is open to fishing.",
+						"By sending a report you allow us to show its zone, species, day and result, without your name. We may hide or delete any report."
+					]
+				},
+				{
+					"h": "Fish responsibly",
+					"p": [
+						"Follow the regulations, sizes and limits, release what you must and look after the environment. Do not use the site to send spam, to enter false data or other people’s data, or to interfere with how it works."
+					]
+				},
+				{
+					"h": "Text and photos",
+					"p": [
+						"Pescamapa’s text, organisation and own data are protected; you may quote them with a link to the source.",
+						"Every photo carries the name of whoever took it. Some are used with their author’s permission and others under free licences (for example Wikimedia Commons or Unsplash), with the credit in view. Photos may be cropped or resized to fit the site. Third-party names and brands belong to their owners."
+					]
+				},
+				{
+					"h": "Links to other sites",
+					"p": [
+						"We link to official sources and to third-party sites. We do not control their content or policies."
+					]
+				},
+				{
+					"h": "Corrections and removals",
+					"p": [
+						"If you are an outfitter or a person and you want us to correct or remove something we published, write to {email} and we will take care of it."
+					]
+				},
+				{
+					"h": "Changes and governing law",
+					"p": [
+						"We may update these terms; the date above says when we last did. They are governed by the laws of the Argentine Republic. To see how we look after your data, read the {privacidad}."
+					]
+				}
+			]
+		}
+	},
+	"privacidad": {
+		"es": {
+			"title": "Política de privacidad | Pescamapa",
+			"description": "Qué datos recoge Pescamapa, para qué los usa, con quién los comparte y cómo podés pedir verlos, corregirlos o borrarlos.",
+			"h1": "Política de privacidad",
+			"secciones": [
+				{
+					"h": "Quién trata tus datos",
+					"p": [
+						"Pescamapa (pescamapa.com), un proyecto de Cheyenne Justiniano y Alberto Ayala. Contacto: {email}."
+					]
+				},
+				{
+					"h": "Qué datos recogemos y para qué",
+					"li": [
+						"Si pedís un viaje o una cotización: tu nombre, WhatsApp o email, país, fechas, cantidad de personas, preferencias (especie, modalidad, experiencia, alojamiento) y el mensaje que escribas. Los usamos para responderte y pasar tu consulta a quien elijas o te recomendemos.",
+						"Si sos prestador y pedís figurar: nombre, contacto, localidad y lo que ofrecés. Los usamos para contactarte y armar tu ficha; no se publica nada sin tu permiso.",
+						"Si enviás un reporte de pique: la zona (un cuadrado de unos 1.000 m), la especie, el día y el resultado. No recibimos ni guardamos tu posición exacta ni tu nombre: tu posición exacta no sale de tu teléfono.",
+						"Para frenar el spam y los abusos: guardamos por una hora un código derivado de tu dirección IP para limitar los envíos, y con cada reporte de pique un código irreversible derivado de tu IP para evitar duplicados. No guardamos tu IP en claro."
+					]
+				},
+				{
+					"h": "Lo que no hacemos",
+					"p": [
+						"No usamos cookies de seguimiento, publicidad ni herramientas de analítica, y no vendemos tus datos. Tu navegador guarda una sola cosa del sitio: que ya cerraste el aviso de idioma."
+					]
+				},
+				{
+					"h": "Con quién los compartimos",
+					"p": [
+						"Con el prestador que elijas o te recomendemos: solo lo necesario para que te conteste (tu consulta y tu contacto).",
+						"Con quienes hacen funcionar el sitio: el servidor donde está alojado, Cloudflare (red y seguridad; procesa las visitas y las direcciones IP) y el servicio de correo con el que recibimos las consultas.",
+						"Cuando ves un mapa, tu navegador pide las imágenes a OpenStreetMap, que recibe tu IP según su propia política.",
+						"No los compartimos con nadie más, salvo que lo exija una autoridad."
+					]
+				},
+				{
+					"h": "Cuánto tiempo los guardamos",
+					"p": [
+						"Las consultas, mientras haga falta para atenderte y seguir tu viaje; podés pedirnos que las borremos cuando quieras. Los reportes de pique no tienen datos personales y quedan como información de la zona."
+					]
+				},
+				{
+					"h": "Tus derechos",
+					"p": [
+						"Podés pedirnos acceso, corrección o borrado de tus datos escribiendo a {email}. Si vivís en otro país, también tenés los derechos que te dé tu ley local; escribinos igual.",
+						"El titular de los datos personales tiene la facultad de ejercer el derecho de acceso a los mismos en forma gratuita a intervalos no inferiores a seis meses, salvo que se acredite un interés legítimo al efecto (art. 14, inc. 3, Ley 25.326). La Agencia de Acceso a la Información Pública, órgano de control de la Ley 25.326, tiene la atribución de atender las denuncias y reclamos que se interpongan con relación al incumplimiento de las normas sobre protección de datos personales."
+					]
+				},
+				{
+					"h": "Cambios",
+					"p": [
+						"Si cambiamos algo importante, lo actualizamos acá y cambiamos la fecha de arriba. Las reglas de uso del sitio están en los {terminos}."
+					]
+				}
+			]
+		},
+		"pt": {
+			"title": "Política de privacidade | Pescamapa",
+			"description": "Que dados o Pescamapa coleta, para que os usa, com quem os compartilha e como você pode pedir para vê-los, corrigi-los ou apagá-los.",
+			"h1": "Política de privacidade",
+			"secciones": [
+				{
+					"h": "Quem trata os seus dados",
+					"p": [
+						"Pescamapa (pescamapa.com), um projeto de Cheyenne Justiniano e Alberto Ayala. Contato: {email}."
+					]
+				},
+				{
+					"h": "Que dados coletamos e para quê",
+					"li": [
+						"Se você pede uma viagem ou um orçamento: nome, WhatsApp ou e-mail, país, datas, número de pessoas, preferências (espécie, modalidade, experiência, hospedagem) e a mensagem que escrever. Usamos para responder e repassar a consulta a quem você escolher ou recomendarmos.",
+						"Se você é prestador e pede para aparecer: nome, contato, localidade e o que oferece. Usamos para entrar em contato e montar a sua ficha; nada é publicado sem a sua permissão.",
+						"Se você envia um relato de pique: a zona (um quadrado de cerca de 1.000 m), a espécie, o dia e o resultado. Não recebemos nem guardamos a sua posição exata nem o seu nome: a posição exata não sai do seu celular.",
+						"Para conter spam e abusos: guardamos por uma hora um código derivado do seu endereço IP para limitar os envios e, com cada relato de pique, um código irreversível derivado do IP para evitar duplicados. Não guardamos o IP em claro."
+					]
+				},
+				{
+					"h": "O que não fazemos",
+					"p": [
+						"Não usamos cookies de rastreamento, publicidade nem ferramentas de análise, e não vendemos os seus dados. O seu navegador guarda uma única coisa do site: que você já fechou o aviso de idioma."
+					]
+				},
+				{
+					"h": "Com quem compartilhamos",
+					"p": [
+						"Com o prestador que você escolher ou recomendarmos: só o necessário para ele responder (a consulta e o seu contato).",
+						"Com quem faz o site funcionar: o servidor onde ele está hospedado, a Cloudflare (rede e segurança; processa as visitas e os endereços IP) e o serviço de e-mail com o qual recebemos as consultas.",
+						"Quando você vê um mapa, o seu navegador pede as imagens ao OpenStreetMap, que recebe o seu IP conforme a política dele.",
+						"Não compartilhamos com mais ninguém, salvo exigência de uma autoridade."
+					]
+				},
+				{
+					"h": "Por quanto tempo guardamos",
+					"p": [
+						"As consultas, enquanto for preciso para atender você e acompanhar a viagem; você pode pedir que as apaguemos quando quiser. Os relatos de pique não têm dados pessoais e ficam como informação da zona."
+					]
+				},
+				{
+					"h": "Os seus direitos",
+					"p": [
+						"Você pode pedir acesso, correção ou exclusão dos seus dados escrevendo para {email}. Se você mora em outro país, também tem os direitos que a lei local lhe dá; escreva do mesmo jeito.",
+						"Na Argentina, o titular dos dados pessoais pode exercer o direito de acesso gratuitamente em intervalos não inferiores a seis meses, salvo interesse legítimo comprovado (art. 14, inc. 3, Lei 25.326). A Agência de Acesso à Informação Pública, órgão de controle da Lei 25.326, atende as denúncias e reclamações sobre o descumprimento das normas de proteção de dados pessoais."
+					]
+				},
+				{
+					"h": "Mudanças",
+					"p": [
+						"Se mudarmos algo importante, atualizamos aqui e trocamos a data acima. As regras de uso do site estão nos {terminos}."
+					]
+				}
+			]
+		},
+		"en": {
+			"title": "Privacy policy | Pescamapa",
+			"description": "What data Pescamapa collects, what for, who it is shared with, and how you can ask to see, correct or delete it.",
+			"h1": "Privacy policy",
+			"secciones": [
+				{
+					"h": "Who handles your data",
+					"p": [
+						"Pescamapa (pescamapa.com), a project of Cheyenne Justiniano and Alberto Ayala. Contact: {email}."
+					]
+				},
+				{
+					"h": "What we collect and why",
+					"li": [
+						"If you ask for a trip or a quote: your name, WhatsApp or email, country, dates, number of people, preferences (species, style, experience, lodging) and the message you write. We use them to reply and to pass your request on to whoever you choose or we recommend.",
+						"If you are an outfitter and ask to be listed: name, contact, town and what you offer. We use them to contact you and build your listing; nothing is published without your permission.",
+						"If you send a bite-zone report: the zone (a square of about 1,000 m), the species, the day and the result. We never receive or store your exact position or your name: your exact position does not leave your phone.",
+						"To stop spam and abuse: for one hour we keep a code derived from your IP address to limit submissions, and with each bite-zone report an irreversible code derived from your IP to avoid duplicates. We do not store your IP in the clear."
+					]
+				},
+				{
+					"h": "What we do not do",
+					"p": [
+						"We use no tracking cookies, advertising or analytics tools, and we do not sell your data. Your browser stores only one thing from the site: that you closed the language notice."
+					]
+				},
+				{
+					"h": "Who we share it with",
+					"p": [
+						"With the outfitter you choose or we recommend: only what they need to answer you (your request and contact).",
+						"With the services that run the site: the server it is hosted on, Cloudflare (network and security; it processes visits and IP addresses) and the email service we receive requests through.",
+						"When you view a map, your browser requests the images from OpenStreetMap, which receives your IP under its own policy.",
+						"We share it with no one else, unless an authority requires it."
+					]
+				},
+				{
+					"h": "How long we keep it",
+					"p": [
+						"Requests, for as long as needed to help you and follow your trip; you can ask us to delete them any time. Bite-zone reports hold no personal data and stay as information about the zone."
+					]
+				},
+				{
+					"h": "Your rights",
+					"p": [
+						"You can ask us for access to, correction or deletion of your data by writing to {email}. If you live elsewhere, you also have the rights your local law gives you (for example in the EU, the UK or Brazil); write to us anyway.",
+						"Under Argentine law (Law 25,326), data subjects may exercise their right of access free of charge at intervals of no less than six months, unless a legitimate interest is shown (art. 14, para. 3). The Agency for Access to Public Information (AAIP), the supervisory body under that law, handles complaints about breaches of the personal-data rules."
+					]
+				},
+				{
+					"h": "Changes",
+					"p": [
+						"If we change something important, we update it here and change the date above. The rules for using the site are in the {terminos}."
+					]
+				}
+			]
+		}
+	}
+}
