@@ -416,7 +416,7 @@
 			"rio.p.cerca.h2": "Otros puntos cerca",
 			"rio.p.guia": "¿Vas a pescar en %lugar%? Mirá la guía →",
 			"rio.p.todos": "← Todas las alturas del río",
-			"rio.resumen": "Hoy, %n% puntos: %sube% suben, %baja% bajan, %estable% estables. Elegí el tuyo:",
+			"rio.resumen": "Hoy, %n% puntos con tendencia: suben %sube%, bajan %baja%, estables %estable%. Elegí el tuyo:",
 			"rio.mareal.corto": "Depende de la marea",
 			"rio.p.respuesta.mareal": "El %curso% en %lugar% marcó %altura% m el %fecha%.",
 			"rio.p.description.mareal": "Altura del %curso% en %lugar% hoy: %altura% m el %fecha%. Niveles de alerta, últimos días, viento y lluvia. Fuente: INA y Prefectura."
@@ -739,7 +739,7 @@
 			"rio.p.cerca.h2": "Outros pontos próximos",
 			"rio.p.guia": "Vai pescar em %lugar%? Veja o guia →",
 			"rio.p.todos": "← Todas as alturas do rio",
-			"rio.resumen": "Hoje, %n% pontos: %sube% sobem, %baja% descem, %estable% estáveis. Escolha o seu:",
+			"rio.resumen": "Hoje, %n% pontos com tendência: sobem %sube%, descem %baja%, estáveis %estable%. Escolha o seu:",
 			"rio.mareal.corto": "Depende da maré",
 			"rio.p.respuesta.mareal": "O %curso% em %lugar% marcou %altura% m em %fecha%.",
 			"rio.p.description.mareal": "Altura do %curso% em %lugar% hoje: %altura% m em %fecha%. Níveis de alerta, últimos dias, vento e chuva. Fonte: INA e Prefectura."
@@ -1062,7 +1062,7 @@
 			"rio.p.cerca.h2": "Other nearby points",
 			"rio.p.guia": "Fishing at %lugar%? Read the guide →",
 			"rio.p.todos": "← All river levels",
-			"rio.resumen": "Today, %n% points: %sube% rising, %baja% falling, %estable% steady. Pick yours:",
+			"rio.resumen": "Today, %n% points with a trend: %sube% rising, %baja% falling, %estable% steady. Pick yours:",
 			"rio.mareal.corto": "Depends on the tide",
 			"rio.p.respuesta.mareal": "The %curso% at %lugar% read %altura% m on %fecha%.",
 			"rio.p.description.mareal": "%curso% height at %lugar% today: %altura% m on %fecha%. Alert levels, last days, wind and rain. Source: INA and Prefectura."
