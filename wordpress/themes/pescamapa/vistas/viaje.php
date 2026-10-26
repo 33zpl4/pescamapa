@@ -47,7 +47,7 @@ get_header(); ?>
 			<p class="bajada"><?php pm_e( 'viaje.bajada' ); ?></p>
 		</div>
 	</header>
-	<div class="shell viaje-layout">
+	<div class="shell viaje-layout<?php echo 'ok' === $resultado ? ' solo' : ''; ?>">
 		<section id="consulta" class="consulta viaje-form" aria-labelledby="viaje-h">
 			<h2 id="viaje-h" class="visually-hidden"><?php pm_e( 'viaje.h1' ); ?></h2>
 			<?php if ( 'ok' === $resultado ) : ?>
@@ -137,6 +137,7 @@ get_header(); ?>
 			<?php endif; ?>
 		</section>
 
+		<?php if ( 'ok' !== $resultado ) : ?>
 		<aside class="viaje-como" aria-labelledby="como-h">
 			<h2 id="como-h"><?php pm_e( 'viaje.como.h' ); ?></h2>
 			<ol>
@@ -148,6 +149,7 @@ get_header(); ?>
 				<?php endforeach; ?>
 			</ol>
 		</aside>
+		<?php endif; ?>
 	</div>
 </div>
 <script>
