@@ -287,6 +287,22 @@ jobs:
           check / 200 'Ver todas las notas'
           check / 200 'cuando-pescar-trucha-patagonia'
           check /en/ 200 'See all notes'
+          # River conditions: the calculations, the store script with an example, the block in a guide and the hub page.
+          python3 wordpress/build/rio-traer.py --test
+          cp wordpress/build/rio-ejemplo.json /tmp/pm-rio.json
+          sed 's/^\$aplicar = false;/$aplicar = true;/' wordpress/scripts/rio-guardar.php > /tmp/rio-guardar.php
+          wp --path="$WP" eval-file /tmp/rio-guardar.php
+          wp --path="$WP" eval-file /tmp/rio-guardar.php   # idempotent
+          check /litoral/corrientes/pesca-en-esquina/ 200 'Cómo está el río hoy'
+          check /litoral/corrientes/pesca-en-esquina/ 200 '4,62'
+          check /litoral/corrientes/pesca-en-esquina/ 200 'href="https://open-meteo.com/"'
+          check /altura-del-rio/ 200 'Altura del río Paraná hoy'
+          check /altura-del-rio/ 200 'application/ld+json'
+          check /altura-del-rio/ 200 'Zona de pique'
+          check /pique/ 200 'altura-del-rio'
+          check /en/river-levels/ 200 'Paraná River levels today'
+          check /pt/altura-do-rio/ 200 'Altura do rio Paraná hoje'
+          check / 200 '/altura-del-rio/'
           # Zona de pique (docs/pique.md): empty state, report through the real endpoint, privacy, delay, abuse limits.
           check /pique/ 200 'pique-mapa' 'reportes en'
           check /pique/ 200 'Todavía no hay reportes'

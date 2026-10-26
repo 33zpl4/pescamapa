@@ -20,6 +20,7 @@ get_header(); ?>
 	<div class="shell wrap">
 		<h1><?php pm_e( 'pique.h1' ); ?></h1>
 		<p class="lead"><?php pm_e( 'pique.intro' ); ?></p>
+		<p><a href="<?php echo esc_url( pm_url_rio( pm_lang() ) ); ?>"><?php pm_e( 'pique.rio' ); ?></a></p>
 		<p class="resumen" role="status">
 			<?php if ( $resumen['reportes'] ) {
 				pm_e( 1 === $resumen['reportes'] && 1 === $resumen['zonas'] ? 'pique.resumen1' : 'pique.resumen', [ 'reportes' => $resumen['reportes'], 'zonas' => $resumen['zonas'], 'fecha' => pm_fecha( $resumen['ultimo'] ) ] );

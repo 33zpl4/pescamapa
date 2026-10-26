@@ -1,0 +1,47 @@
+name: River conditions
+
+# Every day: reads the river heights (INA a5 API) and the weather (Open-Meteo) for the destinations in
+# wordpress/plugins/pescamapa-core/data/rio.json and stores them in the site (option pm_rio) with
+# wordpress/scripts/rio-guardar.php. Read-only towards INA and Open-Meteo. If nothing can be read the run
+# fails and the previous data stays (shown with its date). Manual run: Actions -> River conditions.
+
+on:
+  schedule:
+    - cron: "40 11 * * *"
+  workflow_dispatch:
+    inputs:
+      aplicar:
+        description: "Guardar en el sitio (false = solo mostrar lo que se leyó)"
+        default: "true"
+
+jobs:
+  rio:
+    runs-on: ubuntu-latest
+    env:
+      WP: ${{ secrets.WP_PATH }}
+      APLICAR: ${{ github.event.inputs.aplicar || 'true' }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check the calculations, then read INA and Open-Meteo
+        run: |
+          python3 wordpress/build/rio-traer.py --test
+          python3 wordpress/build/rio-traer.py /tmp/pm-rio.json
+      - name: SSH setup
+        run: |
+          mkdir -p ~/.ssh
+          printf '%s\n' "${{ secrets.WP_SSH_KEY }}" | tr -d '\r' > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          cat > ~/.ssh/config <<EOF
+          Host wp
+            HostName ${{ secrets.WP_SSH_HOST }}
+            Port ${{ secrets.WP_SSH_PORT }}
+            User ${{ secrets.WP_SSH_USER }}
+            IdentityFile ~/.ssh/deploy_key
+            StrictHostKeyChecking accept-new
+          EOF
+      - name: Store in the site
+        run: |
+          if [ "$APLICAR" = "true" ]; then sed 's/^\$aplicar = false;/$aplicar = true;/' wordpress/scripts/rio-guardar.php > /tmp/rio-guardar.php; else cp wordpress/scripts/rio-guardar.php /tmp/rio-guardar.php; fi
+          scp -q /tmp/rio-guardar.php wp:/tmp/pm-script.php
+          scp -q /tmp/pm-rio.json wp:/tmp/pm-rio.json
+          ssh wp "chown www:www /tmp/pm-script.php /tmp/pm-rio.json && cd '$WP' && runuser -u www -- env HOME=/tmp WP_CLI_CACHE_DIR=/tmp/wp-cli-cache-www wp --path='$WP' eval-file /tmp/pm-script.php; s=\$?; rm -f /tmp/pm-script.php /tmp/pm-rio.json; exit \$s"

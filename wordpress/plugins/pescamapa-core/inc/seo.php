@@ -58,6 +58,22 @@ function pm_seo(): array {
 		$s['title']       = pm_t( 'viaje.title' );
 		$s['description'] = pm_t( 'viaje.description' );
 		$s['alternas']    = pm_alternas_fijas( 'pm_url_viaje' );
+	} elseif ( 'rio' === $vista ) {
+		$s['title']       = pm_t( 'rio.title' );
+		$s['description'] = pm_t( 'rio.description' );
+		$s['alternas']    = pm_alternas_fijas( 'pm_url_rio' );
+		$cap              = (string) ( pm_rio_datos()['capturado'] ?? '' );
+		$s['jsonld'][]    = array_filter( [
+			'@context'     => 'https://schema.org',
+			'@type'        => 'WebPage',
+			'name'         => pm_t( 'rio.h1' ),
+			'description'  => pm_t( 'rio.description' ),
+			'url'          => pm_url_rio( pm_lang() ),
+			'inLanguage'   => pm_meta_idioma()['html'],
+			'dateModified' => $cap,
+			'isPartOf'     => [ '@type' => 'WebSite', 'name' => 'Pescamapa', 'url' => pm_url_inicio( pm_lang() ) ],
+			'isBasedOn'    => 'https://alerta.ina.gob.ar/',
+		] );
 	} elseif ( 'terminos' === $vista || 'privacidad' === $vista ) {
 		$l                = pm_legal( $vista );
 		$s['title']       = $l['title'] ?? '';

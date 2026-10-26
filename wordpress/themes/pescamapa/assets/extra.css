@@ -182,3 +182,27 @@
 .v-legal h2 { font-size: var(--fs-h3); margin: 1.8em 0 0.4em; }
 .v-legal li { margin-bottom: 8px; }
 .pie-legal-enlaces a { margin-left: 14px; }
+
+/* River conditions: block in the guides + the hub page */
+.rio { margin-block: 28px; }
+.rio h2 { font-size: var(--fs-h3); margin: 0 0 14px; }
+.rio-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 20px; align-items: start; }
+.rio-altura, .rio-clima { background: var(--cream); border-radius: var(--radius); padding: 18px 22px; }
+.rio-num { font: 700 var(--fs-h2)/1 var(--font-head); }
+.rio-num span { font-size: var(--fs-lead); }
+.rio-que { margin: 6px 0 10px; color: var(--muted); }
+.rio-tend, .rio-estado { margin: 4px 0; font-weight: 600; }
+.rio-sube::before { content: "↑ "; }
+.rio-baja::before { content: "↓ "; }
+.rio-estable::before { content: "→ "; }
+.rio-alerta { color: var(--orange); }
+.rio-evacuacion { color: var(--orange); font-weight: 700; }
+.rio-clima h3 { font-size: var(--fs-lead); margin: 0 0 8px; }
+.rio-clima ul { margin: 0; padding-left: 18px; }
+.rio .note a { margin-left: 6px; }
+@media (max-width: 720px) { .rio-grid { grid-template-columns: 1fr; } }
+.rio-hub { padding-block: 32px 80px; }
+.tabla-rio { overflow-x: auto; margin-bottom: 36px; }
+.tabla-rio table { width: 100%; border-collapse: collapse; }
+.tabla-rio th, .tabla-rio td { text-align: left; padding: 12px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+.tabla-rio small { display: block; color: var(--muted); font-weight: 400; }

@@ -1,0 +1,10 @@
+{
+	"nota": "Un destino por clave. 'estacion' = id de la estación en la API del INA (alerta.ina.gob.ar/a5); es también el id de la serie de altura medida (var H). Sin 'estacion' solo se muestra el clima. lat/lon: el pueblo (para el clima). Los niveles de alerta y evacuación salen de la API.",
+	"destinos": {
+		"goya":              { "estacion": 23, "estacion_nombre": "Goya",              "rio": "Paraná", "lat": -29.14,  "lon": -59.26 },
+		"esquina":           { "estacion": 25, "estacion_nombre": "Esquina",           "rio": "Paraná", "lat": -30.014, "lon": -59.527 },
+		"paso-de-la-patria": { "estacion": 18, "estacion_nombre": "Paso de la Patria", "rio": "Paraná", "lat": -27.32,  "lon": -58.57 },
+		"la-paz":            { "estacion": 26, "estacion_nombre": "La Paz",            "rio": "Paraná", "lat": -30.745, "lon": -59.645 },
+		"san-martin-junin":  { "lat": -39.94, "lon": -71.07 }
+	}
+}
