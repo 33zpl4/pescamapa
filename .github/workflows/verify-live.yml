@@ -49,7 +49,7 @@ jobs:
           check /terminos/ 200 'Términos de uso'
           check /terminos/ 200 'Las fotos pueden estar recortadas'
           check /privacidad/ 200 'Política de privacidad'
-          check /privacidad/ 200 'info@pescamapa.com'
+          check /privacidad/ 200 'Quién trata tus datos'   # (el email sale ofuscado por Cloudflare: no se busca el texto)
           check /en/terms/ 200 'Terms of use'
           check /en/privacy/ 200 'Privacy policy'
           check /pt/termos/ 200 'Termos de uso'
