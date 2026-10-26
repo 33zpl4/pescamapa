@@ -1,7 +1,7 @@
 name: Probe river data
 
-# Read-only probe (26/10/2026): can a runner read the INA daily river report (PDF) and Open-Meteo?
-# Prints what it finds; changes nothing. Run by hand: Actions -> Probe river data.
+# Read-only probe: which INA a5 stations exist around Buenos Aires (Río de la Plata, Delta, Luján, Salado...)
+# and which of them have recent readings. Changes nothing. Run by hand: Actions -> Probe river data.
 
 on:
   workflow_dispatch:
@@ -10,39 +10,37 @@ jobs:
   sonda:
     runs-on: ubuntu-latest
     steps:
-      - name: INA daily reports (listing, latest PDF, text of the PDF)
+      - name: Stations around Buenos Aires
         run: |
           set +e
-          BASE=https://alerta.ina.gob.ar/ina/06-INFORMES/diario/pdf
-          echo "== listing"; curl -sS -m 30 -o lista.html -w '%{http_code} %{size_download} bytes\n' "$BASE/"
-          grep -o 'reporte_diario_[0-9-]*\.pdf' lista.html | sort -u | tail -5
-          N=$(grep -o 'reporte_diario_[0-9-]*\.pdf' lista.html | sort -u | wc -l); echo "pdfs listed: $N"
-          # the latest one that exists (today, then back up to 6 days)
-          for d in 0 1 2 3 4 5 6; do
-            f="reporte_diario_$(date -u -d "-$d day" +%F).pdf"
-            code=$(curl -sS -m 60 -o "$f" -w '%{http_code}' "$BASE/$f")
-            echo "$f -> $code"
-            [[ "$code" == 200 ]] && { LAST="$f"; break; }
-          done
-          echo "== pdf: ${LAST:-none}"
-          [[ -n "${LAST:-}" ]] || exit 0
-          sudo apt-get install -y -qq poppler-utils >/dev/null 2>&1
-          pdfinfo "$LAST" | head -8
-          pdftotext -layout "$LAST" informe.txt
-          echo "text chars: $(wc -c < informe.txt)"
-          echo "== first 60 lines"; head -60 informe.txt
-          echo "== lines with our stations"
-          grep -n -i -E 'goya|esquina|la paz|paso de la patria|corrientes|reconquista|concordia|santa fe' informe.txt | head -40
-      - name: INA alert site (does it load data from an API?)
-        run: |
-          set +e
-          for u in https://alerta.ina.gob.ar/a5/ https://alerta.ina.gob.ar/a5/secciones https://alerta.ina.gob.ar/; do
-            echo "== $u"; curl -sS -L -m 30 -o p.html -w '%{http_code} %{size_download} bytes\n' "$u"
-            grep -o -E '(src|href)="[^"]+"' p.html | head -20
-            grep -o -i -E "[\"'][^\"' ]*(api|json|csv|obs|puntual|series)[^\"' ]*[\"']" p.html | sort -u | head -20
-          done
-      - name: Open-Meteo (last 3 days wind and rain at Goya)
-        run: |
-          set +e
-          curl -sS -m 30 "https://api.open-meteo.com/v1/forecast?latitude=-29.14&longitude=-59.26&past_days=3&forecast_days=1&hourly=wind_speed_10m,wind_direction_10m,precipitation&daily=wind_speed_10m_max,precipitation_sum&timezone=America%2FArgentina%2FBuenos_Aires" -o om.json -w '%{http_code} %{size_download} bytes\n'
-          python3 -c "import json;d=json.load(open('om.json'));print(d.get('daily'))"
+          B=https://alerta.ina.gob.ar/a5
+          curl -sS -m 120 -o estaciones.json "$B/obs/puntual/estaciones?format=json"
+          curl -sS -m 120 -o series.json "$B/obs/puntual/series?format=json"
+          python3 - <<'PY'
+          import json, re
+          est = json.load(open('estaciones.json'))
+          ser = json.load(open('series.json')); rows = ser['rows'] if isinstance(ser, dict) else ser
+          prov = re.compile(r'buenos aires|capital|caba|autonoma|autónoma', re.I)
+          rio = re.compile(r'plata|palmas|luj[aá]n|salado|delta|guaz|matanza|reconquista|samborom|uruguay|paran[aá]', re.I)
+          por_est = {}
+          for r in rows:
+              if (r.get('var') or {}).get('var') == 'H' and (r.get('procedimiento') or {}).get('nombre') == 'medición directa':
+                  por_est[r['estacion']['id']] = r
+          print('--- provinces seen in stations:', sorted({str(e.get('provincia')) for e in est if prov.search(str(e.get('provincia')))}))
+          n = 0
+          for e in est:
+              if e.get('tipo') != 'H': continue
+              if not (prov.search(str(e.get('provincia'))) and rio.search(str(e.get('rio')))): continue
+              s = por_est.get(e['id'])
+              dr = (s or {}).get('date_range') or {}
+              fin = (dr.get('timeend') or '')[:10]
+              if fin >= '2026-10-15':
+                  n += 1
+                  print(e['id'], '|', e['nombre'], '|', e.get('abreviatura'), '|', e.get('rio'), '|', e.get('provincia'), '| alerta', e.get('nivel_alerta'), '| evac', e.get('nivel_evacuacion'), '| red', (e.get('red') or {}).get('nombre'), '| serie', (s or {}).get('id'), '| hasta', fin)
+          print('stations with recent readings:', n)
+          print('--- Mar del Plata / Chascomús / Samborombón / laguna by name')
+          for e in est:
+              if re.search(r'mar del plata|chascom|lacombe|monte|laguna|samborom|quequ|bah[ií]a blanca|san clemente', str(e.get('nombre')) + ' ' + str(e.get('localidad')), re.I) and e.get('tipo') == 'H':
+                  s = por_est.get(e['id']); dr = (s or {}).get('date_range') or {}
+                  print(e['id'], '|', e['nombre'], '|', e.get('rio'), '|', e.get('provincia'), '| hasta', (dr.get('timeend') or '')[:10])
+          PY
