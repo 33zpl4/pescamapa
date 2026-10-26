@@ -10,7 +10,7 @@
  * is reused. Dry run first ($aplicar = false); run with wp-script.yml (script = notas-fotos-titulos-2026-10-26).
  */
 
-$aplicar = false;
+$aplicar = true;
 $carpeta = '/tmp/pm-fotos';
 
 $titulos = [
