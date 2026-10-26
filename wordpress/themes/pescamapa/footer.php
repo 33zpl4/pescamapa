@@ -22,7 +22,7 @@ $inicio = pm_url_inicio( $idioma );
 		</nav>
 	</div>
 	<div class="shell">
-		<p class="legal"><?php pm_e( 'pie.legal' ); ?> © <?php echo esc_html( gmdate( 'Y' ) ); ?> Pescamapa</p>
+		<p class="legal"><?php pm_e( 'pie.legal' ); ?> © <?php echo esc_html( gmdate( 'Y' ) ); ?> Pescamapa <span class="pie-legal-enlaces"><a href="<?php echo esc_url( pm_url_terminos( $idioma ) ); ?>"><?php pm_e( 'legal.terminos.corto' ); ?></a><a href="<?php echo esc_url( pm_url_privacidad( $idioma ) ); ?>"><?php pm_e( 'legal.privacidad.corto' ); ?></a></span></p>
 	</div>
 </footer>
 <?php

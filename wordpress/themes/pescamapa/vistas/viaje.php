@@ -131,7 +131,7 @@ get_header(); ?>
 
 					<div class="enviar">
 						<button class="button primary" type="submit"><?php pm_e( 'viaje.enviar' ); ?></button>
-						<p class="note"><?php pm_e( 'viaje.privacidad' ); ?></p>
+						<p class="note"><?php pm_e( 'viaje.privacidad' ); ?> <?php echo pm_enlace_privacidad(); // phpcs:ignore -- escaped inside ?></p>
 					</div>
 				</form>
 			<?php endif; ?>

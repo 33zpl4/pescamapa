@@ -213,6 +213,17 @@ jobs:
             [[ "$g" == "$e" ]] && echo "✓ $k = $g" || { echo "✖ $k = '$g' (esperado '$e')"; fail=1; }
           done
           check '/en/plan-your-trip/?consulta=ok' 200 'Thank you, we got your request'
+          # Terms of use and privacy policy, 3 languages; linked from the footer and the forms.
+          check /terminos/ 200 'Términos de uso'
+          check /terminos/ 200 'Las fotos pueden estar recortadas'
+          check /privacidad/ 200 'Política de privacidad'
+          check /privacidad/ 200 'info@pescamapa.com'
+          check /en/terms/ 200 'Terms of use'
+          check /en/privacy/ 200 'Privacy policy'
+          check /pt/termos/ 200 'Termos de uso'
+          check /pt/privacidade/ 200 'Política de privacidade'
+          check / 200 '/privacidad/'
+          check /armar-viaje/ 200 'política de privacidad'
           # Species pages: real content, record with its source, the hidden note never shown.
           check /especies/dorado/ 200 'Récord mundial del dorado' 'PENDIENTE'
           check /especies/dorado/ 200 '25,28 kg'

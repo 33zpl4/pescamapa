@@ -352,7 +352,12 @@
 			"viaje.gracias.mas": "Mientras tanto, mirá las guías de cada destino:",
 			"viaje.gracias.ver": "Ver los destinos",
 			"viaje.error": "No pudimos enviar tu consulta. Revisá tu nombre y tu contacto, o probá de nuevo en unos minutos.",
-			"inicio.armar": "Armá tu viaje →"
+			"inicio.armar": "Armá tu viaje →",
+			"legal.actualizado": "Última actualización:",
+			"legal.terminos.corto": "Términos",
+			"legal.privacidad.corto": "Privacidad",
+			"legal.terminos.largo": "términos de uso",
+			"legal.privacidad.larga": "política de privacidad"
 		},
 		"pt": {
 			"marca.lema": "Quando ir, o que diz o regulamento e com quem pescar na Argentina.",
@@ -608,7 +613,12 @@
 			"viaje.gracias.mas": "Enquanto isso, veja os guias de cada destino:",
 			"viaje.gracias.ver": "Ver os destinos",
 			"viaje.error": "Não conseguimos enviar sua consulta. Confira seu nome e seu contato, ou tente de novo em alguns minutos.",
-			"inicio.armar": "Monte sua viagem →"
+			"inicio.armar": "Monte sua viagem →",
+			"legal.actualizado": "Última atualização:",
+			"legal.terminos.corto": "Termos",
+			"legal.privacidad.corto": "Privacidade",
+			"legal.terminos.largo": "termos de uso",
+			"legal.privacidad.larga": "política de privacidade"
 		},
 		"en": {
 			"marca.lema": "When to go, what the rules say and who to fish with in Argentina.",
@@ -864,7 +874,12 @@
 			"viaje.gracias.mas": "In the meantime, browse the guide to each destination:",
 			"viaje.gracias.ver": "See the destinations",
 			"viaje.error": "We could not send your request. Please check your name and contact, or try again in a few minutes.",
-			"inicio.armar": "Plan your trip →"
+			"inicio.armar": "Plan your trip →",
+			"legal.actualizado": "Last updated:",
+			"legal.terminos.corto": "Terms",
+			"legal.privacidad.corto": "Privacy",
+			"legal.terminos.largo": "terms of use",
+			"legal.privacidad.larga": "privacy policy"
 		}
 	},
 	"opciones": {

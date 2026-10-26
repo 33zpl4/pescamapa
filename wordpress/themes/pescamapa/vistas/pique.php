@@ -61,7 +61,7 @@ get_header(); ?>
 					<?php endforeach; ?>
 				</fieldset>
 				<button type="submit" class="button dark" disabled><?php pm_e( 'pique.enviar' ); ?></button>
-				<p class="note"><?php pm_e( 'pique.privacidad' ); ?></p>
+				<p class="note"><?php pm_e( 'pique.privacidad' ); ?> <?php echo pm_enlace_privacidad(); // phpcs:ignore -- escaped inside ?></p>
 			</form>
 		</section>
 		<p><a href="<?php echo esc_url( pm_url_mapa( $idioma ) ); ?>"><?php pm_e( 'pique.mapa' ); ?></a></p>

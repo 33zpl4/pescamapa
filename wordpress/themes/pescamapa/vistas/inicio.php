@@ -181,7 +181,7 @@ get_header(); ?>
 							<label><?php pm_e( 'inicio.prest.ofrece' ); ?> <input name="ofrece" maxlength="200"></label>
 						</div>
 						<button class="button primary" type="submit"><?php pm_e( 'inicio.prest.enviar' ); ?></button>
-						<p class="note"><?php pm_e( 'inicio.prest.privacidad' ); ?></p>
+						<p class="note"><?php pm_e( 'inicio.prest.privacidad' ); ?> <?php echo pm_enlace_privacidad(); // phpcs:ignore -- escaped inside ?></p>
 					</form>
 				<?php endif; ?>
 			</div>

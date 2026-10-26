@@ -5,6 +5,7 @@
  *   /especies/<clave>/  /pt/especies/…  /en/species/…
  *   /mapa/  /pt/mapa/  /en/map/
  *   /creditos/  /pt/creditos/  /en/credits/  (301 to the home: the page was removed)
+ *   /terminos/  /pt/termos/  /en/terms/   and   /privacidad/  /pt/privacidade/  /en/privacy/
  *   /entrevistas/[<slug>/]  /pt/entrevistas/…  /en/interviews/…
  *   /notas/[<slug>/]  /pt/notas/…  /en/notes/…
  *   /pique/  /pt/pique/  /en/bite-zones/   community bite-zone map (inc/pique.php)
@@ -30,6 +31,8 @@ function pm_registrar_rutas(): void {
 		add_rewrite_rule( "^{$pre}{$seg['entrevistas']}/([^/]+)/?$", "index.php?pm_entrevista=\$matches[1]&pm_lang={$i}", 'top' );
 		add_rewrite_rule( "^{$pre}{$seg['pique']}/?$", "index.php?pm_vista=pique&pm_lang={$i}", 'top' );
 		add_rewrite_rule( "^{$pre}{$seg['viaje']}/?$", "index.php?pm_vista=viaje&pm_lang={$i}", 'top' );
+		add_rewrite_rule( "^{$pre}{$seg['terminos']}/?$", "index.php?pm_vista=terminos&pm_lang={$i}", 'top' );
+		add_rewrite_rule( "^{$pre}{$seg['privacidad']}/?$", "index.php?pm_vista=privacidad&pm_lang={$i}", 'top' );
 		add_rewrite_rule( "^{$pre}{$seg['notas']}/?$", "index.php?pm_vista=notas&pm_lang={$i}", 'top' );
 		add_rewrite_rule( "^{$pre}{$seg['notas']}/([^/]+)/?$", "index.php?pm_nota=\$matches[1]&pm_lang={$i}", 'top' );
 		if ( 'es' !== $i ) {
@@ -146,7 +149,7 @@ add_filter( 'template_include', function ( $plantilla ) {
 
 // The virtual views are not "not found" just because no post matched.
 add_filter( 'pre_handle_404', function ( $corto, $query ) {
-	if ( in_array( $query->get( 'pm_vista' ), [ 'inicio', 'mapa', 'creditos', 'entrevistas', 'notas', 'pique', 'viaje' ], true ) ) {
+	if ( in_array( $query->get( 'pm_vista' ), [ 'inicio', 'mapa', 'creditos', 'entrevistas', 'notas', 'pique', 'viaje', 'terminos', 'privacidad' ], true ) ) {
 		status_header( 200 );
 		return true;
 	}
