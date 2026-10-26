@@ -38,4 +38,10 @@ jobs:
       - name: Run
         run: |
           scp -q "wordpress/scripts/$SCRIPT.php" wp:/tmp/pm-script.php
-          ssh wp "chown www:www /tmp/pm-script.php && cd '$WP' && runuser -u www -- env HOME=/tmp WP_CLI_CACHE_DIR=/tmp/wp-cli-cache-www wp --path='$WP' eval-file /tmp/pm-script.php; s=\$?; rm -f /tmp/pm-script.php; exit \$s"
+          # Photos for scripts that load them (wordpress/fotos/*): copied next to the script, removed afterwards.
+          if compgen -G "wordpress/fotos/*" >/dev/null; then
+            ssh wp "rm -rf /tmp/pm-fotos && mkdir -p /tmp/pm-fotos"
+            scp -q wordpress/fotos/* wp:/tmp/pm-fotos/
+            ssh wp "chown -R www:www /tmp/pm-fotos"
+          fi
+          ssh wp "chown www:www /tmp/pm-script.php && cd '$WP' && runuser -u www -- env HOME=/tmp WP_CLI_CACHE_DIR=/tmp/wp-cli-cache-www wp --path='$WP' eval-file /tmp/pm-script.php; s=\$?; rm -rf /tmp/pm-script.php /tmp/pm-fotos; exit \$s"

@@ -258,6 +258,14 @@ jobs:
           check /en/species/trucha/ 200 'Key facts'
           check /pt/especies/trucha/ 200 'Dados-chave'
           check /especies/trucha/ 200 'cuando-pescar-trucha-patagonia'
+          # Titles, display dates and cover photos of the three notes (photos are skipped here: no wordpress/fotos on the runner's WP).
+          sed 's/^\$aplicar = false;/$aplicar = true;/' wordpress/scripts/notas-fotos-titulos-2026-10-26.php > /tmp/fotos.php
+          wp --path="$WP" eval-file /tmp/fotos.php
+          wp --path="$WP" eval-file /tmp/fotos.php   # idempotent
+          check /notas/cuando-pescar-dorado/ 200 'Cuándo pescar dorado: dos ventanas en el Paraná | Pescamapa'
+          check /en/notes/best-time-to-fish-surubi/ 200 'When to fish surubí: it follows the water | Pescamapa'
+          check /pt/notas/quando-pescar-surubi/ 200 'Quando pescar surubi: ele segue a água | Pescamapa'
+          check /notas/ 200 'Cuándo pescar el surubí: no tiene una temporada'
           # Zona de pique (docs/pique.md): empty state, report through the real endpoint, privacy, delay, abuse limits.
           check /pique/ 200 'pique-mapa' 'reportes en'
           check /pique/ 200 'Todavía no hay reportes'
