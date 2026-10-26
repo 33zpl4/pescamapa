@@ -48,7 +48,7 @@ $trucha['es'] = [
 	'titulo' => 'Cuándo pescar trucha en la Patagonia: meses, río, viento y temporada',
 	'slug'   => 'cuando-pescar-trucha-patagonia',
 	'bajada' => 'La temporada va de noviembre a abril-mayo, pero la mejor ventana depende de la zona y del tipo de río: elegí primero el río y después el mes.',
-	'seo_title' => 'Cuándo pescar trucha en la Patagonia: mejores meses | Pescamapa',
+	'seo_title' => 'Cuándo pescar trucha en la Patagonia | Pescamapa',
 	'seo_description' => 'Los mejores meses para pescar trucha en la Patagonia según la zona (Neuquén, Esquel, Santa Cruz y Tierra del Fuego), el tipo de río, el viento y la temporada.',
 	'datos' => [
 		'La temporada abre en noviembre y cierra entre abril y mayo; las fechas cambian por ambiente y por año.',
@@ -107,7 +107,7 @@ $trucha['en'] = [
 	'titulo' => 'When to fish trout in Patagonia: months, river, wind and season',
 	'slug'   => 'best-time-to-fish-trout-patagonia',
 	'bajada' => 'The season runs from November to April–May, but the best window depends on the zone and the type of river: pick the river first, then the month.',
-	'seo_title' => 'Best time to fish trout in Patagonia: best months | Pescamapa',
+	'seo_title' => 'Best time to fish trout in Patagonia | Pescamapa',
 	'seo_description' => 'The best months to fish trout in Argentine Patagonia by zone (Neuquén, Esquel, Santa Cruz and Tierra del Fuego), by type of river, with wind and season notes.',
 	'datos' => [
 		'The season opens in November and closes between April and May; dates change by water and by year.',
@@ -166,7 +166,7 @@ $trucha['pt'] = [
 	'titulo' => 'Quando pescar truta na Patagônia: meses, rio, vento e temporada',
 	'slug'   => 'quando-pescar-truta-patagonia',
 	'bajada' => 'A temporada vai de novembro a abril-maio, mas a melhor janela depende da zona e do tipo de rio: escolha primeiro o rio e depois o mês.',
-	'seo_title' => 'Quando pescar truta na Patagônia: melhores meses | Pescamapa',
+	'seo_title' => 'Quando pescar truta na Patagônia | Pescamapa',
 	'seo_description' => 'Os melhores meses para pescar truta na Patagônia argentina por zona (Neuquén, Esquel, Santa Cruz e Terra do Fogo), tipo de rio, vento e temporada.',
 	'datos' => [
 		'A temporada abre em novembro e fecha entre abril e maio; as datas mudam por ambiente e por ano.',
