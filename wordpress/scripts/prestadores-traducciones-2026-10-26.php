@@ -6,7 +6,7 @@
  * Dry run first ($aplicar = false); run with wp-script.yml. Idempotent.
  */
 
-$aplicar = false;
+$aplicar = true;
 
 $es_base = [
 	'agus-guia-de-pesca-en-goya' => [
