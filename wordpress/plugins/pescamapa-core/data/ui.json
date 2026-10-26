@@ -404,7 +404,19 @@
 			"pique.rio": "Antes de salir, mirá cómo está el río →",
 			"rio.grupo.litoral": "Litoral: Paraná",
 			"rio.grupo.ba": "Buenos Aires: Río de la Plata, Delta y Paraná inferior",
-			"rio.leer.5": "En el Río de la Plata y el Delta la altura sube y baja también con la marea y con el viento (la sudestada). La lectura del día no muestra la marea alta ni la baja: es una referencia, no el pico."
+			"rio.leer.5": "En el Río de la Plata y el Delta la altura sube y baja también con la marea y con el viento (la sudestada). La lectura del día no muestra la marea alta ni la baja: es una referencia, no el pico.",
+			"rio.p.h1": "Altura del río en %lugar% hoy",
+			"rio.p.title": "Altura del río en %lugar% hoy: %curso% | Pescamapa",
+			"rio.p.description": "Altura del %curso% en %lugar% hoy: %altura% m el %fecha%, %tend%. Niveles de alerta, últimos días, viento y lluvia. Fuente: INA y Prefectura.",
+			"rio.p.respuesta": "El %curso% en %lugar% marcó %altura% m el %fecha%. %tend%.",
+			"rio.p.nivel": "Nivel de alerta: %alerta% m. Evacuación: %evac% m.",
+			"rio.p.serie.h2": "Últimos días",
+			"rio.p.serie.fecha": "Fecha",
+			"rio.p.serie.altura": "Altura",
+			"rio.p.cerca.h2": "Otros puntos cerca",
+			"rio.p.guia": "¿Vas a pescar en %lugar%? Mirá la guía →",
+			"rio.p.todos": "← Todas las alturas del río",
+			"rio.resumen": "Hoy, %n% puntos: %sube% suben, %baja% bajan, %estable% estables. Elegí el tuyo:"
 		},
 		"pt": {
 			"marca.lema": "Quando ir, o que diz o regulamento e com quem pescar na Argentina.",
@@ -712,7 +724,19 @@
 			"pique.rio": "Antes de sair, veja como está o rio →",
 			"rio.grupo.litoral": "Litoral: Paraná",
 			"rio.grupo.ba": "Buenos Aires: Río de la Plata, Delta e baixo Paraná",
-			"rio.leer.5": "No Río de la Plata e no Delta a altura também sobe e desce com a maré e com o vento (a sudestada). A leitura do dia não mostra a maré alta nem a baixa: é uma referência, não o pico."
+			"rio.leer.5": "No Río de la Plata e no Delta a altura também sobe e desce com a maré e com o vento (a sudestada). A leitura do dia não mostra a maré alta nem a baixa: é uma referência, não o pico.",
+			"rio.p.h1": "Altura do rio em %lugar% hoje",
+			"rio.p.title": "Altura do rio em %lugar% hoje: %curso% | Pescamapa",
+			"rio.p.description": "Altura do %curso% em %lugar% hoje: %altura% m em %fecha%, %tend%. Níveis de alerta, últimos dias, vento e chuva. Fonte: INA e Prefectura.",
+			"rio.p.respuesta": "O %curso% em %lugar% marcou %altura% m em %fecha%. %tend%.",
+			"rio.p.nivel": "Nível de alerta: %alerta% m. Evacuação: %evac% m.",
+			"rio.p.serie.h2": "Últimos dias",
+			"rio.p.serie.fecha": "Data",
+			"rio.p.serie.altura": "Altura",
+			"rio.p.cerca.h2": "Outros pontos próximos",
+			"rio.p.guia": "Vai pescar em %lugar%? Veja o guia →",
+			"rio.p.todos": "← Todas as alturas do rio",
+			"rio.resumen": "Hoje, %n% pontos: %sube% sobem, %baja% descem, %estable% estáveis. Escolha o seu:"
 		},
 		"en": {
 			"marca.lema": "When to go, what the rules say and who to fish with in Argentina.",
@@ -1020,7 +1044,19 @@
 			"pique.rio": "Before you go, check how the river is →",
 			"rio.grupo.litoral": "Litoral: Paraná",
 			"rio.grupo.ba": "Buenos Aires: Río de la Plata, Delta and lower Paraná",
-			"rio.leer.5": "On the Río de la Plata and in the Delta the height also moves with the tide and the wind (the sudestada). The daily reading does not show high or low tide: it is a reference, not the peak."
+			"rio.leer.5": "On the Río de la Plata and in the Delta the height also moves with the tide and the wind (the sudestada). The daily reading does not show high or low tide: it is a reference, not the peak.",
+			"rio.p.h1": "River level at %lugar% today",
+			"rio.p.title": "River level at %lugar% today: %curso% | Pescamapa",
+			"rio.p.description": "%curso% height at %lugar% today: %altura% m on %fecha%, %tend%. Alert levels, last days, wind and rain. Source: INA and Prefectura.",
+			"rio.p.respuesta": "The %curso% at %lugar% read %altura% m on %fecha%. %tend%.",
+			"rio.p.nivel": "Alert level: %alerta% m. Evacuation: %evac% m.",
+			"rio.p.serie.h2": "Last days",
+			"rio.p.serie.fecha": "Date",
+			"rio.p.serie.altura": "Height",
+			"rio.p.cerca.h2": "Other nearby points",
+			"rio.p.guia": "Fishing at %lugar%? Read the guide →",
+			"rio.p.todos": "← All river levels",
+			"rio.resumen": "Today, %n% points: %sube% rising, %baja% falling, %estable% steady. Pick yours:"
 		}
 	},
 	"opciones": {

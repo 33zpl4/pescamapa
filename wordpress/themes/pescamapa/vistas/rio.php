@@ -12,9 +12,9 @@ foreach ( pm_rio_config() as $clave => $c ) {
 	}
 	$g = pm_buscar( 'pm_destino', $clave, $idioma ) ?? pm_buscar( 'pm_destino', $clave, 'es' );
 	if ( $g ) {
-		$filas[ $c['grupo'] ?? 'litoral' ][] = [ 'clave' => $clave, 'nombre' => get_the_title( $g ), 'url' => get_permalink( $g ) . '#rio', 'x' => $x ];
+		$filas[ $c['grupo'] ?? 'litoral' ][] = [ 'clave' => $clave, 'nombre' => get_the_title( $g ), 'url' => pm_url_rio_punto( $clave, $idioma ), 'x' => $x ];
 	} elseif ( ! empty( $c['nombre'] ) ) { // a place without a guide: name from the config, no link
-		$filas[ $c['grupo'] ?? 'litoral' ][] = [ 'clave' => $clave, 'nombre' => $c['nombre'], 'url' => '', 'x' => $x ];
+		$filas[ $c['grupo'] ?? 'litoral' ][] = [ 'clave' => $clave, 'nombre' => $c['nombre'], 'url' => pm_url_rio_punto( $clave, $idioma ), 'x' => $x ];
 	}
 }
 get_header(); ?>
@@ -28,6 +28,10 @@ get_header(); ?>
 		</div>
 	</header>
 	<div class="shell rio-hub">
+		<?php $cn = pm_rio_conteo(); if ( $cn['n'] ) : ?>
+			<p class="rio-resumen"><?php echo esc_html( pm_t( 'rio.resumen', $cn ) ); ?>
+				<?php foreach ( [ 'litoral', 'ba' ] as $g ) : if ( $filas[ $g ] ) : ?> <a class="chip" href="#<?php echo esc_attr( $g ); ?>"><?php pm_e( 'rio.grupo.' . $g ); ?></a><?php endif; endforeach; ?></p>
+		<?php endif; ?>
 		<?php if ( ! $filas['litoral'] && ! $filas['ba'] ) : ?>
 			<p><?php pm_e( 'rio.vacio' ); ?></p>
 		<?php else : foreach ( $filas as $grupo => $lista ) : if ( ! $lista ) { continue; } ?>

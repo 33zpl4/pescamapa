@@ -1,5 +1,5 @@
 {
-	"nota": "Un destino por clave. 'estacion' = id de la estación en la API del INA (alerta.ina.gob.ar/a5); es también el id de la serie de altura medida (var H). Sin 'estacion' solo se muestra el clima. lat/lon: el pueblo (para el clima). Los niveles de alerta y evacuación salen de la API. 'grupo': 'ba' = Buenos Aires, Delta y Río de la Plata (lugares sin guía: llevan 'nombre'; el resto es litoral y toma el nombre de su guía).",
+	"nota": "Un destino por clave. 'estacion' = id de la estación en la API del INA (alerta.ina.gob.ar/a5); es también el id de la serie de altura medida (var H). Sin 'estacion' solo se muestra el clima. lat/lon: el pueblo (para el clima). Los niveles de alerta y evacuación salen de la API. 'grupo': 'ba' = Buenos Aires, Delta y Río de la Plata (lugares sin guía: llevan 'nombre'; el resto es litoral y toma el nombre de su guía). La clave es también la URL de la página del punto (/altura-del-rio/<clave>/).",
 	"destinos": {
 		"goya": {
 			"estacion": 23,
@@ -33,7 +33,7 @@
 			"lat": -39.94,
 			"lon": -71.07
 		},
-		"buenos-aires-rio-de-la-plata": {
+		"buenos-aires": {
 			"estacion": 85,
 			"estacion_nombre": "Buenos Aires",
 			"nombre": "Buenos Aires",
@@ -42,7 +42,7 @@
 			"lat": -34.58,
 			"lon": -58.37
 		},
-		"san-isidro-rio-de-la-plata": {
+		"san-isidro": {
 			"estacion": 53,
 			"estacion_nombre": "San Isidro",
 			"nombre": "San Isidro",
@@ -51,7 +51,7 @@
 			"lat": -34.47,
 			"lon": -58.51
 		},
-		"olivos-rio-de-la-plata": {
+		"olivos": {
 			"estacion": 54,
 			"estacion_nombre": "Olivos",
 			"nombre": "Olivos",
@@ -60,7 +60,7 @@
 			"lat": -34.51,
 			"lon": -58.49
 		},
-		"la-plata-rio-de-la-plata": {
+		"la-plata": {
 			"estacion": 86,
 			"estacion_nombre": "La Plata",
 			"nombre": "La Plata",
@@ -69,7 +69,7 @@
 			"lat": -34.87,
 			"lon": -57.89
 		},
-		"martin-garcia-rio-de-la-plata": {
+		"martin-garcia": {
 			"estacion": 47,
 			"estacion_nombre": "Martín García",
 			"nombre": "Martín García",
@@ -78,7 +78,7 @@
 			"lat": -34.18,
 			"lon": -58.25
 		},
-		"tigre-delta": {
+		"tigre": {
 			"estacion": 49,
 			"estacion_nombre": "Tigre",
 			"nombre": "Tigre",
@@ -87,7 +87,7 @@
 			"lat": -34.42,
 			"lon": -58.58
 		},
-		"san-fernando-delta": {
+		"san-fernando": {
 			"estacion": 52,
 			"estacion_nombre": "San Fernando",
 			"nombre": "San Fernando",
@@ -96,7 +96,7 @@
 			"lat": -34.44,
 			"lon": -58.55
 		},
-		"escobar-parana-de-las-palmas": {
+		"escobar": {
 			"estacion": 42,
 			"estacion_nombre": "Escobar",
 			"nombre": "Escobar",
@@ -105,7 +105,7 @@
 			"lat": -34.35,
 			"lon": -58.79
 		},
-		"campana-parana-de-las-palmas": {
+		"campana": {
 			"estacion": 41,
 			"estacion_nombre": "Campana",
 			"nombre": "Campana",
@@ -114,7 +114,7 @@
 			"lat": -34.16,
 			"lon": -58.96
 		},
-		"zarate-parana-de-las-palmas": {
+		"zarate": {
 			"estacion": 40,
 			"estacion_nombre": "Zárate",
 			"nombre": "Zárate",
@@ -123,7 +123,7 @@
 			"lat": -34.1,
 			"lon": -59.03
 		},
-		"baradero-parana": {
+		"baradero": {
 			"estacion": 39,
 			"estacion_nombre": "Baradero",
 			"nombre": "Baradero",
@@ -132,7 +132,7 @@
 			"lat": -33.81,
 			"lon": -59.5
 		},
-		"san-pedro-parana": {
+		"san-pedro": {
 			"estacion": 38,
 			"estacion_nombre": "San Pedro",
 			"nombre": "San Pedro",
@@ -141,7 +141,7 @@
 			"lat": -33.68,
 			"lon": -59.67
 		},
-		"san-nicolas-parana": {
+		"san-nicolas": {
 			"estacion": 36,
 			"estacion_nombre": "San Nicolás",
 			"nombre": "San Nicolás",

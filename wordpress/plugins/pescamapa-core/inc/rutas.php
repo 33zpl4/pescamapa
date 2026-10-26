@@ -34,6 +34,7 @@ function pm_registrar_rutas(): void {
 		add_rewrite_rule( "^{$pre}{$seg['terminos']}/?$", "index.php?pm_vista=terminos&pm_lang={$i}", 'top' );
 		add_rewrite_rule( "^{$pre}{$seg['privacidad']}/?$", "index.php?pm_vista=privacidad&pm_lang={$i}", 'top' );
 		add_rewrite_rule( "^{$pre}{$seg['rio']}/?$", "index.php?pm_vista=rio&pm_lang={$i}", 'top' );
+		add_rewrite_rule( "^{$pre}{$seg['rio']}/([a-z0-9-]+)/?$", "index.php?pm_vista=rio-punto&pm_rio_clave=\$matches[1]&pm_lang={$i}", 'top' );
 		add_rewrite_rule( "^{$pre}{$seg['notas']}/?$", "index.php?pm_vista=notas&pm_lang={$i}", 'top' );
 		add_rewrite_rule( "^{$pre}{$seg['notas']}/([^/]+)/?$", "index.php?pm_nota=\$matches[1]&pm_lang={$i}", 'top' );
 		if ( 'es' !== $i ) {
@@ -44,7 +45,7 @@ function pm_registrar_rutas(): void {
 add_action( 'init', 'pm_registrar_rutas' );
 
 add_filter( 'query_vars', function ( $vars ) {
-	return array_merge( $vars, [ 'pm_lang', 'pm_vista', 'pm_especie_clave' ] );
+	return array_merge( $vars, [ 'pm_lang', 'pm_vista', 'pm_especie_clave', 'pm_rio_clave' ] );
 } );
 
 // Species: resolve clave + language to the post.
@@ -54,6 +55,9 @@ add_filter( 'request', function ( $qv ) {
 		if ( $p ) {
 			return [ 'p' => $p->ID, 'post_type' => 'pm_especie', 'pm_lang' => $qv['pm_lang'], 'pm_vista' => 'especie' ];
 		}
+		return [ 'error' => '404' ];
+	}
+	if ( ( $qv['pm_vista'] ?? '' ) === 'rio-punto' && ! isset( pm_rio_config()[ (string) ( $qv['pm_rio_clave'] ?? '' ) ] ) ) {
 		return [ 'error' => '404' ];
 	}
 	return $qv;
@@ -150,7 +154,7 @@ add_filter( 'template_include', function ( $plantilla ) {
 
 // The virtual views are not "not found" just because no post matched.
 add_filter( 'pre_handle_404', function ( $corto, $query ) {
-	if ( in_array( $query->get( 'pm_vista' ), [ 'inicio', 'mapa', 'creditos', 'entrevistas', 'notas', 'pique', 'viaje', 'terminos', 'privacidad', 'rio' ], true ) ) {
+	if ( in_array( $query->get( 'pm_vista' ), [ 'inicio', 'mapa', 'creditos', 'entrevistas', 'notas', 'pique', 'viaje', 'terminos', 'privacidad', 'rio', 'rio-punto' ], true ) ) {
 		status_header( 200 );
 		return true;
 	}

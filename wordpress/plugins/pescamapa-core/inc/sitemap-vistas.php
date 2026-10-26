@@ -20,6 +20,13 @@ class PM_Sitemap_Vistas extends WP_Sitemaps_Provider {
 				$out[] = [ 'loc' => $fn( $i ) ];
 			}
 		}
+		foreach ( pm_rio_datos()['destinos'] ?? [] as $clave => $x ) {
+			if ( ! empty( $x['rio'] ) && isset( pm_rio_config()[ $clave ] ) ) {
+				foreach ( pm_idiomas() as $i ) {
+					$out[] = [ 'loc' => pm_url_rio_punto( $clave, $i ) ];
+				}
+			}
+		}
 		return $out;
 	}
 
