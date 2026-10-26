@@ -20,17 +20,19 @@ jobs:
           import json, re
           est = json.load(open('estaciones.json'))
           ser = json.load(open('series.json')); rows = ser['rows'] if isinstance(ser, dict) else ser
-          prov = re.compile(r'buenos aires|capital|caba|autonoma|autónoma', re.I)
+          prov = re.compile(r'buenos\s*aires|capital|caba|aut[oó]noma|mar argentino', re.I)
           rio = re.compile(r'plata|palmas|luj[aá]n|salado|delta|guaz|matanza|reconquista|samborom|uruguay|paran[aá]', re.I)
           por_est = {}
           for r in rows:
-              if (r.get('var') or {}).get('var') == 'H' and (r.get('procedimiento') or {}).get('nombre') == 'medición directa':
-                  por_est[r['estacion']['id']] = r
+              if (r.get('var') or {}).get('var') == 'H':
+                  k = r['estacion']['id']
+                  if k not in por_est or ((r.get('date_range') or {}).get('timeend') or '') > ((por_est[k].get('date_range') or {}).get('timeend') or ''):
+                      por_est[k] = r
           print('--- provinces seen in stations:', sorted({str(e.get('provincia')) for e in est if prov.search(str(e.get('provincia')))}))
           n = 0
           for e in est:
               if e.get('tipo') != 'H': continue
-              if not (prov.search(str(e.get('provincia'))) and rio.search(str(e.get('rio')))): continue
+              if not (prov.search(str(e.get('provincia'))) or prov.search(str(e.get('rio')))): continue
               s = por_est.get(e['id'])
               dr = (s or {}).get('date_range') or {}
               fin = (dr.get('timeend') or '')[:10]
