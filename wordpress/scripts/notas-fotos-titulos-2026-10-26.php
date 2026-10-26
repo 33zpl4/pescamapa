@@ -91,7 +91,7 @@ foreach ( $titulos as $clave => $por_idioma ) {
 		if ( ! $p ) {
 			WP_CLI::error( "$clave ($i): no existe la nota." );
 		}
-		WP_CLI::log( ( $aplicar ? 'APLICA' : 'SIMULACRO' ) . ": $clave ($i) «{$p->post_title}» → «$titulo» (seo " . mb_strlen( $seo_title ) . ' car.)' . ( $bajada ? ' + bajada' : '' ) );
+		WP_CLI::log( ( $aplicar ? 'APLICA' : 'SIMULACRO' ) . ": $clave ($i) «{$p->post_title}» → «{$titulo}» (seo " . mb_strlen( $seo_title ) . ' car.)' . ( $bajada ? ' + bajada' : '' ) );
 		if ( mb_strlen( $seo_title ) > 60 ) {
 			WP_CLI::error( "$clave ($i): el título SEO pasa de 60 caracteres." );
 		}
