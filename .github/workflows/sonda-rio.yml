@@ -1,7 +1,8 @@
 name: Probe river data
 
-# Read-only probe: how does the INA alert site (a5) serve its data, and can we read our stations?
-# Prints what it finds; changes nothing. Run by hand: Actions -> Probe river data.
+# Read-only probe: find our river stations in the INA a5 API, read their latest observations,
+# and print the station table of the daily PDF to cross-check. Changes nothing.
+# Run by hand: Actions -> Probe river data.
 
 on:
   workflow_dispatch:
@@ -10,33 +11,48 @@ jobs:
   sonda:
     runs-on: ubuntu-latest
     steps:
-      - name: INA a5 page - how it calls its API
+      - name: Stations and series for our places (INA a5 API)
         run: |
           set +e
-          curl -sS -L -m 30 -o p.html "https://alerta.ina.gob.ar/a5/"
-          echo "== absolute URLs in the page (not CDNs)"
-          grep -o -E "https?://[^\"' )]+" p.html | grep -v -E "cdn|googleapis|highcharts|openlayers|jsdelivr|w3.org|datatables" | sort -u | head -30
-          echo "== lines mentioning the API"
-          grep -n -E "observaciones|/series|format=json|format=csv|geojson|fetch\(|\\\$\.(get|ajax|getJSON)|url *[:=]|API|api_url|base" p.html | cut -c1-260 | head -70
-          echo "== local js files"
-          grep -o -E 'src="js/[^"]+"' p.html | sort -u
-      - name: INA a5 - try common endpoints
+          B=https://alerta.ina.gob.ar/a5
+          curl -sS -m 120 -o estaciones.json "$B/obs/puntual/estaciones?format=json"
+          curl -sS -m 120 -o series.json "$B/obs/puntual/series?format=json"
+          python3 - <<'PY'
+          import json, re
+          est = json.load(open('estaciones.json'))
+          ser = json.load(open('series.json'))
+          rows = ser['rows'] if isinstance(ser, dict) else ser
+          print('stations:', len(est), ' series:', len(rows))
+          pat = re.compile(r'goya|esquina|la paz|paso de la patria|corrientes|reconquista|concordia|itat[ií]|ituzaing|barranqueras|santa fe|paran[aá]$|san mart|jun[ií]n', re.I)
+          keep = []
+          for e in est:
+              txt = ' '.join(str(e.get(k) or '') for k in ('nombre','abreviatura','localidad'))
+              if e.get('rio') and re.search(r'paran|uruguay|paraguay', str(e['rio']), re.I) and pat.search(txt) and e.get('tipo') == 'H':
+                  keep.append(e)
+          print('--- stations (tipo H) matching our places')
+          for e in keep:
+              print(e['id'], '|', e['nombre'], '|', e.get('abreviatura'), '|', e.get('rio'), '|', e.get('provincia'), '| alerta', e.get('nivel_alerta'), '| evac', e.get('nivel_evacuacion'), '| has_obs', e.get('has_obs'), '| red', (e.get('red') or {}).get('nombre'))
+          ids = {e['id'] for e in keep}
+          print('--- series of those stations (variable H = altura)')
+          sel = [r for r in rows if r['estacion']['id'] in ids and (r.get('var') or {}).get('var') == 'H']
+          for r in sel:
+              print('serie', r['id'], '| estacion', r['estacion']['id'], r['estacion']['nombre'], '| proc', (r.get('procedimiento') or {}).get('nombre'), '| unid', (r.get('unidades') or {}).get('abrev'), '| date_range', r.get('date_range'))
+          json.dump([r['id'] for r in sel], open('ids.json', 'w'))
+          print('keys of a series row:', sorted(rows[0].keys()))
+          PY
+      - name: Latest observations of those series (format check)
         run: |
           set +e
-          for u in \
-            "https://alerta.ina.gob.ar/a5/obs/puntual/series?format=json&limit=3" \
-            "https://alerta.ina.gob.ar/a5/obs/puntual/estaciones?format=json&limit=3" \
-            "https://alerta.ina.gob.ar/a5/obs/puntual/series?format=json&nombre=Goya" \
-            "https://alerta.ina.gob.ar/a5/obs/puntual/series" \
-            "https://alerta.ina.gob.ar/a5/series" ; do
-            echo "== $u"; curl -sS -L -m 40 -o r.txt -w '%{http_code} %{content_type} %{size_download} bytes\n' "$u"; head -c 700 r.txt; echo
+          B=https://alerta.ina.gob.ar/a5
+          S=$(date -u -d '-7 day' +%F); E=$(date -u +%F)
+          for id in $(python3 -c "import json;print(' '.join(map(str,json.load(open('ids.json'))[:12])))"); do
+            echo "== serie $id"; curl -sS -m 40 -o o.json -w '%{http_code} %{content_type} %{size_download}\n' "$B/obs/puntual/series/$id/observaciones?timestart=$S&timeend=$E&format=json"; head -c 500 o.json; echo
           done
-      - name: INA daily PDF as text (fallback source)
+      - name: Station table of today's PDF (to cross-check the API)
         run: |
           set +e
           sudo apt-get update -qq >/dev/null 2>&1; sudo apt-get install -y -qq poppler-utils >/dev/null 2>&1
           f="reporte_diario_$(date -u +%F).pdf"
-          curl -sS -m 60 -o "$f" -w '%{http_code}\n' "https://alerta.ina.gob.ar/ina/06-INFORMES/diario/pdf/$f"
-          pdftotext -layout "$f" informe.txt; echo "text chars: $(wc -c < informe.txt)"
-          grep -n -i -E 'goya|esquina|la paz|paso de la patria|corrientes|reconquista|concordia|santa fe|ituzaing' informe.txt | head -40
-          echo "== first 50 lines"; head -50 informe.txt
+          curl -sS -m 60 -o "$f" "https://alerta.ina.gob.ar/ina/06-INFORMES/diario/pdf/$f"
+          pdftotext -layout "$f" informe.txt
+          sed -n '45,110p' informe.txt
