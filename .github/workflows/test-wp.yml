@@ -296,7 +296,7 @@ jobs:
           check /litoral/corrientes/pesca-en-esquina/ 200 'Cómo está el río hoy'
           check /litoral/corrientes/pesca-en-esquina/ 200 '4,62'
           check /litoral/corrientes/pesca-en-esquina/ 200 'href="https://open-meteo.com/"'
-          check /altura-del-rio/ 200 'Altura del río Paraná hoy'
+          check /altura-del-rio/ 200 'Altura del río hoy'
           check /altura-del-rio/ 200 'application/ld+json'
           check /altura-del-rio/ 200 'Zona de pique'
           check /pique/ 200 'altura-del-rio'

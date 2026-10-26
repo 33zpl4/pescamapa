@@ -29,6 +29,11 @@ los niveles de alerta y evacuación, y el viento y la lluvia de la zona. Todo co
    Un dato de más de 10 días se muestra con su fecha y un aviso.
 4. Tendencia: último valor contra el de 3 días antes (±0,05 m = estable).
 
+## Buenos Aires, Delta y Río de la Plata (26/10/2026)
+
+13 estaciones de las escalas de Prefectura (red del INA, lectura diaria verificada con la sonda del 26/10): Buenos Aires, San Isidro, Olivos, La Plata, Martín García (Río de la Plata); Tigre, San Fernando (Delta, Luján); Escobar, Campana, Zárate (Paraná de las Palmas); Baradero, San Pedro, San Nicolás (Paraná inferior). Son lugares **sin guía**: en `rio.json` llevan `nombre` y `grupo: "ba"` y el hub los muestra sin enlace, bajo su propio título. La provincia figura como `BUENOSAIRES` (sin espacio) en la API.
+No incluidos: Mar del Plata (mareógrafo del SHN, serie 3347 distinta del id de estación; lectura de marea, no sirve la tendencia de 3 días), los arroyos del AMBA y las lagunas (sin altura oficial: solo viento/lluvia). Pendiente: pronóstico de marea (SHN), sin fuente abierta verificada.
+
 ## Sumar un destino
 Agregar su clave a `rio.json` (con `estacion` si el INA tiene una escala cerca; ids en la sonda) y listo: la
 próxima corrida diaria lo carga. Los niveles de alerta/evacuación no son de pesca: son de crecida.
