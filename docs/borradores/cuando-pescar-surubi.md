@@ -24,7 +24,7 @@ Lo que dicen las fuentes, tramo por tramo:
 | Tramo | Ventana | Qué dicen las fuentes | ¿Mes declarado? |
 | --- | --- | --- | --- |
 | **Río Uruguay** (Concordia, bajo Salto Grande) | Fines de septiembre a mediados de noviembre (pico en octubre) | El guía Martín: "Es un cardumen de surubí que se arrimó; todos los años para esta fecha siempre lo pescamos". El guía Ezequiel, a la pregunta de qué temporada es: "en octubre y mediados del mes que viene; arrancó también unos días antes, a fines de septiembre" ([video del canal MDS](https://www.youtube.com/watch?v=f7RRLtnYvCA)) | Sí |
-| **Paraná medio** (Goya, Esquina, La Paz) | Otoño (marzo a mayo) y primavera | Matías Jalil, guía profesional en Esquina, explica que "en esta época" hay que mirar si la panza del surubí está marrón, señal de que se apuesta en el fondo y no se alimenta; si nada, está activo ([video](https://www.youtube.com/watch?v=ovnJfOqeHhI)). Fishing World Guide da marzo a junio como mejor temporada ([ficha](https://www.fishingworldguide.com/en/fish/surubi-catfish) (V)). La Fiesta Nacional del Surubí se hace en Goya del 28 de abril al 2 de mayo de 2027 ([nuestra guía de Goya](/litoral/corrientes/pesca-en-goya/)) | Parcial: un solo dato de meses; el resto es nuestra inferencia |
+| **Paraná medio** (Goya, Esquina, La Paz) | Otoño (marzo a mayo) y primavera | Matías Jalil, guía profesional en Esquina, explica que "en esta época" hay que mirar si la panza del surubí está marrón, señal de que se apuesta en el fondo y no se alimenta; si nada, está activo ([video](https://www.youtube.com/watch?v=ovnJfOqeHhI)). Fishing World Guide da marzo a junio como mejor temporada ([ficha](https://www.fishingworldguide.com/en/fish/surubi-catfish) (V)). En Goya se hace cada año la Fiesta Nacional del Surubí, un concurso de pesca y devolución ([nuestra guía de Goya](/litoral/corrientes/pesca-en-goya/); fechas en la caja del año) | Parcial: un solo dato de meses; el resto es nuestra inferencia |
 | **Alto Paraná** (Itá Ibaté, Paso de la Patria, Yahapé) | Meses fríos y salida del invierno | Los hermanos Pablo y Valentín Di Santi (Tiempo de Pesca) muestran un surubí de unos 70 kg en Itá Ibaté, pescado a trolling a primera hora ([video](https://www.youtube.com/watch?v=gfw1emcS9-E)) y otro de 1,52 m en Paso de la Patria con el guía Monchi ([video](https://www.youtube.com/watch?v=l5cdtcuMQ6w)) | No: inferencia nuestra, los videos no fijan el mes |
 
 *(Los enlaces con (V) los vimos solo en el resumen de la búsqueda.)*
@@ -41,10 +41,15 @@ Porque el surubí cambia de conducta con la temperatura y la técnica cambia con
 
 ## 2. ¿Cuándo se puede pescar y cuándo no?
 
-- **Corrientes: pesca y devolución obligatoria.** El surubí no se retiene, según la [Disposición 853/22 de Recursos Naturales](https://boletinoficial.corrientes.gob.ar/assets/articulo_adjuntos/7523/original/26-12-2022.pdf) (Boletín Oficial de Corrientes, 26/12/2022).
-- **Veda extraordinaria en el Paraná (Corrientes y Chaco).** Según [ABC](https://www.abc.com.py/interior/2026/06/01/corrientes-y-chaco-decretan-veda-temporal-para-preservar-cardumenes-de-surubi-en-el-rio-parana/) y [Perfil](https://www.perfil.com/noticias/nea/veda-en-el-parana-que-tramo-quedo-cerrado-a-la-pesca-y-que-sanciones-preven-para-los-infractores.phtml), las autoridades de Corrientes (Disposición 618) y Chaco (Disposición 023) cerraron a toda pesca, desde el 29 de mayo de 2026, el tramo entre los km 1232 y 1238 para proteger una concentración de surubíes. No tiene fecha de fin: rige hasta que los equipos técnicos determinen que la situación se normalizó. Hubo protestas de pescadores artesanales ([Primera Edición](https://www.primeraedicion.com.ar/nota/101110879/activaron-una-veda-extraordinaria-en-el-parana-para-proteger-una-masiva-concentracion-de-surubies/)). **Confirmá si sigue vigente.**
-- **Otra veda extraordinaria en 2026:** la del dorado (km 1109 a 1150, desde el 9 de septiembre). Ver [Cuándo pescar el dorado](#).
-- Reglas de otras provincias (Entre Ríos, Santa Fe, Chaco) y del río Uruguay: no encontramos un calendario oficial consolidado; consultá cada autoridad antes de salir.
+En el Litoral hay reglas que cambian con el tiempo: vedas por desove, vedas extraordinarias para proteger un cardumen y normas distintas en cada provincia. En Corrientes, el surubí es de **pesca y devolución obligatoria**, según la [Disposición 853/22 de Recursos Naturales](https://boletinoficial.corrientes.gob.ar/assets/articulo_adjuntos/7523/original/26-12-2022.pdf) (Boletín Oficial de Corrientes, 26/12/2022).
+
+Si pescás con un guía local, no tenés que preocuparte por esto: conoce qué tramos están abiertos en cada momento y te ayuda a moverte. Si vas por tu cuenta, confirmá antes de salir con la autoridad del lugar (Prefectura o la Dirección de Recursos Naturales de la provincia).
+
+> **CAJA DEL AÑO · Vedas y novedades, al 26/10/2026** *(se actualiza una vez por año; el resto de la nota no cambia)*
+>
+> - Desde el 29 de mayo de 2026 rige una veda extraordinaria en el Paraná entre los km 1232 y 1238, dispuesta por Corrientes (Disposición 618) y Chaco (Disposición 023) para proteger una concentración de surubíes. No tiene fecha de fin ([ABC](https://www.abc.com.py/interior/2026/06/01/corrientes-y-chaco-decretan-veda-temporal-para-preservar-cardumenes-de-surubi-en-el-rio-parana/), [Perfil](https://www.perfil.com/noticias/nea/veda-en-el-parana-que-tramo-quedo-cerrado-a-la-pesca-y-que-sanciones-preven-para-los-infractores.phtml)).
+> - Fiesta Nacional del Surubí, en Goya: 50.ª edición del 28 de abril al 2 de mayo de 2027, con concurso de pesca y devolución (según [nuestra guía de Goya](/litoral/corrientes/pesca-en-goya/)). Es el momento de más demanda de alojamiento: reservá con tiempo.
+> - Vedas y reglas: no hay un calendario oficial consolidado por provincia. Tu guía local siempre está al tanto.
 
 ## 3. ¿Cómo influye el río y el clima?
 
@@ -65,7 +70,7 @@ Porque el surubí cambia de conducta con la temperatura y la técnica cambia con
 
 - **Pintado y atigrado.** Hay dos surubíes: el pintado (*Pseudoplatystoma corruscans*) y el atigrado (*P. reticulatum*). El pintado es el gigante: 1,52 m medidos sobre un banco de arena en Paso de la Patria, y un guía de Ituzaingó que ubica a los más grandes cerca de 1,80 m y entre 70 y 90 kg. En la pelea no salta como el dorado: busca el fondo y obliga a un combate lento.
 - **Pescar con mosca un surubí es una sorpresa poco frecuente**, según Chris Dorsey en los esteros de Corrientes ([video](https://www.youtube.com/watch?v=ssQf5GVY3eE)); lo habitual es el trolling o la carnada viva.
-- **Fecha ancla:** la Fiesta Nacional del Surubí en Goya (28 de abril al 2 de mayo de 2027) concentra la demanda de alojamiento. Reservá con tiempo. El concurso es con devolución.
+- **Fecha ancla:** la Fiesta Nacional del Surubí en Goya concentra la demanda de alojamiento; las fechas del año están en la caja de la sección 2.
 - **Devolución:** Pablo Di Santi y Matías Jalil insisten en devolver los ejemplares grandes: son reproductores. Jalil: sostener al pez de la cola dentro del agua, sin moverlo hacia adelante y atrás, hasta que se vaya solo.
 - **¿Querés que te ayudemos a armar el viaje?** Contanos fechas, grupo y qué buscás en [el formulario](/armar-viaje/?destino=goya&especie=surubi) y te escribimos con opciones. *(Esta nota no enlaza a guías ni lodges.)*
 

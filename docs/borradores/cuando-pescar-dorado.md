@@ -43,9 +43,14 @@ El Paraná cambia mucho de un tramo a otro, y por eso el pico se corre. Esta es 
 
 ## 2. ¿Cuándo se puede pescar y cuándo no?
 
-- **Corrientes: pesca y devolución obligatoria.** El dorado no se retiene, según la [Disposición 853/22 de Recursos Naturales](https://boletinoficial.corrientes.gob.ar/assets/articulo_adjuntos/7523/original/26-12-2022.pdf) (Boletín Oficial de Corrientes, 26/12/2022).
-- **Veda extraordinaria vigente en el Paraná (Corrientes).** Según [El Litoral](https://www.ellitoral.com.ar/sociedad/2026-9-9-19-35-0-rige-una-veda-extraordinaria-para-proteger-un-cardumen-de-dorados-en-el-rio-parana), la Dirección de Recursos Naturales de Corrientes prohibió desde las 18:00 del 9 de septiembre de 2026 toda pesca (deportiva, comercial y de subsistencia) en el tramo del Paraná entre los kilómetros 1109 y 1150, para proteger una concentración excepcional de dorados. No tiene fecha de fin: rige hasta que otro acto administrativo la levante, y la protección acompaña al cardumen si se desplaza. Las notas difieren en cómo ubican el tramo: una dice entre Paso de la Patria y Corrientes, otra desde Empedrado hasta la capital ([Valor Local](https://www.valorlocal.com.ar/10/09/2026/declaran-veda-extraordinaria-por-una-concentracion-excepcional-de-dorados/), [Perfil](https://www.perfil.com/noticias/nea/dispusieron-la-veda-extraordinaria-en-el-rio-parana-por-una-concentracion-masiva-de-dorados.phtml)). La multa informada es el equivalente a 500 litros de combustible súper y una inhabilitación de al menos seis meses. **Confirmá en la Dirección de Recursos Naturales de Corrientes si sigue vigente.**
-- **Veda de desove.** Un lodge del Alto Paraná cierra la pesca del 5 de noviembre al 25 de diciembre y recomienda ir dos o tres semanas antes o después ([Yellow Dog](https://www.yellowdogflyfishing.com/blogs/back-stage-pass/4-must-visit-golden-dorado-fishing-destinations-in-argentina) (V)). Otras fuentes de pesca hablan de un cierre general en noviembre y diciembre sin dar fechas ([Field & Stream](https://www.fieldandstream.com/fly-fishing/flyfishing-golden-dorado-fishing-parana-river) (V)). **No encontramos un calendario oficial consolidado de vedas por provincia** (Entre Ríos, Santa Fe, Chaco, Misiones); consultalo en cada autoridad antes de salir.
+En el Litoral hay reglas que cambian con el tiempo: vedas por desove, vedas extraordinarias para proteger un cardumen y normas distintas en cada provincia. En Corrientes, el dorado es de **pesca y devolución obligatoria**, según la [Disposición 853/22 de Recursos Naturales](https://boletinoficial.corrientes.gob.ar/assets/articulo_adjuntos/7523/original/26-12-2022.pdf) (Boletín Oficial de Corrientes, 26/12/2022).
+
+Si pescás con un guía local, no tenés que preocuparte por esto: conoce qué tramos están abiertos en cada momento y te ayuda a moverte. Si vas por tu cuenta, confirmá antes de salir con la autoridad del lugar (Prefectura o la Dirección de Recursos Naturales de la provincia).
+
+> **CAJA DEL AÑO · Vedas y novedades, al 26/10/2026** *(se actualiza una vez por año; el resto de la nota no cambia)*
+>
+> - Desde el 9 de septiembre de 2026 rige una veda extraordinaria en un tramo del Paraná entre los km 1109 y 1150, dispuesta por la Dirección de Recursos Naturales de Corrientes para proteger una concentración excepcional de dorados. No tiene fecha de fin ([El Litoral](https://www.ellitoral.com.ar/sociedad/2026-9-9-19-35-0-rige-una-veda-extraordinaria-para-proteger-un-cardumen-de-dorados-en-el-rio-parana), [Perfil](https://www.perfil.com/noticias/nea/dispusieron-la-veda-extraordinaria-en-el-rio-parana-por-una-concentracion-masiva-de-dorados.phtml)).
+> - Vedas y reglas: no hay un calendario oficial consolidado por provincia. Tu guía local siempre está al tanto.
 
 ## 3. ¿Cómo influye el río y el clima?
 
@@ -66,7 +71,7 @@ El Paraná cambia mucho de un tramo a otro, y por eso el pico se corre. Esta es 
 
 ## 5. Si venís de afuera: ¿cuándo conviene reservar?
 
-- **Octubre–noviembre** y **marzo–mayo** son las ventanas que más se repiten en el Alto Paraná correntino; algunos operadores ubican el pico antes (junio a octubre). Evitá fechas que caen en una veda o en el cierre de un lodge.
+- **Octubre–noviembre** y **marzo–mayo** son las ventanas que más se repiten en el Alto Paraná correntino; algunos operadores ubican el pico antes (junio a octubre). Tu guía te dirá si hay alguna veda o cierre en tus fechas.
 - Preguntá siempre al operador su calendario: unos cierran por desove (5 de noviembre al 25 de diciembre en el caso citado) y otros no.
 - Confirmá la licencia y el reglamento de la provincia con anticipación (próxima nota).
 - **¿Querés que te ayudemos a armar el viaje?** Contanos fechas, grupo y qué buscás en el formulario y te escribimos con opciones. *(Formulario por construir; esta nota no enlaza a guías ni lodges.)*
