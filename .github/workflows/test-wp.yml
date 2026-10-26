@@ -193,6 +193,10 @@ jobs:
           check /pt/planejar-viagem/ 200 'Monte sua viagem de pesca à Argentina'
           check /en/plan-your-trip/ 200 'Plan your fishing trip to Argentina'
           check /en/plan-your-trip/ 200 'hreflang="es"'
+          check / 200 'href="[^"]*/armar-viaje/"'
+          check /en/ 200 'plan-your-trip'
+          check /llms.txt 200 'Armá tu viaje'
+          check /wp-sitemap-vistas-1.xml 200 'armar-viaje'
           loc=$(curl -sS -o /dev/null -w '%{http_code} %{redirect_url}' \
             -d action=pm_consulta -d pm_tipo=viaje -d pm_idioma=en -d pm_destino=goya \
             -d pm_volver="$URL/en/plan-your-trip/" -d pm_t=$(( $(date +%s) - 60 )) \
