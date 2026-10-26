@@ -127,7 +127,7 @@ jobs:
           check /en/ 200 'lang="en"'
           check /mapa/ 200 'class="mapa"'
           check /en/map/ 200 'class="mapa"'
-          check /creditos/ 200
+          check /creditos/ 301
           # Staging is not indexable, and WordPress turns its sitemap off then.
           if [[ "$WP_URL" == *"://nuevo."* ]]; then check /wp-sitemap.xml 404; else check /wp-sitemap.xml 200; fi
           check /esto-no-existe/ 404

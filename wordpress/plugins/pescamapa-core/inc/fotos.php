@@ -59,24 +59,3 @@ function pm_foto( int $att, string $alt, string $sizes, array $op = [] ): string
 	}
 	return '<figure class="foto ' . esc_attr( $op['clase'] ) . '">' . $img . $credito . '</figure>';
 }
-
-/** Every credited photo used by the site, for the credits page. */
-function pm_fotos_con_credito(): array {
-	$ids = [];
-	foreach ( [ 'pm_destino', 'pm_proximo' ] as $tipo ) {
-		foreach ( pm_posts( $tipo ) as $p ) {
-			$t = (int) get_post_thumbnail_id( $p->ID );
-			if ( $t ) {
-				$ids[ $t ] = true;
-			}
-		}
-	}
-	$out = [];
-	foreach ( array_keys( $ids ) as $att ) {
-		$c = pm_credito( $att );
-		if ( $c['autor'] ) {
-			$out[] = $c;
-		}
-	}
-	return $out;
-}

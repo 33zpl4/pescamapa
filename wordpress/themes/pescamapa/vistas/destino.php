@@ -115,6 +115,7 @@ get_header(); ?>
 					</ol>
 					<p class="note"><?php pm_e( 'ficha.elegir.fuente' ); ?></p>
 				</div>
+				<?php get_template_part( 'parciales/notas-relacionadas', null, [ 'notas' => pm_notas_para( $idioma, $d['clave'], $d['especies'] ), 'h2' => 'ficha.notas.h2', 'vars' => [ 'lugar' => $d['nombre'] ] ] ); ?>
 				<?php get_template_part( 'parciales/consulta', null, [ 'destino' => $d['clave'], 'lugar' => $d['nombre'], 'especies' => $d['especies'] ] ); ?>
 
 				<?php if ( $d['faqs'] ) : ?>

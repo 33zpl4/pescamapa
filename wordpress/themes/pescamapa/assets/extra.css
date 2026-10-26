@@ -84,11 +84,19 @@
 .resumen-citas { background: var(--cream); border-radius: var(--radius); padding: 16px 20px; margin-bottom: 1.4em; }
 .resumen-citas h2 { font-size: var(--fs-h3); margin: 0 0 8px; }
 .resumen-citas ul { margin: 0; padding-left: 18px; font-style: italic; }
-.v-entrevistas .lista, .v-notas .lista { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); gap: 24px; padding-block: 40px 80px; }
-.v-entrevistas .tarjeta, .v-notas .tarjeta { display: grid; gap: 6px; text-decoration: none; color: var(--ink); }
-.v-entrevistas .tarjeta strong, .v-notas .tarjeta strong { font: 700 var(--fs-h3)/1.2 var(--font-head); }
+.v-entrevistas .lista, .v-notas .lista, .notas-inicio .lista { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); gap: 24px; padding-block: 40px 80px; }
+.v-entrevistas .tarjeta, .v-notas .tarjeta, .notas-inicio .tarjeta { display: grid; gap: 6px; text-decoration: none; color: var(--ink); }
+.v-entrevistas .tarjeta strong, .v-notas .tarjeta strong, .notas-inicio .tarjeta strong { font: 700 var(--fs-h3)/1.2 var(--font-head); }
 .v-entrevistas .quien, .v-notas .quien { font-size: var(--fs-caption); color: var(--muted); }
-.v-entrevistas .tarjeta .foto, .v-notas .tarjeta .foto { aspect-ratio: 4 / 3; border-radius: var(--radius); overflow: hidden; }
+.v-entrevistas .tarjeta .foto, .v-notas .tarjeta .foto, .notas-inicio .tarjeta .foto { aspect-ratio: 4 / 3; border-radius: var(--radius); overflow: hidden; }
+.notas-inicio .lista { padding-block: 24px 0; }
+
+/* Related notes inside a guide or a species page */
+.notas-rel { margin-block: 2em; }
+.notas-rel ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.notas-rel li { display: grid; gap: 2px; padding: 12px 16px; background: var(--cream); border-radius: var(--radius); }
+.notas-rel a { font-weight: 700; }
+.notas-rel .note { margin: 0; }
 
 /* Language suggestion (never a redirect) */
 .sugerencia-idioma { position: fixed; left: 50%; bottom: 16px; transform: translateX(-50%); z-index: 50; display: flex; align-items: center; gap: 10px; background: var(--forest); color: var(--white); border-radius: 99px; padding: 8px 8px 8px 18px; box-shadow: 0 10px 30px rgb(5 15 12 / 0.35); font-size: var(--fs-small); max-width: calc(100vw - 32px); }

@@ -12,7 +12,7 @@ on:
         default: "https://nuevo.pescamapa.com"
       rutas:
         description: "rutas separadas por espacio"
-        default: "/ /pt/ /litoral/corrientes/pesca-en-goya/ /en/litoral/corrientes/fishing-in-goya/ /mapa/ /especies/surubi/ /creditos/"
+        default: "/ /pt/ /litoral/corrientes/pesca-en-goya/ /en/litoral/corrientes/fishing-in-goya/ /mapa/ /especies/surubi/"
 
 permissions:
   contents: write

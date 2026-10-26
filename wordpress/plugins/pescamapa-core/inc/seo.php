@@ -58,10 +58,6 @@ function pm_seo(): array {
 		$s['title']       = pm_t( 'viaje.title' );
 		$s['description'] = pm_t( 'viaje.description' );
 		$s['alternas']    = pm_alternas_fijas( 'pm_url_viaje' );
-	} elseif ( 'creditos' === $vista ) {
-		$s['title']       = pm_t( 'creditos.title' );
-		$s['description'] = pm_t( 'creditos.description' );
-		$s['alternas']    = pm_alternas_fijas( 'pm_url_creditos' );
 	} elseif ( 'destino' === $vista ) {
 		$d = pm_destino( get_queried_object_id() );
 		$s['title']       = $d['seo_title'] ?: $d['nombre'];
