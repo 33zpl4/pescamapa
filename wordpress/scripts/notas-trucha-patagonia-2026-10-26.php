@@ -10,7 +10,7 @@
  * Dry run first ($aplicar = false); run with wp-script.yml (script = notas-trucha-patagonia-2026-10-26).
  */
 
-$aplicar = false;
+$aplicar = true;
 $hoy     = '20261026';
 
 function pm_n_p( string $html ): string {
@@ -231,7 +231,7 @@ $ficha['es'] = [
 	'titulo' => 'Trucha', 'slug' => 'trucha',
 	'cientifico' => 'Oncorhynchus mykiss, Salmo trutta, Salvelinus fontinalis',
 	'resumen' => 'Trucha arcoíris, marrón y de arroyo: las especies de la pesca con mosca en la Patagonia.',
-	'seo_title' => 'Trucha en la Patagonia: especies, tamaño y reglas | Pescamapa',
+	'seo_title' => 'Trucha en la Patagonia: especies y reglas | Pescamapa',
 	'seo_description' => 'Las truchas de la pesca patagónica (arcoíris, marrón y fontinalis): tamaños, la trucha marrón de mar del Río Grande, temperatura ideal y reglas.',
 	'cuerpo' => [
 		pm_f_datos( 'Datos clave', [
