@@ -90,3 +90,9 @@ La ficha de **especie** (`/especies/dorado/`) habla de la especie: nombre cient�
 ## Notas largas: parte que no caduca + caja del año (owner, 26/10/2026)
 
 Una nota se escribe para durar. Lo que cambia con los años (vedas vigentes, fechas de torneos, normas nuevas) **no va mezclado en el texto**: va en una caja aparte, fechada ("al 26/10/2026"), que se actualiza una vez por año. El cuerpo habla en general ("puede haber vedas en ciertos momentos") y manda al guía local, que siempre está al tanto: **no asustamos ni dejamos dudas, orientamos**. Qué no hacemos: publicar datos que no podemos mantener al día. Las vedas no se copian con fecha en el cuerpo; solo la caja del año, con fuente y fecha, y sin un calendario que haya que sostener.
+
+### Títulos, fechas y fotos de las notas (dueño, 26/10/2026)
+
+- **Cada título dice lo propio de la nota**, no una plantilla con una palabra cambiada ("Cuándo pescar el dorado en el Paraná: dos ventanas y por qué las fuentes no coinciden" / "…el surubí: no tiene una temporada, se mueve con el agua"). El slug no se toca (las URLs no cambian). SEO title ≤ 60.
+- **La fecha que se muestra** es el campo "Fecha de publicación"; "Actualizado" queda siempre con la fecha real. Las notas se publican espaciadas: lo ideal es una por semana, y así el historial es real.
+- **Toda nota lleva foto de portada** (4:3, recortada) con el nombre de quien la sacó; Unsplash no exige etiqueta, se pone solo el nombre. Las fotos viven en `wordpress/fotos/` y se cargan con un script (`wp-script.yml` las copia al servidor; ejemplo: `notas-fotos-titulos-2026-10-26`).

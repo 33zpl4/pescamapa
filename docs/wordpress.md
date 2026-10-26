@@ -50,7 +50,7 @@ con ese check en verde.
 **Cambios de contenido en nombre del dueño** (propagar traducciones, crear
 una guía nueva desde una investigación): un script idempotente en
 `wordpress/scripts/<nombre>.php` y Actions → Run a WordPress script
-(`wp-script.yml`). Nunca pisan a ciegas lo editado en wp-admin. Corridos
+(`wp-script.yml`; si existe `wordpress/fotos/`, el workflow copia esas fotos a `/tmp/pm-fotos/` para que el script las cargue). Nunca pisan a ciegas lo editado en wp-admin. Corridos
 (20/10/2026): `goya-2026-10-20` (reglamento de Goya), `goya-veda-2026-10-20`
 (saca la veda km 1109–1150) y `esquina-2026-10-20` (Esquina, borrador #38).
 También corridos: `prestadores-2026-10-20` (#39–#48, datos de ejemplo),
