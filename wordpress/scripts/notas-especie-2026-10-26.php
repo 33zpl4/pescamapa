@@ -6,7 +6,7 @@
  * (script = notas-especie-2026-10-26).
  */
 
-$aplicar = false;
+$aplicar = true;
 
 $mapa = [ 'cuando-pescar-dorado' => 'dorado', 'cuando-pescar-surubi' => 'surubi', 'cuando-pescar-trucha-patagonia' => 'trucha' ];
 
