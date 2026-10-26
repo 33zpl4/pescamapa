@@ -8,6 +8,7 @@
  *   /entrevistas/[<slug>/]  /pt/entrevistas/…  /en/interviews/…
  *   /notas/[<slug>/]  /pt/notas/…  /en/notes/…
  *   /pique/  /pt/pique/  /en/bite-zones/   community bite-zone map (inc/pique.php)
+ *   /armar-viaje/  /pt/planejar-viagem/  /en/plan-your-trip/   trip request form (inc/consultas.php)
  *   /  /pt/  /en/                            home
  * Views without a post (home, map, credits) are rendered by the theme's
  * vistas/<name>.php.
@@ -28,6 +29,7 @@ function pm_registrar_rutas(): void {
 		add_rewrite_rule( "^{$pre}{$seg['entrevistas']}/?$", "index.php?pm_vista=entrevistas&pm_lang={$i}", 'top' );
 		add_rewrite_rule( "^{$pre}{$seg['entrevistas']}/([^/]+)/?$", "index.php?pm_entrevista=\$matches[1]&pm_lang={$i}", 'top' );
 		add_rewrite_rule( "^{$pre}{$seg['pique']}/?$", "index.php?pm_vista=pique&pm_lang={$i}", 'top' );
+		add_rewrite_rule( "^{$pre}{$seg['viaje']}/?$", "index.php?pm_vista=viaje&pm_lang={$i}", 'top' );
 		add_rewrite_rule( "^{$pre}{$seg['notas']}/?$", "index.php?pm_vista=notas&pm_lang={$i}", 'top' );
 		add_rewrite_rule( "^{$pre}{$seg['notas']}/([^/]+)/?$", "index.php?pm_nota=\$matches[1]&pm_lang={$i}", 'top' );
 		if ( 'es' !== $i ) {
@@ -139,7 +141,7 @@ add_filter( 'template_include', function ( $plantilla ) {
 
 // The virtual views are not "not found" just because no post matched.
 add_filter( 'pre_handle_404', function ( $corto, $query ) {
-	if ( in_array( $query->get( 'pm_vista' ), [ 'inicio', 'mapa', 'creditos', 'entrevistas', 'notas', 'pique' ], true ) ) {
+	if ( in_array( $query->get( 'pm_vista' ), [ 'inicio', 'mapa', 'creditos', 'entrevistas', 'notas', 'pique', 'viaje' ], true ) ) {
 		status_header( 200 );
 		return true;
 	}

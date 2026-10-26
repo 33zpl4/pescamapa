@@ -129,3 +129,40 @@
 .v-pique .resultados label { display: flex; align-items: center; gap: 8px; font-weight: 400; }
 .v-pique .resultados input { width: auto; }
 .v-pique .pique-form button[disabled] { opacity: 0.5; cursor: not-allowed; }
+
+/* Trip request form (/armar-viaje/): the form on the left, how it works on the right. */
+.v-viaje .top .eyebrow { color: var(--lime); }
+.v-viaje .viaje-layout { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 40px; padding-block: 40px 80px; align-items: start; }
+.v-viaje .viaje-form { margin-top: 0; }
+.v-viaje .viaje-form form { gap: 28px; padding: 28px; }
+.v-viaje .paso { border: 0; padding: 0; margin: 0; display: grid; gap: 16px; min-width: 0; }
+.v-viaje .paso + .paso { border-top: 1px solid var(--line); padding-top: 24px; }
+.v-viaje .paso legend { display: flex; align-items: center; gap: 12px; padding: 0; margin-bottom: 16px; font: 700 var(--fs-h3)/1.2 var(--font-head); }
+.v-viaje .num { display: inline-grid; place-items: center; width: 32px; height: 32px; border-radius: 99px; background: var(--forest); color: var(--lime); font: 400 var(--fs-label)/1 var(--font-label); letter-spacing: 0.04em; }
+.v-viaje label small { font-weight: 400; color: var(--muted); font-size: var(--fs-caption); }
+.v-viaje input:focus-visible, .v-viaje select:focus-visible, .v-viaje textarea:focus-visible { outline: 2px solid var(--forest); outline-offset: 2px; }
+.v-viaje .opciones { border: 0; padding: 0; margin: 0; min-width: 0; }
+.v-viaje .opciones legend { font-size: var(--fs-small); font-weight: 600; padding: 0; margin-bottom: 8px; }
+.v-viaje .chips-radio { display: flex; flex-wrap: wrap; gap: 8px; }
+.v-viaje .chips-radio span { position: relative; }
+.v-viaje .chips-radio input { position: absolute; opacity: 0; inset: 0; width: 100%; height: 100%; margin: 0; cursor: pointer; }
+.v-viaje .chips-radio label { display: block; padding: 10px 16px; border: 1px solid var(--line); border-radius: 99px; background: var(--paper); font-weight: 400; font-size: var(--fs-small); color: var(--moss); }
+.v-viaje .chips-radio input:checked + label { background: var(--forest); border-color: var(--forest); color: var(--white); }
+.v-viaje .chips-radio input:focus-visible + label { outline: 2px solid var(--forest); outline-offset: 2px; }
+.v-viaje .enviar { display: grid; gap: 12px; }
+.v-viaje .enviar .button { justify-self: start; }
+.v-viaje button[disabled] { opacity: 0.6; cursor: wait; }
+.v-viaje .gracias { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: 28px; }
+.v-viaje .gracias h2 { margin-top: 0; font-size: var(--fs-h2); }
+.v-viaje .viaje-como { background: var(--cream); border-radius: var(--radius); padding: 24px; position: sticky; top: 20px; }
+.v-viaje .viaje-como h2 { margin: 0 0 16px; font-size: var(--fs-h3); }
+.v-viaje .viaje-como ol { list-style: none; counter-reset: paso; margin: 0; padding: 0; display: grid; gap: 18px; }
+.v-viaje .viaje-como li { counter-increment: paso; display: grid; gap: 4px; padding-left: 44px; position: relative; }
+.v-viaje .viaje-como li::before { content: counter(paso); position: absolute; left: 0; top: 0; width: 32px; height: 32px; display: grid; place-items: center; border-radius: 99px; background: var(--forest); color: var(--lime); font: 400 var(--fs-label)/1 var(--font-label); }
+.v-viaje .viaje-como strong { font-size: var(--fs-body); }
+.v-viaje .viaje-como span { font-size: var(--fs-small); color: var(--muted); }
+@media (max-width: 900px) {
+	.v-viaje .viaje-layout { grid-template-columns: 1fr; gap: 24px; padding-block: 28px 64px; }
+	.v-viaje .viaje-como { position: static; order: -1; }
+	.v-viaje .viaje-form form { padding: 20px; }
+}

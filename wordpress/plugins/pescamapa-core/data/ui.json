@@ -312,7 +312,48 @@
 			"pique.mapa": "Mapa de destinos",
 			"pique.resumen1": "1 reporte en 1 zona. Último día informado: %fecha%.",
 			"pique.ir": "Ir a un destino:",
-			"pique.ir.elegi": "Elegí uno…"
+			"pique.ir.elegi": "Elegí uno…",
+			"nav.viaje": "Armá tu viaje",
+			"viaje.title": "Armá tu viaje de pesca de dorado en Argentina | Pescamapa",
+			"viaje.description": "Contanos fechas, grupo y qué querés pescar. Te armamos opciones de guía y alojamiento en el Litoral argentino, sin costo ni compromiso.",
+			"viaje.eyebrow": "Armá tu viaje",
+			"viaje.h1": "Armá tu viaje de pesca a Argentina",
+			"viaje.bajada": "Contanos cuándo querés ir y qué querés pescar. Te escribimos con opciones de guía y alojamiento, sin costo ni compromiso.",
+			"viaje.paso1": "Tu viaje",
+			"viaje.paso2": "Tu pesca",
+			"viaje.paso3": "Cómo te escribimos",
+			"viaje.destino": "¿A dónde?",
+			"viaje.destino.nose": "Todavía no sé, quiero ideas",
+			"viaje.cuando": "¿Cuándo?",
+			"viaje.cuando.ayuda": "Un mes, una temporada o fechas exactas.",
+			"viaje.cuando.ejemplo": "Ej.: noviembre, o del 3 al 10 de marzo",
+			"viaje.duracion": "¿Cuánto tiempo?",
+			"viaje.personas": "¿Cuántas personas pescan?",
+			"viaje.especie": "¿Qué querés pescar?",
+			"viaje.modalidad": "¿Cómo te gusta pescar?",
+			"viaje.experiencia": "¿Cuánta experiencia tenés?",
+			"viaje.alojamiento": "¿Dónde te gustaría dormir?",
+			"viaje.nombre": "Tu nombre",
+			"viaje.contacto": "WhatsApp o email",
+			"viaje.contacto.ayuda": "Con el código de país si es un WhatsApp (por ejemplo +1, +52, +56).",
+			"viaje.pais": "¿Desde qué país viajás?",
+			"viaje.mensaje": "¿Algo más que debamos saber?",
+			"viaje.mensaje.ayuda": "Presupuesto, si viajás con familia, fechas fijas, qué viste o escuchaste de la zona…",
+			"viaje.enviar": "Pedir cotización",
+			"viaje.enviando": "Enviando…",
+			"viaje.privacidad": "Pedir una cotización no tiene costo ni compromiso. Usamos tus datos solo para responderte y para pasarle tu consulta a quien elijas.",
+			"viaje.como.h": "Cómo funciona",
+			"viaje.como.1.t": "Nos contás",
+			"viaje.como.1.d": "Completás este formulario en un par de minutos. Solo el nombre y el contacto son obligatorios.",
+			"viaje.como.2.t": "Te escribimos",
+			"viaje.como.2.d": "Por WhatsApp o email te proponemos guía y alojamiento que encajen con tus fechas, tu grupo y tu forma de pescar.",
+			"viaje.como.3.t": "Elegís",
+			"viaje.como.3.d": "Si algo te convence, coordinamos la reserva con quien corresponda. Si no, no pasa nada.",
+			"viaje.gracias.h": "¡Gracias, recibimos tu consulta!",
+			"viaje.gracias.p": "Te escribimos pronto por el medio que nos dejaste, con opciones pensadas para tu viaje.",
+			"viaje.gracias.mas": "Mientras tanto, mirá las guías de cada destino:",
+			"viaje.gracias.ver": "Ver los destinos",
+			"viaje.error": "No pudimos enviar tu consulta. Revisá tu nombre y tu contacto, o probá de nuevo en unos minutos."
 		},
 		"pt": {
 			"marca.lema": "Onde, quando e com quem pescar na Argentina.",
@@ -528,7 +569,48 @@
 			"pique.mapa": "Mapa de destinos",
 			"pique.resumen1": "1 relato em 1 zona. Último dia informado: %fecha%.",
 			"pique.ir": "Ir para um destino:",
-			"pique.ir.elegi": "Escolha um…"
+			"pique.ir.elegi": "Escolha um…",
+			"nav.viaje": "Monte sua viagem",
+			"viaje.title": "Planeje sua pesca de dourado na Argentina | Pescamapa",
+			"viaje.description": "Conte as datas, o grupo e o que quer pescar. Montamos opções de guia e hospedagem no Litoral argentino, sem custo nem compromisso.",
+			"viaje.eyebrow": "Monte sua viagem",
+			"viaje.h1": "Monte sua viagem de pesca à Argentina",
+			"viaje.bajada": "Conte quando quer ir e o que quer pescar. Escrevemos com opções de guia e hospedagem, sem custo nem compromisso.",
+			"viaje.paso1": "Sua viagem",
+			"viaje.paso2": "Sua pesca",
+			"viaje.paso3": "Como falamos com você",
+			"viaje.destino": "Para onde?",
+			"viaje.destino.nose": "Ainda não sei, quero ideias",
+			"viaje.cuando": "Quando?",
+			"viaje.cuando.ayuda": "Um mês, uma temporada ou datas exatas.",
+			"viaje.cuando.ejemplo": "Ex.: novembro, ou de 3 a 10 de março",
+			"viaje.duracion": "Por quanto tempo?",
+			"viaje.personas": "Quantas pessoas vão pescar?",
+			"viaje.especie": "O que quer pescar?",
+			"viaje.modalidad": "Como gosta de pescar?",
+			"viaje.experiencia": "Quanta experiência tem?",
+			"viaje.alojamiento": "Onde gostaria de ficar?",
+			"viaje.nombre": "Seu nome",
+			"viaje.contacto": "WhatsApp ou e-mail",
+			"viaje.contacto.ayuda": "Com o código do país se for WhatsApp (por exemplo +55, +1).",
+			"viaje.pais": "De que país você viaja?",
+			"viaje.mensaje": "Mais alguma coisa que devamos saber?",
+			"viaje.mensaje.ayuda": "Orçamento, se viaja com a família, datas fixas, o que viu ou ouviu sobre a região…",
+			"viaje.enviar": "Pedir orçamento",
+			"viaje.enviando": "Enviando…",
+			"viaje.privacidad": "Pedir um orçamento não tem custo nem compromisso. Usamos seus dados apenas para responder e para passar sua consulta a quem você escolher.",
+			"viaje.como.h": "Como funciona",
+			"viaje.como.1.t": "Você conta",
+			"viaje.como.1.d": "Preencha este formulário em poucos minutos. Só o nome e o contato são obrigatórios.",
+			"viaje.como.2.t": "Nós escrevemos",
+			"viaje.como.2.d": "Por WhatsApp ou e-mail propomos guia e hospedagem que combinem com suas datas, seu grupo e seu jeito de pescar.",
+			"viaje.como.3.t": "Você escolhe",
+			"viaje.como.3.d": "Se algo te convencer, combinamos a reserva com quem corresponde. Se não, tudo bem.",
+			"viaje.gracias.h": "Obrigado, recebemos sua consulta!",
+			"viaje.gracias.p": "Escreveremos em breve pelo meio que você deixou, com opções pensadas para a sua viagem.",
+			"viaje.gracias.mas": "Enquanto isso, veja os guias de cada destino:",
+			"viaje.gracias.ver": "Ver os destinos",
+			"viaje.error": "Não conseguimos enviar sua consulta. Confira seu nome e seu contato, ou tente de novo em alguns minutos."
 		},
 		"en": {
 			"marca.lema": "Where, when and who to fish with in Argentina.",
@@ -744,7 +826,48 @@
 			"pique.mapa": "Destinations map",
 			"pique.resumen1": "1 report in 1 zone. Latest day reported: %fecha%.",
 			"pique.ir": "Go to a destination:",
-			"pique.ir.elegi": "Choose one…"
+			"pique.ir.elegi": "Choose one…",
+			"nav.viaje": "Plan your trip",
+			"viaje.title": "Plan your dorado fishing trip to Argentina | Pescamapa",
+			"viaje.description": "Tell us your dates, group and target species. We will put together guide and lodging options in Argentina’s Litoral, at no cost or commitment.",
+			"viaje.eyebrow": "Plan your trip",
+			"viaje.h1": "Plan your fishing trip to Argentina",
+			"viaje.bajada": "Tell us when you want to go and what you want to catch. We will write back with guide and lodging options, at no cost or commitment.",
+			"viaje.paso1": "Your trip",
+			"viaje.paso2": "Your fishing",
+			"viaje.paso3": "How we reach you",
+			"viaje.destino": "Where to?",
+			"viaje.destino.nose": "Not sure yet, I want ideas",
+			"viaje.cuando": "When?",
+			"viaje.cuando.ayuda": "A month, a season or exact dates.",
+			"viaje.cuando.ejemplo": "E.g. November, or March 3 to 10",
+			"viaje.duracion": "How long?",
+			"viaje.personas": "How many people will fish?",
+			"viaje.especie": "What do you want to catch?",
+			"viaje.modalidad": "How do you like to fish?",
+			"viaje.experiencia": "How much experience do you have?",
+			"viaje.alojamiento": "Where would you like to stay?",
+			"viaje.nombre": "Your name",
+			"viaje.contacto": "WhatsApp or email",
+			"viaje.contacto.ayuda": "Include the country code if it is a WhatsApp number (for example +1, +52, +56).",
+			"viaje.pais": "Which country are you travelling from?",
+			"viaje.mensaje": "Anything else we should know?",
+			"viaje.mensaje.ayuda": "Budget, whether you travel with family, fixed dates, what you have seen or heard about the area…",
+			"viaje.enviar": "Request a quote",
+			"viaje.enviando": "Sending…",
+			"viaje.privacidad": "Requesting a quote has no cost or commitment. We use your details only to reply and to pass your request on to whoever you choose.",
+			"viaje.como.h": "How it works",
+			"viaje.como.1.t": "You tell us",
+			"viaje.como.1.d": "Fill in this form in a couple of minutes. Only your name and contact are required.",
+			"viaje.como.2.t": "We write back",
+			"viaje.como.2.d": "By WhatsApp or email we suggest a guide and lodging that fit your dates, your group and the way you like to fish.",
+			"viaje.como.3.t": "You choose",
+			"viaje.como.3.d": "If something convinces you, we arrange the booking with whoever is involved. If not, no hard feelings.",
+			"viaje.gracias.h": "Thank you, we got your request!",
+			"viaje.gracias.p": "We will write to you soon at the contact you left, with options for your trip.",
+			"viaje.gracias.mas": "In the meantime, browse the guide to each destination:",
+			"viaje.gracias.ver": "See the destinations",
+			"viaje.error": "We could not send your request. Please check your name and contact, or try again in a few minutes."
 		}
 	},
 	"opciones": {
@@ -918,6 +1041,67 @@
 				"es": "Italiano",
 				"pt": "Italiano",
 				"en": "Italian"
+			}
+		},
+		"experiencia": {
+			"primera": {
+				"es": "Primera vez",
+				"pt": "Primeira vez",
+				"en": "First time"
+			},
+			"alguna": {
+				"es": "Algo de experiencia",
+				"pt": "Alguma experiência",
+				"en": "Some experience"
+			},
+			"experta": {
+				"es": "Pescador con experiencia",
+				"pt": "Pescador experiente",
+				"en": "Experienced angler"
+			}
+		},
+		"alojamiento": {
+			"hotel": {
+				"es": "Hotel o cabaña",
+				"pt": "Hotel ou cabana",
+				"en": "Hotel or cabin"
+			},
+			"lodge": {
+				"es": "Lodge con todo incluido",
+				"pt": "Lodge com tudo incluído",
+				"en": "All-inclusive lodge"
+			},
+			"igual": {
+				"es": "Me da igual",
+				"pt": "Tanto faz",
+				"en": "No preference"
+			}
+		},
+		"duracion": {
+			"corto": {
+				"es": "1 a 2 días",
+				"pt": "1 a 2 dias",
+				"en": "1 to 2 days"
+			},
+			"medio": {
+				"es": "3 a 4 días",
+				"pt": "3 a 4 dias",
+				"en": "3 to 4 days"
+			},
+			"semana": {
+				"es": "5 a 7 días",
+				"pt": "5 a 7 dias",
+				"en": "5 to 7 days"
+			},
+			"largo": {
+				"es": "Más de una semana",
+				"pt": "Mais de uma semana",
+				"en": "More than a week"
+			},
+			"nose": {
+				"es": "Todavía no sé",
+				"pt": "Ainda não sei",
+				"en": "Not sure yet"
 			}
 		}
 	}
