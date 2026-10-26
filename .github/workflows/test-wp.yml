@@ -123,6 +123,9 @@ jobs:
           }
           check / 200 'PESCAMAPA'
           check /en/ 200 'lang="en"'
+          check / 200 'Armá tu viaje →'
+          check / 200 'Investigación propia'
+          check /en/ 200 'Plan your trip →'
           check /mapa/ 200
           check /litoral/corrientes/pesca-en-esquina/ 200 'TouristDestination' 'PENDIENTE'
           check /litoral/corrientes/pesca-en-esquina/ 200 'CITA-DE-PRUEBA' 'CITA-SIN-PERMISO'

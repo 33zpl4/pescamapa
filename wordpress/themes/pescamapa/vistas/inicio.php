@@ -31,8 +31,8 @@ get_header(); ?>
 				<h1><?php pm_e( 'inicio.h1a' ); ?><br><?php pm_e( 'inicio.h1b' ); ?><br><em><?php pm_e( 'inicio.h1c' ); ?></em></h1>
 				<p class="copy"><?php pm_e( 'inicio.copy' ); ?></p>
 				<div class="actions">
-					<a class="button primary" href="#destinos"><?php pm_e( 'inicio.explorar' ); ?></a>
-					<a class="button secondary" href="<?php echo esc_url( pm_url_mapa( $idioma ) ); ?>"><?php pm_e( 'inicio.vermapa' ); ?></a>
+					<a class="button primary" href="<?php echo esc_url( pm_url_viaje( $idioma ) ); ?>"><?php pm_e( 'inicio.armar' ); ?></a>
+					<a class="button secondary" href="#destinos"><?php pm_e( 'inicio.explorar' ); ?></a>
 				</div>
 				<ul class="stats">
 					<li><strong><?php pm_e( 'inicio.stat1a' ); ?></strong><?php pm_e( 'inicio.stat1b' ); ?></li>

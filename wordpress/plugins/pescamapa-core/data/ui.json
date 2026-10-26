@@ -118,11 +118,11 @@
 			"inicio.tag1.h": "¿Qué querés pescar?",
 			"inicio.tag1.p": "Surubí · dorado · trucha · pejerrey",
 			"inicio.hero.nota": "Mapa ilustrativo",
-			"inicio.eyebrow": "El mapa para salir a pescar",
-			"inicio.h1a": "Argentina",
-			"inicio.h1b": "se pesca",
-			"inicio.h1c": "de mil formas.",
-			"inicio.copy": "Del surubí en las islas del Paraná a la trucha en los Andes. Encontrá el destino que encaja con tu próxima salida.",
+			"inicio.eyebrow": "Investigación propia · fuentes a la vista",
+			"inicio.h1a": "Cuándo ir",
+			"inicio.h1b": "y con quién",
+			"inicio.h1c": "pescar.",
+			"inicio.copy": "Todo lo que necesitás saber antes de ir a pescar a la Argentina: cuándo ir, qué dice el reglamento y con quién salir. Lo investigamos nosotros y mostramos las fuentes. Y si querés, te armamos el viaje.",
 			"inicio.explorar": "Explorar destinos ↓",
 			"inicio.vermapa": "Ver el mapa ↗",
 			"inicio.stat1a": "Ríos y humedales",
@@ -353,7 +353,8 @@
 			"viaje.gracias.p": "Te escribimos pronto por el medio que nos dejaste, con opciones pensadas para tu viaje.",
 			"viaje.gracias.mas": "Mientras tanto, mirá las guías de cada destino:",
 			"viaje.gracias.ver": "Ver los destinos",
-			"viaje.error": "No pudimos enviar tu consulta. Revisá tu nombre y tu contacto, o probá de nuevo en unos minutos."
+			"viaje.error": "No pudimos enviar tu consulta. Revisá tu nombre y tu contacto, o probá de nuevo en unos minutos.",
+			"inicio.armar": "Armá tu viaje →"
 		},
 		"pt": {
 			"marca.lema": "Quando ir, o que diz o regulamento e com quem pescar na Argentina.",
@@ -375,11 +376,11 @@
 			"inicio.tag1.h": "O que você quer pescar?",
 			"inicio.tag1.p": "Surubim · dourado · truta · peixe-rei",
 			"inicio.hero.nota": "Mapa ilustrativo",
-			"inicio.eyebrow": "O mapa para sair para pescar",
-			"inicio.h1a": "A Argentina",
-			"inicio.h1b": "se pesca",
-			"inicio.h1c": "de mil jeitos.",
-			"inicio.copy": "Do surubim nas ilhas do Paraná à truta nos Andes. Encontre o destino certo para a sua próxima pescaria.",
+			"inicio.eyebrow": "Pesquisa própria · fontes à vista",
+			"inicio.h1a": "Quando ir",
+			"inicio.h1b": "e com quem",
+			"inicio.h1c": "pescar.",
+			"inicio.copy": "Tudo o que você precisa saber antes de pescar na Argentina: quando ir, o que diz o regulamento e com quem sair. Nós pesquisamos e mostramos as fontes. E se quiser, montamos a viagem com você.",
 			"inicio.explorar": "Explorar destinos ↓",
 			"inicio.vermapa": "Ver o mapa ↗",
 			"inicio.stat1a": "Rios e áreas úmidas",
@@ -610,7 +611,8 @@
 			"viaje.gracias.p": "Escreveremos em breve pelo meio que você deixou, com opções pensadas para a sua viagem.",
 			"viaje.gracias.mas": "Enquanto isso, veja os guias de cada destino:",
 			"viaje.gracias.ver": "Ver os destinos",
-			"viaje.error": "Não conseguimos enviar sua consulta. Confira seu nome e seu contato, ou tente de novo em alguns minutos."
+			"viaje.error": "Não conseguimos enviar sua consulta. Confira seu nome e seu contato, ou tente de novo em alguns minutos.",
+			"inicio.armar": "Monte sua viagem →"
 		},
 		"en": {
 			"marca.lema": "When to go, what the rules say and who to fish with in Argentina.",
@@ -632,11 +634,11 @@
 			"inicio.tag1.h": "What do you want to catch?",
 			"inicio.tag1.p": "Surubí · golden dorado · trout · pejerrey",
 			"inicio.hero.nota": "Illustrative map",
-			"inicio.eyebrow": "The map for going fishing",
-			"inicio.h1a": "Argentina",
-			"inicio.h1b": "can be fished",
-			"inicio.h1c": "a thousand ways.",
-			"inicio.copy": "From surubí among the Paraná islands to trout in the Andes. Find the destination that fits your next trip.",
+			"inicio.eyebrow": "Our own research · sources shown",
+			"inicio.h1a": "When to go",
+			"inicio.h1b": "and who to",
+			"inicio.h1c": "fish with.",
+			"inicio.copy": "Everything you need to know before you fish Argentina: when to go, what the rules say and who to fish with. We research it ourselves and show the sources. And if you want, we will plan the trip with you.",
 			"inicio.explorar": "Explore destinations ↓",
 			"inicio.vermapa": "See the map ↗",
 			"inicio.stat1a": "Rivers and wetlands",
@@ -867,7 +869,8 @@
 			"viaje.gracias.p": "We will write to you soon at the contact you left, with options for your trip.",
 			"viaje.gracias.mas": "In the meantime, browse the guide to each destination:",
 			"viaje.gracias.ver": "See the destinations",
-			"viaje.error": "We could not send your request. Please check your name and contact, or try again in a few minutes."
+			"viaje.error": "We could not send your request. Please check your name and contact, or try again in a few minutes.",
+			"inicio.armar": "Plan your trip →"
 		}
 	},
 	"opciones": {
