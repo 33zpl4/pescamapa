@@ -24,11 +24,19 @@ const PM_CONSULTA_CAMPOS = [
 	'cuando'    => [ 'Cuándo', 80 ],
 	'personas'  => [ 'Personas', 3 ],
 	'modalidad' => [ 'Modalidad', 40 ],
+	'duracion'  => [ 'Duración', 40 ],
+	'experiencia' => [ 'Experiencia', 40 ],
+	'alojamiento' => [ 'Alojamiento', 40 ],
+	'pais'      => [ 'País desde el que viaja', 60 ],
 	'especie'   => [ 'Especie', 40 ],
 	'localidad' => [ 'Localidad', 80 ],
 	'ofrece'    => [ 'Qué ofrece', 200 ],
 	'mensaje'   => [ 'Mensaje', 2000 ],
 ];
+
+function pm_url_viaje( string $i ): string {
+	return pm_url( PM_SEGMENTOS[ $i ]['viaje'], $i );
+}
 
 function pm_consulta_url_envio(): string {
 	return admin_url( 'admin-post.php' );
@@ -80,6 +88,11 @@ function pm_recibir_consulta(): void {
 	foreach ( PM_CONSULTA_CAMPOS as $k => [ , $max ] ) {
 		$v = 'mensaje' === $k ? sanitize_textarea_field( wp_unslash( $_POST[ $k ] ?? '' ) ) : sanitize_text_field( wp_unslash( $_POST[ $k ] ?? '' ) );
 		$datos[ $k ] = mb_substr( $v, 0, $max );
+	}
+	// Choice fields arrive as keys; keep the Spanish label so the email and the admin read naturally.
+	foreach ( [ 'duracion', 'experiencia', 'alojamiento' ] as $campo ) {
+		$clave = sanitize_key( wp_unslash( $_POST[ $campo ] ?? '' ) );
+		$datos[ $campo ] = isset( pm_ui()['opciones'][ $campo ][ $clave ] ) ? pm_opcion( $campo, $clave, 'es' ) : '';
 	}
 	if ( '' === $datos['nombre'] || '' === $datos['contacto'] ) {
 		$ir( 'error' );

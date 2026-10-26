@@ -186,6 +186,26 @@ jobs:
           curl -sS -o /dev/null -d action=pm_consulta -d pm_web=spam -d pm_t=1 -d nombre=Bot -d contacto=bot "$URL/wp-admin/admin-post.php"
           n=$(wp --path="$WP" post list --post_type=pm_consulta --post_status=private --format=count)
           [[ "$n" == 1 ]] && echo "✓ 1 consulta guardada" || { echo "✖ consultas guardadas: $n (esperado 1)"; fail=1; }
+          # Trip request page (/armar-viaje/): renders in 3 languages, preselects from the URL, saves the new fields as Spanish labels.
+          check /armar-viaje/ 200 'Armá tu viaje de pesca a Argentina' 'PENDIENTE'
+          check /armar-viaje/ 200 'name="contacto"'
+          check '/armar-viaje/?destino=esquina&especie=dorado' 200 'value="esquina" selected'
+          check /pt/planejar-viagem/ 200 'Monte sua viagem de pesca à Argentina'
+          check /en/plan-your-trip/ 200 'Plan your fishing trip to Argentina'
+          check /en/plan-your-trip/ 200 'hreflang="es"'
+          loc=$(curl -sS -o /dev/null -w '%{http_code} %{redirect_url}' \
+            -d action=pm_consulta -d pm_tipo=viaje -d pm_idioma=en -d pm_destino=goya \
+            -d pm_volver="$URL/en/plan-your-trip/" -d pm_t=$(( $(date +%s) - 60 )) \
+            -d nombre=Tester -d contacto=tester@example.com -d cuando=November -d personas=2 \
+            -d duracion=semana -d experiencia=alguna -d alojamiento=lodge -d pais=Chile -d modalidad=mosca \
+            "$URL/wp-admin/admin-post.php")
+          [[ "$loc" == *"consulta=ok"* ]] && echo "✓ viaje → $loc" || { echo "✖ viaje: $loc"; fail=1; }
+          v=$(wp --path="$WP" post list --post_type=pm_consulta --post_status=private --s=Tester --format=ids | head -n1)
+          for par in "duracion:5 a 7 días" "experiencia:Algo de experiencia" "alojamiento:Lodge con todo incluido" "pais:Chile"; do
+            k=${par%%:*}; e=${par#*:}; g=$(wp --path="$WP" post meta get "$v" "$k")
+            [[ "$g" == "$e" ]] && echo "✓ $k = $g" || { echo "✖ $k = '$g' (esperado '$e')"; fail=1; }
+          done
+          check '/en/plan-your-trip/?consulta=ok' 200 'Thank you, we got your request'
           # Species pages: real content, record with its source, the hidden note never shown.
           check /especies/dorado/ 200 'Récord mundial del dorado' 'PENDIENTE'
           check /especies/dorado/ 200 '25,28 kg'

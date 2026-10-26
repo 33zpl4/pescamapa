@@ -51,6 +51,10 @@ function pm_seo(): array {
 		$s['title']       = pm_t( 'pique.title' );
 		$s['description'] = pm_t( 'pique.description' );
 		$s['alternas']    = pm_alternas_fijas( 'pm_url_pique' );
+	} elseif ( 'viaje' === $vista ) {
+		$s['title']       = pm_t( 'viaje.title' );
+		$s['description'] = pm_t( 'viaje.description' );
+		$s['alternas']    = pm_alternas_fijas( 'pm_url_viaje' );
 	} elseif ( 'creditos' === $vista ) {
 		$s['title']       = pm_t( 'creditos.title' );
 		$s['description'] = pm_t( 'creditos.description' );
