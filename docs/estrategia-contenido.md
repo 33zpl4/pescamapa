@@ -86,3 +86,7 @@ en el chat.)
 ## Qué va en una ficha de especie y qué en una guía (24/10/2026)
 
 La ficha de **especie** (`/especies/dorado/`) habla de la especie: nombre científico, récords con su fuente, tamaños de referencia (publicación científica o IGFA), reglas generales y enlaces a las guías. **Lo local** (tamaños que se pescan en un lugar, temporada, vedas del tramo, prestadores) va en la **guía del destino**. No se mezclan: una cifra de Goya no explica la especie, y una cifra de la especie no describe Goya. Fuente de una ficha de especie: IGFA, FishBase, normas; un operador de viajes solo con su nombre delante.
+
+## Notas largas: parte que no caduca + caja del año (owner, 26/10/2026)
+
+Una nota se escribe para durar. Lo que cambia con los años (vedas vigentes, fechas de torneos, normas nuevas) **no va mezclado en el texto**: va en una caja aparte, fechada ("al 26/10/2026"), que se actualiza una vez por año. El cuerpo habla en general ("puede haber vedas en ciertos momentos") y manda al guía local, que siempre está al tanto: **no asustamos ni dejamos dudas, orientamos**. Qué no hacemos: publicar datos que no podemos mantener al día. Las vedas no se copian con fecha en el cuerpo; solo la caja del año, con fuente y fecha, y sin un calendario que haya que sostener.

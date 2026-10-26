@@ -193,6 +193,10 @@ jobs:
           check /pt/planejar-viagem/ 200 'Monte sua viagem de pesca à Argentina'
           check /en/plan-your-trip/ 200 'Plan your fishing trip to Argentina'
           check /en/plan-your-trip/ 200 'hreflang="es"'
+          check / 200 'href="[^"]*/armar-viaje/"'
+          check /en/ 200 'plan-your-trip'
+          check /llms.txt 200 'Armá tu viaje'
+          check /wp-sitemap-vistas-1.xml 200 'armar-viaje'
           loc=$(curl -sS -o /dev/null -w '%{http_code} %{redirect_url}' \
             -d action=pm_consulta -d pm_tipo=viaje -d pm_idioma=en -d pm_destino=goya \
             -d pm_volver="$URL/en/plan-your-trip/" -d pm_t=$(( $(date +%s) - 60 )) \
@@ -213,6 +217,27 @@ jobs:
           check /especies/dorado/ 200 'application/ld+json'
           check /especies/dorado/ 200 'Dorado: récord mundial, tamaño y reglas' 'Angler'
           check /especies/surubi/ 200 'solo pesca y devolución' 'PENDIENTE'
+          # Long-form notes "when to fish" (dorado, surubí), 3 languages: created by the script, evergreen body + dated yearly box, SEO and JSON-LD.
+          sed 's/^\$aplicar = false;/$aplicar = true;/' wordpress/scripts/notas-dorado-surubi-2026-10-26.php > /tmp/notas.php
+          wp --path="$WP" eval-file /tmp/notas.php
+          wp --path="$WP" eval-file /tmp/notas.php   # idempotent
+          n=$(wp --path="$WP" post list --post_type=pm_nota --post_status=publish --meta_key=clave --meta_value=cuando-pescar-dorado --format=count)
+          [[ "$n" == 3 ]] && echo "✓ nota del dorado en 3 idiomas" || { echo "✖ nota del dorado: $n (esperado 3)"; fail=1; }
+          check /notas/cuando-pescar-dorado/ 200 'Al día · vedas y novedades' 'PENDIENTE'
+          check /notas/cuando-pescar-dorado/ 200 'application/ld+json'
+          check /notas/cuando-pescar-dorado/ 200 '"citation"'
+          check /notas/cuando-pescar-dorado/ 200 'Cuándo pescar dorado: mejores meses y vedas | Pescamapa'
+          check /notas/cuando-pescar-dorado/ 200 'Datos clave'
+          check /notas/cuando-pescar-dorado/ 200 'rel="alternate" hreflang="en"'
+          check /en/notes/best-time-to-fish-golden-dorado/ 200 'Up to date · closures and news'
+          check /pt/notas/quando-pescar-dourado/ 200 'Em dia · vedas e novidades'
+          check /notas/cuando-pescar-surubi/ 200 'Fiesta Nacional del Surubí, en Goya'
+          check /en/notes/best-time-to-fish-surubi/ 200 'Best time to fish surubí in Argentina'
+          check /pt/notas/quando-pescar-surubi/ 200 'Quando pescar surubi: melhores meses e vedas'
+          check /notas/cuando-pescar-dorado/ 200 'href="[^"]*armar-viaje/?destino='
+          check /notas/ 200 'Cuándo pescar el dorado'
+          check /llms.txt 200 'Cuándo pescar el dorado'
+          check /wp-sitemap-posts-pm_nota-1.xml 200 'cuando-pescar-dorado'
           # Zona de pique (docs/pique.md): empty state, report through the real endpoint, privacy, delay, abuse limits.
           check /pique/ 200 'pique-mapa' 'reportes en'
           check /pique/ 200 'Todavía no hay reportes'

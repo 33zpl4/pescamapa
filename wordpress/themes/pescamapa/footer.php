@@ -17,6 +17,7 @@ $inicio = pm_url_inicio( $idioma );
 			<a href="<?php echo esc_url( pm_url_pique( $idioma ) ); ?>"><?php pm_e( 'nav.pique' ); ?></a>
 			<a href="<?php echo esc_url( pm_url_entrevistas( $idioma ) ); ?>"><?php pm_e( 'nav.entrevistas' ); ?></a>
 			<?php if ( pm_hay_notas() ) : ?><a href="<?php echo esc_url( pm_url_notas( $idioma ) ); ?>"><?php pm_e( 'nav.notas' ); ?></a><?php endif; ?>
+			<a href="<?php echo esc_url( pm_url_viaje( $idioma ) ); ?>"><?php pm_e( 'nav.viaje' ); ?></a>
 			<a href="<?php echo esc_url( $inicio . '#prestadores' ); ?>"><?php pm_e( 'pie.prestadores' ); ?></a>
 			<a href="<?php echo esc_url( pm_url_creditos( $idioma ) ); ?>"><?php pm_e( 'nav.creditos' ); ?></a>
 		</nav>
