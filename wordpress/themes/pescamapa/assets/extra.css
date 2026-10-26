@@ -206,3 +206,5 @@
 .tabla-rio table { width: 100%; border-collapse: collapse; }
 .tabla-rio th, .tabla-rio td { text-align: left; padding: 12px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
 .tabla-rio small { display: block; color: var(--muted); font-weight: 400; }
+.tabla-rio th small { margin-top: 4px; line-height: 1.3; }
+.rio-hub h2 { margin: 32px 0 12px; }
