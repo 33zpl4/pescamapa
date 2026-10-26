@@ -27,7 +27,21 @@ Hay acuerdo en lo grueso y diferencias en el detalle:
 - **Paraná River Outfitters** (Corrientes, Nervous Waters) dice que su temporada "suele ir de junio a octubre, durante el pico de la acción del dorado" ([video](https://www.youtube.com/watch?v=uHt3QY83Vt0), traducción nuestra). Lo explica por la migración de los peces forrajeros en primavera: los dorados los siguen río arriba "devorándolos para engordar antes de desovar". En esa ventana pescan a pez visto sobre bancos de arena que se pueden vadear y junto a troncos caídos, barrancas, arroyos interiores y caídas de profundidad.
 - **Atando Piques** (canal argentino de pesca), pescando en Ituzaingó en junio y julio, aclara que viajaron fuera de la plena temporada: "las temperaturas todavía no eran tan altas y el agua no tenía ese calor que suele activar con más fuerza a estos peces" ([video](https://www.youtube.com/watch?v=TzHxMam_h38), traducción nuestra: no hay texto original en inglés). En agua fría usaron cañas número 8 con líneas de hundimiento intermedio, porque el pez no caza en superficie como en verano.
 
-**Nuestra lectura:** los calendarios parecen distintos porque describen ríos y estrategias distintas. En el Alto Paraná correntino se pesca el remonte del forraje desde el invierno y la primavera (junio a octubre en algunos operadores); en otros tramos, y para otros públicos, el pico es el tiempo cálido de octubre y de abril y mayo. Lo que no cambia: el calor de pleno verano y el frío de invierno piden ajustar horario y técnica. Si querés ir en un mes difícil, preguntá qué horarios y qué técnica usa quien te guíe.
+### ¿Por qué los calendarios no coinciden?
+
+Un operador internacional dice que su pico va de junio a octubre y un canal argentino llama "fuera de temporada" a junio y julio. No es un error de nadie: son tres cosas distintas que se mezclan. Esta es nuestra lectura; las partes sin fuente propia están marcadas como hipótesis.
+
+1. **El tramo del río.** El Paraná tiene dos peces distintos según dónde lo pesques. En el Alto Paraná (Ituzaingó, Itatí, Paso de la Patria) el río es ancho, con costas de piedra y grandes bancos de arena, y la pesca activa en superficie depende de que el agua se caliente: por eso Atando Piques, en Ituzaingó, habla de junio y julio como fuera de temporada. En el Paraná medio (Esquina, Goya, La Paz) hay más riachos e islas donde los grandes dorados esperan al forraje que sube; ahí un operador puede ubicar su pico más temprano. *(Hipótesis nuestra: no sabemos en qué tramo exacto opera Paraná River Outfitters; hay que preguntárselo.)*
+2. **El calendario comercial.** Un lodge elige sus fechas por más cosas que el pique: el cierre por desove, el calor extremo de pleno verano (que cansa a un cliente que viaja de lejos) y la logística. Por eso una temporada "de junio a octubre" puede decir más de cómo trabaja ese lodge que de cuándo pica el pez. *(Hipótesis: no encontramos un calendario oficial de vedas para confirmarlo; ver sección 2.)*
+3. **La técnica.** Con agua cálida, el dorado sube a cazar a la superficie y se lo pesca a pez visto, con poppers o ratones. Con agua fría baja a los pozones y a la caída de las piedras, y se lo pesca con líneas de hundimiento o señuelos de paleta profunda: menos piques por jornada, pero a veces peces más grandes. Atando Piques lo confirma en la práctica: en invierno pasó a líneas de hundimiento intermedio.
+
+| | Operador internacional | Pescador local |
+| --- | --- | --- |
+| **Ventana que declara** | Junio a octubre | Septiembre a abril (agua cálida) |
+| **Qué busca** | Peces grandes del remonte, antes del cierre, con clima soportable para el cliente | Más piques y pesca en superficie |
+| **Técnica** | Líneas pesadas, pozones, cardúmenes de forraje | Mosca flotante, pez visto, señuelos de superficie |
+
+**En resumen:** ninguno se equivoca. "Mejor mes" depende de qué río, qué técnica y qué pez buscás: muchos piques en agua cálida, o menos piques pero de peces más grandes en agua fría. Por eso, antes que fijar un mes, conviene decir qué querés pescar.
 
 ## 2. ¿Cuándo se puede pescar y cuándo no?
 
