@@ -1,10 +1,154 @@
 {
-	"nota": "Un destino por clave. 'estacion' = id de la estación en la API del INA (alerta.ina.gob.ar/a5); es también el id de la serie de altura medida (var H). Sin 'estacion' solo se muestra el clima. lat/lon: el pueblo (para el clima). Los niveles de alerta y evacuación salen de la API.",
+	"nota": "Un destino por clave. 'estacion' = id de la estación en la API del INA (alerta.ina.gob.ar/a5); es también el id de la serie de altura medida (var H). Sin 'estacion' solo se muestra el clima. lat/lon: el pueblo (para el clima). Los niveles de alerta y evacuación salen de la API. 'grupo': 'ba' = Buenos Aires, Delta y Río de la Plata (lugares sin guía: llevan 'nombre'; el resto es litoral y toma el nombre de su guía). La clave es también la URL de la página del punto (/altura-del-rio/<clave>/).",
 	"destinos": {
-		"goya":              { "estacion": 23, "estacion_nombre": "Goya",              "rio": "Paraná", "lat": -29.14,  "lon": -59.26 },
-		"esquina":           { "estacion": 25, "estacion_nombre": "Esquina",           "rio": "Paraná", "lat": -30.014, "lon": -59.527 },
-		"paso-de-la-patria": { "estacion": 18, "estacion_nombre": "Paso de la Patria", "rio": "Paraná", "lat": -27.32,  "lon": -58.57 },
-		"la-paz":            { "estacion": 26, "estacion_nombre": "La Paz",            "rio": "Paraná", "lat": -30.745, "lon": -59.645 },
-		"san-martin-junin":  { "lat": -39.94, "lon": -71.07 }
+		"goya": {
+			"estacion": 23,
+			"estacion_nombre": "Goya",
+			"rio": "Paraná",
+			"lat": -29.14,
+			"lon": -59.26
+		},
+		"esquina": {
+			"estacion": 25,
+			"estacion_nombre": "Esquina",
+			"rio": "Paraná",
+			"lat": -30.014,
+			"lon": -59.527
+		},
+		"paso-de-la-patria": {
+			"estacion": 18,
+			"estacion_nombre": "Paso de la Patria",
+			"rio": "Paraná",
+			"lat": -27.32,
+			"lon": -58.57
+		},
+		"la-paz": {
+			"estacion": 26,
+			"estacion_nombre": "La Paz",
+			"rio": "Paraná",
+			"lat": -30.745,
+			"lon": -59.645
+		},
+		"san-martin-junin": {
+			"lat": -39.94,
+			"lon": -71.07
+		},
+		"buenos-aires": {
+			"estacion": 85,
+			"estacion_nombre": "Buenos Aires",
+			"nombre": "Buenos Aires",
+			"rio": "Río de la Plata",
+			"grupo": "ba",
+			"lat": -34.58,
+			"lon": -58.37
+		},
+		"san-isidro": {
+			"estacion": 53,
+			"estacion_nombre": "San Isidro",
+			"nombre": "San Isidro",
+			"rio": "Río de la Plata",
+			"grupo": "ba",
+			"lat": -34.47,
+			"lon": -58.51
+		},
+		"olivos": {
+			"estacion": 54,
+			"estacion_nombre": "Olivos",
+			"nombre": "Olivos",
+			"rio": "Río de la Plata",
+			"grupo": "ba",
+			"lat": -34.51,
+			"lon": -58.49
+		},
+		"la-plata": {
+			"estacion": 86,
+			"estacion_nombre": "La Plata",
+			"nombre": "La Plata",
+			"rio": "Río de la Plata",
+			"grupo": "ba",
+			"lat": -34.87,
+			"lon": -57.89
+		},
+		"martin-garcia": {
+			"estacion": 47,
+			"estacion_nombre": "Martín García",
+			"nombre": "Martín García",
+			"rio": "Río de la Plata",
+			"grupo": "ba",
+			"lat": -34.18,
+			"lon": -58.25
+		},
+		"tigre": {
+			"estacion": 49,
+			"estacion_nombre": "Tigre",
+			"nombre": "Tigre",
+			"rio": "Delta (río Luján)",
+			"grupo": "ba",
+			"lat": -34.42,
+			"lon": -58.58
+		},
+		"san-fernando": {
+			"estacion": 52,
+			"estacion_nombre": "San Fernando",
+			"nombre": "San Fernando",
+			"rio": "Delta (río Luján)",
+			"grupo": "ba",
+			"lat": -34.44,
+			"lon": -58.55
+		},
+		"escobar": {
+			"estacion": 42,
+			"estacion_nombre": "Escobar",
+			"nombre": "Escobar",
+			"rio": "Paraná de las Palmas",
+			"grupo": "ba",
+			"lat": -34.35,
+			"lon": -58.79
+		},
+		"campana": {
+			"estacion": 41,
+			"estacion_nombre": "Campana",
+			"nombre": "Campana",
+			"rio": "Paraná de las Palmas",
+			"grupo": "ba",
+			"lat": -34.16,
+			"lon": -58.96
+		},
+		"zarate": {
+			"estacion": 40,
+			"estacion_nombre": "Zárate",
+			"nombre": "Zárate",
+			"rio": "Paraná de las Palmas",
+			"grupo": "ba",
+			"lat": -34.1,
+			"lon": -59.03
+		},
+		"baradero": {
+			"estacion": 39,
+			"estacion_nombre": "Baradero",
+			"nombre": "Baradero",
+			"rio": "Paraná",
+			"grupo": "ba",
+			"lat": -33.81,
+			"lon": -59.5
+		},
+		"san-pedro": {
+			"estacion": 38,
+			"estacion_nombre": "San Pedro",
+			"nombre": "San Pedro",
+			"rio": "Paraná",
+			"grupo": "ba",
+			"lat": -33.68,
+			"lon": -59.67
+		},
+		"san-nicolas": {
+			"estacion": 36,
+			"estacion_nombre": "San Nicolás",
+			"nombre": "San Nicolás",
+			"rio": "Paraná",
+			"grupo": "ba",
+			"lat": -33.33,
+			"lon": -60.21
+		}
 	}
 }

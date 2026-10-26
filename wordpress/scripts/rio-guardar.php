@@ -36,7 +36,14 @@ foreach ( $datos['destinos'] as $clave => $it ) {
 			'delta_3d'   => is_numeric( $r['delta_3d'] ?? null ) ? (float) $r['delta_3d'] : null,
 			'alerta'     => is_numeric( $r['alerta'] ?? null ) ? (float) $r['alerta'] : null,
 			'evacuacion' => is_numeric( $r['evacuacion'] ?? null ) ? (float) $r['evacuacion'] : null,
+			'serie'      => [],
 		];
+		foreach ( (array) ( $r['serie'] ?? [] ) as $p ) {
+			if ( ! $fecha( $p['fecha'] ?? null ) || ! is_numeric( $p['m'] ?? null ) || $p['m'] < -2 || $p['m'] > 60 ) {
+				WP_CLI::error( "$clave: punto de la serie inválido." );
+			}
+			$x['rio']['serie'][] = [ 'fecha' => $p['fecha'], 'm' => (float) $p['m'] ];
+		}
 	}
 	if ( ! empty( $it['clima'] ) ) {
 		foreach ( $it['clima'] as $d ) {

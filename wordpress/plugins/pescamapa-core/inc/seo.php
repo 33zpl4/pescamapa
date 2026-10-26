@@ -74,6 +74,34 @@ function pm_seo(): array {
 			'isPartOf'     => [ '@type' => 'WebSite', 'name' => 'Pescamapa', 'url' => pm_url_inicio( pm_lang() ) ],
 			'isBasedOn'    => 'https://alerta.ina.gob.ar/',
 		] );
+	} elseif ( 'rio-punto' === $vista ) {
+		$k  = (string) get_query_var( 'pm_rio_clave' );
+		$x  = pm_rio_destino( $k );
+		$r  = $x['rio'] ?? null;
+		$a  = [ 'lugar' => pm_rio_nombre( $k ), 'curso' => $r['curso'] ?? '' ];
+		$s['title']       = pm_t( 'rio.p.title', $a );
+		$s['description'] = $r ? pm_t( 'rio.p.description', $a + [ 'altura' => pm_rio_num( $r['altura'] ), 'fecha' => pm_fecha( $r['fecha'] ), 'tend' => mb_strtolower( pm_rio_tendencia_texto( $r ) ) ] ) : pm_t( 'rio.description' );
+		$s['alternas']    = pm_alternas_fijas( fn( $i ) => pm_url_rio_punto( $k, $i ) );
+		$s['jsonld'][]    = array_filter( [
+			'@context'     => 'https://schema.org',
+			'@type'        => 'WebPage',
+			'name'         => pm_t( 'rio.p.h1', $a ),
+			'description'  => $s['description'],
+			'url'          => pm_url_rio_punto( $k, pm_lang() ),
+			'inLanguage'   => pm_meta_idioma()['html'],
+			'dateModified' => (string) ( $x['capturado'] ?? '' ),
+			'isPartOf'     => [ '@type' => 'WebSite', 'name' => 'Pescamapa', 'url' => pm_url_inicio( pm_lang() ) ],
+			'isBasedOn'    => 'https://alerta.ina.gob.ar/',
+		] );
+		$s['jsonld'][]    = [
+			'@context'        => 'https://schema.org',
+			'@type'           => 'BreadcrumbList',
+			'itemListElement' => [
+				[ '@type' => 'ListItem', 'position' => 1, 'name' => 'Pescamapa', 'item' => pm_url_inicio( pm_lang() ) ],
+				[ '@type' => 'ListItem', 'position' => 2, 'name' => pm_t( 'rio.h1' ), 'item' => pm_url_rio( pm_lang() ) ],
+				[ '@type' => 'ListItem', 'position' => 3, 'name' => $a['lugar'], 'item' => pm_url_rio_punto( $k, pm_lang() ) ],
+			],
+		];
 	} elseif ( 'terminos' === $vista || 'privacidad' === $vista ) {
 		$l                = pm_legal( $vista );
 		$s['title']       = $l['title'] ?? '';

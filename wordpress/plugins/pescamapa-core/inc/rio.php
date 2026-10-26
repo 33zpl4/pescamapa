@@ -84,3 +84,52 @@ function pm_rio_resumen_clima( array $dias ): string {
 	$lluvia = array_sum( array_map( fn( $d ) => (float) ( $d['lluvia'] ?? 0 ), $dias ) );
 	return pm_t( 'rio.clima.linea', [ 'v' => pm_rio_num( $viento, 0 ), 'l' => pm_rio_num( $lluvia, 1 ) ] );
 }
+
+/** The page of one measuring point: /altura-del-rio/<clave>/ (the key of data/rio.json is the slug). */
+function pm_url_rio_punto( string $clave, string $i ): string {
+	return pm_url( PM_SEGMENTOS[ $i ]['rio'] . '/' . $clave, $i );
+}
+
+/** Display name of a point: the title of its guide when there is one, else the name in the config. */
+function pm_rio_nombre( string $clave, ?string $idioma = null ): string {
+	$idioma = $idioma ?: pm_lang();
+	$g      = pm_buscar( 'pm_destino', $clave, $idioma ) ?? pm_buscar( 'pm_destino', $clave, 'es' );
+	if ( $g && ! empty( pm_rio_config()[ $clave ]['estacion_nombre'] ) ) {
+		return (string) pm_rio_config()[ $clave ]['estacion_nombre']; // the gauge's own town name, not the long guide title
+	}
+	return (string) ( pm_rio_config()[ $clave ]['nombre'] ?? pm_rio_config()[ $clave ]['estacion_nombre'] ?? $clave );
+}
+
+/** The sentence about the trend ("Sube 0,24 m en 3 días"), '' when unknown. */
+function pm_rio_tendencia_texto( array $r ): string {
+	return empty( $r['tendencia'] ) ? '' : pm_t( 'rio.' . $r['tendencia'], [ 'delta' => pm_rio_num( abs( (float) ( $r['delta_3d'] ?? 0 ) ) ) ] );
+}
+
+/** Other points with a reading, same group first, the same river first among them (max 6). */
+function pm_rio_cercanos( string $clave ): array {
+	$cfg   = pm_rio_config();
+	$datos = pm_rio_datos()['destinos'] ?? [];
+	$mi    = $cfg[ $clave ] ?? [];
+	$out   = [];
+	foreach ( $cfg as $k => $c ) {
+		if ( $k === $clave || empty( $datos[ $k ]['rio'] ) || ( $c['grupo'] ?? 'litoral' ) !== ( $mi['grupo'] ?? 'litoral' ) ) {
+			continue;
+		}
+		$out[ $k ] = ( ( $c['rio'] ?? '' ) === ( $mi['rio'] ?? '' ) ? 0 : 1 );
+	}
+	asort( $out );
+	return array_slice( array_keys( $out ), 0, 6 );
+}
+
+/** Counts of rising / falling / steady points, for the summary line of the hub. */
+function pm_rio_conteo(): array {
+	$n = [ 'n' => 0, 'sube' => 0, 'baja' => 0, 'estable' => 0 ];
+	foreach ( pm_rio_datos()['destinos'] ?? [] as $x ) {
+		if ( empty( $x['rio']['tendencia'] ) ) {
+			continue;
+		}
+		++$n['n'];
+		++$n[ $x['rio']['tendencia'] ];
+	}
+	return $n;
+}
