@@ -32,6 +32,14 @@ function pm_url_rio( string $i ): string {
 	return pm_url( PM_SEGMENTOS[ $i ]['rio'], $i );
 }
 
+/** The two source links, for the credit lines (Open-Meteo asks for attribution with a link; INA is the publisher). */
+function pm_rio_enlaces(): array {
+	return [
+		'ina'   => '<a href="https://alerta.ina.gob.ar/" rel="noopener">INA (alerta.ina.gob.ar)</a>',
+		'meteo' => '<a href="https://open-meteo.com/" rel="noopener">Open-Meteo.com</a>',
+	];
+}
+
 /** 1.234,56 in es/pt, 1,234.56 in en. */
 function pm_rio_num( $n, int $dec = 2 ): string {
 	return 'en' === pm_lang() ? number_format( (float) $n, $dec, '.', ',' ) : number_format( (float) $n, $dec, ',', '.' );

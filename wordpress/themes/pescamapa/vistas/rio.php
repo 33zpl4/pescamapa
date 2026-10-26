@@ -55,7 +55,7 @@ get_header(); ?>
 				<?php foreach ( [ 1, 2, 3, 4 ] as $n ) : ?><li><?php pm_e( "rio.leer.$n" ); ?></li><?php endforeach; ?>
 			</ul>
 			<h2><?php pm_e( 'rio.fuentes.h2' ); ?></h2>
-			<p><?php pm_e( 'rio.fuentes.p' ); ?></p>
+			<p><?php echo wp_kses( pm_t( 'rio.fuentes.p', pm_rio_enlaces() ), [ 'a' => [ 'href' => true, 'rel' => true ] ] ); ?></p>
 			<p><a class="button dark" href="<?php echo esc_url( pm_url_viaje( $idioma ) ); ?>"><?php pm_e( 'rio.cta' ); ?></a></p>
 		</div>
 	</div>

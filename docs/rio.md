@@ -15,8 +15,9 @@ los niveles de alerta y evacuación, y el viento y la lluvia de la zona. Todo co
   interna puede ir 3 días atrás del nombre del archivo. La API es más fresca.
 - **Clima:** Open-Meteo (`api.open-meteo.com/v1/forecast`, viento máx. y lluvia diarios, 3 días atrás y 3 adelante).
   Uso gratuito no comercial con atribución CC BY 4.0. Pocas llamadas (una por destino por día, desde el servidor
-  de GitHub, nunca por visita). Pendiente del dueño: mail a Open-Meteo para confirmar que el uso como bien
-  público entra en el plan gratuito.
+  de GitHub, nunca por visita). Se enlaza a Open-Meteo en cada bloque y en la página (atribución con enlace).
+  **Supuesto del dueño (26/10/2026): el uso como bien público entra en el plan gratuito.** Pendiente: su mail a
+  Open-Meteo; si responden que no, el dueño avisa y se saca el clima (`rio-traer.py`, `parciales/rio.php`, `vistas/rio.php`).
 
 ## Cómo funciona
 1. `.github/workflows/rio.yml` corre todos los días (11:40 UTC) y a mano. Ejecuta `wordpress/build/rio-traer.py`

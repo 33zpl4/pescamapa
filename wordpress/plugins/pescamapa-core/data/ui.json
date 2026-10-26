@@ -380,7 +380,7 @@
 			"rio.clima.pasados": "Últimos 3 días",
 			"rio.clima.proximos": "Hoy y próximos días",
 			"rio.clima.linea": "viento máx. %v% km/h, lluvia %l% mm",
-			"rio.fuente": "Altura: escalas de la Prefectura, publicadas por el INA (alerta.ina.gob.ar). Clima: Open-Meteo.com (CC BY 4.0). Datos capturados el %capturado%.",
+			"rio.fuente": "Altura: escalas de la Prefectura, publicadas por el %ina%. Clima: %meteo% (CC BY 4.0). Datos capturados el %capturado%.",
 			"rio.viejo": "Este dato tiene más de 10 días: puede haber cambiado.",
 			"rio.todos": "Ver todos los ríos →",
 			"rio.col.lugar": "Lugar",
@@ -398,7 +398,7 @@
 			"rio.leer.3": "Los niveles de alerta y de evacuación avisan de crecidas para las poblaciones ribereñas. Estar por encima no significa que no se pueda pescar, pero sí que conviene confirmar el acceso y la lancha.",
 			"rio.leer.4": "El viento y la lluvia son pronósticos y datos del modelo para el pueblo; sirven de referencia, no de garantía.",
 			"rio.fuentes.h2": "De dónde sale",
-			"rio.fuentes.p": "Alturas y niveles: escalas de la Prefectura Naval Argentina, publicadas por el Instituto Nacional del Agua (INA) en alerta.ina.gob.ar. Clima: Open-Meteo.com (licencia CC BY 4.0). Lo leemos todos los días y mostramos siempre la fecha del dato.",
+			"rio.fuentes.p": "Alturas y niveles: escalas de la Prefectura Naval Argentina, publicadas por el Instituto Nacional del Agua (%ina%). Clima: %meteo% (licencia CC BY 4.0). Lo leemos todos los días y mostramos siempre la fecha del dato.",
 			"rio.cta": "Armá tu viaje →"
 		},
 		"pt": {
@@ -683,7 +683,7 @@
 			"rio.clima.pasados": "Últimos 3 dias",
 			"rio.clima.proximos": "Hoje e próximos dias",
 			"rio.clima.linea": "vento máx. %v% km/h, chuva %l% mm",
-			"rio.fuente": "Altura: réguas da Prefectura, publicadas pelo INA (alerta.ina.gob.ar). Clima: Open-Meteo.com (CC BY 4.0). Dados capturados em %capturado%.",
+			"rio.fuente": "Altura: réguas da Prefectura, publicadas pelo %ina%. Clima: %meteo% (CC BY 4.0). Dados capturados em %capturado%.",
 			"rio.viejo": "Este dado tem mais de 10 dias: pode ter mudado.",
 			"rio.todos": "Ver todos os rios →",
 			"rio.col.lugar": "Local",
@@ -701,7 +701,7 @@
 			"rio.leer.3": "Os níveis de alerta e evacuação avisam de cheias para as populações ribeirinhas. Estar acima não significa que não dá para pescar, mas convém confirmar o acesso e a lancha.",
 			"rio.leer.4": "O vento e a chuva são previsões e dados de modelo para a cidade; servem de referência, não de garantia.",
 			"rio.fuentes.h2": "De onde vem",
-			"rio.fuentes.p": "Alturas e níveis: réguas da Prefectura Naval Argentina, publicadas pelo Instituto Nacional da Água (INA) em alerta.ina.gob.ar. Clima: Open-Meteo.com (licença CC BY 4.0). Lemos todos os dias e mostramos sempre a data do dado.",
+			"rio.fuentes.p": "Alturas e níveis: réguas da Prefectura Naval Argentina, publicadas pelo Instituto Nacional da Água (%ina%). Clima: %meteo% (licença CC BY 4.0). Lemos todos os dias e mostramos sempre a data do dado.",
 			"rio.cta": "Monte sua viagem →"
 		},
 		"en": {
@@ -986,7 +986,7 @@
 			"rio.clima.pasados": "Last 3 days",
 			"rio.clima.proximos": "Today and the next days",
 			"rio.clima.linea": "max wind %v% km/h, rain %l% mm",
-			"rio.fuente": "Height: Prefectura gauges, published by the INA (alerta.ina.gob.ar). Weather: Open-Meteo.com (CC BY 4.0). Data captured on %capturado%.",
+			"rio.fuente": "Height: Prefectura gauges, published by the %ina%. Weather: %meteo% (CC BY 4.0). Data captured on %capturado%.",
 			"rio.viejo": "This reading is more than 10 days old: it may have changed.",
 			"rio.todos": "See all rivers →",
 			"rio.col.lugar": "Place",
@@ -1004,7 +1004,7 @@
 			"rio.leer.3": "Alert and evacuation levels warn of floods for riverside towns. Being above them does not mean you cannot fish, but confirm access and the boat first.",
 			"rio.leer.4": "Wind and rain are forecasts and model data for the town; a reference, not a guarantee.",
 			"rio.fuentes.h2": "Where it comes from",
-			"rio.fuentes.p": "Heights and levels: gauges of the Argentine Naval Prefecture, published by the National Water Institute (INA) at alerta.ina.gob.ar. Weather: Open-Meteo.com (CC BY 4.0 licence). We read them every day and always show the date of the reading.",
+			"rio.fuentes.p": "Heights and levels: gauges of the Argentine Naval Prefecture, published by the National Water Institute (%ina%). Weather: %meteo% (CC BY 4.0 licence). We read them every day and always show the date of the reading.",
 			"rio.cta": "Plan your trip →"
 		}
 	},
