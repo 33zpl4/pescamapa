@@ -238,6 +238,23 @@ jobs:
           check /notas/ 200 'Cuándo pescar el dorado'
           check /llms.txt 200 'Cuándo pescar el dorado'
           check /wp-sitemap-posts-pm_nota-1.xml 200 'cuando-pescar-dorado'
+          # Trout: species page + long-form note, 3 languages.
+          sed 's/^\$aplicar = false;/$aplicar = true;/' wordpress/scripts/notas-trucha-patagonia-2026-10-26.php > /tmp/trucha.php
+          wp --path="$WP" eval-file /tmp/trucha.php
+          wp --path="$WP" eval-file /tmp/trucha.php   # idempotent
+          n=$(wp --path="$WP" post list --post_type=pm_nota --post_status=publish --meta_key=clave --meta_value=cuando-pescar-trucha-patagonia --format=count)
+          [[ "$n" == 3 ]] && echo "✓ nota de la trucha en 3 idiomas" || { echo "✖ nota de la trucha: $n (esperado 3)"; fail=1; }
+          n=$(wp --path="$WP" post list --post_type=pm_especie --post_status=publish --meta_key=clave --meta_value=trucha --format=count)
+          [[ "$n" == 3 ]] && echo "✓ ficha de la trucha en 3 idiomas" || { echo "✖ ficha de la trucha: $n (esperado 3)"; fail=1; }
+          check /notas/cuando-pescar-trucha-patagonia/ 200 'Al día · temporada y novedades' 'PENDIENTE'
+          check /notas/cuando-pescar-trucha-patagonia/ 200 'application/ld+json'
+          check /en/notes/best-time-to-fish-trout-patagonia/ 200 'Up to date · season and news'
+          check /pt/notas/quando-pescar-truta-patagonia/ 200 'Em dia · temporada e novidades'
+          check /especies/trucha/ 200 'Oncorhynchus mykiss' 'PENDIENTE'
+          check /especies/trucha/ 200 'application/ld+json'
+          check /en/species/trucha/ 200 'Key facts'
+          check /pt/especies/trucha/ 200 'Dados-chave'
+          check /especies/trucha/ 200 'cuando-pescar-trucha-patagonia'
           # Zona de pique (docs/pique.md): empty state, report through the real endpoint, privacy, delay, abuse limits.
           check /pique/ 200 'pique-mapa' 'reportes en'
           check /pique/ 200 'Todavía no hay reportes'
