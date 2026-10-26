@@ -3,6 +3,7 @@
 defined( 'ABSPATH' ) || exit;
 
 $r     = $args;
+$es    = fn( string $campo ) => in_array( $campo, $r['en_espanol'] ?? [], true ) ? ' lang="es"' : ''; // text still in Spanish on a pt/en page
 // 'vista-previa' cards only reach logged-in editors (pm_prestadores_destino).
 $filas = [
 	'prest.modalidades' => array_map( fn( $k ) => pm_opcion( 'modalidad', $k ), $r['modalidades'] ),
@@ -35,16 +36,16 @@ $filas = [
 	<div class="cuerpo">
 		<p class="tipo"><?php echo esc_html( implode( ' · ', array_map( fn( $k ) => pm_opcion( 'tipo', $k ), $r['tipo'] ) ) ); ?></p>
 		<h3><?php echo esc_html( $r['nombre'] ); ?></h3>
-		<?php if ( $r['descripcion'] ) : ?><p><?php echo esc_html( $r['descripcion'] ); ?></p><?php endif; ?>
+		<?php if ( $r['descripcion'] ) : ?><p<?php echo $es( 'descripcion' ); // phpcs:ignore ?>><?php echo esc_html( $r['descripcion'] ); ?></p><?php endif; ?>
 		<dl>
 			<?php foreach ( $filas as $clave => $valores ) :
 				if ( $valores ) : ?>
-					<div><dt><?php pm_e( $clave ); ?></dt><dd><?php echo esc_html( implode( ' · ', $valores ) ); ?></dd></div>
+					<div><dt><?php pm_e( $clave ); ?></dt><dd<?php echo $es( [ 'prest.lancha' => 'lancha', 'prest.motor' => 'motor', 'prest.temporada' => 'temporada' ][ $clave ] ?? '' ); // phpcs:ignore ?>><?php echo esc_html( implode( ' · ', $valores ) ); ?></dd></div>
 				<?php endif;
 			endforeach; ?>
 		</dl>
 		<?php if ( $r['precio'] && $r['precio_fecha'] ) : ?>
-			<p class="precio"><?php pm_e( 'prest.precio', [ 'precio' => $r['precio'], 'fecha' => pm_fecha( $r['precio_fecha'] ) ] ); ?></p>
+			<p class="precio"><?php echo wp_kses( pm_t( 'prest.precio', [ 'precio' => '<span' . $es( 'precio' ) . '>' . esc_html( $r['precio'] ) . '</span>', 'fecha' => esc_html( pm_fecha( $r['precio_fecha'] ) ) ] ), [ 'span' => [ 'lang' => true ] ] ); ?></p>
 		<?php else : ?>
 			<p class="precio"><?php pm_e( 'prest.precio_consultar' ); ?></p>
 		<?php endif; ?>

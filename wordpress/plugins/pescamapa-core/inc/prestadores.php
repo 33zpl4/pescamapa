@@ -74,6 +74,8 @@ add_action( 'acf/include_fields', function () {
 			[ 'key' => 'field_pm_r_precio_fecha', 'name' => 'precio_fecha', 'label' => 'Fecha del precio', 'type' => 'date_picker', 'display_format' => 'd/m/Y', 'return_format' => 'Y-m-d', 'wrapper' => [ 'width' => 50 ], 'instructions' => 'Sin fecha, el precio no se muestra.' ],
 			[ 'key' => 'field_pm_r_oferta', 'name' => 'prest_oferta', 'label' => 'Condición especial para quienes piden por Pescamapa (se publica)', 'type' => 'text', 'maxlength' => 140, 'instructions' => 'Una frase concreta que ya acordaron con nosotros. Ej. "Carnada incluida" o "5 % menos". Se publica solo si el Estado (pestaña "Referencias y estado") es "Trabajamos juntos". Ver docs/prestadores.md.' ],
 
+			...pm_prestador_campos_traduccion(),
+
 			[ 'key' => 'field_pm_r_tab_relacion', 'label' => 'Referencias y estado (interno)', 'type' => 'tab' ],
 			[ 'key' => 'field_pm_r_referencias', 'name' => 'referencias', 'label' => 'Referencias', 'type' => 'textarea', 'rows' => 4, 'instructions' => 'Quién lo recomendó, qué dicen otros pescadores, reseñas que viste.' ],
 			[ 'key' => 'field_pm_r_estado', 'name' => 'estado', 'label' => 'Estado', 'type' => 'select', 'choices' => [ 'relevado' => 'Relevado (todavía no hablamos)', 'contactado' => 'Contactado', 'acuerdo' => 'Trabajamos juntos', 'pausado' => 'Pausado' ], 'default_value' => 'relevado', 'wrapper' => [ 'width' => 50 ] ],
@@ -103,6 +105,41 @@ add_filter( 'acf/load_field/key=field_pm_r_especies', function ( $field ) {
 	return $field;
 } );
 
+// Free-text fields shown on the card that exist in a version per language (Spanish is the base, the others fall back to it).
+const PM_PREST_TEXTOS = [
+	'descripcion' => [ 'meta' => 'descripcion', 'label' => 'En dos líneas', 'tipo' => 'textarea' ],
+	'lancha'      => [ 'meta' => 'lancha', 'label' => 'Lancha', 'tipo' => 'text' ],
+	'motor'       => [ 'meta' => 'motor', 'label' => 'Motor', 'tipo' => 'text' ],
+	'temporada'   => [ 'meta' => 'prest_temporada', 'label' => 'Cuándo trabaja', 'tipo' => 'text' ],
+	'precio'      => [ 'meta' => 'precio', 'label' => 'Precio de referencia', 'tipo' => 'text' ],
+];
+
+/** ACF tab with the pt/en version of each free-text field (empty = the Spanish text is shown, marked lang="es"). */
+function pm_prestador_campos_traduccion(): array {
+	$campos = [ [ 'key' => 'field_pm_r_tab_trad', 'label' => 'Traducciones (se publican)', 'type' => 'tab' ],
+		[ 'key' => 'field_pm_r_trad_msg', 'label' => '', 'type' => 'message', 'message' => 'Versión en portugués e inglés de los textos libres. Si queda vacío, la ficha muestra el texto en español en esa versión. En el precio, escribí la moneda (ej. "From ARS 300,000 per outing").' ] ];
+	foreach ( PM_PREST_TEXTOS as $nombre => $t ) {
+		foreach ( [ 'pt' => 'portugués', 'en' => 'inglés' ] as $i => $idioma ) {
+			$campos[] = [ 'key' => "field_pm_r_{$nombre}_{$i}", 'name' => "{$t['meta']}_{$i}", 'label' => "{$t['label']} ({$idioma})", 'type' => $t['tipo'], 'wrapper' => [ 'width' => 'textarea' === $t['tipo'] ? 100 : 50 ] ] + ( 'textarea' === $t['tipo'] ? [ 'rows' => 3 ] : [] );
+		}
+	}
+	return $campos;
+}
+
+/** The text of a free field in the current language; falls back to Spanish and reports it. [ text, is_fallback ] */
+function pm_prestador_texto( int $post_id, string $nombre ): array {
+	$meta = PM_PREST_TEXTOS[ $nombre ]['meta'];
+	$base = trim( (string) pm_campo( $meta, $post_id ) );
+	$i    = pm_lang();
+	if ( 'es' !== $i ) {
+		$t = trim( (string) pm_campo( "{$meta}_{$i}", $post_id ) );
+		if ( '' !== $t ) {
+			return [ $t, false ];
+		}
+	}
+	return [ $base, 'es' !== $i && '' !== $base ];
+}
+
 // --- Read model -----------------------------------------------------------------
 
 function pm_prestador( int $post_id ): array {
@@ -113,18 +150,20 @@ function pm_prestador( int $post_id ): array {
 		'tipo'           => $lista( 'tipo' ),
 		'destino'        => (string) pm_campo( 'prest_destino', $post_id ),
 		'localidad'      => (string) pm_campo( 'localidad', $post_id ),
-		'descripcion'    => (string) pm_campo( 'descripcion', $post_id ),
+		'descripcion'    => pm_prestador_texto( $post_id, 'descripcion' )[0],
 		'modalidades'    => $lista( 'prest_modalidades' ),
 		'especies'       => $lista( 'prest_especies' ),
 		'equipo'         => $lista( 'equipo' ),
-		'lancha'         => (string) pm_campo( 'lancha', $post_id ),
-		'motor'          => (string) pm_campo( 'motor', $post_id ),
+		'lancha'         => pm_prestador_texto( $post_id, 'lancha' )[0],
+		'motor'          => pm_prestador_texto( $post_id, 'motor' )[0],
 		'capacidad'      => (int) pm_campo( 'capacidad', $post_id ),
-		'temporada'      => (string) pm_campo( 'prest_temporada', $post_id ),
+		'temporada'      => pm_prestador_texto( $post_id, 'temporada' )[0],
 		'idiomas'        => $lista( 'prest_idiomas' ),
 		'accesible'      => (string) pm_campo( 'prest_accesible', $post_id ),
 		'incluye'        => $lista( 'incluye' ),
-		'precio'         => (string) pm_campo( 'precio', $post_id ),
+		'precio'         => pm_prestador_texto( $post_id, 'precio' )[0],
+		// Which of those texts are the Spanish fallback in a pt/en page (the card marks them lang="es").
+		'en_espanol'     => array_keys( array_filter( array_combine( array_keys( PM_PREST_TEXTOS ), array_map( fn( $n ) => pm_prestador_texto( $post_id, $n )[1], array_keys( PM_PREST_TEXTOS ) ) ) ) ),
 		'precio_fecha'   => (string) pm_campo( 'precio_fecha', $post_id ),
 		'fotos'          => array_map( 'intval', $lista( 'fotos' ) ) ?: array_filter( [ (int) get_post_thumbnail_id( $post_id ) ] ),
 		'consentimiento' => (bool) pm_campo( 'prest_consentimiento', $post_id ),

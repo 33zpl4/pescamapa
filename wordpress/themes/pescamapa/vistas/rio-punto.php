@@ -9,6 +9,7 @@ $r      = $x['rio'] ?? null;
 $clima  = $x['clima'] ?? [];
 $lugar  = pm_rio_nombre( $clave );
 $curso  = $r['curso'] ?? ( pm_rio_config()[ $clave ]['rio'] ?? '' );
+$mareal = pm_rio_mareal( $clave );
 $estado = $r ? pm_rio_estado( $r ) : '';
 $viejo  = $r && pm_rio_dias( $r['fecha'] ) > PM_RIO_VIEJO_DIAS;
 $guia   = pm_buscar( 'pm_destino', $clave, $idioma ) ?? pm_buscar( 'pm_destino', $clave, 'es' );
@@ -20,7 +21,7 @@ get_header(); ?>
 			<div class="eyebrow"><?php echo esc_html( $curso ); ?></div>
 			<h1><?php echo esc_html( pm_t( 'rio.p.h1', [ 'lugar' => $lugar ] ) ); ?></h1>
 			<?php if ( $r ) : ?>
-				<p class="bajada"><?php echo esc_html( pm_t( 'rio.p.respuesta', [ 'lugar' => $lugar, 'curso' => $curso, 'altura' => pm_rio_num( $r['altura'] ), 'fecha' => pm_fecha( $r['fecha'] ), 'tend' => pm_rio_tendencia_texto( $r ) ] ) ); ?><?php if ( $estado ) : ?> <?php echo esc_html( pm_t( 'rio.p.nivel', [ 'alerta' => pm_rio_num( $r['alerta'] ), 'evac' => pm_rio_num( $r['evacuacion'] ?? 0 ) ] ) ); ?><?php endif; ?></p>
+				<p class="bajada"><?php echo esc_html( pm_t( $mareal ? 'rio.p.respuesta.mareal' : 'rio.p.respuesta', [ 'lugar' => $lugar, 'curso' => $curso, 'altura' => pm_rio_num( $r['altura'] ), 'fecha' => pm_fecha( $r['fecha'] ), 'tend' => pm_rio_tendencia_texto( $r ) ] ) ); ?><?php if ( $estado ) : ?> <?php echo esc_html( pm_t( 'rio.p.nivel', [ 'alerta' => pm_rio_num( $r['alerta'] ), 'evac' => pm_rio_num( $r['evacuacion'] ?? 0 ) ] ) ); ?><?php endif; ?></p>
 			<?php endif; ?>
 			<p class="confianza"><a href="<?php echo esc_url( pm_url_rio( $idioma ) ); ?>"><?php pm_e( 'rio.p.todos' ); ?></a></p>
 		</div>
@@ -31,7 +32,7 @@ get_header(); ?>
 				<div class="rio-altura">
 					<div class="rio-num"><?php echo esc_html( pm_rio_num( $r['altura'] ) ); ?> <span>m</span></div>
 					<p class="rio-que"><?php echo esc_html( pm_t( 'rio.altura', [ 'estacion' => $r['estacion'] ] ) ); ?> · <?php echo esc_html( pm_fecha( $r['fecha'] ) ); ?></p>
-					<?php if ( $r['tendencia'] ) : ?><p class="rio-tend rio-<?php echo esc_attr( $r['tendencia'] ); ?>"><?php echo esc_html( pm_rio_tendencia_texto( $r ) ); ?></p><?php endif; ?>
+					<?php if ( $r['tendencia'] && ! $mareal ) : ?><p class="rio-tend rio-<?php echo esc_attr( $r['tendencia'] ); ?>"><?php echo esc_html( pm_rio_tendencia_texto( $r ) ); ?></p><?php endif; ?>
 					<?php if ( $estado ) : ?><p class="rio-estado rio-<?php echo esc_attr( $estado ); ?>"><?php echo esc_html( pm_t( 'rio.estado.' . $estado, [ 'alerta' => pm_rio_num( $r['alerta'] ), 'evac' => pm_rio_num( $r['evacuacion'] ?? 0 ) ] ) ); ?></p><?php endif; ?>
 					<?php if ( $viejo ) : ?><p class="aviso"><?php pm_e( 'rio.viejo' ); ?></p><?php endif; ?>
 				</div>

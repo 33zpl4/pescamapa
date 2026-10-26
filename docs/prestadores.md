@@ -80,3 +80,8 @@ públicas suele ser de bajo riesgo; el riesgo real es publicar algo **falso**
 (precio, capacidad, habilitación) o tratar datos de una persona. Antes de
 escalar el volumen conviene una consulta con un abogado local sobre la ley de
 protección de datos personales (Ley 25.326) y el uso de nombres comerciales.
+
+
+## Textos en portugués e inglés (26/10/2026)
+
+Los textos libres de la ficha (en dos líneas, lancha, motor, cuándo trabaja, precio) tienen una versión pt y en (pestaña "Traducciones (se publican)"). Si falta, la página en ese idioma muestra el texto en español marcado `lang="es"` (no queda mezclado sin aviso, pero conviene cargar la versión). Al sumar o editar una ficha pública, completá las dos. En el precio escribí la moneda ("From ARS 300,000 per outing"). Las 8 fichas públicas de hoy se tradujeron con `wordpress/scripts/prestadores-traducciones-2026-10-26.php`.

@@ -100,6 +100,11 @@ function pm_rio_nombre( string $clave, ?string $idioma = null ): string {
 	return (string) ( pm_rio_config()[ $clave ]['nombre'] ?? pm_rio_config()[ $clave ]['estacion_nombre'] ?? $clave );
 }
 
+/** A point with tide (Río de la Plata, Delta): its daily reading moves with tide and wind, so no trend is claimed. */
+function pm_rio_mareal( string $clave ): bool {
+	return ! empty( pm_rio_config()[ $clave ]['mareal'] );
+}
+
 /** The sentence about the trend ("Sube 0,24 m en 3 días"), '' when unknown. */
 function pm_rio_tendencia_texto( array $r ): string {
 	return empty( $r['tendencia'] ) ? '' : pm_t( 'rio.' . $r['tendencia'], [ 'delta' => pm_rio_num( abs( (float) ( $r['delta_3d'] ?? 0 ) ) ) ] );
@@ -124,8 +129,8 @@ function pm_rio_cercanos( string $clave ): array {
 /** Counts of rising / falling / steady points, for the summary line of the hub. */
 function pm_rio_conteo(): array {
 	$n = [ 'n' => 0, 'sube' => 0, 'baja' => 0, 'estable' => 0 ];
-	foreach ( pm_rio_datos()['destinos'] ?? [] as $x ) {
-		if ( empty( $x['rio']['tendencia'] ) ) {
+	foreach ( pm_rio_datos()['destinos'] ?? [] as $clave => $x ) {
+		if ( empty( $x['rio']['tendencia'] ) || pm_rio_mareal( (string) $clave ) ) {
 			continue;
 		}
 		++$n['n'];

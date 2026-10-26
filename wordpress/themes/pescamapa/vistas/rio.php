@@ -49,7 +49,7 @@ get_header(); ?>
 						<tr>
 							<th scope="row"><?php echo $f['url'] ? '<a href="' . esc_url( $f['url'] ) . '">' . esc_html( $f['nombre'] ) . '</a>' : esc_html( $f['nombre'] ); // phpcs:ignore ?><?php if ( $r ) : ?><small><?php echo esc_html( $r['curso'] ); ?></small><?php endif; ?></th>
 							<td><?php echo $r ? esc_html( pm_rio_num( $r['altura'] ) . ' m' ) . '<small>' . esc_html( pm_fecha( $r['fecha'] ) ) . '</small>' : '—'; // phpcs:ignore ?></td>
-							<td><?php echo $r && $r['tendencia'] ? esc_html( pm_t( 'rio.' . $r['tendencia'], [ 'delta' => pm_rio_num( abs( (float) $r['delta_3d'] ) ) ] ) ) : '—'; ?></td>
+							<td><?php echo $r && pm_rio_mareal( $f['clave'] ) ? esc_html( pm_t( 'rio.mareal.corto' ) ) : ( $r && $r['tendencia'] ? esc_html( pm_rio_tendencia_texto( $r ) ) : '—' ); ?></td>
 							<td><?php echo $r && $est ? '<span class="rio-' . esc_attr( $est ) . '">' . esc_html( pm_t( 'rio.col.estado.' . $est ) ) . '</span><small>' . esc_html( pm_rio_num( $r['alerta'] ) . ' / ' . pm_rio_num( $r['evacuacion'] ?? 0 ) . ' m' ) . '</small>' : '—'; // phpcs:ignore ?></td>
 							<td><?php echo $prox ? esc_html( pm_rio_num( max( array_map( fn( $d ) => (float) $d['viento_max'], array_slice( $prox, 0, 2 ) ) ), 0 ) . ' km/h' ) : '—'; ?></td>
 							<td><?php echo $pas ? esc_html( pm_rio_num( array_sum( array_map( fn( $d ) => (float) $d['lluvia'], $pas ) ), 1 ) . ' mm' ) : '—'; ?></td>
