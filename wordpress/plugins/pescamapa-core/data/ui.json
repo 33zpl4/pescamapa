@@ -1009,6 +1009,11 @@
 				"es": "Historias del río",
 				"pt": "Histórias do rio",
 				"en": "Stories from the river"
+			},
+			"guia": {
+				"es": "Guía práctica",
+				"pt": "Guia prática",
+				"en": "Practical guide"
 			}
 		},
 		"idioma": {
