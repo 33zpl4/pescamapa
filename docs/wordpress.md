@@ -5,6 +5,9 @@ Cloudflare Workers). El sitio Astro (`src/`) queda en el repo como
 referencia y para generar estilos/datos, pero ya no se publica: el Worker
 `pescamapa` de Cloudflare no tiene dominio. `nuevo.pescamapa.com` sigue
 apuntando al mismo WordPress (alias del vhost).
+El 26/10/2026 el dueño **desconectó el repositorio de ese Worker** (sin dominio
+asociado): ya no arma cada rama ni comenta en los PR. El DNS y el proxy de
+Cloudflare no cambiaron.
 
 ## Dónde corre
 
