@@ -149,7 +149,7 @@ jobs:
           check /entrevistas/prueba-el-rio-manda/ 200 '"Article"'
           check /entrevistas/sin-permiso/ 404
           check /wp-sitemap.xml 200 'pm_entrevista'
-          check / 200 'Dónde, cuándo y con quién pescar'
+          check / 200 'Cuándo ir, qué dice el reglamento y con quién pescar'
           check /litoral/corrientes/pesca-en-esquina/ 200 'Mosca (flycast)' 'flycast) (flycast'
           check /robots.txt 200 'Sitemap'
           check /llms.txt 200 'pesca-en-esquina'
@@ -174,7 +174,7 @@ jobs:
           check /notas/nota-de-prueba/ 200 'FUENTE-DE-PRUEBA'
           check /notas/nota-de-prueba/ 200 '"citation"'
           check / 200 '/notas/'
-          check /llms.txt 200 'Pescamapa es la guía' 'CONTACTO-INTERNO-123'
+          check /llms.txt 200 'Pescamapa reúne todo lo que necesitás' 'CONTACTO-INTERNO-123'
           # Inquiry through the real form (pm_t in the past: passes the timing check).
           loc=$(curl -sS -o /dev/null -w '%{http_code} %{redirect_url}' \
             -d action=pm_consulta -d pm_tipo=viaje -d pm_idioma=es -d pm_destino=esquina \

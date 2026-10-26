@@ -76,7 +76,7 @@ jobs:
           check /entrevistas/ 200 'v-entrevistas'
           check /en/interviews/ 200 'v-entrevistas'
           check /robots.txt 200 'Sitemap'
-          check /llms.txt 200 'Pescamapa es la guía'
+          check /llms.txt 200 'Pescamapa reúne todo lo que necesitás'
           grep -q 'pesca-en-goya' page.html || { echo "✖ llms.txt no lista Goya"; fail=1; }
           check /wp-sitemap.xml 200 'vistas'
           check /esto-no-existe/ 404

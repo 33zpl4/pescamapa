@@ -9,9 +9,11 @@
 > es una guía interna para editores (ver `docs/wordpress.md`); las secciones
 > de abajo sobre `borrador`/build que falla describen solo el sitio Astro.
 
-**Qué es Pescamapa (una frase, 21/10/2026):** la guía para pescar en toda la
-Argentina: dónde ir, cuándo, qué dice el reglamento y con qué guía local
-salir, con datos al día y la voz de quienes pescan ahí. **Sumar una ciudad:** `docs/nueva-ciudad.md`; investigación dirigida con Gemini/ChatGPT: `docs/investigacion/README.md`. **Zona de pique** (mapa comunitario, MVP): `docs/pique.md`. **Marca** (color,
+**Qué es Pescamapa (una frase, 26/10/2026):** todo lo que necesitás saber antes
+de ir a pescar a la Argentina: cuándo ir, qué dice el reglamento y con quién
+salir. Lo investigamos nosotros y mostramos las fuentes. Y si querés, te
+armamos el viaje (formulario `/armar-viaje/`, `docs/viaje.md`; notas "Cuándo
+pescar…", `docs/estrategia-contenido.md`). **Sumar una ciudad:** `docs/nueva-ciudad.md`; investigación dirigida con Gemini/ChatGPT: `docs/investigacion/README.md`. **Zona de pique** (mapa comunitario, MVP): `docs/pique.md`. **Marca** (color,
 tipografía, componentes): `docs/marca.md`, obligatoria para todo lo que se
 publique; `node wordpress/build/revisar-marca.mjs` la verifica. Contenido
 propio (entrevistas, notas): `docs/contenido.md`. **Regla de oro** para todo lo que
