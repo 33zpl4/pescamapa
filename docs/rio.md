@@ -34,6 +34,12 @@ los niveles de alerta y evacuación, y el viento y la lluvia de la zona. Todo co
 13 estaciones de las escalas de Prefectura (red del INA, lectura diaria verificada con la sonda del 26/10): Buenos Aires, San Isidro, Olivos, La Plata, Martín García (Río de la Plata); Tigre, San Fernando (Delta, Luján); Escobar, Campana, Zárate (Paraná de las Palmas); Baradero, San Pedro, San Nicolás (Paraná inferior). Son lugares **sin guía**: en `rio.json` llevan `nombre` y `grupo: "ba"` y el hub los muestra sin enlace, bajo su propio título. La provincia figura como `BUENOSAIRES` (sin espacio) en la API.
 No incluidos: Mar del Plata (mareógrafo del SHN, serie 3347 distinta del id de estación; lectura de marea, no sirve la tendencia de 3 días), los arroyos del AMBA y las lagunas (sin altura oficial: solo viento/lluvia). Pendiente: pronóstico de marea (SHN), sin fuente abierta verificada.
 
+## Estructura de las páginas (según la intención de búsqueda)
+
+- **Hub** `/altura-del-rio/`: responde "cómo está el río hoy" de un vistazo: línea de resumen (cuántos suben/bajan), atajos por zona (Litoral / Buenos Aires) y una tabla por zona. Cada fila enlaza a su punto.
+- **Un punto** `/altura-del-rio/<clave>/` (pt `/altura-do-rio/`, en `/river-levels/`): una página por estación, para "altura del río en Zárate hoy". Arriba la respuesta en una frase (altura, fecha, tendencia, niveles), luego número grande, viento/lluvia, tabla de los últimos días (la serie se guarda en `pm_rio`), puntos cercanos, enlace a la guía si existe y CTA. La clave de `rio.json` es la URL; mismo slug en los 3 idiomas, hreflang y sitemap incluidos; una clave desconocida da 404.
+- La **guía** de un lugar sigue mostrando su bloque `#rio` con enlace al punto.
+
 ## Sumar un destino
 Agregar su clave a `rio.json` (con `estacion` si el INA tiene una escala cerca; ids en la sonda) y listo: la
 próxima corrida diaria lo carga. Los niveles de alerta/evacuación no son de pesca: son de crecida.
