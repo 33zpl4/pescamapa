@@ -86,7 +86,7 @@ Igual que en Astro, ahora en WordPress:
   (`inc/datos.php`).
 - **URLs** (`inc/rutas.php`): `[/pt|/en]/<region>/<provincia>/<slug>/`,
   `/especies/<clave>/` (`/en/species/`), `/mapa/` (`/en/map/`),
-  `/creditos/` (`/en/credits/`).
+  `/creditos/` (`/en/credits/`) solo redirige (301) al inicio: la página de créditos se sacó el 26/10/2026.
 - **Completitud, no bloqueos** (`inc/reglas.php`, decisión del 20/10/2026):
   toda ficha publicada en WordPress es pública e indexable, sin carteles.
   El formulario muestra "Para completar la ficha" (fuente oficial, notas PENDIENTE, foto con
@@ -97,7 +97,7 @@ Igual que en Astro, ahora en WordPress:
   hreflang, Open Graph, JSON-LD y sitemap de WordPress (todas las fichas).
 - **Fotos** (`inc/fotos.php`): WordPress genera tamaños y srcset; salen en
   WebP. Crédito en la propia foto (biblioteca de medios → "Autor de la
-  foto"), visible sobre la imagen y en `/creditos/`.
+  foto"), visible sobre la imagen (con la licencia enlazada y "recortada y redimensionada" si es libre). Ya no hay página de créditos aparte.
 - **Mapa del hero**: contorno real precalculado (`data/hero.json`, generado
   por `wordpress/build/generar-datos.mjs`); PHP ubica los puntos con la
   misma proyección.

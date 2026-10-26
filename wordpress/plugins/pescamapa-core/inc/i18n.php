@@ -69,9 +69,6 @@ function pm_url_inicio( string $i ): string {
 function pm_url_mapa( string $i ): string {
 	return pm_url( PM_SEGMENTOS[ $i ]['mapa'], $i );
 }
-function pm_url_creditos( string $i ): string {
-	return pm_url( PM_SEGMENTOS[ $i ]['creditos'], $i );
-}
 function pm_url_entrevistas( string $i ): string {
 	return pm_url( PM_SEGMENTOS[ $i ]['entrevistas'], $i );
 }

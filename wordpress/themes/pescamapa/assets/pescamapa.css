@@ -285,12 +285,6 @@ footer {
 	.lista { columns: 2 260px; padding-left: 18px; }
 }
 
-/* .v-creditos */
-.v-creditos {
-	.wrap { padding-block: 40px 80px; max-width: 860px; }
-	li { margin-bottom: 10px; }
-}
-
 /* .v-404 */
 .v-404 {}
 

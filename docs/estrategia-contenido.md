@@ -96,3 +96,7 @@ Una nota se escribe para durar. Lo que cambia con los años (vedas vigentes, fec
 - **Cada título dice lo propio de la nota**, no una plantilla con una palabra cambiada ("Cuándo pescar el dorado en el Paraná: dos ventanas y por qué las fuentes no coinciden" / "…el surubí: no tiene una temporada, se mueve con el agua"). El slug no se toca (las URLs no cambian). SEO title ≤ 60.
 - **La fecha que se muestra** es el campo "Fecha de publicación"; "Actualizado" queda siempre con la fecha real. Las notas se publican espaciadas: lo ideal es una por semana, y así el historial es real.
 - **Toda nota lleva foto de portada** (4:3, recortada) con el nombre de quien la sacó; Unsplash no exige etiqueta, se pone solo el nombre. Las fotos viven en `wordpress/fotos/` y se cargan con un script (`wp-script.yml` las copia al servidor; ejemplo: `notas-fotos-titulos-2026-10-26`).
+
+### Dónde se muestran las notas (dueño, 26/10/2026)
+
+Cada nota lleva el campo **Especie** (y, si es de un lugar, **Destino**). Con eso aparece sola: en la guía de cada destino que tenga esa especie ("Para leer antes de ir a …"), en la ficha de la especie ("Notas sobre esta especie"), en las 3 más recientes del inicio y en `/notas/`. Una nota nueva sin especie ni destino solo sale en el inicio y en `/notas/`.

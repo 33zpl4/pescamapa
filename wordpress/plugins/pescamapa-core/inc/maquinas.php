@@ -105,7 +105,6 @@ function pm_llms_txt(): string {
 	$out[] = pm_llms_item( 'Zonas de pique (reportes de pescadores, sin verificar, zonas de ~1 km)', pm_url_pique( 'es' ), '', pm_alternas_fijas( 'pm_url_pique' ) );
 	$out[] = pm_llms_item( 'Armá tu viaje (pedido de cotización de guía y alojamiento)', pm_url_viaje( 'es' ), '', pm_alternas_fijas( 'pm_url_viaje' ) );
 	$out[] = pm_llms_item( 'Mapa de destinos', pm_url_mapa( 'es' ), '', pm_alternas_fijas( 'pm_url_mapa' ) );
-	$out[] = pm_llms_item( 'Créditos de las fotos', pm_url_creditos( 'es' ), '', pm_alternas_fijas( 'pm_url_creditos' ) );
 	$out[] = pm_llms_item( 'Sitemap', home_url( '/wp-sitemap.xml' ) );
 	return implode( "\n", $out ) . "\n";
 }

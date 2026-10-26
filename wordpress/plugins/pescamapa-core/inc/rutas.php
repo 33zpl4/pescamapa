@@ -4,7 +4,7 @@
  *   [/pt|/en]/<region>/<provincia>/<slug>/   destination guides
  *   /especies/<clave>/  /pt/especies/…  /en/species/…
  *   /mapa/  /pt/mapa/  /en/map/
- *   /creditos/  /pt/creditos/  /en/credits/
+ *   /creditos/  /pt/creditos/  /en/credits/  (301 to the home: the page was removed)
  *   /entrevistas/[<slug>/]  /pt/entrevistas/…  /en/interviews/…
  *   /notas/[<slug>/]  /pt/notas/…  /en/notes/…
  *   /pique/  /pt/pique/  /en/bite-zones/   community bite-zone map (inc/pique.php)
@@ -85,6 +85,11 @@ function pm_destino_ruta( int $post_id ): ?array {
 
 // Decide the language and the view, and keep URLs canonical.
 add_action( 'template_redirect', function () {
+	// The photo-credits page is gone (each photo carries its own credit); the old URL goes home.
+	if ( 'creditos' === get_query_var( 'pm_vista' ) ) {
+		wp_safe_redirect( pm_url_inicio( get_query_var( 'pm_lang' ) ?: 'es' ), 301 );
+		exit;
+	}
 	if ( is_singular( PM_TIPOS_IDIOMA ) ) {
 		$id = get_queried_object_id();
 		pm_lang( pm_idioma_de( $id ) );

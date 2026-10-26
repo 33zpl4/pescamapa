@@ -55,28 +55,8 @@ function pm_foto( int $att, string $alt, string $sizes, array $op = [] ): string
 			$autor = esc_html( $c['autor'] );
 			$lic   = $c['licencia'] ? ', ' . esc_html( $c['licencia'] ) : '';
 		}
-		$credito = "<figcaption>{$etiqueta}: {$autor}{$lic}</figcaption>";
+		$editada = $c['licencia'] ? ' · ' . esc_html( pm_t( 'foto.editada' ) ) : '';
+		$credito = "<figcaption>{$etiqueta}: {$autor}{$lic}{$editada}</figcaption>";
 	}
 	return '<figure class="foto ' . esc_attr( $op['clase'] ) . '">' . $img . $credito . '</figure>';
-}
-
-/** Every credited photo used by the site, for the credits page. */
-function pm_fotos_con_credito(): array {
-	$ids = [];
-	foreach ( [ 'pm_destino', 'pm_proximo' ] as $tipo ) {
-		foreach ( pm_posts( $tipo ) as $p ) {
-			$t = (int) get_post_thumbnail_id( $p->ID );
-			if ( $t ) {
-				$ids[ $t ] = true;
-			}
-		}
-	}
-	$out = [];
-	foreach ( array_keys( $ids ) as $att ) {
-		$c = pm_credito( $att );
-		if ( $c['autor'] ) {
-			$out[] = $c;
-		}
-	}
-	return $out;
 }

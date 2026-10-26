@@ -60,6 +60,13 @@ jobs:
           check /notas/cuando-pescar-dorado/ 200 'Tomas Frattini'
           check /notas/cuando-pescar-surubi/ 200 'Augusto Frattini'
           check /notas/cuando-pescar-trucha-patagonia/ 200 'Gorordo Coggiola'
+          # Notes inside the guides, the species pages and the home.
+          check /litoral/corrientes/pesca-en-goya/ 200 'Para leer antes de ir a Goya'
+          check /litoral/corrientes/pesca-en-goya/ 200 'cuando-pescar-surubi'
+          check /especies/dorado/ 200 'Notas sobre esta especie'
+          check /especies/trucha/ 200 'cuando-pescar-trucha-patagonia'
+          check / 200 'Ver todas las notas'
+          check /en/ 200 'See all notes'
           check /llms.txt 200 'Cuándo pescar el dorado en el Paraná'
           check /notas/cuando-pescar-trucha-patagonia/ 200 'Al día · temporada y novedades' 'PENDIENTE'
           check /en/notes/best-time-to-fish-trout-patagonia/ 200 'Best time to fish trout in Patagonia | Pescamapa'
@@ -77,7 +84,7 @@ jobs:
           check /pt/especies/dorado/ 200 '25,28 kg' 'PENDIENTE'
           check /especies/surubi/ 200 'solo pesca y devolución' 'PENDIENTE'
           check /en/bite-zones/ 200 'pique-mapa'
-          check /creditos/ 200
+          check /creditos/ 301
           check /entrevistas/ 200 'v-entrevistas'
           check /en/interviews/ 200 'v-entrevistas'
           check /robots.txt 200 'Sitemap'

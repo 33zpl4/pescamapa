@@ -11,7 +11,7 @@ class PM_Sitemap_Vistas extends WP_Sitemaps_Provider {
 
 	public function get_url_list( $page_num, $object_subtype = '' ) {
 		$out = [];
-		$vistas = [ 'pm_url_inicio', 'pm_url_mapa', 'pm_url_pique', 'pm_url_viaje', 'pm_url_creditos', 'pm_url_entrevistas' ];
+		$vistas = [ 'pm_url_inicio', 'pm_url_mapa', 'pm_url_pique', 'pm_url_viaje', 'pm_url_entrevistas' ];
 		if ( pm_hay_notas() ) {
 			$vistas[] = 'pm_url_notas';
 		}

@@ -36,6 +36,7 @@ add_action( 'acf/include_fields', function () {
 				[ 'key' => 'field_pm_t_msg', 'label' => '', 'type' => 'message', 'conditional_logic' => $solo_es, 'message' => 'El <strong>título</strong> es el titular. La <strong>foto</strong> es la "Imagen destacada" (con su autor en la biblioteca). Estos datos se cargan <strong>solo en español</strong> y valen para los tres idiomas.' ],
 				[ 'key' => 'field_pm_t_tipo', 'name' => 'nota_tipo', 'label' => 'Tipo de nota', 'type' => 'select', 'choices' => pm_opciones( 'nota_tipo' ), 'conditional_logic' => $solo_es, 'wrapper' => [ 'width' => 50 ] ],
 				[ 'key' => 'field_pm_t_destino', 'name' => 'nota_destino', 'label' => 'Destino (si es de un lugar)', 'type' => 'select', 'choices' => [], 'allow_null' => 1, 'conditional_logic' => $solo_es, 'wrapper' => [ 'width' => 50 ] ],
+				[ 'key' => 'field_pm_t_especie', 'name' => 'nota_especie', 'label' => 'Especie (si habla de una)', 'type' => 'select', 'choices' => [], 'allow_null' => 1, 'conditional_logic' => $solo_es, 'wrapper' => [ 'width' => 50 ], 'instructions' => 'La nota aparece en las guías de los destinos de esa especie y en su ficha.' ],
 				[ 'key' => 'field_pm_t_fecha', 'name' => 'nota_fecha', 'label' => 'Fecha de publicación', 'type' => 'date_picker', 'display_format' => 'd/m/Y', 'return_format' => 'Y-m-d', 'conditional_logic' => $solo_es, 'wrapper' => [ 'width' => 50 ] ],
 				[ 'key' => 'field_pm_t_origen', 'name' => 'nota_origen', 'label' => 'Material de origen (interno, no se publica)', 'type' => 'textarea', 'rows' => 5, 'conditional_logic' => $solo_es, 'instructions' => 'De dónde salió cada dato: entrevista, video, quién lo contó, qué falta confirmar. Los enlaces públicos van en "Fuentes".' ],
 
@@ -56,6 +57,14 @@ add_action( 'acf/include_fields', function () {
 			]
 		),
 	] );
+} );
+
+add_filter( 'acf/load_field/key=field_pm_t_especie', function ( $field ) {
+	$field['choices'] = [];
+	foreach ( pm_especies_lista( 'es' ) as $e ) {
+		$field['choices'][ $e['clave'] ] = $e['nombre'];
+	}
+	return $field;
 } );
 
 add_filter( 'acf/load_field/key=field_pm_t_destino', function ( $field ) {
@@ -81,6 +90,7 @@ function pm_nota( int $post_id ): array {
 		'url'             => get_permalink( $post_id ),
 		'tipo'            => (string) pm_campo( 'nota_tipo', $fid ),
 		'destino'         => (string) pm_campo( 'nota_destino', $fid ),
+		'especie'         => (string) pm_campo( 'nota_especie', $fid ),
 		'fecha'           => $fecha,
 		'foto'            => (int) get_post_thumbnail_id( $fid ),
 		'bajada'          => (string) pm_campo( 'bajada', $post_id ),
@@ -173,3 +183,9 @@ add_action( 'manage_pm_nota_posts_custom_column', function ( $col, $id ) {
 		echo esc_html( trim( ( $n['tipo'] ? pm_opcion( 'nota_tipo', $n['tipo'], 'es' ) : '' ) . ( $n['destino'] ? " · {$n['destino']}" : '' ), ' ·' ) );
 	}
 }, 10, 2 );
+
+/** Notes that belong in a guide or a species page: about that destino, or about one of its species. Newest first. */
+function pm_notas_para( string $idioma, string $destino = '', array $especies = [], int $limite = 6 ): array {
+	$out = array_filter( pm_notas_lista( $idioma ), fn( $n ) => ( $destino && $n['destino'] === $destino ) || ( $n['especie'] && in_array( $n['especie'], $especies, true ) ) );
+	return array_slice( array_values( $out ), 0, $limite );
+}
