@@ -9,7 +9,7 @@ on:
     inputs:
       base:
         description: "URL base"
-        default: "https://nuevo.pescamapa.com"
+        default: "https://pescamapa.com"
       rutas:
         description: "rutas separadas por espacio"
         default: "/ /pt/ /litoral/corrientes/pesca-en-goya/ /en/litoral/corrientes/fishing-in-goya/ /mapa/ /especies/surubi/"

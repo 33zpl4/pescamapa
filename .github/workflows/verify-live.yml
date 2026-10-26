@@ -4,15 +4,12 @@ name: Verify live site
 # switch): pages in every language, www redirect, sitemap, guides indexable
 # with no internal PENDIENTE notes shown,
 # JSON-LD and hreflang on the guides, and the build stamp being served.
+# Manual (after a deploy) and weekly. No push trigger: it ran before the deploy finished and failed (and emailed).
 
 on:
   workflow_dispatch:
   schedule:
     - cron: "17 9 * * 1"
-  push:
-    branches: [main]
-    paths:
-      - ".github/workflows/verify-live.yml"
 
 jobs:
   verify:
