@@ -80,7 +80,7 @@ function pm_seo(): array {
 		$r  = $x['rio'] ?? null;
 		$a  = [ 'lugar' => pm_rio_nombre( $k ), 'curso' => $r['curso'] ?? '' ];
 		$s['title']       = pm_t( 'rio.p.title', $a );
-		$s['description'] = $r ? pm_t( 'rio.p.description', $a + [ 'altura' => pm_rio_num( $r['altura'] ), 'fecha' => pm_fecha( $r['fecha'] ), 'tend' => mb_strtolower( pm_rio_tendencia_texto( $r ) ) ] ) : pm_t( 'rio.description' );
+		$s['description'] = $r ? pm_t( pm_rio_mareal( $k ) ? 'rio.p.description.mareal' : 'rio.p.description', $a + [ 'altura' => pm_rio_num( $r['altura'] ), 'fecha' => pm_fecha( $r['fecha'] ), 'tend' => mb_strtolower( pm_rio_tendencia_texto( $r ) ) ] ) : pm_t( 'rio.description' );
 		$s['alternas']    = pm_alternas_fijas( fn( $i ) => pm_url_rio_punto( $k, $i ) );
 		$s['jsonld'][]    = array_filter( [
 			'@context'     => 'https://schema.org',

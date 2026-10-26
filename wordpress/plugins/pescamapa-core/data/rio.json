@@ -1,5 +1,5 @@
 {
-	"nota": "Un destino por clave. 'estacion' = id de la estación en la API del INA (alerta.ina.gob.ar/a5); es también el id de la serie de altura medida (var H). Sin 'estacion' solo se muestra el clima. lat/lon: el pueblo (para el clima). Los niveles de alerta y evacuación salen de la API. 'grupo': 'ba' = Buenos Aires, Delta y Río de la Plata (lugares sin guía: llevan 'nombre'; el resto es litoral y toma el nombre de su guía). La clave es también la URL de la página del punto (/altura-del-rio/<clave>/).",
+	"nota": "Un destino por clave. 'estacion' = id de la estación en la API del INA (alerta.ina.gob.ar/a5); es también el id de la serie de altura medida (var H). Sin 'estacion' solo se muestra el clima. lat/lon: el pueblo (para el clima). Los niveles de alerta y evacuación salen de la API. 'grupo': 'ba' = Buenos Aires, Delta y Río de la Plata (lugares sin guía: llevan 'nombre'; el resto es litoral y toma el nombre de su guía). La clave es también la URL de la página del punto (/altura-del-rio/<clave>/). 'mareal': true = lugar con marea (Río de la Plata, Delta, Paraná de las Palmas): la lectura diaria sube y baja con la marea y el viento, así que NO se afirma tendencia ni se cuenta en el resumen; se muestra la altura frente a los niveles de alerta.",
 	"destinos": {
 		"goya": {
 			"estacion": 23,
@@ -40,7 +40,8 @@
 			"rio": "Río de la Plata",
 			"grupo": "ba",
 			"lat": -34.58,
-			"lon": -58.37
+			"lon": -58.37,
+			"mareal": true
 		},
 		"san-isidro": {
 			"estacion": 53,
@@ -49,7 +50,8 @@
 			"rio": "Río de la Plata",
 			"grupo": "ba",
 			"lat": -34.47,
-			"lon": -58.51
+			"lon": -58.51,
+			"mareal": true
 		},
 		"olivos": {
 			"estacion": 54,
@@ -58,7 +60,8 @@
 			"rio": "Río de la Plata",
 			"grupo": "ba",
 			"lat": -34.51,
-			"lon": -58.49
+			"lon": -58.49,
+			"mareal": true
 		},
 		"la-plata": {
 			"estacion": 86,
@@ -67,7 +70,8 @@
 			"rio": "Río de la Plata",
 			"grupo": "ba",
 			"lat": -34.87,
-			"lon": -57.89
+			"lon": -57.89,
+			"mareal": true
 		},
 		"martin-garcia": {
 			"estacion": 47,
@@ -76,7 +80,8 @@
 			"rio": "Río de la Plata",
 			"grupo": "ba",
 			"lat": -34.18,
-			"lon": -58.25
+			"lon": -58.25,
+			"mareal": true
 		},
 		"tigre": {
 			"estacion": 49,
@@ -85,7 +90,8 @@
 			"rio": "Delta (río Luján)",
 			"grupo": "ba",
 			"lat": -34.42,
-			"lon": -58.58
+			"lon": -58.58,
+			"mareal": true
 		},
 		"san-fernando": {
 			"estacion": 52,
@@ -94,7 +100,8 @@
 			"rio": "Delta (río Luján)",
 			"grupo": "ba",
 			"lat": -34.44,
-			"lon": -58.55
+			"lon": -58.55,
+			"mareal": true
 		},
 		"escobar": {
 			"estacion": 42,
@@ -103,7 +110,8 @@
 			"rio": "Paraná de las Palmas",
 			"grupo": "ba",
 			"lat": -34.35,
-			"lon": -58.79
+			"lon": -58.79,
+			"mareal": true
 		},
 		"campana": {
 			"estacion": 41,
@@ -112,7 +120,8 @@
 			"rio": "Paraná de las Palmas",
 			"grupo": "ba",
 			"lat": -34.16,
-			"lon": -58.96
+			"lon": -58.96,
+			"mareal": true
 		},
 		"zarate": {
 			"estacion": 40,
@@ -121,7 +130,8 @@
 			"rio": "Paraná de las Palmas",
 			"grupo": "ba",
 			"lat": -34.1,
-			"lon": -59.03
+			"lon": -59.03,
+			"mareal": true
 		},
 		"baradero": {
 			"estacion": 39,

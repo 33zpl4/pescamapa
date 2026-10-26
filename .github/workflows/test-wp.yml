@@ -300,7 +300,7 @@ jobs:
           check /altura-del-rio/ 200 'application/ld+json'
           check /altura-del-rio/ 200 'Zona de pique'
           check /pique/ 200 'altura-del-rio'
-          check /altura-del-rio/zarate/ 200 'Altura del río en Zárate hoy'
+          check /altura-del-rio/zarate/ 200 'Altura del río en Zárate hoy' 'Sube'
           check /altura-del-rio/zarate/ 200 '1,12'
           check /altura-del-rio/zarate/ 200 'Últimos días'
           check /altura-del-rio/zarate/ 200 'application/ld+json'
