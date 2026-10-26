@@ -17,6 +17,8 @@ Estado: para revisar. Consultado el 26/10/2026. Todavía no es una nota cargada 
 
 **Respuesta corta.** Los meses donde mejor se junta todo para pescar dorado en el Paraná van **de octubre a noviembre** y **de marzo a mayo**. En el Alto Paraná correntino (Itatí, Ituzaingó, Paso de la Patria) esas son las ventanas que más repiten los operadores; algunos tramos y operadores corren el pico hacia el invierno y la primavera (de junio a octubre). **Se puede pescar dorado fuera de esos meses**: lo que cambia es que las condiciones son más exigentes y hay que adaptar la técnica.
 
+## 1. ¿Qué meses se pesca mejor?
+
 Las ventanas, según cada fuente:
 
 | Fuente | Tramo | Mejores meses que declara |
