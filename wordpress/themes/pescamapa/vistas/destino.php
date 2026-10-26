@@ -63,6 +63,8 @@ get_header(); ?>
 			</dl>
 		</section>
 
+		<?php get_template_part( 'parciales/rio', null, [ 'clave' => $d['clave'], 'lugar' => $d['nombre'] ] ); ?>
+
 		<div class="shell layout">
 			<div class="prose">
 				<?php while ( have_posts() ) : the_post(); the_content(); endwhile; ?>

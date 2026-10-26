@@ -54,6 +54,11 @@ jobs:
           check / 200 '/privacidad/'
           check /armar-viaje/ 200 'política de privacidad'
           check / 200 'Cheyenne Justiniano</span> y <span>Alberto Ayala'
+          # River conditions (daily workflow rio.yml): the hub page exists; the data itself is checked after the first run.
+          check /altura-del-rio/ 200 'Altura del río Paraná hoy'
+          check /en/river-levels/ 200 'Paraná River levels today'
+          check /pt/altura-do-rio/ 200 'Altura do rio Paraná hoje'
+          check / 200 '/altura-del-rio/'
           # Long-form notes (dorado, surubí) in 3 languages: yearly box, JSON-LD, SEO title, no leftover markers.
           check /notas/cuando-pescar-dorado/ 200 'Al día · vedas y novedades' 'PENDIENTE'
           check /notas/cuando-pescar-dorado/ 200 'application/ld+json'

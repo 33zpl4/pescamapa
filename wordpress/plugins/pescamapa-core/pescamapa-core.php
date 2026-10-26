@@ -35,6 +35,7 @@ require PM_DIR . 'inc/notas.php';
 require PM_DIR . 'inc/consultas.php';
 require PM_DIR . 'inc/pique.php';
 require PM_DIR . 'inc/legal.php';
+require PM_DIR . 'inc/rio.php';
 require PM_DIR . 'inc/maquinas.php';
 
 register_activation_hook( __FILE__, function () {
