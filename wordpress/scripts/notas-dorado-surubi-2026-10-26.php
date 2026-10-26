@@ -247,7 +247,7 @@ $surubi['es'] = [
 	'slug'   => 'cuando-pescar-surubi',
 	'bajada' => 'El surubí no tiene una sola temporada: se mueve con el agua. Otoño y primavera en el Paraná medio, los meses fríos en el Alto Paraná y octubre en Concordia.',
 	'seo_title' => 'Cuándo pescar surubí: mejores meses y vedas | Pescamapa',
-	'seo_description' => 'Los mejores meses para pescar surubí en el Paraná y el Uruguay, cómo cambia según el tramo del río, qué hacer con el nivel del agua y cómo moverte con las vedas.',
+	'seo_description' => 'Los mejores meses para pescar surubí en el Paraná y el Uruguay, cómo cambian según el tramo del río, el nivel del agua y cómo moverte con las vedas.',
 	'datos' => [
 		'No hay una sola temporada: la ventana cambia con el tramo del río.',
 		'En Concordia (río Uruguay), los guías hablan de una corrida de fines de septiembre a mediados de noviembre, con el pico en octubre.',
@@ -314,7 +314,7 @@ $surubi['en'] = [
 	'slug'   => 'best-time-to-fish-surubi',
 	'bajada' => 'Surubí has no single season: it moves with the water. Autumn and spring on the middle Paraná, the cold months on the Upper Paraná, and October at Concordia.',
 	'seo_title' => 'Best time to fish surubí in Argentina | Pescamapa',
-	'seo_description' => 'The best months to fish surubí catfish on the Paraná and Uruguay rivers, how it changes with the stretch of river, what water level does and how to handle closures.',
+	'seo_description' => 'The best months to fish surubí on the Paraná and Uruguay rivers, how it changes by stretch of river, what water level does and how to handle closures.',
 	'datos' => [
 		'There is no single season: the window changes with the stretch of river.',
 		'At Concordia (Uruguay River) guides talk about a run from late September to mid-November, peaking in October.',
