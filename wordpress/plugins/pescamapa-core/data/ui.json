@@ -399,7 +399,9 @@
 			"rio.leer.4": "El viento y la lluvia son pronósticos y datos del modelo para el pueblo; sirven de referencia, no de garantía.",
 			"rio.fuentes.h2": "De dónde sale",
 			"rio.fuentes.p": "Alturas y niveles: escalas de la Prefectura Naval Argentina, publicadas por el Instituto Nacional del Agua (%ina%). Clima: %meteo% (licencia CC BY 4.0). Lo leemos todos los días y mostramos siempre la fecha del dato.",
-			"rio.cta": "Armá tu viaje →"
+			"rio.cta": "Armá tu viaje →",
+			"rio.pique": "¿Y dónde pica? Mirá los reportes de la Zona de pique →",
+			"pique.rio": "Antes de salir, mirá cómo está el río →"
 		},
 		"pt": {
 			"marca.lema": "Quando ir, o que diz o regulamento e com quem pescar na Argentina.",
@@ -702,7 +704,9 @@
 			"rio.leer.4": "O vento e a chuva são previsões e dados de modelo para a cidade; servem de referência, não de garantia.",
 			"rio.fuentes.h2": "De onde vem",
 			"rio.fuentes.p": "Alturas e níveis: réguas da Prefectura Naval Argentina, publicadas pelo Instituto Nacional da Água (%ina%). Clima: %meteo% (licença CC BY 4.0). Lemos todos os dias e mostramos sempre a data do dado.",
-			"rio.cta": "Monte sua viagem →"
+			"rio.cta": "Monte sua viagem →",
+			"rio.pique": "E onde está picando? Veja os relatos da Zona de pique →",
+			"pique.rio": "Antes de sair, veja como está o rio →"
 		},
 		"en": {
 			"marca.lema": "When to go, what the rules say and who to fish with in Argentina.",
@@ -1005,7 +1009,9 @@
 			"rio.leer.4": "Wind and rain are forecasts and model data for the town; a reference, not a guarantee.",
 			"rio.fuentes.h2": "Where it comes from",
 			"rio.fuentes.p": "Heights and levels: gauges of the Argentine Naval Prefecture, published by the National Water Institute (%ina%). Weather: %meteo% (CC BY 4.0 licence). We read them every day and always show the date of the reading.",
-			"rio.cta": "Plan your trip →"
+			"rio.cta": "Plan your trip →",
+			"rio.pique": "And where are they biting? See the bite-zone reports →",
+			"pique.rio": "Before you go, check how the river is →"
 		}
 	},
 	"opciones": {
