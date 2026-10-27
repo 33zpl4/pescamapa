@@ -82,3 +82,31 @@ El dueño pegó la respuesta de la ronda 1 (8 puntos). **Ninguna URL del informe
 4. *En el sitio oficial de turismo o de la Municipalidad de Chascomús, ¿qué dicen de la pesca en la laguna (accesos, muelle, bajadas de lanchas)? Dame el enlace profundo y la fecha de la página.*
 
 **Vigilancia:** cuando se confirme la página de vedas, sumarla a `vigilancia/fuentes.json` como `texto` (cambia cada año).
+
+## 8. Ronda 2: respuesta recibida (27/10/2026) y auditoría
+
+El dueño pegó las cuatro respuestas. Otra vez **ninguna URL se pudo abrir desde el sandbox**; se contrastó con resúmenes de buscador de las mismas páginas oficiales.
+
+| Punto | Lo que dice el informe | Contraste | Veredicto |
+| --- | --- | --- | --- |
+| Veda pejerrey: período | 1/9 al 30/11, toda la provincia, Disposición 89/08 con renovación automática | La página oficial (`gba.gob.ar/desarrollo_agrario/DAPA/vedas`) dice lo mismo en el resumen de buscador. Una norma antigua cierra a las 00 h del 1/12 | **Se publica**: "1 de septiembre al 30 de noviembre" con enlace a la página oficial |
+| Días de pesca en veda | sáb, dom y feriados (viernes también en Chasicó, Cochicó y Del Monte); sin torneos de pejerrey; sin pesca comercial | Coincide con el buscador (Disposiciones 483/2019 y 116/2021) | **Se publica** |
+| Navegación en veda | sin motonáutica; fuera de borda a 15 km/h máx. | Solo en la transcripción; no apareció en el buscador | **Se publica con "según la página oficial"** solo si el dueño abre la página y lo ve (ver abajo) |
+| **Cupo de Chascomús y "resto de las lagunas"** | **10 piezas** (cita textual "DIEZ (10) piezas para el resto de las lagunas bonaerenses") | El buscador devuelve **dos versiones**: notas viejas (infocampo, texto original de la Disp. 89/08) dicen 10, y la página oficial vigente, según su resumen, dice **"Hasta 15 ejemplares para el resto de las lagunas bonaerenses"** (Disp. 483/2019 y 116/2021) | **CONFLICTO 10 vs 15: no se publica ningún cupo.** El dueño abre la página y copia esa línea |
+| Cupos de lagunas puntuales | Chasicó 30; Cochicó y Hinojo Grande 20; La Salada Grande, Cuero de Zorro, **De Gómez (Junín)**, La Brava, Salada de Coronel Granada, Sauce Grande, Mar Chiquita, Alsina 15; ríos, arroyos y canales 15 | Los 30/20/15 de Chasicó, Cochicó, Del Monte, Cuero de Zorro y Coronel Granada coinciden con el buscador | Útiles para la futura guía de Junín (De Gómez): **confirmar contra la página** |
+| Medida mínima **25 cm** (Disposición 19/96) | | **No confirmada.** El buscador solo trae el Decreto 2/56 (28 cm; menciona también 25 cm para pesca deportiva y 50 piezas, que pudo haber cambiado) y una disposición reciente de **La Pampa** con 25 cm. Además el informe de la ronda 1 la llamó "Resolución 19/96" y ahora "Disposición 19/96": inconsistente. La cita a la "Disp. 217/2007" no se pudo abrir | **No se publica talla.** Pendiente: el dueño abre las páginas de normativa del MDA |
+| Licencia: categorías | Federadas; no federadas: anual (1 año), turística (20 días), de concurso (3 días), costera menor marítima (1 año); exentos: menores de 14 y jubilados | El buscador confirma que el art. 21 (Decreto 1366/01 y 442/10) tiene el apartado "De las licencias para la Pesca Deportiva y Recreativa", pero el texto se corta ahí | **Plausible, sin abrir.** Se publica solo "existe licencia de pesca deportiva (Decreto 3237/95, art. 21)" y se enlaza el decreto actualizado. Las categorías, tras abrir `normas.gba.gob.ar/documentos/V9A2qFPV.html` |
+| Valores | No figuran en el decreto; salen de la ley impositiva y resoluciones del MDA | Coherente con el hallazgo de la ronda 1 (tasas históricas en australes) | **No se publica ningún monto**: "consultá el valor vigente en el sitio del Ministerio" |
+| Página del trámite | `gba.gob.ar/desarrollo_agrario/pesca/articulos/obtenga_su_licencia_de_pesca_deportiva` y `.../pesca/pesca_deportiva`; el aplicativo en `maa.gba.gob.ar/pesca/licencias/` (en la ronda 1, `maa.gba.gov.ar`) | Las dos de `gba.gob.ar` tienen el patrón de la web oficial; la del aplicativo cambió de dominio entre respuestas | **El dueño abre las dos de `gba.gob.ar`** y dice cuál carga; el aplicativo no se enlaza |
+| Chascomús turismo | `chascomus.gob.ar/turismo/nota/85/la-laguna-.html`: la mayor de las 7 Encadenadas, 3.044 ha, pesca deportiva y deportes acuáticos "sin motor", camino de 30 km, muelle de pescadores y mirador en la costanera | El buscador confirma 3.044 ha y los 30 km (otras fuentes dan ~3.000 y 3.012 ha); **"sin motor"** no lo confirma ninguna fuente | **Se publica**: mayor de las 7 Encadenadas, camino de circunvalación de 30 km, muelle y mirador en la costanera, "según el sitio municipal". **No** se publica "sin motor". La transcripción vino con texto mezclado: el dueño abre la página y confirma |
+| Bajadas de lanchas | La ficha municipal no trae inventario ni régimen | Coincide con las notas de turismo (existen bajadas y guardería náutica) | **Sin inventario**: "preguntá en la costanera o a tu guía". Candidato para la futura sección de rampas |
+
+**Lo que el dueño tiene que abrir (5 minutos):**
+1. `https://www.gba.gob.ar/desarrollo_agrario/DAPA/vedas`: copiar **textual** la línea del cupo "para el resto de las lagunas bonaerenses" (¿10 o 15?) y si dice algo de la velocidad de navegación (15 km/h).
+2. `https://www.gba.gob.ar/node/31890` y `https://www.gba.gob.ar/desarrollo_agrario/pesca/pesca_deportiva`: ¿hay una página con la **medida mínima** del pejerrey? Copiar lo que diga.
+3. `https://www.gba.gob.ar/desarrollo_agrario/pesca/articulos/obtenga_su_licencia_de_pesca_deportiva`: ¿abre? ¿qué valores muestra?
+4. `https://chascomus.gob.ar/turismo/nota/85/la-laguna-.html`: ¿abre, y dice algo de motores?
+
+**Mínima guía publicable hoy (con fuente y año):** Ley 11.477 y Decreto 3237/95; existe licencia (valor: ver el Ministerio); veda del pejerrey 1/9-30/11 con sus días de pesca; la laguna (3.044 ha, 30 km, muelle y mirador); viento y lluvia del día. Sin talla, cupo, categorías ni accesos con costo.
+
+**Vigilancia:** cuando se confirme, sumar `gba.gob.ar/desarrollo_agrario/DAPA/vedas` a `vigilancia/fuentes.json` como `texto` (cambia por año y por disposición).
