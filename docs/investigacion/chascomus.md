@@ -49,3 +49,36 @@ Pedir en todas: enlace abierto, fecha de la fuente y, para normas, el número y 
 
 - Audiencia: escapada de un día desde Buenos Aires; la guía responde primero "cómo llegar, qué permiso, cuándo, dónde alquilar lancha". El CTA de viaje armado tiene menos peso que en el Litoral: ofrecer también la consulta a un guía.
 - Respetar "áreas, no puntos de pesca" y "sin 'se pesca todo el año' sin matiz".
+
+## 7. Ronda 1: respuesta recibida (27/10/2026) y auditoría
+
+El dueño pegó la respuesta de la ronda 1 (8 puntos). **Ninguna URL del informe se pudo abrir desde el sandbox**, así que ninguna cuenta como fuente abierta. Se contrastó con resúmenes de buscador de páginas oficiales (`normas.gba.gob.ar`, `gba.gob.ar/desarrollo_agrario`) y con notas de turismo de 2026. Patrón ya conocido (`README.md`): hechos con aire de precisión, enlaces envueltos o genéricos ("Confirmado en portal municipal" con solo la portada), y rangos vagos ("15 o 20").
+
+| Punto | Lo que dice el informe | Contraste | Veredicto |
+| --- | --- | --- | --- |
+| Marco legal | Ley 11.477 + Decreto reglamentario 3237/95 | El buscador devuelve el Decreto 3237/95 (que reglamenta la Ley 11.477) en `normas.gba.gob.ar`, con modificaciones de la Ley 12.481 y los Decretos 1366/01 y 442/10 | **Confirmado** (fuente a abrir: `normas.gba.gob.ar/documentos/V9A2qFPV.html`) |
+| Licencia obligatoria | "Sí, es obligatoria" | El art. 21 del Decreto 3237/95 (texto del Decreto 1366/01) tiene un apartado "De las licencias para la Pesca Deportiva y Recreativa" | **Existe el régimen de licencias**; tipos y montos **NO CONFIRMADOS** |
+| Autoridad | MDA, Dirección de Actividades Pesqueras y Acuicultura | Las disposiciones citan la Dirección Provincial de Pesca (Ministerio de Desarrollo Agrario) | **Dirección de Pesca del Ministerio de Desarrollo Agrario** (nombre exacto a confirmar al abrir su sitio) |
+| URL de licencias `maa.gba.gov.ar/pesca/licencias/` | | No aparece en ninguna búsqueda; el dominio parece del ministerio anterior | **No se usa** |
+| Arancel 2026 | NO CONFIRMADO | Una norma provincial con tasas en australes (A. 6,00 federada / A. 30,00 no federada) es histórica | **Sigue NO CONFIRMADO**; no se publica ningún monto |
+| Resolución "N° 19/96" | | Sin respaldo | **No se cita** |
+| Talla mínima **25 cm** | | El Decreto 2/56 (que reglamenta la Ley 5781) fijaba **28 cm** para aguas interiores bonaerenses y habilitaba al ministerio a modificarla por ambiente | **Conflicto 25 vs 28**: no se publica ninguna talla hasta ver la norma vigente |
+| Cupo "25 por pescador", "15 o 20" | | La página oficial de vedas lista cupos **por laguna** (Chasicó 30; Cochicó y Del Monte 20; Cuero de Zorro y La Salada de Coronel Granada 15); Chascomús no figura en ese extracto | **No se publica un cupo general**; ver ronda 2 |
+| Veda de pejerrey | 1/9 al 1/12; sáb, dom y feriados; cupo reducido; sin oleaje en juncales | La página oficial de vedas (`gba.gob.ar/desarrollo_agrario/DAPA/vedas`): **1/9 al 30/11**, toda la provincia, Disposiciones 483/2019 y 116/2021, pesca solo sáb, dom y feriados (algunas lagunas también viernes) | **Se publica con fecha y fuente**: veda 1/9-30/11 y días de pesca; "cupo reducido" y "oleaje en juncales" **no** (sin respaldo). Abrir la página antes de publicar |
+| Artes (1 caña, 3 anzuelos, sin pesca nocturna a motor) | | Sin respaldo | **No se publican** |
+| Accesos: costanera municipal, muelle público/mirador, zona del Club de Pesca, bajadas de lanchas, alquiler de botes, guardería náutica | | Notas de turismo de 2026 (canal26, welcomeargentina) nombran la zona del club, la costanera, el muelle público y las bajadas de lanchas | **Se nombran como "áreas"** sin costos ni horarios |
+| "Club de Pescadores de Chascomús" (muelle de hormigón, canon por bajada, camping) y "Club de Regatas" | | El buscador **no encuentra** un club con ese nombre ni su sitio | **No se publica**: detalle sin fuente |
+| Temporada otoño-invierno, viento 10-20 km/h, >30-35 km/h peligroso | | Plausible, pero sin fuente; las cifras de viento son del agente | **No se publican como hecho**; la guía muestra el viento real del día (Open-Meteo) |
+| Fiestas y torneos | NO CONFIRMADO | | **Nada que publicar** |
+| Prestadores | NO CONFIRMADO (sin sitios propios) | | **Ninguno** (consistente con `docs/prestadores.md`) |
+| Encadenadas: Vitel, Adela, del Burro, Chis Chis, Tablillas, Las Barrancas; pesqueros "La Cascada", "Don Bartolo" | | Los nombres de lagunas son conocidos; los pesqueros y los detalles de acceso no tienen fuente | **Solo se nombran las lagunas** como contexto; ni pesqueros ni accesos |
+
+**Qué alcanza hoy para una guía honesta (mínima):** régimen (Ley 11.477 y Decreto 3237/95), que existe licencia de pesca deportiva (valores: "consultalos en el sitio del Ministerio"), la **veda del pejerrey 1/9-30/11 con sus días de pesca** (con año y enlace a la página oficial), accesos nombrados como áreas, y el viento/lluvia del día. Sin talla, cupo, artes, horarios ni costos.
+
+**Ronda 2 (pegar una por vez; "si no podés abrirlo, decí NO CONFIRMADO"):**
+1. *Abrí https://www.gba.gob.ar/desarrollo_agrario/DAPA/vedas y transcribime textual la sección del pejerrey: período, días permitidos, y la tabla de cupos por laguna. ¿Aparecen Chascomús y las Encadenadas (Vitel, Adela, del Burro, Chis Chis, Tablillas, Las Barrancas)? Dame las Disposiciones citadas con su número y año.*
+2. *¿Cuál es la medida mínima vigente del pejerrey en aguas públicas de la Provincia de Buenos Aires (25 o 28 cm)? Dame la norma vigente (número y año) que la fija y el enlace a su texto en normas.gba.gob.ar.*
+3. *Abrí el texto actualizado del Decreto 3237/95 (normas.gba.gob.ar/documentos/V9A2qFPV.html), artículo 21, apartado "De las licencias para la Pesca Deportiva y Recreativa": ¿qué tipos de licencia hay y cuál es la tasa vigente de cada una? Y dame la página oficial donde se saca la licencia hoy.*
+4. *En el sitio oficial de turismo o de la Municipalidad de Chascomús, ¿qué dicen de la pesca en la laguna (accesos, muelle, bajadas de lanchas)? Dame el enlace profundo y la fecha de la página.*
+
+**Vigilancia:** cuando se confirme la página de vedas, sumarla a `vigilancia/fuentes.json` como `texto` (cambia cada año).
