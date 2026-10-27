@@ -20,7 +20,7 @@
  * (script = chascomus-2026-10-27).
  */
 
-$aplicar = false;
+$aplicar = true;
 $hoy     = '20261027';
 
 function pm_ch_p( string $html ): string {
