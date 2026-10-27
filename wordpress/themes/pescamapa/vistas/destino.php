@@ -57,14 +57,12 @@ get_header(); ?>
 
 		<section class="shell resumen" aria-label="<?php pm_e( 'ficha.resumen' ); ?>">
 			<dl>
-				<div><dt><?php pm_e( 'ficha.especies' ); ?></dt><dd><ul class="chips">
-					<?php foreach ( $d['especies'] as $clave ) :
-						$e = pm_especie_en( $clave, $idioma );
-						if ( $e ) : ?>
-							<li><a href="<?php echo esc_url( pm_url_especie( $clave, $idioma ) ); ?>"><?php echo esc_html( $e['nombre'] ); ?></a></li>
-						<?php endif;
-					endforeach; ?>
-				</ul></dd></div>
+				<?php $esp = array_filter( array_map( fn( $c ) => pm_especie_en( $c, $idioma ) ? [ $c, pm_especie_en( $c, $idioma ) ] : null, $d['especies'] ) ); // a guide without species sheets shows no empty cell ?>
+				<?php if ( $esp ) : ?><div><dt><?php pm_e( 'ficha.especies' ); ?></dt><dd><ul class="chips">
+					<?php foreach ( $esp as [ $clave, $e ] ) : ?>
+						<li><a href="<?php echo esc_url( pm_url_especie( $clave, $idioma ) ); ?>"><?php echo esc_html( $e['nombre'] ); ?></a></li>
+					<?php endforeach; ?>
+				</ul></dd></div><?php endif; ?>
 				<div><dt><?php pm_e( 'ficha.modalidades' ); ?></dt><dd><?php echo esc_html( implode( ' · ', $d['modalidades'] ) ); ?></dd></div>
 				<div><dt><?php pm_e( 'ficha.cuando' ); ?></dt><dd><?php echo esc_html( $d['epoca'] ); ?></dd></div>
 				<div><dt><?php pm_e( 'ficha.res.reglamento' ); ?></dt><dd><a href="#reglamento"><?php echo esc_html( $d['reglamento']['autoridad'] ); ?></a></dd></div>
