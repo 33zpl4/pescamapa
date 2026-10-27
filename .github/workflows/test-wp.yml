@@ -294,6 +294,8 @@ jobs:
           wp --path="$WP" eval-file /tmp/rio-guardar.php
           wp --path="$WP" eval-file /tmp/rio-guardar.php   # idempotent
           check /litoral/corrientes/pesca-en-esquina/ 200 'Cómo está el río hoy'
+          check /litoral/corrientes/pesca-en-esquina/ 200 'En esta guía'
+          check /litoral/corrientes/pesca-en-esquina/ 200 'href="#reglamento"'
           check /litoral/corrientes/pesca-en-esquina/ 200 '4,62'
           check /litoral/corrientes/pesca-en-esquina/ 200 'href="https://open-meteo.com/"'
           check /altura-del-rio/ 200 'Altura del río hoy'

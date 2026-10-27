@@ -310,5 +310,21 @@
 		"vigilar": "texto",
 		"afecta": "San Martín y Junín: valores de permisos, fechas de temporada y reglas generales",
 		"accion": "Hoy muestra la edición 2025-2026 (temporada 01/11/2025 al 01/05/2026). Cuando cambie a 2026-2027, reemplazar los valores de referencia de la guía y quitar el año viejo."
+	},
+	{
+		"id": "pba-vedas",
+		"nombre": "Ministerio de Desarrollo Agrario de Buenos Aires: vedas",
+		"url": "https://www.gba.gob.ar/desarrollo_agrario/DAPA/vedas",
+		"vigilar": "texto",
+		"afecta": "Guía de Chascomús: veda del pejerrey, días, cupos y navegación",
+		"accion": "Si cambia, releer y comparar fechas y cupos con la guía; abrir la tabla de cupos."
+	},
+	{
+		"id": "pba-licencia",
+		"nombre": "Ministerio de Desarrollo Agrario de Buenos Aires: licencia de pesca deportiva",
+		"url": "https://www.gba.gob.ar/desarrollo_agrario/pesca/articulos/obtenga_su_licencia_de_pesca_deportiva",
+		"vigilar": "texto",
+		"afecta": "Guía de Chascomús: licencia y exenciones",
+		"accion": "Si aparecen valores o categorías, completar la guía."
 	}
 ]

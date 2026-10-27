@@ -12,6 +12,14 @@ $migas     = [
 	[ $provincia, null ],
 	[ $d['nombre'], $d['url'] ],
 ];
+$rio_hoy     = pm_rio_destino( $d['clave'] );
+$hoy_texto   = '';
+if ( ! empty( $rio_hoy['rio'] ) ) { // today's reading, or the coming days' wind when the place has no gauge
+	$hoy_texto = pm_t( 'ficha.res.hoy.rio', [ 'altura' => pm_rio_num( $rio_hoy['rio']['altura'] ), 'fecha' => pm_fecha( $rio_hoy['rio']['fecha'] ) ] );
+} elseif ( ! empty( $rio_hoy['clima'] ) ) {
+	$prox = pm_rio_clima_partes( $rio_hoy['clima'] )[1];
+	$hoy_texto = $prox ? pm_t( 'ficha.res.hoy.clima', [ 'linea' => pm_rio_resumen_clima( array_slice( $prox, 0, 3 ) ) ] ) : '';
+}
 $citas       = pm_citas_destino( $d['clave'], $idioma );
 $prestadores = pm_prestadores_destino( $d['clave'], current_user_can( 'edit_posts' ) );
 $pins = [ [ 'nombre' => $d['nombre'], 'coordenadas' => $d['coordenadas'], 'tipo' => 'destino', 'detalle' => $provincia ] ];
@@ -59,9 +67,24 @@ get_header(); ?>
 				</ul></dd></div>
 				<div><dt><?php pm_e( 'ficha.modalidades' ); ?></dt><dd><?php echo esc_html( implode( ' · ', $d['modalidades'] ) ); ?></dd></div>
 				<div><dt><?php pm_e( 'ficha.cuando' ); ?></dt><dd><?php echo esc_html( $d['epoca'] ); ?></dd></div>
+				<div><dt><?php pm_e( 'ficha.res.reglamento' ); ?></dt><dd><a href="#reglamento"><?php echo esc_html( $d['reglamento']['autoridad'] ); ?></a></dd></div>
+				<?php if ( $hoy_texto ) : ?><div><dt><?php pm_e( 'ficha.res.hoy' ); ?></dt><dd><a href="#rio"><?php echo esc_html( $hoy_texto ); ?></a></dd></div><?php endif; ?>
 				<div><dt><?php pm_e( 'ficha.guias' ); ?></dt><dd><a href="#prestadores"><?php pm_e( 'ficha.prestadores.link' ); ?></a></dd></div>
 			</dl>
 		</section>
+
+		<nav class="shell ir-a" aria-label="<?php pm_e( 'ficha.ir.h' ); ?>">
+			<?php foreach ( array_filter( [
+				'rio'        => $hoy_texto ? 'ficha.ir.rio' : '',
+				'temporada'  => $d['temporada'] ? 'ficha.ir.calendario' : '',
+				'reglamento' => 'ficha.ir.reglamento',
+				'prestadores' => 'ficha.ir.guias',
+				'preguntas'  => $d['faqs'] ? 'ficha.ir.preguntas' : '',
+				'fuentes'    => $d['fuentes'] ? 'ficha.ir.fuentes' : '',
+			] ) as $ancla => $clave ) : ?>
+				<a href="#<?php echo esc_attr( $ancla ); ?>"><?php pm_e( $clave ); ?></a>
+			<?php endforeach; ?>
+		</nav>
 
 		<?php get_template_part( 'parciales/rio', null, [ 'clave' => $d['clave'], 'lugar' => $d['nombre'] ] ); ?>
 

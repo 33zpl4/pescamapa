@@ -1,48 +1,33 @@
 name: Probe river data
-
-# Read-only probe (26/10/2026): can a runner read the INA daily river report (PDF) and Open-Meteo?
-# Prints what it finds; changes nothing. Run by hand: Actions -> Probe river data.
-
-on:
-  workflow_dispatch:
-
+on: workflow_dispatch
 jobs:
   sonda:
     runs-on: ubuntu-latest
     steps:
-      - name: INA daily reports (listing, latest PDF, text of the PDF)
+      - name: OpenStreetMap boat ramps (leisure=slipway), read-only
         run: |
           set +e
-          BASE=https://alerta.ina.gob.ar/ina/06-INFORMES/diario/pdf
-          echo "== listing"; curl -sS -m 30 -o lista.html -w '%{http_code} %{size_download} bytes\n' "$BASE/"
-          grep -o 'reporte_diario_[0-9-]*\.pdf' lista.html | sort -u | tail -5
-          N=$(grep -o 'reporte_diario_[0-9-]*\.pdf' lista.html | sort -u | wc -l); echo "pdfs listed: $N"
-          # the latest one that exists (today, then back up to 6 days)
-          for d in 0 1 2 3 4 5 6; do
-            f="reporte_diario_$(date -u -d "-$d day" +%F).pdf"
-            code=$(curl -sS -m 60 -o "$f" -w '%{http_code}' "$BASE/$f")
-            echo "$f -> $code"
-            [[ "$code" == 200 ]] && { LAST="$f"; break; }
-          done
-          echo "== pdf: ${LAST:-none}"
-          [[ -n "${LAST:-}" ]] || exit 0
-          sudo apt-get install -y -qq poppler-utils >/dev/null 2>&1
-          pdfinfo "$LAST" | head -8
-          pdftotext -layout "$LAST" informe.txt
-          echo "text chars: $(wc -c < informe.txt)"
-          echo "== first 60 lines"; head -60 informe.txt
-          echo "== lines with our stations"
-          grep -n -i -E 'goya|esquina|la paz|paso de la patria|corrientes|reconquista|concordia|santa fe' informe.txt | head -40
-      - name: INA alert site (does it load data from an API?)
-        run: |
-          set +e
-          for u in https://alerta.ina.gob.ar/a5/ https://alerta.ina.gob.ar/a5/secciones https://alerta.ina.gob.ar/; do
-            echo "== $u"; curl -sS -L -m 30 -o p.html -w '%{http_code} %{size_download} bytes\n' "$u"
-            grep -o -E '(src|href)="[^"]+"' p.html | head -20
-            grep -o -i -E "[\"'][^\"' ]*(api|json|csv|obs|puntual|series)[^\"' ]*[\"']" p.html | sort -u | head -20
-          done
-      - name: Open-Meteo (last 3 days wind and rain at Goya)
-        run: |
-          set +e
-          curl -sS -m 30 "https://api.open-meteo.com/v1/forecast?latitude=-29.14&longitude=-59.26&past_days=3&forecast_days=1&hourly=wind_speed_10m,wind_direction_10m,precipitation&daily=wind_speed_10m_max,precipitation_sum&timezone=America%2FArgentina%2FBuenos_Aires" -o om.json -w '%{http_code} %{size_download} bytes\n'
-          python3 -c "import json;d=json.load(open('om.json'));print(d.get('daily'))"
+          python3 - <<'PY'
+          import json, urllib.request, urllib.parse, time
+          API = "https://overpass-api.de/api/interpreter"
+          def q(query):
+              for i in range(2):
+                  try:
+                      req = urllib.request.Request(API, data=urllib.parse.urlencode({"data": query}).encode(), headers={"User-Agent": "pescamapa-sonda/1.0 (+https://pescamapa.com)"})
+                      return json.load(urllib.request.urlopen(req, timeout=45))
+                  except Exception as e:
+                      err = e; time.sleep(3)
+              return {"error": str(err)}
+          places = {"Goya": (-29.14, -59.26), "Esquina": (-30.01, -59.53), "Paso de la Patria": (-27.32, -58.57), "La Paz ER": (-30.75, -59.64),
+                    "Chascomus": (-35.57, -58.01), "Tigre/Delta": (-34.42, -58.58), "San Martin de los Andes": (-40.16, -71.35), "Junin de los Andes": (-39.95, -71.07), "Corrientes": (-27.47, -58.83), "Concordia": (-31.39, -58.02)}
+          for n, (la, lo) in places.items():
+              d = 0.2
+              bb = f"{la-d},{lo-d},{la+d},{lo+d}"
+              r = q(f'[out:json][timeout:30];(nwr["leisure"="slipway"]({bb}););out center tags;')
+              els = r.get("elements", [])
+              print(f"--- {n}: {len(els)} slipways en un cuadro de ~44 km" + (f" ERROR {r['error']}" if "error" in r else ""))
+              for e in els[:12]:
+                  t = e.get("tags", {})
+                  print("   ", e["type"], e["id"], "|", t.get("name"), "|", t.get("access"), "|", t.get("fee"), "|", t.get("surface"), "|", t.get("operator"), "|", t.get("boat"))
+              time.sleep(2)
+          PY

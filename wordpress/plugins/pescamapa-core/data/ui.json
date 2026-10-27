@@ -419,7 +419,18 @@
 			"rio.resumen": "Hoy, %n% puntos con tendencia: suben %sube%, bajan %baja%, estables %estable%. Elegí el tuyo:",
 			"rio.mareal.corto": "Depende de la marea",
 			"rio.p.respuesta.mareal": "El %curso% en %lugar% marcó %altura% m el %fecha%.",
-			"rio.p.description.mareal": "Altura del %curso% en %lugar% hoy: %altura% m el %fecha%. Niveles de alerta, últimos días, viento y lluvia. Fuente: INA y Prefectura."
+			"rio.p.description.mareal": "Altura del %curso% en %lugar% hoy: %altura% m el %fecha%. Niveles de alerta, últimos días, viento y lluvia. Fuente: INA y Prefectura.",
+			"ficha.res.reglamento": "Licencia y reglas",
+			"ficha.res.hoy": "Hoy",
+			"ficha.res.hoy.rio": "%altura% m el %fecha%",
+			"ficha.res.hoy.clima": "próximos días: %linea%",
+			"ficha.ir.h": "En esta guía",
+			"ficha.ir.rio": "Hoy en el agua",
+			"ficha.ir.calendario": "Calendario",
+			"ficha.ir.reglamento": "Licencia y reglas",
+			"ficha.ir.guias": "Guías y alojamiento",
+			"ficha.ir.preguntas": "Preguntas",
+			"ficha.ir.fuentes": "Fuentes"
 		},
 		"pt": {
 			"marca.lema": "Quando ir, o que diz o regulamento e com quem pescar na Argentina.",
@@ -742,7 +753,18 @@
 			"rio.resumen": "Hoje, %n% pontos com tendência: sobem %sube%, descem %baja%, estáveis %estable%. Escolha o seu:",
 			"rio.mareal.corto": "Depende da maré",
 			"rio.p.respuesta.mareal": "O %curso% em %lugar% marcou %altura% m em %fecha%.",
-			"rio.p.description.mareal": "Altura do %curso% em %lugar% hoje: %altura% m em %fecha%. Níveis de alerta, últimos dias, vento e chuva. Fonte: INA e Prefectura."
+			"rio.p.description.mareal": "Altura do %curso% em %lugar% hoje: %altura% m em %fecha%. Níveis de alerta, últimos dias, vento e chuva. Fonte: INA e Prefectura.",
+			"ficha.res.reglamento": "Licença e regras",
+			"ficha.res.hoy": "Hoje",
+			"ficha.res.hoy.rio": "%altura% m em %fecha%",
+			"ficha.res.hoy.clima": "próximos dias: %linea%",
+			"ficha.ir.h": "Neste guia",
+			"ficha.ir.rio": "Hoje na água",
+			"ficha.ir.calendario": "Calendário",
+			"ficha.ir.reglamento": "Licença e regras",
+			"ficha.ir.guias": "Guias e hospedagem",
+			"ficha.ir.preguntas": "Perguntas",
+			"ficha.ir.fuentes": "Fontes"
 		},
 		"en": {
 			"marca.lema": "When to go, what the rules say and who to fish with in Argentina.",
@@ -1065,7 +1087,18 @@
 			"rio.resumen": "Today, %n% points with a trend: %sube% rising, %baja% falling, %estable% steady. Pick yours:",
 			"rio.mareal.corto": "Depends on the tide",
 			"rio.p.respuesta.mareal": "The %curso% at %lugar% read %altura% m on %fecha%.",
-			"rio.p.description.mareal": "%curso% height at %lugar% today: %altura% m on %fecha%. Alert levels, last days, wind and rain. Source: INA and Prefectura."
+			"rio.p.description.mareal": "%curso% height at %lugar% today: %altura% m on %fecha%. Alert levels, last days, wind and rain. Source: INA and Prefectura.",
+			"ficha.res.reglamento": "Licence and rules",
+			"ficha.res.hoy": "Today",
+			"ficha.res.hoy.rio": "%altura% m on %fecha%",
+			"ficha.res.hoy.clima": "coming days: %linea%",
+			"ficha.ir.h": "In this guide",
+			"ficha.ir.rio": "On the water today",
+			"ficha.ir.calendario": "Calendar",
+			"ficha.ir.reglamento": "Licence and rules",
+			"ficha.ir.guias": "Guides and lodging",
+			"ficha.ir.preguntas": "FAQ",
+			"ficha.ir.fuentes": "Sources"
 		}
 	},
 	"opciones": {

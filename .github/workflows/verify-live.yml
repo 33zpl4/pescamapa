@@ -132,6 +132,14 @@ jobs:
             grep -q 'cazaypesca.neuquen.gob.ar' page.html || { echo "✖ $p sin el enlace al permiso de Neuquén"; fail=1; }
             grep -q 'reglamentodepesca.org.ar' page.html || { echo "✖ $p sin el enlace al reglamento patagónico"; fail=1; }
           done
+          # Chascomús (Buenos Aires): licence from the Ministry, veda 1/9-30/11, 25 cm; no bag limit or fees published.
+          for p in /pampa/buenos-aires/pesca-chascomus/ /en/pampa/buenos-aires/fishing-chascomus/; do
+            check "$p" 200 'TouristDestination'
+            grep -qE "name=[\"']robots[\"'][^>]*noindex" page.html && { echo "✖ $p tiene noindex"; fail=1; }
+            grep -q 'PENDIENTE' page.html && { echo "✖ $p muestra una nota PENDIENTE"; fail=1; }
+            grep -q 'desarrollo_agrario/DAPA/vedas' page.html || { echo "✖ $p sin el enlace a la página de vedas"; fail=1; }
+            grep -q '25 cm' page.html || { echo "✖ $p sin la talla mínima"; fail=1; }
+          done
           # The sample WordPress pages stay unpublished.
           for p in /hola-mundo/ /pagina-ejemplo/; do check "$p" 404; done
           check /litoral/corrientes/pesca-en-goya/ 200 'Más para hacer'
