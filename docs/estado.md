@@ -86,6 +86,7 @@ todas a nosotros (centralizar datos y cobrar comisión más adelante).
 | 21/10/2026 | **Modelo**: la oferta viaja con la respuesta (condición especial por Pescamapa, publicada en la tarjeta y en llms.txt), somos el camino fácil (idioma, precio, disponibilidad) y cobramos comisión del lado del prestador. Primero Esquina y Goya. `docs/prestadores.md`, `docs/mensajes-prestadores.md`. |
 | 24/10/2026 | **Claude lanza los workflows (`wp-script`, `verify-live`) directamente, bajo demanda**: el dueño no tiene que ejecutarlos. Flujo: PR → `test-wp` en verde → merge → simulacro → `$aplicar = true` por PR → en vivo → `verify-live`. Nota: dos corridas de `wp-script` a la vez chocan en `/tmp/pm-script.php` del servidor (`Permission denied`); esperar a que termine la otra y reintentar. |
 | antes | Fotos solo de Commons con licencia libre o cedidas con crédito; nunca de Google. Prestadores solo con consentimiento y precios fechados. |
+| 27/10/2026 | **Estrategia de negocio (dueño, todavía flexible):** fase 1 = tráfico con información útil, gratis e imparcial; fase 2 = cobrar comisión (cobrarle a los guías por figurar, o vender nosotros los paquetes, como Yellow Dog). Para eso **no se listan todos los datos del prestador**: el contacto sigue interno y las consultas pasan por Pescamapa. No se vende "directorio abierto" como diferencial ni se critica a quien hace lo mismo: hoy ganamos poco o nada y el modelo no está cerrado. Detalle en `docs/prestadores.md`. |
 
 ## Pendientes, en orden
 

@@ -1,5 +1,8 @@
 name: Verify live site
 
+# Rule (owner, 27/10/2026): this check must not fail because an editor changed content (a title, a photo credit, a price).
+# It asserts what the code and the scripts guarantee: pages exist, templates render, JSON-LD, no internal markers,
+# no leaked contact data. Wording that editors own is not asserted.
 # Read-only check of what pescamapa.com serves (WordPress since the domain
 # switch): pages in every language, www redirect, sitemap, guides indexable
 # with no internal PENDIENTE notes shown,
@@ -26,10 +29,11 @@ jobs:
       - name: Served pages
         run: |
           fail=0
-          check() { # path expected-status [must-contain]
+          check() { # path expected-status [must-contain] [must-not-contain]
             code=$(curl -sS -m 30 -o page.html -w '%{http_code}' "$SITE$1")
             if [[ "$code" != "$2" ]]; then echo "✖ $code $1 (esperado $2)"; fail=1; return; fi
-            if [[ -n "${3:-}" ]] && ! grep -q "$3" page.html; then echo "✖ $1 no contiene: $3"; fail=1; return; fi
+            if [[ -n "${3:-}" ]] && ! grep -q -- "$3" page.html; then echo "✖ $1 no contiene: $3"; fail=1; return; fi
+            if [[ -n "${4:-}" ]] && grep -q -- "$4" page.html; then echo "✖ $1 contiene: $4"; fail=1; return; fi
             echo "✓ $code $1"
           }
           check / 200 'PESCAMAPA'
@@ -54,25 +58,27 @@ jobs:
           check / 200 '/privacidad/'
           check /armar-viaje/ 200 'política de privacidad'
           check / 200 'Cheyenne Justiniano</span> y <span>Alberto Ayala'
-          # River conditions (daily workflow rio.yml): the hub page exists; the data itself is checked after the first run.
-          check /altura-del-rio/ 200 'Altura del río Paraná hoy'
-          check /en/river-levels/ 200 'Paraná River levels today'
-          check /pt/altura-do-rio/ 200 'Altura do rio Paraná hoje'
+          # River conditions (daily workflow rio.yml): the hub, one point page per station, the block in a guide.
+          for p in /altura-del-rio/ /en/river-levels/ /pt/altura-do-rio/; do
+            check "$p" 200 'class="tabla-rio"'
+            grep -q 'application/ld+json' page.html || { echo "✖ $p sin JSON-LD"; fail=1; }
+          done
+          check /altura-del-rio/zarate/ 200 'class="rio-num"'
+          check /altura-del-rio/inventado/ 404
           check / 200 '/altura-del-rio/'
-          # Long-form notes (dorado, surubí) in 3 languages: yearly box, JSON-LD, SEO title, no leftover markers.
-          check /notas/cuando-pescar-dorado/ 200 'Al día · vedas y novedades' 'PENDIENTE'
-          check /notas/cuando-pescar-dorado/ 200 'application/ld+json'
-          check /notas/cuando-pescar-dorado/ 200 'Cuándo pescar dorado: dos ventanas en el Paraná | Pescamapa'
-          check /en/notes/best-time-to-fish-golden-dorado/ 200 'Up to date · closures and news'
-          check /pt/notas/quando-pescar-dourado/ 200 'Em dia · vedas e novidades'
-          check /notas/cuando-pescar-surubi/ 200 'Fiesta Nacional del Surubí, en Goya' 'PENDIENTE'
-          check /en/notes/best-time-to-fish-surubi/ 200 'When to fish surubí: it follows the water | Pescamapa'
-          check /pt/notas/quando-pescar-surubi/ 200 'Quando pescar surubi: ele segue a água | Pescamapa'
-          check /notas/ 200 'Cuándo pescar el surubí: no tiene una temporada'
-          # Cover photos with the photographer's name.
-          check /notas/cuando-pescar-dorado/ 200 'Tomas Frattini'
-          check /notas/cuando-pescar-surubi/ 200 'Augusto Frattini'
-          check /notas/cuando-pescar-trucha-patagonia/ 200 'Gorordo Coggiola'
+          # Long-form notes (dorado, surubí, trucha) in 3 languages. Only what the code guarantees: the page exists,
+          # JSON-LD, a title with the brand, a cover photo with a credit, no leftover internal markers. NOT the wording
+          # of titles, boxes or photographers' names: editors own those and may change them.
+          for p in /notas/cuando-pescar-dorado/ /en/notes/best-time-to-fish-golden-dorado/ /pt/notas/quando-pescar-dourado/ \
+                   /notas/cuando-pescar-surubi/ /en/notes/best-time-to-fish-surubi/ /pt/notas/quando-pescar-surubi/ \
+                   /notas/cuando-pescar-trucha-patagonia/ /en/notes/best-time-to-fish-trout-patagonia/ /pt/notas/quando-pescar-truta-patagonia/; do
+            check "$p" 200 'application/ld+json' 'PENDIENTE'
+            grep -q '<title>[^<]*Pescamapa' page.html || { echo "✖ $p sin título con la marca"; fail=1; }
+          done
+          for p in /notas/cuando-pescar-dorado/ /notas/cuando-pescar-surubi/ /notas/cuando-pescar-trucha-patagonia/; do
+            check "$p" 200 '<figcaption>'   # the cover photo shows its credit (whoever the editor named)
+          done
+          check /notas/ 200 'cuando-pescar-surubi'
           # Notes inside the guides, the species pages and the home.
           check /litoral/corrientes/pesca-en-goya/ 200 'Para leer antes de ir a Goya'
           check /litoral/corrientes/pesca-en-goya/ 200 'cuando-pescar-surubi'
@@ -80,22 +86,13 @@ jobs:
           check /especies/trucha/ 200 'cuando-pescar-trucha-patagonia'
           check / 200 'Ver todas las notas'
           check /en/ 200 'See all notes'
-          check /llms.txt 200 'Cuándo pescar el dorado en el Paraná'
-          check /notas/cuando-pescar-trucha-patagonia/ 200 'Al día · temporada y novedades' 'PENDIENTE'
-          check /en/notes/best-time-to-fish-trout-patagonia/ 200 'Best time to fish trout in Patagonia | Pescamapa'
-          check /pt/notas/quando-pescar-truta-patagonia/ 200 'Quando pescar truta na Patagônia | Pescamapa'
-          check /especies/trucha/ 200 'Oncorhynchus mykiss' 'PENDIENTE'
-          check /en/species/trucha/ 200 'Key facts'
-          check /pt/especies/trucha/ 200 'Dados-chave'
-          check /en/plan-your-trip/ 200 'Plan your fishing trip to Argentina'
-          check /pt/planejar-viagem/ 200 'Monte sua viagem'
-          check /especies/dorado/ 200 '25,28 kg' 'PENDIENTE'
-          check /especies/dorado/ 200 'og:description' 'Angler'
-          check /especies/dorado/ 200 'application/ld+json'
-          check /especies/dorado/ 200 'Dorado: récord mundial, tamaño y reglas'
-          check /en/species/dorado/ 200 '25.28 kg' 'PENDIENTE'
-          check /pt/especies/dorado/ 200 '25,28 kg' 'PENDIENTE'
-          check /especies/surubi/ 200 'solo pesca y devolución' 'PENDIENTE'
+          check /llms.txt 200 'cuando-pescar-dorado'
+          # Species pages: exist, JSON-LD, nothing internal showing (the facts in them are the editors' to change).
+          for p in /especies/dorado/ /en/species/dorado/ /pt/especies/dorado/ /especies/surubi/ /especies/trucha/ /en/species/trucha/ /pt/especies/trucha/; do
+            check "$p" 200 'application/ld+json' 'PENDIENTE'
+          done
+          check /en/plan-your-trip/ 200 'name="contacto"'
+          check /pt/planejar-viagem/ 200 'name="contacto"'
           check /en/bite-zones/ 200 'pique-mapa'
           check /creditos/ 301
           check /entrevistas/ 200 'v-entrevistas'
@@ -122,7 +119,6 @@ jobs:
             check "$p" 200 'TouristDestination'
             grep -qE "name=[\"']robots[\"'][^>]*noindex" page.html && { echo "✖ $p tiene noindex"; fail=1; }
             grep -q 'PENDIENTE' page.html && { echo "✖ $p muestra una nota PENDIENTE"; fail=1; }
-            grep -q '24.251,60' page.html || { echo "✖ $p sin el arancel de Entre Ríos"; fail=1; }
           done
           # San Martín y Junín de los Andes (Neuquén): season opens 1 November; 2025-2026 reference fees from the regulation, no per-water rules.
           for p in /patagonia/neuquen/pesca-san-martin-junin-de-los-andes/ /en/patagonia/neuquen/fishing-san-martin-junin-de-los-andes/; do
@@ -143,9 +139,9 @@ jobs:
           # The sample WordPress pages stay unpublished.
           for p in /hola-mundo/ /pagina-ejemplo/; do check "$p" 404; done
           check /litoral/corrientes/pesca-en-goya/ 200 'Más para hacer'
-          check /litoral/corrientes/pesca-en-goya/ 200 'Ogaraity Apart Hotel' '3777'
-          check /litoral/corrientes/pesca-en-goya/ 200 'Experiencia Isoró' '603774'
-          check /litoral/corrientes/pesca-en-goya/ 200 'Reserva Natural Isoró' '53840108'
+          # Provider cards show up and never leak the internal contact data (phones, handles).
+          check /litoral/corrientes/pesca-en-goya/ 200 'class="prestador' '3777'
+          check /litoral/corrientes/pesca-en-goya/ 200 'class="prestador' '603774'
           check /litoral/corrientes/pesca-en-goya/ 200 'class="miniaturas"' 'tomasfraa'
           # Esquina exists once esquina-2026-10-20 ran (Spanish first).
           code=$(curl -sS -m 30 -o page.html -w '%{http_code}' "$SITE/litoral/corrientes/pesca-en-esquina/")
