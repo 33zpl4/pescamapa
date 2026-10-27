@@ -13,7 +13,7 @@
  * Dry run first ($aplicar = false); run with wp-script.yml (script = pejerrey-especie-2026-10-27).
  */
 
-$aplicar = false;
+$aplicar = true;
 $hoy     = '20261027';
 
 function pm_pj_p( string $html ): string {
