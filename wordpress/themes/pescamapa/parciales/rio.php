@@ -39,5 +39,5 @@ $viejo  = $r && pm_rio_dias( $r['fecha'] ) > PM_RIO_VIEJO_DIAS;
 		<?php endif; ?>
 	</div>
 	<?php if ( $r ) : ?><p class="note"><?php pm_e( 'rio.nota.niveles' ); ?></p><?php endif; ?>
-	<p class="note"><?php echo wp_kses( pm_t( 'rio.fuente', pm_rio_enlaces() + [ 'capturado' => esc_html( pm_fecha( substr( $x['capturado'], 0, 10 ) ) ) ] ), [ 'a' => [ 'href' => true, 'rel' => true ] ] ); ?> <a href="<?php echo esc_url( pm_url_rio( pm_lang() ) ); ?>"><?php pm_e( 'rio.todos' ); ?></a></p>
+	<p class="note"><?php echo wp_kses( pm_t( $r ? 'rio.fuente' : 'rio.fuente.clima', pm_rio_enlaces() + [ 'capturado' => esc_html( pm_fecha( substr( $x['capturado'], 0, 10 ) ) ) ] ), [ 'a' => [ 'href' => true, 'rel' => true ] ] ); ?><?php if ( $r ) : ?> <a href="<?php echo esc_url( pm_url_rio( pm_lang() ) ); ?>"><?php pm_e( 'rio.todos' ); ?></a><?php endif; ?></p>
 </section>

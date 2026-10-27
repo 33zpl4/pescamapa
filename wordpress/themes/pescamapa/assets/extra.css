@@ -215,3 +215,4 @@
 .ir-a a { padding: 6px 14px; border: 1px solid var(--line); border-radius: var(--radius); text-decoration: none; font-size: var(--fs-small, 0.9rem); }
 .ir-a a:hover { border-color: var(--orange); }
 .v-destino [id] { scroll-margin-top: 80px; }
+@media (min-width: 640px) { .resumen dl { grid-template-columns: repeat(auto-fit, minmax(min(100%, 170px), 1fr)); } }
