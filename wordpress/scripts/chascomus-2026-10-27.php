@@ -12,7 +12,8 @@
  * 27/10/2026; the veda 1/9-30/11 with its days and the 15 km/h limit (Ministry's vedas page, text pasted by the
  * owner); the 25 cm minimum size (the Ministry's own measuring ruler, image sent by the owner on 27/10/2026);
  * what the municipal tourism site and 2026 tourism notes say about the lagoon and its access areas.
- * NOT published (kept as hidden PENDIENTE notes): the bag limit (10 vs 15 conflict, see dossier §8), licence
+ * Bag limit during the veda: 10 pieces per angler per day for "the rest of the Buenos Aires lagoons" (owner, 27/10/2026:
+ * "es el dato que figura en la web oficial"). NOT published (kept as hidden PENDIENTE notes): licence
  * fees, categories of licence, costs and schedules of ramps, clubs, guides and anything about motors on the lagoon.
  *
  * Idempotent: a guide that exists is never touched. Dry run first ($aplicar = false); run with wp-script.yml
@@ -87,9 +88,10 @@ $guias['es'] = [
 			'Están prohibidas las competencias deportivas relacionadas con el pejerrey y la pesca comercial en aguas interiores.',
 			'La pesca deportiva y recreativa de pejerrey se permite solo los <strong>sábados, domingos y feriados</strong>, respetando el número máximo de piezas por pescador y por día (en algunas lagunas, como Chasicó, Cochicó y del Monte, también los viernes).',
 			'Se prohíbe la motonáutica y las embarcaciones con motor fuera de borda de combustión interna navegan a una velocidad máxima de <strong>15 km/h</strong>.',
+			'Máximo de <strong>10 piezas</strong> por pescador y por día en Chascomús (grupo "resto de las lagunas bonaerenses").',
 		] ),
-		pm_ch_p( 'La página fija el número máximo de piezas por laguna. <strong>No publicamos el de Chascomús</strong>: la laguna figura en el grupo "resto de las lagunas bonaerenses" y hay dos cifras en circulación; mirá la página oficial de vedas antes de salir.' ),
-		pm_ch_pendiente( 'cupo por pescador y por día: la transcripción de la página dice 10 piezas para "el resto de las lagunas bonaerenses" y un resumen de buscador de la misma página dice 15. Abrir la tabla vigente, copiar la línea y recién ahí publicar (docs/investigacion/chascomus.md §8).' ),
+		pm_ch_p( 'En la veda, la página de vedas fija el número máximo de piezas por pescador y por día laguna por laguna. Chascomús no tiene un cupo propio: queda en el grupo de <strong>"el resto de las lagunas bonaerenses", con 10 piezas por pescador y por día</strong>. Confirmalo en la página oficial antes de salir, porque las disposiciones cambian.' ),
+		pm_ch_pendiente( 'cupo fuera de la veda: la página de vedas solo fija el cupo durante la veda. Un resumen de buscador de la misma página mencionó 15 para "el resto de las lagunas"; el dueño confirmó 10 en la web oficial (27/10/2026). Si cambia, ajustar (docs/investigacion/chascomus.md §8).' ),
 		pm_ch_h( 'Dónde se pesca: la laguna y sus accesos' ),
 		pm_ch_p( 'Según el <a href="' . $turismo_url . '" rel="noopener">sitio de turismo de Chascomús</a>, la laguna es una de las elegidas para la pesca deportiva y los deportes acuáticos, y tiene un camino de circunvalación de unos 30 km. Notas de turismo de 2026 mencionan, para pescar sin lancha, la zona del club de pesca, la costanera municipal y el muelle público (un muelle de pescadores y mirador en la zona céntrica de la costanera), y para ir embarcado, bajadas de lanchas, alquiler de botes y guardería náutica.' ),
 		pm_ch_p( 'No tenemos un inventario de rampas ni sus costos y horarios: <strong>no lo podemos confirmar</strong>. Preguntá en la costanera, en el club o a tu guía antes de ir con tu embarcación.' ),
@@ -105,7 +107,7 @@ $guias['es'] = [
 		pm_ch_lista( [
 			'Llevá la licencia vigente (el trámite y las excepciones están arriba).',
 			'Medí cada pejerrey: 25 cm es la talla mínima de captura.',
-			'Del 1 de septiembre al 30 de noviembre, solo sábados, domingos y feriados; sin motonáutica y a 15 km/h máx. con motor fuera de borda.',
+			'Del 1 de septiembre al 30 de noviembre, solo sábados, domingos y feriados, hasta 10 piezas por pescador y por día; sin motonáutica y a 15 km/h máx. con motor fuera de borda.',
 			'Las normas cambian por disposición: confirmalas en la página oficial de vedas o con la Dirección Provincial de Pesca.',
 		] ),
 	] ),
@@ -117,11 +119,11 @@ $guias['es'] = [
 		'seo_title'    => 'Pesca de pejerrey en Chascomús: licencia, veda y talla (2026)',
 		'seo_description' => 'Guía de pesca en la laguna de Chascomús (Buenos Aires): licencia de pesca deportiva, talla mínima de 25 cm, veda del pejerrey del 1/9 al 30/11, accesos y viento del día. Fuentes oficiales.',
 		'temporada'   => [
-			[ 'meses' => '1 de septiembre – 30 de noviembre', 'que' => 'Veda del pejerrey en toda la provincia: solo sábados, domingos y feriados, sin competencias ni motonáutica (Disposición 89/08, página de vedas del Ministerio).' ],
+			[ 'meses' => '1 de septiembre – 30 de noviembre', 'que' => 'Veda del pejerrey en toda la provincia: solo sábados, domingos y feriados, hasta 10 piezas por pescador y por día en Chascomús, sin competencias ni motonáutica (Disposición 89/08, página de vedas del Ministerio).' ],
 			[ 'meses' => 'Resto del año', 'que' => 'Se pesca con licencia y respetando la talla mínima de 25 cm. Confirmá cupos y disposiciones vigentes con el Ministerio.' ],
 			[ 'meses' => 'Antes de cada salida', 'que' => 'Mirá el viento del día y las disposiciones vigentes: cambian por resolución.' ],
 		],
-		'reglamento_resumen' => 'Ley 11.477 y Decreto 3237/95 (Provincia de Buenos Aires): licencia de pesca deportiva obligatoria (gratuita para menores de 14, jubilados y quienes cumplan la Resolución 46/05; valor de las demás: consultar al Ministerio). Talla mínima del pejerrey: 25 cm. Veda del 1/9 al 30/11: solo sábados, domingos y feriados, sin competencias ni motonáutica, fuera de borda a 15 km/h máx. (consultado el 27/10/2026).',
+		'reglamento_resumen' => 'Ley 11.477 y Decreto 3237/95 (Provincia de Buenos Aires): licencia de pesca deportiva obligatoria (gratuita para menores de 14, jubilados y quienes cumplan la Resolución 46/05; valor de las demás: consultar al Ministerio). Talla mínima del pejerrey: 25 cm. Veda del 1/9 al 30/11: solo sábados, domingos y feriados, hasta 10 piezas por pescador y por día en Chascomús, sin competencias ni motonáutica, fuera de borda a 15 km/h máx. (consultado el 27/10/2026).',
 		'aguas' => [
 			[ 'nombre' => 'Laguna de Chascomús', 'nota' => 'La mayor de las siete Encadenadas (≈3.044 ha, según el sitio municipal). Muelle de pescadores y mirador en la costanera; camino de circunvalación de unos 30 km.', 'lat' => '', 'lon' => '' ],
 		],
@@ -130,7 +132,7 @@ $guias['es'] = [
 			[ 'pregunta' => '¿Cuál es la talla mínima del pejerrey en Buenos Aires?', 'respuesta' => '25 cm de captura, según la regla de medición oficial del Ministerio de Desarrollo Agrario de la Provincia de Buenos Aires (consultada el 27/10/2026). Lo que no llega a esa medida se devuelve.' ],
 			[ 'pregunta' => '¿Cuándo es la veda del pejerrey?', 'respuesta' => 'Del 1 de septiembre al 30 de noviembre, en toda la provincia de Buenos Aires (Disposición 89/08, con renovación automática), según la página de vedas del Ministerio (consultada el 27/10/2026).' ],
 			[ 'pregunta' => '¿Se puede pescar pejerrey durante la veda?', 'respuesta' => 'Solo la pesca deportiva y recreativa, los sábados, domingos y feriados, respetando el máximo de piezas por pescador y por día. Están prohibidas las competencias de pejerrey y la pesca comercial.' ],
-			[ 'pregunta' => '¿Cuántos pejerreyes se pueden llevar por día en Chascomús?', 'respuesta' => 'No lo podemos confirmar: la página oficial de vedas fija el cupo por laguna y hay dos cifras en circulación para las lagunas que no figuran con nombre. Consultalo en la página del Ministerio antes de salir.' ],
+			[ 'pregunta' => '¿Cuántos pejerreyes se pueden llevar por día en Chascomús?', 'respuesta' => 'Durante la veda, 10 piezas por pescador y por día: Chascomús no tiene un cupo propio y queda en el grupo "el resto de las lagunas bonaerenses" de la página de vedas del Ministerio (consultada el 27/10/2026). Confirmalo en esa página antes de salir.' ],
 			[ 'pregunta' => '¿Se puede navegar con motor durante la veda?', 'respuesta' => 'Durante la veda se prohíbe la motonáutica, y las embarcaciones con motor fuera de borda de combustión interna pueden navegar a una velocidad máxima de 15 km/h, según la página de vedas del Ministerio.' ],
 			[ 'pregunta' => '¿Dónde se puede pescar sin lancha en Chascomús?', 'respuesta' => 'Notas de turismo de 2026 mencionan la zona del club de pesca, la costanera municipal y el muelle público de pescadores, que también es mirador. No tenemos un inventario con costos ni horarios.' ],
 			[ 'pregunta' => '¿Hay guías de pesca y alquiler de lanchas?', 'respuesta' => 'Notas de turismo mencionan guías de pesca, alquiler de botes y bajadas de lanchas, pero no listamos prestadores sin su consentimiento o su sitio propio abierto. Si ofrecés el servicio, escribinos a info@pescamapa.com.' ],
@@ -162,8 +164,9 @@ $guias['en'] = [
 			'Sport competitions related to pejerrey and commercial fishing in inland waters are prohibited.',
 			'Sport and recreational pejerrey fishing is allowed only on <strong>Saturdays, Sundays and public holidays</strong>, within the per-angler daily limit (on some lagoons, such as Chasicó, Cochicó and del Monte, Fridays too).',
 			'Powerboating is prohibited and boats with an internal-combustion outboard may travel at a maximum of <strong>15 km/h</strong>.',
+			'Maximum of <strong>10 pieces</strong> per angler per day at Chascomús (group "the rest of the Buenos Aires lagoons").',
 		] ),
-		pm_ch_p( 'The page sets the daily limit lagoon by lagoon. <strong>We do not publish Chascomús\'s</strong>: the lagoon falls under "the rest of the Buenos Aires lagoons" and two different figures are in circulation; check the official closed seasons page before you go.' ),
+		pm_ch_p( 'During the closed season the page sets the daily per-angler limit lagoon by lagoon. Chascomús has no limit of its own: it falls under <strong>"the rest of the Buenos Aires lagoons", at 10 pieces per angler per day</strong>. Confirm it on the official page before you go, because orders change.' ),
 		pm_ch_h( 'Where to fish: the lagoon and its access points' ),
 		pm_ch_p( 'According to the <a href="' . $turismo_url . '" rel="noopener">Chascomús tourism site</a>, the lagoon is one of those chosen for sport fishing and water sports, and has a ring road of about 30 km. 2026 tourism articles mention, for fishing without a boat, the area around the fishing club, the municipal waterfront and the public pier (a fishermen\'s pier and viewpoint in the central part of the waterfront), and for boat fishing, boat ramps, boat rental and boat storage.' ),
 		pm_ch_p( 'We have no inventory of ramps with their costs and hours: <strong>we cannot confirm it</strong>. Ask on the waterfront, at the club or your guide before bringing your own boat.' ),
@@ -177,7 +180,7 @@ $guias['en'] = [
 		pm_ch_lista( [
 			'Carry a valid licence (the procedure and exemptions are above).',
 			'Measure every pejerrey: 25 cm is the minimum catch size.',
-			'From 1 September to 30 November, Saturdays, Sundays and public holidays only; no powerboating and 15 km/h max with an outboard.',
+			'From 1 September to 30 November, Saturdays, Sundays and public holidays only, up to 10 pieces per angler per day; no powerboating and 15 km/h max with an outboard.',
 			'Rules change by official order: confirm them on the Ministry\'s closed seasons page or with the Dirección Provincial de Pesca.',
 		] ),
 	] ),
@@ -189,11 +192,11 @@ $guias['en'] = [
 		'seo_title'    => 'Pejerrey fishing in Chascomús: licence, closed season and size (2026)',
 		'seo_description' => 'Fishing guide to the Chascomús lagoon (Buenos Aires): sport fishing licence, 25 cm minimum size, pejerrey closed season 1 Sep to 30 Nov, access points and the day\'s wind. Official sources.',
 		'temporada'   => [
-			[ 'meses' => '1 September – 30 November', 'que' => 'Pejerrey closed season across the province: Saturdays, Sundays and holidays only, no competitions or powerboating (Disposición 89/08, Ministry closed seasons page).' ],
+			[ 'meses' => '1 September – 30 November', 'que' => 'Pejerrey closed season across the province: Saturdays, Sundays and holidays only, up to 10 pieces per angler per day at Chascomús, no competitions or powerboating (Disposición 89/08, Ministry closed seasons page).' ],
 			[ 'meses' => 'Rest of the year', 'que' => 'Fishing with a licence and respecting the 25 cm minimum size. Confirm limits and current orders with the Ministry.' ],
 			[ 'meses' => 'Before every trip', 'que' => 'Check the day\'s wind and the current orders: they change by resolution.' ],
 		],
-		'reglamento_resumen' => 'Law 11.477 and Decree 3237/95 (Buenos Aires province): sport fishing licence required (free for under-14s, retirees and those covered by Resolution 46/05; price of the others: ask the Ministry). Pejerrey minimum size: 25 cm. Closed season 1/9 to 30/11: Saturdays, Sundays and holidays only, no competitions or powerboating, outboards at 15 km/h max (checked 27/10/2026).',
+		'reglamento_resumen' => 'Law 11.477 and Decree 3237/95 (Buenos Aires province): sport fishing licence required (free for under-14s, retirees and those covered by Resolution 46/05; price of the others: ask the Ministry). Pejerrey minimum size: 25 cm. Closed season 1/9 to 30/11: Saturdays, Sundays and holidays only, up to 10 pieces per angler per day at Chascomús, no competitions or powerboating, outboards at 15 km/h max (checked 27/10/2026).',
 		'aguas' => [
 			[ 'nombre' => 'Chascomús lagoon', 'nota' => 'The largest of the seven Encadenadas (≈3,044 ha, according to the municipal site). Fishermen\'s pier and viewpoint on the waterfront; ring road of about 30 km.', 'lat' => '', 'lon' => '' ],
 		],
@@ -202,7 +205,7 @@ $guias['en'] = [
 			[ 'pregunta' => 'What is the minimum size for pejerrey in Buenos Aires?', 'respuesta' => '25 cm, according to the official measuring ruler of the Buenos Aires Ministry of Agrarian Development (checked 27/10/2026). Shorter fish are returned.' ],
 			[ 'pregunta' => 'When is the pejerrey closed season?', 'respuesta' => 'From 1 September to 30 November across Buenos Aires province (Disposición 89/08, renewed automatically), according to the Ministry\'s closed seasons page (checked 27/10/2026).' ],
 			[ 'pregunta' => 'Can I fish for pejerrey during the closed season?', 'respuesta' => 'Only sport and recreational fishing, on Saturdays, Sundays and public holidays, within the per-angler daily limit. Pejerrey competitions and commercial fishing are prohibited.' ],
-			[ 'pregunta' => 'How many pejerrey can I keep per day at Chascomús?', 'respuesta' => 'We cannot confirm it: the official closed seasons page sets the limit lagoon by lagoon and two different figures are in circulation for lagoons not listed by name. Check the Ministry\'s page before you go.' ],
+			[ 'pregunta' => 'How many pejerrey can I keep per day at Chascomús?', 'respuesta' => 'During the closed season, 10 pieces per angler per day: Chascomús has no limit of its own and falls under "the rest of the Buenos Aires lagoons" on the Ministry\'s closed seasons page (checked 27/10/2026). Confirm it on that page before you go.' ],
 			[ 'pregunta' => 'Can I use a motor during the closed season?', 'respuesta' => 'Powerboating is prohibited during the closed season, and boats with an internal-combustion outboard may travel at a maximum of 15 km/h, according to the Ministry\'s closed seasons page.' ],
 			[ 'pregunta' => 'Where can I fish without a boat in Chascomús?', 'respuesta' => '2026 tourism articles mention the area around the fishing club, the municipal waterfront and the public fishermen\'s pier, which is also a viewpoint. We have no inventory with costs or hours.' ],
 			[ 'pregunta' => 'Are there fishing guides and boat rentals?', 'respuesta' => 'Tourism articles mention fishing guides, boat rental and boat ramps, but we do not list providers without their consent or their own open website. If you offer the service, write to info@pescamapa.com.' ],

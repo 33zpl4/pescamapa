@@ -211,3 +211,7 @@
 .rio-resumen { margin: 0 0 24px; font-size: var(--fs-lead); }
 .rio-resumen .chip { display: inline-block; margin: 4px 6px 0 0; padding: 6px 14px; border: 1px solid var(--line); border-radius: var(--radius); text-decoration: none; }
 .tabla-rio-serie { max-width: 420px; }
+.ir-a { display: flex; flex-wrap: wrap; gap: 8px; padding-top: 18px; padding-bottom: 6px; }
+.ir-a a { padding: 6px 14px; border: 1px solid var(--line); border-radius: var(--radius); text-decoration: none; font-size: var(--fs-small, 0.9rem); }
+.ir-a a:hover { border-color: var(--orange); }
+.v-destino [id] { scroll-margin-top: 80px; }

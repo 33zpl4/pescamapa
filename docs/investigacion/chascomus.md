@@ -121,3 +121,7 @@ El dueño pegó las cuatro respuestas. Otra vez **ninguna URL se pudo abrir desd
 
 **Guía publicada con esto:** `wordpress/scripts/chascomus-2026-10-27.php` (es + en, simulacro primero). Sin cupo, sin valores, sin categorías de licencia, sin clubes ni prestadores, sin "sin motor". Clave `chascomus` (hereda foto y pin de la tarjeta "próximamente"); `rio.json` suma `chascomus` solo-clima; el hub del río ya no lista guías solo-clima (San Martín y Junín dejan de salir en la tabla del Litoral).
 **Pendientes:** cupo vigente, talla/cupo en otras disposiciones, ficha de la especie pejerrey, sección de accesos con administrador y costo, prestadores, pt.
+
+## 10. Decisión del dueño sobre el cupo (27/10/2026)
+
+El dueño indicó **10 piezas**: "es el dato que figura en la web oficial". Se publica **durante la veda**: 10 piezas por pescador y por día para "el resto de las lagunas bonaerenses" (Chascomús no tiene cupo propio). El resumen de buscador que decía 15 queda como duda menor; el cupo fuera de la veda sigue sin publicarse (la página solo lo fija en la veda). Verificado por el dueño, no por Claude (el sandbox no abre la página).
