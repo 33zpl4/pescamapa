@@ -17,5 +17,5 @@ Informe recibido por el dueño sobre la web de una agencia de viajes de pesca co
 - **Checklist de equipo y afiliados**: decisión comercial del dueño; ojo con la regla de no nombrar marcas en superficies de producto.
 - **Videos incrustados** y **podcast**: contenido propio; las entrevistas ya existen (`/entrevistas/`).
 
-## Para decidir con el dueño
-El informe critica que esa agencia **oculta el contacto del prestador** y obliga a pasar por su formulario. Nuestro modelo hace lo mismo hoy (el contacto del prestador es interno, las consultas llegan a Pescamapa: `docs/prestadores.md`). Es válido para cobrar una comisión, pero el posicionamiento "directorio abierto y verificado" convive mal con esconder el contacto. Opciones: mantener el modelo (consulta intermediada) y decirlo con claridad, o publicar el contacto de quien lo consienta y cobrar por otra vía.
+## Decidido (dueño, 27/10/2026): no es un punto de ataque
+El informe critica que Yellow Dog **oculta el contacto del prestador**. Nuestro modelo hace lo mismo y es intencional: el negocio necesita una comisión (fase 2: cobrarle a los guías por figurar o vender paquetes nosotros), así que no se lista todo ni se publica el contacto. No usamos "directorio abierto" como diferencial ni criticamos a quien lo hace. Fase 1 = tráfico con información gratis e imparcial. Ver `docs/prestadores.md` ("Modelo de negocio y qué se muestra").

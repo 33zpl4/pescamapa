@@ -132,6 +132,7 @@ Bitácora de verificaciones:
 | Fecha | Guía | Quién | Qué se verificó |
 | --- | --- | --- | --- |
 | 20/10/2026 | Esquina | Equipo del dueño | Reglamento: licencia y categorías, río Corriente solo pesca deportiva, pacú 45 cm, régimen de vedas. |
+| 27/10/2026 | **Estrategia de negocio (dueño, todavía flexible):** fase 1 = tráfico con información útil, gratis e imparcial; fase 2 = cobrar comisión (cobrarle a los guías por figurar, o vender nosotros los paquetes, como Yellow Dog). Para eso **no se listan todos los datos del prestador**: el contacto sigue interno y las consultas pasan por Pescamapa. No se vende "directorio abierto" como diferencial ni se critica a quien hace lo mismo: hoy ganamos poco o nada y el modelo no está cerrado. Detalle en `docs/prestadores.md`. |
 
 ## Vedas extraordinarias 2026 (para las guías de Paso de la Patria e Itatí)
 

@@ -85,3 +85,12 @@ protección de datos personales (Ley 25.326) y el uso de nombres comerciales.
 ## Textos en portugués e inglés (26/10/2026)
 
 Los textos libres de la ficha (en dos líneas, lancha, motor, cuándo trabaja, precio) tienen una versión pt y en (pestaña "Traducciones (se publican)"). Si falta, la página en ese idioma muestra el texto en español marcado `lang="es"` (no queda mezclado sin aviso, pero conviene cargar la versión). Al sumar o editar una ficha pública, completá las dos. En el precio escribí la moneda ("From ARS 300,000 per outing"). Las 8 fichas públicas de hoy se tradujeron con `wordpress/scripts/prestadores-traducciones-2026-10-26.php`.
+
+
+## Modelo de negocio y qué se muestra (dueño, 27/10/2026; sujeto a revisión)
+
+- **Fase 1 (hoy):** conseguir audiencia con información útil, gratis e imparcial. Ganamos poco o nada mientras tanto.
+- **Fase 2:** pasar a cobrar una **comisión**: cobrarle a los guías por figurar o destacar, o vender nosotros los paquetes (como Yellow Dog Flyfishing). El dueño lo mantiene flexible según lo que vea de otros modelos y del tráfico.
+- **Consecuencia ya vigente:** no se publican teléfono, WhatsApp, email ni redes del prestador; las consultas llegan a Pescamapa y las pasamos. **No se lista todo**: la ficha muestra qué ofrece y cómo trabaja, no cómo saltearnos. Qué otros datos mostrar (por ejemplo el precio de referencia con fecha) queda abierto para cuando se defina la fase 2.
+- **En lo que decimos al público:** no presentamos "directorio abierto" como ventaja ni criticamos a competidores por ocultar contactos: hacemos lo mismo y el modelo no está cerrado.
+- **Qué medir para decidir el pivote** (revisar cada mes): impresiones y clics en Search Console por guía, consultas recibidas por destino y por prestador (panel de consultas), cuántas pasamos a un prestador y cuántas se concretan (estado de la consulta), y qué prestadores preguntan por figurar.
