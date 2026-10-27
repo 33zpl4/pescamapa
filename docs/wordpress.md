@@ -211,3 +211,7 @@ desactualizadas; las propagamos con un script.
 ## Mapa del inicio (22/10/2026)
 
 Se verificó la proyección con las mismas funciones del plugin (`pm_proyectar`): las guías, los próximos destinos y 8 ciudades de referencia (La Quiaca, Ushuaia, Buenos Aires, Mendoza, Posadas, Córdoba, Bariloche, Puerto Madryn) caen donde corresponde sobre el contorno de `data/hero.json`. El defecto que se encontró no era de posición sino de **etiquetas**: Goya, Esquina y La Paz están a 14-16 px y la etiqueta mide 22 px, así que se pisaban. `pm_mapa_hero` ahora reparte las etiquetas en vertical (hueco mínimo de 24 px) y las une al punto con una línea fina (`.guia-linea`, en `extra.css`); el punto no se mueve. Los ríos del mapa son líneas simplificadas (pocos vértices): sirven de referencia, no de cartografía.
+
+## verify-live no comprueba lo que editan las personas (dueño, 27/10/2026)
+
+Un chequeo en vivo no debe fallar porque alguien cambió contenido (un título, un crédito de foto, un precio). Falló el 27/10 porque Cheyenne corrigió el crédito de una foto. Regla: `verify-live.yml` comprueba lo que garantizan el código y los scripts (la página existe, la plantilla se ve, hay JSON-LD, hay un `<figcaption>` con crédito, no hay marcas PENDIENTE, no se filtran contactos), **no** textos de títulos, cajas anuales, nombres de fotógrafos ni cifras (aranceles, récords). Un dato nuevo que escribe un script se verifica en el log del propio script (`VERIFIED`), no acá. El `check()` ahora también acepta un cuarto argumento (texto que NO debe aparecer); antes se ignoraba.
