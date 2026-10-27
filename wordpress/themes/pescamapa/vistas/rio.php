@@ -7,7 +7,7 @@ $datos   = pm_rio_datos();
 $filas   = [ 'litoral' => [], 'ba' => [] ];
 foreach ( pm_rio_config() as $clave => $c ) {
 	$x = $datos['destinos'][ $clave ] ?? null;
-	if ( ! $x ) {
+	if ( ! $x || empty( $x['rio'] ) ) { // weather-only guides (lagoons, Patagonia) show it in their own guide, not in a river table
 		continue;
 	}
 	$g = pm_buscar( 'pm_destino', $clave, $idioma ) ?? pm_buscar( 'pm_destino', $clave, 'es' );
