@@ -70,7 +70,7 @@ get_header(); ?>
 							<span><?php pm_e( 'paquetes.precio.consultar' ); ?></span>
 						<?php endif; ?>
 					</div>
-					<a class="button dark pedir" href="#consulta" data-mensaje="<?php echo esc_attr( pm_t( 'paquetes.msg', [ 'titulo' => $p['titulo'] ] ) ); ?>"><?php pm_e( 'paquetes.cta' ); ?></a>
+					<a class="button dark pedir" href="#consulta" data-titulo="<?php echo esc_attr( $p['titulo'] ); ?>" data-mensaje="<?php echo esc_attr( pm_t( 'paquetes.msg', [ 'titulo' => $p['titulo'] ] ) ); ?>"><?php pm_e( 'paquetes.cta' ); ?></a>
 				</article>
 			<?php endforeach; ?>
 		</div>
@@ -97,14 +97,24 @@ get_header(); ?>
 		</section>
 		<p class="note"><?php pm_e( 'paquetes.licencia', $a ); ?></p>
 		<p><a href="<?php echo esc_url( $d['url'] ); ?>"><?php pm_e( 'paquetes.guia', $a ); ?></a></p>
-		<?php get_template_part( 'parciales/consulta', null, [ 'destino' => $d['clave'], 'lugar' => $d['nombre'], 'especies' => $d['especies'] ] ); ?>
+		<?php get_template_part( 'parciales/consulta', null, [ 'destino' => $d['clave'], 'lugar' => $d['nombre'], 'especies' => $d['especies'], 'boutique' => true ] ); ?>
 	</div>
 </div>
+<a class="barra-pedir" href="#consulta"><?php pm_e( 'paquetes.barra' ); ?></a>
 <script>
-// "Pedir cotización" on a package: put the option in the message of the form below.
+// "Pedir cotización" on a package: show which option the inquiry is about and put it in the message.
 document.querySelectorAll('.paquete .pedir').forEach((b) => b.addEventListener('click', () => {
-	const m = document.querySelector('#consulta textarea[name="mensaje"]');
-	if (m) m.value = b.dataset.mensaje;
+	const f = document.querySelector('#consulta form');
+	if (!f) return;
+	if (f.mensaje) f.mensaje.value = b.dataset.mensaje;
+	const s = f.querySelector('.sobre');
+	if (s) { s.hidden = false; s.querySelector('strong').textContent = b.dataset.titulo; }
+	setTimeout(() => f.nombre && f.nombre.focus({ preventScroll: true }), 400);
 }));
+// The mobile bar disappears once the form is on screen.
+const barra = document.querySelector('.barra-pedir'), form = document.querySelector('#consulta');
+if (barra && form && 'IntersectionObserver' in window) {
+	new IntersectionObserver((e) => barra.classList.toggle('oculta', e[0].isIntersecting)).observe(form);
+}
 </script>
 <?php get_footer();
