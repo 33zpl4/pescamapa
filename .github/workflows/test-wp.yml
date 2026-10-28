@@ -229,6 +229,12 @@ jobs:
           check /especies/dorado/ 200 '25,28 kg'
           check /especies/dorado/ 200 'Fuentes consultadas'
           check /especies/dorado/ 200 'application/ld+json'
+          check /especies/ 200 'v-especies' 'PENDIENTE'
+          check /especies/ 200 '/especies/dorado/'
+          check /especies/ 200 'BreadcrumbList'
+          check /en/species/ 200 'v-especies'
+          check /especies/dorado/ 200 'Ver todas las especies'
+          check /llms.txt 200 'Todas las especies'
           check /especies/dorado/ 200 'Dorado: récord mundial, tamaño y reglas' 'Angler'
           check /especies/surubi/ 200 'solo pesca y devolución' 'PENDIENTE'
           # Long-form notes "when to fish" (dorado, surubí), 3 languages: created by the script, evergreen body + dated yearly box, SEO and JSON-LD.

@@ -116,6 +116,18 @@ function pm_seo(): array {
 		if ( $d['foto'] ) {
 			$s['imagen'] = wp_get_attachment_image_url( $d['foto'], 'large' );
 		}
+	} elseif ( 'especies' === $vista ) {
+		$s['title']       = pm_t( 'especies.title' );
+		$s['description'] = pm_t( 'especies.description' );
+		$s['alternas']    = pm_alternas_fijas( 'pm_url_especies' );
+		$s['jsonld']      = [
+			'@context'   => 'https://schema.org',
+			'@type'      => 'BreadcrumbList',
+			'itemListElement' => [
+				[ '@type' => 'ListItem', 'position' => 1, 'name' => 'Pescamapa', 'item' => pm_url_inicio( pm_lang() ) ],
+				[ '@type' => 'ListItem', 'position' => 2, 'name' => pm_t( 'especies.h1' ), 'item' => pm_url_especies( pm_lang() ) ],
+			],
+		];
 	} elseif ( 'especie' === $vista ) {
 		$e = pm_especie( get_queried_object_id() );
 		$s['title']       = $e['seo_title'] ?: $e['nombre'];

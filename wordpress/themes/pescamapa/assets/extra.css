@@ -80,7 +80,7 @@
 .elegir li { margin-bottom: 8px; }
 
 /* Interviews */
-.v-entrevista .top .eyebrow, .v-entrevistas .top .eyebrow, .v-nota .top .eyebrow, .v-notas .top .eyebrow { color: var(--lime); }
+.v-entrevista .top .eyebrow, .v-entrevistas .top .eyebrow, .v-nota .top .eyebrow, .v-notas .top .eyebrow, .v-especies .top .eyebrow { color: var(--lime); }
 .resumen-citas { background: var(--cream); border-radius: var(--radius); padding: 16px 20px; margin-bottom: 1.4em; }
 .resumen-citas h2 { font-size: var(--fs-h3); margin: 0 0 8px; }
 .resumen-citas ul { margin: 0; padding-left: 18px; font-style: italic; }
@@ -90,6 +90,14 @@
 .v-entrevistas .quien, .v-notas .quien { font-size: var(--fs-caption); color: var(--muted); }
 .v-entrevistas .tarjeta .foto, .v-notas .tarjeta .foto, .notas-inicio .tarjeta .foto { aspect-ratio: 4 / 3; border-radius: var(--radius); overflow: hidden; }
 .notas-inicio .lista { padding-block: 24px 0; }
+.v-especies .lista { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr)); gap: 24px; padding-block: 40px 80px; }
+.v-especies .tarjeta { display: grid; gap: 8px; align-content: start; background: var(--cream); border-radius: var(--radius); padding: 20px 22px; }
+.v-especies .tarjeta h2 { font: 700 var(--fs-h3)/1.2 var(--font-head); margin: 0; }
+.v-especies .tarjeta h2 a { color: var(--ink); text-decoration: none; }
+.v-especies .tarjeta h2 a:hover { text-decoration: underline; }
+.v-especies .tarjeta p { margin: 0; }
+.v-especies .quien { font-size: var(--fs-caption); color: var(--muted); }
+.especies-todas { margin-top: 2em; }
 
 /* Related notes inside a guide or a species page */
 .notas-rel { margin-block: 2em; }

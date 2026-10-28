@@ -39,6 +39,7 @@ get_header(); ?>
 				<?php endforeach; ?>
 			</ul>
 		<?php endif; ?>
+		<p class="especies-todas"><a href="<?php echo esc_url( pm_url_especies( $idioma ) ); ?>"><?php pm_e( 'especies.todas' ); ?></a></p>
 	</div>
 </div>
 <?php get_footer();
