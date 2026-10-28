@@ -21,6 +21,7 @@ if ( ! empty( $rio_hoy['rio'] ) ) { // today's reading, or the coming days' wind
 	$hoy_texto = $prox ? pm_t( 'ficha.res.hoy.clima', [ 'linea' => pm_rio_resumen_clima( array_slice( $prox, 0, 3 ) ) ] ) : '';
 }
 $citas       = pm_citas_destino( $d['clave'], $idioma );
+$paquetes    = pm_paquetes( get_queried_object_id() );
 $prestadores = pm_prestadores_destino( $d['clave'], current_user_can( 'edit_posts' ) );
 $pins = [ [ 'nombre' => $d['nombre'], 'coordenadas' => $d['coordenadas'], 'tipo' => 'destino', 'detalle' => $provincia ] ];
 foreach ( $d['aguas'] as $a ) {
@@ -67,6 +68,7 @@ get_header(); ?>
 				<div><dt><?php pm_e( 'ficha.cuando' ); ?></dt><dd><?php echo esc_html( $d['epoca'] ); ?></dd></div>
 				<div><dt><?php pm_e( 'ficha.res.reglamento' ); ?></dt><dd><a href="#reglamento"><?php echo esc_html( $d['reglamento']['autoridad'] ); ?></a></dd></div>
 				<?php if ( $hoy_texto ) : ?><div><dt><?php pm_e( 'ficha.res.hoy' ); ?></dt><dd><a href="#rio"><?php echo esc_html( $hoy_texto ); ?></a></dd></div><?php endif; ?>
+				<?php if ( $paquetes ) : ?><div><dt><?php pm_e( 'ficha.res.paquetes' ); ?></dt><dd><a href="<?php echo esc_url( pm_url_paquetes( $d['clave'], $idioma ) ); ?>"><?php pm_e( 'paquetes.res.link', [ 'lugar' => $d['nombre'] ] ); ?></a></dd></div><?php endif; ?>
 				<div><dt><?php pm_e( 'ficha.guias' ); ?></dt><dd><a href="#prestadores"><?php pm_e( 'ficha.prestadores.link' ); ?></a></dd></div>
 			</dl>
 		</section>

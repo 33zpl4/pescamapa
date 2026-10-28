@@ -100,6 +100,18 @@ function pm_llms_txt(): string {
 			$out[] = pm_llms_item( $n['titulo'], $n['url'], $n['bajada'], pm_alternas_nota( $n['clave'] ) );
 		}
 	}
+	$paq = [];
+	foreach ( pm_destinos_lista( 'es' ) as $d ) {
+		if ( pm_destino_paquetes( $d['clave'], 'es' ) ) {
+			$paq[] = pm_llms_item( 'Paquetes de pesca en ' . $d['nombre'], pm_url_paquetes( $d['clave'], 'es' ), 'Opciones armadas por Pescamapa, con qué incluye cada una; el precio "desde" figura solo cuando está confirmado y con su fecha.', pm_alternas_paquetes( $d['clave'] ) );
+		}
+	}
+	if ( $paq ) {
+		$out[] = '';
+		$out[] = '## Paquetes de pesca';
+		$out[] = '';
+		array_push( $out, ...$paq );
+	}
 	$out[] = '';
 	$out[] = '## Otras páginas';
 	$out[] = '';

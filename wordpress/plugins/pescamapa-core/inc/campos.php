@@ -186,6 +186,27 @@ add_action( 'acf/include_fields', function () {
 						[ 'key' => 'field_pm_d_mas_pago', 'name' => 'patrocinado', 'label' => 'Es publicidad (pagan por figurar)', 'type' => 'true_false', 'ui' => 1, 'wrapper' => [ 'width' => 50 ] ],
 					],
 				],
+				[ 'key' => 'field_pm_d_tab_paquetes', 'label' => 'Paquetes', 'type' => 'tab' ],
+				[ 'key' => 'field_pm_d_paq_msg', 'label' => '', 'type' => 'message', 'message' => 'Opciones de pesca que Pescamapa arma en este destino (página "Paquetes de pesca en…"). No se nombra al guía. <strong>Si una opción está tildada "Publicada" y no tiene precio, la página dice que se cotiza al pedirla.</strong> El precio "desde" solo se muestra si están el monto, la moneda, la unidad (por lancha, por persona) y la <strong>fecha</strong> del precio. Cargá los datos en cada idioma.', 'new_lines' => 'br', 'esc_html' => 0 ],
+				[
+					'key' => 'field_pm_d_paquetes', 'name' => 'paquetes', 'label' => 'Paquetes', 'type' => 'repeater', 'layout' => 'block', 'button_label' => 'Agregar paquete',
+					'sub_fields' => [
+						[ 'key' => 'field_pm_d_paq_publicado', 'name' => 'publicado', 'label' => 'Publicada', 'type' => 'true_false', 'ui' => 1, 'wrapper' => [ 'width' => 20 ] ],
+						[ 'key' => 'field_pm_d_paq_titulo', 'name' => 'titulo', 'label' => 'Título', 'type' => 'text', 'wrapper' => [ 'width' => 80 ] ],
+						[ 'key' => 'field_pm_d_paq_resumen', 'name' => 'resumen', 'label' => 'De qué se trata (2 o 3 líneas)', 'type' => 'textarea', 'rows' => 3 ],
+						[ 'key' => 'field_pm_d_paq_modalidad', 'name' => 'modalidad', 'label' => 'Modalidad', 'type' => 'text', 'wrapper' => [ 'width' => 34 ] ],
+						[ 'key' => 'field_pm_d_paq_duracion', 'name' => 'duracion', 'label' => 'Duración', 'type' => 'text', 'wrapper' => [ 'width' => 33 ] ],
+						[ 'key' => 'field_pm_d_paq_capacidad', 'name' => 'capacidad', 'label' => 'Capacidad', 'type' => 'text', 'wrapper' => [ 'width' => 33 ] ],
+						[ 'key' => 'field_pm_d_paq_incluye', 'name' => 'incluye', 'label' => 'Qué incluye (una línea cada cosa; vacío si no está confirmado)', 'type' => 'textarea', 'rows' => 3, 'wrapper' => [ 'width' => 50 ] ],
+						[ 'key' => 'field_pm_d_paq_no_incluye', 'name' => 'no_incluye', 'label' => 'Qué no incluye (una línea cada cosa)', 'type' => 'textarea', 'rows' => 3, 'wrapper' => [ 'width' => 50 ] ],
+						[ 'key' => 'field_pm_d_paq_variantes', 'name' => 'variantes', 'label' => 'Variantes (una por línea, p. ej. los packs)', 'type' => 'textarea', 'rows' => 3 ],
+						[ 'key' => 'field_pm_d_paq_monto', 'name' => 'desde_monto', 'label' => 'Precio desde (monto)', 'type' => 'number', 'min' => 0, 'step' => 'any', 'wrapper' => [ 'width' => 25 ] ],
+						[ 'key' => 'field_pm_d_paq_moneda', 'name' => 'desde_moneda', 'label' => 'Moneda', 'type' => 'select', 'choices' => [ 'ARS' => 'Pesos (ARS)', 'USD' => 'Dólares (USD)', 'BRL' => 'Reales (BRL)' ], 'allow_null' => 1, 'wrapper' => [ 'width' => 25 ] ],
+						[ 'key' => 'field_pm_d_paq_unidad', 'name' => 'desde_unidad', 'label' => 'Por (ej. "por lancha", "por persona")', 'type' => 'text', 'wrapper' => [ 'width' => 25 ] ],
+						[ 'key' => 'field_pm_d_paq_fecha', 'name' => 'desde_fecha', 'label' => 'Fecha del precio', 'type' => 'date_picker', 'display_format' => 'd/m/Y', 'return_format' => 'Y-m-d', 'wrapper' => [ 'width' => 25 ] ],
+						[ 'key' => 'field_pm_d_paq_interno', 'name' => 'interno', 'label' => 'Interno (no se publica): qué guías pueden armarlo, condiciones, comisión', 'type' => 'textarea', 'rows' => 2 ],
+					],
+				],
 			]
 		),
 	] );

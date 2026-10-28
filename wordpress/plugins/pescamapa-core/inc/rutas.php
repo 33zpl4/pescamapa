@@ -3,6 +3,7 @@
  * URLs, same as the Astro site:
  *   [/pt|/en]/<region>/<provincia>/<slug>/   destination guides
  *   /especies/  /pt/especies/  /en/species/   species index
+ *   /paquetes-de-pesca/<destino>/  /pt/pacotes-de-pesca/…  /en/fishing-packages/…   packages page (only with published packages)
  *   /especies/<clave>/  /pt/especies/…  /en/species/…
  *   /mapa/  /pt/mapa/  /en/map/
  *   /creditos/  /pt/creditos/  /en/credits/  (301 to the home: the page was removed)
@@ -35,6 +36,7 @@ function pm_registrar_rutas(): void {
 		add_rewrite_rule( "^{$pre}{$seg['viaje']}/?$", "index.php?pm_vista=viaje&pm_lang={$i}", 'top' );
 		add_rewrite_rule( "^{$pre}{$seg['terminos']}/?$", "index.php?pm_vista=terminos&pm_lang={$i}", 'top' );
 		add_rewrite_rule( "^{$pre}{$seg['privacidad']}/?$", "index.php?pm_vista=privacidad&pm_lang={$i}", 'top' );
+		add_rewrite_rule( "^{$pre}{$seg['paquetes']}/([a-z0-9-]+)/?$", "index.php?pm_vista=paquetes&pm_paquete_clave=\$matches[1]&pm_lang={$i}", 'top' );
 		add_rewrite_rule( "^{$pre}{$seg['rio']}/?$", "index.php?pm_vista=rio&pm_lang={$i}", 'top' );
 		add_rewrite_rule( "^{$pre}{$seg['rio']}/([a-z0-9-]+)/?$", "index.php?pm_vista=rio-punto&pm_rio_clave=\$matches[1]&pm_lang={$i}", 'top' );
 		add_rewrite_rule( "^{$pre}{$seg['notas']}/?$", "index.php?pm_vista=notas&pm_lang={$i}", 'top' );
@@ -47,7 +49,7 @@ function pm_registrar_rutas(): void {
 add_action( 'init', 'pm_registrar_rutas' );
 
 add_filter( 'query_vars', function ( $vars ) {
-	return array_merge( $vars, [ 'pm_lang', 'pm_vista', 'pm_especie_clave', 'pm_rio_clave' ] );
+	return array_merge( $vars, [ 'pm_lang', 'pm_vista', 'pm_especie_clave', 'pm_rio_clave', 'pm_paquete_clave' ] );
 } );
 
 // Species: resolve clave + language to the post.
@@ -58,6 +60,9 @@ add_filter( 'request', function ( $qv ) {
 			return [ 'p' => $p->ID, 'post_type' => 'pm_especie', 'pm_lang' => $qv['pm_lang'], 'pm_vista' => 'especie' ];
 		}
 		return [ 'error' => '404' ];
+	}
+	if ( ( $qv['pm_vista'] ?? '' ) === 'paquetes' && ! pm_destino_paquetes( (string) ( $qv['pm_paquete_clave'] ?? '' ), pm_idioma_valido( $qv['pm_lang'] ?? 'es' ) ) ) {
+		return [ 'error' => '404' ]; // no published packages in this language: no page
 	}
 	if ( ( $qv['pm_vista'] ?? '' ) === 'rio-punto' && ! isset( pm_rio_config()[ (string) ( $qv['pm_rio_clave'] ?? '' ) ] ) ) {
 		return [ 'error' => '404' ];
@@ -156,7 +161,7 @@ add_filter( 'template_include', function ( $plantilla ) {
 
 // The virtual views are not "not found" just because no post matched.
 add_filter( 'pre_handle_404', function ( $corto, $query ) {
-	if ( in_array( $query->get( 'pm_vista' ), [ 'inicio', 'mapa', 'creditos', 'entrevistas', 'notas', 'especies', 'pique', 'viaje', 'terminos', 'privacidad', 'rio', 'rio-punto' ], true ) ) {
+	if ( in_array( $query->get( 'pm_vista' ), [ 'inicio', 'mapa', 'creditos', 'entrevistas', 'notas', 'especies', 'pique', 'viaje', 'terminos', 'privacidad', 'rio', 'rio-punto', 'paquetes' ], true ) ) {
 		status_header( 200 );
 		return true;
 	}

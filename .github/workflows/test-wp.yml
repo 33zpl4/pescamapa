@@ -85,6 +85,18 @@ jobs:
           # The sizes-and-quotas FAQ only sees published guides (as on the server).
           w eval-file wordpress/scripts/reglas-corrientes-2026-10-21.php
           w eval-file wordpress/scripts/reglas-corrientes-2026-10-21.php   # idempotent
+          # Packages page: the Goya script run against Esquina (the guide that exists here).
+          sed "s/^\$aplicar = false;/\$aplicar = true;/; s/^\$destino = 'goya';/\$destino = 'esquina';/" wordpress/scripts/paquetes-goya-2026-10-28.php > /tmp/paquetes.php
+          w eval-file /tmp/paquetes.php
+          w eval-file /tmp/paquetes.php   # idempotent
+          w eval '
+            $e = pm_buscar( "pm_destino", "esquina", "es" );
+            $f = pm_filas( "paquetes", $e->ID );
+            $f[0]["desde_monto"] = 150000; $f[0]["desde_moneda"] = "ARS"; $f[0]["desde_unidad"] = "por lancha"; $f[0]["desde_fecha"] = "20261028";
+            $f[1]["desde_monto"] = 99999; $f[1]["desde_moneda"] = "ARS"; $f[1]["desde_unidad"] = "por lancha"; // no date: must not show
+            $f[2]["publicado"] = 0; $f[2]["titulo"] = "PAQUETE-OCULTO"; $f[2]["interno"] = "INTERNO-NO-PUBLICO";
+            update_field( "paquetes", $f, $e->ID );
+          '
           w eval '
             $id = wp_insert_post( [ "post_type" => "pm_entrevista", "post_status" => "publish", "post_title" => "Prueba: el río manda", "post_name" => "prueba-el-rio-manda", "post_content" => "<!-- wp:paragraph --><p>Charla de prueba.</p><!-- /wp:paragraph -->" ] );
             foreach ( [ "idioma" => "es", "clave" => "prueba", "persona" => "Persona Prueba", "destino" => "esquina", "fecha" => "20261020", "consentimiento" => 1, "rol" => "Guía de prueba", "bajada" => "Bajada de prueba", "seo_title" => "Prueba", "seo_description" => "Descripción de prueba" ] as $k => $v ) { update_field( $k, $v, $id ); }
@@ -171,6 +183,18 @@ jobs:
           check /litoral/corrientes/pesca-en-esquina/ 200 '"citation"'
           check /litoral/corrientes/pesca-en-esquina/ 200 'rel="sponsored noopener"'
           check /litoral/corrientes/pesca-en-esquina/ 200 'MAS-GRATIS'
+          check /paquetes-de-pesca/esquina/ 200 'v-paquetes' 'PENDIENTE'
+          check /paquetes-de-pesca/esquina/ 200 'Pedir cotización de esta opción'
+          check /paquetes-de-pesca/esquina/ 200 'Desde \$ 150.000 por lancha'
+          check /paquetes-de-pesca/esquina/ 200 'Precio de referencia al 28 de octubre de 2026'
+          check /paquetes-de-pesca/esquina/ 200 'Precio: lo cotizamos' 'PAQUETE-OCULTO'
+          check /paquetes-de-pesca/esquina/ 200 'application/ld+json' 'INTERNO-NO-PUBLICO'
+          n=$(curl -sS "$URL/paquetes-de-pesca/esquina/" | grep -o 'Desde &#036; \|Desde \$ ' | wc -l); [[ "$n" == 1 ]] || { echo "✖ debía haber un solo precio (el sin fecha no se muestra): $n"; fail=1; }
+          check /paquetes-de-pesca/goya/ 404
+          check /en/fishing-packages/esquina/ 404
+          check /litoral/corrientes/pesca-en-esquina/ 200 'paquetes-de-pesca/esquina'
+          check /wp-sitemap-vistas-1.xml 200 'paquetes-de-pesca/esquina'
+          check /llms.txt 200 'Paquetes de pesca en Esquina'
           check /notas/ 200 'Nota de prueba'
           check /en/notes/ 200 'v-notas'
           check /notas/nota-de-prueba/ 200 'DATO-CLAVE-DE-PRUEBA' 'dato sin confirmar'
