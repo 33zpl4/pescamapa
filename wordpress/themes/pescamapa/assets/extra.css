@@ -238,3 +238,8 @@
 .v-paquetes .paquete dd { margin: 0; }
 .v-paquetes .paquete .precio { display: grid; gap: 2px; margin-top: 6px; }
 .v-paquetes .paquete .pedir { justify-self: start; margin-top: 6px; }
+
+.v-paquetes .antes { margin: 8px 0 32px; max-width: 760px; }
+.v-paquetes .antes .bloque { margin-bottom: 20px; }
+.v-paquetes .antes h3 { font-size: var(--fs-h3); margin: 0 0 6px; }
+.v-paquetes .antes p { margin: 0 0 8px; }

@@ -207,6 +207,17 @@ add_action( 'acf/include_fields', function () {
 						[ 'key' => 'field_pm_d_paq_interno', 'name' => 'interno', 'label' => 'Interno (no se publica): qué guías pueden armarlo, condiciones, comisión', 'type' => 'textarea', 'rows' => 2 ],
 					],
 				],
+				[
+					'key' => 'field_pm_d_paq_info', 'name' => 'paquetes_info', 'label' => 'Antes de viajar (bloques con fuente, en la página de paquetes)', 'type' => 'repeater', 'layout' => 'block', 'button_label' => 'Agregar bloque',
+					'instructions' => 'Documentos, cómo llegar, qué llevar, condiciones. Cada bloque lleva su fuente y la fecha en que se consultó. Si no hay bloques, la sección no aparece.',
+					'sub_fields' => [
+						[ 'key' => 'field_pm_d_pi_titulo', 'name' => 'titulo', 'label' => 'Título', 'type' => 'text' ],
+						[ 'key' => 'field_pm_d_pi_texto', 'name' => 'texto', 'label' => 'Texto (un párrafo por línea)', 'type' => 'textarea', 'rows' => 5 ],
+						[ 'key' => 'field_pm_d_pi_fuente', 'name' => 'fuente_nombre', 'label' => 'Fuente (nombre)', 'type' => 'text', 'wrapper' => [ 'width' => 40 ] ],
+						[ 'key' => 'field_pm_d_pi_url', 'name' => 'fuente_url', 'label' => 'Fuente (enlace)', 'type' => 'url', 'wrapper' => [ 'width' => 40 ] ],
+						[ 'key' => 'field_pm_d_pi_fecha', 'name' => 'consultada', 'label' => 'Consultada el', 'type' => 'date_picker', 'display_format' => 'd/m/Y', 'return_format' => 'Y-m-d', 'wrapper' => [ 'width' => 20 ] ],
+					],
+				],
 			]
 		),
 	] );
