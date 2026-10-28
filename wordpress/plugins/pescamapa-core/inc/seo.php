@@ -116,6 +116,35 @@ function pm_seo(): array {
 		if ( $d['foto'] ) {
 			$s['imagen'] = wp_get_attachment_image_url( $d['foto'], 'large' );
 		}
+	} elseif ( 'paquetes' === $vista ) {
+		$k   = (string) get_query_var( 'pm_paquete_clave' );
+		$dp  = pm_buscar( 'pm_destino', $k, pm_lang() );
+		$d   = $dp ? pm_destino( $dp->ID ) : null;
+		$paq = $d ? pm_paquetes( $dp->ID ) : [];
+		$a   = [ 'lugar' => $d['nombre'] ?? '' ];
+		$s['title']       = pm_t( 'paquetes.title', $a );
+		$s['description'] = pm_t( 'paquetes.description', $a );
+		$s['alternas']    = pm_alternas_paquetes( $k );
+		if ( $d ) {
+			$items = [];
+			foreach ( $paq as $n => $p ) {
+				$trip = array_filter( [ '@type' => 'TouristTrip', 'name' => $p['titulo'], 'description' => $p['resumen'] ] );
+				if ( $p['precio'] ) {
+					$trip['offers'] = [ '@type' => 'Offer', 'price' => $p['precio']['monto'], 'priceCurrency' => $p['precio']['moneda'], 'validFrom' => $p['precio']['fecha'] ];
+				}
+				$items[] = [ '@type' => 'ListItem', 'position' => $n + 1, 'item' => $trip ];
+			}
+			$s['jsonld'][] = [ '@context' => 'https://schema.org', '@type' => 'ItemList', 'name' => pm_t( 'paquetes.h1', $a ), 'itemListElement' => $items ];
+			$s['jsonld'][] = [
+				'@context'        => 'https://schema.org',
+				'@type'           => 'BreadcrumbList',
+				'itemListElement' => [
+					[ '@type' => 'ListItem', 'position' => 1, 'name' => 'Pescamapa', 'item' => pm_url_inicio( pm_lang() ) ],
+					[ '@type' => 'ListItem', 'position' => 2, 'name' => $d['nombre'], 'item' => $d['url'] ],
+					[ '@type' => 'ListItem', 'position' => 3, 'name' => pm_t( 'paquetes.h1', $a ), 'item' => pm_url_paquetes( $k, pm_lang() ) ],
+				],
+			];
+		}
 	} elseif ( 'especies' === $vista ) {
 		$s['title']       = pm_t( 'especies.title' );
 		$s['description'] = pm_t( 'especies.description' );

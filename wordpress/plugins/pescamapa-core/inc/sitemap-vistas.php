@@ -27,6 +27,11 @@ class PM_Sitemap_Vistas extends WP_Sitemaps_Provider {
 				}
 			}
 		}
+		foreach ( pm_posts( 'pm_destino' ) as $p ) {
+			if ( pm_paquetes( $p->ID ) ) {
+				$out[] = [ 'loc' => pm_url_paquetes( pm_clave_de( $p->ID ), pm_idioma_de( $p->ID ) ) ];
+			}
+		}
 		return $out;
 	}
 

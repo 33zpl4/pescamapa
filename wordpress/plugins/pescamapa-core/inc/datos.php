@@ -107,6 +107,58 @@ function pm_destinos_lista( string $idioma ): array {
 	return array_map( 'pm_destino', array_values( $por_clave ) );
 }
 
+/**
+ * Published packages of a destination post: each with its dated "desde" price only when amount, currency, unit and
+ * date are all there (a price without a date is never shown). The internal field never leaves this function.
+ */
+function pm_paquetes( int $post_id ): array {
+	$lineas = fn( $v ) => array_values( array_filter( array_map( 'trim', preg_split( '/\R/', (string) $v ) ) ) );
+	$out    = [];
+	foreach ( pm_filas( 'paquetes', $post_id ) as $r ) {
+		if ( empty( $r['publicado'] ) || '' === trim( (string) ( $r['titulo'] ?? '' ) ) ) {
+			continue;
+		}
+		$monto  = is_numeric( $r['desde_monto'] ?? null ) ? (float) $r['desde_monto'] : 0.0;
+		$moneda = in_array( $r['desde_moneda'] ?? '', [ 'ARS', 'USD', 'BRL' ], true ) ? $r['desde_moneda'] : '';
+		$unidad = trim( (string) ( $r['desde_unidad'] ?? '' ) );
+		$fecha  = (string) ( $r['desde_fecha'] ?? '' );
+		$out[]  = [
+			'titulo'     => trim( (string) $r['titulo'] ),
+			'resumen'    => trim( (string) ( $r['resumen'] ?? '' ) ),
+			'modalidad'  => trim( (string) ( $r['modalidad'] ?? '' ) ),
+			'duracion'   => trim( (string) ( $r['duracion'] ?? '' ) ),
+			'capacidad'  => trim( (string) ( $r['capacidad'] ?? '' ) ),
+			'incluye'    => $lineas( $r['incluye'] ?? '' ),
+			'no_incluye' => $lineas( $r['no_incluye'] ?? '' ),
+			'variantes'  => $lineas( $r['variantes'] ?? '' ),
+			'precio'     => ( $monto > 0 && $moneda && $unidad && $fecha ) ? [ 'monto' => $monto, 'moneda' => $moneda, 'unidad' => $unidad, 'fecha' => $fecha ] : null,
+		];
+	}
+	return $out;
+}
+
+/** Packages of the guide of this destination in this language (never borrowed from another language). */
+function pm_destino_paquetes( string $clave, string $idioma ): array {
+	$p = pm_buscar( 'pm_destino', $clave, $idioma );
+	return $p ? pm_paquetes( $p->ID ) : [];
+}
+
+function pm_alternas_paquetes( string $clave ): array {
+	$out = [];
+	foreach ( pm_idiomas() as $i ) {
+		if ( pm_destino_paquetes( $clave, $i ) ) {
+			$out[ $i ] = pm_url_paquetes( $clave, $i );
+		}
+	}
+	return $out;
+}
+
+/** "US$ 150", "$ 150.000", "R$ 600" with the separators of the page's language. */
+function pm_paquete_precio_txt( array $precio, string $idioma ): string {
+	$n = 'en' === $idioma ? number_format( $precio['monto'], 0, '.', ',' ) : number_format( $precio['monto'], 0, ',', '.' );
+	return [ 'ARS' => '$ ', 'USD' => 'US$ ', 'BRL' => 'R$ ' ][ $precio['moneda'] ] . $n;
+}
+
 /** Language versions of a destination: idioma => url. */
 function pm_alternas_destino( string $clave ): array {
 	$out = [];
