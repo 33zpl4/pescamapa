@@ -86,6 +86,7 @@ jobs:
           check /especies/ 200 'v-especies' 'PENDIENTE'
           check /paquetes-de-pesca/goya/ 200 'v-paquetes' 'PENDIENTE'
           check /paquetes-de-pesca/goya/ 200 'Pedir cotización de esta opción'
+          check /paquetes-de-pesca/goya/ 200 'consulta--boutique'
           check /paquetes-de-pesca/goya/ 200 'Preguntas frecuentes sobre los paquetes de pesca en Goya'
           check /paquetes-de-pesca/goya/ 200 '"@type":"FAQPage"'
           check /paquetes-de-pesca/goya/ 200 'hreflang="x-default"'

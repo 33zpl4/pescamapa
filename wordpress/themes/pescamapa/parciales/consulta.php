@@ -7,9 +7,24 @@ defined( 'ABSPATH' ) || exit;
 
 $resultado = pm_consulta_resultado();
 ?>
-<section id="consulta" class="consulta" aria-labelledby="consulta-h">
-	<h2 id="consulta-h"><?php pm_e( 'consulta.h2' ); ?></h2>
-	<p><?php pm_e( 'consulta.p', [ 'lugar' => $args['lugar'] ] ); ?></p>
+<?php $boutique = ! empty( $args['boutique'] ); ?>
+<section id="consulta" class="consulta<?php echo $boutique ? ' consulta--boutique' : ''; ?>" aria-labelledby="consulta-h">
+	<?php if ( $boutique ) : ?>
+		<div class="pitch">
+			<span class="eyebrow"><?php pm_e( 'consulta.boutique.eyebrow' ); ?></span>
+			<h2 id="consulta-h"><?php pm_e( 'consulta.boutique.h2' ); ?></h2>
+			<p><?php pm_e( 'consulta.p', [ 'lugar' => $args['lugar'] ] ); ?></p>
+			<ul class="ticks">
+				<li><?php pm_e( 'consulta.boutique.t1' ); ?></li>
+				<li><?php pm_e( 'consulta.boutique.t2' ); ?></li>
+				<li><?php pm_e( 'consulta.boutique.t3' ); ?></li>
+			</ul>
+		</div>
+	<?php else : ?>
+		<h2 id="consulta-h"><?php pm_e( 'consulta.h2' ); ?></h2>
+		<p><?php pm_e( 'consulta.p', [ 'lugar' => $args['lugar'] ] ); ?></p>
+	<?php endif; ?>
+	<div class="formulario">
 	<?php if ( 'ok' === $resultado ) : ?>
 		<p class="aviso ok" role="status"><?php pm_e( 'consulta.ok' ); ?></p>
 	<?php else : ?>
@@ -19,8 +34,8 @@ $resultado = pm_consulta_resultado();
 			<p class="sobre" hidden><?php pm_e( 'consulta.sobre' ); ?> <strong></strong></p>
 			<div class="grilla">
 				<label><?php pm_e( 'consulta.nombre' ); ?> <input name="nombre" required maxlength="80" autocomplete="name"></label>
-				<label><?php pm_e( 'consulta.contacto' ); ?> <input name="contacto" required maxlength="120" autocomplete="tel"></label>
-				<label><?php pm_e( 'consulta.cuando' ); ?> <input name="cuando" maxlength="80"></label>
+				<label><?php pm_e( 'consulta.contacto' ); ?> <input name="contacto" required maxlength="120" autocomplete="tel"<?php echo $boutique ? ' placeholder="' . esc_attr( pm_t( 'consulta.ph.contacto' ) ) . '"' : ''; ?>></label>
+				<label><?php pm_e( 'consulta.cuando' ); ?> <input name="cuando" maxlength="80"<?php echo $boutique ? ' placeholder="' . esc_attr( pm_t( 'consulta.ph.cuando' ) ) . '"' : ''; ?>></label>
 				<label><?php pm_e( 'consulta.personas' ); ?> <input name="personas" type="number" min="1" max="99" value="2" inputmode="numeric"></label>
 				<label><?php pm_e( 'consulta.modalidad' ); ?>
 					<select name="modalidad">
@@ -43,10 +58,11 @@ $resultado = pm_consulta_resultado();
 				</label>
 			</div>
 			<label><?php pm_e( 'consulta.mensaje' ); ?> <textarea name="mensaje" rows="3" maxlength="2000"></textarea></label>
-			<button class="button dark" type="submit"><?php pm_e( 'consulta.enviar' ); ?></button>
+			<button class="button dark" type="submit"><?php pm_e( $boutique ? 'consulta.boutique.enviar' : 'consulta.enviar' ); ?></button>
 			<p class="note"><?php pm_e( 'consulta.privacidad' ); ?> <?php echo pm_enlace_privacidad(); // phpcs:ignore -- escaped inside ?></p>
 		</form>
 	<?php endif; ?>
+	</div>
 </section>
 <script>
 // "Consultar" on an outfitter card: fill the form with who it is about.
