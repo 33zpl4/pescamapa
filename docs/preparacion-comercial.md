@@ -29,3 +29,22 @@ Nada de precios sin fecha y fuente; nada de "el mejor"; nada de contacto de pres
 - Prioridad de destinos para relevar prestadores primero.
 - Si se abre una página de "Guías de pesca en X" por destino aun con pocos prestadores confirmados (recomendado: no hasta tener 3).
 - La página "Cuánto cuesta": ¿piloto en Goya?
+
+## Modelo de paquetes propios (dueño, 28/10/2026) y auditoría de la lista de Goya
+
+**Modelo:** vendemos opciones armadas por nosotros. La página del destino muestra qué opciones hay (modalidad, duración, qué incluye) y un **"desde"** como referencia. Si llega una
+consulta de un grupo concreto, el dueño habla con los guías y ve cuál puede adaptar el paquete. Los guías no se nombran en la página (el contacto y la identidad de cada uno siguen internos).
+
+**Lista pegada el 28/10 sobre Goya (otra IA):** no se publica nada de ahí.
+- Rango "ARS 60.000–150.000 por jornada", fechado en julio de 2026, sin fuente: **no se usa** (precio viejo en pesos, sin respaldo).
+- Cuatro prestadores/alojamientos con teléfonos y WhatsApp, sin enlace a sus sitios; "recomendados por el Ministerio de Turismo provincial" sin fuente. Sirven solo como **candidatos a relevar**; los teléfonos no van al repo ni a la web.
+- Modalidades y especies que menciona ya las cubrimos en la guía de Goya. "La licencia puede no estar incluida": hay que preguntarlo a cada guía.
+- Ninguno de los dos prestadores que ya tenemos cargados aparece en esa lista: la oferta real de Goya es más grande que lo que tenemos.
+
+**Condiciones antes de publicar un "desde":**
+1. Un guía lo confirmó y acepta sostenerlo, con **fecha, unidad (por lancha o por persona), qué incluye y qué no** (licencia, alojamiento, traslado). Un "desde" que no podemos honrar es publicidad engañosa.
+2. Moneda: el peso se desactualiza en semanas. Decidir entre pesos con fecha visible, dólares de referencia, o ambos (y reales para Brasil).
+3. **Revisar con abogado/contador antes de vender paquetes en nombre propio:** en la Argentina el rol de agencia de viajes (registro, seguro, facturación, defensa del consumidor) es distinto del de intermediario que deriva consultas. No lo afirmamos: se consulta.
+4. La neutralidad se redefine: ya no es "no ordenamos por comisión" a secas, es "te mostramos las opciones y qué incluye cada una; nuestra comisión no cambia lo que pagás".
+
+**Qué se construye (cuando se confirme):** un tipo de contenido "paquete" por destino: título, modalidad, duración, capacidad, qué incluye, qué no incluye, desde (monto, moneda, unidad, **fecha**), estado (acordado / no), guías que pueden armarlo (interno), notas. La página "Paquetes de pesca en X" lista solo los acordados; sin ninguno, no se publica.
