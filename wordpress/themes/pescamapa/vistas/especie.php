@@ -36,6 +36,7 @@ get_header(); ?>
 			<ul class="chips">
 				<?php foreach ( $destinos as $d ) : ?>
 					<li><a href="<?php echo esc_url( $d['url'] ); ?>"><?php echo esc_html( $d['nombre'] . ', ' . ( PM_PROVINCIAS[ $d['provincia'] ] ?? '' ) ); ?></a></li>
+					<?php if ( pm_destino_paquetes( $d['clave'], $idioma ) ) : ?><li><a href="<?php echo esc_url( pm_url_paquetes( $d['clave'], $idioma ) ); ?>"><?php pm_e( 'paquetes.especie.link', [ 'lugar' => $d['nombre'] ] ); ?></a></li><?php endif; ?>
 				<?php endforeach; ?>
 			</ul>
 		<?php endif; ?>

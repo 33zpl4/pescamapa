@@ -56,3 +56,13 @@ consulta de un grupo concreto, el dueño habla con los guías y ve cuál puede a
 - Contenido cargado: `wordpress/scripts/paquetes-goya-2026-10-28.php` (6 paquetes por idioma, desde el brochure del prestador, sin nombrarlo). **No** hay precios, ni qué incluye, ni capacidad de pesca: el brochure no los trae.
 - Para sumar otro destino: cargar la pestaña "Paquetes" en su guía (por idioma); la página aparece sola.
 - Cheyenne está registrada como agencia en Bitácora y se factura por ahí (dueño, 28/10/2026): queda resuelto el rol de agencia; falta dejar por escrito voucher, condiciones y cancelación.
+
+## SEO de la página de paquetes (28/10/2026, a pedido del dueño: el objetivo es rankear)
+Hecho en la página `/paquetes-de-pesca/<destino>/` (es/pt/en):
+- **Consulta objetivo en cada lugar donde Google lo mira:** title (≤60, con "opciones y precios"), meta description (~140, con modalidades y qué incluye), H1, bajada, primer párrafo y títulos de los paquetes ("Pesca de dorado en la Reserva Natural Isoró (Goya)", "Pesca nocturna en Goya", "Paseo en lancha…, Goya"). En portugués se usa "pescaria" (cómo buscan los brasileños) y "Argentina" en el H1.
+- **Estructura:** un H1, H2 por sección (cómo funciona, cada paquete, antes de viajar, preguntas frecuentes), H3 dentro; migas; enlace a la guía de arriba (reglamento, licencia, calendario).
+- **Contenido que responde la intención:** intro, qué incluye cada opción, preguntas frecuentes (cuánto cuesta, qué incluye, licencia, cómo cotizar) y "Antes de viajar" con fuente y fecha. Precio "desde" fechado cuando llegue.
+- **Datos estructurados:** ItemList de TouristTrip (con `offers` solo si hay precio fechado), WebPage con `dateModified`, FAQPage y BreadcrumbList; imagen social con la foto de la guía.
+- **Confianza y frescura:** "Por … · Actualizado el …" visible.
+- **Enlaces internos:** desde el resumen de la guía y desde las fichas de especie donde se pesca (anclas "Paquetes de pesca en Goya"); hreflang entre idiomas, sitemap y `llms.txt`.
+Falta (no se puede hacer desde el repo): pedir la indexación en Search Console, mirar impresiones y posición por consulta a los 7–14 días y reforzar lo que quede en 8–20; pedir enlaces entrantes (prestadores, notas); fotos propias de las salidas con texto alternativo cuando las ceda el prestador; reseñas reales de quienes viajen.
