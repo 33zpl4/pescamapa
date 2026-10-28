@@ -353,7 +353,7 @@ jobs:
           check /en/river-levels/zarate/ 200 'River level at Zárate today'
           check /altura-del-rio/ 200 'altura-del-rio/zarate/'
           check /en/river-levels/ 200 'River levels today'
-          check /pt/altura-do-rio/ 200 'Altura do rio hoje'
+          check /pt/altura-do-rio/ 200 'Nível do rio hoje'
           check / 200 '/altura-del-rio/'
           # Zona de pique (docs/pique.md): empty state, report through the real endpoint, privacy, delay, abuse limits.
           check /pique/ 200 'pique-mapa' 'reportes en'
