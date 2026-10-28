@@ -190,7 +190,7 @@ jobs:
           check /paquetes-de-pesca/esquina/ 200 '"@type":"FAQPage"'
           check /paquetes-de-pesca/esquina/ 200 '"@type":"WebPage"'
           check /paquetes-de-pesca/esquina/ 200 'rel="canonical"'
-          check /paquetes-de-pesca/esquina/ 200 'hreflang="x-default"'
+          check /paquetes-de-pesca/esquina/ 200 'rel="alternate" hreflang="es"'
           check /paquetes-de-pesca/esquina/ 200 'Paquetes de pesca en Esquina: opciones y precios | Pescamapa'
           check /paquetes-de-pesca/esquina/ 200 'Actualizado el'
           check /especies/dorado/ 200 'Paquetes de pesca en Esquina'
