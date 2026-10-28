@@ -103,6 +103,11 @@ def main(salida):
     datos = {"capturado": dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"), "destinos": out}
     json.dump(datos, open(salida, "w"), ensure_ascii=False, indent=1)
     print(f"OK: {len(out)} destinos, {leidos} lecturas -> {salida}")
+    # Which stations already have the reading of today's Argentine date (to pick the run hour).
+    hoy_ar = (dt.datetime.now(dt.timezone.utc) - dt.timedelta(hours=3)).date().isoformat()
+    con_rio = [it["rio"] for it in out.values() if it.get("rio")]
+    de_hoy = sum(1 for r in con_rio if r["fecha"] == hoy_ar)
+    print(f"HORA: {dt.datetime.now(dt.timezone.utc):%H:%M}Z ({(dt.datetime.now(dt.timezone.utc) - dt.timedelta(hours=3)):%H:%M} AR); lecturas con fecha de hoy ({hoy_ar}): {de_hoy} de {len(con_rio)}")
     for clave, it in out.items():
         r = it.get("rio")
         print(f"  {clave}: " + (f"{r['altura']} m ({r['fecha']}, {r['tendencia']} {r['delta_3d']})" if r else "solo clima"))
