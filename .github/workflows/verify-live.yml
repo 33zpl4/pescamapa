@@ -89,6 +89,7 @@ jobs:
           check /paquetes-de-pesca/goya/ 200 'Preguntas frecuentes sobre los paquetes de pesca en Goya'
           check /paquetes-de-pesca/goya/ 200 '"@type":"FAQPage"'
           check /paquetes-de-pesca/goya/ 200 'hreflang="x-default"'
+          check /pt/altura-do-rio/paso-de-la-patria/ 200 'Nível do rio em Paso de la Patria'
           check /paquetes-de-pesca/esquina/ 200 'v-paquetes' 'PENDIENTE'
           check /paquetes-de-pesca/esquina/ 200 'Pedir cotización de esta opción'
           check /especies/dorado/ 200 'Paquetes de pesca en Goya'

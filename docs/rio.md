@@ -49,3 +49,5 @@ próxima corrida diaria lo carga. Los niveles de alerta/evacuación no son de pe
   enlace en el pie. Consultas: "altura del río Paraná hoy", "altura río Paraná Goya/Corrientes/La Paz/Esquina",
   "río Paraná creciendo o bajando", "river level Paraná", "pronóstico viento Goya" (+ las guías por destino).
 - Un asistente que responde "¿cómo está el río en Goya?" puede citar la página con fecha.
+
+**Portugués (28/10/2026, dueño):** los textos dicen "nível do rio", no "altura do rio": así buscan los brasileños ("nível do rio Paraná em Paso de la Patria"). La dirección sigue siendo `/pt/altura-do-rio/` para no romper enlaces.
