@@ -16,7 +16,7 @@
  * wp-script.yml (script = chascomus-accesos-2026-10-28).
  */
 
-$aplicar = false;
+$aplicar = true;
 $hoy     = '20261028';
 
 function pm_ac_p( string $html ): string {
