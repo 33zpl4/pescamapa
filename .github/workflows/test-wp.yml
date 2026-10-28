@@ -96,6 +96,7 @@ jobs:
             $f[1]["desde_monto"] = 99999; $f[1]["desde_moneda"] = "ARS"; $f[1]["desde_unidad"] = "por lancha"; // no date: must not show
             $f[2]["publicado"] = 0; $f[2]["titulo"] = "PAQUETE-OCULTO"; $f[2]["interno"] = "INTERNO-NO-PUBLICO";
             update_field( "paquetes", $f, $e->ID );
+            update_field( "paquetes_intro", "INTRO-DE-PRUEBA", $e->ID ); update_field( "paquetes_description", "DESC-DE-PRUEBA", $e->ID );
             update_field( "paquetes_info", [ [ "titulo" => "INFO-DE-PRUEBA", "texto" => "Primer párrafo de prueba\nSegundo párrafo de prueba", "fuente_nombre" => "FUENTE-INFO", "fuente_url" => "https://example.com/info", "consultada" => "20261028" ], [ "titulo" => "", "texto" => "BLOQUE-SIN-TITULO" ] ], $e->ID );
           '
           w eval '
@@ -187,6 +188,8 @@ jobs:
           check /paquetes-de-pesca/esquina/ 200 'v-paquetes' 'PENDIENTE'
           check /paquetes-de-pesca/esquina/ 200 'Pedir cotización de esta opción'
           check /paquetes-de-pesca/esquina/ 200 'consulta--boutique'
+          check /paquetes-de-pesca/esquina/ 200 'INTRO-DE-PRUEBA'
+          check /paquetes-de-pesca/esquina/ 200 'content="DESC-DE-PRUEBA"'
           check /paquetes-de-pesca/esquina/ 200 'Pedir mi cotización'
           check /paquetes-de-pesca/esquina/ 200 'barra-pedir'
           check /litoral/corrientes/pesca-en-esquina/ 200 'id="consulta"' 'consulta--boutique'
