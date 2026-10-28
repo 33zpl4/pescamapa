@@ -125,3 +125,22 @@ El dueño pegó las cuatro respuestas. Otra vez **ninguna URL se pudo abrir desd
 ## 10. Decisión del dueño sobre el cupo (27/10/2026)
 
 El dueño indicó **10 piezas**: "es el dato que figura en la web oficial". Se publica **durante la veda**: 10 piezas por pescador y por día para "el resto de las lagunas bonaerenses" (Chascomús no tiene cupo propio). El resumen de buscador que decía 15 queda como duda menor; el cupo fuera de la veda sigue sin publicarse (la página solo lo fija en la veda). Verificado por el dueño, no por Claude (el sandbox no abre la página).
+
+## 12. Ronda 3: auditoría (28/10/2026)
+
+Respuesta de Gemini sobre accesos, cobro, alquiler y navegación. **Ningún sitio de `chascomus.gob.ar` abre desde el sandbox** (host fuera de la red permitida): las notas municipales no se verificaron acá; las abre el dueño.
+
+| Dato | Fuente citada | Veredicto |
+| --- | --- | --- |
+| Bajadas y botaduras solo en bajadas náuticas habilitadas; zonas con boyas; velocidad adecuada; guardavidas; nota del 6/1/2026 | `chascomus.gob.ar/digital/nota/12430/…` | **Se publica**, atribuido a la nota municipal. El dueño la abre para confirmar. |
+| Muelle de pescadores y mirador en la costanera céntrica; "alquiler de botes para recreación o pesca deportiva" (sin operador ni precio) | `chascomus.gob.ar/turismo/seccion/24/…` | **Se publica**, atribuido al sitio de turismo. Sin precio ni operador. |
+| Nombre del muelle: "Domingo Casaux" (otra fuente: "Cazaux") | nota municipal de un torneo de aguas abiertas, 2024 | **No se publica el nombre** (grafía dudosa). |
+| Tasa por ingreso/egreso de embarcaciones, "Ordenanza Fiscal 5525, Anexo I", unidad "Md" | PDF `ACTA_REU_N3_ASAMBLEA_PROVINCIAL_07-01-2021.pdf` (un acta de asamblea, no la ordenanza) | **No se publica**: la fuente no es la ordenanza, "Md" no está definido y no hay monto 2026. La guía dice que no pudimos confirmar si se cobra ni cuánto. |
+| Guardería Náutica Chascomús (sitio propio, sin precio ni alquiler); Club de Regatas (guardería y embarcaciones para socios, reglamento sin monto); Club Pesca y Náutica (solo nota municipal 2022); Puerto Chascomús (country) | sitios propios | **No se nombran** (regla: sin prestadores ni clubes en la guía). La guía dice en general que hay guarderías privadas y clubes, con tarifas no publicadas y algunos clubes solo para socios (el reglamento del Club de Regatas lo dice). |
+| Baños públicos en los paradores | `chascomus.gob.ar/turismo/nota/84/CONF_APP_RUTA_WEB_HOME` | **No se publica**: la URL no corresponde a una nota (parece un nombre técnico). |
+| Estacionamiento y accesibilidad | "no encontré fuente" | Se dice que no lo podemos confirmar. |
+| Requisitos de Prefectura, límite de velocidad en nudos, zonas vedadas, novedades 2026 | "no encontré fuente" | Se dice que no lo podemos confirmar; la guía manda a la Oficina de Turismo. |
+
+**Teléfonos de la Oficina de Turismo** (dados por el dueño el 28/10/2026): (2241) 603414 y (2241) 430405. El 603414 lo corrobora un listado del Ministerio de Turismo bonaerense (con la dirección Av. Costanera España 25); el 430405 no se encontró en otra fuente. Se publican ambos en la guía como los pasó el dueño; confirmar el segundo.
+
+**Publicado** con `wordpress/scripts/chascomus-accesos-2026-10-28.php` (es y en): sección "Dónde se pesca", dos preguntas actualizadas, una nueva ("¿Dónde se puede bajar la lancha?") y dos fuentes. Sin precios, sin tasa, sin nombres.
