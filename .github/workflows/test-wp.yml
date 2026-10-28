@@ -96,6 +96,7 @@ jobs:
             $f[1]["desde_monto"] = 99999; $f[1]["desde_moneda"] = "ARS"; $f[1]["desde_unidad"] = "por lancha"; // no date: must not show
             $f[2]["publicado"] = 0; $f[2]["titulo"] = "PAQUETE-OCULTO"; $f[2]["interno"] = "INTERNO-NO-PUBLICO";
             update_field( "paquetes", $f, $e->ID );
+            update_field( "paquetes_info", [ [ "titulo" => "INFO-DE-PRUEBA", "texto" => "Primer párrafo de prueba\nSegundo párrafo de prueba", "fuente_nombre" => "FUENTE-INFO", "fuente_url" => "https://example.com/info", "consultada" => "20261028" ], [ "titulo" => "", "texto" => "BLOQUE-SIN-TITULO" ] ], $e->ID );
           '
           w eval '
             $id = wp_insert_post( [ "post_type" => "pm_entrevista", "post_status" => "publish", "post_title" => "Prueba: el río manda", "post_name" => "prueba-el-rio-manda", "post_content" => "<!-- wp:paragraph --><p>Charla de prueba.</p><!-- /wp:paragraph -->" ] );
@@ -185,6 +186,18 @@ jobs:
           check /litoral/corrientes/pesca-en-esquina/ 200 'MAS-GRATIS'
           check /paquetes-de-pesca/esquina/ 200 'v-paquetes' 'PENDIENTE'
           check /paquetes-de-pesca/esquina/ 200 'Pedir cotización de esta opción'
+          check /paquetes-de-pesca/esquina/ 200 'Preguntas frecuentes sobre los paquetes de pesca en Esquina'
+          check /paquetes-de-pesca/esquina/ 200 '"@type":"FAQPage"'
+          check /paquetes-de-pesca/esquina/ 200 '"@type":"WebPage"'
+          check /paquetes-de-pesca/esquina/ 200 'rel="canonical"'
+          check /paquetes-de-pesca/esquina/ 200 'rel="alternate" hreflang="es"'
+          check /paquetes-de-pesca/esquina/ 200 'Paquetes de pesca en Esquina: opciones y precios | Pescamapa'
+          check /paquetes-de-pesca/esquina/ 200 'Actualizado el'
+          check /especies/dorado/ 200 'Paquetes de pesca en Esquina'
+          check /paquetes-de-pesca/esquina/ 200 'Antes de viajar' 'BLOQUE-SIN-TITULO'
+          check /paquetes-de-pesca/esquina/ 200 'Segundo párrafo de prueba'
+          check /paquetes-de-pesca/esquina/ 200 'href="https://example.com/info"'
+          check /paquetes-de-pesca/esquina/ 200 'consultada el 28 de octubre de 2026'
           check /paquetes-de-pesca/esquina/ 200 'Desde \$ 150.000 por lancha'
           check /paquetes-de-pesca/esquina/ 200 'Precio de referencia al 28 de octubre de 2026'
           check /paquetes-de-pesca/esquina/ 200 'Precio: lo cotizamos' 'PAQUETE-OCULTO'

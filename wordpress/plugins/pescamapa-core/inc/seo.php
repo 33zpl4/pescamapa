@@ -128,13 +128,32 @@ function pm_seo(): array {
 		if ( $d ) {
 			$items = [];
 			foreach ( $paq as $n => $p ) {
-				$trip = array_filter( [ '@type' => 'TouristTrip', 'name' => $p['titulo'], 'description' => $p['resumen'] ] );
+				$trip = array_filter( [ '@type' => 'TouristTrip', 'name' => $p['titulo'], 'description' => $p['resumen'], 'provider' => [ '@type' => 'Organization', 'name' => 'Pescamapa', 'url' => pm_url_inicio( pm_lang() ) ] ] );
 				if ( $p['precio'] ) {
 					$trip['offers'] = [ '@type' => 'Offer', 'price' => $p['precio']['monto'], 'priceCurrency' => $p['precio']['moneda'], 'validFrom' => $p['precio']['fecha'] ];
 				}
 				$items[] = [ '@type' => 'ListItem', 'position' => $n + 1, 'item' => $trip ];
 			}
 			$s['jsonld'][] = [ '@context' => 'https://schema.org', '@type' => 'ItemList', 'name' => pm_t( 'paquetes.h1', $a ), 'itemListElement' => $items ];
+			$s['jsonld'][] = [
+				'@context'     => 'https://schema.org',
+				'@type'        => 'WebPage',
+				'name'         => pm_t( 'paquetes.h1', $a ),
+				'description'  => $s['description'],
+				'url'          => pm_url_paquetes( $k, pm_lang() ),
+				'inLanguage'   => pm_meta_idioma()['html'],
+				'dateModified' => get_post_modified_time( 'Y-m-d', true, $dp ),
+				'isPartOf'     => [ '@type' => 'WebSite', 'name' => 'Pescamapa', 'url' => pm_url_inicio( pm_lang() ) ],
+				'about'        => [ '@type' => 'Place', 'name' => $d['nombre'] ],
+			];
+			$s['jsonld'][] = [
+				'@context'   => 'https://schema.org',
+				'@type'      => 'FAQPage',
+				'mainEntity' => array_map( fn( $n ) => [ '@type' => 'Question', 'name' => pm_t( "paquetes.faq.$n.q", $a ), 'acceptedAnswer' => [ '@type' => 'Answer', 'text' => pm_t( "paquetes.faq.$n.a", $a ) ] ], [ 1, 2, 3, 4 ] ),
+			];
+			if ( $d['foto'] ) {
+				$s['imagen'] = wp_get_attachment_image_url( $d['foto'], 'large' );
+			}
 			$s['jsonld'][] = [
 				'@context'        => 'https://schema.org',
 				'@type'           => 'BreadcrumbList',

@@ -137,6 +137,25 @@ function pm_paquetes( int $post_id ): array {
 	return $out;
 }
 
+/** "Before you travel" blocks of the packages page: title, paragraphs, and the source with the date it was read. */
+function pm_paquetes_info( int $post_id ): array {
+	$out = [];
+	foreach ( pm_filas( 'paquetes_info', $post_id ) as $r ) {
+		$parrafos = array_values( array_filter( array_map( 'trim', preg_split( '/\R/', (string) ( $r['texto'] ?? '' ) ) ) ) );
+		if ( '' === trim( (string) ( $r['titulo'] ?? '' ) ) || ! $parrafos ) {
+			continue;
+		}
+		$out[] = [
+			'titulo'     => trim( (string) $r['titulo'] ),
+			'parrafos'   => $parrafos,
+			'fuente'     => trim( (string) ( $r['fuente_nombre'] ?? '' ) ),
+			'url'        => (string) ( $r['fuente_url'] ?? '' ),
+			'consultada' => (string) ( $r['consultada'] ?? '' ),
+		];
+	}
+	return $out;
+}
+
 /** Packages of the guide of this destination in this language (never borrowed from another language). */
 function pm_destino_paquetes( string $clave, string $idioma ): array {
 	$p = pm_buscar( 'pm_destino', $clave, $idioma );

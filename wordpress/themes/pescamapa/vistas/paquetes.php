@@ -6,7 +6,9 @@ $idioma = pm_lang();
 $dp     = pm_buscar( 'pm_destino', (string) get_query_var( 'pm_paquete_clave' ), $idioma );
 $d      = pm_destino( $dp->ID );
 $paq    = pm_paquetes( $dp->ID );
+$info   = pm_paquetes_info( $dp->ID );
 $a      = [ 'lugar' => $d['nombre'] ];
+$modificado = get_post_modified_time( 'Y-m-d', true, $dp );
 
 get_header(); ?>
 <div class="v-destino v-paquetes">
@@ -22,9 +24,12 @@ get_header(); ?>
 			<div class="eyebrow"><?php pm_e( 'paquetes.eyebrow' ); ?></div>
 			<h1><?php pm_e( 'paquetes.h1', $a ); ?></h1>
 			<p class="bajada"><?php pm_e( 'paquetes.bajada', $a ); ?></p>
+			<p class="confianza"><?php pm_e( 'ficha.por' ); ?> <?php echo esc_html( $d['autor'] ?: 'Equipo Pescamapa' ); ?> · <?php pm_e( 'ficha.actualizado' ); ?> <time datetime="<?php echo esc_attr( $modificado ); ?>"><?php echo esc_html( pm_fecha( $modificado, $idioma ) ); ?></time></p>
 		</div>
 	</header>
 	<div class="shell cuerpo">
+		<p class="intro"><?php pm_e( 'paquetes.intro', $a ); ?></p>
+		<p><a href="<?php echo esc_url( $d['url'] ); ?>"><?php pm_e( 'paquetes.guia.intro', $a ); ?></a></p>
 		<section class="como" aria-labelledby="como-h">
 			<h2 id="como-h"><?php pm_e( 'paquetes.como.h' ); ?></h2>
 			<ol>
@@ -69,6 +74,27 @@ get_header(); ?>
 				</article>
 			<?php endforeach; ?>
 		</div>
+		<?php if ( $info ) : ?>
+			<section class="antes" aria-labelledby="antes-h">
+				<h2 id="antes-h"><?php pm_e( 'paquetes.antes.h' ); ?></h2>
+				<?php foreach ( $info as $b ) : ?>
+					<div class="bloque">
+						<h3><?php echo esc_html( $b['titulo'] ); ?></h3>
+						<?php foreach ( $b['parrafos'] as $t ) : ?><p><?php echo esc_html( $t ); ?></p><?php endforeach; ?>
+						<?php if ( $b['fuente'] ) : ?>
+							<p class="note"><?php pm_e( 'paquetes.fuente' ); ?>: <?php if ( $b['url'] ) : ?><a href="<?php echo esc_url( $b['url'] ); ?>" rel="noopener"><?php echo esc_html( $b['fuente'] ); ?></a><?php else : echo esc_html( $b['fuente'] ); endif; ?><?php if ( $b['consultada'] ) : ?>, <?php pm_e( 'paquetes.consultada', [ 'fecha' => pm_fecha( $b['consultada'], $idioma ) ] ); ?><?php endif; ?></p>
+						<?php endif; ?>
+					</div>
+				<?php endforeach; ?>
+			</section>
+		<?php endif; ?>
+		<section class="faq" aria-labelledby="faq-h">
+			<h2 id="faq-h"><?php pm_e( 'paquetes.faq.h', $a ); ?></h2>
+			<?php foreach ( [ 1, 2, 3, 4 ] as $n ) : ?>
+				<h3><?php pm_e( "paquetes.faq.$n.q", $a ); ?></h3>
+				<p><?php pm_e( "paquetes.faq.$n.a", $a ); ?></p>
+			<?php endforeach; ?>
+		</section>
 		<p class="note"><?php pm_e( 'paquetes.licencia', $a ); ?></p>
 		<p><a href="<?php echo esc_url( $d['url'] ); ?>"><?php pm_e( 'paquetes.guia', $a ); ?></a></p>
 		<?php get_template_part( 'parciales/consulta', null, [ 'destino' => $d['clave'], 'lugar' => $d['nombre'], 'especies' => $d['especies'] ] ); ?>
