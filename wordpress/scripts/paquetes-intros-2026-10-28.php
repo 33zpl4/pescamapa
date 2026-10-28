@@ -1,6 +1,6 @@
 <?php
 /**
- * Goya and Esquina (es/en/pt), 28/10/2026: the intro and the Google description of the packages page say what is
+ * Goya and Esquina (es/en/pt; Esquina en/pt exist only after esquina-traducciones-2026-10-28 has been applied), 28/10/2026: the intro and the Google description of the packages page say what is
  * really offered in each place (the generic text no longer lists night fishing or boat tours, which Esquina does not
  * have). Only fills an EMPTY field: anything an editor wrote is left alone. Run with wp-script.yml
  * (script = paquetes-intros-2026-10-28).
@@ -16,6 +16,8 @@ $t = [
 	],
 	'esquina' => [
 		'es' => [ 'Armamos salidas de pesca en Esquina: carnada viva, señuelos (spinning y baitcasting), mosca, al garete y trolling, y packs de varios días con alojamiento. Cada opción dice qué incluye y el precio se cotiza según tu grupo y tus fechas.', 'Paquetes de pesca en Esquina: carnada viva, señuelos, mosca, al garete y trolling, todo incluido y packs de varios días con alojamiento. Cotización sin costo.' ],
+		'en' => [ 'We put together fishing trips in Esquina: live bait, lures (spinning and baitcasting), fly fishing, drift fishing and trolling, plus multi-day packs with lodging. Each option says what it includes, and the price is quoted for your group and dates.', 'Fishing packages in Esquina, Argentina: live bait, lures, fly fishing, drift fishing and trolling, all-inclusive and multi-day packs with lodging. Free quote.' ],
+		'pt' => [ 'Montamos saídas de pescaria em Esquina: isca viva, iscas artificiais (spinning e baitcasting), mosca, pesca à deriva e corrico, e pacotes de vários dias com hospedagem. Cada opção diz o que inclui e o preço é cotado conforme o seu grupo e as suas datas.', 'Pacotes de pescaria em Esquina, Argentina: isca viva, iscas artificiais, mosca, pesca à deriva e corrico, tudo incluído e pacotes de vários dias com hospedagem. Cotação sem custo.' ],
 	],
 ];
 
