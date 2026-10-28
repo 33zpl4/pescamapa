@@ -97,6 +97,8 @@
 .v-especies .tarjeta h2 a:hover { text-decoration: underline; }
 .v-especies .tarjeta p { margin: 0; }
 .v-especies .quien { font-size: var(--fs-caption); color: var(--muted); }
+.v-especies .chips li { background: var(--paper); padding: 0; }
+.v-especies .chips a { display: block; padding: 6px 10px; background: transparent; }
 .especies-todas { margin-top: 2em; }
 
 /* Related notes inside a guide or a species page */
