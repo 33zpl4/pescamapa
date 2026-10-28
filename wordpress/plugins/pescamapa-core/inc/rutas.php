@@ -2,6 +2,7 @@
 /**
  * URLs, same as the Astro site:
  *   [/pt|/en]/<region>/<provincia>/<slug>/   destination guides
+ *   /especies/  /pt/especies/  /en/species/   species index
  *   /especies/<clave>/  /pt/especies/…  /en/species/…
  *   /mapa/  /pt/mapa/  /en/map/
  *   /creditos/  /pt/creditos/  /en/credits/  (301 to the home: the page was removed)
@@ -24,6 +25,7 @@ function pm_registrar_rutas(): void {
 	foreach ( pm_idiomas() as $i ) {
 		$pre = 'es' === $i ? '' : "{$i}/";
 		$seg = PM_SEGMENTOS[ $i ];
+		add_rewrite_rule( "^{$pre}{$seg['especies']}/?$", "index.php?pm_vista=especies&pm_lang={$i}", 'top' );
 		add_rewrite_rule( "^{$pre}{$seg['especies']}/([^/]+)/?$", "index.php?pm_vista=especie&pm_especie_clave=\$matches[1]&pm_lang={$i}", 'top' );
 		add_rewrite_rule( "^{$pre}{$seg['mapa']}/?$", "index.php?pm_vista=mapa&pm_lang={$i}", 'top' );
 		add_rewrite_rule( "^{$pre}{$seg['creditos']}/?$", "index.php?pm_vista=creditos&pm_lang={$i}", 'top' );
@@ -154,7 +156,7 @@ add_filter( 'template_include', function ( $plantilla ) {
 
 // The virtual views are not "not found" just because no post matched.
 add_filter( 'pre_handle_404', function ( $corto, $query ) {
-	if ( in_array( $query->get( 'pm_vista' ), [ 'inicio', 'mapa', 'creditos', 'entrevistas', 'notas', 'pique', 'viaje', 'terminos', 'privacidad', 'rio', 'rio-punto' ], true ) ) {
+	if ( in_array( $query->get( 'pm_vista' ), [ 'inicio', 'mapa', 'creditos', 'entrevistas', 'notas', 'especies', 'pique', 'viaje', 'terminos', 'privacidad', 'rio', 'rio-punto' ], true ) ) {
 		status_header( 200 );
 		return true;
 	}

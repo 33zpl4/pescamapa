@@ -88,7 +88,7 @@ Igual que en Astro, ahora en WordPress:
   destacada) solo en la versión en español; pt/en los heredan
   (`inc/datos.php`).
 - **URLs** (`inc/rutas.php`): `[/pt|/en]/<region>/<provincia>/<slug>/`,
-  `/especies/<clave>/` (`/en/species/`), `/mapa/` (`/en/map/`),
+  `/especies/` (índice, `/en/species/`) y `/especies/<clave>/`, `/mapa/` (`/en/map/`),
   `/terminos/` (`/pt/termos/`, `/en/terms/`) y `/privacidad/` (`/pt/privacidade/`, `/en/privacy/`): texto en `data/legal.json`, links en el pie y bajo los formularios (26/10/2026; los lee un abogado antes de darlos por definitivos).
   `/creditos/` (`/en/credits/`) solo redirige (301) al inicio: la página de créditos se sacó el 26/10/2026.
 - **Completitud, no bloqueos** (`inc/reglas.php`, decisión del 20/10/2026):

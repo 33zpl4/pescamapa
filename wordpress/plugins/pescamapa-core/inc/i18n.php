@@ -75,6 +75,9 @@ function pm_url_entrevistas( string $i ): string {
 function pm_url_notas( string $i ): string {
 	return pm_url( PM_SEGMENTOS[ $i ]['notas'], $i );
 }
+function pm_url_especies( string $i ): string {
+	return pm_url( PM_SEGMENTOS[ $i ]['especies'], $i );
+}
 function pm_url_especie( string $clave, string $i ): string {
 	return pm_url( PM_SEGMENTOS[ $i ]['especies'] . '/' . $clave, $i );
 }

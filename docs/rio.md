@@ -20,7 +20,7 @@ los niveles de alerta y evacuación, y el viento y la lluvia de la zona. Todo co
   Open-Meteo; si responden que no, el dueño avisa y se saca el clima (`rio-traer.py`, `parciales/rio.php`, `vistas/rio.php`).
 
 ## Cómo funciona
-1. `.github/workflows/rio.yml` corre todos los días (11:40 UTC) y a mano. Ejecuta `wordpress/build/rio-traer.py`
+1. `.github/workflows/rio.yml` corre todos los días (10:07 UTC = 07:07 en Argentina; antes 11:40 UTC, cambiado el 28/10/2026 para ver si ya hay lectura del día; el log imprime la línea HORA con cuántas estaciones ya tienen la fecha de hoy) y a mano. Ejecuta `wordpress/build/rio-traer.py`
    (lee INA y Open-Meteo; falla solo si no pudo leer nada) y guarda con `wordpress/scripts/rio-guardar.php`
    (valida y guarda la opción `pm_rio`, con `VERIFIED`).
 2. Qué destinos y estaciones: `wordpress/plugins/pescamapa-core/data/rio.json` (una entrada por clave de destino;

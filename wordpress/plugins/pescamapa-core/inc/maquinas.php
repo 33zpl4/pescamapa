@@ -78,6 +78,7 @@ function pm_llms_txt(): string {
 		$out[] = '';
 		$out[] = '## Especies';
 		$out[] = '';
+		$out[] = pm_llms_item( 'Todas las especies', pm_url_especies( 'es' ), '', pm_alternas_fijas( 'pm_url_especies' ) );
 		foreach ( $especies as $e ) {
 			$out[] = pm_llms_item( $e['nombre'], $e['url'], $e['resumen'], pm_alternas_especie( $e['clave'] ) );
 		}
