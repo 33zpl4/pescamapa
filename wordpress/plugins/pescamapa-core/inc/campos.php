@@ -188,6 +188,8 @@ add_action( 'acf/include_fields', function () {
 				],
 				[ 'key' => 'field_pm_d_tab_paquetes', 'label' => 'Paquetes', 'type' => 'tab' ],
 				[ 'key' => 'field_pm_d_paq_msg', 'label' => '', 'type' => 'message', 'message' => 'Opciones de pesca que Pescamapa arma en este destino (página "Paquetes de pesca en…"). No se nombra al guía. <strong>Si una opción está tildada "Publicada" y no tiene precio, la página dice que se cotiza al pedirla.</strong> El precio "desde" solo se muestra si están el monto, la moneda, la unidad (por lancha, por persona) y la <strong>fecha</strong> del precio. Cargá los datos en cada idioma.', 'new_lines' => 'br', 'esc_html' => 0 ],
+				[ 'key' => 'field_pm_d_paq_intro', 'name' => 'paquetes_intro', 'label' => 'Introducción de la página (opcional; si queda vacío, va un texto general)', 'type' => 'textarea', 'rows' => 3, 'instructions' => 'Dos o tres líneas con lo que de verdad se ofrece acá (modalidades, especies, packs). Es lo primero que lee quien llega.' ],
+				[ 'key' => 'field_pm_d_paq_desc', 'name' => 'paquetes_description', 'label' => 'Descripción para Google (opcional, hasta 160 caracteres)', 'type' => 'text', 'maxlength' => 160 ],
 				[
 					'key' => 'field_pm_d_paquetes', 'name' => 'paquetes', 'label' => 'Paquetes', 'type' => 'repeater', 'layout' => 'block', 'button_label' => 'Agregar paquete',
 					'sub_fields' => [

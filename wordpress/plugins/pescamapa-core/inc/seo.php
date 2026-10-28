@@ -123,7 +123,7 @@ function pm_seo(): array {
 		$paq = $d ? pm_paquetes( $dp->ID ) : [];
 		$a   = [ 'lugar' => $d['nombre'] ?? '' ];
 		$s['title']       = pm_t( 'paquetes.title', $a );
-		$s['description'] = pm_t( 'paquetes.description', $a );
+		$s['description'] = ( $dp ? trim( (string) pm_campo( 'paquetes_description', $dp->ID ) ) : '' ) ?: pm_t( 'paquetes.description', $a );
 		$s['alternas']    = pm_alternas_paquetes( $k );
 		if ( $d ) {
 			$items = [];
