@@ -11,7 +11,11 @@ prestadores interno). Esto no cambia el orden: arma la cañería para que, cuand
 
 ## Qué falta, en orden
 1. **Medir antes de vender.** Qué búsqueda trae a quien consulta: guardar el *landing* y la consulta de entrada (sin cookies ni datos personales extra) en cada consulta, y mirar Search Console por página. Sin esto no sabemos cuál palabra paga.
-2. **La capa "cuánto cuesta" por destino.** Un bloque fijo en cada guía: "Cuánto cuesta salir a pescar en X", con rango **fechado y con fuente** cuando un prestador lo confirme; mientras no haya dato, "a consultar" + formulario. Es el H2 que responde "tarifas / precio" sin inventar.
+2. **Página propia "Cuánto cuesta pescar en X" (corregido 28/10/2026, a pedido del dueño: las guías ya son largas y un bloque enterrado no rankea por "precio").**
+   Una página por destino **solo si tiene contenido real**, no una cáscara de "a consultar". Contenido que se puede sostener sin inventar: costo de la licencia (con la fuente oficial, si existe),
+   de qué se compone el precio de una salida (lancha, días, qué incluye) y **qué preguntar antes de contratar**, rangos de prestadores **solo si están confirmados y fechados**, alojamiento con fecha,
+   y el formulario. En la guía queda un resumen de dos líneas con enlace a la página. Destinos sin ningún dato fechado: solo el resumen en la guía hasta que haya.
+   Piloto candidato: Goya (ya tiene fichas con precio cargado; verificar fechas antes de publicar).
 3. **Oferta de prestadores relevada, no solo listada.** Por destino prioritario (Goya, Esquina, Paso de la Patria, La Paz, San Martín de los Andes, Chascomús): 3–5 prestadores con sitio propio, relevados con `docs/mensajes-prestadores.md`, estado "relevado" → "acordado". Sin oferta no hay comisión.
 4. **Páginas por intención, solo donde hay datos.** "Guías de pesca en X" (lista + qué incluye + cómo pedir) y "Alquiler de botes / bajadas" para Chascomús cuando haya fuentes. En portugués, "pacotes de pescaria" para Corrientes. No se crean vacías.
 5. **Posicionamiento.** Una frase que se repite en todas: *"Lo investigamos nosotros, mostramos las fuentes y, si querés, te armamos la salida."* Diferencia: neutral (no ordenamos por comisión), fechado, con la fuente a la vista.
@@ -24,3 +28,4 @@ Nada de precios sin fecha y fuente; nada de "el mejor"; nada de contacto de pres
 - Cuánto del precio se muestra en la ficha pública (rango fechado vs. "a consultar" siempre) una vez definida la fase 2.
 - Prioridad de destinos para relevar prestadores primero.
 - Si se abre una página de "Guías de pesca en X" por destino aun con pocos prestadores confirmados (recomendado: no hasta tener 3).
+- La página "Cuánto cuesta": ¿piloto en Goya?
