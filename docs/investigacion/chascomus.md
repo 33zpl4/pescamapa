@@ -125,3 +125,15 @@ El dueño pegó las cuatro respuestas. Otra vez **ninguna URL se pudo abrir desd
 ## 10. Decisión del dueño sobre el cupo (27/10/2026)
 
 El dueño indicó **10 piezas**: "es el dato que figura en la web oficial". Se publica **durante la veda**: 10 piezas por pescador y por día para "el resto de las lagunas bonaerenses" (Chascomús no tiene cupo propio). El resumen de buscador que decía 15 queda como duda menor; el cupo fuera de la veda sigue sin publicarse (la página solo lo fija en la veda). Verificado por el dueño, no por Claude (el sandbox no abre la página).
+
+## 11. Ronda 3: accesos, muelles, bajadas de lanchas y alquiler (28/10/2026)
+
+Objetivo: la sección "Dónde se baja al agua" de la guía y las consultas "alquiler de botes laguna de Chascomús", "bajada de lanchas Chascomús",
+"muelle de pesca Chascomús costo" (`docs/seo-palabras-clave.md`). Se publica como **áreas**, con administrador, costo con fecha, fuente y fecha de consulta;
+nada de coordenadas exactas ni de clubes/prestadores sin sitio propio abierto. Lo que Gemini no pueda sostener con enlace profundo queda como "no lo podemos confirmar".
+
+Qué ya sabemos (no volver a pedirlo): laguna de 3.044 ha, camino de 30 km, muelle de pescadores y mirador en la costanera (sitio municipal de turismo); notas de 2026 nombran
+costanera, zona del club, bajadas de lanchas y guardería náutica; licencia, veda 1/9–30/11, 25 cm, 10 piezas en veda, 15 km/h (ver §1–10). Los nombres "Club de Pescadores de Chascomús"
+con muelle de hormigón y canon, y "Club de Regatas", **no** se encontraron con fuente: tratarlos como no confirmados.
+
+Prompt para pasar tal cual: ver la respuesta del 28/10/2026 en la sesión; al recibir la respuesta se audita con la checklist de `README.md` y se anota acá debajo (§12).
