@@ -6,11 +6,11 @@
  * Spanish guide as written by esquina-2026-10-20 + esquina-reglamento-2026-10-20 (regulation verified 20/10/2026).
  * Run with wp-script.yml (script = esquina-traducciones-2026-10-28).
  *
- * Idempotent: a language that already exists is never touched. Shared fields (region, province, location, species,
+ * Dry run was clean (29/10/2026: pt and en, 9 questions and 8 sources each); applied. Idempotent: a language that already exists is never touched. Shared fields (region, province, location, species,
  * photo) are inherited from the Spanish guide. Dry run first.
  */
 
-$aplicar = false;
+$aplicar = true;
 $hoy     = '20261020';
 
 function pm_et_p( string $html ): string {
