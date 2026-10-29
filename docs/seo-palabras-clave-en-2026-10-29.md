@@ -90,8 +90,10 @@ La plantilla está abajo.
 | **4. Hubs regionales con días sueltos** | Guías de San Martín/Junín y Bariloche/Limay + módulo "reservá un guía de bote" | `san martin de los andes fly fishing`, `fly fishing bariloche argentina`, `limay river fly fishing`: 50/mes, puja hasta 4,14 | Días guiados a 550–750 USD; "las agencias de EE. UU. no los venden" | **Sí.** San Martín/Junín ya tiene guía; Bariloche/Limay requiere ronda (R4). Encaja con el modelo "día suelto" y con 1–2 socios por lugar |
 | **5. DIY / presupuesto** | "How to fish Patagonia on a budget", rampas públicas, licencias paso a paso | `fly fishing argentina on a budget` (50, puja 3,00), `without a guide` (50) | Alquiler de 4x4, derechos de acceso público | **Sí, barato y alineado:** la nota de licencia por provincia, la tabla de tallas y cupos (ya publicada) y las rampas |
 
-> Nada de lo que está en la columna "NO están" se publica ni se usa para fijar una comisión. Se confirma con 2 o 3 prestadores (qué cobran, qué pagan hoy
-> a quien los intermedia) antes de decidir nuestro porcentaje.
+> **Ruling del dueño (29/10/2026):** las cifras de la columna "NO están" (comisiones, precios de viaje, tarifas) son **referencia interna**: valen para elegir
+> dirección y priorizar, y se consideran válidas (el dueño las estima correctas en ~80 %) **salvo que un guía o un lodge las desmienta directamente**.
+> **Nunca se publican** ni aparecen en una página del sitio como dato; para publicar un "desde" hace falta precio del prestador con fecha. El porcentaje de
+> comisión se fija con cada prestador al cerrar el acuerdo.
 
 ## Plantilla: página de prestador o lodge (1 o 2 por lugar): qué responde
 

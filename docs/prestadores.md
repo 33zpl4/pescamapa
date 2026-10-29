@@ -94,3 +94,25 @@ Los textos libres de la ficha (en dos líneas, lancha, motor, cuándo trabaja, p
 - **Consecuencia ya vigente:** no se publican teléfono, WhatsApp, email ni redes del prestador; las consultas llegan a Pescamapa y las pasamos. **No se lista todo**: la ficha muestra qué ofrece y cómo trabaja, no cómo saltearnos. Qué otros datos mostrar (por ejemplo el precio de referencia con fecha) queda abierto para cuando se defina la fase 2.
 - **En lo que decimos al público:** no presentamos "directorio abierto" como ventaja ni criticamos a competidores por ocultar contactos: hacemos lo mismo y el modelo no está cerrado.
 - **Qué medir para decidir el pivote** (revisar cada mes): impresiones y clics en Search Console por guía, consultas recibidas por destino y por prestador (panel de consultas), cuántas pasamos a un prestador y cuántas se concretan (estado de la consulta), y qué prestadores preguntan por figurar.
+
+
+## Decisión del dueño (29/10/2026): modelo de dos niveles (Gemini), con una salvedad
+
+El dueño adopta el modelo de dos niveles: información pública imparcial y operadores con acuerdo arriba.
+
+| | Ficha informativa (sin acuerdo) | Operador con acuerdo |
+| --- | --- | --- |
+| Objetivo | Cubrir la oferta real del río y dar credibilidad | Convertir y cobrar comisión |
+| Contacto | Interno; la consulta va por el formulario de Pescamapa | Igual; lo pasamos nosotros |
+| Marca visible | "Información pública, todavía sin verificar" + enlace para corregir o reclamar la ficha | "Operador con acuerdo con Pescamapa" + una línea que dice que cobramos comisión al operador y que el pescador paga lo mismo |
+| Lugar | Después de los operadores con acuerdo | Primero en la lista del destino |
+
+Cómo se activa el nivel 2 en wp-admin: Prestadores → la ficha → **Aceptó aparecer** y **Estado = Trabajamos juntos** (`acuerdo`). Sin las dos cosas no sale la marca ni sube.
+
+**Salvedad (escenario "desviar la venta"):** si el operador consultado no tiene cupo o no contesta, se le dice al cliente la verdad y se le ofrecen alternativas **nombrando al operador con acuerdo y diciendo que lo es**. No se usa el nombre de un lodge conocido solo para atraer la búsqueda ni se insinúa falta de cupo sin haberlo consultado. Motivo: riesgo de marca y de reputación, y nuestra credibilidad es el activo.
+
+**Antes de decir "agencia" o vender paquetes ajenos:** confirmar si hace falta registro en Argentina (referir por comisión no es lo mismo que vender el paquete). Pendiente con el dueño.
+
+Formulario de las guías: ahora también pide el país desde el que viaja (fechas, pescadores, modalidad y especie ya estaban).
+
+Cifras de comisión y de precios del análisis externo: referencia **interna** del dueño (ver `docs/seo-palabras-clave-en-2026-10-29.md`); nunca se publican.

@@ -34,6 +34,9 @@ $filas = [
 		</div>
 	<?php endif; ?>
 	<div class="cuerpo">
+		<?php if ( $r['acuerdo'] && $r['consentimiento'] ) : ?>
+			<p class="acuerdo"><strong><?php pm_e( 'prest.acuerdo' ); ?></strong> <span><?php pm_e( 'prest.acuerdo_nota' ); ?></span></p>
+		<?php endif; ?>
 		<p class="tipo"><?php echo esc_html( implode( ' · ', array_map( fn( $k ) => pm_opcion( 'tipo', $k ), $r['tipo'] ) ) ); ?></p>
 		<h3><?php echo esc_html( $r['nombre'] ); ?></h3>
 		<?php if ( $r['descripcion'] ) : ?><p<?php echo $es( 'descripcion' ); // phpcs:ignore ?>><?php echo esc_html( $r['descripcion'] ); ?></p><?php endif; ?>
