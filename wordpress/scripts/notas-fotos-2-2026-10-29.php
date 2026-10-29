@@ -11,7 +11,7 @@
  * run with wp-script.yml (script = notas-fotos-2-2026-10-29).
  */
 
-$aplicar = false;
+$aplicar = true;
 $carpeta = '/tmp/pm-fotos';
 
 $fotos = [
