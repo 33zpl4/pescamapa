@@ -141,3 +141,11 @@ con **fecha y fuente** y se trata como referencia, no como oferta.
 - **R4: Bariloche / Limay.** Temporada, permisos de Río Negro y Neuquén, tramos públicos, qué ofrecen los guías para días sueltos, con enlace y fecha.
 - **R5: Referencias de precio (solo públicas).** Tarifas publicadas de 5 a 8 prestadores de Paraná y 5 a 8 de Patagonia (por pescador, noches, qué incluye),
   cada una con enlace y fecha. Sirve para el "desde" y para conversar con prestadores; no se publica la lista.
+
+## Hallazgo de la lectura de títulos en inglés (29/10/2026, solo lectura del sitio en vivo)
+
+- De las páginas en inglés que mencionan al dorado, **solo la guía de Esquina** le faltaba "golden": la ficha de especie ("Golden dorado: world record, size and rules") y la
+  nota "Best time to fish golden dorado" ya lo dicen. Corrección en `en-golden-dorado-2026-10-29` (simulacro primero; solo toca el texto exacto leído).
+- **Mayor hallazgo: faltan versiones en inglés de los destinos de dorado.** Paso de la Patria y La Paz existen solo en español y portugués. Para el turista de EE. UU.
+  que busca "golden dorado fishing argentina", Paso de la Patria (fiestas del dorado, tallas y cupos, licencia) es la página más natural. **Traducir
+  Paso de la Patria y La Paz al inglés es la siguiente construcción de Etapa 1**, antes de la guía pilar.
