@@ -11,7 +11,7 @@
  * run with wp-script.yml (script = nota-golden-dorado-guia-2026-10-29). Run AFTER paso-de-la-patria-en-2026-10-29 so {paso} links the English guide.
  */
 
-$aplicar = false;
+$aplicar = true;
 $hoy     = '20261029';
 $clave   = 'golden-dorado-guia';
 
