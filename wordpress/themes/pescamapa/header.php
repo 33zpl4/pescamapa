@@ -21,7 +21,7 @@ $alternas = $seo['alternas'];
 	<div class="shell inner">
 		<a class="brand" href="<?php echo esc_url( $inicio ); ?>" aria-label="Pescamapa — <?php pm_e( 'ficha.inicio' ); ?>"><span class="mark" aria-hidden="true">↗</span> PESCAMAPA</a>
 		<div class="right">
-			<nav aria-label="Principal">
+			<nav id="menu-principal" aria-label="Principal">
 				<a class="opt" href="<?php echo esc_url( $inicio . '#destinos' ); ?>"><?php pm_e( 'nav.destinos' ); ?></a>
 				<a class="opt" href="<?php echo esc_url( pm_url_mapa( $idioma ) ); ?>"><?php pm_e( 'nav.mapa' ); ?></a>
 				<a class="opt" href="<?php echo esc_url( pm_url_pique( $idioma ) ); ?>"><?php pm_e( 'nav.pique' ); ?></a>
@@ -35,6 +35,7 @@ $alternas = $seo['alternas'];
 					<a href="<?php echo esc_url( $alternas[ $i ] ?? pm_url_inicio( $i ) ); ?>" hreflang="<?php echo esc_attr( $m['html'] ); ?>" lang="<?php echo esc_attr( $m['html'] ); ?>" title="<?php echo esc_attr( $m['nombre'] ); ?>"<?php echo $i === $idioma ? ' aria-current="true"' : ''; ?>><?php echo esc_html( $m['corto'] ); ?></a>
 				<?php endforeach; ?>
 			</nav>
+			<button type="button" class="menu-btn" aria-expanded="false" aria-controls="menu-principal" aria-label="<?php pm_e( 'nav.menu' ); ?>"></button>
 		</div>
 	</div>
 </header>

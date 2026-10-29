@@ -137,6 +137,9 @@ jobs:
           }
           check / 200 'PESCAMAPA'
           check /en/ 200 'lang="en"'
+          check / 200 'class="menu-btn"'
+          check / 200 'id="menu-principal"'
+          check /en/ 200 'aria-label="Menu"'
           check / 200 'Armá tu viaje →'
           check / 200 'Investigación propia'
           check /en/ 200 'Plan your trip →'

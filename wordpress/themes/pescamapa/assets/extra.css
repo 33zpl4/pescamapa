@@ -283,3 +283,25 @@
 .prose .wp-block-table { overflow-x: auto; margin: 1.2em 0; }
 .prose .wp-block-table table { min-width: 560px; }
 .prose .wp-block-table th, .prose .wp-block-table td { text-align: left; vertical-align: top; padding: 8px 10px; border-bottom: 1px solid var(--line); }
+
+/* Home hero on phones (29/10/2026): the map SVG has overflow: visible and its (almost transparent) neighbouring-country
+   shapes reached over the text column, so taps on the two hero buttons landed on the map. Decorative shapes ignore the
+   pointer; the text column sits above the map. */
+.mapa-hero .vecinos, .mapa-hero .pais, .mapa-hero .rio { pointer-events: none; }
+.v-inicio .hero-text { position: relative; z-index: 2; }
+
+/* Mobile menu (29/10/2026): below 760 px the header links were hidden with nothing to open them. */
+.nav { position: relative; }
+.nav .menu-btn { display: none; }
+@media (max-width: 760px) {
+	.nav .menu-btn { display: inline-flex; position: relative; align-items: center; justify-content: center; width: 40px; height: 40px; padding: 0; border: 1px solid currentColor; border-radius: 50%; background: transparent; color: inherit; cursor: pointer; }
+	.nav .menu-btn::before, .nav .menu-btn::after { content: ""; position: absolute; width: 18px; height: 2px; background: currentColor; transition: transform 0.15s; }
+	.nav .menu-btn::before { transform: translateY(-4px); }
+	.nav .menu-btn::after { transform: translateY(4px); }
+	.nav .menu-btn[aria-expanded="true"]::before { transform: rotate(45deg); }
+	.nav .menu-btn[aria-expanded="true"]::after { transform: rotate(-45deg); }
+	.nav #menu-principal { display: none; position: absolute; left: 0; right: 0; top: 100%; flex-direction: column; align-items: stretch; gap: 0; padding: 6px 16px 20px; background: var(--forest); color: var(--white); box-shadow: 0 18px 30px rgb(5 15 12 / 0.35); }
+	.nav.menu-abierto #menu-principal { display: flex; }
+	.nav #menu-principal a { display: block; padding: 14px 4px; border-bottom: 1px solid rgb(255 255 255 / 0.14); font-size: var(--fs-lead); }
+	.nav #menu-principal .cta { margin-top: 14px; padding: 14px; border: 0; border-radius: 99px; text-align: center; font-size: var(--fs-body); }
+}

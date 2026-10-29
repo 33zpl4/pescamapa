@@ -62,6 +62,12 @@ jobs:
               console.log('  tras tocar:', JSON.stringify({ antes, despues: { url: p.url(), y: await p.evaluate(() => scrollY) } }));
               if (p.url() !== antes.url && !p.url().includes('#')) await p.goBack({ waitUntil: 'load' }).catch(() => {});
             }
+            const mb = await p.$('.menu-btn');
+            if (mb) {
+              await p.touchscreen.tap(...(await mb.boundingBox().then((r) => [r.x + r.width / 2, r.y + r.height / 2])));
+              await p.waitForTimeout(600);
+              console.log('menu abierto:', JSON.stringify(await p.evaluate(() => ({ expanded: document.querySelector('.menu-btn').getAttribute('aria-expanded'), links: [...document.querySelectorAll('#menu-principal a')].map((a) => { const r = a.getBoundingClientRect(); return [a.textContent.trim().slice(0, 20), getComputedStyle(a).display, r.width | 0, r.height | 0]; }) }))));
+            } else { console.log('menu abierto: NO HAY .menu-btn'); }
             console.log('errores:', JSON.stringify(errores.slice(0, 20)));
             await ctx.close();
           }
