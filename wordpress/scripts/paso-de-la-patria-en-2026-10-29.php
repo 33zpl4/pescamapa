@@ -10,7 +10,7 @@
  * Idempotent: if the English guide exists it is not touched. Dry run first. Run with wp-script.yml (script = paso-de-la-patria-en-2026-10-29).
  */
 
-$aplicar = false;
+$aplicar = true;
 $hoy     = '20261021'; // the date of the Spanish text and of its sources, not today's
 
 function pm_pe_p( string $html ): string {
