@@ -70,3 +70,74 @@ Paso de la Patria · pescaria em Goya · pescaria em Esquina · licença de pesc
 2. **Cuando haya export en es/pt:** reordenar `docs/seo-palabras-clave.md` por volumen real.
 3. **Ronda de investigación de Jurassic Lake** (acceso, temporada, permisos, reglas de Santa Cruz): primer destino nuevo de Patagonia candidato.
 4. **Baja prioridad:** páginas por lodge, equipo y marcas.
+
+---
+
+# Plan de construcción: del dato al negocio (agregado el 29/10/2026)
+
+**Criterio del dueño:** lo más importante no es siempre lo de mayor volumen, es **dejar el sitio bien posicionado económicamente** y construir
+los bloques para eso. El turista de EE. UU. paga un precio superior y suele tener buen presupuesto: **atenderlo no es un error**, y el inglés
+sale primero cuando el tema lo pide. Sobre los lodges: la pregunta no es si 1, 2 o 10 por lugar (serán 1 o 2); lo que importa es **qué responde cada página**.
+La plantilla está abajo.
+
+## Qué propone el análisis externo (resumen) y cómo lo tratamos
+
+| Prioridad | Propuesta del análisis | Dato que sí está en el export | Cifras que NO están (hipótesis a confirmar con prestadores) | Nuestra lectura |
+| --- | --- | --- | --- | --- |
+| **1. Golden dorado** | Guía "definitiva" + viajes de un día desde Buenos Aires (Delta) | 4 consultas de ~500/mes, competencia paga baja, puja 3,5–3,8; `buenos aires fly fishing` 50/mes, puja 4,38 | Viaje de 5 a 7 días a 3.500–5.500 USD por pescador; comisión del 15 %; día en el Delta a 400–850 USD | **Sí, primero.** Es nuestro terreno y tenemos las piezas (nota "cuándo pescar", especie, reglas, guías, paquetes). Falta una guía pilar que las una y las secciones del río por tramo (ver investigación R1) |
+| **2. Jurassic Lake (Lago Strobel)** | Guía maestra: costos, temporada, "beats", logística; matriz de equipo para viento | `jurassic lake argentina` y `patagonia` 500/mes cada una, competencia baja (16–20), `lodge` 50/mes | Paquetes de 5.200 USD (4 noches) a 8.000 USD (semana); comisión de 780–1.200 USD por caña; nombres de "beats" y de lodges | **Sí, como destino nuevo.** Hoy no tenemos nada. Necesita una ronda de investigación (R2) antes de escribir una línea; los nombres de tramos y los precios del análisis **no se usan** hasta que haya fuente |
+| **3. Lodges en Patagonia** | "Reseñas independientes y comparador" + páginas por lodge con "Request dates" | Pujas 3,2–6,2 por nombre de lodge; `fly fishing lodges in patagonia` 500/mes, 4,12 | Comparaciones "NerdWallet", tarifas, "agua privada vs pública" por lodge | **Cambia el formato:** no un comparador abierto sino **la plantilla de página de prestador** (abajo), 1 o 2 por lugar, con relación comercial declarada y fecha de verificación |
+| **4. Hubs regionales con días sueltos** | Guías de San Martín/Junín y Bariloche/Limay + módulo "reservá un guía de bote" | `san martin de los andes fly fishing`, `fly fishing bariloche argentina`, `limay river fly fishing`: 50/mes, puja hasta 4,14 | Días guiados a 550–750 USD; "las agencias de EE. UU. no los venden" | **Sí.** San Martín/Junín ya tiene guía; Bariloche/Limay requiere ronda (R4). Encaja con el modelo "día suelto" y con 1–2 socios por lugar |
+| **5. DIY / presupuesto** | "How to fish Patagonia on a budget", rampas públicas, licencias paso a paso | `fly fishing argentina on a budget` (50, puja 3,00), `without a guide` (50) | Alquiler de 4x4, derechos de acceso público | **Sí, barato y alineado:** la nota de licencia por provincia, la tabla de tallas y cupos (ya publicada) y las rampas |
+
+> Nada de lo que está en la columna "NO están" se publica ni se usa para fijar una comisión. Se confirma con 2 o 3 prestadores (qué cobran, qué pagan hoy
+> a quien los intermedia) antes de decidir nuestro porcentaje.
+
+## Plantilla: página de prestador o lodge (1 o 2 por lugar): qué responde
+
+Lo que importa no es cuántos, es que cada página conteste **las preguntas que decide una reserva**. Cada respuesta lleva fuente, fecha de verificación
+o dice "a consultar"; nunca se rellena.
+
+1. **¿Qué es y para quién?** Tipo de pesca (mosca, señuelos, carnada), nivel, si sirve para acompañantes no pescadores y para familias.
+2. **¿Dónde está y cómo se llega?** Aeropuerto o ciudad base, tiempo y tipo de traslado, distancia a la ciudad.
+3. **¿Qué agua se pesca y con qué permisos?** Río o tramo, agua pública o privada, licencia necesaria y quién la tramita (enlaza a la guía de licencia de esa provincia).
+4. **¿Cuándo?** Temporada por especie y qué cambia con el nivel del río (enlaza a la nota "cuándo pescar" y al río de hoy).
+5. **¿Cómo es un día?** Embarcación, cantidad de pescadores por bote, guías e idiomas que hablan, equipo propio o provisto.
+6. **¿Qué incluye y qué no?** Alojamiento, comidas y bebidas, combustible, licencia, traslados, propinas, repuestos.
+7. **¿Cuánto cuesta?** Un "desde", con moneda, unidad (por pescador o por bote, noches mínimas), temporada y **fecha del precio**. Sin fecha: "a consultar".
+8. **¿Qué reglas aplican?** Pesca y devolución, medidas y cupos (enlaza a la tabla), qué pasa con vedas y río alto.
+9. **¿Cómo se reserva y qué pasa si algo cambia?** Formulario de Pescamapa, depósito y condiciones, política de cancelación (la del prestador, por escrito), quién factura.
+10. **¿Por qué confiar?** Relación comercial declarada ("socio de Pescamapa"), fecha de verificación, fuentes, fotos propias o cedidas, reseñas reales cuando existan, **qué no pudimos confirmar**.
+11. **¿Y si no es lo que busco?** Alternativas cercanas y el resto de la guía del lugar.
+
+Datos estructurados: `TouristTrip` con `Offer` solo si el precio está completo y fechado; `FAQPage` con las preguntas 5, 6, 8 y 9. El contacto del prestador
+sigue siendo interno (decisión del 27/10).
+
+## Orden de construcción propuesto (primero lo que más pesa en lo económico)
+
+1. **Guía pilar "Golden dorado en Argentina" (inglés primero, luego es/pt).** Une lo que ya tenemos (nota de temporada, ficha de especie, reglas, guías de
+   destino, páginas de paquetes, río de hoy) y suma las secciones por tramo del Paraná y los métodos. Antes: ronda R1.
+2. **Inglés en lo que ya existe:** "golden dorado" en títulos y H1 de las guías en inglés (lectura de títulos hecha; script a continuación); paquetes en inglés con
+   los precios cuando los cargue el dueño. Es lo más barato y llega directo al turista de EE. UU.
+3. **Plantilla de prestador** lista y probada con el primer socio (Goya/Esquina), con los datos que dé el prestador.
+4. **Jurassic Lake**: ronda R2 → guía maestra en inglés.
+5. **Delta y Buenos Aires (días desde la ciudad)**: ronda R3 antes de decir qué se pesca ahí y qué reglas rigen.
+6. **San Martín/Junín (ya hay guía) y Bariloche/Limay**: ronda R4.
+7. **Licencias por provincia, tabla de tallas y rampas** (el piso de confianza y la puerta del "DIY").
+
+## Rondas de investigación (para Gemini u otra IA con búsqueda; después se audita)
+
+Reglas de siempre: cada dato con **enlace donde se leyó y fecha**; si no está en una fuente abierta, "NO CONFIRMADO"; lo comercial (precios, comisiones) se pide
+con **fecha y fuente** y se trata como referencia, no como oferta.
+
+- **R1: Dorado por tramo del Paraná.** Para el Alto Paraná (Misiones/Itá Ibaté–Ituzaingó), el Paraná medio (Paso de la Patria–Goya–Esquina–La Paz) y el
+  Delta: ¿qué cambia en el pez y en la pesca? Métodos que se usan en cada tramo con fuente (mosca, señuelos, carnada: tuvira/morena, trolling), meses
+  declarados por operadores con enlace, qué reglas rigen en cada jurisdicción (Misiones, Corrientes, Entre Ríos, Buenos Aires), y dónde se puede pescar de costa.
+- **R2: Jurassic Lake / Lago Strobel (Santa Cruz).** Acceso (ruta, vuelo, tiempos), temporada y clima declarados por fuentes, permisos y licencia de Santa
+  Cruz (autoridad, enlace, valores con fecha), reglas (devolución, anzuelos, tallas), qué operadores existen y qué incluyen **con enlace a su tarifa publicada y la fecha**, 
+  riesgos (viento, camino). No dar nombres de "beats" ni precios sin enlace.
+- **R3: Delta del Paraná y Buenos Aires.** ¿Se pesca dorado en el Delta/Tigre/San Fernando, en qué época y con qué reglas de la provincia de Buenos Aires?
+  Qué operadores ofrecen salidas de un día, qué incluyen y qué publican de tarifa (enlace y fecha).
+- **R4: Bariloche / Limay.** Temporada, permisos de Río Negro y Neuquén, tramos públicos, qué ofrecen los guías para días sueltos, con enlace y fecha.
+- **R5: Referencias de precio (solo públicas).** Tarifas publicadas de 5 a 8 prestadores de Paraná y 5 a 8 de Patagonia (por pescador, noches, qué incluye),
+  cada una con enlace y fecha. Sirve para el "desde" y para conversar con prestadores; no se publica la lista.
