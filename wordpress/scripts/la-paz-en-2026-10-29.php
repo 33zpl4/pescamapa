@@ -12,7 +12,7 @@
  * (script = la-paz-en-2026-10-29). One wp-script at a time.
  */
 
-$aplicar = false;
+$aplicar = true;
 $hoy     = '20261022'; // the date of the fees table and of the sources, not today's
 
 function pm_lpe_p( string $html ): string {
