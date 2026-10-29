@@ -7,7 +7,7 @@
  * an editor's own text is left alone. Dry run first. Run with wp-script.yml (script = en-golden-dorado-2026-10-29).
  */
 
-$aplicar = false;
+$aplicar = true;
 
 $cambios = [
 	'seo_title'       => [
