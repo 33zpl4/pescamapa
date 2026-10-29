@@ -28,7 +28,7 @@ get_header(); ?>
 		</div>
 	</header>
 	<div class="shell cuerpo">
-		<p class="intro"><?php pm_e( 'paquetes.intro', $a ); ?></p>
+		<p class="intro"><?php echo esc_html( trim( (string) pm_campo( 'paquetes_intro', $dp->ID ) ) ?: pm_t( 'paquetes.intro', $a ) ); ?></p>
 		<p><a href="<?php echo esc_url( $d['url'] ); ?>"><?php pm_e( 'paquetes.guia.intro', $a ); ?></a></p>
 		<section class="como" aria-labelledby="como-h">
 			<h2 id="como-h"><?php pm_e( 'paquetes.como.h' ); ?></h2>

@@ -1,0 +1,68 @@
+name: Investigar sitios
+
+# Reads public pages (competitors, official sites) from a GitHub runner, which has open internet, and pushes
+# plain-text reports to the scratch branch `investigacion`, so they can be read from the Claude sandbox, which
+# cannot reach those sites. Read-only towards every site: declares itself a generic bot, obeys robots.txt, 1 request per
+# host every 1.5 s, at most 30 pages per run, no logins or forms. See docs/investigar.md.
+
+on:
+  workflow_dispatch:
+    inputs:
+      urls:
+        description: "URLs (una por línea o separadas por espacio, hasta 30)"
+        required: true
+      etiqueta:
+        description: "Nombre de la carpeta de resultados (ej. competencia-1)"
+        default: "investigacion"
+      sitemap:
+        description: "Resumir también el sitemap de cada sitio (true/false)"
+        default: "true"
+      navegador:
+        description: "Abrir con navegador (para sitios con JavaScript; saca captura) (true/false)"
+        default: "false"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: investigar
+  cancel-in-progress: false
+
+jobs:
+  leer:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - name: Install
+        env:
+          NAVEGADOR: ${{ github.event.inputs.navegador }}
+        run: |
+          npm init -y >/dev/null && npm i --silent cheerio@1
+          if [ "$NAVEGADOR" = "true" ]; then npm i --silent playwright@1 && npx playwright install --with-deps chromium >/dev/null; fi
+      - name: Read
+        env:
+          URLS: ${{ github.event.inputs.urls }}
+          LABEL: ${{ github.event.inputs.etiqueta }}
+          SITEMAP: ${{ github.event.inputs.sitemap }}
+          RENDER: ${{ github.event.inputs.navegador }}
+          OUT: ${{ runner.temp }}/out
+        run: node scripts/investigar.mjs
+      - name: Push to branch investigacion
+        env:
+          LABEL: ${{ github.event.inputs.etiqueta }}
+        run: |
+          set -e
+          dest="$(echo "$LABEL" | tr -c 'a-zA-Z0-9\n-' '-' | tr 'A-Z' 'a-z')-$(date -u +%Y%m%d-%H%M)"
+          git config user.name "Claude" && git config user.email "noreply@anthropic.com"
+          url="https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git"
+          if git ls-remote --exit-code --heads "$url" investigacion >/dev/null 2>&1; then
+            git fetch -q --depth=1 "$url" investigacion && git checkout -q -B investigacion FETCH_HEAD
+          else
+            git checkout -q --orphan investigacion && git rm -rfq . 2>/dev/null || true
+          fi
+          mkdir -p "$dest" && cp -r "${{ runner.temp }}/out/." "$dest/"
+          git add "$dest" && git commit -qm "Investigación: $dest"
+          git push -q "$url" investigacion
+          echo "Resultados en la rama investigacion, carpeta $dest"
