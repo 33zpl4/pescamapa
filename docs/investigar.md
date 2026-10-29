@@ -19,7 +19,7 @@ H1–H3, cantidad de palabras, enlaces internos/externos y secciones más enlaza
 
 ## Reglas de cortesía (no se cambian sin hablar)
 
-- Se identifica: `PescamapaResearchBot/1.0 (+https://pescamapa.com; …)`.
+- Se declara como robot con un nombre genérico (`ResearchBot/1.0`), sin nombrar a Pescamapa. No se hace pasar por un navegador de persona.
 - Respeta `robots.txt`: lo que desautoriza no se lee, y el índice lo dice.
 - Un pedido por sitio cada 1,5 s, 30 páginas por corrida como máximo.
 - Solo lectura: nada de logins, formularios ni saltarse bloqueos. Si un sitio bloquea, no se insiste.

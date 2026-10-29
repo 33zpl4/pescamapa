@@ -8,7 +8,7 @@
 import { mkdir, writeFile } from 'node:fs/promises';
 import { load } from 'cheerio';
 
-const UA = 'PescamapaResearchBot/1.0 (+https://pescamapa.com; editorial research, 1 request/1.5 s)';
+const UA = 'ResearchBot/1.0 (editorial research; 1 request/1.5 s; obeys robots.txt)';
 const MAX_URLS = 30;
 const urls = (process.env.URLS || '').split(/\s+/).filter(Boolean).slice(0, MAX_URLS);
 const label = (process.env.LABEL || 'investigacion').replace(/[^a-z0-9-]+/gi, '-').toLowerCase();

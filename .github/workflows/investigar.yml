@@ -2,7 +2,7 @@ name: Investigar sitios
 
 # Reads public pages (competitors, official sites) from a GitHub runner, which has open internet, and pushes
 # plain-text reports to the scratch branch `investigacion`, so they can be read from the Claude sandbox, which
-# cannot reach those sites. Read-only towards every site: identifies itself, obeys robots.txt, 1 request per
+# cannot reach those sites. Read-only towards every site: declares itself a generic bot, obeys robots.txt, 1 request per
 # host every 1.5 s, at most 30 pages per run, no logins or forms. See docs/investigar.md.
 
 on:
