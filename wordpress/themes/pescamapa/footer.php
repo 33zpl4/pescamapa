@@ -26,6 +26,17 @@ $inicio = pm_url_inicio( $idioma );
 		<p class="legal"><?php pm_e( 'pie.legal' ); ?> © <?php echo esc_html( gmdate( 'Y' ) ); ?> Pescamapa <span class="pie-legal-enlaces"><a href="<?php echo esc_url( pm_url_terminos( $idioma ) ); ?>"><?php pm_e( 'legal.terminos.corto' ); ?></a><a href="<?php echo esc_url( pm_url_privacidad( $idioma ) ); ?>"><?php pm_e( 'legal.privacidad.corto' ); ?></a></span></p>
 	</div>
 </footer>
+<script>
+// Mobile menu: the header links used to be hidden below 760 px with nothing to open them.
+(() => {
+	const h = document.querySelector('header.nav'), b = h && h.querySelector('.menu-btn');
+	if (!b) return;
+	const set = (abierto) => { h.classList.toggle('menu-abierto', abierto); b.setAttribute('aria-expanded', abierto ? 'true' : 'false'); };
+	b.addEventListener('click', () => set(b.getAttribute('aria-expanded') !== 'true'));
+	document.addEventListener('keydown', (e) => { if (e.key === 'Escape') set(false); });
+	h.querySelectorAll('#menu-principal a').forEach((a) => a.addEventListener('click', () => set(false)));
+})();
+</script>
 <?php
 // Browser in another of our languages: suggest that version, never redirect
 // (search engines crawl without a language; hreflang does the steering).
