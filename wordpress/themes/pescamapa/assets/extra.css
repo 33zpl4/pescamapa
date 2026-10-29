@@ -276,3 +276,8 @@
 		font: 700 var(--fs-body) var(--font-body); padding: 14px 20px; border-radius: 99px; text-decoration: none; box-shadow: 0 6px 24px rgb(17 37 31 / 0.35); transition: opacity .2s; }
 	.barra-pedir.oculta { opacity: 0; pointer-events: none; }
 }
+
+/* Tables inside notes (size/bag limits): scroll sideways on narrow screens instead of breaking the layout */
+.prose .wp-block-table { overflow-x: auto; margin: 1.2em 0; }
+.prose .wp-block-table table { min-width: 560px; }
+.prose .wp-block-table th, .prose .wp-block-table td { text-align: left; vertical-align: top; padding: 8px 10px; border-bottom: 1px solid var(--line); }
