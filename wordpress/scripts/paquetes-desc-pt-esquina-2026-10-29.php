@@ -5,7 +5,7 @@
  * (anything an editor wrote since is left alone). Run with wp-script.yml (script = paquetes-desc-pt-esquina-2026-10-29).
  */
 
-$aplicar = false;
+$aplicar = true;
 
 $viejo = 'Pacotes de pescaria em Esquina, Argentina: isca viva, iscas artificiais, mosca, pesca à deriva e corrico, tudo incluído e pacotes de vários dias com hospedagem. Cotação sem custo.';
 $nuevo = 'Pacotes de pescaria em Esquina, Argentina: isca viva, artificiais, mosca, deriva e corrico, tudo incluído e pacotes com hospedagem. Cotação sem custo.';
