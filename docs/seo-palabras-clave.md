@@ -2,7 +2,7 @@
 
 Origen: lista de consultas pasada por el dueño el 28/10/2026 (armada por razonamiento, **sin volúmenes**: no hay Search Console ni
 Keyword Planner detrás). Los volúmenes los da Google Keyword Planner (Argentina y Brasil) y, ya indexado el sitio, Search Console
-(consultas en posición 8–20 de cada página = lo que hay que reforzar). Complementa `docs/seo-oportunidades.md`.
+(consultas en posición 8–20 de cada página = lo que hay que reforzar). Complementa `docs/seo-oportunidades.md`. **Export en inglés con volúmenes (29/10/2026): `docs/seo-palabras-clave-en-2026-10-29.md`.**
 
 Reglas que mandan sobre la lista: lo que no se puede verificar online no se publica (decisión 22/10); precios solo con fecha y fuente,
 si no "a consultar"; el contacto de prestadores es interno; áreas, no puntos exactos; "Armá tu viaje" es el único camino comercial hoy.
