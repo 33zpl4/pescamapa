@@ -6,11 +6,11 @@
  * section, not filled in. Not included on purpose: the 85 cm "national reference" for surubí (cited in the Goya guide
  * but not read in full: Corrientes requires release), cupos of Buenos Aires outside the veda (no source), Entre Ríos.
  *
- * Idempotent: a language that already exists is not touched. Dry run first; run with wp-script.yml
+ * Dry run clean 29/10/2026 (es/pt/en, 9 sources each, SEO within limits): applied. Idempotent: a language that already exists is not touched. Run with wp-script.yml
  * (script = nota-tallas-cupos-vedas-2026-10-29).
  */
 
-$aplicar = false;
+$aplicar = true;
 $hoy     = '20261029';
 
 function pm_tc_p( string $html ): string {
