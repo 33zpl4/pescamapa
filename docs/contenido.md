@@ -47,3 +47,7 @@ Por cada fuente, mandar en el chat:
 `permiso` (sí | no | pendiente), `destino`, `resumen`, `usado_en`. Cuando se
 automatice, cada fila pasa a ser un registro y los hechos extraídos llevan
 `fuente_id` + tiempo.
+
+## Fotos (regla del dueño, 29/10/2026)
+
+Solo se cargan fotos que el dueño aporta como disponibles o permitidas, **siempre con el crédito del fotógrafo** (`foto_autor` y `foto_origen`: propia, cedida o licencia). No se marca la licencia como pendiente ni se busca otra fuente cada vez; si una foto tiene condiciones especiales, el dueño lo avisa al pasarla. Las fotos viven en `wordpress/fotos/` (máx. 1600 px de ancho) y se cargan con un script de `wordpress/scripts/` (simulacro primero).
