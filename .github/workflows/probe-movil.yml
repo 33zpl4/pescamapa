@@ -1,0 +1,70 @@
+name: Probe mobile (read-only)
+
+# Opens the live site in a phone-sized touch browser and reports, in the log only (writes nothing, pushes nothing):
+# what element sits on top of the home-page hero buttons, what happens when each one is tapped, JS errors, and what the
+# header does at phone width. Used to diagnose "buttons do not work and there is no menu on mobile" (29/10/2026).
+
+on:
+  workflow_dispatch:
+    inputs:
+      base:
+        description: "URL base"
+        default: "https://pescamapa.com"
+      rutas:
+        description: "rutas separadas por espacio"
+        default: "/ /en/"
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - name: Probe
+        env:
+          BASE: ${{ github.event.inputs.base }}
+          RUTAS: ${{ github.event.inputs.rutas }}
+        run: |
+          mkdir probe && cd probe && npm init -y >/dev/null && npm i --silent playwright@1 && npx playwright install --with-deps chromium >/dev/null
+          cat > probe.mjs <<'JS'
+          import { chromium, devices } from 'playwright';
+          const b = await chromium.launch();
+          const tel = devices['iPhone 13'];
+          for (const ruta of process.env.RUTAS.split(/\s+/).filter(Boolean)) {
+            const ctx = await b.newContext({ ...tel });
+            const p = await ctx.newPage();
+            const errores = [];
+            p.on('pageerror', (e) => errores.push('pageerror: ' + e.message));
+            p.on('console', (m) => { if (m.type() === 'error') errores.push('console: ' + m.text()); });
+            p.on('requestfailed', (r) => errores.push('requestfailed: ' + r.url() + ' ' + (r.failure() || {}).errorText));
+            await p.goto(process.env.BASE + ruta, { waitUntil: 'networkidle', timeout: 60000 }).catch((e) => console.log('goto', e.message));
+            await p.waitForTimeout(1500);
+            console.log(`\n=== ${ruta}  viewport ${JSON.stringify(p.viewportSize())}  scrollWidth ${await p.evaluate(() => document.documentElement.scrollWidth)}`);
+            console.log('header nav links:', JSON.stringify(await p.evaluate(() => [...document.querySelectorAll('header.nav a')].map((a) => ({ t: a.textContent.trim().slice(0, 24), cls: a.className, display: getComputedStyle(a).display, vis: getComputedStyle(a).visibility, r: (({ x, y, width, height }) => [x | 0, y | 0, width | 0, height | 0])(a.getBoundingClientRect()) })))));
+            console.log('menu/hamburger candidates:', await p.evaluate(() => document.querySelectorAll('button[aria-expanded], .menu, .burger, .hamburguesa, [aria-label*="enu" i], summary').length));
+            for (const sel of ['.hero .button.primary', '.hero .button.secondary']) {
+              const el = await p.$(sel);
+              if (!el) { console.log(sel, 'NO EXISTE'); continue; }
+              await el.scrollIntoViewIfNeeded();
+              const info = await p.evaluate((s) => {
+                const e = document.querySelector(s); const r = e.getBoundingClientRect();
+                const x = r.x + r.width / 2, y = r.y + r.height / 2; const top = document.elementFromPoint(x, y);
+                const d = (n) => n ? `${n.tagName.toLowerCase()}.${(n.className && n.className.baseVal !== undefined ? n.className.baseVal : n.className) || ''}`.slice(0, 80) : null;
+                return { rect: [r.x | 0, r.y | 0, r.width | 0, r.height | 0], href: e.getAttribute('href'), pointerEvents: getComputedStyle(e).pointerEvents, encima: d(top), esElMismo: top === e || e.contains(top), cadena: (() => { const out = []; let n = top; while (n && out.length < 6) { out.push(d(n)); n = n.parentElement; } return out; })() };
+              }, sel);
+              console.log(sel, JSON.stringify(info));
+              const antes = { url: p.url(), y: await p.evaluate(() => scrollY) };
+              await p.touchscreen.tap(info.rect[0] + info.rect[2] / 2, info.rect[1] + info.rect[3] / 2);
+              await p.waitForTimeout(2500);
+              console.log('  tras tocar:', JSON.stringify({ antes, despues: { url: p.url(), y: await p.evaluate(() => scrollY) } }));
+              if (p.url() !== antes.url && !p.url().includes('#')) await p.goBack({ waitUntil: 'load' }).catch(() => {});
+            }
+            console.log('errores:', JSON.stringify(errores.slice(0, 20)));
+            await ctx.close();
+          }
+          await b.close();
+          JS
+          node probe.mjs
