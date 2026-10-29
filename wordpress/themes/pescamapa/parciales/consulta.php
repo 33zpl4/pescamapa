@@ -36,6 +36,7 @@ $resultado = pm_consulta_resultado();
 				<label><?php pm_e( 'consulta.nombre' ); ?> <input name="nombre" required maxlength="80" autocomplete="name"></label>
 				<label><?php pm_e( 'consulta.contacto' ); ?> <input name="contacto" required maxlength="120" autocomplete="tel"<?php echo $boutique ? ' placeholder="' . esc_attr( pm_t( 'consulta.ph.contacto' ) ) . '"' : ''; ?>></label>
 				<label><?php pm_e( 'consulta.cuando' ); ?> <input name="cuando" maxlength="80"<?php echo $boutique ? ' placeholder="' . esc_attr( pm_t( 'consulta.ph.cuando' ) ) . '"' : ''; ?>></label>
+				<label><?php pm_e( 'consulta.pais' ); ?> <input name="pais" maxlength="60" autocomplete="country-name"></label>
 				<label><?php pm_e( 'consulta.personas' ); ?> <input name="personas" type="number" min="1" max="99" value="2" inputmode="numeric"></label>
 				<label><?php pm_e( 'consulta.modalidad' ); ?>
 					<select name="modalidad">

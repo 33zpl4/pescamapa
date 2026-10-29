@@ -203,7 +203,9 @@ function pm_prestadores_destino( string $destino, bool $con_borradores = false )
 			$out[] = $r;
 		}
 	}
-	usort( $out, fn( $a, $b ) => pm_prestador_publico( $b ) <=> pm_prestador_publico( $a ) );
+	// Public cards first; among them the operators we work with (stated agreement + consent) go on top.
+	$arriba = fn( $r ) => $r['acuerdo'] && $r['consentimiento'];
+	usort( $out, fn( $a, $b ) => [ pm_prestador_publico( $b ), $arriba( $b ) ] <=> [ pm_prestador_publico( $a ), $arriba( $a ) ] );
 	return $out;
 }
 
