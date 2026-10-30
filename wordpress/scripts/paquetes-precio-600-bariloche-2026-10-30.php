@@ -10,7 +10,7 @@
  * Dry run first ($aplicar = false); run with wp-script.yml (script = paquetes-precio-600-bariloche-2026-10-30).
  */
 
-$aplicar = false;
+$aplicar = true;
 $destino = 'bariloche';
 
 $unidad = [
