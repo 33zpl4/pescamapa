@@ -47,7 +47,7 @@ todas a nosotros (centralizar datos y cobrar comisión más adelante).
 - **Dossiers de lodges** (lote 1, ocho lodges): `docs/investigacion/lodges-lote1-dossiers-2026-10-30.md`. Regla: solo vale el dominio del lodge o una fuente regulatoria; una tarifa sin temporada es `NO CONFIRMADO`; las agencias no son fuente.
 - **Inicio:** se saca la tarjeta "¿Qué querés pescar?" del mapa del hero (`vistas/inicio.php`); se unen las dos guías de San Martín/Junín (había una duplicada por un error mío: ver el recap de Patagonia) y el mapa muestra "Lago Strobel" en español y "Jurassic Lake" en inglés.
 - **Error que no se repite:** antes de crear una guía, buscar si ya existe (clave y nombre en `wordpress/scripts/` y en la lista de guías vivas).
-- **Fotos cargadas hoy** (cedidas por el dueño, con crédito, ortografía confirmada): Jurassic Lake "Red Kulper", Junín "Chad Shmukler". Falta foto en Bariloche.
+- **Fotos cargadas hoy** (cedidas por el dueño, con crédito, ortografía confirmada): Jurassic Lake "Red Kulper", Junín "Chad Shmukler", Bariloche "arique.com" (adjunto #165, redimensionada de 1500×2000 / 443 KB a 1000×1333 / 217 KB; script `bariloche-foto-2026-10-30`).
 
 ## Al 24/10/2026
 
@@ -112,7 +112,7 @@ todas a nosotros (centralizar datos y cobrar comisión más adelante).
 
 - Pegar desde el navegador: `reglamentodepesca.org.ar/reglamento-items/ambientes-de-rio-negro/` y el texto general 2026/27 → cerrar Bariloche (Limay río negrino, Ñirihuau, Pichileufu), validez cruzada y fieltro.
 - **Anexo I oficial de Santa Cruz** (con o sin las líneas de exclusión) y la resolución de valores.
-- Foto de Bariloche con crédito; guía de equipo y viento para Jurassic Lake; versión es/pt de la guía pilar del dorado.
+- Guía de equipo y viento para Jurassic Lake; versión es/pt de la guía pilar del dorado.
 - Lodges: contactar a los de las fichas de información pública; San Huberto (403), Spring Creek (sin dominio), Estancia Tecka (sin portal). Primer operador con acuerdo: abre el nivel 2.
 - Consulta legal sobre el término "agencia" y sobre vender paquetes ajenos (pendiente con el dueño).
 - Pedir indexación de las URLs nuevas en Search Console (el dueño lo hace a mano).
