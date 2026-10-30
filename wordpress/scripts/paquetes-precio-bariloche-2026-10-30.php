@@ -13,7 +13,7 @@
  * (script = paquetes-precio-bariloche-2026-10-30).
  */
 
-$aplicar = false;
+$aplicar = true;
 $destino = 'bariloche';
 
 $datos = [
