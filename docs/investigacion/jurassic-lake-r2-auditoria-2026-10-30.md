@@ -85,3 +85,48 @@ Eso coincide con lo que seguimos sin tener. Estado de cada dato nuevo (**"leído
 
 **Contradicciones entre fuentes que hay que mostrar, no tapar:** la ruta de acceso desde Gobernador Gregores (turismo) frente a los traslados desde El Calafate (operadores) son dos
 accesos distintos, no un error; los tiempos varían de 5 a 6 horas según la fuente.
+
+## 5. Disposición N.º 241/2026, leída (PDF aportado por el dueño, 30/10/2026)
+
+Fuente: copia fiel del original, Ministerio de Producción, Comercio e Industria de Santa Cruz, Río Gallegos, 22/09/2026, Expte. MPCI-443.690/26. Son 8 páginas escaneadas (sin capa de texto); las leí una por una como imagen.
+**Límite:** el PDF trae la disposición y el Reglamento General (arts. 1.º a 18.º). **No trae los Anexos I y II**, que es donde están las reglas por ambiente. Todo lo específico de Strobel sigue sin leerse en la fuente.
+
+### Leído (se puede publicar citando la Disposición 241/2026)
+
+| Dato | Dónde | Estado |
+| --- | --- | --- |
+| Reglamento General de Pesca Deportiva Continental, **Temporada 2026/2027**, rige desde el **1/10/2026** | Art. 1.º de la disposición | Leído |
+| Temporada general: **1/10/2026 al 30/09/2027 inclusive**, sin perjuicio de regímenes especiales e interrupciones biológicas del Anexo I | Art. 7.º | Leído. Cierra la duda del fin de temporada |
+| Permiso personal, nominativo, intransferible; se porta en papel o digital con DNI/documento | Art. 3.º | Leído |
+| Categorías: residentes (RP-D/F/S/T), **no residentes (E-D diario, E-S semanal, E-T temporada)** y adicional de **trolling** (AT-D/S/T, se suma a un permiso ordinario) | Art. 4.º | Leído |
+| Valores: los fija la autoridad por resolución aparte; el permiso de temporada vale desde la emisión hasta el 30/09/2027; solo vale dentro de Santa Cruz | Art. 5.º | Leído. **Los montos no están en este PDF** |
+| Jornada de pesca: de la salida a la puesta del sol (Hidrografía Naval); pesca nocturna prohibida en toda la provincia | Arts. 6.º y 15.º t) | Leído |
+| Un solo señuelo artificial con un solo anzuelo simple o doble, con o sin rebaba | Art. 8.º | Leído |
+| Modalidades: spinning/cuchara/baitcasting, mosca, trolling (desde embarcación, cualquiera sea su propulsión) | Art. 9.º | Leído |
+| Un solo equipo de pesca activo a la vez | Art. 10.º | Leído |
+| Devolución obligatoria como régimen general en ríos, arroyos y 200 m en sus nacientes o desembocaduras; anzuelo simple o doble con micro rebaba aplastada | Art. 11.º | Leído. Para Strobel, ver Anexo I |
+| Prohibido pescar desde embarcación en lagos dentro de 200 m de las desembocaduras de ríos o arroyos | Art. 15.º a) | Leído. Relevante para la boca del Barrancoso |
+| Prohibidos plomos y señuelos con plomo en la cabeza o el núcleo | Art. 15.º r) | Leído. Dato útil para la nota de equipo |
+| Prohibido acopiar peces vivos; en zonas de devolución obligatoria no se pueden tener ni transportar ejemplares | Arts. 12.º y 15.º n) | Leído |
+| Motores: solo cuatro tiempos o dos tiempos con certificación de emisiones ultra bajas; **en embalses y lagos se autoriza pescar con motor; en ríos la navegación con motor está prohibida** (excepciones en el Anexo I) | Art. 16.º | Leído |
+| Didymo: desinfección obligatoria de waders, botas, equipos, flotadores y vehículos; el fieltro queda condicionado a cumplir la desinfección | Arts. 17.º y 18.º | Leído |
+| Considerandos: un estudio del CONICET (IPEEC-CENPAT) sobre la trucha arco iris en el **Lago Strobel y el Río Barrancoso** llevó a medidas restrictivas que **prohíben el sacrificio** de ejemplares | Considerandos | Leído. Es la fuente oficial de la devolución en Strobel, sin detalle de la medida |
+
+### Lo que contradice o matiza la tercera respuesta (Strobel)
+
+| Afirmación de la respuesta | Resultado |
+| --- | --- |
+| "Captura y devolución obligatoria" en Strobel | Respaldada por los considerandos (prohíben el sacrificio en Strobel y Barrancoso). El artículo concreto está en el Anexo I: sin leer |
+| "Anzuelo simple con o sin rebaba" | Coincide con el art. 8.º general. Si el Anexo I exige rebaba aplastada, la regla de devolución (art. 11.º) manda: sin leer |
+| "Prohibida la navegación con motores de combustión interna o propulsión mecánica" | **No confirmada.** El art. 16.º dice que en lagos se autoriza el motor; la restricción para Strobel, si existe, estaría en el Anexo I. No publicar |
+| "Abierto todo el año" | La temporada general es 1/10 al 30/09 (art. 7.º), o sea doce meses; si Strobel tiene una veda propia, está en el Anexo I. Decir "temporada 2026/27: 1/10/2026 al 30/09/2027" |
+
+### Qué se puede escribir ya en la guía
+
+Temporada 2026/27 (fechas del art. 7.º), permiso personal y categorías de no residente, trolling con permiso adicional, jornada solo de día, un señuelo y un anzuelo, sin plomo, un equipo a la vez, devolución en Strobel y Barrancoso por el estudio del CONICET (sin inventar medidas), Didymo, reglas de acceso al agua en ríos. **No se publica** nada de motores en Strobel, cupos, tallas ni valores en pesos hasta leer el Anexo I y la resolución de valores.
+
+### Pendiente
+
+1. Anexos I y II (`pesca.santacruz.gob.ar/ambientes/` y `/reglamento/`): el PDF aportado no los incluye.
+2. Resolución de valores (aparte; la respuesta 2 habla de la Disposición 242/2026, sin confirmar).
+3. Operadores y estado del camino (sin cambios).
