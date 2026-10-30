@@ -6,6 +6,7 @@
 // env: URLS (whitespace/newline separated), LABEL, SITEMAP=true|false, RENDER=true|false, OUT (output dir)
 
 import { mkdir, writeFile } from 'node:fs/promises';
+import { execFileSync } from 'node:child_process';
 import { load } from 'cheerio';
 
 const UA = 'ResearchBot/1.0 (editorial research; 1 request/1.5 s; obeys robots.txt)';
@@ -30,7 +31,7 @@ async function get(url, accept = 'text/html,application/xhtml+xml,application/xm
   const ctl = AbortSignal.timeout(25000);
   const r = await fetch(url, { headers: { 'user-agent': UA, accept, 'accept-language': 'es-AR,es;q=0.9,pt;q=0.8,en;q=0.7' }, redirect: 'follow', signal: ctl });
   const buf = Buffer.from(await r.arrayBuffer());
-  return { status: r.status, finalUrl: r.url, type: r.headers.get('content-type') || '', text: buf.subarray(0, 4_000_000).toString('utf8') };
+  return { status: r.status, finalUrl: r.url, type: r.headers.get('content-type') || '', text: buf.subarray(0, 4_000_000).toString('utf8'), buf };
 }
 
 // --- robots.txt (simple, conservative: our UA group, else '*') ---
@@ -172,6 +173,14 @@ for (const url of urls) {
       await page.screenshot({ path: `${out}/${id}.png`, fullPage: true }).catch(() => {});
       await page.close(); extra = '  · renderizada con navegador';
     } else r = await get(url);
+    if (r.status === 200 && r.buf && r.buf.subarray(0, 5).toString() === '%PDF-') {
+      // PDF: keep the file and, when poppler is there, its text layer (scans have none: say so).
+      await writeFile(`${out}/${id}.pdf`, r.buf);
+      let txt = '';
+      try { execFileSync('pdftotext', ['-layout', `${out}/${id}.pdf`, `${out}/${id}.pdf.txt`]); txt = (await import('node:fs')).readFileSync(`${out}/${id}.pdf.txt`, 'utf8'); } catch (e) { txt = '(pdftotext falló: ' + e.message + ')'; }
+      index.push({ url, status: r.status, note: `PDF, ${r.buf.length} bytes, ${txt.trim().length} caracteres de texto`, file: `${id}.pdf.txt` });
+      console.log('✓ PDF', url, txt.trim().length, 'caracteres'); continue;
+    }
     if (!/html|xml/i.test(r.type) && r.status === 200) { await writeFile(`${out}/${id}.txt`, `(${r.type}, no es HTML)\n` + clip(r.text, 20000)); index.push({ url, status: r.status, note: r.type }); continue; }
     const a = analyse(r.text, r.finalUrl);
     await writeFile(`${out}/${id}.md`, md(url, r, a, extra));

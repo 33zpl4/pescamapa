@@ -42,6 +42,7 @@ jobs:
           # Tools live OUTSIDE the checkout: touching the repo's package.json made the later branch switch fail.
           mkdir -p "$RUNNER_TEMP/inv" && cp scripts/investigar.mjs "$RUNNER_TEMP/inv/" && cd "$RUNNER_TEMP/inv"
           npm init -y >/dev/null && npm i --silent cheerio@1
+          command -v pdftotext >/dev/null || (sudo apt-get update -qq && sudo apt-get install -y -qq poppler-utils >/dev/null)
           if [ "$NAVEGADOR" = "true" ]; then npm i --silent playwright@1 && npx playwright install --with-deps chromium >/dev/null; fi
       - name: Read
         env:
