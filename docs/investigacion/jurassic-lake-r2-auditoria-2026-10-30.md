@@ -189,7 +189,9 @@ Archivo: `reglamento-santa-cruz-2026-2027.pdf`, 11 páginas con texto, alojado p
 | Anzuelo | Strobel y Barrancoso: simple, con o sin rebaba (Anexo I). El art. 11 pide rebaba aplastada en ríos y desembocaduras: ante la duda, **aplastada** |
 | Trucha arco iris | Anexo II: especie exótica pescable |
 
-### Tensión con la descripción de los operadores (a tratar con cuidado en la guía)
+### Tensión con la descripción de los operadores: resuelta por el dueño (30/10/2026)
+
+Criterio del dueño: 100 m de la desembocadura sigue siendo "cerca de la boca"; no es una contradicción. La guía lo dice así: se pesca cerca de la boca respetando la distancia mínima legal, y el operador confirma los sectores habilitados en cada fecha. Texto original de la nota, que queda como referencia:
 
 Los lodges describen "la boca" del Barrancoso como el mejor sector del lago. El Anexo I del Strobel excluye la pesca en 200 m sobre ambas márgenes alrededor de las desembocaduras de ríos vinculados al lago, y el del Barrancoso excluye 100 m desde sus desembocaduras. **No interpretamos cómo se aplica en cada punto.** La guía cita la regla tal cual y dice que el operador o los guardapescas confirman los sectores habilitados. No se promete "pescar en la boca".
 
