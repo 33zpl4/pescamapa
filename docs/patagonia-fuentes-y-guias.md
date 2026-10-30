@@ -8,7 +8,7 @@ Un solo lugar para retomar el trabajo de Patagonia. Lo que está leído lleva su
 | --- | --- | --- | --- |
 | **Lago Strobel / Jurassic Lake** (Santa Cruz) | es "Lago Strobel", en "Jurassic Lake" | `/patagonia/santa-cruz/pesca-en-jurassic-lake/`, `/en/patagonia/santa-cruz/fishing-in-jurassic-lake/` (los slugs conservan "jurassic-lake") | `jurassic-lake-2026-10-30` y sus ajustes (`-exclusion`, `-faq`, `-foto`, `-pin`, `jurassic-nombre`) |
 | **San Martín y Junín de los Andes** (Neuquén) | es, en | `/patagonia/neuquen/pesca-san-martin-junin-de-los-andes/`, `/en/patagonia/neuquen/fishing-san-martin-junin-de-los-andes/` | la guía es de `san-martin-junin-2026-10-24`; el 30/10 se le cargó el contenido 2026/27 con `junin-unificar-2026-10-30` |
-| **Bariloche y el Nahuel Huapi** (Río Negro) | es, en | `/patagonia/rio-negro/pesca-en-bariloche/`, `/en/patagonia/rio-negro/fishing-in-bariloche/` (confirmar en vivo) | `bariloche-2026-10-30` |
+| **Bariloche y el Nahuel Huapi** (Río Negro) | es, en | `/patagonia/rio-negro/pesca-en-bariloche/` (#161), `/en/patagonia/rio-negro/fishing-in-bariloche/` (#162); publicadas y verificadas el 30/10/2026 | `bariloche-2026-10-30` |
 
 **Error del 30/10 que no se repite:** se creó una guía duplicada de Junín (clave `junin-de-los-andes`) sin ver que ya existía la de `san-martin-junin` (24/10). El mapa del inicio mostró el nombre dos veces. **Antes de crear una guía: buscar la clave y el nombre en los scripts de `wordpress/scripts/` y en la lista de guías vivas.** El duplicado quedó en la papelera; sus URLs ya no sirven.
 
