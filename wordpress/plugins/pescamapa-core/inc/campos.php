@@ -195,6 +195,7 @@ add_action( 'acf/include_fields', function () {
 					'sub_fields' => [
 						[ 'key' => 'field_pm_d_paq_publicado', 'name' => 'publicado', 'label' => 'Publicada', 'type' => 'true_false', 'ui' => 1, 'wrapper' => [ 'width' => 20 ] ],
 						[ 'key' => 'field_pm_d_paq_titulo', 'name' => 'titulo', 'label' => 'Título', 'type' => 'text', 'wrapper' => [ 'width' => 80 ] ],
+						[ 'key' => 'field_pm_d_paq_foto', 'name' => 'foto', 'label' => 'Foto (opcional)', 'type' => 'image', 'return_format' => 'id', 'preview_size' => 'thumbnail', 'library' => 'all', 'instructions' => 'El autor y el origen se cargan en la foto (Medios). Sale con el crédito sobre la imagen.' ],
 						[ 'key' => 'field_pm_d_paq_resumen', 'name' => 'resumen', 'label' => 'De qué se trata (2 o 3 líneas)', 'type' => 'textarea', 'rows' => 3 ],
 						[ 'key' => 'field_pm_d_paq_modalidad', 'name' => 'modalidad', 'label' => 'Modalidad', 'type' => 'text', 'wrapper' => [ 'width' => 34 ] ],
 						[ 'key' => 'field_pm_d_paq_duracion', 'name' => 'duracion', 'label' => 'Duración', 'type' => 'text', 'wrapper' => [ 'width' => 33 ] ],

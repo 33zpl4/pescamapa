@@ -232,6 +232,8 @@
 .v-paquetes .como ol { padding-left: 20px; margin: 0 0 32px; }
 .v-paquetes .lista { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr)); gap: 24px; margin-bottom: 32px; }
 .v-paquetes .paquete { display: grid; gap: 10px; align-content: start; background: var(--cream); border-radius: var(--radius); padding: 22px 24px; }
+.v-paquetes .paquete .portada-paquete { aspect-ratio: 4 / 3; margin: -22px -24px 6px; border-radius: var(--radius) var(--radius) 0 0; }
+.v-paquetes .paquete .portada-paquete img { object-position: 50% 70%; }
 .v-paquetes .paquete h2 { font: 700 var(--fs-h3)/1.2 var(--font-head); margin: 0; }
 .v-paquetes .paquete h3 { font-size: var(--fs-small); margin: 6px 0 0; color: var(--muted); }
 .v-paquetes .paquete p, .v-paquetes .paquete ul, .v-paquetes .paquete dl { margin: 0; }

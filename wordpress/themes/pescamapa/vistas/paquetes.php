@@ -41,6 +41,7 @@ get_header(); ?>
 		<div class="lista">
 			<?php foreach ( $paq as $p ) : ?>
 				<article class="paquete">
+					<?php echo pm_foto( $p['foto'], (string) get_post_meta( $p['foto'], '_wp_attachment_image_alt', true ), '(max-width: 700px) 100vw, 380px', [ 'clase' => 'portada-paquete', 'enlaces' => false ] ); // phpcs:ignore ?>
 					<h2><?php echo esc_html( $p['titulo'] ); ?></h2>
 					<?php if ( $p['resumen'] ) : ?><p><?php echo esc_html( $p['resumen'] ); ?></p><?php endif; ?>
 					<dl>
