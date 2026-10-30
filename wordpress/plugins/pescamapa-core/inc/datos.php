@@ -124,6 +124,7 @@ function pm_paquetes( int $post_id ): array {
 		$fecha  = (string) ( $r['desde_fecha'] ?? '' );
 		$out[]  = [
 			'titulo'     => trim( (string) $r['titulo'] ),
+			'foto'       => (int) ( $r['foto'] ?? 0 ),
 			'resumen'    => trim( (string) ( $r['resumen'] ?? '' ) ),
 			'modalidad'  => trim( (string) ( $r['modalidad'] ?? '' ) ),
 			'duracion'   => trim( (string) ( $r['duracion'] ?? '' ) ),
