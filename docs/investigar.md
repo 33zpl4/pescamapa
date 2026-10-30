@@ -17,6 +17,12 @@ Salida por página (`NN-host-ruta.md`): título, meta description, canonical, hr
 H1–H3, cantidad de palabras, enlaces internos/externos y secciones más enlazadas, más el texto (primeros 12.000 caracteres) y el HTML crudo.
 `INDEX.md` resume todo en una tabla.
 
+## PDF y sitios que bloquean (30/10/2026)
+
+- Si una URL es un **PDF**, el script lo guarda y extrae el texto con `pdftotext` (archivo `.pdf.txt` en la carpeta del resultado). Un PDF escaneado no tiene texto: se renderiza a imagen (`pdftoppm`) y se lee página por página.
+- Los sitios que bloquean datacenters (reglamentodepesca.org.ar, portales provinciales, algunas agencias) responden 403 o "fetch failed", también con `navegador: true`. No se insiste: el dueño abre la página en su navegador y pega el texto o sube el PDF.
+- Una corrida a la vez (grupo de concurrencia `investigar`), máximo 30 URLs.
+
 ## Reglas de cortesía (no se cambian sin hablar)
 
 - Se declara como robot con un nombre genérico (`ResearchBot/1.0`), sin nombrar a Pescamapa. No se hace pasar por un navegador de persona.

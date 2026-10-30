@@ -151,3 +151,12 @@ con **fecha y fuente** y se trata como referencia, no como oferta.
 - **Mayor hallazgo: faltan versiones en inglés de los destinos de dorado.** Paso de la Patria y La Paz existen solo en español y portugués. Para el turista de EE. UU.
   que busca "golden dorado fishing argentina", Paso de la Patria (fiestas del dorado, tallas y cupos, licencia) es la página más natural. **Traducir
   Paso de la Patria y La Paz al inglés es la siguiente construcción de Etapa 1**, antes de la guía pilar.
+
+## Estado del plan al 30/10/2026
+
+- **Etapa 1 hecha** (29/10): guía pilar "Golden dorado fishing in Argentina", Esquina, Paso de la Patria y La Paz en inglés.
+- **Etapa 2 hecha** (30/10): guía de **Jurassic Lake** (en) / **Lago Strobel** (es) con reglas 2026/27, permiso de no residente, foto y operadores como información pública. Queda la nota de equipo y viento para trucha grande.
+- **Etapa 3 en curso**: **San Martín y Junín de los Andes** (contenido 2026/27 cargado) y **Bariloche y el Nahuel Huapi** (con lo leído; falta el listado de ambientes de Río Negro). Dossiers de lodges para la comparación ("fly fishing lodges in patagonia"): `docs/investigacion/lodges-lote1-dossiers-2026-10-30.md`.
+- **Pedir indexación a mano** de las URLs nuevas (lo hace el dueño): ver las URLs en `docs/patagonia-fuentes-y-guias.md`.
+- Las cifras de CPC y de precios que trajo el análisis externo siguen siendo referencia interna.
+

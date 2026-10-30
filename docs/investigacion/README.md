@@ -38,3 +38,14 @@ Checklist de auditoría por dato: ¿quién lo dice?, ¿la URL abre y lo dice?, �
 - Le dice al dueño en qué herramienta pegarla y qué adjuntar al volver.
 
 Ver también: `docs/nueva-ciudad.md` (receta completa), `docs/vigilancia.md` (cómo se vigilan las fuentes después de publicar), `docs/investigacion/la-paz.md` (ejemplo de dossier auditado).
+
+## Lo aprendido el 30/10/2026 (Patagonia)
+
+- **Las páginas del reglamento las abre el dueño.** `reglamentodepesca.org.ar`, `pescacontinental.gob.ar`, los portales de Neuquén y de Santa Cruz y `olsenfamily.com.ar` devuelven 403 o "fetch failed" a los runners de GitHub (bloquean datacenters), incluso con navegador. El dueño abre la página en su navegador y **pega el texto**: es la fuente oficial. Si no es posible, un PDF subido; recién después, copias de terceros (AICACYP, clubes), siempre dichas como tales.
+- **`investigar.yml` ahora lee PDF** (`pdftotext`). Un PDF escaneado no tiene texto: se renderiza a imagen y se lee página por página (así se leyó la Disposición 241/2026 de Santa Cruz).
+- **Dos copias del mismo reglamento pueden no coincidir.** Se compararon palabra por palabra el Word de 16 páginas y la copia de un club: solo difirieron dos líneas (las exclusiones de Strobel y Barrancoso). Regla: lo que figura en una sola copia no se publica.
+- **Un texto de IA con citas se audita línea por línea.** Una "hoja de ruta" trajo enlaces inventados (`/rio-negro/`, `/neuquen/`), artículos citados sin poder abrirlos y fichas de ríos que contradecían el anexo leído (Manso Medio "solo mosca"). Se usó solo lo que se pudo cotejar; el resto quedó "reportado" hasta leerlo.
+- **Dominios por verificar.** Un dominio adivinado puede ser otro negocio: `limayriverlodge.com` es una agencia; el lodge es `limaylodge.com`.
+- **Un dato de fuente secundaria se publica con la fuente y la fecha** ("según ANBariloche el 16/10/2026", "según el operador"); si dos fuentes difieren (permiso de zona preferencial: 10.000 en el anexo, 12.500 en el anuncio) se publica la de fecha conocida y se avisa de la diferencia.
+- Mapa y dossiers de Patagonia: `docs/patagonia-fuentes-y-guias.md`, `docs/investigacion/lodges-lote1-dossiers-2026-10-30.md`, `docs/investigacion/patagonia-anexos-2026-27-fuentes-2026-10-30.md`, `docs/investigacion/fuentes/`, `docs/investigacion/jurassic-lake-r2-auditoria-2026-10-30.md`.
+

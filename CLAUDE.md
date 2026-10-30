@@ -9,6 +9,8 @@
 > es una guía interna para editores (ver `docs/wordpress.md`); las secciones
 > de abajo sobre `borrador`/build que falla describen solo el sitio Astro.
 
+**Patagonia y listados (30/10/2026):** fuentes, valores de permisos y guías de Patagonia en `docs/patagonia-fuentes-y-guias.md`; cómo se listan los prestadores (dos niveles, baja visible, solo lo leído, precios con temporada) en `docs/prestadores.md` → "Estrategia de listados"; dossiers de lodges en `docs/investigacion/`. **Antes de crear una guía, comprobar que no exista ya** (clave y nombre en `wordpress/scripts/`). Un `wp-script` a la vez.
+
 **Qué es Pescamapa (una frase, 26/10/2026):** todo lo que necesitás saber antes
 de ir a pescar a la Argentina: cuándo ir, qué dice el reglamento y con quién
 salir. Lo investigamos nosotros y mostramos las fuentes. Y si querés, te

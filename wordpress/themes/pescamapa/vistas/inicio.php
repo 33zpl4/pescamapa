@@ -42,7 +42,6 @@ get_header(); ?>
 			</div>
 			<div class="hero-map">
 				<?php echo pm_mapa_hero( $puntos_hero, pm_t( 'inicio.hero.mapa' ) ); // phpcs:ignore -- escaped inside ?>
-				<div class="tag tag-top"><strong><?php pm_e( 'inicio.tag1.h' ); ?></strong><?php pm_e( 'inicio.tag1.p' ); ?></div>
 				<span class="map-note"><?php pm_e( 'inicio.hero.nota' ); ?></span>
 			</div>
 		</div>

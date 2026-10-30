@@ -1,6 +1,6 @@
 # Estado del proyecto — para retomar en otra sesión
 
-Última actualización: 24/10/2026 (5.ª guía: San Martín y Junín de los Andes, en vivo). Actualizá este archivo al cerrar cada sesión.
+Última actualización: 30/10/2026 (Patagonia: Jurassic Lake / Lago Strobel, Junín y San Martín con datos 2026/27, Bariloche; estrategia de listados refinada). Actualizá este archivo al cerrar cada sesión.
 
 ## Objetivo (del dueño)
 
@@ -39,7 +39,17 @@ todas a nosotros (centralizar datos y cobrar comisión más adelante).
   sigue como notas PENDIENTE (no se ven). Investigación:
   `docs/investigacion/esquina.md`.
 
-## Al 24/10/2026 (leer primero)
+## Al 30/10/2026 (leer primero)
+
+- **Patagonia entra al sitio.** Guías nuevas o puestas al día el 30/10/2026: **Lago Strobel / Jurassic Lake** (Santa Cruz, es "Lago Strobel", en "Jurassic Lake"), **San Martín y Junín de los Andes** (Neuquén, contenido 2026/27 cargado en la guía del 24/10) y **Bariloche y el Nahuel Huapi** (Río Negro, #161 es / #162 en, en vivo y verificadas). Todo el detalle, las fuentes y los valores de permisos: **`docs/patagonia-fuentes-y-guias.md`**.
+- **Estrategia de listados refinada** (dueño, 29-30/10): listar ya, con información pública y baja visible; dos niveles de ficha; formulario "concierge"; fotos solo cedidas con crédito; precios solo con fecha y fuente. Resumen en `docs/prestadores.md` → "Estrategia de listados (30/10/2026)".
+- **Fuentes oficiales del reglamento: pegadas desde el navegador del dueño.** `reglamentodepesca.org.ar` y los portales de Neuquén y Santa Cruz bloquean los runners de GitHub. Lo que se pegó se lee como fuente oficial (anexos Neuquén y Río Negro, puntos generales); los listados de ambientes se leyeron en copias de AICACYP. Faltan el listado de ambientes de Río Negro y el texto general. `docs/investigacion/README.md` → "Lo aprendido el 30/10/2026".
+- **Dossiers de lodges** (lote 1, ocho lodges): `docs/investigacion/lodges-lote1-dossiers-2026-10-30.md`. Regla: solo vale el dominio del lodge o una fuente regulatoria; una tarifa sin temporada es `NO CONFIRMADO`; las agencias no son fuente.
+- **Inicio:** se saca la tarjeta "¿Qué querés pescar?" del mapa del hero (`vistas/inicio.php`); se unen las dos guías de San Martín/Junín (había una duplicada por un error mío: ver el recap de Patagonia) y el mapa muestra "Lago Strobel" en español y "Jurassic Lake" en inglés.
+- **Error que no se repite:** antes de crear una guía, buscar si ya existe (clave y nombre en `wordpress/scripts/` y en la lista de guías vivas).
+- **Fotos cargadas hoy** (cedidas por el dueño, con crédito, ortografía confirmada): Jurassic Lake "Red Kulper", Junín "Chad Shmukler". Falta foto en Bariloche.
+
+## Al 24/10/2026
 
 - **4 guías publicadas**: Goya, Esquina, Paso de la Patria (Corrientes, es/pt/en) y **La Paz, Entre Ríos** (es/pt, con aranceles de la tabla oficial, fiesta y precio 2026). Todo mergeado en `main` y desplegado; `verify-live` en verde. Contacto de licencias de Corrientes (Corrientes Turismo) en todas las guías correntinas.
 - **Informe semanal** (`informe-semanal.yml`): Search Console + vigilancia de fuentes, un issue por lunes. Ya muestra impresiones reales (el sitio rankea). `docs/vigilancia.md`.
@@ -88,8 +98,26 @@ todas a nosotros (centralizar datos y cobrar comisión más adelante).
 | antes | Fotos solo de Commons con licencia libre o cedidas con crédito; nunca de Google. Prestadores solo con consentimiento y precios fechados. |
 | 28/10/2026 | **Competencia y paquetes (dueño):** el lodge brasileño de Goya cuyo material pegó el dueño es **competidor**: no se lista ni se nombra. **Todo lo que ofrezca se puede ofrecer** (paquetes por tamaño de grupo, alojamiento todo incluido, licencia/combustible/carnada incluidos, traslados, condiciones para agencias y grupos); sus detalles sirven de guía. Cheyenne factura como agencia por Bitácora. Página "Paquetes de pesca en Goya" en vivo desde el 28/10/2026, sin precios hasta que lleguen. `docs/preparacion-comercial.md`, `docs/referencias-rincon-del-dorado.md`. |
 | 27/10/2026 | **Estrategia de negocio (dueño, todavía flexible):** fase 1 = tráfico con información útil, gratis e imparcial; fase 2 = cobrar comisión (cobrarle a los guías por figurar, o vender nosotros los paquetes, como Yellow Dog). Para eso **no se listan todos los datos del prestador**: el contacto sigue interno y las consultas pasan por Pescamapa. No se vende "directorio abierto" como diferencial ni se critica a quien hace lo mismo: hoy ganamos poco o nada y el modelo no está cerrado. Detalle en `docs/prestadores.md`. |
+| 29/10/2026 | **Modelo de dos niveles** (Gemini): ficha informativa (sin acuerdo) y "Operador con acuerdo con Pescamapa" (primero en la lista, con la línea de comisión al operador). Cifras de comisión y precios del análisis externo: referencia **interna**, nunca públicas. |
+| 29/10/2026 | **Fotos**: solo las que el dueño aporta como disponibles o permitidas, siempre con el crédito del fotógrafo (`docs/contenido.md`). Bitácora de Viajes **no** es un prestador de pesca: va en "otras cosas para hacer". |
+| 30/10/2026 | **Publicar con lo que hay**: no se bloquea una guía por lo que falta; lo no leído se dice y se marca `NO CONFIRMADO` / PENDIENTE interno, y se completa después. |
+| 30/10/2026 | **Listar ya, afirmar solo lo leído.** Un prestador entra como "información pública, sin verificar" con sitio y baja visibles; los datos concretos van "según el operador", con fuente y fecha. Un sitio que se contradice (licencia de Rio Manso) o que no abre (San Huberto, 403) se publica sin ese dato. No se usa "auditada" para el nivel básico. |
+| 30/10/2026 | **Una distancia de exclusión que figura en una sola de dos copias del reglamento no se publica** (Strobel 200 m, Barrancoso 100 m). Se publican las reglas del texto firmado (arts. 11 y 15 a). |
+| 30/10/2026 | **La boca del Barrancoso**: "cerca de la boca" respetando la distancia mínima legal; no hay contradicción con lo que dicen los lodges. |
+| 30/10/2026 | **Nombres**: "Lago Strobel" en español, "Jurassic Lake" en inglés; los slugs ya publicados no cambian. |
 
 ## Pendientes, en orden
+
+**Al 30/10/2026 (primero):**
+
+- Pegar desde el navegador: `reglamentodepesca.org.ar/reglamento-items/ambientes-de-rio-negro/` y el texto general 2026/27 → cerrar Bariloche (Limay río negrino, Ñirihuau, Pichileufu), validez cruzada y fieltro.
+- **Anexo I oficial de Santa Cruz** (con o sin las líneas de exclusión) y la resolución de valores.
+- Foto de Bariloche con crédito; guía de equipo y viento para Jurassic Lake; versión es/pt de la guía pilar del dorado.
+- Lodges: contactar a los de las fichas de información pública; San Huberto (403), Spring Creek (sin dominio), Estancia Tecka (sin portal). Primer operador con acuerdo: abre el nivel 2.
+- Consulta legal sobre el término "agencia" y sobre vender paquetes ajenos (pendiente con el dueño).
+- Pedir indexación de las URLs nuevas en Search Console (el dueño lo hace a mano).
+
+**Lista anterior:**
 
 0. **Foto de Goya**: la socia subió "Experiencia Isoro (1)" (vertical) pero
    el cambio no llegó a guardarse por el bloqueo de validación, ya
@@ -166,6 +194,8 @@ catalinaporras.com. No usar ese hosting para Pescamapa.
 | `capturas.yml` | A mano | Capturas de pantalla a la rama `capturas` |
 | `revisar-fotos.yml` | Mensual y a mano | Issue "Revisión de fotos" |
 | `probe-wp.yml` | A mano | Diagnóstico de solo lectura: versiones, log, subida de fotos, validación de formularios |
+| `investigar.yml` | A mano (`urls`, `etiqueta`, `navegador`) | Lee páginas y PDF (con `pdftotext`) respetando robots.txt y deja el texto en la rama `investigacion`. No abre los sitios que bloquean datacenters |
+| `probe-movil.yml` | A mano | Playwright con un iPhone: toques del hero y menú. Solo lectura |
 | `fotos.yml`, `vhost-alias.yml` | A mano | Candidatas de Commons; alias de vhost (histórico) |
 
 ## Cómo se trabaja
@@ -179,3 +209,4 @@ catalinaporras.com. No usar ese hosting para Pescamapa.
 - Cambios de contenido en nombre del dueño: scripts idempotentes en
   `wordpress/scripts/` + `wp-script.yml`. Nunca pisar ediciones de wp-admin
   ni empujar la base de datos.
+- **Reglas de trabajo aprendidas el 30/10/2026**: (1) un `wp-script` a la vez; (2) después de un squash-merge de la rama, volver a partir de `origin/main` (`git checkout -B <rama> origin/main`) y subir con `--force-with-lease`; (3) `list_workflow_runs` sin filtros devuelve cientos de KB: guardarlo y leerlo con un script; (4) si un texto de una IA cita artículos o enlaces, se contrasta contra la fuente abierta antes de usar nada (varias URLs estaban inventadas); (5) buscar si la guía ya existe antes de crearla.
