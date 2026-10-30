@@ -1,13 +1,13 @@
 <?php
 /**
  * Jurassic Lake guide: the map pin (lat -48.367, lon -71.2, from a Wikipedia mirror) falls about 11 km north of the lake on the map
- * (seen in the 30/10/2026 screenshot against the protected-landscape polygon). Moves it to the middle of the lake: lat -48.47, lon -71.2.
+ * (seen in the 30/10/2026 screenshot against the protected-landscape polygon). Moves it to the middle of the lake: lat -48.41, lon -71.2 (a first move to -48.47 left it on the south shore, seen in the second screenshot).
  * The pin marks a general area, not a fishing spot. Only the Spanish guide holds the coordinates. Idempotent. Dry run first.
  * Run with wp-script.yml (script = jurassic-lake-pin-2026-10-30).
  */
 
 $aplicar = true;
-$lat     = -48.47;
+$lat     = -48.41;
 $lon     = -71.2;
 
 $es = pm_buscar( 'pm_destino', 'jurassic-lake', 'es' );
