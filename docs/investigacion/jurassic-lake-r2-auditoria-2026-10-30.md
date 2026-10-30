@@ -164,3 +164,35 @@ El mismo artículo confirma: permisos personales, nominativos e intransferibles,
 
 - **Se puede escribir ya:** hechos de la sección 5 + valores de permisos (con fuente y fecha) + que Jurassic Lake es el apodo y Strobel el lago + accesos "según el operador" (chárter de 1 h / traslado de 5-6 h desde El Calafate) + tres operadores como fichas "información pública".
 - **Sigue sin publicarse:** reglas específicas de Strobel (anzuelo con rebaba aplastada, motores, cupos), viento en números, estado del camino, tarifas de operadores.
+
+## 7. Anexo I leído (copia del reglamento aportada por el dueño, 30/10/2026)
+
+Archivo: `reglamento-santa-cruz-2026-2027.pdf`, 11 páginas con texto, alojado por `pesca.clubnautico.org` (copia de terceros, bajada del portal oficial cuando funcionaba, según el dueño). **Verificación cruzada:** los artículos 5, 7, 11, 12 y 16 de esta copia coinciden palabra por palabra con la copia fiel del original que leímos en la sección 5. Incluye Anexo I (ambientes) y Anexo II (especies, buenas prácticas). No trae la firma ni la fecha: se toman de la copia fiel (22/09/2026).
+
+### Lago Strobel (Anexo I, textual)
+
+"STROBEL (LAGO): Abierto todo el año. Régimen: Captura y Devolución Obligatoria. Aparejos: Anzuelo simple con o sin rebaba. Área de exclusión: Prohibida la pesca sobre ambas márgenes en un perímetro de doscientos (200) metros desde las nacientes y desembocaduras fluviales vinculadas al lago. Restricciones náuticas: Prohibición absoluta de navegación utilizando motores de combustión interna o propulsión mecánica. Exigencia sanitaria: Se exige desinfección y proceder al lavado de materiales al finalizar la jornada."
+
+### Río Barrancoso (Anexo I, textual)
+
+"BARRANCOSO (RÍO): Apertura: 01/10/2026. Cierre: 03/05/2027. Ámbito de aplicación: Totalidad del curso fluvial, desde sus nacientes hasta la desembocadura en el Lago Strobel. Régimen: Captura y Devolución Obligatoria de forma absoluta. Artes permitidas: Anzuelo simple con o sin rebaba. Zona catalogada de máxima vulnerabilidad biológica ante la invasión del alga Didymo: Se exige portar el certificado diario de desinfección y proceder al lavado de materiales al finalizar la jornada. Área de exclusión: Prohibida la pesca sobre ambas márgenes en un perímetro de cien (100) metros desde las nacientes y desembocaduras fluviales vinculadas al lago."
+
+### Resolución de las contradicciones
+
+| Punto | Resultado |
+| --- | --- |
+| Exclusión en el Barrancoso | **100 m** (Anexo I). Las respuestas con 200 m confundían con el Strobel |
+| Exclusión en el Strobel | **200 m** sobre ambas márgenes desde nacientes y desembocaduras de ríos vinculados al lago |
+| Motores en Strobel | **Prohibidos** (el Anexo I manda sobre el art. 16, que en general permite motor en lagos) |
+| Talla y cupo en Strobel/Barrancoso | No figuran (devolución obligatoria: no se retiene ningún ejemplar, art. 12) |
+| Barrancoso cierra | 03/05/2027 (abre 01/10/2026). Strobel no tiene veda |
+| Anzuelo | Strobel y Barrancoso: simple, con o sin rebaba (Anexo I). El art. 11 pide rebaba aplastada en ríos y desembocaduras: ante la duda, **aplastada** |
+| Trucha arco iris | Anexo II: especie exótica pescable |
+
+### Tensión con la descripción de los operadores (a tratar con cuidado en la guía)
+
+Los lodges describen "la boca" del Barrancoso como el mejor sector del lago. El Anexo I del Strobel excluye la pesca en 200 m sobre ambas márgenes alrededor de las desembocaduras de ríos vinculados al lago, y el del Barrancoso excluye 100 m desde sus desembocaduras. **No interpretamos cómo se aplica en cada punto.** La guía cita la regla tal cual y dice que el operador o los guardapescas confirman los sectores habilitados. No se promete "pescar en la boca".
+
+### Otras reglas del anexo útiles (recomendaciones, no obligaciones)
+
+No vadear sectores de grava fina en ríos y arroyos hasta el 01/01/2027 (camas de desove). Práctica de bajo impacto: no usar drones para ubicar peces. Los ambientes no listados se rigen por la reglamentación general.
