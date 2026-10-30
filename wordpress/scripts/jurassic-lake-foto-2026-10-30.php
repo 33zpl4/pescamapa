@@ -1,6 +1,6 @@
 <?php
 /**
- * Jurassic Lake guide: cover photo, 30/10/2026. The owner supplied it with the credit "Red Kulper" (spelling as typed; confirm it).
+ * Jurassic Lake guide: cover photo, 30/10/2026. The owner supplied it with the credit "Red Kulper" (spelling confirmed by the owner, 30/10/2026).
  * It shows an angler wading in spray on a turquoise lake in steppe country; the alt text does not name the lake. The photo is 770 x 513 px:
  * fine for the card and the guide, small for a very large hero. Set on the Spanish guide (the English one reads the photo from it).
  * Origin "cedida": supplied by the owner; the exact licence terms were not checked here.

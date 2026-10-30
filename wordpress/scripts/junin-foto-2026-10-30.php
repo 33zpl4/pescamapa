@@ -1,6 +1,6 @@
 <?php
 /**
- * Junín y San Martín guide: cover photo, 30/10/2026. The owner supplied it with the credit "Chad Shmukler" (spelling as typed; confirm it).
+ * Junín y San Martín guide: cover photo, 30/10/2026. The owner supplied it with the credit "Chad Shmukler" (spelling confirmed by the owner, 30/10/2026).
  * It shows a fly angler casting in a river with a snow-capped volcano behind; the alt text does not name the volcano. The photo is large:
  * Set on the Spanish guide (the English one reads the photo from it).
  * Origin "cedida": supplied by the owner; the exact licence terms were not checked here.
