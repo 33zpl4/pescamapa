@@ -6,7 +6,7 @@
  * Run with wp-script.yml (script = jurassic-lake-pin-2026-10-30).
  */
 
-$aplicar = false;
+$aplicar = true;
 $lat     = -48.47;
 $lon     = -71.2;
 
