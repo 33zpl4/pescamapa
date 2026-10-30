@@ -1,0 +1,46 @@
+# Jurassic Lake Lodge, Argentina
+- URL pedida: https://farbank.com/blogs/fly-water-travel/jurassic-lake-lodge-argentina
+- URL final: https://farbank.com/blogs/fly-water-travel/jurassic-lake-lodge-argentina  (HTTP 200)
+- Canonical: https://farbank.com/blogs/fly-water-travel/jurassic-lake-lodge-argentina   · lang: en   · robots meta: —
+- Meta description (0 car.): —
+- og:title: Jurassic Lake Lodge, Argentina   · og:image: http://farbank.com/cdn/shop/articles/FWT_Product_Jurassic_Lake_Web-5_6c366d74-5a92-4a07-8d79-243d20f9ccd7.jpg?v=1681328948
+- Palabras: 1345 · imágenes: 11 · enlaces internos: 38 · externos: 0
+- Secciones más enlazadas: /pages (17), /collections (8), /blogs (4), /account (3), / (2), /cart (2), /policies (1), /products (1)
+- hreflang: ninguno
+- Datos estructurados:
+  - Organization · Far Bank Enterprises
+    {"@type":"Organization","@id":"https://farbank.com/#organization","name":"Far Bank Enterprises","url":"https://farbank.com/"}
+  - Brand · Fly Water Travel
+    {"@type":"Brand","@id":"https://farbank.com/#brand/flywater","name":"Fly Water Travel","url":"https://farbank.com/pages/fly-water-travel","parentOrganization":{"@id":"https://farbank.com/#organization"},"sameAs":["https://www.facebook.com/flywatertravel","https://www.instagram.com/flywatertravel","https://twitter.com/flywatertravel","https://www.youtube.com/user/FlyWaterTravel"]}
+## Encabezados
+H2: Your cart is empty
+H2: Your cart
+H2: Estimated total
+H1: Jurassic Lake Lodge, Argentina
+H3: Jurassic Lake Lodge, Argentina
+## Texto (primeras 12.000 caracteres)
+Destination Reports
+Jurassic Lake Lodge, Argentina
+Ken Morrish
+April 12, 2023
+Share this article
+Jurassic Lake Lodge, Argentina
+Let me begin by saying I am not a particularly passionate or gifted still-water angler. I fish lakes, but I am not a lake fisherman, and it wasn’t until seeing Tim Pask’s images of a remote Argentine desert lake back in 2007 or 2008, that I considered traveling specifically to fish a stillwater venue. The fish in his images were simply different…way different. They were the biggest, fattest, baddest rainbows I had ever seen…true beasts, each and every one of them. The whole scene was so extraordinary that Christer Sjoberg, who brought Lago Strobel to market, named it Jurassic Lake. It was a fitting stroke of genius.
+My first visit in 2009 followed on the heels of an early steelhead trip to Rio Santa Cruz. Like this recent trip, it took place in the last week of March, but aside from the huge fish, many things had changed for the better over the past 15 years. On my first trip it took 13 hours to drive there from the lower Santa Cruz River and the last five hours were grueling off-road driving over lava rocks that took a severe toll on rigs and riders alike. Back in the day we called the trip in, the Drive from Hell, and it seriously limited the applicant pool. Back then we stayed in geodesic-dome tents, and I recall the door flap on mine didn’t properly close and one morning I woke to my open duffle bag filled with snow. Today, after massive investments in road improvements and building an airstrip, the drive in is a non-issue, and once you arrive, the lodge is as comfortable and cozy as any.
+The lodge now boasts a remarkable nine-month long season with the highest catch corresponding to the October through early-January spawning migration into the Rio Barrancoso. Come mid-January through mid-March, the fishing becomes more challenging and then from mid-March through May, the fishing for super high-quality fish improves and the catch rates fall into a category that I really like, meaning 3 to 12 really good fish per person per day. These fish are in superb condition, and many are chrome sided with aqua-marine backs and they run and jump like the world’s best steelhead.
+Needless to say, it was a great treat to return with super group of longtime Fly Water guests and get reacquainted with the world’s most prolific trophy rainbow fishery and the talented staff that makes fishing this otherwise forlorn region of the Patagonian steppe a true pleasure.
+Where did you go and how did you get there?
+After arriving Calafate, Argentina, we spent the night and then drove into the lodge the following morning. The drive was about 5.5 hours long and the roads were SO great as compared with my first trip in. After unpacking, we had some lunch, suited up and had a great afternoon of fishing. Next year we suspect the charter flight from Calafate into the lodge will be back on track, so the drive may not be part of the program moving forward.
+Where did you fish?
+We primarily fished the most productive quarter mile of Lago Strobel’s massive shoreline. The lake, which is a maar lake with no outlet, has only one inlet, so it attracts virtually every fish in the lake at one time or another. We spent most of our time fishing both sides of the inlet (which offers easy wading and has a manageable and consistent wind direction for right-handed anglers) as well as the rugged rock peninsula to the left of the river’s mouth. When it is windy, fish feed on the NW face of the peninsula which is called The Bay of Pigs. It is very rough and challenging, not only because of the crashing waves but because you need to cast right into the wind. Overhead casting a small Spey rod can be very helpful in this location. I also ventured up the river and there were plenty of big fish up there as well, but they were spooky and tough. I did get several nice ones though, including a 12 and 16 pounder on my five weight, so it was worth the rugged terrain and rock-hopping.
+How was fishing?
+By Jurassic Lake Lodge standards it was good. By any other standard it was absolutely off the charts. Our group landed between 3 and 12 remarkable fish per person per day. It took me three or four days to catch my first fish that was under ten pounds. Despite fishing a relatively small area, each day fished differently, and the weather was always changing. Every angler in our group had their moments in the sun when their rod was the hottest and likewise, we all had hours where we wondered what we were doing wrong and became increasingly interested in others’ retrieve technique and fly selection. We really had to fish for our fish, and when we got one it was always well worth double the effort. While none of landed a scale-weighed 20-pounder, we all caught fish in the 17 to 18-pound class and our week’s most deadly rod lost a 20+ pound monster in the last hour of the last day, which made us all hungry to return.
+How did you fish?
+The majority of our group fished single-hand eight-weight rods with weight forward floating lines. We slow stripped nymphs, scuds, buggers, and balanced leaches. We did this by wading out into the “surf zone” on both sides of the river mouth and spreading out over the most productive 150-yard reach of the shoreline. We also fished from wave battered rocky perches on the Bay of Pigs and cast as best we could into the teeth of persistent wind. I primarily fished a 12.5-foot Spey rod with an integrated running line. I employed a range of double handed retrieves, mostly very slow but most evenings, at the head guide’s recommendation, I would use a very fast retrieve punctuated by pauses. This resulted in some great top-water takes, porpoising follows, and wild refusals on the Morrish Mouse and wounded top-water baitfish pattern called the Waking-Wounded as well as and some great fish landed on a small, drab juvenile rainbow streamer.
+Where did you stay?
+We stayed in the lodge which is located within quick walking distance of all the best fishing spots near the mouth of the river. The lodge takes up to 12 anglers in eight rooms, all with nice beds, attached bathrooms and great heaters. The main lodge room has a big dining table, an open bar, comfortable leather couches, a great view of the lake and fishing grounds. The meals were excellent, as the Malbec!
+What equipment did you use and how did it perform?
+To start with I used a Sage 796-4 R8 Core with a matching Spectrum Max reel and an Elite RIO Grand line. At times I also used a 10-foot intermediate RIO Heavy Versileader. RIO Fluoroflex was the tippet of choice. However, after my first session casting straight into the wind at the Bay of Pigs, I rigged up a 12.5-foot 6 weight Sage Igniter with an Elite Integrated Skagit Max Power Head and intermediate sinking poly leader. Since you retrieve the fly fully in, in many cases, the integrated running line was a true blessing, and it is a great addition to the RIO line up. I ended up fishing this set up most of the time, as it was easier on my body/shoulder and I was impressed that my peers were able to fish so well and so hard with their single handers, as we had days with sustained winds of 40-50 MPH. Tough guys!
+Jurassic Lake Lodge, Argentina
+We can say that in all our years of fly fishing, we have never seen, heard of, or experienced anything remotely like Jurassic Lake Lodge. Some label it surreal or incomprehensible, but for simplicity the are the largest hardest fighting rainbow trout on Earth.
+EXPLORE MORE
