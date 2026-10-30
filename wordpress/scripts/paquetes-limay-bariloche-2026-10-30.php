@@ -14,7 +14,7 @@
  * ($aplicar = false); run with wp-script.yml (script = paquetes-limay-bariloche-2026-10-30).
  */
 
-$aplicar = false;
+$aplicar = true;
 $destino = 'bariloche';
 $hoy     = '20261030';
 
