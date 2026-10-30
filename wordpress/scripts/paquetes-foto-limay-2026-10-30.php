@@ -9,7 +9,7 @@
  * ($aplicar = false); run with wp-script.yml (script = paquetes-foto-limay-2026-10-30); the file lives in wordpress/fotos/.
  */
 
-$aplicar = false;
+$aplicar = true;
 $carpeta = '/tmp/pm-fotos';
 $foto    = [
 	'archivo' => 'limay-pescador-bote.jpg', 'autor' => 'Claudio Antonelli', 'origen' => 'cedida',
