@@ -10,7 +10,7 @@
  * Run with wp-script.yml (script = junin-validez-2026-10-30).
  */
 
-$aplicar = false;
+$aplicar = true;
 
 $cambios = [
 	'en' => [
