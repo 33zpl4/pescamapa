@@ -56,3 +56,32 @@ con fuente numérica, nombres de sectores adicionales.
 
 **Pasos siguientes:** (a) repetir el portal oficial con navegador; (b) leer las páginas de los operadores y agencias que publican tarifa (`estancialagostrobel.com`,
 Yellow Dog, Farbank, Aardvark McLeod, Where Wise Men Fish); (c) con eso, redactar la guía (simulacro primero).
+
+## 4. Segunda respuesta de R2 (otra IA con búsqueda, pegada por el dueño el 30/10/2026) y correcciones a la auditoría
+
+**Corrección a la sección 2, fila 10:** `jurassiclake.com` (con `/location`) y `estancialagunaverde.com` **existen** y tienen contenido; los marqué como "dominios sin comprobar" y
+eso estuvo mal. Lo que sigue sin comprobar es "Strobel Fishing / Jurassic Camp" (el enlace era una búsqueda de Google). La página de turismo cita además `estancialagostrobel.com`.
+
+Esta segunda respuesta dice no haber encontrado fuente abierta para: reglas específicas del lago, estado del camino, viento medido ni tarifa 2026/27 fechada de un operador.
+Eso coincide con lo que seguimos sin tener. Estado de cada dato nuevo (**"leído"** = lo abrí yo desde un runner; "reportado" = lo dice esa respuesta y falta leerlo):
+
+| Dato | Lo que dice la respuesta | Estado | Cómo se usa |
+| --- | --- | --- | --- |
+| Valores no residentes 90.000 / 300.000 / 450.000; trolling diario 20.000; residentes 15.000 a 40.000 | Portal `pesca.santacruz.gob.ar/valores/` | **Confirmado** por la nota oficial del 01/10/2026 (leída) | Publicable, con fecha |
+| Norma que fija los valores | "Disposición N.º 242/2026 (EXPTE 443.691)", ajuste por IPC jul-2025 a jul-2026 | Reportado; la nota oficial atribuye el reglamento a la **241/26** y no nombra la norma de valores | Citar la 241/26 por el reglamento; la 242/2026 solo tras leer `/valores/` |
+| Vigencia de la temporada | "01/10/2026 al 30/09/2027" | Reportado. **Explica la diferencia de 2025/26**: el permiso rige hasta el 30/09 y la temporada de pesca se extendía "hasta el 1 de mayo" (nota oficial) | Distinguir "validez del permiso" y "fin de la pesca"; el fin 2026/27 sigue sin publicarse |
+| Multas: sin permiso $400.000; en veda $800.000 | Portal | Reportado | Falta leer; no se publica aún |
+| Horario: solo luz diurna (art. 6.º), prohibida la pesca nocturna | Portal | Reportado | Falta leer el artículo |
+| Dirección: Avellaneda 801, Río Gallegos | Portal | Reportado | Falta leer |
+| Chárter los sábados por la mañana desde El Calafate, 1 hora, pista privada del lodge; traslado terrestre incluido en todos los paquetes, unas 6 horas | [jurassiclake.com/location](https://www.jurassiclake.com/location) (operador; el buscador lo fecha 19/09/2026) | Reportado; falta leer | "Según el operador", con enlace y fecha |
+| 5 h por tierra desde El Calafate a Estancia Laguna Verde | Tight Loop Travel (sin fecha) y AnglerAdventures (2019) | Reportado, terceros | Solo como contraste con el operador |
+| Temporada según el lodge: oct a principios de enero (peces grandes en el río Barrancoso y el arroyo Moro); mediados de enero a mediados de marzo (pesca a la vista en la costa); mediados de marzo a mayo (lluvia y frío) | jurassiclake.com | Reportado; falta leer | "Según el lodge", con enlace |
+| Sectores con nombre en fuente del operador: río Barrancoso y arroyo Moro (Moro Creek) | jurassiclake.com | Barrancoso: confirmado por turismo. Moro: reportado | Barrancoso sí; Moro tras leer la página |
+| Viento: "rachas hasta 100 km/h" | Un comentario de TripAdvisor de 2018 | Anécdota | **No es un dato.** Solo cualitativo ("viento y frío todo el año", turismo) |
+| Paquete de 7 noches a US$ 6.200 | AnglerAdventures (2019) | Desactualizado | Solo referencia interna |
+| Tres Amigos Outfitters (4 noches en Jurassic Lake + 4 en Glacier King), sin monto | Sitio de agencia | Reportado | Ficha informativa si se confirma |
+
+**Sigue sin resolverse (se resuelve con el anexo de la Disposición 241/26):** devolución, anzuelos, medidas, cupos, trolling y motores en Strobel; fin de la temporada 2026/27; estado del camino.
+
+**Contradicciones entre fuentes que hay que mostrar, no tapar:** la ruta de acceso desde Gobernador Gregores (turismo) frente a los traslados desde El Calafate (operadores) son dos
+accesos distintos, no un error; los tiempos varían de 5 a 6 horas según la fuente.
