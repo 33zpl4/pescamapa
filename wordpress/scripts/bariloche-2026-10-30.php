@@ -30,10 +30,12 @@ function pm_bq_pendiente( string $t ): string {
 
 $u = [
 	'rn'   => 'https://www.permisosdepesca.com.ar/',
-	'anrn' => 'https://reglamentodepesca.org.ar/rio-negro/',
-	'annc' => 'https://reglamentodepesca.org.ar/neuquen/',
-	'annp' => 'https://www.aicacyp.ar/wp-content/uploads/2026/10/Reglamento-PDCP-2026-27-Ambientes-Parques-Nacionales.pdf',
-	'annn' => 'https://www.aicacyp.ar/wp-content/uploads/2026/10/Reglamento-PDCP-2026-27-Ambientes-Neuquen.pdf',
+	'anrn' => 'https://reglamentodepesca.org.ar/reglamento-items/anexo-rio-negro/',
+	'annc' => 'https://reglamentodepesca.org.ar/reglamento-items/anexo-neuquen/',
+	'annp' => 'https://reglamentodepesca.org.ar/reglamento-items/ambientes-parques-nacionales-del-sur/',
+	'annpc' => 'https://www.aicacyp.ar/wp-content/uploads/2026/10/Reglamento-PDCP-2026-27-Ambientes-Parques-Nacionales.pdf',
+	'annn' => 'https://reglamentodepesca.org.ar/reglamento-items/ambientes-neuquen/',
+	'annnc' => 'https://www.aicacyp.ar/wp-content/uploads/2026/10/Reglamento-PDCP-2026-27-Ambientes-Neuquen.pdf',
 	'perf' => 'https://weekend.perfil.com/noticias/pesca/temporada-de-pesca-2026-2027-en-la-patagonia-cuanto-costaran-las-licencias-y-que-cambios-habra.phtml',
 	'rml'  => 'https://www.riomansolodge.com/lodge-rates-details/',
 	'rmf'  => 'https://www.riomansolodge.com/faqs/',
@@ -42,9 +44,10 @@ $u = [
 ];
 $fuentes_en = [
 	[ 'Mesa Directiva de Pesca Deportiva Zona Andina (Bariloche): 2026/2027 permit values and online sale', $u['rn'], 1 ],
-	[ 'Regulation of Continental Sport Fishing of Patagonia: Río Negro annex, general points (text copied from the regulation site on 30/10/2026)', $u['anrn'], 1 ],
-	[ 'Regulation 2026/27, list of environments of the National Parks of the south (Annex), copy hosted by AICACYP (third party; the official site did not answer)', $u['annp'], 0 ],
-	[ 'Regulation 2026/27, list of environments of Neuquén (Annex), copy hosted by AICACYP (third party): Limay below the dams', $u['annn'], 0 ],
+	[ 'Regulation of Continental Sport Fishing of Patagonia (official site): Río Negro annex, general points, read on 30/10/2026', $u['anrn'], 1 ],
+	[ 'Regulation of Continental Sport Fishing of Patagonia (official site): Neuquén annex, general points, read on 30/10/2026', $u['annc'], 1 ],
+	[ 'Regulation 2026/27 (official site): list of environments of the National Parks of the south; we read the entries in a copy hosted by AICACYP (third party), because our reader cannot open the official site', $u['annp'], 1 ],
+	[ 'Regulation 2026/27 (official site): list of environments of Neuquén (Limay below the dams); read in the same AICACYP copy', $u['annn'], 1 ],
 	[ 'Perfil Weekend: 2026-2027 season, trolling permits and changes decided by the Advisory Commission', $u['perf'], 0 ],
 	[ 'Rio Manso Lodge: 2026-27 rates and details (operator)', $u['rml'], 0 ],
 	[ 'Rio Manso Lodge: frequently asked questions (operator)', $u['rmf'], 0 ],
@@ -53,9 +56,10 @@ $fuentes_en = [
 ];
 $fuentes_es = [
 	[ 'Mesa Directiva de Pesca Deportiva Zona Andina (Bariloche): valores 2026/2027 y venta online de permisos', $u['rn'], 1 ],
-	[ 'Reglamento de Pesca Deportiva Continental Patagónico: Anexo Río Negro, puntos generales (texto copiado del sitio del reglamento el 30/10/2026)', $u['anrn'], 1 ],
-	[ 'Reglamento 2026/27, listado de ambientes de los Parques Nacionales del sur (Anexo), copia alojada en AICACYP (terceros; el sitio oficial no respondió)', $u['annp'], 0 ],
-	[ 'Reglamento 2026/27, listado de ambientes de Neuquén (Anexo), copia alojada en AICACYP (terceros): Limay aguas abajo de los diques', $u['annn'], 0 ],
+	[ 'Reglamento de Pesca Deportiva Continental Patagónico (sitio oficial): Anexo Río Negro, puntos generales, leído el 30/10/2026', $u['anrn'], 1 ],
+	[ 'Reglamento de Pesca Deportiva Continental Patagónico (sitio oficial): Anexo Neuquén, puntos generales, leído el 30/10/2026', $u['annc'], 1 ],
+	[ 'Reglamento 2026/27 (sitio oficial): listado de ambientes de los Parques Nacionales del sur; leímos las fichas en una copia alojada en AICACYP (terceros), porque nuestro lector no puede abrir el sitio oficial', $u['annp'], 1 ],
+	[ 'Reglamento 2026/27 (sitio oficial): listado de ambientes de Neuquén (Limay aguas abajo de los diques); leído en la misma copia de AICACYP', $u['annn'], 1 ],
 	[ 'Perfil Weekend: temporada 2026-2027, permisos de trolling y cambios decididos por la Comisión Consultiva', $u['perf'], 0 ],
 	[ 'Rio Manso Lodge: tarifas y detalles 2026-27 (operador)', $u['rml'], 0 ],
 	[ 'Rio Manso Lodge: preguntas frecuentes (operador)', $u['rmf'], 0 ],

@@ -1,6 +1,6 @@
 # Anexo Neuquén del Reglamento Patagónico (texto copiado por el dueño, 30/10/2026)
 
-**Origen:** el dueño abrió la página "Anexo Neuquén" de `reglamentodepesca.org.ar` en su navegador y pegó el texto en la conversación el 30/10/2026. No trae el listado de ambientes (esa es otra página; lo leímos en la copia de AICACYP). **No dice a qué temporada pertenecen los montos de permisos adicionales**: puede ser la 2025/26.
+**Origen:** el dueño abrió la página oficial "Anexo Neuquén" (`https://reglamentodepesca.org.ar/reglamento-items/anexo-neuquen/`) en su navegador y pegó el texto en la conversación el 30/10/2026. No trae el listado de ambientes (esa es otra página; lo leímos en la copia de AICACYP). **No dice a qué temporada pertenecen los montos de permisos adicionales**: puede ser la 2025/26.
 
 ## Puntos que usamos
 
