@@ -7,7 +7,7 @@
  * found once or the script stops. Idempotent. Dry run first. Run with wp-script.yml (script = jurassic-lake-exclusion-2026-10-30).
  */
 
-$aplicar = false;
+$aplicar = true;
 
 $cambios = [
 	'en' => [
