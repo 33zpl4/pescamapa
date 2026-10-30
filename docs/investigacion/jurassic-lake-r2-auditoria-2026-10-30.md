@@ -130,3 +130,37 @@ Temporada 2026/27 (fechas del art. 7.º), permiso personal y categorías de no r
 1. Anexos I y II (`pesca.santacruz.gob.ar/ambientes/` y `/reglamento/`): el PDF aportado no los incluye.
 2. Resolución de valores (aparte; la respuesta 2 habla de la Disposición 242/2026, sin confirmar).
 3. Operadores y estado del camino (sin cambios).
+
+## 6. Corrida `jurassic-lake-operadores` (30/10/2026, HTTP simple): qué se leyó y qué no
+
+**No se pudo leer:** `pesca.santacruz.gob.ar/ambientes/`, `/reglamento/`, `/valores/` y `estancialagostrobel.com` ("fetch failed": el portal oficial no responde a la corrida de GitHub; con navegador tampoco, la página se redirige). AnglerAdventures y Where Wise Men Fish devolvieron 403 (protección anti-robots). **Los Anexos I y II siguen sin leerse**: hace falta que el dueño abra la página de ambientes desde su navegador y pegue o suba el Anexo I (sección Lago Strobel / Río Barrancoso).
+
+### Valores de permisos 2026/27: LEÍDO en prensa (La Voz de Santa Cruz, 1/10/2026, cita la Disposición 241/26 y el portal oficial)
+
+| Categoría | Valor (ARS) |
+| --- | --- |
+| No residente, diario (E-D) | $90.000 |
+| No residente, semanal (E-S) | $300.000 |
+| No residente, temporada (E-T) | $450.000 |
+| Trolling adicional (diario / semanal / temporada) | $20.000 / $30.000 / $40.000 (se suma a un permiso ordinario) |
+| Residente (diario / fin de semana / semanal / temporada) | $15.000 / $20.000 / $25.000 / $40.000 |
+
+El mismo artículo confirma: permisos personales, nominativos e intransferibles, gestionados por **SIPESQ**; la devolución obligatoria, los cupos y los sectores permitidos "pueden diferir por ambiente". **Estado:** fuente secundaria (prensa oficial-afín), no el portal. Publicable como "según informó La Voz de Santa Cruz el 1/10/2026, con enlace", y con "confirmá el valor vigente en SIPESQ". Esto reemplaza la mención a la "Disposición 242/2026" de la respuesta 2, que no apareció en ninguna fuente leída.
+
+### Operadores: LEÍDO en sus sitios
+
+| Dato | Fuente | Uso |
+| --- | --- | --- |
+| Jurassic Lake Lodge es marca registrada del lodge; el lago se llama Strobel ("muchos creen que es el nombre del lago") | jurassiclake.com/location | Aclarar en la guía: Jurassic Lake es el apodo; el lago es Lago Strobel |
+| Lodge en bahía protegida, a pie de la boca del Río Barrancoso ("único afluente significativo" del lago); más de 10 millas de costa privada; 10 habitaciones | jurassiclake.com | "Según el lodge" |
+| Charter desde El Calafate los sábados por la mañana, 1 hora, pista privada; traslado terrestre incluido en los paquetes, "unas seis horas" | jurassiclake.com/location | "Según el lodge" |
+| Temporada según el lodge: oct a principios de enero (Barrancoso y Moro Creek); mediados de enero a mediados de marzo | jurassiclake.com | "Según el lodge" (Moro Creek leído) |
+| Estancia Laguna Verde: costa sur de Lago Strobel; traslado de 5 h desde El Calafate; temporada "octubre a mayo" | estancialagunaverde.com, tightlooptravel.com | Contraste: 5 h (Laguna Verde, agencia) frente a 6 h (Jurassic Lake Lodge) |
+| Paquete 2026/27 (por persona, doble): 7 noches / 6 días US$ 8.000; 4 noches / 3,5 días US$ 5.200; habitación individual +US$ 700; depósito del 50%, saldo a 90 días | Yellow Dog Flyfishing (agencia), 2026/27 | **Referencia interna, no se publica** |
+| Laguna Verde (Tight Loop, sin fecha): 3 noches US$ 3.850; 4 noches US$ 4.650; 7 noches US$ 6.200 | tightlooptravel.com | **Referencia interna, sin fecha confiable, no se publica** |
+| Tres Amigos Outfitters combina Jurassic Lake con Glacier King | tresamigosoutfitters.com | Ficha informativa posible |
+
+### Qué cambia para la guía
+
+- **Se puede escribir ya:** hechos de la sección 5 + valores de permisos (con fuente y fecha) + que Jurassic Lake es el apodo y Strobel el lago + accesos "según el operador" (chárter de 1 h / traslado de 5-6 h desde El Calafate) + tres operadores como fichas "información pública".
+- **Sigue sin publicarse:** reglas específicas de Strobel (anzuelo con rebaba aplastada, motores, cupos), viento en números, estado del camino, tarifas de operadores.
