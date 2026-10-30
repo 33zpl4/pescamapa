@@ -13,7 +13,7 @@
  * Run with wp-script.yml (script = junin-unificar-2026-10-30).
  */
 
-$aplicar = false;
+$aplicar = true;
 $hoy     = '20261030';
 $R       = 'https://reglamentodepesca.org.ar/reglamento-items/';
 $oficiales = [
