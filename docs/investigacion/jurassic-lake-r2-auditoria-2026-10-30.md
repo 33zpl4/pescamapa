@@ -198,3 +198,14 @@ Los lodges describen "la boca" del Barrancoso como el mejor sector del lago. El 
 ### Otras reglas del anexo útiles (recomendaciones, no obligaciones)
 
 No vadear sectores de grava fina en ríos y arroyos hasta el 01/01/2027 (camas de desove). Práctica de bajo impacto: no usar drones para ubicar peces. Los ambientes no listados se rigen por la reglamentación general.
+
+## 8. Corrección (30/10/2026, mismo día): las distancias de exclusión no están en el texto Word
+
+El dueño aportó una segunda copia del reglamento: `DISPOSICION_N_241_-_REGLAMENTO_1.pdf`, 16 páginas, hecha en Word, con las marcas de página "///-2-" del formato oficial. La comparamos palabra por palabra con la copia de `pesca.clubnautico.org`. **Hay solo dos diferencias de fondo**, y son justo estas líneas, que solo figuran en la copia de terceros:
+
+- Strobel: "Área de exclusión: Prohibida la pesca sobre ambas márgenes en un perímetro de doscientos (200) metros desde las nacientes y desembocaduras fluviales vinculadas al lago."
+- Barrancoso: "Área de exclusión: ... cien (100) metros ..."
+
+El resto (Strobel: abierto todo el año, devolución obligatoria, anzuelo simple con o sin rebaba, sin motores, desinfección; Barrancoso: 01/10/2026 al 03/05/2027, devolución absoluta, certificado diario) es **idéntico en las dos copias**. Las otras 19 áreas de exclusión (Argentino, Tar, etc.) sí están en ambas.
+
+**Decisión:** la guía publicada deja de afirmar las distancias de 200 m y 100 m para Strobel y Barrancoso. Se queda con lo que dice el texto firmado: art. 11 (devolución de todos los peces a menos de 200 m de nacientes y desembocaduras de ríos) y art. 15 a) (no se pesca desde embarcación a menos de 200 m de las desembocaduras en lagos). La FAQ de la boca del Barrancoso dice que las copias difieren y manda a preguntar al operador. Si el dueño consigue el Anexo I oficial con las dos líneas, se vuelve a agregar.
