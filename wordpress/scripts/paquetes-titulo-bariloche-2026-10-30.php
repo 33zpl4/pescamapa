@@ -7,7 +7,7 @@
  * Run with wp-script.yml (script = paquetes-titulo-bariloche-2026-10-30).
  */
 
-$aplicar = false;
+$aplicar = true;
 $destino = 'bariloche';
 
 $titulos = [
