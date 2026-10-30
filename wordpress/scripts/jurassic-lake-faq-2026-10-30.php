@@ -6,7 +6,7 @@
  * Run with wp-script.yml (script = jurassic-lake-faq-2026-10-30).
  */
 
-$aplicar = false;
+$aplicar = true;
 
 $nuevo = [
 	'en' => [
