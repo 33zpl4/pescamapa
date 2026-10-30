@@ -17,13 +17,13 @@
  * wp-script.yml (script = paquetes-bariloche-2026-10-30).
  */
 
-$aplicar = false;
+$aplicar = true;
 $destino = 'bariloche';
 $hoy     = '20261030';
 
 $lineas = fn( array $l ) => implode( "\n", $l );
 
-$interno = 'No se publica. Ancla de mercado (30/10/2026): una agencia europea vende esta jornada "desde 450 $" (sin unidad ni fecha visibles en su página; moneda y base por persona o por lancha NO confirmadas). Dice incluir guía, equipo, bote y combustible, licencia, asado con bebidas; salida privada; embarque en Bahía López (Circuito Chico), unos 15 min de Bariloche; unos 30 min de navegación; bote con motor eléctrico; media jornada posible; temporada fuerte de noviembre a abril. Todo es dicho por la agencia: confirmar con un operador antes de publicar incluye, unidad o precio. Hay conversaciones abiertas con operadores (dueño, 30/10/2026); todavía sin acuerdo firmado.';
+$interno = 'No se publica. Ancla de mercado, leída el 30/10/2026 en el flujo de reserva de una agencia europea (competidora, no se nombra). Cotización real: jueves 5/11/2026, 2 pescadores, 09:30 a 16:30, embarque en Bahía López: USD 650 en total con impuestos, sin extras. Incluye guía privado, equipo completo (caña, reel, moscas), asado con bebidas, licencias, bote y combustible. Reparto del pago según el texto pegado: USD 450 en el lugar el día de la salida y USD 200 por adelantado al pedir la reserva. Aparece además una opción "media jornada" (sesión más corta, sin almuerzo), sin precio en lo pegado. El "desde 450" de la ficha sería la base para un pescador (no confirmado: 650 para dos no se explica con certeza). Es el precio de ellos con su margen: no es el de un operador nuestro. Hay conversaciones abiertas con operadores (dueño, 30/10/2026); todavía sin acuerdo firmado. Para publicar un desde hace falta un precio de un operador con acuerdo, con su unidad y fecha.';
 
 $paquetes = [
 	'es' => [
