@@ -11,7 +11,7 @@
  * Idempotent: a guide that exists is not touched. Dry run first. Run with wp-script.yml (script = bariloche-2026-10-30).
  */
 
-$aplicar = false;
+$aplicar = true;
 $hoy     = '20261030';
 
 function pm_bq_p( string $html ): string {
