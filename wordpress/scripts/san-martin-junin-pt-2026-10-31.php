@@ -73,7 +73,7 @@ $g = [
 		'modalidades' => "Mosca (flycast)\nSpinning leve\nDescidas em barco de deriva\nCaptura e devolução",
 		'epoca'       => 'De 1º de novembro de 2026 a 31 de maio de 2027 nos rios; alguns lagos até outubro de 2027.',
 		'seo_title'   => 'Pesca com mosca em San Martín e Junín de los Andes (2026/27)',
-		'seo_description' => 'Guia de pesca de San Martín e Junín de los Andes, Neuquén: regras do Chimehuín, Malleo, Collón Curá e Quilquihue, temporada 2026-2027 (abre em 1º de novembro), licença e valores de referência.',
+		'seo_description' => 'Guia de pesca de San Martín e Junín de los Andes, Neuquén: regras do Chimehuín, Malleo e Quilquihue, temporada 2026-2027, licença e valores de referência.',
 		'temporada'   => [
 			[ 'meses' => 'Novembro', 'que' => 'Abre a temporada 2026/27 (1º de novembro de 2026).' ],
 			[ 'meses' => 'Até maio', 'que' => 'Os rios do anexo fecham em 31 de maio de 2027; algumas águas fecham em 1º de maio.' ],

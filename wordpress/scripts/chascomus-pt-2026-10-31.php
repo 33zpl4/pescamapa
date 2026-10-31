@@ -96,7 +96,7 @@ $g = [
 		'modalidades' => "Pesca da margem (píer e orla)\nPesca embarcada (rampas)\nDia com guia",
 		'epoca'       => 'A veda do peixe-rei vai de 1º de setembro a 30 de novembro; no resto do ano pesca-se com licença e respeitando o tamanho mínimo.',
 		'seo_title'   => 'Pesca de peixe-rei em Chascomús: licença, veda e tamanho',
-		'seo_description' => 'Guia de pesca da lagoa de Chascomús (Buenos Aires): licença de pesca esportiva, tamanho mínimo de 25 cm, veda do peixe-rei de 1º/9 a 30/11, acessos e o vento do dia. Fontes oficiais.',
+		'seo_description' => 'Guia de pesca da lagoa de Chascomús (Buenos Aires): licença, tamanho mínimo de 25 cm, veda do peixe-rei de 1º/9 a 30/11, acessos e vento. Fontes oficiais.',
 		'temporada'   => [
 			[ 'meses' => '1º de setembro – 30 de novembro', 'que' => 'Veda do peixe-rei em toda a província: só sábados, domingos e feriados, até 10 peças por pescador e por dia em Chascomús, sem competições nem navegação esportiva a motor (Disposición 89/08, página de vedas do Ministério).' ],
 			[ 'meses' => 'Resto do ano', 'que' => 'Pesca com licença e respeitando o tamanho mínimo de 25 cm. Confirme limites e disposições vigentes com o Ministério.' ],

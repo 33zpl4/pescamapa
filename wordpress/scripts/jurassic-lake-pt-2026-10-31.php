@@ -82,7 +82,7 @@ $g = [
 		'modalidades' => "Mosca (flycast)\nSpinning e baitcasting\nCaptura e devolução",
 		'epoca'       => 'O lago Strobel está aberto o ano todo; o rio Barrancoso de 1º/10/2026 a 3/5/2027.',
 		'seo_title'   => 'Guia de pesca no Jurassic Lake: regras e licença do Strobel',
-		'seo_description' => 'Guia de pesca no Jurassic Lake (lago Strobel), Santa Cruz: captura e devolução, regras do Anexo I 2026/27, licença para não residentes com valores e como chegar.',
+		'seo_description' => 'Guia de pesca no Jurassic Lake (lago Strobel), Santa Cruz: captura e devolução, regras do Anexo I 2026/27, licença para não residentes e como chegar.',
 		'temporada'   => [
 			[ 'meses' => 'Lago Strobel', 'que' => 'Aberto o ano todo. Só captura e devolução.' ],
 			[ 'meses' => 'Rio Barrancoso', 'que' => 'De 1º de outubro de 2026 a 3 de maio de 2027. Captura e devolução absoluta.' ],
