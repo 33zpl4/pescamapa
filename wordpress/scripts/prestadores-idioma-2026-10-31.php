@@ -7,7 +7,7 @@
  * Dry run first ($aplicar = false); run with wp-script.yml (script = prestadores-idioma-2026-10-31).
  */
 
-$aplicar = false;
+$aplicar = true;
 
 $fichas = [
 	'Rio Manso Lodge' => [
