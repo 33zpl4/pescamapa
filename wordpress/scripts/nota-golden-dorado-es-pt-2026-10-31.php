@@ -8,7 +8,7 @@
  * run with wp-script.yml (script = nota-golden-dorado-es-pt-2026-10-31).
  */
 
-$aplicar = false;
+$aplicar = true;
 $hoy     = '20261031';
 $clave   = 'golden-dorado-guia';
 
