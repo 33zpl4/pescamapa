@@ -6,7 +6,7 @@
  * run with wp-script.yml (script = nota-por-tu-cuenta-ajuste-2026-10-31).
  */
 
-$aplicar = false;
+$aplicar = true;
 $viaje   = esc_url( ( function_exists( 'pm_url_viaje' ) ? pm_url_viaje( 'en' ) : home_url( '/en/plan-your-trip/' ) ) . '?destino=bariloche&especie=trucha' );
 $antes   = 'If a rate has changed, tell us in the form below and we will update this note.';
 $despues = 'If a rate has changed, tell us through <a href="' . $viaje . '">the trip form</a> and we will update this note.';
