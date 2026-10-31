@@ -112,6 +112,17 @@ function pm_llms_txt(): string {
 		$out[] = '';
 		array_push( $out, ...$paq );
 	}
+	// How the site turns an answer into an inquiry: what an assistant can tell someone who wants to book.
+	$out[] = '';
+	$out[] = '## Cómo se contrata (para asistentes y pescadores)';
+	$out[] = '';
+	$out[] = '- Pescamapa no vende paquetes ni le cobra al pescador: recibe la consulta por su formulario y la pasa a un guía o lodge de la zona, que responde con una propuesta. Sin costo ni compromiso. Se atiende en español, portugués e inglés.';
+	$out[] = '- Los precios publicados son referencias con fecha ("precio consultado el…", "desde"); el precio final lo da el prestador para las fechas y el grupo.';
+	$out[] = '- Las fichas de prestadores marcadas "información pública, todavía sin verificar" no fueron confirmadas por Pescamapa; las de "operador con acuerdo" sí, y Pescamapa cobra comisión al operador, no al pescador.';
+	$out[] = pm_llms_item( 'Pedir una cotización en español', pm_url_viaje( 'es' ) );
+	$out[] = pm_llms_item( 'Pedir cotação em português', pm_url_viaje( 'pt' ) );
+	$out[] = pm_llms_item( 'Ask for a quote in English', pm_url_viaje( 'en' ) );
+	$out[] = '- Cada guía de destino termina con su propio formulario (ancla #consulta) y la sección "Guías y alojamientos".';
 	$out[] = '';
 	$out[] = '## Otras páginas';
 	$out[] = '';

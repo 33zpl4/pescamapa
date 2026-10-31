@@ -40,6 +40,8 @@ get_header(); ?>
 						</ul>
 					</aside>
 				<?php endif; ?>
+				<?php // The way from a fact to an inquiry: one line and the form, before the body (most readers arrive from a search or an AI answer with one question). ?>
+				<p class="cta-nota"><?php pm_e( 'nota.cta' ); ?> <a class="button dark" href="<?php echo esc_url( pm_url_viaje( $idioma ) . '?' . http_build_query( array_filter( [ 'destino' => $n['destino'], 'especie' => $n['especie'] ] ) ) ); ?>"><?php pm_e( 'nota.cta.boton' ); ?></a></p>
 				<?php while ( have_posts() ) : the_post(); the_content(); endwhile; ?>
 
 				<?php if ( $n['fuentes'] ) : ?>

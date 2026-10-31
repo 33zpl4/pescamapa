@@ -491,7 +491,9 @@
 			"ficha.ir.guias": "Guías y alojamiento",
 			"ficha.ir.preguntas": "Preguntas",
 			"ficha.ir.fuentes": "Fuentes",
-			"rio.fuente.clima": "Clima: %meteo% (CC BY 4.0). Datos capturados el %capturado%."
+			"rio.fuente.clima": "Clima: %meteo% (CC BY 4.0). Datos capturados el %capturado%.",
+			"nota.cta": "¿Querés pescar esto? Contanos tus fechas y cuántos van: armamos la salida con guías de la zona y te mandamos la propuesta, sin costo ni compromiso.",
+			"nota.cta.boton": "Pedir cotización →"
 		},
 		"pt": {
 			"marca.lema": "Quando ir, o que diz o regulamento e com quem pescar na Argentina.",
@@ -886,7 +888,9 @@
 			"ficha.ir.guias": "Guias e hospedagem",
 			"ficha.ir.preguntas": "Perguntas",
 			"ficha.ir.fuentes": "Fontes",
-			"rio.fuente.clima": "Clima: %meteo% (CC BY 4.0). Dados capturados em %capturado%."
+			"rio.fuente.clima": "Clima: %meteo% (CC BY 4.0). Dados capturados em %capturado%.",
+			"nota.cta": "Quer pescar isso? Conte suas datas e quantos vão: montamos a saída com guias da região e enviamos a proposta, sem custo nem compromisso.",
+			"nota.cta.boton": "Pedir cotação →"
 		},
 		"en": {
 			"marca.lema": "When to go, what the rules say and who to fish with in Argentina.",
@@ -1281,7 +1285,9 @@
 			"ficha.ir.guias": "Guides and lodging",
 			"ficha.ir.preguntas": "FAQ",
 			"ficha.ir.fuentes": "Sources",
-			"rio.fuente.clima": "Weather: %meteo% (CC BY 4.0). Data captured on %capturado%."
+			"rio.fuente.clima": "Weather: %meteo% (CC BY 4.0). Data captured on %capturado%.",
+			"nota.cta": "Want to fish this? Tell us your dates and how many are going: we put the trip together with local guides and send you a proposal, at no cost or commitment.",
+			"nota.cta.boton": "Ask for a quote →"
 		}
 	},
 	"opciones": {
