@@ -12,7 +12,7 @@
  * run with wp-script.yml (script = nota-por-tu-cuenta-es-pt-2026-10-31).
  */
 
-$aplicar = false;
+$aplicar = true;
 $hoy     = '20261031';
 $clave   = 'patagonia-por-tu-cuenta';
 
