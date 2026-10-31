@@ -75,6 +75,10 @@
 .prestador .acuerdo span { display: block; }
 .prestador.vista-previa { border: 2px dashed var(--warn-line); background: var(--warn-bg); }
 .prestador .sello { grid-column: 1 / -1; margin: 0; font-size: var(--fs-caption); font-weight: 600; }
+/* A card without photos has no gallery column: the body takes the full width (otherwise it would sit in the 220px slot). */
+.prestador.sin-fotos { grid-template-columns: 1fr; }
+.prestador .cuerpo > p:not(.tipo):not(.precio):not(.sin-verificar) { max-width: 72ch; }
+@media (min-width: 721px) { .prestador.sin-fotos dl { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 24px; } }
 @media (max-width: 720px) { .prestador { grid-template-columns: 1fr; } }
 .elegir { background: var(--cream); border-radius: var(--radius); padding: 18px 22px; margin-top: 18px; }
 .elegir h3 { font-size: var(--fs-h3); }
