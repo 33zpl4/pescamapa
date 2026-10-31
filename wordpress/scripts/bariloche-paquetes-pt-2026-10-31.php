@@ -7,7 +7,7 @@
  * ($aplicar = false); run with wp-script.yml (script = bariloche-paquetes-pt-2026-10-31).
  */
 
-$aplicar = false;
+$aplicar = true;
 $hoy     = '20261031';
 $lineas  = fn( array $l ) => implode( "\n", $l );
 
