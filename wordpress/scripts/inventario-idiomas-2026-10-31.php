@@ -39,7 +39,7 @@ foreach ( get_posts( [ 'post_type' => 'pm_prestador', 'post_status' => 'publish'
 	}
 	$faltan = array_filter( [ 'pt', 'en' ], fn( $i ) => '' === trim( (string) pm_campo( "descripcion_$i", $p->ID ) ) );
 	$base   = (string) pm_campo( 'descripcion', $p->ID );
-	$ingles = preg_match( '/^(Lodge|Outfitter|Estancia|Guide|Fly fishing|Local|Day trips|Bariloche guides)/', $base ) ? ' (BASE EN INGLÉS)' : '';
+	$ingles = preg_match( '/\b(the|with|and|its|according)\b/', $base ) ? ' (BASE EN INGLÉS)' : ''; // English function words; "Lodge cerca de…" is Spanish
 	if ( $faltan || $ingles ) {
 		WP_CLI::log( sprintf( '  #%-4d %-32s destino=%-20s falta: %s%s', $p->ID, $p->post_title, $r['destino'] ?: '-', implode( ',', $faltan ) ?: '-', $ingles ) );
 	}
