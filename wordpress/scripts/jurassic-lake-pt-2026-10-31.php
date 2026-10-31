@@ -7,7 +7,7 @@
  * run with wp-script.yml (script = jurassic-lake-pt-2026-10-31).
  */
 
-$aplicar = false;
+$aplicar = true;
 $hoy     = '20261031';
 
 function pm_jp_p( string $h ): string { return "<!-- wp:paragraph -->\n<p>{$h}</p>\n<!-- /wp:paragraph -->"; }
