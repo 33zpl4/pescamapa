@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<!-- SR INTERNAL MODE START -->
+<script>
+(function (w, d) {
+  'use strict';
+  var key = 'sr_internal_mode_v1';
+  var id = 'G-YNFDSGC4Z6';
+  var host = w.location.hostname.toLowerCase().replace(/^\[|\]$/g, '');
+  var local = w.location.protocol === 'file:' || host === 'localhost' || /\.localhost$/.test(host) || host === '::1' || /^127\./.test(host) || /^10\./.test(host) || /^192\.168\./.test(host) || /^172\.(1[6-9]|2\d|3[01])\./.test(host);
+  var state = { key: key, measurementId: id, local: local, marked: false, blocked: false, reloadRequired: false, storageAvailable: true, controlUrl: 'modo-interno.html' };
+  var loaded = false;
+  function indicator() {
+    if (loaded || d.documentElement.hasAttribute('data-sr-mode-panel')) return;
+    loaded = true;
+    var script = d.createElement('script');
+    script.src = 'js/sr-internal-mode.js?v=20260923-1';
+    script.async = true;
+    (d.head || d.documentElement).appendChild(script);
+  }
+  function refresh() {
+    try {
+      state.marked = w.localStorage.getItem(key) === '1';
+      state.storageAvailable = true;
+    } catch (error) {
+      state.storageAvailable = false;
+    }
+    if (local || state.marked) {
+      // This must run synchronously, before Google Tag Manager starts.
+      w['ga-disable-' + id] = true;
+      state.blocked = true;
+      state.reloadRequired = false;
+    } else if (state.blocked) {
+      // Never resume collection midway through an already excluded page.
+      state.reloadRequired = true;
+    }
+    if (state.blocked) indicator();
+    d.dispatchEvent(new CustomEvent('sr-internal-mode-change'));
+    return state;
+  }
+  state.refresh = refresh;
+  w.__srInternalMode = state;
+  refresh();
+  w.addEventListener('storage', function (event) {
+    if (event.key === key || event.key === null) refresh();
+  });
+  w.addEventListener('pageshow', refresh);
+  d.addEventListener('visibilitychange', function () {
+    if (!d.hidden) refresh();
+  });
+})(window, document);
+</script>
+<!-- SR INTERNAL MODE END -->
+
+     <!-- Google Tag Manager -->
+     <script>
+          (function (w, d, s, l, i) {
+               w[l] = w[l] || []; w[l].push({
+                    'gtm.start':
+                         new Date().getTime(), event: 'gtm.js'
+               }); var f = d.getElementsByTagName(s)[0],
+                    j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                         'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+          })(window, document, 'script', 'dataLayer', 'GTM-KL8HZF32');
+     </script>
+     <!-- End Google Tag Manager -->
+
+     <!-- Charset & Viewport -->
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta name="theme-color" content="#0b3d2e">
+
+     <!-- Title y Description SEO -->
+     <title>Full-Day Fly Fishing Trip - Limay River - Bariloche, Patagonia | Local guides & Outfitter</title>
+     <meta name="description" content="Private full-day fly fishing on the Limay River from Bariloche, Patagonia. Enjoy guided fishing, equipment, transfers and an Argentine riverside lunch for one or two anglers. Best Bariloche outfitter.">
+     <meta name="robots" content="index, follow, max-image-preview:large">
+
+     <!-- SEO Internacional -->
+     <link rel="alternate" hreflang="en" href="https://southernriverspatagonia.com/limay-full-day-fly-fishing">
+     <link rel="alternate" hreflang="en-US" href="https://southernriverspatagonia.com/limay-full-day-fly-fishing">
+     <link rel="alternate" hreflang="es-AR" href="https://southernriverspatagonia.com/ESP/limay-full-day-fly-fishing">
+     <link rel="alternate" hreflang="es" href="https://southernriverspatagonia.com/ESP/limay-full-day-fly-fishing">
+     <link rel="alternate" hreflang="x-default" href="https://southernriverspatagonia.com/limay-full-day-fly-fishing">
+
+     <!-- Canonical -->
+     <link rel="canonical" href="https://southernriverspatagonia.com/limay-full-day-fly-fishing">
+
+     <!-- Open Graph -->
+     <meta property="og:type" content="website">
+     <meta property="og:title" content="Full-Day Fly Fishing Trip - Limay River - Bariloche, Patagonia | Local guides &amp; Outfitter">
+     <meta property="og:description" content="Private full-day fly fishing on the Limay River from Bariloche, Patagonia. Enjoy guided fishing, equipment, transfers and an Argentine riverside lunch for one or two anglers. Best Bariloche outfitter.">
+     <meta property="og:image" content="https://southernriverspatagonia.com/images/limay-full-day-fly-fishing/social/limay-river-driftboat-fishing-patagonia-1200-share.jpg">
+     <meta property="og:image:secure_url" content="https://southernriverspatagonia.com/images/limay-full-day-fly-fishing/social/limay-river-driftboat-fishing-patagonia-1200-share.jpg">
+     <meta property="og:image:type" content="image/jpeg" />
+     <meta property="og:url" content="https://southernriverspatagonia.com/limay-full-day-fly-fishing">
+     <meta property="og:site_name" content="Southern Rivers Patagonia">
+     <meta property="og:locale" content="en_US">
+     <meta property="og:locale:alternate" content="es_AR">
+
+     <!-- Twitter Card -->
+     <meta name="twitter:card" content="summary_large_image">
+     <meta name="twitter:title" content="Full-Day Fly Fishing Trip - Limay River - Bariloche, Patagonia | Local guides &amp; Outfitter">
+     <meta name="twitter:description" content="Private full-day fly fishing on the Limay River from Bariloche, Patagonia. Enjoy guided fishing, equipment, transfers and an Argentine riverside lunch for one or two anglers. Best Bariloche outfitter.">
+     <meta name="twitter:image" content="https://southernriverspatagonia.com/images/limay-full-day-fly-fishing/social/limay-river-driftboat-fishing-patagonia-1200-share.jpg">
+
+     <!-- Favicon (rutas absolutas sin www) -->
+     <link rel="icon" href="https://southernriverspatagonia.com/images/favicon_sr.png" type="image/png">
+     <link rel="shortcut icon" href="https://southernriverspatagonia.com/images/favicon_sr.ico" type="image/x-icon">
+     <link rel="apple-touch-icon" href="https://southernriverspatagonia.com/images/favicon_sr.png">
+
+     <!-- Estilos CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+     <link rel="stylesheet" href="/css/styles.css?v=20260920-image-names">
+
+     <link rel="preload" href="/css/font-awesome.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+     <noscript>
+          <link rel="stylesheet" href="/css/font-awesome.min.css">
+     </noscript>
+
+     <link rel="preload" href="/css/animate.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+     <noscript>
+          <link rel="stylesheet" href="/css/animate.css">
+     </noscript>
+
+     <link rel="preload" href="/css/owl.carousel.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+     <noscript>
+          <link rel="stylesheet" href="/css/owl.carousel.css">
+     </noscript>
+
+     <link rel="preload" href="/css/owl.theme.default.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+     <noscript>
+          <link rel="stylesheet" href="/css/owl.theme.default.min.css">
+     </noscript>
+
+     <link rel="preload" href="/css/magnific-popup.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+     <noscript>
+          <link rel="stylesheet" href="/css/magnific-popup.css">
+     </noscript>
+
+     <!-- Local Fonts (auto-hosted for performance) -->
+     <link rel="preload" href="/fonts/bebas-neue-v16-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+     <link rel="preload" href="/fonts/pt-serif-v19-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+     <link rel="stylesheet" href="/css/fonts.css">
+     <!-- Preload de la imagen principal del carrusel (LCP) -->
+     
+
+     <!-- Preload del ícono TripAdvisor para mejorar LCP -->
+     <!-- JSON-LD (multilingüe y completo) -->
+     <!-- Menú compartido: editar js/site-navigation.js y css/site-navigation.css. -->
+     <link rel="stylesheet" href="/css/site-navigation.css">
+     <script src="/js/site-navigation.40956c3f1ab9.js" defer></script>
+
+<link rel="stylesheet" href="/css/hero-controls.css?v=4">
+<link rel="stylesheet" href="/css/hero-photo-signature.css?v=20260925-1">
+<link rel="stylesheet" href="/css/waters-modern.css?v=2">
+
+
+<meta property="og:image:width" content="1067">
+<meta property="og:image:height" content="800">
+<meta property="og:image:alt" content="Angler fly fishing from a drift boat on the Limay River in Patagonia">
+<meta name="twitter:image:alt" content="Angler fly fishing from a drift boat on the Limay River in Patagonia">
+
+
+<link rel="stylesheet" href="/css/day-trip-detail.css?v=20260924-text-contrast">
+<link rel="stylesheet" href="/css/limay-full-day-hero.css?v=20260924-1">
+<link rel="stylesheet" href="/css/limay-full-day-overview.css?v=20260924-1">
+<link rel="preload" as="image" type="image/webp" href="/images/sliders/limay-full-day-fly-fishing/limay-river-driftboat-fishing-patagonia-1200.webp" imagesrcset="/images/sliders/limay-full-day-fly-fishing/limay-river-driftboat-fishing-patagonia-480.webp 480w, /images/sliders/limay-full-day-fly-fishing/limay-river-driftboat-fishing-patagonia-800.webp 800w, /images/sliders/limay-full-day-fly-fishing/limay-river-driftboat-fishing-patagonia-1200.webp 1200w, /images/sliders/limay-full-day-fly-fishing/limay-river-driftboat-fishing-patagonia-1600.webp 1600w" imagesizes="100vw" fetchpriority="high">
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://southernriverspatagonia.com/#business",
+      "name": "Southern Rivers Patagonia",
+      "url": "https://southernriverspatagonia.com/",
+      "image": "https://southernriverspatagonia.com/images/sliders/daily_trips/fly-fishing-salmon-traful-river-patagonia-argentina.webp",
+      "priceRange": "$$$",
+      "parentOrganization": {
+        "@id": "https://southernriverspatagonia.com/#org"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "San Carlos de Bariloche",
+        "addressRegion": "Río Negro",
+        "addressCountry": "AR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -41.1335,
+        "longitude": -71.3103
+      },
+      "openingHours": "Mo-Su 08:00-20:00",
+      "telephone": "+54-9-294-4587543",
+      "email": "info@southernriverspatagonia.com",
+      "alternateName": "Southern Rivers Patagonia - Fly Fishing Trips",
+      "logo": {
+        "@id": "https://southernriverspatagonia.com/#logo"
+      },
+      "sameAs": [
+        "https://www.facebook.com/southernriverspatagonia",
+        "https://www.instagram.com/southern_rivers_patagonia",
+        "https://www.tripadvisor.com/Attraction_Review-g312848-d3847242-Reviews-Southern_Rivers_Patagonia_Fly_Fishing_Trips-San_Carlos_de_Bariloche_Province_of_R.html"
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://southernriverspatagonia.com/#org",
+      "name": "Southern Rivers Patagonia",
+      "url": "https://southernriverspatagonia.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://southernriverspatagonia.com/#logo",
+        "url": "https://southernriverspatagonia.com/images/Logo-negro-solo.png",
+        "contentUrl": "https://southernriverspatagonia.com/images/Logo-negro-solo.png",
+        "width": 300,
+        "height": 300
+      },
+      "sameAs": [
+        "https://www.facebook.com/southernriverspatagonia",
+        "https://www.instagram.com/southern_rivers_patagonia",
+        "https://www.tripadvisor.com/Attraction_Review-g312848-d3847242-Reviews-Southern_Rivers_Patagonia_Fly_Fishing_Trips-San_Carlos_de_Bariloche_Province_of_R.html"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "Customer Service",
+        "email": "info@southernriverspatagonia.com",
+        "telephone": "+54-9-294-4587543",
+        "availableLanguage": [
+          "en",
+          "es-AR"
+        ]
+      },
+      "alternateName": "Southern Rivers Patagonia - Fly Fishing Trips",
+      "telephone": "+54-9-294-4587543",
+      "email": "info@southernriverspatagonia.com"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://southernriverspatagonia.com/limay-full-day-fly-fishing#webpage",
+      "url": "https://southernriverspatagonia.com/limay-full-day-fly-fishing",
+      "name": "Full-Day Fly Fishing Trip - Limay River - Bariloche, Patagonia | Local guides & Outfitter",
+      "description": "Private full-day fly fishing on the Limay River from Bariloche, Patagonia. Enjoy guided fishing, equipment, transfers and an Argentine riverside lunch for one or two anglers. Best Bariloche outfitter.",
+      "inLanguage": "en",
+      "dateModified": "2026-09-27",
+      "isPartOf": {
+        "@id": "https://southernriverspatagonia.com/#website"
+      },
+      "publisher": {
+        "@id": "https://southernriverspatagonia.com/#org"
+      },
+      "mainEntity": {
+        "@id": "https://southernriverspatagonia.com/limay-full-day-fly-fishing#service"
+      },
+      "breadcrumb": {
+        "@id": "https://southernriverspatagonia.com/limay-full-day-fly-fishing#breadcrumb"
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://southernriverspatagonia.com/images/sliders/limay-full-day-fly-fishing/limay-river-driftboat-fishing-patagonia-1200.webp",
+        "width": 1200,
+        "height": 900
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://southernriverspatagonia.com/limay-full-day-fly-fishing#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://southernriverspatagonia.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Day Trips",
+          "item": "https://southernriverspatagonia.com/daily-trips.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Full day on the Limay",
+          "item": "https://southernriverspatagonia.com/limay-full-day-fly-fishing"
+        }
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://southernriverspatagonia.com/limay-full-day-fly-fishing#service",
+      "url": "https://southernriverspatagonia.com/limay-full-day-fly-fishing",
+      "name": "Limay River Full-Day Fly Fishing Trip",
+      "description": "Private full-day fly fishing on the Limay River from Bariloche, Patagonia. Enjoy guided fishing, equipment, transfers and an Argentine riverside lunch for one or two anglers. Best Bariloche outfitter.",
+      "serviceType": "Guided fly fishing",
+      "provider": {
+        "@id": "https://southernriverspatagonia.com/#business"
+      },
+      "areaServed": {
+        "@type": "Place",
+        "name": "Limay River",
+        "url": "https://southernriverspatagonia.com/limay-river"
+      },
+      "image": "https://southernriverspatagonia.com/images/sliders/limay-full-day-fly-fishing/limay-river-driftboat-fishing-patagonia-1200.webp",
+      "offers": {
+        "@type": "Offer",
+        "url": "https://southernriverspatagonia.com/limay-full-day-fly-fishing#trip-essentials",
+        "price": "530",
+        "priceCurrency": "USD",
+        "description": "Total trip price for one or two anglers. Fishing licenses and gratuities excluded."
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://southernriverspatagonia.com/limay-full-day-fly-fishing#faq",
+      "inLanguage": "en",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the difference from the half-day trip?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A full-day trip gives you time on the water both morning and afternoon, along with a hearty Argentine lunch served riverside. The half-day option focuses on the morning and includes a snack instead of lunch."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do we fish from a boat or wade?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We float the river and stop at suitable wading spots when conditions allow. The mix depends on the river level, chosen stretch and your preferences."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is this trip suitable for beginners?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The guide adapts the day and provides instruction. Let us know your experience so we can recommend an appropriate plan."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "When is the best time to target migratory brown trout?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The fall season—especially April and May—is the prime period for targeting large migratory brown trout on the Limay River. As water temperatures drop, these fish move up from Lake Nahuel Huapi into the river, creating opportunities to encounter some truly impressive specimens. It is a technical fishery that rewards patience, precise presentations, and the ability to read the water. Our guides adjust the approach and tactics each day to make the most of every opportunity."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can you accommodate dietary requirements?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Tell us about dietary requirements in advance so we can prepare suitable options for lunch."
+          }
+        }
+      ]
+    }
+  ]
+}</script>
+<link rel="stylesheet" href="/css/internal-links.css?v=20260929-home-links-v3">
+</head>
+
+<body class="waters-modern daytrip-detail" data-trip-name="Limay River Full-Day Fly Fishing Trip">
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KL8HZF32" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<a class="waters-skip" href="#trip-overview">Skip to content</a>
+<header id="site-header"></header>
+<main id="trip-content">
+<section id="home" class="section_carousel slider-home hero-controls waters-hero dt-hero dt-hero-limay-full" aria-label="Limay River Full-Day Fly Fishing Trip">
+ <div id="carousel-1" class="carousel slide" data-interval="9000">
+  <div class="carousel-inner"><div class="item active"><picture><img src="/images/sliders/limay-full-day-fly-fishing/limay-river-driftboat-fishing-patagonia-1200.webp" srcset="/images/sliders/limay-full-day-fly-fishing/limay-river-driftboat-fishing-patagonia-480.webp 480w, /images/sliders/limay-full-day-fly-fishing/limay-river-driftboat-fishing-patagonia-800.webp 800w, /images/sliders/limay-full-day-fly-fishing/limay-river-driftboat-fishing-patagonia-1200.webp 1200w, /images/sliders/limay-full-day-fly-fishing/limay-river-driftboat-fishing-patagonia-1600.webp 1600w" sizes="100vw" width="1200" height="900" alt="Angler fly fishing from a drift boat on the Limay River in Patagonia" fetchpriority="high" loading="eager" decoding="async"></picture><a class="hero-photo-signature sr-home-signature" href="/">Southern Rivers Patagonia · Since 2007</a></div></div>
+  <div class="waters-hero-overlay"><div class="dt-wrap"><div class="waters-hero-copy"><p class="waters-eyebrow">A day on the Limay · Bariloche, Patagonia</p><h1>Limay River<br><span>Full Day Fly fishing in Bariloche</span></h1><p class="waters-hero-lead">Follow the Limay through open Patagonia, with a private guide, more time to fish and an Argentine lunch beside the river.</p><div class="waters-hero-actions"><a class="waters-button waters-button-primary" href="#contact">Enquire about this trip</a><a class="waters-button waters-button-ghost" href="#trip-itinerary">Explore the day</a></div></div></div></div>
+ </div><a class="hero-discover" href="#trip-overview"><span>Discover the trip</span><i class="fa fa-angle-down" aria-hidden="true"></i></a>
+</section>
+<nav class="sr-breadcrumbs" aria-label="Breadcrumb"><div class="container"><ol><li><a href="/">Home</a></li><li><a href="/daily-trips.html">Day Trips</a></li><li><span aria-current="page">Limay Full-Day Trip</span></li></ol></div></nav>
+<section class="dt-facts" aria-label="Your trip at a glance"><div class="dt-wrap"><dl>
+ <div><dt>Including transfers</dt><dd>10–11 hours approx.</dd></div>
+ <div><dt>Private trip</dt><dd>One or two anglers</dd></div>
+ <div><dt>Fishing style</dt><dd>Float &amp; wade</dd></div>
+ <div><dt>Included</dt><dd>Argentine riverside lunch</dd></div>
+</dl></div></section>
+<section class="dt-section dt-intro" id="trip-overview"><div class="dt-wrap dt-split"><div class="waters-reveal"><p class="dt-overline">Give the river a full day</p><h2>More water to explore.<br>More time to enjoy it.</h2><p>A full day on the Limay gives you time to settle into the fishing. With <a class="sr-home-context" href="/">Southern Rivers Patagonia</a>, we float a section selected for the conditions, work promising water and stop to wade where the river allows.</p><p>Brown and rainbow trout are the main focus. Your guide reads the current, chooses the flies and adapts the approach to your experience, whether you are learning your first cast or refining a familiar technique.</p><p>Lunch is part of the day: a pause on the riverbank for Argentine food, good conversation and the landscape. Then it is back to the water for the afternoon before returning to your accommodation in Bariloche.</p><div class="dt-rate"><strong>USD 530</strong><p>Total for one or two anglers<small>Fishing license and gratuities not included.</small></p></div></div><figure class="dt-figure dt-overview-photos waters-reveal"><picture><img src="/images/limay-full-day-fly-fishing/story/limay-full-day-fly-fishing-bariloche-brown-trout-angler-800.webp" srcset="/images/limay-full-day-fly-fishing/story/limay-full-day-fly-fishing-bariloche-brown-trout-angler-480.webp 480w, /images/limay-full-day-fly-fishing/story/limay-full-day-fly-fishing-bariloche-brown-trout-angler-800.webp 800w, /images/limay-full-day-fly-fishing/story/limay-full-day-fly-fishing-bariloche-brown-trout-angler-1200.webp 1200w, /images/limay-full-day-fly-fishing/story/limay-full-day-fly-fishing-bariloche-brown-trout-angler-1600.webp 1600w, /images/limay-full-day-fly-fishing/story/limay-full-day-fly-fishing-bariloche-brown-trout-angler-2048.webp 2048w" sizes="(max-width: 767px) calc(100vw - 36px), (max-width: 991px) calc((100vw - 83px) / 2.12), (max-width: 1218px) calc((100vw - 118px) / 2.12), 519px" width="800" height="500" alt="Angler holding a brown trout in the Limay River near Bariloche, with autumn trees along the banks" loading="lazy" decoding="async"></picture><picture><img src="/images/limay-full-day-fly-fishing/story/limay-full-day-fly-fishing-patagonia-river-float-800.webp" srcset="/images/limay-full-day-fly-fishing/story/limay-full-day-fly-fishing-patagonia-river-float-480.webp 480w, /images/limay-full-day-fly-fishing/story/limay-full-day-fly-fishing-patagonia-river-float-800.webp 800w, /images/limay-full-day-fly-fishing/story/limay-full-day-fly-fishing-patagonia-river-float-1200.webp 1200w, /images/limay-full-day-fly-fishing/story/limay-full-day-fly-fishing-patagonia-river-float-1440.webp 1440w" sizes="(max-width: 767px) calc(100vw - 36px), (max-width: 991px) calc((100vw - 83px) / 2.12), (max-width: 1218px) calc((100vw - 118px) / 2.12), 519px" width="800" height="500" alt="Fishing boat floating on the clear Limay River, surrounded by green riverbanks and Patagonia’s mountains" loading="lazy" decoding="async"></picture></figure></div></section>
+<section class="dt-section dt-route" id="trip-itinerary"><div class="dt-wrap"><div class="dt-section-heading"><div><p class="dt-overline">From your accommodation to the river</p><h2>How your day unfolds.</h2></div><p>We organize the transfers, equipment and fishing, so you can settle into the experience.</p></div><ol class="dt-timeline"><li class="waters-reveal"><span class="dt-step" aria-hidden="true">01</span><div class="dt-time">8:00 AM</div><h3>Pickup at your accommodation</h3><p>Your guide picks you up in Bariloche at 8:00 a.m., and we head toward the Limay River.</p></li><li class="waters-reveal"><span class="dt-step" aria-hidden="true">02</span><div class="dt-time">Around 9:30–10:00 AM</div><h3>The morning on the river</h3><p>We begin our float and work the best pools and runs before lunch. Your guide will help with technique, fly selection, and boat positioning. Instruction is always part of the trip whenever you need it.</p></li><li class="waters-reveal"><span class="dt-step" aria-hidden="true">03</span><div class="dt-time">Around noon</div><h3>Riverside lunch</h3><p>We take a break for appetizers, premium Argentine grilled beef, fresh salads, and dessert, accompanied by Malbec wine. Please let us know in advance about any dietary requirements.</p></li><li class="waters-reveal"><span class="dt-step" aria-hidden="true">04</span><div class="dt-time">Afternoon · return around 6:30 PM</div><h3>More fishing and the return to Bariloche</h3><p>After lunch, we get back on the water and normally continue fishing until approximately 5:00 p.m. Your guide then drives you back to your accommodation in the city.</p></li></ol><p class="dt-schedule-note">Times are approximate and may vary depending on your accommodation, the section of river we fish, and the conditions that day. We confirm the final plan and schedule with you before the trip.</p></div></section>
+<section class="dt-section dt-experience" id="trip-experience"><div class="dt-wrap"><p class="dt-overline">Experience it for yourself</p><h2>A full day of fly fishing on the Limay River</h2><div class="dt-experience-grid"><article class="waters-reveal"><picture><img src="/images/limay-full-day-fly-fishing/services/limay-river-wading-fishing-patagonia-800.webp" srcset="/images/limay-full-day-fly-fishing/services/limay-river-wading-fishing-patagonia-480.webp 480w, /images/limay-full-day-fly-fishing/services/limay-river-wading-fishing-patagonia-800.webp 800w, /images/limay-full-day-fly-fishing/services/limay-river-wading-fishing-patagonia-1200.webp 1200w" sizes="(max-width:767px) calc(100vw - 36px), (max-width:991px) 45vw, 550px" width="800" height="600" alt="Angler wading the Limay River with a bent fly rod in Patagonia" loading="lazy" decoding="async"></picture><h3>More time on the river</h3><p>A full day gives us time to explore different stretches, fine-tune our approach, and adapt our strategy alongside a knowledgeable local guide.</p></article><article class="waters-reveal"><picture><img src="/images/limay-full-day-fly-fishing/services/patagonia-guided-fishing-riverside-lunch-800.webp" srcset="/images/limay-full-day-fly-fishing/services/patagonia-guided-fishing-riverside-lunch-480.webp 480w, /images/limay-full-day-fly-fishing/services/patagonia-guided-fishing-riverside-lunch-800.webp 800w, /images/limay-full-day-fly-fishing/services/patagonia-guided-fishing-riverside-lunch-1200.webp 1200w" sizes="(max-width:767px) calc(100vw - 36px), (max-width:991px) 45vw, 550px" width="800" height="454" alt="Guests enjoying lunch beside a drift boat on the Limay River in Patagonia" loading="lazy" decoding="async"></picture><h3>Patagonian flavors</h3><p>A riverside table featuring an appetizer, Argentine beef, fresh salads, Malbec, and time to enjoy the scenery before heading back out on the water.</p></article><article class="waters-reveal"><picture><img src="/images/limay-full-day-fly-fishing/services/limay-full-day-fly-fishing-bariloche-brown-trout-drift-boat-800.webp" srcset="/images/limay-full-day-fly-fishing/services/limay-full-day-fly-fishing-bariloche-brown-trout-drift-boat-480.webp 480w, /images/limay-full-day-fly-fishing/services/limay-full-day-fly-fishing-bariloche-brown-trout-drift-boat-800.webp 800w, /images/limay-full-day-fly-fishing/services/limay-full-day-fly-fishing-bariloche-brown-trout-drift-boat-1200.webp 1200w, /images/limay-full-day-fly-fishing/services/limay-full-day-fly-fishing-bariloche-brown-trout-drift-boat-1600.webp 1600w, /images/limay-full-day-fly-fishing/services/limay-full-day-fly-fishing-bariloche-brown-trout-drift-boat-2048.webp 2048w" sizes="(max-width: 767px) calc(100vw - 36px), (max-width: 1218px) calc((100vw - 104px) / 3), 372px" width="800" height="600" alt="Angler holding a brown trout in the Limay River, with a Southern Rivers Patagonia drift boat behind him" loading="lazy" decoding="async"></picture><h3>Private, personalized fishing</h3><p>We work with one or two anglers per guide and boat, providing dedicated attention, quality gear, and guidance tailored to your experience.</p></article></div></div></section>
+<section class="dt-section dt-essentials" id="trip-essentials"><div class="dt-wrap"><p class="dt-overline">Before you book</p><h2>Every detail, clearly explained.</h2><div class="dt-inclusions"><article class="dt-included"><h3>Included in your trip</h3><ul><li>Pickup and return transfers to your accommodation in downtown Bariloche</li><li>Professional guide and a private boat for one or two anglers</li><li>Complete fishing gear when needed</li><li>Instruction and advice suited to your experience</li><li>Argentine riverside lunch and drinks</li></ul></article><article class="dt-excluded"><h3>Not included</h3><ul><li>Fishing license: USD 40 per person, per day. We can arrange it in advance.</li><li>Gratuities for your guide.</li></ul><div class="dt-rate"><strong>USD 530</strong><p>Total for one or two anglers</p></div><a class="dt-text-link" href="#contact">Ask about availability <span aria-hidden="true">→</span></a></article></div><div class="dt-checklist"><div><h3>What to bring</h3><p>Sunglasses, a hat, sunscreen, lip balm, a waterproof jacket and warm layers. Let us know your sizes and equipment needs before the trip.</p></div><div><h3>Payment and enquiries</h3><p>Cards through PayPal or WeTravel, bank transfer or ACH, cash and stablecoins. Contact us to confirm dates, availability and booking arrangements.</p></div></div></div></section>
+<section class="dt-season-summary" id="trip-season" aria-labelledby="trip-season-title"><div class="dt-wrap"><div class="dt-season-card"><h2 id="trip-season-title">Fishing season · Limay River</h2><p>November through May</p></div></div></section>
+<section class="dt-section dt-faq" id="trip-faq"><div class="dt-wrap dt-faq-layout"><div><p class="dt-overline">Useful to know</p><h2>Before your<br>first cast.</h2><p>Have another question? Get in touch and we will help you choose the right trip for your visit.</p></div><div><details><summary>What is the difference from the half-day trip?</summary><p>A full-day trip gives you time on the water both morning and afternoon, along with a hearty Argentine lunch served riverside. The half-day option focuses on the morning and includes a snack instead of lunch.</p></details><details><summary>Do we fish from a boat or wade?</summary><p>We float the river and stop at suitable wading spots when conditions allow. The mix depends on the river level, chosen stretch and your preferences.</p></details><details><summary>Is this trip suitable for beginners?</summary><p>Yes. The guide adapts the day and provides instruction. Let us know your experience so we can recommend an appropriate plan.</p></details><details><summary>When is the best time to target migratory brown trout?</summary><p>The fall season—especially April and May—is the prime period for targeting large migratory brown trout on the Limay River. As water temperatures drop, these fish move up from Lake Nahuel Huapi into the river, creating opportunities to encounter some truly impressive specimens.
+It is a technical fishery that rewards patience, precise presentations, and the ability to read the water. Our guides adjust the approach and tactics each day to make the most of every opportunity.</p></details><details><summary>Can you accommodate dietary requirements?</summary><p>Yes. Tell us about dietary requirements in advance so we can prepare suitable options for lunch.</p></details></div></div></section>
+<section class="dt-other-trips" id="other-day-trips" aria-labelledby="other-day-trips-title"><div class="dt-wrap"><div class="dt-other-copy"><h2 id="other-day-trips-title">More fishing day trips</h2><p>Working with a shorter itinerary? The half-day Limay trip offers a private morning with a snack before returning to Bariloche.</p></div><nav aria-label="Other fishing day trips"><a class="dt-text-link" href="/limay-half-day-fly-fishing">Half day on the Limay <span aria-hidden="true">→</span></a><a class="dt-text-link" href="/manso-full-day-fly-fishing">Full day on the Manso <span aria-hidden="true">→</span></a><a class="dt-text-link" href="/daily-trips.html">All day trips <span aria-hidden="true">→</span></a></nav></div></section>
+</main>
+<section id="contact"></section>
+<footer id="footer"><section id="EN_footer"></section></footer>
+<script src="/js/jquery.js" defer></script>
+<script src="/js/bootstrap.min.js" defer></script>
+<script src="/js/jquery.stellar.min.js" defer></script>
+<script src="/js/wow.min.js" defer></script>
+<script src="/js/owl.carousel.min.js" defer></script>
+<script src="/js/jquery.magnific-popup.min.js" defer></script>
+<script src="/js/smoothscroll.js" defer></script>
+<script src="/js/custom.8f7c1f923bc3.js" defer></script>
+<script src="/js/contact-form-en.js?v=20260929-home-links-v3" defer></script>
+<script src="/js/waters-modern.js?v=2" defer></script>
+<script src="/js/day-trip-detail.js?v=20260923-daytrips" defer></script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"ba56654c063649baa7f0cce9ff3919da","r":1,"spa":2}' crossorigin="anonymous"></script>
+</body>
+</html>
