@@ -6,7 +6,7 @@
  * (script = prestadores-descripcion-pt-2026-10-31).
  */
 
-$aplicar = false;
+$aplicar = true;
 
 $fichas = [
 	'Trout Bariloche' => [
