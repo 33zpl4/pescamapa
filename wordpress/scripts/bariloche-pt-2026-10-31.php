@@ -7,7 +7,7 @@
  * (script = bariloche-pt-2026-10-31). Run BEFORE bariloche-paquetes-pt-2026-10-31 (the packages hang from this post).
  */
 
-$aplicar = false;
+$aplicar = true;
 $hoy     = '20261031';
 
 function pm_bp_p( string $h ): string { return "<!-- wp:paragraph -->\n<p>{$h}</p>\n<!-- /wp:paragraph -->"; }
