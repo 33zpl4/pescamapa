@@ -267,6 +267,8 @@ function pm_jsonld_destino( array $d ): array {
 			'containedInPlace' => [ '@type' => 'AdministrativeArea', 'name' => "{$provincia}, Argentina" ],
 			'touristType'      => $d['modalidades'],
 			'inLanguage'       => pm_meta_idioma( $d['idioma'] )['html'],
+			'dateModified'     => $d['actualizado'] ?: null, // the date the guide shows; what an answer engine should quote as 'as of'
+			'publisher'        => [ '@type' => 'Organization', 'name' => 'Pescamapa', 'url' => pm_url_inicio( $d['idioma'] ) ],
 		],
 		[
 			'@context'        => 'https://schema.org',
@@ -274,6 +276,7 @@ function pm_jsonld_destino( array $d ): array {
 			'itemListElement' => array_map( fn( $m, $i ) => [ '@type' => 'ListItem', 'position' => $i + 1 ] + $m, $migas, array_keys( $migas ) ),
 		],
 	];
+	$out[0] = array_filter( $out[0], fn( $v ) => null !== $v );
 	// Sources as structured data (not a long list the reader has to scan).
 	$citas = array_values( array_filter( array_map( fn( $f ) => ! empty( $f['url'] ) ? [ '@type' => 'CreativeWork', 'name' => $f['nombre'], 'url' => $f['url'] ] : null, $d['fuentes'] ) ) );
 	if ( $citas ) {
