@@ -9,7 +9,7 @@
  * the file lives in wordpress/fotos/ and wp-script.yml copies it to /tmp/pm-fotos/.
  */
 
-$aplicar = false;
+$aplicar = true;
 $carpeta = '/tmp/pm-fotos';
 $foto    = [
 	'archivo' => 'paso-de-la-patria-dorado-saltando.jpg', 'autor' => 'Jim Klug', 'origen' => 'cedida',
