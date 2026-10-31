@@ -12,7 +12,7 @@
  * Dry run first ($aplicar = false); run with wp-script.yml (script = prestadores-bariloche-dia-2026-10-31).
  */
 
-$aplicar = false;
+$aplicar = true;
 $hoy     = '20261031';
 
 $nota_interna = 'Listado con información pública (sitio del operador leído el 31/10/2026 por investigar.yml). Pescamapa no confirmó contacto, disponibilidad ni habilitación con el registro provincial. Falta contactarlo y cruzarlo con el directorio de prestadores de Neuquén / Río Negro.';
