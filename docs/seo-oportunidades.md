@@ -1,5 +1,7 @@
 # Oportunidades SEO — prioridades de contenido
 
+> **Superado el 31/10/2026** por `docs/estrategia-seo-2026-10-31.md` (estrategia v2) y el backlog con puntaje en `docs/ideas-contenido-seo-2026-10-31.md`. Se conserva como historia de la decisión del 20/10.
+
 Análisis del dueño (20/10/2026). Decide **qué destino se arma después** y
 qué páginas sumamos. Objetivo de todo: ser útil para quien quiere pescar y
 que Google y las IA nos citen.
