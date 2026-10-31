@@ -8,7 +8,7 @@
  * Dry run first ($aplicar = false); run with wp-script.yml (script = nota-por-tu-cuenta-ajuste2-2026-10-31).
  */
 
-$aplicar = false;
+$aplicar = true;
 $pkg     = esc_url( pm_url_paquetes( 'bariloche', 'en' ) );
 
 $cambios = [

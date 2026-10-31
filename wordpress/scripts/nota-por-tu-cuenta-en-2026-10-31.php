@@ -10,7 +10,7 @@
  * It deliberately has NO trip total, no car/cabin/fuel/grocery prices and no named access points: they wait for a sourced research
  * round (docs/investigacion/diy-patagonia-directiva-y-auditorias-2026-10-31.md, line 2). The general articles of the Reglamento
  * (felt soles art. 22, imported gear arts. 27-28) were NOT read: the note says so. The Limay reference price of our packages page
- * (USD 550 / 650) is NOT quoted here: it sits above the operators' own rates (USD 520-550 per boat), see the note to the owner.
+ * (USD 550 / 650) is linked from the call to action, not quoted: owner (31/10/2026) finds it fair because it includes the permit, lunch and more; the note gives one figure for the guided day (around USD 550 per boat, the operators' own pages show 520-550) and does not name the operators.
  *
  * English only for now (as the golden dorado pillar): pm_nota() reads its type/date from the post itself when there is no Spanish one.
  * Cover photo: the existing attachment "junin-pescador-volcan.jpg" (credit Chad Shmukler).
@@ -62,23 +62,23 @@ $n = [
 		'A non-resident permit for 2026/27 costs ARS 50,000 a day, ARS 140,000 for 10 days or ARS 280,000 for the season in Neuquén and Río Negro (permit valid in Río Negro, Neuquén, Chubut and the National Parks).',
 		'Preferential zones need an extra permit (ARS 12,500 a day, 25,000 for 10 days, 50,000 for the season, as announced by Neuquén).',
 		'Felt-soled boots are banned in all Río Negro waters and in each National Park water that lists the ban: do not bring felt anywhere in Patagonia.',
-		'A full day with a guide and a boat on the Limay is published at USD 520 to 550 per boat for one or two anglers; the licence is usually extra.',
+		'A full day with a guide and a boat on the Limay is published at around USD 550 per boat for one or two anglers; the licence is usually extra.',
 		'A river being public does not give you the right to cross private land to reach it; the legal way in is a public road, a bridge approach, a boat ramp or the owner\'s permission.',
 	],
 ];
 
 $cuerpo = implode( "\n\n", [
-	pm_dy_p( '<strong>Short answer.</strong> Yes, you can fish Patagonia without a lodge. The fixed costs we can source today are the <strong>permit</strong> (ARS 140,000 for 10 days for a non-resident in Neuquén and Río Negro in 2026/27) and, if you want a boat, <strong>a day with a local guide</strong> (USD 520 to 550 per boat for one or two anglers on the Limay, as four operators publish it). We have not priced the car, the cabins, fuel or groceries with a source yet, so this guide gives <strong>no trip total</strong>: it tells you what is certain and what is still open.' ),
+	pm_dy_p( '<strong>Short answer.</strong> Yes, you can fish Patagonia without a lodge. The fixed costs we can source today are the <strong>permit</strong> (ARS 140,000 for 10 days for a non-resident in Neuquén and Río Negro in 2026/27) and, if you want a boat, <strong>a day with a local guide</strong> (around USD 550 per boat for one or two anglers on the Limay, going by the rates operators publish). We have not priced the car, the cabins, fuel or groceries with a source yet, so this guide gives <strong>no trip total</strong>: it tells you what is certain and what is still open.' ),
 	pm_dy_h2( 'What does a trip on your own cost?' ),
 	pm_dy_p( 'This is what we can source, with the date we read it. Everything else is left out on purpose.' ),
 	pm_dy_tabla( [ 'Item', 'What we found', 'Source' ], [
 		[ '<strong>Fishing permit, non-resident</strong>', 'ARS 50,000 a day, ARS 140,000 for 10 days, ARS 280,000 for the season, per angler', 'Neuquén values reported on 16 October 2026; Río Negro portal read on 30 October 2026' ],
 		[ '<strong>Extra permit, preferential zones</strong>', 'ARS 12,500 a day, ARS 25,000 for 10 days, ARS 50,000 for the season', 'Neuquén values reported on 16 October 2026' ],
-		[ '<strong>Guide and boat, full day, 1 or 2 anglers</strong>', 'USD 520 to 550 per boat', 'Four operators, rates read on 31 October 2026 (table below)' ],
+		[ '<strong>Guide and boat, full day, 1 or 2 anglers</strong>', 'Around USD 550 per boat', 'Operators\' own websites, rates read on 31 October 2026' ],
 		[ '<strong>Car, cabin for two, fuel, groceries</strong>', 'Not priced yet', 'We add them when we have a source and a date' ],
 	] ),
-	pm_dy_p( '<strong>A worked example.</strong> Two anglers on a ten-day trip with one day on a boat: two 10-day permits are 2 × ARS 140,000 = ARS 280,000, and the guided day is USD 520 to 550 for the boat. We do not convert pesos to dollars, because the rate moves: use the day\'s rate when you plan.' ),
-	pm_dy_p( 'Ask every guide whether the permit is included. Of the four operators below, three list the licence as not included, and two of those offer to arrange it for USD 35 to 40. The fourth does not say on its page.' ),
+	pm_dy_p( '<strong>A worked example.</strong> Two anglers on a ten-day trip with one day on a boat: two 10-day permits are 2 × ARS 140,000 = ARS 280,000, and the guided day is about USD 550 for the boat. We do not convert pesos to dollars, because the rate moves: use the day\'s rate when you plan.' ),
+	pm_dy_p( 'Ask every guide whether the permit is included: most operators we read list the licence as an extra, and some offer to arrange it for around USD 35 to 40.' ),
 	pm_dy_h2( 'The permit: what it covers and where to buy it' ),
 	pm_dy_lista( [
 		'<strong>One permit, several jurisdictions.</strong> According to the 2026/27 annexes of Neuquén and Río Negro, the Patagonian permit is valid in Río Negro, Neuquén, Chubut and the National Parks.',
@@ -106,14 +106,8 @@ $cuerpo = implode( "\n\n", [
 	pm_dy_p( 'We do not list access points we have not verified. When we have a source and a date for a public ramp or approach, it goes in the destination guide.' ),
 	pm_dy_h2( 'When a day with a guide is worth it' ),
 	pm_dy_p( 'Some water is made for a boat. On the Upper Limay boats without a motor are the way in, and a drift boat covers stretches you cannot reach on foot. Many independent anglers plan their own trip and add one or two days with a guide.' ),
-	pm_dy_tabla( [ 'Operator', 'Full day', 'What the page says' ], [
-		[ '<a href="https://troutbariloche.com/day-trips/" rel="noopener">Trout Bariloche</a>', 'USD 520', '1 or 2 anglers; an extra angler aged 11 or older pays USD 60; licence USD 40 on request' ],
-		[ '<a href="https://southernriverspatagonia.com/limay-full-day-fly-fishing" rel="noopener">Southern Rivers Patagonia</a>', 'USD 530', 'Total for 1 or 2 anglers; fishing licence and gratuities not included' ],
-		[ '<a href="https://www.patagoniaintheloop.com/" rel="noopener">Patagonia in the Loop</a>', 'USD 550', '1 or 2 anglers, 9 hours; half day USD 430; licence USD 35 on request' ],
-		[ '<a href="https://www.patagoniadrift.com.ar/en/fly-fishing-day-trips/" rel="noopener">Patagonia Drift Fly Fishing</a>', 'USD 550', '1 or 2 anglers; full-day Limay float' ],
-	] ),
-	pm_dy_p( 'These are the rates the operators publish, read on 31 October 2026. They are not quotes for your dates and we have not fished with them, so this is not a recommendation. In Neuquén the province keeps an official list of authorised guides and agencies at <a href="https://turismo.neuquen.gob.ar/actividades/?turapi_prestacion=Pesca" rel="noopener">turismo.neuquen.gob.ar</a>. If a rate has changed, tell us through <a href="{viaje}">the trip form</a> and we will update this note.' ),
-	pm_dy_p( '<strong>Want a road trip with a day or two on a boat?</strong> Tell us your dates, how many of you are going and your experience in <a href="{viaje}">the trip form</a>. We pass the request to a local guide and write back with options, at no cost or commitment.' ),
+	pm_dy_p( 'Rates on several operators\' own websites, read on 31 October 2026, cluster around USD 550 for a full day with a boat for one or two anglers, and the licence is usually extra. They are published rates, not quotes for your dates, and we have not fished with these operators, so this is not a recommendation. In Neuquén the province keeps an official list of authorised guides and agencies at <a href="https://turismo.neuquen.gob.ar/actividades/?turapi_prestacion=Pesca" rel="noopener">turismo.neuquen.gob.ar</a>. If a rate has changed, tell us through <a href="{viaje}">the trip form</a> and we will update this note.' ),
+	pm_dy_p( '<strong>Want a road trip with a day or two on a boat?</strong> Tell us your dates, how many of you are going and your experience in <a href="{viaje}">the trip form</a>. We pass the request to a local guide and write back with options, at no cost or commitment. Our <a href="{paquetes}">Bariloche packages page</a> shows a full day on the Limay, with what it includes and a reference price.' ),
 	pm_dy_h2( 'Getting around' ),
 	pm_dy_p( 'One practical detail: the Villa Llanquín cable ferry carries vehicles across the Limay between Route 40 and Villa Llanquín. It is free and runs from 8:00 to 20:00, according to Río Negro\'s road agency (<a href="https://gobierno.rionegro.gov.ar/servicio/213/balsas" rel="noopener">Vialidad Rionegrina</a>). That page says nothing about fishing access there.' ),
 	pm_dy_caja( 'Up to date · 2026/27 season, 31 October 2026', [
@@ -169,6 +163,7 @@ $enlaces = [
 	'{bariloche}' => pm_dy_destino( 'bariloche', 'our Bariloche guide' ),
 	'{junin}'     => pm_dy_destino( 'san-martin-junin', 'San Martín and Junín de los Andes' ),
 	'{trucha}'    => pm_dy_nota( 'cuando-pescar-trucha-patagonia', 'our note on when to fish trout in Patagonia' ),
+	'{paquetes}' => esc_url( pm_url_paquetes( 'bariloche', 'en' ) ),
 	'{viaje}'     => esc_url( ( function_exists( 'pm_url_viaje' ) ? pm_url_viaje( 'en' ) : home_url( '/en/plan-a-trip/' ) ) . '?destino=bariloche&especie=trucha' ),
 ];
 $cuerpo = strtr( $cuerpo, $enlaces );
