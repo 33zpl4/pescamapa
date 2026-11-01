@@ -1,0 +1,9 @@
+(text/plain; charset=utf-8, no es HTML)
+User-agent: *
+Disallow: /wp-admin/
+Allow: /wp-admin/admin-ajax.php
+
+Sitemap: https://pescamapa.com/wp-sitemap.xml
+
+# Pages the inquiry forms redirect to: duplicates of the page itself.
+Disallow: /*?consulta=
