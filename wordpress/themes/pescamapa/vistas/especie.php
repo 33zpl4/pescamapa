@@ -30,6 +30,7 @@ get_header(); ?>
 				</ul>
 			</details>
 		<?php endif; ?>
+		<?php get_template_part( 'parciales/guias-especie', null, [ 'especie' => $e['clave'], 'idioma' => $idioma ] ); ?>
 		<?php get_template_part( 'parciales/notas-relacionadas', null, [ 'notas' => pm_notas_para( $idioma, '', [ $e['clave'] ] ), 'h2' => 'especie.notas.h2' ] ); ?>
 		<?php if ( $destinos ) : ?>
 			<h2><?php pm_e( 'especie.donde' ); ?> <?php echo esc_html( mb_strtolower( $e['nombre'] ) ); ?></h2>

@@ -124,6 +124,44 @@ function pm_seo(): array {
 			'@type'      => 'FAQPage',
 			'mainEntity' => array_map( fn( $n ) => [ '@type' => 'Question', 'name' => pm_t( "pg.faq.$n.q" ), 'acceptedAnswer' => [ '@type' => 'Answer', 'text' => pm_t( "pg.faq.$n.a" ) ] ], [ 1, 2, 3, 4 ] ),
 		];
+	} elseif ( 'provincia' === $vista ) {
+		$region   = (string) get_query_var( 'pm_region' );
+		$prov     = (string) get_query_var( 'pm_provincia' );
+		$destinos = pm_destinos_provincia( $region, $prov, pm_lang() );
+		$a        = [ 'prov' => PM_PROVINCIAS[ $prov ] ?? $prov, 'region' => PM_REGIONES[ $region ][ pm_lang() ] ?? $region, 'n' => (string) count( $destinos ) ];
+		$url      = pm_url_provincia( $region, $prov, pm_lang() );
+		$s['title']       = pm_t( 'prov.title', $a );
+		$s['description'] = pm_t( 'prov.description', $a );
+		$s['alternas']    = pm_alternas_fijas( fn( $i ) => pm_url_provincia( $region, $prov, $i ) );
+		$s['jsonld'][]    = [
+			'@context'    => 'https://schema.org',
+			'@type'       => 'CollectionPage',
+			'name'        => pm_t( 'prov.h1', $a ),
+			'description' => $s['description'],
+			'url'         => $url,
+			'inLanguage'  => pm_meta_idioma()['html'],
+			'isPartOf'    => [ '@type' => 'WebSite', 'name' => 'Pescamapa', 'url' => pm_url_inicio( pm_lang() ) ],
+			'publisher'   => [ '@type' => 'Organization', 'name' => 'Pescamapa', 'url' => pm_url_inicio( pm_lang() ) ],
+			'about'       => [ '@type' => 'AdministrativeArea', 'name' => $a['prov'], 'containedInPlace' => [ '@type' => 'Country', 'name' => 'Argentina' ] ],
+			'mainEntity'  => [
+				'@type'           => 'ItemList',
+				'itemListElement' => array_map( fn( $n, $d ) => [ '@type' => 'ListItem', 'position' => $n + 1, 'name' => $d['nombre'], 'url' => $d['url'] ], array_keys( $destinos ), $destinos ),
+			],
+		];
+		$s['jsonld'][]    = [
+			'@context'        => 'https://schema.org',
+			'@type'           => 'BreadcrumbList',
+			'itemListElement' => [
+				[ '@type' => 'ListItem', 'position' => 1, 'name' => 'Pescamapa', 'item' => pm_url_inicio( pm_lang() ) ],
+				[ '@type' => 'ListItem', 'position' => 2, 'name' => $a['prov'], 'item' => $url ],
+			],
+		];
+		foreach ( $destinos as $d ) {
+			if ( $d['foto'] ) {
+				$s['imagen'] = wp_get_attachment_image_url( $d['foto'], 'large' );
+				break;
+			}
+		}
 	} elseif ( 'rio-punto' === $vista ) {
 		$k  = (string) get_query_var( 'pm_rio_clave' );
 		$x  = pm_rio_destino( $k );
