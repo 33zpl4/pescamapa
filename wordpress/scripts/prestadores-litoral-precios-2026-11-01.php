@@ -64,7 +64,7 @@ foreach ( $cambios as $nombre => $c ) {
 		continue;
 	}
 	$fuente = (string) pm_campo( 'prest_fuente', $id );
-	WP_CLI::log( ( $aplicar ? 'APLICA' : 'SIMULACRO' ) . ": $nombre (#$id) → descripción sin mención de plataforma; fuente «$fuente» pasa a notas; precio: " . ( $c['precio'] ?? 'sin publicar' ) );
+	WP_CLI::log( ( $aplicar ? 'APLICA' : 'SIMULACRO' ) . ": $nombre (#$id) → descripción sin mención de plataforma; fuente «{$fuente}» pasa a notas; precio: " . ( $c['precio'] ?? 'sin publicar' ) );
 	if ( ! $aplicar ) {
 		continue;
 	}
