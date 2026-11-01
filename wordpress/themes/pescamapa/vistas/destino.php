@@ -133,6 +133,9 @@ get_header(); ?>
 				<?php foreach ( $prestadores as $r ) {
 					get_template_part( 'parciales/prestador', null, $r );
 				} ?>
+				<?php if ( pm_destino_guias( $d['clave'], $idioma ) ) : ?>
+					<p class="a-guias"><a href="<?php echo esc_url( pm_url_guias( $d['clave'], $idioma ) ); ?>"><?php pm_e( 'guias.desde_guia', [ 'lugar' => $d['nombre'] ] ); ?></a></p>
+				<?php endif; ?>
 				<div class="elegir">
 					<h3><?php pm_e( 'ficha.elegir.h3' ); ?></h3>
 					<ol>

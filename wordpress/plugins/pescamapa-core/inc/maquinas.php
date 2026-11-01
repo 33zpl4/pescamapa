@@ -21,7 +21,13 @@ add_filter( 'robots_txt', function ( $salida, $publico ) {
 	if ( ! $publico ) {
 		return $salida;
 	}
-	return rtrim( $salida ) . "\n\n# Pages the inquiry forms redirect to: duplicates of the page itself.\nDisallow: /*?consulta=\n";
+	$salida = rtrim( $salida ) . "\n\n# Pages the inquiry forms redirect to: duplicates of the page itself.\nDisallow: /*?consulta=\n";
+	// Assistants and their crawlers are welcome by name: the whole site is written to be read and cited (llms.txt has the summary).
+	foreach ( [ 'GPTBot', 'OAI-SearchBot', 'ChatGPT-User', 'ClaudeBot', 'Claude-User', 'Claude-SearchBot', 'anthropic-ai', 'PerplexityBot', 'Perplexity-User', 'Google-Extended', 'Applebot-Extended', 'CCBot', 'Bytespider', 'Amazonbot', 'meta-externalagent' ] as $bot ) {
+		$salida .= "\nUser-agent: {$bot}\nAllow: /\nDisallow: /wp-admin/\nDisallow: /*?consulta=\n";
+	}
+	$salida .= "\n# Machine-readable summary of the site, for language models: " . home_url( '/llms.txt' ) . "\n";
+	return $salida;
 }, 20, 2 );
 
 /** One markdown bullet: [name](url): note. */
@@ -111,6 +117,36 @@ function pm_llms_txt(): string {
 		$out[] = '## Paquetes de pesca';
 		$out[] = '';
 		array_push( $out, ...$paq );
+	}
+	// One page per city with every public outfitter, and one line per outfitter: what the provider itself publishes,
+	// attributed and dated, never contact data. Public-information cards say so.
+	$ciudades = [];
+	foreach ( pm_destinos_lista( 'es' ) as $d ) {
+		$lista = pm_prestadores_destino( $d['clave'] );
+		if ( ! $lista ) {
+			continue;
+		}
+		$ciudades[] = pm_llms_item( 'Guías de pesca en ' . $d['nombre'], pm_url_guias( $d['clave'], 'es' ), count( $lista ) . ' fichas (guías, alojamientos y salidas), qué incluye cada una y las tarifas que el propio prestador publica, con fecha. Las consultas van por el formulario de Pescamapa.', pm_alternas_guias( $d['clave'] ) );
+		foreach ( $lista as $r ) {
+			$partes = [ implode( ', ', array_map( fn( $t ) => pm_opcion( 'tipo', $t, 'es' ), $r['tipo'] ) ) ];
+			if ( $r['modalidades'] ) {
+				$partes[] = implode( ', ', array_map( fn( $k ) => pm_opcion( 'modalidad', $k, 'es' ), $r['modalidades'] ) );
+			}
+			if ( $r['incluye'] ) {
+				$partes[] = 'incluye ' . implode( ', ', array_map( fn( $k ) => mb_strtolower( pm_opcion( 'incluye', $k, 'es' ) ), $r['incluye'] ) );
+			}
+			if ( $r['precio'] && $r['precio_fecha'] ) {
+				$partes[] = $r['precio'] . ' (según el prestador, consultado el ' . pm_fecha( $r['precio_fecha'], 'es' ) . ')';
+			}
+			$partes[] = ( $r['acuerdo'] && $r['consentimiento'] ) ? 'operador con acuerdo con Pescamapa' : ( $r['consentimiento'] ? 'ficha confirmada por el prestador' : 'información pública, sin verificar con el prestador' );
+			$ciudades[] = '  ' . pm_llms_item( $r['nombre'], pm_url_guias( $d['clave'], 'es' ) . '#prestador-' . $r['id'], implode( '; ', $partes ) );
+		}
+	}
+	if ( $ciudades ) {
+		$out[] = '';
+		$out[] = '## Guías de pesca por ciudad (prestadores listados)';
+		$out[] = '';
+		array_push( $out, ...$ciudades );
 	}
 	// How the site turns an answer into an inquiry: what an assistant can tell someone who wants to book.
 	$out[] = '';

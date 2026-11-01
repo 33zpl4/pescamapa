@@ -153,7 +153,7 @@ jobs:
           check /litoral/corrientes/pesca-en-esquina/ 200 'mailto:info@pescamapa.com?subject='
           check /litoral/corrientes/pesca-en-esquina/ 200 'sin verificar con el prestador'
           check /litoral/corrientes/pesca-en-esquina/ 200 'Precio: a consultar'
-          check /llms.txt 200 'se corrigen o se quitan a pedido' 'PRESTADOR-PUBLICO'
+          check /llms.txt 200 'se corrigen o se quitan a pedido' 'PRESTADOR-NO-PUBLICO'   # public listings ARE in llms.txt since 1/11/2026; non-public never
           # Special condition: only for an outfitter we work with.
           check /litoral/corrientes/pesca-en-esquina/ 200 'Con Pescamapa: OFERTA-DE-PRUEBA' 'OFERTA-NO-ACORDADA'
           # Two-level cards (29/10/2026): the agreement badge shows only with consent + state 'acuerdo'; the guide form asks the country.
@@ -198,6 +198,23 @@ jobs:
           check /paquetes-de-pesca/esquina/ 200 'content="DESC-DE-PRUEBA"'
           check /paquetes-de-pesca/esquina/ 200 'Pedir mi cotización'
           check /paquetes-de-pesca/esquina/ 200 'barra-pedir'
+          # City page (1/11/2026): every public outfitter of the destination, short answer, FAQ, agreements first; no contact data, no example data.
+          check /guias-de-pesca/esquina/ 200 'v-guias' 'CONTACTO-INTERNO-123'
+          check /guias-de-pesca/esquina/ 200 'Guías de pesca en Esquina'
+          check /guias-de-pesca/esquina/ 200 'PRESTADOR-CON-ACUERDO' 'PRESTADOR-NO-PUBLICO'
+          check /guias-de-pesca/esquina/ 200 'PRESTADOR-PUBLICO' 'Don Joaquín River Lodge'
+          check /guias-de-pesca/esquina/ 200 '"CollectionPage"'
+          check /guias-de-pesca/esquina/ 200 '"LocalBusiness"'
+          check /guias-de-pesca/esquina/ 200 'consulta--boutique'
+          check /guias-de-pesca/esquina/ 200 'hreflang="es"'   # x-default appears only with a second language; the test has Esquina in Spanish only
+          check /en/fishing-guides/esquina/ 404   # the test has no English Esquina guide: no city page in that language
+          check /guias-de-pesca/no-existe/ 404
+          check /litoral/corrientes/pesca-en-esquina/ 200 '/guias-de-pesca/esquina/'
+          check /llms.txt 200 'Guías de pesca por ciudad' 'CONTACTO-INTERNO-123'
+          check /llms.txt 200 'guias-de-pesca/esquina/#prestador-' 'PRESTADOR-NO-PUBLICO'
+          check /robots.txt 200 'User-agent: GPTBot'
+          check /robots.txt 200 'User-agent: ClaudeBot'
+          check /wp-sitemap-vistas-1.xml 200 'guias-de-pesca/esquina'
           check /litoral/corrientes/pesca-en-esquina/ 200 'id="consulta"' 'consulta--boutique'
           check /paquetes-de-pesca/esquina/ 200 'Preguntas frecuentes sobre los paquetes de pesca en Esquina'
           check /paquetes-de-pesca/esquina/ 200 '"@type":"FAQPage"'
