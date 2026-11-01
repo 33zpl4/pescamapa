@@ -396,7 +396,7 @@ jobs:
           check /altura-del-rio/inventado/ 404
           check /altura-del-rio/esquina/ 200 'Qué significa para pescar' 'PENDIENTE'
           check /altura-del-rio/esquina/ 200 'Río subiendo'
-          check /altura-del-rio/esquina/ 200 'href="#temporada"'
+          check /altura-del-rio/esquina/ 200 'pesca-en-esquina/#temporada'
           check /altura-del-rio/zarate/ 200 'con la marea y con el viento'
           check /en/river-levels/esquina/ 200 'What it means for fishing'
           # Province hub + species guides block
