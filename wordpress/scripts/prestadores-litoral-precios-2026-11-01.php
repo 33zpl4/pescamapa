@@ -10,7 +10,7 @@
  * description still contains the old phrase. Dry run first; run with wp-script.yml (script = prestadores-litoral-precios-2026-11-01).
  */
 
-$aplicar = false;
+$aplicar = true;
 $hoy     = '20261101';
 $ref     = 'Fuente interna: perfil público leído el 1/11/2026 en ';
 

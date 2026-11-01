@@ -9,7 +9,7 @@
  * Idempotent by title. Dry run first ($aplicar = false); run with wp-script.yml (script = prestadores-tanda2-2026-11-01).
  */
 
-$aplicar = false;
+$aplicar = true;
 $hoy     = '20261101';
 $nota    = fn( string $url ) => "Fuente interna: perfil público leído el 1/11/2026 en $url\nListado con información pública. Pescamapa no confirmó contacto, disponibilidad ni habilitación. Sin tarifa publicada en ese perfil (\"consultá disponibilidad\"). Revisar a los 90 días.";
 
