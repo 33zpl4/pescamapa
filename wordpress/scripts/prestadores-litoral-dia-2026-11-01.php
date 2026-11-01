@@ -14,7 +14,7 @@
  * run with wp-script.yml (script = prestadores-litoral-dia-2026-11-01).
  */
 
-$aplicar = false;
+$aplicar = true;
 $hoy     = '20261101';
 
 $nota = fn( string $fuente, string $precio_ref ) => "Listado con información pública (perfil público en $fuente, leído el 1/11/2026 por investigar.yml / búsqueda web). Pescamapa no confirmó contacto, disponibilidad ni habilitación. Precio de referencia INTERNO visto en ese perfil (no publicar): $precio_ref. Falta contactarlo y cruzarlo con el registro de guías de Corrientes.";
