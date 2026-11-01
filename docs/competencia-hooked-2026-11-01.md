@@ -97,7 +97,14 @@ confirmar si aceptamos esa atribución)**.
 - Si ChatGPT lo recomienda por su `llms.txt` o por otras señales: es la hipótesis más simple y coincide con que el texto de ChatGPT repite
   frases de ese archivo ("comparar guías, especies, precios y modalidades", "reserva y pago online en determinados servicios").
 
-## 7. Qué se hizo hoy y qué sigue
+## 7. Rulings del dueño (1/11/2026)
+
+- **URL por ciudad, sí** ("Guías de pesca en <ciudad>", es/pt/en, guías listados en nivel 1). URL por guía: no por ahora.
+- **Precios de Hooked = base interna** para diseñar nuestros paquetes (Esquina desde ARS 480.000 por lancha, Berisso ARS 100.000 por pescador, leídos el 1/11/2026). Nunca se publican como dato.
+- **Se contacta a los guías** con oferta concreta (ficha gratis + consultas calificadas, comisión solo en paquetes); sin cuota fija hasta medir demanda.
+- **Modelo todavía abierto**: listar guías uno a uno vs paquetes propios. Dato para la decisión: Hooked cobra suscripción fija y no muestra comisión; a nosotros la comisión por derivación no nos paga en la salida de día argentina (15 % de ARS 100.000 ≈ USD 10) y sí en paquetes de varios días y en el extranjero.
+
+## 8. Qué se hizo hoy y qué sigue
 
 - Hecho: dos lecturas completas, este documento, puntero en `CLAUDE.md`, entrada en `docs/estado.md`, backlog actualizado (P10 sube, P12 nuevo).
 - Sigue (en orden): el dueño decide los puntos 2 y la atribución de la regla; mientras, 1, 3, 4 y 5 se pueden empezar sin esperar.

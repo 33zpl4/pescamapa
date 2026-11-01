@@ -116,6 +116,7 @@ todas a nosotros (centralizar datos y cobrar comisión más adelante).
 | 30/10/2026 | **Una distancia de exclusión que figura en una sola de dos copias del reglamento no se publica** (Strobel 200 m, Barrancoso 100 m). Se publican las reglas del texto firmado (arts. 11 y 15 a). |
 | 30/10/2026 | **La boca del Barrancoso**: "cerca de la boca" respetando la distancia mínima legal; no hay contradicción con lo que dicen los lodges. |
 | 30/10/2026 | **Nombres**: "Lago Strobel" en español, "Jurassic Lake" en inglés; los slugs ya publicados no cambian. |
+| 1/11/2026 | **Frente a Hooked** (`docs/competencia-hooked-2026-11-01.md`): (a) se hace la **URL por ciudad** "Guías de pesca en <ciudad>" (es/pt/en) con los guías listados; **no** una URL por guía por ahora; (b) los precios que publica Hooked son **referencia interna** para armar nuestros paquetes, nunca dato publicable; (c) se contacta a los guías para competir con paquetes propios; el modelo (listar guías uno a uno vs paquetes, cuota fija vs comisión) sigue **abierto**: Hooked cobra solo suscripción fija al guía, sin comisión visible; la comisión por derivación no paga en la salida de día argentina y sí en paquetes y extranjero. |
 
 ## Pendientes, en orden
 
