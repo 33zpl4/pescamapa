@@ -19,7 +19,8 @@ $inicio = pm_url_inicio( $idioma );
 			<?php if ( pm_hay_notas() ) : ?><a href="<?php echo esc_url( pm_url_notas( $idioma ) ); ?>"><?php pm_e( 'nav.notas' ); ?></a><?php endif; ?>
 			<a href="<?php echo esc_url( pm_url_rio( $idioma ) ); ?>"><?php pm_e( 'nav.rio' ); ?></a>
 			<a href="<?php echo esc_url( pm_url_viaje( $idioma ) ); ?>"><?php pm_e( 'nav.viaje' ); ?></a>
-			<a href="<?php echo esc_url( $inicio . '#prestadores' ); ?>"><?php pm_e( 'pie.prestadores' ); ?></a>
+			<a href="<?php echo esc_url( pm_url_calendario( $idioma ) ); ?>"><?php pm_e( 'cal.eyebrow' ); ?></a>
+			<a href="<?php echo esc_url( pm_url_paraguias( $idioma ) ); ?>"><?php pm_e( 'pie.prestadores' ); ?></a>
 		</nav>
 	</div>
 	<div class="shell">

@@ -53,9 +53,9 @@ function pm_etiqueta( string $clave, ?string $idioma = null ): string {
 // --- URLs ------------------------------------------------------------------
 
 const PM_SEGMENTOS = [
-	'es' => [ 'especies' => 'especies', 'mapa' => 'mapa', 'creditos' => 'creditos', 'entrevistas' => 'entrevistas', 'notas' => 'notas', 'pique' => 'pique', 'viaje' => 'armar-viaje', 'terminos' => 'terminos', 'privacidad' => 'privacidad', 'rio' => 'altura-del-rio', 'paquetes' => 'paquetes-de-pesca', 'guias' => 'guias-de-pesca' ],
-	'pt' => [ 'especies' => 'especies', 'mapa' => 'mapa', 'creditos' => 'creditos', 'entrevistas' => 'entrevistas', 'notas' => 'notas', 'pique' => 'pique', 'viaje' => 'planejar-viagem', 'terminos' => 'termos', 'privacidad' => 'privacidade', 'rio' => 'altura-do-rio', 'paquetes' => 'pacotes-de-pesca', 'guias' => 'guias-de-pesca' ],
-	'en' => [ 'especies' => 'species', 'mapa' => 'map', 'creditos' => 'credits', 'entrevistas' => 'interviews', 'notas' => 'notes', 'pique' => 'bite-zones', 'viaje' => 'plan-your-trip', 'terminos' => 'terms', 'privacidad' => 'privacy', 'rio' => 'river-levels', 'paquetes' => 'fishing-packages', 'guias' => 'fishing-guides' ],
+	'es' => [ 'especies' => 'especies', 'mapa' => 'mapa', 'creditos' => 'creditos', 'entrevistas' => 'entrevistas', 'notas' => 'notas', 'pique' => 'pique', 'viaje' => 'armar-viaje', 'terminos' => 'terminos', 'privacidad' => 'privacidad', 'rio' => 'altura-del-rio', 'paquetes' => 'paquetes-de-pesca', 'guias' => 'guias-de-pesca', 'calendario' => 'calendario-de-pesca', 'paraguias' => 'para-guias-y-lodges' ],
+	'pt' => [ 'especies' => 'especies', 'mapa' => 'mapa', 'creditos' => 'creditos', 'entrevistas' => 'entrevistas', 'notas' => 'notas', 'pique' => 'pique', 'viaje' => 'planejar-viagem', 'terminos' => 'termos', 'privacidad' => 'privacidade', 'rio' => 'altura-do-rio', 'paquetes' => 'pacotes-de-pesca', 'guias' => 'guias-de-pesca', 'calendario' => 'calendario-de-pesca', 'paraguias' => 'para-guias-e-lodges' ],
+	'en' => [ 'especies' => 'species', 'mapa' => 'map', 'creditos' => 'credits', 'entrevistas' => 'interviews', 'notas' => 'notes', 'pique' => 'bite-zones', 'viaje' => 'plan-your-trip', 'terminos' => 'terms', 'privacidad' => 'privacy', 'rio' => 'river-levels', 'paquetes' => 'fishing-packages', 'guias' => 'fishing-guides', 'calendario' => 'fishing-calendar', 'paraguias' => 'for-guides-and-lodges' ],
 ];
 
 function pm_url( string $ruta, string $idioma ): string {
@@ -80,6 +80,12 @@ function pm_url_paquetes( string $clave, string $i ): string {
 }
 function pm_url_guias( string $clave, string $i ): string {
 	return pm_url( PM_SEGMENTOS[ $i ]['guias'] . '/' . $clave, $i );
+}
+function pm_url_calendario( string $i ): string {
+	return pm_url( PM_SEGMENTOS[ $i ]['calendario'], $i );
+}
+function pm_url_paraguias( string $i ): string {
+	return pm_url( PM_SEGMENTOS[ $i ]['paraguias'], $i );
 }
 function pm_url_especies( string $i ): string {
 	return pm_url( PM_SEGMENTOS[ $i ]['especies'], $i );
