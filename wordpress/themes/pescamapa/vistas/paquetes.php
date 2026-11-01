@@ -30,6 +30,7 @@ get_header(); ?>
 	<div class="shell cuerpo">
 		<p class="intro"><?php echo esc_html( trim( (string) pm_campo( 'paquetes_intro', $dp->ID ) ) ?: pm_t( 'paquetes.intro', $a ) ); ?></p>
 		<p><a href="<?php echo esc_url( $d['url'] ); ?>"><?php pm_e( 'paquetes.guia.intro', $a ); ?></a></p>
+		<?php if ( pm_destino_guias( $d['clave'], $idioma ) ) : ?><p><a href="<?php echo esc_url( pm_url_guias( $d['clave'], $idioma ) ); ?>"><?php pm_e( 'guias.res.link', $a ); ?> →</a></p><?php endif; ?>
 		<section class="como" aria-labelledby="como-h">
 			<h2 id="como-h"><?php pm_e( 'paquetes.como.h' ); ?></h2>
 			<ol>

@@ -173,6 +173,21 @@ function pm_alternas_paquetes( string $clave ): array {
 	return $out;
 }
 
+/** The city page "Guías de pesca en <lugar>" exists in a language when the guide exists there and the destination has at least one public outfitter. */
+function pm_destino_guias( string $clave, string $idioma ): bool {
+	return (bool) pm_buscar( 'pm_destino', $clave, $idioma ) && (bool) pm_prestadores_destino( $clave );
+}
+
+function pm_alternas_guias( string $clave ): array {
+	$out = [];
+	foreach ( pm_idiomas() as $i ) {
+		if ( pm_destino_guias( $clave, $i ) ) {
+			$out[ $i ] = pm_url_guias( $clave, $i );
+		}
+	}
+	return $out;
+}
+
 /** "US$ 150", "$ 150.000", "R$ 600" with the separators of the page's language. */
 function pm_paquete_precio_txt( array $precio, string $idioma ): string {
 	$n = 'en' === $idioma ? number_format( $precio['monto'], 0, '.', ',' ) : number_format( $precio['monto'], 0, ',', '.' );

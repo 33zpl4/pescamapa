@@ -164,6 +164,64 @@ function pm_seo(): array {
 				],
 			];
 		}
+	} elseif ( 'guias' === $vista ) {
+		$k   = (string) get_query_var( 'pm_guias_clave' );
+		$dp  = pm_buscar( 'pm_destino', $k, pm_lang() );
+		$d   = $dp ? pm_destino( $dp->ID ) : null;
+		$a   = [ 'lugar' => $d['nombre'] ?? '' ];
+		$s['title']       = pm_t( 'guias.title', $a );
+		$s['description'] = pm_t( 'guias.description', $a );
+		$s['alternas']    = pm_alternas_guias( $k );
+		if ( $d ) {
+			$url   = pm_url_guias( $k, pm_lang() );
+			$items = [];
+			foreach ( pm_prestadores_destino( $k ) as $n => $r ) {
+				// Only an operator with a stated agreement is described as a business; a public-information
+				// listing is just a named item, so the page never asserts more than it verified.
+				$item = [ '@type' => 'ListItem', 'position' => $n + 1, 'name' => $r['nombre'], 'url' => $url . '#prestador-' . $r['id'] ];
+				if ( $r['acuerdo'] && $r['consentimiento'] ) {
+					$item['item'] = array_filter( [
+						'@type'       => 'LocalBusiness',
+						'name'        => $r['nombre'],
+						'description' => $r['descripcion'],
+						'url'         => $url . '#prestador-' . $r['id'],
+						'areaServed'  => [ '@type' => 'Place', 'name' => $d['nombre'] ],
+						'image'       => $r['fotos'] ? wp_get_attachment_image_url( $r['fotos'][0], 'large' ) : null,
+					] );
+				}
+				$items[] = $item;
+			}
+			$s['jsonld'][] = [ '@context' => 'https://schema.org', '@type' => 'ItemList', 'name' => pm_t( 'guias.h1', $a ), 'numberOfItems' => count( $items ), 'itemListElement' => $items ];
+			$s['jsonld'][] = [
+				'@context'     => 'https://schema.org',
+				'@type'        => 'CollectionPage',
+				'name'         => pm_t( 'guias.h1', $a ),
+				'description'  => $s['description'],
+				'url'          => $url,
+				'inLanguage'   => pm_meta_idioma()['html'],
+				'dateModified' => get_post_modified_time( 'Y-m-d', true, $dp ),
+				'isPartOf'     => [ '@type' => 'WebSite', 'name' => 'Pescamapa', 'url' => pm_url_inicio( pm_lang() ) ],
+				'publisher'    => [ '@type' => 'Organization', 'name' => 'Pescamapa', 'url' => pm_url_inicio( pm_lang() ) ],
+				'about'        => [ '@type' => 'Place', 'name' => $d['nombre'] ],
+			];
+			$s['jsonld'][] = [
+				'@context'   => 'https://schema.org',
+				'@type'      => 'FAQPage',
+				'mainEntity' => array_map( fn( $n ) => [ '@type' => 'Question', 'name' => pm_t( "guias.faq.$n.q", $a ), 'acceptedAnswer' => [ '@type' => 'Answer', 'text' => pm_t( "guias.faq.$n.a", $a ) ] ], [ 1, 2, 3, 4 ] ),
+			];
+			if ( $d['foto'] ) {
+				$s['imagen'] = wp_get_attachment_image_url( $d['foto'], 'large' );
+			}
+			$s['jsonld'][] = [
+				'@context'        => 'https://schema.org',
+				'@type'           => 'BreadcrumbList',
+				'itemListElement' => [
+					[ '@type' => 'ListItem', 'position' => 1, 'name' => 'Pescamapa', 'item' => pm_url_inicio( pm_lang() ) ],
+					[ '@type' => 'ListItem', 'position' => 2, 'name' => $d['nombre'], 'item' => $d['url'] ],
+					[ '@type' => 'ListItem', 'position' => 3, 'name' => pm_t( 'guias.h1', $a ), 'item' => $url ],
+				],
+			];
+		}
 	} elseif ( 'especies' === $vista ) {
 		$s['title']       = pm_t( 'especies.title' );
 		$s['description'] = pm_t( 'especies.description' );

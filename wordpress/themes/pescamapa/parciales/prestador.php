@@ -16,7 +16,7 @@ $filas = [
 	'prest.accesible'   => 'si' === $r['accesible'] ? [ '♿ ' . pm_t( 'prest.accesible.si' ) ] : [],
 ];
 ?>
-<article class="prestador<?php echo pm_prestador_publico( $r ) ? '' : ' vista-previa'; echo $r['fotos'] ? '' : ' sin-fotos'; ?>">
+<article id="prestador-<?php echo (int) $r['id']; ?>" class="prestador<?php echo pm_prestador_publico( $r ) ? '' : ' vista-previa'; echo $r['fotos'] ? '' : ' sin-fotos'; ?>">
 	<?php if ( ! pm_prestador_publico( $r ) ) : ?>
 		<p class="sello">Vista previa, solo editores: <?php echo esc_html( $r['ejemplo'] ? 'datos de ejemplo, reemplazalos y destildá "Datos de ejemplo".' : 'marcá "Aceptó aparecer" o "Listado con información pública".' ); ?> <a href="<?php echo esc_url( get_edit_post_link( $r['id'] ) ); ?>">Editar</a></p>
 	<?php endif; ?>
