@@ -74,6 +74,56 @@ function pm_seo(): array {
 			'isPartOf'     => [ '@type' => 'WebSite', 'name' => 'Pescamapa', 'url' => pm_url_inicio( pm_lang() ) ],
 			'isBasedOn'    => 'https://alerta.ina.gob.ar/',
 		] );
+	} elseif ( 'calendario' === $vista ) {
+		$s['title']       = pm_t( 'cal.title' );
+		$s['description'] = pm_t( 'cal.description' );
+		$s['alternas']    = pm_alternas_fijas( 'pm_url_calendario' );
+		$destinos         = pm_destinos_lista( pm_lang() );
+		$fechas           = array_filter( array_map( fn( $d ) => $d['reglamento']['verificado'], $destinos ) );
+		$s['jsonld'][]    = array_filter( [
+			'@context'     => 'https://schema.org',
+			'@type'        => 'WebPage',
+			'name'         => pm_t( 'cal.h1' ),
+			'description'  => pm_t( 'cal.description' ),
+			'url'          => pm_url_calendario( pm_lang() ),
+			'inLanguage'   => pm_meta_idioma()['html'],
+			'dateModified' => $fechas ? max( $fechas ) : '',
+			'isPartOf'     => [ '@type' => 'WebSite', 'name' => 'Pescamapa', 'url' => pm_url_inicio( pm_lang() ) ],
+			'publisher'    => [ '@type' => 'Organization', 'name' => 'Pescamapa', 'url' => pm_url_inicio( pm_lang() ) ],
+			'hasPart'      => array_map( fn( $d ) => [ '@type' => 'WebPageElement', 'name' => $d['nombre'], 'url' => pm_url_calendario( pm_lang() ) . '#' . $d['clave'], 'about' => [ '@type' => 'Place', 'name' => $d['nombre'], 'url' => $d['url'] ] ], $destinos ),
+		] );
+		$s['jsonld'][]    = [
+			'@context'   => 'https://schema.org',
+			'@type'      => 'FAQPage',
+			'mainEntity' => array_map( fn( $n ) => [ '@type' => 'Question', 'name' => pm_t( "cal.faq.$n.q" ), 'acceptedAnswer' => [ '@type' => 'Answer', 'text' => pm_t( "cal.faq.$n.a" ) ] ], [ 1, 2, 3 ] ),
+		];
+		$s['jsonld'][]    = [
+			'@context'        => 'https://schema.org',
+			'@type'           => 'BreadcrumbList',
+			'itemListElement' => [
+				[ '@type' => 'ListItem', 'position' => 1, 'name' => 'Pescamapa', 'item' => pm_url_inicio( pm_lang() ) ],
+				[ '@type' => 'ListItem', 'position' => 2, 'name' => pm_t( 'cal.eyebrow' ), 'item' => pm_url_calendario( pm_lang() ) ],
+			],
+		];
+	} elseif ( 'paraguias' === $vista ) {
+		$s['title']       = pm_t( 'pg.title' );
+		$s['description'] = pm_t( 'pg.description' );
+		$s['alternas']    = pm_alternas_fijas( 'pm_url_paraguias' );
+		$s['jsonld'][]    = [
+			'@context'    => 'https://schema.org',
+			'@type'       => 'WebPage',
+			'name'        => pm_t( 'pg.h1' ),
+			'description' => pm_t( 'pg.description' ),
+			'url'         => pm_url_paraguias( pm_lang() ),
+			'inLanguage'  => pm_meta_idioma()['html'],
+			'isPartOf'    => [ '@type' => 'WebSite', 'name' => 'Pescamapa', 'url' => pm_url_inicio( pm_lang() ) ],
+			'publisher'   => [ '@type' => 'Organization', 'name' => 'Pescamapa', 'url' => pm_url_inicio( pm_lang() ), 'email' => PM_EMAIL_PUBLICO ],
+		];
+		$s['jsonld'][]    = [
+			'@context'   => 'https://schema.org',
+			'@type'      => 'FAQPage',
+			'mainEntity' => array_map( fn( $n ) => [ '@type' => 'Question', 'name' => pm_t( "pg.faq.$n.q" ), 'acceptedAnswer' => [ '@type' => 'Answer', 'text' => pm_t( "pg.faq.$n.a" ) ] ], [ 1, 2, 3, 4 ] ),
+		];
 	} elseif ( 'rio-punto' === $vista ) {
 		$k  = (string) get_query_var( 'pm_rio_clave' );
 		$x  = pm_rio_destino( $k );

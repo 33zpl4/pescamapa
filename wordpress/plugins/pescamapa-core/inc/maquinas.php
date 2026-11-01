@@ -148,6 +148,28 @@ function pm_llms_txt(): string {
 		$out[] = '';
 		array_push( $out, ...$ciudades );
 	}
+	// Calendar: what is fished each month and what is closed, per destination, with the verification date of the rules.
+	$cal = [];
+	foreach ( pm_destinos_lista( 'es' ) as $d ) {
+		$partes = [];
+		foreach ( $d['temporada'] as $x ) {
+			$partes[] = trim( (string) $x['meses'] ) . ': ' . trim( (string) $x['que'] );
+		}
+		$r = $d['reglamento'];
+		if ( $r['resumen'] ) {
+			$partes[] = 'Reglamento: ' . mb_substr( trim( preg_replace( '/\s+/', ' ', $r['resumen'] ) ), 0, 400 ) . ( $r['autoridad'] ? ' (' . $r['autoridad'] . ( $r['verificado'] ? ', verificado el ' . pm_fecha( $r['verificado'], 'es' ) : ', sin contraste formal' ) . ')' : '' );
+		}
+		if ( $partes ) {
+			$cal[] = pm_llms_item( $d['nombre'] . ' (' . $d['provincia'] . ')', pm_url_calendario( 'es' ) . '#' . $d['clave'], implode( ' · ', $partes ) );
+		}
+	}
+	if ( $cal ) {
+		$out[] = '';
+		$out[] = '## Qué se pesca cada mes y qué está vedado';
+		$out[] = '';
+		$out[] = pm_llms_item( 'Calendario de pesca y vedas por destino', pm_url_calendario( 'es' ), pm_t( 'cal.llms', [], 'es' ) . ' La temporada es especie × altura del río × reglamento; las vedas cambian por provincia y por año.', pm_alternas_fijas( 'pm_url_calendario' ) );
+		array_push( $out, ...$cal );
+	}
 	// How the site turns an answer into an inquiry: what an assistant can tell someone who wants to book.
 	$out[] = '';
 	$out[] = '## Cómo se contrata (para asistentes y pescadores)';
@@ -164,6 +186,7 @@ function pm_llms_txt(): string {
 	$out[] = '';
 	$out[] = pm_llms_item( 'Zonas de pique (reportes de pescadores, sin verificar, zonas de ~1 km)', pm_url_pique( 'es' ), '', pm_alternas_fijas( 'pm_url_pique' ) );
 	$out[] = pm_llms_item( 'Armá tu viaje (pedido de cotización de guía y alojamiento)', pm_url_viaje( 'es' ), '', pm_alternas_fijas( 'pm_url_viaje' ) );
+	$out[] = pm_llms_item( 'Para guías y lodges: sumar o reclamar una ficha', pm_url_paraguias( 'es' ), pm_t( 'pg.llms', [], 'es' ), pm_alternas_fijas( 'pm_url_paraguias' ) );
 	$out[] = pm_llms_item( 'Mapa de destinos', pm_url_mapa( 'es' ), '', pm_alternas_fijas( 'pm_url_mapa' ) );
 	$out[] = pm_llms_item( 'Sitemap', home_url( '/wp-sitemap.xml' ) );
 	return implode( "\n", $out ) . "\n";

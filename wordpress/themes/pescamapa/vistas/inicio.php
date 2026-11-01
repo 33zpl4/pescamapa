@@ -165,6 +165,7 @@ get_header(); ?>
 				<div class="eyebrow"><?php pm_e( 'inicio.prest.eyebrow' ); ?></div>
 				<h2><?php pm_e( 'inicio.prest.h2' ); ?></h2>
 				<p><?php pm_e( 'inicio.prest.p' ); ?></p>
+				<p><a href="<?php echo esc_url( pm_url_paraguias( $idioma ) ); ?>"><?php pm_e( 'inicio.prest.pagina' ); ?></a></p>
 			</div>
 			<div id="consulta" class="consulta">
 				<?php if ( 'ok' === pm_consulta_resultado() ) : ?>
