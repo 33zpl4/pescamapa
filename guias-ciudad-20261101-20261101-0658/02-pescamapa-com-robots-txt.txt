@@ -1,0 +1,86 @@
+(text/plain; charset=utf-8, no es HTML)
+User-agent: *
+Disallow: /wp-admin/
+Allow: /wp-admin/admin-ajax.php
+
+Sitemap: https://pescamapa.com/wp-sitemap.xml
+
+# Pages the inquiry forms redirect to: duplicates of the page itself.
+Disallow: /*?consulta=
+
+User-agent: GPTBot
+Allow: /
+Disallow: /wp-admin/
+Disallow: /*?consulta=
+
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /wp-admin/
+Disallow: /*?consulta=
+
+User-agent: ChatGPT-User
+Allow: /
+Disallow: /wp-admin/
+Disallow: /*?consulta=
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /wp-admin/
+Disallow: /*?consulta=
+
+User-agent: Claude-User
+Allow: /
+Disallow: /wp-admin/
+Disallow: /*?consulta=
+
+User-agent: Claude-SearchBot
+Allow: /
+Disallow: /wp-admin/
+Disallow: /*?consulta=
+
+User-agent: anthropic-ai
+Allow: /
+Disallow: /wp-admin/
+Disallow: /*?consulta=
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /wp-admin/
+Disallow: /*?consulta=
+
+User-agent: Perplexity-User
+Allow: /
+Disallow: /wp-admin/
+Disallow: /*?consulta=
+
+User-agent: Google-Extended
+Allow: /
+Disallow: /wp-admin/
+Disallow: /*?consulta=
+
+User-agent: Applebot-Extended
+Allow: /
+Disallow: /wp-admin/
+Disallow: /*?consulta=
+
+User-agent: CCBot
+Allow: /
+Disallow: /wp-admin/
+Disallow: /*?consulta=
+
+User-agent: Bytespider
+Allow: /
+Disallow: /wp-admin/
+Disallow: /*?consulta=
+
+User-agent: Amazonbot
+Allow: /
+Disallow: /wp-admin/
+Disallow: /*?consulta=
+
+User-agent: meta-externalagent
+Allow: /
+Disallow: /wp-admin/
+Disallow: /*?consulta=
+
+# Machine-readable summary of the site, for language models: https://pescamapa.com/llms.txt
