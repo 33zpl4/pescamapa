@@ -109,6 +109,26 @@ add_filter( 'locale', function ( $locale ) {
 	return [ 'es' => 'es_AR', 'pt' => 'pt_BR', 'en' => 'en_US' ][ pm_lang() ] ?? $locale;
 } );
 
+/**
+ * How fresh a dated fact is, in words a reader trusts more than a stale exact date: "en los últimos 30 días",
+ * "en los últimos 3 meses", else "en <mes de año>". The exact date stays in the data (and in llms.txt).
+ */
+function pm_fecha_relativa( ?string $ymd, ?string $idioma = null ): string {
+	if ( ! $ymd ) {
+		return '';
+	}
+	$dias = (int) floor( ( time() - strtotime( $ymd ) ) / DAY_IN_SECONDS );
+	if ( $dias <= 30 ) {
+		return pm_t( 'fecha.rel.30', [], $idioma );
+	}
+	if ( $dias <= 90 ) {
+		return pm_t( 'fecha.rel.90', [], $idioma );
+	}
+	$i   = $idioma ?? pm_lang();
+	$mes = wp_date( 'en' === $i ? 'F Y' : 'F \d\e Y', strtotime( $ymd ) );
+	return pm_t( 'fecha.rel.mes', [ 'mes' => 'en' === $i ? $mes : mb_strtolower( $mes ) ], $idioma );
+}
+
 /** Localised date, e.g. "19 de octubre de 2026". */
 function pm_fecha( ?string $ymd, ?string $idioma = null ): string {
 	if ( ! $ymd ) {

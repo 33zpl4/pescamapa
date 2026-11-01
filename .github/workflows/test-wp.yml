@@ -153,6 +153,8 @@ jobs:
           check /litoral/corrientes/pesca-en-esquina/ 200 'mailto:info@pescamapa.com?subject='
           check /litoral/corrientes/pesca-en-esquina/ 200 'sin verificar con el prestador'
           check /litoral/corrientes/pesca-en-esquina/ 200 'Precio: a consultar'
+          # Dates on cards are relative words, never an exact date (owner, 1/11/2026).
+          check /litoral/corrientes/pesca-en-esquina/ 200 'precio revisado en los últimos' 'precio consultado el'
           check /llms.txt 200 'se corrigen o se quitan a pedido' 'PRESTADOR-NO-PUBLICO'   # public listings ARE in llms.txt since 1/11/2026; non-public never
           # Special condition: only for an outfitter we work with.
           check /litoral/corrientes/pesca-en-esquina/ 200 'Con Pescamapa: OFERTA-DE-PRUEBA' 'OFERTA-NO-ACORDADA'

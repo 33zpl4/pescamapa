@@ -218,7 +218,7 @@
 			"prest.modalidades": "Modalidades",
 			"prest.temporada": "Cuándo",
 			"prest.capacidad": "Hasta %n% pescadores por lancha",
-			"prest.precio": "%precio% (precio consultado el %fecha%)",
+			"prest.precio": "%precio% (precio revisado %cuando%)",
 			"prest.consultar": "Consultar disponibilidad",
 			"consulta.h2": "Pedí tu cotización",
 			"consulta.p": "Contanos cuándo querés ir y qué querés pescar. Te respondemos con opciones de guías y alojamientos de %lugar%, sin costo.",
@@ -502,7 +502,7 @@
 			"guias.resumen.h": "Respuesta corta",
 			"guias.resumen.n": "En %lugar% listamos %n% fichas: %tipos%.",
 			"guias.resumen.precios": "Tarifas publicadas por el propio prestador, con fecha de lectura:",
-			"guias.resumen.precio": "%precio% (%nombre%, consultado el %fecha%)",
+			"guias.resumen.precio": "%precio% (%nombre%, revisado %cuando%)",
 			"guias.resumen.sinprecio": "Ningún prestador publica tarifa con fecha: se cotiza según grupo y fechas.",
 			"guias.resumen.licencia": "La licencia de pesca va aparte salvo que la ficha diga lo contrario; en la guía de %lugar% explicamos cuál hace falta y cómo se saca.",
 			"guias.resumen.como": "Pescamapa no le cobra al pescador: pedís por el formulario, pasamos la consulta al prestador y te responde con la propuesta.",
@@ -524,7 +524,10 @@
 			"guias.guia": "Volver a la guía de %lugar%",
 			"guias.res.link": "Ver guías de pesca en %lugar%",
 			"guias.desde_guia": "Todas las fichas de %lugar% en una página: guías de pesca en %lugar% →",
-			"guias.barra": "Pedir propuesta"
+			"guias.barra": "Pedir propuesta",
+			"fecha.rel.30": "en los últimos 30 días",
+			"fecha.rel.90": "en los últimos 3 meses",
+			"fecha.rel.mes": "en %mes%"
 		},
 		"pt": {
 			"marca.lema": "Quando ir, o que diz o regulamento e com quem pescar na Argentina.",
@@ -646,7 +649,7 @@
 			"prest.modalidades": "Modalidades",
 			"prest.temporada": "Quando",
 			"prest.capacidad": "Até %n% pescadores por barco",
-			"prest.precio": "%precio% (preço consultado em %fecha%)",
+			"prest.precio": "%precio% (preço revisado %cuando%)",
 			"prest.consultar": "Consultar disponibilidade",
 			"consulta.h2": "Peça seu orçamento",
 			"consulta.p": "Conte quando quer ir e o que quer pescar. Respondemos com opções de guias e hospedagens em %lugar%, sem custo.",
@@ -930,7 +933,7 @@
 			"guias.resumen.h": "Resposta curta",
 			"guias.resumen.n": "Em %lugar% listamos %n% fichas: %tipos%.",
 			"guias.resumen.precios": "Tarifas publicadas pelo próprio prestador, com data de leitura:",
-			"guias.resumen.precio": "%precio% (%nombre%, consultado em %fecha%)",
+			"guias.resumen.precio": "%precio% (%nombre%, revisado %cuando%)",
 			"guias.resumen.sinprecio": "Nenhum prestador publica tarifa com data: cotamos conforme o grupo e as datas.",
 			"guias.resumen.licencia": "A licença de pesca é à parte, salvo se a ficha disser o contrário; no guia de %lugar% explicamos qual é preciso e como obter.",
 			"guias.resumen.como": "A Pescamapa não cobra do pescador: você pede pelo formulário, passamos a consulta ao prestador e ele responde com a proposta.",
@@ -952,7 +955,10 @@
 			"guias.guia": "Voltar ao guia de %lugar%",
 			"guias.res.link": "Ver guias de pesca em %lugar%",
 			"guias.desde_guia": "Todas as fichas de %lugar% em uma página: guias de pesca em %lugar% →",
-			"guias.barra": "Pedir proposta"
+			"guias.barra": "Pedir proposta",
+			"fecha.rel.30": "nos últimos 30 dias",
+			"fecha.rel.90": "nos últimos 3 meses",
+			"fecha.rel.mes": "em %mes%"
 		},
 		"en": {
 			"marca.lema": "When to go, what the rules say and who to fish with in Argentina.",
@@ -1074,7 +1080,7 @@
 			"prest.modalidades": "Fishing styles",
 			"prest.temporada": "When",
 			"prest.capacidad": "Up to %n% anglers per boat",
-			"prest.precio": "%precio% (price checked on %fecha%)",
+			"prest.precio": "%precio% (price checked %cuando%)",
 			"prest.consultar": "Ask about availability",
 			"consulta.h2": "Get a quote",
 			"consulta.p": "Tell us when you want to go and what you want to catch. We will reply with guide and lodging options in %lugar%, free of charge.",
@@ -1358,7 +1364,7 @@
 			"guias.resumen.h": "Short answer",
 			"guias.resumen.n": "In %lugar% we list %n% providers: %tipos%.",
 			"guias.resumen.precios": "Rates published by the provider itself, with the date we read them:",
-			"guias.resumen.precio": "%precio% (%nombre%, read on %fecha%)",
+			"guias.resumen.precio": "%precio% (%nombre%, checked %cuando%)",
 			"guias.resumen.sinprecio": "No provider publishes a dated rate: trips are quoted by group and dates.",
 			"guias.resumen.licencia": "The fishing licence is extra unless the listing says otherwise; the %lugar% guide explains which one you need and how to get it.",
 			"guias.resumen.como": "Pescamapa charges the angler nothing: you ask through the form, we pass the inquiry to the provider and they reply with a proposal.",
@@ -1380,7 +1386,10 @@
 			"guias.guia": "Back to the %lugar% guide",
 			"guias.res.link": "See fishing guides in %lugar%",
 			"guias.desde_guia": "All %lugar% listings on one page: fishing guides in %lugar% →",
-			"guias.barra": "Ask for a proposal"
+			"guias.barra": "Ask for a proposal",
+			"fecha.rel.30": "within the last 30 days",
+			"fecha.rel.90": "within the last 3 months",
+			"fecha.rel.mes": "in %mes%"
 		}
 	},
 	"opciones": {

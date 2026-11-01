@@ -51,7 +51,7 @@ get_header(); ?>
 					<li><?php pm_e( 'guias.resumen.precios' ); ?>
 						<ul>
 							<?php foreach ( array_slice( $precios, 0, 3 ) as $r ) : ?>
-								<li><a href="#prestador-<?php echo (int) $r['id']; ?>"><?php pm_e( 'guias.resumen.precio', [ 'precio' => $r['precio'], 'nombre' => $r['nombre'], 'fecha' => pm_fecha( $r['precio_fecha'], $idioma ) ] ); ?></a></li>
+								<li><a href="#prestador-<?php echo (int) $r['id']; ?>"><?php pm_e( 'guias.resumen.precio', [ 'precio' => $r['precio'], 'nombre' => $r['nombre'], 'cuando' => pm_fecha_relativa( $r['precio_fecha'], $idioma ) ] ); ?></a></li>
 							<?php endforeach; ?>
 						</ul>
 					</li>

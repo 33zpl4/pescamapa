@@ -20,6 +20,9 @@
 
 defined( 'ABSPATH' ) || exit;
 
+/** Days after which a card's data or price is due for a new check (owner, 1/11/2026). */
+const PM_PREST_REVISION_DIAS = 90;
+
 /** Choices of an option list, in Spanish for the form. */
 function pm_opciones( string $lista ): array {
 	return array_map( fn( $o ) => $o['es'], pm_ui()['opciones'][ $lista ] ?? [] );
@@ -211,7 +214,7 @@ function pm_prestadores_destino( string $destino, bool $con_borradores = false )
 
 // Admin list: where, what, state, consent.
 add_filter( 'manage_pm_prestador_posts_columns', function ( $cols ) {
-	return [ 'cb' => $cols['cb'], 'title' => 'Nombre', 'pm_donde' => 'Dónde', 'pm_tipo' => 'Qué ofrece', 'pm_estado' => 'Estado', 'pm_visible' => 'En la web', 'date' => $cols['date'] ];
+	return [ 'cb' => $cols['cb'], 'title' => 'Nombre', 'pm_donde' => 'Dónde', 'pm_tipo' => 'Qué ofrece', 'pm_estado' => 'Estado', 'pm_visible' => 'En la web', 'pm_revisado' => 'Revisado', 'date' => $cols['date'] ];
 } );
 add_action( 'manage_pm_prestador_posts_custom_column', function ( $col, $id ) {
 	$r = pm_prestador( $id );
@@ -221,6 +224,15 @@ add_action( 'manage_pm_prestador_posts_custom_column', function ( $col, $id ) {
 		echo esc_html( implode( ', ', array_map( fn( $t ) => pm_opcion( 'tipo', $t, 'es' ), $r['tipo'] ) ) );
 	} elseif ( 'pm_estado' === $col ) {
 		echo esc_html( (string) pm_campo( 'estado', $id ) );
+	} elseif ( 'pm_revisado' === $col ) {
+		// Internal: when the data (or the price) was last checked and whether a new check is due (90 days).
+		$f = max( (string) pm_campo( 'verificado', $id ), $r['precio_fecha'] );
+		if ( $f ) {
+			$dias = (int) floor( ( time() - strtotime( $f ) ) / DAY_IN_SECONDS );
+			echo esc_html( pm_fecha( $f, 'es' ) . " ({$dias} d)" . ( $dias > PM_PREST_REVISION_DIAS ? ' ⚠ revisar' : '' ) );
+		} else {
+			echo esc_html( '— sin fecha' );
+		}
 	} elseif ( 'pm_visible' === $col ) {
 		echo $r['ejemplo'] ? esc_html( '🧪 datos de ejemplo' ) : ( $r['consentimiento'] ? '✅' : ( $r['publico'] ? esc_html( '🌐 listado público (sin verificar)' ) : esc_html( '— no se publica' ) ) );
 	}
