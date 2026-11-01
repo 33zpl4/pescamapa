@@ -121,7 +121,7 @@ jobs:
             $no = wp_insert_post( [ "post_type" => "pm_prestador", "post_status" => "publish", "post_title" => "PRESTADOR-NO-PUBLICO" ] );
             foreach ( [ "tipo" => [ "guia" ], "prest_destino" => "esquina" ] as $k => $v ) { update_field( $k, $v, $no ); }
             $r = wp_insert_post( [ "post_type" => "pm_prestador", "post_status" => "publish", "post_title" => "PRESTADOR-DE-PRUEBA" ] );
-            foreach ( [ "tipo" => [ "guia" ], "prest_destino" => "esquina", "prest_modalidades" => [ "mosca" ], "equipo" => [ "motor_electrico" ], "incluye" => [ "carnada", "comida" ], "precio" => "Desde $ 1", "precio_fecha" => "20261020", "prest_consentimiento" => 1, "whatsapp" => "CONTACTO-INTERNO-123" ] as $k => $v ) { update_field( $k, $v, $r ); }
+            foreach ( [ "tipo" => [ "guia" ], "prest_destino" => "esquina", "prest_modalidades" => [ "mosca" ], "prest_especies" => [ "dorado" ], "equipo" => [ "motor_electrico" ], "incluye" => [ "carnada", "comida" ], "precio" => "Desde $ 1", "precio_fecha" => "20261020", "prest_consentimiento" => 1, "whatsapp" => "CONTACTO-INTERNO-123" ] as $k => $v ) { update_field( $k, $v, $r ); }
           '
       - name: Render pages
         run: |
@@ -394,6 +394,23 @@ jobs:
           check /altura-del-rio/zarate/ 200 'Últimos días'
           check /altura-del-rio/zarate/ 200 'application/ld+json'
           check /altura-del-rio/inventado/ 404
+          check /altura-del-rio/esquina/ 200 'Qué significa para pescar' 'PENDIENTE'
+          check /altura-del-rio/esquina/ 200 'Río subiendo'
+          check /altura-del-rio/esquina/ 200 'href="#temporada"'
+          check /altura-del-rio/zarate/ 200 'con la marea y con el viento'
+          check /en/river-levels/esquina/ 200 'What it means for fishing'
+          # Province hub + species guides block
+          check /litoral/corrientes/ 200 'v-provincia' 'PENDIENTE'
+          check /litoral/corrientes/ 200 '"CollectionPage"' 'CONTACTO-INTERNO-123'
+          check /litoral/corrientes/ 200 'pesca-en-esquina'
+          check /en/litoral/corrientes/ 200 'Fishing in Corrientes'
+          check /pt/litoral/corrientes/ 200 'hreflang="x-default"'
+          check /litoral/inventada/ 404
+          check /litoral/corrientes/pesca-en-esquina/ 200 'href="http://localhost:8080/litoral/corrientes/"'
+          check /especies/dorado/ 200 'Guías que pescan dorado' 'CONTACTO-INTERNO-123'
+          check /especies/dorado/ 200 'desde Desde $ 1'
+          check /llms.txt 200 'Por provincia'
+          check /wp-sitemap-vistas-1.xml 200 'litoral/corrientes/'
           check /en/river-levels/zarate/ 200 'River level at Zárate today'
           check /altura-del-rio/ 200 'altura-del-rio/zarate/'
           check /en/river-levels/ 200 'River levels today'

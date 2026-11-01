@@ -279,6 +279,22 @@ function pm_proximos_lista( string $idioma ): array {
 }
 
 /** Destinations that list this species (in the requested language when translated). */
+/** Published destinations of one province (region + province keys), this language with Spanish fallback. */
+function pm_destinos_provincia( string $region, string $provincia, string $idioma ): array {
+	return array_values( array_filter( pm_destinos_lista( $idioma ), fn( $d ) => $d['region'] === $region && $d['provincia'] === $provincia ) );
+}
+
+/** Every region/province pair that has a published destination, in the destinations' order. */
+function pm_provincias_lista(): array {
+	$out = [];
+	foreach ( pm_destinos_lista( 'es' ) as $d ) {
+		if ( $d['region'] && $d['provincia'] ) {
+			$out[ $d['region'] . '/' . $d['provincia'] ] = [ 'region' => $d['region'], 'provincia' => $d['provincia'] ];
+		}
+	}
+	return array_values( $out );
+}
+
 function pm_destinos_con_especie( string $clave_especie, string $idioma ): array {
 	return array_values( array_filter( pm_destinos_lista( $idioma ), fn( $d ) => in_array( $clave_especie, $d['especies'], true ) ) );
 }

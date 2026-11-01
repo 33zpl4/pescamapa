@@ -344,3 +344,17 @@
 .v-paraguias .consulta label { display: block; }
 .v-paraguias .consulta textarea { width: 100%; margin-top: 12px; }
 .v-paraguias .consulta .button { margin-top: 16px; }
+
+/* River station: what it means for fishing; species guides block; province hub (1/11/2026) */
+.v-rio-punto .rio-pescar { background: var(--cream); border-left: 3px solid var(--moss); border-radius: var(--radius); padding: 18px 22px; margin: 0 0 24px; }
+.v-rio-punto .rio-pescar h2 { margin: 0 0 8px; font-size: var(--fs-h3); }
+.v-rio-punto .rio-pescar p:last-child { margin-bottom: 0; }
+.v-rio-punto .rio-pescar .enlaces, .v-provincia .enlaces { display: flex; flex-wrap: wrap; gap: 6px 18px; }
+.guias-especie { margin: 28px 0; max-width: 760px; }
+.guias-especie ul { padding-left: 20px; }
+.v-provincia .prov-destinos { display: grid; gap: 24px; max-width: 980px; margin: 0 0 32px; }
+.v-provincia .prov-destino { display: grid; gap: 16px; grid-template-columns: minmax(0, 1fr); align-items: start; padding-bottom: 24px; border-bottom: 1px solid var(--line); }
+@media (min-width: 720px) { .v-provincia .prov-destino { grid-template-columns: 280px minmax(0, 1fr); } }
+.v-provincia .prov-destino .foto img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; border-radius: var(--radius); }
+.v-provincia .prov-destino h3 { margin: 0 0 6px; }
+.v-provincia .prov-destino p { margin: 0 0 8px; }

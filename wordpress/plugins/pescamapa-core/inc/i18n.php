@@ -87,6 +87,9 @@ function pm_url_calendario( string $i ): string {
 function pm_url_paraguias( string $i ): string {
 	return pm_url( PM_SEGMENTOS[ $i ]['paraguias'], $i );
 }
+function pm_url_provincia( string $region, string $provincia, string $i ): string {
+	return pm_url( $region . '/' . $provincia, $i );
+}
 function pm_url_especies( string $i ): string {
 	return pm_url( PM_SEGMENTOS[ $i ]['especies'], $i );
 }

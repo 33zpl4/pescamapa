@@ -61,6 +61,20 @@ get_header(); ?>
 			<?php endif; ?>
 		<?php endif; ?>
 		<div class="prose">
+			<?php // What the reading means for fishing: the sentence follows the state (tidal point, above alert, rising, falling, steady), then the guide's own calendar and the town's guides. ?>
+			<section class="rio-pescar" aria-labelledby="pescar-h">
+				<h2 id="pescar-h"><?php pm_e( 'rio.pescar.h2' ); ?></h2>
+				<?php
+				$pescar = ! $r || $viejo ? 'sindato' : ( $mareal ? 'mareal' : ( $r['tendencia'] ?: 'estable' ) );
+				if ( $r && ! $viejo && in_array( $estado, [ 'alerta', 'evacuacion' ], true ) ) : ?><p><?php pm_e( 'rio.pescar.alerta' ); ?></p><?php endif; ?>
+				<p><?php pm_e( 'rio.pescar.' . $pescar ); ?></p>
+				<?php if ( $guia ) : ?>
+					<p class="enlaces">
+						<a href="<?php echo esc_url( get_permalink( $guia ) . '#temporada' ); ?>"><?php echo esc_html( pm_t( 'rio.pescar.temporada', [ 'lugar' => $lugar ] ) ); ?></a>
+						<?php if ( pm_destino_guias( $clave, $idioma ) ) : ?><a href="<?php echo esc_url( pm_url_guias( $clave, $idioma ) ); ?>"><?php echo esc_html( pm_t( 'rio.pescar.guias', [ 'lugar' => $lugar ] ) ); ?></a><?php endif; ?>
+					</p>
+				<?php endif; ?>
+			</section>
 			<?php if ( $r ) : ?><p class="note"><?php pm_e( 'rio.nota.niveles' ); ?></p><?php endif; ?>
 			<?php if ( 'ba' === ( pm_rio_config()[ $clave ]['grupo'] ?? '' ) ) : ?><p class="note"><?php pm_e( 'rio.leer.5' ); ?></p><?php endif; ?>
 			<p class="note"><?php echo wp_kses( pm_t( 'rio.fuente', pm_rio_enlaces() + [ 'capturado' => esc_html( pm_fecha( substr( (string) ( $x['capturado'] ?? '' ), 0, 10 ) ) ) ] ), [ 'a' => [ 'href' => true, 'rel' => true ] ] ); ?></p>

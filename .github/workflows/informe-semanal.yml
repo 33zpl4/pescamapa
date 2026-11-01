@@ -13,7 +13,9 @@ on:
     branches: [main]
     paths: [".github/workflows/informe-semanal.yml"]
   schedule:
-    - cron: "43 11 * * 1"
+    # Moved from "43 11 * * 1" on 1/11/2026: GitHub never fired that schedule (0 scheduled runs since 22/10; rio.yml fires daily).
+    # Editing this file on main re-registers the schedule. If Monday 13:23 UTC does not fire either, dispatch by hand and open an issue.
+    - cron: "23 13 * * 1"
   workflow_dispatch:
 
 permissions:

@@ -9,7 +9,7 @@ $region    = PM_REGIONES[ $d['region'] ][ $idioma ] ?? $d['region'];
 $migas     = [
 	[ pm_t( 'ficha.inicio' ), pm_url_inicio( $idioma ) ],
 	[ $region, null ],
-	[ $provincia, null ],
+	[ $provincia, pm_url_provincia( $d['region'], $d['provincia'], $idioma ) ],
 	[ $d['nombre'], $d['url'] ],
 ];
 $rio_hoy     = pm_rio_destino( $d['clave'] );

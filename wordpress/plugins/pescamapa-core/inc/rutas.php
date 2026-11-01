@@ -23,6 +23,7 @@ defined( 'ABSPATH' ) || exit;
 function pm_registrar_rutas(): void {
 	$regiones = implode( '|', array_keys( PM_REGIONES ) );
 	add_rewrite_rule( "^(?:(pt|en)/)?(?:{$regiones})/[a-z0-9-]+/([^/]+)/?$", 'index.php?pm_destino=$matches[2]&pm_lang=$matches[1]', 'top' );
+	add_rewrite_rule( "^(?:(pt|en)/)?({$regiones})/([a-z0-9-]+)/?$", 'index.php?pm_vista=provincia&pm_region=$matches[2]&pm_provincia=$matches[3]&pm_lang=$matches[1]', 'top' );
 
 	foreach ( pm_idiomas() as $i ) {
 		$pre = 'es' === $i ? '' : "{$i}/";
@@ -53,7 +54,7 @@ function pm_registrar_rutas(): void {
 add_action( 'init', 'pm_registrar_rutas' );
 
 add_filter( 'query_vars', function ( $vars ) {
-	return array_merge( $vars, [ 'pm_lang', 'pm_vista', 'pm_especie_clave', 'pm_rio_clave', 'pm_paquete_clave', 'pm_guias_clave' ] );
+	return array_merge( $vars, [ 'pm_lang', 'pm_vista', 'pm_especie_clave', 'pm_rio_clave', 'pm_paquete_clave', 'pm_guias_clave', 'pm_region', 'pm_provincia' ] );
 } );
 
 // Species: resolve clave + language to the post.
@@ -67,6 +68,9 @@ add_filter( 'request', function ( $qv ) {
 	}
 	if ( ( $qv['pm_vista'] ?? '' ) === 'paquetes' && ! pm_destino_paquetes( (string) ( $qv['pm_paquete_clave'] ?? '' ), pm_idioma_valido( $qv['pm_lang'] ?? 'es' ) ) ) {
 		return [ 'error' => '404' ]; // no published packages in this language: no page
+	}
+	if ( ( $qv['pm_vista'] ?? '' ) === 'provincia' && ! pm_destinos_provincia( (string) ( $qv['pm_region'] ?? '' ), (string) ( $qv['pm_provincia'] ?? '' ), pm_idioma_valido( $qv['pm_lang'] ?? 'es' ) ) ) {
+		return [ 'error' => '404' ];
 	}
 	if ( ( $qv['pm_vista'] ?? '' ) === 'guias' && ! pm_destino_guias( (string) ( $qv['pm_guias_clave'] ?? '' ), pm_idioma_valido( $qv['pm_lang'] ?? 'es' ) ) ) {
 		return [ 'error' => '404' ]; // no guide in this language or no public outfitter: no page
@@ -168,7 +172,7 @@ add_filter( 'template_include', function ( $plantilla ) {
 
 // The virtual views are not "not found" just because no post matched.
 add_filter( 'pre_handle_404', function ( $corto, $query ) {
-	if ( in_array( $query->get( 'pm_vista' ), [ 'inicio', 'mapa', 'creditos', 'entrevistas', 'notas', 'especies', 'pique', 'viaje', 'terminos', 'privacidad', 'rio', 'rio-punto', 'paquetes', 'guias', 'calendario', 'paraguias' ], true ) ) {
+	if ( in_array( $query->get( 'pm_vista' ), [ 'inicio', 'mapa', 'creditos', 'entrevistas', 'notas', 'especies', 'pique', 'viaje', 'terminos', 'privacidad', 'rio', 'rio-punto', 'paquetes', 'guias', 'calendario', 'paraguias', 'provincia' ], true ) ) {
 		status_header( 200 );
 		return true;
 	}

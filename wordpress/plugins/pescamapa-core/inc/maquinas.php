@@ -148,6 +148,18 @@ function pm_llms_txt(): string {
 		$out[] = '';
 		array_push( $out, ...$ciudades );
 	}
+	// Province hubs: one line per province with its destinations.
+	$provs = [];
+	foreach ( pm_provincias_lista() as $pr ) {
+		$ds      = pm_destinos_provincia( $pr['region'], $pr['provincia'], 'es' );
+		$provs[] = pm_llms_item( 'Pesca en ' . ( PM_PROVINCIAS[ $pr['provincia'] ] ?? $pr['provincia'] ), pm_url_provincia( $pr['region'], $pr['provincia'], 'es' ), count( $ds ) . ' destinos: ' . implode( ', ', array_column( $ds, 'nombre' ) ) . '. Guía, guías de pesca por ciudad, paquetes, altura del río hoy y calendario de cada uno.', pm_alternas_fijas( fn( $i ) => pm_url_provincia( $pr['region'], $pr['provincia'], $i ) ) );
+	}
+	if ( $provs ) {
+		$out[] = '';
+		$out[] = '## Por provincia';
+		$out[] = '';
+		array_push( $out, ...$provs );
+	}
 	// Calendar: what is fished each month and what is closed, per destination, with the verification date of the rules.
 	$cal = [];
 	foreach ( pm_destinos_lista( 'es' ) as $d ) {
