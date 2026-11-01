@@ -48,7 +48,7 @@ $filas = [
 			endforeach; ?>
 		</dl>
 		<?php if ( $r['precio'] && $r['precio_fecha'] ) : ?>
-			<p class="precio"><?php echo wp_kses( pm_t( 'prest.precio', [ 'precio' => '<span' . $es( 'precio' ) . '>' . esc_html( $r['precio'] ) . '</span>', 'fecha' => esc_html( pm_fecha( $r['precio_fecha'] ) ) ] ), [ 'span' => [ 'lang' => true ] ] ); ?></p>
+			<p class="precio"><?php echo wp_kses( pm_t( 'prest.precio', [ 'precio' => '<span' . $es( 'precio' ) . '>' . esc_html( $r['precio'] ) . '</span>', 'cuando' => esc_html( pm_fecha_relativa( $r['precio_fecha'] ) ) ] ), [ 'span' => [ 'lang' => true ] ] ); ?></p>
 		<?php else : ?>
 			<p class="precio"><?php pm_e( 'prest.precio_consultar' ); ?></p>
 		<?php endif; ?>
