@@ -2,7 +2,7 @@
 /**
  * <head> and sitemaps without an SEO plugin: the data model already has the
  * title, description, languages and draft state, so we print them directly.
- *   - title, description, canonical, hreflang (es, pt-BR, en, x-default → es)
+ *   - title, description, canonical, hreflang (es, pt-BR, en, x-default → en when it exists, else es)
  *   - Open Graph
  *   - noindex only on the 404 page; every published ficha is indexable
  *   - JSON-LD: WebSite (home), TouristDestination + BreadcrumbList + FAQPage,
@@ -462,7 +462,8 @@ add_action( 'wp_head', function () {
 		echo '<link rel="alternate" hreflang="' . esc_attr( pm_meta_idioma( $i )['hreflang'] ) . '" href="' . esc_url( $u ) . "\">\n";
 	}
 	if ( count( $s['alternas'] ) > 1 ) {
-		echo '<link rel="alternate" hreflang="x-default" href="' . esc_url( $s['alternas']['es'] ?? $canon ) . "\">\n";
+		// x-default = the page for searchers whose language we do not cover: English, the international fallback (owner, 3/11/2026).
+		echo '<link rel="alternate" hreflang="x-default" href="' . esc_url( $s['alternas']['en'] ?? $s['alternas']['es'] ?? $canon ) . "\">\n";
 	}
 	$og = [
 		'og:type'        => 'website',

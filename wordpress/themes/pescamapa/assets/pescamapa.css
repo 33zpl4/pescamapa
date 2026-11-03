@@ -235,6 +235,10 @@ footer {
 	.bajada { font-size: 18px; color: var(--on-dark); max-width: 720px; }
 	.confianza { font-size: 13px; color: var(--on-dark); margin: 0; }
 	.confianza strong { color: var(--lime); }
+	/* River-level page: the next step (guide, quote, species) sits in the header, in view, not under the table. */
+	.rio-siguiente { display: flex; flex-wrap: wrap; gap: 12px; margin: 20px 0 0; }
+	.rio-especies { font-size: 14px; color: var(--on-dark); margin: 16px 0 0; }
+	.rio-especies a { color: var(--lime); margin-left: 10px; }
 
 	.resumen dl { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap: 0; margin: -22px 0 0; background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); position: relative; }
 	.resumen dl > div { padding: 18px 20px; border-right: 1px solid var(--line); }

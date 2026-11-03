@@ -105,8 +105,14 @@ jobs:
           check /en/ 200 'See all notes'
           check /llms.txt 200 'cuando-pescar-dorado'
           # Species pages: exist, JSON-LD, nothing internal showing (the facts in them are the editors' to change).
-          for p in /especies/dorado/ /en/species/dorado/ /pt/especies/dorado/ /especies/surubi/ /especies/trucha/ /en/species/trucha/ /pt/especies/trucha/; do
+          for p in /especies/dorado/ /en/species/golden-dorado/ /pt/especies/dourado/ /especies/surubi/ /especies/trucha/ /en/species/trout/ /pt/especies/truta/; do
             check "$p" 200 'application/ld+json' 'PENDIENTE'
+          done
+          # Old species URLs (the clave as slug) 301 to the language's own slug.
+          for par in '/en/species/trucha/|/en/species/trout/' '/pt/especies/trucha/|/pt/especies/truta/' '/en/species/dorado/|/en/species/golden-dorado/' '/pt/especies/dorado/|/pt/especies/dourado/'; do
+            viejo="${par%%|*}"; nuevo="${par##*|}"
+            read -r code loc < <(curl -sS -m 30 -o /dev/null -w '%{http_code} %{redirect_url}\n' "$SITE$viejo")
+            if [[ "$code" == "301" && "$loc" == *"$nuevo" ]]; then echo "✓ 301 $viejo → $nuevo"; else echo "✖ $viejo: $code $loc (esperado 301 a $nuevo)"; fail=1; fi
           done
           check /en/plan-your-trip/ 200 'name="contacto"'
           check /pt/planejar-viagem/ 200 'name="contacto"'

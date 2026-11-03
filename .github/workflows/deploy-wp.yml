@@ -136,5 +136,5 @@ jobs:
           check /pt/litoral/corrientes/pesca-em-goya/ 200 'hreflang="x-default"'
           check /en/litoral/corrientes/fishing-in-goya/ 200 'hreflang="es"'
           check /especies/surubi/ 200
-          check /en/species/dorado/ 200
+          check /en/species/golden-dorado/ 200
           exit $fail
