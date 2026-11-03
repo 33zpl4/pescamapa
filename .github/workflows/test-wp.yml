@@ -356,7 +356,8 @@ jobs:
           check /en/species/trout/ 200 'Key facts'
           check /pt/especies/truta/ 200 'Dados-chave'
           # Old species URLs (the clave as slug) 301 to the language's own slug; the clave still resolves, so nothing breaks.
-          for par in '/en/species/trucha/|/en/species/trout/' '/pt/especies/trucha/|/pt/especies/truta/' '/en/species/dorado/|/en/species/golden-dorado/' '/pt/especies/dorado/|/pt/especies/dourado/'; do
+          # (Only trucha is seeded in en/pt here; the dorado redirects are checked on the live site in verify-live.yml.)
+          for par in '/en/species/trucha/|/en/species/trout/' '/pt/especies/trucha/|/pt/especies/truta/'; do
             viejo="${par%%|*}"; nuevo="${par##*|}"
             read -r code loc < <(curl -sS -o /dev/null -w '%{http_code} %{redirect_url}\n' "$URL$viejo")
             if [[ "$code" == "301" && "$loc" == *"$nuevo" ]]; then echo "✓ 301 $viejo → $nuevo"; else echo "✖ $viejo: $code $loc (esperado 301 a $nuevo)"; fail=1; fi
