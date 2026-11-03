@@ -105,7 +105,7 @@ jobs:
           check /en/ 200 'See all notes'
           check /llms.txt 200 'cuando-pescar-dorado'
           # Species pages: exist, JSON-LD, nothing internal showing (the facts in them are the editors' to change).
-          for p in /especies/dorado/ /en/species/dorado/ /pt/especies/dorado/ /especies/surubi/ /especies/trucha/ /en/species/trucha/ /pt/especies/trucha/; do
+          for p in /especies/dorado/ /en/species/golden-dorado/ /pt/especies/dourado/ /especies/surubi/ /especies/trucha/ /en/species/trout/ /pt/especies/truta/; do
             check "$p" 200 'application/ld+json' 'PENDIENTE'
           done
           check /en/plan-your-trip/ 200 'name="contacto"'

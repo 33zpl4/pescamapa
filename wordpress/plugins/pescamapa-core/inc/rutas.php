@@ -60,7 +60,9 @@ add_filter( 'query_vars', function ( $vars ) {
 // Species: resolve clave + language to the post.
 add_filter( 'request', function ( $qv ) {
 	if ( ( $qv['pm_vista'] ?? '' ) === 'especie' ) {
-		$p = pm_buscar( 'pm_especie', (string) ( $qv['pm_especie_clave'] ?? '' ), pm_idioma_valido( $qv['pm_lang'] ?? 'es' ) );
+		$i = pm_idioma_valido( $qv['pm_lang'] ?? 'es' );
+		// The URL carries the language's slug ("trout"); an old URL with the clave ("trucha") also resolves, then template_redirect sends it to the new one.
+		$p = pm_buscar( 'pm_especie', pm_clave_de_slug_especie( (string) ( $qv['pm_especie_clave'] ?? '' ), $i ), $i );
 		if ( $p ) {
 			return [ 'p' => $p->ID, 'post_type' => 'pm_especie', 'pm_lang' => $qv['pm_lang'], 'pm_vista' => 'especie' ];
 		}

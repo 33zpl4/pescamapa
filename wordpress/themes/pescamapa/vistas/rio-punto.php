@@ -24,6 +24,18 @@ get_header(); ?>
 				<p class="bajada"><?php echo esc_html( pm_t( $mareal ? 'rio.p.respuesta.mareal' : 'rio.p.respuesta', [ 'lugar' => $lugar, 'curso' => $curso, 'altura' => pm_rio_num( $r['altura'] ), 'fecha' => pm_fecha( $r['fecha'] ), 'tend' => pm_rio_tendencia_texto( $r ) ] ) ); ?><?php if ( $estado ) : ?> <?php echo esc_html( pm_t( 'rio.p.nivel', [ 'alerta' => pm_rio_num( $r['alerta'] ), 'evac' => pm_rio_num( $r['evacuacion'] ?? 0 ) ] ) ); ?><?php endif; ?></p>
 			<?php endif; ?>
 			<p class="confianza"><a href="<?php echo esc_url( pm_url_rio( $idioma ) ); ?>"><?php pm_e( 'rio.p.todos' ); ?></a></p>
+			<?php // The visit comes for the gauge reading; the way on is in view, not under the table. With a guide: the guide and a quote for that place. Without one (Buenos Aires points): the species pages and a general quote. ?>
+			<p class="rio-siguiente">
+				<?php if ( $guia ) : ?><a class="button primary" href="<?php echo esc_url( get_permalink( $guia ) ); ?>"><?php echo esc_html( pm_t( 'rio.p.guia', [ 'lugar' => $lugar ] ) ); ?></a><?php endif; ?>
+				<a class="button secondary" href="<?php echo esc_url( add_query_arg( array_filter( [ 'destino' => $guia ? $clave : '' ] ), pm_url_viaje( $idioma ) ) ); ?>"><?php pm_e( 'nota.cta.boton' ); ?></a>
+			</p>
+			<?php if ( ! $guia ) :
+				$especies_sig = array_filter( [ 'dorado', 'surubi', 'pejerrey' ], fn( $k ) => pm_buscar( 'pm_especie', $k, $idioma ) );
+				if ( $especies_sig ) : ?>
+				<p class="rio-especies"><?php pm_e( 'rio.p.sig.especies' ); ?>
+					<?php foreach ( $especies_sig as $k ) : ?><a href="<?php echo esc_url( pm_url_especie( $k, $idioma ) ); ?>"><?php echo esc_html( pm_etiqueta( $k ) ); ?></a><?php endforeach; ?>
+				</p>
+			<?php endif; endif; ?>
 		</div>
 	</header>
 	<div class="shell rio-hub">

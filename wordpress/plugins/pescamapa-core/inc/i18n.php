@@ -93,8 +93,34 @@ function pm_url_provincia( string $region, string $provincia, string $i ): strin
 function pm_url_especies( string $i ): string {
 	return pm_url( PM_SEGMENTOS[ $i ]['especies'], $i );
 }
+/**
+ * URL slug of a species per language. The `clave` stays the shared key (and the Spanish slug); pt and en
+ * get the word people search with ("trout", "truta"). A species not listed keeps its clave in every language.
+ * The old URL (/en/species/trucha/) still resolves and 301s to the new one (see inc/rutas.php).
+ */
+const PM_SLUGS_ESPECIE = [
+	'trucha'   => [ 'pt' => 'truta', 'en' => 'trout' ],
+	'dorado'   => [ 'pt' => 'dourado', 'en' => 'golden-dorado' ],
+	'surubi'   => [ 'pt' => 'surubim' ],
+	'pejerrey' => [ 'pt' => 'peixe-rei' ],
+];
+
+function pm_slug_especie( string $clave, string $i ): string {
+	return PM_SLUGS_ESPECIE[ $clave ][ $i ] ?? $clave;
+}
+
+/** The clave a species slug stands for in this language; a slug that is already a clave (old URL) passes through. */
+function pm_clave_de_slug_especie( string $slug, string $i ): string {
+	foreach ( PM_SLUGS_ESPECIE as $clave => $por_idioma ) {
+		if ( ( $por_idioma[ $i ] ?? null ) === $slug ) {
+			return $clave;
+		}
+	}
+	return $slug;
+}
+
 function pm_url_especie( string $clave, string $i ): string {
-	return pm_url( PM_SEGMENTOS[ $i ]['especies'] . '/' . $clave, $i );
+	return pm_url( PM_SEGMENTOS[ $i ]['especies'] . '/' . pm_slug_especie( $clave, $i ), $i );
 }
 
 /** Same view in every language (home, map, credits). */
