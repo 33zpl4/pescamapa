@@ -71,7 +71,7 @@ foreach ( $datos as $clave => $x ) {
 		if ( $actual === (string) $valor ) {
 			continue;
 		}
-		WP_CLI::log( ( $aplicar ? 'APLICA' : 'SIMULACRO' ) . ": $clave (es) $campo: «$actual» → «$valor»" );
+		WP_CLI::log( ( $aplicar ? 'APLICA' : 'SIMULACRO' ) . ": $clave (es) $campo: «{$actual}» → «{$valor}»" );
 		++$cambios;
 		if ( $aplicar ) {
 			update_field( $campo, $valor, $es->ID );
