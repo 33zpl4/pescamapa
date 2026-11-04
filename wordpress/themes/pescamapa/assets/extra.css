@@ -358,3 +358,15 @@
 .v-provincia .prov-destino .foto img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; border-radius: var(--radius); }
 .v-provincia .prov-destino h3 { margin: 0 0 6px; }
 .v-provincia .prov-destino p { margin: 0 0 8px; }
+
+/* Month bar of a guide (4/11/2026) */
+.barra-meses { margin: 0 0 22px; max-width: 760px; }
+.barra-meses .barra-meses-t { margin: 0 0 8px; }
+.barra-meses .meses { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 3px; }
+.barra-meses .mes { position: relative; text-align: center; font-size: var(--fs-caption); line-height: 1; padding: 10px 0; border-radius: 6px; border: 1px solid var(--line); background: var(--white); color: var(--ink); opacity: 0.55; }
+.barra-meses .mes--abierto { background: var(--cream); border-color: var(--moss); opacity: 1; }
+.barra-meses .mes--pico { background: var(--moss); border-color: var(--moss); color: var(--white); opacity: 1; }
+.barra-meses .mes--actual { box-shadow: 0 0 0 2px var(--ink); opacity: 1; font-weight: 700; }
+.barra-meses .leyenda { list-style: none; margin: 10px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: var(--fs-caption); }
+.barra-meses .leyenda .mes { display: inline-block; width: 14px; height: 14px; padding: 0; vertical-align: -2px; margin-right: 4px; }
+@media (max-width: 520px) { .barra-meses .meses { gap: 2px; } .barra-meses .mes { padding: 8px 0; } }

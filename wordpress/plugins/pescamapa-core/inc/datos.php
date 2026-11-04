@@ -74,6 +74,11 @@ function pm_destino( int $post_id ): array {
 		'epoca'       => (string) pm_campo( 'epoca', $post_id ),
 		'aguas'       => $aguas,
 		'temporada'   => pm_sin_pendientes( pm_filas( 'temporada', $post_id ) ),
+		'abre'        => (string) pm_campo( 'temporada_abre', $fid ),
+		'cierra'      => (string) pm_campo( 'temporada_cierra', $fid ),
+		'pico'        => array_values( array_filter( array_map( 'intval', preg_split( '/[^0-9]+/', (string) pm_campo( 'pico_meses', $fid ), -1, PREG_SPLIT_NO_EMPTY ) ), fn( $m ) => $m >= 1 && $m <= 12 ) ),
+		'pico_quien'  => trim( (string) pm_campo( 'pico_quien', $fid ) ),
+		'temporada_nota' => trim( (string) pm_campo( 'temporada_nota', $post_id ) ),
 		'reglamento'  => [
 			'autoridad'  => (string) pm_campo( 'reglamento_autoridad', $post_id ),
 			'url'        => (string) pm_campo( 'reglamento_url', $post_id ),

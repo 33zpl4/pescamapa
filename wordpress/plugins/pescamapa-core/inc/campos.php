@@ -127,6 +127,10 @@ add_action( 'acf/include_fields', function () {
 				[ 'key' => 'field_pm_d_provincia', 'name' => 'provincia', 'label' => 'Provincia', 'type' => 'select', 'choices' => PM_PROVINCIAS, 'conditional_logic' => $en_es, 'wrapper' => [ 'width' => 50 ] ],
 				[ 'key' => 'field_pm_d_lat', 'name' => 'lat', 'label' => 'Latitud (ej. -29.14)', 'type' => 'number', 'step' => 'any', 'min' => -56, 'max' => -21, 'conditional_logic' => $en_es, 'instructions' => 'Clic derecho en Google Maps sobre el lugar → el primer número.', 'wrapper' => [ 'width' => 50 ] ],
 				[ 'key' => 'field_pm_d_lon', 'name' => 'lon', 'label' => 'Longitud (ej. -59.26)', 'type' => 'number', 'step' => 'any', 'min' => -74, 'max' => -53, 'conditional_logic' => $en_es, 'instructions' => 'El segundo número.', 'wrapper' => [ 'width' => 50 ] ],
+				[ 'key' => 'field_pm_d_temp_abre', 'name' => 'temporada_abre', 'label' => 'La temporada abre el (según la norma)', 'type' => 'date_picker', 'display_format' => 'd/m/Y', 'return_format' => 'Y-m-d', 'conditional_logic' => $en_es, 'instructions' => 'Fecha oficial de apertura de la temporada actual. Con apertura y cierre la guía muestra la barra de meses y responde "¿Se puede pescar ahora?". Dejalo vacío si el agua está abierta todo el año o no leíste la norma.', 'wrapper' => [ 'width' => 50 ] ],
+				[ 'key' => 'field_pm_d_temp_cierra', 'name' => 'temporada_cierra', 'label' => 'La temporada cierra el (según la norma)', 'type' => 'date_picker', 'display_format' => 'd/m/Y', 'return_format' => 'Y-m-d', 'conditional_logic' => $en_es, 'instructions' => 'Fecha oficial de cierre de la temporada actual (la del agua principal; las excepciones van en la nota de cada idioma).', 'wrapper' => [ 'width' => 50 ] ],
+				[ 'key' => 'field_pm_d_pico_meses', 'name' => 'pico_meses', 'label' => 'Mejor época: meses (números separados por coma, ej. 2,3,4)', 'type' => 'text', 'conditional_logic' => $en_es, 'instructions' => 'Solo si un operador o una fuente técnica lo afirma. No es la norma: es una opinión, y la guía la atribuye.', 'wrapper' => [ 'width' => 50 ] ],
+				[ 'key' => 'field_pm_d_pico_quien', 'name' => 'pico_quien', 'label' => 'Mejor época: quién lo dice', 'type' => 'text', 'conditional_logic' => $en_es, 'instructions' => 'Nombre del operador o de la fuente (ej. Karku Fly Fishing). Sin nombre, no se muestra la mejor época.', 'wrapper' => [ 'width' => 50 ] ],
 				[ 'key' => 'field_pm_d_alturas_url', 'name' => 'alturas_url', 'label' => 'Enlace a la altura del río (oficial, se actualiza solo)', 'type' => 'url', 'conditional_logic' => $en_es, 'instructions' => 'Ej. la página de alturas de Prefectura o del INA para este puerto. Aparece arriba, junto a la fecha.' ],
 				[ 'key' => 'field_pm_d_especies', 'name' => 'especies', 'label' => 'Especies', 'type' => 'checkbox', 'choices' => [], 'layout' => 'horizontal', 'conditional_logic' => $en_es, 'instructions' => 'Las opciones salen de las Especies cargadas en español.' ],
 
@@ -158,6 +162,8 @@ add_action( 'acf/include_fields', function () {
 						[ 'key' => 'field_pm_d_te_que', 'name' => 'que', 'label' => 'Qué esperar', 'type' => 'textarea', 'rows' => 2 ],
 					],
 				],
+
+				[ 'key' => 'field_pm_d_temp_nota', 'name' => 'temporada_nota', 'label' => 'Nota de la temporada (una línea, en este idioma)', 'type' => 'text', 'instructions' => 'Excepciones a las fechas de arriba: aguas que cierran antes o después. Aparece bajo la barra de meses.' ],
 
 				[ 'key' => 'field_pm_d_tab_reglamento', 'label' => 'Reglamento', 'type' => 'tab' ],
 				[ 'key' => 'field_pm_d_reg_autoridad', 'name' => 'reglamento_autoridad', 'label' => 'Autoridad', 'type' => 'text' ],
