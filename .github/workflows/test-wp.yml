@@ -299,6 +299,23 @@ jobs:
           check /terminos/ 200 'Las fotos pueden estar recortadas'
           check /privacidad/ 200 'Política de privacidad'
           check /privacidad/ 200 'info@pescamapa.com'
+          # Season dates: the month bar and the computed "can I fish now?" answer (idea from the PESQA review, 4/11/2026).
+          check /litoral/corrientes/pesca-en-esquina/ 200 'id="preguntas"' 'barra-meses'
+          wp --path="$WP" eval '$p = pm_buscar( "pm_destino", "esquina", "es" ); update_field( "temporada_abre", "20261030", $p->ID ); update_field( "temporada_cierra", "20270502", $p->ID ); update_field( "pico_meses", "2,3", $p->ID ); update_field( "pico_quien", "Operador de prueba", $p->ID ); update_field( "temporada_nota", "NOTA-DE-TEMPORADA-DE-PRUEBA", $p->ID ); wp_cache_flush();'
+          check /litoral/corrientes/pesca-en-esquina/ 200 'barra-meses'
+          check /litoral/corrientes/pesca-en-esquina/ 200 'Temporada del 30 de octubre de 2026 al 2 de mayo de 2027'
+          check /litoral/corrientes/pesca-en-esquina/ 200 'NOTA-DE-TEMPORADA-DE-PRUEBA'
+          check /litoral/corrientes/pesca-en-esquina/ 200 'Mejor época, según Operador de prueba'
+          check /litoral/corrientes/pesca-en-esquina/ 200 'mes--pico'
+          check /litoral/corrientes/pesca-en-esquina/ 200 'mes--cerrado'
+          check /litoral/corrientes/pesca-en-esquina/ 200 'mes--abierto'
+          check /litoral/corrientes/pesca-en-esquina/ 200 '¿Se puede pescar en'
+          check /litoral/corrientes/pesca-en-esquina/ 200 'Fechas según'
+          check /litoral/corrientes/pesca-en-esquina/ 200 '"FAQPage"'
+          fq=$(wp --path="$WP" eval '$d = pm_destino( pm_buscar( "pm_destino", "esquina", "es" )->ID ); echo implode( "|", [ pm_temporada_estado( $d, "2026-11-04" ), pm_temporada_estado( $d, "2026-10-01" ), pm_temporada_estado( $d, "2027-05-03" ), implode( ",", pm_temporada_meses( $d ) ) ] );')
+          [[ "$fq" == "abierta|antes|cerrada|abierto,pico,pico,abierto,abierto,cerrado,cerrado,cerrado,cerrado,abierto,abierto,abierto" ]] && echo "✓ estados y meses de la temporada" || { echo "✖ estados y meses de la temporada: $fq"; fail=1; }
+          wp --path="$WP" eval '$p = pm_buscar( "pm_destino", "esquina", "es" ); foreach ( [ "temporada_abre", "temporada_cierra", "pico_meses", "pico_quien" ] as $c ) { update_field( $c, "", $p->ID ); } update_field( "temporada_nota", "", pm_buscar( "pm_destino", "esquina", "es" )->ID ); wp_cache_flush();'
+          check /litoral/corrientes/pesca-en-esquina/ 200 'id="preguntas"' 'barra-meses'
           # Outgoing mail (Resend): the payload is built correctly, and with no key wp_mail is left alone.
           pl=$(wp --path="$WP" eval 'echo wp_json_encode( pm_correo_payload( [ "to" => "Alguien <a@example.com>", "subject" => "S", "message" => "M", "headers" => [ "Reply-To: Otra <r@example.com>" ] ] ) );')
           [[ "$pl" == *'"from":"Pescamapa <info@pescamapa.com>"'* && "$pl" == *'"to":["a@example.com"]'* && "$pl" == *'"reply_to":"r@example.com"'* && "$pl" == *'"text":"M"'* ]] && echo "✓ payload de Resend" || { echo "✖ payload de Resend: $pl"; fail=1; }

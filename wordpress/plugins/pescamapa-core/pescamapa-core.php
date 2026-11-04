@@ -22,6 +22,7 @@ require PM_DIR . 'inc/i18n.php';
 require PM_DIR . 'inc/tipos.php';
 require PM_DIR . 'inc/campos.php';
 require PM_DIR . 'inc/datos.php';
+require PM_DIR . 'inc/temporada.php';
 require PM_DIR . 'inc/rutas.php';
 require PM_DIR . 'inc/reglas.php';
 require PM_DIR . 'inc/fotos.php';

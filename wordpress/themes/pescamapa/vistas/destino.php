@@ -76,7 +76,7 @@ get_header(); ?>
 		<nav class="shell ir-a" aria-label="<?php pm_e( 'ficha.ir.h' ); ?>">
 			<?php foreach ( array_filter( [
 				'rio'        => $hoy_texto ? 'ficha.ir.rio' : '',
-				'temporada'  => $d['temporada'] ? 'ficha.ir.calendario' : '',
+				'temporada'  => ( $d['temporada'] || pm_temporada_hay( $d ) ) ? 'ficha.ir.calendario' : '',
 				'reglamento' => 'ficha.ir.reglamento',
 				'prestadores' => 'ficha.ir.guias',
 				'preguntas'  => $d['faqs'] ? 'ficha.ir.preguntas' : '',
@@ -92,8 +92,11 @@ get_header(); ?>
 			<div class="prose">
 				<?php while ( have_posts() ) : the_post(); the_content(); endwhile; ?>
 
-				<?php if ( $d['temporada'] ) : ?>
+				<?php if ( $d['temporada'] || pm_temporada_hay( $d ) ) : ?>
 					<h2 id="temporada"><?php pm_e( 'ficha.calendario' ); ?></h2>
+					<?php get_template_part( 'parciales/barra-meses', null, [ 'd' => $d ] ); ?>
+				<?php endif; ?>
+				<?php if ( $d['temporada'] ) : ?>
 					<table>
 						<thead><tr><th scope="col"><?php pm_e( 'ficha.epoca' ); ?></th><th scope="col"><?php pm_e( 'ficha.que' ); ?></th></tr></thead>
 						<tbody>
@@ -146,9 +149,9 @@ get_header(); ?>
 				<?php get_template_part( 'parciales/notas-relacionadas', null, [ 'notas' => pm_notas_para( $idioma, $d['clave'], $d['especies'] ), 'h2' => 'ficha.notas.h2', 'vars' => [ 'lugar' => $d['nombre'] ] ] ); ?>
 				<?php get_template_part( 'parciales/consulta', null, [ 'destino' => $d['clave'], 'lugar' => $d['nombre'], 'especies' => $d['especies'] ] ); ?>
 
-				<?php if ( $d['faqs'] ) : ?>
+				<?php $faqs_todas = pm_faqs_destino( $d ); if ( $faqs_todas ) : ?>
 					<h2 id="preguntas"><?php pm_e( 'ficha.faqs' ); ?></h2>
-					<?php foreach ( $d['faqs'] as $f ) : ?>
+					<?php foreach ( $faqs_todas as $f ) : ?>
 						<details><summary><?php echo esc_html( $f['pregunta'] ); ?></summary><p><?php echo esc_html( $f['respuesta'] ); ?></p></details>
 					<?php endforeach; ?>
 				<?php endif; ?>

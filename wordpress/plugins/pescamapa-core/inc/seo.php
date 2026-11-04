@@ -428,7 +428,7 @@ function pm_jsonld_destino( array $d ): array {
 	if ( $citas ) {
 		$out[0]['citation'] = $citas;
 	}
-	$faqs = $d['faqs'];
+	$faqs = pm_faqs_destino( $d );
 	if ( $faqs ) {
 		$out[] = [
 			'@context'   => 'https://schema.org',
