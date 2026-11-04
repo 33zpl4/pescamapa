@@ -326,5 +326,37 @@
 		"vigilar": "texto",
 		"afecta": "Guía de Chascomús: licencia y exenciones",
 		"accion": "Si aparecen valores o categorías, completar la guía."
+	},
+	{
+		"id": "tdf-pesca-pagina",
+		"nombre": "Tierra del Fuego: pesca deportiva (Ministerio de Producción y Ambiente)",
+		"url": "https://prodyambiente.tierradelfuego.gob.ar/pesca-deportiva-tdf/",
+		"vigilar": "texto",
+		"afecta": "Guía de Río Grande: fechas de temporada, reglas por ambiente y valores del permiso",
+		"accion": "Comparar con la Resolución 259/26. Ojo: la página mostró una fecha vieja (13/4/2025) para el río Grande mientras la resolución dice 18/4/2027; si cambia, releer el PDF y actualizar la guía."
+	},
+	{
+		"id": "sc-ambientes",
+		"nombre": "Santa Cruz: Anexo I, ambientes 2026/27 (portal de Pesca y Acuicultura)",
+		"url": "https://pesca.santacruz.gob.ar/ambientes/",
+		"vigilar": "texto",
+		"afecta": "Guía de Río Gallegos y de Lago Strobel: fechas y reglas por río",
+		"accion": "Si cambia una fecha, un límite o una veda, actualizar las dos guías de Santa Cruz y sus FAQ."
+	},
+	{
+		"id": "sc-valores",
+		"nombre": "Santa Cruz: valores y categorías de los permisos",
+		"url": "https://pesca.santacruz.gob.ar/valores/",
+		"vigilar": "texto",
+		"afecta": "Valores del permiso en las guías de Río Gallegos y de Lago Strobel",
+		"accion": "Si cambian los montos, actualizar las dos guías (y la FAQ de permiso)."
+	},
+	{
+		"id": "kautapen-tarifas",
+		"nombre": "Kau Tapen Lodge: tarifas 2027 (operador)",
+		"url": "https://www.kautapen.com/rates.html",
+		"vigilar": "texto",
+		"afecta": "Ficha de Kau Tapen Lodge en la guía de Río Grande (precio con su fecha)",
+		"accion": "Si cambian los montos o las fechas de la temporada, actualizar el precio de la ficha y su fecha, y la FAQ de costo."
 	}
 ]
