@@ -7,7 +7,7 @@
  * (script = esquel-trevelin-pt-2026-11-04).
  */
 
-$aplicar = false;
+$aplicar = true;
 $hoy     = '20261104';
 
 function pm_etp_p( string $h ): string { return "<!-- wp:paragraph -->\n<p>{$h}</p>\n<!-- /wp:paragraph -->"; }

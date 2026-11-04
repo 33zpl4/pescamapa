@@ -6,7 +6,7 @@
  * Idempotent. Dry run first ($aplicar = false); run with wp-script.yml (script = rio-gallegos-pt-2026-11-04).
  */
 
-$aplicar = false;
+$aplicar = true;
 $hoy     = '20261104';
 
 function pm_glp_p( string $h ): string { return "<!-- wp:paragraph -->\n<p>{$h}</p>\n<!-- /wp:paragraph -->"; }
