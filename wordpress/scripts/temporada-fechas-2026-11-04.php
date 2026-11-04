@@ -13,7 +13,7 @@
  * Dry run first ($aplicar = false). Run with wp-script.yml (script = temporada-fechas-2026-11-04).
  */
 
-$aplicar = false;
+$aplicar = true;
 
 $datos = [
 	'bariloche' => [
@@ -71,7 +71,7 @@ foreach ( $datos as $clave => $x ) {
 		if ( $actual === (string) $valor ) {
 			continue;
 		}
-		WP_CLI::log( ( $aplicar ? 'APLICA' : 'SIMULACRO' ) . ": $clave (es) $campo: «$actual» → «$valor»" );
+		WP_CLI::log( ( $aplicar ? 'APLICA' : 'SIMULACRO' ) . ": $clave (es) $campo: «{$actual}» → «{$valor}»" );
 		++$cambios;
 		if ( $aplicar ) {
 			update_field( $campo, $valor, $es->ID );

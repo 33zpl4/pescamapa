@@ -20,7 +20,7 @@ Origen: el relevamiento de prestadores que pasó el dueño (`pescamapa_directori
 
 ## No leído (para la próxima ronda)
 
-- **Chubut:** anexo oficial y ambientes 2026/27 (`reglamentodepesca.org.ar` falla desde los runners: que el dueño pegue `…/anexo-chubut/` y los ambientes de Chubut). Sitio oficial de Pesca Continental de Chubut: URL no confirmada. Parque Nacional Los Alerces: la página abrió pero no trae reglas de pesca.
+- **Chubut:** el anexo y los ambientes 2026/27 **se leyeron después** con `investigar.yml` en modo navegador (carpeta `chubut-reglamento-20261104`) y alimentan la guía de Esquel y Trevelin. Siguen sin leer: el anexo de Parques Nacionales (Los Alerces, Lago Puelo) y el sitio oficial de Pesca Continental de Chubut (URL no confirmada).
 - **Operadores de Chubut:** Baqueanos, Challhuaquen, Rios Grandes, Patagonia Trout Outfitters, AHO Esquel, Pescando en el Paraíso, La Pilarica y Las Pampas abrieron (tarifas sin revisar a fondo); Altos del Molino y Patagonia River Guides dieron 403; Lago Rosario Lodge lo desautoriza el robots.txt; Cipreses mostró una pantalla de espera.
 - **Tierra del Fuego:** Estancia María Behety y La Villa (no abren), Despedida Lodge (solo el vendedor de viajes).
 - **Santa Cruz:** reglamento general (suelas de fieltro, anzuelos), Bella Sofía (sitio vacío para el lector), Los Plateados, Truchaike y Los Morros (sin sitio propio que abra). Las Buitreras y Karku no publican tarifa.
