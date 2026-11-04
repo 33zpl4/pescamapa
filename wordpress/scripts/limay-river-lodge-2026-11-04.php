@@ -6,7 +6,7 @@
  * Dry run by default; run with wp-script.yml (script = limay-river-lodge-2026-11-04).
  */
 
-$aplicar = false;
+$aplicar = true;
 $nota    = "\n4/11/2026: oculta de la guía de Bariloche. El lodge está en el Limay Medio (Neuquén), a 3-4 h de los aeropuertos de Neuquén, San Martín y Bariloche (Orvis; relevamiento del 4/11/2026). Vuelve a publicarse con una guía del Limay Medio.";
 
 $ids = get_posts( [ 'post_type' => 'pm_prestador', 'post_status' => 'any', 'title' => 'Limay River Lodge', 'numberposts' => 1, 'fields' => 'ids' ] );
