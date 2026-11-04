@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rios Grandes Fly Fishing</title>
+    
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://riosgrandesflyfishing.com/">
+    <meta property="og:title" content="Ríos Grandes Fly Fishing">
+    <meta property="og:description" content="Exclusive fly fishing experiences in the wildest and most majestic rivers of Argentine Patagonia.">
+    <meta property="og:image" content="https://riosgrandesflyfishing.com/assets/img/logo-rios-grandes.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Ríos Grandes Fly Fishing">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Ríos Grandes Fly Fishing">
+    <meta name="twitter:description" content="Exclusive fly fishing experiences in the wildest and most majestic rivers of Argentine Patagonia.">
+    <meta name="twitter:image" content="https://riosgrandesflyfishing.com/assets/img/logo-rios-grandes.png">
+    
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="assets/css/custom.css">
+</head>
+<body>
+
+    <div id="preloader">
+        <div class="preloader-content">
+            <img src="assets/img/logo-rios-grandes.png" alt="Rios Grandes Logo" class="preloader-logo">
+            <div class="spinner-custom"></div>
+        </div>
+    </div>
+
+    <header class="fixed-top navbar-dynamic">
+    <div class="top-bar d-none d-md-block py-1 bg-dark text-white-50">
+        <div class="container d-flex justify-content-between align-items-center font-size-sm">
+            <div>
+                <span class="me-3"><i class="bi bi-geo-alt"></i> Patagonia, Argentina</span>
+                <span><i class="bi bi-envelope"></i> info@riosgrandesflyfishing.com</span>
+            </div>
+            <div class="lang-selector">
+                <a href="?lang=es" class="text-white-50 text-decoration-none me-2 fw-bold text-white">ES</a>
+                <span class="text-muted">|</span>
+                <a href="?lang=en" class="text-white-50 text-decoration-none ms-2 ">EN</a>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand-xl navbar-dark py-3">
+        <div class="container-fluid px-md-4">
+            
+            <a class="navbar-brand d-flex align-items-center" href="index.php">
+                <img src="assets/img/logo-rios-grandes.png" alt="Rios Grandes" class="navbar-logo me-2">
+                <div class="brand-text-wrapper d-flex flex-column lh-1 text-start">
+                    <span class="brand-text-main">Ríos Grandes</span>
+                    <span class="brand-text-sub text-uppercase">Fly Fishing</span>
+                </div>
+            </a>
+
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="mainNavbar">
+                
+                <ul class="navbar-nav mx-auto mb-3 mb-xl-0 align-items-center text-center gap-1">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.php">Ríos Grandes</a>
+                    </li>
+                    
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="whereDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Dónde Estamos                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark text-center text-xl-start" aria-labelledby="whereDropdown">
+                            <li><a class="dropdown-item" href="#">Trevelin</a></li>
+                            <li><a class="dropdown-item" href="#">Cholila</a></li>
+                            <li><a class="dropdown-item" href="#">PN Los Alerces</a></li>
+                            <li><a class="dropdown-item" href="rio-pico.php">Río Pico</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="activitiesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Otras Actividades                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark text-center text-xl-start" aria-labelledby="activitiesDropdown">
+                            <li><a class="dropdown-item" href="#">Cabalgatas</a></li>
+                            <li><a class="dropdown-item" href="#">Excursiones</a></li>
+                            <li><a class="dropdown-item" href="#">Senderismo</a></li>
+                            <li><a class="dropdown-item" href="#">Te Galés</a></li>
+                            <li><a class="dropdown-item" href="#">Viñedos</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item d-block d-md-none my-3 border-top border-secondary border-opacity-25 pt-3">
+                        <div class="d-flex justify-content-center align-items-center gap-3 font-size-sm">
+                            <a href="?lang=es" class="text-white-50 text-decoration-none px-2 py-1 rounded fw-bold text-white bg-dark border border-secondary border-opacity-50" style="font-size: 0.85rem;">
+                                <i class="bi bi-globe me-1 opacity-50"></i> ES
+                            </a>
+                            <span class="text-white-50 opacity-25">|</span>
+                            <a href="?lang=en" class="text-white-50 text-decoration-none px-2 py-1 rounded " style="font-size: 0.85rem;">
+                                <i class="bi bi-globe me-1 opacity-50"></i> EN
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+
+                <div class="d-flex align-items-center justify-content-center gap-2 flex-wrap mt-2 mt-xl-0">
+                    
+                    <form class="nav-search-form position-relative" action="buscar.php" method="GET">
+                        <input class="form-control nav-search-input" type="search" name="q" placeholder="Estoy buscando..." aria-label="Search">
+                        <button class="btn nav-search-btn position-absolute top-50 end-0 translate-middle-y border-0 bg-transparent text-white-50" type="submit">
+                            <i class="bi bi-search"></i>
+                        </button>
+                    </form>
+
+                    <a href="https://wa.me/542945694596" target="_blank" class="btn-nav-action" title="WhatsApp">
+                        <i class="bi bi-whatsapp"></i>
+                    </a>
+
+                    <button type="button" class="btn-nav-action" data-bs-toggle="modal" data-bs-target="#modalContact" title="Contacto">
+                        <i class="bi bi-envelope"></i>
+                    </button>
+                    
+                </div>
+
+            </div>
+        </div>
+    </nav>
+</header>
+    <main class="main-content-grid">
+        <div class="container-fluid px-3 py-2">
+            
+            <div class="row g-2">
+                
+                <div class="col-12 col-md-4">
+                    <a href="trip-details" class="grid-card card-tall-lg">
+                        <div class="grid-card-bg" style="background-image: url('assets/img/fly-fishing-trips-2.jpg');"></div>
+                        <div class="grid-card-overlay"></div>
+                        <div class="grid-card-content">
+                            <h2 class="grid-title">Excursiones de Pesca</h2>
+                            <p class="grid-subtitle">Excursiones a medida para pescadores de todos los niveles.</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-12 col-md-4">
+                    <div class="row g-2">
+                        <div class="col-12">
+                            <a href="lodge" class="grid-card card-medium">
+                                <div class="grid-card-bg" style="background-image: url('assets/img/portada-lodge.jpg');"></div>
+                                <div class="grid-card-overlay"></div>
+                                <div class="grid-card-content">
+                                    <h2 class="grid-title">Lodge de Pesca con Mosca</h2>
+                                    <p class="grid-subtitle">Viví la experiencia completa de un lodge de pesca patagónico.</p>
+                                </div>
+                            </a>
+                        </div>
+                        
+                        <div class="col-12">
+                            <a href="rio-pico" class="grid-card card-medium">
+                                <div class="grid-card-bg" style="background-image: url('assets/img/riopico/page-rio-pico-05.jpeg');"></div>
+                                <div class="grid-card-overlay"></div>
+                                <div class="grid-card-content">
+                                    <h2 class="grid-title">Programa Rio Pico</h2>
+                                    <p class="grid-subtitle">Es la opción de alojamiento ideal para quienes buscan pescar en la zona de Río Pico.</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-4">
+                    <div class="row g-2">
+                        <div class="col-12">
+                            <a href="avoid-expensive-lodges" class="grid-card card-medium">
+                                <div class="grid-card-bg" style="background-image: url('assets/img/avoid/avoid-02.jpg');"></div>
+                                <div class="grid-card-overlay"></div>
+                                <div class="grid-card-content">
+                                    <h2 class="grid-title">Evita Lodges Caros</h2>
+                                    <p class="grid-subtitle">Disfruta tu viaje de pesca a la Patagonia con un valor inteligente y accesos a aguas de nivel internacional.</p>
+                                </div>
+                            </a>
+                        </div>
+                        
+                        <div class="col-12">
+                            <a href="gallery" class="grid-card card-medium">
+                                <div class="grid-card-bg" style="background-image: url('assets/img/photo-gallery.jpg');"></div>
+                                <div class="grid-card-overlay"></div>
+                                <div class="grid-card-content">
+                                    <h2 class="grid-title">Galería de Fotos y Videos</h2>
+                                    <p class="grid-subtitle">Explorá nuestra galería multimedia.</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row g-2 mt-2">
+                <div class="col-12 col-md-4">
+                    <div class="grid-card card-short cursor-pointer" data-bs-toggle="modal" data-bs-target="#modalDryFly">
+                        <div class="grid-card-bg" style="background-image: url('assets/img/fly-fishing-trips.jpg');"></div>
+                        <div class="grid-card-overlay"></div>
+                        <div class="grid-card-content">
+                            <h2 class="grid-title">Excursión de un Día</h2>
+                            <p class="grid-subtitle">Disfrutá de un día completo de pesca de truchas diseñado para vos.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-12 col-md-4">
+                    <a href="day-trip" class="grid-card card-short">
+                        <div class="grid-card-bg" style="background-image: url('assets/img/patagonia-dry-fly.jpg');"></div>
+                        <div class="grid-card-overlay"></div>
+                        <div class="grid-card-content">
+                            <h2 class="grid-title">Mosca Seca en Patagonia</h2>
+                            <p class="grid-subtitle">Pesca de truchas con mosca seca en aguas patagónicas cristalinas.</p>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="col-12 col-md-4">
+                    <div class="grid-card card-short grid-calendar-box-premium position-relative overflow-hidden">
+                        
+                        
+                        <div class="grid-calendar-bg-blur" style="background: linear-gradient(rgba(11, 17, 21, 0.85), rgba(11, 17, 21, 0.95)), url('assets/img/moscas-pesca.jpg') no-repeat center center; background-size: cover;"></div>
+                        
+                        <div class="grid-calendar-content-wrapper position-relative h-100 d-flex flex-column justify-content-between p-4 z-2">
+                            
+                            <div class="d-flex justify-content-between align-items-center">
+                                <img src="assets/img/logo-rios-grandes.png" alt="Ríos Grandes" style="width: 38px; height: 38px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.15);">
+                                <div class="text-end lh-sm">
+                                    <span class="badge text-uppercase tracking-wider px-2 py-1 mb-1" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); font-size: 0.6rem; color: var(--color-brand-gold);">Calendario</span>
+                                    <small class="text-white-50 d-block" style="font-size: 0.7rem; letter-spacing: 0.5px;">04 de Noviembre de 2026</small>
+                                </div>
+                            </div>
+
+                            <div class="mt-2">
+                                <h5 class="grid-title mb-3" style="font-size: 1.1rem; color: var(--color-brand-gold) !important;">
+                                    Temporadas de Pesca                                </h5>
+                                
+                                <div class="d-flex flex-column gap-2">
+                                    <div class="d-flex align-items-center gap-2 py-1 px-2 rounded active-season-row-gold">
+                                        <i class="bi bi-check2-circle fs-5" style="color: var(--color-brand-gold); opacity: 1;"></i>
+                                        <div class="lh-sm">
+                                            <span class="text-white font-size-sm text-uppercase fw-bold" style="letter-spacing: 0.5px; font-size: 0.78rem;">Temporada Alta:</span>
+                                            <small class="d-block text-white-50" style="font-size: 0.72rem;">Noviembre - Mayo</small>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="d-flex align-items-center gap-2 py-1 px-2 rounded ">
+                                        <i class="bi bi-circle fs-5" style="color: var(--color-brand-green); opacity: 0.4;"></i>
+                                        <div class="lh-sm">
+                                            <span class="text-white font-size-sm text-uppercase opacity-50" style="letter-spacing: 0.5px; font-size: 0.78rem;">Temporada Baja:</span>
+                                            <small class="d-block text-white-50" style="font-size: 0.72rem;">Junio - Octubre</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <section class="about-section position-relative">
+        <div class="wave-container">
+            <svg viewBox="0 0 1440 74" version="1.1" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                <path d="M0,32 C240,74.6666667 480,96 720,96 C960,96 1200,74.6666667 1440,32 L1440,0 L0,0 Z" class="wave-fill"></path>
+            </svg>
+        </div>
+
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-12 col-lg-6">
+                    <div class="about-image-wrapper">
+                        <div class="about-image-frame"></div>
+                        <div class="about-image" style="background-image: url('assets/img/team/guillermo_home.jpeg');"></div>
+                        <div class="image-badge text-uppercase tracking-wider font-weight-bold">Guille (Founder)</div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                    <div class="about-content-box ps-lg-4">
+                        <span class="about-subtitle text-uppercase tracking-wider">Acerca de nosotros</span>
+                        <h2 class="about-title font-serif mt-2 mb-4">RIOS GRANDES <br><span class="highlight-text">FLY FISHING</span></h2>
+                        <p class="about-text lead-custom">
+                            La marca surge de un viaje al Río Santa Cruz para una flotada de 400 km en soledad, conviviendo con la grandeza (de grandioso  – greatest) de este río y fue inspiración para notar la grandeza de los ríos a lo largo de nuestras vidas.                        </p>
+                        <div class="mt-5">
+                            <a href="team" class="btn-modern-liquid">
+                                <span>Nuestro Equipo</span>
+                                <div class="liquid-bg"></div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bg-watermark-angler"></div>
+    </section>
+
+    <section class="gallery-section py-5 position-relative">
+        <div class="container py-4">
+            
+            <div class="text-center mb-5">
+                <span class="gallery-subtitle text-uppercase tracking-wider">Capturas de la Patagonia</span>
+                <h2 class="gallery-main-title font-serif mt-2">NUESTRA GALERÍA</h2>
+                <div class="gallery-line mx-auto"></div>
+            </div>
+
+            <div class="row mb-4">
+                <div class="col-12 text-center">
+                    <div class="gallery-filters d-inline-flex flex-wrap justify-content-center p-1 rounded-pill">
+                        <button class="filter-btn active" data-filter="all">Todo</button>
+                        <button class="filter-btn" data-filter="lodge">El Lodge</button>
+                        <button class="filter-btn" data-filter="fishing">Pesca</button>
+                        <button class="filter-btn" data-filter="landscapes">Paisajes</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-3 gallery-grid">
+                <div class="col-12 col-md-6 col-lg-4 gallery-item" data-category="lodge">
+                    <div class="gallery-box">
+                        <img src="assets/img/gallery/gallery-0001.jpg" alt="Fly Fishing Patagonia" class="img-fluid gallery-img">
+                        <div class="gallery-box-hover">
+                            <i class="bi bi-eye"></i>
+                            <span class="text-uppercase tracking-wider mt-2">Ver Imagen</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 gallery-item" data-category="fishing">
+                    <div class="gallery-box">
+                        <img src="assets/img/gallery/gallery-0002.jpg" alt="Lodge Exterior" class="img-fluid gallery-img">
+                        <div class="gallery-box-hover">
+                            <i class="bi bi-eye"></i>
+                            <span class="text-uppercase tracking-wider mt-2">Ver Imagen</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 gallery-item" data-category="lodge">
+                    <div class="gallery-box">
+                        <img src="assets/img/gallery/gallery-0003.jpg" alt="Patagonia Rivers" class="img-fluid gallery-img">
+                        <div class="gallery-box-hover">
+                            <i class="bi bi-eye"></i>
+                            <span class="text-uppercase tracking-wider mt-2">Ver Imagen</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 gallery-item" data-category="landscapes">
+                    <div class="gallery-box">
+                        <img src="assets/img/gallery/gallery-0004.jpg" alt="Big Trout Catch" class="img-fluid gallery-img">
+                        <div class="gallery-box-hover">
+                            <i class="bi bi-eye"></i>
+                            <span class="text-uppercase tracking-wider mt-2">Ver Imagen</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 gallery-item" data-category="fishing">
+                    <div class="gallery-box">
+                        <img src="assets/img/gallery/gallery-0005.jpg" alt="Lodge Room" class="img-fluid gallery-img">
+                        <div class="gallery-box-hover">
+                            <i class="bi bi-eye"></i>
+                            <span class="text-uppercase tracking-wider mt-2">Ver Imagen</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 gallery-item" data-category="landscapes">
+                    <div class="gallery-box">
+                        <img src="assets/img/gallery/gallery-0006.jpg" alt="Mountain View" class="img-fluid gallery-img">
+                        <div class="gallery-box-hover">
+                            <i class="bi bi-eye"></i>
+                            <span class="text-uppercase tracking-wider mt-2">Ver Imagen</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-5 pt-2">
+                <a href="gallery" class="btn btn-rainbow-index text-uppercase tracking-wider font-size-sm px-5 py-3 fw-bold">
+                    <i class="bi bi-images me-2"></i>Ver Más Medios                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <button id="scrollToTopBtn" class="btn-scroll-top-rainbow" aria-label="Scroll to top">
+        <i class="bi bi-arrow-up"></i>
+    </button>
+
+    <div class="modal fade" id="modalDryFly" tabindex="-1" aria-labelledby="modalDryFlyLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+        <div class="modal-content text-white modal-premium-bootstrap">
+            
+            <div class="modal-header border-0 d-flex justify-content-between align-items-center p-4">
+                <div class="d-flex align-items-center gap-2">
+                    <img src="assets/img/logo-rios-grandes.png" alt="Ríos Grandes" class="navbar-logo" style="width: 45px; height: 45px; border-radius: 50%;">
+                    
+                    <div class="brand-text-wrapper d-flex flex-column lh-1">
+                        <span class="brand-text-main" style="font-size: 1.15rem; color: #ffffff;">Ríos Grandes</span>
+                        <span class="brand-text-sub text-uppercase" style="font-size: 0.65rem; color: var(--color-brand-gold); letter-spacing: 1.5px;">Fly Fishing</span>
+                    </div>
+
+                    <span class="text-white-50 opacity-20 mx-1">|</span>
+
+                    <img src="assets/img/PATAGONIA-DRY-FLY.png" alt="Patagonia Dry Fly" style="width: 45px; height: 45px; border-radius: 50%; object-fit: cover; border: 1px solid rgba(255, 255, 255, 0.2);">
+                </div>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body p-4 p-md-5">
+                <div class="row align-items-center">
+                    
+                    <div class="col-12 col-lg-6 mb-4 mb-lg-0">
+                        <span class="text-uppercase tracking-wider text-white-50 font-size-sm d-block mb-2">
+                            Explorá nuestros ríos y lagos                        </span>
+                        <h2 class="font-serif text-uppercase fw-bold text-white lh-sm mb-4" style="font-size: 2.2rem;">
+                            Ríos Grandes <br>
+                            <span class="fw-light text-white-50">Fly Fishing Expeditions</span>
+                        </h2>
+                    </div>
+
+                    <div class="col-12 col-lg-6">
+                        
+                        <div class="p-4 mb-3" style="background: rgba(0, 0, 0, 0.5); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px;">
+                            <h6 class="text-white text-uppercase tracking-wider fw-bold mb-2 font-size-sm">
+                                ¿Cuándo venir?                            </h6>
+                            <p class="text-white-50 font-size-sm m-0">
+                                Nuestros programas son tan diversos que podemos adaptarnos a lo largo de toda la temporada y brindar siempre la mejor experiencia imaginable.                            </p>
+                        </div>
+
+                        <div class="p-4" style="background: rgba(0, 0, 0, 0.5); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px;">
+                            <h6 class="text-white text-uppercase tracking-wider mb-3 font-size-sm">
+                                Actividades imperdibles                            </h6>
+                            
+                            <div class="must-do-list d-flex flex-column gap-3">
+                                <div class="must-do-item border-start border-2 border-primary ps-3">
+                                    <h6 class="text-white m-0 font-size-sm fw-bold">Excursiones de pesca con mosca</h6>
+                                    <p class="text-white-50 font-size-sm m-0 mt-1">Disfrutá de jornadas completas de pesca de truchas diseñadas a tu medida.</p>
+                                </div>
+                                <div class="must-do-item border-start border-2 border-secondary ps-3">
+                                    <h6 class="text-white m-0 font-size-sm fw-bold">Salida de pesca diaria</h6>
+                                    <p class="text-white-50 font-size-sm m-0 mt-1">Esta opción es perfecta para quienes buscan pesca de clase mundial sin incluir alojamiento.</p>
+                                </div>
+                                <div class="must-do-item border-start border-2 border-success ps-3">
+                                    <h6 class="text-white m-0 font-size-sm fw-bold">Pescadores principiantes</h6>
+                                    <p class="text-white-50 font-size-sm m-0 mt-1">Pasá un día con un guía experimentado que te llevará a los mejores ríos de la zona.</p>
+                                </div>
+                                <div class="must-do-item border-start border-2 border-warning ps-3">
+                                    <h6 class="text-white m-0 font-size-sm fw-bold">Casting lessons</h6>
+                                </div>
+                            </div>
+
+                            <div class="mt-4 d-flex justify-content-end align-items-center gap-2 flex-wrap">
+                                <a href="beginner-anglers.php" class="btn btn-rainbow-trout text-uppercase tracking-wider font-size-sm px-4 py-2 fw-bold" style="border-radius: 50px; letter-spacing: 1px;">
+                                    Principiantes                                </a>
+
+                                <a href="day-trip.php" class="btn btn-outline-light text-uppercase tracking-wider font-size-sm px-4 py-2 fw-bold" style="border-radius: 50px; letter-spacing: 1px;">
+                                    Ver programa completo                                </a>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<style>
+.btn-rainbow-trout {
+    background: transparent;
+    color: #ffffff !important;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.btn-rainbow-trout:hover {
+    color: #ffffff !important;
+    border-color: transparent;
+    transform: translateY(-2px);
+    /* Degradado lineal que emula el lomo verde oliva, la icónica franja rosa/magenta lateral y el vientre plateado destellante de la trucha arcoíris */
+    background: linear-gradient(135deg, #3d5a45 0%, #a26b7c 45%, #d192a4 55%, #46677a 100%);
+    box-shadow: 0 6px 20px rgba(209, 146, 164, 0.4), 0 0 10px rgba(70, 103, 122, 0.2);
+}
+
+.btn-rainbow-trout:active {
+    transform: translateY(0);
+}
+</style>    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/css/intlTelInput.css">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<div class="modal fade" id="modalContact" tabindex="-1" aria-labelledby="modalContactLabel" aria-hidden="true">
+    <div class="modal-dialog modal-md modal-dialog-centered">
+        <div class="modal-content text-white modal-premium-bootstrap" style="background: linear-gradient(rgba(11, 17, 21, 0.95), rgba(11, 17, 21, 0.95)); border: 1px solid rgba(74, 93, 78, 0.3) !important;">
+            
+            <div class="modal-header border-0 d-flex justify-content-between align-items-center p-4">
+                <div class="d-flex align-items-center">
+                    <img src="assets/img/logo-rios-grandes.png" alt="Ríos Grandes" class="footer-logo me-2" style="width: 35px; height: 35px;">
+                    <h5 class="modal-title font-serif tracking-wider fw-bold m-0" id="modalContactLabel" style="font-size: 1.1rem; color: var(--color-brand-gold) !important;">
+                        Enviar Mensaje                    </h5>
+                </div>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body p-4 pt-0">
+                <form id="formContactPremium" action="procesar-contacto.php" method="POST">
+                    
+                    <div class="row">
+                        <div class="col-12 col-sm-6 mb-3">
+                            <label class="form-label font-size-sm text-white-50 text-uppercase tracking-wider" style="font-size: 0.75rem;">Nombre</label>
+                            <input type="text" name="name" class="form-control form-footer-premium" required>
+                        </div>
+                        <div class="col-12 col-sm-6 mb-3">
+                            <label class="form-label font-size-sm text-white-50 text-uppercase tracking-wider" style="font-size: 0.75rem;">Email</label>
+                            <input type="email" name="email" class="form-control form-footer-premium" required>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12 col-sm-6 mb-3">
+                            <label class="form-label font-size-sm text-white-50 text-uppercase tracking-wider" style="font-size: 0.75rem;">País</label>
+                            <input type="text" name="country" class="form-control form-footer-premium" placeholder="Ej. Argentina" required>
+                        </div>
+                        <div class="col-12 col-sm-6 mb-3">
+                            <label class="form-label font-size-sm text-white-50 text-uppercase tracking-wider" style="font-size: 0.75rem;">Edad</label>
+                            <input type="number" name="age" min="10" max="99" class="form-control form-footer-premium" required>
+                        </div>
+                    </div>
+
+                    <div class="mb-3 d-flex flex-column position-relative text-start">
+                        <label class="form-label font-size-sm text-white-50 text-uppercase tracking-wider" style="font-size: 0.75rem;">Teléfono de Contacto</label>
+                        <input type="tel" id="contactPhoneInput" name="phone" class="form-control form-footer-premium w-100" required>
+                        <input type="hidden" id="fullPhoneHidden" name="full_phone">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label font-size-sm text-white-50 text-uppercase tracking-wider" style="font-size: 0.75rem;">Mensaje</label>
+                        <textarea name="message" rows="3" class="form-control form-footer-premium" required></textarea>
+                    </div>
+
+                    <div class="mb-3 form-check text-start">
+                        <input type="checkbox" class="form-check-input" id="termsCheck" required style="cursor: pointer; background-color: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.2);">
+                        <label class="form-check-label text-white-50" for="termsCheck" style="font-size: 0.8rem; cursor: pointer;">
+                            Acepto los <a href="terminos-y-condiciones.php" target="_blank" style="color: var(--color-brand-gold); text-decoration: underline;">Términos y Condiciones</a>                        </label>
+                    </div>
+
+                    <div class="text-end mt-4">
+                        <button type="submit" class="btn-modern-liquid bg-transparent border-0" style="cursor: pointer; padding: 12px 30px;">
+                            <span>Enviar Consulta</span>
+                            <div class="liquid-bg"></div>
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/intlTelInput.min.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const phoneInput = document.querySelector("#contactPhoneInput");
+    const fullPhoneHidden = document.querySelector("#fullPhoneHidden");
+    
+    const iti = window.intlTelInput(phoneInput, {
+        preferredCountries: ["us", "ar", "br", "cl", "gb"],
+        utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.js",
+        customContainer: "w-100 position-relative d-block"
+    });
+
+    const form = document.querySelector("#formContactPremium");
+    const submitBtn = form.querySelector("button[type='submit']");
+    const submitBtnText = submitBtn.querySelector("span");
+
+    form.addEventListener("submit", function(e) {
+        e.preventDefault();
+        
+        // Bloqueo de seguridad anti-click duplicado
+        submitBtn.disabled = true;
+        submitBtn.style.opacity = "0.6";
+        submitBtn.style.pointerEvents = "none";
+        if(submitBtnText) submitBtnText.innerText = "Enviando...";
+        
+        fullPhoneHidden.value = iti.getNumber();
+
+        const formData = new FormData(form);
+        
+        fetch(form.action, {
+            method: "POST",
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Desbloqueo del botón
+            submitBtn.disabled = false;
+            submitBtn.style.opacity = "1";
+            submitBtn.style.pointerEvents = "auto";
+            if(submitBtnText) submitBtnText.innerText = "Enviar Consulta";
+
+            if(data.status === "success") {
+                const modalElement = document.querySelector('#modalContact');
+                const modalInstance = bootstrap.Modal.getInstance(modalElement);
+                if(modalInstance) modalInstance.hide();
+                
+                form.reset();
+
+                Swal.fire({
+                    icon: 'success',
+                    title: '¡Consulta Enviada!',
+                    text: data.message,
+                    background: '#0b1115',
+                    color: '#ffffff',
+                    confirmButtonColor: '#4a5d4e',
+                    iconColor: '#c5a059',
+                    customClass: {
+                        popup: 'border border-secondary border-opacity-20'
+                    }
+                });
+            } else {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: data.message,
+                    background: '#0b1115',
+                    color: '#ffffff',
+                    confirmButtonColor: '#4a5d4e'
+                });
+            }
+        })
+        .catch(error => {
+            submitBtn.disabled = false;
+            submitBtn.style.opacity = "1";
+            submitBtn.style.pointerEvents = "auto";
+            if(submitBtnText) submitBtnText.innerText = "Enviar Consulta";
+            console.error("Error:", error);
+        });
+    });
+});
+</script>
+
+<style>
+/* Solución al solapamiento de la bandera: Empuja el número del usuario a la derecha */
+#contactPhoneInput {
+    padding-left: 52px !important;
+}
+
+/* Forzar que el texto escrito por el usuario y los placeholders siempre sean blanco nítido */
+.form-footer-premium {
+    color: #ffffff !important;
+}
+
+.form-footer-premium::placeholder {
+    color: rgba(255, 255, 255, 0.5) !important;
+    opacity: 1 !important;
+}
+
+/* Corrige el color del autocompletado en caliente de Chrome/Safari (Fondo traslúcido y letras blancas) */
+.form-footer-premium:-webkit-autofill,
+.form-footer-premium:-webkit-autofill:hover, 
+.form-footer-premium:-webkit-autofill:focus {
+    -webkit-text-fill-color: #ffffff !important;
+    transition: background-color 5000s ease-in-out 0s !important;
+}
+
+/* Estilos de la caja desplegable del plugin intl-tel-input */
+.iti { width: 100% !important; }
+.iti__country-list { 
+    background-color: #0b1115 !important; 
+    border: 1px solid rgba(255,255,255,0.1) !important; 
+    color: #ffffff !important;
+    z-index: 1060 !important;
+}
+.iti__country:hover { background-color: #4a5d4e !important; }
+.form-footer-premium:focus { border-color: var(--color-brand-gold) !important; box-shadow: 0 0 8px rgba(197, 160, 89, 0.2) !important; }
+</style>    <footer class="footer-premium pt-5 pb-4">
+    <div class="container text-md-start text-center">
+        <div class="row g-4">
+            
+            <div class="col-12 col-md-4">
+                <div class="d-flex align-items-center justify-content-md-start justify-content-center mb-3">
+                    <img src="assets/img/logo-rios-grandes.png" alt="Ríos Grandes" class="footer-logo me-2">
+                    <span class="font-serif text-white tracking-wider fw-bold fs-5">RÍOS GRANDES</span>
+                </div>
+                <p class="text-white-50 font-size-sm pe-md-4">
+                    Experiencias exclusivas de pesca con mosca en los ríos más salvajes y majestuosos de la Patagonia Argentina.                </p>
+                <div class="footer-socials mt-3">
+                    <a href="https://www.instagram.com/riosgrandesflyfishing" class="me-3"><i class="bi bi-instagram"></i></a>
+                    <a href="https://www.facebook.com/share/17uskzhWxQ/?mibextid=wwXIfr" class="me-3"><i class="bi bi-facebook"></i></a>
+                    <a href="https://www.youtube.com/@riosgrandesflyfishing" target="_blank"><i class="bi bi-youtube"></i></a>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-4">
+                <h5 class="text-white tracking-wider text-uppercase mb-3 font-size-sm fw-bold">Navegación</h5>
+                <ul class="list-unstyled footer-links">
+                    <li><a href="index"><i class="bi bi-chevron-right font-size-sm"></i> Inicio</a></li>
+                    <li><a href="lodge"><i class="bi bi-chevron-right font-size-sm"></i> Lodge de Pesca</a></li>
+                    <li><a href="rio-pico"><i class="bi bi-chevron-right font-size-sm"></i> Dónde Estamos</a></li>
+                </ul>
+            </div>
+
+            <div class="col-12 col-md-4">
+                <h5 class="text-white tracking-wider text-uppercase mb-3 font-size-sm fw-bold">Contacto</h5>
+                <ul class="list-unstyled text-white-50 font-size-sm footer-contact-info">
+                    <li class="mb-2"><i class="bi bi-geo-alt text-primary me-2"></i> Trevelin, Chubut, Argentina</li>
+                    <li class="mb-2"><i class="bi bi-envelope text-primary me-2"></i> info@riosgrandesflyfishing.com</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <hr class="border-secondary my-4" style="opacity: 0.15;">
+
+        <div class="row align-items-center font-size-sm text-white-50">
+            <div class="col-12 col-md-6 text-md-start text-center mb-md-0 mb-3">
+                &copy; 2026 Ríos Grandes Fly Fishing. Todos los derechos reservados.                
+                <a href="terminos-y-condiciones" class="ms-2 footer-legal-icon" 
+                   title="Términos y Condiciones" 
+                   data-bs-toggle="tooltip" data-bs-placement="top">
+                    <i class="bi bi-shield-check"></i>
+                </a>
+            </div>
+            <div class="col-12 col-md-6 text-md-end text-center">
+                Diseñado por Mario Jones.            </div>
+        </div>
+    </div>
+</footer>
+
+<div id="customLightbox" class="custom-lightbox" onclick="closeLightbox()">
+    <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+    <img id="lightboxImg" src="" alt="Lightbox">
+</div>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            // Se muestra u oculta el botón flotante según la posición de la pantalla
+            $(window).on('scroll', function() {
+                if ($(this).scrollTop() > 450) {
+                    $('#scrollToTopBtn').addClass('visible');
+                } else {
+                    $('#scrollToTopBtn').removeClass('visible');
+                }
+            });
+
+            // Retorno fluido y suave hacia arriba
+            $('#scrollToTopBtn').on('click', function() {
+                $('html, body').animate({ scrollTop: 0 }, 600);
+            });
+        });
+    </script>
+
+    <style>
+    /* --- BOTÓN VER MÁS --- */
+    .btn-rainbow-index {
+        display: inline-block;
+        background: transparent;
+        color: #ffffff !important;
+        text-decoration: none !important;
+        border: 2px solid rgba(255, 255, 255, 0.15);
+        border-radius: 50px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        letter-spacing: 1.5px;
+        transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        position: relative;
+        z-index: 1;
+    }
+    .btn-rainbow-index:hover {
+        color: #ffffff !important;
+        border-color: transparent;
+        transform: translateY(-3px);
+        background: linear-gradient(135deg, #3d5a45 0%, #a26b7c 45%, #d192a4 55%, #46677a 100%);
+        box-shadow: 0 8px 25px rgba(209, 146, 164, 0.45), 0 0 15px rgba(70, 103, 122, 0.2);
+    }
+    .btn-rainbow-index:active {
+        transform: translateY(-1px);
+    }
+
+    /* --- BOTÓN SCROLL TO TOP --- */
+    .btn-scroll-top-rainbow {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 50px;
+        height: 50px;
+        background: #070b0e;
+        color: #ffffff;
+        border: 2px solid rgba(255, 255, 255, 0.15);
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.25rem;
+        cursor: pointer;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        z-index: 1050;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(20px);
+        transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+    .btn-scroll-top-rainbow.visible {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+    .btn-scroll-top-rainbow:hover {
+        color: #ffffff !important;
+        border-color: transparent;
+        background: linear-gradient(135deg, #3d5a45 0%, #a26b7c 45%, #d192a4 55%, #46677a 100%);
+        box-shadow: 0 6px 20px rgba(209, 146, 164, 0.5);
+        transform: translateY(-4px) scale(1.05);
+    }
+    @media (max-width: 767px) {
+        .btn-scroll-top-rainbow {
+            bottom: 20px;
+            right: 20px;
+            width: 44px;
+            height: 44px;
+            font-size: 1.1rem;
+        }
+    }
+    </style>
+</body>
+</html>
