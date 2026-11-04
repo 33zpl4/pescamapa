@@ -1,0 +1,33 @@
+name: Set the mail key
+
+# Writes the Resend API key (repo secret RESEND_API_KEY) into the pm_resend_key option of the site, over SSH, through
+# stdin so it never appears in a command line or a log. Run once after the secret exists (and again if the key rotates).
+# The key is never printed; the step only says whether the option now holds a key of the right shape.
+
+on:
+  workflow_dispatch:
+
+jobs:
+  clave:
+    runs-on: ubuntu-latest
+    env:
+      WP: ${{ secrets.WP_PATH }}
+      RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+    steps:
+      - name: SSH setup
+        run: |
+          [[ -n "$RESEND_API_KEY" ]] || { echo "Falta el secreto RESEND_API_KEY"; exit 1; }
+          mkdir -p ~/.ssh
+          printf '%s\n' "${{ secrets.WP_SSH_KEY }}" | tr -d '\r' > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          cat > ~/.ssh/config <<EOF2
+          Host wp
+            HostName ${{ secrets.WP_SSH_HOST }}
+            Port ${{ secrets.WP_SSH_PORT }}
+            User ${{ secrets.WP_SSH_USER }}
+            IdentityFile ~/.ssh/deploy_key
+            StrictHostKeyChecking accept-new
+          EOF2
+      - name: Store the key
+        run: |
+          printf '%s' "$RESEND_API_KEY" | ssh wp "cd '$WP' && runuser -u www -- env HOME=/tmp WP_CLI_CACHE_DIR=/tmp/wp-cli-cache-www wp --path='$WP' eval '\$k = trim( (string) file_get_contents( \"php://stdin\" ) ); if ( 0 !== strpos( \$k, \"re_\" ) ) { WP_CLI::error( \"la clave no empieza con re_\" ); } update_option( \"pm_resend_key\", \$k, false ); WP_CLI::log( \"✓ pm_resend_key guardada (\" . strlen( \$k ) . \" caracteres)\" );'"
