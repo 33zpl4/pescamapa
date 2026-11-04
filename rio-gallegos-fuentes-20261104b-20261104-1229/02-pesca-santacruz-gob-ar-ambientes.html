@@ -1,0 +1,688 @@
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Pesca</title>
+  
+  
+  <link rel="icon" type="image/x-icon" href="/static/img/favicon.ico">
+  
+
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" integrity="sha384-tViUnnbYAV00FLIhhi3v/dWt3Jxw4gZQcNoSCxCIFNJVCx7/D55/wXsrNIRANwdD" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/main.css">
+
+  
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+  
+  <link rel="stylesheet" type="text/css" href="/static/css/icono-arg.min.css">
+
+  
+  <link rel="stylesheet" href="/static/css/home.css">
+
+  
+  
+
+  
+  <link rel="stylesheet" type="text/css" href="/static/css/project.css">
+</head>
+
+<body>
+
+  
+  
+
+
+<header class="custom-header">
+  <div class="container d-flex align-items-center justify-content-between header-inner">
+
+    <!-- Logo -->
+    <a href="/" class="d-flex align-items-center gap-1 text-decoration-none">
+      <img src="/static/img/logo-santacruz.png"
+           alt="Escudo Gobierno de Santa Cruz"
+           class="logo-img">
+
+      <div class="logo-text">
+        <p class="logo-top">Gobierno de Santa Cruz</p>
+        <p class="logo-bottom">Pesca y Acuicultura</p>
+      </div>
+    </a>
+
+    <!-- NAV DESKTOP -->
+    <nav class="nav-desktop d-none d-md-flex align-items-center gap-2">
+
+      <a href="/ayuda/" class="btn btn-ghost btn-sm d-flex align-items-center gap-2">
+        <i class="bi-question-circle"></i>
+        Ayuda
+      </a>
+
+      
+        <!-- Invitado -->
+        <a href="/accounts/login/"
+           class="btn btn-primary d-flex align-items-center gap-2">
+          <i class="bi-box-arrow-in-right"></i>
+          Inicio de sesión
+        </a>
+
+      
+
+    </nav>
+
+    <!-- BOTON MOBILE -->
+    <button class="menu-toggle d-md-none" id="menuToggle">
+      <i class="bi-list"></i>
+    </button>
+  </div>
+
+  <!-- NAV MOBILE -->
+  <div class="nav-mobile d-md-none" id="mobileMenu">
+    <div class="container py-3 d-flex flex-column gap-2">
+
+      <a href="/ayuda/" class="btn btn-ghost w-100 text-start d-flex align-items-center gap-2">
+        <i class="bi-question-circle"></i>
+        Ayuda
+      </a>
+
+      
+
+        <a href="/accounts/login/"
+           class="btn btn-primary w-100 text-start d-flex align-items-center gap-2">
+          <i class="bi-box-arrow-in-right"></i>
+          Inicio de sesión
+        </a>
+
+      
+
+    </div>
+  </div>
+</header>
+
+  <span class="alert-mensaje">
+      
+  </span>
+
+  
+  
+
+  <a id="ir-arriba" class="ir-arriba d-print-none" href="#" title="Volver arriba">
+    <span class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center shadow"
+          style="width:48px;height:48px;">
+      <i class="bi bi-arrow-up" style="font-size:1.5rem;"></i>
+    </span>
+  </a>
+  
+  
+
+<section class="border-bottom bg-light">
+  <div class="container pt-5 pb-2">
+    <a href="/ayuda/" class="btn btn-link px-0 mb-3 text-decoration-none text-muted">
+      <i class="bi bi-arrow-left me-2"></i> Volver a la Ayuda
+    </a>
+    <p class="text-uppercase small fw-semibold text-secondary mb-2" style="letter-spacing: 0.15em;">
+      Anexo I · Temporada 2026/2027
+    </p>
+    <h1 class="fw-bold text-primary display-5">Ambientes de Santa Cruz</h1>
+  </div>
+</section>
+
+<section class="pt-3 pb-5">
+  <div class="container">
+
+    <div class="alert alert-info small mb-4" role="alert">
+      <i class="bi bi-info-circle me-1"></i>
+      La presente nómina incluye algunos de los ambientes provinciales más destacados para la
+      práctica de la pesca deportiva. Para consultar la totalidad de las cuencas, ríos, lagos y
+      sus respectivas disposiciones particulares, consulte el
+      <a href="/reglamento/" class="alert-link">Reglamento General de Pesca
+      Deportiva Continental</a> vigente.
+    </div>
+
+    <div class="text-muted small mb-4">
+      <p class="mb-1">
+        <strong>LD:</strong> límite diario de captura por pescador. Salvo indicación contraria,
+        rige la <strong>reglamentación general</strong> del reglamento.
+      </p>
+      <p class="mb-0">
+        <strong>Área de exclusión:</strong> prohibida la pesca sobre ambas márgenes en un perímetro
+        de 200 metros (o el indicado) desde las nacientes y desembocaduras fluviales vinculadas.
+      </p>
+    </div>
+
+    <!-- Lagos todo el año -->
+    <div class="mb-5">
+      <h2 class="h5 fw-bold text-primary mb-3">
+        <i class="bi bi-water me-2"></i>Lagos habilitados todo el año
+      </h2>
+      <p class="small text-muted mb-3">
+        Apertura y cierre del lago durante todo el año. Rige además el área de exclusión de 200 m
+        en nacientes y desembocaduras.
+      </p>
+
+      <div class="accordion" id="acLagos">
+        <div class="accordion-item">
+          <h3 class="accordion-header" id="hArgentino">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#cArgentino" aria-expanded="true" aria-controls="cArgentino">
+              Argentino <span class="text-muted fst-italic ms-1">(Lago)</span>
+            </button>
+          </h3>
+          <div id="cArgentino" class="accordion-collapse collapse show" aria-labelledby="hArgentino" data-bs-parent="#acLagos">
+            <div class="accordion-body small">
+              <ul class="mb-0">
+                <li><strong>LD:</strong> dos (2) ejemplares en total.</li>
+                <li>Habilitado <strong>trolling</strong>, cumpliendo las exigencias de P.N.A.</li>
+                <li>Área de exclusión: 200 m en nacientes y desembocaduras.</li>
+                <li>Ambiente compartido: ver también el Anexo de Parques Nacionales.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h3 class="accordion-header" id="hLagosStd">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cLagosStd" aria-expanded="false" aria-controls="cLagosStd">
+              Buenos Aires, Cardiel, Ghio, Posadas, Pueyrredón, San Martín y Viedma <span class="text-muted fst-italic ms-1">(Lagos)</span>
+            </button>
+          </h3>
+          <div id="cLagosStd" class="accordion-collapse collapse" aria-labelledby="hLagosStd" data-bs-parent="#acLagos">
+            <div class="accordion-body small">
+              <ul class="mb-0">
+                <li>Habilitados durante todo el año.</li>
+                <li><strong>LD:</strong> dos (2) ejemplares en total por pescador.</li>
+                <li>Área de exclusión: 200 m en nacientes y desembocaduras.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h3 class="accordion-header" id="hColumna">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cColumna" aria-expanded="false" aria-controls="cColumna">
+              Columna <span class="text-muted fst-italic ms-1">(Lago y Río)</span>
+            </button>
+          </h3>
+          <div id="cColumna" class="accordion-collapse collapse" aria-labelledby="hColumna" data-bs-parent="#acLagos">
+            <div class="accordion-body small">
+              <ul class="mb-0">
+                <li>Habilitado durante todo el año.</li>
+                <li><strong>LD:</strong> dos (2) ejemplares en total por pescador.</li>
+                <li>Área de exclusión: 200 m en nacientes y desembocaduras.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h3 class="accordion-header" id="hOlnie">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cOlnie" aria-expanded="false" aria-controls="cOlnie">
+              Olnie I y Olnie II <span class="text-muted fst-italic ms-1">(Lagos)</span>
+            </button>
+          </h3>
+          <div id="cOlnie" class="accordion-collapse collapse" aria-labelledby="hOlnie" data-bs-parent="#acLagos">
+            <div class="accordion-body small">
+              <ul class="mb-0">
+                <li>Habilitados durante todo el año.</li>
+                <li><strong>LD:</strong> dos (2) ejemplares en total por pescador.</li>
+                <li>Área de exclusión: 200 m en nacientes y desembocaduras.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h3 class="accordion-header" id="hQuiroga">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cQuiroga" aria-expanded="false" aria-controls="cQuiroga">
+              Quiroga y Quiroga Chico <span class="text-muted fst-italic ms-1">(Lagos)</span>
+            </button>
+          </h3>
+          <div id="cQuiroga" class="accordion-collapse collapse" aria-labelledby="hQuiroga" data-bs-parent="#acLagos">
+            <div class="accordion-body small">
+              <ul class="mb-0">
+                <li>Habilitados durante todo el año.</li>
+                <li><strong>LD:</strong> dos (2) ejemplares en total por pescador.</li>
+                <li>Área de exclusión: 200 m en nacientes y desembocaduras.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h3 class="accordion-header" id="hTar">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cTar" aria-expanded="false" aria-controls="cTar">
+              Tar <span class="text-muted fst-italic ms-1">(Lago)</span>
+            </button>
+          </h3>
+          <div id="cTar" class="accordion-collapse collapse" aria-labelledby="hTar" data-bs-parent="#acLagos">
+            <div class="accordion-body small">
+              <ul class="mb-0">
+                <li>Abierto todo el año.</li>
+                <li><strong>LD:</strong> dos (2) ejemplares en total por pescador.</li>
+                <li>Área de exclusión: 200 m desde las nacientes y desembocaduras de ríos asociados.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h3 class="accordion-header" id="hStrobel">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cStrobel" aria-expanded="false" aria-controls="cStrobel">
+              Strobel <span class="text-muted fst-italic ms-1">(Lago)</span>
+            </button>
+          </h3>
+          <div id="cStrobel" class="accordion-collapse collapse" aria-labelledby="hStrobel" data-bs-parent="#acLagos">
+            <div class="accordion-body small">
+              <ul class="mb-0">
+                <li>Abierto todo el año.</li>
+                <li>Régimen: <strong>Captura y Devolución Obligatoria</strong>.</li>
+                <li>Aparejos: anzuelo simple con o sin rebaba.</li>
+                <li>
+                  <strong class="text-danger">Restricción náutica:</strong> prohibición absoluta de
+                  navegación con motores de combustión interna o propulsión mecánica.
+                </li>
+                <li>Exigencia sanitaria: desinfección y lavado de materiales al finalizar la jornada (Didymo).</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h3 class="accordion-header" id="hDesierto">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cDesierto" aria-expanded="false" aria-controls="cDesierto">
+              Del Desierto <span class="text-muted fst-italic ms-1">(Lago)</span>
+            </button>
+          </h3>
+          <div id="cDesierto" class="accordion-collapse collapse" aria-labelledby="hDesierto" data-bs-parent="#acLagos">
+            <div class="accordion-body small">
+              <ul class="mb-0">
+                <li>Apertura 01/10/2026 · Cierre 03/05/2027.</li>
+                <li><strong>LD:</strong> dos (2) ejemplares en total por pescador.</li>
+                <li><strong>Prohibición absoluta de encender fuego.</strong></li>
+                <li>Pesca embarcada exclusivamente a propulsión a <strong>remo o motor eléctrico</strong>, bajo las modalidades de Mosca/Flycasting y trolling con cargo.</li>
+                <li>Respetar los límites perimetrales de 200 m en desembocaduras y nacientes.</li>
+                <li>Didymo: se exige desinfección y lavado de materiales al finalizar la jornada.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ríos y arroyos -->
+    <div class="mb-5">
+      <h2 class="h5 fw-bold text-primary mb-3">
+        <i class="bi bi-arrow-repeat me-2"></i>Ríos y arroyos (apertura general 01/10/2026 · cierre 03/05/2027)
+      </h2>
+
+      <div class="accordion" id="acRios">
+        <div class="accordion-item">
+          <h3 class="accordion-header" id="hBarrancoso">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#cBarrancoso" aria-expanded="true" aria-controls="cBarrancoso">
+              Barrancoso <span class="text-muted fst-italic ms-1">(Río)</span>
+            </button>
+          </h3>
+          <div id="cBarrancoso" class="accordion-collapse collapse show" aria-labelledby="hBarrancoso" data-bs-parent="#acRios">
+            <div class="accordion-body small">
+              <ul class="mb-0">
+                <li>Ámbito: totalidad del curso fluvial, desde sus nacientes hasta la desembocadura en el Lago Strobel.</li>
+                <li>Régimen: <strong>Captura y Devolución Obligatoria de forma absoluta</strong>.</li>
+                <li>Artes permitidas: anzuelo simple con o sin rebaba.</li>
+                <li>Zona de máxima vulnerabilidad biológica (Didymo): <strong>exige portar el certificado diario de desinfección</strong> y lavado de materiales al finalizar la jornada.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h3 class="accordion-header" id="hRiosStd">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cRiosStd" aria-expanded="false" aria-controls="cRiosStd">
+              Bote, Calafate, Correntoso, Guenguel y Olnie <span class="text-muted fst-italic ms-1">(Ríos/Arroyos)</span>
+            </button>
+          </h3>
+          <div id="cRiosStd" class="accordion-collapse collapse" aria-labelledby="hRiosStd" data-bs-parent="#acRios">
+            <div class="accordion-body small">
+              <ul class="mb-0">
+                <li>Apertura 01/10/2026 · Cierre 03/05/2027.</li>
+                <li><strong>Bote</strong> (Río): Captura y Devolución Obligatoria, anzuelo simple con o sin rebaba.</li>
+                <li><strong>Calafate</strong> (Arroyo): Captura y Devolución Obligatoria.</li>
+                <li><strong>Correntoso</strong> (Río): LD dos (2) ejemplares.</li>
+                <li><strong>Guenguel</strong> (Río): LD dos (2) ejemplares.</li>
+                <li><strong>Olnie</strong> (Río): LD dos (2) ejemplares.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h3 class="accordion-header" id="hRiosLD1">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cRiosLD1" aria-expanded="false" aria-controls="cRiosLD1">
+              Capitán, Centinela, Del Hacha, Furioso, Mitre, Oro, Peloue/Peloque y Pierrestegui <span class="text-muted fst-italic ms-1">(Ríos/Arroyos)</span>
+            </button>
+          </h3>
+          <div id="cRiosLD1" class="accordion-collapse collapse" aria-labelledby="hRiosLD1" data-bs-parent="#acRios">
+            <div class="accordion-body small">
+              <ul class="mb-0">
+                <li><strong>LD: un (1) ejemplar</strong> en total por pescador (salvo indicación).</li>
+                <li><strong>Capitán</strong> (Río): apertura 01/10/2026, LD 1.</li>
+                <li><strong>Centinela</strong> (Río): apertura 01/10/2026, LD 1.</li>
+                <li><strong>Del Hacha</strong> (Arroyo): apertura 01/12/2026, LD 1.</li>
+                <li><strong>Furioso</strong> (Río): apertura 01/12/2026, LD 1.</li>
+                <li><strong>Mitre</strong> (Río): apertura 01/11/2026 · cierre 31/03/2027, LD 1.</li>
+                <li><strong>Oro</strong> (Río): apertura 01/11/2026, LD 1.</li>
+                <li><strong>Peloue/Peloque</strong> (Río): LD 1.</li>
+                <li><strong>Pierrestegui</strong> (Arroyo): LD 1; desde el 01/04/2027 hasta el cierre rige Captura y Devolución Obligatoria.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h3 class="accordion-header" id="hCR10">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cCR10" aria-expanded="false" aria-controls="cCR10">
+              Coyle o Coig, Cuesta de la Pava, San José, Toro y Magan <span class="text-muted fst-italic ms-1">(Ríos/Arroyos/Embalses)</span>
+            </button>
+          </h3>
+          <div id="cCR10" class="accordion-collapse collapse" aria-labelledby="hCR10" data-bs-parent="#acRios">
+            <div class="accordion-body small">
+              <ul class="mb-0">
+                <li><strong>Coyle o Coig</strong> (Río): brazos Norte y Sur, <strong>Captura y Devolución Obligatoria</strong>.</li>
+                <li><strong>Cuesta de la Pava</strong> (Laguna): Captura y Devolución Obligatoria; <strong>prohibido encender fuego</strong> en toda el área circundante.</li>
+                <li><strong>San José</strong> (Dique): Captura y Devolución Obligatoria, anzuelo simple o doble.</li>
+                <li><strong>Toro</strong> (Río): Captura y Devolución Obligatoria, anzuelo simple; <strong>prohibido encender fuego</strong>; zona Didymo: exige certificado diario de desinfección.</li>
+                <li><strong>Magan</strong> (Arroyo): 01/11/2026 · 28/02/2027, Captura y Devolución Obligatoria.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h3 class="accordion-header" id="hExtras">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cExtras" aria-expanded="false" aria-controls="cExtras">
+              Chico, Cóndor e Italiano <span class="text-muted fst-italic ms-1">(Regímenes particulares)</span>
+            </button>
+          </h3>
+          <div id="cExtras" class="accordion-collapse collapse" aria-labelledby="hExtras" data-bs-parent="#acRios">
+            <div class="accordion-body small">
+              <ul class="mb-0">
+                <li><strong>Chico</strong> (Río, sector Chico): se autoriza excepcionalmente el uso de <strong>carnada natural</strong>; LD dos (2) percas <em>(Percichthys trucha)</em> en total.</li>
+                <li><strong>Cóndor</strong> (Laguna): LD dos (2) ejemplares; <strong>prohibida la pesca</strong> en todos sus arroyos afluentes y tributarios; área de exclusión 200 m.</li>
+                <li><strong>Italiano</strong> (Arroyo, cuenca Río Coyle): 01/11/2026 · 28/02/2027, LD dos (2) ejemplares.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Regímenes especiales -->
+    <div class="mb-5">
+      <h2 class="h5 fw-bold text-primary mb-3">
+        <i class="bi bi-stars me-2"></i>Regímenes especiales
+      </h2>
+
+      <div class="row g-3">
+        <div class="col-md-6">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body small">
+              <h6 class="fw-bold">Chico Sur <span class="text-muted fst-italic">(Río)</span></h6>
+              <ul class="mb-0">
+                <li>01/11/2026 · 03/05/2027.</li>
+                <li>Captura y Devolución Obligatoria de carácter absoluto.</li>
+                <li><strong>Modalidad exclusiva: pesca con mosca (Flycasting).</strong></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body small">
+              <h6 class="fw-bold">Gallegos Chico <span class="text-muted fst-italic">(Río)</span></h6>
+              <ul class="mb-0">
+                <li>01/11/2026 · 03/05/2027.</li>
+                <li><strong>Modalidad exclusiva: mosca (Flycasting)</strong>, bajo régimen estricto de Captura y Devolución Obligatoria.</li>
+                <li><strong>Veda total</strong> en el tramo desde el Puente Nuevo (Ruta Nacional N° 40) hasta su desembocadura.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body small">
+              <h6 class="fw-bold">Gallegos <span class="text-muted fst-italic">(Río)</span></h6>
+              <ul class="mb-0">
+                <li>01/11/2026 · Cierre 30/05/2027.</li>
+                <li>Régimen predominante: Captura y Devolución Obligatoria en ambos márgenes, desde sus nacientes hasta el estuario marino.</li>
+                <li><strong>Ventana de extracción especial</strong> 01/02/2027 al 28/02/2027: LD un (1) ejemplar de <strong>Trucha Marrón Anádroma</strong>.</li>
+                <li><strong>Zona de veda:</strong> ambas márgenes, aguas arriba y abajo del <strong>Puente Güer Aike</strong>, en una distancia de exclusión lineal de 200 m.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body small">
+              <h6 class="fw-bold">Guanaco <span class="text-muted fst-italic">(Río · Jurisdicción Provincial)</span></h6>
+              <ul class="mb-0">
+                <li>01/10/2026 · 03/05/2027.</li>
+                <li><strong>LD: un (1) ejemplar exclusivo de Salmón Chinook</strong> <em>(Oncorhynchus tshawytscha)</em> en total por pescador.</li>
+                <li>Exige desinfección y lavado de materiales al finalizar la jornada (Didymo).</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body small">
+              <h6 class="fw-bold">Los Antiguos <span class="text-muted fst-italic">(Río)</span></h6>
+              <ul class="mb-0">
+                <li>Habilitado todo el año, en dos fases:</li>
+                <li><strong>Fase A</strong> (01/10/2026 · 31/03/2027): LD un (1) ejemplar en total.</li>
+                <li><strong>Fase B</strong> (01/04/2027 · 30/09/2027): modalidad exclusiva de <strong>pesca con mosca (Flycasting)</strong>, Captura y Devolución Obligatoria con anzuelo simple.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body small">
+              <h6 class="fw-bold">Penitente <span class="text-muted fst-italic">(Río)</span></h6>
+              <ul class="mb-0">
+                <li>01/11/2026 · 03/05/2027.</li>
+                <li>Captura y Devolución Obligatoria.</li>
+                <li>Anzuelo simple con o sin rebaba.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body small">
+              <h6 class="fw-bold">Rubens <span class="text-muted fst-italic">(Río)</span></h6>
+              <ul class="mb-0">
+                <li>01/11/2026 · 03/05/2027.</li>
+                <li>Captura y Devolución Obligatoria.</li>
+                <li>Anzuelo simple o doble con o sin rebaba.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12">
+          <div class="card h-100 shadow-sm border-info">
+            <div class="card-body small">
+              <h6 class="fw-bold text-info">
+                <i class="bi bi-moon-stars me-2"></i>Santa Cruz (Río)
+              </h6>
+              <ul class="mb-0 row-cols-md-2 list-unstyled d-md-flex flex-wrap gap-1">
+                <li class="col-md-6"><i class="bi bi-check-circle text-success"></i> Apertura continuada durante todo el año.</li>
+                <li class="col-md-6"><i class="bi bi-x-circle text-danger"></i> Prohibido el uso de carnadas naturales (salvo excepciones).</li>
+                <li class="col-md-6"><i class="bi bi-x-circle text-danger"></i> Prohibido el uso de lastres de plomo.</li>
+                <li class="col-md-6"><i class="bi bi-check-circle text-success"></i> Didymo: desinfección obligatoria en estaciones fijas habilitadas antes de transitar a otros ambientes.</li>
+                <li class="col-md-6"><i class="bi bi-check-circle text-success"></i> Anzuelo: obligatoriedad permanente de un (1) anzuelo simple o doble, con o sin rebaba.</li>
+                <li class="col-md-6"><i class="bi bi-check-circle text-success"></i> <strong>Cupo anual:</strong> un (1) ejemplar de <strong>Trucha Steelhead</strong> <em>(Oncorhynchus mykiss)</em> por temporada.</li>
+                <li class="col-md-6"><i class="bi bi-check-circle text-success"></i> <strong>LD general:</strong> dos (2) ejemplares; un (1) de Perca y un (1) de Trucha Marrón.</li>
+                <li class="col-md-6"><i class="bi bi-check-circle text-success"></i> A partir del 15/03/2027: Captura y Devolución Obligatoria de Trucha Steelhead.</li>
+                <li class="col-md-6"><i class="bi bi-check-circle text-success"></i> <strong>Salmón Chinook</strong>: 01/08/2027 · 30/11/2027, señuelo libre con un (1) anzuelo simple o doble, LD un (1) ejemplar.</li>
+                <li class="col-md-6"><i class="bi bi-check-circle text-success"></i> <strong>Róbalo</strong> <em>(Eleginops maclovinus)</em>: todo el año, hasta 10 ejemplares por jornada, talla mínima 30 cm, prohibido el plomo.</li>
+              </ul>
+              <p class="small mb-0 mt-2">
+                Zona de pesca de costa autorizada: desde la bajada a la ribera a la altura del
+                Monumento Héroes de Malvinas (calle Bella Vista) hasta el cruce del Interconectado
+                Provincial, en ambas márgenes.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Veda total -->
+    <div class="mb-5">
+      <h2 class="h5 fw-bold text-danger mb-3">
+        <i class="bi bi-ban me-2"></i>Ambientes con veda total
+      </h2>
+      <div class="row g-3">
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm border-danger">
+            <div class="card-body small">
+              <h6 class="fw-bold text-danger">El Roble <span class="text-muted fst-italic">(Arroyo)</span></h6>
+              <p class="mb-0">Veda total. Prohibida la práctica de la pesca en cualquiera de sus modalidades.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm border-danger">
+            <div class="card-body small">
+              <h6 class="fw-bold text-danger">El Zurdo <span class="text-muted fst-italic">(Arroyo)</span></h6>
+              <p class="mb-0">Veda total. Prohibida la práctica de la pesca en cualquiera de sus modalidades.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm border-danger">
+            <div class="card-body small">
+              <h6 class="fw-bold text-danger">Los Juncos <span class="text-muted fst-italic">(Laguna)</span></h6>
+              <p class="mb-0">Veda permanente y absoluta por constituir una Reserva Natural Municipal.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="alert alert-warning">
+      <i class="bi bi-info-circle me-2"></i>
+      <strong>Fuente:</strong> Anexo I del Reglamento Provincial de Pesca Deportiva — Temporada
+      2026/2027 (EXPTE 443.690). Ante cualquier duda, consulte el
+      <a href="/reglamento/" class="alert-link">Reglamento General</a>.
+    </div>
+
+  </div>
+</section>
+
+
+
+  
+  
+  
+<footer class="footer">
+
+  <div class="container px-4 py-5">
+    <div class="row g-4">
+
+      
+
+      
+       <!-- Columna 1 -->
+      <div class="col-6 col-md-4">
+        <h4 class="footer-heading">Contacto</h4>
+        <ul class="footer-links">
+          <li><a href="mailto:pesca-continental@santacruz.gob.ar">pesca-continental@santacruz.gob.ar</a></li>
+          <li><a href="tel:+542966429462">+54 2966 429462</a></li>
+          <li><a href="/contacto/">Datos de contacto</a></li>
+        </ul>
+      </div>
+
+      <!-- Columna 2 -->
+      <div class="col-6 col-md-4">
+        <h4 class="footer-heading">Recursos</h4>
+        <ul class="footer-links">
+          <li><a href="/ayuda/">Ayuda</a></li>
+          <li><a href="/reglamento/">Reglamento de pesca</a></li>
+          <li><a href="/valores/">Valores y categorías</a></li>
+          <li><a href="/multas/">Valores de multas</a></li>
+        </ul>
+      </div>
+
+      <!-- Columna 3 -->
+      <div class="col-6 col-md-4">
+        <h4 class="footer-heading">Sitios oficiales</h4>
+        <ul class="footer-links">
+          <li><a href="https://minpro.santacruz.gob.ar/pesca" target="_blank" rel="noreferrer">Secretaría de Pesca y Acuicultura</a></li>
+          <li><a href="https://www.santacruzpatagonia.gob.ar/" target="_blank" rel="noreferrer">Turismo en Santa Cruz</a></li>
+          <li><a href="https://www.hidro.gov.ar/observatorio/Astronomia.asp?op=10" target="_blank" rel="noreferrer">Salida y puesta del sol</a></li>
+          <li><a href="https://informatica.santacruz.gob.ar/" target="_blank" rel="noreferrer">Subsecretaría de Informática</a></li>
+          <li><a href="https://cap.santacruz.gob.ar/%C3%A1reas-protegidas" target="_blank" rel="noreferrer">Áreas Protegidas (CAP)</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Desarrollo del sistema -->
+  <div class="container px-4 py-3">
+    <div class="d-flex flex-column flex-sm-row justify-content-between align-items-center gap-2 small">
+      <div class="d-flex align-items-center gap-2 text-center text-sm-start">
+        <img src="/static/img/LogoSubse.png"
+             alt="Logo Subsecretaría de Informática"
+             style="height: 22px; width: auto;">
+        <span>
+          Desarrollado por
+          <strong>Subsecretaría de Informática</strong>
+        </span>
+      </div>
+      <div>
+        <a href="mailto:pesca@santacruz.gob.ar"
+           class="text-white text-decoration-none" style="opacity: 0.85;">
+          Soporte técnico: pesca@santacruz.gob.ar
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom -->
+  <div class="footer-bottom">
+    <div class="container px-4 d-flex flex-column flex-sm-row justify-content-between align-items-center gap-2">
+      <p class="mb-0">
+        © 2026 Gobierno de la Provincia de Santa Cruz. Todos los derechos reservados.
+      </p>
+      <p class="mb-0">
+        Secretaría de Estado de Pesca y Acuicultura - Subsecretaría de Informática
+      </p>
+    </div>
+  </div>
+
+</footer>
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="/static/js/frontend.js" defer></script>
+  <script src="/static/js/pesca-behaviors.js" defer></script>
+  
+  <script src="https://captcha.santacruz.gob.ar/static/js/captcha-widget.js" defer></script>
+  
+  
+  
+  
+
+</body>
+</html>

@@ -1,0 +1,657 @@
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Pesca</title>
+  
+  
+  <link rel="icon" type="image/x-icon" href="/static/img/favicon.ico">
+  
+
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" integrity="sha384-tViUnnbYAV00FLIhhi3v/dWt3Jxw4gZQcNoSCxCIFNJVCx7/D55/wXsrNIRANwdD" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/main.css">
+
+  
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+  
+  <link rel="stylesheet" type="text/css" href="/static/css/icono-arg.min.css">
+
+  
+  <link rel="stylesheet" href="/static/css/home.css">
+
+  
+  
+
+  
+  <link rel="stylesheet" type="text/css" href="/static/css/project.css">
+</head>
+
+<body>
+
+  
+  
+
+
+<header class="custom-header">
+  <div class="container d-flex align-items-center justify-content-between header-inner">
+
+    <!-- Logo -->
+    <a href="/" class="d-flex align-items-center gap-1 text-decoration-none">
+      <img src="/static/img/logo-santacruz.png"
+           alt="Escudo Gobierno de Santa Cruz"
+           class="logo-img">
+
+      <div class="logo-text">
+        <p class="logo-top">Gobierno de Santa Cruz</p>
+        <p class="logo-bottom">Pesca y Acuicultura</p>
+      </div>
+    </a>
+
+    <!-- NAV DESKTOP -->
+    <nav class="nav-desktop d-none d-md-flex align-items-center gap-2">
+
+      <a href="/ayuda/" class="btn btn-ghost btn-sm d-flex align-items-center gap-2">
+        <i class="bi-question-circle"></i>
+        Ayuda
+      </a>
+
+      
+        <!-- Invitado -->
+        <a href="/accounts/login/"
+           class="btn btn-primary d-flex align-items-center gap-2">
+          <i class="bi-box-arrow-in-right"></i>
+          Inicio de sesión
+        </a>
+
+      
+
+    </nav>
+
+    <!-- BOTON MOBILE -->
+    <button class="menu-toggle d-md-none" id="menuToggle">
+      <i class="bi-list"></i>
+    </button>
+  </div>
+
+  <!-- NAV MOBILE -->
+  <div class="nav-mobile d-md-none" id="mobileMenu">
+    <div class="container py-3 d-flex flex-column gap-2">
+
+      <a href="/ayuda/" class="btn btn-ghost w-100 text-start d-flex align-items-center gap-2">
+        <i class="bi-question-circle"></i>
+        Ayuda
+      </a>
+
+      
+
+        <a href="/accounts/login/"
+           class="btn btn-primary w-100 text-start d-flex align-items-center gap-2">
+          <i class="bi-box-arrow-in-right"></i>
+          Inicio de sesión
+        </a>
+
+      
+
+    </div>
+  </div>
+</header>
+
+  <span class="alert-mensaje">
+      
+  </span>
+
+  
+  
+
+  <a id="ir-arriba" class="ir-arriba d-print-none" href="#" title="Volver arriba">
+    <span class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center shadow"
+          style="width:48px;height:48px;">
+      <i class="bi bi-arrow-up" style="font-size:1.5rem;"></i>
+    </span>
+  </a>
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+<section class="hero">
+
+  <div class="hero-bg">
+    <img
+      src="/static/img/hero2.jpg"
+      alt="Pescador en un río de la Patagonia al amanecer"
+    />
+    <div class="hero-gradient"></div>
+  </div>
+
+  <span class="hero-credit">Foto: Matías Gentile</span>
+
+  <div class="container px-4 hero-content">
+    <div class="hero-inner">
+
+      <!-- Badge -->
+      <div class="hero-badge">
+        <i class="bi bi-calendar"></i>
+        <span>Trámite oficial · Provincia de Santa Cruz</span>
+      </div>
+
+      <!-- Título -->
+      <h1 class="hero-title">
+        Temporada
+        <span>2026 - 2027</span>
+      </h1>
+
+      <!-- Texto -->
+      <p class="hero-text">
+        Se encuentran disponibles los permisos de pesca para la temporada que comienza el 
+        <strong>01/10/2026</strong> y tiene validez hasta el 
+        <strong>30/09/2027</strong>. 
+        Realice su trámite en línea de forma rápida y segura.
+      </p>
+
+      <!-- Botones -->
+      <div class="hero-actions">
+        <a href="/permisos/alta_permiso/" class="btn btn-cta">
+          Solicitar Permiso
+          <i class="bi bi-arrow-right"></i>
+        </a>
+
+        <a href="/permisos/consulta" class="btn btn-glass">
+          <i class="bi bi-search"></i>
+          Consultar Permiso
+        </a>
+      </div>
+
+      <!-- Aviso -->
+      
+
+    </div>
+  </div>
+</section>
+  
+
+<section class="quick-access py-5 py-lg-6">
+  <div class="container px-4">
+
+    <!-- Header -->
+    <div class="mb-5 quick-header">
+      <p class="quick-label">Recursos</p>
+      <h2 class="quick-title">Accesos rápidos</h2>
+      <p class="quick-subtitle">
+        Toda la información que necesita para planificar su jornada de
+        pesca en la provincia.
+      </p>
+    </div>
+
+    <!-- Grid -->
+    <div class="row g-3">
+
+      <!-- Card -->
+      <div class="col-12 col-sm-6 col-lg-4">
+        <a href="/reglamento/" class="quick-card">
+          <div class="quick-icon">
+            <i class="bi bi-book"></i>
+          </div>
+          <h3>Reglamento de Pesca</h3>
+          <p>Normativa vigente para la temporada</p>
+          <i class="bi bi-arrow-up-right quick-arrow"></i>
+        </a>
+      </div>
+
+      <div class="col-12 col-sm-6 col-lg-4">
+        <a href="/valores/" class="quick-card">
+          <div class="quick-icon">
+            <i class="bi bi-currency-dollar"></i>
+          </div>
+          <h3>Valores y Categorías</h3>
+          <p>Aranceles y tipos de permisos disponibles</p>
+          <i class="bi bi-arrow-up-right quick-arrow"></i>
+        </a>
+      </div>
+
+      <div class="col-12 col-sm-6 col-lg-4">
+        <a href="/contacto/" class="quick-card">
+          <div class="quick-icon">
+            <i class="bi bi-telephone"></i>
+          </div>
+          <h3>Datos de Contacto</h3>
+          <p>Comunicación con la Secretaría</p>
+          <i class="bi bi-arrow-up-right quick-arrow"></i>
+        </a>
+      </div>
+
+      <div class="col-12 col-sm-6 col-lg-4">
+        <a href="/ambientes/" class="quick-card">
+          <div class="quick-icon">
+            <i class="bi bi-water"></i>
+          </div>
+          <h3>Ambientes de Santa Cruz</h3>
+          <p>Ríos, lagos y cuerpos de agua</p>
+          <i class="bi bi-arrow-up-right quick-arrow"></i>
+        </a>
+      </div>
+
+      <div class="col-12 col-sm-6 col-lg-4">
+        <a href="/peces/" class="quick-card">
+          <div class="quick-icon">
+            <svg viewBox="0 0 50.46 50.46" width="32" height="32" fill="currentColor" aria-hidden="true"><path d="M48.09,31.54l-3-6.31,3-6.31A.92.92,0,0,0,48,18a.94.94,0,0,0-.78-.41s-.62,0-.92.05c-4.75.47-8.6,4.33-10.15,6.12-2.22-2.67-9.33-10.3-18-10.3C7.84,13.5,2.59,24.38,2.37,24.85a.92.92,0,0,0,0,.76C2.59,26.08,7.84,37,18.21,37c8.64,0,15.75-7.63,18-10.3,1.58,1.82,5.57,5.81,10.44,6.15l.64,0h0a.9.9,0,0,0,.81-1.29ZM18.21,35.16c-8.19,0-13-8.06-14-9.93,1-1.87,5.8-9.93,14-9.93S33.27,23.09,35,25.23C33.27,27.37,26.31,35.16,18.21,35.16Zm19.12-9.93c1.15-1.36,4.47-4.9,8.45-5.65l-2.49,5.26a.89.89,0,0,0,0,.78l2.49,5.26C41.81,30.13,38.48,26.59,37.33,25.23Z"/><path d="M11.05,21a1.09,1.09,0,1,0,1.08,1.08A1.08,1.08,0,0,0,11.05,21Z"/><path d="M19.86,17.34a.59.59,0,0,0-.6.6.6.6,0,0,0,.6.6,1.92,1.92,0,0,1,.6,3.74.59.59,0,0,0,0,1.13,1.91,1.91,0,0,1,0,3.64.59.59,0,0,0,0,1.13,1.92,1.92,0,0,1-.6,3.74.6.6,0,0,0-.6.6.59.59,0,0,0,.6.6,3.12,3.12,0,0,0,2-5.51A3.06,3.06,0,0,0,23,25.23a3.1,3.1,0,0,0-1.12-2.39A3.06,3.06,0,0,0,23,20.46,3.12,3.12,0,0,0,19.86,17.34Z"/><path d="M25.54,19.72a.6.6,0,0,0,0,1.2,1.92,1.92,0,0,1,.61,3.74.6.6,0,0,0,0,1.14,1.92,1.92,0,0,1-.61,3.74.6.6,0,0,0,0,1.2,3.13,3.13,0,0,0,3.13-3.13,3.08,3.08,0,0,0-1.12-2.38,3.08,3.08,0,0,0,1.12-2.38A3.13,3.13,0,0,0,25.54,19.72Z"/></svg>
+          </div>
+          <h3>Peces de la Patagonia</h3>
+          <p>Especies de la Patagonia continental</p>
+          <i class="bi bi-arrow-up-right quick-arrow"></i>
+        </a>
+      </div>
+
+      <div class="col-12 col-sm-6 col-lg-4">
+        <a href="/codigo-etica/" class="quick-card">
+          <div class="quick-icon">
+            <i class="bi bi-shield-check"></i>
+          </div>
+          <h3>Código de Ética</h3>
+          <p>Buenas prácticas del pescador deportivo</p>
+          <i class="bi bi-arrow-up-right quick-arrow"></i>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+  
+
+<section class="temporada-info py-5 py-lg-6">
+  <div class="container px-4">
+
+    <div class="row g-4">
+
+      <!-- Multas -->
+      <div class="col-lg-6">
+        <div class="card h-100 border-danger shadow-sm">
+          <div class="card-body p-4 p-lg-5">
+
+            <div class="d-flex align-items-center gap-2 mb-3">
+              <i class="bi bi-exclamation-octagon fs-4 text-danger"></i>
+              <p class="text-uppercase small fw-semibold text-danger mb-0" style="letter-spacing: 0.15em;">
+                Multas · Temporada 2026/2027
+              </p>
+            </div>
+
+            <h3 class="fw-bold mb-3">Conozca el cuadro de sanciones</h3>
+
+            <p class="text-muted mb-4">
+              Las multas se calculan en módulos. El valor del módulo PD equivale al permiso de
+              Residente País Temporada (RP-T): <strong class="text-danger">$40.000</strong>.
+            </p>
+
+            <ul class="list-unstyled small mb-4">
+              <li class="d-flex justify-content-between align-items-center border-bottom py-2">
+                <span><i class="bi bi-x-circle me-2 text-danger"></i>Pescar sin permiso</span>
+                <span class="fw-semibold text-danger">$ 400.000</span>
+              </li>
+              <li class="d-flex justify-content-between align-items-center border-bottom py-2">
+                <span><i class="bi bi-x-circle me-2 text-danger"></i>Pescar en época de veda</span>
+                <span class="fw-semibold text-danger">$ 800.000</span>
+              </li>
+              <li class="d-flex justify-content-between align-items-center border-bottom py-2">
+                <span><i class="bi bi-x-circle me-2 text-danger"></i>Elementos prohibidos o cebaderos</span>
+                <span class="fw-semibold text-danger">$ 200.000</span>
+              </li>
+              <li class="d-flex justify-content-between align-items-center border-bottom py-2">
+                <span><i class="bi bi-x-circle me-2 text-danger"></i>Vender pescado de la pesca deportiva</span>
+                <span class="fw-semibold text-danger">$ 4.000.000</span>
+              </li>
+              <li class="d-flex justify-content-between align-items-center py-2">
+                <span><i class="bi bi-x-circle me-2 text-danger"></i>Pesca submarina sin permiso</span>
+                <span class="fw-semibold text-danger">$ 2.000.000</span>
+              </li>
+            </ul>
+
+            <a href="/multas/" class="btn btn-outline-danger">
+              Ver cuadro completo de multas
+              <i class="bi bi-arrow-right ms-2"></i>
+            </a>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Horarios y turismo -->
+      <div class="col-lg-6">
+        <div class="d-flex flex-column gap-4 h-100">
+
+          <!-- Horarios -->
+          <div class="card flex-fill border-primary shadow-sm">
+            <div class="card-body p-4">
+
+              <div class="d-flex align-items-center gap-2 mb-2">
+                <i class="bi bi-sun fs-4 text-primary"></i>
+                <h4 class="fw-bold mb-0">Horarios de pesca</h4>
+              </div>
+
+              <p class="text-muted small mb-3">
+                La jornada de pesca coincide con las <strong>horas de luz diurna</strong>, según la
+                salida y puesta del sol publicadas por el Servicio de Hidrografía Naval (Art. 6° del
+                Reglamento). Queda prohibida la pesca nocturna.
+              </p>
+
+              <a href="/horarios/"
+                 class="btn btn-sm btn-primary">
+                <i class="bi bi-clock-history me-2"></i>Ver horarios de pesca
+              </a>
+
+            </div>
+          </div>
+
+          <!-- Turismo -->
+          <div class="card flex-fill shadow-sm">
+            <div class="card-body p-4">
+
+              <div class="d-flex align-items-center gap-2 mb-2">
+                <i class="bi bi-globe2 fs-4 text-success"></i>
+                <h4 class="fw-bold mb-0">Turismo en Santa Cruz</h4>
+              </div>
+
+              <p class="text-muted small mb-3">
+                Más de 40 ambientes de pesca entre ríos, lagos y arroyos, glaciares, estepa y costa.
+                Alojamiento, gastronomía y servicios para planificar su viaje con información oficial.
+              </p>
+
+              <a href="https://www.santacruzpatagonia.gob.ar/"
+                 target="_blank" rel="noreferrer"
+                 class="btn btn-sm btn-outline-success">
+                <i class="bi bi-map me-2"></i>Ir al portal de turismo
+              </a>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+  
+  
+
+<section class="inspectores-cta py-5 py-lg-6">
+  <div class="container px-4">
+    <div class="card border-0 shadow-sm">
+      <div class="card-body p-4 p-lg-5">
+        <div class="row align-items-center g-4">
+
+          <div class="col-lg-8">
+            <div class="d-flex align-items-start gap-3 mb-2">
+              <div class="quick-icon flex-shrink-0">
+                <i class="bi bi-person-badge"></i>
+              </div>
+              <div>
+                <p class="text-uppercase small fw-semibold text-secondary mb-1" style="letter-spacing: 0.15em;">
+                  Control y fiscalización
+                </p>
+                <h2 class="fw-bold text-primary mb-2">Conocé a nuestros inspectores</h2>
+                <p class="text-muted mb-0">
+                  El cuerpo de inspectores y guardapescas de la Dirección de
+                  Pesca Continental, con su foto y DNI para su identificación.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 text-lg-end">
+            <a href="/ayuda/#inspectores" class="btn btn-primary btn-lg">
+              <i class="bi bi-arrow-right me-2"></i>
+              Ver inspectores
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+  <section class="contact-section py-5 py-lg-6">
+  <div class="container px-4">
+
+    <div class="row g-5 align-items-start">
+
+      <!-- Texto -->
+      <div class="col-lg-4">
+        <p class="contact-label">
+          Estamos para ayudarle
+        </p>
+
+        <h2 class="contact-title">
+          Secretaría de Estado de Pesca y Acuicultura
+        </h2>
+
+        <p class="contact-text">
+          Comuníquese con nosotros por cualquiera de los siguientes medios.
+          Nuestro equipo le brindará asesoramiento.
+        </p>
+      </div>
+
+      <!-- Cards -->
+      <div class="col-lg-8">
+        <div class="row g-4">
+
+          <!-- Teléfono -->
+          <div class="col-12 col-sm-6 col-md-4">
+            <div class="contact-card">
+              <div class="contact-icon">
+                <i class="bi bi-telephone-fill"></i>
+              </div>
+              <p class="contact-item-label">Teléfono</p>
+              <p class="contact-item-value">
+                <a href="tel:+542966429462">+54 2966 429462</a>
+              </p>
+              <p class="contact-item-detail">
+                Lunes a viernes, 8:00 a 16:00 hs
+              </p>
+            </div>
+          </div>
+
+          <!-- Mail -->
+          <div class="col-12 col-sm-6 col-md-4">
+            <div class="contact-card">
+              <div class="contact-icon">
+                <i class="bi bi-envelope-fill"></i>
+              </div>
+              <p class="contact-item-label">Correo electrónico</p>
+              <p class="contact-item-value">
+                <a href="mailto:pesca-continental@santacruz.gob.ar" class="text-break">
+                  pesca-continental@santacruz.gob.ar
+                </a>
+              </p>
+              <p class="contact-item-detail">
+                Consultas y trámites administrativos
+              </p>
+            </div>
+          </div>
+
+          <!-- Dirección -->
+          <div class="col-12 col-sm-6 col-md-4">
+            <div class="contact-card">
+              <div class="contact-icon">
+                <i class="bi bi-geo-alt-fill"></i>
+              </div>
+              <p class="contact-item-label">Dirección</p>
+              <p class="contact-item-value">
+                Avellaneda 801
+              </p>
+              <p class="contact-item-detail">
+                Río Gallegos, Santa Cruz
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+  
+
+<section class="developed-by-section" aria-labelledby="desarrollado-por">
+
+        <div class="developed-by-wrapper">
+
+                <div class="developed-icon">
+                    
+                     <img src="/static/img/LogoSubse.png"
+                        alt="Escudo Gobierno de Santa Cruz"
+                        class="logo-img">
+                </div>
+    
+                <div class="developed-content">
+                    <p class="developed-label">
+                    Desarrollado por
+                    </p>
+    
+                    <h2 id="desarrollado-por" class="developed-title">
+                    Subsecretaría de Informática
+                    </h2>
+    
+                    <p class="developed-text">
+                    Dependiente del <strong>Ministerio de Secretaría General de la Gobernación</strong>,
+                    la Subsecretaría de Informática es el organismo destinado a dar soporte y
+                    asistencia a otros entes gubernamentales en relación a Tecnologías de la
+                    Información y Comunicación. Este sistema fue diseñado, desarrollado y es
+                    mantenido por nuestro equipo.
+                    </p>
+
+                    <div class="developed-actions d-flex flex-wrap gap-2 mt-3">
+                      <a href="https://informatica.santacruz.gob.ar/"
+                         target="_blank" rel="noreferrer"
+                         class="btn btn-sm btn-outline-primary">
+                        <i class="bi bi-box-arrow-up-right me-1"></i>Portal de Informática
+                      </a>
+                      <a href="mailto:pesca@santacruz.gob.ar"
+                         class="btn btn-sm btn-outline-secondary">
+                        <i class="bi bi-life-preserver me-1"></i>Soporte técnico del sistema
+                      </a>
+                    </div>
+                </div>
+
+        </div>
+
+</section>
+
+
+
+
+  
+  
+  
+<footer class="footer">
+
+  <div class="container px-4 py-5">
+    <div class="row g-4">
+
+      
+
+      
+       <!-- Columna 1 -->
+      <div class="col-6 col-md-4">
+        <h4 class="footer-heading">Contacto</h4>
+        <ul class="footer-links">
+          <li><a href="mailto:pesca-continental@santacruz.gob.ar">pesca-continental@santacruz.gob.ar</a></li>
+          <li><a href="tel:+542966429462">+54 2966 429462</a></li>
+          <li><a href="/contacto/">Datos de contacto</a></li>
+        </ul>
+      </div>
+
+      <!-- Columna 2 -->
+      <div class="col-6 col-md-4">
+        <h4 class="footer-heading">Recursos</h4>
+        <ul class="footer-links">
+          <li><a href="/ayuda/">Ayuda</a></li>
+          <li><a href="/reglamento/">Reglamento de pesca</a></li>
+          <li><a href="/valores/">Valores y categorías</a></li>
+          <li><a href="/multas/">Valores de multas</a></li>
+        </ul>
+      </div>
+
+      <!-- Columna 3 -->
+      <div class="col-6 col-md-4">
+        <h4 class="footer-heading">Sitios oficiales</h4>
+        <ul class="footer-links">
+          <li><a href="https://minpro.santacruz.gob.ar/pesca" target="_blank" rel="noreferrer">Secretaría de Pesca y Acuicultura</a></li>
+          <li><a href="https://www.santacruzpatagonia.gob.ar/" target="_blank" rel="noreferrer">Turismo en Santa Cruz</a></li>
+          <li><a href="https://www.hidro.gov.ar/observatorio/Astronomia.asp?op=10" target="_blank" rel="noreferrer">Salida y puesta del sol</a></li>
+          <li><a href="https://informatica.santacruz.gob.ar/" target="_blank" rel="noreferrer">Subsecretaría de Informática</a></li>
+          <li><a href="https://cap.santacruz.gob.ar/%C3%A1reas-protegidas" target="_blank" rel="noreferrer">Áreas Protegidas (CAP)</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Desarrollo del sistema -->
+  <div class="container px-4 py-3">
+    <div class="d-flex flex-column flex-sm-row justify-content-between align-items-center gap-2 small">
+      <div class="d-flex align-items-center gap-2 text-center text-sm-start">
+        <img src="/static/img/LogoSubse.png"
+             alt="Logo Subsecretaría de Informática"
+             style="height: 22px; width: auto;">
+        <span>
+          Desarrollado por
+          <strong>Subsecretaría de Informática</strong>
+        </span>
+      </div>
+      <div>
+        <a href="mailto:pesca@santacruz.gob.ar"
+           class="text-white text-decoration-none" style="opacity: 0.85;">
+          Soporte técnico: pesca@santacruz.gob.ar
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom -->
+  <div class="footer-bottom">
+    <div class="container px-4 d-flex flex-column flex-sm-row justify-content-between align-items-center gap-2">
+      <p class="mb-0">
+        © 2026 Gobierno de la Provincia de Santa Cruz. Todos los derechos reservados.
+      </p>
+      <p class="mb-0">
+        Secretaría de Estado de Pesca y Acuicultura - Subsecretaría de Informática
+      </p>
+    </div>
+  </div>
+
+</footer>
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="/static/js/frontend.js" defer></script>
+  <script src="/static/js/pesca-behaviors.js" defer></script>
+  
+  <script src="https://captcha.santacruz.gob.ar/static/js/captcha-widget.js" defer></script>
+  
+  
+  
+  
+
+</body>
+</html>
