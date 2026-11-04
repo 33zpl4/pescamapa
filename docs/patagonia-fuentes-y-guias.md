@@ -10,6 +10,11 @@ Un solo lugar para retomar el trabajo de Patagonia. Lo que está leído lleva su
 | **San Martín y Junín de los Andes** (Neuquén) | es, en | `/patagonia/neuquen/pesca-san-martin-junin-de-los-andes/`, `/en/patagonia/neuquen/fishing-san-martin-junin-de-los-andes/` | la guía es de `san-martin-junin-2026-10-24`; el 30/10 se le cargó el contenido 2026/27 con `junin-unificar-2026-10-30` |
 | **Bariloche y el Nahuel Huapi** (Río Negro) | es, en | `/patagonia/rio-negro/pesca-en-bariloche/` (#161), `/en/patagonia/rio-negro/fishing-in-bariloche/` (#162); publicadas y verificadas el 30/10/2026 | `bariloche-2026-10-30` |
 
+| **Río Grande** (Tierra del Fuego) | es, en | `/patagonia/tierra-del-fuego/pesca-en-rio-grande/` (#199), `/en/patagonia/tierra-del-fuego/fishing-in-rio-grande/` (#200); en vivo el 4/11/2026 | `rio-grande-2026-11-04` |
+| **Río Gallegos** (Santa Cruz) | es, en | `/patagonia/santa-cruz/pesca-en-rio-gallegos/` (#205), `/en/patagonia/santa-cruz/fishing-in-rio-gallegos/` (#206); en vivo el 4/11/2026 | `rio-gallegos-2026-11-04` |
+
+**Esquel y Trevelin (Chubut): sin guía todavía.** El reglamento oficial de Chubut no abre desde los runners (`reglamentodepesca.org.ar`, 403/fetch failed) y la apertura de la temporada 2026/27 (Disposición 131/2026, 30/10/2026) solo la vimos en prensa local. Falta que el dueño pegue `…/reglamento-items/anexo-chubut/` y el listado de ambientes de Chubut; con eso se escribe la guía como las otras. Qué se leyó y qué no, en `docs/investigacion/patagonia-sur-2026-11-04.md`.
+
 **Error del 30/10 que no se repite:** se creó una guía duplicada de Junín (clave `junin-de-los-andes`) sin ver que ya existía la de `san-martin-junin` (24/10). El mapa del inicio mostró el nombre dos veces. **Antes de crear una guía: buscar la clave y el nombre en los scripts de `wordpress/scripts/` y en la lista de guías vivas.** El duplicado quedó en la papelera; sus URLs ya no sirven.
 
 ## Dónde vive cada regla (fuentes primarias)
@@ -21,6 +26,13 @@ Un solo lugar para retomar el trabajo de Patagonia. Lo que está leído lleva su
 | Permisos Neuquén | `cazaypesca.neuquen.gob.ar/permisos/` (no abre desde GitHub) | Valores por la nota de ANBariloche del 16/10/2026 y el portal de Río Negro |
 | Permisos Río Negro (Bariloche) | `permisosdepesca.com.ar` (Mesa Directiva de Pesca Deportiva Zona Andina, Av. 12 de Octubre y Onelli) | Leído: valores 2026/27 |
 | Santa Cruz | `pesca.santacruz.gob.ar` (SIPESQ; no abre desde GitHub) | Disposición 241/2026 (copia fiel, escaneada, arts. 1 a 18) y el Word de 16 páginas con el Anexo I; MINPRO del 1/10/2026 para los valores |
+
+## Tierra del Fuego: fuentes y lo aprendido el 4/11/2026
+
+- **Fuente oficial leída:** Resolución S.A. N.º 259/2026 (PDF en `prodyambiente.tierradelfuego.gob.ar/wp-content/uploads/2026/10/Resolucion-N259-Temporada-pesca-2026.pdf`) y la página `…/pesca-deportiva-tdf/`. Abren desde los runners con `investigar.yml`; el sandbox no los abre.
+- **Trampa:** la página oficial dice, para el río Grande, "hasta el 13 de abril de 2025" (fecha de la temporada pasada); el PDF dice **18 de abril de 2027**. Se publica la del PDF y la guía lo cuenta. Vigilado en `vigilancia/fuentes.json` (`tdf-pesca-pagina`).
+- **Valores 2026/27, extranjeros no residentes (ARS):** ordinario 78.000 / 117.000 (3 días) / 195.000 (7 días) / 260.000 (temporada); adicional zona preferencial ríos Grande y Menéndez 59.000 / 163.000 / 260.000 / 390.000. El permiso es provincial (no es el patagónico).
+- **Santa Cruz, fuente oficial leída el 4/11/2026:** `pesca.santacruz.gob.ar/ambientes/` (Anexo I 2026/27, con Gallegos, Gallegos Chico, Chico Sur, Penitente) y `/valores/` (mismos valores que ya publicábamos). Ese portal sí abrió con `investigar.yml`; antes no lo había hecho.
 
 ## Valores de permisos 2026/27 (pesos argentinos)
 
