@@ -358,5 +358,21 @@
 		"vigilar": "texto",
 		"afecta": "Ficha de Kau Tapen Lodge en la guía de Río Grande (precio con su fecha)",
 		"accion": "Si cambian los montos o las fechas de la temporada, actualizar el precio de la ficha y su fecha, y la FAQ de costo."
+	},
+	{
+		"id": "chubut-anexo",
+		"nombre": "Chubut: Anexo Chubut 2026/27 (Reglamento Patagónico, texto de la Dirección de Pesca Continental)",
+		"url": "https://reglamentodepesca.org.ar/reglamento-items/anexo-chubut/",
+		"vigilar": "texto",
+		"afecta": "Guía de Esquel y Trevelin: temporada, reglas generales, rebaba, fieltro, permisos",
+		"accion": "Comparar fechas y reglas con la guía; la autoridad puede cambiar el cronograma (anexo, punto 2.d). Ojo: este sitio solo abre desde los runners con navegador."
+	},
+	{
+		"id": "chubut-ambientes",
+		"nombre": "Chubut: Ambientes Chubut 2026/27 (listado alfabético con reglas por agua)",
+		"url": "https://reglamentodepesca.org.ar/reglamento-items/ambientes-chubut/",
+		"vigilar": "texto",
+		"afecta": "Guía de Esquel y Trevelin: reglas del Futaleufú, Rosario, Fontana, Carrileufú, Cholila, Percey, Corcovado, Engaño, Puelo",
+		"accion": "Si cambia una fecha, un límite o un modo de pesca, actualizar la guía y sus FAQ. El texto capturado se corta a los 12.000 caracteres: leer el HTML completo."
 	}
 ]
