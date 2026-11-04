@@ -10,10 +10,10 @@ Un solo lugar para retomar el trabajo de Patagonia. Lo que está leído lleva su
 | **San Martín y Junín de los Andes** (Neuquén) | es, en | `/patagonia/neuquen/pesca-san-martin-junin-de-los-andes/`, `/en/patagonia/neuquen/fishing-san-martin-junin-de-los-andes/` | la guía es de `san-martin-junin-2026-10-24`; el 30/10 se le cargó el contenido 2026/27 con `junin-unificar-2026-10-30` |
 | **Bariloche y el Nahuel Huapi** (Río Negro) | es, en | `/patagonia/rio-negro/pesca-en-bariloche/` (#161), `/en/patagonia/rio-negro/fishing-in-bariloche/` (#162); publicadas y verificadas el 30/10/2026 | `bariloche-2026-10-30` |
 
-| **Río Grande** (Tierra del Fuego) | es, en | `/patagonia/tierra-del-fuego/pesca-en-rio-grande/` (#199), `/en/patagonia/tierra-del-fuego/fishing-in-rio-grande/` (#200); en vivo el 4/11/2026 | `rio-grande-2026-11-04` |
-| **Río Gallegos** (Santa Cruz) | es, en | `/patagonia/santa-cruz/pesca-en-rio-gallegos/` (#205), `/en/patagonia/santa-cruz/fishing-in-rio-gallegos/` (#206); en vivo el 4/11/2026 | `rio-gallegos-2026-11-04` |
+| **Río Grande** (Tierra del Fuego) | es, en, pt | `/patagonia/tierra-del-fuego/pesca-en-rio-grande/` (#199), `/en/patagonia/tierra-del-fuego/fishing-in-rio-grande/` (#200), `/pt/patagonia/tierra-del-fuego/pesca-em-rio-grande/` (#217); en vivo el 4/11/2026 | `rio-grande-2026-11-04` |
+| **Río Gallegos** (Santa Cruz) | es, en, pt | `/patagonia/santa-cruz/pesca-en-rio-gallegos/` (#205), `/en/patagonia/santa-cruz/fishing-in-rio-gallegos/` (#206), `/pt/patagonia/santa-cruz/pesca-em-rio-gallegos/` (#218); en vivo el 4/11/2026 | `rio-gallegos-2026-11-04` |
 
-| **Esquel y Trevelin** (Chubut) | es, en | `/patagonia/chubut/pesca-en-esquel-y-trevelin/` (#211), `/en/patagonia/chubut/fishing-in-esquel-and-trevelin/` (#212); en vivo el 4/11/2026, 4 fichas | `esquel-trevelin-2026-11-04` |
+| **Esquel y Trevelin** (Chubut) | es, en, pt | `/patagonia/chubut/pesca-en-esquel-y-trevelin/` (#211), `/en/patagonia/chubut/fishing-in-esquel-and-trevelin/` (#212), `/pt/patagonia/chubut/pesca-em-esquel-e-trevelin/` (#219); en vivo el 4/11/2026, 4 fichas | `esquel-trevelin-2026-11-04` |
 
 **Chubut:** el Anexo Chubut y el listado Ambientes Chubut 2026/27 (`reglamentodepesca.org.ar/reglamento-items/anexo-chubut/` y `…/ambientes-chubut/`) **sí abrieron con `investigar.yml` en modo navegador** (`navegador: true`); en modo simple fallaban. La página de ambientes llega cortada a 12.000 caracteres en el `.md`: leer el `.html` completo. **Falta:** el anexo de Parques Nacionales (Los Alerces: lagos Futalaufquen, Verde, Menéndez, Arrayanes; Lago Puelo). Las fechas del anexo (1/11/2026 al 1/5/2027) chocan con la prensa local, que habla del 30/10 por la Disposición 131/2026: la guía sigue el anexo y lo dice.
 
