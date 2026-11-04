@@ -12,7 +12,7 @@
  * Idempotent: a guide that exists is not touched. Dry run first ($aplicar = false). Run with wp-script.yml (script = rio-grande-2026-11-04).
  */
 
-$aplicar = false;
+$aplicar = true;
 $hoy     = '20261104';
 
 function pm_rg_p( string $html ): string {
