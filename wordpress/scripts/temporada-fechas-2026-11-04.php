@@ -13,7 +13,7 @@
  * Dry run first ($aplicar = false). Run with wp-script.yml (script = temporada-fechas-2026-11-04).
  */
 
-$aplicar = false;
+$aplicar = true;
 
 $datos = [
 	'bariloche' => [
