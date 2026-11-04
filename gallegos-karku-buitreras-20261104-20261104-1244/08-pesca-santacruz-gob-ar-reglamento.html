@@ -1,0 +1,524 @@
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Pesca</title>
+  
+  
+  <link rel="icon" type="image/x-icon" href="/static/img/favicon.ico">
+  
+
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" integrity="sha384-tViUnnbYAV00FLIhhi3v/dWt3Jxw4gZQcNoSCxCIFNJVCx7/D55/wXsrNIRANwdD" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/main.css">
+
+  
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+  
+  <link rel="stylesheet" type="text/css" href="/static/css/icono-arg.min.css">
+
+  
+  <link rel="stylesheet" href="/static/css/home.css">
+
+  
+  
+
+  
+  <link rel="stylesheet" type="text/css" href="/static/css/project.css">
+</head>
+
+<body>
+
+  
+  
+
+
+<header class="custom-header">
+  <div class="container d-flex align-items-center justify-content-between header-inner">
+
+    <!-- Logo -->
+    <a href="/" class="d-flex align-items-center gap-1 text-decoration-none">
+      <img src="/static/img/logo-santacruz.png"
+           alt="Escudo Gobierno de Santa Cruz"
+           class="logo-img">
+
+      <div class="logo-text">
+        <p class="logo-top">Gobierno de Santa Cruz</p>
+        <p class="logo-bottom">Pesca y Acuicultura</p>
+      </div>
+    </a>
+
+    <!-- NAV DESKTOP -->
+    <nav class="nav-desktop d-none d-md-flex align-items-center gap-2">
+
+      <a href="/ayuda/" class="btn btn-ghost btn-sm d-flex align-items-center gap-2">
+        <i class="bi-question-circle"></i>
+        Ayuda
+      </a>
+
+      
+        <!-- Invitado -->
+        <a href="/accounts/login/"
+           class="btn btn-primary d-flex align-items-center gap-2">
+          <i class="bi-box-arrow-in-right"></i>
+          Inicio de sesión
+        </a>
+
+      
+
+    </nav>
+
+    <!-- BOTON MOBILE -->
+    <button class="menu-toggle d-md-none" id="menuToggle">
+      <i class="bi-list"></i>
+    </button>
+  </div>
+
+  <!-- NAV MOBILE -->
+  <div class="nav-mobile d-md-none" id="mobileMenu">
+    <div class="container py-3 d-flex flex-column gap-2">
+
+      <a href="/ayuda/" class="btn btn-ghost w-100 text-start d-flex align-items-center gap-2">
+        <i class="bi-question-circle"></i>
+        Ayuda
+      </a>
+
+      
+
+        <a href="/accounts/login/"
+           class="btn btn-primary w-100 text-start d-flex align-items-center gap-2">
+          <i class="bi-box-arrow-in-right"></i>
+          Inicio de sesión
+        </a>
+
+      
+
+    </div>
+  </div>
+</header>
+
+  <span class="alert-mensaje">
+      
+  </span>
+
+  
+  
+
+  <a id="ir-arriba" class="ir-arriba d-print-none" href="#" title="Volver arriba">
+    <span class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center shadow"
+          style="width:48px;height:48px;">
+      <i class="bi bi-arrow-up" style="font-size:1.5rem;"></i>
+    </span>
+  </a>
+  
+  
+
+<section class="border-bottom bg-light">
+  <div class="container pt-5 pb-2">
+
+    <a href="/ayuda/" class="btn btn-link px-0 mb-3 text-decoration-none text-muted">
+      <i class="bi bi-arrow-left me-2"></i>
+      Volver a la Ayuda
+    </a>
+
+    <p class="text-uppercase small fw-semibold text-secondary mb-2" style="letter-spacing: 0.15em;">
+      Normativa vigente · Temporada 2026/2027
+    </p>
+
+    <h1 class="fw-bold text-primary display-5">
+      Reglamento de Pesca
+    </h1>
+
+  </div>
+</section>
+
+<section class="pt-3 pb-5">
+  <div class="container">
+
+    <!-- Cómo leer -->
+    <div class="alert alert-primary d-flex align-items-start gap-3">
+      <i class="bi bi-book fs-5 mt-1"></i>
+      <div>
+        <strong>CÓMO LEER EL REGLAMENTO:</strong>
+        <ol class="mb-0 mt-1 ps-3">
+          <li>Leer el <strong>Reglamento General</strong> (esta página).</li>
+          <li>Buscar en el listado alfabético del <strong>Anexo I</strong> si el ambiente que va a
+              pescar tiene reglamentaciones específicas (<a href="/ambientes/" class="alert-link">ver ambientes</a>).</li>
+          <li>Leer las <strong>Recomendaciones y Prácticas de bajo impacto</strong> del Anexo II.</li>
+        </ol>
+      </div>
+    </div>
+
+    <p class="mb-4">
+      Es obligatorio leer el reglamento, <strong>llevar siempre el permiso de pesca</strong> y
+      acreditar la identidad con documento idóneo.
+    </p>
+
+    <!-- CAP I -->
+    <h2 class="h5 fw-bold text-primary mt-5 mb-3">
+      <span class="badge bg-primary">Cap. I</span> Autoridad de Aplicación y convenios
+    </h2>
+    <ul class="mb-0">
+      <li>
+        <strong>Art. 1° — Órganos de contralor:</strong> la Secretaría de Estado de Pesca y
+        Acuicultura es la autoridad de aplicación. El control es ejercido por la Dirección de Pesca
+        Continental, el Cuerpo de Inspectores y Fiscalizadores Provinciales y las instituciones con
+        convenios de colaboración recíproca. Las infracciones se sancionan conforme a la Ley 1464,
+        el Decreto Reglamentario 195/83 y sus disposiciones modificatorias. Los inspectores podrán
+        emplear <strong>cámaras personales y drones (VANT)</strong> para documentar los procedimientos
+        de control.
+      </li>
+      <li>
+        <strong>Art. 2° — Convenios</strong> de cooperación interinstitucional: se ratifica la
+        delegación de facultades de fiscalización, control y sustanciación de actas de infracción
+        provisionales a la Policía de la Provincia de Santa Cruz, la Prefectura Naval Argentina y la
+        Gendarmería Nacional Argentina.
+      </li>
+    </ul>
+
+    <!-- CAP II -->
+    <h2 class="h5 fw-bold text-primary mt-5 mb-3">
+      <span class="badge bg-primary">Cap. II</span> Permisos, validez y jornada
+    </h2>
+    <ul class="mb-0">
+      <li>
+        <strong>Art. 3° — Carácter del permiso:</strong> <strong>personal, nominativo e
+        intransferible</strong>. Se otorga por vía electrónica o formato papel y debe portarse en
+        formato físico o digital idóneo, exhibiéndose obligatoriamente ante toda autoridad de
+        control junto con documento de identidad. No será necesario que contenga estampillado.
+      </li>
+      <li>
+        <strong>Art. 4° — Categorías:</strong> residentes del país, no residentes en el país,
+        excombatientes, menores, jubilados y pensionados, personas con discapacidad, socios de
+        clubes y permisos adicionales de trolling (<a href="/valores/" class="text-decoration-underline">ver valores</a>).
+      </li>
+      <li>
+        <strong>Art. 5° — Validez:</strong> los permisos solo tienen validez dentro de los límites
+        de la Provincia de Santa Cruz y para las fechas indicadas. Los permisos de la categoría
+        <strong>temporada rigen hasta el 30/09/2027</strong> (consultar excepciones en el Anexo I).
+      </li>
+      <li>
+        <strong>Art. 6° — Jornada de pesca:</strong> un “día de pesca” es el lapso que coincide con
+        las <strong>horas de luz diurna</strong>, entre la salida y la puesta del sol publicadas por
+        el Servicio de Hidrografía Naval para la ciudad más cercana al lugar de pesca.
+        <a href="/horarios/" class="text-decoration-underline">Consultar horarios</a>.
+      </li>
+    </ul>
+
+    <!-- CAP III -->
+    <h2 class="h5 fw-bold text-primary mt-5 mb-3">
+      <span class="badge bg-primary">Cap. III</span> Períodos, modalidades y equipos
+    </h2>
+    <ul class="mb-0">
+      <li>
+        <strong>Art. 7° — Cronograma general:</strong> la temporada general de pesca deportiva se
+        extiende del <strong>01/10/2026 al 30/09/2027</strong>, sin perjuicio de los regímenes
+        especiales e interrupciones biológicas por cuenca (Anexo I).
+      </li>
+      <li>
+        <strong>Art. 8° — Artes y señuelos:</strong> rigurosamente condicionada a la utilización de
+        <strong>un (1) solo señuelo artificial</strong> provisto de <strong>un (1) único anzuelo</strong>
+        simple o doble, con o sin rebaba. Si el señuelo trae más de un anzuelo, deben quitarse o
+        inutilizarse los restantes. <strong>Prohibidos</strong> los señuelos que contengan pilas o
+        baterías, salvo excepciones del Anexo I.
+      </li>
+      <li>
+        <strong>Art. 9° — Modalidades permitidas:</strong>
+        <ul>
+          <li><strong>A. Cuchara o Spinning, Bait casting y "Tarrito":</strong> señuelos artificiales cuya tracción y peso de lanzamiento dependen de la masa del propio señuelo.</li>
+          <li><strong>B. Mosca o Flycasting:</strong> señuelos tipo mosca acoplados a una línea de arrastre ("cola de ratón"), incluye la variante "al hilo" o estilo europeo.</li>
+          <li><strong>C. Arrastre o trolling:</strong> un señuelo artificial arrastrado desde una embarcación.</li>
+          <li><strong>D. Otras modalidades:</strong> según lo dispuesto en los Anexos.</li>
+        </ul>
+        Se prohíbe el uso de <strong>peces y almejas como carnada</strong> donde esté permitido su uso.
+      </li>
+      <li>
+        <strong>Art. 10° — Restricción de equipos:</strong> se autoriza el uso activo de
+        <strong>un (1) solo equipo de pesca a la vez</strong>. Se permite portar equipos de repuesto,
+        pero está terminantemente prohibido su despliegue simultáneo.
+      </li>
+    </ul>
+
+    <!-- CAP IV -->
+    <h2 class="h5 fw-bold text-primary mt-5 mb-3">
+      <span class="badge bg-primary">Cap. IV</span> Acopio, tallas y limitaciones
+    </h2>
+    <ul class="mb-0">
+      <li>
+        <strong>Art. 11° — Devolución obligatoria:</strong> en todos los ríos, arroyos y sus
+        nacientes o desembocaduras lacustres, en un radio de <strong>200 metros</strong> sobre ambas
+        costas desde el punto de conjunción, rige la liberación inmediata, mandatoria y sin daño de
+        la totalidad de los ejemplares (salvo excepciones del Anexo I). En estos ambientes se usa un
+        solo anzuelo simple o doble con micro rebaba o rebaba aplastada, y los peces deben
+        devolverse vivos (procedimiento del Anexo II).
+      </li>
+      <li>
+        <strong>Art. 12° — Límite de acopio:</strong> el máximo de acopio por pescador se equipara
+        de forma estricta al <strong>límite diario de captura</strong> del ambiente (Anexo I). En zonas
+        de devolución obligatoria queda totalmente prohibida la tenencia o transporte de cualquier ejemplar.
+      </li>
+      <li>
+        <strong>Art. 13° — Biometría:</strong> la longitud total se mide con una línea recta
+        horizontal que une el extremo anterior del hocico con el extremo posterior de la aleta caudal.
+      </li>
+      <li>
+        <strong>Art. 14° — Encuentros y competencias:</strong> requieren autorización expresa y
+        previa de la Autoridad de Aplicación (Art. 14° Dcto 195/83). Se prohíben los certámenes bajo
+        la modalidad de pesca embarcada (con o sin motor) en ambientes naturales.
+      </li>
+    </ul>
+
+    <!-- CAP V -->
+    <h2 class="h5 fw-bold text-primary mt-5 mb-3">
+      <span class="badge bg-primary">Cap. V</span> Prohibiciones generales
+    </h2>
+    <ul class="mb-0">
+      <li>
+        <strong>Art. 15° — Acciones prohibidas</strong> (síntesis): pescar desde embarcaciones dentro
+        del perímetro de exclusión (200 m) de nacientes y desembocaduras; pesca a la deriva mediante
+        garreo sobre el lecho; caza subacuática fuera de los ambientes zonificados por la autoridad
+        competente; extraer especies en períodos de veda; superar los límites de captura; la
+        comercialización o lucro con ejemplares de pesca deportiva; portar equipos de pesca armados y
+        listos para operar en ambientes o franjas horarias no habilitadas; el ingreso de unidades
+        náuticas con motores de dos tiempos (2T) carburados en ambientes con restricciones; el uso de
+        lastres, contrapesos, plomadas de fondo o señuelos que incorporen plomo en sus cabezas o
+        núcleos; el montaje de baterías náuticas sin sistemas mecánicos de sujeción segura; el
+        confinamiento o acopio vivo de ejemplares silvestres; la pesca en aguas afectadas por obras
+        hidrodinámicas o extraer peces de canales y bocatomas; el transporte intercuenca de organismos
+        acuáticos vivos sin guía de tránsito; entre otras.
+      </li>
+      <li>
+        <strong>Art. 15° t) — Pesca nocturna:</strong> queda <strong>absolutamente prohibida la pesca
+        nocturna en todo el ámbito provincial</strong>.
+      </li>
+      <li>
+        <strong>Art. 16° — Navegación, pesca embarcada y flotación:</strong> solo se permite el uso de
+        motores <strong>cuatro tiempos</strong> o <strong>dos tiempos con certificación de Emisiones
+        Ultra Bajas</strong> (EPA 2006, EU, CARB 3 o más estrellas) de fábrica. Las embarcaciones y
+        sus conductores deben estar habilitados por la Prefectura Naval Argentina y las autoridades
+        provinciales. En <strong>embalses y lagos</strong> se autoriza la pesca con motor en
+        funcionamiento; queda <strong>prohibida la navegación con motor en todos los ríos</strong> de la
+        provincia (consultar excepciones en el Anexo I).
+      </li>
+    </ul>
+
+    <!-- CAP VI -->
+    <h2 class="h5 fw-bold text-primary mt-5 mb-3">
+      <span class="badge bg-primary">Cap. VI</span> Protocolo biológico obligatorio — Campaña Didymo
+    </h2>
+    <ul class="mb-0">
+      <li>
+        <strong>Art. 17° — Medidas de prevención biológica:</strong> en el marco del Plan Provincial de
+        prevención del alga <em>Didymosphenia geminata</em> (Disposición 391/SPyAP/2010) se establecen
+        pautas sanitarias de carácter mandatorio para evitar la propagación del alga invasora. En las
+        zonas de máxima vulnerabilidad se exige portar el <strong>certificado diario de desinfección</strong>
+        y lavar los materiales al finalizar la jornada.
+      </li>
+      <li>
+        <strong>Art. 18° — Desinfección exigible:</strong> todo pescador que ingrese al territorio
+        provincial debe utilizar equipos <strong>nuevos o previamente desinfectados</strong>. Pescadores,
+        guías de pesca continental y prestadores turísticos deben desinfectar indumentarias de vadeo
+        (waders, botas de fieltro), equipos, flotadores y vehículos. El <strong>cambio de cuenca
+        hidrográfica exige una sanitización inmediata</strong>. El uso de botas con suela de fieltro queda
+        condicionado al cumplimiento riguroso de estas pautas.
+      </li>
+    </ul>
+
+    <div class="alert alert-info d-flex align-items-start gap-3 mt-4">
+      <i class="bi bi-info-circle fs-5 mt-1"></i>
+      <div class="small mb-0">
+        <strong>DATO:</strong> la presencia de <strong>salmón Chinook (Oncorhynchus tshawytscha)</strong>
+        se encuentra consolidada en las cuencas del <strong>Río de las Vueltas</strong> y del
+        <strong>Río Santa Cruz</strong>, con regímenes específicos detallados en las páginas de
+        <a href="/ambientes/" class="alert-link">Ambientes</a>.
+      </div>
+    </div>
+
+    <!-- Anexos -->
+    <h2 class="h5 fw-bold text-primary mt-5 mb-3">
+      <span class="badge bg-primary">Anexos</span>
+    </h2>
+    <div class="row g-4">
+      <div class="col-md-6">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body">
+            <h6 class="fw-bold">Anexo I — Regímenes específicos por ambiente</h6>
+            <p class="card-text small text-muted mb-3">
+              Listado alfabético de ríos, lagos y arroyos con apertura/cierre, límite diario (LD),
+              artes permitidas y restricciones náuticas de la temporada 2026/2027.
+            </p>
+            <a href="/ambientes/" class="btn btn-sm btn-outline-primary">Ver ambientes</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body">
+            <h6 class="fw-bold">Anexo II — Especies y prácticas de bajo impacto</h6>
+            <p class="card-text small text-muted mb-3">
+              Taxonomía y categorización de especies (exóticas, nativas pescables y nativas con
+              prohibición de sacrificio) y recomendaciones de bajo impacto.
+            </p>
+            <a href="/peces/" class="btn btn-sm btn-outline-primary">Ver especies</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sanciones -->
+    <div class="alert alert-warning d-flex align-items-start gap-3 mt-5">
+      <i class="bi bi-exclamation-triangle fs-5 mt-1"></i>
+      <div>
+        <strong>NO OLVIDE:</strong> las infracciones al reglamento se sancionan con multas que van
+        desde los 5 hasta los 200 módulos PD ($40.000 cada uno).
+        <a href="/multas/" class="alert-link">Ver cuadro de multas 2026/2027</a>.
+      </div>
+    </div>
+
+    <!-- Didymo -->
+    <div class="alert alert-warning mt-4 mb-0">
+      <div class="d-flex align-items-center gap-2 mb-2">
+        <i class="bi bi-exclamation-triangle fs-5"></i>
+        <h5 class="fw-bold mb-0">ALERTA DIDYMO</h5>
+      </div>
+      <p class="small mb-3">
+        Recientemente se ha descubierto el alga invasora <em>didymosphenia geminata</em>
+        (moco de roca) en la Patagonia. Ayudemos a proteger los ambientes desinfectando
+        todos sus equipos.
+      </p>
+      <ul class="small mb-0">
+        <li><strong>1. RETIRAR:</strong> restos de vegetación, barro, algas y sedimentos.</li>
+        <li><strong>2. REMOJAR:</strong> con lavandina o agua caliente (+60°).</li>
+        <li><strong>3. SECAR:</strong> al sol y esperar 48 hs antes de reutilizar.</li>
+      </ul>
+    </div>
+
+    <!-- Descarga -->
+    <div class="card border-primary shadow-sm mt-5">
+      <div class="card-body p-4 p-lg-5">
+        <div class="d-flex align-items-start gap-3">
+          <i class="bi bi-file-earmark-pdf fs-1 text-danger"></i>
+          <div class="flex-grow-1">
+            <h5 class="fw-bold mb-1">Disposición Nº 241 — Reglamento General de Pesca</h5>
+            <p class="small text-muted mb-2">
+              Reglamento de Pesca Deportiva y Recreativa — Temporada 2026/2027
+              (Disposición Nº 241). El documento incluye: Reglamento General,
+              <strong>Anexo I</strong> (regímenes específicos por ambiente) y
+              <strong>Anexo II</strong> (especies y prácticas de bajo impacto).
+            </p>
+            <a href="/static/docs/reglamento-pesca-2026-2027.pdf"
+               target="_blank" rel="noreferrer" download
+               class="btn btn-primary">
+              <i class="bi bi-download me-2"></i>Descargar reglamento y anexos (PDF, 1,8 MB)
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+  
+  
+  
+<footer class="footer">
+
+  <div class="container px-4 py-5">
+    <div class="row g-4">
+
+      
+
+      
+       <!-- Columna 1 -->
+      <div class="col-6 col-md-4">
+        <h4 class="footer-heading">Contacto</h4>
+        <ul class="footer-links">
+          <li><a href="mailto:pesca-continental@santacruz.gob.ar">pesca-continental@santacruz.gob.ar</a></li>
+          <li><a href="tel:+542966429462">+54 2966 429462</a></li>
+          <li><a href="/contacto/">Datos de contacto</a></li>
+        </ul>
+      </div>
+
+      <!-- Columna 2 -->
+      <div class="col-6 col-md-4">
+        <h4 class="footer-heading">Recursos</h4>
+        <ul class="footer-links">
+          <li><a href="/ayuda/">Ayuda</a></li>
+          <li><a href="/reglamento/">Reglamento de pesca</a></li>
+          <li><a href="/valores/">Valores y categorías</a></li>
+          <li><a href="/multas/">Valores de multas</a></li>
+        </ul>
+      </div>
+
+      <!-- Columna 3 -->
+      <div class="col-6 col-md-4">
+        <h4 class="footer-heading">Sitios oficiales</h4>
+        <ul class="footer-links">
+          <li><a href="https://minpro.santacruz.gob.ar/pesca" target="_blank" rel="noreferrer">Secretaría de Pesca y Acuicultura</a></li>
+          <li><a href="https://www.santacruzpatagonia.gob.ar/" target="_blank" rel="noreferrer">Turismo en Santa Cruz</a></li>
+          <li><a href="https://www.hidro.gov.ar/observatorio/Astronomia.asp?op=10" target="_blank" rel="noreferrer">Salida y puesta del sol</a></li>
+          <li><a href="https://informatica.santacruz.gob.ar/" target="_blank" rel="noreferrer">Subsecretaría de Informática</a></li>
+          <li><a href="https://cap.santacruz.gob.ar/%C3%A1reas-protegidas" target="_blank" rel="noreferrer">Áreas Protegidas (CAP)</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Desarrollo del sistema -->
+  <div class="container px-4 py-3">
+    <div class="d-flex flex-column flex-sm-row justify-content-between align-items-center gap-2 small">
+      <div class="d-flex align-items-center gap-2 text-center text-sm-start">
+        <img src="/static/img/LogoSubse.png"
+             alt="Logo Subsecretaría de Informática"
+             style="height: 22px; width: auto;">
+        <span>
+          Desarrollado por
+          <strong>Subsecretaría de Informática</strong>
+        </span>
+      </div>
+      <div>
+        <a href="mailto:pesca@santacruz.gob.ar"
+           class="text-white text-decoration-none" style="opacity: 0.85;">
+          Soporte técnico: pesca@santacruz.gob.ar
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom -->
+  <div class="footer-bottom">
+    <div class="container px-4 d-flex flex-column flex-sm-row justify-content-between align-items-center gap-2">
+      <p class="mb-0">
+        © 2026 Gobierno de la Provincia de Santa Cruz. Todos los derechos reservados.
+      </p>
+      <p class="mb-0">
+        Secretaría de Estado de Pesca y Acuicultura - Subsecretaría de Informática
+      </p>
+    </div>
+  </div>
+
+</footer>
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="/static/js/frontend.js" defer></script>
+  <script src="/static/js/pesca-behaviors.js" defer></script>
+  
+  <script src="https://captcha.santacruz.gob.ar/static/js/captcha-widget.js" defer></script>
+  
+  
+  
+  
+
+</body>
+</html>
