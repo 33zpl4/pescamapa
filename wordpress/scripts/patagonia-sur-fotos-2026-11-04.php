@@ -8,7 +8,7 @@
  * the files live in wordpress/fotos/ and wp-script.yml copies them to /tmp/pm-fotos/.
  */
 
-$aplicar = false;
+$aplicar = true;
 $carpeta = '/tmp/pm-fotos';
 $fotos   = [
 	'rio-grande' => [
