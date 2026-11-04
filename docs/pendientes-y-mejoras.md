@@ -2,7 +2,7 @@
 
 Lista única de lo que hay que completar y de lo que conviene mejorar, ordenada por área. Reúne lo que dejó abierta la sesión del 4/11/2026 (Patagonia, temporada, correo, PESQA) y remite a la lista anterior de `docs/estado.md` ("Pendientes, en orden") para lo del Litoral y de las primeras semanas. **Quién:** *Claude* lo puede hacer solo; *Dueño* necesita una acción suya (abrir una página en el navegador, decidir, contactar); *Ambos* si hace falta una decisión y luego trabajo. **Prioridad:** 1 = esta semana, 2 = próximas dos semanas, 3 = cuando haya tiempo o tráfico.
 
-Cómo se trabaja cada ítem: `docs/nueva-ciudad.md` (guías), `docs/prestadores.md` (fichas), `docs/verification-map` no existe en este repo: la prueba de "hecho" es la corrida en verde y la lectura en vivo con `investigar.yml`.
+Cómo se trabaja cada ítem: `docs/nueva-ciudad.md` (guías) y `docs/prestadores.md` (fichas). La prueba de "hecho" es la corrida en verde y la lectura en vivo con `investigar.yml`.
 
 ## 1. Patagonia: contenido por completar
 
