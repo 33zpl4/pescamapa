@@ -7,7 +7,7 @@
  * "investigación propia a partir de datos públicos y proveedores asociados" (decisión del dueño, 5/11/2026).
  * Idempotente: una nota con la misma clave e idioma no se toca. Simulacro primero ($aplicar = false); se corre con wp-script.yml.
  */
-$aplicar = false;
+$aplicar = true;
 $actualizar = true;
 $solo = 'viaje-dorado-amigos-precios';
 $hoy     = '20261105';
