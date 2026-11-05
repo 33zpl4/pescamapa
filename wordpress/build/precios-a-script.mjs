@@ -4,7 +4,9 @@
 import { readFileSync, writeFileSync } from 'node:fs';
 const aplicar = process.argv.includes('--aplicar');
 const d = new URL('../contenido/precios/', import.meta.url).pathname;
-const j = l => JSON.stringify(JSON.parse(readFileSync(`${d}paginas.${l}.json`, 'utf8')));
+const es0 = JSON.parse(readFileSync(`${d}paginas.es.json`, 'utf8'));
+// Las claves, la especie y los tipos de bloque son del original: la traducción no los toca.
+const j = l => { const o = JSON.parse(readFileSync(`${d}paginas.${l}.json`, 'utf8')); o.paginas.forEach((p, i) => { p.clave = es0.paginas[i].clave; p.especie = es0.paginas[i].especie; p.bloques.forEach((b, k) => { b.t = es0.paginas[i].bloques[k].t; }); }); return JSON.stringify(o); };
 const php = String.raw`<?php
 /**
  * Cinco páginas de precios de paquetes de pesca (es/en/pt), 5/11/2026. Fuente única de contenido:
