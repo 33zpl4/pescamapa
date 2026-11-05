@@ -86,3 +86,10 @@ Cómo se trabaja cada ítem: `docs/nueva-ciudad.md` (guías) y `docs/prestadores
 - Precios solo con la fecha en que los publica el propio operador; sin precios de agencias (`docs/prestadores.md`).
 - Sin fotos descargadas de los sitios de los guías ni enlace a su Instagram en la ficha (1/11/2026).
 - La licencia de las fotos las aporta el dueño con crédito; no se verifica caso por caso (`docs/contenido.md`).
+
+### Páginas de precios (5/11/2026)
+- Hambaré: paquetes 3d/4d para grupos de 3, temporada de tarifas y un contacto para el botón; leer `paquete3diastrios.html` y `paquete4diastrios.html`.
+- Leer las tarifas de Karandá y Delta Lodge (Nervous Waters), Pirá "Rates 2025-26", Villa María y Despedida Lodge; tarifas de guías en Paso de la Patria y Goya; micros y vuelos; valor de la licencia de Corrientes.
+- Medición día 14 (19/11) y día 30 (5/12): `node scripts/consultar-ia.mjs`, mismas preguntas, carpeta `docs/investigacion/medicion-ia/`. Gemini con búsqueda: clave con `x-goog-api-key`.
+- Verificar con una captura que las tablas se ven bien en el celular (workflow `capturas.yml`).
+- Reemplazar el dato público por datos propios cuando haya acuerdos con prestadores (fila por fila en el JSON).

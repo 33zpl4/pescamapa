@@ -39,6 +39,12 @@ todas a nosotros (centralizar datos y cobrar comisión más adelante).
   sigue como notas PENDIENTE (no se ven). Investigación:
   `docs/investigacion/esquina.md`.
 
+## Al 5/11/2026: páginas de precios de paquetes (es/en/pt) y medición con APIs de IA
+
+- **Cinco páginas de precios en vivo** (notas de tipo guía, 15 en total): `/notas/viaje-pesca-dorado-con-amigos/` (la ancla), `/notas/cuanto-cuesta-viaje-pesca-dorado/` (escalera de noches de los lodges), `/notas/cuanto-cuesta-pesca-con-mosca-bariloche/`, `/notas/cuanto-cuesta-semana-pesca-trucha-patagonia/`, `/notas/cuanto-cuesta-pescar-tierra-del-fuego-calafate/`; en `/en/notes/…` y `/pt/notas/…`. Formato elegido porque es el que ChatGPT citó en la medición del día 0: respuesta corta arriba, tabla por noches y días de pesca con precio por persona, qué incluye y qué no, costo por día de pesca calculado, preguntas como títulos. **Decisión del dueño:** la fuente pública es "investigación propia a partir de datos públicos y proveedores asociados" con fecha de lectura; no se enlazan las páginas de cada precio. Fuentes exactas y errores de ChatGPT: `docs/investigacion/precios-paquetes-2026-11-05.md`. Contenido en `wordpress/contenido/precios/*.json`; script generado `wordpress/scripts/precios-paquetes-2026-11-05.php` (`wordpress/build/precios-a-script.mjs`; traducción con `traducir-precios.mjs`, números verificados).
+- **APIs de IA desde la sesión:** `scripts/consultar-ia.mjs` (ChatGPT con búsqueda web, Gemini por el endpoint compatible, sin búsqueda). Medición día 0 en `docs/investigacion/medicion-ia/2026-11-05/`: ChatGPT cita lodges con escalera de precios y no a Pescamapa; la corrida de Gemini salió vacía (corregido el script). Repetir a los 14 y 30 días. Gemini con búsqueda necesita la clave en el encabezado `x-goog-api-key` (entorno o secreto del repo).
+- **Lección:** ChatGPT con búsqueda inventó o desactualizó varios precios (Futa Lodge es chileno, Calafate con tarifa vieja, El Tránsito sin precio publicado). Nunca se publica un precio sin leer la página del operador con `investigar.yml`.
+
 ## Al 30/10/2026 (leer primero)
 
 - **Lista única de pendientes y mejoras: `docs/pendientes-y-mejoras.md`** (4/11/2026): Patagonia por completar, producto, prestadores, medición, correo y operación, con quién la hace y prioridad. La lista "Pendientes, en orden" de más abajo queda como historial.
