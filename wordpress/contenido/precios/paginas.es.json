@@ -1,0 +1,214 @@
+{
+"fecha": "20261105",
+"cierre": "<strong>Cómo armamos esta página.</strong> Es investigación propia a partir de datos públicos y proveedores asociados. Los precios son los publicados o informados a los pasajeros al 5 de noviembre de 2026, en la moneda en que se publican. Los totales y los precios por día de pesca son cálculos nuestros. Las tarifas cambian: confirmalas antes de reservar. Si sos operador y tu tarifa cambió, escribinos y la actualizamos.",
+"paginas": [
+{
+"clave": "viaje-dorado-amigos-precios",
+"slug": "viaje-pesca-dorado-con-amigos",
+"especie": "dorado",
+"titulo": "Viaje de pesca de dorado con amigos: cuántos días, cuánto cuesta y dónde alojarse (2026/27)",
+"bajada": "Tres formas de armar un viaje de dorado entre amigos en el Paraná, con el precio por persona de cada una, qué incluye y cuántos días conviene.",
+"seo_title": "Viaje de pesca de dorado con amigos: precios 2026/27",
+"seo_description": "Cuánto cuesta un viaje de pesca de dorado con amigos en Argentina: desde US$ 605 por persona en una posada hasta US$ 4.050 en un lodge. Días y qué incluye.",
+"datos": [
+"Posada en Esquina (Corrientes): 2 días de pesca y 3 noches desde US$ 605 por persona en un grupo de tres y desde US$ 705 en uno de dos, con comidas, lancha, guía y licencia.",
+"Barco-hotel en el Delta del Paraná: 3 noches desde US$ 1.260 y 4 noches desde US$ 1.680 por persona.",
+"Lodge todo incluido en Corrientes: 3 noches y 2 días de pesca desde US$ 4.050 por persona; 7 noches y 6 días US$ 7.950.",
+"Cuantos más días, más barato sale cada día de pesca: en una posada de Esquina baja de US$ 353 a US$ 326 por persona entre 2 y 4 días.",
+"La veda extraordinaria del Paraná en Corrientes se levantó el 29 de septiembre de 2026."
+],
+"bloques": [
+{"t":"p","h":"<strong>Respuesta corta.</strong> Para un viaje de dorado con amigos conviene <strong>de 2 a 4 días de pesca</strong>. El precio por persona depende más del tipo de alojamiento que de los días: <strong>desde US$ 605 a US$ 705</strong> en una posada (2 días de pesca, 3 noches), <strong>desde US$ 1.260</strong> en un barco-hotel del Delta y <strong>desde US$ 4.050</strong> en un lodge todo incluido. Todos los precios son por persona, en dólares, sin pasajes."},
+{"t":"h2","h":"Tres formas de hacerlo, con precio"},
+{"t":"tabla","cab":["Formato","Dónde","Noches y días de pesca","Desde, por persona","Qué incluye"],"filas":[
+["<strong>Posada con paquete</strong>","Esquina, Corrientes","3 noches, 2 días (grupo de 2)","US$ 705","Alojamiento, comidas, bebidas, lancha, guía, carnada, combustible y licencia"],
+["<strong>Posada con paquete</strong>","Esquina, Corrientes","3 noches, 2 días (grupo de 3)","US$ 605","Lo mismo, con el precio repartido entre tres"],
+["<strong>Barco-hotel</strong>","Delta superior del Paraná","3 noches, 2 días y medio","US$ 1.260","Alojamiento a bordo, comidas, pesca guiada"],
+["<strong>Barco-hotel</strong>","Delta superior del Paraná","4 noches, 3 días y medio","US$ 1.680","Lo mismo, un día más"],
+["<strong>Lodge todo incluido</strong>","Paraná, Corrientes","3 noches, 2 días","US$ 4.050","Alojamiento doble, todas las comidas y bebidas, guía y equipo de préstamo"],
+["<strong>Lodge todo incluido</strong>","Paraná, Corrientes","7 noches, 6 días","US$ 7.950","Lo mismo; no incluye licencia, traslados ni pasajes"]
+]},
+{"t":"p","h":"Precios publicados o informados al 5 de noviembre de 2026, por persona en habitación doble y guía compartido. Las tarifas de cada lodge por cantidad de noches están en <a href=\"{n:precio-viaje-dorado-lodge}\">cuánto cuesta un viaje de pesca de dorado</a>."},
+{"t":"h2","h":"¿Cuántos días conviene para un viaje de dorado con amigos?"},
+{"t":"p","h":"Nuestra opinión, con los números publicados: <strong>3 noches y 2 días de pesca</strong> si el tiempo es corto, porque un día de viento o lluvia pesa menos que en un viaje de un solo día; y <strong>4 noches y 3 días</strong> si viajan de lejos, porque el costo por día de pesca baja y el pasaje ya está pagado. En una posada de Esquina, el costo por persona y por día de pesca va de US$ 353 (2 días) a US$ 337 (3 días) y US$ 326 (4 días), en un grupo de dos. Son cálculos nuestros."},
+{"t":"h2","h":"Paquetes de varios días en una posada de Esquina"},
+{"t":"tabla","cab":["Formato","Grupo en la lancha","Por persona","Por día de pesca","Total del grupo"],"filas":[
+["2 días de pesca, 3 noches","2","US$ 705","US$ 353","US$ 1.410"],
+["3 días de pesca, 4 noches","2","US$ 1.010","US$ 337","US$ 2.020"],
+["4 días de pesca, 5 noches","2","US$ 1.305","US$ 326","US$ 2.610"],
+["2 días de pesca, 3 noches","3","US$ 605","US$ 303","US$ 1.815"]
+]},
+{"t":"p","h":"Posada Hambaré, Ruta Nacional 12, km 688, Esquina. Precios \"desde\" al 4 de noviembre de 2026; la posada no publica la temporada de esas tarifas. Incluye alojamiento; desayuno, almuerzo y cena; refrescos, agua, cerveza y vinos sin límite; lancha, guía de pesca, dos docenas de morenas por persona, 50 litros de combustible y licencia de pesca. Los totales y el costo por día de pesca son cálculos nuestros."},
+{"t":"h2","h":"¿Cuánto cuesta para tu grupo?"},
+{"t":"tabla","cab":["Amigos","Cómo se reparte","Total con los precios publicados"],"filas":[
+["2","Una lancha, 2 días y 3 noches","US$ 1.410"],
+["3","Una lancha, 2 días y 3 noches","US$ 1.815"],
+["4","Dos lanchas de 2","US$ 2.820"],
+["6","Dos lanchas de 3","US$ 3.630"]
+]},
+{"t":"p","h":"Cálculo nuestro, sin pasajes ni equipo. Para 4 y 6 amigos hay que confirmar que la posada tenga dos lanchas libres en tus fechas y que cada grupo conserve su precio."},
+{"t":"h2","h":"¿Y si prefieren una salida de un día?"},
+{"t":"p","h":"Una guía de Esquina publica la jornada completa en lancha con guía <strong>desde $ 480.000 por lancha</strong>, o $ 160.000 por persona si van tres (1 de noviembre de 2026, en pesos). En Paso de la Patria ningún operador que revisamos publica tarifa de salida: las ofertas dicen \"todo incluido\" o \"consultar\". No fijamos el tipo de cambio entre pesos y dólares: confirmalo al reservar."},
+{"t":"h2","h":"¿Hay veda en el Paraná en Corrientes ahora?"},
+{"t":"tabla","cab":["Fecha","Qué pasó"],"filas":[
+["30 de mayo de 2026","Disposición 618: veda entre los km 1232 y 1238, por una concentración de surubíes"],
+["16 de septiembre de 2026","Se amplía a los km 1180 a 1239, jurisdicción de Paso de la Patria, por dorados y sábalos"],
+["29 de septiembre de 2026, 13:00","Disposición 1054: se levanta la veda y se restablecen las modalidades de la Disposición 853/22"]
+]},
+{"t":"p","h":"Dirección de Recursos Naturales de Corrientes. No encontramos una veda posterior al 4 de noviembre de 2026, pero la norma permite reimponerla si reaparecen concentraciones de peces: preguntale a tu guía antes de salir. Desde la Disposición 853/22 el dorado y el surubí se pescan con devolución obligatoria en Corrientes."},
+{"t":"h2","h":"¿Necesito licencia de pesca?"},
+{"t":"p","h":"Sí. En Corrientes se saca la licencia de pesca deportiva en línea y se lleva con el documento. En los paquetes de posada de Esquina y en algunos lodges ya está incluida; en otros no (los lodges de Corrientes de la tabla de noches no la incluyen). Siempre preguntalo."},
+{"t":"p","h":"<strong>¿Querés que te ayudemos a armarlo?</strong> Contanos fechas, cantidad de amigos y presupuesto en <a href=\"{viaje}\">el formulario del viaje</a> y te escribimos con opciones de guía y alojamiento, sin costo ni compromiso."},
+{"t":"h2","h":"Qué no cubre todavía esta página"},
+{"t":"p","h":"Los paquetes de 3 y 4 días para grupos de tres, los horarios de micros y vuelos desde Buenos Aires, el valor de la licencia de Corrientes y un calendario por mes con fuente técnica. Los agregamos cuando los verifiquemos con una fecha."}
+]},
+{
+"clave": "precio-viaje-dorado-lodge",
+"slug": "cuanto-cuesta-viaje-pesca-dorado",
+"especie": "dorado",
+"titulo": "Cuánto cuesta un viaje de pesca de dorado en Argentina: lodges todo incluido, por cantidad de noches (2026/27)",
+"bajada": "Tarifas por persona de lodges de dorado en Corrientes, Iberá, el Paraná de Santa Fe y el Delta, con lo que incluye cada una y el costo por día de pesca.",
+"seo_title": "Cuánto cuesta un viaje de pesca de dorado (2026/27)",
+"seo_description": "Precios de lodges de dorado en Argentina para 2026/27: de US$ 4.050 por 3 noches a US$ 7.950 por 7 noches, por persona, con lo que incluye y el costo por día.",
+"datos": [
+"Un lodge todo incluido del Alto Paraná en Corrientes cuesta de US$ 4.050 (3 noches, 2 días de pesca) a US$ 7.950 (7 noches, 6 días) por persona en doble.",
+"Cada día de pesca extra baja el precio por día: de US$ 2.025 con 2 días a US$ 1.325 con 6 días en el mismo lodge.",
+"Esteros del Iberá: un lodge publica 7 noches y 6 días desde US$ 6.400 por persona, en habitación individual.",
+"Paraná de Santa Fe: 4 días de pesca desde US$ 3.600; una oferta de 3 días y 4 noches a US$ 2.500 en fechas elegidas de diciembre de 2026 a febrero de 2027.",
+"Las licencias de pesca y los traslados suelen quedar fuera del precio: sumalos."
+],
+"bloques": [
+{"t":"p","h":"<strong>Respuesta corta.</strong> Un viaje de dorado en un lodge todo incluido en Argentina cuesta, por persona y en habitación doble, <strong>de US$ 4.050 por 3 noches y 2 días de pesca a US$ 7.950 por 7 noches y 6 días</strong> en el Alto Paraná (Corrientes). En Iberá y en el Paraná de Santa Fe hay opciones de US$ 2.500 a US$ 6.400. Para un viaje más barato, mirá <a href=\"{n:viaje-dorado-amigos-precios}\">el viaje con amigos en posada</a> (desde US$ 605)."},
+{"t":"h2","h":"Escalera de precios por cantidad de noches (Paraná, Corrientes)"},
+{"t":"tabla","cab":["Noches y días de pesca","Por persona","Por día de pesca (cálculo nuestro)"],"filas":[
+["3 noches, 2 días","US$ 4.050","US$ 2.025"],
+["4 noches, 3 días","US$ 5.350","US$ 1.783"],
+["5 noches, 4 días","US$ 6.495","US$ 1.624"],
+["6 noches, 5 días","US$ 7.595","US$ 1.519"],
+["7 noches, 6 días","US$ 7.950","US$ 1.325"]
+]},
+{"t":"p","h":"Tarifa 2026/27 de dos lodges del Alto Paraná en Corrientes (uno abierto de octubre de 2026 a mayo de 2027 y otro todo el año), con el mismo precio. Por persona, en habitación doble y guía compartido. Incluye alojamiento, todas las comidas, vinos, cerveza y bebidas, guía profesional y equipo de préstamo (cañas, reeles y líneas). No incluye pasajes, traslados, licencia de pesca, lavandería ni propinas. Habitación y lancha individuales: 60 % de recargo. Acompañante que no pesca: US$ 650 por noche. Día completo de pesca el día de llegada o salida: US$ 950 por lancha."},
+{"t":"h2","h":"Otros lodges y formatos"},
+{"t":"tabla","cab":["Dónde","Formato","Precio por persona","Condiciones"],"filas":[
+["Itatí, Corrientes (Alto Paraná)","7 noches, 6 días","US$ 7.850","Doble. Incluye vuelos chárter desde Buenos Aires, traslados, licencia, moscas y equipo. Temporada 2026/27"],
+["Itatí, Corrientes (Alto Paraná)","4 noches, 3 días","US$ 4.050","Igual que arriba"],
+["Esteros del Iberá, Corrientes","7 noches, 6 días","US$ 6.400","Habitación individual y guía compartido; tarifa de lanzamiento 2x1 según el lodge"],
+["Esteros del Iberá, Corrientes","7 noches, 6 días (tarifa de 2025)","US$ 6.340","Doble; incluye traslado desde Corrientes y licencia. Tarifa publicada para septiembre a mayo de 2025: reconfirmar"],
+["Paraná, Santa Fe","4 días de pesca","desde US$ 3.600","Agosto a abril"],
+["Paraná, Santa Fe","3 días y 4 noches (oferta)","US$ 2.500","Fechas elegidas de diciembre de 2026 a febrero de 2027"],
+["Delta superior del Paraná (barco-hotel)","3 noches, 2 días y medio","desde US$ 1.260","Catamarán para 8 pasajeros"],
+["Delta superior del Paraná (barco-hotel)","4 noches, 3 días y medio","desde US$ 1.680","Igual que arriba"]
+]},
+{"t":"p","h":"Precios publicados o informados al 5 de noviembre de 2026, en dólares, tal como los muestra cada operador. Cada operador incluye cosas distintas: comparar solo el número engaña."},
+{"t":"h2","h":"¿Cuántos días conviene?"},
+{"t":"p","h":"El precio por día de pesca baja con cada día extra: en la escalera de arriba pasa de US$ 2.025 con 2 días a US$ 1.325 con 6. Si el presupuesto manda, 3 noches y 2 días es el mínimo razonable; si viajás de lejos, 5 noches y 4 días ya cubre un día de mal tiempo sin perder la semana."},
+{"t":"h2","h":"¿Qué suele quedar fuera del precio?"},
+{"t":"lista","items":["<strong>La licencia de pesca</strong>: en Corrientes se saca en línea; algunos lodges la incluyen y otros no.","<strong>Pasajes y traslados</strong> hasta el lodge, salvo que figuren como incluidos.","<strong>Propinas</strong> para guías y personal.","<strong>El recargo individual</strong>: si viajás solo y querés habitación y lancha propias, el recargo llega al 60 %."]},
+{"t":"p","h":"<strong>¿Querés comparar con tu fecha y tu grupo?</strong> Escribinos en <a href=\"{viaje}\">el formulario del viaje</a> y te devolvemos opciones, sin costo ni compromiso."}
+]},
+{
+"clave": "precio-pesca-bariloche-limay",
+"slug": "cuanto-cuesta-pesca-con-mosca-bariloche",
+"especie": "trucha",
+"titulo": "Cuánto cuesta un día de pesca con mosca en Bariloche y el Río Limay (2026/27)",
+"bajada": "Precio de una jornada de pesca con guía en el Río Limay: en dólares y en pesos, qué incluye, cuánto cuesta la licencia y qué cambia si van dos.",
+"seo_title": "Cuánto cuesta pescar en Bariloche y el Limay (2026/27)",
+"seo_description": "Precio de un día de pesca con mosca con guía en el Río Limay, Bariloche: de US$ 500 a US$ 545 por bote en dólares y desde $ 666.000 en pesos. Qué incluye.",
+"datos": [
+"Un día completo de pesca con mosca en el Limay con guía y bote cuesta entre US$ 500 y US$ 545 (un pescador), según el operador.",
+"Para dos pescadores en el mismo bote, un operador publica US$ 520: el segundo pescador suma solo US$ 20.",
+"En pesos, un guía de plataforma de reservas publica $ 666.000 por día para hasta dos personas (marzo de 2027).",
+"La licencia de pesca suele estar fuera del precio: un operador informa US$ 30 por día para extranjeros, US$ 90 por semana y US$ 180 por temporada.",
+"La mejor época que informa un operador va de noviembre a mayo."
+],
+"bloques": [
+{"t":"p","h":"<strong>Respuesta corta.</strong> Un día completo de pesca con mosca con guía en el Río Limay, a unos 45 minutos de Bariloche, cuesta <strong>entre US$ 500 y US$ 545 por bote</strong>, y <strong>$ 666.000</strong> en pesos en una plataforma de reservas (hasta dos personas). La licencia de pesca casi siempre se paga aparte."},
+{"t":"h2","h":"Precios de una jornada en el Río Limay"},
+{"t":"tabla","cab":["Operador (tipo)","Duración","Precio","Incluye","No incluye"],"filas":[
+["Guía de pesca con mosca (operador local)","Día completo, 8 a 10 horas","US$ 500 un pescador; US$ 520 dos pescadores","Bote, equipo de pesca, almuerzo patagónico con vino, refrescos, cerveza y traslados","Licencia de pesca y propinas"],
+["Experiencia de pesca en el Limay (agencia de Bariloche)","Medio día o día completo","Desde US$ 545","Embarcación para hasta 2 personas, traslado desde hoteles de Bariloche, guía bilingüe, equipo completo, refrigerio o almuerzo con bebidas","Licencia, propinas y vuelos"],
+["Guía en plataforma de reservas","9 horas (08:00 a 17:00), hasta 2 personas","$ 666.000 por día (marzo de 2027)","Guía, embarcación, almuerzo, equipos y traslados","Licencia y propinas"]
+]},
+{"t":"p","h":"Precios publicados o informados al 5 de noviembre de 2026. Los precios en dólares y en pesos son de operadores distintos y no se convierten entre sí: el tipo de cambio lo fija cada uno al reservar."},
+{"t":"h2","h":"¿Cuánto cuesta ir de a dos?"},
+{"t":"p","h":"En el operador que publica las dos tarifas, <strong>un pescador paga US$ 500 y dos pescadores en el mismo bote pagan US$ 520 en total</strong>: el segundo pescador agrega solo US$ 20. Por persona, ir de a dos sale casi a la mitad (cálculo nuestro: US$ 260 por persona)."},
+{"t":"h2","h":"¿Cuánto cuesta la licencia de pesca?"},
+{"t":"p","h":"Un operador de Bariloche informa estos valores de la licencia: <strong>US$ 10 por día para argentinos y US$ 30 por día para extranjeros; US$ 90 por semana y US$ 180 por temporada para extranjeros; US$ 30 por temporada para argentinos</strong>. Es la información de ese operador, no una tarifa oficial: confirmala con la autoridad de la provincia antes de pescar."},
+{"t":"h2","h":"¿Cuándo conviene ir?"},
+{"t":"p","h":"Un operador local indica como mejor época de noviembre a mayo. Es la descripción de un operador; la temporada oficial y las vedas están en nuestra <a href=\"{n:cuando-pescar-trucha-patagonia}\">nota de temporada de la trucha en la Patagonia</a>."},
+{"t":"p","h":"<strong>¿Querés que te ayudemos a elegir?</strong> Contanos fechas y cuántos son en <a href=\"{viaje}\">el formulario del viaje</a> y te escribimos con opciones de guía, sin costo ni compromiso."}
+]},
+{
+"clave": "precio-semana-trucha-patagonia-norte",
+"slug": "cuanto-cuesta-semana-pesca-trucha-patagonia",
+"especie": "trucha",
+"titulo": "Cuánto cuesta una semana de pesca de trucha en Neuquén y Chubut: lodges todo incluido (2026/27)",
+"bajada": "Tarifas por persona de lodges de trucha en Junín de los Andes, Cholila, Futaleufú y Trevelin: de 3 a 7 noches, con lo que incluye cada uno.",
+"seo_title": "Cuánto cuesta una semana de pesca de trucha (2026/27)",
+"seo_description": "Precio de una semana de pesca con mosca en lodges de Neuquén y Chubut en 2026/27: de US$ 3.950 por 3 noches a US$ 9.200 por 7 noches, por persona.",
+"datos": [
+"Un lodge del río Chimehuín (Junín de los Andes, Neuquén) cuesta de US$ 3.950 (3 noches, 2 días de pesca) a US$ 6.950 (7 noches, 6 días) por persona, de diciembre de 2026 a abril de 2027.",
+"Una cadena de lodges en Chubut publica 7 noches y 6 días de pesca desde US$ 6.545 (Trevelin) hasta US$ 9.200 (Cholila), en temporada alta.",
+"Una semana organizada en Trevelin, del 6 al 13 de marzo de 2027, cuesta US$ 5.800 por pescador e incluye licencias y traslados desde Esquel.",
+"Estos precios son por persona en habitación doble y con guía compartido."
+],
+"bloques": [
+{"t":"p","h":"<strong>Respuesta corta.</strong> Una semana de pesca con mosca en un lodge todo incluido de la Patagonia argentina cuesta, por persona y en habitación doble, <strong>de US$ 5.800 a US$ 9.200 por 7 noches y 6 días de pesca</strong>. En Neuquén, un lodge del Chimehuín publica toda la escalera, <strong>de US$ 3.950 por 3 noches a US$ 6.950 por 7</strong>."},
+{"t":"h2","h":"Neuquén: escalera de precios por noches (río Chimehuín, Junín de los Andes)"},
+{"t":"tabla","cab":["Noches y días de pesca","Por persona","Por día de pesca (cálculo nuestro)"],"filas":[
+["3 noches, 2 días","US$ 3.950","US$ 1.975"],
+["4 noches, 3 días","US$ 4.950","US$ 1.650"],
+["5 noches, 4 días","US$ 5.750","US$ 1.438"],
+["6 noches, 5 días","US$ 6.350","US$ 1.270"],
+["7 noches, 6 días","US$ 6.950","US$ 1.158"]
+]},
+{"t":"p","h":"Tarifa de diciembre de 2026 a abril de 2027, por persona, en habitación doble y guía compartido. La temporada oficial abre el 1 de noviembre, pero este lodge abre sus puertas normalmente el 1 de diciembre."},
+{"t":"h2","h":"Chubut: semana de 7 noches y 6 días (Cholila, Futaleufú y Trevelin)"},
+{"t":"tabla","cab":["Lodge","Zona","Por persona, temporada alta","Condiciones"],"filas":[
+["Lodge de Cholila","Lago Cholila, Chubut","US$ 9.200","Todo incluido, doble, guía compartido"],
+["Lodge de Futaleufú","Futaleufú, Chubut","US$ 8.750","Todo incluido, doble, guía compartido"],
+["Lodge de Trevelin","Trevelin, Chubut","US$ 6.545","Todo incluido, doble, guía compartido"],
+["Semana organizada en Trevelin","Río Futaleufú, 6 al 13 de marzo de 2027","US$ 5.800","7 noches, 6 días de pesca, comidas, bebidas, traslados desde Esquel y licencias"]
+]},
+{"t":"p","h":"Precios publicados o informados al 5 de noviembre de 2026. Los lodges de la cadena publican semanas de sábado a sábado; los precios cambian según la fecha y algunos lodges aceptan estadías de otra duración. Incluyen alojamiento, comidas, bebidas y guía. La licencia y los pasajes se confirman con cada operador."},
+{"t":"h2","h":"¿Cuántos días conviene?"},
+{"t":"p","h":"En el lodge con escalera completa de Neuquén, cada día de pesca extra baja el precio por día: de US$ 1.975 con 2 días a US$ 1.158 con 6. Una estadía de 4 noches y 3 días es lo más corto que justifica el viaje; una semana completa aprovecha mejor el traslado."},
+{"t":"h2","h":"¿Cuándo es la temporada?"},
+{"t":"p","h":"Cada provincia fija sus fechas. Las que verificamos, con su fuente, están en <a href=\"{n:cuando-pescar-trucha-patagonia}\">nuestra nota de temporada</a> y en el <a href=\"{calendario}\">calendario de pesca</a>."},
+{"t":"p","h":"<strong>¿Querés que te ayudemos a elegir lodge?</strong> Escribinos en <a href=\"{viaje}\">el formulario del viaje</a> y te devolvemos opciones según tu fecha, sin costo ni compromiso."}
+]},
+{
+"clave": "precio-pesca-patagonia-sur",
+"slug": "cuanto-cuesta-pescar-tierra-del-fuego-calafate",
+"especie": "trucha",
+"titulo": "Cuánto cuesta pescar en Tierra del Fuego y El Calafate: trucha de mar y salidas de un día (2026/27)",
+"bajada": "El precio de una semana de trucha de mar en un lodge de Río Grande y de una salida de medio día o día completo en El Calafate, con lo que incluye cada una.",
+"seo_title": "Cuánto cuesta pescar en Tierra del Fuego y Calafate",
+"seo_description": "Precio de pescar en la Patagonia sur: una semana de trucha de mar en Río Grande desde US$ 12.950 y una salida de día en El Calafate desde $ 440.000.",
+"datos": [
+"Una semana en un lodge de trucha de mar en Río Grande (Tierra del Fuego) cuesta de US$ 12.950 a US$ 14.950 por persona, según la fecha, en la temporada 2026/27.",
+"La tarifa de ese lodge es en habitación single y con guía compartido, e incluye comidas, bebidas y traslado desde el aeropuerto.",
+"En El Calafate, la salida de medio día (5 horas) cuesta $ 440.000 por pescador y la de día completo (9 horas) $ 720.000.",
+"En El Calafate se pesca desde la orilla, vadeando; el acompañante que no pesca paga $ 185.000 el medio día y $ 335.000 el día completo."
+],
+"bloques": [
+{"t":"p","h":"<strong>Respuesta corta.</strong> En la Patagonia sur hay dos extremos con precio publicado. Una <strong>semana de trucha de mar en un lodge de Río Grande</strong> (Tierra del Fuego) cuesta <strong>de US$ 12.950 a US$ 14.950 por persona</strong>. Una <strong>salida de día en El Calafate</strong> cuesta <strong>$ 440.000 (medio día) o $ 720.000 (día completo) por pescador</strong>, en pesos."},
+{"t":"h2","h":"Trucha de mar en Río Grande: semana en un lodge"},
+{"t":"tabla","cab":["Semana","Por persona","Condiciones"],"filas":[
+["26 de diciembre al 9 de enero","US$ 13.950","Habitación single, guía compartido"],
+["9 de enero al 20 de marzo","US$ 14.950","Habitación single, guía compartido"],
+["20 de marzo al 17 de abril","US$ 12.950","Habitación single, guía compartido"]
+]},
+{"t":"p","h":"Tarifa de un lodge de Río Grande para la temporada del 26 de diciembre de 2026 al 17 de abril de 2027, leída el 4 de noviembre de 2026. Incluye alojamiento, traslado desde el aeropuerto de Río Grande, todas las comidas y bebidas, guía profesional (dos pescadores por guía) y equipo de préstamo. No incluye pasajes, la licencia de pesca (el lodge calcula unos US$ 550 por pescador), la lavandería ni las propinas. Pide un depósito del 50 % y no es reembolsable. Los demás operadores que encontramos en Río Grande no publican tarifa; la guía del destino está en <a href=\"{n:rio-grande}\">pescar en Río Grande</a>."},
+{"t":"h2","h":"El Calafate: salida de medio día o de día completo"},
+{"t":"tabla","cab":["Salida","Pescador","Acompañante que no pesca"],"filas":[
+["Medio día (5 horas)","$ 440.000","$ 185.000"],
+["Día completo (9 horas)","$ 720.000","$ 335.000"]
+]},
+{"t":"p","h":"Precios en pesos publicados por una agencia de El Calafate, al 5 de noviembre de 2026. Incluyen traslado desde el hotel, guía de pesca, equipo completo para pesca con mosca o spinning, bebidas, bebidas calientes, seguro y permisos de pesca. La pesca es con devolución, desde la orilla, vadeando; no se pesca embarcado. Los lugares quedan a unos 50 minutos de El Calafate y se definen el mismo día según el clima y el nivel del agua."},
+{"t":"h2","h":"¿Cuánto hay que sumar fuera del precio?"},
+{"t":"lista","items":["<strong>Pasajes</strong> hasta Río Grande o El Calafate: el precio del lodge empieza en el aeropuerto.","<strong>La licencia de pesca</strong> en Tierra del Fuego: el lodge calcula unos US$ 550 por pescador por semana.","<strong>Propinas</strong> para guías y personal."]},
+{"t":"p","h":"<strong>¿Querés comparar con otros destinos?</strong> Mirá cuánto cuesta una <a href=\"{n:precio-semana-trucha-patagonia-norte}\">semana de trucha en Neuquén y Chubut</a>, o escribinos en <a href=\"{viaje}\">el formulario del viaje</a>."}
+]}
+]
+}
