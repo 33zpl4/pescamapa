@@ -1,0 +1,25 @@
+# paquetes-precios-20261105: 2026-11-05
+
+Agente: ResearchBot/1.0 (editorial research; 1 request/1.5 s; obeys robots.txt)
+Páginas pedidas: 18 · modo: navegador · robots.txt respetado
+
+| URL | HTTP | Título | H1 | Palabras | Datos estructurados | Archivo / nota |
+| --- | --- | --- | --- | --- | --- | --- |
+| https://www.paranasunrise.com/es/dorado-fishing-2/ | 403 |  |  | 10 |  | 01-www-paranasunrise-com-es-dorado-fishing-2.md |
+| https://eltransitoibera.com/en/fishing/ | 200 | Golden Dorado Fishing in the Iberá Wetlands — El Tránsito Lodge | Fishing in the Iberá Wetlands | 3476 | Place, LodgingBusiness/Organization, WebSite, ImageObject, BreadcrumbList, WebPage, Person, Article, LodgingBusiness | 02-eltransitoibera-com-en-fishing.md |
+| https://argentinafishinglodges.com/ | 200 | Fishing in Argentina / Golden Dorado and Patagonia Trout | Fishing in Argentina | 297 | Organization, WebSite, WebPage, ItemList | 03-argentinafishinglodges-com.md |
+| https://www.nervouswaters.com/the-lodges/suinda-lodge/ | 200 | Suindá Lodge / Fly Fishing for Golden Dorado in Corrientes | Suindá Lodge Upper Paraná Golden Dorado Fly Fishing | 6495 | BreadcrumbList, Organization, WebPage, WebSite, Product, VideoObject, LocalBusiness, ItemList | 04-www-nervouswaters-com-the-lodges-suinda-lodge.md |
+| https://www.nervouswaters.com/the-lodges/pira-lodge/ | 200 | Pirá Lodge / Golden Dorado Fishing Corrientes / Nervous Waters | PIRÁ LODGE Iberá Marshes Golden Dorado Fly Fishing | 6832 | BreadcrumbList, Organization, WebPage, WebSite, Product, FAQPage, VideoObject, LocalBusiness, ItemList | 05-www-nervouswaters-com-the-lodges-pira-lodge.md |
+| https://www.nervouswaters.com/the-lodges/futa-lodge/ | 200 | Futa Lodge / Best Rainbow and Brown Trout Fishing in Chile | Futa Lodge Chilean Patagonia Fly Fishing / Family Adventure Lodge | 7709 | BreadcrumbList, Organization, WebPage, WebSite, Product, LocalBusiness, ItemList | 06-www-nervouswaters-com-the-lodges-futa-lodge.md |
+| https://www.nervouswaters.com/the-lodges/chime-lodge/ | 200 | Rainbow & Brown Trout Fishing Argentina / Chime Lodge | Chime Lodge Patagonia Fly Fishing | 7532 | BreadcrumbList, Organization, WebPage, WebSite, LocalBusiness, ItemList | 07-www-nervouswaters-com-the-lodges-chime-lodge.md |
+| https://www.patagoniaflyfishinglodge.com/futaleufu-fly-fishing-packages.html | 200 | Packages & Rates / Patagonia Fly Fishing Lodge | Packages & Rates | 1891 | Organization | 08-www-patagoniaflyfishinglodge-com-futaleufu-fly-fishing-packages-html.md |
+| https://www.isolationoutfitters.com/trips/p/challhuaquen-lodge-hosted-week-march-2027 | 200 | Challhuaquen Lodge Hosted Week / Patagonia March 2027 — Isolation Outfitters | Challhuaquen Lodge Hosted Week, March 2027 | 361 | WebSite, Organization, LocalBusiness, Product | 09-www-isolationoutfitters-com-trips-p-challhuaquen-lodge-hosted-week-march-2027.md |
+| https://barilochefishingtrips.com/es/viajes/guia-de-pesca-con-mosca-en-el-rio-limay-bariloche-patagonia-dia-completo/ | 200 | Fly Fishing Guide Limay River - Bariloche Patagonia Argentina | Dias Completos Rios Limay | 1425 | WebPage, ImageObject, BreadcrumbList, WebSite, Organization | 10-barilochefishingtrips-com-es-viajes-guia-de-pesca-con-mosca-en-el-rio-limay-bari.md |
+| https://barilochefishingguides.com/ | 200 | FLY FISHING GUIDES BARILOCHE PATAGONIA ARGENTINA | FLY FISHING OUTFITTERS BARILOCHE PATAGONIA ARGENTINA | 553 |  | 11-barilochefishingguides-com.md |
+| https://pescar.pro/salidas/rio-limay | 200 | Rio Limay — Río Negro / Pescar SD | Rio Limay | 348 | Organization, WebSite, ImageObject, BreadcrumbList, WebPage, TouristTrip | 12-pescar-pro-salidas-rio-limay.md |
+| https://www.elorigen.travel/experiencias/pesca-rio-limay | 200 | El Origen — Donde empieza todo | Pesca con Mosca — Río Limay | 269 | TravelAgency | 13-www-elorigen-travel-experiencias-pesca-rio-limay.md |
+| https://calafatetravel.com/producto/pesca-en-calafate/ | 200 | Pesca deportiva en El Calafate – Experiencia premium 2025 / Salum Travel | Pesca en El Calafate | 1213 | Place, TravelAgency/Organization, WebSite, ImageObject, BreadcrumbList, ItemPage, Product | 14-calafatetravel-com-producto-pesca-en-calafate.md |
+| https://pointeroutfitters.com/uguay-lodge/ | 200 | Uguay Lodge - Pointer Outfitters / Global Hunting & Fishing Adventures | Uguay Lodge | 2189 | WebPage, ImageObject, BreadcrumbList, WebSite, Organization | 15-pointeroutfitters-com-uguay-lodge.md |
+| https://flyfishingcaribe.com/programa-detalle.php?id=98&lang=es | 200 | La Alondra Lodge - Esteros del Iberá · Centro y Norte, Argentina Agua Dulce · Fly Fishing Caribe |  | 2024 |  | 16-flyfishingcaribe-com-programa-detalle-php.md |
+| https://farbank.com/products/fly-water-travel-itati-lodge | 200 | Itati Lodge / Fly Water Travel | Itati Lodge | 1765 | Organization, Brand | 17-farbank-com-products-fly-water-travel-itati-lodge.md |
+| https://www.4tourists.com.ar/paquete/pesca_parana_golden_dorado | 200 | Pesca en el Río Paraná abordo del Golden Dorado River Cruiser | Pesca en el Río Paraná abordo del Golden Dorado River Cruiser | 3261 |  | 18-www-4tourists-com-ar-paquete-pesca-parana-golden-dorado.md |
