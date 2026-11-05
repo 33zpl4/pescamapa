@@ -45,7 +45,7 @@
 
 ## Pendiente
 
-- Hambaré: paquetes 3d/4d para grupos de 3 (páginas `paquete3diastrios.html`, `paquete4diastrios.html` no leídas) y la temporada de sus tarifas; un número de teléfono/WhatsApp de contacto para el CTA.
+- Hambaré: la temporada de sus tarifas. Los paquetes 3d/4d para grupos de 3 se leyeron el 5/11/2026 (US$ 855 y US$ 1.105) y están en la nota ancla.
 - Precios de salidas de un día en Paso de la Patria y Goya (ningún operador los publica); micros/vuelos; valor de la licencia de Corrientes.
 - Rate sheets de Karandá y Delta Lodge (Nervous Waters), Pirá "Rates 2025-26 PDF", Villa María Lodge (trucha de mar, Río Gallegos) y Despedida Lodge: no leídos.
 - Medición día 14 y día 30 de las mismas preguntas (`scripts/consultar-ia.mjs`, carpeta `medicion-ia/`).

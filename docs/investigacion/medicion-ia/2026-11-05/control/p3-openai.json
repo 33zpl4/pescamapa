@@ -1,0 +1,13 @@
+{
+  "fecha": "2026-11-05T22:40:09.315Z",
+  "proveedor": "openai",
+  "pregunta": "¿Cuánto cuesta un guía de pesca con mosca en Esquina?",
+  "cita_pescamapa": false,
+  "urls": [
+    "https://viajacongus.com/argentina/esquina/",
+    "https://www.pescaargentina.com/servicios-pesca/leo-cardella-116/",
+    "https://www.corrientes.com.ar/donjoaquinriverlodge/"
+  ],
+  "texto": "El costo de contratar un guía de pesca con mosca en Esquina, Corrientes, varía según el servicio y la temporada. Según datos de julio de 2026, las tarifas oscilaban entre US$90 y US$180 por persona para una jornada completa. ([viajacongus.com](https://viajacongus.com/argentina/esquina/?utm_source=openai)) Algunos guías ofrecen paquetes completos que incluyen alojamiento, comidas y equipos de pesca, mientras que otros brindan servicios más básicos.\n\nPor ejemplo, el guía Leo Cardella ofrece programas que incluyen lancha, combustible y guía, con opciones de almuerzo y bebidas durante la jornada. ([pescaargentina.com](https://www.pescaargentina.com/servicios-pesca/leo-cardella-116/?utm_source=openai)) Otro ejemplo es Don Joaquín River Lodge, que brinda servicios de pesca y alojamiento en Esquina, Corrientes. ([corrientes.com.ar](https://www.corrientes.com.ar/donjoaquinriverlodge/?utm_source=openai))\n\nDado que las tarifas pueden variar y actualizarse, se recomienda contactar directamente a los guías o lodges para obtener información actualizada y promociones vigentes. ",
+  "error": null
+}

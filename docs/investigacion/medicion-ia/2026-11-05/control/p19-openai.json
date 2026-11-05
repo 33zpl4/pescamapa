@@ -1,0 +1,14 @@
+{
+  "fecha": "2026-11-05T22:41:47.669Z",
+  "proveedor": "openai",
+  "pregunta": "¿Cuánto cuesta un guía de pesca con mosca en Bariloche?",
+  "cita_pescamapa": false,
+  "urls": [
+    "https://barilochefishingtrips.com/es/viajes/guia-de-pesca-con-mosca-en-el-rio-limay-bariloche-patagonia-dia-completo/",
+    "https://troutbariloche.com/es/excursiones-diarias/",
+    "https://southernriverspatagonia.com/ESP/expeditions.html",
+    "https://fishing-bariloche.com/es/"
+  ],
+  "texto": "Los costos de contratar un guía de pesca con mosca en Bariloche varían según la duración de la excursión, el número de pescadores y los servicios incluidos. A continuación, se presentan algunas opciones disponibles:\n\n**Excursiones de día completo:**\n\n- **Río Limay:**\n  - Precio: USD 500 por bote para un pescador; USD 520 para dos pescadores.\n  - Incluye: Guía profesional, equipo de pesca, almuerzo gourmet, bebidas y traslados.\n  - Duración: 8 a 10 horas.\n  - ([barilochefishingtrips.com](https://barilochefishingtrips.com/es/viajes/guia-de-pesca-con-mosca-en-el-rio-limay-bariloche-patagonia-dia-completo/?utm_source=openai))\n\n- **Río Manso:**\n  - Precio: USD 550 por bote para uno o dos pescadores.\n  - Incluye: Guía certificado, equipo de pesca, almuerzo junto al río, bebidas y traslados.\n  - Duración: 8:00 a 18:30.\n  - ([troutbariloche.com](https://troutbariloche.com/es/excursiones-diarias/?utm_source=openai))\n\n**Excursiones de medio día:**\n\n- **Río Limay:**\n  - Precio: USD 360 por bote para uno o dos pescadores.\n  - Incluye: Guía certificado, equipo de pesca, traslados.\n  - Duración: 8:00 a 14:00.\n  - ([troutbariloche.com](https://troutbariloche.com/es/excursiones-diarias/?utm_source=openai))\n\n**Campamentos de pesca:**\n\n- **Expediciones de varios días:**\n  - Precio: USD 540 por día por pescador en base doble; USD 730 en base individual.\n  - Incluye: Guía profesional, equipo de campamento, comidas, bebidas y traslados.\n  - ([southernriverspatagonia.com](https://southernriverspatagonia.com/ESP/expeditions.html?utm_source=openai))\n\n**Pesca en lagos:**\n\n- **Lago Nahuel Huapi:**\n  - Medio día: Desde USD 600 por lancha (hasta 4 personas).\n  - Día completo: Desde USD 800 por lancha (hasta 4 personas).\n  - Incluye: Guía, equipo de pesca, permisos, refrigerios y fotos del día.\n  - ([fishing-bariloche.com](https://fishing-bariloche.com/es/?utm_source=openai))\n\nEs importante tener en cuenta que estos precios pueden variar según la temporada y la disponibilidad. Además, algunos servicios, como las licencias de pesca (aproximadamente USD 40 por día) y las propinas para los guías, no están incluidos en las tarifas mencionadas. Se recomienda contactar directamente a los operadores para obtener información actualizada y personalizada. ",
+  "error": null
+}

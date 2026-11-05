@@ -3,6 +3,8 @@
 // Uso: node wordpress/build/precios-a-script.mjs [--aplicar]
 import { readFileSync, writeFileSync } from 'node:fs';
 const aplicar = process.argv.includes('--aplicar');
+const actualizar = process.argv.includes('--actualizar'); // reescribe contenido de notas que ya existen (no crea)
+const solo = (process.argv.find(a => a.startsWith('--solo=')) || '').slice(7); // clave a actualizar
 const d = new URL('../contenido/precios/', import.meta.url).pathname;
 const es0 = JSON.parse(readFileSync(`${d}paginas.es.json`, 'utf8'));
 // Las claves, la especie y los tipos de bloque son del original: la traducción no los toca.
@@ -17,6 +19,8 @@ const php = String.raw`<?php
  * Idempotente: una nota con la misma clave e idioma no se toca. Simulacro primero ($aplicar = false); se corre con wp-script.yml.
  */
 $aplicar = ${aplicar ? 'true' : 'false'};
+$actualizar = ${actualizar ? 'true' : 'false'};
+$solo = '${solo}';
 $hoy     = '20261105';
 $datos   = [
 	'es' => json_decode( <<<'JSON_ES'
@@ -86,6 +90,23 @@ foreach ( [ 'es', 'en', 'pt' ] as $l ) {
 			WP_CLI::error( "SEO fuera de rango $clave ($l): title $tl / description $dl" );
 		}
 		$ya = array_filter( get_posts( [ 'post_type' => 'pm_nota', 'post_status' => 'any', 'meta_key' => 'clave', 'meta_value' => $clave, 'numberposts' => -1 ] ), fn( $p ) => pm_idioma_de( $p->ID ) === $l );
+		if ( $actualizar ) {
+			if ( ( $solo && $solo !== $clave ) || ! $ya ) {
+				continue;
+			}
+			$id     = reset( $ya )->ID;
+			$cuerpo = pm_pp_resolver( pm_pp_cuerpo( $pg, $datos[ $l ]['cierre'] ), $l );
+			WP_CLI::log( ( $aplicar ? 'ACTUALIZA' : 'SIMULACRO' ) . ": $clave ($l) #$id — " . mb_strlen( wp_strip_all_tags( $cuerpo ) ) . ' car., ' . count( $pg['datos'] ) . ' datos' );
+			if ( $aplicar ) {
+				wp_update_post( [ 'ID' => $id, 'post_content' => wp_slash( $cuerpo ) ] );
+				update_field( 'nota_datos', array_map( fn( $x ) => [ 'dato' => $x ], $pg['datos'] ), $id );
+				update_field( 'actualizado', $hoy, $id );
+				$ok = false !== strpos( get_post_field( 'post_content', $id ), 'US$ 855' ) || false !== strpos( get_post_field( 'post_content', $id ), 'US$ 855' );
+				WP_CLI::log( ( $ok ? 'VERIFIED' : 'FALLÓ' ) . ": $clave ($l) #$id " . get_permalink( $id ) );
+				$ok || WP_CLI::error( "$clave ($l): la lectura de vuelta no coincide." );
+			}
+			continue;
+		}
 		if ( $ya ) {
 			WP_CLI::log( "$clave ($l) ya existe: no toco nada." );
 			continue;
@@ -136,5 +157,5 @@ if ( ! $aplicar ) {
 flush_rewrite_rules( false );
 WP_CLI::success( count( $creadas ) . ' notas creadas.' );
 `;
-writeFileSync(new URL('../scripts/precios-paquetes-2026-11-05.php', import.meta.url).pathname, php);
+writeFileSync(new URL(actualizar ? '../scripts/precios-actualizar-2026-11-05.php' : '../scripts/precios-paquetes-2026-11-05.php', import.meta.url).pathname, php);
 console.log('escrito', aplicar ? '(APLICA)' : '(simulacro)', php.length, 'bytes');

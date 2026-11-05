@@ -1,0 +1,12 @@
+{
+  "fecha": "2026-11-05T22:40:26.862Z",
+  "proveedor": "openai",
+  "pregunta": "Quanto custa um guia de pesca em Corrientes?",
+  "cita_pescamapa": false,
+  "urls": [
+    "https://hooked.com.ar/blog/cuanto-cuesta-una-salida-de-pesca-con-guia",
+    "https://www.corrientes.com.ar/guillermoschellerpesca/"
+  ],
+  "texto": "Os custos para contratar um guia de pesca em Corrientes, Argentina, variam conforme a localização, a duração da saída, os serviços incluídos e o número de pescadores. Em geral, os preços são estabelecidos por embarcação, podendo ser divididos entre os participantes.\n\nPor exemplo, em Esquina, Corrientes, o serviço Rebo Pesca oferece saídas por ARS 480.000 por lancha, acomodando até 4 pescadores. Isso equivale a aproximadamente ARS 120.000 por pessoa. O pacote inclui guia, picada, almoço em uma ilha, conservadora, iscas e até 50 litros de combustível. Não estão inclusos bebidas, licença de pesca e equipamentos pessoais. ([hooked.com.ar](https://hooked.com.ar/blog/cuanto-cuesta-una-salida-de-pesca-con-guia?utm_source=openai))\n\nEm Paso de la Patria, um guia local cobra cerca de ARS 320.000 por uma lancha para 3 pescadores, resultando em aproximadamente ARS 106.700 por pessoa. Este valor inclui lancha, guia, refrigerio e equipamentos. ([hooked.com.ar](https://hooked.com.ar/blog/cuanto-cuesta-una-salida-de-pesca-con-guia?utm_source=openai))\n\nAlém disso, há opções de pacotes completos que combinam pesca e hospedagem. Por exemplo, o serviço de pesca e alojamento de Federico Scheller em Goya oferece pacotes que incluem guia, embarcação, combustível, almoço na ilha, bebidas não alcoólicas e merenda. As tarifas podem variar, portanto, é recomendável entrar em contato diretamente para obter valores atualizados e promoções vigentes. ([corrientes.com.ar](https://www.corrientes.com.ar/guillermoschellerpesca/?utm_source=openai))\n\nÉ importante notar que os preços podem variar conforme a temporada, a demanda e os serviços adicionais oferecidos. Recomenda-se entrar em contato diretamente com os guias ou empresas de pesca para obter informações atualizadas e detalhadas sobre os pacotes disponíveis. ",
+  "error": null
+}
