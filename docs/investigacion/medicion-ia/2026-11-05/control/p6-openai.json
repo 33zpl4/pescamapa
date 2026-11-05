@@ -1,0 +1,15 @@
+{
+  "fecha": "2026-11-05T22:40:11.530Z",
+  "proveedor": "openai",
+  "pregunta": "¿Qué es la Fiesta Nacional del Surubí y cuándo se hace?",
+  "cita_pescamapa": false,
+  "urls": [
+    "https://www.goyasurubi.com/index/index.php/nuestra-fiesta/ique-es-la-fn-del-surubi",
+    "https://festivalesargentina.com/fiesta-nacional-del-surubi/",
+    "https://corrientes.tur.ar/evento/49o-edicion-fiesta-nacional-del-surubi-goya/",
+    "https://guiadefiestas.com.ar/fiesta/fiesta-nacional-del-surubi/",
+    "https://www.youtube.com/watch?v=EGjmV6Ca13E"
+  ],
+  "texto": "La **Fiesta Nacional del Surubí** es un evento emblemático que se celebra anualmente en la ciudad de Goya, provincia de Corrientes, Argentina. Iniciada en 1969 por el Club de Caza y Pesca \"Doña Goya\" y la Municipalidad local, esta festividad tiene como eje central un concurso de pesca deportiva embarcada en el río Paraná, enfocándose en la captura y devolución del surubí, una especie icónica de la región. ([goyasurubi.com](https://www.goyasurubi.com/index/index.php/nuestra-fiesta/ique-es-la-fn-del-surubi?utm_source=openai))\n\nAdemás de la competencia de pesca, la fiesta ofrece una variedad de actividades culturales y deportivas, incluyendo la Expo-Goya, una muestra industrial, comercial y artesanal; competencias de ciclismo, maratón, vóley y fútbol; festivales de música y danza; y la elección de la Reina Nacional del Surubí. ([festivalesargentina.com](https://festivalesargentina.com/fiesta-nacional-del-surubi/?utm_source=openai))\n\nTradicionalmente, la Fiesta Nacional del Surubí se realiza entre fines de abril y principios de mayo. Por ejemplo, la 49ª edición se llevó a cabo del 27 de abril al 3 de mayo de 2026. ([corrientes.tur.ar](https://corrientes.tur.ar/evento/49o-edicion-fiesta-nacional-del-surubi-goya/?utm_source=openai)) Para la edición de 2027, las fechas exactas aún no han sido confirmadas, pero se espera que se mantenga en el mismo período. ([guiadefiestas.com.ar](https://guiadefiestas.com.ar/fiesta/fiesta-nacional-del-surubi/?utm_source=openai))\n\nEste evento no solo destaca por su importancia en el ámbito de la pesca deportiva, sino también por su impacto cultural y económico en la región, atrayendo a miles de visitantes y participantes de todo el país y del extranjero.\n\nPara una visión más detallada de la fiesta, puedes ver el siguiente video:\n\n[Fiesta Nacional del Surubí](https://www.youtube.com/watch?v=EGjmV6Ca13E&utm_source=openai)\n ",
+  "error": null
+}

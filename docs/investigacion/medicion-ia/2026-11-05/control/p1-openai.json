@@ -1,0 +1,12 @@
+{
+  "fecha": "2026-11-05T22:40:09.506Z",
+  "proveedor": "openai",
+  "pregunta": "¿Cuándo es la mejor época para pescar dorado en Corrientes?",
+  "cita_pescamapa": false,
+  "urls": [
+    "https://eltransitoibera.com/pesca/",
+    "https://cardumi.com/es/destinos/esteros-del-ibera-rio-corriente"
+  ],
+  "texto": "La mejor época para pescar dorado en Corrientes abarca principalmente desde septiembre hasta abril, coincidiendo con las estaciones de primavera y verano, cuando las temperaturas más cálidas activan el comportamiento predador del dorado. ([eltransitoibera.com](https://eltransitoibera.com/pesca/?utm_source=openai))\n\nDurante este período, los meses de octubre, noviembre y diciembre son especialmente destacados, ya que el agua alcanza temperaturas óptimas que incrementan la actividad del dorado. ([eltransitoibera.com](https://eltransitoibera.com/pesca/?utm_source=openai))\n\nEs importante tener en cuenta que, aunque la pesca del dorado es posible durante todo el año, en invierno la actividad disminuye debido a las temperaturas más bajas del agua. ([cardumi.com](https://cardumi.com/es/destinos/esteros-del-ibera-rio-corriente?utm_source=openai))\n\nAdemás, en Corrientes, el dorado es considerado Monumento Natural Provincial, lo que implica que su pesca es exclusivamente con devolución obligatoria (catch & release). ([cardumi.com](https://cardumi.com/es/destinos/esteros-del-ibera-rio-corriente?utm_source=openai))\n\nPor lo tanto, para una experiencia óptima de pesca del dorado en Corrientes, se recomienda planificar su viaje entre septiembre y abril, prestando especial atención a las regulaciones locales y a las condiciones climáticas de la temporada. ",
+  "error": null
+}

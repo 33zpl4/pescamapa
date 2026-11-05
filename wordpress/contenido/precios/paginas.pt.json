@@ -133,6 +133,20 @@
        "US$ 605",
        "US$ 303",
        "US$ 1.815"
+      ],
+      [
+       "3 dias de pesca, 4 noites",
+       "3",
+       "US$ 855",
+       "US$ 285",
+       "US$ 2.565"
+      ],
+      [
+       "4 dias de pesca, 5 noites",
+       "3",
+       "US$ 1.105",
+       "US$ 276",
+       "US$ 3.315"
       ]
      ]
     },
@@ -233,7 +247,7 @@
     },
     {
      "t": "p",
-     "h": "Os pacotes de 3 e 4 dias para grupos de três, os horários de ônibus e voos desde Buenos Aires, o valor da licença de Corrientes e um calendário por mês com fonte técnica. Adicionaremos quando verificarmos com uma data."
+     "h": "Os horários de ônibus e voos desde Buenos Aires, o valor da licença de Corrientes e um calendário por mês com fonte técnica. Adicionaremos quando verificarmos com uma data."
     }
    ]
   },

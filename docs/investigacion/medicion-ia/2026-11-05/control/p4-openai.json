@@ -1,0 +1,11 @@
+{
+  "fecha": "2026-11-05T22:40:09.730Z",
+  "proveedor": "openai",
+  "pregunta": "¿Hay vedas vigentes en el Paraná frente a Goya?",
+  "cita_pescamapa": false,
+  "urls": [
+    "https://misiones.gob.ar/ecologia-intensifica-los-controles-para-garantizar-el-cumplimiento-de-la-veda-de-pesca-en-el-rio-parana/"
+  ],
+  "texto": "Sí, actualmente rige una veda de pesca en el río Paraná frente a Goya. Esta restricción comenzó el 2 de noviembre de 2026 y se extenderá hasta el 22 de diciembre de 2026. Durante este período, está prohibida la pesca deportiva y comercial en el río Paraná y sus afluentes. La única excepción es la pesca de subsistencia, permitida únicamente para personas previamente registradas y con permisos vigentes, quienes pueden pescar desde la costa utilizando línea de mano, destinando las capturas exclusivamente al consumo familiar y sin posibilidad de comercialización. ([misiones.gob.ar](https://misiones.gob.ar/ecologia-intensifica-los-controles-para-garantizar-el-cumplimiento-de-la-veda-de-pesca-en-el-rio-parana/?utm_source=openai)) ",
+  "error": null
+}

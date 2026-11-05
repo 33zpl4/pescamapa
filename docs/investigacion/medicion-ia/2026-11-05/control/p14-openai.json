@@ -1,0 +1,14 @@
+{
+  "fecha": "2026-11-05T22:41:03.516Z",
+  "proveedor": "openai",
+  "pregunta": "When is the sea-run brown trout season in Tierra del Fuego and what does a week at a Río Grande lodge cost?",
+  "cita_pescamapa": false,
+  "urls": [
+    "https://flyfishingarg.com/water/rio-grande/",
+    "https://flyfishingpatagonia.com/trips-lodges/kau-tapen-lodge/",
+    "https://www.nervouswaters.com/wp-content/uploads/2025/03/2.-Villa-Maria-Lodge-Rates-2025-26.pdf",
+    "https://www.youtube.com/watch?v=ShPtT0V2Ovc"
+  ],
+  "texto": "The sea-run brown trout fishing season in Tierra del Fuego typically runs from November 1 to May 1. However, the prime months for targeting these fish are January through April, with peak activity occurring between mid-January and mid-March. ([flyfishingarg.com](https://flyfishingarg.com/water/rio-grande/?utm_source=openai))\n\nRegarding accommodations, lodges along the Río Grande offer weekly packages that generally range from $12,950 to $14,950 per angler. For instance, Kau Tapen Lodge, the original sea-run brown trout lodge in Tierra del Fuego, offers packages within this price range. ([flyfishingpatagonia.com](https://flyfishingpatagonia.com/trips-lodges/kau-tapen-lodge/?utm_source=openai)) Similarly, Villa María Lodge provides packages priced between $12,950 and $14,950 per week, depending on the timing within the season. ([nervouswaters.com](https://www.nervouswaters.com/wp-content/uploads/2025/03/2.-Villa-Maria-Lodge-Rates-2025-26.pdf?utm_source=openai))\n\nThese packages typically include lodging, meals, guided fishing, and transfers from the Río Grande Airport. Additional costs may encompass fishing licenses (approximately $550 to $595), terminal tackle, and gratuities. It's advisable to contact the lodges directly for the most current pricing and availability.\n\nFor a visual insight into sea-run brown trout fishing in the Río Grande, you might find the following video informative:\n\n[Sea Brown Trout Fishing in Rio Grande, Tierra del Fuego, Patagonia Argentina](https://www.youtube.com/watch?v=ShPtT0V2Ovc&utm_source=openai)\n ",
+  "error": null
+}
