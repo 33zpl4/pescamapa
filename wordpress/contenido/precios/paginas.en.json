@@ -742,26 +742,27 @@
   {
    "clave": "licencia-pesca-patagonia-precios",
    "slug": "patagonia-fishing-license-2026-27",
-   "especie": "trucha",
-   "titulo": "Patagonia Argentina Fishing License 2026/27: Cost and Validity",
-   "bajada": "Official rates for the Patagonian fishing permit for the 2026/27 season, for foreigners and residents, where it is valid, how long it lasts, and what is charged separately.",
+   "especie": "trout",
+   "titulo": "Patagonian Argentina Fishing License 2026/27: Cost and Validity",
+   "bajada": "Official prices for the Patagonian fishing permit for the 2026/27 season, for foreigners and residents, where it's valid, duration, and extra fees.",
    "seo_title": "Patagonia fishing license 2026/27: prices",
-   "seo_description": "How much is the Patagonia fishing permit 2026/27: foreigners ARS 50,000 per day and ARS 280,000 per season; residents from ARS 12,500. Where it is valid.",
+   "seo_description": "How much is the Patagonia fishing permit 2026/27: foreigners ARS 50,000 per day and ARS 280,000 for the season; neighboring countries, 10 days at ARS 50,000.",
    "datos": [
     "Non-resident foreigners: ARS 50,000 per day, ARS 140,000 for 10 days, and ARS 280,000 for the season (2026/27 rates, in pesos).",
     "Residents in Argentina: ARS 12,500 per day, ARS 25,000 for 10 days, and ARS 50,000 for the season.",
     "The same permit is valid in Neuquén, Río Negro, Chubut, and the Southern National Parks; Santa Cruz and Tierra del Fuego have their own.",
     "The fishing season runs from 1 November 2026 to 1 May 2027 inclusive; the season permit is valid until 31 October 2027.",
-    "No charge: people over 65, retirees, pensioners, children up to 12 years old, and people with disabilities with official accreditation."
+    "No charge: people over 65, retirees, pensioners, children up to 12 years old, and people with disabilities with official accreditation.",
+    "Río Negro also sells a 10-day permit for non-resident foreigners from neighboring countries (including Brazil) at ARS 50,000; this is a provincial category and only valid in the issuing province."
    ],
    "bloques": [
     {
      "t": "p",
-     "h": "<strong>Short answer.</strong> To fish in Argentine Patagonia in the 2026/27 season, a <strong>non-resident foreigner pays ARS 50,000 for one day, ARS 140,000 for 10 days, or ARS 280,000 for the season</strong>, and a resident pays <strong>ARS 12,500, ARS 25,000, or ARS 50,000</strong>. The permit is the same in Neuquén, Río Negro, Chubut, and the Southern National Parks."
+     "h": "<strong>Short answer.</strong> To fish in Argentine Patagonia during the 2026/27 season, a <strong>non-resident foreigner pays ARS 50,000 for one day, ARS 140,000 for 10 days, or ARS 280,000 for the season</strong>, and a resident pays <strong>ARS 12,500, ARS 25,000, or ARS 50,000</strong>. The permit is the same in Neuquén, Río Negro, Chubut, and the Southern National Parks."
     },
     {
      "t": "h2",
-     "h": "Permit rates 2026/27"
+     "h": "Permit prices 2026/27"
     },
     {
      "t": "tabla",
@@ -779,19 +780,25 @@
        "ARS 280,000"
       ],
       [
-       "<strong>Resident in Argentina</strong> (Argentine citizens and resident foreigners)",
+       "<strong>Resident in Argentina</strong> (Argentine and resident foreigners)",
        "ARS 12,500",
        "ARS 25,000",
        "ARS 50,000"
       ],
       [
-       "Resident aged 13 to 17",
+       "Resident minor aged 13 to 17",
        "",
        "",
        "ARS 25,000"
       ],
       [
-       "Trolling (additional permit, in addition to the regular one)",
+       "Non-resident foreigner from neighboring country (provincial category, Río Negro)",
+       "",
+       "ARS 50,000",
+       ""
+      ],
+      [
+       "Trolling (additional permit, besides regular)",
        "ARS 25,000",
        "ARS 50,000",
        "ARS 100,000"
@@ -800,15 +807,23 @@
     },
     {
      "t": "p",
-     "h": "Rates in Argentine pesos from the Patagonian Continental Sport Fishing General Regulations, text updated on 26 October 2026. Read on 6 November 2026. In dollars, the value changes with the exchange rate of the day."
+     "h": "Prices in Argentine pesos from the General Regulations for Patagonian Continental Sport Fishing, text updated 26 October 2026. Read on 6 November 2026. Dollar value varies with the daily exchange rate."
     },
     {
      "t": "h2",
-     "h": "Who does not pay for the permit?"
+     "h": "Is there a cheaper permit for neighboring countries?"
     },
     {
      "t": "p",
-     "h": "No permit fee for people over 65, retirees and pensioners, children up to 12 years old, and people with disabilities with official accreditation (resident category). Residents aged 13 to 17 pay ARS 25,000 for the season."
+     "h": "Yes, in Río Negro. Its official sales page includes the <strong>permit for non-resident foreigners from neighboring countries, 10 days, at ARS 50,000</strong> (code E-L10), compared to ARS 140,000 for the regular 10-day foreign permit. This can be used, for example, by residents of Brazil, Chile, Uruguay, Paraguay, or Bolivia. It is a provincial category: the regulations state that permits in categories not listed in the common table <strong>are only valid in the jurisdiction that issues them</strong>, so this is valid in Río Negro and not in Neuquén, Chubut, or the National Parks. The price list for Chubut published by Aire Libre magazine also includes it; confirm on Chubut's sales page before relying on it."
+    },
+    {
+     "t": "h2",
+     "h": "Who doesn't pay for the permit?"
+    },
+    {
+     "t": "p",
+     "h": "No permit fee for people over 65, retirees and pensioners, children up to 12 years old, and people with disabilities with official accreditation (resident category). Minors aged 13 to 17 pay ARS 25,000 for the season."
     },
     {
      "t": "h2",
@@ -816,7 +831,7 @@
     },
     {
      "t": "p",
-     "h": "Permits issued by Neuquén, Río Negro, Chubut, and the National Parks Administration, with these categories and rates, are the only ones valid for fishing in all waters of those four jurisdictions. Each province also has its own annexes with exceptions by river and lake: check them before fishing a specific water. <strong>Santa Cruz and Tierra del Fuego do not use this permit</strong>: they have their own, with their own rates (see guides for {d:rio-gallegos} and {d:rio-grande})."
+     "h": "Permits issued by Neuquén, Río Negro, Chubut, and the National Parks Administration, with these categories and prices, are the only ones valid for fishing in all waters of those four jurisdictions. Each province also has annexes with exceptions for specific rivers and lakes: check them before fishing a particular water. <strong>Santa Cruz and Tierra del Fuego do not use this permit</strong>: they have their own, with different prices (see guides for {d:rio-gallegos} and {d:rio-grande})."
     },
     {
      "t": "h2",
@@ -825,7 +840,7 @@
     {
      "t": "lista",
      "items": [
-      "<strong>Fishing season:</strong> from 1 November 2026 to 1 May 2027 inclusive. Each province's annexes list exceptions (waters that open or close on other dates).",
+      "<strong>Fishing season:</strong> from 1 November 2026 to 1 May 2027 inclusive. Each province's annexes have exceptions (waters that open or close on other dates).",
       "<strong>Season permit:</strong> valid from the date of issue until 31 October 2027.",
       "<strong>One-day and 10-day permits:</strong> valid for the dates indicated on the permit.",
       "<strong>Hours:</strong> fishing is only allowed during daylight hours."
@@ -837,7 +852,7 @@
     },
     {
      "t": "p",
-     "h": "The permit is personal and non-transferable, must have all fields completed, and must be carried and shown whenever requested by authorities, along with an identity document. In Chubut, the digital permit managed through the DINO platform can be re-downloaded for free if lost."
+     "h": "The permit is personal and non-transferable, must be fully completed, and you must carry and show it whenever requested by authorities, along with an ID. In Chubut, the digital permit managed through the DINO platform can be re-downloaded for free if lost."
     },
     {
      "t": "h2",
@@ -845,11 +860,11 @@
     },
     {
      "t": "p",
-     "h": "For a foreign angler fishing 6 to 7 days, the 10-day permit (ARS 140,000) is cheaper than six daily permits (ARS 300,000) and less than the season permit (ARS 280,000) if not returning. This is our calculation based on the above rates; the lodge weeks on our price pages state if the license is included: see <a href=\"{n:precio-semana-trucha-patagonia-norte}\">how much a week of trout fishing in Neuquén and Chubut costs</a> and <a href=\"{n:precio-pesca-bariloche-limay}\">a day of fishing in Bariloche</a>."
+     "h": "For a foreigner fishing 6 to 7 days, the 10-day permit (ARS 140,000) is cheaper than six daily permits (ARS 300,000) and cheaper than the season permit (ARS 280,000) if not returning. This is our calculation based on the prices above; lodge week prices on our pages indicate if the license is included: see <a href=\"{n:precio-semana-trucha-patagonia-norte}\">how much a week of trout fishing in Neuquén and Chubut costs</a> and <a href=\"{n:precio-pesca-bariloche-limay}\">a day of fishing in Bariloche</a>."
     },
     {
      "t": "p",
-     "h": "<strong>Want help planning your trip?</strong> Write to us using <a href=\"{viaje}\">the trip form</a> and we’ll send you guide and lodge options, free of charge and with no obligation."
+     "h": "<strong>Want help planning your trip?</strong> Write to us using <a href=\"{viaje}\">the trip form</a> and we'll send you guide and lodge options, free of charge and with no obligation."
     }
    ]
   }
