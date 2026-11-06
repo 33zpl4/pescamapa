@@ -1,0 +1,36 @@
+{
+  "fecha": "2026-11-06T08:16:47.082Z",
+  "proveedor": "gemini-search",
+  "pregunta": "Quanto custa um guia de pesca em Corrientes?",
+  "cita_pescamapa": false,
+  "urls": [
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF6lZ6PliK2QrGaQCxrLfYs9vkurx91sFC62a2Sv1ObLwlp4VXpAAWuxVW0JRPqSsWw_NjEidz_nxmven8W6CzgbLxdmt-alOdf6cn5LO-dkQbzfjTonZV6GD-XX7GAbc63",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF_RQtBWpycGwwjnDqQrwpmMxHymkUVXMUMoY2wFpYHQPZWQfPMTznqdI9KXK-VGJflT9wEIjwouwpwcqay-iaGZsC6kVTbbD-r8hDtmxvoR6RrpkKMjNFbZ_nJAp32Gse3MExAEx9-YYsHRA5MqEXETvCrAAxL3TCl6LQ=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHdvpFZUXIkXA842Mpe4tYCSkZOFjEi2MGnaru-QB3puLNKCPrzDEtT7BNKt62U3C0mX-CmralMdiuPRMw_JxhMlp1ltfqcMZloYKwCSCBZMuXkH-PZHL6IDAl1XBIU6ISAi5IXaJAGmHKES0p0242meYf-OsB-czUaRtByDc0W4VDtoXgZiH9b3H0-Zg==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFAz1SHmkqAR7IK6uuRyezvyE4VOBqOujJzq1aXkxirFUFFEyuj3kuryFC9KTLd4FrMLxl85918V0W20Csince8CRevADVnpSIUJL8BX7NhbFfQNse5l_51W2_jzAOnL7C6Ebf84OxxWpKtkM48-2Czdllj",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGGFVXOvpMcMUXG9bGnt0Btzne2GBM1zAjY1dGVH6TiFGFlZIHgMV_OtbTCnDSZivr76X8afZRqRpll1F8yU2OoXqgpnPaOGH_Q3xTiTdUKqCvpy-GQUW6Qn_BaDlHRb_J7K3rO5qJK-IGIqnufJ6QQOkC7",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG_egUznCy_7J1qUJFsBJtnGklxQf52g46EShuZWAte5SRzGlVqYqAxXwM_RoucVmQtpO51-ErYWpk4Sgg-o_6BiJxkvOUdQiEWef7Du_WrHObG5pNQoilT38MwDXS8wtzpq0dy1wuuqctD2CNR0rWfHhcRViXaXrG6MYK7PJ7gMLDOEa1IkAoa75Ucag==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHE9zF8YYyVLr-VD7rsxIJ6RZJ6d8g40tayjb_UPuNlqb2A5aMDBV97NAIDECLOdDsl-5uxubRnK5QeYgp7tgtl6kQGBxrFhe2N3mNZCKsB_xAdYsksDkwNvrjjDYoh-DAYSIC30ib_2aBUmhQy",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEYsJ799Z_PRvuK7YHkKX_SuxD94Wc5AOcH3iwD677xWg5nHmiuvQwadcWgCX8_CIo7Q4By34agjO_6P8kbEh9HPwAOQCdhF0hYvIFchd0JUX0dXKO38noGvgT5pqOaR9N7",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH6KLN0h9V8zFrtBFyiVr-X-N4ya8QeTC9LhAW7nYeNyDHx4AB1GTk0INW38JodU_84w6lkjbuWLpa1ckGP5HSHofFClZqmnBy8X9utOP7O",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGRv6pOjcusddIaHA1Ak3qgEVEmsXmiLjMwkUzObd8celrzQle1f9mJEQAe_-O33HatmU-Bw3AAwtYUtZ3arCWVTaqtpSUDiOQFy6j4HcWMiaL9ZCro0INFvlTzrQ2l9EulLpUSWl-hJJMFhASlD5l1hNF-Ezq9qQ0jpSuJqQ=="
+  ],
+  "dominios": [
+    "pousadalapesca.com.br",
+    "hooked.com.ar",
+    "elpasocorrientes.com.ar",
+    "fishingbooker.com",
+    "fishingbraziladventures.com.br",
+    "tur.com",
+    "posadahambare.com.ar",
+    "cobraspesca.com",
+    "santinopesca.com",
+    "gigantesdapesca.com.br"
+  ],
+  "consultas": [
+    "quanto custa guia de pesca em Corrientes Argentina",
+    "precio guia de pesca Corrientes Argentina valor diario"
+  ],
+  "texto": "O custo de um guia de pesca na província de Corrientes, na Argentina (famosa pela pesca do Dourado e Surubí em locais como Paso de la Patria, Esquina, Ita Ibaté e Yahapé), varia se você contrata **apenas a saída diária com o guia** ou um **pacote completo (All-Inclusive)** em pousadas pesqueiras.\n\n---\n\n### 1. Apenas a Diária da Lancha com Guia\nSe você já tem hospedagem por conta própria e quer contratar apenas a embarcação com o guia profissional por um dia (jornada de 7 a 8 horas):\n\n* **Valor em Pesos Argentinos (ARS):** Entre **ARS 300.000 e ARS 480.000 por lancha/dia**. Dividindo por um grupo de 3 a 4 pescadores na embarcação, o custo fica por volta de **ARS 100.000 a ARS 150.000 por pessoa/dia**.\n* **Valor em Dólares (USD):** Cerca de **US$ 250 a US$ 500 por lancha/dia** (dependendo da quantidade de combustível e itens inclusos).\n\n**Geralmente inclui:** Lancha (*tracker* com motor de 70 a 90 HP), guia credenciado, combustível e, em alguns casos, equipamentos básicos e iscas.  \n**Nem sempre inclui:** Licença de pesca provincial, iscas vivas em grande quantidade (como tuviras/morenas), bebidas e refeições.\n\n---\n\n### 2. Pacote Completo / Pousada All-Inclusive\nA opção mais comum para os pescadores brasileiros que viajam a Corrientes é fechar pacotes fechados por dia ou de 3 a 5 dias:\n\n* **Em Reais (BRL):** Varia entre **R$ 1.500 e R$ 2.000 por dia por pescador**.\n  * *Exemplo para 3 a 4 dias de pesca:* Custa em média **R$ 4.800 a R$ 8.000 por pessoa**.\n* **Em Dólares (USD):** Custa entre **US$ 250 e US$ 350 por dia/pessoa** (ou cerca de **US$ 1.000 a US$ 1.500** em pacotes de 4 dias/5 noites com hospedagem).\n\n**Geralmente inclui no pacote:**\n* Hospedagem e pensão completa (café, almoço, jantar com churrasco/parrilla e petiscos no rio).\n* Bebidas à vontade (cerveja, vinhos, refrigerantes e água).\n* Barco exclusivo com guia experiente e combustível ilimitado.\n* Iscas vivas (cota diária de tuviras/morenas) e licenças de pesca.\n\n---\n\n### O que influencia no preço final:\n1. **O número de pescadores por barco:** Pescar em 2 pessoas por embarcação é mais confortável, porém deixa o custo diário individual mais alto do que pescar em grupos de 3 ou 4.\n2. **Iscas vivas e Combustível:** Algumas diárias cobram a gasolina ou cotas extras de iscas (*morena/tuvira*) por fora caso você ultrapasse o limite diário padrão.\n3. **Translado:** O transporte do Brasil (ou dos aeroportos de Corrientes/Resistência/Foz do Iguaçu) até a pousada costuma ser cobrado à parte.",
+  "error": null
+}

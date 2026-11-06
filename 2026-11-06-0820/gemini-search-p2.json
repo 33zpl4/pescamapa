@@ -1,0 +1,34 @@
+{
+  "fecha": "2026-11-06T08:15:49.915Z",
+  "proveedor": "gemini-search",
+  "pregunta": "¿Qué licencia necesito para pescar en Corrientes y cuánto cuesta?",
+  "cita_pescamapa": false,
+  "urls": [
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQElqK3SN7F21Hrh_tvf7e8uAtL0y0wZhOqO1itGqIyez7ExOSmryYpf40jqyxTfBnrrKhahHIbuedX6PjzdX2mfeVl6SfxL2lRhqj7aO1No5fEh-GEYnw==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF8U_trUnK7U2rB4J4Ql-5fKcUCD4LnHXarqm3ddNdyBXoc3riU9gblKlBgoW9qrdARAZQNAKfyUdA-7ryRwNcA3Qkz51IyDzrCmjHa2XZtml-clYhpaMBSKGi93QhmTDiUitCP6fCh4uGcjFcttoEs0hzTAH4UYLuEplnX-P52lho_AgVXwIIApdBRFIDejtw=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFm2hzeK7LCKSMjmCQme45EVV7-PX_i9vpLelozyFdxRsmbPDCx1weX3em76ppPwwK7R73mkSmmDDx1WYYuO1tcp3hqPEMtxEH5KgKHaJrNLRUZrAq2D10W5Sd5cUfm9bP0IduhaHtx8KqhEIfigmLXbwE2peo3htpdAszw",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF5ImwYAci6PihuZBvDlR6ORl81lLaHJ-W20O4gLNhye27_qSYRjEQSBuZ_SYczphr4qLhxZruE8xJppZca07VMuyPx0yg2pjHJnxyWmCfW939y0HWlril3FEhLeGF867pxoTLHVkVhSruWFzVBlXNMMvb9BwgZRQp5e_iJ8B-FIIH7AWhGqx-ZrtQl-tYJ_5GWZI8wRBh440In",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEXXTkqxfBk9bVHeXTzsYPgShnPlqv7o5dct3gDc7twbWqYywQrZJHqQ8mu32ZhZ6gduUmomM1BWnH5PUdjNBpY5-f8xtivUD0Sf29vcqVODceBWSt_EYHRkrTUa7ppIEufrP4-bwyxaiFng5USTaqOBSW3TuMdhmvvwC4=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQERtENCCCVS4yYsF5Uc-FLyN-WmmO2Zz32bhjHgxE7rJPAF3GGy8wB_gho-suDNcBYKErSD-SfWSOpMIi4FLETHAxrt6iJA9ghOyFqOfUy08VzvLe1fRVXUFC3BPzWeaYw3DUTYXGv61Vz_mhVCyfxZqC2Rvife",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEXVq8-IFDn-3b_ZSxbN8tBpO2d914Li8jTu4ZZBv7IdjPmfKzY0Jxvdm5VWFpd8XoHLHQv9SEH9BLSWRdHYwuEtTEmH7EcJVoKNLOYE-Xr_JiWVLJRxxq7DiuytPZT_rdgdSEZjFAJudQV95A9pQosOm8apFkoS58DZdTTMUCJRbmTcJDuWvXQXPiixrjHd-Bi5Kq4kVzUAP214Q1Y0FVVrSI2afGZ6F8XlHwexQuYa9o4l5yQ-0vd0dvFsS7-UGcjGB802Z7L",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH9eEAnGcEpUprnmnbC4oKakDUNgnFa9NTb63OYYS3PpKWaXAlH_Bpd2x6Hd_f_eYZra2-ophrslV_jYGGxqSNILfy4JKTG1EVQYkAgPN9cMZ5F5ov8cPaGolqh_ENqL8R1HEt6pR951v_sd1qs_27FQD1BoQedVwSdItEwlEL6Ielw",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGPR4s5K1cGNLnI4ar1rysnc_ZR6PX5mFbt8kLnF_nnIoE7TAWVgRDBlL_hrwAiPq0MfOEEloVxmpfYeuAEWnsCmHO9tjxGMN0NznmfmoXKrEtmXkW-jXEJ5CM8CBxXlW30aP-FtKICUQMHP3_dFjkJ5oDgUR9xBa0IfoQI1RpPM8daB8UZFN8GS3B69QrJToOLvU5nRDkFne5MNRrXrjm2Fs069KFgccyePbgNAI8="
+  ],
+  "dominios": [
+    "recnaturalesctes.gob.ar",
+    "argentina.gob.ar",
+    "aicacyp.ar",
+    "clarin.com",
+    "montecaserosonline.com",
+    "visitcorrientes.tur.ar",
+    "corrientes.gob.ar",
+    "sentilapesca.com.ar",
+    "perfil.com"
+  ],
+  "consultas": [
+    "carnet de pesca corrientes argentina costo",
+    "licencia de pesca corrientes precio requisitos"
+  ],
+  "texto": "Para pescar legalmente en la provincia de Corrientes (Argentina) se requiere la **Licencia de Pesca Deportiva**, un documento obligatorio emitido por la **Dirección de Recursos Naturales** dependiente del Ministerio de Turismo provincial.\n\n---\n\n### 1. ¿Qué tipo de licencia necesitas?\n\nEl tipo de permiso depende de tu lugar de residencia y de la modalidad de pesca que vayas a realizar:\n\n* **Por origen/residencia:**\n  * **Residentes de Corrientes** (con domicilio acreditado en el DNI en la provincia).\n  * **Turistas Nacionales** (pescadores con domicilio en otras provincias argentinas).\n  * **Turistas Extranjeros**.\n\n* **Por modalidad y tiempo:**\n  * **Pesca desde la Costa** (por día o anual).\n  * **Pesca Embarcada a Remo** (por día o anual).\n  * **Pesca Embarcada a Motor** (por día o anual).\n  * **Licencias temporarias / turísticas** (por 1 día, 2 días o por la duración de la excursión).\n\n---\n\n### 2. ¿Cuánto cuesta?\n\nEn la provincia de Corrientes, los aranceles de las licencias de pesca están fijados en **litros de nafta súper** (tomando como referencia el precio de expendedora oficial en Corrientes Capital). De esta forma, los precios en pesos se actualizan de manera automática a la par de las variaciones del combustible.\n\n* **Residentes de la provincia:** pagan los valores más bajos por día o en pase anual (el permiso de costa equivale a aprox. 4 a 5 litros de nafta súper; el embarcado a motor asciende a proporciones mayores como 20-25 litros).\n* **Turistas nacionales y extranjeros:** los permisos temporarios o anuales varían según los días de estadía y la modalidad (embarcada o costa), fijados en módulos de litros equivalentes.\n\n#### **¿Quiénes están exentos de pago (Gratuitas)?**\nTienen acceso a licencias sin costo (generalmente aplicando a residentes correntinos que lo acrediten):\n* Menores de 15 años.\n* Jubilados, retirados y pensionados.\n* Personas con discapacidad (presentando Certificado Único de Discapacidad / CUD).\n* Excombatientes de Malvinas.\n\n---\n\n### 3. ¿Cómo y dónde se tramita?\n\nEl trámite es **100% digital** y se puede realizar desde el celular o la computadora en pocos minutos:\n\n1. Ingresa a la plataforma oficial: [licenciasrecursosnaturales.gob.ar](https://licenciasrecursosnaturales.gob.ar) (o a través del sitio del Ministerio de Recursos Naturales `recnaturalesctes.gob.ar`).\n2. Registra tus datos personales y selecciona la categoría de pesca (Costa, Embarcada a Remo o Motor) y la duración.\n3. Realiza el pago en línea (con tarjeta de débito/crédito o medios de pago electrónicos habilitados).\n4. Descarga la licencia en tu celular o imprímela.\n\n---\n\n### Requisitos y recomendaciones adicionales\n\n* **Documentación:** Durante la jornada de pesca debes llevar siempre la licencia (digital o impresa) junto a tu **DNI o Pasaporte físico**.\n* **Embarcaciones:** Si pescas en embarcación propia, el timonel debe contar adicionalmente con el carnet y la documentación de la nave emitida por la **Prefectura Naval Argentina**.\n* **Normativa de conservación:** Infórmate sobre la **veda temporaria o zonal**, las medidas mínimas permitidas por especie (dorado, surubí, pacú, boga) y las zonas exclusivas de **pesca con devolución obligatoria**.",
+  "error": null
+}

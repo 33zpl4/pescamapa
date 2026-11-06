@@ -1,0 +1,52 @@
+{
+  "fecha": "2026-11-06T08:20:44.094Z",
+  "proveedor": "gemini-search",
+  "pregunta": "Quiero organizar un viaje de pesca con amigos para pescar dorado en Argentina. ¿Cuántos días conviene, cuánto cuesta por persona y dónde me alojo? Citá fuentes.",
+  "cita_pescamapa": true,
+  "urls": [
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG3sZWuEv8i9EWvy0lk3WF0cUtQUxAessr6UUA4JuhxGjbQkQj34sLxqCftD875ryz5nuhAAN9AMHQ8dRkgHJWapO5an9M6i9dUOdvki2iaOP8BT5vwZvc-MHUC5Y-9wilucJibAFAr",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHPA9i8gApgzisbcWmoi1alZ9ec2sAxvGIh6R1om9-DOlO6813Nxam-rd4Q3mxqqNThfBNHPCM9--zkRW_RdJEujAQnp6-VETC2UnOu1Sk4mZ9L_DxNBs2wqa4hXtBoJg==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFmNzgnwnnJVbZhLYOU4mOYc0wfRvzBjAmn2n1yBk4k4N0aY5zeZKs0lxNyxbNLKUuvgklQLeaHgqQSMbtBFNVfp5fYq80x-jMi-w8JuKVDJafclOBiHYgRsIq_oYtsDp2EY3FlxlXjZ0S0UyYS7cQ3f88=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFjYtLpjWt3WlZX8vYOTEmojBKs_-ADJzkTCmPNnit13qHDhV04jipCtyQZGd_Kd6RSUfMeOIIVHhoOcKimYWHHaYWwIYPCHIlAbKoRvZlLAKGoI3cj6EkSYskDkKzOEHyHbAqe6d27VEhrIDPSEm5P9TGxNbyHfX6kN5-RSw==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHqUbjVPgo455iQCElRCkW-9DIiVcjlUwTELQJPsGGJsAuU3Uxfuf-Cr9fP5ikDSPDIJgRPEh7LahsAk-yXDbv1yM8Jd12XXpAFg0Tprid9v4ne2_7n7i3rw5fkF2xiPhNt1CmaxXvZ9FS7H1vVOC6-4vuDTqL1u_Oi34mMh8C7TBae_Dp1IP_cdpOXOWGsP_o0MbtBt6lWPWYSIUuXD_euwWX5VV6KXA==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQERbzI8L7eCM8OnVs1UPWNQAo97oPeshI2yD8nbzT6Avpc8PTIpqtEM3wW9PvKsFG3s2hRe5P13tCOp_QcYikLOix48qQlA2ICiTzJydGi2t8QXA_-u6vW5q9xdtbpgF1EnyyEZ2cNPIg==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHkRdDO71rsnTLD4pvGMUOSedPL2z5qEliQHM49-gmLUd2dVGzqUABeBkrkEarUuERBGYOEwT5Th7jhMqBfOEJslMpYKkt8amPehWzMKoDa-LyKEbi6Q5_JjK8OAR62",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHxKSgqD5Gk_nL8P3dj_f9cUwNnqMqNmvk1-9Z5p9cUZ3G3SA-UlOH7FQe1vwuAaGp_ZhJ5dqoQBWWQDDU5-zW3_YHGXDT_Y_Pf7h3VltQKoQEftdi5q-iWNh_CGMs=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHsY3Ix_ZF8V1rx3LKsZxo73s0QMpXrz1X9EQbPOlX5XvmOYo36Ij2lKems8sP3p9QvCWgWpRpE2hxNOlISrs2-jGtoVzqZ0VAGHS_so-j24lPkvzy_Zc2t_8rA9pd61eWWgApce_45",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEQtJISdRMyAwN-lXLx06jK0J1eWadMKPuwxx089VhVhLrED0cO8RuR5vUbQvXKTl4HOn9AGBcX9e7pYynJ_9Kuws8BgGhV6Lqhcj3kNxlnJNxzFbtSnkHBwQ-Njrkz-YMIA-xxaQ==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFX5qT6VMzqvxgUwH4GyFgQplFCST5lDJ2kFX17lP5hGt4Q1i91NZWwuxVWhhHo2wG8T4WURdQS0ZM_MX1LGfFwaXnVuMSv_SBisSVFFiT767gBzwOu8pDVM3PNf0hqTz5ZOUIO",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFGK8BZxSmC1gdUxtpAQVuCS20MK2ZL7ibWZwVddCCwk2szfO7nBihZsxciMhXh6FbSwhDOJTJnjpZ6EKMJS0fgU7EqnSISk7tzR0QCp0ktOlrQkUqNdvN6glJiMQ-23OcPQSFEa4O44_cdnV_6DTzc2LTSnIirqEg=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFSCDwbl3RzEIRDkuuJOaho8fFZkel9QJtU36s6NPEusS-ddO9zZN9BryQ9vqZmVRiMjHmJhuTT3Xb8fWeAHuhG9S4eHX8e3dO27jlH0GMJbWghOR18ai5xNA3FA4aCZTKWM7zhJqqDS3w9E7ZRrWCOLDytcVb21AOlpe9E",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFJtbfMZ3nXumG2lmnqggc-mD_Wi_EmSrFE_92ltzf1VEyqIajjrK6GxXThOzqTyYypMx1piphttie0CifSYxS-meA3jYwZOuRa_1LCgKVofvaE7MUN8AbI-g==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFCG2GoJ0Z1YC15BDa8qKPjr63H2RpLapCbKCaDbxxhEVDLO2QcUoxKVdk4Z0yovD4Xco9LkRuVKFqWG0gDrqeiSEyCZrImlW-7kHcMS_xGGzhEPxwCIRq3fqd1XhviV_UewK1F1M2yYRw8oeapDIvZzUo=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGdMguUleRXca-lgBruw_S3EHY1aRHXSIzo1jpiOfrRANjQQCTJtdGTqA6PGY6mR1vfiHmKWWKiTa2PFm8CQJBhxouL5B_5GakYMCNLUiE18XMNRevtkyQ3DLN_znuJZRl3VUqUuJomoGL8hrucafmmQROV",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG2ELNl9bL8XMnqE-4m6wzOmg2bNyhJDWmj-XEgJwcUGy4z8G6-XUkM_2KWozrL_fe8GdKMtjpORgFFlZ6RChJZwB9DpXx7VKj2HaA3baS2q5_bQ22_4TTzq6xkjpfmY60=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHfarizIppmoJjJb1dbTwKyWIsjeCs-ldyErXznOm0vVAdWKGe86Fd0Q68IhHoHBzgYH-ig1BpTyvr8W4zsL6nNlor-wqRVCulLd5WMenAugvsfw3zkalNfyIuOgP47DUjap8iiNKsvvAglHbNZkBuM9UThZ4HZx11brO1A05-Ku4sF-yRzUrJiUra7NhfR4EOT",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHrxQC_oDirIGfwFcdNuu651j1TjtYx8uIsgxxogL6LutJhA6AcE-9meKT9EzQwzT80rG--gjjCx1C0LFzsRoQsKS0UeOURZMexoMyEn7S3C7b9EiszrCxqFRrsWQLteXMMWX-Zk5QQ"
+  ],
+  "dominios": [
+    "paranasunrise.com",
+    "setflyfishing.com",
+    "pescamapa.com",
+    "pescaargentina.com.ar",
+    "clarin.com",
+    "goldenflyfishing.com",
+    "tatafishinglodge.com",
+    "theitatilodge.com",
+    "fishingbooker.com",
+    "blackbone.us",
+    "piralodge.com",
+    "aipeces.com",
+    "flyfishingcaribe.com",
+    "hooked.com.ar",
+    "flyfishingpatagonia.com",
+    "suizaoutdoor.com.ar"
+  ],
+  "consultas": [
+    "pesca de dorado corrientes lodges donde alojarse tarifas",
+    "cuantos dias pesca de dorado corrientes argentina recomendaciones",
+    "pesca de dorado argentina precios paquetes por persona lodge"
+  ],
+  "texto": "Organizar un viaje de pesca para buscar al **dorado** (el \"tigre del río\") en Argentina es una excelente idea. A continuación, verás la estructura de días recomendada, los lugares y alojamientos principales, y los costos aproximados diferenciados según el tipo de experiencia.\n\n---\n\n### 1. ¿Cuántos días conviene ir?\nLo ideal para una excursión con amigos es planificar **3 a 4 días completos de pesca** (lo que equivale a un viaje total de **4 a 6 días** contemplando el viaje de ida y vuelta). \n\n* **¿Por qué?** El comportamiento del dorado cambia según la presión atmosférica, la temperatura del agua y la claridad del río. Un itinerario de 3 a 4 días garantiza margen para adaptarse a las condiciones del clima y rotar por distintos sectores del río.\n\n---\n\n### 2. ¿Dónde alojarse? (Principales destinos y hospedajes)\n\nLos mejores destinos para la pesca del dorado en Argentina se concentran a lo largo de la cuenca del Río Paraná y del Río Uruguay:\n\n#### A. Paso de la Patria e Itatí (Corrientes – Alto Paraná)\nEs la cuna clásica del dorado, con aguas claras y posibilidad de captura de ejemplares de gran porte.\n* **Hospedajes destacados:** \n  * *Golden Lodge* o *Tatá Lodge* en Paso de la Patria (cabañas/lodges orientados a grupos de amigos y familias).\n  * *The Itati Lodge* (SET Fly Fishing) si buscan una estancia más exclusiva de alta gama sobre el Paraná.\n\n#### B. Esquina y Goya (Corrientes – Paraná Medio)\nZona caracterizada por un laberinto de riachos, islas y el delta del Río Corriente. Ideal para pescar tanto con carnada como con baitcasting, spinning y fly fishing.\n* **Hospedajes destacados:** \n  * *Don Joaquín River Lodge* (Lodge all-inclusive con flota propia sobre el río).\n  * *Pirá Guazú* o cabañas con servicio de guías locales.\n\n#### C. San Javier / Santa Fe (Paraná Medio)\nUbicado del lado santafesino del río Paraná, con gran volumen de dorados y variedad de especies acompañantes (surubí, piraña, etc.).\n* **Hospedajes destacados:** \n  * *Parana Sunrise Lodge*.\n  * *Rio Bravo Fishing Lodge*.\n\n#### D. Esteros del Iberá (Corrientes)\nIdeal para quienes buscan pesca de dorado con mosca (*Fly Fishing*) en aguas cristalinas y un entorno virgen.\n* **Hospedajes destacados:** \n  * *Pirá Lodge* (Nervous Waters).\n\n---\n\n### 3. ¿Cuánto cuesta por persona?\n\nEl costo depende del formato del viaje:\n\n#### Opción A: Pesca Autónoma con Guía Local + Cabaña (Económico / Intermedio)\nSi organizan el viaje contratando una embarcación con guía local y alquilando una cabaña o hotel en el pueblo base (Paso de la Patria, Esquina, etc.):\n* **Costo por embarcación:** Entre **$250 y $500 USD por día** (incluye lancha, combustible y guía, a dividir entre 2 o 3 pescadores por barco).\n* **Alojamiento y comidas:** Aprox. **$40 a $100 USD** por persona/noche.\n* **Presupuesto estimado total:** Entre **$150 USD y $300 USD por persona por día** (Aproximadamente **$600 a $1.200 USD total por persona** para un viaje de 4 días).\n\n#### Opción B: Lodge Todo Incluido / Fly Fishing Premium (Gama Alta)\nSi buscan una experiencia completa (*All-Inclusive*) con alojamiento boutique/estancia, gastronomía de chef, barra libre, traslados privados, lanchas de última generación y guías bilingües:\n* **Parana Sunrise Lodge (Santa Fe):** Paquete estándar de 5 noches / 4 días completos de pesca ronda los **$2.695 USD por persona** (~$540 USD por día).\n* **Pirá Lodge / SET Fly Fishing (Corrientes):** Paquetes exclusivos de 6-7 días orientados a pesca con mosca oscilan entre **$3.500 USD y $7.800 USD por persona**.\n\n#### Gastos adicionales a considerar:\n* **Licencia de pesca deportiva:** Requerida por la provincia (aprox. **$20 a $65 USD** según la jurisdicción y la duración).\n* **Propinas:** Acostumbradas para el guía de lancha y el personal del alojamiento.\n* **Traslados internos:** Vuelos a Corrientes (CNQ), Resistencia (RES), Santa Fe (SFN) o Paraná (PRA).\n\n---\n\n### Fuentes consultadas:\n1. **FishingBooker / Hooked:** Tarifas y modalidades de contratación de guías y embarcaciones por día en Esquina y Paso de la Patria.\n2. **Parana Sunrise Lodge:** Programas, servicios e itinerarios de pesca de dorado en el río Paraná.\n3. **BlackBone Outfitters & Don Joaquín River Lodge:** Ubicación, logística y características de pesca en el sistema de ríos de Corrientes.\n4. **Nervous Waters (Pirá Lodge) / SET Fly Fishing:** Tarifas y detalles para expediciones y lodges de pesca con mosca de dorado en Iberá y Alto Paraná.\n5. **Dirección de Recursos Naturales de Corrientes / Regulaciones provinciales:** Normativas de devolución obligatoria del dorado y licencias de pesca.",
+  "error": null
+}

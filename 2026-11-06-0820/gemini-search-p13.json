@@ -1,0 +1,43 @@
+{
+  "fecha": "2026-11-06T08:18:27.907Z",
+  "proveedor": "gemini-search",
+  "pregunta": "Do I need a fishing license in Patagonia, Argentina, and how much is it in 2026/27?",
+  "cita_pescamapa": false,
+  "urls": [
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGjuFkE53WVi9S2q2aCFiml83b42wNbzYgUvbhcz2VmaaZS_NuDGE4yMYL4pGcVlSOgHAzRH2-eZef82TdugetjWgFrEA07nFplE-8VV-LfILKuvfSAXnCVAFDz4W-YDpUzgQHh2eUt4Pa9PTa3wu32UQ==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFUw6s3cScCMbr5IRYWqZy2OHaw6VUp3AA-8DovK_IZFZMGXsTqvkCyWxLZh0EuBNmSTnuMejJKrKuQO9LMD3W-Bfqwx_4fzNIQVDsSsUG2FV_t6rb38yYsvpg5m6aoLHi0BEJLRbnysQtrUAL02ikAoyenk3yAPCfIs_VhWDS0avJq-u9ltic8ZTfkZvc7BjUm726nIT_N_7-sQQDYqelzP6Y_YGMU6sJ1m8JfL5iUpS3V6kw=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEFXwXZGnb8NbCR5ywf5x1rAaFCJBEqoZ81sPb2f1UfbRx_XgQh98ODK4v8aQBChSaH3Bk7CoT4TXd5esJrRnFYXCwc4EYj-g4NiXT7wfHfiEMOY3hVeVvprlWxwLU5T9rqvKISm-9Eg20=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG4n6cWp7R8LZp4Fh4y0TswN7YsEUAk5dzMRdJ8Mo1wgOnszGfk_bKQGK055zn2IHWyKiqZJSyyt8K2kz4YeKFLXVi_0Bo_R3uIu9KYPV3wGRKjwGDsyxmE0hcWFwitUhN9QGLlO5v_RdKcvHl-LTxRm6y7563r8lBhe2gtyMdFnpZoeTFTMdv3ZACUcdDCRifzbL0mZW01xu89ltIRU5KUYvFpq_QNEyfs9TSGaridr85ffEkW9O1lb_hx291oGJTTyA==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGPW79Lz5ePYgLLJuOjAcohJ99xnRfF0KYYuqn_MpYyFuTJ1VopQpTMeAuGdyWkXtqRQlmFVlm5KN31wdpq1O9V8LVCAzMdDefV9oO5GrzmNyEUs1zW4n4lMbta-IDp09MxHEBJoAM=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG14W-09CaeatOpTfYavpJ_0xghWu7cwVfmQOa7TEb_5enmLKTHjcrEGq4oPS-YgT8D85ZI8F1YNzaUvrCGy8ixAHAtR9zq9BUZlU0GqOZ8snYKzeNMmv2Fdzk72Acb8bObnfReH-q9CxtsqQjYyiB6EKLb1sm4uo3WKFAZn5wnNDskpjSIcfrI1HJW2u2YciJiR-Lc-tMJ1FW2VrcPTRrY-cWufx61mSyo6Wuhb2KY",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFH64oHBe0xNCDwkONJh5enpvmDK57_3hRYbT_jtwHhtHWw9cc1a6cMHiJXCCizp4ODuC2LuFgNcLN5J9T9NWBbTZWjcYvJFNyUjcV8PPD-5yk5OscUvQ1wJcJNzW_ywX3nJ2yNAszA6sePyABfPJjfPc3PY4oSwWNEDx5R5_0fO2ZFwC6kRcq9Eg==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHVjv1FaeJ0oRXefdqXDtTSLwDP4JfPQpzElMgJbyW01rjrIe1CFCwyzIPisaw0lWWE9bz3O_wrC2QYfMHrsE5WBksd9JRbUOM1lEk9CjLBBqxzldIjd1S7hlTw5mkk3EcX_kSPXnDs0tpZuwtWeC3oJXhwn5U2yfRLPpdrR-eqwpgc7nQFzoYUDPKrChAj-wkPckgh0pXTO1J0HQHr6t2nbXVdVtCK3rQ8wLNdE2LYPIvu_Pw7uDu0DEJMDW_IWcbB",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE2jLdkIhg_qndgKTh2v3x_WwmONUkT2I_MAQKGjHyWMGzRFw6djb_WiJhjz6enJMGEBzb1J6SplRfozPECT6dB8G-B-osGqsJjTz5LKmYiE7IzG17lh7hpWM6m_F5AixLjbazFm81EbjPqWJRy-OkACwLpbqyC4jBC9cJNG_FcVrN9-9HcMRHaGbOtEof62ZFmC1MafdEMqFgpEOJU1xD9QhPv-OE0V-x7RncYp9ZDAQrK4g-WtZUBNxpnKg==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG1k22cUEK5aPyYl1ZePag8NYAOEyF7Om7g7yNK4RN6T5H_lmK9dfaFbZhnHkil8tK2sR8UncuGl4W5Lbak2TUU4fbiDvuwOXffoVADLI1obr8oGe_wH4ZxIyefiVAR_QUlrUaec-3VdCerzKxVs2MClcAX9H_KEiXm_KvmqwgSF89xedI4m4-a",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGz7tiNqzGwJOJWqmisX_V07PqUv6ScdgCjTmtXQP2Fuq8muzSWJ_ytCmnnUcn3meDCCergQIgG8g2FBL0fd9nnLYvK08Ovs2uM5JByyQ7gxLGXNdcTBUvNy0VKjbHEw3sJUsmSiso0adUafPg=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE9IR4J3vtm2Oe747_5LEYE_PYDiqcuGOfsaZT0MVTvSvJrRQy56LEJQ0ZTRO41T9LXTFONm1tLVaywjwheT7xf5y0PViBF7vOIUqXWbnl8emGf4pzcq-skJ9_xfhlwJLhR2QgFa-nQetCcmbPKoaXfsyV513tNnwMN5ls=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE25VNw-Cgs0cjtiRBwM9KVJEh2pMhIw9OrUV606qdyO1crEw6C5-rlk2jRUf9xvWWuRGFbrBTfdPTEax0pBYeP1yp5A7TGH-3xHtgeA4CDuBAD0MK6Q3AzewCQosb_hk8="
+  ],
+  "dominios": [
+    "paranasunrise.com",
+    "reglamentodepesca.org.ar",
+    "flyfishingarg.com",
+    "barilochediario.com",
+    "patagoniawow.com",
+    "perfil.com",
+    "aicacyp.ar",
+    "diariolaportada.com.ar",
+    "lmneuquen.com",
+    "argentinapura.com",
+    "patagonia.gob.ar",
+    "pescaargentina.com.ar",
+    "santacruz.gob.ar"
+  ],
+  "consultas": [
+    "Reglamento de Pesca Deportiva Continental Patagonico tarifas 2025 2026",
+    "Patagonia Argentina fishing license cost 2025 2026",
+    "Argentina fishing license cost Patagonia nonresident"
+  ],
+  "texto": "**Yes, you are required by law to have a valid fishing license (permiso de pesca)** to fish anywhere in Argentine Patagonia. Park rangers and fishery inspectors actively conduct checks on the water, and fishing without a permit can result in fines and equipment confiscation.\n\n---\n\n### How Licensing Works\n* **Unified Regional License:** A single standard permit covers the heart of Northern/Central Patagonia, including the provinces of **Neuquén, Río Negro, Chubut, and all National Parks** (e.g., Nahuel Huapi, Lanín, Los Alerces). Buying a license in one of these areas allows you to fish in the others.\n* **Separate Jurisdictions:** **Santa Cruz** (e.g., Jurassic Lake/Lago Strobel) and **Tierra del Fuego** manage their own individual provincial permits and regulations.\n\n---\n\n### Fishing License Costs (2026/2027 Season)\n\nThe Continental Patagonian Fishing Commission set official rates in Argentine Pesos (ARS) for the **2026/2027 season** (which runs from November 1, 2026 to May 1, 2027):\n\n#### **1. Foreign Non-Residents (International Tourists)**\n* **1-Day Permit:** ARS $50,000\n* **10-Day Permit:** ARS $140,000\n* **Full Season Permit:** ARS $280,000\n* **Special Neighboring Countries Permit** *(Chile, Brazil, Uruguay, etc.)*: ARS $50,000 for a 10-day permit.\n\n#### **2. Argentine Residents (Residentes)**\n* **1-Day Permit:** ARS $12,500\n* **10-Day Permit:** ARS $25,000\n* **Full Season Permit:** ARS $50,000\n* **Youth (Ages 13–17):** ARS $25,000 (Season)\n* **Seniors (65+), Children under 12, & Disabled Residents:** Free (*Sin cargo*).\n\n#### **3. Trolling Add-On (Spinning from a moving motorboat)**\nIf you plan to practice trolling, you must purchase a supplementary endorsement:\n* **Daily:** ARS $25,000\n* **10-Day:** ARS $50,000\n* **Season:** ARS $100,000\n\n---\n\n### Where to Buy Your Permit\n1. **Online:** Permits can be purchased digitally prior to your trip via official portals such as [permisosdepesca.com.ar](https://www.permisosdepesca.com.ar) or provincial wildlife portals (e.g., `cazaypesca.neuquen.gob.ar`). You can carry the digital QR code permit on your mobile phone.\n2. **In Person:** Permits are sold locally at authorized fishing tackle shops (*casas de pesca*), municipal tourist offices, and park ranger stations.\n3. **Through Guides/Lodges:** If you are booking a guided fishing excursion or staying at a fly-fishing lodge, the outfitter almost always handles the license application on your behalf.\n\n### Key Requirements to Keep in Mind\n* **Identification:** You must carry a government-issued photo ID or passport matching the name on your permit.\n* **Barb-less Hooks Only:** Most Patagonian rivers require single, barb-less hooks and practice strict **catch-and-release** for native species.\n* **Felt-Soled Boots Banned:** Boots with felt soles are strictly prohibited in all Patagonian waters to prevent the spread of invasive algae (*Didymo*).",
+  "error": null
+}

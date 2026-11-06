@@ -1,0 +1,41 @@
+{
+  "fecha": "2026-11-06T08:20:05.064Z",
+  "proveedor": "gemini-search",
+  "pregunta": "¿Cuánto cuesta un guía de pesca con mosca en Bariloche?",
+  "cita_pescamapa": false,
+  "urls": [
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFdZ5Bz1eRycn-4-Z8jB5HRN6VxIvKhSRYrpDE7EwqnCjZhyoXpnu3Si2HY2TBW1IZ9W3fVYEBkPyUObv6CIghgpbLkrJx83qbeBc9qwv5lmykXJOfr2VnTidCPgIwAw-cqqlikiJgMea3ClwSxBCqQ6fPwMzDFH1s=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG1kTWtWidY8QB7m0zTBum5aE5eFkUHjfKtq7YuzKKZwepBA8JwH1IuDxKnowtNpfLqJBIjfyBdHB5JjQi5G15b7rWnjOylMKIGczBfkUu4F3x88_qeWrevqddf463VxZDJlKTq8J6z3DsXucS7UgeXPEihGehKt6UpLMiAvXAUmiSH3jEa8AkPIMXPaA==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH1TrTm9RPsksdxXoYo0mPSyMH3RHuyYx7uhzjFC7AbQD9cb4PuvXrxiPURuKmXDERxqavVEU7mgT6ooOwxCFtrMoORDO9_i8ICqg-eikxxGYBu5tuRkOtr6ayCr6j4MtasiaBp8097Z08mAqvXFnpf8Mo=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHz0lkMSrKGgYRNmHxOIEpPjwCw5-BFAHCm93aNDfh3BlZyFOZd4SeAB2C394n6PQXqVbccMQXX0Fg1ESCHJ9SSniHSqngcK1PfFzLOSgL0B8h0lEAzubEs1MY1eMP0",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGx7zWv3R_lBdzlIHNpFF_sp5BWtfsUHNNJRb6CKvw5vN6HFhbFfjN2lmflRMC-Kv-hT2-WocFu9zBThgO5njBs8S2ejfuZUk5YNNmH9f7C4Rtyk6ESerer6E1ayBFejqYRZO_omdsVQvMQ-Q74JIVmJonzBU3cmXRSc6pPqtaSB-MnBaq5zEpB4HYrKvX0RD_TSGsTkyQc7WZ57BxmKE4HHCDT",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEtaM3AoCYMaD6-ieTX9ZdkT3n0RTnpMUiwz65c9XVipa3Cyb1DzBj2NSuDFBJGy_G1FtKXfUkOSj6uiviLDeS1ObsOZZuyfHCNywdiCrnVAbXwkbgyw4QeMdpAzrGVr1vrKJB3Xm4cyy9SPKhoveg=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGQxmr8oJrMZK-8piiViXsmYywzYmWrMimLGfXuMUY_coRpLk0fRoWNeqxgB24Qg8OMQeo07adCKFUETQKsZSR1VciH3uNCukBSGJP-5U9oYSqJzW8=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEb5CAvreoSysbNjiEnz2Z1ASxvSGS16KmEmFhMMtbLIcG0RXqVZyLrd2Z5SAvNcDyrhR5yKoPrTr4DZq_kMMiylt_PMU1LUEPOn7kQdn9romB8xhaqjK6tbgzLOB5p",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHkc26ll8Yr4vrKi8VIccbbd6_v9ibmqeUR_Sz9UZeZg7feDbbRDMgukXfeetLixwKwwO-CNIlXUyBZjtJRc_knav2LfwrclEouLvzTkkfX7c-KLH9KxQY5",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEppkeLdM-ZrR7zST9v0vXI79HB6HiT7faIF-i-l1HPmb62CMzbVa7uyuzXbqehOuayRmrkIDXjyIbZx9VNT1mxiK7olZ9osrI3_d8AIOpcqy4zTT6d9xGyYZ7MoayJOj3cGbl9w6YqAu8n0oxVI2DnGww_VF5TpdnQFnZlMigQLGlHLPmtWwsl6t8=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHMVxlSrF5_1qvRqCzKmGR5qaNslFAuK6pHbTIk449VG4p3Myx0Wf7QQyM601WhrvFBeVHcWCstejPf6J98Z05FxSRQZ3vsU8a_2m7syWQfJV9OWhYOBUU76m0WAAwO98TumV6gIPtDJwbW",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGv4T3Q_ZTbyKX5Pjd84UrjjqDjYCaLE-om3LrWzf44t7B9Ue2dm9duMx8HHHKyPidGKv-OyjKPxTLD0h_eipgjC7K7CSW7VfCBkPW62fYetYZxL6PJf_AeVH5X9SZj-_o14mRMU96GHtWPT9cX3RZBLPERJ-HjSQedY0r5ptQZsSePf0JlnJgNxdKMigv2Ck2jRHBtHA==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH2hgA_wqgHa2Guhwz2PxwG1hJWAgmjdQtU1GdUEG3pKYOahwd4TkXuUggL0LvLv2fggGW2qa34_QzIgA7gVKJqEwISmOQ5wVEr6JM3J0e8zYx6"
+  ],
+  "dominios": [
+    "patagonia-trashumante.com",
+    "matoflyfishingpatagonia.com",
+    "fishingbooker.com",
+    "baityourhook.com",
+    "barilochefishingtrips.com",
+    "patagoniafishingtrips.com",
+    "troutbariloche.com",
+    "southernriverspatagonia.com",
+    "panilflyfishing.com.ar",
+    "viator.com",
+    "fjordanglers.com",
+    "limayflyfishing.com"
+  ],
+  "consultas": [
+    "fly fishing guide bariloche price full day usd",
+    "precio guia pesca con mosca bariloche"
+  ],
+  "texto": "El costo de contratar un guía de pesca con mosca (*fly fishing*) en San Carlos de Bariloche se cotiza habitualmente en **dólares estadounidenses (USD)** debido a los insumos y al público internacional, aunque también se puede abonar en pesos al tipo de cambio del día según la agencia u operador.\n\nLos valores de referencia aproximados varían según la modalidad y la duración de la salida:\n\n---\n\n### 1. Precios de Salidas Diarias (para 1 o 2 pescadores por bote)\n*El precio suele ser por la excursión/bote completo, lo que significa que el costo se divide entre hasta 2 personas.*\n\n* **Excursión de Día Completo (Full Day):**  \n  **Entre USD $450 y $600 dólares**  \n  * **Duración:** 9 a 10 horas.  \n  * **Ríos/Lagos comunes:** Río Limay, Río Manso, Lago Fonck, Lago Hess.\n  \n* **Excursión de Medio Día (Half Day):**  \n  **Entre USD $250 y $380 dólares**  \n  * **Duración:** 4 a 5 horas.  \n  * **Ideal para:** Pescadores con poco tiempo o principiantes que quieren una primera experiencia.\n\n* **Expediciones de Varios Días / Campamentos (Floating & Camping):**  \n  **Entre USD $600 y $900+ por día por persona**  \n  * Incluye flotadas de varios días por el Río Limay medio/inferior o Manso con campamentos tipo *glamping* a orillas del río, todas las comidas y logística.\n\n---\n\n### 2. ¿Qué suele incluir el precio?\nLa mayoría de los guías y operadores locales ofrecen un servicio **todo incluido**:\n\n* **Guía profesional habilitado** por Parques Nacionales o la Asociación de Guías.\n* **Traslados ida y vuelta** desde el alojamiento en Bariloche.\n* **Embarcación:** *Drift boat*, balsa (*cataraft*) o lancha con motor según el entorno.\n* **Equipamiento completo:** Cañas, reeles, líneas, *waders* (mimetizadores/botas) y moscas.\n* **Comidas y bebidas:** \n  * En *Full Day*: Almuerzo a orillas del río (usualmente asado, picadas patagónicas, ensaladas, postre) y bebidas (vino Malbec, cerveza, gaseosas, agua).\n  * En *Half Day*: Snacks, café/té o refrigerios.\n\n---\n\n### 3. ¿Qué NO suele estar incluido?\n* **Permiso de pesca deportiva:** Es obligatorio y se saca aparte. Cuesta aproximadamente **USD $30 a $40** (o su equivalente oficial en pesos para residentes o extranjeros).\n* **Propinas** para el guía.\n\n---\n\n### 4. Datos clave a tener en cuenta:\n* **Temporada de pesca:** La temporada regular en los ríos de la zona va desde **noviembre hasta mayo**. Durante los meses de invierno (junio a octubre) la pesca se limita a embalses habilitados como el Embalse Alicurá.\n* **Nivel de experiencia:** No se requiere experiencia previa; los guías se adaptan tanto a pescadores expertos como a quienes nunca tomaron una caña.\n* **Reserva:** En temporada alta (diciembre a marzo), es muy recomendable reservar con semanas o meses de anticipación, ya que los guías experimentados agotan sus fechas rápido.",
+  "error": null
+}

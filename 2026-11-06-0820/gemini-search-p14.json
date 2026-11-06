@@ -1,0 +1,42 @@
+{
+  "fecha": "2026-11-06T08:18:41.238Z",
+  "proveedor": "gemini-search",
+  "pregunta": "When is the sea-run brown trout season in Tierra del Fuego and what does a week at a Río Grande lodge cost?",
+  "cita_pescamapa": true,
+  "urls": [
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGO6TYxMfyJV_792GSpiq8XY1rvq-ThszxFexXB3oY9w55-esWwLr2VD2EqLIrTfCb4DuHiZq-zhgMVX9tyQPslLUk9GWKMN0KJs6bRPkN9gxprHPO6SjulHpD4JnOSYlYlM_nwVJksNFlnxlQec3A=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFi6KQEHcLlidlVinjkEG0xL2qv8TPT9gOM9L73xiCQRCSjUF0rxnkjJnpno8Nln-hkGe_ZW7xoI2ISOUF8HBh9ERoK5XIkzSiKiDf8Gk9qSIJIOB9fgDPS9Rpi4npiIhIw0iuaTBN8Q5V7pX_CLuU3Q98rqxUtc2hl1WJDbgc=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHtngqB2KWssd4CtzPjBFmXX1tshCDics_fn1oWkGBq54EnYfaU2EaXlX1r5CQkXK84f-uW3UX_TQIAw5pU-z8fAJEMzgrpqRRrk6__hRXskQA_swferkkPRxg8IKpE_NTM0tJslpgSx9XZeEGmQpddK-WP",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEIsxd9vAEFL-miNcBS_iHvfIChd5z2bzGEIm25ViV6RgeGcolKq3w1b2NqiZpItyfD8-kqf_x_bK37DeRVGy1NpWVxwaphXSLgts0x8k1qpKCC_6NA4E3kU9CTKamHHq7egoawLXgN1oqT2h4Ky7pruG3-M421RNBuGzjNzaZp",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGdE4bPpTe69AxgfgwGqxXGAhv5X_Mo7MCpC5jh99FnfkUQmBk7IxsrTMWAqBYPkvxvdv9NDjnLqXn0pP64_ZwX8b5m8VpbCPWQ97YpdznUUEyDqdhJro3rGhkiqHmFb4TNOGB4i554BmXHSa2OMqFn",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGEsXeczq9cTffGMisu_4m5wuubtJUoPE92alg5ptqM8gyGnADwii049iUA5FXXihagBwyMv2bypvJ2OIuilyAoFaaSQJArkx_7kEka_FVhGRVZJk8jqLBNbh0Wbmm0XC8GilRD26hMzQeTlbM=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH4MXJidKkA4MdH5-OWHh4NnVRzo-K1eFM2jtOUuIgw_WPsfse1eCrAT9FwsesluAjIWINhBKb30EMm_NVrzzg38oEqZL8per3k_cDrGfKJ41jb1NF63N1vDAd9Y-thcCOv1KaAURBOtk2s9Ztzg0a5g6nuQKdORXzdMb7nKZnCzCbBVyp4D72Qpy79lGJ8",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHIezT5GNvk-CMZ2-v13m0nr3osxCy4G4sgW6zcjmnSylBEd8PidfPVDR9XUqewvzq2AKoO8HVQZoyGICP-_ug8hATUrqrxQJf6kyAL1DfVEzyy7b6758yM1uWX4rJ4GZnPlARYqbsDLZlSq86QKl5bS7oOV2zAMKjoKFY=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHIhtGjndzfb68F7o1ZTj5pD9yUxhbwzTblI2KHYKUQH1NY9KeXTdSPF3Zh8-bVFbnaXuxvO6S03nA1DeunC7PUaG6aqQPXZ7tcyaknQMN0_DNB-O24SnFlVC40MNuICUoYRgKlNBBMydU7p8pUo9OzsQ==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFNO1TMyBzgGxhFT19Qa-jqwxg7bxa7_blocV8BUt_caCz1eKKEnoP1-gEptl4kGGOZeAXM5wq8rduglXDN9KADlI96SD9tWaJdtKTkiSbebrPg05SbE3R8Laaz2BkAOulgjrbc_e7pPqs=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHL95NQsCP4NzfpBUbQEISoqxYY5yusgicGYALIGe7qoBG1qaxsZnGiX3_Y6y5bSOSCm8WA0ssf0dmg2aU0qIjf5TRCp4qsoUgEo__-CtldeXbRsL3UI50q7Co0nA==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF4l0Oo9DKpzr4i2bsElcoPG8xjQNo0gmA_MS2hm2-5KLTkKhH--3OjT_QUNl9hI7Nt36tnNrbe_8X_I2zUEfZOvPhQiSp56lH_xgJzNrUrwgv5RB9U53GJyEdvsOd1AEJPX-IHdsn8bWLj2tFR0Xie5Uwo_qu3",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGmVxP5S7wKIfVTzhdGZ6wimQdNJNawlG5NeSFMdHtdwVZ3RIYRTqugJ7s2qiEfJn-IDQ5Z4cfW2MQkiomz92dN_i00m1Ea95d_QLPXud9XzktIh4Ra9SHe3Qa3TcxSTgWtsDkNkA8IoZozcdLJ1rFxbbOk9c4=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEo-gv4y8WAX5YoathEt5CZqSRQ_gS6dyPhE5RUoQid9qAfkpjpS95mW0nmyUzvpPK5AdnaqT30TfifhRNPNab1cSNdaCZSY4YHHJqjZrPiArylwb7D3aAByx_T6rx8gcPZlyCzlJErZ8QswevkbLWRJv0ZOUHn6fdnAQbyfZ8oa87hWA=="
+  ],
+  "dominios": [
+    "excitingoutdoors.com",
+    "farbank.com",
+    "pescatravel.com",
+    "flyfishingpatagonia.com",
+    "nervouswaters.com",
+    "vmarialodge.com",
+    "montanaangler.com",
+    "fishingwithlarry.com",
+    "pescamapa.com",
+    "angleradventures.com",
+    "oneoutdoors.org",
+    "aardvarkmcleod.com"
+  ],
+  "consultas": [
+    "Tierra del Fuego sea run brown trout season months",
+    "Rio Grande fly fishing lodge cost per week Tierra del Fuego"
+  ],
+  "texto": "### **Season Overview**\n\nThe sea-run brown trout season on Tierra del Fuego's Río Grande runs from **December through April**, with the core run peaking between **January and late March**.\n\n* **December – Early January (Early Season):** Fresh, bright silver sea trout enter the river. Water levels are generally higher, and days are long.\n* **January – March (Peak Season):** The highest concentration of fish fills the pools across the river system. Catch rates and chances for trophy 15–20+ lb fish are at their peak.\n* **Late March – April (Late Season):** As Southern Hemisphere autumn arrives, water levels drop and fish turn darker and colorful as they prepare for spawning. Days are shorter and colder, but this time offers strong shots at massive, mature males.\n\n---\n\n### **Weekly Cost Breakdown**\n\nFor an all-inclusive 7-night / 6-day guided fishing package on the Río Grande, expect rates to range from **$7,000 to $15,000+ per angler**, depending on the lodge and time of season:\n\n#### **1. High-End / Flagship Lodges ($12,000 – $15,000 per week)**\n* **Lodges:** *Kau Tapen Lodge*, *Villa Maria Lodge*.\n* **Price Range:** **$12,950 – $14,950+** per person.\n* **What you get:** Access to prime private beats, luxury single-room accommodations, top-tier farm-to-table cuisine, open bar with fine Argentine wines, and a 2:1 angler-to-guide ratio.\n\n#### **2. Premier Historic Estancias ($8,000 – $11,000 per week)**\n* **Lodges:** *Estancia Maria Behety (EMB)*, *La Villa Maria Behety*, *Aurelia Lodge*.\n* **Price Range:** **$7,900 – $10,500** per person.\n* **What you get:** Access to vast swaths of prime lower-river private water, authentic Patagonian estancia hospitality, double or single occupancy, and high catch-per-day averages.\n\n#### **3. Chilean Side / Value Programs ($7,000 – $9,000 per week)**\n* **Lodges:** *Cameron Lodge* (Upper Río Grande in Chile).\n* **Price Range:** **$7,000 – $8,500** per person.\n* **What you get:** Upper river access (smaller water suited to single-handed or light Spey rods), intimate lodge capacity (often 6 rods maximum), and the legal option for night fishing (which is prohibited on the Argentine side).\n\n---\n\n### **Additional Costs to Budget For**\n\n* **Airfare:** International flights to Buenos Aires (EZE) plus domestic flights to Río Grande (RGA) or Ushuaia (USH): **$1,800 – $3,200**.\n* **Fishing License:** Roughly **$300 – $500**.\n* **Tips/Gratuities:** Typically **$800 – $1,200** per angler for lodge staff and guides.\n* **Pre/Post Overnight Stays:** Hotel night in Buenos Aires or Ushuaia: **$200 – $400**.",
+  "error": null
+}

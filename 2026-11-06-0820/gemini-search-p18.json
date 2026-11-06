@@ -1,0 +1,32 @@
+{
+  "fecha": "2026-11-06T08:19:43.547Z",
+  "proveedor": "gemini-search",
+  "pregunta": "What are the fishing rules and season dates for Esquel, Trevelin and the Futaleufú in 2026/27?",
+  "cita_pescamapa": true,
+  "urls": [
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHTf3EBKmYWddgRKsHNdlJfUaNXVwSQkDGryMbry4L7x7uJUy9bsS3J0qg-9os3SJmSDudK3zxcbqFcz-J7jvoYX3aQx7YRFL9f0G28Wz3Z1Y3jWj7nKFuPiG5cpcOEmk5YPok6o-qm1sSktg2DLqqD7F5eTBhbivM=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE6HZf_2LpgK5-pGBdahuGO-c3QYCuJP8-3Eg_VFo4J7H15PMfoR0KXSppPeJs1G7-5BVH8EgIpLzwrHGg1F8vN3d6KjNrs51nFZRd_6tXJCOnv82WYBgEgNxC3S_0eZAR8SdoU4G5UKEVUxxP_UFPO3W-UC1xFCxk3FBClTcS8AL8LfgDhoSWt9w==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHRnn8Jg_2YNYk_5hC2DQWLiUq3nlzWkLzuxSJVhr02LBSBkd6sdVHonr6UCkJ-lNeLYPNuWhgx-wfTQvK9kNLjNPyECBBqMtbM2VhEqJAmsga710ETwbYiayO1fBSo0ydad9ZTJMdFZoLEyzPE89kxGCGpqvHOdgF8mLwI0bwfw_UQidprHYYkfrID8Q-hMLZ3F74ubR42bU-zljdinjOpS7XqLx8oLD40prOpxg==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGAf9EaH99vVNDtdCM3IZy58NKfYlsN-GlWzJ6bqauDEdmrnPbYh6sUmNvDxclEWiAIi_OYQVgCVoEYpmedgoz_mMw0RLhkSIPBb1myz_nriEkH2MaFlvojXnZ_dTTmfRsVVnbKmMBmFNN9OInlhy6ZvDyUyE03zi_lD68vAknF5Rljq7tWr7hUZwi4vGQnmrA7Ajr_AL3h3bYj1mo7xWC1a4idhJMpaCIxYJ7PCDSTlc0y2HRGkqbmCA9RzcY_",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG2P0ZpO9mlTBAn9k8TkE_aAgqwy4UOsfktDypgmVFdwuWLmTnXyRZOqMufuBmK6Lq4yYErGcbavpLGWzau9C0UwpF-izuCg_QG5_lS4h24t8A4bQBwz6UPVps4ivzJrwudV1s1olKubPxoOZsJ5GsYJfmiCQ0pV7ww7t2UJ77JcLh-5RPAwA0-Gda7BX7i6QL2W4qDloHr84Zir26lQjKVhDV84NEZsWeZw7ckL1BSFiYkLSgjB1njgRCOYaA=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGvW1rrXwN7w1EFbV5dL_4lUp2sQhxEaKDcXohihu3kv_tNGpZJsMUfgVgykclw8Tc46SZx2DV1q7tg87hchm3MwHnZu9ho3dY-IPUwfKWJeGgu6yvXn27hhUMT1oj-DLWL2p-zP79jaBye7kziRaPQvXSTh6s64K1k",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFQdKk09RHnLsVUR9IT3oQpWvP3KMyxxIlnyvdrsld2kxOI_VW7o-jinvKHlXWd-R1KiMxFXoYsjgTcwqUHCyjAQw4t7lZvR29hb_EUmtMeRViVSTMEvOTKIizb_9h0mCmGz-hzV6dN",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEgQRkg_J8xIrQUfkWXMWRbeYq3__jGYvucNLNr4xHZfwzwuU--oMusULRv_R3T6ee0CdRqQFzvlQo0QCzx2RkpUKN6oUrWCPdsWnmvcSAObSsiXUSP_Q9MJsrCJYdIUK4RgOKzF7D9uuFhvg=="
+  ],
+  "dominios": [
+    "pescamapa.com",
+    "aicacyp.ar",
+    "patagonianews.com.ar",
+    "argentinambiental.com",
+    "canal12web.com",
+    "reglamentodepesca.org.ar",
+    "chubut.gob.ar",
+    "trevelin.tur.ar"
+  ],
+  "consultas": [
+    "Chubut reglamento pesca deportiva 2026 2027 Esquel Trevelin Futaleufu",
+    "Reglamento de Pesca Deportiva Continental Patagonico Esquel Trevelin Futaleufu"
+  ],
+  "texto": "The fishing rules and season dates for the **Esquel, Trevelin, and Río Futaleufú (Río Grande)** area in Chubut Province, Argentina, are governed by the *Reglamento de Pesca Deportiva Continental Patagónico*.\n\n---\n\n### **1. Key Season Dates (2026–2027)**\n\n* **General Season:** **November 1, 2026 – May 1, 2027**. *(Note: Provincial authorities opened general waters early on October 30, 2026).*\n* **Río Futaleufú / Río Grande:**\n  * **Early Catch-and-Release:** **October 1 – October 31, 2026** (Catch-and-release only / *devolución obligatoria*).\n  * **Regular/Extended Season:** **November 1, 2026 – May 31, 2027**.\n* **Lago Rosario (Near Trevelin):** Open **year-round**, with mandatory catch-and-release for all salmonids between **August 1 and October 31**.\n* **Brook Trout (*Trucha de Arroyo*) Restriction:** Catch-and-keep for brook trout in all rivers and streams ends **March 1, 2027**. From March 1 onward, all brook trout must be released alive immediately.\n* **Spawning Bed Protection:** Anglers are strongly advised **not to wade** in rivers and streams before **December 15, 2026**, to protect trout spawning redds.\n\n---\n\n### **2. Rules & Regulations for Río Futaleufú (Río Grande)**\n\n* **Motorized Craft & Trolling:** Trolling (*pesca de arrastre*) is **strictly prohibited** on the river. Fishing while the boat’s engine is running is forbidden.\n* **Los Alerces National Park Section:** \n  * Fishing is **completely prohibited** in the section between the Futaleufú Dam (*Presa Futaleufú*) and the Iron Bridge (*Puente de Hierro*).\n  * Fishing is permitted downstream from the Iron Bridge through May 31.\n  * Gear disinfection for invasive *Didymo* algae is **mandatory** at the park entrance (Portada Sur / Visitor Center) before entering the water.\n\n---\n\n### **3. General Gear & Tackle Regulations**\n\n* **Hooks:** Barbless single hooks (*anzuelos sin rebaba*) are mandatory across all permitted fishing modalities and waters.\n* **Felt Soles Ban:** **Felt-soled wading boots are strictly illegal** in Chubut Province to prevent the spread of invasive algae. Rubber or studded rubber soles are required.\n* **Fly Rigs / Droppers:** You may fish a maximum setup of **one dry fly and one nymph** (dropper rig). Rigs with two streamers or two nymphs are prohibited.\n* **Designated Gear Classifications:**\n  * **Exclusivo equipo de mosca (Fly Fishing Only):** Fly rod, fly line, and fly reel only. Carrying spinning lures or spoons in your vest or bag while fishing these stretches is treated as an active violation.\n  * **Mosca solamente (Fly Lures Only):** Fly tackle or spinning/baitcasting gear using a plastic bubble float (*buldo*) with an artificial fly.\n  * **Permitidas todas las modalidades:** Fly fishing, spinning, and baitcasting are allowed.\n\n---\n\n### **4. Permits & Biosecurity**\n\n* **Fishing License:** A valid Patagonian Continental Sportfishing license is required for all anglers. Permits must be purchased online prior to fishing through Chubut's official **DINO** platform. Options include:\n  * **Daily (RP-D / NRP-D)**\n  * **10-Day (RP-10 / NRP-10)**\n  * **Full Season (RP-T / NRP-T)** *(Rates differ for Argentine residents vs. foreign non-residents)*.\n* **Biosecurity / Didymo Protocol:** All equipment (waders, boots, lines, nets) must be washed and disinfected before moving between different water bodies in Chubut.",
+  "error": null
+}

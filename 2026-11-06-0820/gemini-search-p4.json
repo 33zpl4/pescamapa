@@ -1,0 +1,35 @@
+{
+  "fecha": "2026-11-06T08:15:52.411Z",
+  "proveedor": "gemini-search",
+  "pregunta": "¿Hay vedas vigentes en el Paraná frente a Goya?",
+  "cita_pescamapa": false,
+  "urls": [
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGj__NBaxti5k4jTciDMEIem6vL21bYKmbWGM8YbL0ZOhxDGjvFNY13SGiEcVnM1pCP1rCbWjbmYDLBwD_nZWvab4BXIEMhH2b9aj5Q3b0Qnf86Z2c_dfs_HoMm_w8ltDXWfcc161SSbtJjgw_DgijOBak_sQAge8TcAkgXOGV1imQSfEgJMct8Max41kU0bFDvYelzTScGOcQdHds8fwxUAWLoLTaebPWC",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGLebdvNzV0WJ6FWL6JfgKeHMrKOuUsIckeBw_WvfbB_Q56Rm_EPA6Y4De1t0L0wRhALIupjJFfV0rQV5tIANR3iRF1k6C4Q3OR6KApqvG91hhtLSGlRLznvAbHx3K2YBnC0NfE2yERApOpXdn7tcBGVoQd99lvF0SDdnrKuSgB-ItZAgdyiXuarehySHrVG4_KxfKT7zd9cIFR8LJQx6BThdlCs83ZusAOXfwOG8Jks-dEB1zMkMorGg==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFNDplJYfQA1X7ro7xZLT3Vyt6227WYspkeFmqw06XQvbC04soEouWeb6xgtMxUZTbQ8vnKWQMEv1OS2o_mi4VsYfg6yH0U9nadYE6KjsGzvyw-0lSyckPD-BQhgoynxbnXGfY11lB6f_JyEQXfSVWy4OdSovAnCW-6jRDA6LunPNi8ueCm_xs1NIW1U92RJC5ux9ZjHlm09vp_uGLw2-T8bA_WUi6u0uW_AmqRTHBXhahqQv1Y-nseTw==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFsFS8elzIWANE2eS96twsWps6vnN84bxQcs2JopGBJe6j6anXrPFcNqOvwc4TAMNNt7hsdVzCETs-bjhV5OWNVjmmzzBy6sp8LqS9Z571Uro_ABd5jUnu8viwnvDdFl3qjfLmXPY5VFi1Yij9WwbvCMWggjx4seKcfJdKDdGHsW7-8N868FkEl_i_bh1vkntGWiR5gZYQus8bMiISBCDSB8bITDpzazkrMlTxL",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHbkJKyLOXYgLp6sqZTLpXXVmxH1EOuVof1v_KXXfFqMUzztWD5_LGbgrwCtvuRoM3kgH3C31y1pTWrPR8GpWXMvXDlBTtokXR48z-ZhVq2hqoGqAMo4v-PqmlqCJseZo8Z5CJPM10=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF250MaqxP1uOOgpaPBgc14uyVBLGQx1J2MneCcJBlWkq5FvWE74YHJVX3a9-LsodgPBLRNRaBfrPdxAb7FqCLVjjFwsUQqQkBYWLenzQY_K4idjqVEQXkgLqARu2xdbOxnQv02lv9MpAcaoQxf9pUGzx44jzMrM1SHDpHtgAVlSC27NToq0fHDj7xUt0WIGBny3_ZJrDgh0_J8oXx7TPYltcfepFTOHlMDl7Mkx_BIqbVPDA==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE9W4GvPOVosKW1IjbwwKLoEGIlxqGj4tkytUEP2yHEZVNjAITKq2fVEXUeh6dAnzkt-oSJUTgUVPM_I-yXYr9fxqGn_pCtUbFosD5acuwin3bbJWX4At4vtLVs1u4OC7OBLw==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHbX0yVq6hu0tOWskJmU2rpBexs-wlmpJj1ZHavqwuKEL8ts6Kqr9vXhnwyXTzd0dgkW2md2H5NunUqu9VnwjMwOwlfA5wUrVXJSeyMShgPPPSx88NuXAiK3NVGwtFiDDYSdQhkU12XSQYtXuC9DQKhPFYjJewIBfxx6MIQvt9qMbdFntRx3hbHxqFrQYnF04BoZ6QyAxfbLAcD816hyFUkEPLDnMrPpP0=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGovnHkZikR1FCcHywrYjeH-Ko7Eu71kTDjRGFHF6uqt9cbCkpktDgBdT_gjo72EdYli8g9mMaIJvSyv6kcurtfSflH0ZREvTAlu47RDglT2STlSvRzHwZ-fU6HV2oyJKhtlD_uZlfKQCEcVC3L0Ez9ZHsA1hUK5_ygUCXiZ9wYgE-hGAbBERYLiKJg1dCedsU6kpkPfLeHACCEJFn0e4n4KfrRxg6T8JrdoTCPrg=="
+  ],
+  "dominios": [
+    "ellitoral.com.ar",
+    "perfil.com",
+    "radiodos.com.ar",
+    "aicacyp.ar",
+    "cadenaderadios.com.ar",
+    "tucorrientes.com",
+    "elonce.com",
+    "hoy.com.py"
+  ],
+  "consultas": [
+    "regimen de veda de pesca corrientes goya",
+    "veda extendida corrientes dias permitidos 2026",
+    "veda extendida corrientes pesca",
+    "veda pesca parana goya corrientes"
+  ],
+  "texto": "**No hay una veda total ni extraordinaria vigente** en el río Paraná frente a la ciudad de Goya (jurisdicción de la provincia de Corrientes).\n\n---\n\n### Estado actual de la normativa:\n\n1. **Levantamiento de vedas extraordinarias recientes:**\n   En septiembre la Dirección de Recursos Naturales de Corrientes dispuso vedas extraordinarias temporales en algunos tramos del río Paraná debido a concentraciones excepcionales de cardúmenes de surubí y dorado. Sin embargo, **dicha restricción fue levantada oficialmente el 29 de septiembre** (mediante la Disposición Nº 1054) tras constatarse la dispersión de los peces.\n\n2. **Régimen ordinario (Veda Extendida):**\n   La provincia de Corrientes gestiona la conservación de la fauna íctica mediante el sistema de **Veda Extendida** (Disposición Nº 853/22 y reglamentaciones complementarias), en lugar de la veda total estacional continua. \n   * **Pesca deportiva:** Se encuentra permitida bajo las normativas vigentes (respetando tamaños mínimos, licencias al día, cupos por especie y promoviendo la pesca con devolución).\n   * **Pesca comercial y de subsistencia:** Está regulada por días hábiles de extracción y límites fijados por la provincia.\n\n3. **Diferencia con otras jurisdicciones:**\n   La veda total de pesca fijada entre el **2 de noviembre y el 21–22 de diciembre** aplica en el río Paraná bajo jurisdicción de la provincia de **Misiones** y en las aguas compartidas con **Paraguay**, pero **no afecta al tramo del Paraná en Corrientes como la zona de Goya**.\n\n*Se recomienda a pescadores deportivos y guías verificar siempre antes de embarcar las licencias vigentes ante la Dirección de Recursos Naturales de la Provincia de Corrientes.*",
+  "error": null
+}

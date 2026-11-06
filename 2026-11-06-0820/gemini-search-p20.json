@@ -1,0 +1,37 @@
+{
+  "fecha": "2026-11-06T08:20:05.229Z",
+  "proveedor": "gemini-search",
+  "pregunta": "¿Cuándo empieza la temporada de pesca en Chubut y qué permiso necesito?",
+  "cita_pescamapa": false,
+  "urls": [
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG7U54gU3-Fu2R27_CQ0453qajX_F1SpgUjh95ZTaXFlIr07DrdPcCOCHJKmc_lEzowq2cX8wcBzLMZIFPyOFiVqdjPig8nO2Ee44i84CbokgOI9XZLMuMW5HstGHCUkX4PKyz7gXn40xauy-Zr3yhS4sFHUUPvpa9PnGpfFabNg1PML2t5cxUPcQ==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE5VxN3ZcZoXAxgWyWBmjnfiw17L9E8egQBzrebJ7_F4LYVDVqMMz6pNpHXb_ZhIIJo23I2BxQiIR66P8x3j3m01NiyWUXennopvH8uZabHHhjNzS_WiZ7AG5zB7krkE7mgw3U0-ncTpDzHcsbAIHPKBlmSxp_EgmkxoaIqmAjSporLGObJdsbr1ZZB78T95Wix-7l0cXmV4y-YIDn8dQ==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFQNCWVES70_fxQeSNJhE4l1YxZ8OKkPdKBBbi-sAYJdGgTlajD4Bak3ZbxAbnPnXsu0zA1eZ1q_016qogkl2cSdX27zL0j6-jiIIyezeOEx2jGwNebkIPLL8Z9xTkeudnlsMqi3Uoy",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHO1tMznVaP6ABaGz8sWzVHBlNG9RNiMTkQ-zCKr3F8LHzK7DIQm35k5KLzVCJ9g1DzA4NoEg-IcKDt26jIR5RvIvgULWgNPscTh4ClwGlleoMOMwexuyWOhsSb_dJIE4XN69L7rhjr2w51eK1z3QhfVRrcrRbtUYfKUUCgjWNT9JWSX3rj9BLHZ8NjImn0WDqPurtJXfHc8XjqWIQ4sACFhPSrNNoTyWEq9LzgCAzrECF0BUhCcvoYrUsxkwY=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGJ30XJW2b5cwHr6IbEVK1o2l2UmfoWvo9NUjemvkdgHj1NYk_7WLOHW5IWi87YHoCdOj_MZaCrnr5g4Ew8xwLAEkZA_oqwUqGcPH5tzxX6A3_ztwwp9tcnQDEUwOGX5Bpu2bzeEsxgcUqDNnpe3497ILia",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHQsLFZ0la0wJjWl5mScry2XsSVIe-At5V7r7QJe5bqTn9Vh9RpLaY15o-DMFuNCJhw2tNN_CQdYTVlulDjIbUzTcHfoJWUI1RMbUmXarYHviqsWLaba4REr6hUAUHX3qGvcTv4EOHKO5PT-ylteXg5Zf0rPCLVw556qXfJWxFpFQBCrQ4NM5BY25EvcIXiOZBaFKzSsN5cECd4GItc8gfeu4IfsGpaaWRyNlfMydGkrZBOIZfUs-pkzTgnP0sIiByCCyEf-zNR5xTK92dzTfXrpA==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEzs88fK5_dLOggmZJlJ4gjazc81b8GoWyAy619o560rXgrIUFArp9Z9dJFkrZYCKxoLbjzBmRUpC9wAA4OyR-MTwJ6MHj8KBc-JTAgybf-y4Jz1TYHbrdU5p7cKdDZcaiv8iYJYToMz_TT48kJFrQC5qpD0emy9-xYgMnWSZqhx1T2qJfMFaP-TaTI13ala_IQRbU-UoaGDfD63lwZOlsd-EUrBB_5ubJ9Y6w9Qryaqfzj39o=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGosYxun9kS98j3qcLUQTjXF6IZ8ejDO10RyUV20YsprWO74Z2Q-m9HOMojbNEd9UvQBBdBbxLhSaBLYf_BQkuRrCx_LN3w2T_GQKUPKA8MJ59V78dcu3XjYi1M8DQE_zwmzEXI354zicRvxksvL1mIo_tSBUXef3kx11_uCssBRs7naLnqTZg8HjlvPGYJI2qCasWHiwPvbyQMF5XkRU6fSeqygDdXThpYMsqhQDh5iJiDy26GrvMIAm5EhaY=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF5idcXz1MMjqiY-5EbpGfcfD_CUNgxuBXKdUYKrCWmbTNLYMQ82E_l5OvOaCMx5LX2GwFurYV4ktsx2FG_q5pPkfzUjWSK6H7MuDMbo7Wun3S9PiB8jJ2AjEL78lV4TQRskggNOuiOxkmCZjI=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEySsisYovW2hcDhPzMG2vGGVFVUJtVYDD3qNj_lEBqESII2vfytP_4kkzi-X1vUa2RmNYr5DJ_cx6-ttAMAsacsZoFNtNgaHsqLImj9ub565Fp8NReALvXLMyLp3cwxVaLekDK-RFD9qW90rIA1PfqMXcVPA==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF9tD6m23QsiCXud_QtVI6pnCM32tNhMN-cCzyRKdgrs5YmSUtWuL1Ks8niW5B_76OV9ByAka9mR83tGh-tzsetVO6TePIgcqT9vKBGmBsStRlAIPDv5KClsdrXg1A8m985AmHevpGDRVVU_FNqfDg2kDCTxQydKl6y59vQzFC-XMXQZalu6TaLlgE=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHBYpxGD6OEcdP_CFTSrCK19bIeOFMfK7fF1HrTmmbQHTHoDEmMkCQA1QxkMH3v0eSK2XKlelOiF5z-nRYj5I3OuR1qq2uLtgNN2lyjRECSv6o3T8c7ZdSISYUAe90iW2rk2P9ZdVLHPmjoTe9BWnBNtFtic4ok-hXfRaUHWmAwT_cUSNGpukjXZ5pTKGC6qLFR"
+  ],
+  "dominios": [
+    "aicacyp.ar",
+    "reglamentodepesca.org.ar",
+    "chubut.gob.ar",
+    "canal12web.com",
+    "elchubut.com.ar",
+    "canal4esquel.com.ar",
+    "rionegro.gov.ar",
+    "patagonia-trashumante.com",
+    "radiochubut.com"
+  ],
+  "consultas": [
+    "reglamento pesca continental patagonica chubut permiso requisitos",
+    "temporada de pesca deportiva chubut fechas permiso"
+  ],
+  "texto": "La **temporada de pesca deportiva continental en Chubut** se rige por el *Reglamento General de Pesca Deportiva Continental Patagónico*.\n\n---\n\n### 📅 Fechas de la Temporada\n* **Inicio:** **1 de noviembre**.\n* **Cierre:** **1 de mayo** del año siguiente.\n* *Excepciones:* Algunos ambientes de pesca (ríos específicos, embalses o santuarios de reproducción de trucha fontinalis/de arroyo) pueden tener períodos más acotados o regulaciones especiales fijadas en los anexos del reglamento provincial.\n\n---\n\n### 🎣 Permiso necesario y categorías\nPara pescar de forma recreativa o deportiva en Chubut es **obligatorio poseer el Permiso de Pesca Deportiva Continental Patagónico**. \n\n#### 🔹 Tipos de Permiso (duración):\n* **Diario**\n* **Por 10 días**\n* **Por temporada completa**\n\nExisten tarifas diferenciales según la residencia (pescadores argentinos, residentes en el país, menores de 13 a 17 años, no residentes / extranjeros y jubilados o mayores de 65 años).\n\n#### 🔹 Validez y Reciprocidad:\nEl permiso regular continental es **recíproco**: el pase obtenido en Chubut también es válido en las provincias de **Río Negro, Neuquén** y en las áreas protegidas de la **Administración de Parques Nacionales** (salvo en Tierra del Fuego o para ciertas artes de pesca específicas como el *trolling*, que pueden requerir un estampillado o pase adicional).\n\n---\n\n### 💻 ¿Cómo se tramita?\n1. **Trámite Digital (Online):** Se realiza a través de la plataforma oficial de permisos del Gobierno de Chubut o su asistente digital (**DINO**) vía WhatsApp o web oficial ([chubut.gob.ar](https://www.chubut.gob.ar)).\n2. **Puntos Presenciales:** Se puede adquirir en casas de pesca, oficinas de turismo, estaciones de servicio habilitadas o delegaciones de Pesca Continental en la zona cordillerana (Esquel, Trevelin, Río Pico, Lago Puelo, etc.).\n\n---\n\n### 📝 Requisitos y recomendaciones a la hora de pescar\n* **Portación obligatoria:** Debes llevar siempre el permiso (digital con código QR o impreso) acompañado de tu **documento de identidad / DNI**.\n* **Equipamiento:** Está prohibido el uso de señuelos con rebaba/rebabón en los anzuelos para proteger a las especies de captura y devolución. También suele estar prohibido el uso de botas de vadeo con suela de fieltro para evitar la propagación de algas exóticas invasoras (*Didymo*).",
+  "error": null
+}
