@@ -867,6 +867,213 @@
      "h": "<strong>¿Querés que te ayudemos a armar el viaje?</strong> Escribinos en <a href=\"{viaje}\">el formulario del viaje</a> y te devolvemos opciones de guía y lodge, sin costo ni compromiso."
     }
    ]
+  },
+  {
+   "clave": "pesca-desde-brasil-corrientes",
+   "slug": "pesca-en-corrientes-desde-brasil",
+   "especie": "dorado",
+   "titulo": "Pesca en Corrientes desde Brasil: licencia, documentos, rutas y costos (2026/27)",
+   "bajada": "Qué licencia necesita un pescador que viene de Brasil, cuánto cuesta aproximadamente, qué documentos llevar y cuánto se tarda en llegar a Paso de la Patria, Esquina y Goya.",
+   "seo_title": "Pescar en Corrientes desde Brasil: licencia y cómo llegar",
+   "seo_description": "Cómo pescar en Corrientes viniendo de Brasil: licencia de turista extranjero (desde unos $ 35.000 por día), documentos de ingreso y rutas con tiempos.",
+   "datos": [
+    "La licencia de turista extranjero (domicilio fuera de Argentina) se fija en litros de nafta súper: 16 litros por un día, 20 por dos, 24 por tres, 28 por cuatro y 36 por seis.",
+    "Con la nafta súper a unos $ 2.177 el litro, son aproximadamente $ 35.000 por un día, $ 44.000 por dos, $ 52.000 por tres, $ 61.000 por cuatro y $ 78.000 por seis.",
+    "La licencia se saca en línea, las 24 horas, y el portal está en español, inglés y portugués; el registro acepta el CPF brasileño como documento.",
+    "Para entrar a la Argentina desde Brasil hace falta RG físico en buen estado o pasaporte vigente; no sirven las versiones digitales ni la licencia de conducir (CNH).",
+    "De Uruguaiana a Esquina son 310 km (4 h 31 min) y de São Borja a Paso de la Patria, 386 km (4 h 45 min), según Google Maps."
+   ],
+   "fuentes": [
+    {
+     "nombre": "Disposición 1144/2024, Dirección de Recursos Naturales de Corrientes (27 de septiembre de 2024): tipos, litros y valores de las licencias",
+     "url": "https://www.aicacyp.ar/wp-content/uploads/2025/02/Disposicion-1144.pdf",
+     "oficial": 1
+    },
+    {
+     "nombre": "Precios en surtidor de la Secretaría de Energía: promedio de la nafta súper en 14 estaciones de Corrientes (21 de octubre de 2026)",
+     "url": "",
+     "oficial": 1
+    },
+    {
+     "nombre": "Portal de licencias de la Dirección de Recursos Naturales de Corrientes: registro (leído el 6 de noviembre de 2026)",
+     "url": "https://www.recnaturalesctes.gob.ar/signup",
+     "oficial": 1
+    },
+    {
+     "nombre": "Ministerio de Turismo de Corrientes: licencias en línea en tres idiomas (nota del 6 de febrero de 2019)",
+     "url": "https://turismo.corrientes.gob.ar/noticia/corrientes-ofrece-un-sistema-de-avanzada-en-la-region-en-la-venta-de-licencias-de-pesca-deportiva",
+     "oficial": 1
+    },
+    {
+     "nombre": "Paso Santo Tomé - São Borja, Ministerio de Seguridad de la Nación",
+     "url": "https://www.argentina.gob.ar/seguridad/pasosinternacionales/detalle/ruta/74/Santo-Tom%C3%A9-Sao-Borja",
+     "oficial": 1
+    },
+    {
+     "nombre": "Sitio oficial de turismo de la Argentina: documentos para ingresar (28 de octubre de 2026)",
+     "url": "",
+     "oficial": 1
+    },
+    {
+     "nombre": "Google Maps: rutas en auto consultadas el 6 de noviembre de 2026",
+     "url": "",
+     "oficial": 0
+    }
+   ],
+   "bloques": [
+    {
+     "t": "p",
+     "h": "<strong>Respuesta corta.</strong> Para pescar en Corrientes un brasileño necesita la <strong>licencia de turista extranjero</strong>, que se saca en línea y se paga en pesos según el precio de la nafta súper. Hoy cuesta <strong>aproximadamente $ 35.000 por un día, $ 52.000 por tres días y $ 78.000 por seis</strong>. Para entrar alcanza con el RG físico en buen estado o el pasaporte. De Uruguaiana a Esquina son unos 310 km y 4 h 30 min de manejo."
+    },
+    {
+     "t": "h2",
+     "h": "¿Cuánto cuesta la licencia de pesca en Corrientes para un extranjero?"
+    },
+    {
+     "t": "tabla",
+     "cab": [
+      "Duración",
+      "Litros de nafta súper",
+      "Valor aproximado hoy",
+      "Valor del anexo (octubre de 2024)"
+     ],
+     "filas": [
+      [
+       "1 día",
+       "16",
+       "aprox. $ 35.000",
+       "$ 18.160"
+      ],
+      [
+       "2 días",
+       "20",
+       "aprox. $ 44.000",
+       "$ 22.700"
+      ],
+      [
+       "3 días",
+       "24",
+       "aprox. $ 52.000",
+       "$ 27.240"
+      ],
+      [
+       "4 días",
+       "28",
+       "aprox. $ 61.000",
+       "$ 31.780"
+      ],
+      [
+       "6 días",
+       "36",
+       "aprox. $ 78.000",
+       "$ 40.860"
+      ]
+     ]
+    },
+    {
+     "t": "p",
+     "h": "Los litros salen del Anexo I de la Disposición 1144/2024 de la Dirección de Recursos Naturales de Corrientes. El valor se actualiza solo con el precio de la nafta súper que se vende en el Automóvil Club Argentino de Corrientes Capital: el anexo tomó $ 1.135 el litro en octubre de 2024. Calculamos el valor aproximado de hoy con $ 2.177 el litro, que es el promedio de 14 estaciones de Corrientes según los precios en surtidor de la Secretaría de Energía (actualizado el 21 de octubre de 2026). No es el precio exacto del ACA: el portal muestra el importe vigente al comprar."
+    },
+    {
+     "t": "h2",
+     "h": "¿Conviene sacar una licencia por varios días?"
+    },
+    {
+     "t": "p",
+     "h": "Sí. Cada día extra pesa menos: la licencia de 3 días (24 litros) cuesta la mitad que tres licencias de un día (48 litros, unos $ 104.000), y la de 6 días (36 litros) cuesta poco más de un tercio que seis licencias de un día (96 litros). Es un cálculo nuestro con los litros de la tabla."
+    },
+    {
+     "t": "h2",
+     "h": "¿Cómo se saca la licencia en línea?"
+    },
+    {
+     "t": "lista",
+     "items": [
+      "<strong>En el portal de la Dirección de Recursos Naturales de Corrientes.</strong> Funciona las 24 horas y está en español, inglés y portugués, según el Ministerio de Turismo de la provincia (nota de 2019, hecha para el turismo brasileño).",
+      "<strong>El registro pide</strong> tipo y número de identificación, correo electrónico, nombre, apellido, teléfono, ubicación, foto de perfil y contraseña.",
+      "<strong>Documento:</strong> el desplegable del registro ofrece DNI, <strong>CPF brasileño</strong>, CI uruguayo, pasaporte argentino y \"Otros\" (captura del 6 de noviembre de 2026).",
+      "<strong>La licencia lleva un código QR</strong> que el inspector verifica con el celular. Llevala, impresa o en el teléfono, en la lancha."
+     ]
+    },
+    {
+     "t": "p",
+     "h": "No pudimos confirmar qué medios de pago acepta el portal para un extranjero: preguntalo a la Dirección de Recursos Naturales (ventas@recnaturalesctes.gob.ar o +54 379 4909039). Los beneficios de exención de la disposición (jubilados, personas con discapacidad, menores de 15 años) valen solo para quienes tienen domicilio en Corrientes."
+    },
+    {
+     "t": "h2",
+     "h": "¿Qué documentos necesito para entrar a la Argentina desde Brasil?"
+    },
+    {
+     "t": "lista",
+     "items": [
+      "<strong>RG físico en buen estado o pasaporte vigente.</strong> No se aceptan versiones digitales, incluido el RG digital.",
+      "<strong>La CNH no sirve</strong> como documento de ingreso.",
+      "<strong>Menores de 13 años:</strong> necesitan una autorización especial; mirá el trámite en argentina.gob.ar (\"ingresar al país con un menor de edad\").",
+      "Algunos guías y lodges recomiendan un RG de menos de 10 años: es una recomendación práctica, no un requisito oficial."
+     ]
+    },
+    {
+     "t": "p",
+     "h": "Según el sitio oficial de turismo de la Argentina, consultado el 28 de octubre de 2026. Confirmalo con Migraciones antes de viajar."
+    },
+    {
+     "t": "h2",
+     "h": "¿Cuánto se tarda en llegar desde la frontera?"
+    },
+    {
+     "t": "tabla",
+     "cab": [
+      "Ruta en auto",
+      "Distancia",
+      "Tiempo",
+      "Camino"
+     ],
+     "filas": [
+      [
+       "Uruguaiana (Brasil) → Esquina",
+       "310 km",
+       "4 h 31 min",
+       "RN14 y RP126, con peajes"
+      ],
+      [
+       "Paso de los Libres (Argentina) → Esquina",
+       "307 km",
+       "4 h 22 min",
+       "RN14 y RP126, con peajes"
+      ],
+      [
+       "São Borja (Brasil) → Paso de la Patria",
+       "386 km",
+       "4 h 45 min",
+       "RN12"
+      ]
+     ]
+    },
+    {
+     "t": "p",
+     "h": "Tiempos de Google Maps consultados el 6 de noviembre de 2026; no incluyen la espera en la frontera. El paso Santo Tomé - São Borja, por el Puente Internacional de la Integración, está abierto las 24 horas (Ministerio de Seguridad de la Nación; teléfono (3756) 420035)."
+    },
+    {
+     "t": "h2",
+     "h": "¿Dónde pescar y cuánto cuesta el viaje?"
+    },
+    {
+     "t": "p",
+     "h": "Para elegir el destino y el alojamiento, mirá <a href=\"{n:viaje-dorado-amigos-precios}\">el viaje de dorado con amigos</a> (posadas con paquete desde US$ 605 por persona) y <a href=\"{n:precio-viaje-dorado-lodge}\">cuánto cuesta un viaje de pesca de dorado</a> (lodges por cantidad de noches)."
+    },
+    {
+     "t": "h2",
+     "h": "Qué no cubre todavía esta página"
+    },
+    {
+     "t": "p",
+     "h": "Lo que hace falta para pasar con auto propio, equipo de pesca y carnada por la aduana; los medios de pago del portal para un extranjero; la ruta hasta Goya; las tarifas en reales de operadores que las publiquen; y los horarios y esperas de cada paso. Los agregamos cuando los verifiquemos con una fuente y una fecha."
+    },
+    {
+     "t": "p",
+     "h": "<strong>¿Querés que te ayudemos a armar el viaje?</strong> Contanos desde dónde salís, fechas y cuántos son en <a href=\"{viaje}\">el formulario del viaje</a> y te escribimos con opciones de guía y alojamiento, sin costo ni compromiso."
+    }
+   ]
   }
  ]
 }
