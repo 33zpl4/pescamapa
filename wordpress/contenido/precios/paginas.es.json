@@ -413,51 +413,58 @@
    "slug": "cuanto-cuesta-pesca-con-mosca-bariloche",
    "especie": "trucha",
    "titulo": "Cuánto cuesta un día de pesca con mosca en Bariloche y el Río Limay (2026/27)",
-   "bajada": "Precio de una jornada de pesca con guía en el Río Limay: en dólares y en pesos, qué incluye, cuánto cuesta la licencia y qué cambia si van dos.",
+   "bajada": "Precios publicados de un día de pesca con mosca con guía en Bariloche, por niveles: medio día, día completo en el Limay y en el Manso, y en pesos. Qué incluye y qué cambia el precio.",
    "seo_title": "Cuánto cuesta pescar en Bariloche y el Limay (2026/27)",
-   "seo_description": "Precio de un día de pesca con mosca con guía en el Río Limay, Bariloche: de US$ 500 a US$ 545 por bote en dólares y desde $ 666.000 en pesos. Qué incluye.",
+   "seo_description": "Cuánto cuesta pescar en Bariloche: medio día desde US$ 410, día completo desde US$ 500 (Manso US$ 600) y desde $ 666.000 en pesos. Licencia oficial.",
    "datos": [
-    "Un día completo de pesca con mosca en el Limay con guía y bote cuesta entre US$ 500 y US$ 545 (un pescador), según el operador.",
-    "Para dos pescadores en el mismo bote, un operador publica US$ 520: el segundo pescador suma solo US$ 20.",
+    "Medio día en el Limay (unas 6 horas): US$ 410 por bote con guía, para uno o dos pescadores.",
+    "Día completo en el Limay: desde US$ 500 (un pescador) y US$ 520 (dos) en un operador, US$ 530 en otro y desde US$ 545 en una agencia.",
+    "Día completo en el Manso: US$ 600, que incluye un suplemento de US$ 70 sobre el Limay.",
     "En pesos, un guía de plataforma de reservas publica $ 666.000 por día para hasta dos personas (marzo de 2027).",
-    "La licencia de pesca suele estar fuera del precio. Valores oficiales 2026/27, en pesos: extranjeros $ 50.000 por día, $ 140.000 por 10 días y $ 280.000 por temporada; residentes en el país $ 12.500, $ 25.000 y $ 50.000.",
-    "La mejor época que informa un operador va de noviembre a mayo."
+    "La licencia suele estar fuera del precio. Valores oficiales 2026/27: extranjeros $ 50.000 por día, $ 140.000 por 10 días y $ 280.000 por temporada; residentes $ 12.500, $ 25.000 y $ 50.000."
    ],
    "bloques": [
     {
      "t": "p",
-     "h": "<strong>Respuesta corta.</strong> Un día completo de pesca con mosca con guía en el Río Limay, a unos 45 minutos de Bariloche, cuesta <strong>entre US$ 500 y US$ 545 por bote</strong>, y <strong>$ 666.000</strong> en pesos en una plataforma de reservas (hasta dos personas). La licencia de pesca casi siempre se paga aparte."
+     "h": "<strong>Respuesta corta.</strong> Un día de pesca con mosca con guía cerca de Bariloche cuesta <strong>desde US$ 410 el medio día y desde US$ 500 el día completo, por bote para uno o dos pescadores</strong>. El Manso sube a <strong>US$ 600</strong>. En pesos, un guía de plataforma publica <strong>$ 666.000</strong> por día. Son precios de entrada: lo que cambia el precio está más abajo. La licencia se paga aparte."
     },
     {
      "t": "h2",
-     "h": "Precios de una jornada en el Río Limay"
+     "h": "Precios por tipo de salida"
     },
     {
      "t": "tabla",
      "cab": [
-      "Operador (tipo)",
+      "Salida",
       "Duración",
-      "Precio",
+      "Precio (bote, 1 o 2 pescadores)",
       "Incluye",
       "No incluye"
      ],
      "filas": [
       [
-       "Guía de pesca con mosca (operador local)",
-       "Día completo, 8 a 10 horas",
-       "US$ 500 un pescador; US$ 520 dos pescadores",
-       "Bote, equipo de pesca, almuerzo patagónico con vino, refrescos, cerveza y traslados",
-       "Licencia de pesca y propinas"
+       "<strong>Medio día en el Limay</strong>",
+       "Unas 6 horas",
+       "US$ 410",
+       "Guía y bote privados, equipo, traslados, refrigerio",
+       "Licencia y propinas"
       ],
       [
-       "Experiencia de pesca en el Limay (agencia de Bariloche)",
-       "Medio día o día completo",
-       "Desde US$ 545",
-       "Embarcación para hasta 2 personas, traslado desde hoteles de Bariloche, guía bilingüe, equipo completo, refrigerio o almuerzo con bebidas",
-       "Licencia, propinas y vuelos"
+       "<strong>Día completo en el Limay</strong>",
+       "8 a 11 horas",
+       "Desde US$ 500 un pescador, US$ 520 dos (un operador); US$ 530 (otro operador); desde US$ 545 (una agencia)",
+       "Guía, bote, equipo, traslados, almuerzo y bebidas",
+       "Licencia y propinas"
       ],
       [
-       "Guía en plataforma de reservas",
+       "<strong>Día completo en el Manso</strong>",
+       "Día completo",
+       "US$ 600 (incluye US$ 70 de suplemento del Manso)",
+       "Lo mismo que el día completo en el Limay",
+       "Licencia y propinas"
+      ],
+      [
+       "<strong>Día completo, en pesos</strong> (guía en plataforma de reservas)",
        "9 horas (08:00 a 17:00), hasta 2 personas",
        "$ 666.000 por día (marzo de 2027)",
        "Guía, embarcación, almuerzo, equipos y traslados",
@@ -467,7 +474,15 @@
     },
     {
      "t": "p",
-     "h": "Precios publicados o informados al 5 de noviembre de 2026. Los precios en dólares y en pesos son de operadores distintos y no se convierten entre sí: el tipo de cambio lo fija cada uno al reservar."
+     "h": "Precios publicados o informados al 6 de noviembre de 2026, por bote con guía y para uno o dos pescadores. Los precios en dólares y en pesos son de operadores distintos y no se convierten entre sí: el tipo de cambio lo fija cada uno al reservar."
+    },
+    {
+     "t": "h2",
+     "h": "¿Por qué hay tantos precios?"
+    },
+    {
+     "t": "p",
+     "h": "Porque los precios publicados son de entrada, no un tope. Cambian con el río (el Manso suma US$ 70 al Limay), con la duración (el medio día cuesta US$ 410 y el día completo desde US$ 500) y con lo que incluye cada operador. Algunos operadores ofrecen además programas de varios días y flotadas con campamento y <strong>no publican tarifa</strong>: la piden por consulta. Tampoco encontramos una tarifa publicada por encima de US$ 600 para un día; que otros cobren más es posible, pero no lo podemos afirmar sin un precio publicado."
     },
     {
      "t": "h2",
@@ -475,7 +490,7 @@
     },
     {
      "t": "p",
-     "h": "En el operador que publica las dos tarifas, <strong>un pescador paga US$ 500 y dos pescadores en el mismo bote pagan US$ 520 en total</strong>: el segundo pescador agrega solo US$ 20. Por persona, ir de a dos sale casi a la mitad (cálculo nuestro: US$ 260 por persona)."
+     "h": "El precio es por bote, no por persona. En el operador que publica las dos tarifas, <strong>un pescador paga US$ 500 y dos pescadores en el mismo bote pagan US$ 520 en total</strong>: el segundo agrega solo US$ 20. Por persona, ir de a dos sale casi a la mitad (cálculo nuestro: US$ 260 por persona). Con el día completo en el Limay a US$ 530, son US$ 265 por persona."
     },
     {
      "t": "h2",
@@ -483,7 +498,7 @@
     },
     {
      "t": "p",
-     "h": "El permiso patagónico vale en Neuquén, Río Negro, Chubut y Parques Nacionales, y sus valores 2026/27 son oficiales, en pesos: <strong>extranjeros no residentes, $ 50.000 por día, $ 140.000 por 10 días y $ 280.000 por temporada; residentes en el país, $ 12.500, $ 25.000 y $ 50.000</strong> (reglamento actualizado el 26 de octubre de 2026). Todos los valores, quién no paga y qué permiso adicional lleva el trolling están en <a href=\"{n:licencia-pesca-patagonia-precios}\">licencia de pesca en la Patagonia 2026/27</a>."
+     "h": "El permiso patagónico vale en Neuquén, Río Negro, Chubut y Parques Nacionales, y sus valores 2026/27 son oficiales, en pesos: <strong>extranjeros no residentes, $ 50.000 por día, $ 140.000 por 10 días y $ 280.000 por temporada; residentes en el país, $ 12.500, $ 25.000 y $ 50.000</strong> (reglamento actualizado el 26 de octubre de 2026). Algunos operadores lo gestionan por vos y lo cobran aparte: uno informa US$ 40 por persona por día. Todos los valores, quién no paga y el permiso adicional del trolling están en <a href=\"{n:licencia-pesca-patagonia-precios}\">licencia de pesca en la Patagonia 2026/27</a>."
     },
     {
      "t": "h2",

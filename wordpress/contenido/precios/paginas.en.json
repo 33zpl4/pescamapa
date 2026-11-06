@@ -413,61 +413,76 @@
    "slug": "how-much-does-fly-fishing-bariloche-cost",
    "especie": "trout",
    "titulo": "How much does a day of fly fishing cost in Bariloche and the Limay River (2026/27)",
-   "bajada": "Price for a guided fishing day on the Limay River: in US dollars and pesos, what's included, license cost, and what changes if there are two anglers.",
+   "bajada": "Published prices for a day of guided fly fishing in Bariloche, by level: half day, full day on the Limay and Manso, and in pesos. What's included and what changes the price.",
    "seo_title": "How much is fishing in Bariloche & Limay (2026/27)",
-   "seo_description": "Day rates for guided fly fishing on the Limay River, Bariloche: from US$ 500 to US$ 545 per boat in dollars and from $ 666,000 in pesos. What's included.",
+   "seo_description": "How much is fishing in Bariloche: half day from US$ 410, full day from US$ 500 (Manso US$ 600) and from $ 666,000 in pesos. Official license.",
    "datos": [
-    "A full day of guided fly fishing on the Limay with boat costs between US$ 500 and US$ 545 (one angler), depending on the outfitter.",
-    "For two anglers in the same boat, one outfitter lists US$ 520: the second angler adds only US$ 20.",
+    "Half day on the Limay (about 6 hours): US$ 410 per boat with guide, for one or two anglers.",
+    "Full day on the Limay: from US$ 500 (one angler) and US$ 520 (two) with one outfitter, US$ 530 with another and from US$ 545 with an agency.",
+    "Full day on the Manso: US$ 600, which includes a US$ 70 supplement over the Limay.",
     "In pesos, a guide on a booking platform lists $ 666,000 per day for up to two people (March 2027).",
-    "The fishing license is usually not included. Official rates 2026/27, in pesos: foreigners $ 50,000 per day, $ 140,000 for 10 days, and $ 280,000 for the season; residents $ 12,500, $ 25,000, and $ 50,000.",
-    "The best season according to one outfitter is from November to May."
+    "The license is usually not included. Official 2026/27 rates: foreigners $ 50,000 per day, $ 140,000 for 10 days and $ 280,000 for the season; residents $ 12,500, $ 25,000 and $ 50,000."
    ],
    "bloques": [
     {
      "t": "p",
-     "h": "<strong>Short answer.</strong> A full day of guided fly fishing on the Limay River, about 45 minutes from Bariloche, costs <strong>between US$ 500 and US$ 545 per boat</strong>, and <strong>$ 666,000</strong> in pesos on a booking platform (up to two people). The fishing license is almost always paid separately."
+     "h": "<strong>Short answer.</strong> A day of guided fly fishing near Bariloche costs <strong>from US$ 410 for a half day and from US$ 500 for a full day, per boat for one or two anglers</strong>. The Manso goes up to <strong>US$ 600</strong>. In pesos, a guide on a platform lists <strong>$ 666,000</strong> per day. These are entry prices: what changes the price is below. The license is paid separately."
     },
     {
      "t": "h2",
-     "h": "Day rates on the Limay River"
+     "h": "Prices by trip type"
     },
     {
      "t": "tabla",
      "cab": [
-      "Operator (type)",
+      "Trip",
       "Duration",
-      "Price",
+      "Price (boat, 1 or 2 anglers)",
       "Includes",
       "Not included"
      ],
      "filas": [
       [
-       "Fly fishing guide (local outfitter)",
-       "Full day, 8 to 10 hours",
-       "US$ 500 one angler; US$ 520 two anglers",
-       "Boat, fishing gear, Patagonian lunch with wine, soft drinks, beer, and transfers",
-       "Fishing license and tips"
+       "<strong>Half day on the Limay</strong>",
+       "About 6 hours",
+       "US$ 410",
+       "Private guide and boat, gear, transfers, snack",
+       "License and tips"
       ],
       [
-       "Limay fishing experience (Bariloche agency)",
-       "Half day or full day",
-       "From US$ 545",
-       "Boat for up to 2 people, transfer from Bariloche hotels, bilingual guide, full gear, snack or lunch with drinks",
-       "License, tips, and flights"
+       "<strong>Full day on the Limay</strong>",
+       "8 to 11 hours",
+       "From US$ 500 one angler, US$ 520 two (one outfitter); US$ 530 (another outfitter); from US$ 545 (an agency)",
+       "Guide, boat, gear, transfers, lunch and drinks",
+       "License and tips"
       ],
       [
-       "Guide on booking platform",
+       "<strong>Full day on the Manso</strong>",
+       "Full day",
+       "US$ 600 (includes US$ 70 Manso supplement)",
+       "Same as full day on the Limay",
+       "License and tips"
+      ],
+      [
+       "<strong>Full day, in pesos</strong> (guide on booking platform)",
        "9 hours (08:00 to 17:00), up to 2 people",
        "$ 666,000 per day (March 2027)",
-       "Guide, boat, lunch, gear, and transfers",
+       "Guide, boat, lunch, gear and transfers",
        "License and tips"
       ]
      ]
     },
     {
      "t": "p",
-     "h": "Rates published or reported as of 5 November 2026. Dollar and peso prices are from different operators and are not converted between each other: each sets their own exchange rate at booking."
+     "h": "Prices published or reported as of 6 November 2026, per boat with guide and for one or two anglers. The prices in dollars and pesos are from different operators and are not converted between each other: each sets their own exchange rate at booking."
+    },
+    {
+     "t": "h2",
+     "h": "Why are there so many prices?"
+    },
+    {
+     "t": "p",
+     "h": "Because published prices are entry level, not a cap. They change with the river (the Manso adds US$ 70 to the Limay), with duration (half day is US$ 410 and full day from US$ 500) and with what each operator includes. Some operators also offer multi-day programs and float trips with camping and <strong>do not publish rates</strong>: you have to ask. We also did not find a published rate above US$ 600 for a day; others may charge more, but we can't confirm it without a published price."
     },
     {
      "t": "h2",
@@ -475,7 +490,7 @@
     },
     {
      "t": "p",
-     "h": "With the outfitter that lists both rates, <strong>one angler pays US$ 500 and two anglers in the same boat pay US$ 520 total</strong>: the second angler adds only US$ 20. Per person, going as a pair is almost half price (our calculation: US$ 260 per person)."
+     "h": "The price is per boat, not per person. With the outfitter who lists both rates, <strong>one angler pays US$ 500 and two anglers in the same boat pay US$ 520 total</strong>: the second adds only US$ 20. Per person, going as a pair is almost half (our calculation: US$ 260 per person). With the full day on the Limay at US$ 530, it's US$ 265 per person."
     },
     {
      "t": "h2",
@@ -483,7 +498,7 @@
     },
     {
      "t": "p",
-     "h": "The Patagonian permit is valid in Neuquén, Río Negro, Chubut, and National Parks, and the 2026/27 rates are official, in pesos: <strong>non-resident foreigners, $ 50,000 per day, $ 140,000 for 10 days, and $ 280,000 for the season; residents, $ 12,500, $ 25,000, and $ 50,000</strong> (regulations updated 26 October 2026). All rates, who is exempt, and which extra permit is needed for trolling are in <a href=\"{n:licencia-pesca-patagonia-precios}\">Patagonia fishing license 2026/27</a>."
+     "h": "The Patagonian permit is valid in Neuquén, Río Negro, Chubut and National Parks, and its 2026/27 rates are official, in pesos: <strong>non-resident foreigners, $ 50,000 per day, $ 140,000 for 10 days and $ 280,000 for the season; residents, $ 12,500, $ 25,000 and $ 50,000</strong> (regulations updated 26 October 2026). Some operators handle it for you and charge it separately: one reports US$ 40 per person per day. All rates, who is exempt and the trolling permit are in <a href=\"{n:licencia-pesca-patagonia-precios}\">Patagonia fishing license 2026/27</a>."
     },
     {
      "t": "h2",
@@ -491,11 +506,11 @@
     },
     {
      "t": "p",
-     "h": "A local outfitter suggests the best season is from November to May. This is one outfitter's description; the official season and closures are in our <a href=\"{n:cuando-pescar-trucha-patagonia}\">Patagonia trout season guide</a>."
+     "h": "A local outfitter says the best time is November to May. This is one outfitter's description; the official season and closures are in our <a href=\"{n:cuando-pescar-trucha-patagonia}\">Patagonia trout season guide</a>."
     },
     {
      "t": "p",
-     "h": "<strong>Want help choosing?</strong> Tell us your dates and group size in <a href=\"{viaje}\">the trip form</a> and we'll reply with guide options, no cost or obligation."
+     "h": "<strong>Want help choosing?</strong> Tell us your dates and group size in <a href=\"{viaje}\">the trip form</a> and we'll write you with guide options, no cost or obligation."
     }
    ]
   },

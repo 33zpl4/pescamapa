@@ -413,51 +413,58 @@
    "slug": "quanto-custa-pesca-com-mosca-bariloche",
    "especie": "trucha",
    "titulo": "Quanto custa um dia de pesca com mosca em Bariloche e no Rio Limay (2026/27)",
-   "bajada": "Preço de um dia de pesca com guia no Rio Limay: em dólares e em pesos, o que inclui, quanto custa a licença e o que muda para dois.",
+   "bajada": "Preços publicados de um dia de pesca com mosca com guia em Bariloche, por níveis: meio dia, dia inteiro no Limay e no Manso, e em pesos. O que está incluído e o que altera o preço.",
    "seo_title": "Quanto custa pescar em Bariloche e Limay (2026/27)",
-   "seo_description": "Preço de um dia de pesca com mosca com guia no Rio Limay, Bariloche: de US$ 500 a US$ 545 por barco em dólares e a partir de $ 666.000 em pesos. O que inclui.",
+   "seo_description": "Quanto custa pescar em Bariloche: meio dia a partir de US$ 410, dia inteiro desde US$ 500 (Manso US$ 600) e a partir de $ 666.000 em pesos. Licença oficial.",
    "datos": [
-    "Um dia completo de pesca com mosca no Limay com guia e barco custa entre US$ 500 e US$ 545 (um pescador), conforme o operador.",
-    "Para dois pescadores no mesmo barco, um operador publica US$ 520: o segundo pescador acrescenta apenas US$ 20.",
+    "Meio dia no Limay (cerca de 6 horas): US$ 410 por barco com guia, para um ou dois pescadores.",
+    "Dia inteiro no Limay: a partir de US$ 500 (um pescador) e US$ 520 (dois) em um operador, US$ 530 em outro e desde US$ 545 em uma agência.",
+    "Dia inteiro no Manso: US$ 600, que inclui um adicional de US$ 70 sobre o Limay.",
     "Em pesos, um guia em plataforma de reservas publica $ 666.000 por dia para até duas pessoas (março de 2027).",
-    "A licença de pesca geralmente não está incluída no preço. Valores oficiais 2026/27, em pesos: estrangeiros $ 50.000 por dia, $ 140.000 por 10 dias e $ 280.000 por temporada; residentes no país $ 12.500, $ 25.000 e $ 50.000.",
-    "A melhor época informada por um operador vai de novembro a maio."
+    "A licença geralmente não está incluída no preço. Valores oficiais 2026/27: estrangeiros $ 50.000 por dia, $ 140.000 por 10 dias e $ 280.000 por temporada; residentes $ 12.500, $ 25.000 e $ 50.000."
    ],
    "bloques": [
     {
      "t": "p",
-     "h": "<strong>Resposta curta.</strong> Um dia completo de pesca com mosca com guia no Rio Limay, a cerca de 45 minutos de Bariloche, custa <strong>entre US$ 500 e US$ 545 por barco</strong>, e <strong>$ 666.000</strong> em pesos em uma plataforma de reservas (até duas pessoas). A licença de pesca quase sempre é paga à parte."
+     "h": "<strong>Resposta curta.</strong> Um dia de pesca com mosca com guia perto de Bariloche custa <strong>a partir de US$ 410 o meio dia e desde US$ 500 o dia inteiro, por barco para um ou dois pescadores</strong>. O Manso sobe para <strong>US$ 600</strong>. Em pesos, um guia em plataforma publica <strong>$ 666.000</strong> por dia. São preços de entrada: o que altera o valor está mais abaixo. A licença é paga à parte."
     },
     {
      "t": "h2",
-     "h": "Preços de um dia no Rio Limay"
+     "h": "Preços por tipo de saída"
     },
     {
      "t": "tabla",
      "cab": [
-      "Operador (tipo)",
+      "Saída",
       "Duração",
-      "Preço",
+      "Preço (barco, 1 ou 2 pescadores)",
       "Inclui",
       "Não inclui"
      ],
      "filas": [
       [
-       "Guia de pesca com mosca (operador local)",
-       "Dia completo, 8 a 10 horas",
-       "US$ 500 um pescador; US$ 520 dois pescadores",
-       "Barco, equipamento de pesca, almoço patagônico com vinho, refrigerantes, cerveja e traslados",
-       "Licença de pesca e gorjetas"
+       "<strong>Meio dia no Limay</strong>",
+       "Cerca de 6 horas",
+       "US$ 410",
+       "Guia e barco privados, equipamentos, traslados, lanche",
+       "Licença e gorjetas"
       ],
       [
-       "Experiência de pesca no Limay (agência de Bariloche)",
-       "Meio dia ou dia completo",
-       "A partir de US$ 545",
-       "Embarcação para até 2 pessoas, traslado desde hotéis de Bariloche, guia bilíngue, equipamento completo, lanche ou almoço com bebidas",
-       "Licença, gorjetas e voos"
+       "<strong>Dia inteiro no Limay</strong>",
+       "8 a 11 horas",
+       "Desde US$ 500 um pescador, US$ 520 dois (um operador); US$ 530 (outro operador); desde US$ 545 (uma agência)",
+       "Guia, barco, equipamentos, traslados, almoço e bebidas",
+       "Licença e gorjetas"
       ],
       [
-       "Guia em plataforma de reservas",
+       "<strong>Dia inteiro no Manso</strong>",
+       "Dia inteiro",
+       "US$ 600 (inclui US$ 70 de adicional do Manso)",
+       "O mesmo do dia inteiro no Limay",
+       "Licença e gorjetas"
+      ],
+      [
+       "<strong>Dia inteiro, em pesos</strong> (guia em plataforma de reservas)",
        "9 horas (08:00 a 17:00), até 2 pessoas",
        "$ 666.000 por dia (março de 2027)",
        "Guia, embarcação, almoço, equipamentos e traslados",
@@ -467,15 +474,23 @@
     },
     {
      "t": "p",
-     "h": "Preços publicados ou informados em 5 de novembro de 2026. Os preços em dólares e em pesos são de operadores diferentes e não são convertidos entre si: a cotação é definida por cada um na reserva."
+     "h": "Preços publicados ou informados em 6 de novembro de 2026, por barco com guia e para um ou dois pescadores. Os preços em dólares e em pesos são de operadores diferentes e não são convertidos entre si: a cotação é definida por cada um na reserva."
     },
     {
      "t": "h2",
-     "h": "Quanto custa para duas pessoas?"
+     "h": "Por que há tantos preços?"
     },
     {
      "t": "p",
-     "h": "No operador que publica as duas tarifas, <strong>um pescador paga US$ 500 e dois pescadores no mesmo barco pagam US$ 520 no total</strong>: o segundo pescador acrescenta apenas US$ 20. Por pessoa, ir em dois sai quase pela metade (nosso cálculo: US$ 260 por pessoa)."
+     "h": "Porque os preços publicados são iniciais, não um teto. Variam conforme o rio (o Manso soma US$ 70 ao Limay), a duração (meio dia custa US$ 410 e o dia inteiro desde US$ 500) e o que cada operador inclui. Alguns operadores também oferecem programas de vários dias e flutuações com acampamento e <strong>não publicam tarifa</strong>: só informam sob consulta. Também não encontramos tarifa publicada acima de US$ 600 para um dia; que outros cobrem mais é possível, mas não podemos afirmar sem preço publicado."
+    },
+    {
+     "t": "h2",
+     "h": "Quanto custa para dois?"
+    },
+    {
+     "t": "p",
+     "h": "O preço é por barco, não por pessoa. No operador que publica as duas tarifas, <strong>um pescador paga US$ 500 e dois pescadores no mesmo barco pagam US$ 520 no total</strong>: o segundo acrescenta só US$ 20. Por pessoa, ir em dois sai quase pela metade (cálculo nosso: US$ 260 por pessoa). Com o dia inteiro no Limay a US$ 530, são US$ 265 por pessoa."
     },
     {
      "t": "h2",
@@ -483,7 +498,7 @@
     },
     {
      "t": "p",
-     "h": "A permissão patagônica vale em Neuquén, Río Negro, Chubut e Parques Nacionais, e seus valores 2026/27 são oficiais, em pesos: <strong>estrangeiros não residentes, $ 50.000 por dia, $ 140.000 por 10 dias e $ 280.000 por temporada; residentes no país, $ 12.500, $ 25.000 e $ 50.000</strong> (regulamento atualizado em 26 de outubro de 2026). Todos os valores, quem não paga e qual permissão adicional exige o trolling estão em <a href=\"{n:licencia-pesca-patagonia-precios}\">licença de pesca na Patagônia 2026/27</a>."
+     "h": "A permissão patagônica vale em Neuquén, Río Negro, Chubut e Parques Nacionais, e seus valores 2026/27 são oficiais, em pesos: <strong>estrangeiros não residentes, $ 50.000 por dia, $ 140.000 por 10 dias e $ 280.000 por temporada; residentes no país, $ 12.500, $ 25.000 e $ 50.000</strong> (regulamento atualizado em 26 de outubro de 2026). Alguns operadores providenciam para você e cobram à parte: um informa US$ 40 por pessoa por dia. Todos os valores, quem não paga e a permissão adicional do trolling estão em <a href=\"{n:licencia-pesca-patagonia-precios}\">licença de pesca na Patagônia 2026/27</a>."
     },
     {
      "t": "h2",
@@ -491,11 +506,11 @@
     },
     {
      "t": "p",
-     "h": "Um operador local indica como melhor época de novembro a maio. É a descrição de um operador; a temporada oficial e os períodos de defeso estão em nossa <a href=\"{n:cuando-pescar-trucha-patagonia}\">nota sobre a temporada da truta na Patagônia</a>."
+     "h": "Um operador local indica como melhor época de novembro a maio. É a descrição de um operador; a temporada oficial e as proibições estão em nossa <a href=\"{n:cuando-pescar-trucha-patagonia}\">nota sobre a temporada da truta na Patagônia</a>."
     },
     {
      "t": "p",
-     "h": "<strong>Quer ajuda para escolher?</strong> Conte para nós as datas e quantas pessoas em <a href=\"{viaje}\">o formulário da viagem</a> e responderemos com opções de guia, sem custo nem compromisso."
+     "h": "<strong>Quer ajuda para escolher?</strong> Conte para nós as datas e quantos são no <a href=\"{viaje}\">formulário da viagem</a> e responderemos com opções de guia, sem custo ou compromisso."
     }
    ]
   },
@@ -729,13 +744,13 @@
    "slug": "licenca-pesca-patagonia-2026-27",
    "especie": "trucha",
    "titulo": "Licença de pesca na Patagônia argentina 2026/27: quanto custa e onde vale",
-   "bajada": "Valores oficiais da licença de pesca patagônica para a temporada 2026/27, para estrangeiros e residentes, onde é válida, quanto dura e o que é pago à parte.",
+   "bajada": "Valores oficiais da licença de pesca patagônica para a temporada 2026/27, para estrangeiros e residentes, onde é válida, duração e o que é cobrado à parte.",
    "seo_title": "Licença de pesca Patagônia 2026/27: preços",
    "seo_description": "Quanto custa a licença de pesca na Patagônia 2026/27: estrangeiros $ 50.000 por dia e $ 280.000 a temporada; residentes a partir de $ 12.500. Onde vale.",
    "datos": [
     "Estrangeiros não residentes: $ 50.000 por dia, $ 140.000 por 10 dias e $ 280.000 por temporada (valores 2026/27, em pesos).",
     "Residentes no país: $ 12.500 por dia, $ 25.000 por 10 dias e $ 50.000 por temporada.",
-    "A mesma licença vale em Neuquén, Río Negro, Chubut e nos Parques Nacionais do Sul; Santa Cruz e Terra do Fogo têm a sua própria.",
+    "A mesma licença vale em Neuquén, Río Negro, Chubut e nos Parques Nacionais do Sul; Santa Cruz e Tierra del Fuego têm a sua própria.",
     "A temporada de pesca vai de 1 de novembro de 2026 a 1 de maio de 2027 inclusive; a licença de temporada vale até 31 de outubro de 2027.",
     "Isentos: maiores de 65 anos, aposentados, pensionistas, menores de até 12 anos e pessoas com deficiência com comprovação oficial."
    ],
@@ -801,7 +816,7 @@
     },
     {
      "t": "p",
-     "h": "As licenças emitidas por Neuquén, Río Negro, Chubut e a Administração de Parques Nacionais, com estas categorias e valores, são as únicas válidas para pescar em todos os ambientes dessas quatro jurisdições. Cada província tem ainda seus anexos com exceções por rio e lago: consulte antes de pescar em um ambiente específico. <strong>Santa Cruz e Terra do Fogo não usam esta licença</strong>: têm a sua própria, com valores próprios (guias de {d:rio-gallegos} e {d:rio-grande})."
+     "h": "As licenças emitidas por Neuquén, Río Negro, Chubut e a Administração de Parques Nacionais, com estas categorias e valores, são as únicas válidas para pescar em todos os ambientes dessas quatro jurisdições. Cada província tem ainda seus anexos com exceções por rio e lago: consulte antes de pescar em um ambiente específico. <strong>Santa Cruz e Tierra del Fuego não utilizam esta licença</strong>: possuem a própria, com seus próprios valores (guias de {d:rio-gallegos} e {d:rio-grande})."
     },
     {
      "t": "h2",
@@ -822,19 +837,19 @@
     },
     {
      "t": "p",
-     "h": "A licença é pessoal e intransferível, deve conter todos os campos preenchidos e deve ser apresentada sempre que solicitada pela autoridade, junto com um documento que comprove sua identidade. Em Chubut a licença digital gerada pela plataforma DINO pode ser baixada novamente gratuitamente em caso de perda."
+     "h": "A licença é pessoal e intransferível, deve conter todos os campos preenchidos e deve ser levada e apresentada sempre que solicitada pela autoridade, junto com um documento que comprove sua identidade. Em Chubut a licença digital gerada pela plataforma DINO pode ser baixada novamente gratuitamente em caso de perda."
     },
     {
      "t": "h2",
-     "h": "Quanto custa a licença para uma viagem de uma semana?"
+     "h": "Quanto custa a licença para uma semana de viagem?"
     },
     {
      "t": "p",
-     "h": "Para um estrangeiro que pesca de 6 a 7 dias, a licença de 10 dias ($ 140.000) sai mais barata que seis licenças diárias ($ 300.000) e mais barata que a de temporada ($ 280.000) se não for voltar. É um cálculo nosso com os valores acima; as semanas de lodge em nossas páginas de preços indicam se a licença está incluída: veja <a href=\"{n:precio-semana-trucha-patagonia-norte}\">quanto custa uma semana de pesca de truta em Neuquén e Chubut</a> e <a href=\"{n:precio-pesca-bariloche-limay}\">um dia de pesca em Bariloche</a>."
+     "h": "Para um estrangeiro que pesca de 6 a 7 dias, a licença de 10 dias ($ 140.000) sai mais barata que seis licenças diárias ($ 300.000) e mais barata que a de temporada ($ 280.000) se não for voltar. É um cálculo nosso com os valores acima; as semanas de lodge em nossas páginas de preços informam se a licença está incluída: veja <a href=\"{n:precio-semana-trucha-patagonia-norte}\">quanto custa uma semana de pesca de truta em Neuquén e Chubut</a> e <a href=\"{n:precio-pesca-bariloche-limay}\">um dia de pesca em Bariloche</a>."
     },
     {
      "t": "p",
-     "h": "<strong>Quer ajuda para organizar sua viagem?</strong> Escreva para nós no <a href=\"{viaje}\">formulário de viagem</a> e retornamos opções de guia e lodge, sem custo nem compromisso."
+     "h": "<strong>Quer ajuda para organizar sua viagem?</strong> Escreva para nós no <a href=\"{viaje}\">formulário da viagem</a> e retornamos opções de guia e lodge, sem custo ou compromisso."
     }
    ]
   }
