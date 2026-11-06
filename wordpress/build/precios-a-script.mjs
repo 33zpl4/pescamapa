@@ -105,7 +105,7 @@ foreach ( [ 'es', 'en', 'pt' ] as $l ) {
 				update_field( 'actualizado', $hoy, $id );
 				$guardado = get_post_field( 'post_content', $id );
 				$tablas = count( array_filter( $pg['bloques'], fn( $b ) => 'tabla' === $b['t'] ) );
-				$ok = substr_count( $guardado, '<table' ) === $tablas && ( '' === $marcador || false !== strpos( $guardado, $marcador ) ) && false === strpos( $guardado, '{n:' );
+				$ok = substr_count( $guardado, '<table' ) === $tablas && false === strpos( $guardado, '{n:' ) && md5( wp_strip_all_tags( $guardado ) ) === md5( wp_strip_all_tags( $cuerpo ) );
 				WP_CLI::log( ( $ok ? 'VERIFIED' : 'FALLÓ' ) . ": $clave ($l) #$id " . get_permalink( $id ) );
 				$ok || WP_CLI::error( "$clave ($l): la lectura de vuelta no coincide." );
 			}
