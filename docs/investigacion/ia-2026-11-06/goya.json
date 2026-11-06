@@ -1,0 +1,11 @@
+{
+  "fecha": "2026-11-06T05:27:55.315Z",
+  "proveedor": "openai",
+  "pregunta": "Guías y alojamientos de pesca en Goya (Corrientes) que publiquen precio de la salida de pesca de dorado o surubí con guía y lancha, o paquetes de varios días. Respondé en español. Para cada dato: valor con moneda, vigencia o fecha, y la URL exacta del sitio oficial u operador donde figura. Solo lo publicado hoy; si no hay valor publicado, decilo.",
+  "cita_pescamapa": false,
+  "urls": [
+    "https://viajacongus.com/argentina/goya/"
+  ],
+  "texto": "Actualmente, no se encuentran publicados en línea precios específicos para salidas de pesca de dorado o surubí con guía y lancha en Goya, Corrientes, correspondientes al 6 de noviembre de 2026. Sin embargo, según información verificada en julio de 2026, los costos de estas excursiones en Goya oscilaban entre AR$ 60.000 y AR$ 150.000 por jornada, dependiendo del tipo de embarcación y los servicios incluidos. ([viajacongus.com](https://viajacongus.com/argentina/goya/?utm_source=openai))\n\nPara obtener tarifas actualizadas y paquetes de varios días, se recomienda contactar directamente a guías y operadores locales en Goya. Además, es importante verificar los precios actuales de las licencias provinciales de pesca deportiva, ya que se actualizan periódicamente en función del precio de la nafta súper y pueden variar. ([viajacongus.com](https://viajacongus.com/argentina/goya/?utm_source=openai)) ",
+  "error": null
+}
