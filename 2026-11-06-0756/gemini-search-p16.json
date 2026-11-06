@@ -1,0 +1,40 @@
+{
+  "fecha": "2026-11-06T07:54:45.278Z",
+  "proveedor": "gemini-search",
+  "pregunta": "Can I fly fish in Patagonia without staying at a lodge, with day trips and a local guide?",
+  "cita_pescamapa": false,
+  "urls": [
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGhyQX_LOgtUEvQzRlEvFgCsKkXjnljAwmTEa3_Bg8YOmwx_fPCsTBGXQuwYXk6LzQFT-HineI6ypJkyRXYnorIPLM73KyRoC6TXBBoxbXcaBXImi5BN5AF7D9MjI7KLhZvtNREDNTeHDO8ngcinqs=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGJaO7oH_2e4DRGeYyA5h_7rwNfRvE9gwTl4pVm1LV2RL5KgQaCdaZcH0RBH9MShGh7aXFA6ikx0igz8WdAnNNY5CdCs4GdtKGKu0rHsO9QlwwRqbshedRivG0gwWMbW7FgZFFvfTA-4fdEo8vCRNM_XTpmgF260TG7CfIPPiYJp1iq8k9Feeoaf16pEx9WuRrjUuVQ1Bk=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFRJR1PaOUkuCT3zGCw5HzeDr_Sk5kxu6Io7nDx_abwUS1UJBsP4PwkS4PqI6mRoMrO5ShbV4xLskBKSINKCXjW5JB3YJQGiM7X3n4g3xiPdcfRmRnHYt5gs6QpeCzfqLeoldX1mJDLS9_b7au4HJHy",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGUat19ehYF8GsdoeCLgFU1S4JfIITuMP7TSHy59l2Deom-33SPkuV_5lYOc-4no5lq36x0BWfsVBn7OLjDk0hBtVmTg3dTT0Jp4QRzdyJwtZ7UfaJk7tozL_yORV0fwADJ9zAegp7tp6Pk1RdiSxrbStQANU2cmT8bOiy_Z9BYKJiFremqrQ==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEQstffkfJePpO-TpyZtPwBQCB8NyIkZgKpNCPIwMdx3YpIVmuBOIupi7si91Y-OOXr6ZI5Tq5hMq1QTzCCQz42Zz1hU95gInna20_-8_09uTwn1sscPYepoH1LLiID4FVhIsYAWy44QnMTjoAY2KoZOmaJgw6IxwKPhAiien90",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGLb9vz1Kcz42cCVq9B8aunUKc_ccXFX45CYGOFczbxizq7_9QreT2WWtwsnPotISi5ZgLUOczIaT0DGRrZanzdfeIw94S5GnsxcJQS6PHPJmU_SSXyDeUQmGlV7g_r",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHT_5lCMe-kgBc3C2PiU0z1jAKXmqqPlohtgZbLIFUIGrjnWLzbYdH6uj4O9jxrm7o2xVpoRtzE7LCggoCU9G0dkhj57azgKxCa1Z0uchOGc5wJJgoONWZhmsjY9qv4Necbf4UHFtEj4dcT4JmisJu7z0CTgxFK1kGS2aED_9RbILLtllC0iQoeeRfZ6At2RopFP6pS",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHnz5HtkIBji1RyG6vO0SjfjoQ7X-yPQNmZy6aHZ_4KHO6yg4dsygzBEuTEWf0RFinytV_5hXV15ufv4sf0770lkTfGzAoHLDFFao4BPm_yya-e8rJGmDh4sefe_Ghbs2GjPj87snKiw-yaSt7l2UTnirhkeJc1HZZM_-dPSAMY6R2L8lgQFbU=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFBUaitqHl1EcjIsn4tLZds-hVQsqmsAq-H_1zRVS0HL2R2Wojpsnrj7YbapL2FKkY49VXHWnAjT3AKt1aIzRd-h-UK-25r4IBU3GYFRD_VkXIcrH8H96ruCt93y8iSLSbUC5qCCbWXiNQAxfkq-2mGBPJjWbvsObDdKKF3fHFNMd89gWUpVyyfkqn5G8bJ_BIhQABa7GlktugjFPk51xo=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGNm1G1eWdOu-3OT8LYesuVeHP7h5zNOyn5JRz7ABqLjfsVJ9yd4oZFz6_RX_m6aF7j4EchnCwx2OMNBOqOblwpRomt448J7ujttLnCruRqA-ehu2jPguClVQuCHq501DITQcgKIyA=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFXUy0crmIpnCTRO03z8-lHlAbeo7vzcEF6YJVVGvu93yIOhx0Uuw90LxmsXVro9TqBmvBd4Ftsam4MH5ow3BkFGRlO0g8qf0pr9OyCn_XTjvyZ8Fw7AE0ZRMQTjI-pIcnkKJvEd9Nx1uDXOlFc",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHDLBsK5cWvXqUOCinEDYx7M-3RlorZ7acmkqXbnbEetf4l46N8j5V1pRExbp-HpO3d4DvEmmlw6GCCdSRXrKVnzRPubbciIGOV29UtWOhifIL44e4vlzCdhpwk7NX224eBwwu_Fs59GSsRST6IbVtqmIziC7-jElk="
+  ],
+  "dominios": [
+    "flyfishingwisconsin.com",
+    "thelarderat36.co.uk",
+    "expeditom.com",
+    "firstcastflyfishing.com",
+    "patagoniariverguides.com",
+    "fishpatagonia.com",
+    "pnwflyfishing.com",
+    "chasingscale.com",
+    "douglasoutdoors.com",
+    "180trout.com",
+    "flyfishpatagonia.com",
+    "johnkreft.com"
+  ],
+  "consultas": [
+    "DIY fly fishing patagonia day trips local guide",
+    "fly fishing town based patagonia bariloche coyhaique"
+  ],
+  "texto": "**Yes, absolutely.** You do not need to stay at an expensive, all-inclusive fishing lodge to fly fish in Patagonia. Doing a **town-based trip**—where you stay in a hotel or Airbnb, take day trips, and hire independent local guides—is a very popular, flexible, and budget-friendly way to experience Patagonian waters.\n\n---\n\n### How It Works\n\n1. **Accommodation:** You book a hotel, cabin, or Airbnb in a central hub town. \n2. **Guiding:** You book local independent guides or day trips through local fly shops. On guided days, the guide typically picks you up at your lodging in a 4x4 truck, drives you to the river or lake (for a float or wade trip), provides a riverside lunch/drinks, and drops you off back at your hotel in the evening.\n3. **Flexibility:** Unlike 7-day all-inclusive lodge packages, a town-based setup allows you to fish 3 or 4 days with a guide, spend a few days doing unguided DIY wading, or take days off for hiking, sight-seeing, and dining at local restaurants.\n\n---\n\n### Best Towns to Base Yourself\n\n#### **In Argentina**\n* **San Martín de los Andes & Junín de los Andes:** \n  * *Why:* Known as the trout capitals of Argentina. Located right in the heart of prime trout country.\n  * *Rivers:* Rio Chimehuín, Rio Malleo, Rio Collón Curá, Rio Aluminé.\n  * *Vibe:* Junín is smaller and heavily focused on fishing; San Martín is a beautiful mountain town with upscale dining, craft breweries, and shops.\n* **San Carlos de Bariloche:** \n  * *Why:* Easy to fly into (BRC airport) with endless lodging options and great nightlife/restaurants. \n  * *Rivers:* Access to the massive Rio Limay (famous for big brown trout), Rio Manso, and nearby lakes.\n* **Esquel / Trevelin:** \n  * *Why:* Located further south, near Los Alerces National Park. \n  * *Rivers:* Rio Rivadavia, Rio Futaleufú, and spring creeks. \n\n#### **In Chile**\n* **Coyhaique:** \n  * *Why:* The undisputed fly fishing hub of Chilean Patagonia. It has over 500 fishable lakes, rivers, and spring creeks within a 2-hour drive.\n  * *Rivers:* Rio Simpson, Rio Paloma, Rio Ñirehuao, and remote spring creeks.\n  * *Vibe:* Plenty of independent local outfitters, tackle shops, Airbnbs, and local pubs.\n* **Puerto Varas:** \n  * *Why:* Great base in the Chilean Lake District, easy access via Puerto Montt airport (PMC).\n  * *Rivers:* Rio Petrohué and surrounding volcanic lakes.\n\n---\n\n### Key Logistics & Planning Tips\n\n* **Booking Local Guides:** Search online for independent outfitters based in your target town (e.g., *\"fly fishing guide day trips San Martín de los Andes\"* or *\"Coyhaique day trip fishing guide\"*). Many local guides work independently outside of the major lodges and can be booked directly.\n* **Fishing Licenses:** \n  * *Argentina:* You can purchase the Patagonian Continental Fishing License online or at local tackle shops in town upon arrival.\n  * *Chile:* You can easily purchase the Sernapesca recreational fishing license online before you land.\n* **Gear & Waders (Felt Boot Banned):** Both Chile and Argentina strictly enforce biosecurity measures to stop the spread of *Didymo* (an invasive algae). **Felt-soled boots are banned in many places.** Bring rubber-soled wading boots, and clean/dry your gear thoroughly before traveling.\n* **Renting a Car:** If you want to do a mix of guided days and unguided DIY days, rent a 4x4 or high-clearance SUV. Having your own car lets you explore public access points (bridges, park boundaries) on non-guided days.\n* **Cost Comparison:** \n  * *All-inclusive Lodge:* ~$5,000 to $8,000+ USD per person per week.\n  * *Town-Based Trip:* ~$400 to $600 USD total per day for a guide (which can usually be split between two anglers), plus standard hotel/Airbnb and food costs.",
+  "error": null
+}

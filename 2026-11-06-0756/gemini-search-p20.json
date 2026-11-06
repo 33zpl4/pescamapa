@@ -1,0 +1,36 @@
+{
+  "fecha": "2026-11-06T07:55:37.769Z",
+  "proveedor": "gemini-search",
+  "pregunta": "¿Cuándo empieza la temporada de pesca en Chubut y qué permiso necesito?",
+  "cita_pescamapa": false,
+  "urls": [
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFfVc4zwNALNyXvj55uIe12YT_9QKkUcPY-8sfGgSDlZ8RWBo35cYgvUQZZIRyeaa56pUlZ8NsS-vQqEUdYL6o7LQBPEKju-L-W0Kot70oK7_Qay5ZLXRpxSydRxSoRiHxMAGTzjkl5OdIGb0qdJvgFyyy6Lt5fb0zHlX2zNoa-GskSoBdFLUgloHW06Q2pgaAFwbuucL785SJRmbNM6TIxxO21XPlnelhhWUq8h4exVmGC1Y-iWsn4T_wIUOC6DYeoUBv6ztSop_Nrvu_9HtBM",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGJy6NhG_cCadgyR4v33bQv6F_S7JTavr_b6SmwWLWfZpnBschciuBQCD-RiXOE3NQloc1qY6QWUm8S04HUgvwIxk6UvdTkMVmR8uzE4wHc8Q_GneVmhGO3Am_vfgeio9VlnlwTG2I=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGMRb1UloIJC4BGTh76dAeYtu9D9IWFsvzKnuHajQ76HLWAG0he9TB4XIKZ0bsDuxq6y87bzrjiEXpgwWqLVtAl0ciYWtCSjSAE2IViGMlBmQq6bsfj6trfmoEXhPz0-9rVVYznbYD5kwIONCQkr0OBah6ML8oKnAakqWaUIsmRaAQeDQh7t_wm",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHe0RBbr2-oW-YXsMSXj_5Af9AriygObHPzB1dEZ0ss5mG5_pQkwFduhDUEY5tGCceRm7wWck_2BFq6lFXn2wzpHcljEgtZ2juUnqyZbA3dAzzUTejYwJSjfrnj45lHrp5_nbWeSJ2je7lmupsq94Dg4qc=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHEOIfAxXIix1Nk0IfwQ-kg6-XK1y2xd4-pWEr0LKws43-zvFmMehOytTqUzfqiHJU4mAhnt9XF-Vus-aS5Y_1E01v0MCuRkGMy6g_QByC7kiwhTlrHaDV6tHAY9hyJFAt8yi9zfkGrz9_Ra_8IvWIg5SQdfcGThDoF",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHFq8rv3LfRHi83TBVoE9wijhfdPjk4-wMsnEjW6QGcVGLvlQnpi4iZqEpfFqm2gnfTVAFJvQkvQ2lp94OSuUO1w4NJ2xTmJnGuzJX0SfNpiKPVcN_n2WAuvrd8CIPNmgdoRG-S9UQ2KlF89cbKg7ChMEIpoCG5SdSY_4hAu4RlLyiJhjXh8sOFa8Svf5Et6WEYgBKolLmusGG46x46uAlEPW0Av47UFztfKY79ySlUQZQWFQ==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEG9s6DaP21da3BtZ1lb8NE7851DnVw9WhtItyPBKu-ChwL8xQq_yFOatGQvpAQE_zSm_zdw8uTK6gdBkZyUWMuweE00GeYigkBjtIsqOCshdxrUTF2Uji6EgcaP-WFDFy20wc68m_Jz0be3yZ1vYDnfjw_nvdl29ec6sxP7ClTfbJkPoshh8sB_w==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFGJHMlXjZd5KYRdURm0Yoe-WQNpuFSau4xZ2XIfnBkBPx0cg2ngh2CzxYQ_qJ6ciEPUr1VGYCY6QifXy6YzMBqxqY40CEh6akp6oZ8y7Z4X4FFEEGQWmPn9islCKGFefSXGfFFfk6EOIwBWflPFx5x2P24OUCTjvGG6OQwIFX7YHII5_ei2MD96Wfto-uXTwBpznpTM_0pvEDoeBUdqV9ypYAboAkLKholWQtLrkd7hKQxRE7KefLiVMxdwA==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFUJErZVZLRfHOxVmCHHcq5D7-F6DMd2-Fkz9CRTyA1zK2Bzf7W9TXXLfZO-0sT8Y_5FzzgXtjfuD_EhBL2dhc8-tiCTm23yxArEMlvF-CbukRLNi_Hks-UlHeNPuTE1eu6aUXqfOrcvDkKlBsy3kzIgefGPbzi1QTIJ1IcSFbStyTCPHN3VD33Ig2-",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH44TUuks2aJJ6kSUVd1mKmw-w4IsXzqGcBW3Atnsln9v5Gyx7Fg0CXs_O3GNzGoqMh9vDQI7-doWFCfYONmmJsBHfApzq-AOhIfFyufHAHABzqIkbLxm0GxFGw9TMCN38SwYsKHK_7AJ4-25XbW3SklASwhaD5o1tB66kQi32bzra6jlXju-P_GSOpwwwAcu4=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQELIq5UnTb0H4X2QdJH7d7zElSRc9htCC4CWrPreikWaYC6gGW4sIbaZjWFsQMBvyLU6tx24t-xo5PQjsgquuPNpCkup6LXldAnhc0otl8btaPEcrSwAh33WDx6JDeoa6KTaByaFMxv9fuub3dCsg87sbzQ5ljgS_7A-40_jKzzu9gxO5DhhX4_1OLST4A-_2Okk9X22FNzseBhiRwoKx93JfEd79VF0PXn83DHi9dzfrMINqAEa9Ux1CCaPA=="
+  ],
+  "dominios": [
+    "elchubut.com.ar",
+    "chubut.gob.ar",
+    "aicacyp.ar",
+    "scribd.com",
+    "reglamentodepesca.org.ar",
+    "canal4esquel.com.ar",
+    "permisosdepesca.com.ar",
+    "radiochubut.com",
+    "canal12web.com"
+  ],
+  "consultas": [
+    "temporada de pesca chubut inicio fechas permiso",
+    "reglamento pesca deportiva continental patagonia chubut permiso"
+  ],
+  "texto": "### 1. Fecha de inicio y duración de la temporada\nLa **Temporada General de Pesca Deportiva Continental en Chubut** comienza formalmente el **1 de noviembre** y finaliza el **1 de mayo** del año siguiente.\n\n* **Excepciones:** Aunque esta es la regla general para la mayoría de los ríos, lagos y lagunas, existen ambientes de agua específicos que tienen fechas diferidas (aperturas anticipadas o cierres extendidos, así como zonas con pesca permitida todo el año). Estas particularidades están detalladas en el *Anexo Chubut* del Reglamento de Pesca Continental Patagónico.\n\n---\n\n### 2. Permiso necesario\nPara pescar en los cursos de agua dulce de la provincia necesitas el **Permiso de Pesca Deportiva Continental Patagónico**. \n\n* **Reciprocidad:** Este permiso es válido y compartido de manera recíproca entre las provincias de **Chubut, Río Negro, Neuquén y la Administración de Parques Nacionales** (los lagos y ríos dentro de los Parques Nacionales del Sur).\n\n#### ¿Cómo tramitarlo?\n* **En línea (Online):** Se puede gestionar digitalmente a través del portal oficial del Gobierno del Chubut o mediante su asistente digital **DINO** (vía WhatsApp o en la web del gobierno provincial). \n* **Presencial:** También se comercializa en comercios habilitados (casas de pesca, estaciones de servicio, oficinas de turismo y delegaciones de Pesca Continental) en localidades como Esquel, Trevelin, Río Pico, Cholila, El Hoyo, Lago Puelo, entre otras.\n\n---\n\n### 3. Categorías de permisos disponibles\nExisten distintas modalidades según la residencia y la duración de la estadía:\n\n1. **Residentes en Argentina:**\n   * Permiso Diario (RP-D).\n   * Permiso por 10 Días (RP-10).\n   * Permiso por Temporada (RP-T).\n   * *Menores (de 13 a 17 años):* Tienen una categoría diferencial por temporada.\n   * *Jubilados, pensionados, mayores de 65 años y personas con discapacidad:* Suelen contar con permisos bonificados o gratuitos presentando la documentación acreditativa correspondiente.\n\n2. **Turistas Extranjeros:**\n   * Permisos para extranjeros no residentes (diarios, por 10 días o por temporada).\n   * Permiso preferencial por 10 días para turistas residentes en **países limítrofes** (como Chile, Brasil o Uruguay).\n\n3. **Permiso para Arrastre o Trolling:**\n   * Si pescas desde una embarcación en la modalidad de arrastre (*trolling*), se requiere abonar un permiso adicional específico para esta modalidad.\n\n---\n\n### 4. Requisitos y recomendaciones para la actividad\n* **Documentación:** Al momento de pescar debes llevar siempre contigo el **permiso (impreso o en el celular)** junto con tu **DNI o pasaporte**.\n* **Equipo de vadeo:** Está **prohibido el uso de botas con suela de fieltro** en todos los ambientes continentales de la Patagonia para evitar la propagación del alga invasora Didymo (*Didymosphenia geminata*).\n* **Lectura del Reglamento:** Antes de lanzar la línea, verifica en la tabla de ambientes el reglamento del río o lago exacto donde vayas a pescar, ya que allí se especifica si la modalidad requerida es **pesca con devolución obligatoria**, el número máximo de capturas permitidas o el tipo de anzuelo autorizado (sin rebaba, etc.).",
+  "error": null
+}

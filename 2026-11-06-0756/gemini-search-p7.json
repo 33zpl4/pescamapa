@@ -1,0 +1,44 @@
+{
+  "fecha": "2026-11-06T07:52:21.553Z",
+  "proveedor": "gemini-search",
+  "pregunta": "Como pescar dourado na Argentina saindo do Brasil? Preciso de licença?",
+  "cita_pescamapa": false,
+  "urls": [
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHlaNkm6hARH9EoW_sXNKYFk12rf9hP4Pf0Q1PlegEqbBNaxse8tC7AypQB68zy455eKmLGUBQBAlsTBM9_AuW9CIrWKLsHK8kzwSFv01WXgmZ-sMiZhjU4uKXJE6tMMHa9lTFTBEBqJ6Kh1SBFoB-32m0EKmc_aZso-sGMLDrSFfPu",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFq-taG4-VqnmMHSZx0Ij4mEV-4JPlzhLPDaq-7faSvdwPictp-po9FRWkdtA7U_dnujS9aH-rs0s5LDbktI79a5OxBVIqa7cKTvy2DevbxyziarLUAmzklgRS_fuV3aYxWI8aHI3VwOtVw",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHGsJAiezihWkooxGEUnkTBbIH0RzbV3eB6AjXFmRk4CL8KSRdez-jughqqvFWz5_wekLHPh9ZbjJE54xjY3zK2L8I-ArxGTeYHMjnkC-LGwxQUI78g1DccXlw_",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHE-ums03BHdiN9qSVTusep7GdTBGGs3bcAaKnA6tPCjkSxFUrIfZWn3WxbvCzOGyORmhotaaAazILnlhxiMqsVIM8XJPm3ExNBpifV6reJ5H9PA7JnRJMMWDZxLVvUqGLwh00BV4rByEBv8MTa5I3u7Q==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE1G2R0wPvuJBPutvWbWfIRpDmtsJ9skJLtLRJU4u5IqGwi0i7IufPsAEpb6LgruRHLsMKEpajesZmevquPkTj0Bn9IBMco6Xh5iHUsnsAWXritmgj8LWlt1NGSwpa79X-N-8afNi9m0N_6SVuoSVyn8jYT5j60iimmOzkSCuFMIurDGGO9GV9FhcY4KTmwDik=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG8m1-f47nvZK70JtAXB92D0aLbtPLXK01qiyn1TJlegxd2WVaJSATQyH7lGxJEk4uCUfLX6sDPKnjHKT2_m90Dg46L7MeVEwHfP6Fn414zWktuMZeWQ1ATnERLbnp-QcGGRinmCugoSbVkHPNA5RD_OVb6YgoTk8PTxdw=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE9Oq8mDnV1Msm0DxYnRDCICP3QIv_OW8lHyi-_8TuS5oQ-Od1zTk5btxo3x9Mabr5NbIb1hE8k7rkC2IxwIlfEVqM77dlrtdO-zRe_TrA-WQQnOgu_ALzkPE6U6M-dypGaQcyB",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFO6iRHfoSvI6fUxUCSpSB_4Ozyaw1pTN2tnLw395ZiD7l2Ssns4xLNHuLC-TzKUa_eyv5I3q1k7S0lucZk_CSWAXl8wlXe05M1keLgrJ-OeWAzKLdUDhh-1LJtBXuUOdWJzCQvH3vJ2XtzcsaRb5aYfjw=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHA67Vo6KErwspKGRM2Eb0yfhENp_fsI-3rHArYeUFgkRhTf-q9yk3XxyKnoFmdFnKvZ-yAWM8ktdw6co-pY0PCTgEbnl4V4AV_6xx0Ui4-nmPeMrQNCaicwICvmyirAWKC",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEVtVtOQTDOfa7ZmTL3rIxJDrkRhd5TwbmntKur-2JobckHBEw7HZCBMjNFYcD7nWh76acS8tfnm31whqbBqFzYqtmikVNOSqJY3RpvT-fda5qvrOH9nUcc6MTS4492H2vRFJmPdRFT5Wo6XiV1",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFJkdrJmQDyzuXwnmTBj0D8a22CSZsEhNg4ylmHNaFWi8DiAjjguHiVtKC36MfbpPQI1yg8KP-YCH301fe8MEc6MBsWzF-pSL9_NRrZH-rD__DDTtw-hpqHvUI5hbQMMpK5lvd02kpSrLBLgfoy",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEeP1U61REuwYhujW5VQ9Lrc3vQE37gSo6cEDLRMeskdgKm6MKx9XQDiGtxrWJp87jr72BKX0rMk6eTHwJ4FrITSPyOLAMt2Z5X4sXW1gYJtCW7ohM2MN_loAAGWlVDm0qAgHqwb33jh5YDAgm5BRsYxsBFoHTGEVRLpaX__0m_jspRql9QitBCAWS5A_Km",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFWQMJIUjJYdqnVtt3CzVC5rQthJlGj0pmjXyZpu6QlTP4fLyiQn-DlY20JmgmEZ-fprIsblz2N2kkQScRC4B68njbyBSjlfGuStCTop97qLpugmJV_D12jT53eZQ3VITEe",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQESJiCIZ9Pmzt2xr5FRC2-ICmBo3RGKBBaJ2BpCiWcmzK8aSOTSrCmkoqxK94Kc-_Ggc4cVWJSF--IHbhX8qHsBddxQC22zCBuBrpA9bg80T9GYVDPBhpgkftxwXG7CD63dh2LiQCuZNKp3iCIqXXMbfXJnkgX0cIrKpt33K-RKq_YQdPwoW4hGp9leg4Op00OUXLQGA_-DLBle7cCDZ1cVcDF0jENCGv08iQ=="
+  ],
+  "dominios": [
+    "fishingbraziladventures.com.br",
+    "pousadapuertoyacarey.com.br",
+    "pescadouradosalto.com.br",
+    "paranasunrise.com",
+    "argentina.gob.ar",
+    "pescaargentina.com.ar",
+    "corrientes.tur.ar",
+    "pousadabambyspesca.com.br",
+    "youtube.com",
+    "pescaargentina.com.br",
+    "pacotesdepesca.com.br",
+    "turmadobigua.com.br",
+    "romanipesca.com.br",
+    "reddit.com"
+  ],
+  "consultas": [
+    "licenca de pesca argentina corrientes dourado requisitos",
+    "como ir pescar dourado na argentina saindo do brasil"
+  ],
+  "texto": "Fazer uma pescaria de dourado na Argentina é um dos destinos favoritos dos pescadores brasileiros. O Rio Paraná e o Rio Uruguai abrigam alguns dos maiores exemplares da espécie no mundo. \n\n---\n\n### 1. Preciso de licença de pesca?\n**SIM, é obrigatória.** \n\n* **Regra Provincial:** Na Argentina, o licenciamento de pesca não é nacional, mas sim **provincial**. Se você for pescar na província de Corrientes, precisará da licença de Corrientes; se for pescar em Entre Ríos, precisará da licença de Entre Ríos.\n* **Como emitir:** \n  * Você pode emitir pela internet no site oficial do órgão de turismo da província correspondente.\n  * **O jeito mais comum:** A grande maioria das pousadas e operadoras de pesca na Argentina já providencia essa licença para o pescador antes da pescaria ou na chegada (geralmente cobrada à parte no pacote, em torno de 10 a 20 dólares).\n* **Fiscalização:** A *Prefectura Naval Argentina* e a fiscalização de fauna costumam checar barcos no rio. Pescadores sem licença estão sujeitos a multas e apreensão de equipamentos.\n\n---\n\n### 2. Principais Destinos de Pesca de Dourado\nOs melhores pontos ficam na região nordeste da Argentina:\n\n1. **Rio Paraná (Província de Corrientes):**\n   * **Paso de La Patria, Ita Ibaté, Esquina, Yahapé, Ita Itatí e Bella Vista.**\n   * *Destaque:* Quantidade impressionante de dourados e grande diversidade de espécies de couro (surubim, jaú, patí) e peixes como o pacu.\n2. **Rio Uruguai (Província de Entre Ríos):**\n   * **Concórdia (região da Barragem de Salto).**\n   * *Destaque:* Conhecido como o local dos **maiores dourados do mundo** (muitos exemplares passam dos 15 a 20 kg).\n\n---\n\n### 3. Como ir saindo do Brasil?\n\nExistem três maneiras principais de realizar a viagem:\n\n#### A. De carro (Próprio ou Alugado)\nÉ a opção muito usada por quem mora na Região Sul ou interior de SP/PR/MS. \n* **Pontos de fronteira mais comuns:**\n  * Foz do Iguaçu (PR) / Puerto Iguazú\n  * Uruguaiana (RS) / Paso de los Libres\n  * São Borja (RS) / Santo Tomé\n  * Dionísio Cerqueira (SC) / Bernardo de Irigoyen\n* **Documentos e itens obrigatórios para o carro:**\n  * **Seguro Carta Verde:** Obrigatório para rodar em países do Mercosul.\n  * **Kit para o veículo:** Dois triângulos, cambão/cabo de reboque (1,5 a 2 m), kit de primeiros socorros.\n  * Se o carro não estiver no seu nome, é necessária uma autorização emitida em cartório e chancelada para transitar no exterior.\n\n#### B. Pacote de Operadora (Ônibus/Van de Excursão)\nMuitas agências de pesca brasileiras organizam viagens em grupo saindo do Brasil (Goiás, São Paulo, Paraná, Santa Catarina e Rio Grande do Sul) em ônibus leito ou vans executivas com tudo incluso (transporte, pousada, bebidas, alimentação e barcos).\n\n#### C. De Avião\n* Voe até **Buenos Aires** e pegue uma conexão interna/voo regional para **Corrientes** ou **Resistência**.\n* Do aeroporto local, a própria pousada contratada costuma oferecer o *transfer* por terra.\n\n---\n\n### 4. Documentação Pessoal para Entrar na Argentina\n* **Documento de Identidade (RG):** Original, em bom estado de conservação e emitido há menos de 10 anos. **OU**\n* **Passaporte:** Válido.\n* *Nota:* A CNH (Carteira de Motorista) **NÃO** serve como documento de identificação migratória para entrar na Argentina, apenas para dirigir no país.\n* **Menores de idade:** Se viajarem desacompanhados de um dos pais, exigem autorização judicial ou em cartório registrada.\n\n---\n\n### 5. Melhores Épocas e Modalidades\n* **Melhor época:** De **setembro a maio** (meses mais quentes, quando os peixes sobem os rios e ficam mais ativos). No inverno (junho a agosto), a atividade diminui um pouco por causa do frio, mas a pesca de fundo ainda rende capturas.\n* **Modalidades:** \n  * *Pinchada (Iscas Artificiais):* Arremesso de plugs de meia-água e superfície.\n  * *Rodada ou Corrico:* Com iscas naturais vivas (como mçorçocas, piaparas ou tuviras).\n  * *Fly Fishing:* Muito praticado na região do Rio Paraná e Esteros del Iberá.\n* **Pesque e Solte (*Captura y Devolución*):** Em praticamente toda a Argentina, o Dourado é protegido por lei e a prática do Pesque e Solte é **estritamente obrigatória**.",
+  "error": null
+}

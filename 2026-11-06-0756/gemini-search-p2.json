@@ -1,0 +1,34 @@
+{
+  "fecha": "2026-11-06T07:51:13.050Z",
+  "proveedor": "gemini-search",
+  "pregunta": "¿Qué licencia necesito para pescar en Corrientes y cuánto cuesta?",
+  "cita_pescamapa": false,
+  "urls": [
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFtBTPNHS0hDHVYU-GiisS-NS4IbyFiBoGF6S99saC7LtfPjl0-ikcIxKN9qv9azwrc69B-Mj0Jm2KeK_b-VRkDsJ0AXBTK8EmIHlWJYoMC-i-LRf-YG2xoKIIw5HZiTCSCRlPhNGQ5YfHdBdomrT-yxzoZHWknmAUH1QvP7NBqjrR6p9dAIlYvgSpp-0-K5WA=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGiE6d4_dVxHx3RKJuP1g4RXcmfBL4DWRBssi78d_05M0ULqaCIqZDhCHNk69Dn_L3AouboemLrR3zK5LdOboMx88iwJv7vyXIPimYRp6ayRwI-iVkGwHU1Fxq_mdFuTKbNOYIvloE32Ui8yKocj1rYBY2DhBe2",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGpk89-sd8jpqqQN-d4d6djoAkO_gZgxc-v_4AuMHq-pNelZgiuAUKDBeCvxWoLeVrdLWbiX-E5RfhxStOgd-RcHtSs-Bq_RJgNjiSvCbraqcaYYakBokUTx2atY-YIm3UXgM0WBAw_9rL9Hwtn5Fgk8o6IXLf-gJLqLSAH",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFdC58FKpOhH-6l2BHC7qj43HlYp13Nt0ZdmTeTmAenejZaukUW8OoaEBFJHjtyqD0nQ1PgU8zT1lsWnkHeJ2vraJ1F5L9-jFidlRlyJr-XDoyCNuy8OrLkiGTeMH0LbuUmiV3ta6TOgVY7wkix7_03_zUDwZoZkh_Efb9jj6tHuHnQiF14Rv7PNEyoEQ6CpCLZL4O9gj52Zjv6",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHR5K5Da8Hhy0xyshK90kIJq5gdU49pFXYglqjtOOG6JWGjoPPoMlHAI-tUrtL9fJ6SPV1s5LB5bZs5ka-yxWqGl98Qp-fxkLBdUzb6NZQHBTZLMligl1l_C0mR_NZe57wPRT1AGxY4l5_Tu4I-MQ==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGMaxs21GwfNIJKPK8oH-A0e_FnBtgA-FdYZafMGC-RTtV4dFa1zF-9BzUQ12o4HoO5thqWcNxEmTpC8RmRpKJZhNKmRFsabmDG727KZo-hBwWjf_dfXYftvqvOhdjiIj4m0D2vFsvGr5J3VHtYzPQeprz2fQ==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGjW_ruSCgYvqFWOL_Fq_rdnKjxQa3LA6ALxtBDiG9WYIQ0CRVDtvUFB_IwFwz1xAq0Yq-zA4sy4aWEsL0sLmm9Gph0u1pj7o0JS0SpyTH3EHZZD4SX6rV7N9n_tPy5bxP5fab2rSpBXWfF8h04pdu446AuOpl-OmWRLMoJ",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFAhLShzJjPJxmbspTaOukyx3D9SukQnUImpLfVxkj9_S5SyLZ-zGaKbEMJF7nS1Xu9JjLBSAIvvuxbEYiWWJbRBK1BEQngt6UqlvXHU-9u034vyWXvWmPZvgKHgH4QWaHZ09Ufhm_xHqT-v8wFNnvRQYW17Q3jcLM7XgMufY7fMt2q6GVmyoxXJVTdDQzNP9FgXX8H7Du13eg8p92-a_BR57Mmw_AMwu7MQifnYBp_zo-DL4czOkVTtIhHRxhwQ8Kxdg==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGb-MFB9kWwDCok4oq1neetyheMl9Kevacc3ROq2X4Q1A72pFpJVJ5wCg1O09EM-zQ09SNT6h95PcMcJ72-tzE6SLaEb_De8B23_yDNCpi1pT0eJ7xXLuqLLznzOh9ASN4="
+  ],
+  "dominios": [
+    "argentina.gob.ar",
+    "visitcorrientes.tur.ar",
+    "aicacyp.ar",
+    "clarin.com",
+    "pescabox.com.ar",
+    "revista-airelibre.com",
+    "corrientes.gob.ar",
+    "recnaturalesctes.gob.ar"
+  ],
+  "consultas": [
+    "\"Disposición 1144/2024\" corrientes \"pesca\"",
+    "licencia de pesca corrientes argentina tipos precio",
+    "licencia de pesca corrientes recnaturalesctes.gob.ar precios"
+  ],
+  "texto": "Para pescar de manera deportiva en la provincia de Corrientes, es **obligatorio contar con una Licencia de Pesca Deportiva** emitida por la Dirección de Recursos Naturales. \n\n---\n\n### 1. ¿Qué licencia necesitas?\n\nEl tipo de licencia que debes solicitar depende de tu **lugar de residencia**, la **modalidad de pesca** y el **tiempo de validez**:\n\n1. **Según tu residencia:**\n   * **Residentes de Corrientes:** Personas con domicilio en la provincia.\n   * **Turistas Nacionales:** Pescadores con domicilio en cualquier otra provincia de Argentina.\n   * **Turistas Extranjeros:** Pescadores con residencia fuera de Argentina.\n\n2. **Según la modalidad de pesca:**\n   * **Costa:** Para pescar desde la orilla.\n   * **Embarcado a remo:** En bote, kayak o canoa sin motor.\n   * **Embarcado a motor:** En embarcaciones a motor.\n\n3. **Según la duración:**\n   * **Provisoria / Turista (por día o por período corto):** Ideal para viajes breves.\n   * **Anual:** Recomendada si pescas con frecuencia durante el año.\n\n---\n\n### 2. ¿Cuánto cuesta la licencia?\n\nMediante la **Disposición 1144/2024** de la Dirección de Recursos Naturales de Corrientes, los precios no son fijos, sino que **se actualizan automáticamente tomando como referencia el precio del litro de nafta Súper** (conforme el valor en la estación YPF / ACA de Corrientes Capital):\n\n* **Pesca de Costa (Residente):** Equivalente a **4 litros** de nafta súper.\n* **Embarcado a Remo (Residente):** Equivalente a **10 litros** de nafta súper.\n* **Embarcado a Motor (Residente anual):** Equivalente a **25 litros** de nafta súper.\n* **Turistas Nacionales o Extranjeros:** Las tarifas oscilan entre **8 y 35+ litros** de nafta súper según la modalidad (costa o embarcado) y si es por 1 día, permiso provisorio o anual.\n\n*(Nota: Al tramitar la licencia en la plataforma online se calcula automáticamente el importe exacto en pesos argentinos actualizado a la fecha).*\n\n---\n\n### 3. Exenciones (¿Quiénes no pagan?)\n\nTienen **acceso gratuito** (sin pagar licencia) únicamente quienes tengan **domicilio comprobable en la provincia de Corrientes** y pertenezcan a los siguientes grupos:\n* Menores de 15 años.\n* Jubilados, pensionados y retirados.\n* Personas con discapacidad.\n* Excombatientes de Malvinas.\n\n*(Deben acreditar su condición ante los inspectores de fauna junto con su DNI).*\n\n---\n\n### 4. ¿Cómo y dónde tramitarla?\n\nEl trámite es **100% online** y se obtiene de forma inmediata:\n\n1. Ingresa a la web oficial de la **Dirección de Recursos Naturales de Corrientes**: [recnaturalesctes.gob.ar](https://www.recnaturalesctes.gob.ar).\n2. Registra un usuario con tus datos personales y DNI.\n3. Selecciona la categoría de licencia correspondiente (Residente/Turista, Costa/Embarcado, Anual/Diaria).\n4. Realiza el pago mediante tarjeta o medios digitales habilitados.\n5. Descarga la **licencia digital con código QR** en tu teléfono móvil (también puedes imprimirla si prefieres).\n\n⚠️ **Importante:** Cada vez que salgas a pescar, debes llevar contigo el DNI y la licencia digital visible en el teléfono. Si la embarcación es propia, también requerirás la documentación del vehículo otorgada por Prefectura Naval Argentina.",
+  "error": null
+}

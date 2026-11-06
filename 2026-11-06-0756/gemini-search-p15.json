@@ -1,0 +1,38 @@
+{
+  "fecha": "2026-11-06T07:54:25.018Z",
+  "proveedor": "gemini-search",
+  "pregunta": "Is Jurassic Lake worth it and how much does a trip cost?",
+  "cita_pescamapa": false,
+  "urls": [
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEy0WcTdwoA1djTu0juZOaazjCV8EbNEVARMHELj8O_kqr2UcOAJkNW_8baVqOFidJMKfH0T2fQZmgz3wGi2PqcJiU0tT_URaAFaLNpahZ5eVXCn3wp48e7iGF_nOC-HMN9gO0shchxKuD5LRxGu8yli5g=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEHtAxMFGDM44SoH2JeAADYozWIs2oMOXysET1u_j41nRQPGqtNZ37ctMeqJdOIuznEt2Qrdgw_vqdGkQ8YOEjHIKM2UknaZUo6QEG4nhnqqEiEkqucq7YvbufvzubIzai-Ui70aHQx6jE9bBFvJNETrFINOh3hDu_d9iNhTZGFwfcrHDrhSFY=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFegnD_eGSoLWIiKv4Ne6clvF8RhMzXxvr-navT05NnytB8Q0TKCU9uikBz2fJOCiQ08JybL2gvjBMi3LW-Hh23e2keSKAGo2V_ylfeEen3YhsNkdJJdtX7thT_i3x0sH62viFMQlORW9G4d8v2P-oklTwI3uYs-LpMjYYCXQA=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHYOZ6Vc92QmTQ4JGBg5qpjSkJO8pVCIkcZXpycYf9VEeFaD5KFJlyjzqSAnGUZvlzd93AIw8J4vjKlsrdXBQvTDtHxAaxNjRLmTQo0n3kex1xAqZKrdp0=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFaNCfHY7pVL6KO2CZNoOYx_XpqMGnJ2PLZLBRNjvJ_pSbS9FGxX_DQ2TBgdm8LqwreMz03QjqWl0HH8_pwdyJHU9RDib4ysnKpNI8Q9_l3EQHgCXwoo6xJJuuf1f7pq_37OGjN3lCnhzlQLGIVVtIkuwuRj6uod4diEupU-xgj",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGJdcvN7qpSLqWOLmYr_hbHapItT4y0OgzdkCNpmyOHYYjjexGW2aj1MdU5-wOI9z6oPTfd5C5dVXsTrj7AsIxKyuF4B6ZOFaXUdxkKW5PfVcCodhheQgvE9k-BbZGw9WGUbjegsp4n3qTmpdSWyxRrZCVd47s_MhLNusGUBITEaF-cPh3hzEk=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGldk2dVvwLzPi3wN1MYt0hg_bu8osdiXQbl4IZOVUHVa7KqWDiG_HRSlb8RzEmAws77mKcGyA8ixxdkhuqaJkIbME3JSrea84t-vO30GgBaggJZihz5R94yPaYdN-woTRV9XGYB_9c04XxZ6mUr-jJ4w==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE81x5Dd_QvtOHUDAQkmiCRdBaMlpw1e71mIjY2eN8pRD8dh7NiXDxuHW0fot6cmCZ8nEMGsClpwt35hETVrWclRf3Bd3CeLFrx-Xk-zfEL5uJnpxPONpW-PTCOyyDrQHJALS9sSlL5IM7zOkWNQrcJ00C0qYyJ",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFwmXmycYfkccb2ckuNY0l1WN_VKUmKPbIRgXh9BbrjSPoaSHIwHXTaQGwwBqyWhq2D8Vp7IDFfidQgzdIkQZ4OA6Jrek_mjCKhcz3lt-ZWIAitTxUqwYNHqAk4ajkgNrY77FgIWx46so86jvuBwMz7N5V8ng==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE9n0SdQi7QlKPAHd0bAHcqOu81bqWgRoRJh0-ekIqiAskFBXTp7f3YwYbYcJLfIpYlGovgbBJicXfHw1z6G-gazQt7gGa6MYPzmRDaFT35Zrh4EZeVoY-7dEvWX9ywL5pprWCorQt7AxM0oSy3W2AdOpnlD4aB36wFV7SyiPyHtSyGxbebs1IGyTtEvzFiBK4=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQERDicvTjVqPIUei6NSkZBBSUJq05SUDk3Yk7gwTtoAK9-S1qwd9FjaIjqH2TRjsMzj5G4yUPsDvYGKtsA5j09JRDuWY3lyNrGVU9ikr4HmRC75dgc0FnMpX7FI5Bo2RKzttf6QXDuxbCVT6Rz-ubk1ne5J9B0=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGtnM6fjQ86PG1hXb-Za_om-W7xLvO2PottlsdMs5GPLkZ1sLuVsUJ4iDx5-NhNA65FnpqkjTPNVcP3fbMaOBYFYvUaZQjG2gyk6Yo3clI9V9TLwlZbU54H2W9cnrLomW-w0y6DwD063XpPbbZlm4p6t56tyS8="
+  ],
+  "dominios": [
+    "fishingwithlarry.com",
+    "montanaangler.com",
+    "jurassiclake.com",
+    "tridentflyfishing.com",
+    "reddit.com",
+    "farbank.com",
+    "oneoutdoors.org",
+    "gotfishing.com",
+    "flygyde.com",
+    "yellowdogflyfishing.com"
+  ],
+  "consultas": [
+    "Jurassic Lake fly fishing cost",
+    "Jurassic Lake Lodge price per person"
+  ],
+  "texto": "Whether Jurassic Lake (Lago Strobel) in Argentine Patagonia is \"worth it\" depends on what you want out of a fly-fishing trip, but for anglers targeting trophy rainbow trout, it is widely considered a **bucket-list destination**.\n\n---\n\n### **Is Jurassic Lake Worth It?**\n\n#### **Why It’s Worth It (The Pros):**\n* **Unrivaled Size and Numbers:** Lago Strobel is arguably the single best place on Earth to catch giant wild rainbow trout. The average trout weighs **8 to 12 pounds**, and fish in the **15 to 20+ pound range** are caught regularly. \n* **High Catch Volume:** Unlike standard trophy fisheries where landing one big fish per week is considered a success, anglers at Jurassic Lake often hook dozens of massive, hard-fighting fish in a single afternoon.\n* **Exclusive Access:** Lodges in the region control private access to key stretches of coastline and the **Barrancoso River** (the lake's primary spawning tributary).\n\n#### **Things to Consider (The Cons):**\n* **Extreme Wind:** Patagonia’s famous wind is relentless here. You will frequently cast in 20–40+ mph winds, requiring heavy rods (7–8 weight), weighted lines, and strong casting skills.\n* **Desolate Landscape:** The environment is rugged, wind-swept, dry volcanic basalt. It is striking and remote, but not lush, green, alpine scenery.\n* **Rugged Travel:** Reaching the remote lake requires long transit times, including an optional hour-long charter flight or a grueling 5- to 6-hour drive over unpaved roads (\"The Road from Hell\") from El Calafate.\n\n**Verdict:** If your goal is to land the rainbow trout of a lifetime on a fly, **it is worth every penny.** If you prefer gentle, calm-water casting in lush forested rivers, a standard Northern Patagonia trip (e.g., around Junín de los Andes or Bariloche) might be a better fit.\n\n---\n\n### **How Much Does a Trip Cost?**\n\nA full trip typically ranges from **$8,500 to $13,000+ USD all-in per person**, depending on the chosen lodge, time of year, and travel logistics.\n\n#### **1. Lodge Package Rates**\nLodge rates vary based on whether you book short-stay programs or full-week itineraries:\n* **Full Week (7 Nights / 6.5 Days Fishing):** **$6,550 – $9,000 USD** per person\n  * *Top-tier ops* (like *Jurassic Lake Lodge* at the mouth of the Barrancoso River) run around **$8,000 – $9,000 USD**.\n  * *Alternative options* (like *Estancia Laguna Verde* or *Lago Strobel Lodge*) range from **$5,000 – $6,550 USD**.\n* **Short Stay (3 to 5 Nights):** **$4,200 – $5,450 USD** per person.\n\n*Packages typically include lodging, all meals, open bar (local wine/beer), guided fishing (2 anglers per guide), and standard local ground transfers.*\n\n#### **2. Additional Expenses (Not Included in Lodge Cost)**\n* **Flights:**\n  * International to Buenos Aires (EZE): **$1,000 – $1,800**\n  * Domestic flight (Buenos Aires AEP to El Calafate FTE): **$200 – $400**\n* **Charter Flights to the Lake (Optional but recommended):** \n  * Round-trip private charter flight from El Calafate directly to the lodge's airstrip (1 hour vs. 5-hour drive): **$500 – $1,000 USD**. *(Some premium peak-season packages include this).*\n* **Transit Overnight Stays & Meals:** \n  * Hotels/meals in Buenos Aires & El Calafate: **$300 – $600**\n* **Gratuities & Incidentals:** \n  * Guide and lodge staff tips: **$500 – $800**\n  * Fishing license: **~$50 – $100**\n  * Travel Insurance (highly recommended): **$200 – $400**\n\n---\n\n### **Cost Summary**\n\n| Expense Category | Estimated Cost (USD) |\n| :--- | :--- |\n| **Lodge Package (7 Nights)** | $6,500 – $9,000 |\n| **All Airfare (International & Domestic)** | $1,200 – $2,200 |\n| **Charter Flight / Ground Transfers** | $0 – $1,000 |\n| **Transit Hotels, Tips & Insurance** | $1,000 – $1,800 |\n| **Total Estimated All-In Trip Cost** | **$8,700 – $14,000 per person** |",
+  "error": null
+}

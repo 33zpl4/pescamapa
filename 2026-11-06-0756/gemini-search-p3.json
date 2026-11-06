@@ -1,0 +1,36 @@
+{
+  "fecha": "2026-11-06T07:51:00.121Z",
+  "proveedor": "gemini-search",
+  "pregunta": "¿Cuánto cuesta un guía de pesca con mosca en Esquina?",
+  "cita_pescamapa": false,
+  "urls": [
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHlofVLNympexdeOPkTGcreSOFelwN3mclN3YQZinAiKYotUrJ-iaQCIFfZJXhQ2dFkPjTAkhywuPr_q-aNfJeOKLjQ0RFauA9siGLmtkVX-slF2pKEty0SCUPYN8tzN9jIqx8GPBprRN8=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFRBAOrdswmeMw4e_Epmi_qJHfu8JCq-T7vyqLZfcLNZ04QulqI5bvX9xboqD_w8_oNPcpQOEHqVwruVkuNjZ2wiWAeY0kjvO5cB6hMNDJaeGJihiz_t6VxIy1DPkgOuvUkZJBXKxrhuWTk_18m",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGYAMTjoYO85bXwlTiQX51ZO7IHrVQGkC-fJ4FSbe6N9tEGs9GtMOJiCr6Xpgtlnt38yqykkrzM8Tf5QIW7-lhouS9CByUP7W0bchGsVCFaUqYi-5wJgoctnJYtqFLvygd0S50H2ifPgUMTkX1moEajFKNHeKu2kiFvEuM=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHQy_pyTCZNrxoJKX2D1PxOqaSpyySjYA4rWGmJt9vC6Hd3xi1Rj2PW63N4OnSItSkHRxsQgvN9Kgp7yfpJxexSJ8MYbLTP9NKQMd0dWrsMXgCfeP4mEp3EVj0VIRIQZ69PA3wQpJO0cHIYEq4s2ezJ",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHopkVKdx1roR_f20YtYby2czSu2DTpekUCiH4USt7iczCIDVawPUpeCsd63Zr2UD4jCO6mwkXlJ6GQ-QVLP9NaA5yymF7-kIiU0TmWDqydP7y71vB504K2oS_D_1UIUQ==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGXsPYdmdtzVZkaoz6BEHoqLZiUuMv80l0yDhKHOyULQ7aeSRu7zcTmU18b2PW5jMXeF9wRPotWyDspoAOCdy0CC6BCxNCXyZJ6kPZa9jUUWcb6Ra-ZLv82r7i4hWXU9zI=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHFub2eFyUS-J4OSZberqA5iF7Plv-7aePLKLqC3jFAx7RFHoZ0pAJJvcjNT-sKsLWOdRHdM9cMDJpGjUnQYnDiE0dip__hkpwIKyvkt1EEfBDl82pzgEfQ1g0FafsLZJ5C4cwb0P4rWfUkAcT9GQbNhKqXzFpHTJyUN3blQhBckSUpk3L634FWQQ5GxgtNnUurP3Zn-_fwMnOWY2K1_nHmJQ==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHxi8bOfYLcoZKbzg0hMC0yZMLVfm7-q40ZTLjs9FgDA3MVfwO3jz6FkSxnWMFLhJI2jeZ--RURUP26-E7Vvq8F2EuF3WHo476g-jcnyzfi-j16P5I4k_ZhlSC81Hnr_VQOgbZP2oSPiDbcm9g-",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE2XKPtH4EFXWxHr7Mo-RtqjKRTF7zezFCjheDIJvZhcP6i3YJvbCC4_DbE4yXxHRKAAt2dDjQKTSxFIBQluVFI2IJrB-PZS7q5uNbwAXroCMwmZPnAy0pxz2q7Ig8ewyDzwSLbas_28e5eWz72ZT_MbCg=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFZLoYQ-6tGhU86FxKZNSxw16iVOQ-N-0fJuVK6v5hkqfnzn39I97F1xh_4dBuFpDCTTdh2JxFInywrnEidrTGV5aez01AuG9L5NimGU486_pQO91ElenghuBwEf0QfwnLRDGxCILIkT8jSc4x3xHyFXYaRv6Lgzqc="
+  ],
+  "dominios": [
+    "pescaloapp.com",
+    "posadahambare.com.ar",
+    "hooked.com.ar",
+    "fishingbooker.com",
+    "baityourhook.com",
+    "corrientes.com.ar",
+    "tangol.com",
+    "corrientes.tur.ar",
+    "patagonia-trashumante.com"
+  ],
+  "consultas": [
+    "fly fishing Esquina Corrientes price per day guide",
+    "precio guia pesca con mosca Esquina Corrientes",
+    "cuanto cuesta guia pesca Esquina Corrientes precio dia"
+  ],
+  "texto": "El costo de un guía de pesca con mosca (fly fishing) en **Esquina, Corrientes** varía según el tipo de contratación (si es solo la salida en lancha o un paquete todo incluido con posada).\n\n---\n\n### 1. Solo salida diaria (Guía + Lancha por día)\nSi ya tenés alojamiento propio o vas por tu cuenta y contratás únicamente la embarcación con el guía especializado:\n* **Costo por lancha por día:** Entre **USD 150 y USD 300** por jornada completa (a dividir entre 2 o 3 pescadores por embarcación).\n* **Servicios dedicados exclusivamente a Fly Fishing:** Los charters u operadores especializados en pesca con mosca con lanchas equipadas con plataformas de casteo y motor eléctrico suelen cobrar entre **USD 250 y USD 450 por día de lancha**.\n\n*¿Qué suele incluir?* Lancha tracker con motor, guía experimentado en técnicas de mosca, combustible (a veces con tope de litros), vianda o asado/pescado frito en la isla, e hielera con bebidas.\n\n---\n\n### 2. Paquetes completos en Posadas o Lodges de Pesca (*All Inclusive*)\nEs la opción más común en Esquina para este tipo de pesca. Incluye estancia, pensión completa (desayuno, almuerzo, cena y bebidas) y salidas diarias guiadas.\n* **Costo promedio por día/persona:** Entre **USD 200 y USD 450 por día por persona** (en base doble o triple por lancha).\n* **Ejemplos de paquetes:** \n  * Paquete de **2 días de pesca / 3 noches:** desde **USD 600 a USD 900 por persona**.\n  * Paquete de **4 a 5 días de pesca / 5 o 6 noches:** desde **USD 1.100 a USD 2.000+ por persona** (según si es posada tradicional o *luxury lodge*).\n\n---\n\n### 3. Costos adicionales a considerar\n* **Licencia de pesca deportiva:** Es obligatoria en la provincia de Corrientes. Se gestiona online a través de la Secretaría de Recursos Naturales de Corrientes.\n* **Alquiler de equipos o moscas:** Si no llevás tu propio equipo de *fly* (cañas #8 a #10 para dorado, líneas de hundimiento/flotantes, streamers), el alquiler o la compra de moscas locales suele cobrarse aparte.\n* **Propinas:** Es customary dejar propina al guía de pesca al finalizar la jornada o estadía.\n\n*Nota: Los valores en Argentina se pactan habitualmente en dólares (USD) para el rubro de pesca deportiva, aunque al contratar directamente con operadores locales podés pagar en pesos argentinos al tipo de cambio acordado.*",
+  "error": null
+}

@@ -1,0 +1,43 @@
+{
+  "fecha": "2026-11-06T07:53:57.166Z",
+  "proveedor": "gemini-search",
+  "pregunta": "Do I need a fishing license in Patagonia, Argentina, and how much is it in 2026/27?",
+  "cita_pescamapa": true,
+  "urls": [
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF-tei0Y3gUJfgKBzVOxjDYm60zAj1Q3EwTRnZb-IRG1htOSR2oQHQ-8ZKHfy-K556FXuLHpL1ZLDXkz4lieLXw_qkmg-VRXFzdQf3ZE-rN1y0KHhUlu3vm3cks8zNfjiOMebG-Xd-oVifFmTplKR7d",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG7uvCnyaA_PnQzgTYu6-n4oKeFuG4XZSW535PIDyQ3sc__umkK5tz86VnCaLLe_irJb_UeW_LiS5NOpe4tjAbc_gL_-WNME-m1IUMUZloZb8w5sUV7OKy7bxDIKtatsviy1vBxBSxGXQ4LpI5n1zBuX_mGwCzVzAoMIeywdBWttEybWf-xFWsDRIPqH3iNdqNADdnZMeTFQC1oc_LPhErQC9k43e1cFwxyeymMsUimmYHtfw==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGZdL13ufc3x2H_m4tzV_iNB-Ii0cXVl1tjP0Oe_3PNkf4gPITt1GCebQq_P-nspeuaa1vD2ZwpwsZQW0FN9VBoOT09pXAGKg3nyAEhj9KlAL93dStLEj41hhW7e6iHQ9VOAzw1W3VzE-Uujb86v7HOhfBh0TXy3ukYYdA-JooKV_6mAEoG8PTaNXckulGo7jP3EQ==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH8d4IPgM8ofT2OIVHhF44cfhyfyrsdwn03Vbe76UZmSX71KFh-2-2XarSGu5WafGtluAyW0Yh0YczaeB1Tz_fX0IPghxYIdxWWgg6pnQytCrFAZ_Rwb436WPgHLNs2Vo8ilHhRKbol8yuzq2-M5G4sxOhkwBxWYu1n_ALHfjRe7MqQHPwrJeG6",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGleePhWgD6xlhtA_XGuibCYohatqxAIvwBQnZ8Fp2MVHj9B-urDkAGWkc2wMmlh0Du-W1uV8w0j0yUqkMoR6b5b9Sg_bVBAnkc153xC82xBSWDMuDAlJNxmAevehSj4Rqhx1xm32ZUA_gwlB5lmTswQ0__",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG5dOVx-D9AkkBpF5qceME1nhhnywNyDioOeoDIlODC552qWulWOBniwfe8uEH8Gf3BE4HJ7NI4O7y0flSPj9TUDCFO6gzel6Epy-cXv99kZKhOEr2dfV7uyctl1fKqmVu72aBz8A==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH6_qbaB6aPE1ptusTcwwPyzVZnEWcGbIThEJ9yWH3tM07BNKxq4HYLQ1ChiHcDKX19JhdP80wJdzdDlXpiC601gdYb7rLxtP3hMDCdTbKF3TY3B5K-tD0e3jFNdnUMqTwgBpkpvWgfI__NfPD-qpiEZdkS5fWaax9dVd2d666mndJfII4TingPykNUUfm5LyEa-Bk4LXBEI9LS-QIMWV5Cc-o3NrhrNRuCV12oGzM=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGKPTefMmYBYBOg9J2eDXQQQBOR6tBN3oNQ9TnKjnlbHdrlxv0R-VhxTGZBXuTW4k5pY6xpwaA9UVe3-bD9mg59wfnZzBSxeen2XGw1hnBDepPPXB3MpKDxUtuQ5_6nu1cL4VWBg1dD-Y9vh_iQ30XcVqQenM4fp1vfr3x_cHamuZRvmETOM2G8tndF_fO9MNOzEMVoDDOfQ_qW26KFb1GPMGKMDaaF4LquhEpdvRWZ-IICtS7bFNwbWMe5vpWt0jU=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE1FenJ67I9nt_q_CaHcZk_JA8z6WMlnnBzh-Wwdq5HI79mUSUADaj8gLxcAoXid9zFZ11gt_b7jTF6FeVeRAVNbXOGPu4-LTmEBzSjHJ4iaVES1VkzruuX92pLVInZhjKSgabRFklisFx8YrBxIluJaRhzr8t9Y1oJ48NA6PNHcDn9UfFGBCYzLZjwAYXS5HEVhSdes1oY_BsyDQSEEhUWG8lNB1K0D2AuBI8KGoHetYSq-EEsHqspXSSJ",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHimmGQ-7u7zpPkok36NV7NyWD8cZ_O2OiSAqzsYs8mQGgtAT-GoH6m72H8820TOioF71ryGG7cq4mksRnSZqoxufhERdP1_PpVq7cqDJc-gix0QsPY4Nd6rplh-X5a10i3JNhqgNnrijLOIrLMZUILHDrY4mfxl3mg8Lb6QRMX5iQPOnReK3ruW5D-o5WwYK64q7MvLgtGsNxKTMYak01XI-T2vCY6-4BfVV2_-fZv_E9HQGvKKfb_C_NXAUeFzRuN",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEJfia-nm7tl5Rh98gV1ZI75KksYWSBci4RknmV1XkRlI7GH-vD5O7dA3FAKlNffDyS53f7pObmFgAg0olNjps1Vnwdl4IO3aGLBq-WOVuG6otIHFJkWn-1iJ93qaJ0nSMnQU6bB0Z3VQXoGK0KP0N3G5QLGBIx",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGK03RnzSFr3j2-hWhgxrUcMry_aX43zRcBihvVfXWK4eWh66oTQdJeRa928BW4QeJ08yF5OAUIEmQegPJLsQDgCI9PNORE1fIphvm5yHD_EcUZfkQukLuq_iPRMb8oPKd0ZiakXwM8YvWANWhWOg96EXcW9TqJHnmUo4YF4lUHtFjvpZdeCss=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEwI03Z4fGIiLpD7CyWLzNM9ZV_MCyWZnn0VC2f6qb9O5FT3oHMbG_1C36-dPrSm3BKQslheAyEFHWaIMtXyu1o1RiyUhCEuQuBrIdBWggD0nR9tTf8EZ5TmpWgGPOyFKzJzV8siDBBmfPLOKejRT6mNlGVXxvVecZZwA=="
+  ],
+  "dominios": [
+    "paranasunrise.com",
+    "reglamentodepesca.org.ar",
+    "neuquen21.com.ar",
+    "aicacyp.ar",
+    "patagonia-trashumante.com",
+    "patagoniawow.com",
+    "perfil.com",
+    "diariolaportada.com.ar",
+    "lmneuquen.com",
+    "barilochediario.com",
+    "pescamapa.com",
+    "argentinapura.com",
+    "pescaargentina.com.ar"
+  ],
+  "consultas": [
+    "reglamento de pesca deportiva continental patagonico tarifas 2025 2026",
+    "patagonia argentina fishing license cost non resident 2025 2026",
+    "reglamento pesca patagonica permit fees 2025 2026"
+  ],
+  "texto": "**Yes, you are required by law to have a valid sport fishing license** to fish anywhere in Patagonia, Argentina. \n\nThe regulations are strictly enforced by wildlife officers, and fishing without a permit can result in heavy fines (starting around ARS 200,000) and confiscation of gear.\n\n---\n\n### How the Licensing System Works\n* **Unified Reciprocal License:** Neuquén, Río Negro, Chubut, and the Southern National Parks Administration share a common agreement. Buying a standard permit issued by any of these three provinces or National Parks covers all general public waters across those jurisdictions.\n* **Separate Jurisdictions:** **Santa Cruz** and **Tierra del Fuego** maintain their own distinct provincial licensing systems and require separate permits.\n\n---\n\n### Official Permit Costs (2026/2027 Season)\nPrices for the **2026/2027 Patagonian Continental Fishing Season** (November 1, 2026 – May 1, 2027):\n\n#### 1. Foreign Non-Residents (Turistas Extranjeros)\n* **1 Day:** ARS 50,000\n* **10 Days:** ARS 140,000\n* **Full Season:** ARS 280,000\n* **Neighboring Country Special 10-Day Permit** *(New for 2026/27 for visitors from Chile, Brazil, Uruguay, etc.)*: ARS 50,000\n\n#### 2. Argentine Residents & Foreigners with DNI Residency\n* **1 Day:** ARS 12,500\n* **10 Days:** ARS 25,000\n* **Full Season:** ARS 50,000\n* **Youth (Ages 13–17, Season):** ARS 25,000\n* **Free (Sin Cargo):** Children under 12, Seniors over 65, retirees, and persons with disabilities.\n\n#### 3. Additional Supplements & Special Permits\n* **Trolling Supplement:** ARS 25,000 (1 day) | ARS 50,000 (10 days) | ARS 100,000 (Full Season).\n* **Preferential / Special Restricted Waters:** Additional permit required for designated trophy waters (ARS 12,500/day up to ARS 50,000/season).\n\n---\n\n### Key Things to Know Before You Go\n1. **Where to Buy:** You can easily purchase digital licenses online through provincial government portals (such as Neuquén's *cazaypesca.neuquen.gob.ar* or Río Negro's *permisosdepesca.com.ar*) or in person at local fly shops, tourism offices, and park ranger stations upon arrival.\n2. **Identification Required:** Your license is personal and non-transferable. You must carry a digital QR code on your phone or a printed paper copy alongside your passport or national ID.\n3. **Felt-Soled Boots Ban:** **Felt-soled wading boots are strictly banned** in all Patagonian waters to prevent the spread of invasive *Didymo* (rock snot) algae. Use rubber-soled wading boots instead.\n4. **Hook Rules:** Most rivers and streams mandate barbless single hooks and catch-and-release for native species.",
+  "error": null
+}

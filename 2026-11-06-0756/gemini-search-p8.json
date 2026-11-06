@@ -1,0 +1,32 @@
+{
+  "fecha": "2026-11-06T07:52:06.710Z",
+  "proveedor": "gemini-search",
+  "pregunta": "Quanto custa um guia de pesca em Corrientes?",
+  "cita_pescamapa": false,
+  "urls": [
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHVBE08rZFEzbZpjd7ma9a090lM0U5IJOn0qDbRpa31nuquf2x8N9XFZeflR4lCPKBFLr0qFtbpcOEWwqSHLNlCHLhDh6h_AQkW4SvB8W2YATGIlK96cX31YEMmWAWJ0BJNWF4jbqO0cKx_DynY5qHt3zt3C-KGvg==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGSMqakjyTPvkb7ZHQQF_LE6R3GrE5ZpAiJXdOf7aCa6vdBjumXhm_2JVCK3wbbN1KglHfAA4Pa0Z9y-fq83EydxVYAvMbcmndf4qseAeIB6cbHoTTLWgmEdPB2P2ePq_yu60HwLnT-1XT2chScsFCZ5_TQgCxofYtCqhc=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHLUKKNwZ4vtB6GtqIIBOWBtPeFMi1QA555pbka6CfVZnqdfj4sZ7fB0VRgHG_fa7C-84UMtUYiex_AgRJlCYJzF6xap0tRtCYPK68Zk2_p5DIa258xSTA5yAcgTt6_tQ==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGOUR1EXYuYEYe1wdWHn8qs5J7vdo9LU3TX1c2yGZrAdv9bBfR5e43X2Ss3kqCjCJH7o0iQKOHujb69EWwb-Fk0fIPhO-bNbdfsSNQoGeA29lNh_abJP_bABMxbeA1OqIWvxIrfpzDrVUGhxYpWxtvYEzAwSobZnj31TKI=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGiV5775H6CDLlET6x3o_7_jsDl0bontFWHwSInxMUWaseay8VySuu0aMykRPmcgWF_L2YrdKD5ZUbMzAYKYipZQ5fgHk3qCfKTV-XmQiJW_5S9JZNlLc42MjqxyYnv3K6rmfMdXvMJcZhhs6P5vJOFrrK7",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHQJsNA6g0xV2CaCpDqTLJsNr5LZ2p4L__7oeII2YfbSmvR1dDow8Y8sQ9GSoHEAYskx9dUSJa5yet1299L1eUlmEBpA5eQ12uFOkODNhlqMx3x2xoTz4QhRmNIHw==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFpG2UvolrH4Ropt-m6T2c40pZV1j_FJoYuduzZQwzJTpxA9Sro5B-Vs3tAlRxsyVM_RFWQg23Xz4PzwOXg92cQHH4HUt1w68rk3Jq4n2XzrcX2wwcmplVQJRvBG2LvqW8n7Ts=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEpRD7SIO0HFugcKzLSyuiYMrWdC2-HMHCQBmYaL7YmvRnqJM89X9-YlzN1YXytH_36pZMz7enk9vO3RzA4cLj0yoMwF5Ygq0IQfatdaIxu5osEAWVuIMHN9fT0EH-gQ_rz-triIfBLcSGieoENZXepm0w9u-s2__z4uEvA7UyPNwVBVR4H8xxase0l9A=="
+  ],
+  "dominios": [
+    "pousadapuertoyacarey.com.br",
+    "carecapesca.com",
+    "jralquileresypesca.com",
+    "hooked.com.ar",
+    "fishingbraziladventures.com.br",
+    "pescamaisargentina.com.br",
+    "romanipesca.com.br",
+    "tur.com"
+  ],
+  "consultas": [
+    "diaria barqueiro guia pesca paso de la patria corrientes valor",
+    "preco guia de pesca corrientes argentina usd BRL"
+  ],
+  "texto": "O custo de um guia de pesca em Corrientes (Argentina) varia conforme a modalidade contratada (apenas a contratação diária do barqueiro/guia ou o pacote completo *all-inclusive* com pousada).\n\n---\n\n### 1. Apenas a diária do Guia/Barco (sem hospedagem)\nSe você já tem acomodação e quer contratar apenas a embarcação com o guia para o dia de pesca:\n* **Valor médio por barco (por dia):** entre **USD 250 e USD 400** (ou cerca de **R$ 1.300 a R$ 2.200** / **ARS 300.000 a ARS 480.000**).\n* **Capacidade:** O valor é cobrado pela embarcação inteira (lancha tipo *Tracker*), que acomoda de **2 a 3 pescadores**. \n* **Dividindo o custo:** O valor fica em média entre **R$ 450 e R$ 800 por pessoa/dia** só pelo serviço de guia/barco.\n\n---\n\n### 2. Pacote Completo em Pousadas / All-Inclusive (Opção mais procurada)\nA maioria dos brasileiros opta pelos pacotes das pousadas locais (em Paso de la Patria, Esquina, Yahapé, Ita Ibaté, etc.).\n\n* **Valor por pessoa/dia:** Entre **R$ 1.500 e R$ 2.000** (ou **USD 300 a USD 450**).\n* **O que costuma incluir:**\n  * Guia/piloteiro experiente;\n  * Barco com motor de alta potência e combustível;\n  * Iscas vivas (*morenas*, muçuns, etc.) e/ou iscas artificiais;\n  * Equipamento de pesca completo (varas e carretilhas/molinetes);\n  * Licença/permissão de pesca da província de Corrientes;\n  * Hospedagem com pensão completa (café, almoço/assado na ilha e jantar);\n  * Bebidas liberadas (água, refrigerante, cerveja e vinhos).\n\n---\n\n### Importante checar antes de fechar:\n1. **Limitação de combustível:** Confirme se o combustível é ilimitado ou se há uma cota por dia.\n2. **Iscas vivas:** Algumas pousadas/guias incluem uma quantidade fixa de *morenas* por dia; caso queira mais, são cobradas à parte.\n3. **Moeda de pagamento:** A maioria dos guias e pousadas voltados a turistas estrangeiros prefere cotações em **Dólar (USD)** ou **Real (BRL)**. Se optar por pagar em Pesos Argentinos (ARS), confirme qual taxa de câmbio será aplicada.",
+  "error": null
+}

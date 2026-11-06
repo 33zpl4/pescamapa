@@ -1,0 +1,42 @@
+{
+  "fecha": "2026-11-06T07:56:08.734Z",
+  "proveedor": "gemini-search",
+  "pregunta": "Quiero organizar un viaje de pesca con amigos para pescar dorado en Argentina. ¿Cuántos días conviene, cuánto cuesta por persona y dónde me alojo? Citá fuentes.",
+  "cita_pescamapa": false,
+  "urls": [
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFJKgbNsKxGq0ScxVOXaKXsHIIYuw4uNpfq6jyGqq7ph2ACPGFhUSq4eX93aeuGoLuAKcNWCff-4Da_7LxWyUZPDRggDdp8-bIJJJDJgw36dtTXk71Rz5fT7Ni37mvU",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFR-j2DKSodBjZFgrCyjxG-AsFqY2_bXmCK95DzVi6dEGZpiBnmYhCCOiNZBf9Ax14HYEeMO3XZfJjzDxfYfyeplgHY_Ka6GDamMuxuKc7LYglrA7Hunf5bPxsDHeziQ0GGBm2O0dd72n8CdmD7vbdsgFrkhE4kvr-GxN1Nsw==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHBzJwPmDRfUbgSc0DBCALax4G2a12XYdNqZ0CvFJRt0IqDeAH7gcf5VPR8alkFycUv8wq1xbRi1mhyaxD0GVZKyLAakZEBsiT1uXNjukmWVYxZFcLqpHKGaWezEGDjluP7VBEJU8PdK7xcLQl5K2LwC5w=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE7jC_1V36FEbrwr76vQ1jtIRFJeva0_iIMzexrvHrwWGmFqRhO6DRk-HP5TsxwnAWrV3B13zMgh1_u13fEyi0xSF5CKhmOAx3TAXxwkofwTsqSLq6t3iz8oYoNxMDla4CYpwZLgKm-fg==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGyw0587B4S7nvT64E7XZcsUXLY32oVoPZSraJiOuGzUrZU0VHyGPhBEeR_bHeszvno1A8Zdu_7cv9bh9INhU1s27OSrNhWIJRWSMko59ZXWMze2B0gniV78nPkwKnjkWeDoe0qJImDwjc8Vrkr",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHZQ-MOS2smXvLfG9kcJmyzhkFDpe-_LsK4BJ8cePinFb8iLfZk--OLVjp0qiiwAVBTJXYyMFW69FBdVVWMqQl9jTXAZXFDa36PPFoPI4qRjXPdU57GFtGIHbBkeqlrmm2fEyMRmwq-6g==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH6nzThyyPZ2QIyVMpRiI91TVUjjZV-h_S86utiBzhFsiGCdl8qVIR3J9-5M3-SUHMwFxVdDCzJw3P3VJfjwl2c3W0hP9TmQD0lgDlaMz2dHKiA0i1K--w880eH07Rpx6ZdkEuCJxmbnFT54VH56JoSLA==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHH6jQEopwKWYeQxDd4l7k7Cf4ReRhpJPBddIsEf9mTFS6sbcfCUKqJv9xnMeAiP4RlXMQ871PJSjp5FtxNfq0hVRcNY-fZCTVFqPcZjMKy6BoGl1DVSzb96x1SYWijlsJD62lrBr3fPF5tp7Bq",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF5p4HrabvCQMNGFI3ySvpYmC_mIsRukNQBIoTUGZaGOr3xQMjlCdJj2SX0kPBR5x5vV0Zz7dNx2Rkvi8tjha5CuVbY_Z4mekEWLVULGwVvSJraizQv7wIwsa_83l0Z9_3nHnvWik40ZVzytw==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEbU01-9DyR8NBLuNFmnhwgcPL7NbqyxakblaMSgy7B_r48GvKulTokkiuDMEYmGsXzNrlECq2M7BshKrHPi2lwfutb_I1oBT8A2lCmG68l0hIYWgasNgjcXjRZxX9XTteUKtr--ystSekhMrcNKb4JTmBY7bUUmj6BCQ==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHd4DAy4NAuQHB2KhyowxbwQ_mB2qR5Ep7rtGYKc1MFUsSW23rNwUL5AFkN_lA3MaLTp2k6RaFtQUZsVbRdfCMAa5MvcI4K_BIhR2TUOK3zuBi7WuEGW1KjRHcac5TzMriPj9mksGmxsQtaYbO3nteURg-s2q4eTvE=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGZumXshrK3E0DNivM7aFbhCF_98m_I0IRO4oe5JoyWgAqGuNzNkr3v_IlsTSQsy3-XyfoZ7c755JagEulZcTfnrG9xt335lnfMu67sHoXEZXLOIOUTABFtnLZa9Q868cRu8NafiW0JIGj43C4=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQElPelExxAObgLogE7w8oqYaBJxBqkhmPJks9CF3-ZsHQ980RjLE-WB01iSyggsM-KqXewtHpPuwWxxkdRT1GZcY8WeRS50P9_T2Ti2al9b7TJdWr0REdwGGoadcS6rPZGaCUzHLQJpx_DlwRFVOrhrTHmDqlaiOrbO18lz5P-X9fw="
+  ],
+  "dominios": [
+    "setflyfishing.com",
+    "blackbone.us",
+    "goldenflyfishing.com",
+    "paranasunrise.com",
+    "posadahambare.com.ar",
+    "fishingbooker.com",
+    "amazon-angler.com",
+    "yellowdogflyfishing.com",
+    "fishingwithlarry.com",
+    "reelwomenflyfishing.com",
+    "flyfishingcaribe.com",
+    "viajespescamosca.com",
+    "goldenflyshop.com"
+  ],
+  "consultas": [
+    "pescar dorado argentina costo dias alojamiento paquete pesca",
+    "golden dorado fishing argentina cost per person lodges duration"
+  ],
+  "texto": "Para organizar un viaje de pesca de dorado en Argentina con amigos, los aspectos clave en cuanto a duración, costos y destinos incluyen:\n\n---\n\n### 1. ¿Cuántos días conviene viajar?\n\n* **Formato Estándar / Recomendado (5 a 6 días de pesca / 6 a 7 noches):** Es la opción más elegida para viajes dedicados. Permite aclimatarse al río, compensar eventuales días de mal clima o cambio de presión hidrométrica y buscar otras especies de valor deportivo (como el Surubí, Pacú o Pira Pytá).\n* **Escapada corta (3 a 4 días de pesca / 4 a 5 noches):** Ideal para grupos con tiempo limitado que viajan al Paraná Medio (Santa Fe, Entre Ríos o sur de Corrientes).\n* **Día de pesca express (1 día):** Salidas diarias desde Buenos Aires (Delta del Paraná o San Fernando), ideales si se busca una excursión rápida sin traslados largos.\n\n---\n\n### 2. ¿Cuánto cuesta por persona?\n\nEl presupuesto varía según la categoría de alojamiento, el nivel del servicio y la modalidad (pesca con mosca / *fly fishing* de lujo vs. pesca tradicional o posadas locales):\n\n* **Charters o Guías locales por día (sin alojamiento de lujo incluido):**\n  * **$100 a $250 USD por persona/día** (lanchas para 2 a 3 pescadores, cuyo costo por embarcación ronda entre los $250 y $500 USD diarios).\n* **Posadas regionales y Lodges estándar (Todo Incluido):**\n  * **$450 a $650 USD por día/persona**.\n  * Paquetes de **3 a 4 días de pesca (4 a 5 noches):** entre **$2,200 USD y $2,970 USD por persona**. Incluyen alojamiento, todas las comidas/bebidas, lancha con guía y combustible.\n* **Lodges de Alta Gama / Outfitters Internacionales (Fly Fishing exclusivo):**\n  * Paquetes de **6 días de pesca / 7 noches:** entre **$4,000 USD y $8,350 USD por persona** (operaciones como SET Fly Fishing, Pirá Lodge o Itatí Lodge).\n* **Gastos adicionales a contemplar:** Licencias de pesca provinciales (aprox. $20 a $65 USD), propinas para guías y personal del lodge, traslados terrestres o vuelos de cabotaje hasta la zona de pesca.\n\n---\n\n### 3. ¿Dónde alojarse? (Mejores destinos y lodges)\n\nArgentina ofrece distintos entornos para la pesca del dorado:\n\n#### A. Corrientes (El corazón de la pesca de dorado)\n* **Esquina y Goya (Paraná Medio):** Muy accesibles y tradicionales para pescar dorados de tamaño medio a grande.\n  * *Alojamientos recomendados:* **Posada Hambaré**, **Don Joaquín River Lodge**.\n* **Alto Paraná (Paso de la Patria e Itatí):** Famoso por los ejemplares \"trofeo\" de gran porte.\n  * *Alojamientos recomendados:* **Itatí Lodge**, **Del Paso Fishing**.\n* **Esteros del Iberá y Río Corriente:** Aguas transparentes, ideales para pesca pez visto (*sight fishing*).\n  * *Alojamientos recomendados:* **Pirá Lodge** (Nervous Waters / Yellow Dog), **La Alondra’i**, **Estancia El Dorado**.\n\n#### B. Santa Fe y Entre Ríos (Cuenca del Paraná Medio y Río Uruguay)\n* **Santa Fe (Reconquista / San Javier):** Excelente pesca tanto a mosca como con carnada y modalidad spinning.\n  * *Alojamientos recomendados:* **Rio Bravo Fishing Lodge**, **Paraná Sunrise Lodge**.\n* **Concordia (Río Uruguay):** Famoso por la zona de \"La Zona\" (Río Uruguay), conocida mundialmente por alojar a los dorados más voluminosos de la región.\n\n#### C. Salta (Pesca en ríos de montaña / Aguas claras)\n* Para quienes prefieren pescar vadeando (caminando por el agua) en ríos selváticos de agua cristalina.\n  * *Alojamientos recomendados:* **Pachamama Lodge / Popoyán Lodge** (Tuku Lodge).\n\n---\n\n### Consejos para la organización\n1. **Mejor época:** La pesca está abierta todo el año en el Paraná, pero los meses de mayor actividad suelen ir de **agosto a abril** (la primavera y el verano austral traen temperaturas más cálidas y mayor movimiento del pez).\n2. **Reserva grupal:** La mayoría de las lanchas operan con 2 (máximo 3) pescadores por guía/embarcación. Reservar en grupos de 2, 4 o 6 personas optimiza los costos por lancha y habitación compartida.\n\n---\n\n### Fuentes consultadas\n1. **Paraná Sunrise Lodge / Rio Bravo Fishing Lodge:** Tarifas y paquetes de 3 a 5 días todo incluido en Santa Fe/Paraná.\n2. **SET Fly Fishing / Fly Water Travel:** Tarifas de lodges de alta gama (Itatí Lodge, La Alondra’i).\n3. **Yellow Dog Flyfishing:** Información operativa y logística para Pirá Lodge en los Esteros del Iberá.\n4. **Posada Hambaré & Don Joaquín River Lodge:** Paquetes clásicos en Esquina, Corrientes.\n5. **FishingBooker & Tuku Lodge (Salta):** Excursiones diarias desde Buenos Aires y expediciones de vadeo en Salta.",
+  "error": null
+}

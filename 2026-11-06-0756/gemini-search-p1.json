@@ -1,0 +1,40 @@
+{
+  "fecha": "2026-11-06T07:51:00.767Z",
+  "proveedor": "gemini-search",
+  "pregunta": "¿Cuándo es la mejor época para pescar dorado en Corrientes?",
+  "cita_pescamapa": false,
+  "urls": [
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEdSGgKKQaNXixKFI8FlLOSlVl8DgHhElV-1lZyEmkMi9Zmn6mJcMjiqLs7WnmhkuONrKi8g3Gu9LTcfDvSPRLFJmgVTcgW_sie9gAwSTgtbDy9SqDwNJx_St41Xu1wLJX_m1Du6dktAIW3UWc4IZpNQidIjnyTVa-sEnrNpqtwsiM=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG982IeOXr_7Uw9j3DlJ2plCTocoORn5YUB1JbBitIaMTrOhTpk1hr5uyhayqDjZ1kzv2Dm7L6ZctNmhOHGD_p0CR6-lPJquog2lxyMAGwqxCROjuNcdjO8QVOixGLr91gHMke1VG61QZ89MwqZ2B6yRSsUVkTeeQumYIcAD00=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGRswAEyKeqj34okMDNc9R4B044000-bXktvPmdAylAa51zB1MGV-RgMghxv0kgt3PEQ0OuBd84sGQ7xGqTKQpHzHz4d5NqCy-Fajk8qpQ4f8O1wAar",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEfP_sTK_Q6i4Tb3leg_7DEInLn9jJGW4EOsmCglLd_fPjQ3BvD__MOASJDMUs-MXejPbDd4nT8b6SXOfEFhusgROX7owax7MCeCtLAsD7BBZVQ64CX8ZieC-SXjiWn7CPH",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHfT9-kil2pdby_7lhJA6vQA8DmSYwYZsNTXU3o3Oivun-Q0dFcbLYZu_5CgLNeH_7qhw4-WS-H1NaRGUq1G8BEkMJX5zFIjPraO7PjdiiCD86r-wwESCL4Ah6ex1-21duwOoNLQl-ivu71wo62B8PcPnIwtq7U",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEudiqE9UNtGme-NRVGBQi6hL_FO0s0cgi-vEg9S9Qte_dwja9GHjl1eA1KeFKFqJkXmSppWA7Mh-Cw6mzbkBPcBs1eABxAWFJT_UzAKcwcsKafrkrAJnOWzCKUM_eDIRhkrC8-4z_jHQrCJQBEcpLQ9fNn_UDJRMksLSRmovDOmzFMLV6djo3MXkR5-5lq",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEVVRmyZhBMZTnagXjkrHaTxx55mQpxTbJa7nCPqvLM30QrZJq1peZA3-GQsy2Yrpxz5R1slo4Pxp-cB6Vs1pVEFGHrqVDdQATUflwFuVNDgc5QRU-63oRc",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE3A6s8U-wSr3WJzZL20XnQ8y0p4cn_S3tvP1vd0qtLTgx3-ZWmF_kjYFVNOsZTh3C96IDK233kzquIfi4zuERpbVi-kjPKJg-GbkLNIJBIGWlB5JJ75B7kKSdtuoiRiYjeLL6vtOVZV0wkc4ZnXa_tp7rbZAtwigoqo8nWlFS-ToW2i_2H9tN31EQ=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGy4gRPiwZRj0kG96hJtV9cGgBzJMNAaYaPqH5XrHtOJA26SetaGUhOmZQlF9nsXmxA5ZRGZ5wwIM9l850qBPqtfZQq2jgLIfAhzpUIBZwNt1bXzpFtUDGqzHrMFCziOusrg1bjfStceehW",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEfzoaJY_KpQoFT37nmGbXjSbIMFHJtm1SV_VMLRcHw0ocwS0kp2uClVfxAxZt6gL1-BBYS7zp2QUuvU4obafBEBLMBgVMlx9_Nj7DJxlvSWNufwP9ivZh99RpVgs_OCUWD",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEUEjhn5nUJDzezWkN5Pmq3kFu2gLkOFozKiHSOJHG0XFrhsCVgTHU8sipewZfokwW7qPkAWcuXtNIF8emQheDOf5WZXHDBhUIGCKIe6DpfU5s7fRrJlCAfRb4mipnqypngGkDVoGmalBQ=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGi0gjg1GzjWNTWu7caFBcfHjujGt0I9ht7bYkVTdcXcswH9NeAtqwZ4hMqGer0IRimgmGkJd_h5M_y4JKcsLlLPvikYDdkq6AbM4H6--wVMmAqPsWKu0jl04rKAvpaJ8m0XqlUqJQVNCrz0I4lbM3eX_AOYS3qVmlGclk03UgmPXz_-MhgPZ98MVGB_Wwz0L4="
+  ],
+  "dominios": [
+    "paranasunrise.com",
+    "theanglercompany.com",
+    "pesqa.ar",
+    "hooked.com.ar",
+    "fansfishing.com",
+    "damorfishing.com",
+    "eltransitoibera.com",
+    "iscabox.com",
+    "posadadelpaso.com",
+    "youtube.com",
+    "fullaventura.com",
+    "diarioepoca.com"
+  ],
+  "consultas": [
+    "temporada pesca dorado corrientes paso de la patria esquina",
+    "mejor epoca pescar dorado corrientes argentina meses"
+  ],
+  "texto": "La mejor época para pescar dorado (*Salminus brasiliensis*) en la provincia de Corrientes se extiende **de septiembre a abril** (primavera, verano e inicio del otoño en el hemisferio sur). \n\nDado que el dorado es un pez depredador de aguas cálidas, su metabolismo y agresividad aumentan significativamente cuando la temperatura del agua oscila entre los **20 °C y 28 °C**.\n\n---\n\n### Desglose por temporadas y meses clave\n\n#### 1. Primavera (Octubre – Noviembre) ★ *Época Pico para Grandes Ejemplares*\n* **Por qué es ideal:** Con el ascenso paulatino de la temperatura del agua tras el invierno, los dorados entran en una etapa de alta voracidad previa al desove.\n* **Ventaja:** Es el mejor momento para intentar capturar **ejemplares trofeo** de gran tamaño.\n* **Modalidades:** Muy efectivo para *baitcasting*, *fly fishing* (pesca con mosca) y carnada viva.\n\n#### 2. Verano (Diciembre – Febrero) ★ *Máxima Actividad y Pesca en Superficie*\n* **Por qué es ideal:** El pez está sumamente activo y alimentándose cerca de la superficie.\n* **Ventaja:** Excelente para ataques explosivos en superficie (*topwater*, poppers, señuelos de paleta corta).\n* **A tener en cuenta:** Las temperaturas del aire en Corrientes pueden ser muy elevadas durante el mediodía, por lo que los mejores picos de pique son a primera hora de la mañana y al atardecer.\n\n#### 3. Otoño temprano (Marzo – Abril) ★ *Excelente Clima y Buen Pique*\n* **Por qué es ideal:** Período posterior al desove con intensa actividad de alimentación antes de la llegada del frío.\n* **Ventaja:** Las temperaturas ambientales son mucho más agradables para el pescador y las aguas se mantienen templadas.\n\n---\n\n### ¿Qué pasa en Invierno (Mayo a Agosto)?\nAunque se puede pescar durante todo el año en destinos como Paso de la Patria, Esquina, Ita Ibaté o los Esteros del Iberá:\n* El agua fría vuelve al dorado más aletargado y lo desplaza hacia sectores o pozones más profundos.\n* En esta época suele dar mejores resultados la pesca a la deriva con carnada natural o el *trolling* de profundidad.\n* *Dato:* Eventos tradicionales como la **Fiesta Nacional del Dorado** en Paso de la Patria suelen celebrarse en agosto.\n\n---\n\n### Factores a considerar antes de viajar\n1. **Régimen de lluvias y caudal del río:** La claridad y la altura del río Paraná (o de la cuenca donde pesques) influyen más en el éxito de la jornada que la misma fecha del calendario.\n2. **Normativas y Veda:** Es obligatorio contar con la **licencia de pesca provincial** expedida por la Dirección de Recursos Naturales de Corrientes. Además, la pesca deportiva en la región promueve o exige de manera estricta la **pesca con devolución** (*catch & release*).",
+  "error": null
+}

@@ -1,0 +1,36 @@
+{
+  "fecha": "2026-11-06T07:52:53.799Z",
+  "proveedor": "gemini-search",
+  "pregunta": "Do I need a fishing licence as a foreigner in Corrientes?",
+  "cita_pescamapa": false,
+  "urls": [
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFuGNQJ7cDc3tOVKVhJtjIn9A2OslRc-70fYZujT_wsniiQor4smZ_WCfwIUK8V7V0GbVz_UtpwtRgSQDXculROxa8IuxgUvU8FIiRnKLCufzdVY9YkAK0o7Vx1f_X2TUgolSc6UkIeGCB4ddlPT0uD",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFo9K2jE_EiGbMmB_1_bnsHruWeyuqvfpCL7BrE7c49u51xKZXcaqBJev-zTDgS5WbbIl9s5Kxo-wygwhxsIx4rdMCWKKSPeu4l1AJ8cnrUy__pqMkS8eYrf-KMQZFlb2AzahDf6CSrnA==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG_UMK5uCh2hro-NpRmebOXTN0EUTH-uiZ_nEUovM57IOEnxIaod0LZ7RMdp2JfSbPrYqeWIC-ZovJhMVyWaUm6fS41fR2Nfik9-TKt6vtB-NWIVsIlXShtyg==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFBg_sofEjT8TZDLLGx23wMVwOjEGscrkAmRLuwSS6lRLzOp6YK7xnCe7Enr3VURPxzrVmlgR9YABzQ4eViN8olD-lVy-TL7cxZCfrJEu0oXx--vYJEQTei4eX_M7LHXgGwjKcrcA1WP5k698THIkmS0rOh6N20u5Y_616m9Nq-EkMyk-09EuDKBIArZi0V99MRsXmwxC8-8ucVOyquL6ADU7AfPGFL25CcH5KAg71ph6nAuGsVHof24I1ItGc1Q3Wq",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGtvZrunvL9MhyNDV2z5wBDrOg1_6tWOBtqzmlNyXYHQ_cSA3ngygK0pqiCjAThUb43hhLOBX2T8qPx1pHDk_xDRYpWriCVpysA3hiOaf5JgX0fcYaC4WOUu57861GnfZoeIJOWQWk_N5g7ehzEkSsfeyfwEqfGwGdfuD52wdvoneH1aIIaUX-JlUpybl1dasMxkeBXnR79V3Q=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHQoIij-WJ8zQLzmXFYB9XHUjuGPF2_kpz8hTnEWE77YP-7UnZYEIeBVTJELHXiNMEH5KdAYK6qsFACXiPT2B1gCWtS1FEHM7cN9KLZyVvVd3S1uwnYocfcM2qt7HP62eQV4PBPt3JgF5rWtqMX",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFMNzxHLZZ0E4LNcBfPLrAsqZ17msdB2_yZrhGnwMPq4MwHEzp7uq7A1qEK75gGi6PuClm-qEMCMeqWsdN30P8yF4IPvDhCXn5GtS9VaiAGiGBkwnUxIifmkD-03nu8hcSmQK64k5ro_rpZ48E=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF0ZhVkrqiCmiq6tTlxMmCh0h98v3qZ7YR-JdlGHDvTYv1AMz6IYk_Ayu5MlDocifTjuYs-a3vdL9RP-M1252pWGPAf2N83rAwDaTct9SIt7ICpuoMANxRJrXPqVsl3POLaaN3WjO7hR6kosHk-1qnEGJdgTrnWozt9mplykZb2bS2h_5HTc9g7goppqpHWuQ==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFEnSM5sVqiQqaJgUw13VnNnHm121P1NW1YTXCG1CDdN-EkjBL-fpgAtDqTiqCBKHRGfHsRn8mI2lc7gb2KFotyMFct0xFFVsULOxHcVVj5SpdXfO8JOR9Or56BZOeWUZOlvT05dnNONX5fq6CTYapl6Ej_Vbrundsf3l8fCIksEKy2zW7mbpfzuA_kmmFYj006_VvCZ6YG-t4KJYEJelA3uYSZS-ME3igSlzju9ry_hKB1z_dLtVFCZGMGtY34O5uCEcSEZjU=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFoAh0PNSUKkC-6W19yY7EyWuaTi_aScLwKuXRspkpOVFtcnnd6EMhAVBacNZH9MuM7P6Kmjl9lIBy00fcqmv5tvmr8celdI7PK7EN3KRPj7eB4_w36K6ZXFSg3Ir3dX_imjoDJ16BM_lnCiu7534MY4Q=="
+  ],
+  "dominios": [
+    "paranasunrise.com",
+    "flyfishingarg.com",
+    "recnaturalesctes.gob.ar",
+    "corrientes.gob.ar",
+    "clarin.com",
+    "pescabox.com.ar",
+    "reglamentodepesca.org.ar",
+    "argentina.gob.ar",
+    "pescaargentina.com.ar",
+    "patagonia-trashumante.com"
+  ],
+  "consultas": [
+    "do foreigners need fishing license corrientes argentina",
+    "permiso de pesca corrientes argentina extranjeros"
+  ],
+  "texto": "**Yes, as a foreigner, you are required by law to have a fishing license (*licencia / permiso de pesca*) to fish in the province of Corrientes**. \n\nArgentina does not issue a single nationwide fishing license; regulations and permits are managed individually by each province. Therefore, a license from another province (such as Patagonia or Buenos Aires) will not cover you in Corrientes.\n\n---\n\n### Key Information for Foreign Anglers in Corrientes:\n\n#### 1. How to Buy the License\n* **Through Your Lodge/Guide:** If you book a guided trip or stay at a fishing lodge (e.g., in Esquina, Paso de la Patria, Goya, or Ita Ibaté), the lodge or guide will almost always arrange your provincial permit for you in advance.\n* **Online:** You can purchase it directly through the official website of the **Dirección de Recursos Naturales de Corrientes** (`recnaturalesctes.gob.ar` / `licenciasrecursosnaturales.gob.ar`). The portal supports registration in English, Spanish, and Portuguese.\n* **In Person:** Permits can also be bought locally at designated tackle shops (*casas de pesca*) or tourist offices in Corrientes.\n\n#### 2. License Options & Pricing\n* Permits are categorized by duration—typically available as **1-day (daily)**, **multi-day/tourist**, or **annual** permits. \n* Foreign non-residents pay a dedicated non-resident rate, which is higher than the rate for local Argentine residents.\n\n#### 3. What You Must Carry on the Water\n* **Your License:** Keep either a printed copy or a digital version with the official QR code on your phone.\n* **Identification:** You must carry your **Passport** (or a clear photo ID matching the details on your permit) whenever you are fishing, as river game wardens and the *Prefectura Naval Argentina* perform routine checks.\n\n#### 4. Additional Regulations to Keep in Mind\n* **Boat Rules:** If you plan on driving/skippering a boat yourself, you will need valid boating certification/documentation recognized by the *Prefectura Naval Argentina*.\n* **Catch & Release Laws:** Corrientes strictly protects key target species like the **Golden Dorado** (*Dorado*) and **Surubí**. Many areas require strict catch-and-release (*pesca con devolución*), single barbless hooks, or enforce specific seasonal closures (*vedas*), depending on the time of year and location.",
+  "error": null
+}
