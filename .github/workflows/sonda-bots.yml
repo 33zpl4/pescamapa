@@ -5,6 +5,9 @@ name: Probe bots, weight and 404s
 #  2. HTML weight (Googlebot indexes only the first 2 MiB) and whether title/canonical come before it;
 #  3. invented URLs must answer 404 (no soft 404).
 on:
+  push:
+    branches: ["claude/**"]
+    paths: [".github/workflows/sonda-bots.yml"]   # a new workflow cannot be dispatched from a branch until it is on main
   workflow_dispatch:
 
 jobs:
