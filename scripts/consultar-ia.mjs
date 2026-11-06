@@ -11,13 +11,13 @@ const [prov, pregunta, salida] = process.argv.slice(2);
 if (!prov || !pregunta) { console.error('uso: consultar-ia.mjs <openai|gemini> "pregunta" [salida.json]'); process.exit(1); }
 
 function post(url, cuerpo, clave) {
-  const args = ['-sS', '-m', '240', url, '-H', 'Content-Type: application/json', '-d', JSON.stringify(cuerpo)];
+  const args = ['-sS', '-m', '120', url, '-H', 'Content-Type: application/json', '-d', JSON.stringify(cuerpo)];
   if (clave) args.push('-H', `Authorization: Bearer ${clave}`);
   const r = JSON.parse(execFileSync('curl', args, { maxBuffer: 50e6 }).toString());
   return Array.isArray(r) && r[0]?.error ? r[0] : r; // Gemini devuelve los errores como [{error}]
 }
 const vacia = r => !r.error && !(r.choices?.[0]?.message?.content) && !(r.output || []).some(o => o.type === 'message');
-const intentar = (f, n = 6) => { for (let i = 1; ; i++) { try { const r = f(); if ((!r.error && !vacia(r)) || i >= n) return r; } catch (e) { if (i >= n) throw e; } execFileSync('sleep', [String(6 * i)]); } };
+const intentar = (f, n = 3) => { for (let i = 1; ; i++) { try { const r = f(); if ((!r.error && !vacia(r)) || i >= n) return r; } catch (e) { if (i >= n) throw e; } execFileSync('sleep', [String(6 * i)]); } };
 
 let texto = '', urls = [], crudo;
 if (prov === 'openai') {
@@ -39,7 +39,7 @@ if (prov === 'openai') {
   if (!process.env.GEMINI_API_KEY || process.env.GEMINI_API_KEY === 'proxy-injected') { console.error('gemini-search necesita GEMINI_API_KEY real'); process.exit(2); }
   const modelo = process.env.GEMINI_MODEL || 'gemini-3.5-flash';
   crudo = intentar(() => {
-    const r = JSON.parse(execFileSync('curl', ['-sS', '-m', '240', `https://generativelanguage.googleapis.com/v1beta/models/${modelo}:generateContent`,
+    const r = JSON.parse(execFileSync('curl', ['-sS', '-m', '120', `https://generativelanguage.googleapis.com/v1beta/models/${modelo}:generateContent`,
       '-H', 'Content-Type: application/json', '-H', `x-goog-api-key: ${process.env.GEMINI_API_KEY}`,
       '-d', JSON.stringify({ contents: [{ parts: [{ text: pregunta }] }], tools: [{ google_search: {} }], generationConfig: { maxOutputTokens: 8000 } })], { maxBuffer: 50e6 }).toString());
     return Array.isArray(r) && r[0]?.error ? r[0] : r;

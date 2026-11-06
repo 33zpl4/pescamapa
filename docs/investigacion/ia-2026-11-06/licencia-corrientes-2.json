@@ -1,0 +1,11 @@
+{
+  "fecha": "2026-11-06T07:59:00.877Z",
+  "proveedor": "openai",
+  "pregunta": "Valor del permiso de pesca deportiva en la provincia de Corrientes en 2026 para extranjeros y argentinos (día, semana, temporada) según la Dirección de Recursos Naturales o el Ministerio de Turismo de Corrientes. URL exacta de la fuente.",
+  "cita_pescamapa": false,
+  "urls": [
+    "https://turismo.corrientes.gob.ar/noticia/corrientes-ofrece-un-sistema-de-avanzada-en-la-region-en-la-venta-de-licencias-de-pesca-deportiva"
+  ],
+  "texto": "Según la información disponible hasta junio de 2024, la provincia de Corrientes implementó un sistema digital para la adquisición de licencias de pesca deportiva a través del sitio web [www.licenciasrecursosnaturales.gob.ar](http://www.licenciasrecursosnaturales.gob.ar). Este sistema permite obtener licencias anuales o temporales de manera sencilla y rápida. ([turismo.corrientes.gob.ar](https://turismo.corrientes.gob.ar/noticia/corrientes-ofrece-un-sistema-de-avanzada-en-la-region-en-la-venta-de-licencias-de-pesca-deportiva?utm_source=openai))\n\nSin embargo, no se dispone de datos específicos sobre los costos de las licencias de pesca deportiva para argentinos y extranjeros en 2026. Para obtener información actualizada sobre las tarifas vigentes, se recomienda visitar el sitio web mencionado o contactar directamente a la Dirección de Recursos Naturales o al Ministerio de Turismo de Corrientes. ",
+  "error": null
+}

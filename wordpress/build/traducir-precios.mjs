@@ -14,8 +14,12 @@ function llamar(prompt) {
       messages: [{ role: 'system', content: 'You are a precise translator for a fishing-travel website. Output only JSON.' }, { role: 'user', content: prompt }] })], { maxBuffer: 5e7 }).toString());
   return JSON.parse(r.choices[0].message.content);
 }
-for (const lang of (process.argv[2] ? [process.argv[2]] : ['en', 'pt'])) {
-  const out = { fecha: es.fecha, cierre: null, paginas: [] };
+const args = process.argv.slice(2);
+const solo = (args.find(a => a.startsWith('--solo=')) || '').slice(7).split(',').filter(Boolean); // claves a (re)traducir; el resto se conserva
+const idioma = args.find(a => !a.startsWith('--'));
+for (const lang of (idioma ? [idioma] : ['en', 'pt'])) {
+  let out = { fecha: es.fecha, cierre: null, paginas: [] };
+  if (solo.length) { try { out = JSON.parse(readFileSync(`${dir}paginas.${lang}.json`, 'utf8')); } catch { /* sin archivo previo: se arma entero */ } }
   const trad = (obj) => {
     const p = `Translate every string value of this JSON from Rioplatense Spanish to ${L[lang]}. Keep the JSON structure and keys EXACTLY (keys like t, h, cab, filas, items must not change; values of key "t" are block types and must stay as is; "clave", "slug", "especie", "fecha" must stay as is, EXCEPT translate "slug" into a natural lowercase hyphenated URL slug in the target language). Preserve every number, currency amount, date digit, HTML tag, attribute and placeholder such as {n:xxx}, {d:xxx}, {viaje}, {calendario} EXACTLY. Do not add or drop content. seo_title must stay <= 55 characters (count carefully) and seo_description between 100 and 150 characters (count carefully). Tone: factual, plain, voseo not applicable. JSON:\n${JSON.stringify(obj)}`;
     for (let i = 0; i < 6; i++) {
@@ -25,8 +29,11 @@ for (const lang of (process.argv[2] ? [process.argv[2]] : ['en', 'pt'])) {
     }
     throw new Error(`no se pudo traducir con números intactos: ${lang} ${obj.clave || 'cierre'}`);
   };
-  out.cierre = trad({ cierre: es.cierre }).cierre;
-  for (const pg of es.paginas) out.paginas.push(trad(pg));
+  if (!solo.length) out.cierre = trad({ cierre: es.cierre }).cierre;
+  out.paginas = es.paginas.map(pg => {
+    if (solo.length && !solo.includes(pg.clave)) return out.paginas.find(x => x.clave === pg.clave) || trad(pg);
+    return trad(pg);
+  });
   writeFileSync(`${dir}paginas.${lang}.json`, JSON.stringify(out, null, 1));
   console.log(`ok ${lang}: ${out.paginas.length} páginas`);
 }
