@@ -1,0 +1,14 @@
+{
+  "fecha": "2026-11-06T05:27:56.353Z",
+  "proveedor": "openai",
+  "pregunta": "Guías y lodges de pesca de dorado en Paso de la Patria y Itatí (Corrientes) que publiquen precio de la salida de pesca con guía y lancha (por día o por lancha). Respondé en español. Para cada dato: valor con moneda, vigencia o fecha, y la URL exacta del sitio oficial u operador donde figura. Solo lo publicado hoy; si no hay valor publicado, decilo.",
+  "cita_pescamapa": false,
+  "urls": [
+    "https://pescar.pro/destinos/corrientes/paso-de-la-patria",
+    "https://carecapesca.com/pesca-del-dorado-2026/",
+    "https://www.nervouswaters.com/the-lodges/pira-lodge/",
+    "https://www.nervouswaters.com/the-lodges/suinda-lodge/"
+  ],
+  "texto": "A continuación, se detallan las opciones de guías y lodges de pesca de dorado en Paso de la Patria e Itatí (Corrientes) que publican los precios de sus salidas de pesca con guía y lancha. Se incluye el valor con moneda, la vigencia o fecha de publicación y la URL exacta del sitio oficial u operador donde figura la información.\n\n**Paso de la Patria:**\n\n1. **Pescar SD:**\n   - **Precio:** ARS $350.000,00 por día.\n   - **Vigencia:** Información publicada recientemente.\n   - **URL:** ([pescar.pro](https://pescar.pro/destinos/corrientes/paso-de-la-patria?utm_source=openai))\n\n2. **Careca Pesca:**\n   - **Precio:** Desde $250.000 por pescador, en base a tres pescadores por lancha.\n   - **Vigencia:** Publicado hace 6 meses.\n   - **URL:** ([carecapesca.com](https://carecapesca.com/pesca-del-dorado-2026/?utm_source=openai))\n\n3. **Pirá Lodge:**\n   - **Precio:** US$ 4.050 por persona para 3 noches y 2 días de pesca.\n   - **Vigencia:** Publicado hace 6,1 años.\n   - **URL:** ([nervouswaters.com](https://www.nervouswaters.com/the-lodges/pira-lodge/?utm_source=openai))\n\n**Itatí:**\n\n1. **Suindá Lodge:**\n   - **Precio:** US$ 4.050 por persona para 3 noches y 2 días de pesca.\n   - **Vigencia:** Publicado hace 6,1 años.\n   - **URL:** ([nervouswaters.com](https://www.nervouswaters.com/the-lodges/suinda-lodge/?utm_source=openai))\n\nEs importante destacar que algunos precios pueden no estar actualizados debido a la fecha de publicación de la información. Se recomienda contactar directamente a los operadores para obtener tarifas vigentes y detalles adicionales. ",
+  "error": null
+}

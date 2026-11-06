@@ -1,0 +1,9 @@
+{
+  "fecha": "2026-11-06T05:27:56.276Z",
+  "proveedor": "openai",
+  "pregunta": "Cuánto cuesta la licencia de pesca deportiva en la provincia de Corrientes (Argentina) para extranjeros y para argentinos, por día, semana y temporada, en 2026. Respondé en español. Para cada dato: valor con moneda, vigencia o fecha, y la URL exacta del sitio oficial u operador donde figura. Solo lo publicado hoy; si no hay valor publicado, decilo.",
+  "cita_pescamapa": false,
+  "urls": [],
+  "texto": "Al 6 de noviembre de 2026, no se han publicado oficialmente los costos de las licencias de pesca deportiva en la provincia de Corrientes para el año 2026, ni para argentinos ni para extranjeros, ya sea por día, semana o temporada. La información disponible en los sitios oficiales del Gobierno de Corrientes no incluye detalles actualizados sobre estos valores.\n\nPara obtener la información más precisa y actualizada, se recomienda consultar directamente con la Dirección de Recursos Naturales de Corrientes o visitar el Boletín Oficial de la Provincia de Corrientes, donde se publican las disposiciones oficiales relacionadas con la pesca deportiva. ",
+  "error": null
+}

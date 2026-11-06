@@ -1,0 +1,46 @@
+name: Measure AI assistants
+
+# Runs the control questions (docs/preguntas-llm.md) in ChatGPT (web search) and Gemini (Google Search) and pushes answers,
+# cited domains and "does it cite pescamapa.com" to the scratch branch `medicion-ia` (never merged, never deployed).
+# Needs the repo secrets OPENAI_API_KEY and GEMINI_API_KEY; a provider without its secret is skipped with a note in the summary.
+# Weekly (Monday) and on demand. Baseline of 5/11/2026: docs/investigacion/medicion-ia/2026-11-05/LEEME.md.
+
+on:
+  push:
+    branches: [main]
+    paths: [".github/workflows/medir-ia.yml"]
+  schedule:
+    - cron: "41 14 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  medir:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - name: Measure
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          OUT: ${{ runner.temp }}/medicion
+        run: node scripts/medir-ia.mjs
+      - name: Push to branch medicion-ia
+        run: |
+          set -e
+          dest="$(date -u +%Y-%m-%d-%H%M)"
+          git config user.name "Claude" && git config user.email "noreply@anthropic.com"
+          url="https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git"
+          if git ls-remote --exit-code --heads "$url" medicion-ia >/dev/null 2>&1; then
+            git fetch -q --depth=1 "$url" medicion-ia && git checkout -q -B medicion-ia FETCH_HEAD
+          else
+            git checkout -q --orphan medicion-ia && git rm -rfq . 2>/dev/null || true
+          fi
+          mkdir -p "$dest" && cp -r "${{ runner.temp }}/medicion/." "$dest/"
+          git add "$dest" && git commit -qm "Medición: $dest"
+          git push -q "$url" medicion-ia
+          echo "Resultados en la rama medicion-ia, carpeta $dest"
