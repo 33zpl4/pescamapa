@@ -407,6 +407,17 @@ jobs:
           # River conditions: the calculations, the store script with an example, the block in a guide and the hub page.
           python3 wordpress/build/rio-traer.py --test
           cp wordpress/build/rio-ejemplo.json /tmp/pm-rio.json
+          # The example reading is dated 26/10/2026 and the page calls a reading "old" after a few days (that made this check fail
+          # on 6/11/2026 with no change to the code): shift every date so the newest reading is always yesterday.
+          python3 - <<'PY'
+          import re, datetime
+          s = open('/tmp/pm-rio.json').read()
+          fechas = sorted(set(re.findall(r'\d{4}-\d{2}-\d{2}', s)))
+          delta = (datetime.date.today() - datetime.timedelta(days=1)) - datetime.date.fromisoformat(fechas[-1])
+          s = re.sub(r'\d{4}-\d{2}-\d{2}', lambda m: (datetime.date.fromisoformat(m.group(0)) + delta).isoformat(), s)
+          open('/tmp/pm-rio.json', 'w').write(s)
+          print('fechas del ejemplo corridas', delta.days, 'días')
+          PY
           sed 's/^\$aplicar = false;/$aplicar = true;/' wordpress/scripts/rio-guardar.php > /tmp/rio-guardar.php
           wp --path="$WP" eval-file /tmp/rio-guardar.php
           wp --path="$WP" eval-file /tmp/rio-guardar.php   # idempotent
