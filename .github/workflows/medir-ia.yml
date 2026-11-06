@@ -19,6 +19,7 @@ permissions:
 jobs:
   medir:
     runs-on: ubuntu-latest
+    timeout-minutes: 40
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -30,6 +31,7 @@ jobs:
           OUT: ${{ runner.temp }}/medicion
         run: node scripts/medir-ia.mjs
       - name: Push to branch medicion-ia
+        if: always()
         run: |
           set -e
           dest="$(date -u +%Y-%m-%d-%H%M)"
