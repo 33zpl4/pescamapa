@@ -867,6 +867,213 @@
      "h": "<strong>Want help planning your trip?</strong> Write to us using <a href=\"{viaje}\">the trip form</a> and we'll send you guide and lodge options, free of charge and with no obligation."
     }
    ]
+  },
+  {
+   "clave": "pesca-desde-brasil-corrientes",
+   "slug": "fishing-in-corrientes-from-brazil",
+   "especie": "dorado",
+   "titulo": "Fishing in Corrientes from Brazil: license, documents, routes & costs (2026/27)",
+   "bajada": "Which license an angler coming from Brazil needs, approximate cost, what documents to bring, and travel times to Paso de la Patria, Esquina, and Goya.",
+   "seo_title": "Fishing Corrientes from Brazil: license & how to get there",
+   "seo_description": "How to fish in Corrientes coming from Brazil: foreign tourist license (from about $ 35,000 per day), entry documents, and routes with travel times.",
+   "datos": [
+    "The foreign tourist license (residence outside Argentina) is set in liters of “súper” gasoline (the standard grade, not premium): 16 liters for one day, 20 for two, 24 for three, 28 for four, and 36 for six.",
+    "With “súper” gasoline at about $ 2,177 per liter, that's approximately $ 35,000 for one day, $ 44,000 for two, $ 52,000 for three, $ 61,000 for four, and $ 78,000 for six.",
+    "The license is obtained online, 24 hours a day, and the portal is available in Spanish, English, and Portuguese; the registration accepts the Brazilian CPF as a document.",
+    "To enter Argentina from Brazil you need a physical RG in good condition or a valid passport; digital versions and driver's license (CNH) are not accepted.",
+    "From Uruguaiana to Esquina is 310 km (4 h 31 min) and from São Borja to Paso de la Patria, 386 km (4 h 45 min), according to Google Maps."
+   ],
+   "fuentes": [
+    {
+     "nombre": "Disposición 1144/2024, Dirección de Recursos Naturales de Corrientes (27 de septiembre de 2024): types, liters, and license values",
+     "url": "https://www.aicacyp.ar/wp-content/uploads/2025/02/Disposicion-1144.pdf",
+     "oficial": 1
+    },
+    {
+     "nombre": "Pump prices from the Secretaría de Energía: average “súper” gasoline price at 14 Corrientes stations (21 October 2026)",
+     "url": "",
+     "oficial": 1
+    },
+    {
+     "nombre": "License portal of the Dirección de Recursos Naturales de Corrientes: registration (read on 6 November 2026)",
+     "url": "https://www.recnaturalesctes.gob.ar/signup",
+     "oficial": 1
+    },
+    {
+     "nombre": "Corrientes Ministry of Tourism: online licenses in three languages (note from 6 February 2019)",
+     "url": "https://turismo.corrientes.gob.ar/noticia/corrientes-ofrece-un-sistema-de-avanzada-en-la-region-en-la-venta-de-licencias-de-pesca-deportiva",
+     "oficial": 1
+    },
+    {
+     "nombre": "Paso Santo Tomé - São Borja, National Security Ministry",
+     "url": "https://www.argentina.gob.ar/seguridad/pasosinternacionales/detalle/ruta/74/Santo-Tom%C3%A9-Sao-Borja",
+     "oficial": 1
+    },
+    {
+     "nombre": "Official tourism site of Argentina: entry documents (28 October 2026)",
+     "url": "",
+     "oficial": 1
+    },
+    {
+     "nombre": "Google Maps: routes by car checked on 6 November 2026",
+     "url": "",
+     "oficial": 0
+    }
+   ],
+   "bloques": [
+    {
+     "t": "p",
+     "h": "<strong>Short answer.</strong> To fish in Corrientes, a Brazilian needs the <strong>foreign tourist license</strong>, which is obtained online and paid in pesos based on the price of “súper” gasoline. Today it costs <strong>about $ 35,000 for one day, $ 52,000 for three days, and $ 78,000 for six</strong>. To enter, a physical RG in good condition or a passport is enough. From Uruguaiana to Esquina is about 310 km and 4 h 30 min driving."
+    },
+    {
+     "t": "h2",
+     "h": "How much does a fishing license in Corrientes cost for a foreigner?"
+    },
+    {
+     "t": "tabla",
+     "cab": [
+      "Duration",
+      "Liters of “súper” gasoline",
+      "Approximate value today",
+      "Annex value (October 2024)"
+     ],
+     "filas": [
+      [
+       "1 day",
+       "16",
+       "approx. $ 35,000",
+       "$ 18,160"
+      ],
+      [
+       "2 days",
+       "20",
+       "approx. $ 44,000",
+       "$ 22,700"
+      ],
+      [
+       "3 days",
+       "24",
+       "approx. $ 52,000",
+       "$ 27,240"
+      ],
+      [
+       "4 days",
+       "28",
+       "approx. $ 61,000",
+       "$ 31,780"
+      ],
+      [
+       "6 days",
+       "36",
+       "approx. $ 78,000",
+       "$ 40,860"
+      ]
+     ]
+    },
+    {
+     "t": "p",
+     "h": "The liters are from Annex I of Disposición 1144/2024 of the Dirección de Recursos Naturales de Corrientes. The value is updated only with the price of “súper” gasoline sold at the Automóvil Club Argentino in Corrientes Capital: the annex used $ 1,135 per liter in October 2024. We calculated today's approximate value with $ 2,177 per liter, which is the average at 14 Corrientes stations according to pump prices from the Secretaría de Energía (updated 21 October 2026). It's not the exact ACA price: the portal shows the current amount at purchase."
+    },
+    {
+     "t": "h2",
+     "h": "Is it worth getting a multi-day license?"
+    },
+    {
+     "t": "p",
+     "h": "Yes. Each extra day costs less: the 3-day license (24 liters) is half the price of three one-day licenses (48 liters, about $ 104,000), and the 6-day license (36 liters) is just over a third of six one-day licenses (96 liters). This is our calculation using the table's liters."
+    },
+    {
+     "t": "h2",
+     "h": "How do you get the license online?"
+    },
+    {
+     "t": "lista",
+     "items": [
+      "<strong>On the portal of the Dirección de Recursos Naturales de Corrientes.</strong> It's available 24 hours and in Spanish, English, and Portuguese, according to the provincial Ministry of Tourism (2019 note, made for Brazilian tourism).",
+      "<strong>Registration requires</strong> type and ID number, email, first and last name, phone, location, profile photo, and password.",
+      "<strong>Document:</strong> the registration dropdown offers DNI, <strong>Brazilian CPF</strong>, Uruguayan CI, Argentine passport, and \"Others\" (screenshot from 6 November 2026).",
+      "<strong>The license has a QR code</strong> that the inspector checks with a phone. Bring it, printed or on your phone, on the boat."
+     ]
+    },
+    {
+     "t": "p",
+     "h": "We couldn't confirm which payment methods the portal accepts for foreigners: ask the Dirección de Recursos Naturales (ventas@recnaturalesctes.gob.ar or +54 379 4909039). The exemption benefits in the regulation (retirees, people with disabilities, under 15) apply only to those with residence in Corrientes."
+    },
+    {
+     "t": "h2",
+     "h": "What documents do I need to enter Argentina from Brazil?"
+    },
+    {
+     "t": "lista",
+     "items": [
+      "<strong>Physical RG in good condition or valid passport.</strong> Digital versions are not accepted, including digital RG.",
+      "<strong>CNH is not valid</strong> as an entry document.",
+      "<strong>Under 13 years old:</strong> need a special authorization; see the process at argentina.gob.ar (\"entering the country with a minor\").",
+      "Some guides and lodges recommend an RG less than 10 years old: this is practical advice, not an official requirement."
+     ]
+    },
+    {
+     "t": "p",
+     "h": "According to Argentina's official tourism site, checked on 28 October 2026. Confirm with Immigration before traveling."
+    },
+    {
+     "t": "h2",
+     "h": "How long does it take from the border?"
+    },
+    {
+     "t": "tabla",
+     "cab": [
+      "Car route",
+      "Distance",
+      "Time",
+      "Road"
+     ],
+     "filas": [
+      [
+       "Uruguaiana (Brazil) → Esquina",
+       "310 km",
+       "4 h 31 min",
+       "RN14 and RP126, with tolls"
+      ],
+      [
+       "Paso de los Libres (Argentina) → Esquina",
+       "307 km",
+       "4 h 22 min",
+       "RN14 and RP126, with tolls"
+      ],
+      [
+       "São Borja (Brazil) → Paso de la Patria",
+       "386 km",
+       "4 h 45 min",
+       "RN12"
+      ]
+     ]
+    },
+    {
+     "t": "p",
+     "h": "Google Maps times checked on 6 November 2026; do not include border wait. The Santo Tomé - São Borja crossing, via the International Integration Bridge, is open 24 hours (National Security Ministry; phone (3756) 420035)."
+    },
+    {
+     "t": "h2",
+     "h": "Where to fish and how much does the trip cost?"
+    },
+    {
+     "t": "p",
+     "h": "To choose your destination and accommodation, see <a href=\"{n:viaje-dorado-amigos-precios}\">the dorado trip with friends</a> (lodges with package from US$ 605 per person) and <a href=\"{n:precio-viaje-dorado-lodge}\">how much a dorado fishing trip costs</a> (lodges by number of nights)."
+    },
+    {
+     "t": "h2",
+     "h": "What this page doesn't cover yet"
+    },
+    {
+     "t": "p",
+     "h": "What's needed to cross with your own car, fishing gear, and bait through customs; payment methods on the portal for foreigners; the route to Goya; rates in reais from operators who publish them; and the schedules and waits for each crossing. We'll add these when we verify them with a source and date."
+    },
+    {
+     "t": "p",
+     "h": "<strong>Want help planning your trip?</strong> Tell us where you're leaving from, dates, and how many people in <a href=\"{viaje}\">the trip form</a> and we'll write you with guide and lodging options, with no cost or obligation."
+    }
+   ]
   }
  ]
 }

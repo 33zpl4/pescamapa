@@ -127,7 +127,7 @@ foreach ( [ 'es', 'en', 'pt' ] as $l ) {
 		$campos = [
 			'clave' => $clave, 'idioma' => $l, 'autor' => 'Equipo Pescamapa', 'actualizado' => $hoy,
 			'bajada' => $pg['bajada'], 'nota_datos' => array_map( fn( $x ) => [ 'dato' => $x ], $pg['datos'] ),
-			'fuentes' => [ [ 'nombre' => $fuentes_txt[ $l ], 'url' => '', 'oficial' => 0, 'consultada' => $hoy ] ],
+			'fuentes' => isset( $pg['fuentes'] ) ? array_map( fn( $f ) => [ 'nombre' => $f['nombre'], 'url' => $f['url'] ?? '', 'oficial' => ! empty( $f['oficial'] ) ? 1 : 0, 'consultada' => $hoy ], $pg['fuentes'] ) : [ [ 'nombre' => $fuentes_txt[ $l ], 'url' => '', 'oficial' => 0, 'consultada' => $hoy ] ],
 			'seo_title' => $pg['seo_title'], 'seo_description' => $pg['seo_description'],
 			'nota_tipo' => 'guia', 'nota_fecha' => $hoy, 'nota_especie' => $pg['especie'],
 			'nota_origen' => 'Precios leídos el 5/11/2026 en páginas de operadores (investigar.yml, rama investigacion). Detalle interno: docs/investigacion/precios-paquetes-2026-11-05.md. En público: investigación propia a partir de datos públicos y proveedores asociados.',
