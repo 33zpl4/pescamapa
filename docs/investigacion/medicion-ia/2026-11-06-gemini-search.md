@@ -14,8 +14,8 @@ Corrida del workflow `medir-ia.yml` (carpeta `2026-11-06-0756` de la rama `medic
 
 ## Qué aprendimos (y qué se hizo)
 1. **Gemini con búsqueda contesta con valores concretos de la licencia patagónica 2026/27.** Verificados contra el texto del reglamento oficial (actualizado el 26/10/2026): extranjeros $ 50.000 / $ 140.000 / $ 280.000; residentes $ 12.500 / $ 25.000 / $ 50.000; trolling adicional; sin cargo mayores de 65, menores de 12, discapacidad. → **Se creó la página "Licencia de pesca en la Patagonia 2026/27" (es/en/pt)** y se enlazó desde las de precios.
-2. **Error nuestro detectado:** la nota de Bariloche tenía la licencia en dólares (US$ 30/90/180, dato de un operador). Los valores oficiales son en pesos. → **Corregida** en es/en/pt.
-3. Las respuestas de IA **inventan o mezclan** valores (en esta misma corrida, ChatGPT dio un precio que no existe y Gemini rangos genéricos): publicar el dato verificado con fecha es lo que se puede citar.
+2. **Corrección de moneda (no era un dato falso):** la nota de Bariloche traía la licencia en dólares (US$ 30/90/180, de un operador). Son los valores oficiales en pesos ($ 50.000 / $ 140.000 / $ 280.000) convertidos a dólares con un tipo de cambio de ~1.550–1.670, así que eran coherentes. Se reemplazó por la cifra oficial en pesos, que es la fuente primaria, en es/en/pt. (Primero lo describí como un error nuestro: era una conversión, no un error.)
+3. Las respuestas de IA a veces dan valores sin fuente verificable (ChatGPT dio un precio de Pescar que no existe); los rangos de Gemini (p. ej. US$ 550–700 el día en Bariloche) no se pueden descartar: son compatibles con tarifas "desde" más altas. Publicar el dato verificado, con fecha y como piso o rango según corresponda, es lo que se puede citar.
 4. Los redireccionadores de grounding de Google (`vertexaisearch.cloud.google.com/grounding-api-redirect/…`) **no se pueden leer** (robots.txt) ni desde el sandbox: para ver la fuente real hay que pedir la URL a ChatGPT o buscarla por dominio.
 
 ## Huecos que muestra la medición (candidatos a guía, por orden)
