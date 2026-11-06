@@ -746,13 +746,14 @@
    "titulo": "Licencia de pesca en la Patagonia argentina 2026/27: cuánto cuesta y dónde vale",
    "bajada": "Valores oficiales del permiso de pesca patagónico para la temporada 2026/27, para extranjeros y residentes, dónde sirve, cuánto dura y qué se paga aparte.",
    "seo_title": "Licencia de pesca en la Patagonia 2026/27: precios",
-   "seo_description": "Cuánto cuesta el permiso de pesca en Patagonia 2026/27: extranjeros $ 50.000 por día y $ 280.000 la temporada; residentes desde $ 12.500. Dónde vale.",
+   "seo_description": "Cuánto cuesta el permiso de pesca en Patagonia 2026/27: extranjeros $ 50.000 por día y $ 280.000 la temporada; vecinos de países limítrofes, 10 días a $ 50.000.",
    "datos": [
     "Extranjeros no residentes: $ 50.000 por día, $ 140.000 por 10 días y $ 280.000 por temporada (valores 2026/27, en pesos).",
     "Residentes en el país: $ 12.500 por día, $ 25.000 por 10 días y $ 50.000 por temporada.",
     "El mismo permiso vale en Neuquén, Río Negro, Chubut y los Parques Nacionales del Sur; Santa Cruz y Tierra del Fuego tienen el suyo.",
     "La temporada de pesca va del 1 de noviembre de 2026 al 1 de mayo de 2027 inclusive; el permiso de temporada vale hasta el 31 de octubre de 2027.",
-    "Sin cargo: mayores de 65 años, jubilados, pensionados, menores de hasta 12 años y personas con discapacidad con acreditación oficial."
+    "Sin cargo: mayores de 65 años, jubilados, pensionados, menores de hasta 12 años y personas con discapacidad con acreditación oficial.",
+    "Río Negro vende además un permiso de 10 días para extranjeros no residentes de países limítrofes (Brasil entre ellos) a $ 50.000; es una categoría provincial y vale solo en la provincia que lo emite."
    ],
    "bloques": [
     {
@@ -791,6 +792,12 @@
        "$ 25.000"
       ],
       [
+       "Extranjero no residente de país limítrofe (categoría provincial, Río Negro)",
+       "",
+       "$ 50.000",
+       ""
+      ],
+      [
        "Trolling (permiso adicional, además del ordinario)",
        "$ 25.000",
        "$ 50.000",
@@ -801,6 +808,14 @@
     {
      "t": "p",
      "h": "Valores en pesos argentinos del Reglamento General de Pesca Deportiva Continental Patagónico, texto actualizado el 26 de octubre de 2026. Leído el 6 de noviembre de 2026. En dólares el valor cambia con el tipo de cambio del día."
+    },
+    {
+     "t": "h2",
+     "h": "¿Hay un permiso más barato para vecinos?"
+    },
+    {
+     "t": "p",
+     "h": "Sí, en Río Negro. Su página de venta oficial incluye el <strong>permiso para extranjeros no residentes de país limítrofe, de 10 días, a $ 50.000</strong> (código E-L10), frente a $ 140.000 del permiso común de 10 días para extranjeros. Pueden usarlo, por ejemplo, quienes viven en Brasil, Chile, Uruguay, Paraguay o Bolivia. Es una categoría propia de la provincia: el reglamento dice que los permisos de categorías que no figuran en el cuadro común <strong>solo valen en la jurisdicción que los expide</strong>, así que este vale en Río Negro y no en Neuquén, Chubut ni los Parques Nacionales. El listado de valores de Chubut publicado por la revista Aire Libre también lo incluye; confirmalo en la página de venta de Chubut antes de contar con él."
     },
     {
      "t": "h2",
