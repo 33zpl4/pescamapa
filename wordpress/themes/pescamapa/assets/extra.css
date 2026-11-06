@@ -288,7 +288,14 @@
 }
 
 /* Tables inside notes (size/bag limits): scroll sideways on narrow screens instead of breaking the layout */
-.prose .wp-block-table { overflow-x: auto; margin: 1.2em 0; }
+.prose .wp-block-table { overflow-x: auto; margin: 1.2em 0;
+	/* Scroll cue (6/11/2026): a soft shadow shows on the side where the table continues, and disappears at the end of the scroll
+	   (the first two gradients cover the shadows once the edge is reached: background-attachment local). */
+	background:
+		linear-gradient(to right, var(--paper) 30%, transparent) 0 0 / 2.5rem 100% no-repeat local,
+		linear-gradient(to left, var(--paper) 30%, transparent) 100% 0 / 2.5rem 100% no-repeat local,
+		radial-gradient(farthest-side at 0 50%, rgb(17 37 31 / 0.22), transparent) 0 0 / 0.9rem 100% no-repeat scroll,
+		radial-gradient(farthest-side at 100% 50%, rgb(17 37 31 / 0.22), transparent) 100% 0 / 0.9rem 100% no-repeat scroll; }
 .prose .wp-block-table table { min-width: 560px; }
 .prose .wp-block-table th, .prose .wp-block-table td { text-align: left; vertical-align: top; padding: 8px 10px; border-bottom: 1px solid var(--line); }
 
