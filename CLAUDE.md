@@ -82,6 +82,8 @@ Los reglamentos cambian y en este nicho el lector se cobra un error. Por eso:
    reglamento vigente con la autoridad (no alcanza con un informe).
 5. Las FAQ con `PENDIENTE` no entran al JSON-LD.
 
+**APIs de IA (ChatGPT, Gemini): uso quirúrgico (dueño, 6/11/2026).** Cuestan por llamada: se corren cuando se detectó una oportunidad, con una pregunta concreta y una estrategia, no en calendario ni "por las dudas". Primero lo que no cuesta (`investigar.yml`, lo ya medido). `medir-ia.yml` es solo a pedido y con `preguntas`/`proveedores` acotados. Ver `docs/estado.md`.
+
 ## Reglas de contenido
 
 - **Áreas, no puntos de pesca.** No publicar coordenadas de pesqueros ni

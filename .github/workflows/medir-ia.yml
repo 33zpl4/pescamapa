@@ -3,15 +3,19 @@ name: Measure AI assistants
 # Runs the control questions (docs/preguntas-llm.md) in ChatGPT (web search) and Gemini (Google Search) and pushes answers,
 # cited domains and "does it cite pescamapa.com" to the scratch branch `medicion-ia` (never merged, never deployed).
 # Needs the repo secrets OPENAI_API_KEY and GEMINI_API_KEY; a provider without its secret is skipped with a note in the summary.
-# Weekly (Monday) and on demand. Baseline of 5/11/2026: docs/investigacion/medicion-ia/2026-11-05/LEEME.md.
+# On demand only. Baseline of 5/11/2026: docs/investigacion/medicion-ia/2026-11-05/LEEME.md.
 
 on:
-  push:
-    branches: [main]
-    paths: [".github/workflows/medir-ia.yml"]
-  schedule:
-    - cron: "41 14 * * 1"
+  # Only on demand (owner ruling 6/11/2026): every call to ChatGPT/Gemini costs, so it runs when an opportunity was detected,
+  # with the questions that matter. No schedule and no push trigger.
   workflow_dispatch:
+    inputs:
+      preguntas:
+        description: "Questions to run: numbers from docs/preguntas-llm.md and/or dorado-amigos, comma separated (empty = all 21)"
+        default: ""
+      proveedores:
+        description: "Providers: openai, gemini-search (empty = both)"
+        default: ""
 
 permissions:
   contents: write
@@ -29,6 +33,8 @@ jobs:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           OUT: ${{ runner.temp }}/medicion
+          PREGUNTAS: ${{ github.event.inputs.preguntas }}
+          PROVEEDORES: ${{ github.event.inputs.proveedores }}
         run: node scripts/medir-ia.mjs
       - name: Push to branch medicion-ia
         if: always()

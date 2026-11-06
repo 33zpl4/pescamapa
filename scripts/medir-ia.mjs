@@ -12,6 +12,12 @@ const proveedores = [['openai', real('OPENAI_API_KEY')], ['gemini-search', real(
 const preguntas = readFileSync(new URL('../docs/preguntas-llm.md', import.meta.url), 'utf8').split('\n')
   .map(l => l.match(/^\|\s*(\d+)\s*\|\s*(es|en|pt)\s*\|\s*(.+?)\s*\|\s*$/)).filter(Boolean).map(m => ({ n: m[1], q: m[3] }));
 preguntas.push({ n: 'dorado-amigos', q: 'Quiero organizar un viaje de pesca con amigos para pescar dorado en Argentina. ¿Cuántos días conviene, cuánto cuesta por persona y dónde me alojo? Citá fuentes.' });
+// Uso quirúrgico: PREGUNTAS="13,14,dorado-amigos" y PROVEEDORES="openai" limitan qué se corre (cada llamada cuesta).
+const solo = (process.env.PREGUNTAS || '').split(',').map(x => x.trim()).filter(Boolean);
+const soloProv = (process.env.PROVEEDORES || '').split(',').map(x => x.trim()).filter(Boolean);
+for (let i = preguntas.length - 1; i >= 0; i--) if (solo.length && !solo.includes(preguntas[i].n)) preguntas.splice(i, 1);
+for (let i = proveedores.length - 1; i >= 0; i--) if (soloProv.length && !soloProv.includes(proveedores[i][0])) proveedores.splice(i, 1);
+if (!preguntas.length) { console.error('PREGUNTAS no coincide con ninguna pregunta'); process.exit(1); }
 mkdirSync(out, { recursive: true });
 const filas = [], dom = {};
 async function enLotes(items, n, f) { const it = items[Symbol.iterator](); await Promise.all(Array.from({ length: n }, async () => { for (const x of it) await f(x); })); }
