@@ -1,0 +1,13 @@
+{
+  "fecha": "2026-11-06T07:59:02.210Z",
+  "proveedor": "openai",
+  "pregunta": "Temporada de pesca deportiva 2026/27 en Chubut: fechas de apertura y cierre, permiso necesario y valor. URL exacta de la fuente oficial (chubut.gob.ar o Dirección de Pesca Continental).",
+  "cita_pescamapa": false,
+  "urls": [
+    "https://pesca.chubut.gob.ar/arranca-la-temporada-de-pesca-deportiva-25-26-en-chubut/",
+    "https://pesca.chubut.gob.ar/",
+    "https://pesca.chubut.gob.ar/normativas/"
+  ],
+  "texto": "La Temporada de Pesca Deportiva Continental 2026/2027 en la provincia de Chubut se extiende desde el 1 de noviembre de 2026 hasta el 1 de mayo de 2027. Para practicar la pesca deportiva durante este período, es obligatorio obtener un permiso de pesca. El trámite para obtener dicho permiso se realiza de manera completamente online a través de DINO, el asistente digital del Gobierno de Chubut. ([pesca.chubut.gob.ar](https://pesca.chubut.gob.ar/arranca-la-temporada-de-pesca-deportiva-25-26-en-chubut/?utm_source=openai))\n\n**Pasos para obtener el permiso de pesca:**\n\n1. Acceder a DINO desde tu celular o computadora.\n2. Seleccionar el tipo de permiso según tu condición (residente, turista, menor, etc.), la vigencia y la modalidad de pesca.\n3. Realizar el pago online correspondiente.\n4. Recibir el permiso en formato PDF por WhatsApp, listo para ser presentado en tus salidas de pesca.\n\nEste proceso es ágil, seguro y completamente digital, facilitando el acceso al permiso sin necesidad de desplazamientos. ([pesca.chubut.gob.ar](https://pesca.chubut.gob.ar/arranca-la-temporada-de-pesca-deportiva-25-26-en-chubut/?utm_source=openai))\n\nPara obtener información actualizada sobre los costos de los permisos y cualquier otra consulta relacionada, se recomienda visitar el sitio oficial de la Secretaría de Pesca de Chubut: ([pesca.chubut.gob.ar](https://pesca.chubut.gob.ar/?utm_source=openai))\n\nAdemás, puedes contactar directamente a la Secretaría de Pesca a través de los siguientes medios:\n\n- **Dirección:** Av. Libertad 279, Rawson, Chubut.\n- **Horario de atención:** Lunes a viernes de 8:00 a 17:00 hs.\n- **Correo electrónico:** secretaria.pesca.ch@gmail.com\n- **Teléfonos:** (0280) 4484835, 4483640 (int. 113)\n\nPara más detalles sobre normativas y regulaciones vigentes, puedes consultar la sección de normativas en el sitio oficial: ([pesca.chubut.gob.ar](https://pesca.chubut.gob.ar/normativas/?utm_source=openai)) ",
+  "error": null
+}

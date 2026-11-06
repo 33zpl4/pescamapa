@@ -1,0 +1,12 @@
+{
+  "fecha": "2026-11-06T07:59:02.853Z",
+  "proveedor": "openai",
+  "pregunta": "Valores oficiales de la licencia (permiso) de pesca deportiva continental patagónica temporada 2026/27 (Neuquén, Río Negro, Chubut y Parques Nacionales): turista extranjero y residente argentino, por día, 10 días y temporada. Dame los valores en pesos, la fecha de la norma o comunicado y la URL exacta de la fuente oficial (gobierno provincial, Parques Nacionales o aicacyp.ar).",
+  "cita_pescamapa": false,
+  "urls": [
+    "https://reglamentodepesca.org.ar/reglamento/",
+    "https://www.aicacyp.ar/blog/2026/10/27/"
+  ],
+  "texto": "Para la temporada de pesca deportiva continental patagónica 2026/2027, que abarca las provincias de Neuquén, Río Negro, Chubut y los Parques Nacionales del Sur, los valores oficiales de las licencias son los siguientes:\n\n**Para residentes argentinos:**\n\n- **Permiso diario:** $12.500\n- **Permiso por 10 días:** $25.000\n- **Permiso por temporada:** $50.000\n\n**Para turistas extranjeros no residentes:**\n\n- **Permiso diario:** $50.000\n- **Permiso por 10 días:** $140.000\n- **Permiso por temporada:** $280.000\n\nEstos valores fueron establecidos en el Reglamento General de Pesca Deportiva Continental Patagónica para la temporada 2026/2027, publicado el 26 de octubre de 2026. Puedes consultar el reglamento completo en el siguiente enlace: ([reglamentodepesca.org.ar](https://reglamentodepesca.org.ar/reglamento/?utm_source=openai))\n\nAdemás, la Asociación de Industriales y Comerciantes de Artículos para Caza y Pesca (AICACYP) publicó información relevante sobre la temporada de pesca 2026/2027 el 27 de octubre de 2026. Puedes acceder a su comunicado aquí: ([aicacyp.ar](https://www.aicacyp.ar/blog/2026/10/27/?utm_source=openai))\n\nEs importante destacar que la temporada de pesca comienza el 1 de noviembre de 2026 y finaliza el 1 de mayo de 2027. Se recomienda revisar el reglamento completo y las disposiciones específicas de cada jurisdicción antes de planificar tus actividades de pesca. ",
+  "error": null
+}
