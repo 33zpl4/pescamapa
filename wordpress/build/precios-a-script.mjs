@@ -4,7 +4,8 @@
 import { readFileSync, writeFileSync } from 'node:fs';
 const aplicar = process.argv.includes('--aplicar');
 const actualizar = process.argv.includes('--actualizar'); // reescribe contenido de notas que ya existen (no crea)
-const solo = (process.argv.find(a => a.startsWith('--solo=')) || '').slice(7); // clave a actualizar
+const solo = (process.argv.find(a => a.startsWith('--solo=')) || '').slice(7); // claves a actualizar, separadas por coma
+const marcador = (process.argv.find(a => a.startsWith('--marcador=')) || '').slice(11); // texto que debe quedar en el contenido (verificación)
 const d = new URL('../contenido/precios/', import.meta.url).pathname;
 const es0 = JSON.parse(readFileSync(`${d}paginas.es.json`, 'utf8'));
 // Las claves, la especie y los tipos de bloque son del original: la traducción no los toca.
@@ -20,7 +21,8 @@ const php = String.raw`<?php
  */
 $aplicar = ${aplicar ? 'true' : 'false'};
 $actualizar = ${actualizar ? 'true' : 'false'};
-$solo = '${solo}';
+$solo = array_filter( explode( ',', '${solo}' ) );
+$marcador = '${marcador}';
 $hoy     = '20261105';
 $datos   = [
 	'es' => json_decode( <<<'JSON_ES'
@@ -91,7 +93,7 @@ foreach ( [ 'es', 'en', 'pt' ] as $l ) {
 		}
 		$ya = array_filter( get_posts( [ 'post_type' => 'pm_nota', 'post_status' => 'any', 'meta_key' => 'clave', 'meta_value' => $clave, 'numberposts' => -1 ] ), fn( $p ) => pm_idioma_de( $p->ID ) === $l );
 		if ( $actualizar ) {
-			if ( ( $solo && $solo !== $clave ) || ! $ya ) {
+			if ( ( $solo && ! in_array( $clave, $solo, true ) ) || ! $ya ) {
 				continue;
 			}
 			$id     = reset( $ya )->ID;
@@ -101,7 +103,9 @@ foreach ( [ 'es', 'en', 'pt' ] as $l ) {
 				wp_update_post( [ 'ID' => $id, 'post_content' => wp_slash( $cuerpo ) ] );
 				update_field( 'nota_datos', array_map( fn( $x ) => [ 'dato' => $x ], $pg['datos'] ), $id );
 				update_field( 'actualizado', $hoy, $id );
-				$ok = false !== strpos( get_post_field( 'post_content', $id ), 'US$ 855' ) || false !== strpos( get_post_field( 'post_content', $id ), 'US$ 855' );
+				$guardado = get_post_field( 'post_content', $id );
+				$tablas = count( array_filter( $pg['bloques'], fn( $b ) => 'tabla' === $b['t'] ) );
+				$ok = substr_count( $guardado, '<table' ) === $tablas && ( '' === $marcador || false !== strpos( $guardado, $marcador ) ) && false === strpos( $guardado, '{n:' );
 				WP_CLI::log( ( $ok ? 'VERIFIED' : 'FALLÓ' ) . ": $clave ($l) #$id " . get_permalink( $id ) );
 				$ok || WP_CLI::error( "$clave ($l): la lectura de vuelta no coincide." );
 			}
