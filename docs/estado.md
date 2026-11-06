@@ -103,6 +103,8 @@ todas a nosotros (centralizar datos y cobrar comisión más adelante).
 
 ## Decisiones del dueño (no relitigar)
 
+- **APIs de IA: uso quirúrgico (6/11/2026).** Cada llamada a ChatGPT o Gemini cuesta: no se corre nada "por las dudas" ni en calendario. Se consulta cuando se detectó una oportunidad o hace falta un dato, con una hipótesis y una pregunta concreta (qué decisión cambia la respuesta). Antes se prueba lo que no cuesta: leer las páginas con `investigar.yml`, mirar lo ya medido. `medir-ia.yml` corre solo a pedido y con `preguntas`/`proveedores` acotados. Cada corrida deja anotado por qué se hizo y qué se decidió con el resultado (`docs/investigacion/medicion-ia/`).
+
 | Fecha | Decisión |
 | --- | --- |
 | 20/10/2026 | Sin carteles "en construcción", sin noindex, sin bloquear publicación. Completitud = guía interna. |
