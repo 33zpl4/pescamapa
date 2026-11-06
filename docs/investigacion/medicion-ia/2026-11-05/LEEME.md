@@ -5,7 +5,7 @@ Script: `scripts/consultar-ia.mjs` (ChatGPT `gpt-4.1` con búsqueda web; Gemini 
 ## Resultado
 - **Citas a Pescamapa: 0 de 42 respuestas** (línea base esperada: las páginas de precios se publicaron hoy).
 - Respuestas con al menos una URL: ChatGPT 15 de 20; Gemini 4 de 20 (Gemini cita lo que recuerda, sin buscar).
-- Respuestas vacías o con error tras reintentos: p5-gemini, p12-gemini, p14-gemini, p15-gemini, p17-gemini.
+- Respuestas vacías o con error tras reintentos: p12, p14, p15 y p17 de Gemini (**429, cuota diaria de la capa gratuita agotada**, no un fallo del script; la p5 se recuperó el 6/11). Repetir esas cuatro cuando la cuota se reinicie o con facturación activada.
 
 ## Dominios que sí se citan (para saber con quién competimos)
 - **ChatGPT:** google.com (9), corrientes.com.ar (3), reglamentodepesca.org.ar (3), youtube.com (2), oneoutdoors.org (2), eltransitoibera.com (1), cardumi.com (1), viajacongus.com (1), pescaargentina.com (1), misiones.gob.ar (1), goyasurubi.com (1), festivalesargentina.com (1)

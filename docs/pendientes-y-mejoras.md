@@ -89,7 +89,9 @@ Cómo se trabaja cada ítem: `docs/nueva-ciudad.md` (guías) y `docs/prestadores
 
 ### Páginas de precios (5/11/2026)
 - Hambaré: temporada de sus tarifas (las de 3d/4d para grupos de 3 ya están: US$ 855 y US$ 1.105, leídas el 5/11/2026).
-- Leer las tarifas de Karandá y Delta Lodge (Nervous Waters), Pirá "Rates 2025-26", Villa María y Despedida Lodge; tarifas de guías en Paso de la Patria y Goya; micros y vuelos; valor de la licencia de Corrientes.
-- Medición día 14 (19/11) y día 30 (5/12): `node scripts/consultar-ia.mjs`, mismas preguntas, carpeta `docs/investigacion/medicion-ia/`. Gemini con búsqueda: clave con `x-goog-api-key`.
+- Leer las tarifas de Karandá y Delta Lodge (Nervous Waters), Pirá "Rates 2025-26", Villa María y Despedida Lodge; micros y vuelos.
+- **Revisado el 6/11/2026 y no publicado en ningún sitio que se pueda citar** (no se completa sin inventar): salidas con precio en Paso de la Patria y en Goya (Pescar: "todavía no hay salidas publicadas"; Careca Pesca solo tiene un paquete de torneo de agosto 2026, vencido; un portal turístico da rangos sin prestador); valor de la licencia de Corrientes (la página del Ministerio de Turismo no muestra monto y el portal de licencias carga con JavaScript sin texto). Para estos hay que pedírselos a un prestador o a Recursos Naturales; ChatGPT dio un $ 350.000 de Pescar que no existe.
+- Temporada de las tarifas de Hambaré: preguntársela a la posada (WhatsApp +54 9 3777 622477, número público de su sitio).
+- Medición día 14 (19/11) y día 30 (5/12): `node scripts/consultar-ia.mjs`, mismas preguntas, carpeta `docs/investigacion/medicion-ia/`. Gemini con búsqueda: cargar los secretos del repo `GEMINI_API_KEY` y `OPENAI_API_KEY` y correr `medir-ia.yml` (semanal, lunes 14:41 UTC); la clave de Gemini de la capa gratuita se agota (429) tras unas 45 llamadas por día, así que para medir con regularidad hay que activar facturación en la cuenta de Google. Tablas de las notas: ya tienen sombra de desplazamiento (6/11/2026).
 - Verificar con una captura que las tablas se ven bien en el celular (workflow `capturas.yml`).
 - Reemplazar el dato público por datos propios cuando haya acuerdos con prestadores (fila por fila en el JSON).
