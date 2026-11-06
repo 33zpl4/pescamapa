@@ -28,3 +28,7 @@ Corrida del workflow `medir-ia.yml` (carpeta `2026-11-06-0756` de la rama `medic
 ## Próximos pasos
 - Cargar `OPENAI_API_KEY` como secreto para medir ChatGPT desde `medir-ia.yml`.
 - Repetir el lunes 9/11 y a los 14 y 30 días; comparar si las páginas de precios y la de licencia entran como fuente.
+
+## Corrección del 6/11/2026 (permiso para vecinos)
+Dije que el "permiso especial de 10 días para vecinos" que mencionó Gemini **no existía**, porque no figura en el cuadro común del reglamento patagónico (punto 3º). **Sí existe como categoría provincial:** la página de venta oficial de Río Negro lo lista (`E-L10`, 10 días, $ 50.000, leído el 6/11/2026) y el listado de Chubut de la revista Aire Libre también. Por el punto 4º del reglamento, las categorías fuera del cuadro común valen solo en la provincia que las emite. Gemini tenía razón; el error fue buscar solo en el texto general. La página de licencia ya lo incluye.
+
