@@ -1374,6 +1374,201 @@
      "h": "<strong>Quer que a gente te ajude a planejar a viagem?</strong> Escreva para nós no <a href=\"{viaje}\">formulário da viagem</a> e retornamos opções de guia e lodge, sem custo nem compromisso."
     }
    ]
+  },
+  {
+   "clave": "licencias-extranjeros-argentina",
+   "slug": "licenca-pesca-estrangeiros-argentina-2026-27",
+   "especie": "trucha",
+   "titulo": "Licença de pesca para estrangeiros na Argentina 2026/27: quanto custa em cada região",
+   "bajada": "Valores 2026/27 da permissão de pesca para estrangeiros não residentes na Patagônia, Terra do Fogo, Santa Cruz e Corrientes, em pesos e em dólares aproximados, e qual você precisa conforme o destino.",
+   "seo_title": "Licença de pesca para estrangeiros na Argentina 2026/27",
+   "seo_description": "Quanto custa a licença de pesca para estrangeiros na Argentina 2026/27: Patagônia, Terra do Fogo, Santa Cruz e Corrientes, em pesos e dólares aprox.",
+   "datos": [
+    "Na Patagônia, um estrangeiro não residente paga $ 50.000 por um dia e $ 280.000 pela temporada (≈ US$ 32 e ≈ US$ 181).",
+    "Na Terra do Fogo, a permissão ordinária custa $ 78.000 por um dia e $ 260.000 pela temporada, e as zonas preferenciais (rios Grande e Menéndez; Ewan Sur, Irigoyen e lago Fagnano) exigem uma permissão adicional.",
+    "Em Santa Cruz são $ 90.000 por um dia e $ 450.000 pela temporada; em Corrientes o valor é fixado em litros de gasolina comum (aprox. $ 35.000 por um dia).",
+    "Terra do Fogo e Río Negro têm tarifas mais baixas para estrangeiros de países vizinhos (por exemplo, brasileiros), com condições próprias.",
+    "Os valores em dólares são aproximados, com US$ 1 = $ 1.545 (xe.com, 8 de novembro de 2026): o peso varia, use a cotação do dia."
+   ],
+   "fuentes": [
+    {
+     "nombre": "Regulamento Geral de Pesca Desportiva Continental Patagônica: categorias e valores das permissões 2026/27 (texto atualizado em 26 de outubro de 2026)",
+     "url": "https://reglamentodepesca.org.ar/reglamento/",
+     "oficial": 1
+    },
+    {
+     "nombre": "Resolução S.A. Nº 259/2026 da Secretaria de Meio Ambiente da Terra do Fogo (1 de outubro de 2026): Anexos I a VI, temporada 2026/2027",
+     "url": "",
+     "oficial": 1
+    },
+    {
+     "nombre": "Pesca e Aquicultura de Santa Cruz: valores das permissões 2026/27 (portal oficial, lido em 4 de novembro de 2026)",
+     "url": "https://pesca.santacruz.gob.ar/valores/",
+     "oficial": 1
+    },
+    {
+     "nombre": "Disposição 1144/2024, Direção de Recursos Naturais de Corrientes: licenças de turista estrangeiro por litros de gasolina comum",
+     "url": "https://www.aicacyp.ar/wp-content/uploads/2025/02/Disposicion-1144.pdf",
+     "oficial": 1
+    },
+    {
+     "nombre": "Mesa Diretiva de Pesca Desportiva Zona Andina: permissão para estrangeiros não residentes de país vizinho de Río Negro (lido em 6 de novembro de 2026)",
+     "url": "https://www.permisosdepesca.com.ar/ofertas.php",
+     "oficial": 1
+    },
+    {
+     "nombre": "xe.com: 1 ARS = 0,00064733 USD (8 de novembro de 2026)",
+     "url": "https://www.xe.com/currencyconverter/convert/?Amount=1&From=ARS&To=USD",
+     "oficial": 0
+    }
+   ],
+   "bloques": [
+    {
+     "t": "p",
+     "h": "<strong>Resposta curta.</strong> Não existe uma licença nacional: cada região tem a sua. Para um estrangeiro não residente, em 2026/27 custa <strong>$ 50.000 por um dia na Patagônia (≈ US$ 32)</strong>, <strong>$ 78.000 na Terra do Fogo (≈ US$ 50), mais uma permissão adicional se pescar nas zonas preferenciais</strong>, <strong>$ 90.000 em Santa Cruz (≈ US$ 58)</strong> e <strong>aprox. $ 35.000 em Corrientes (≈ US$ 23)</strong>. Uma permissão patagônica vale em quatro jurisdições; as outras três só valem em sua província."
+    },
+    {
+     "t": "h2",
+     "h": "De relance: valores 2026/27 para estrangeiros não residentes"
+    },
+    {
+     "t": "tabla",
+     "cab": [
+      "Região",
+      "Um dia",
+      "Vários dias",
+      "Temporada"
+     ],
+     "filas": [
+      [
+       "<strong>Patagônia</strong> (Neuquén, Río Negro, Chubut e Parques Nacionais)",
+       "$ 50.000 (≈ US$ 32)",
+       "10 dias: $ 140.000 (≈ US$ 91)",
+       "$ 280.000 (≈ US$ 181)"
+      ],
+      [
+       "<strong>Terra do Fogo</strong> (permissão ordinária)",
+       "$ 78.000 (≈ US$ 50)",
+       "3 dias: $ 117.000 (≈ US$ 76); 7 dias: $ 195.000 (≈ US$ 126)",
+       "$ 260.000 (≈ US$ 168)"
+      ],
+      [
+       "<strong>Santa Cruz</strong>",
+       "$ 90.000 (≈ US$ 58)",
+       "7 dias: $ 300.000 (≈ US$ 194)",
+       "$ 450.000 (≈ US$ 291)"
+      ],
+      [
+       "<strong>Corrientes</strong> (aproximado, conforme o preço da gasolina)",
+       "aprox. $ 35.000 (≈ US$ 23)",
+       "3 dias: aprox. $ 52.000 (≈ US$ 34); 6 dias: aprox. $ 78.000 (≈ US$ 50)",
+       "O anexo de turista vai até 6 dias"
+      ]
+     ]
+    },
+    {
+     "t": "p",
+     "h": "Valores em pesos das normas de cada região (veja as fontes), lidos entre 4 e 8 de novembro de 2026. Os valores em dólares são aproximados, com US$ 1 = $ 1.545 segundo xe.com de 8 de novembro de 2026: o peso varia, então use a cotação do dia para pagar. Os valores de Corrientes são um cálculo nosso (litros × preço da gasolina comum); o detalhe está em <a href=\"{n:pesca-desde-brasil-corrientes}\">pesca em Corrientes desde o Brasil</a>."
+    },
+    {
+     "t": "h2",
+     "h": "Qual permissão preciso conforme o destino?"
+    },
+    {
+     "t": "lista",
+     "items": [
+      "<strong>Bariloche, San Martín e Junín de los Andes, Esquel e Trevelin, parques nacionais:</strong> a permissão patagônica. Detalhes, validade e regras em <a href=\"{n:licencia-pesca-patagonia-precios}\">licença de pesca na Patagônia 2026/27</a>.",
+      "<strong>Río Grande (truta do mar):</strong> a permissão da Terra do Fogo e, para as zonas preferenciais, uma permissão adicional (abaixo). Os guias de <a href=\"{d:rio-grande}\">Río Grande</a> e <a href=\"{d:rio-gallegos}\">Río Gallegos</a> têm o detalhe de cada ambiente.",
+      "<strong>Río Gallegos e o restante de Santa Cruz:</strong> a permissão de Santa Cruz, que é emitida online no portal oficial.",
+      "<strong>Paso de la Patria, Esquina, Goya e o restante de Corrientes:</strong> a licença de turista estrangeiro de Corrientes, que é emitida online.",
+      "<strong>Entre Ríos, Santa Fé, Chaco, Misiones e o Delta de Buenos Aires:</strong> cada província tem a sua; ainda não as incluímos porque não lemos suas fontes oficiais."
+     ]
+    },
+    {
+     "t": "h2",
+     "h": "Terra do Fogo: permissão ordinária e permissão adicional por zona preferencial"
+    },
+    {
+     "t": "p",
+     "h": "A permissão ordinária para estrangeiro não residente é a da tabela acima. Para as zonas preferenciais, a Resolução 259/2026 estabelece ainda uma <strong>permissão adicional</strong>, com tarifa diferente para quem reside em países vizinhos como o Brasil:"
+    },
+    {
+     "t": "tabla",
+     "cab": [
+      "Zona e categoria",
+      "Um dia",
+      "3 dias",
+      "7 dias",
+      "Temporada"
+     ],
+     "filas": [
+      [
+       "Rios Grande e Menéndez, estrangeiro",
+       "$ 59.000",
+       "$ 163.000",
+       "$ 260.000",
+       "$ 390.000"
+      ],
+      [
+       "Rios Grande e Menéndez, estrangeiro de país vizinho",
+       "$ 65.000",
+       "$ 78.000",
+       "$ 130.000",
+       "$ 175.000"
+      ],
+      [
+       "Rios Ewan Sur, Irigoyen e lago Fagnano, estrangeiro",
+       "$ 43.000",
+       "$ 85.000",
+       "$ 130.000",
+       "$ 247.000"
+      ],
+      [
+       "Rios Ewan Sur, Irigoyen e lago Fagnano, estrangeiro de país vizinho",
+       "$ 35.000",
+       "$ 62.000",
+       "$ 98.000",
+       "$ 169.000"
+      ]
+     ]
+    },
+    {
+     "t": "p",
+     "h": "Um cálculo nosso, supondo que a permissão adicional se soma à ordinária (a resolução a chama de \"adicional\"): uma semana nos rios Grande e Menéndez custa $ 455.000 (≈ US$ 295) para um estrangeiro e $ 325.000 (≈ US$ 210) para um de país vizinho. Um lodge de Río Grande calcula cerca de US$ 550 por pescador por semana pela licença; não sabemos o que inclui esse cálculo, então vale a pena perguntar. <strong>Uma peculiaridade da norma:</strong> a permissão diária para vizinhos em Río Grande e Menéndez ($ 65.000) é mais cara que a diária geral ($ 59.000), embora para 3 dias, semana e temporada seja bem mais barata; pode ser um erro da resolução, então confirme com a Secretaria de Meio Ambiente antes de pagar."
+    },
+    {
+     "t": "p",
+     "h": "Como solicitar: quem vende a permissão registra o pescador no Sistema de Informação de Pesca Desportiva (siped.ar) e verifica o documento de identidade; é preciso portar o documento e o comprovante de pagamento (ou a permissão digital do app \"pesca deportiva\") enquanto pesca. Para acessar o rio Grande e seus afluentes é necessário estar registrado e ter uma reserva prévia no sistema de acessos saptdf.ar; o rio está aberto de 30 de outubro de 2026 a 18 de abril de 2027, com devolução obrigatória de todos os salmonídeos."
+    },
+    {
+     "t": "h2",
+     "h": "Patagônia: a permissão unificada e a de vizinhos de Río Negro"
+    },
+    {
+     "t": "p",
+     "h": "Uma mesma permissão de Neuquén, Río Negro, Chubut ou Parques Nacionais vale nas quatro jurisdições. O trolling exige uma permissão adicional ($ 25.000 por dia, $ 50.000 por 10 dias e $ 100.000 por temporada). Río Negro vende ainda uma permissão de 10 dias para estrangeiros de países vizinhos por $ 50.000 (≈ US$ 32), válida apenas nessa província. Todos os detalhes estão em <a href=\"{n:licencia-pesca-patagonia-precios}\">licença de pesca na Patagônia 2026/27</a>."
+    },
+    {
+     "t": "h2",
+     "h": "Se eu for com um lodge ou guia, está incluída?"
+    },
+    {
+     "t": "p",
+     "h": "Depende do pacote: nos nove que comparamos, a licença está incluída em 4, fica de fora em 3 e 2 não esclarecem. Pergunte por escrito antes de pagar; veja <a href=\"{n:paquete-incluye-no-incluye}\">o que inclui um pacote de pesca na Argentina e o que custa à parte</a>."
+    },
+    {
+     "t": "h2",
+     "h": "O que esta página ainda não cobre"
+    },
+    {
+     "t": "p",
+     "h": "As licenças de Entre Ríos, Santa Fé, Chaco, Misiones e Buenos Aires; as permissões adicionais de trolling da Terra do Fogo e Santa Cruz; e a permissão de vizinhos de Chubut, que aparece em uma lista secundária e não em uma fonte oficial lida. Vamos adicionar quando verificarmos com uma fonte e uma data."
+    },
+    {
+     "t": "p",
+     "h": "<strong>Quer ajuda para planejar sua viagem?</strong> Escreva no <a href=\"{viaje}\">formulário da viagem</a> e enviaremos opções de guia e lodge, sem custo ou compromisso."
+    }
+   ]
   }
  ]
 }

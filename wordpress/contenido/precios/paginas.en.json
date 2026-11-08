@@ -1374,6 +1374,201 @@
      "h": "<strong>Want help planning your trip?</strong> Write to us using <a href=\"{viaje}\">the trip form</a> and we’ll send you guide and lodge options, with no cost or obligation."
     }
    ]
+  },
+  {
+   "clave": "licencias-extranjeros-argentina",
+   "slug": "fishing-license-foreigners-argentina-2026-27",
+   "especie": "trout",
+   "titulo": "Fishing license for foreigners in Argentina 2026/27: costs by region",
+   "bajada": "2026/27 rates for non-resident foreign fishing permits in Patagonia, Tierra del Fuego, Santa Cruz, and Corrientes, in pesos and approximate US dollars, and which one you need depending on where you go.",
+   "seo_title": "Fishing license for foreigners in Argentina 2026/27",
+   "seo_description": "How much is the fishing license for foreigners in Argentina 2026/27: Patagonia, Tierra del Fuego, Santa Cruz, and Corrientes, in pesos and approx. US dollars.",
+   "datos": [
+    "In Patagonia, a non-resident foreigner pays $ 50,000 for one day and $ 280,000 for the season (≈ US$ 32 and ≈ US$ 181).",
+    "In Tierra del Fuego, the standard permit costs $ 78,000 for one day and $ 260,000 for the season, and preferred areas (Rivers Grande and Menéndez; Ewan Sur, Irigoyen, and Lake Fagnano) require an additional permit.",
+    "In Santa Cruz, it's $ 90,000 for one day and $ 450,000 for the season; in Corrientes, the price is set in liters of “súper” gasoline (approx. $ 35,000 for one day).",
+    "Tierra del Fuego and Río Negro have lower rates for foreigners from neighboring countries (for example, Brazilians), with their own conditions.",
+    "Dollar amounts are approximate, with US$ 1 = $ 1,545 (xe.com, 8 November 2026): the peso fluctuates, so use the exchange rate of the day."
+   ],
+   "fuentes": [
+    {
+     "nombre": "General Regulations for Patagonian Continental Sport Fishing: permit categories and rates 2026/27 (text updated 26 October 2026)",
+     "url": "https://reglamentodepesca.org.ar/reglamento/",
+     "oficial": 1
+    },
+    {
+     "nombre": "Resolution S.A. No. 259/2026 of the Secretariat of Environment of Tierra del Fuego (1 October 2026): Annexes I to VI, 2026/2027 season",
+     "url": "",
+     "oficial": 1
+    },
+    {
+     "nombre": "Santa Cruz Fishing and Aquaculture: permit rates 2026/27 (official portal, read on 4 November 2026)",
+     "url": "https://pesca.santacruz.gob.ar/valores/",
+     "oficial": 1
+    },
+    {
+     "nombre": "Provision 1144/2024, Corrientes Directorate of Natural Resources: foreign tourist licenses by liters of “súper” gasoline",
+     "url": "https://www.aicacyp.ar/wp-content/uploads/2025/02/Disposicion-1144.pdf",
+     "oficial": 1
+    },
+    {
+     "nombre": "Andean Zone Sport Fishing Board: permit for non-resident foreigners from neighboring countries in Río Negro (read on 6 November 2026)",
+     "url": "https://www.permisosdepesca.com.ar/ofertas.php",
+     "oficial": 1
+    },
+    {
+     "nombre": "xe.com: 1 ARS = 0.00064733 USD (8 November 2026)",
+     "url": "https://www.xe.com/currencyconverter/convert/?Amount=1&From=ARS&To=USD",
+     "oficial": 0
+    }
+   ],
+   "bloques": [
+    {
+     "t": "p",
+     "h": "<strong>Short answer.</strong> There is no national license: each region has its own. For a non-resident foreigner, in 2026/27 it costs <strong>$ 50,000 for one day in Patagonia (≈ US$ 32)</strong>, <strong>$ 78,000 in Tierra del Fuego (≈ US$ 50), plus an additional permit if you fish in preferred areas</strong>, <strong>$ 90,000 in Santa Cruz (≈ US$ 58)</strong> and <strong>approx. $ 35,000 in Corrientes (≈ US$ 23)</strong>. A Patagonian permit is valid in four jurisdictions; the other three are only valid in their province."
+    },
+    {
+     "t": "h2",
+     "h": "At a glance: 2026/27 rates for non-resident foreigners"
+    },
+    {
+     "t": "tabla",
+     "cab": [
+      "Region",
+      "One day",
+      "Multiple days",
+      "Season"
+     ],
+     "filas": [
+      [
+       "<strong>Patagonia</strong> (Neuquén, Río Negro, Chubut, and National Parks)",
+       "$ 50,000 (≈ US$ 32)",
+       "10 days: $ 140,000 (≈ US$ 91)",
+       "$ 280,000 (≈ US$ 181)"
+      ],
+      [
+       "<strong>Tierra del Fuego</strong> (standard permit)",
+       "$ 78,000 (≈ US$ 50)",
+       "3 days: $ 117,000 (≈ US$ 76); 7 days: $ 195,000 (≈ US$ 126)",
+       "$ 260,000 (≈ US$ 168)"
+      ],
+      [
+       "<strong>Santa Cruz</strong>",
+       "$ 90,000 (≈ US$ 58)",
+       "7 days: $ 300,000 (≈ US$ 194)",
+       "$ 450,000 (≈ US$ 291)"
+      ],
+      [
+       "<strong>Corrientes</strong> (approximate, based on gasoline price)",
+       "approx. $ 35,000 (≈ US$ 23)",
+       "3 days: approx. $ 52,000 (≈ US$ 34); 6 days: approx. $ 78,000 (≈ US$ 50)",
+       "The tourist annex covers up to 6 days"
+      ]
+     ]
+    },
+    {
+     "t": "p",
+     "h": "Rates in pesos are from each region's regulations (see sources), read between 4 and 8 November 2026. Dollar amounts are approximate, with US$ 1 = $ 1,545 according to xe.com on 8 November 2026: the peso fluctuates, so use the exchange rate of the day to pay. Corrientes values are our calculation (liters × price of “súper” gasoline); details are in <a href=\"{n:pesca-desde-brasil-corrientes}\">fishing Corrientes from Brazil</a>."
+    },
+    {
+     "t": "h2",
+     "h": "Which permit do I need depending on where I go?"
+    },
+    {
+     "t": "lista",
+     "items": [
+      "<strong>Bariloche, San Martín and Junín de los Andes, Esquel and Trevelin, national parks:</strong> the Patagonian permit. Details, validity, and rules in <a href=\"{n:licencia-pesca-patagonia-precios}\">Patagonia fishing license 2026/27</a>.",
+      "<strong>Río Grande (sea-run trout):</strong> the Tierra del Fuego permit and, for preferred areas, an additional permit (below). The <a href=\"{d:rio-grande}\">Río Grande</a> and <a href=\"{d:rio-gallegos}\">Río Gallegos</a> guides have details for each fishery.",
+      "<strong>Río Gallegos and the rest of Santa Cruz:</strong> the Santa Cruz permit, which is processed online on the official portal.",
+      "<strong>Paso de la Patria, Esquina, Goya, and the rest of Corrientes:</strong> the Corrientes foreign tourist license, which is obtained online.",
+      "<strong>Entre Ríos, Santa Fe, Chaco, Misiones, and the Buenos Aires Delta:</strong> each province has its own; we have not included them yet because we have not read their official sources."
+     ]
+    },
+    {
+     "t": "h2",
+     "h": "Tierra del Fuego: standard permit and additional permit for preferred areas"
+    },
+    {
+     "t": "p",
+     "h": "The standard non-resident foreign permit is shown in the table above. For preferred areas, Resolution 259/2026 also sets an <strong>additional permit</strong>, with a different rate for residents of neighboring countries such as Brazil:"
+    },
+    {
+     "t": "tabla",
+     "cab": [
+      "Area and category",
+      "One day",
+      "3 days",
+      "7 days",
+      "Season"
+     ],
+     "filas": [
+      [
+       "Rivers Grande and Menéndez, foreigner",
+       "$ 59,000",
+       "$ 163,000",
+       "$ 260,000",
+       "$ 390,000"
+      ],
+      [
+       "Rivers Grande and Menéndez, foreigner from neighboring country",
+       "$ 65,000",
+       "$ 78,000",
+       "$ 130,000",
+       "$ 175,000"
+      ],
+      [
+       "Rivers Ewan Sur, Irigoyen, and Lake Fagnano, foreigner",
+       "$ 43,000",
+       "$ 85,000",
+       "$ 130,000",
+       "$ 247,000"
+      ],
+      [
+       "Rivers Ewan Sur, Irigoyen, and Lake Fagnano, foreigner from neighboring country",
+       "$ 35,000",
+       "$ 62,000",
+       "$ 98,000",
+       "$ 169,000"
+      ]
+     ]
+    },
+    {
+     "t": "p",
+     "h": "Our calculation, assuming the additional permit is added to the standard one (the resolution calls it \"adicional\"): one week on the Grande and Menéndez rivers costs $ 455,000 (≈ US$ 295) for a foreigner and $ 325,000 (≈ US$ 210) for one from a neighboring country. A Río Grande lodge estimates about US$ 550 per angler per week for the license; we do not know what their calculation includes, so it is best to ask them. <strong>An oddity in the regulation:</strong> the daily permit for neighboring countries in Grande and Menéndez ($ 65,000) is more expensive than the general daily permit ($ 59,000), though for 3 days, a week, and season it is much cheaper; this may be a mistake in the resolution, so confirm with the Secretariat of Environment before paying."
+    },
+    {
+     "t": "p",
+     "h": "How to get it: the seller registers the angler in the Sport Fishing Information System (siped.ar) and checks the ID; you must carry your ID and proof of payment (or the digital permit from the \"pesca deportiva\" app) while fishing. To access the Grande River and its tributaries, you must be registered and have a prior reservation in the saptdf.ar access system; the river is open from 30 October 2026 to 18 April 2027, with mandatory catch and release for all salmonids."
+    },
+    {
+     "t": "h2",
+     "h": "Patagonia: unified permit and Río Negro neighboring country permit"
+    },
+    {
+     "t": "p",
+     "h": "A single permit from Neuquén, Río Negro, Chubut, or National Parks is valid in all four jurisdictions. Trolling requires an additional permit ($ 25,000 per day, $ 50,000 for 10 days, and $ 100,000 for the season). Río Negro also sells a 10-day permit for foreigners from neighboring countries at $ 50,000 (≈ US$ 32), valid only in that province. Full details are in <a href=\"{n:licencia-pesca-patagonia-precios}\">Patagonia fishing license 2026/27</a>."
+    },
+    {
+     "t": "h2",
+     "h": "If I go with a lodge or guide, is it included?"
+    },
+    {
+     "t": "p",
+     "h": "It depends on the package: in the nine we compared, the license is included in 4, not included in 3, and 2 do not specify. Ask for it in writing before paying; see <a href=\"{n:paquete-incluye-no-incluye}\">what is included in a fishing package in Argentina and what costs extra</a>."
+    },
+    {
+     "t": "h2",
+     "h": "What this page does not cover yet"
+    },
+    {
+     "t": "p",
+     "h": "Licenses for Entre Ríos, Santa Fe, Chaco, Misiones, and Buenos Aires; additional trolling permits for Tierra del Fuego and Santa Cruz; and the neighboring country permit for Chubut, which appears in a secondary list and not in an official source we have read. We will add them when we verify them with a source and a date."
+    },
+    {
+     "t": "p",
+     "h": "<strong>Want help planning your trip?</strong> Write to us using the <a href=\"{viaje}\">trip form</a> and we will send you guide and lodge options, free of charge and with no obligation."
+    }
+   ]
   }
  ]
 }
