@@ -1074,6 +1074,306 @@
      "h": "<strong>¿Querés que te ayudemos a armar el viaje?</strong> Contanos desde dónde salís, fechas y cuántos son en <a href=\"{viaje}\">el formulario del viaje</a> y te escribimos con opciones de guía y alojamiento, sin costo ni compromiso."
     }
    ]
+  },
+  {
+   "clave": "paquete-incluye-no-incluye",
+   "slug": "que-incluye-paquete-pesca-argentina",
+   "especie": "dorado",
+   "titulo": "Qué incluye un paquete de pesca en Argentina y qué cuesta aparte (ejemplos 2026/27)",
+   "bajada": "Nueve paquetes publicados, lado a lado: qué cubre cada precio, qué queda fuera, qué cargos aparecen aparte y qué preguntar antes de pagar el depósito.",
+   "seo_title": "Qué incluye un paquete de pesca en Argentina",
+   "seo_description": "Qué incluye y qué cuesta aparte en paquetes de pesca en Argentina: licencia, traslados, vuelos, habitación individual y propinas, con ejemplos 2026/27.",
+   "datos": [
+    "En nueve paquetes publicados para 2026/27, la licencia de pesca está incluida en 4, queda fuera en 3 y 2 no lo aclaran.",
+    "Ninguno de los paquetes que lo aclaran incluye pasajes internacionales; solo un lodge de Corrientes incluye los vuelos chárter desde Buenos Aires.",
+    "El recargo por habitación individual va de US$ 200 por noche en un lodge de Chubut a 60 % del paquete (habitación y lancha) en un lodge de Corrientes.",
+    "Un lodge de Corrientes cobra US$ 650 por noche a un acompañante que no pesca y US$ 950 por pescar el día de llegada o de salida.",
+    "Un lodge de Río Grande pide un depósito del 50 % no reembolsable: las condiciones de cancelación cambian de un operador a otro."
+   ],
+   "bloques": [
+    {
+     "t": "p",
+     "h": "<strong>Respuesta corta.</strong> El precio de un paquete de pesca casi nunca cubre todo. Lo que más cambia de uno a otro es si incluye <strong>la licencia, los traslados, los vuelos, la habitación individual y las propinas</strong>, y qué cargos aparecen aparte (acompañante que no pesca, pescar el día de llegada o de salida). Antes de comparar números, compará qué trae cada precio. Abajo hay nueve paquetes publicados y las preguntas para pedir una cotización detallada."
+    },
+    {
+     "t": "h2",
+     "h": "Qué incluye cada paquete y qué no (ejemplos publicados)"
+    },
+    {
+     "t": "tabla",
+     "cab": [
+      "Paquete",
+      "Incluye",
+      "No incluye",
+      "Cargos aparte publicados"
+     ],
+     "filas": [
+      [
+       "<strong>Lodge en Corrientes</strong>, 7 noches (US$ 7.950)",
+       "Alojamiento en doble, todas las comidas, vinos, cerveza y licores, guía y equipo de préstamo",
+       "Pasajes internacionales y domésticos, traslados, licencia, lavandería, propinas",
+       "Habitación y lancha individuales: +60 % (unos US$ 4.770 más en la semana, cálculo nuestro). Acompañante que no pesca: US$ 650 por noche. Pescar el día de llegada o de salida: US$ 950 (día completo) o US$ 750 (medio día) por lancha"
+      ],
+      [
+       "<strong>Itatí Lodge</strong>, 7 noches (US$ 7.850)",
+       "Vuelos chárter entre Buenos Aires y el lodge, traslados a los aeropuertos, alojamiento, comidas y bebidas con alcohol, guía, licencia, moscas y equipo",
+       "Vuelos internacionales, lavandería, propinas",
+       "La página no publica cargos aparte"
+      ],
+      [
+       "<strong>Lodge en Iberá</strong>, 7 noches (US$ 6.400)",
+       "Comidas y bebidas, un guía cada dos o tres pescadores, conductor y asistente, vehículos del programa, recepción y traslados desde el aeropuerto, licencias y tasas del gobierno",
+       "Propinas (se pagan en la factura final), vuelos locales e internacionales, seguro, alquiler de equipo, moscas",
+       "La página dice a la vez \"ocupación individual\" (en el precio) y \"ocupación doble\" (en lo que incluye): hay que confirmarlo"
+      ],
+      [
+       "<strong>Lodge en Neuquén</strong>, 7 noches (US$ 6.950)",
+       "Traslado desde y hacia el aeropuerto de San Martín de los Andes, alojamiento en ocupación compartida, comidas, bebidas con alcohol, guía, equipo de préstamo",
+       "Pasajes internacionales y domésticos, traslado desde Bariloche, licencias, lavandería, propinas",
+       "La página no publica cargos aparte"
+      ],
+      [
+       "<strong>Lodges de Chubut</strong>, 7 noches (US$ 6.545 a US$ 9.200)",
+       "Alojamiento, todas las comidas y bebidas, guías (uno cada dos pescadores), cañas, reeles, botas y waders de préstamo, moscas y líder, traslados desde y hacia los aeropuertos de Esquel o Bariloche",
+       "La página no lo detalla (licencia y pasajes: confirmar)",
+       "Habitación individual: +US$ 200 por noche. Guía exclusivo: +US$ 325 por día. Acompañante: tarifa propia"
+      ],
+      [
+       "<strong>Semana organizada en Trevelin</strong> (US$ 5.800)",
+       "7 noches, 6 días de pesca guiada, comidas, bebidas, traslados desde Esquel, licencias y la organización del grupo",
+       "La página no lo detalla",
+       "La página no publica cargos aparte"
+      ],
+      [
+       "<strong>Posada en Esquina</strong>, 3 noches y 2 días (desde US$ 705, grupo de 2)",
+       "Alojamiento, desayuno, almuerzo y cena, bebidas, lancha, guía, dos docenas de morenas por persona, 50 litros de combustible y licencia",
+       "Material de pesca, salvo que se contrate con anticipación",
+       "La página no publica cargos aparte"
+      ],
+      [
+       "<strong>Barco-hotel en el Delta</strong>, 3 noches (desde US$ 1.260)",
+       "Alojamiento a bordo y días de pesca guiada; la página menciona cocina a cargo de un chef, barra libre y equipos de préstamo",
+       "La página no detalla licencia ni traslados",
+       "Carnada natural: se encarga por pedido y se cobra aparte"
+      ],
+      [
+       "<strong>Día con guía en Bariloche</strong>, día completo en el Limay (US$ 530)",
+       "Guía y bote privados, traslados, equipo, bebidas y almuerzo (en el medio día, refrigerio)",
+       "Licencia y propinas",
+       "Licencia gestionada por el operador: US$ 40 por persona por día. El Manso suma US$ 70"
+      ]
+     ]
+    },
+    {
+     "t": "p",
+     "h": "Precios y condiciones publicados o informados al 5 y 6 de noviembre de 2026, tal como los muestra cada operador. Cada uno cobra y agrupa distinto: por eso la tabla compara lo que incluye, no cuál conviene. Los precios de cada destino están en <a href=\"{n:precio-viaje-dorado-lodge}\">cuánto cuesta un viaje de pesca de dorado</a> y en <a href=\"{n:precio-semana-trucha-patagonia-norte}\">cuánto cuesta una semana de pesca de trucha</a>."
+    },
+    {
+     "t": "h2",
+     "h": "¿Qué cambia de un paquete a otro?"
+    },
+    {
+     "t": "lista",
+     "items": [
+      "<strong>La licencia:</strong> de los nueve ejemplos, 4 la incluyen (Itatí, Iberá, Trevelin y la posada de Esquina), 3 la dejan afuera (el lodge de Corrientes, el de Neuquén y el día en Bariloche) y 2 no lo aclaran (los lodges de Chubut y el barco-hotel). Los valores oficiales están en <a href=\"{n:licencia-pesca-patagonia-precios}\">licencia de pesca en la Patagonia 2026/27</a> y en <a href=\"{n:pesca-desde-brasil-corrientes}\">pesca en Corrientes desde Brasil</a>.",
+      "<strong>Los pasajes:</strong> ninguno de los paquetes que lo aclaran incluye pasajes internacionales. Solo Itatí incluye vuelos, los chárter desde Buenos Aires; otros dos dicen expresamente que los pasajes domésticos quedan afuera.",
+      "<strong>Los traslados:</strong> algunos incluyen el traslado desde el aeropuerto (Iberá, Neuquén desde San Martín de los Andes, Chubut desde Esquel o Bariloche, Trevelin desde Esquel) y otros lo dejan afuera (el lodge de Corrientes; en Neuquén, el que sale de Bariloche).",
+      "<strong>La habitación individual:</strong> se cobra de dos maneras que no son comparables a simple vista: +US$ 200 por noche (unos US$ 1.400 en una semana) en un lodge de Chubut y +60 % del paquete, habitación y lancha, en uno de Corrientes (unos US$ 4.770 en la semana). Es un cálculo nuestro con los valores publicados.",
+      "<strong>El acompañante que no pesca:</strong> un lodge de Corrientes cobra US$ 650 por noche; los lodges de Chubut tienen tarifa propia. Si viaja alguien que no pesca, es una de las primeras cosas para cotizar.",
+      "<strong>La cancelación:</strong> un lodge de Río Grande pide un depósito del 50 % no reembolsable (<a href=\"{d:rio-grande}\">pescar en Río Grande</a>). No encontramos las condiciones de cancelación de la mayoría en sus páginas: hay que pedirlas por escrito."
+     ]
+    },
+    {
+     "t": "h2",
+     "h": "Dos caminos para reservar: con un outfitter o directo con un operador argentino"
+    },
+    {
+     "t": "p",
+     "h": "Los lodges de la tabla se venden a través de outfitters y agencias de pesca que publican la tarifa por persona en dólares, con una lista de qué incluye y qué no; algunos agregan los vuelos chárter desde Buenos Aires (Itatí) o los traslados (Chubut, Neuquén). Las posadas y guías argentinos que publican precio (la posada de Esquina, el barco-hotel del Delta, los guías de Bariloche) lo hacen por grupo o por persona, en dólares o en pesos, y suelen dejar a tu cargo el pasaje hasta la zona. <strong>No encontramos datos confiables sobre cuál de los dos caminos usan más los pescadores de EE.UU., ni cuál sale más barato: no lo afirmamos.</strong> Lo que sí se comprueba en los ejemplos es que ni siquiera un paquete \"todo incluido\" cubre todo, y que quien coordina la pesca no siempre coordina los vuelos."
+    },
+    {
+     "t": "tabla",
+     "cab": [
+      "",
+      "Con un outfitter o agencia",
+      "Directo con un operador argentino"
+     ],
+     "filas": [
+      [
+       "Qué suele publicar",
+       "Tarifa por persona y por cantidad de noches, lista de qué incluye y qué no",
+       "Precio por grupo o por persona, en dólares o en pesos; a veces \"consultar\""
+      ],
+      [
+       "Qué suele dejar a tu cargo",
+       "Pasajes internacionales y, según el paquete, los domésticos y algunos traslados",
+       "El pasaje hasta la zona y el traslado desde el aeropuerto o la frontera"
+      ],
+      [
+       "Qué preguntar antes de pagar",
+       "Quién reserva los vuelos domésticos y las noches en Buenos Aires, quién responde si el viaje se interrumpe y a quién le pagás cada cosa",
+       "Si cotiza en dólares o en pesos, cómo se paga, qué incluye la licencia y quién te busca en el aeropuerto"
+      ]
+     ]
+    },
+    {
+     "t": "h2",
+     "h": "Cómo pedir una cotización detallada"
+    },
+    {
+     "t": "p",
+     "h": "Un mensaje que sirve para cualquier operador: <em>\"Hola, quiero cotizar [fechas] para [cantidad] pescadores. ¿Me pueden enviar una cotización detallada que muestre qué incluye y qué tengo que reservar por separado (licencia, traslados, vuelos, noches en Buenos Aires, habitación individual, acompañante, propinas), las condiciones de pago y de cancelación, y qué pasa si el clima o el río impiden pescar?\"</em>"
+    },
+    {
+     "t": "p",
+     "h": "Y estas diez preguntas, antes de pagar un depósito:"
+    },
+    {
+     "t": "lista",
+     "items": [
+      "¿Cuántos días de pesca y cuántas horas guiadas incluye?",
+      "¿Guía, lancha, comidas, alojamiento, traslados y licencia: cuáles están incluidos?",
+      "¿Por qué aeropuerto llego y cómo es el traslado hasta el lodge?",
+      "¿La pesca es privada o compartida? ¿Cuántos pescadores por guía?",
+      "¿Qué pasa si el clima, el río o el transporte interrumpen el viaje?",
+      "¿Cuánto es el depósito y cuáles son las condiciones de cancelación y reembolso?",
+      "¿Qué cargos extra hay: propinas, lavandería, habitación individual, acompañante?",
+      "¿Puede venir alguien que no pesca y cuánto cuesta?",
+      "¿Qué equipo puedo pedir prestado y qué tengo que llevar?",
+      "¿Cómo se pagan los extras y qué medios de pago aceptan?"
+     ]
+    },
+    {
+     "t": "h2",
+     "h": "Qué no cubre todavía esta página"
+    },
+    {
+     "t": "p",
+     "h": "Las condiciones de depósito y cancelación de la mayoría de los operadores, los seguros y la evacuación médica, y el detalle de cada conexión aérea. Los agregamos cuando los verifiquemos con una fuente y una fecha."
+    },
+    {
+     "t": "p",
+     "h": "<strong>¿Querés que te ayudemos a comparar?</strong> Contanos fechas, cuántos son y qué querés pescar en <a href=\"{viaje}\">el formulario del viaje</a> y te devolvemos opciones con lo que incluye cada una, sin costo ni compromiso."
+    }
+   ]
+  },
+  {
+   "clave": "reglas-equipo-patagonia",
+   "slug": "reglas-equipo-pesca-patagonia",
+   "especie": "trucha",
+   "titulo": "Equipo y reglas de pesca en la Patagonia: suela de fieltro, anzuelos y desinfección (2026/27)",
+   "bajada": "Lo que dice el reglamento patagónico sobre el calzado de vadeo, el equipo que entra al país, los anzuelos, el plomo y el horario, con el artículo de cada regla.",
+   "seo_title": "Reglas de equipo para pescar en la Patagonia (2026/27)",
+   "seo_description": "Qué prohíbe el reglamento patagónico 2026/27: suela de fieltro, anzuelos con rebaba, plomo, equipo sin desinfectar. Con el artículo de cada regla.",
+   "datos": [
+    "Está prohibido el calzado de vadeo con suela de fieltro en todos los ambientes que rige el reglamento patagónico (art. 22).",
+    "Los pescadores que ingresan al país deben usar equipos nuevos o desinfectados (art. 27); guías y prestadores desinfectan equipos, embarcaciones y vehículos cuando la autoridad lo pida (art. 28).",
+    "En ríos y arroyos la devolución es obligatoria, con un solo anzuelo simple sin rebaba o con la rebaba aplastada, y el pez se devuelve vivo (art. 17).",
+    "Se prohíben las anclas y plomadas con plomo y los señuelos con cuerpo o cabeza de plomo (art. 22).",
+    "La temporada va del 1 de noviembre de 2026 al 1 de mayo de 2027; solo se pesca de día y con un solo equipo por pescador."
+   ],
+   "fuentes": [
+    {
+     "nombre": "Reglamento General de Pesca Deportiva Continental Patagónico, Parte Primera: artículos 6, 7, 15 a 18, 22 y 24 a 28 (texto actualizado el 26 de octubre de 2026, leído el 6 de noviembre de 2026)",
+     "url": "https://reglamentodepesca.org.ar/reglamento/",
+     "oficial": 1
+    }
+   ],
+   "bloques": [
+    {
+     "t": "p",
+     "h": "<strong>Respuesta corta.</strong> En Neuquén, Río Negro, Chubut y los Parques Nacionales del Sur <strong>no se puede pescar con calzado de vadeo de suela de fieltro</strong>, el equipo que entra al país tiene que ser <strong>nuevo o estar desinfectado</strong>, y en ríos y arroyos hay que usar <strong>un solo anzuelo simple sin rebaba</strong> y devolver el pez vivo. Tampoco se permiten las anclas ni las plomadas con plomo, ni los señuelos con cuerpo o cabeza de plomo. Son reglas del reglamento común 2026/27; cada provincia tiene además sus anexos."
+    },
+    {
+     "t": "h2",
+     "h": "¿Puedo usar botas con suela de fieltro?"
+    },
+    {
+     "t": "p",
+     "h": "No. El artículo 22 prohíbe \"el uso de calzado de vadeo con suela de fieltro en todos los ambientes regidos por el presente reglamento\", es decir, en las cuatro jurisdicciones (Neuquén, Río Negro, Chubut y Parques Nacionales). Llevá botas de vadeo sin fieltro."
+    },
+    {
+     "t": "h2",
+     "h": "¿Hay que desinfectar el equipo?"
+    },
+    {
+     "t": "p",
+     "h": "Sí, en dos casos. El artículo 27 dice que es obligatorio para los pescadores que ingresen al país <strong>utilizar equipos nuevos o desinfectados</strong>. El artículo 28 obliga a pescadores, guías y prestadores a <strong>desinfectar los equipos, las embarcaciones y los vehículos</strong> en las oportunidades y condiciones que lo requiera la autoridad de aplicación. El reglamento no detalla el procedimiento en estos artículos."
+    },
+    {
+     "t": "h2",
+     "h": "¿Qué anzuelos y qué señuelos se pueden usar?"
+    },
+    {
+     "t": "tabla",
+     "cab": [
+      "Regla",
+      "Qué dice",
+      "Artículo"
+     ],
+     "filas": [
+      [
+       "Devolución obligatoria",
+       "En ríos y arroyos, incluidas sus nacientes y desembocaduras en lagunas y lagos y hasta 200 metros en ambas costas, se liberan todos los peces (con excepciones en los anexos)",
+       "17"
+      ],
+      [
+       "Anzuelo",
+       "En los ambientes de devolución obligatoria, un solo anzuelo simple sin rebaba o con la rebaba aplastada; el pez se devuelve vivo",
+       "17"
+      ],
+      [
+       "Un solo equipo",
+       "Cada pescador no puede usar al mismo tiempo más de un equipo de pesca",
+       "16"
+      ],
+      [
+       "Plomo",
+       "Prohibidos las anclas con plomo, las líneas con plomo, las plomadas y los señuelos con cuerpo o cabeza de plomo",
+       "22"
+      ],
+      [
+       "Cebado y carnada",
+       "Prohibido el cebado; no se pueden usar peces ni almejas como carnada donde la carnada está permitida",
+       "22 y 15"
+      ],
+      [
+       "Motores",
+       "Prohibido entrar con motores de dos tiempos carburados donde su uso está restringido, aunque sean auxiliares y no se usen; se recomiendan los de cuatro tiempos",
+       "22 y 25"
+      ]
+     ]
+    },
+    {
+     "t": "h2",
+     "h": "¿Cuándo y cuánto se puede pescar?"
+    },
+    {
+     "t": "lista",
+     "items": [
+      "<strong>Temporada:</strong> del 1 de noviembre de 2026 al 1 de mayo de 2027 inclusive (art. 7), con excepciones en los anexos de cada provincia.",
+      "<strong>Horario:</strong> solo con luz de día (art. 6).",
+      "<strong>Lagos y lagunas:</strong> se permite sacrificar un ejemplar por día y por pescador entre el 1 de diciembre de 2026 y el 31 de marzo de 2027 (art. 18).",
+      "<strong>Gravas:</strong> se recomienda no vadear sectores de grava fina en ríos y arroyos hasta el 1 de enero de 2027, para no dañar las camas de desove (art. 24)."
+     ]
+    },
+    {
+     "t": "p",
+     "h": "El permiso y sus valores están en <a href=\"{n:licencia-pesca-patagonia-precios}\">licencia de pesca en la Patagonia 2026/27</a>, y las fechas y vedas por zona, en <a href=\"{n:cuando-pescar-trucha-patagonia}\">cuándo pescar trucha en la Patagonia</a>."
+    },
+    {
+     "t": "h2",
+     "h": "Qué no cubre esta página"
+    },
+    {
+     "t": "p",
+     "h": "Santa Cruz y Tierra del Fuego tienen su propio reglamento (mirá las guías de <a href=\"{d:rio-gallegos}\">Río Gallegos</a> y <a href=\"{d:rio-grande}\">Río Grande</a>), y en el Litoral rigen otras normas (por ejemplo, en Corrientes el dorado y el surubí son de devolución obligatoria). Tampoco verificamos cómo se aplica el artículo 27 en la aduana ni el procedimiento de desinfección: el reglamento solo dice \"nuevos o desinfectados\". Los anexos de cada provincia pueden agregar reglas por río o lago: consultalos antes de pescar un ambiente puntual."
+    },
+    {
+     "t": "p",
+     "h": "<strong>¿Querés que te ayudemos a planificar el viaje?</strong> Escribinos en <a href=\"{viaje}\">el formulario del viaje</a> y te devolvemos opciones de guía y lodge, sin costo ni compromiso."
+    }
+   ]
   }
  ]
 }
