@@ -8,7 +8,7 @@
  * Dry run first. Run with wp-script.yml (script = esquel-foto-2026-11-08); the file lives in wordpress/fotos/.
  */
 
-$aplicar = false;
+$aplicar = true;
 $carpeta = '/tmp/pm-fotos';
 $foto    = [
 	'archivo' => 'esquel-trevelin-pescador-moscas.jpg', 'autor' => 'pesca.chubut.gob.ar', 'origen' => 'cedida',
