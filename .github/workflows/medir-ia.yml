@@ -11,7 +11,7 @@ on:
   workflow_dispatch:
     inputs:
       preguntas:
-        description: "Questions to run: numbers from docs/preguntas-llm.md and/or dorado-amigos, comma separated (empty = all 21)"
+        description: "Questions to run: numbers from docs/preguntas-llm.md and/or dorado-amigos, comma separated (empty = all 22)"
         default: ""
       proveedores:
         description: "Providers: openai, gemini-search (empty = both)"

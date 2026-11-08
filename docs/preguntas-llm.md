@@ -32,6 +32,14 @@ Las diez de arriba son del Litoral. Patagonia es el producto de mayor valor por 
 | 19 | es | ¿Cuánto cuesta un guía de pesca con mosca en Bariloche? |
 | 20 | es | ¿Cuándo empieza la temporada de pesca en Chubut y qué permiso necesito? |
 
+## Pregunta de licencias (agregada el 8/11/2026)
+
+Mide si el hub de licencias para extranjeros (publicado el 8/11/2026) aparece citado. Se corre en las mediciones de los días 14 y 30, igual que las otras.
+
+| # | Idioma | Pregunta |
+| --- | --- | --- |
+| 21 | en | How much is a fishing license for foreigners in Argentina in 2026/27, by region? |
+
 ## Registro
 
 | fecha | asistente | pregunta | ¿nos cita? | qué respondió / qué falta |
@@ -41,4 +49,4 @@ Las diez de arriba son del Litoral. Patagonia es el producto de mayor valor por 
 | 4/11/2026 | búsqueda web (proxy) | (Limay River Lodge, tarifas) | no | The Fly Shop: US$ 990 por noche y pescador, sin fecha; folleto de Frontiers de 2019; ninguna hoja de tarifas del propio lodge. Orvis ubica el lodge a 3-4 h de los aeropuertos de Neuquén, San Martín y Bariloche. |
 | 4/11/2026 | búsqueda web (proxy) | 18 | no | Prensa local: la Disposición 131/2026 de la Secretaría de Pesca de Chubut habilitó la temporada 2026/27 desde el 30/10/2026 (fuente secundaria, a confirmar con la oficial). No apareció el valor del permiso 2026/27. |
 
-**Pendiente del dueño:** correr las 20 preguntas en ChatGPT, Gemini y Perplexity y anotar a quién citan. Es la única medición directa. Hasta entonces la línea base es la búsqueda web de arriba, que muestra el hueco pero no dice qué recomienda cada asistente.
+**Pendiente del dueño:** correr las 21 preguntas en ChatGPT, Gemini y Perplexity y anotar a quién citan. Es la única medición directa. Hasta entonces la línea base es la búsqueda web de arriba, que muestra el hueco pero no dice qué recomienda cada asistente.
