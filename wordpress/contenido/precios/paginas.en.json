@@ -1074,6 +1074,306 @@
      "h": "<strong>Want help planning your trip?</strong> Tell us where you're leaving from, dates, and how many people in <a href=\"{viaje}\">the trip form</a> and we'll write you with guide and lodging options, with no cost or obligation."
     }
    ]
+  },
+  {
+   "clave": "paquete-incluye-no-incluye",
+   "slug": "what-fishing-package-includes-argentina",
+   "especie": "dorado",
+   "titulo": "What’s included in an Argentina fishing package and what’s extra (2026/27 examples)",
+   "bajada": "Nine published packages, side by side: what each price covers, what’s excluded, which extra charges appear, and what to ask before paying a deposit.",
+   "seo_title": "What’s included in an Argentina fishing package",
+   "seo_description": "What’s included and what’s extra in Argentina fishing packages: license, transfers, flights, single room, tips, with 2026/27 examples.",
+   "datos": [
+    "In nine published packages for 2026/27, the fishing license is included in 4, excluded in 3, and 2 don’t specify.",
+    "None of the packages that specify include international flights; only one Corrientes lodge includes charter flights from Buenos Aires.",
+    "The single room surcharge ranges from US$ 200 per night at a Chubut lodge to 60% of the package (room and boat) at a Corrientes lodge.",
+    "A Corrientes lodge charges US$ 650 per night for a non-fishing companion and US$ 950 to fish on arrival or departure day.",
+    "A Río Grande lodge requires a non-refundable 50% deposit: cancellation policies vary by operator."
+   ],
+   "bloques": [
+    {
+     "t": "p",
+     "h": "<strong>Short answer.</strong> The price of a fishing package almost never covers everything. What varies most is whether it includes <strong>the license, transfers, flights, single room, and tips</strong>, and which extra charges appear (non-fishing companion, fishing on arrival or departure day). Before comparing numbers, compare what each price includes. Below are nine published packages and the questions to ask for a detailed quote."
+    },
+    {
+     "t": "h2",
+     "h": "What each package includes and excludes (published examples)"
+    },
+    {
+     "t": "tabla",
+     "cab": [
+      "Package",
+      "Includes",
+      "Does not include",
+      "Published extra charges"
+     ],
+     "filas": [
+      [
+       "<strong>Lodge in Corrientes</strong>, 7 nights (US$ 7,950)",
+       "Double occupancy lodging, all meals, wines, beer and spirits, guide and loaner gear",
+       "International and domestic flights, transfers, license, laundry, tips",
+       "Single room and boat: +60% (about US$ 4,770 more for the week, our calculation). Non-fishing companion: US$ 650 per night. Fishing on arrival or departure day: US$ 950 (full day) or US$ 750 (half day) per boat"
+      ],
+      [
+       "<strong>Itatí Lodge</strong>, 7 nights (US$ 7,850)",
+       "Charter flights between Buenos Aires and the lodge, airport transfers, lodging, meals and alcoholic drinks, guide, license, flies and gear",
+       "International flights, laundry, tips",
+       "No extra charges published on the website"
+      ],
+      [
+       "<strong>Lodge in Iberá</strong>, 7 nights (US$ 6,400)",
+       "Meals and drinks, one guide per two or three anglers, driver and assistant, program vehicles, airport pickup and transfers, licenses and government fees",
+       "Tips (paid on final bill), local and international flights, insurance, gear rental, flies",
+       "The website mentions both \"single occupancy\" (in the price) and \"double occupancy\" (in what’s included): needs confirmation"
+      ],
+      [
+       "<strong>Lodge in Neuquén</strong>, 7 nights (US$ 6,950)",
+       "Transfer from and to San Martín de los Andes airport, shared lodging, meals, alcoholic drinks, guide, loaner gear",
+       "International and domestic flights, transfer from Bariloche, licenses, laundry, tips",
+       "No extra charges published on the website"
+      ],
+      [
+       "<strong>Chubut Lodges</strong>, 7 nights (US$ 6,545 to US$ 9,200)",
+       "Lodging, all meals and drinks, guides (one per two anglers), loaner rods, reels, boots and waders, flies and leader, transfers from and to Esquel or Bariloche airports",
+       "Not detailed on the website (license and flights: confirm)",
+       "Single room: +US$ 200 per night. Private guide: +US$ 325 per day. Companion: own rate"
+      ],
+      [
+       "<strong>Organized week in Trevelin</strong> (US$ 5,800)",
+       "7 nights, 6 guided fishing days, meals, drinks, transfers from Esquel, licenses and group organization",
+       "Not detailed on the website",
+       "No extra charges published on the website"
+      ],
+      [
+       "<strong>Inn in Esquina</strong>, 3 nights and 2 days (from US$ 705, group of 2)",
+       "Lodging, breakfast, lunch and dinner, drinks, boat, guide, two dozen livebaits per person, 50 liters of fuel and license",
+       "Fishing tackle, unless booked in advance",
+       "No extra charges published on the website"
+      ],
+      [
+       "<strong>Boat-hotel in the Delta</strong>, 3 nights (from US$ 1,260)",
+       "Onboard lodging and guided fishing days; the website mentions chef-prepared meals, open bar, and loaner gear",
+       "Website does not detail license or transfers",
+       "Natural bait: ordered on request and charged separately"
+      ],
+      [
+       "<strong>Day with guide in Bariloche</strong>, full day on the Limay (US$ 530)",
+       "Private guide and boat, transfers, gear, drinks and lunch (snack for half day)",
+       "License and tips",
+       "License managed by the operator: US$ 40 per person per day. El Manso adds US$ 70"
+      ]
+     ]
+    },
+    {
+     "t": "p",
+     "h": "Prices and conditions published or reported as of 5 and 6 November 2026, as shown by each operator. Each one charges and groups differently: that’s why the table compares what’s included, not which is better value. Prices for each destination are at <a href=\"{n:precio-viaje-dorado-lodge}\">how much a golden dorado fishing trip costs</a> and <a href=\"{n:precio-semana-trucha-patagonia-norte}\">how much a Patagonia trout week costs</a>."
+    },
+    {
+     "t": "h2",
+     "h": "What varies from one package to another?"
+    },
+    {
+     "t": "lista",
+     "items": [
+      "<strong>The license:</strong> of the nine examples, 4 include it (Itatí, Iberá, Trevelin, and the Esquina inn), 3 leave it out (Corrientes lodge, Neuquén lodge, and the Bariloche day), and 2 don’t specify (Chubut lodges and the boat-hotel). Official rates are at <a href=\"{n:licencia-pesca-patagonia-precios}\">Patagonia fishing license 2026/27</a> and <a href=\"{n:pesca-desde-brasil-corrientes}\">fishing in Corrientes from Brazil</a>.",
+      "<strong>The flights:</strong> none of the packages that specify include international flights. Only Itatí includes flights, the charters from Buenos Aires; two others explicitly say domestic flights are excluded.",
+      "<strong>The transfers:</strong> some include airport transfers (Iberá, Neuquén from San Martín de los Andes, Chubut from Esquel or Bariloche, Trevelin from Esquel) and others leave it out (Corrientes lodge; in Neuquén, the one departing from Bariloche).",
+      "<strong>The single room:</strong> charged in two ways that aren’t directly comparable: +US$ 200 per night (about US$ 1,400 for a week) at a Chubut lodge and +60% of the package, room and boat, at a Corrientes lodge (about US$ 4,770 for the week). This is our calculation using published rates.",
+      "<strong>The non-fishing companion:</strong> a Corrientes lodge charges US$ 650 per night; Chubut lodges have their own rate. If someone is traveling who won’t fish, this is one of the first things to quote.",
+      "<strong>Cancellation:</strong> a Río Grande lodge requires a non-refundable 50% deposit (<a href=\"{d:rio-grande}\">fishing Río Grande</a>). We didn’t find most operators’ cancellation policies on their sites: ask for them in writing."
+     ]
+    },
+    {
+     "t": "h2",
+     "h": "Two ways to book: with an outfitter or direct with an Argentine operator"
+    },
+    {
+     "t": "p",
+     "h": "The lodges in the table are sold through outfitters and fishing agencies that publish per-person rates in dollars, with a list of what’s included and what’s not; some add charter flights from Buenos Aires (Itatí) or transfers (Chubut, Neuquén). Argentine inns and guides who publish prices (the Esquina inn, the Delta boat-hotel, Bariloche guides) do so per group or per person, in dollars or pesos, and usually leave you to arrange travel to the area. <strong>We found no reliable data on which route US anglers use more, or which is cheaper: we don’t claim to know.</strong> What the examples do show is that not even an \"all-inclusive\" package covers everything, and that the fishing coordinator doesn’t always handle flights."
+    },
+    {
+     "t": "tabla",
+     "cab": [
+      "",
+      "With an outfitter or agency",
+      "Direct with an Argentine operator"
+     ],
+     "filas": [
+      [
+       "What’s usually published",
+       "Per-person rate and number of nights, list of what’s included and what’s not",
+       "Price per group or per person, in dollars or pesos; sometimes \"ask for quote\""
+      ],
+      [
+       "What’s usually left to you",
+       "International flights and, depending on the package, domestic flights and some transfers",
+       "Travel to the area and transfer from the airport or border"
+      ],
+      [
+       "What to ask before paying",
+       "Who books domestic flights and Buenos Aires nights, who’s responsible if the trip is interrupted, and who you pay for each item",
+       "If quoted in dollars or pesos, how to pay, what the license covers, and who picks you up at the airport"
+      ]
+     ]
+    },
+    {
+     "t": "h2",
+     "h": "How to request a detailed quote"
+    },
+    {
+     "t": "p",
+     "h": "A message that works for any operator: <em>\"Hi, I’d like a quote for [dates] for [number] anglers. Can you send a detailed quote showing what’s included and what I need to book separately (license, transfers, flights, Buenos Aires nights, single room, companion, tips), payment and cancellation terms, and what happens if weather or river conditions prevent fishing?\"</em>"
+    },
+    {
+     "t": "p",
+     "h": "And these ten questions, before paying a deposit:"
+    },
+    {
+     "t": "lista",
+     "items": [
+      "How many fishing days and how many guided hours are included?",
+      "Guide, boat, meals, lodging, transfers, and license: which are included?",
+      "Which airport do I arrive at and how is the transfer to the lodge?",
+      "Is the fishing private or shared? How many anglers per guide?",
+      "What happens if weather, river, or transport interrupt the trip?",
+      "How much is the deposit and what are the cancellation and refund policies?",
+      "What extra charges are there: tips, laundry, single room, companion?",
+      "Can a non-fishing companion come and what does it cost?",
+      "What gear can I borrow and what do I need to bring?",
+      "How are extras paid and what payment methods are accepted?"
+     ]
+    },
+    {
+     "t": "h2",
+     "h": "What this page doesn’t cover yet"
+    },
+    {
+     "t": "p",
+     "h": "Most operators’ deposit and cancellation policies, insurance and medical evacuation, and details of each flight connection. We’ll add them when verified with a source and date."
+    },
+    {
+     "t": "p",
+     "h": "<strong>Want help comparing?</strong> Tell us your dates, group size, and what you want to fish for in <a href=\"{viaje}\">the trip form</a> and we’ll send you options with what each includes, no cost or obligation."
+    }
+   ]
+  },
+  {
+   "clave": "reglas-equipo-patagonia",
+   "slug": "patagonia-fishing-gear-rules",
+   "especie": "trout",
+   "titulo": "Fishing gear and rules in Patagonia: felt soles, hooks, and disinfection (2026/27)",
+   "bajada": "What the Patagonian regulations say about wading footwear, gear brought into the country, hooks, lead, and fishing hours, with the article for each rule.",
+   "seo_title": "Patagonia fishing gear rules (2026/27)",
+   "seo_description": "Patagonian regulations 2026/27: felt soles, barbed hooks, lead, and non-disinfected gear are banned. Each rule includes its article.",
+   "datos": [
+    "Wading boots with felt soles are prohibited in all waters covered by the Patagonian regulations (art. 22).",
+    "Anglers entering the country must use new or disinfected gear (art. 27); guides and outfitters must disinfect gear, boats, and vehicles when required by authorities (art. 28).",
+    "In rivers and streams, catch and release is mandatory, with only one single barbless hook or a hook with the barb flattened, and the fish must be released alive (art. 17).",
+    "Anchors and sinkers with lead, and lures with lead bodies or heads, are prohibited (art. 22).",
+    "The season runs from 1 November 2026 to 1 May 2027; fishing is only allowed during daylight hours and with one rod per angler."
+   ],
+   "fuentes": [
+    {
+     "nombre": "General Regulations for Patagonian Continental Sport Fishing, Part One: articles 6, 7, 15 to 18, 22 and 24 to 28 (text updated 26 October 2026, accessed 6 November 2026)",
+     "url": "https://reglamentodepesca.org.ar/reglamento/",
+     "oficial": 1
+    }
+   ],
+   "bloques": [
+    {
+     "t": "p",
+     "h": "<strong>Short answer.</strong> In Neuquén, Río Negro, Chubut, and the Southern National Parks, <strong>wading boots with felt soles are not allowed</strong>, gear brought into the country must be <strong>new or disinfected</strong>, and in rivers and streams you must use <strong>only one single barbless hook</strong> and release the fish alive. Anchors and sinkers with lead are also not allowed, nor are lures with a lead body or head. These are rules from the common 2026/27 regulations; each province also has its own annexes."
+    },
+    {
+     "t": "h2",
+     "h": "Can I use boots with felt soles?"
+    },
+    {
+     "t": "p",
+     "h": "No. Article 22 bans \"the use of wading boots with felt soles in all waters covered by these regulations,\" meaning in all four jurisdictions (Neuquén, Río Negro, Chubut, and National Parks). Bring wading boots without felt soles."
+    },
+    {
+     "t": "h2",
+     "h": "Do I need to disinfect my gear?"
+    },
+    {
+     "t": "p",
+     "h": "Yes, in two cases. Article 27 states that anglers entering the country are <strong>required to use new or disinfected gear</strong>. Article 28 requires anglers, guides, and outfitters to <strong>disinfect gear, boats, and vehicles</strong> whenever and however the authorities require. The regulations do not specify the procedure in these articles."
+    },
+    {
+     "t": "h2",
+     "h": "What hooks and lures can I use?"
+    },
+    {
+     "t": "tabla",
+     "cab": [
+      "Rule",
+      "What it says",
+      "Article"
+     ],
+     "filas": [
+      [
+       "Mandatory catch and release",
+       "In rivers and streams, including their sources and mouths in lagoons and lakes and up to 200 meters on both banks, all fish must be released (with exceptions in the annexes)",
+       "17"
+      ],
+      [
+       "Hook",
+       "In mandatory catch and release waters, only one single barbless hook or a hook with the barb flattened; fish must be released alive",
+       "17"
+      ],
+      [
+       "One rod",
+       "Each angler may not use more than one rod at a time",
+       "16"
+      ],
+      [
+       "Lead",
+       "Anchors with lead, lines with lead, sinkers, and lures with lead bodies or heads are prohibited",
+       "22"
+      ],
+      [
+       "Chumming and bait",
+       "Chumming is prohibited; fish and clams may not be used as bait where bait is allowed",
+       "22 and 15"
+      ],
+      [
+       "Engines",
+       "Entering with carbureted two-stroke engines is prohibited where their use is restricted, even if auxiliary and not in use; four-stroke engines are recommended",
+       "22 and 25"
+      ]
+     ]
+    },
+    {
+     "t": "h2",
+     "h": "When and how much can you fish?"
+    },
+    {
+     "t": "lista",
+     "items": [
+      "<strong>Season:</strong> from 1 November 2026 to 1 May 2027 inclusive (art. 7), with exceptions in each province’s annexes.",
+      "<strong>Hours:</strong> only during daylight (art. 6).",
+      "<strong>Lakes and lagoons:</strong> one fish per day per angler may be kept between 1 December 2026 and 31 March 2027 (art. 18).",
+      "<strong>Gravel:</strong> it is recommended not to wade fine gravel areas in rivers and streams until 1 January 2027, to avoid damaging spawning beds (art. 24)."
+     ]
+    },
+    {
+     "t": "p",
+     "h": "License prices are in <a href=\"{n:licencia-pesca-patagonia-precios}\">Patagonia fishing license 2026/27</a>, and dates and closures by area are in <a href=\"{n:cuando-pescar-trucha-patagonia}\">when to fish for trout in Patagonia</a>."
+    },
+    {
+     "t": "h2",
+     "h": "What this page does not cover"
+    },
+    {
+     "t": "p",
+     "h": "Santa Cruz and Tierra del Fuego have their own regulations (see the guides for <a href=\"{d:rio-gallegos}\">Río Gallegos</a> and <a href=\"{d:rio-grande}\">Río Grande</a>), and other rules apply in the Litoral (for example, in Corrientes, dorado and surubí must be released). We also do not verify how article 27 is enforced at customs or the disinfection procedure: the regulations only state \"new or disinfected.\" Each province’s annexes may add rules for specific rivers or lakes: check them before fishing a particular water."
+    },
+    {
+     "t": "p",
+     "h": "<strong>Want help planning your trip?</strong> Write to us using <a href=\"{viaje}\">the trip form</a> and we’ll send you guide and lodge options, with no cost or obligation."
+    }
+   ]
   }
  ]
 }

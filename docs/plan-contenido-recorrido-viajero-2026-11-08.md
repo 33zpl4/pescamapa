@@ -33,3 +33,19 @@ Origen: análisis pegado por el dueño del recorrido de planificación de un pes
 - Las APIs de IA solo para una pregunta concreta (primero se lee con `investigar.yml`). Capturas de Google Maps/Flights del dueño valen como fuente fechada.
 - **Ventana de medición (hasta el 5/12/2026):** las páginas nuevas pueden salir; las 8 páginas objetivo no se editan salvo correcciones de datos anotadas con fecha.
 - Cada página nueva suma sus preguntas de control cuando existe (banco en inglés a partir de las búsquedas del análisis: costo desde EE.UU., visa, mejor mes de dorado en Corrientes, licencia de extranjero en Corrientes, "¿la licencia está incluida en el paquete?", cómo llegar de Buenos Aires a Corrientes).
+
+## Lo aprendido de tres páginas que rankean bien en Gemini (8/11/2026)
+Páginas leídas con `investigar.yml`: la guía de licencias de flyfishingarg.com, la guía "qué necesitás saber" de Pointer Outfitters y la guía "mejor época" de Patagonia Trashumante. Se usan como **mapa de temas**, no como texto: cada dato se verifica contra la fuente oficial.
+
+| Página | Qué hace bien | Dónde la superamos o podemos |
+| --- | --- | --- |
+| Licencias (flyfishingarg) | Cuadro "de un vistazo"; permiso unificado vs. regiones aparte; tabla con dólares aproximados; dónde comprar; FAQ | Usa valores **2025/26** (residentes $ 10.000/20.000/40.000; trolling $ 20.000/40.000/80.000) y lo admite; Corrientes **sin precio**; Santa Cruz y Tierra del Fuego de la temporada pasada. Tenemos los 2026/27 oficiales de Patagonia, Santa Cruz y la fórmula de Corrientes |
+| General (Pointer) | Recorrido completo y simple | Recomienda botas "de fieltro o de goma": el art. 22 del reglamento patagónico **prohíbe el fieltro**; dice "dorado mejor de septiembre a mayo" sin mencionar la veda |
+| Mejor época (Trashumante) | Voz de guía; tres ventanas (noviembre–diciembre, mediados de diciembre–mediados de marzo, marzo–abril) con "para quién es"; el viento | Ya tenemos una nota con estructura equivalente (`cuando-pescar-trucha-patagonia`); lo que le falta es la voz de un guía. Podemos agregar el efecto del mes en el precio con datos propios (bandas de precio de Kau Tapen) |
+
+**Lo que se decide con esto**
+1. **Hub "Licencias de pesca para extranjeros en Argentina 2026/27"** (es/en/pt): cuadro de un vistazo + tabla por región. Filas verificadas hoy: Patagonia, Santa Cruz (portal oficial, 4/11) y Corrientes (litros × nafta, aprox.). Faltan: Tierra del Fuego (Anexo II de la Resolución 259/2026 en siped.ar, no abre) y las provincias del Litoral (hoy solo fuente secundaria). Dólares aproximados solo con un tipo de cambio fechado y con fuente.
+2. **Nota de época de la trucha:** no se reescribe; se agrega "¿el mes cambia el precio?" (Kau Tapen: 26/12–9/1 US$ 13.950; 9/1–20/3 US$ 14.950; 20/3–17/4 US$ 12.950) y, si el dueño consigue 1 o 2 entrevistas con guías, la voz de "para quién es cada ventana".
+3. **Cómo llegar a la Patagonia norte** (vuelos, conexiones, traslado): es un tema que esa competencia tiene como nota aparte y nosotros no.
+4. Seguridad ("¿es seguro Argentina?") y listas genéricas de equipo y moscas: no los escribimos.
+
