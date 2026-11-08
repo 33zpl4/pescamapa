@@ -18,10 +18,10 @@ $foto    = [
 
 $es = pm_buscar( 'pm_destino', 'esquel-trevelin', 'es' );
 if ( ! $es ) {
-	WP_CLI::error( 'No encontré la guía paso-de-la-patria (es).' );
+	WP_CLI::error( 'No encontré la guía esquel-trevelin (es).' );
 }
 $antes = (int) get_post_thumbnail_id( $es->ID );
-WP_CLI::log( ( $aplicar ? 'APLICA' : 'SIMULACRO' ) . ": paso-de-la-patria (es) #{$es->ID}: foto {$foto['archivo']} de {$foto['autor']}" . ( $antes ? " (hoy tiene la foto #$antes, se reemplaza)" : ' (hoy sin foto)' ) );
+WP_CLI::log( ( $aplicar ? 'APLICA' : 'SIMULACRO' ) . ": esquel-trevelin (es) #{$es->ID}: foto {$foto['archivo']} de {$foto['autor']}" . ( $antes ? " (hoy tiene la foto #$antes, se reemplaza)" : ' (hoy sin foto)' ) );
 
 $ya = get_posts( [ 'post_type' => 'attachment', 'post_status' => 'inherit', 'meta_key' => '_pm_archivo_origen', 'meta_value' => $foto['archivo'], 'numberposts' => 1, 'fields' => 'ids' ] );
 $att = $ya ? (int) $ya[0] : 0;
@@ -56,6 +56,6 @@ if ( ! $att ) {
 }
 set_post_thumbnail( $es->ID, $att );
 $ok = (int) get_post_thumbnail_id( $es->ID ) === $att && pm_campo( 'foto_autor', $att ) === $foto['autor'] && wp_attachment_is_image( $att );
-WP_CLI::log( ( $ok ? 'VERIFIED' : 'FALLÓ' ) . ": foto paso-de-la-patria #$att ({$foto['archivo']}, {$foto['autor']}) " . wp_get_attachment_url( $att ) );
+WP_CLI::log( ( $ok ? 'VERIFIED' : 'FALLÓ' ) . ": foto esquel-trevelin #$att ({$foto['archivo']}, {$foto['autor']}) " . wp_get_attachment_url( $att ) );
 $ok || WP_CLI::error( 'la foto no quedó.' );
 WP_CLI::log( 'APLICADO' );
