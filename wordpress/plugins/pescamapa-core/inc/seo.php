@@ -395,11 +395,11 @@ function pm_jsonld_especie( array $e ): array {
 
 function pm_jsonld_destino( array $d ): array {
 	$provincia = PM_PROVINCIAS[ $d['provincia'] ] ?? $d['provincia'];
-	$region    = PM_REGIONES[ $d['region'] ][ $d['idioma'] ] ?? $d['region'];
+	// Google requires `item` on every step but the last. The region (Patagonia, Litoral) has no page of its own, so it stays
+	// in the visible trail only; the province page exists (pm_url_provincia) and carries the link.
 	$migas     = [
 		[ 'name' => pm_t( 'ficha.inicio' ), 'item' => pm_url_inicio( $d['idioma'] ) ],
-		[ 'name' => $region ],
-		[ 'name' => $provincia ],
+		[ 'name' => $provincia, 'item' => pm_url_provincia( $d['region'], $d['provincia'], $d['idioma'] ) ],
 		[ 'name' => $d['nombre'], 'item' => $d['url'] ],
 	];
 	$out = [

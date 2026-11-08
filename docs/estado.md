@@ -39,6 +39,12 @@ todas a nosotros (centralizar datos y cobrar comisión más adelante).
   sigue como notas PENDIENTE (no se ven). Investigación:
   `docs/investigacion/esquina.md`.
 
+## Al 8/11/2026: hub de licencias para extranjeros y fotos con fuente web
+
+- **Hub de licencias** (es/en/pt, clave `licencias-extranjeros-argentina`): `/notas/licencia-pesca-extranjeros-argentina-2026-27/`. Tabla por región (Patagonia, Tierra del Fuego ordinario + permiso adicional por zona preferencial y tarifa de país limítrofe, Santa Cruz, Corrientes), en pesos y en dólares aproximados con **US$ 1 = $ 1.545 (xe.com, 8/11/2026, dato del dueño)**. Los valores de Tierra del Fuego salen de la Resolución S.A. 259/2026 (leída entera); Patagonia, Santa Cruz y Corrientes, de las páginas ya publicadas. La rareza de la norma (diario limítrofe Río Grande/Menéndez $ 65.000 > diario general $ 59.000) se publica tal cual y marcada para confirmar con la Secretaría de Ambiente. Falta: Entre Ríos, Santa Fe, Chaco, Misiones, Buenos Aires (sin fuente oficial leída) y confirmar el permiso de vecinos de Chubut en una fuente oficial.
+- **Fotos (regla del dueño, 8/11/2026):** Unsplash cuando se puede, con nombre del fotógrafo; si no, la web de origen, citada como fuente. Mismo criterio que con los prestadores: si alguien pide que se quite, se quita. Se carga con `foto_origen: cedida` y `foto_autor` = fotógrafo o dominio. Primera foto de Esquel y Trevelin: `pesca.chubut.gob.ar` (`esquel-foto-2026-11-08.php`). La otra foto que pasó el dueño (pescador con mosca, fuente pescachubut.ar) no llegó como archivo: queda disponible si se vuelve a enviar.
+- **Entrevistas a guías locales:** el dueño las va a conseguir; falta armar la lista de preguntas (reglas de consentimiento en `docs/contenido.md`).
+
 ## Al 6/11/2026: licencia, Bariloche y pesca desde Brasil
 
 - **Páginas nuevas o corregidas (es/en/pt):** `licencia-pesca-patagonia-precios` (valores oficiales del permiso patagónico 2026/27 y permiso de 10 días para vecinos de Río Negro, E-L10, solo en esa provincia), `precio-pesca-bariloche-limay` (por niveles: medio día, día completo, Manso, pesos) y `pesca-desde-brasil-corrientes` (licencia de turista extranjero de Corrientes por litros de nafta, documentos, rutas). Detalle y fuentes: `docs/pendientes-y-mejoras.md`, `docs/investigacion/medicion-ia/2026-11-06-gemini-search.md`, `docs/analisis-ahrefs-2026-11-06.md`.
