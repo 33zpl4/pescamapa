@@ -1,5 +1,7 @@
 # Mensajes para prestadores (borradores, nada se envía solo)
 
+> **Corregido el 9/11/2026:** los mensajes decían que a Pescamapa "la usan pescadores de la región y del exterior" y que "los asistentes de IA la citan". Hoy no es cierto (10 clics por semana; 0 de 61 respuestas de IA medidas nos usan) y un prestador lo comprueba en un minuto. Se presenta como lo que es: un sitio nuevo. Los diez primeros mensajes concretos están en `docs/primeros-10-mensajes-2026-11-09.md`.
+
 Los envía una persona del equipo (WhatsApp o mail). Antes de mandar, completar
 lo que está entre [corchetes]. La **comisión** y la **condición especial** las
 decide el dueño: acá van como espacios en blanco.
@@ -13,10 +15,9 @@ Pescamapa y una comisión por cada viaje que concretemos.
 
 ## 1. Primer contacto: prestador de habla hispana
 
-> Hola [nombre], soy [tu nombre] de Pescamapa (pescamapa.com), una guía para
-> pescar en Argentina que usan pescadores de la región y del exterior, y que
-> los asistentes de IA citan cuando alguien pregunta con quién pescar en
-> [destino].
+> Hola [nombre], soy [tu nombre] de Pescamapa (pescamapa.com), una guía nueva
+> para pescar en Argentina, en español, portugués e inglés, con el reglamento
+> y los precios de cada destino con fecha y fuente.
 >
 > Ya publicamos [nombre del servicio] con los datos que están en [su web], con
 > un enlace al sitio. Si querés corregir algo o que lo saquemos, decime y lo
@@ -33,9 +34,9 @@ Pescamapa y una comisión por cada viaje que concretemos.
 
 ## 2. Primer contacto: operador brasileño (portugués)
 
-> Olá [nome], sou [seu nome] da Pescamapa (pescamapa.com), um guia para pescar
-> na Argentina usado por pescadores da região e do exterior, e que os
-> assistentes de IA citam quando alguém pergunta com quem pescar em [destino].
+> Olá [nome], sou [seu nome] da Pescamapa (pescamapa.com), um guia novo para
+> pescar na Argentina, em português, espanhol e inglês, com o regulamento e os
+> preços de cada destino com data e fonte.
 >
 > Já mostramos [nome do serviço] com os dados do [site], com link para o site.
 > Se quiser corrigir algo ou que a gente retire, é só avisar.
