@@ -117,3 +117,32 @@ En la rama `claude/determined-wright-q3oxnq` (sin mergear ni desplegar; falta pa
 - **Consecuencia:** tres etapas. (1) Fuente de información en todo el país, como hoy. (2) Goya como el destino donde una consulta sí se puede concretar, con guías conocidos, precio, fotos y condiciones (los paquetes de Goya están publicados sin precio). (3) Lodges de terceros, cuando haya consultas que mostrarles.
 - **A cuidar:** la página "Quiénes somos" dice que las salidas de naturaleza enlazadas en Goya son de Bitácora, la agencia de Cheyenne. Cuando haya acuerdo con un guía de pesca de Goya, su ficha lo marca como cualquier otro.
 - **Quiénes somos: publicada sin fotos por decisión del dueño** (`/quienes-somos/`, `/pt/quem-somos/`, `/en/about/`; vista `vistas/nosotros.php`, textos `ns.*`). Con permiso para citar el trabajo de Cheyenne. Se suman después: fotos y el número de registro de la agencia, si existe.
+
+## Cómo se siente el sitio y cómo llega el primer cliente (9/11/2026, tarde)
+
+Capturas de hoy en la rama `capturas` (inicio, guía de Goya, paquetes de Goya es/pt, nota del dorado en inglés, formulario).
+
+**Lo que se ve**
+- El diseño es prolijo y coherente; el formulario es claro. El sitio se lee como una obra de consulta: informa bien y no vende.
+- **Paquetes de Goya**, la página que debería convertir en el único lugar donde podemos cumplir: siete opciones, todas con "Qué incluye: lo confirmamos al cotizar" y "Precio: lo cotizamos según tu grupo y tus fechas". Ninguna foto, ningún precio, ninguna persona. No hay con qué decidir.
+- **Guía de Goya en el teléfono:** unas 17 pantallas de alto. Para pedir una cotización hay que llegar al final o abrir el menú. Arriba aparece en rojo "Por encima del nivel de evacuación" antes de cualquier invitación a pescar.
+- **Defecto corregido en este PR:** en el teléfono, toda nota con una tabla (las cinco páginas de precios y el pilar del dorado, en los tres idiomas) medía 576 px de ancho en una pantalla de 390: la página entera se desplazaba de costado y la tabla no se movía dentro de su recuadro. Reproducido y corregido en `extra.css` (390 px, tabla desplazable).
+
+**Qué falta para el primer cliente (todo en Goya, todo al alcance del dueño)**
+1. **Una oferta concreta con precio:** una o dos salidas (por ejemplo, jornada de dorado en el Isoró y pack de 2 noches con alojamiento) con un "desde" confirmado por un guía conocido y por el alojamiento, por lancha o por persona, con qué incluye y qué no.
+2. **Prueba:** entre 6 y 10 fotos propias de la lancha, el guía, la pesca y el alojamiento.
+3. **Un canal rápido:** un WhatsApp de Pescamapa en esa página.
+4. Después, tráfico hacia **esa** página, no hacia el sitio en general.
+
+**De dónde sale la gente sin esperar al SEO (sin publicidad paga)**
+- **Venta a quien ya arma grupos:** agencias y peñas de pesca de Brasil y de la Argentina que organizan viajes al dorado. Bitácora es agencia receptiva: un organizador que confía trae varios grupos por año. Es la vía más corta al producto que paga.
+- **La red de Goya:** huéspedes de los alojamientos conocidos que preguntan por pesca, clientes y seguidores de Bitácora, guías con fechas llenas que derivan.
+- **Fiesta Nacional del Surubí:** una fecha fija con demanda segura y alojamiento escaso; un paquete para esa semana, publicado con meses de anticipación.
+- **Plataformas donde la demanda ya está** (marketplaces de salidas de pesca y de excursiones): publicar ahí el producto de Goya trae los primeros clientes y las primeras reseñas, a cambio de su comisión. Decisión del dueño.
+- **Video corto desde el agua** (Instagram, YouTube): la pesca se vende con imagen y desde Goya se puede filmar lo que un sitio de información no tiene.
+- **Comunidades:** responder con nuestros datos (licencias, temporada, precios) donde los pescadores preguntan, en español y en portugués.
+- **Lista propia:** un aviso por correo o WhatsApp de la altura del río en las páginas que ya traen visitas.
+
+**Para que el SEO tarde menos:** concentrar la autoridad en Corrientes antes que en todo el país, conseguir enlaces de los prestadores listados y de sitios locales, y configurar Bing Webmaster Tools.
+
+**A cuidar:** el cargo de Cheyenne en la oficina de turismo no debería usarse para derivar consultas hacia Pescamapa o Bitácora ni para conseguir enlaces oficiales sin que la oficina lo decida con las mismas reglas que para cualquier otro prestador.

@@ -377,3 +377,8 @@
 .barra-meses .leyenda { list-style: none; margin: 10px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: var(--fs-caption); }
 .barra-meses .leyenda .mes { display: inline-block; width: 14px; height: 14px; padding: 0; vertical-align: -2px; margin-right: 4px; }
 @media (max-width: 520px) { .barra-meses .meses { gap: 2px; } .barra-meses .mes { padding: 8px 0; } }
+
+/* Phones (9/11/2026): the one-column layout was "1fr", whose minimum is the widest thing inside, so a note with a table
+   (min-width 560px) made the whole page 576px wide on a 390px screen and the table never scrolled inside its own box. */
+@media (max-width: 960px) { .layout { grid-template-columns: minmax(0, 1fr); } }
+.layout > .prose { min-width: 0; }
