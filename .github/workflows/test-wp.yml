@@ -183,6 +183,16 @@ jobs:
           check /para-guias-y-lodges/ 200 'name="pm_tipo" value="prestador"'
           check /en/for-guides-and-lodges/ 200 'Add your listing'
           check / 200 'para-guias-y-lodges'
+          # About page (docs/revision-negocio-2026-11-09.md): 3 languages, footer link, sitemap, llms.txt, structured data.
+          check /quienes-somos/ 200 'Quiénes hacen Pescamapa'
+          check /quienes-somos/ 200 '"AboutPage"'
+          check /quienes-somos/ 200 'No es guía de pesca'
+          check /pt/quem-somos/ 200 'Quem faz a Pescamapa'
+          check /en/about/ 200 'Who makes Pescamapa'
+          check /en/about/ 200 'hreflang="pt-BR"'
+          check / 200 '/quienes-somos/'
+          check /llms.txt 200 'quienes-somos'
+          check /wp-sitemap-vistas-1.xml 200 'quienes-somos'
           check /llms.txt 200 'Qué se pesca cada mes y qué está vedado'
           check /llms.txt 200 'Para guías y lodges: sumar o reclamar una ficha'
           check /wp-sitemap-vistas-1.xml 200 'calendario-de-pesca'
@@ -212,6 +222,9 @@ jobs:
           check /paquetes-de-pesca/esquina/ 200 'content="DESC-DE-PRUEBA"'
           check /paquetes-de-pesca/esquina/ 200 'Pedir mi cotización'
           check /paquetes-de-pesca/esquina/ 200 'barra-pedir'
+          # Same phone bar on the destination guide (to its own form) and on notes (to the trip form).
+          check /litoral/corrientes/pesca-en-esquina/ 200 'class="barra-pedir" href="#consulta"'
+          check /notas/nota-de-prueba/ 200 'class="barra-pedir" href="[^"]*/armar-viaje/'
           # City page (1/11/2026): every public outfitter of the destination, short answer, FAQ, agreements first; no contact data, no example data.
           check /guias-de-pesca/esquina/ 200 'v-guias' 'CONTACTO-INTERNO-123'
           check /guias-de-pesca/esquina/ 200 'Guías de pesca en Esquina'
@@ -286,10 +299,14 @@ jobs:
             -d pm_volver="$URL/en/plan-your-trip/" -d pm_t=$(( $(date +%s) - 60 )) \
             -d nombre=Tester -d contacto=tester@example.com -d cuando=November -d personas=2 \
             -d duracion=semana -d experiencia=alguna -d alojamiento=lodge -d pais=Chile -d modalidad=mosca \
+            --data-urlencode 'pm_entrada=/en/notes/nota-de-prueba/?utm_source=chatgpt.com' -d pm_referente=www.chatgpt.com -d pm_campana=chatgpt.com \
             "$URL/wp-admin/admin-post.php")
           [[ "$loc" == *"consulta=ok"* ]] && echo "✓ viaje → $loc" || { echo "✖ viaje: $loc"; fail=1; }
           v=$(wp --path="$WP" post list --post_type=pm_consulta --post_status=private --s=Tester --format=ids | head -n1)
-          for par in "duracion:5 a 7 días" "experiencia:Algo de experiencia" "alojamiento:Lodge con todo incluido" "pais:Chile"; do
+          # Attribution (footer script → hidden fields): entry page, referrer host without www, channel label.
+          check /en/plan-your-trip/ 200 'name="pm_entrada"'
+          check /en/plan-your-trip/ 200 "sessionStorage.setItem('pm-entrada'"
+          for par in "duracion:5 a 7 días" "experiencia:Algo de experiencia" "alojamiento:Lodge con todo incluido" "pais:Chile" "canal:ChatGPT" "referente:chatgpt.com" "entrada:/en/notes/nota-de-prueba/?utm_source=chatgpt.com"; do
             k=${par%%:*}; e=${par#*:}; g=$(wp --path="$WP" post meta get "$v" "$k")
             [[ "$g" == "$e" ]] && echo "✓ $k = $g" || { echo "✖ $k = '$g' (esperado '$e')"; fail=1; }
           done

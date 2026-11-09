@@ -42,6 +42,7 @@ function pm_registrar_rutas(): void {
 		add_rewrite_rule( "^{$pre}{$seg['guias']}/([a-z0-9-]+)/?$", "index.php?pm_vista=guias&pm_guias_clave=\$matches[1]&pm_lang={$i}", 'top' );
 		add_rewrite_rule( "^{$pre}{$seg['calendario']}/?$", "index.php?pm_vista=calendario&pm_lang={$i}", 'top' );
 		add_rewrite_rule( "^{$pre}{$seg['paraguias']}/?$", "index.php?pm_vista=paraguias&pm_lang={$i}", 'top' );
+		add_rewrite_rule( "^{$pre}{$seg['nosotros']}/?$", "index.php?pm_vista=nosotros&pm_lang={$i}", 'top' );
 		add_rewrite_rule( "^{$pre}{$seg['rio']}/?$", "index.php?pm_vista=rio&pm_lang={$i}", 'top' );
 		add_rewrite_rule( "^{$pre}{$seg['rio']}/([a-z0-9-]+)/?$", "index.php?pm_vista=rio-punto&pm_rio_clave=\$matches[1]&pm_lang={$i}", 'top' );
 		add_rewrite_rule( "^{$pre}{$seg['notas']}/?$", "index.php?pm_vista=notas&pm_lang={$i}", 'top' );
@@ -174,7 +175,7 @@ add_filter( 'template_include', function ( $plantilla ) {
 
 // The virtual views are not "not found" just because no post matched.
 add_filter( 'pre_handle_404', function ( $corto, $query ) {
-	if ( in_array( $query->get( 'pm_vista' ), [ 'inicio', 'mapa', 'creditos', 'entrevistas', 'notas', 'especies', 'pique', 'viaje', 'terminos', 'privacidad', 'rio', 'rio-punto', 'paquetes', 'guias', 'calendario', 'paraguias', 'provincia' ], true ) ) {
+	if ( in_array( $query->get( 'pm_vista' ), [ 'inicio', 'mapa', 'creditos', 'entrevistas', 'notas', 'especies', 'pique', 'viaje', 'terminos', 'privacidad', 'rio', 'rio-punto', 'paquetes', 'guias', 'calendario', 'paraguias', 'nosotros', 'provincia' ], true ) ) {
 		status_header( 200 );
 		return true;
 	}

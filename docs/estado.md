@@ -1,6 +1,6 @@
 # Estado del proyecto — para retomar en otra sesión
 
-Última actualización: 31/10/2026 (idiomas completados en es/pt/en, estrategia SEO v2, auditoría con lente de IA, fichas de guías de día en Bariloche). Actualizá este archivo al cerrar cada sesión.
+Última actualización: 9/11/2026 (revisión del negocio y origen de las consultas; antes, 31/10/2026: idiomas completados en es/pt/en, estrategia SEO v2, auditoría con lente de IA, fichas de guías de día en Bariloche). Actualizá este archivo al cerrar cada sesión.
 
 ## Objetivo (del dueño)
 
@@ -38,6 +38,11 @@ todas a nosotros (centralizar datos y cobrar comisión más adelante).
   reglamento verificado por el equipo del dueño el 20/10/2026. Lo dudoso
   sigue como notas PENDIENTE (no se ven). Investigación:
   `docs/investigacion/esquina.md`.
+
+## Al 9/11/2026: revisión del negocio y origen de las consultas
+
+- **Revisión completa: `docs/revision-negocio-2026-11-09.md`.** Diagnóstico: mucho contenido y ninguna prueba del negocio (0 consultas, 0 operadores con acuerdo; 10 clics por semana, casi todos de altura del río). Palancas en orden: cerrar un viaje a mano con un operador con acuerdo, demanda que paga (semanas de lodge en inglés, grupos al dorado en portugués) y probarla con un experimento chico de anuncios, enlaces entrantes, página "Quiénes somos" con el respaldo de la agencia. Tiene un tablero a 30 días y la lista de lo que depende del dueño. Dos propuestas contradicen decisiones previas y esperan su respuesta: escribirles ya a los prestadores listados (antes: "cuando haya tráfico") y un experimento de anuncios de US$ 150 a 300 (antes: sin publicidad paga).
+- **Código en la rama `claude/determined-wright-q3oxnq` (sin PR ni deploy todavía):** cada consulta guarda por qué página entró la persona, desde qué sitio llegó y un **Canal** (ChatGPT, Perplexity, Gemini, Google, WhatsApp…), visible en el aviso, en la consulta y en una columna de wp-admin; acuse de recibo por correo a quien deja un email (texto fijo, en su idioma); el aviso interno lleva `Reply-To` del pescador. Sin cookies (`sessionStorage`); política de privacidad actualizada en es/pt/en. PR 161. **Página "Quiénes somos"** (`/quienes-somos/`, `/pt/quem-somos/`, `/en/about/`), sin fotos por ahora: Alberto y Cheyenne (guía de naturaleza, no de pesca), método, red local en Goya y cómo se sostiene el sitio; enlazada desde el pie, el sitemap y `llms.txt`. Decisiones del dueño del 9/11: sin publicidad paga; el sitio es hoy fuente de información y Goya es el primer lugar donde concretar una consulta con guías y alojamiento conocidos. Falta: `test-wp` en verde, deploy, una consulta de prueba real y Bing Webmaster Tools (dueño).
 
 ## Al 8/11/2026: hub de licencias para extranjeros y fotos con fuente web
 
