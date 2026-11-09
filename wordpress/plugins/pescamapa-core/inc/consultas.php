@@ -50,6 +50,10 @@ function pm_consulta_ocultos( string $tipo, array $extra = [] ): string {
 		'pm_idioma'   => pm_lang(),
 		'pm_volver'   => strtok( home_url( add_query_arg( [] ) ), '?' ),
 		'pm_t'        => (string) time(),
+		// Filled by the footer script: first page of this visit, the outside site it came from, utm_source.
+		'pm_entrada'  => '',
+		'pm_referente' => '',
+		'pm_campana'  => '',
 	] + $extra;
 	$html = '';
 	foreach ( $campos as $k => $v ) {
@@ -64,6 +68,37 @@ function pm_consulta_ocultos( string $tipo, array $extra = [] ): string {
 function pm_consulta_resultado(): string {
 	$r = sanitize_key( $_GET['consulta'] ?? '' );
 	return in_array( $r, [ 'ok', 'error' ], true ) ? $r : '';
+}
+
+/**
+ * Which channel brought the visit: fragment of the referrer host or of utm_source => label. First match wins, so the
+ * assistants go before the search engines that host them (gemini.google.com, copilot.microsoft.com).
+ */
+const PM_CANALES = [
+	'chatgpt' => 'ChatGPT', 'openai' => 'ChatGPT', 'perplexity' => 'Perplexity', 'gemini' => 'Gemini', 'copilot' => 'Copilot', 'claude' => 'Claude',
+	'google' => 'Google', 'bing' => 'Bing', 'duckduckgo' => 'DuckDuckGo', 'yahoo' => 'Yahoo', 'yandex' => 'Yandex',
+	'facebook' => 'Facebook', 'instagram' => 'Instagram', 'whatsapp' => 'WhatsApp', 'wa.me' => 'WhatsApp', 'youtube' => 'YouTube', 'reddit' => 'Reddit',
+];
+
+/** Host of a referrer URL (or a bare host), lowercase and without www.; '' for our own site or anything unusable. */
+function pm_consulta_host( string $referente ): string {
+	$host = (string) wp_parse_url( false === strpos( $referente, '//' ) ? "//{$referente}" : $referente, PHP_URL_HOST );
+	$host = preg_replace( '/^www\./', '', strtolower( $host ) );
+	$host = preg_match( '/^[a-z0-9.-]{3,100}$/', $host ) ? $host : '';
+	$aca  = preg_replace( '/^www\./', '', strtolower( (string) wp_parse_url( home_url(), PHP_URL_HOST ) ) );
+	return $host === $aca ? '' : $host;
+}
+
+/** Channel label for the admin and the notice: a known name, else the referrer host, else '' (direct or unknown). */
+function pm_consulta_canal( string $host, string $campana ): string {
+	foreach ( [ strtolower( $campana ), $host ] as $pista ) {
+		foreach ( PM_CANALES as $trozo => $nombre ) {
+			if ( '' !== $pista && false !== strpos( $pista, $trozo ) ) {
+				return $nombre;
+			}
+		}
+	}
+	return $host ?: mb_substr( $campana, 0, 60 );
 }
 
 function pm_recibir_consulta(): void {
@@ -104,13 +139,19 @@ function pm_recibir_consulta(): void {
 		$prestador = 0;
 	}
 
+	// Attribution, sent by the footer script (no cookies): which page and which channel bring the people who ask.
+	$entrada   = sanitize_text_field( wp_unslash( $_POST['pm_entrada'] ?? '' ) );
+	$entrada   = '/' === ( $entrada[0] ?? '' ) && '/' !== ( $entrada[1] ?? '' ) ? mb_substr( $entrada, 0, 200 ) : '';
+	$referente = pm_consulta_host( sanitize_text_field( wp_unslash( $_POST['pm_referente'] ?? '' ) ) );
+	$campana   = mb_substr( sanitize_text_field( wp_unslash( $_POST['pm_campana'] ?? '' ) ), 0, 60 );
+
 	$lugar  = $destino ?: $datos['localidad'];
 	$titulo = ( 'prestador' === $tipo ? 'Prestador: ' : 'Viaje: ' ) . $datos['nombre'] . ( $lugar ? " — {$lugar}" : '' );
 	$id     = wp_insert_post( [
 		'post_type'   => 'pm_consulta',
 		'post_status' => 'private',
 		'post_title'  => $titulo,
-		'meta_input'  => array_filter( $datos ) + [
+		'meta_input'  => array_filter( $datos + [ 'entrada' => $entrada, 'referente' => $referente, 'campana' => $campana, 'canal' => pm_consulta_canal( $referente, $campana ) ] ) + [
 			'tipo'      => $tipo,
 			'destino'   => $destino,
 			'prestador' => $prestador,
@@ -123,6 +164,7 @@ function pm_recibir_consulta(): void {
 		$ir( 'error' );
 	}
 	pm_avisar_consulta( $id );
+	pm_acusar_consulta( $id );
 	$ir( 'ok' );
 }
 add_action( 'admin_post_nopriv_pm_consulta', 'pm_recibir_consulta' );
@@ -137,7 +179,23 @@ function pm_avisar_consulta( int $id ): void {
 	}
 	$lineas[] = '';
 	$lineas[] = 'Abrir: ' . admin_url( "post.php?post={$id}&action=edit" );
-	wp_mail( $para, '[Pescamapa] ' . get_the_title( $id ), implode( "\n", $lineas ) );
+	// "Reply" in the inbox answers the angler directly when they left an email.
+	$contacto = (string) get_post_meta( $id, 'contacto', true );
+	wp_mail( $para, '[Pescamapa] ' . get_the_title( $id ), implode( "\n", $lineas ), is_email( $contacto ) ? [ 'Reply-To: ' . $contacto ] : [] );
+}
+
+/**
+ * Receipt to the person who asked, when the contact is an email: in their language, a fixed text (nothing they typed
+ * goes back out, so the form cannot be used to send someone else a message), and replies land in our inbox.
+ */
+function pm_acusar_consulta( int $id ): void {
+	$contacto = (string) get_post_meta( $id, 'contacto', true );
+	if ( ! is_email( $contacto ) ) {
+		return;
+	}
+	$idioma = (string) get_post_meta( $id, 'idioma', true );
+	$cuerpo = 'prestador' === get_post_meta( $id, 'tipo', true ) ? 'acuse.prestador' : 'acuse.viaje';
+	wp_mail( $contacto, pm_t( 'acuse.asunto', [], $idioma ), pm_t( $cuerpo, [], $idioma ) . "\n\nPescamapa\n" . pm_url_inicio( $idioma ), [ 'Reply-To: ' . PM_EMAIL_PUBLICO ] );
 }
 
 /** Label => value of what the person sent, for the email and the admin box. */
@@ -155,6 +213,12 @@ function pm_consulta_datos( int $id ): array {
 	}
 	$out['Idioma'] = strtoupper( (string) get_post_meta( $id, 'idioma', true ) );
 	$out['Página'] = (string) get_post_meta( $id, 'origen', true );
+	foreach ( [ 'canal' => 'Canal', 'referente' => 'Vino desde', 'entrada' => 'Entró al sitio por', 'campana' => 'Campaña (utm_source)' ] as $k => $etiqueta ) {
+		$v = (string) get_post_meta( $id, $k, true );
+		if ( '' !== $v ) {
+			$out[ $etiqueta ] = $v;
+		}
+	}
 	$out['Fecha']  = get_the_date( 'd/m/Y H:i', $id );
 	return $out;
 }
@@ -219,13 +283,15 @@ add_action( 'save_post_pm_consulta', function ( $id ) {
 } );
 
 add_filter( 'manage_pm_consulta_posts_columns', function ( $cols ) {
-	return [ 'cb' => $cols['cb'], 'title' => 'Consulta', 'pm_contacto' => 'Contacto', 'pm_cuando' => 'Cuándo / personas', 'pm_estado' => 'Estado', 'date' => 'Llegó' ];
+	return [ 'cb' => $cols['cb'], 'title' => 'Consulta', 'pm_contacto' => 'Contacto', 'pm_cuando' => 'Cuándo / personas', 'pm_canal' => 'Canal', 'pm_estado' => 'Estado', 'date' => 'Llegó' ];
 } );
 add_action( 'manage_pm_consulta_posts_custom_column', function ( $col, $id ) {
 	if ( 'pm_contacto' === $col ) {
 		echo pm_enlace_contacto( (string) get_post_meta( $id, 'contacto', true ) ); // phpcs:ignore -- escaped inside
 	} elseif ( 'pm_cuando' === $col ) {
 		echo esc_html( trim( get_post_meta( $id, 'cuando', true ) . ' · ' . get_post_meta( $id, 'personas', true ), ' ·' ) );
+	} elseif ( 'pm_canal' === $col ) {
+		echo esc_html( (string) get_post_meta( $id, 'canal', true ) ?: '—' );
 	} elseif ( 'pm_estado' === $col ) {
 		$e = (string) get_post_meta( $id, 'estado', true );
 		echo esc_html( ( 'nueva' === $e ? '🟠 ' : '' ) . ( PM_CONSULTA_ESTADOS[ $e ] ?? $e ) );

@@ -38,6 +38,23 @@ $inicio = pm_url_inicio( $idioma );
 	h.querySelectorAll('#menu-principal a').forEach((a) => a.addEventListener('click', () => set(false)));
 })();
 </script>
+<script>
+// Which page this visit started on and which outside site sent it: kept in sessionStorage (this tab, no cookies) and
+// sent only inside an inquiry form, so we learn which pages and channels bring the people who ask.
+(() => {
+	let v = null;
+	try { v = JSON.parse(sessionStorage.getItem('pm-entrada')); } catch (e) {}
+	if (!v || typeof v.e !== 'string') {
+		let r = '';
+		try { const u = new URL(document.referrer); if (u.host !== location.host) r = u.host; } catch (e) {}
+		v = { e: location.pathname + location.search, r, c: new URLSearchParams(location.search).get('utm_source') || '' };
+		try { sessionStorage.setItem('pm-entrada', JSON.stringify(v)); } catch (e) {}
+	}
+	document.querySelectorAll('input[name="pm_entrada"]').forEach((i) => {
+		i.value = v.e; i.form.pm_referente.value = v.r || ''; i.form.pm_campana.value = v.c || '';
+	});
+})();
+</script>
 <?php
 // Browser in another of our languages: suggest that version, never redirect
 // (search engines crawl without a language; hreflang does the steering).

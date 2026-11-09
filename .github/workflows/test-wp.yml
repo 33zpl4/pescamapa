@@ -286,10 +286,14 @@ jobs:
             -d pm_volver="$URL/en/plan-your-trip/" -d pm_t=$(( $(date +%s) - 60 )) \
             -d nombre=Tester -d contacto=tester@example.com -d cuando=November -d personas=2 \
             -d duracion=semana -d experiencia=alguna -d alojamiento=lodge -d pais=Chile -d modalidad=mosca \
+            --data-urlencode 'pm_entrada=/en/notes/nota-de-prueba/?utm_source=chatgpt.com' -d pm_referente=www.chatgpt.com -d pm_campana=chatgpt.com \
             "$URL/wp-admin/admin-post.php")
           [[ "$loc" == *"consulta=ok"* ]] && echo "✓ viaje → $loc" || { echo "✖ viaje: $loc"; fail=1; }
           v=$(wp --path="$WP" post list --post_type=pm_consulta --post_status=private --s=Tester --format=ids | head -n1)
-          for par in "duracion:5 a 7 días" "experiencia:Algo de experiencia" "alojamiento:Lodge con todo incluido" "pais:Chile"; do
+          # Attribution (footer script → hidden fields): entry page, referrer host without www, channel label.
+          check /en/plan-your-trip/ 200 'name="pm_entrada"'
+          check /en/plan-your-trip/ 200 "sessionStorage.setItem('pm-entrada'"
+          for par in "duracion:5 a 7 días" "experiencia:Algo de experiencia" "alojamiento:Lodge con todo incluido" "pais:Chile" "canal:ChatGPT" "referente:chatgpt.com" "entrada:/en/notes/nota-de-prueba/?utm_source=chatgpt.com"; do
             k=${par%%:*}; e=${par#*:}; g=$(wp --path="$WP" post meta get "$v" "$k")
             [[ "$g" == "$e" ]] && echo "✓ $k = $g" || { echo "✖ $k = '$g' (esperado '$e')"; fail=1; }
           done
