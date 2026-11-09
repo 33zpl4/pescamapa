@@ -107,3 +107,13 @@ En la rama `claude/determined-wright-q3oxnq` (sin mergear ni desplegar; falta pa
 4. Decidir qué pasa con los "desde" de Bariloche hasta que un operador los confirme.
 5. Pasar los datos para "Quiénes somos" y decir si hay un WhatsApp de Pescamapa para publicar.
 6. Confirmar Bing Webmaster Tools.
+
+## Respuesta del dueño (9/11/2026) y cómo cambia el orden
+
+- **Sin publicidad paga por ahora.** El experimento de la palanca 2 queda descartado; sigue vigente el punto 6 de la estrategia SEO.
+- **Bing Webmaster Tools no está configurado.** Queda como tarea del dueño (se importa desde Search Console).
+- **El sitio es hoy una fuente de información, no un lugar donde se reserva.** Nadie reservaría un lodge desde acá: no muestra el lodge, sus habitaciones ni sus servicios. La transición lleva tiempo.
+- **Dato nuevo que reordena la palanca 1:** Cheyenne es técnica en turismo, trabaja en la oficina de turismo de Goya, es guía profesional en la Isla de las Damas y la Reserva Isoró y fundó la agencia Bitácora. En Goya Pescamapa no necesita convencer a un operador: **es** el operador, con agencia, conocimiento local y fotos propias. El primer viaje cerrado conviene buscarlo ahí (paquetes de Goya, que hoy están publicados sin precio), y no en un lodge de Patagonia.
+- **Consecuencia:** tres etapas. (1) Fuente de información en todo el país, como hoy. (2) Goya como el destino donde sí se puede pedir y concretar, con producto propio, precio, fotos y condiciones. (3) Lodges de terceros, cuando haya consultas que mostrarles. Las metas del tablero se leen así: los dos acuerdos pasan a ser "paquetes de Goya con precio y condiciones" y "un operador externo".
+- **A cuidar:** si Bitácora opera los paquetes de Goya, la página lo tiene que decir (la promesa de imparcialidad lo exige), y conviene confirmar que Cheyenne puede y quiere mencionar su cargo en la oficina de turismo.
+- **Quiénes somos:** con lo que pasó el dueño alcanza para una página creíble. Faltan una foto de cada uno, el número de registro de la agencia si existe y el visto bueno de Cheyenne sobre qué se nombra.
