@@ -222,6 +222,9 @@ jobs:
           check /paquetes-de-pesca/esquina/ 200 'content="DESC-DE-PRUEBA"'
           check /paquetes-de-pesca/esquina/ 200 'Pedir mi cotización'
           check /paquetes-de-pesca/esquina/ 200 'barra-pedir'
+          # Same phone bar on the destination guide (to its own form) and on notes (to the trip form).
+          check /litoral/corrientes/pesca-en-esquina/ 200 'class="barra-pedir" href="#consulta"'
+          check /notas/nota-de-prueba/ 200 'class="barra-pedir" href="[^"]*/armar-viaje/'
           # City page (1/11/2026): every public outfitter of the destination, short answer, FAQ, agreements first; no contact data, no example data.
           check /guias-de-pesca/esquina/ 200 'v-guias' 'CONTACTO-INTERNO-123'
           check /guias-de-pesca/esquina/ 200 'Guías de pesca en Esquina'

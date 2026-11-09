@@ -382,3 +382,10 @@
    (min-width 560px) made the whole page 576px wide on a 390px screen and the table never scrolled inside its own box. */
 @media (max-width: 960px) { .layout { grid-template-columns: minmax(0, 1fr); } }
 .layout > .prose { min-width: 0; }
+
+/* The language suggestion sat on top of the quote bar on phones (both fixed at the bottom): lift it while the bar shows,
+   and leave room under the footer so the bar never covers its last links. */
+@media (max-width: 860px) {
+	body:has(.barra-pedir:not(.oculta)) .sugerencia-idioma { bottom: 80px; }
+	body:has(.barra-pedir) footer { padding-bottom: 88px; }
+}

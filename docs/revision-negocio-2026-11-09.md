@@ -146,3 +146,5 @@ Capturas de hoy en la rama `capturas` (inicio, guía de Goya, paquetes de Goya e
 **Para que el SEO tarde menos:** concentrar la autoridad en Corrientes antes que en todo el país, conseguir enlaces de los prestadores listados y de sitios locales, y configurar Bing Webmaster Tools.
 
 **A cuidar:** el cargo de Cheyenne en la oficina de turismo no debería usarse para derivar consultas hacia Pescamapa o Bitácora ni para conseguir enlaces oficiales sin que la oficina lo decida con las mismas reglas que para cualquier otro prestador.
+
+**Botón fijo en el teléfono (dueño: sí, 9/11/2026).** Las páginas de paquetes y de "Guías de pesca en <ciudad>" ya lo tenían; se sumó a las guías de destino (lleva al formulario de la misma página) y a las notas (lleva a `/armar-viaje/` con el destino y la especie). Parcial `parciales/barra-pedir.php`. De paso: el aviso de idioma tapaba el botón en el teléfono; ahora se corre hacia arriba mientras el botón está a la vista.

@@ -68,4 +68,5 @@ get_header(); ?>
 		</div>
 	</article>
 </div>
+<?php get_template_part( 'parciales/barra-pedir', null, [ 'url' => pm_url_viaje( $idioma ) . '?' . http_build_query( array_filter( [ 'destino' => $n['destino'], 'especie' => $n['especie'] ] ) ), 'hasta' => '.cta-nota' ] ); ?>
 <?php get_footer();

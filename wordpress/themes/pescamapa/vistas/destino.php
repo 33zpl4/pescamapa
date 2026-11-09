@@ -201,4 +201,5 @@ get_header(); ?>
 		</div>
 	</article>
 </div>
+<?php get_template_part( 'parciales/barra-pedir', null, [ 'url' => '#consulta', 'hasta' => '#consulta' ] ); ?>
 <?php get_footer();
