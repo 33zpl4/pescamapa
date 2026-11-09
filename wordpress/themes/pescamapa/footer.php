@@ -21,6 +21,7 @@ $inicio = pm_url_inicio( $idioma );
 			<a href="<?php echo esc_url( pm_url_viaje( $idioma ) ); ?>"><?php pm_e( 'nav.viaje' ); ?></a>
 			<a href="<?php echo esc_url( pm_url_calendario( $idioma ) ); ?>"><?php pm_e( 'cal.eyebrow' ); ?></a>
 			<a href="<?php echo esc_url( pm_url_paraguias( $idioma ) ); ?>"><?php pm_e( 'pie.prestadores' ); ?></a>
+			<a href="<?php echo esc_url( pm_url_nosotros( $idioma ) ); ?>"><?php pm_e( 'ns.eyebrow' ); ?></a>
 		</nav>
 	</div>
 	<div class="shell">

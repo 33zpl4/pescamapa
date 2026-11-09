@@ -105,6 +105,26 @@ function pm_seo(): array {
 				[ '@type' => 'ListItem', 'position' => 2, 'name' => pm_t( 'cal.eyebrow' ), 'item' => pm_url_calendario( pm_lang() ) ],
 			],
 		];
+	} elseif ( 'nosotros' === $vista ) {
+		$s['title']       = pm_t( 'ns.title' );
+		$s['description'] = pm_t( 'ns.description' );
+		$s['alternas']    = pm_alternas_fijas( 'pm_url_nosotros' );
+		$s['jsonld'][]    = [
+			'@context'    => 'https://schema.org',
+			'@type'       => 'AboutPage',
+			'name'        => pm_t( 'ns.h1' ),
+			'description' => pm_t( 'ns.description' ),
+			'url'         => pm_url_nosotros( pm_lang() ),
+			'inLanguage'  => pm_meta_idioma()['html'],
+			'isPartOf'    => [ '@type' => 'WebSite', 'name' => 'Pescamapa', 'url' => pm_url_inicio( pm_lang() ) ],
+			'mainEntity'  => [
+				'@type'   => 'Organization',
+				'name'    => 'Pescamapa',
+				'url'     => pm_url_inicio( pm_lang() ),
+				'email'   => PM_EMAIL_PUBLICO,
+				'founder' => array_map( fn( $n ) => [ '@type' => 'Person', 'name' => pm_t( "ns.p$n.nombre" ), 'description' => pm_t( "ns.p$n.texto" ) ], [ 1, 2 ] ),
+			],
+		];
 	} elseif ( 'paraguias' === $vista ) {
 		$s['title']       = pm_t( 'pg.title' );
 		$s['description'] = pm_t( 'pg.description' );
