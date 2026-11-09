@@ -7,7 +7,7 @@
  * If no such heading is found the guide is skipped and logged: nothing is guessed. Idempotent: a guide that already links to the hub
  * is left alone. Simulacro first ($aplicar = false). Run with wp-script.yml (script = hub-licencias-enlaces-guias-2026-11-09).
  */
-$aplicar = false;
+$aplicar = true;
 $guias   = [ 'rio-grande', 'esquel-trevelin' ];
 $texto   = [
 	'es' => 'Todos los permisos por región, en pesos y en dólares aproximados: <a href="%s">licencia de pesca para extranjeros en Argentina 2026/27</a>.',
