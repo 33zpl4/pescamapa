@@ -519,12 +519,13 @@
    "slug": "quanto-custa-semana-pesca-truta-patagonia",
    "especie": "trucha",
    "titulo": "Quanto custa uma semana de pesca de truta em Neuquén e Chubut: lodges all inclusive (2026/27)",
-   "bajada": "Tarifas por pessoa de lodges de truta em Junín de los Andes, Cholila, Futaleufú e Trevelin: de 3 a 7 noites, com o que cada um inclui.",
+   "bajada": "Tarifas por pessoa de lodges de truta em Junín de los Andes, Cholila, Futaleufú, Trevelin e rio Manso (perto de Bariloche): de 3 a 7 noites, com o que cada um inclui.",
    "seo_title": "Quanto custa uma semana de pesca de truta (2026/27)",
    "seo_description": "Preço de uma semana de pesca com mosca em lodges de Neuquén e Chubut em 2026/27: de US$ 3.950 por 3 noites a US$ 9.200 por 7 noites, por pessoa.",
    "datos": [
     "Um lodge do rio Chimehuín (Junín de los Andes, Neuquén) custa de US$ 3.950 (3 noites, 2 dias de pesca) a US$ 6.950 (7 noites, 6 dias) por pessoa, de dezembro de 2026 a abril de 2027.",
     "Uma rede de lodges em Chubut publica 7 noites e 6 dias de pesca desde US$ 6.545 (Trevelin) até US$ 9.200 (Cholila), na alta temporada.",
+    "Um lodge do rio Manso (Rio Negro, perto de Bariloche) custa US$ 7.000 por pescador por semana em 2026/27 e US$ 7.700 a partir de 1 de janeiro de 2027; inclui as licenças de pesca e o traslado desde Bariloche.",
     "Uma semana organizada em Trevelin, de 6 a 13 de março de 2027, custa US$ 5.800 por pescador e inclui licenças e traslados desde Esquel.",
     "Esses preços são por pessoa em quarto duplo e com guia compartilhado."
    ],
@@ -574,7 +575,7 @@
     },
     {
      "t": "p",
-     "h": "Tarifa de dezembro de 2026 a abril de 2027, por pessoa, em quarto duplo e guia compartilhado. A temporada oficial abre em 1º de novembro, mas este lodge normalmente abre em 1º de dezembro."
+     "h": "Tarifa de dezembro de 2026 a abril de 2027, por pessoa, em quarto duplo e guia compartilhado. A temporada oficial abre em 1 de novembro, mas este lodge normalmente abre suas portas em 1 de dezembro."
     },
     {
      "t": "h2",
@@ -617,7 +618,49 @@
     },
     {
      "t": "p",
-     "h": "Preços publicados ou informados em 5 de novembro de 2026. Os lodges da rede publicam semanas de sábado a sábado; os preços variam conforme a data e alguns lodges aceitam estadias de outra duração. Incluem hospedagem, refeições, bebidas e guia. A licença não está inclusa no preço, salvo se o operador informar (a semana de Trevelin inclui) e as passagens são confirmadas com cada operador. Valores oficiais da licença em <a href=\"{n:licencia-pesca-patagonia-precios}\">licença de pesca na Patagônia 2026/27</a>."
+     "h": "Preços publicados ou informados em 5 de novembro de 2026. Os lodges da rede publicam semanas de sábado a sábado; os preços variam conforme a data e alguns lodges aceitam estadias de outra duração. Incluem hospedagem, refeições, bebidas e guia. A licença não está inclusa no preço salvo se o operador indicar (a semana de Trevelin e o lodge do rio Manso sim incluem) e as passagens são confirmadas com cada operador. Valores oficiais da licença em <a href=\"{n:licencia-pesca-patagonia-precios}\">licença de pesca na Patagônia 2026/27</a>."
+    },
+    {
+     "t": "h2",
+     "h": "Rio Negro: semana em um lodge do rio Manso, perto de Bariloche"
+    },
+    {
+     "t": "tabla",
+     "cab": [
+      "Tarifa do operador, por pessoa em quarto duplo",
+      "Temporada 2026/27",
+      "A partir de 1 de janeiro de 2027 (temporada 2027/28)"
+     ],
+     "filas": [
+      [
+       "Pescador, por noite",
+       "US$ 1.050",
+       "US$ 1.150"
+      ],
+      [
+       "Pescador, por semana",
+       "US$ 7.000",
+       "US$ 7.700"
+      ],
+      [
+       "Acompanhante que não pesca, por noite",
+       "US$ 800",
+       "US$ 800"
+      ],
+      [
+       "Acompanhante que não pesca, por semana",
+       "US$ 5.400",
+       "US$ 5.400"
+      ]
+     ]
+    },
+    {
+     "t": "p",
+     "h": "Tarifa publicada pelo próprio lodge, lida em 10 de novembro de 2026; a página não mostra data de publicação. <strong>Inclui</strong> a pesca guiada, o traslado desde e para a região de Bariloche, hospedagem, refeições e lanches, todas as bebidas (com álcool), internet, lavanderia uma ou duas vezes por semana, <strong>as licenças de pesca</strong> e atividades guiadas sem pesca (caminhada, caiaque, cavalgadas, passeios de barco, rafting, aulas de culinária e sauna). <strong>Não inclui</strong> o equipamento pessoal de pesca nem as gorjetas, nem massagens, observação de aves, degustação de vinhos ou caminhadas de alta dificuldade. Cobra à parte um suplemento de guia individual de US$ 250 por pescador por dia e o aluguel do equipamento completo a US$ 80 por pescador por dia (vara e carretilha, ou botas e waders, a US$ 40 por dia); o aluguel pode ser isento conforme a duração da estadia."
+    },
+    {
+     "t": "p",
+     "h": "<strong>Condições de reserva do operador:</strong> sinal de 50% não reembolsável na reserva; o saldo, não reembolsável, deve ser pago no máximo 90 dias antes da chegada. Mudanças de data dentro da mesma temporada dependem da disponibilidade; passar para outra temporada faz perder o sinal. <strong>Quem confirmar a temporada 2027/28 com um sinal recebido antes de 1 de janeiro de 2027 mantém a tarifa da temporada atual.</strong> Cálculos nossos: a semana de 2027/28 custa 10% a mais que a de 2026/27 (US$ 7.700 contra US$ 7.000), e a semana sai cerca de US$ 350 mais barata que sete noites avulsas (US$ 7.350 em 2026/27)."
     },
     {
      "t": "h2",
@@ -625,7 +668,7 @@
     },
     {
      "t": "p",
-     "h": "No lodge com escala completa de Neuquén, cada dia extra de pesca reduz o preço por dia: de US$ 1.975 com 2 dias a US$ 1.158 com 6. Uma estadia de 4 noites e 3 dias é o mínimo que justifica a viagem; uma semana completa aproveita melhor o deslocamento."
+     "h": "No lodge com escala completa de Neuquén, cada dia extra de pesca reduz o preço por dia: de US$ 1.975 com 2 dias a US$ 1.158 com 6. Uma estadia de 4 noites e 3 dias é o mínimo que justifica a viagem; uma semana completa aproveita melhor o traslado."
     },
     {
      "t": "h2",
@@ -637,7 +680,7 @@
     },
     {
      "t": "p",
-     "h": "<strong>Quer ajuda para escolher o lodge?</strong> Escreva no <a href=\"{viaje}\">formulário da viagem</a> e retornamos opções conforme sua data, sem custo ou compromisso."
+     "h": "<strong>Quer ajuda para escolher lodge?</strong> Escreva no <a href=\"{viaje}\">formulário da viagem</a> e retornamos opções conforme sua data, sem custo nem compromisso."
     }
    ]
   },
@@ -645,20 +688,21 @@
    "clave": "precio-pesca-patagonia-sur",
    "slug": "quanto-custa-pescar-tierra-del-fuego-calafate",
    "especie": "trucha",
-   "titulo": "Quanto custa pescar em Tierra del Fuego e El Calafate: truta-do-mar e passeios de um dia (2026/27)",
-   "bajada": "O preço de uma semana de truta-do-mar em um lodge em Río Grande e de um passeio de meio dia ou dia inteiro em El Calafate, com o que está incluído em cada um.",
+   "titulo": "Quanto custa pescar em Tierra del Fuego e El Calafate: truta-do-mar e saídas de um dia (2026/27)",
+   "bajada": "O preço de uma semana de truta-do-mar em um lodge de Río Grande e de uma saída de meio dia ou dia inteiro em El Calafate, com o que cada uma inclui.",
    "seo_title": "Quanto custa pescar em Tierra del Fuego e Calafate",
-   "seo_description": "Preço para pescar na Patagônia sul: uma semana de truta-do-mar em Río Grande a partir de US$ 12.950 e um passeio de dia em El Calafate desde $ 440.000.",
+   "seo_description": "Preço para pescar na Patagônia sul: uma semana de truta-do-mar em Río Grande a partir de US$ 12.950 e uma saída de dia em El Calafate a partir de $ 440.000.",
    "datos": [
     "Uma semana em um lodge de truta-do-mar em Río Grande (Tierra del Fuego) custa de US$ 12.950 a US$ 14.950 por pessoa, conforme a data, na temporada 2026/27.",
-    "A tarifa desse lodge é em quarto single e com guia compartilhado, e inclui refeições, bebidas e traslado do aeroporto.",
-    "Em El Calafate, o passeio de meio dia (5 horas) custa $ 440.000 por pescador e o de dia inteiro (9 horas) $ 720.000.",
-    "Em El Calafate pesca-se da margem, com wading; o acompanhante que não pesca paga $ 185.000 o meio dia e $ 335.000 o dia inteiro."
+    "A tarifa desse lodge é em quarto single e com guia compartilhado, e inclui refeições, bebidas e traslado desde o aeroporto.",
+    "Uma semana em Jurassic Lake (Santa Cruz) custa US$ 8.000 por pescador segundo a página de tarifas do lodge; os programas de 4 e 3 noites custam US$ 5.200 e US$ 4.200, de janeiro a abril.",
+    "Em El Calafate, a saída de meio dia (5 horas) custa $ 440.000 por pescador e a de dia inteiro (9 horas) $ 720.000.",
+    "Em El Calafate pesca-se da margem, vadeando; o acompanhante que não pesca paga $ 185.000 o meio dia e $ 335.000 o dia inteiro."
    ],
    "bloques": [
     {
      "t": "p",
-     "h": "<strong>Resposta curta.</strong> No sul da Patagônia há dois extremos com preço publicado. Uma <strong>semana de truta-do-mar em um lodge de Río Grande</strong> (Tierra del Fuego) custa <strong>de US$ 12.950 a US$ 14.950 por pessoa</strong>. Um <strong>passeio de dia em El Calafate</strong> custa <strong>$ 440.000 (meio dia) ou $ 720.000 (dia inteiro) por pescador</strong>, em pesos."
+     "h": "<strong>Resposta curta.</strong> No sul da Patagônia há dois extremos com preço publicado. Uma <strong>semana de truta-do-mar em um lodge de Río Grande</strong> (Tierra del Fuego) custa <strong>de US$ 12.950 a US$ 14.950 por pessoa</strong>. Uma <strong>saída de dia em El Calafate</strong> custa <strong>$ 440.000 (meio dia) ou $ 720.000 (dia inteiro) por pescador</strong>, em pesos. Também há uma <strong>semana em Jurassic Lake</strong> (Santa Cruz): <strong>US$ 8.000 por pescador</strong>."
     },
     {
      "t": "h2",
@@ -691,16 +735,53 @@
     },
     {
      "t": "p",
-     "h": "Tarifa de um lodge de Río Grande para a temporada de 26 de dezembro de 2026 a 17 de abril de 2027, consultada em 4 de novembro de 2026. Inclui hospedagem, traslado do aeroporto de Río Grande, todas as refeições e bebidas, guia profissional (dois pescadores por guia) e equipamento para empréstimo. Não inclui passagens, licença de pesca (o lodge estima cerca de US$ 550 por pescador), lavanderia nem gorjetas. Solicita um depósito de 50% e não é reembolsável. Os demais operadores que encontramos em Río Grande não publicam tarifa; o guia do destino está em <a href=\"{n:rio-grande}\">pescar em Río Grande</a>."
+     "h": "Tarifa de um lodge de Río Grande para a temporada de 26 de dezembro de 2026 a 17 de abril de 2027, lida em 4 de novembro de 2026. Inclui hospedagem, traslado desde o aeroporto de Río Grande, todas as refeições e bebidas, guia profissional (dois pescadores por guia) e equipamento para empréstimo. Não inclui passagens, a licença de pesca (o lodge estima cerca de US$ 550 por pescador), lavanderia nem gorjetas. Solicita um depósito de 50% e não é reembolsável. Os demais operadores que encontramos em Río Grande não publicam tarifa; o guia do destino está em <a href=\"{n:rio-grande}\">pescar em Río Grande</a>."
     },
     {
      "t": "h2",
-     "h": "El Calafate: passeio de meio dia ou dia inteiro"
+     "h": "Jurassic Lake (Santa Cruz): programas de 3, 4 e 7 noites"
     },
     {
      "t": "tabla",
      "cab": [
-      "Passeio",
+      "Programa",
+      "Por pescador",
+      "Dias de pesca (cálculo nosso por dia)",
+      "Quando"
+     ],
+     "filas": [
+      [
+       "7 noites, sábado a sábado",
+       "US$ 8.000",
+       "6,5 dias (cerca de US$ 1.231 por dia)",
+       "Sem restrição de mês publicada"
+      ],
+      [
+       "4 noites, terça a sábado",
+       "US$ 5.200",
+       "3,5 dias (cerca de US$ 1.486 por dia)",
+       "De janeiro a abril"
+      ],
+      [
+       "3 noites, sábado a terça",
+       "US$ 4.200",
+       "2,5 dias (cerca de US$ 1.680 por dia)",
+       "De janeiro a abril"
+      ]
+     ]
+    },
+    {
+     "t": "p",
+     "h": "Tarifa final por pescador da página de tarifas do próprio lodge, lida em 10 de novembro de 2026; a página não mostra data nem temporada. Pesca-se vadeando ou da margem, no lago Strobel e no rio Barrancoso. A página menciona guias, hospedagem, refeições e logística, mas não lista o que está incluído nem o que é cobrado à parte: licença, traslados, bebidas e gorjetas não estão confirmados. <strong>Um valor diferente:</strong> o mesmo site tem outra página de planos que mostra uma \"Jurassic Full Week\" de 7 noites e 6,5 dias de pesca por US$ 6.900, com voo charter de ida e volta, válida por 12 meses e sem data; não conseguimos conciliar os dois valores, então pergunte qual vale para sua data. O lodge lista agências representantes, mas não diz nada sobre comissões."
+    },
+    {
+     "t": "h2",
+     "h": "El Calafate: saída de meio dia ou de dia inteiro"
+    },
+    {
+     "t": "tabla",
+     "cab": [
+      "Saída",
       "Pescador",
       "Acompanhante que não pesca"
      ],
@@ -719,23 +800,23 @@
     },
     {
      "t": "p",
-     "h": "Preços em pesos publicados por uma agência de El Calafate, em 5 de novembro de 2026. Incluem traslado do hotel, guia de pesca, equipamento completo para pesca com fly ou spinning, bebidas, bebidas quentes, seguro e permissões de pesca. A pesca é com devolução, da margem, com wading; não há pesca embarcada. Os locais ficam a cerca de 50 minutos de El Calafate e são definidos no mesmo dia conforme o clima e o nível da água."
+     "h": "Preços em pesos publicados por uma agência de El Calafate, em 5 de novembro de 2026. Incluem traslado desde o hotel, guia de pesca, equipamento completo para pesca com mosca ou spinning, bebidas, bebidas quentes, seguro e permissões de pesca. A pesca é com devolução, da margem, vadeando; não se pesca embarcado. Os locais ficam a cerca de 50 minutos de El Calafate e são definidos no mesmo dia conforme o clima e o nível da água."
     },
     {
      "t": "h2",
-     "h": "O que somar além do preço?"
+     "h": "O que é preciso somar além do preço?"
     },
     {
      "t": "lista",
      "items": [
       "<strong>Passagens</strong> até Río Grande ou El Calafate: o preço do lodge começa no aeroporto.",
-      "<strong>Licença de pesca</strong> em Tierra del Fuego: o lodge estima cerca de US$ 550 por pescador por semana.",
+      "<strong>A licença de pesca</strong> em Tierra del Fuego: o lodge estima cerca de US$ 550 por pescador por semana.",
       "<strong>Gorjetas</strong> para guias e equipe."
      ]
     },
     {
      "t": "p",
-     "h": "<strong>Quer comparar com outros destinos?</strong> Veja quanto custa uma <a href=\"{n:precio-semana-trucha-patagonia-norte}\">semana de truta em Neuquén e Chubut</a>, ou escreva para nós em <a href=\"{viaje}\">o formulário da viagem</a>."
+     "h": "<strong>Quer comparar com outros destinos?</strong> Veja quanto custa uma <a href=\"{n:precio-semana-trucha-patagonia-norte}\">semana de truta na Neuquén e Chubut</a>, ou escreva para nós no <a href=\"{viaje}\">formulário da viagem</a>."
     }
    ]
   },
@@ -877,15 +958,16 @@
    "slug": "pesca-em-corrientes-desde-brasil",
    "especie": "dourado",
    "titulo": "Pesca em Corrientes desde o Brasil: licença, documentos, rotas e custos (2026/27)",
-   "bajada": "Que licença um pescador vindo do Brasil precisa, quanto custa aproximadamente, quais documentos levar e quanto tempo leva para chegar a Paso de la Patria, Esquina e Goya.",
-   "seo_title": "Pescar em Corrientes desde o Brasil: licença e como chegar",
+   "bajada": "Qual licença precisa um pescador vindo do Brasil, quanto custa aproximadamente, quais documentos levar e quanto tempo leva para chegar a Paso de la Patria, Esquina e Goya.",
+   "seo_title": "Pescar em Corrientes desde o Brasil: licença e rotas",
    "seo_description": "Como pescar em Corrientes vindo do Brasil: licença de turista estrangeiro (a partir de $ 35.000 por dia), documentos de entrada e rotas com tempos.",
    "datos": [
     "A licença de turista estrangeiro (domicílio fora da Argentina) é fixada em litros de gasolina comum: 16 litros por um dia, 20 por dois, 24 por três, 28 por quatro e 36 por seis.",
     "Com a gasolina comum a cerca de $ 2.177 o litro, são aproximadamente $ 35.000 por um dia, $ 44.000 por dois, $ 52.000 por três, $ 61.000 por quatro e $ 78.000 por seis.",
     "A licença é emitida online, 24 horas por dia, e o portal está em espanhol, inglês e português; o cadastro aceita o CPF brasileiro como documento.",
-    "Para entrar na Argentina desde o Brasil é necessário RG físico em bom estado ou passaporte válido; não são aceitas versões digitais nem a CNH.",
-    "De Uruguaiana a Esquina são 310 km (4 h 31 min) e de São Borja a Paso de la Patria, 386 km (4 h 45 min), segundo o Google Maps."
+    "Para entrar na Argentina desde o Brasil é necessário RG físico em bom estado ou passaporte válido; não são aceitas versões digitais nem a carteira de motorista (CNH).",
+    "De Uruguaiana a Esquina são 310 km (4 h 31 min) e de São Borja a Paso de la Patria, 386 km (4 h 45 min), segundo o Google Maps.",
+    "Uma agência brasileira publica um pacote de pesca na cidade de Corrientes por R$ 1.800 por pescador por dia (2 por lancha) ou R$ 1.600 (3 por lancha), com mínimo de 3 dias, na temporada 2026."
    ],
    "fuentes": [
     {
@@ -894,7 +976,7 @@
      "oficial": 1
     },
     {
-     "nombre": "Preços na bomba da Secretaria de Energia: média da gasolina comum em 14 postos de Corrientes (21 de outubro de 2026)",
+     "nombre": "Preços nas bombas da Secretaria de Energia: média da gasolina comum em 14 postos de Corrientes (21 de outubro de 2026)",
      "url": "",
      "oficial": 1
     },
@@ -909,12 +991,12 @@
      "oficial": 1
     },
     {
-     "nombre": "Passagem Santo Tomé - São Borja, Ministério da Segurança da Nação",
+     "nombre": "Paso Santo Tomé - São Borja, Ministério da Segurança da Nação",
      "url": "https://www.argentina.gob.ar/seguridad/pasosinternacionales/detalle/ruta/74/Santo-Tom%C3%A9-Sao-Borja",
      "oficial": 1
     },
     {
-     "nombre": "Site oficial de turismo da Argentina: documentos para entrada (28 de outubro de 2026)",
+     "nombre": "Site oficial de turismo da Argentina: documentos para ingressar (28 de outubro de 2026)",
      "url": "",
      "oficial": 1
     },
@@ -922,12 +1004,37 @@
      "nombre": "Google Maps: rotas de carro consultadas em 6 de novembro de 2026",
      "url": "",
      "oficial": 0
+    },
+    {
+     "nombre": "ARCA (Aduana): veículos registrados no MERCOSUL, lido em 10 de novembro de 2026",
+     "url": "https://www.arca.gob.ar/viajeros/ayuda/vehiculos-MERCOSUR.asp",
+     "oficial": 1
+    },
+    {
+     "nombre": "Migrações: documentação para entrar no país como turista, lido em 10 de novembro de 2026",
+     "url": "https://www.argentina.gob.ar/migraciones/documentacion-para-ingresar-al-pais-como-turista",
+     "oficial": 1
+    },
+    {
+     "nombre": "Visit Argentina: documentação necessária para turistas brasileiros que entram na Argentina (22 de julho de 2026)",
+     "url": "https://www.argentina.travel/novedades/documentacion-necesaria-para-turistas-brasilenos-que-ingresan-a-la-argentina",
+     "oficial": 1
+    },
+    {
+     "nombre": "Fishing Brazil Adventures: pacote Marco Pesca, temporada 2026 (operadora, lido em 10 de novembro de 2026)",
+     "url": "https://www.fishingbraziladventures.com.br/pacote/marco-pesca",
+     "oficial": 0
+    },
+    {
+     "nombre": "Ruta0: Paso de los Libres a Goya (site de rotas, 10 de novembro de 2026)",
+     "url": "https://www.ruta0.com/ruta/argentina/paso-de-los-libres-a-goya/",
+     "oficial": 0
     }
    ],
    "bloques": [
     {
      "t": "p",
-     "h": "<strong>Resposta curta.</strong> Para pescar em Corrientes, um brasileiro precisa da <strong>licença de turista estrangeiro</strong>, que é emitida online e paga em pesos conforme o preço da gasolina comum. Hoje custa <strong>aproximadamente $ 35.000 por um dia, $ 52.000 por três dias e $ 78.000 por seis</strong>. Para entrar basta RG físico em bom estado ou passaporte. De Uruguaiana a Esquina são cerca de 310 km e 4 h 30 min de viagem."
+     "h": "<strong>Resposta curta.</strong> Para pescar em Corrientes um brasileiro precisa da <strong>licença de turista estrangeiro</strong>, que é emitida online e paga em pesos conforme o preço da gasolina comum. Hoje custa <strong>aproximadamente $ 35.000 por um dia, $ 52.000 por três dias e $ 78.000 por seis</strong>. Para entrar basta o RG físico em bom estado ou passaporte. De Uruguaiana a Esquina são cerca de 310 km e 4 h 30 min de viagem."
     },
     {
      "t": "h2",
@@ -976,11 +1083,11 @@
     },
     {
      "t": "p",
-     "h": "Os litros constam no Anexo I da Disposição 1144/2024 da Direção de Recursos Naturais de Corrientes. O valor é atualizado apenas conforme o preço da gasolina comum vendida no Automóvel Club Argentino de Corrientes Capital: o anexo considerou $ 1.135 o litro em outubro de 2024. Calculamos o valor aproximado de hoje com $ 2.177 o litro, que é a média de 14 postos de Corrientes segundo os preços da Secretaria de Energia (atualizado em 21 de outubro de 2026). Não é o preço exato do ACA: o portal mostra o valor vigente na compra."
+     "h": "Os litros vêm do Anexo I da Disposição 1144/2024 da Direção de Recursos Naturais de Corrientes. O valor é atualizado apenas com o preço da gasolina comum vendida no Automóvil Club Argentino de Corrientes Capital: o anexo considerou $ 1.135 o litro em outubro de 2024. Calculamos o valor aproximado de hoje com $ 2.177 o litro, que é a média de 14 postos de Corrientes segundo os preços nas bombas da Secretaria de Energia (atualizado em 21 de outubro de 2026). Não é o preço exato do ACA: o portal mostra o valor vigente na hora da compra."
     },
     {
      "t": "h2",
-     "h": "Vale a pena tirar licença para vários dias?"
+     "h": "Vale a pena tirar uma licença para vários dias?"
     },
     {
      "t": "p",
@@ -996,12 +1103,12 @@
       "<strong>No portal da Direção de Recursos Naturais de Corrientes.</strong> Funciona 24 horas e está em espanhol, inglês e português, segundo o Ministério do Turismo da província (nota de 2019, feita para o turismo brasileiro).",
       "<strong>O cadastro pede</strong> tipo e número de identificação, e-mail, nome, sobrenome, telefone, localização, foto de perfil e senha.",
       "<strong>Documento:</strong> o menu do cadastro oferece DNI, <strong>CPF brasileiro</strong>, CI uruguaio, passaporte argentino e \"Outros\" (captura de 6 de novembro de 2026).",
-      "<strong>A licença possui um código QR</strong> que o fiscal verifica pelo celular. Leve-a, impressa ou no telefone, no barco."
+      "<strong>A licença tem um código QR</strong> que o fiscal verifica com o celular. Leve-a, impressa ou no telefone, no barco."
      ]
     },
     {
      "t": "p",
-     "h": "Não conseguimos confirmar quais meios de pagamento o portal aceita para estrangeiro: pergunte à Direção de Recursos Naturais (ventas@recnaturalesctes.gob.ar ou +54 379 4909039). Os benefícios de isenção da disposição (aposentados, pessoas com deficiência, menores de 15 anos) valem apenas para quem tem domicílio em Corrientes."
+     "h": "Não conseguimos confirmar quais meios de pagamento o portal aceita para estrangeiros: pergunte à Direção de Recursos Naturais (ventas@recnaturalesctes.gob.ar ou +54 379 4909039). Os benefícios de isenção da disposição (aposentados, pessoas com deficiência, menores de 15 anos) valem apenas para quem tem domicílio em Corrientes."
     },
     {
      "t": "h2",
@@ -1012,13 +1119,36 @@
      "items": [
       "<strong>RG físico em bom estado ou passaporte válido.</strong> Não são aceitas versões digitais, incluindo o RG digital.",
       "<strong>A CNH não serve</strong> como documento de entrada.",
-      "<strong>Menores de 13 anos:</strong> precisam de autorização especial; veja o procedimento em argentina.gob.ar (\"ingressar no país com menor de idade\").",
-      "Alguns guias e lodges recomendam RG com menos de 10 anos: é uma recomendação prática, não um requisito oficial."
+      "<strong>Menores de 13 anos:</strong> precisam de autorização especial; veja o procedimento em argentina.gob.ar (\"ingressar no país com um menor de idade\").",
+      "Alguns guias e lodges recomendam um RG com menos de 10 anos: é uma recomendação prática, não um requisito oficial."
      ]
     },
     {
      "t": "p",
-     "h": "Segundo o site oficial de turismo da Argentina, consultado em 28 de outubro de 2026. Confirme com a Migração antes de viajar."
+     "h": "Segundo o site oficial de turismo da Argentina (22 de julho de 2026) e a página de Migrações sobre documentação para entrar como turista, lida em 10 de novembro de 2026. Migrações aceita passaporte válido ou carteira de identidade válida do Brasil e autoriza permanência de até três meses, prorrogável por igual período; o site de turismo especifica o RG em formato físico e um máximo de 90 dias prorrogáveis por mais 90. Confirme com Migrações antes de viajar."
+    },
+    {
+     "t": "h2",
+     "h": "O que pedem para entrar com um carro brasileiro?"
+    },
+    {
+     "t": "p",
+     "h": "Segundo a página da ARCA (Aduana) sobre veículos registrados no MERCOSUL, lida em 10 de novembro de 2026 (sem data de publicação), o condutor precisa:"
+    },
+    {
+     "t": "lista",
+     "items": [
+      "Documento de identidade válido para circular no MERCOSUL e o documento de turista emitido pela autoridade migratória.",
+      "Carteira de motorista de um país do MERCOSUL; o condutor deve ser residente no país onde o veículo está registrado.",
+      "Título ou outro documento oficial que comprove a propriedade do veículo.",
+      "Comprovante de seguro vigente no MERCOSUL.",
+      "Se dirigir alguém que não seja o titular: uma autorização por procuração em cartório (com o documento verde que comprova a titularidade) ou o documento azul em seu nome. O cônjuge e familiares até segundo grau podem dirigir sem autorização expressa, como turistas e comprovando o vínculo.",
+      "Se o carro for alugado: a Autorização para Circulação no MERCOSUL (ACM) fornecida pela locadora substitui parte desta documentação."
+     ]
+    },
+    {
+     "t": "p",
+     "h": "O prazo de permanência do carro é definido por Migrações. <strong>Uma diferença entre duas fontes oficiais:</strong> a página do site de turismo (22 de julho de 2026) exige \"seguro internacional\" e o \"procedimento completo de Admissão Temporária de veículos\", enquanto a da ARCA fala em \"seguro vigente no MERCOSUL\" e não menciona essa admissão. Nenhuma cita a Carta Verde. Confirme com sua seguradora e na aduana da fronteira antes de viajar."
     },
     {
      "t": "h2",
@@ -1050,12 +1180,49 @@
        "386 km",
        "4 h 45 min",
        "RN12"
+      ],
+      [
+       "Paso de los Libres (Argentina) → Goya",
+       "280 km",
+       "3 h 29 min",
+       "Rota recomendada por Ruta0"
       ]
      ]
     },
     {
      "t": "p",
-     "h": "Tempos do Google Maps consultados em 6 de novembro de 2026; não incluem a espera na fronteira. A passagem Santo Tomé - São Borja, pela Ponte Internacional da Integração, está aberta 24 horas (Ministério da Segurança da Nação; telefone (3756) 420035)."
+     "h": "Tempos do Google Maps consultados em 6 de novembro de 2026; não incluem a espera na fronteira. O passo Santo Tomé - São Borja, pela Ponte Internacional da Integração, está aberto 24 horas (Ministério da Segurança da Nação; telefone (3756) 420035). A linha de Goya vem do Ruta0, um site de rotas não oficial, consultado em 10 de novembro de 2026."
+    },
+    {
+     "t": "h2",
+     "h": "Quanto custa um pacote em reais?"
+    },
+    {
+     "t": "tabla",
+     "cab": [
+      "Pacote da temporada 2026 (Corrientes capital)",
+      "Por pescador e por dia",
+      "Mínimo",
+      "Total de 3 dias (cálculo nosso)"
+     ],
+     "filas": [
+      [
+       "2 pescadores por lancha",
+       "R$ 1.800",
+       "3 dias de pesca",
+       "R$ 5.400"
+      ],
+      [
+       "3 pescadores por lancha",
+       "R$ 1.600",
+       "3 dias de pesca",
+       "R$ 4.800"
+      ]
+     ]
+    },
+    {
+     "t": "p",
+     "h": "É a única tarifa em reais com data que encontramos publicada por uma agência, lida em 10 de novembro de 2026; a página informa \"temporada 2026\" e não mostra a data de publicação. É um pacote em um hotel 5 estrelas com cassino na cidade de Corrientes, não em Goya nem em Esquina. Inclui pensão completa com bebidas (cerveja, destilados, vinhos e refrigerantes), lancha de 6,20 m com guia, equipamento de pesca e iscas. Não inclui visto ou autorização de entrada, gorjetas, traslado até a região (é cotado à parte), socorro médico nem seguro viagem. Uma agência de Porto Alegre lista três pousadas argentinas (Hambaré, em Esquina; Puerto Yacarey e Matute) em sua página de pacotes 2026-2027, mas não publica preços."
     },
     {
      "t": "h2",
@@ -1063,7 +1230,7 @@
     },
     {
      "t": "p",
-     "h": "Para escolher o destino e a hospedagem, veja <a href=\"{n:viaje-dorado-amigos-precios}\">a viagem de dourado com amigos</a> (pousadas com pacote a partir de US$ 605 por pessoa) e <a href=\"{n:precio-viaje-dorado-lodge}\">quanto custa uma viagem de pesca de dourado</a> (lodges por quantidade de noites)."
+     "h": "Para escolher o destino e a hospedagem, veja <a href=\"{n:viaje-dorado-amigos-precios}\">a viagem de dourado com amigos</a> (pousadas com pacote desde US$ 605 por pessoa) e <a href=\"{n:precio-viaje-dorado-lodge}\">quanto custa uma viagem de pesca de dourado</a> (lodges por quantidade de noites)."
     },
     {
      "t": "h2",
@@ -1071,15 +1238,15 @@
     },
     {
      "t": "p",
-     "h": "O que é necessário para passar com carro próprio, equipamento de pesca e isca pela alfândega; os meios de pagamento do portal para estrangeiro; a rota até Goya; as tarifas em reais de operadores que as publiquem; e os horários e esperas de cada passagem. Vamos adicionar quando confirmarmos com fonte e data."
+     "h": "Quais normas valem para passar com varas, molinetes e iscas pela aduana (não encontramos norma que diga isso para turista); os meios de pagamento do portal para estrangeiros e dos prestadores de Corrientes; e os horários e esperas de cada fronteira, exceto Santo Tomé. Vamos adicionar quando confirmarmos com fonte e data."
     },
     {
      "t": "p",
-     "h": "Se você também pretende pescar em outra região, veja as licenças da Patagônia, da Terra do Fogo e de Santa Cruz em <a href=\"{n:licencias-extranjeros-argentina}\">licença de pesca para estrangeiros na Argentina 2026/27</a>."
+     "h": "Se também pretende pescar em outra região, veja as permissões da Patagônia, Terra do Fogo e Santa Cruz em <a href=\"{n:licencias-extranjeros-argentina}\">a licença de pesca para estrangeiros na Argentina 2026/27</a>."
     },
     {
      "t": "p",
-     "h": "<strong>Quer que a gente ajude a montar a viagem?</strong> Conte de onde você sai, datas e quantos são no <a href=\"{viaje}\">formulário da viagem</a> e enviamos opções de guia e hospedagem, sem custo nem compromisso."
+     "h": "<strong>Quer que a gente ajude a montar a viagem?</strong> Conte de onde sai, datas e quantos são em <a href=\"{viaje}\">o formulário da viagem</a> e enviamos opções de guia e hospedagem, sem custo nem compromisso."
     }
    ]
   },

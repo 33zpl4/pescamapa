@@ -103,6 +103,10 @@ foreach ( [ 'es', 'en', 'pt' ] as $l ) {
 				wp_update_post( [ 'ID' => $id, 'post_content' => wp_slash( $cuerpo ) ] );
 				update_field( 'nota_datos', array_map( fn( $x ) => [ 'dato' => $x ], $pg['datos'] ), $id );
 				update_field( 'actualizado', $hoy, $id );
+				update_field( 'bajada', $pg['bajada'], $id );
+				if ( isset( $pg['fuentes'] ) ) {
+					update_field( 'fuentes', array_map( fn( $f ) => [ 'nombre' => $f['nombre'], 'url' => $f['url'] ?? '', 'oficial' => ! empty( $f['oficial'] ) ? 1 : 0, 'consultada' => $hoy ], $pg['fuentes'] ), $id );
+				}
 				$guardado = get_post_field( 'post_content', $id );
 				$tablas = count( array_filter( $pg['bloques'], fn( $b ) => 'tabla' === $b['t'] ) );
 				$ok = substr_count( $guardado, '<table' ) === $tablas && false === strpos( $guardado, '{n:' ) && md5( wp_strip_all_tags( $guardado ) ) === md5( wp_strip_all_tags( $cuerpo ) );
