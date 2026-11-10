@@ -7,7 +7,7 @@
  * Idempotent: a page that already mentions 1904 is left alone. Simulacro first ($aplicar = false).
  * Run with wp-script.yml (script = especie-trucha-historia-2026-11-10).
  */
-$aplicar = false;
+$aplicar = true;
 $hoy     = '20261110';
 $url_paper = 'https://www.scielo.org.ar/scielo.php?script=sci_arttext&pid=S1667-782X2014000200005';
 $sec = [
