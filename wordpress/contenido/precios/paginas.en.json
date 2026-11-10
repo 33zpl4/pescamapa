@@ -517,14 +517,15 @@
   {
    "clave": "precio-semana-trucha-patagonia-norte",
    "slug": "how-much-does-a-week-trout-fishing-patagonia-cost",
-   "especie": "trucha",
+   "especie": "trout",
    "titulo": "How much does a week of trout fishing cost in Neuquén and Chubut: all-inclusive lodges (2026/27)",
-   "bajada": "Per person rates for trout lodges in Junín de los Andes, Cholila, Futaleufú, and Trevelin: 3 to 7 nights, with what's included at each.",
+   "bajada": "Rates per person for trout lodges in Junín de los Andes, Cholila, Futaleufú, Trevelin, and the Manso River (near Bariloche): from 3 to 7 nights, with what each includes.",
    "seo_title": "How much is a week of trout fishing (2026/27)",
    "seo_description": "Price for a week of fly fishing at lodges in Neuquén and Chubut in 2026/27: from US$ 3,950 for 3 nights to US$ 9,200 for 7 nights, per person.",
    "datos": [
     "A lodge on the Chimehuín River (Junín de los Andes, Neuquén) costs from US$ 3,950 (3 nights, 2 fishing days) to US$ 6,950 (7 nights, 6 days) per person, from December 2026 to April 2027.",
     "A lodge chain in Chubut lists 7 nights and 6 fishing days from US$ 6,545 (Trevelin) up to US$ 9,200 (Cholila), in high season.",
+    "A lodge on the Manso River (Río Negro, near Bariloche) costs US$ 7,000 per angler per week in 2026/27 and US$ 7,700 from 1 January 2027; includes fishing licenses and transfers from Bariloche.",
     "A hosted week in Trevelin, from 6 to 13 March 2027, costs US$ 5,800 per angler and includes licenses and transfers from Esquel.",
     "These prices are per person in double occupancy and with shared guide."
    ],
@@ -535,7 +536,7 @@
     },
     {
      "t": "h2",
-     "h": "Neuquén: price breakdown by nights (Chimehuín River, Junín de los Andes)"
+     "h": "Neuquén: price ladder by nights (Chimehuín River, Junín de los Andes)"
     },
     {
      "t": "tabla",
@@ -574,7 +575,7 @@
     },
     {
      "t": "p",
-     "h": "Rates from December 2026 to April 2027, per person, in double occupancy and with shared guide. The official season opens on 1 November, but this lodge usually opens its doors on 1 December."
+     "h": "Rate from December 2026 to April 2027, per person, in double occupancy and shared guide. The official season opens on 1 November, but this lodge usually opens its doors on 1 December."
     },
     {
      "t": "h2",
@@ -593,31 +594,73 @@
        "Cholila Lodge",
        "Lake Cholila, Chubut",
        "US$ 9,200",
-       "All-inclusive, double, shared guide"
+       "All inclusive, double, shared guide"
       ],
       [
        "Futaleufú Lodge",
        "Futaleufú, Chubut",
        "US$ 8,750",
-       "All-inclusive, double, shared guide"
+       "All inclusive, double, shared guide"
       ],
       [
        "Trevelin Lodge",
        "Trevelin, Chubut",
        "US$ 6,545",
-       "All-inclusive, double, shared guide"
+       "All inclusive, double, shared guide"
       ],
       [
        "Hosted week in Trevelin",
        "Futaleufú River, 6 to 13 March 2027",
        "US$ 5,800",
-       "7 nights, 6 fishing days, meals, drinks, transfers from Esquel and licenses"
+       "7 nights, 6 fishing days, meals, drinks, transfers from Esquel, and licenses"
       ]
      ]
     },
     {
      "t": "p",
-     "h": "Prices published or reported as of 5 November 2026. The lodge chain offers weeks from Saturday to Saturday; prices vary by date and some lodges accept stays of other lengths. Includes lodging, meals, drinks, and guide. License is not included unless stated by the operator (the Trevelin week does include it) and flights are confirmed with each operator. Official license rates at <a href=\"{n:licencia-pesca-patagonia-precios}\">Patagonia fishing license 2026/27</a>."
+     "h": "Prices published or reported as of 5 November 2026. Lodges in the chain list weeks from Saturday to Saturday; prices vary by date and some lodges accept stays of other lengths. Includes lodging, meals, drinks, and guide. The license is not included unless the operator states it (the Trevelin week and the Manso River lodge do include it) and tickets are confirmed with each operator. Official license rates at <a href=\"{n:licencia-pesca-patagonia-precios}\">fishing license in Patagonia 2026/27</a>."
+    },
+    {
+     "t": "h2",
+     "h": "Río Negro: week at a lodge on the Manso River, near Bariloche"
+    },
+    {
+     "t": "tabla",
+     "cab": [
+      "Operator's rate, per person in double occupancy",
+      "2026/27 season",
+      "From 1 January 2027 (2027/28 season)"
+     ],
+     "filas": [
+      [
+       "Angler, per night",
+       "US$ 1,050",
+       "US$ 1,150"
+      ],
+      [
+       "Angler, per week",
+       "US$ 7,000",
+       "US$ 7,700"
+      ],
+      [
+       "Non-fishing companion, per night",
+       "US$ 800",
+       "US$ 800"
+      ],
+      [
+       "Non-fishing companion, per week",
+       "US$ 5,400",
+       "US$ 5,400"
+      ]
+     ]
+    },
+    {
+     "t": "p",
+     "h": "Rate published by the lodge itself, read on 10 November 2026; the page does not show a publication date. <strong>Includes</strong> guided fishing, transfers to and from the Bariloche area, lodging, meals and snacks, all drinks (including alcohol), internet, laundry once or twice a week, <strong>fishing licenses</strong>, and guided non-fishing activities (hiking, kayaking, horseback riding, boat trips, rafting, cooking classes, and sauna). <strong>Does not include</strong> personal fishing gear or tips, nor massages, birdwatching, wine tasting, or high-difficulty hikes. Charges an extra for a private guide of US$ 250 per angler per day and full gear rental at US$ 80 per angler per day (rod and reel, or boots and waders, at US$ 40 per day); rental may be waived depending on length of stay."
+    },
+    {
+     "t": "p",
+     "h": "<strong>Operator's booking conditions:</strong> 50% non-refundable deposit upon booking; the balance, non-refundable, is due no later than 90 days before arrival. Date changes within the same season depend on availability; moving to another season forfeits the deposit. <strong>Anyone confirming the 2027/28 season with a deposit received before 1 January 2027 keeps the current season's rate.</strong> Our calculations: the 2027/28 week is 10% more than 2026/27 (US$ 7,700 vs US$ 7,000), and the week is about US$ 350 cheaper than seven single nights (US$ 7,350 in 2026/27)."
     },
     {
      "t": "h2",
@@ -625,7 +668,7 @@
     },
     {
      "t": "p",
-     "h": "At the Neuquén lodge with the full range, each extra fishing day lowers the per-day price: from US$ 1,975 with 2 days to US$ 1,158 with 6. A 4-night, 3-day stay is the shortest that justifies the trip; a full week makes the most of the travel."
+     "h": "At the Neuquén lodge with the full ladder, each extra fishing day lowers the per-day price: from US$ 1,975 with 2 days to US$ 1,158 with 6. A 4-night, 3-day stay is the shortest that justifies the trip; a full week makes better use of the transfer."
     },
     {
      "t": "h2",
@@ -633,11 +676,11 @@
     },
     {
      "t": "p",
-     "h": "Each province sets its own dates. The ones we've checked, with sources, are in <a href=\"{n:cuando-pescar-trucha-patagonia}\">our season article</a> and in the <a href=\"{calendario}\">fishing calendar</a>."
+     "h": "Each province sets its own dates. The ones we checked, with sources, are in <a href=\"{n:cuando-pescar-trucha-patagonia}\">our season article</a> and in the <a href=\"{calendario}\">fishing calendar</a>."
     },
     {
      "t": "p",
-     "h": "<strong>Want help choosing a lodge?</strong> Write to us using <a href=\"{viaje}\">the trip form</a> and we'll send you options for your dates, with no cost or obligation."
+     "h": "<strong>Want help choosing a lodge?</strong> Write to us in <a href=\"{viaje}\">the trip form</a> and we'll send you options for your dates, free and with no obligation."
     }
    ]
   },
@@ -645,24 +688,25 @@
    "clave": "precio-pesca-patagonia-sur",
    "slug": "how-much-does-it-cost-to-fish-tierra-del-fuego-calafate",
    "especie": "trout",
-   "titulo": "How much does it cost to fish in Tierra del Fuego and El Calafate: sea-run trout and day trips (2026/27)",
-   "bajada": "The price of a week of sea-run trout at a Río Grande lodge and a half-day or full-day trip in El Calafate, with what each includes.",
+   "titulo": "How much does it cost to fish in Tierra del Fuego and El Calafate: sea trout and one-day trips (2026/27)",
+   "bajada": "The price for a week of sea trout at a Río Grande lodge and for a half-day or full-day trip in El Calafate, with what each includes.",
    "seo_title": "How much does it cost to fish Tierra del Fuego & Calafate",
-   "seo_description": "Fishing prices in southern Patagonia: a week of sea-run trout in Río Grande from US$ 12,950 and a day trip in El Calafate from $ 440,000.",
+   "seo_description": "Fishing prices in southern Patagonia: a week of sea trout in Río Grande from US$ 12,950 and a day trip in El Calafate from $ 440,000.",
    "datos": [
-    "A week at a sea-run trout lodge in Río Grande (Tierra del Fuego) costs from US$ 12,950 to US$ 14,950 per person, depending on the date, in the 2026/27 season.",
+    "A week at a sea trout lodge in Río Grande (Tierra del Fuego) costs from US$ 12,950 to US$ 14,950 per person, depending on the date, in the 2026/27 season.",
     "That lodge rate is for a single room and shared guide, and includes meals, drinks, and transfer from the airport.",
+    "A week at Jurassic Lake (Santa Cruz) costs US$ 8,000 per angler according to the lodge's rate page; 4- and 3-night programs cost US$ 5,200 and US$ 4,200, from January to April.",
     "In El Calafate, a half-day trip (5 hours) costs $ 440,000 per angler and a full-day trip (9 hours) $ 720,000.",
     "In El Calafate, fishing is from the shore, wading; non-fishing companions pay $ 185,000 for half-day and $ 335,000 for full-day."
    ],
    "bloques": [
     {
      "t": "p",
-     "h": "<strong>Short answer.</strong> In southern Patagonia there are two published price points. A <strong>week of sea-run trout at a Río Grande lodge</strong> (Tierra del Fuego) costs <strong>from US$ 12,950 to US$ 14,950 per person</strong>. A <strong>day trip in El Calafate</strong> costs <strong>$ 440,000 (half-day) or $ 720,000 (full-day) per angler</strong>, in pesos."
+     "h": "<strong>Short answer.</strong> In southern Patagonia there are two ends with published prices. A <strong>week of sea trout at a Río Grande lodge</strong> (Tierra del Fuego) costs <strong>from US$ 12,950 to US$ 14,950 per person</strong>. A <strong>day trip in El Calafate</strong> costs <strong>$ 440,000 (half-day) or $ 720,000 (full-day) per angler</strong>, in pesos. There is also a <strong>week at Jurassic Lake</strong> (Santa Cruz): <strong>US$ 8,000 per angler</strong>."
     },
     {
      "t": "h2",
-     "h": "Sea-run trout in Río Grande: week at a lodge"
+     "h": "Sea trout in Río Grande: week at a lodge"
     },
     {
      "t": "tabla",
@@ -695,6 +739,43 @@
     },
     {
      "t": "h2",
+     "h": "Jurassic Lake (Santa Cruz): 3, 4, and 7-night programs"
+    },
+    {
+     "t": "tabla",
+     "cab": [
+      "Program",
+      "Per angler",
+      "Fishing days (our calculation per day)",
+      "When"
+     ],
+     "filas": [
+      [
+       "7 nights, Saturday to Saturday",
+       "US$ 8,000",
+       "6.5 days (about US$ 1,231 per day)",
+       "No published month restriction"
+      ],
+      [
+       "4 nights, Tuesday to Saturday",
+       "US$ 5,200",
+       "3.5 days (about US$ 1,486 per day)",
+       "January to April"
+      ],
+      [
+       "3 nights, Saturday to Tuesday",
+       "US$ 4,200",
+       "2.5 days (about US$ 1,680 per day)",
+       "January to April"
+      ]
+     ]
+    },
+    {
+     "t": "p",
+     "h": "Final rate per angler from the lodge's own rate page, checked on 10 November 2026; the page does not show date or season. Fishing is wading or from the shore, in Strobel Lake and the Barrancoso River. The page mentions guides, lodging, meals, and logistics, but does not list what is included or what is charged separately: license, transfers, drinks, and tips are not confirmed. <strong>A different figure:</strong> the same website has another plans page showing a \"Jurassic Full Week\" of 7 nights and 6.5 days of fishing at US$ 6,900, with round-trip charter flight, valid for 12 months and no date; we could not reconcile the two figures, so ask which applies for your date. The lodge lists representative agencies, but says nothing about commissions."
+    },
+    {
+     "t": "h2",
      "h": "El Calafate: half-day or full-day trip"
     },
     {
@@ -719,7 +800,7 @@
     },
     {
      "t": "p",
-     "h": "Prices in pesos published by an El Calafate agency, as of 5 November 2026. Includes transfer from the hotel, fishing guide, full fly or spinning gear, drinks, hot beverages, insurance, and fishing permits. Fishing is catch and release, from the shore, wading; no boat fishing. Locations are about 50 minutes from El Calafate and are chosen the same day based on weather and water levels."
+     "h": "Prices in pesos published by an El Calafate agency, as of 5 November 2026. Includes transfer from the hotel, fishing guide, full fly or spinning gear, drinks, hot drinks, insurance, and fishing permits. Fishing is catch and release, from the shore, wading; no boat fishing. Locations are about 50 minutes from El Calafate and are chosen the same day depending on weather and water level."
     },
     {
      "t": "h2",
@@ -735,7 +816,7 @@
     },
     {
      "t": "p",
-     "h": "<strong>Want to compare with other destinations?</strong> See how much a <a href=\"{n:precio-semana-trucha-patagonia-norte}\">week of trout fishing in Neuquén and Chubut</a> costs, or write to us in <a href=\"{viaje}\">the trip form</a>."
+     "h": "<strong>Want to compare with other destinations?</strong> See how much a <a href=\"{n:precio-semana-trucha-patagonia-norte}\">week of trout fishing in Neuquén and Chubut</a> costs, or write to us using <a href=\"{viaje}\">the trip form</a>."
     }
    ]
   },
@@ -876,68 +957,94 @@
    "clave": "pesca-desde-brasil-corrientes",
    "slug": "fishing-in-corrientes-from-brazil",
    "especie": "dorado",
-   "titulo": "Fishing in Corrientes from Brazil: license, documents, routes & costs (2026/27)",
-   "bajada": "Which license an angler coming from Brazil needs, approximate cost, what documents to bring, and travel times to Paso de la Patria, Esquina, and Goya.",
+   "titulo": "Fishing in Corrientes from Brazil: license, documents, routes and costs (2026/27)",
+   "bajada": "Which license an angler coming from Brazil needs, approximate cost, what documents to bring and how long it takes to get to Paso de la Patria, Esquina and Goya.",
    "seo_title": "Fishing Corrientes from Brazil: license & how to get there",
-   "seo_description": "How to fish in Corrientes coming from Brazil: foreign tourist license (from about $ 35,000 per day), entry documents, and routes with travel times.",
+   "seo_description": "How to fish in Corrientes coming from Brazil: foreign tourist license (from about $ 35,000 per day), entry documents and routes with travel times.",
    "datos": [
-    "The foreign tourist license (residence outside Argentina) is set in liters of “súper” gasoline (the standard grade, not premium): 16 liters for one day, 20 for two, 24 for three, 28 for four, and 36 for six.",
-    "With “súper” gasoline at about $ 2,177 per liter, that's approximately $ 35,000 for one day, $ 44,000 for two, $ 52,000 for three, $ 61,000 for four, and $ 78,000 for six.",
-    "The license is obtained online, 24 hours a day, and the portal is available in Spanish, English, and Portuguese; the registration accepts the Brazilian CPF as a document.",
-    "To enter Argentina from Brazil you need a physical RG in good condition or a valid passport; digital versions and driver's license (CNH) are not accepted.",
-    "From Uruguaiana to Esquina is 310 km (4 h 31 min) and from São Borja to Paso de la Patria, 386 km (4 h 45 min), according to Google Maps."
+    "The foreign tourist license (residence outside Argentina) is set in liters of 'súper' gasoline: 16 liters for one day, 20 for two, 24 for three, 28 for four and 36 for six.",
+    "With 'súper' gasoline at about $ 2,177 per liter, that's approximately $ 35,000 for one day, $ 44,000 for two, $ 52,000 for three, $ 61,000 for four and $ 78,000 for six.",
+    "The license is obtained online, 24 hours a day, and the portal is in Spanish, English and Portuguese; the registration accepts the Brazilian CPF as a document.",
+    "To enter Argentina from Brazil you need a physical RG in good condition or a valid passport; digital versions and the driver's license (CNH) are not accepted.",
+    "From Uruguaiana to Esquina is 310 km (4 h 31 min) and from São Borja to Paso de la Patria, 386 km (4 h 45 min), according to Google Maps.",
+    "A Brazilian agency lists a fishing package in the city of Corrientes at R$ 1,800 per angler per day (2 per boat) or R$ 1,600 (3 per boat), minimum 3 days, for the 2026 season."
    ],
    "fuentes": [
     {
-     "nombre": "Disposición 1144/2024, Dirección de Recursos Naturales de Corrientes (27 de septiembre de 2024): types, liters, and license values",
+     "nombre": "Disposición 1144/2024, Dirección de Recursos Naturales de Corrientes (27 de septiembre de 2024): tipos, litros y valores de las licencias",
      "url": "https://www.aicacyp.ar/wp-content/uploads/2025/02/Disposicion-1144.pdf",
      "oficial": 1
     },
     {
-     "nombre": "Pump prices from the Secretaría de Energía: average “súper” gasoline price at 14 Corrientes stations (21 October 2026)",
+     "nombre": "Precios en surtidor de la Secretaría de Energía: promedio de la nafta súper en 14 estaciones de Corrientes (21 de octubre de 2026)",
      "url": "",
      "oficial": 1
     },
     {
-     "nombre": "License portal of the Dirección de Recursos Naturales de Corrientes: registration (read on 6 November 2026)",
+     "nombre": "Portal de licencias de la Dirección de Recursos Naturales de Corrientes: registro (leído el 6 de noviembre de 2026)",
      "url": "https://www.recnaturalesctes.gob.ar/signup",
      "oficial": 1
     },
     {
-     "nombre": "Corrientes Ministry of Tourism: online licenses in three languages (note from 6 February 2019)",
+     "nombre": "Ministerio de Turismo de Corrientes: licencias en línea en tres idiomas (nota del 6 de febrero de 2019)",
      "url": "https://turismo.corrientes.gob.ar/noticia/corrientes-ofrece-un-sistema-de-avanzada-en-la-region-en-la-venta-de-licencias-de-pesca-deportiva",
      "oficial": 1
     },
     {
-     "nombre": "Paso Santo Tomé - São Borja, National Security Ministry",
+     "nombre": "Paso Santo Tomé - São Borja, Ministerio de Seguridad de la Nación",
      "url": "https://www.argentina.gob.ar/seguridad/pasosinternacionales/detalle/ruta/74/Santo-Tom%C3%A9-Sao-Borja",
      "oficial": 1
     },
     {
-     "nombre": "Official tourism site of Argentina: entry documents (28 October 2026)",
+     "nombre": "Sitio oficial de turismo de la Argentina: documentos para ingresar (28 de octubre de 2026)",
      "url": "",
      "oficial": 1
     },
     {
-     "nombre": "Google Maps: routes by car checked on 6 November 2026",
+     "nombre": "Google Maps: rutas en auto consultadas el 6 de noviembre de 2026",
      "url": "",
+     "oficial": 0
+    },
+    {
+     "nombre": "ARCA (Aduana): vehículos registrados en el MERCOSUR, leído el 10 de noviembre de 2026",
+     "url": "https://www.arca.gob.ar/viajeros/ayuda/vehiculos-MERCOSUR.asp",
+     "oficial": 1
+    },
+    {
+     "nombre": "Migraciones: documentación para ingresar al país como turista, leído el 10 de noviembre de 2026",
+     "url": "https://www.argentina.gob.ar/migraciones/documentacion-para-ingresar-al-pais-como-turista",
+     "oficial": 1
+    },
+    {
+     "nombre": "Visit Argentina: documentación necesaria para turistas brasileños que ingresan a la Argentina (22 de julio de 2026)",
+     "url": "https://www.argentina.travel/novedades/documentacion-necesaria-para-turistas-brasilenos-que-ingresan-a-la-argentina",
+     "oficial": 1
+    },
+    {
+     "nombre": "Fishing Brazil Adventures: paquete Marco Pesca, temporada 2026 (operador, leído el 10 de noviembre de 2026)",
+     "url": "https://www.fishingbraziladventures.com.br/pacote/marco-pesca",
+     "oficial": 0
+    },
+    {
+     "nombre": "Ruta0: Paso de los Libres a Goya (sitio de rutas, 10 de noviembre de 2026)",
+     "url": "https://www.ruta0.com/ruta/argentina/paso-de-los-libres-a-goya/",
      "oficial": 0
     }
    ],
    "bloques": [
     {
      "t": "p",
-     "h": "<strong>Short answer.</strong> To fish in Corrientes, a Brazilian needs the <strong>foreign tourist license</strong>, which is obtained online and paid in pesos based on the price of “súper” gasoline. Today it costs <strong>about $ 35,000 for one day, $ 52,000 for three days, and $ 78,000 for six</strong>. To enter, a physical RG in good condition or a passport is enough. From Uruguaiana to Esquina is about 310 km and 4 h 30 min driving."
+     "h": "<strong>Short answer.</strong> To fish in Corrientes, a Brazilian needs a <strong>foreign tourist license</strong>, which is obtained online and paid in pesos according to the price of 'súper' gasoline. Today it costs <strong>about $ 35,000 for one day, $ 52,000 for three days and $ 78,000 for six</strong>. To enter, a physical RG in good condition or a passport is enough. From Uruguaiana to Esquina is about 310 km and 4 h 30 min driving."
     },
     {
      "t": "h2",
-     "h": "How much does a fishing license in Corrientes cost for a foreigner?"
+     "h": "How much does the fishing license cost in Corrientes for a foreigner?"
     },
     {
      "t": "tabla",
      "cab": [
       "Duration",
-      "Liters of “súper” gasoline",
+      "Liters of 'súper' gasoline",
       "Approximate value today",
       "Annex value (October 2024)"
      ],
@@ -976,15 +1083,15 @@
     },
     {
      "t": "p",
-     "h": "The liters are from Annex I of Disposición 1144/2024 of the Dirección de Recursos Naturales de Corrientes. The value is updated only with the price of “súper” gasoline sold at the Automóvil Club Argentino in Corrientes Capital: the annex used $ 1,135 per liter in October 2024. We calculated today's approximate value with $ 2,177 per liter, which is the average at 14 Corrientes stations according to pump prices from the Secretaría de Energía (updated 21 October 2026). It's not the exact ACA price: the portal shows the current amount at purchase."
+     "h": "The liters are from Annex I of Disposición 1144/2024 of the Corrientes Directorate of Natural Resources. The value is updated only with the price of 'súper' gasoline sold at the Automóvil Club Argentino in Corrientes Capital: the annex used $ 1,135 per liter in October 2024. We calculated today's approximate value with $ 2,177 per liter, which is the average of 14 stations in Corrientes according to pump prices from the Energy Secretariat (updated 21 October 2026). It is not the exact ACA price: the portal shows the current amount when you buy."
     },
     {
      "t": "h2",
-     "h": "Is it worth getting a multi-day license?"
+     "h": "Is it better to get a license for several days?"
     },
     {
      "t": "p",
-     "h": "Yes. Each extra day costs less: the 3-day license (24 liters) is half the price of three one-day licenses (48 liters, about $ 104,000), and the 6-day license (36 liters) is just over a third of six one-day licenses (96 liters). This is our calculation using the table's liters."
+     "h": "Yes. Each extra day costs less: the 3-day license (24 liters) is half the price of three one-day licenses (48 liters, about $ 104,000), and the 6-day license (36 liters) is just over a third of six one-day licenses (96 liters). This is our calculation with the liters from the table."
     },
     {
      "t": "h2",
@@ -993,15 +1100,15 @@
     {
      "t": "lista",
      "items": [
-      "<strong>On the portal of the Dirección de Recursos Naturales de Corrientes.</strong> It's available 24 hours and in Spanish, English, and Portuguese, according to the provincial Ministry of Tourism (2019 note, made for Brazilian tourism).",
-      "<strong>Registration requires</strong> type and ID number, email, first and last name, phone, location, profile photo, and password.",
-      "<strong>Document:</strong> the registration dropdown offers DNI, <strong>Brazilian CPF</strong>, Uruguayan CI, Argentine passport, and \"Others\" (screenshot from 6 November 2026).",
+      "<strong>On the Corrientes Directorate of Natural Resources portal.</strong> It works 24 hours a day and is in Spanish, English and Portuguese, according to the provincial Ministry of Tourism (2019 note, made for Brazilian tourism).",
+      "<strong>The registration asks for</strong> type and number of ID, email, first name, last name, phone, location, profile photo and password.",
+      "<strong>Document:</strong> the registration dropdown offers DNI, <strong>Brazilian CPF</strong>, Uruguayan CI, Argentine passport and \"Others\" (screenshot from 6 November 2026).",
       "<strong>The license has a QR code</strong> that the inspector checks with a phone. Bring it, printed or on your phone, on the boat."
      ]
     },
     {
      "t": "p",
-     "h": "We couldn't confirm which payment methods the portal accepts for foreigners: ask the Dirección de Recursos Naturales (ventas@recnaturalesctes.gob.ar or +54 379 4909039). The exemption benefits in the regulation (retirees, people with disabilities, under 15) apply only to those with residence in Corrientes."
+     "h": "We could not confirm which payment methods the portal accepts for a foreigner: ask the Directorate of Natural Resources (ventas@recnaturalesctes.gob.ar or +54 379 4909039). The exemption benefits in the regulation (retirees, people with disabilities, under 15 years old) apply only to those with residence in Corrientes."
     },
     {
      "t": "h2",
@@ -1010,19 +1117,42 @@
     {
      "t": "lista",
      "items": [
-      "<strong>Physical RG in good condition or valid passport.</strong> Digital versions are not accepted, including digital RG.",
-      "<strong>CNH is not valid</strong> as an entry document.",
-      "<strong>Under 13 years old:</strong> need a special authorization; see the process at argentina.gob.ar (\"entering the country with a minor\").",
+      "<strong>Physical RG in good condition or valid passport.</strong> Digital versions are not accepted, including the digital RG.",
+      "<strong>The CNH is not valid</strong> as an entry document.",
+      "<strong>Children under 13:</strong> need a special authorization; see the procedure at argentina.gob.ar (\"entering the country with a minor\").",
       "Some guides and lodges recommend an RG less than 10 years old: this is practical advice, not an official requirement."
      ]
     },
     {
      "t": "p",
-     "h": "According to Argentina's official tourism site, checked on 28 October 2026. Confirm with Immigration before traveling."
+     "h": "According to the official tourism site of Argentina (22 July 2026) and the Migrations page on entry documents, read on 10 November 2026. Migrations accepts a valid passport or valid Brazilian ID card and authorizes a stay of up to three months, extendable for another similar period; the tourism site specifies the RG in physical format and a maximum of 90 days, extendable for another 90. Confirm with Migrations before you travel."
     },
     {
      "t": "h2",
-     "h": "How long does it take from the border?"
+     "h": "What do they require to enter with a Brazilian car?"
+    },
+    {
+     "t": "p",
+     "h": "According to the ARCA (Customs) page on vehicles registered in MERCOSUR, read on 10 November 2026 (no publication date), the driver needs:"
+    },
+    {
+     "t": "lista",
+     "items": [
+      "Valid ID to travel in MERCOSUR and the tourist document issued by the migration authority.",
+      "Driver's license from a MERCOSUR country; the driver must be a resident of the country where the vehicle is registered.",
+      "Title or other official document proving ownership of the vehicle.",
+      "Proof of insurance valid in MERCOSUR.",
+      "If someone other than the owner is driving: a notarized authorization (with the green card proving ownership) or the blue card in their name. Spouses and relatives up to second degree can drive without express authorization, as tourists and proving the relationship.",
+      "If the car is a rental: the Authorization for Circulation in MERCOSUR (ACM) provided by the rental company replaces part of this documentation."
+     ]
+    },
+    {
+     "t": "p",
+     "h": "The length of stay for the car is set by Migrations. <strong>A difference between two official sources:</strong> the tourism site (22 July 2026) requires \"international insurance\" and the \"complete Temporary Vehicle Admission process\", while ARCA mentions \"insurance valid in MERCOSUR\" and does not mention that admission. Neither mentions the Green Card. Confirm with your insurer and at the border customs before you travel."
+    },
+    {
+     "t": "h2",
+     "h": "How long does it take to get there from the border?"
     },
     {
      "t": "tabla",
@@ -1050,12 +1180,49 @@
        "386 km",
        "4 h 45 min",
        "RN12"
+      ],
+      [
+       "Paso de los Libres (Argentina) → Goya",
+       "280 km",
+       "3 h 29 min",
+       "Route recommended by Ruta0"
       ]
      ]
     },
     {
      "t": "p",
-     "h": "Google Maps times checked on 6 November 2026; do not include border wait. The Santo Tomé - São Borja crossing, via the International Integration Bridge, is open 24 hours (National Security Ministry; phone (3756) 420035)."
+     "h": "Google Maps times checked on 6 November 2026; do not include border wait. The Santo Tomé - São Borja crossing, via the International Integration Bridge, is open 24 hours a day (Ministry of National Security; phone (3756) 420035). The Goya row comes from Ruta0, a non-official route site, checked on 10 November 2026."
+    },
+    {
+     "t": "h2",
+     "h": "How much does a package cost in reais?"
+    },
+    {
+     "t": "tabla",
+     "cab": [
+      "2026 season package (Corrientes city)",
+      "Per angler per day",
+      "Minimum",
+      "Total for 3 days (our calculation)"
+     ],
+     "filas": [
+      [
+       "2 anglers per boat",
+       "R$ 1,800",
+       "3 days fishing",
+       "R$ 5,400"
+      ],
+      [
+       "3 anglers per boat",
+       "R$ 1,600",
+       "3 days fishing",
+       "R$ 4,800"
+      ]
+     ]
+    },
+    {
+     "t": "p",
+     "h": "This is the only rate in reais with a date we found published by an agency, read on 10 November 2026; the page says \"2026 season\" and does not show a publication date. It is a package in a 5-star hotel with casino in Corrientes city, not in Goya or Esquina. Includes full board with drinks (beer, spirits, wines and soft drinks), 6.20 m boat with guide, fishing gear and lures. Does not include visa or entry authorization, tips, transfer to the area (quoted separately), medical assistance or travel insurance. An agency in Porto Alegre lists three Argentine lodges (Hambaré, in Esquina; Puerto Yacarey and Matute) on its 2026-2027 package page, but does not publish prices."
     },
     {
      "t": "h2",
@@ -1063,23 +1230,23 @@
     },
     {
      "t": "p",
-     "h": "To choose your destination and accommodation, see <a href=\"{n:viaje-dorado-amigos-precios}\">the dorado trip with friends</a> (lodges with package from US$ 605 per person) and <a href=\"{n:precio-viaje-dorado-lodge}\">how much a dorado fishing trip costs</a> (lodges by number of nights)."
+     "h": "To choose your destination and accommodation, see <a href=\"{n:viaje-dorado-amigos-precios}\">the dorado trip with friends</a> (lodges with packages from US$ 605 per person) and <a href=\"{n:precio-viaje-dorado-lodge}\">how much a dorado fishing trip costs</a> (lodges by number of nights)."
     },
     {
      "t": "h2",
-     "h": "What this page doesn't cover yet"
+     "h": "What this page does not yet cover"
     },
     {
      "t": "p",
-     "h": "What's needed to cross with your own car, fishing gear, and bait through customs; payment methods on the portal for foreigners; the route to Goya; rates in reais from operators who publish them; and the schedules and waits for each crossing. We'll add these when we verify them with a source and date."
+     "h": "Which rules apply for bringing rods, reels and bait through customs (we did not find a regulation for tourists); payment methods on the portal for foreigners and those accepted by Corrientes providers; and the opening hours and wait times for each crossing, except Santo Tomé. We will add them when we verify with a source and date."
     },
     {
      "t": "p",
-     "h": "If you also plan to fish in another region, see the permits for Patagonia, Tierra del Fuego and Santa Cruz in <a href=\"{n:licencias-extranjeros-argentina}\">the fishing license for foreigners in Argentina 2026/27</a>."
+     "h": "If you also plan to fish in another region, see the permits for Patagonia, Tierra del Fuego and Santa Cruz at <a href=\"{n:licencias-extranjeros-argentina}\">the fishing license for foreigners in Argentina 2026/27</a>."
     },
     {
      "t": "p",
-     "h": "<strong>Want help planning your trip?</strong> Tell us where you're leaving from, dates, and how many people in <a href=\"{viaje}\">the trip form</a> and we'll write you with guide and lodging options, with no cost or obligation."
+     "h": "<strong>Want help planning your trip?</strong> Tell us where you're coming from, dates and how many people in <a href=\"{viaje}\">the trip form</a> and we'll write you with guide and lodging options, with no cost or obligation."
     }
    ]
   },

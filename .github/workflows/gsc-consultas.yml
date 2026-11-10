@@ -1,0 +1,32 @@
+name: Search Console queries by page
+
+# Read-only (webmasters.readonly), no model calls. Prints to the log and the run summary which of OUR pages Google shows for each
+# search (impressions, clicks, average position), last DIAS days. On demand; the push trigger exists because a new workflow cannot be
+# dispatched from a branch until it is on main.
+on:
+  push:
+    branches: ["claude/**"]
+    paths: [".github/workflows/gsc-consultas.yml"]
+  workflow_dispatch:
+    inputs:
+      dias:
+        description: "Days back (default 28)"
+        required: false
+      top:
+        description: "How many searches to list (default 60)"
+        required: false
+
+jobs:
+  consultas:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Queries by page
+        env:
+          GSC_SERVICE_ACCOUNT: ${{ secrets.GSC_SERVICE_ACCOUNT }}
+          GSC_SITE: ${{ secrets.GSC_SITE }}
+          DIAS: ${{ github.event.inputs.dias }}
+          TOP: ${{ github.event.inputs.top }}
+        run: |
+          node scripts/gsc-consultas.mjs gsc-consultas.md
+          cat gsc-consultas.md >> "$GITHUB_STEP_SUMMARY"

@@ -519,12 +519,13 @@
    "slug": "cuanto-cuesta-semana-pesca-trucha-patagonia",
    "especie": "trucha",
    "titulo": "Cuánto cuesta una semana de pesca de trucha en Neuquén y Chubut: lodges todo incluido (2026/27)",
-   "bajada": "Tarifas por persona de lodges de trucha en Junín de los Andes, Cholila, Futaleufú y Trevelin: de 3 a 7 noches, con lo que incluye cada uno.",
+   "bajada": "Tarifas por persona de lodges de trucha en Junín de los Andes, Cholila, Futaleufú, Trevelin y el río Manso (cerca de Bariloche): de 3 a 7 noches, con lo que incluye cada uno.",
    "seo_title": "Cuánto cuesta una semana de pesca de trucha (2026/27)",
    "seo_description": "Precio de una semana de pesca con mosca en lodges de Neuquén y Chubut en 2026/27: de US$ 3.950 por 3 noches a US$ 9.200 por 7 noches, por persona.",
    "datos": [
     "Un lodge del río Chimehuín (Junín de los Andes, Neuquén) cuesta de US$ 3.950 (3 noches, 2 días de pesca) a US$ 6.950 (7 noches, 6 días) por persona, de diciembre de 2026 a abril de 2027.",
     "Una cadena de lodges en Chubut publica 7 noches y 6 días de pesca desde US$ 6.545 (Trevelin) hasta US$ 9.200 (Cholila), en temporada alta.",
+    "Un lodge del río Manso (Río Negro, cerca de Bariloche) cuesta US$ 7.000 por pescador por semana en 2026/27 y US$ 7.700 desde el 1 de enero de 2027; incluye las licencias de pesca y el traslado desde Bariloche.",
     "Una semana organizada en Trevelin, del 6 al 13 de marzo de 2027, cuesta US$ 5.800 por pescador e incluye licencias y traslados desde Esquel.",
     "Estos precios son por persona en habitación doble y con guía compartido."
    ],
@@ -617,7 +618,49 @@
     },
     {
      "t": "p",
-     "h": "Precios publicados o informados al 5 de noviembre de 2026. Los lodges de la cadena publican semanas de sábado a sábado; los precios cambian según la fecha y algunos lodges aceptan estadías de otra duración. Incluyen alojamiento, comidas, bebidas y guía. La licencia no está en el precio salvo que el operador lo diga (la semana de Trevelin sí la incluye) y los pasajes se confirman con cada operador. Valores oficiales de la licencia en <a href=\"{n:licencia-pesca-patagonia-precios}\">licencia de pesca en la Patagonia 2026/27</a>."
+     "h": "Precios publicados o informados al 5 de noviembre de 2026. Los lodges de la cadena publican semanas de sábado a sábado; los precios cambian según la fecha y algunos lodges aceptan estadías de otra duración. Incluyen alojamiento, comidas, bebidas y guía. La licencia no está en el precio salvo que el operador lo diga (la semana de Trevelin y el lodge del río Manso sí la incluyen) y los pasajes se confirman con cada operador. Valores oficiales de la licencia en <a href=\"{n:licencia-pesca-patagonia-precios}\">licencia de pesca en la Patagonia 2026/27</a>."
+    },
+    {
+     "t": "h2",
+     "h": "Río Negro: semana en un lodge del río Manso, cerca de Bariloche"
+    },
+    {
+     "t": "tabla",
+     "cab": [
+      "Tarifa del operador, por persona en habitación doble",
+      "Temporada 2026/27",
+      "Desde el 1 de enero de 2027 (temporada 2027/28)"
+     ],
+     "filas": [
+      [
+       "Pescador, por noche",
+       "US$ 1.050",
+       "US$ 1.150"
+      ],
+      [
+       "Pescador, por semana",
+       "US$ 7.000",
+       "US$ 7.700"
+      ],
+      [
+       "Acompañante que no pesca, por noche",
+       "US$ 800",
+       "US$ 800"
+      ],
+      [
+       "Acompañante que no pesca, por semana",
+       "US$ 5.400",
+       "US$ 5.400"
+      ]
+     ]
+    },
+    {
+     "t": "p",
+     "h": "Tarifa publicada por el propio lodge, leída el 10 de noviembre de 2026; la página no muestra fecha de publicación. <strong>Incluye</strong> la pesca guiada, el traslado desde y hacia la zona de Bariloche, alojamiento, comidas y meriendas, todas las bebidas (con alcohol), internet, lavandería una o dos veces por semana, <strong>las licencias de pesca</strong> y actividades guiadas sin pesca (senderismo, kayak, cabalgatas, paseos en bote, rafting, clases de cocina y sauna). <strong>No incluye</strong> el equipo personal de pesca ni las propinas, ni masajes, observación de aves, cata de vinos o caminatas de dificultad alta. Cobra aparte un suplemento de guía individual de US$ 250 por pescador por día y el alquiler del equipo completo a US$ 80 por pescador por día (caña y reel, o botas y waders, a US$ 40 por día); el alquiler puede eximirse según la duración de la estadía."
+    },
+    {
+     "t": "p",
+     "h": "<strong>Condiciones de reserva del operador:</strong> seña del 50 % no reembolsable al reservar; el saldo, no reembolsable, se paga como máximo 90 días antes de la llegada. Los cambios de fecha dentro de la misma temporada dependen de la disponibilidad; pasar a otra temporada hace perder la seña. <strong>Quien confirme la temporada 2027/28 con una seña recibida antes del 1 de enero de 2027 mantiene la tarifa de la temporada actual.</strong> Cálculos nuestros: la semana de 2027/28 cuesta un 10 % más que la de 2026/27 (US$ 7.700 contra US$ 7.000), y la semana sale unos US$ 350 más barata que siete noches sueltas (US$ 7.350 en 2026/27)."
     },
     {
      "t": "h2",
@@ -652,13 +695,14 @@
    "datos": [
     "Una semana en un lodge de trucha de mar en Río Grande (Tierra del Fuego) cuesta de US$ 12.950 a US$ 14.950 por persona, según la fecha, en la temporada 2026/27.",
     "La tarifa de ese lodge es en habitación single y con guía compartido, e incluye comidas, bebidas y traslado desde el aeropuerto.",
+    "Una semana en Jurassic Lake (Santa Cruz) cuesta US$ 8.000 por pescador según la página de tarifas del lodge; los programas de 4 y 3 noches cuestan US$ 5.200 y US$ 4.200, de enero a abril.",
     "En El Calafate, la salida de medio día (5 horas) cuesta $ 440.000 por pescador y la de día completo (9 horas) $ 720.000.",
     "En El Calafate se pesca desde la orilla, vadeando; el acompañante que no pesca paga $ 185.000 el medio día y $ 335.000 el día completo."
    ],
    "bloques": [
     {
      "t": "p",
-     "h": "<strong>Respuesta corta.</strong> En la Patagonia sur hay dos extremos con precio publicado. Una <strong>semana de trucha de mar en un lodge de Río Grande</strong> (Tierra del Fuego) cuesta <strong>de US$ 12.950 a US$ 14.950 por persona</strong>. Una <strong>salida de día en El Calafate</strong> cuesta <strong>$ 440.000 (medio día) o $ 720.000 (día completo) por pescador</strong>, en pesos."
+     "h": "<strong>Respuesta corta.</strong> En la Patagonia sur hay dos extremos con precio publicado. Una <strong>semana de trucha de mar en un lodge de Río Grande</strong> (Tierra del Fuego) cuesta <strong>de US$ 12.950 a US$ 14.950 por persona</strong>. Una <strong>salida de día en El Calafate</strong> cuesta <strong>$ 440.000 (medio día) o $ 720.000 (día completo) por pescador</strong>, en pesos. También hay una <strong>semana en Jurassic Lake</strong> (Santa Cruz): <strong>US$ 8.000 por pescador</strong>."
     },
     {
      "t": "h2",
@@ -692,6 +736,43 @@
     {
      "t": "p",
      "h": "Tarifa de un lodge de Río Grande para la temporada del 26 de diciembre de 2026 al 17 de abril de 2027, leída el 4 de noviembre de 2026. Incluye alojamiento, traslado desde el aeropuerto de Río Grande, todas las comidas y bebidas, guía profesional (dos pescadores por guía) y equipo de préstamo. No incluye pasajes, la licencia de pesca (el lodge calcula unos US$ 550 por pescador), la lavandería ni las propinas. Pide un depósito del 50 % y no es reembolsable. Los demás operadores que encontramos en Río Grande no publican tarifa; la guía del destino está en <a href=\"{n:rio-grande}\">pescar en Río Grande</a>."
+    },
+    {
+     "t": "h2",
+     "h": "Jurassic Lake (Santa Cruz): programas de 3, 4 y 7 noches"
+    },
+    {
+     "t": "tabla",
+     "cab": [
+      "Programa",
+      "Por pescador",
+      "Días de pesca (cálculo nuestro por día)",
+      "Cuándo"
+     ],
+     "filas": [
+      [
+       "7 noches, sábado a sábado",
+       "US$ 8.000",
+       "6,5 días (unos US$ 1.231 por día)",
+       "Sin restricción de mes publicada"
+      ],
+      [
+       "4 noches, martes a sábado",
+       "US$ 5.200",
+       "3,5 días (unos US$ 1.486 por día)",
+       "De enero a abril"
+      ],
+      [
+       "3 noches, sábado a martes",
+       "US$ 4.200",
+       "2,5 días (unos US$ 1.680 por día)",
+       "De enero a abril"
+      ]
+     ]
+    },
+    {
+     "t": "p",
+     "h": "Tarifa final por pescador de la página de tarifas del propio lodge, leída el 10 de noviembre de 2026; la página no muestra fecha ni temporada. Se pesca vadeando o desde la orilla, en el lago Strobel y el río Barrancoso. La página habla de guías, alojamiento, comidas y logística, pero no lista qué incluye ni qué cobra aparte: la licencia, los traslados, las bebidas y las propinas no están confirmados. <strong>Una cifra distinta:</strong> la misma web tiene otra página de planes que muestra una \"Jurassic Full Week\" de 7 noches y 6,5 días de pesca a US$ 6.900, con vuelo chárter de ida y vuelta, válida por 12 meses y sin fecha; no pudimos conciliar las dos cifras, así que preguntá cuál rige para tu fecha. El lodge lista agencias representantes, pero no dice nada de comisiones."
     },
     {
      "t": "h2",
@@ -885,7 +966,8 @@
     "Con la nafta súper a unos $ 2.177 el litro, son aproximadamente $ 35.000 por un día, $ 44.000 por dos, $ 52.000 por tres, $ 61.000 por cuatro y $ 78.000 por seis.",
     "La licencia se saca en línea, las 24 horas, y el portal está en español, inglés y portugués; el registro acepta el CPF brasileño como documento.",
     "Para entrar a la Argentina desde Brasil hace falta RG físico en buen estado o pasaporte vigente; no sirven las versiones digitales ni la licencia de conducir (CNH).",
-    "De Uruguaiana a Esquina son 310 km (4 h 31 min) y de São Borja a Paso de la Patria, 386 km (4 h 45 min), según Google Maps."
+    "De Uruguaiana a Esquina son 310 km (4 h 31 min) y de São Borja a Paso de la Patria, 386 km (4 h 45 min), según Google Maps.",
+    "Una agencia brasileña publica un paquete de pesca en la ciudad de Corrientes a R$ 1.800 por pescador por día (2 por lancha) o R$ 1.600 (3 por lancha), con mínimo de 3 días, en la temporada 2026."
    ],
    "fuentes": [
     {
@@ -921,6 +1003,31 @@
     {
      "nombre": "Google Maps: rutas en auto consultadas el 6 de noviembre de 2026",
      "url": "",
+     "oficial": 0
+    },
+    {
+     "nombre": "ARCA (Aduana): vehículos registrados en el MERCOSUR, leído el 10 de noviembre de 2026",
+     "url": "https://www.arca.gob.ar/viajeros/ayuda/vehiculos-MERCOSUR.asp",
+     "oficial": 1
+    },
+    {
+     "nombre": "Migraciones: documentación para ingresar al país como turista, leído el 10 de noviembre de 2026",
+     "url": "https://www.argentina.gob.ar/migraciones/documentacion-para-ingresar-al-pais-como-turista",
+     "oficial": 1
+    },
+    {
+     "nombre": "Visit Argentina: documentación necesaria para turistas brasileños que ingresan a la Argentina (22 de julio de 2026)",
+     "url": "https://www.argentina.travel/novedades/documentacion-necesaria-para-turistas-brasilenos-que-ingresan-a-la-argentina",
+     "oficial": 1
+    },
+    {
+     "nombre": "Fishing Brazil Adventures: paquete Marco Pesca, temporada 2026 (operador, leído el 10 de noviembre de 2026)",
+     "url": "https://www.fishingbraziladventures.com.br/pacote/marco-pesca",
+     "oficial": 0
+    },
+    {
+     "nombre": "Ruta0: Paso de los Libres a Goya (sitio de rutas, 10 de noviembre de 2026)",
+     "url": "https://www.ruta0.com/ruta/argentina/paso-de-los-libres-a-goya/",
      "oficial": 0
     }
    ],
@@ -1018,7 +1125,30 @@
     },
     {
      "t": "p",
-     "h": "Según el sitio oficial de turismo de la Argentina, consultado el 28 de octubre de 2026. Confirmalo con Migraciones antes de viajar."
+     "h": "Según el sitio oficial de turismo de la Argentina (22 de julio de 2026) y la página de Migraciones sobre la documentación para ingresar como turista, leída el 10 de noviembre de 2026. Migraciones acepta pasaporte vigente o cédula de identidad vigente de Brasil y autoriza una permanencia de hasta tres meses, prorrogable por otro período similar; el sitio de turismo especifica el RG en formato físico y un máximo de 90 días prorrogable por otros 90. Confirmalo con Migraciones antes de viajar."
+    },
+    {
+     "t": "h2",
+     "h": "¿Qué piden para entrar con un auto brasileño?"
+    },
+    {
+     "t": "p",
+     "h": "Según la página de ARCA (Aduana) sobre vehículos registrados en el MERCOSUR, leída el 10 de noviembre de 2026 (sin fecha de publicación), el conductor necesita:"
+    },
+    {
+     "t": "lista",
+     "items": [
+      "Documento de identidad válido para circular en el MERCOSUR y el documento de turista emitido por la autoridad migratoria.",
+      "Licencia de conducir de un país del MERCOSUR; el conductor debe ser residente en el país donde está registrado el vehículo.",
+      "Título u otro documento oficial que acredite la propiedad del vehículo.",
+      "Comprobante de seguro vigente en el MERCOSUR.",
+      "Si maneja alguien que no es el titular: una autorización por poder ante escribano (con la cédula verde que acredita la titularidad) o la cédula azul a su nombre. El cónyuge y los familiares hasta segundo grado pueden manejar sin autorización expresa, como turistas y acreditando el vínculo.",
+      "Si el auto es de alquiler: la Autorización para Circulación en el MERCOSUR (ACM) que da la empresa de alquiler reemplaza parte de esta documentación."
+     ]
+    },
+    {
+     "t": "p",
+     "h": "El plazo de permanencia del auto lo fija Migraciones. <strong>Una diferencia entre dos fuentes oficiales:</strong> la página del sitio de turismo (22 de julio de 2026) pide \"seguro internacional\" y el \"trámite completo de Admisión Temporal de vehículos\", mientras que la de ARCA habla de \"seguro vigente en el MERCOSUR\" y no menciona esa admisión. Ninguna nombra la Carta Verde. Confirmalo con tu aseguradora y en la aduana del paso antes de viajar."
     },
     {
      "t": "h2",
@@ -1050,12 +1180,49 @@
        "386 km",
        "4 h 45 min",
        "RN12"
+      ],
+      [
+       "Paso de los Libres (Argentina) → Goya",
+       "280 km",
+       "3 h 29 min",
+       "Ruta recomendada por Ruta0"
       ]
      ]
     },
     {
      "t": "p",
-     "h": "Tiempos de Google Maps consultados el 6 de noviembre de 2026; no incluyen la espera en la frontera. El paso Santo Tomé - São Borja, por el Puente Internacional de la Integración, está abierto las 24 horas (Ministerio de Seguridad de la Nación; teléfono (3756) 420035)."
+     "h": "Tiempos de Google Maps consultados el 6 de noviembre de 2026; no incluyen la espera en la frontera. El paso Santo Tomé - São Borja, por el Puente Internacional de la Integración, está abierto las 24 horas (Ministerio de Seguridad de la Nación; teléfono (3756) 420035). La fila de Goya viene de Ruta0, un sitio de rutas que no es oficial, consultado el 10 de noviembre de 2026."
+    },
+    {
+     "t": "h2",
+     "h": "¿Cuánto cuesta un paquete en reales?"
+    },
+    {
+     "t": "tabla",
+     "cab": [
+      "Paquete de la temporada 2026 (Corrientes capital)",
+      "Por pescador y por día",
+      "Mínimo",
+      "Total de 3 días (cálculo nuestro)"
+     ],
+     "filas": [
+      [
+       "2 pescadores por lancha",
+       "R$ 1.800",
+       "3 días de pesca",
+       "R$ 5.400"
+      ],
+      [
+       "3 pescadores por lancha",
+       "R$ 1.600",
+       "3 días de pesca",
+       "R$ 4.800"
+      ]
+     ]
+    },
+    {
+     "t": "p",
+     "h": "Es la única tarifa en reales con fecha que encontramos publicada por una agencia, leída el 10 de noviembre de 2026; la página dice \"temporada 2026\" y no muestra la fecha de publicación. Es un paquete en un hotel de 5 estrellas con casino en la ciudad de Corrientes, no en Goya ni en Esquina. Incluye pensión completa con bebidas (cerveza, destilados, vinos y gaseosas), lancha de 6,20 m con guía, equipo de pesca y señuelos. No incluye el visado o autorización de entrada, propinas, el traslado hasta la zona (se cotiza aparte), socorro médico ni seguro de viaje. Una agencia de Porto Alegre lista tres posadas argentinas (Hambaré, en Esquina; Puerto Yacarey y Matute) en su página de paquetes 2026-2027, pero no publica precios."
     },
     {
      "t": "h2",
@@ -1071,7 +1238,7 @@
     },
     {
      "t": "p",
-     "h": "Lo que hace falta para pasar con auto propio, equipo de pesca y carnada por la aduana; los medios de pago del portal para un extranjero; la ruta hasta Goya; las tarifas en reales de operadores que las publiquen; y los horarios y esperas de cada paso. Los agregamos cuando los verifiquemos con una fuente y una fecha."
+     "h": "Qué normas valen para pasar con las cañas, los reeles y la carnada por la aduana (no encontramos una norma que lo diga para un turista); los medios de pago del portal para un extranjero y los de los prestadores de Corrientes; y los horarios y esperas de cada paso, salvo el de Santo Tomé. Los agregamos cuando los verifiquemos con una fuente y una fecha."
     },
     {
      "t": "p",
