@@ -9,7 +9,7 @@
  * Idempotent: a page that already has the new section / title is left alone. Simulacro first ($aplicar = false).
  * Run with wp-script.yml (script = trucha-esquel-titulos-2026-11-10).
  */
-$aplicar = false;
+$aplicar = true;
 $especie = [
 	'es' => [
 		'seo_title' => 'Tipos de trucha en la Patagonia: especies y reglas',
