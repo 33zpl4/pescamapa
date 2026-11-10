@@ -105,7 +105,7 @@ if ( $lt > 60 || $ld > 160 || $ld < 70 ) {
 if ( pm_campo( 'seo_title', $g->ID ) === $st && pm_campo( 'h1', $g->ID ) === $h1 ) {
 	WP_CLI::log( 'esquel-trevelin (en): ya está, no toco nada.' );
 } else {
-	WP_CLI::log( ( $aplicar ? 'APLICA' : 'SIMULACRO' ) . ": esquel-trevelin (en) #{$g->ID}: h1 «$h1», title ($lt), description ($ld)" );
+	WP_CLI::log( ( $aplicar ? 'APLICA' : 'SIMULACRO' ) . ": esquel-trevelin (en) #{$g->ID}: h1 «{$h1}», title ($lt), description ($ld)" );
 	$cambios++;
 	if ( $aplicar ) {
 		update_field( 'h1', $h1, $g->ID );
