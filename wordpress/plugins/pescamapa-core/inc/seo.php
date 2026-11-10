@@ -21,6 +21,18 @@ remove_action( 'wp_head', 'feed_links', 2 );
 remove_action( 'wp_head', 'feed_links_extra', 3 );
 add_filter( 'xmlrpc_enabled', '__return_false' );
 
+/**
+ * A meta description Google shows whole: at most $max characters. The river pages build theirs from the live reading, so its length
+ * changes with the place, the river and the date (the Portuguese Paso de la Patria one was 171). Drop whole trailing sentences first
+ * (the source line goes before the data), and only as a last resort cut with an ellipsis.
+ */
+function pm_recortar_meta( string $s, int $max = 160 ): string {
+	while ( mb_strlen( $s ) > $max && preg_match( '/^(.+[.!?])\s+[^.!?]+[.!?]$/us', $s, $m ) ) {
+		$s = $m[1];
+	}
+	return mb_strlen( $s ) > $max ? rtrim( mb_substr( $s, 0, $max - 1 ) ) . '…' : $s;
+}
+
 /** What the current request is about: title, description, alternates, draft, JSON-LD. */
 function pm_seo(): array {
 	static $s = null;
@@ -188,7 +200,7 @@ function pm_seo(): array {
 		$r  = $x['rio'] ?? null;
 		$a  = [ 'lugar' => pm_rio_nombre( $k ), 'curso' => $r['curso'] ?? '' ];
 		$s['title']       = pm_t( 'rio.p.title', $a );
-		$s['description'] = $r ? pm_t( pm_rio_mareal( $k ) ? 'rio.p.description.mareal' : 'rio.p.description', $a + [ 'altura' => pm_rio_num( $r['altura'] ), 'fecha' => pm_fecha( $r['fecha'] ), 'tend' => mb_strtolower( pm_rio_tendencia_texto( $r ) ) ] ) : pm_t( 'rio.description' );
+		$s['description'] = $r ? pm_recortar_meta( pm_t( pm_rio_mareal( $k ) ? 'rio.p.description.mareal' : 'rio.p.description', $a + [ 'altura' => pm_rio_num( $r['altura'] ), 'fecha' => pm_fecha( $r['fecha'] ), 'tend' => mb_strtolower( pm_rio_tendencia_texto( $r ) ) ] ) ) : pm_t( 'rio.description' );
 		$s['alternas']    = pm_alternas_fijas( fn( $i ) => pm_url_rio_punto( $k, $i ) );
 		$s['jsonld'][]    = array_filter( [
 			'@context'     => 'https://schema.org',
