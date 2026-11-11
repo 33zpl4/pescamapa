@@ -10,7 +10,7 @@
  * Idempotent: unpublished rows are not counted again and the note is added once.
  * Dry run first ($aplicar = false); run with wp-script.yml (script = paquetes-bariloche-quitar-no-validados-2026-11-11).
  */
-$aplicar = false;
+$aplicar = true;
 $destino = 'bariloche';
 $nota    = ' Despublicado el 11/11/2026 por decisión del dueño: precio sin validar por un operador.';
 $ops     = [ 'Trout Bariloche', 'Southern Rivers Patagonia', 'Patagonia in the Loop', 'Patagonia Drift Fly Fishing', 'Outfitters Patagonia', 'Guides Patagonia' ];
