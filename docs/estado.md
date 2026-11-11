@@ -43,6 +43,7 @@ todas a nosotros (centralizar datos y cobrar comisión más adelante).
 
 - **Bariloche:** 5 paquetes de operador publicados, cada uno con precio y fuente (script `paquetes-bariloche-operadores-2026-11-11`).
 - **Guías nuevas:** El Calafate y Ushuaia, en es/en/pt, con un paquete cada una (script `calafate-ushuaia-2026-11-11`).
+- **Viator (11/11, pegado por el dueño):** sexto operador en Bariloche, Guides Patagonia (€ 599,69 por grupo de hasta 2, 10 h), y variante de medio día de Outfitters (€ 445,22); script `paquetes-bariloche-viator-2026-11-11`. El resto del banco (Tangol, Mendoza, Trout Bariloche € 90,86 que no cuadra con su web) en `docs/paquetes-banco-plataformas-2026-11-11.md`.
 - **Decisión del dueño (11/11):** publicar paquetes con datos públicos de plataformas, pedirle al operador que confirme o se saca, y solo dos guías nuevas (no ampliar más).
 - **Regla de trabajo del dueño:** el modelo principal dirige y revisa; la ejecución se delega a subagentes en Sonnet.
 - **Documentos:** `docs/paquetes-bariloche-fichas-2026-11-11.md` y `docs/paquetes-banco-plataformas-2026-11-11.md`.

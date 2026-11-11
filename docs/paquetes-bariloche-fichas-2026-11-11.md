@@ -20,7 +20,7 @@ Esto reemplaza los "desde US$ 400 / US$ 550" de los paquetes de Bariloche que ni
 
 ## Las cinco fichas, precargadas con lo que cada uno publica
 
-Marcadas **a confirmar** donde falta dato. La fuente de cada precio está en la columna final; los de TripAdvisor los pegó el dueño el 11/11/2026 y no se leyeron en el sitio del operador. **Un operador, un paquete:** el listado de TripAdvisor "Fly Fishing Trips in Bariloche" (desde US$ 100, sin unidad clara) se firma "Trout Bariloche" en las respuestas del dueño; no se pudo confirmar que sea el mismo, y como es el mismo tipo de salida privada, no se publica como paquete aparte.
+Son seis operadores con Guides Patagonia, sumado desde Viator el 11/11 (ver `docs/paquetes-banco-plataformas-2026-11-11.md`). Marcadas **a confirmar** donde falta dato. La fuente de cada precio está en la columna final; los de TripAdvisor los pegó el dueño el 11/11/2026 y no se leyeron en el sitio del operador. **Un operador, un paquete:** el listado de TripAdvisor "Fly Fishing Trips in Bariloche" (desde US$ 100, sin unidad clara) se firma "Trout Bariloche" en las respuestas del dueño; Viator lo confirma ("Supplied by Trout Bariloche", 11/11/2026), y como es el mismo tipo de salida privada, no se publica como paquete aparte.
 
 | Guía | Paquete | Precio publicado | Incluye | No incluye | Idiomas | Fuente |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -33,7 +33,7 @@ Marcadas **a confirmar** donde falta dato. La fuente de cada precio está en la 
 Observaciones útiles para el mensaje:
 - **Southern Rivers:** el mismo día completo se ve a US$ 530 en su web y a US$ 660 en TripAdvisor (+25 %). No sabemos qué se queda la plataforma ni qué cobra el guía; solo que el viajero ve dos precios.
 - **Licencia:** el valor oficial para extranjero ($ 50.000 por día) y lo que cobra Southern Rivers (US$ 35) coinciden con diferencia de US$ 3; confirma el hub de licencias.
-- **Reseñas:** Outfitters Patagonia tiene 317, Trout Bariloche 163 (listado "Fly Fishing Trips in Bariloche", si es el mismo operador) y Southern Rivers 43 en TripAdvisor. Es lo que Pescamapa todavía no tiene y no se inventa.
+- **Reseñas:** Outfitters Patagonia tiene 317, Trout Bariloche 163 (listado "Fly Fishing Trips in Bariloche", que Viator confirma como suyo) y Southern Rivers 43 en TripAdvisor. Es lo que Pescamapa todavía no tiene y no se inventa.
 - **Combinados:** Outfitters Patagonia aparece en reseñas con viajes de 8 días que mezclan Collón Curá, Limay y dorado en el Paraná (Arroyo Seco, Santa Fe). Es el patrón de la página maestra.
 
 ## Mensajes (borradores; completar lo que va entre corchetes)

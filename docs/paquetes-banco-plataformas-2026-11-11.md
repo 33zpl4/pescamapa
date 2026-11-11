@@ -29,6 +29,20 @@ Fuera del banco: "Ushuaia: excursión privada a Puerto Almanza" (€ 403 por gru
 
 Los demás listados de TripAdvisor (Bariloche y El Calafate) están en `docs/paquetes-bariloche-fichas-2026-11-11.md`.
 
+## Viator (pegado por el dueño, 11/11/2026)
+
+| Operador | Destino | Qué es | Precio publicado | Licencia | Notas |
+| --- | --- | --- | --- | --- | --- |
+| Trout Bariloche ("Fly Fishing Trips in Bariloche", producto 213187P1) | Bariloche | Privado, 7 h | € 90,86 "por grupo (hasta 1)", no reembolsable | No incluida (la pueden gestionar) | Viator dice "Supplied by Trout Bariloche": confirma que es el mismo operador del paquete ya publicado. El precio no cuadra con los US$ 520 por bote de su web: no se publica, preguntarle al operador. |
+| Southern Rivers Patagonia (288203P1) | Bariloche, Limay, 10 h | Salida de día completo | € 599,69 por grupo de hasta 2 | US$ 35 por persona si la gestionan | Coincide con lo publicado. |
+| Guides Patagonia (5601300P1) | Bariloche, Limay superior, 10 h, privado | Día completo | € 599,69 por grupo de hasta 2 | US$ 30 por persona, aparte | Publicado como paquete el 11/11. |
+| Outfitters Patagonia | Bariloche | Día completo y medio día | Día completo € 626,95; medio día (5 a 6 h) € 445,22 | Sin detalle | El medio día se sumó como variante del paquete existente. |
+| Tangol (5674P248) | Bariloche, medio día en el Limay, 5 h, balsa | Salida de medio día | € 563,34 por grupo de hasta 2 | Aparte; entrada al Parque Nacional aparte; almuerzo no incluido | Agencia que revende, no es el guía: no se publica como paquete. |
+| Tangol (5674P249) | Bariloche, lagos Nahuel Huapi, Moreno o Gutiérrez, 6 h | Salida de 6 h | € 629,67 por grupo de hasta 2 | Aparte | Ídem. |
+| SALUM Tour & Travel (175887P13) | El Calafate, 9 h, máximo 4 | Salida de día | € 308,93 por persona | Incluida | Coincide con la guía de El Calafate. |
+| Trout Wine Tours (44877P4) | Mendoza, río privado con asado, 8 h | Salida de día | € 490,65 por persona | No la menciona | Fuera de foco por ahora. |
+| Pioneros Fly Fishing | Mendoza, Estancia La Carrera, 10 h | Salida de día | € 708,72 | No la menciona | Ídem. |
+
 ## Qué falta para usarlos
 
 1. **Euro en la tarjeta de paquete:** hoy solo admite pesos, dólares y reales (`desde_moneda` en `inc/campos.php`).
