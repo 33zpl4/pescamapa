@@ -2,7 +2,7 @@
 
 Objetivo (dueño, 11/11/2026): que Pescamapa sea **el lugar donde se pide** la salida, no solo donde se lee. Para eso cada guía necesita **un paquete con un precio real**, como los listados de TripAdvisor y Viator: un producto, un precio, qué incluye y qué no, la licencia explícita, idiomas, seña y cancelación, y una persona que responde.
 
-Esto reemplaza los "desde US$ 400 / US$ 550" de los paquetes de Bariloche que ningún operador confirmó (riesgo n.º 1 de `docs/revision-negocio-2026-11-09.md`). **Esos dos paquetes se despublicaron el 11/11/2026** (decisión del dueño; script `paquetes-bariloche-quitar-no-validados-2026-11-11`, no se borraron: quedan en la guía con `publicado` = 0 y una nota interna). La página muestra los seis de operador. **Nada se publica hasta que el guía confirma.** Los mensajes los manda una persona del equipo; la comisión la decide el dueño (acá va en blanco).
+Esto reemplaza los "desde US$ 400 / US$ 550" de los paquetes de Bariloche que ningún operador confirmó (riesgo n.º 1 de `docs/revision-negocio-2026-11-09.md`). **Esos dos paquetes se despublicaron el 11/11/2026** (decisión del dueño; script `paquetes-bariloche-quitar-no-validados-2026-11-11`, no se borraron: quedan en la guía con `publicado` = 0 y una nota interna). La página muestra los seis de operador. **Se publica con los datos públicos del operador y se le pide que confirme; si no quiere estar, se saca** (decisión del dueño, 11/11/2026). Los mensajes los manda una persona del equipo; la comisión la decide el dueño (acá va en blanco).
 
 ## La ficha de paquete (campos)
 

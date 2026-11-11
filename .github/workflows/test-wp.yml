@@ -543,7 +543,8 @@ jobs:
           fuente_antes=$(w post meta get "$post" fuentes_0_nombre || true)
           [[ -n "$fuente_antes" ]] || { echo "✖ la guía de prueba no tiene fuentes cargadas"; exit 1; }
           w eval "update_field( 'foto_autor', 'Tomás Prueba', $foto );"
-          mkdir -p /tmp/pw && cd /tmp/pw && npm init -y >/dev/null && npm i -s playwright@1.48.2 >/dev/null && npx playwright install --with-deps chromium >/dev/null
+          mkdir -p /tmp/pw && cd /tmp/pw && npm init -y >/dev/null && npm i -s playwright@1.48.2 >/dev/null
+          npx playwright install --with-deps chromium >/dev/null || { echo "::warning::apt no disponible; se instala chromium sin dependencias del sistema"; npx playwright install chromium >/dev/null; }
           cat > editor.mjs <<'JS'
           import { chromium } from 'playwright';
           const [url, post, foto] = process.argv.slice(2);
