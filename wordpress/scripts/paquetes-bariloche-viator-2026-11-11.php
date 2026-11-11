@@ -11,7 +11,7 @@
  * Idempotent: a package with the same title and a variant line already present are not touched.
  * Dry run first ($aplicar = false); run with wp-script.yml (script = paquetes-bariloche-viator-2026-11-11).
  */
-$aplicar = false;
+$aplicar = true;
 $destino = 'bariloche';
 
 $T = [
