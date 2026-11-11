@@ -15,7 +15,7 @@
  *    El Calafate agency day prices in pesos: read on 5/11/2026 (already on the Patagonia sur price page).
  * Idempotent: an existing guide is not touched. Dry run first ($aplicar = false). Run with wp-script.yml (script = calafate-ushuaia-2026-11-11).
  */
-$aplicar = false;
+$aplicar = true;
 $hoy     = '20261111';
 
 $P  = fn( string $h ) => "<!-- wp:paragraph -->\n<p>{$h}</p>\n<!-- /wp:paragraph -->";
