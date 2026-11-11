@@ -42,7 +42,8 @@ jobs:
           # Tools live OUTSIDE the checkout: touching the repo's package.json made the later branch switch fail.
           mkdir -p "$RUNNER_TEMP/inv" && cp scripts/investigar.mjs "$RUNNER_TEMP/inv/" && cd "$RUNNER_TEMP/inv"
           npm init -y >/dev/null && npm i --silent cheerio@1
-          command -v pdftotext >/dev/null || (sudo apt-get update -qq && sudo apt-get install -y -qq poppler-utils >/dev/null)
+          # poppler (PDF text) is optional: an apt outage must not sink the run; PDFs just stay unreadable.
+          command -v pdftotext >/dev/null || (timeout 90 sudo apt-get update -qq && timeout 90 sudo apt-get install -y -qq poppler-utils >/dev/null) || echo "::warning::No se pudo instalar poppler-utils (apt falló); en esta corrida los PDF no se podrán leer."
           if [ "$NAVEGADOR" = "true" ]; then npm i --silent playwright@1 && npx playwright install --with-deps chromium >/dev/null; fi
       - name: Read
         env:
