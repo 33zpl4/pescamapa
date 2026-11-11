@@ -124,7 +124,7 @@ function pm_paquetes( int $post_id ): array {
 			continue;
 		}
 		$monto  = is_numeric( $r['desde_monto'] ?? null ) ? (float) $r['desde_monto'] : 0.0;
-		$moneda = in_array( $r['desde_moneda'] ?? '', [ 'ARS', 'USD', 'BRL' ], true ) ? $r['desde_moneda'] : '';
+		$moneda = in_array( $r['desde_moneda'] ?? '', [ 'ARS', 'USD', 'BRL', 'EUR' ], true ) ? $r['desde_moneda'] : '';
 		$unidad = trim( (string) ( $r['desde_unidad'] ?? '' ) );
 		$fecha  = (string) ( $r['desde_fecha'] ?? '' );
 		$out[]  = [
@@ -196,7 +196,7 @@ function pm_alternas_guias( string $clave ): array {
 /** "US$ 150", "$ 150.000", "R$ 600" with the separators of the page's language. */
 function pm_paquete_precio_txt( array $precio, string $idioma ): string {
 	$n = 'en' === $idioma ? number_format( $precio['monto'], 0, '.', ',' ) : number_format( $precio['monto'], 0, ',', '.' );
-	return [ 'ARS' => '$ ', 'USD' => 'US$ ', 'BRL' => 'R$ ' ][ $precio['moneda'] ] . $n;
+	return [ 'ARS' => '$ ', 'USD' => 'US$ ', 'BRL' => 'R$ ', 'EUR' => '€ ' ][ $precio['moneda'] ] . $n;
 }
 
 /** Language versions of a destination: idioma => url. */
