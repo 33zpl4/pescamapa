@@ -17,7 +17,7 @@
  * Idempotent: a package with the same title, a card already carrying the 11/11 price and an existing card are not touched.
  * Dry run first ($aplicar = false); run with wp-script.yml (script = paquetes-bariloche-operadores-2026-11-11).
  */
-$aplicar = false;
+$aplicar = true;
 $destino = 'bariloche';
 $hoy     = '20261111';
 $ta_outfitters = 'https://www.tripadvisor.com/AttractionProductReview-g312848-d11455647-Fly_Fishing_Bariloche-San_Carlos_de_Bariloche_Province_of_Rio_Negro_Patagonia.html';
