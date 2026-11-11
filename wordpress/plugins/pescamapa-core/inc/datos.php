@@ -193,10 +193,31 @@ function pm_alternas_guias( string $clave ): array {
 	return $out;
 }
 
-/** "US$ 150", "$ 150.000", "R$ 600" with the separators of the page's language. */
+/**
+ * "US$ 150", "$ 150.000", "R$ 600" with the separators of the page's language. A whole amount shows no decimals;
+ * one with cents shows two ("€ 599,69" in es/pt, "€ 599.69" in en).
+ */
 function pm_paquete_precio_txt( array $precio, string $idioma ): string {
-	$n = 'en' === $idioma ? number_format( $precio['monto'], 0, '.', ',' ) : number_format( $precio['monto'], 0, ',', '.' );
+	$monto = round( (float) $precio['monto'], 2 );
+	$dec   = abs( $monto - round( $monto ) ) > 0.001 ? 2 : 0;
+	$n     = 'en' === $idioma ? number_format( $monto, $dec, '.', ',' ) : number_format( $monto, $dec, ',', '.' );
 	return [ 'ARS' => '$ ', 'USD' => 'US$ ', 'BRL' => 'R$ ', 'EUR' => '€ ' ][ $precio['moneda'] ] . $n;
+}
+
+/**
+ * "Updated on" date of a packages page (Y-m-d): the later of the guide's modified date and the dates of the "desde" prices
+ * of the published packages (ACF stores them as Ymd or Y-m-d), so a price edit moves the date the page shows.
+ */
+function pm_paquetes_modificado( array $paquetes, string $base ): string {
+	$max = $base;
+	foreach ( $paquetes as $p ) {
+		$t = strtotime( (string) ( $p['precio']['fecha'] ?? '' ) );
+		$f = $t ? gmdate( 'Y-m-d', $t ) : '';
+		if ( $f && $f > $max ) {
+			$max = $f;
+		}
+	}
+	return $max;
 }
 
 /** Language versions of a destination: idioma => url. */

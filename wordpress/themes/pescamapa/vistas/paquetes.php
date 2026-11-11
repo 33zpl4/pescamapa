@@ -8,7 +8,7 @@ $d      = pm_destino( $dp->ID );
 $paq    = pm_paquetes( $dp->ID );
 $info   = pm_paquetes_info( $dp->ID );
 $a      = [ 'lugar' => $d['nombre'] ];
-$modificado = get_post_modified_time( 'Y-m-d', true, $dp );
+$modificado = pm_paquetes_modificado( $paq, (string) get_post_modified_time( 'Y-m-d', true, $dp ) );
 
 get_header(); ?>
 <div class="v-destino v-paquetes">

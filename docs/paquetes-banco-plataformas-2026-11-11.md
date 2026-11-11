@@ -45,6 +45,6 @@ Los demás listados de TripAdvisor (Bariloche y El Calafate) están en `docs/paq
 
 ## Qué falta para usarlos
 
-1. **Euro en la tarjeta de paquete:** hoy solo admite pesos, dólares y reales (`desde_moneda` en `inc/campos.php`).
-2. **Guía de destino propia** para El Calafate, Ushuaia, Lago Puelo y Mendoza (los paquetes cuelgan de una guía de destino). Hoy solo Bariloche la tiene.
+1. **Euro en la tarjeta de paquete:** resuelto. `desde_moneda` admite EUR y la tarjeta muestra "€ 599,69" (es/pt) o "€ 599.69" (en); los montos enteros no llevan decimales.
+2. **Guía de destino propia** (los paquetes cuelgan de una guía de destino): Bariloche, El Calafate y Ushuaia ya la tienen (es/en/pt, un paquete cada una en las dos últimas). Faltan Lago Puelo y Mendoza; por decisión del dueño (11/11) no se amplía más por ahora.
 3. **Validación del operador** en todos los casos.
