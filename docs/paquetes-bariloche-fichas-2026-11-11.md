@@ -2,7 +2,7 @@
 
 Objetivo (dueño, 11/11/2026): que Pescamapa sea **el lugar donde se pide** la salida, no solo donde se lee. Para eso cada guía necesita **un paquete con un precio real**, como los listados de TripAdvisor y Viator: un producto, un precio, qué incluye y qué no, la licencia explícita, idiomas, seña y cancelación, y una persona que responde.
 
-Esto reemplaza los "desde US$ 400 / US$ 550" de los paquetes de Bariloche que ningún operador confirmó (riesgo n.º 1 de `docs/revision-negocio-2026-11-09.md`). **Nada se publica hasta que el guía confirma.** Los mensajes los manda una persona del equipo; la comisión la decide el dueño (acá va en blanco).
+Esto reemplaza los "desde US$ 400 / US$ 550" de los paquetes de Bariloche que ningún operador confirmó (riesgo n.º 1 de `docs/revision-negocio-2026-11-09.md`). **Esos dos paquetes se despublicaron el 11/11/2026** (decisión del dueño; script `paquetes-bariloche-quitar-no-validados-2026-11-11`, no se borraron: quedan en la guía con `publicado` = 0 y una nota interna). La página muestra los seis de operador. **Se publica con los datos públicos del operador y se le pide que confirme; si no quiere estar, se saca** (decisión del dueño, 11/11/2026). Los mensajes los manda una persona del equipo; la comisión la decide el dueño (acá va en blanco).
 
 ## La ficha de paquete (campos)
 
@@ -76,4 +76,4 @@ Observaciones útiles para el mensaje:
 
 1. Decidir la comisión (o dejar "lo acordamos por escrito si algún día traemos un cliente").
 2. Mandar los mensajes (WhatsApp o mail), empezando por Southern Rivers Patagonia, Patagonia in the Loop y los de TripAdvisor con menos reseñas.
-3. Pasarme las respuestas: con cada confirmación armo el paquete (precio real y fecha) y saco el "desde US$ 400 / 550" sin confirmar.
+3. Pasarme las respuestas: con cada confirmación armo el paquete (precio real y fecha) (el "desde US$ 400 / 550" sin confirmar ya se sacó el 11/11/2026).

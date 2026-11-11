@@ -262,7 +262,7 @@ function pm_seo(): array {
 				'description'  => $s['description'],
 				'url'          => pm_url_paquetes( $k, pm_lang() ),
 				'inLanguage'   => pm_meta_idioma()['html'],
-				'dateModified' => get_post_modified_time( 'Y-m-d', true, $dp ),
+				'dateModified' => pm_paquetes_modificado( $paq, (string) get_post_modified_time( 'Y-m-d', true, $dp ) ),
 				'isPartOf'     => [ '@type' => 'WebSite', 'name' => 'Pescamapa', 'url' => pm_url_inicio( pm_lang() ) ],
 				'about'        => [ '@type' => 'Place', 'name' => $d['nombre'] ],
 			];

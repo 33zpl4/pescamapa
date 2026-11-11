@@ -99,6 +99,19 @@ jobs:
             update_field( "paquetes_intro", "INTRO-DE-PRUEBA", $e->ID ); update_field( "paquetes_description", "DESC-DE-PRUEBA", $e->ID );
             update_field( "paquetes_info", [ [ "titulo" => "INFO-DE-PRUEBA", "texto" => "Primer párrafo de prueba\nSegundo párrafo de prueba", "fuente_nombre" => "FUENTE-INFO", "fuente_url" => "https://example.com/info", "consultada" => "20261028" ], [ "titulo" => "", "texto" => "BLOQUE-SIN-TITULO" ] ], $e->ID );
           '
+          # Package prices keep their cents; the page date follows the newest price date.
+          w eval '
+            $ok = "€ 599,69" === pm_paquete_precio_txt( [ "monto" => 599.69, "moneda" => "EUR" ], "es" )
+              && "€ 599.69" === pm_paquete_precio_txt( [ "monto" => 599.69, "moneda" => "EUR" ], "en" )
+              && "€ 599,69" === pm_paquete_precio_txt( [ "monto" => 599.69, "moneda" => "EUR" ], "pt" )
+              && "US$ 550" === pm_paquete_precio_txt( [ "monto" => 550, "moneda" => "USD" ], "es" )
+              && "$ 150.000" === pm_paquete_precio_txt( [ "monto" => 150000, "moneda" => "ARS" ], "es" )
+              && "US$ 1,200" === pm_paquete_precio_txt( [ "monto" => 1200, "moneda" => "USD" ], "en" );
+            $ok = $ok && "2027-12-31" === pm_paquetes_modificado( [ [ "precio" => [ "fecha" => "20271231" ] ], [ "precio" => null ] ], "2026-10-30" )
+              && "2026-11-11" === pm_paquetes_modificado( [ [ "precio" => [ "fecha" => "2026-11-11" ] ] ], "2026-10-30" )
+              && "2026-10-30" === pm_paquetes_modificado( [ [ "precio" => [ "fecha" => "2026-10-01" ] ] ], "2026-10-30" );
+            $ok || WP_CLI::error( "pm_paquete_precio_txt / pm_paquetes_modificado: resultado inesperado" );
+          '
           w eval '
             $id = wp_insert_post( [ "post_type" => "pm_entrevista", "post_status" => "publish", "post_title" => "Prueba: el río manda", "post_name" => "prueba-el-rio-manda", "post_content" => "<!-- wp:paragraph --><p>Charla de prueba.</p><!-- /wp:paragraph -->" ] );
             foreach ( [ "idioma" => "es", "clave" => "prueba", "persona" => "Persona Prueba", "destino" => "esquina", "fecha" => "20261020", "consentimiento" => 1, "rol" => "Guía de prueba", "bajada" => "Bajada de prueba", "seo_title" => "Prueba", "seo_description" => "Descripción de prueba" ] as $k => $v ) { update_field( $k, $v, $id ); }
@@ -530,7 +543,8 @@ jobs:
           fuente_antes=$(w post meta get "$post" fuentes_0_nombre || true)
           [[ -n "$fuente_antes" ]] || { echo "✖ la guía de prueba no tiene fuentes cargadas"; exit 1; }
           w eval "update_field( 'foto_autor', 'Tomás Prueba', $foto );"
-          mkdir -p /tmp/pw && cd /tmp/pw && npm init -y >/dev/null && npm i -s playwright@1.48.2 >/dev/null && npx playwright install --with-deps chromium >/dev/null
+          mkdir -p /tmp/pw && cd /tmp/pw && npm init -y >/dev/null && npm i -s playwright@1.48.2 >/dev/null
+          npx playwright install --with-deps chromium >/dev/null || { echo "::warning::apt no disponible; se instala chromium sin dependencias del sistema"; npx playwright install chromium >/dev/null; }
           cat > editor.mjs <<'JS'
           import { chromium } from 'playwright';
           const [url, post, foto] = process.argv.slice(2);
