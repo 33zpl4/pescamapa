@@ -4,6 +4,8 @@ Los envía una persona del equipo (WhatsApp o mail). Antes de mandar, completar
 lo que está entre [corchetes]. La **comisión** y la **condición especial** las
 decide el dueño: acá van como espacios en blanco.
 
+> **Nota del 11/11/2026:** la frase de abajo "los asistentes de IA citan Pescamapa" no está probada (0 de 61 respuestas medidas usan nuestras cifras, `docs/revision-negocio-2026-11-09.md`): no usarla ni prometer volumen. Para Bariloche hay mensajes y fichas de paquete listas en `docs/paquetes-bariloche-fichas-2026-11-11.md`.
+
 ## Qué proponemos (una línea)
 
 Los pescadores ya le preguntan a un asistente de IA con quién salir; Pescamapa
