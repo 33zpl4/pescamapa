@@ -39,6 +39,15 @@ todas a nosotros (centralizar datos y cobrar comisión más adelante).
   sigue como notas PENDIENTE (no se ven). Investigación:
   `docs/investigacion/esquina.md`.
 
+## Al 11/11/2026: paquetes por operador en Bariloche y guías de El Calafate y Ushuaia
+
+- **Bariloche:** 5 paquetes de operador publicados, cada uno con precio y fuente (script `paquetes-bariloche-operadores-2026-11-11`).
+- **Guías nuevas:** El Calafate y Ushuaia, en es/en/pt, con un paquete cada una (script `calafate-ushuaia-2026-11-11`).
+- **Viator (11/11, pegado por el dueño):** sexto operador en Bariloche, Guides Patagonia (€ 599,69 por grupo de hasta 2, 10 h), y variante de medio día de Outfitters (€ 445,22); script `paquetes-bariloche-viator-2026-11-11`. El resto del banco (Tangol, Mendoza, Trout Bariloche € 90,86 que no cuadra con su web) en `docs/paquetes-banco-plataformas-2026-11-11.md`.
+- **Decisión del dueño (11/11):** publicar paquetes con datos públicos de plataformas, pedirle al operador que confirme o se saca, y solo dos guías nuevas (no ampliar más).
+- **Regla de trabajo del dueño:** el modelo principal dirige y revisa; la ejecución se delega a subagentes en Sonnet.
+- **Documentos:** `docs/paquetes-bariloche-fichas-2026-11-11.md` y `docs/paquetes-banco-plataformas-2026-11-11.md`.
+
 ## Al 9/11/2026: revisión del negocio y origen de las consultas
 
 - **Revisión completa: `docs/revision-negocio-2026-11-09.md`.** Diagnóstico: mucho contenido y ninguna prueba del negocio (0 consultas, 0 operadores con acuerdo; 10 clics por semana, casi todos de altura del río). Palancas en orden: cerrar un viaje a mano con un operador con acuerdo, demanda que paga (semanas de lodge en inglés, grupos al dorado en portugués) y probarla con un experimento chico de anuncios, enlaces entrantes, página "Quiénes somos" con el respaldo de la agencia. Tiene un tablero a 30 días y la lista de lo que depende del dueño. Dos propuestas contradicen decisiones previas y esperan su respuesta: escribirles ya a los prestadores listados (antes: "cuando haya tráfico") y un experimento de anuncios de US$ 150 a 300 (antes: sin publicidad paga).

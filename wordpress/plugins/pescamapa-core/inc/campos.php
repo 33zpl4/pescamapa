@@ -210,7 +210,7 @@ add_action( 'acf/include_fields', function () {
 						[ 'key' => 'field_pm_d_paq_no_incluye', 'name' => 'no_incluye', 'label' => 'Qué no incluye (una línea cada cosa)', 'type' => 'textarea', 'rows' => 3, 'wrapper' => [ 'width' => 50 ] ],
 						[ 'key' => 'field_pm_d_paq_variantes', 'name' => 'variantes', 'label' => 'Variantes (una por línea, p. ej. los packs)', 'type' => 'textarea', 'rows' => 3 ],
 						[ 'key' => 'field_pm_d_paq_monto', 'name' => 'desde_monto', 'label' => 'Precio desde (monto)', 'type' => 'number', 'min' => 0, 'step' => 'any', 'wrapper' => [ 'width' => 25 ] ],
-						[ 'key' => 'field_pm_d_paq_moneda', 'name' => 'desde_moneda', 'label' => 'Moneda', 'type' => 'select', 'choices' => [ 'ARS' => 'Pesos (ARS)', 'USD' => 'Dólares (USD)', 'BRL' => 'Reales (BRL)' ], 'allow_null' => 1, 'wrapper' => [ 'width' => 25 ] ],
+						[ 'key' => 'field_pm_d_paq_moneda', 'name' => 'desde_moneda', 'label' => 'Moneda', 'type' => 'select', 'choices' => [ 'ARS' => 'Pesos (ARS)', 'USD' => 'Dólares (USD)', 'BRL' => 'Reales (BRL)', 'EUR' => 'Euros (EUR)' ], 'allow_null' => 1, 'wrapper' => [ 'width' => 25 ] ],
 						[ 'key' => 'field_pm_d_paq_unidad', 'name' => 'desde_unidad', 'label' => 'Por (ej. "por lancha", "por persona")', 'type' => 'text', 'wrapper' => [ 'width' => 25 ] ],
 						[ 'key' => 'field_pm_d_paq_fecha', 'name' => 'desde_fecha', 'label' => 'Fecha del precio', 'type' => 'date_picker', 'display_format' => 'd/m/Y', 'return_format' => 'Y-m-d', 'wrapper' => [ 'width' => 25 ] ],
 						[ 'key' => 'field_pm_d_paq_interno', 'name' => 'interno', 'label' => 'Interno (no se publica): qué guías pueden armarlo, condiciones, comisión', 'type' => 'textarea', 'rows' => 2 ],
