@@ -17,7 +17,7 @@
  * Idempotent. Dry run first ($aplicar = false). Run with wp-script.yml (script = las-buitreras-2027-2026-11-13).
  */
 
-$aplicar = false;
+$aplicar = true;
 $hoy     = '20261113';
 $nombre  = 'Estancia Las Buitreras (Solid Adventures)';
 $carpeta = '/tmp/pm-fotos';
@@ -66,7 +66,8 @@ $cortar = fn( $v ) => mb_substr( is_array( $v ) ? implode( ',', $v ) : (string) 
 $cambios = [];
 foreach ( $campos as $k => $nuevo ) {
 	$antes = pm_campo( $k, $pid );
-	$igual = is_array( $nuevo ) ? ( (array) $antes === $nuevo ) : ( (string) $antes === (string) $nuevo );
+	$norm  = in_array( $k, [ 'precio_fecha', 'verificado' ], true ) ? fn( $v ) => preg_replace( '/\D/', '', (string) $v ) : fn( $v ) => (string) $v; // date fields read back as Y-m-d
+	$igual = is_array( $nuevo ) ? ( (array) $antes === $nuevo ) : ( $norm( $antes ) === $norm( $nuevo ) );
 	WP_CLI::log( ( $igual ? '  = ' : '  ~ ' ) . "$k" . ( $igual ? ' sin cambios' : "\n      ANTES:   " . $cortar( $antes ) . "\n      DESPUÉS: " . $cortar( $nuevo ) ) );
 	if ( ! $igual ) {
 		$cambios[ $k ] = $nuevo;
@@ -231,7 +232,7 @@ foreach ( pm_prestadores_destino( 'rio-gallegos' ) as $x ) {
 		$r = $x;
 	}
 }
-$bien = $r && pm_prestador_publico( $r ) && ! $r['acuerdo'] && ! $r['consentimiento'] && (bool) $r['publico'] && $r['precio_fecha'] === $hoy && false !== strpos( $r['precio'], '9.990' ) && in_array( $att, $r['fotos'], true ) && wp_attachment_is_image( $att ) && 'Solid Adventures' === pm_campo( 'foto_autor', $att );
+$bien = $r && pm_prestador_publico( $r ) && ! $r['acuerdo'] && ! $r['consentimiento'] && (bool) $r['publico'] && preg_replace( '/\D/', '', (string) $r['precio_fecha'] ) === $hoy && false !== strpos( $r['precio'], '9.990' ) && in_array( $att, $r['fotos'], true ) && wp_attachment_is_image( $att ) && 'Solid Adventures' === pm_campo( 'foto_autor', $att );
 WP_CLI::log( ( $bien ? 'VERIFIED' : 'FALLÓ' ) . ": ficha #$pid en la lista de rio-gallegos | precio_fecha={$r['precio_fecha']} | precio={$r['precio']} | foto #$att (" . wp_get_attachment_url( $att ) . ") crédito=" . pm_campo( 'foto_autor', $att ) . ' | publico=' . (int) $r['publico'] . ' consentimiento=' . (int) $r['consentimiento'] . ' acuerdo=' . (int) $r['acuerdo'] );
 $ok = $ok && $bien;
 foreach ( [ 'descripcion', 'descripcion_en', 'descripcion_pt', 'prest_temporada', 'prest_temporada_en', 'prest_temporada_pt', 'precio', 'precio_en', 'precio_pt' ] as $k ) {

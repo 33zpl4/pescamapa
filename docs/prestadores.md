@@ -29,7 +29,7 @@ Nunca se publica una ficha con **Datos de ejemplo** marcado.
 
 - Teléfono, WhatsApp, email o redes: son internos y nunca se imprimen (las
   consultas llegan a Pescamapa y nosotros se las pasamos).
-- Fotos o logos de su sitio, salvo que nos los hayan cedido (crédito del autor).
+- Fotos o logos de su sitio, salvo que nos los hayan cedido (crédito del autor). **Regla nueva del dueño (13/11/2026): una foto del material de la propia fuente (por ejemplo el programa que nos manda el operador) puede usarse con crédito visible y se quita si lo piden; la ficha la lleva en el campo Fotos con "Autor de la foto". Vale para el punto 8 de la estrategia.**
 - Frases de marketing suyas ("los mejores precios"): son afirmaciones sin
   fuente. Tampoco reseñas ni valoraciones.
 - Datos estructurados de negocio (`LocalBusiness`): solo cuando la ficha esté
