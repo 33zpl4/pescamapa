@@ -96,7 +96,7 @@ if ( ! function_exists( 'pm_sc_h2' ) ) {
 }
 
 
-$aplicar = false;
+$aplicar = true;
 $cambios = 0;
 
 // destino => idioma => [ new description for Google (<= 160) ]
