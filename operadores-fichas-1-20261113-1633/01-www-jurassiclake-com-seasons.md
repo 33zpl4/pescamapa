@@ -1,0 +1,38 @@
+# Fly Fishing Seasons at Jurassic Lake | Patagonia Argentina
+- URL pedida: https://www.jurassiclake.com/seasons
+- URL final: https://www.jurassiclake.com/seasons  (HTTP 200)
+- Canonical: https://www.jurassiclake.com/seasons   · lang: en   · robots meta: —
+- Meta description (159 car.): From October to April, each month at Jurassic Lake® Lodge offers a unique fly fishing experience. Learn how seasons affect rainbow trout behavior in Patagonia.
+- og:title: Fly Fishing Seasons at Jurassic Lake | Patagonia Argentina   · og:image: https://static.wixstatic.com/media/8e7926_4d86f68a8c5e4ef5a7d213412c1ba095%7Emv2_d_5512_3564_s_4_2.jpg/v1/fit/w_2500,h_1330,al_c/8e7926_4d86f68a8c5e4ef5a7d213412c1ba095%7Emv2_d_5512_3564_s_4_2.jpg
+- Palabras: 992 · imágenes: 5 · enlaces internos: 18 · externos: 4
+- Secciones más enlazadas: / (3), /seasons (2), /barrancoso-mouth (1), /strobel-lake (1), /barrancoso-river (1), /creeks-and-lagoons (1), /the-lodge (1), /location (1), /rates (1), /pre-trip-info (1), /charter-flight (1), /personal-information-form (1)
+- hreflang: ninguno
+- Datos estructurados:
+  - VideoObject · Jurassic Lake Lodge - Fly Fishing Lago Strobel (12 Years after our first video there)
+    {"@context":"https://schema.org","@type":"VideoObject","thumbnailUrl":"https://i.ytimg.com/vi/GxfWQ8iehXE/mqdefault.jpg","name":"Jurassic Lake Lodge - Fly Fishing Lago Strobel (12 Years after our first video there)","description":"Our Crew got to spend three days at the hallowed Jurassic Lake Lodge on the river mouth of the Barrancoso River. 12 years after we first set foot into the dry soil of this place... and it still is the most productive Rainbow trout fishery there is. \n\nhttps://www.jurassiclake.com","uploadDate":"2026-11-11T00:41:10.751Z","duration":"PT3M6S","embedUrl":"https://www.yo…
+## Encabezados
+H2: SEASONS AT JURASSIC LAKE
+## Texto (primeras 12.000 caracteres)
+Play Video
+SEASONS AT JURASSIC LAKE
+Early Season
+Spring: September to Early January
+Our first guests of the season arrive at Jurassic Lake Lodge each year in September. From then, through the first part of January, the fishing can be incredible. Lago Strobel’s huge rainbow trout are hungry, un-pressured and plentiful this time of year. Catch rates can be mind-blowing and guests often lose track of the number of big trout caught each day.
+During the Southern Hemisphere’s Spring and Early Summer, temperatures are cool. Melting snow and rain in the mountains feed the Rio Barrancoso, Moro Creek, and the networks of lagoons spread across our property. Fish are able to spread out and everywhere you look, trophy trout are chasing flies. Every pattern in an angler’s fly box seems to work this time of year.
+Rainbow trout spawn during the Spring and the trout of Lago Strobel are no exception. The Rio Barrancoso is the only tributary to Lago Strobel and this makes it the focal point of every trout in the lake during the early season. This is why the founders of Jurassic Lake Lodge wisely built the Lodge only a short walk from the mouth the Rio Barrancoso. During the early season, the river is absolutely packed with fish and our lucky guests have exclusive, private access to the very best water of the entire system. The sight of massive rainbow trout crowding throughout the Rio Barrancoso to feed and spawn is an amazing thing to see.
+This early part of our season is historically the most popular time to visit Jurassic Lake Lodge. Many of the stories that made the Lodge famous across the world are from this special time of year. A number of our regular guests have standing dates reserved for years in advance to ensure they are able to fish the Rio Barrancoso during Spring and early Summer each year. Due to this demand, we only make reservations for full week trips during the early part of our season.
+​
+Early Season
+Mid Season
+Middle Season
+Summer: Mid-January to Mid-March
+Summer weather settles over Argentine Patagonia sometime in the middle of January and remains until the temperatures begin to cool again in March. Water levels drop in Moro Creek and the Upper Rio Barrancoso. Hungry rainbow trout cruise the shoreline of Lago Strobel and move in and out of the Lower Barrancoso to feed. Anglers pursue these large trout with a variety of dry flies, streamers and nymphs, often sight casting to the largest rainbow trout of their lives.
+Because the trout spread throughout the lake, catch rates during our Summer season usually slow a bit compared to the sometimes unbelievable numbers of the early season. Anglers can still expect many opportunities each day to catch trophy rainbow trout weighing over ten pounds each. Anglers visiting Lago Strobel this time of year still describe the fishing as exceptional and many appreciate the extra touch of skill and challenge sometimes required during the middle of our season. Long days and bright conditions reward careful presentations, accurate casting, smaller flies and longer leaders. It is satisfying, compelling fly fishing. The lagoons on our property are also filled with trout feeding on scuds. These fish aren’t as large as the fish of Lago Strobel, but they can provide a change of pace from the lake’s expansive water.
+During Summer, prime locations along Lago Strobel and near the mouth of the Rio Barrancoso are critical for an angler to intercept consistent numbers of cruising fish. Fortunately, Jurassic Lake Lodge property runs along many miles of the most productive waters and our guests have exclusive access to these premiere beats. Each morning our experienced guides consider wind direction, seasonal food supplies, and fish movements to select the best water for our guests to fish each day. Dates for our Summer season book quickly each year and we also begin to offer half-week visits during this part of our season for anglers who don’t have the time to stay for a full week.
+Late Season
+Late Season
+Autumn: Mid-March to May
+The days grow shorter and cool temperatures return to Patagonia sometime in the middle of March. We look forward to these days each year. The fish notice this final seasonal change and begin to feed aggressively before winter arrives. From that time until our last guests of the season fish with us in early May, the fishing in Lago Strobel and the Rio Barrancoso can be fast paced. Many of our guests consider these last weeks of the season to be the second prime time to visit Jurassic Lake Lodge.
+Good numbers of fish caught, and the variety of methods used, can make for enjoyable days on the water at the end of our season. In the Rio Barrancoso, there is a late run of large rainbow trout that appears when the autumn rains in the nearby mountains charge the river with extra water after the dry summer. When you hook one of these fish, you’ll hope your backing knot is solid. After an entire season of feeding in the rich waters of Lago Strobel, these can be some of the strongest and most powerful rainbow trout we hook each season. They are special fish and some of our favorites.
+Many of our guests live in the Northern Hemisphere. This time of year their home waters are beginning to open. These anglers sometimes forget that exceptional fishing is still happening here at Lago Strobel and the Rio Barrancoso. Because of this, the end of our year can sometimes be overlooked by traveling anglers. This is a mistake because our world-class fishery is still going strong right up to when we close our doors for the season. We book full and half-week trips this time of year. Don’t just take our word. Come see for yourself how good it is to end the season with us at Jurassic Lake Lodge.
+​
