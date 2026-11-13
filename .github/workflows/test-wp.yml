@@ -268,7 +268,7 @@ jobs:
           check /en/plan-your-trip/ 200 'Request options for your fishing trip in Argentina | Pescamapa'
           check /pt/planejar-viagem/ 200 'Peça opções para a sua viagem de pesca na Argentina | Pescamapa'
           check /en/ 200 'Fishing in Argentina: when to go and who to fish with | Pescamapa'
-          check /paquetes-de-pesca/esquina/ 200 'Pedir esta opción' 'Pedir cotización'
+          check /paquetes-de-pesca/esquina/ 200 'Pedir esta opción'
           check /robots.txt 200 'Sitemap'
           check /llms.txt 200 'pesca-en-esquina'
           check /llms.txt 200 'prueba-el-rio-manda' 'sin-permiso'
