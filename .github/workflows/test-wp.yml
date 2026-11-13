@@ -351,6 +351,64 @@ jobs:
           [[ "$pl" == *'"from":"Pescamapa <info@pescamapa.com>"'* && "$pl" == *'"to":["a@example.com"]'* && "$pl" == *'"reply_to":"r@example.com"'* && "$pl" == *'"text":"M"'* ]] && echo "✓ payload de Resend" || { echo "✖ payload de Resend: $pl"; fail=1; }
           sin=$(wp --path="$WP" eval 'var_dump( apply_filters( "pre_wp_mail", null, [ "to" => "a@example.com", "subject" => "S", "message" => "M" ] ) );')
           [[ "$sin" == "NULL" ]] && echo "✓ sin clave, wp_mail no se toca" || { echo "✖ sin clave el filtro respondió: $sin"; fail=1; }
+          # Inquiry emails (no network): the subject is plain text, the acknowledgement links follow the language, and the send result is recorded on the Consulta.
+          wp --path="$WP" eval '
+            foreach ( [ [ "pm_destino", "en", "Fishing in Esquina", "esquina" ], [ "pm_nota", "es", "Licencia para extranjeros", "licencias-extranjeros-argentina" ], [ "pm_nota", "en", "Fishing licence for foreigners", "licencias-extranjeros-argentina" ] ] as [ $tipo, $idioma, $titulo, $clave ] ) {
+              $x = wp_insert_post( [ "post_type" => $tipo, "post_status" => "publish", "post_title" => $titulo, "post_name" => sanitize_title( $titulo ) . "-prueba-correo" ] );
+              update_post_meta( $x, "idioma", $idioma ); update_post_meta( $x, "clave", $clave );
+            }
+          '
+          wp --path="$WP" eval '
+            $mal = [];
+            $ver = function ( $cond, $msg ) use ( &$mal ) { if ( ! $cond ) { $mal[] = $msg; } };
+            // Acknowledgement body.
+            $base = fn( $t, $i ) => pm_t( "viaje" === $t ? "acuse.viaje" : "acuse.prestador", [], $i ) . "\n\nPescamapa\n" . pm_url_inicio( $i );
+            $guia_en = get_permalink( pm_buscar( "pm_destino", "esquina", "en" )->ID );
+            $nota_en = get_permalink( pm_buscar( "pm_nota", "licencias-extranjeros-argentina", "en" )->ID );
+            $nota_es = get_permalink( pm_buscar( "pm_nota", "licencias-extranjeros-argentina", "es" )->ID );
+            $c = pm_acuse_cuerpo( "viaje", "en", "esquina" );
+            $ver( str_starts_with( $c, pm_t( "acuse.viaje", [], "en" ) ) && str_contains( $c, pm_t( "acuse.ayuda", [], "en" ) ), "en: texto fijo + introducción" );
+            $ver( str_contains( $c, "\n$guia_en\n" ) && str_contains( $c, "\n$nota_en\n" ) && str_ends_with( $c, "Pescamapa\n" . pm_url_inicio( "en" ) ), "en: guía y nota de licencia, cada URL en su línea" );
+            $c = pm_acuse_cuerpo( "viaje", "en", "no-existe" );
+            $ver( str_contains( $c, $nota_en ) && ! str_contains( $c, $guia_en ), "en, destino desconocido: solo la nota" );
+            $c = pm_acuse_cuerpo( "viaje", "es", "esquina" );
+            $ver( ! str_contains( $c, $nota_es ) && str_contains( $c, "pesca-en-esquina" ), "es: guía sí, nota de licencia no" );
+            $ver( pm_acuse_cuerpo( "viaje", "pt", "esquina" ) === $base( "viaje", "pt" ), "pt sin guía ni nota en pt: igual que hoy" );
+            $ver( pm_acuse_cuerpo( "viaje", "es", "" ) === $base( "viaje", "es" ), "es sin destino: igual que hoy" );
+            $ver( pm_acuse_cuerpo( "prestador", "en", "esquina" ) === $base( "prestador", "en" ), "prestador: sin enlaces" );
+            foreach ( [ "es", "pt", "en" ] as $i ) { $ver( "" !== pm_t( "acuse.ayuda", [], $i ) && "acuse.ayuda" !== pm_t( "acuse.ayuda", [], $i ), "acuse.ayuda en $i" ); }
+            echo pm_acuse_cuerpo( "viaje", "en", "esquina" ), "\n---\n";
+            // Subject: plain text.
+            $ver( "O’Connor & Co" === pm_texto_plano( "O&#8217;Connor &amp; Co" ), "pm_texto_plano" );
+            $id = wp_insert_post( [ "post_type" => "pm_consulta", "post_status" => "private", "post_title" => "Viaje: O\x27Connor — esquina" ] );
+            $ver( "[Pescamapa] Viaje: O\x27Connor — esquina" === pm_asunto_aviso( $id ), "asunto con apóstrofo: " . pm_asunto_aviso( $id ) );
+            $ver( ! str_contains( pm_asunto_aviso( $id ), "&#" ), "asunto sin entidades" );
+            // Send result recorded on the Consulta (wp_mail short-circuited, nothing is sent).
+            $nueva = function ( $contacto ) {
+              $n = wp_insert_post( [ "post_type" => "pm_consulta", "post_status" => "private", "post_title" => "Viaje: Prueba" ] );
+              foreach ( [ "tipo" => "viaje", "idioma" => "en", "destino" => "esquina", "contacto" => $contacto, "nombre" => "Prueba" ] as $k => $v ) { update_post_meta( $n, $k, $v ); }
+              return $n;
+            };
+            $viejo = $nueva( "x@example.com" );
+            $ver( "sin dato" === pm_correos_resumen( $viejo ), "consulta vieja: sin dato" );
+            add_filter( "pre_wp_mail", fn() => true, 1 );
+            $a = $nueva( "tester@example.com" ); pm_avisar_consulta( $a ); pm_acusar_consulta( $a );
+            $ver( "enviado" === get_post_meta( $a, "correo_aviso_estado", true ) && "enviado" === get_post_meta( $a, "correo_acuse_estado", true ), "estado enviado" );
+            $ver( (bool) get_post_meta( $a, "correo_aviso_el", true ) && "Aviso ✓ · Acuse ✓" === pm_correos_resumen( $a ), "fecha y resumen: " . pm_correos_resumen( $a ) );
+            remove_all_filters( "pre_wp_mail" );
+            add_filter( "pre_wp_mail", function () { do_action( "wp_mail_failed", new WP_Error( "wp_mail_failed", "ERROR-SIMULADO" ) ); return false; }, 1 );
+            $b = $nueva( "tester@example.com" ); pm_avisar_consulta( $b ); pm_acusar_consulta( $b );
+            $ver( "fallo" === get_post_meta( $b, "correo_acuse_estado", true ) && "ERROR-SIMULADO" === get_post_meta( $b, "correo_acuse_error", true ), "estado fallo con error" );
+            $ver( "Aviso ✗ · Acuse ✗" === pm_correos_resumen( $b ), "resumen fallo: " . pm_correos_resumen( $b ) );
+            remove_all_filters( "pre_wp_mail" );
+            add_filter( "pre_wp_mail", fn() => true, 1 );
+            $d = $nueva( "+5493411234567" ); pm_avisar_consulta( $d ); pm_acusar_consulta( $d );
+            $ver( "sin_email" === get_post_meta( $d, "correo_acuse_estado", true ) && "Aviso ✓ · Acuse — (sin email)" === pm_correos_resumen( $d ), "sin email: " . pm_correos_resumen( $d ) );
+            foreach ( [ $id, $viejo, $a, $b, $d ] as $x ) { wp_delete_post( $x, true ); }
+            if ( $mal ) { WP_CLI::error( "correos de consultas:\n - " . implode( "\n - ", $mal ) ); }
+            WP_CLI::success( "correos de consultas" );
+          '
+          wp --path="$WP" eval 'foreach ( [ "pm_destino", "pm_nota" ] as $t ) { foreach ( get_posts( [ "post_type" => $t, "post_status" => "any", "meta_key" => "clave", "meta_value" => [ "esquina", "licencias-extranjeros-argentina" ], "posts_per_page" => -1, "suppress_filters" => true ] ) as $p ) { if ( str_ends_with( $p->post_name, "-prueba-correo" ) ) { wp_delete_post( $p->ID, true ); } } }'
           check /en/terms/ 200 'Terms of use'
           check /en/privacy/ 200 'Privacy policy'
           check /pt/termos/ 200 'Termos de uso'

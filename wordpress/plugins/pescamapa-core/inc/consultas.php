@@ -170,6 +170,42 @@ function pm_recibir_consulta(): void {
 add_action( 'admin_post_nopriv_pm_consulta', 'pm_recibir_consulta' );
 add_action( 'admin_post_pm_consulta', 'pm_recibir_consulta' );
 
+/** Plain text for an email subject or body: no HTML entities (WordPress stores and filters titles with them). */
+function pm_texto_plano( string $s ): string {
+	return html_entity_decode( $s, ENT_QUOTES | ENT_HTML5, 'UTF-8' );
+}
+
+/** Subject of the team notice: the Consulta's raw title as plain text ("O’Connor", never "O&#8217;Connor"). */
+function pm_asunto_aviso( int $id ): string {
+	return '[Pescamapa] ' . pm_texto_plano( (string) get_post_field( 'post_title', $id, 'raw' ) );
+}
+
+/**
+ * wp_mail() that remembers what happened on the Consulta: correo_<que>_estado (enviado | fallo), correo_<que>_el
+ * (site time) and, on failure, correo_<que>_error when wp_mail_failed told us why. $que: aviso | acuse.
+ */
+function pm_enviar_registrando( int $id, string $que, string $para, string $asunto, string $cuerpo, array $cabeceras = [] ): bool {
+	$error  = '';
+	$oyente = function ( $e ) use ( &$error ) {
+		$error = $e instanceof WP_Error ? $e->get_error_message() : '';
+	};
+	add_action( 'wp_mail_failed', $oyente );
+	$ok = (bool) wp_mail( $para, $asunto, $cuerpo, $cabeceras );
+	remove_action( 'wp_mail_failed', $oyente );
+	pm_consulta_registrar_correo( $id, $que, $ok ? 'enviado' : 'fallo', $ok ? '' : $error );
+	return $ok;
+}
+
+function pm_consulta_registrar_correo( int $id, string $que, string $estado, string $error = '' ): void {
+	update_post_meta( $id, "correo_{$que}_estado", $estado );
+	update_post_meta( $id, "correo_{$que}_el", current_time( 'mysql' ) );
+	if ( '' !== $error ) {
+		update_post_meta( $id, "correo_{$que}_error", mb_substr( $error, 0, 300 ) );
+	} else {
+		delete_post_meta( $id, "correo_{$que}_error" );
+	}
+}
+
 /** Best-effort email; the Consulta post is the record either way. */
 function pm_avisar_consulta( int $id ): void {
 	$para   = get_option( 'pm_email_consultas' ) ?: get_option( 'admin_email' );
@@ -181,7 +217,46 @@ function pm_avisar_consulta( int $id ): void {
 	$lineas[] = 'Abrir: ' . admin_url( "post.php?post={$id}&action=edit" );
 	// "Reply" in the inbox answers the angler directly when they left an email.
 	$contacto = (string) get_post_meta( $id, 'contacto', true );
-	wp_mail( $para, '[Pescamapa] ' . get_the_title( $id ), implode( "\n", $lineas ), is_email( $contacto ) ? [ 'Reply-To: ' . $contacto ] : [] );
+	pm_enviar_registrando( $id, 'aviso', $para, pm_asunto_aviso( $id ), implode( "\n", $lineas ), is_email( $contacto ) ? [ 'Reply-To: ' . $contacto ] : [] );
+}
+
+/**
+ * Up to two helpful links for a trip request, in the sender's language: the destination guide (when there is a
+ * published one in that language) and, for en/pt, the licence note for foreigners (when it exists in that language).
+ * Each is [ label, url ]; [] when nothing resolves.
+ */
+function pm_acuse_enlaces( string $destino, string $idioma ): array {
+	$out = [];
+	$guia = '' !== $destino ? pm_buscar( 'pm_destino', $destino, $idioma ) : null;
+	if ( $guia ) {
+		$out[] = [ pm_texto_plano( get_the_title( $guia->ID ) ), get_permalink( $guia->ID ) ];
+	}
+	if ( in_array( $idioma, [ 'en', 'pt' ], true ) ) {
+		$nota = pm_buscar( 'pm_nota', PM_NOTA_LICENCIA_EXTRANJEROS, $idioma );
+		if ( $nota ) {
+			$out[] = [ pm_texto_plano( get_the_title( $nota->ID ) ), get_permalink( $nota->ID ) ];
+		}
+	}
+	return $out;
+}
+
+/** Clave of the foreigners' fishing-licence note (es: /notas/licencia-pesca-extranjeros-argentina-2026-27/). */
+const PM_NOTA_LICENCIA_EXTRANJEROS = 'licencias-extranjeros-argentina';
+
+/**
+ * Body of the acknowledgement: the fixed text, then (trip requests only) the optional links block, then the signature.
+ * Pure given the site content: nothing the person typed goes back out.
+ */
+function pm_acuse_cuerpo( string $tipo, string $idioma, string $destino = '' ): string {
+	$cuerpo = pm_t( 'prestador' === $tipo ? 'acuse.prestador' : 'acuse.viaje', [], $idioma );
+	$enlaces = 'prestador' === $tipo ? [] : pm_acuse_enlaces( $destino, $idioma );
+	if ( $enlaces ) {
+		$cuerpo .= "\n\n" . pm_t( 'acuse.ayuda', [], $idioma );
+		foreach ( $enlaces as [ $etiqueta, $url ] ) {
+			$cuerpo .= "\n\n{$etiqueta}\n{$url}";
+		}
+	}
+	return $cuerpo . "\n\nPescamapa\n" . pm_url_inicio( $idioma );
 }
 
 /**
@@ -191,11 +266,37 @@ function pm_avisar_consulta( int $id ): void {
 function pm_acusar_consulta( int $id ): void {
 	$contacto = (string) get_post_meta( $id, 'contacto', true );
 	if ( ! is_email( $contacto ) ) {
+		pm_consulta_registrar_correo( $id, 'acuse', 'sin_email' );
 		return;
 	}
 	$idioma = (string) get_post_meta( $id, 'idioma', true );
-	$cuerpo = 'prestador' === get_post_meta( $id, 'tipo', true ) ? 'acuse.prestador' : 'acuse.viaje';
-	wp_mail( $contacto, pm_t( 'acuse.asunto', [], $idioma ), pm_t( $cuerpo, [], $idioma ) . "\n\nPescamapa\n" . pm_url_inicio( $idioma ), [ 'Reply-To: ' . PM_EMAIL_PUBLICO ] );
+	$cuerpo = pm_acuse_cuerpo( (string) get_post_meta( $id, 'tipo', true ), $idioma, (string) get_post_meta( $id, 'destino', true ) );
+	pm_enviar_registrando( $id, 'acuse', $contacto, pm_t( 'acuse.asunto', [], $idioma ), $cuerpo, [ 'Reply-To: ' . PM_EMAIL_PUBLICO ] );
+}
+
+/** What happened to one of the two emails: [ estado, fecha, error ]; estado '' when there is no record (old Consultas). */
+function pm_consulta_correo( int $id, string $que ): array {
+	return [
+		(string) get_post_meta( $id, "correo_{$que}_estado", true ),
+		(string) get_post_meta( $id, "correo_{$que}_el", true ),
+		(string) get_post_meta( $id, "correo_{$que}_error", true ),
+	];
+}
+
+/** One-line summary for the Consultas list: "Aviso ✓ · Acuse ✓", "Acuse ✗", "Acuse — (sin email)", "sin dato". */
+function pm_correos_resumen( int $id ): string {
+	$partes = [];
+	foreach ( [ 'aviso' => 'Aviso', 'acuse' => 'Acuse' ] as $que => $nombre ) {
+		$estado = pm_consulta_correo( $id, $que )[0];
+		if ( 'enviado' === $estado ) {
+			$partes[] = "{$nombre} ✓";
+		} elseif ( 'fallo' === $estado ) {
+			$partes[] = "{$nombre} ✗";
+		} elseif ( 'sin_email' === $estado ) {
+			$partes[] = "{$nombre} — (sin email)";
+		}
+	}
+	return $partes ? implode( ' · ', $partes ) : 'sin dato';
 }
 
 /** Label => value of what the person sent, for the email and the admin box. */
@@ -209,7 +310,7 @@ function pm_consulta_datos( int $id ): array {
 	}
 	$prestador = (int) get_post_meta( $id, 'prestador', true );
 	if ( $prestador ) {
-		$out['Sobre el prestador'] = get_the_title( $prestador );
+		$out['Sobre el prestador'] = pm_texto_plano( get_the_title( $prestador ) );
 	}
 	$out['Idioma'] = strtoupper( (string) get_post_meta( $id, 'idioma', true ) );
 	$out['Página'] = (string) get_post_meta( $id, 'origen', true );
@@ -246,6 +347,22 @@ add_action( 'add_meta_boxes_pm_consulta', function ( $post ) {
 		}
 		echo '</tbody></table>';
 	}, null, 'normal', 'high' );
+	add_meta_box( 'pm_consulta_correos', 'Correos', function ( $post ) {
+		$estados = [ 'enviado' => 'Enviado', 'fallo' => 'No se pudo enviar', 'sin_email' => 'No corresponde (el contacto no es un email)' ];
+		echo '<table class="widefat striped"><tbody>';
+		foreach ( [ 'aviso' => 'Aviso al equipo', 'acuse' => 'Acuse al remitente' ] as $que => $etiqueta ) {
+			[ $estado, $el, $error ] = pm_consulta_correo( $post->ID, $que );
+			$txt = $estados[ $estado ] ?? 'sin dato';
+			if ( $el ) {
+				$txt .= ' · ' . $el;
+			}
+			if ( $error ) {
+				$txt .= ' · ' . $error;
+			}
+			echo '<tr><th style="width:160px">' . esc_html( $etiqueta ) . '</th><td>' . esc_html( $txt ) . '</td></tr>';
+		}
+		echo '</tbody></table>';
+	}, null, 'normal', 'default' );
 	add_meta_box( 'pm_consulta_seguimiento', 'Seguimiento', function ( $post ) {
 		wp_nonce_field( 'pm_consulta_seguimiento', 'pm_consulta_nonce' );
 		$estado = (string) get_post_meta( $post->ID, 'estado', true );
@@ -283,7 +400,7 @@ add_action( 'save_post_pm_consulta', function ( $id ) {
 } );
 
 add_filter( 'manage_pm_consulta_posts_columns', function ( $cols ) {
-	return [ 'cb' => $cols['cb'], 'title' => 'Consulta', 'pm_contacto' => 'Contacto', 'pm_cuando' => 'Cuándo / personas', 'pm_canal' => 'Canal', 'pm_estado' => 'Estado', 'date' => 'Llegó' ];
+	return [ 'cb' => $cols['cb'], 'title' => 'Consulta', 'pm_contacto' => 'Contacto', 'pm_cuando' => 'Cuándo / personas', 'pm_canal' => 'Canal', 'pm_correos' => 'Correos', 'pm_estado' => 'Estado', 'date' => 'Llegó' ];
 } );
 add_action( 'manage_pm_consulta_posts_custom_column', function ( $col, $id ) {
 	if ( 'pm_contacto' === $col ) {
@@ -292,6 +409,8 @@ add_action( 'manage_pm_consulta_posts_custom_column', function ( $col, $id ) {
 		echo esc_html( trim( get_post_meta( $id, 'cuando', true ) . ' · ' . get_post_meta( $id, 'personas', true ), ' ·' ) );
 	} elseif ( 'pm_canal' === $col ) {
 		echo esc_html( (string) get_post_meta( $id, 'canal', true ) ?: '—' );
+	} elseif ( 'pm_correos' === $col ) {
+		echo esc_html( pm_correos_resumen( (int) $id ) );
 	} elseif ( 'pm_estado' === $col ) {
 		$e = (string) get_post_meta( $id, 'estado', true );
 		echo esc_html( ( 'nueva' === $e ? '🟠 ' : '' ) . ( PM_CONSULTA_ESTADOS[ $e ] ?? $e ) );
