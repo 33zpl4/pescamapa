@@ -99,7 +99,7 @@ if ( ! function_exists( 'pm_sc_h2' ) ) {
 }
 
 
-$aplicar = false;
+$aplicar = true;
 $hoy     = '20261113';
 $clave   = 'la-zona-salto-grande';
 $cambios = 0;
@@ -160,7 +160,7 @@ $N['es'] = [
 		'<strong>Señuelo artificial o mosca</strong> (fly casting, spinning y bait casting), con <strong>anzuelo sin rebaba</strong> o con la rebaba aplastada o rellenada; <strong>sin carnada</strong> y <strong>sin trolling</strong> (arts. 7.1 y 8.1). Un solo equipo por pescador (art. 9.1).',
 		'<strong>Máximo dos minutos fuera del agua</strong> para cada pez (art. 10.3).',
 		'<strong>Hasta cuatro embarcaciones a la vez</strong>, no más de dos por país en cada turno; hasta cuatro personas a bordo, guía y timonel incluidos; embarcaciones de 4,50 a 6,50 m de eslora y 15 km/h como máximo (art. 11).',
-		'<strong>De lunes a jueves, solo con luz diurna</strong>, desde el 1 de junio de 2023 (Resolución CARU 37/2023, Boletín Oficial del 11/4/2023). Los textos anteriores, y algunos sitios todavía, dicen de viernes a lunes.',
+		'<strong>De lunes a jueves, solo con luz diurna</strong>, desde el 1 de junio de 2023 (Resolución CARU 37/2023, Boletín Oficial del 11/4/2023). Los textos anteriores (el Digesto de la CARU de 2018 y un llamado uruguayo de 2020, entre ellos) dicen de viernes a lunes.',
 		'<strong>Clientes:</strong> contratan con el permisionario y llevan los documentos que acrediten ese vínculo y su identidad; el permisionario comunica a la Prefectura la filiación de sus clientes con al menos 48 horas de antelación (art. 4.2 b y c).',
 	],
 	'h_veda' => 'La veda del dorado: cómo se aplica acá',
@@ -191,13 +191,13 @@ $N['es'] = [
 		'Las tasas de licencia, tallas y cupos de Entre Ríos para el río Uruguay: no las leímos en una página oficial.',
 		'Las tarifas que publican los propios operadores.',
 		'Si el permiso uruguayo del llamado de 2020 sigue vigente.',
-		'El largo total de la zona: ningún texto de la CARU que leímos lo da (algunos sitios de agencias hablan de 1.000 metros).',
+		'El largo total de la zona: ningún texto de la CARU que leímos lo da (el sitio de una agencia habla de 1.000 metros).',
 	],
 	'faq_h' => 'Preguntas frecuentes',
 	'faq' => [
 		[ '¿Qué es La Zona en la Argentina?', 'Es como llaman los pescadores a la Zona de Seguridad aguas abajo de la Represa de Salto Grande, en el río Uruguay, entre Concordia (Argentina) y Salto (Uruguay). El reglamento de la CARU permite pescar dorado con devolución desde una línea a 500 m de la presa hasta el final de esa zona (Resolución 27/2004 y reformas; los 500 m rigen desde la Resolución 63/2026).' ],
 		[ '¿Puede pescar cualquiera en La Zona?', 'No. Se pesca solo desde embarcaciones autorizadas y contratando con el permisionario que habilita cada país, uno por Estado; no se puede pescar desde la costa. El cliente lleva los documentos que acrediten su vínculo con el permisionario y su identidad, y el permisionario avisa a la Prefectura con al menos 48 horas. Al 13/11/2026 no encontramos publicado quién tiene el permiso del lado argentino.' ],
-		[ '¿Qué días se puede pescar en La Zona?', 'De lunes a jueves y solo con luz diurna, desde el 1 de junio de 2023 (Resolución CARU 37/2023). Los textos anteriores y algunos sitios todavía dicen de viernes a lunes.' ],
+		[ '¿Qué días se puede pescar en La Zona?', 'De lunes a jueves y solo con luz diurna, desde el 1 de junio de 2023 (Resolución CARU 37/2023). Los textos anteriores, como el Digesto de la CARU de 2018, dicen de viernes a lunes.' ],
 		[ '¿Cuándo es la veda del dorado en el río Uruguay?', 'Del 1 de septiembre al 31 de diciembre de cada año, para la pesca comercial y deportiva (Resolución CARU 111/2023; aviso de la CARU del 7/10/2026). No encontramos un texto que exceptúe La Zona, y el reglamento dice que su temporada se ajusta a lo que establece la CARU: preguntale al operador, por escrito, cómo se aplica a tus fechas.' ],
 	],
 	'f' => [
@@ -255,7 +255,7 @@ $N['en'] = [
 		'<strong>Artificial lure or fly</strong> (fly casting, spinning and bait casting), with a <strong>barbless hook</strong> or one with the barb crushed or filled; <strong>no bait</strong> and <strong>no trolling</strong> (arts. 7.1 and 8.1). One rod per angler (art. 9.1).',
 		'<strong>No more than two minutes out of the water</strong> for each fish (art. 10.3).',
 		'<strong>Up to four boats at a time</strong>, no more than two per country per shift; up to four people on board, guide and skipper included; boats of 4.50 to 6.50 m in length and 15 km/h at most (art. 11).',
-		'<strong>Monday to Thursday, daylight only</strong>, since 1 June 2023 (CARU Resolution 37/2023, Boletín Oficial of 11 April 2023). Older texts, and some sites still, say Friday to Monday.',
+		'<strong>Monday to Thursday, daylight only</strong>, since 1 June 2023 (CARU Resolution 37/2023, Boletín Oficial of 11 April 2023). Earlier texts (the 2018 CARU Digesto and a 2020 Uruguayan call, among them) say Friday to Monday.',
 		'<strong>Clients:</strong> book with the permit holder and carry documents that prove that link and their identity; the permit holder notifies the Prefectura of its clients\' identities at least 48 hours ahead (art. 4.2 b and c).',
 	],
 	'h_veda' => 'The golden dorado closed season: how it applies here',
@@ -286,13 +286,13 @@ $N['en'] = [
 		'Entre Ríos licence fees, sizes and bag limits for the Uruguay River: we did not read them on an official page.',
 		'The rates the operators publish themselves.',
 		'Whether the Uruguayan permit from the 2020 call is still in force.',
-		'The total length of the zone: no CARU text we read gives one (some agency sites say 1,000 metres).',
+		'The total length of the zone: no CARU text we read gives one (one agency site says 1,000 metres).',
 	],
 	'faq_h' => 'Frequently asked questions',
 	'faq' => [
 		[ 'What is La Zona in Argentina?', 'It is what anglers call the Safety Zone downstream of the Salto Grande Dam on the Uruguay River, between Concordia (Argentina) and Salto (Uruguay). The CARU regulation allows catch-and-release fishing for golden dorado from a line 500 m from the dam to the end of that zone (Resolution 27/2004 as amended; the 500 m applies since Resolution 63/2026).' ],
 		[ 'Can anyone fish La Zona?', 'No. You fish only from authorised boats and by booking with the permit holder each country authorises, one per State; shore fishing is not allowed. Clients carry documents proving their link with the permit holder and their identity, and the permit holder notifies the Prefectura at least 48 hours ahead. As of 13 November 2026 we found no published record of who holds the Argentine-side permit.' ],
-		[ 'Which days can you fish La Zona?', 'Monday to Thursday and in daylight only, since 1 June 2023 (CARU Resolution 37/2023). Older texts and some sites still say Friday to Monday.' ],
+		[ 'Which days can you fish La Zona?', 'Monday to Thursday and in daylight only, since 1 June 2023 (CARU Resolution 37/2023). Earlier texts, such as the 2018 CARU Digesto, say Friday to Monday.' ],
 		[ 'When is the golden dorado closed season on the Uruguay River?', '1 September to 31 December every year, for commercial and sport fishing (CARU Resolution 111/2023; CARU notice of 7 October 2026). We found no text that exempts La Zona, and the regulation says its season follows what CARU establishes: ask the operator, in writing, how it applies to your dates.' ],
 	],
 	'f' => [
@@ -350,7 +350,7 @@ $N['pt'] = [
 		'<strong>Isca artificial ou mosca</strong> (fly casting, spinning e bait casting), com <strong>anzol sem farpa</strong> ou com a farpa amassada ou preenchida; <strong>sem isca natural</strong> e <strong>sem trolling</strong> (arts. 7.1 e 8.1). Um só equipamento por pescador (art. 9.1).',
 		'<strong>No máximo dois minutos fora da água</strong> para cada peixe (art. 10.3).',
 		'<strong>Até quatro embarcações ao mesmo tempo</strong>, não mais de duas por país em cada turno; até quatro pessoas a bordo, guia e timoneiro incluídos; embarcações de 4,50 a 6,50 m de comprimento e 15 km/h no máximo (art. 11).',
-		'<strong>De segunda a quinta, só com luz do dia</strong>, desde 1.º de junho de 2023 (Resolução CARU 37/2023, Boletim Oficial de 11/4/2023). Os textos anteriores, e alguns sites ainda, dizem de sexta a segunda.',
+		'<strong>De segunda a quinta, só com luz do dia</strong>, desde 1.º de junho de 2023 (Resolução CARU 37/2023, Boletim Oficial de 11/4/2023). Os textos anteriores (o Digesto da CARU de 2018 e uma licitação uruguaia de 2020, entre eles) dizem de sexta a segunda.',
 		'<strong>Clientes:</strong> contratam com o permissionário e levam os documentos que comprovem esse vínculo e sua identidade; o permissionário comunica à Prefeitura Naval a filiação dos clientes com pelo menos 48 horas de antecedência (art. 4.2 b e c).',
 	],
 	'h_veda' => 'O defeso do dourado: como se aplica aqui',
@@ -381,13 +381,13 @@ $N['pt'] = [
 		'As taxas de licença, tamanhos e cotas de Entre Ríos para o rio Uruguai: não as lemos em página oficial.',
 		'As tarifas que os próprios operadores publicam.',
 		'Se a licença uruguaia da licitação de 2020 segue em vigor.',
-		'O comprimento total da zona: nenhum texto da CARU que lemos o informa (alguns sites de agências falam em 1.000 metros).',
+		'O comprimento total da zona: nenhum texto da CARU que lemos o informa (o site de uma agência fala em 1.000 metros).',
 	],
 	'faq_h' => 'Perguntas frequentes',
 	'faq' => [
 		[ 'O que é La Zona na Argentina?', 'É como os pescadores chamam a Zona de Segurança a jusante da Represa de Salto Grande, no rio Uruguai, entre Concordia (Argentina) e Salto (Uruguai). O regulamento da CARU permite pescar dourado com devolução a partir de uma linha a 500 m da barragem até o fim dessa zona (Resolução 27/2004 e reformas; os 500 m valem desde a Resolução 63/2026).' ],
 		[ 'Qualquer pessoa pode pescar em La Zona?', 'Não. Pesca-se só em embarcações autorizadas e contratando com o permissionário que cada país habilita, um por Estado; não se pode pescar da margem. O cliente leva os documentos que comprovem seu vínculo com o permissionário e sua identidade, e o permissionário avisa a Prefeitura Naval com pelo menos 48 horas. Em 13/11/2026 não encontramos publicado quem tem a licença do lado argentino.' ],
-		[ 'Em que dias se pode pescar em La Zona?', 'De segunda a quinta e só com luz do dia, desde 1.º de junho de 2023 (Resolução CARU 37/2023). Os textos anteriores e alguns sites ainda dizem de sexta a segunda.' ],
+		[ 'Em que dias se pode pescar em La Zona?', 'De segunda a quinta e só com luz do dia, desde 1.º de junho de 2023 (Resolução CARU 37/2023). Os textos anteriores, como o Digesto da CARU de 2018, dizem de sexta a segunda.' ],
 		[ 'Quando é o defeso do dourado no rio Uruguai?', 'De 1.º de setembro a 31 de dezembro de cada ano, para a pesca comercial e esportiva (Resolução CARU 111/2023; aviso da CARU de 7/10/2026). Não encontramos texto que isente La Zona, e o regulamento diz que sua temporada se ajusta ao que a CARU estabelece: pergunte ao operador, por escrito, como se aplica às suas datas.' ],
 	],
 	'f' => [
