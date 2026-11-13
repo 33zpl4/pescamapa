@@ -318,7 +318,7 @@ foreach ( $t as $i => $x ) {
 	}
 	update_field( 'actualizado', $hoy, $p->ID );
 	$leido = get_post( $p->ID )->post_content;
-	$ok = false !== strpos( $leido, $x['h2'] ) && false !== strpos( $leido, $x['faq_q'] ) && false === strpos( $leido, 'Andre De Button en 2006 en el río Uruguay, en la frontera entre Argentina y Uruguay. La IGFA' )
+	$ok = false !== strpos( $leido, $x['h2'] ) && false !== strpos( $leido, $x['faq_q'] ) && false !== strpos( $leido, $x['datos'] )
 		&& ( false !== strpos( $leido, 'prensa' ) || false !== strpos( $leido, 'press' ) || false !== strpos( $leido, 'imprensa' ) );
 	WP_CLI::log( ( $ok ? 'VERIFIED' : 'FALLÓ' ) . ": dorado ($i) #{$p->ID} " . get_permalink( $p->ID ) . ' — H2, FAQ y atribución leídos de vuelta' );
 	$ok || WP_CLI::error( "dorado ($i): la lectura de vuelta no coincide." );
