@@ -1,0 +1,20 @@
+# verif-seo-consultas: 2026-11-13
+
+Agente: ResearchBot/1.0 (editorial research; 1 request/1.5 s; obeys robots.txt)
+Páginas pedidas: 13 · modo: HTTP simple · robots.txt respetado
+
+| URL | HTTP | Título | H1 | Palabras | Datos estructurados | Archivo / nota |
+| --- | --- | --- | --- | --- | --- | --- |
+| https://pescamapa.com/en/notes/fishing-license-foreigners-argentina-2026-27/ | 200 | Argentina fishing license for foreigners 2026/27: prices | Fishing license for foreigners in Argentina 2026/27: costs by region | 1758 | Article, BreadcrumbList | 01-pescamapa-com-en-notes-fishing-license-foreigners-argentina-2026-27.md |
+| https://pescamapa.com/en/species/trout/ | 200 | Rainbow, brown and brook trout in Patagonia | Trout Oncorhynchus mykiss, Salmo trutta, Salvelinus fontinalis | 1359 | Article, BreadcrumbList | 02-pescamapa-com-en-species-trout.md |
+| https://pescamapa.com/en/species/golden-dorado/ | 200 | Golden dorado: world record, size and rules / Pescamapa | Golden dorado Salminus brasiliensis | 878 | Article, BreadcrumbList | 03-pescamapa-com-en-species-golden-dorado.md |
+| https://pescamapa.com/especies/surubi/ | 200 | Surubí: qué es y reglas de pesca en Corrientes / Pescamapa | Surubí Pseudoplatystoma corruscans | 482 | Article, BreadcrumbList | 04-pescamapa-com-especies-surubi.md |
+| https://pescamapa.com/pt/especies/truta/ | 200 | Tipos de truta na Patagônia: espécies e regras | Truta Oncorhynchus mykiss, Salmo trutta, Salvelinus fontinalis | 1412 | Article, BreadcrumbList | 05-pescamapa-com-pt-especies-truta.md |
+| https://pescamapa.com/en/notes/golden-dorado-fishing-argentina/ | 200 | Golden dorado fishing in Argentina: a planning guide | Golden dorado fishing in Argentina: where to go, when, the rules and how to plan | 1387 | Article, BreadcrumbList | 06-pescamapa-com-en-notes-golden-dorado-fishing-argentina.md |
+| https://pescamapa.com/pt/notas/pacotes-de-pesca-na-argentina/ | 200 | Pacotes de pesca na Argentina: preços por destino | Pacotes de pesca na Argentina: onde há, quanto custam e o que incluem | 1261 | Article, BreadcrumbList | 07-pescamapa-com-pt-notas-pacotes-de-pesca-na-argentina.md |
+| https://pescamapa.com/notas/paquetes-de-pesca-en-argentina/ | 200 | Paquetes de pesca en Argentina: precios por destino | Paquetes de pesca en Argentina: dónde hay, cuánto cuestan y qué incluyen | 1253 | Article, BreadcrumbList | 08-pescamapa-com-notas-paquetes-de-pesca-en-argentina.md |
+| https://pescamapa.com/en/notes/fishing-packages-in-argentina/ | 200 | Fishing packages in Argentina: prices by destination | Fishing packages in Argentina: where to find them, what they cost and what they include | 1187 | Article, BreadcrumbList | 09-pescamapa-com-en-notes-fishing-packages-in-argentina.md |
+| https://pescamapa.com/pt/notas/o-que-inclui-pacote-pesca-argentina/ | 200 | Pacotes de pesca na Argentina: o que inclui e o que é extra | O que inclui um pacote de pesca na Argentina e o que é cobrado à parte (exemplos 2026/27) | 1802 | Article, BreadcrumbList | 10-pescamapa-com-pt-notas-o-que-inclui-pacote-pesca-argentina.md |
+| https://pescamapa.com/en/patagonia/chubut/fishing-in-esquel-and-trevelin/ | 200 | Fly fishing in Esquel, Argentina: season, rules and permit 2026/27 | Fly fishing in Esquel and Trevelin, Chubut: rules and 2026/27 permit | 3020 | TouristDestination, BreadcrumbList, FAQPage | 11-pescamapa-com-en-patagonia-chubut-fishing-in-esquel-and-trevelin.md |
+| https://pescamapa.com/en/notes/patagonia-fishing-license-2026-27/ | 200 | Patagonia fishing license 2026/27: prices | Patagonia Argentina Fishing License 2026/27: Cost and Validity | 1019 | Article, BreadcrumbList | 12-pescamapa-com-en-notes-patagonia-fishing-license-2026-27.md |
+| https://pescamapa.com/pt/notas/pesca-de-dourado-na-argentina/ | 200 | Pesca de dourado na Argentina: guia para planejar | Pesca de dourado na Argentina: onde ir, quando, as regras e como planejar | 1397 | Article, BreadcrumbList | 13-pescamapa-com-pt-notas-pesca-de-dourado-na-argentina.md |
