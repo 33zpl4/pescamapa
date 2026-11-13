@@ -57,7 +57,7 @@ $notas = [
 	'cuando-pescar-dorado' => [ 'b' => true ],
 	'cuando-pescar-surubi' => [ 'a' => true ],
 ];
-$marca_ok = [ 'a' => '639/26', 'b' => 'Disposición 1054' ];
+$marca_ok = [ 'a' => '639/26', 'b' => '1054' ];
 $mal      = 0;
 $cambios  = 0;
 
