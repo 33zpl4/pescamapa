@@ -131,18 +131,28 @@ function pm_campos_fechas( bool $largo, string $prefijo = 'viaje' ): void {
 	echo '</div>' . ( $largo ? '<small class="ayuda">' . esc_html( pm_t( 'viaje.fechas.ayuda' ) ) . '</small>' : '' ) . '</div>';
 	pm_chips( 'flexibilidad', 'flexibilidad', pm_t( 'viaje.flex' ), pm_previo( 'flexibilidad' ), false, '', $largo ? null : [ 'exacta', 'dias', 'semana', 'mes' ], $prefijo );
 	if ( $largo ) {
-		echo '<fieldset class="opciones meses" data-meses><legend>' . esc_html( pm_t( 'viaje.meses' ) ) . '</legend><div class="chips-radio">';
+		// Compact grid: short month names, the year once per group; the full "mes año" stays in the accessible name.
+		echo '<fieldset class="opciones meses" data-meses><legend>' . esc_html( pm_t( 'viaje.meses' ) ) . '</legend>';
 		$marcados = pm_previo_lista( 'meses' );
+		$grupos   = [];
 		foreach ( pm_consulta_meses() as $ym => [ $m, $y ] ) {
-			printf(
-				'<span><input type="checkbox" name="meses[]" id="%1$s-mes-%2$s" value="%2$s"%4$s><label for="%1$s-mes-%2$s">%3$s</label></span>',
-				esc_attr( $prefijo ),
-				esc_attr( $ym ),
-				esc_html( pm_consulta_mes_etiqueta( $ym, pm_lang() ) ),
-				in_array( $ym, $marcados, true ) ? ' checked' : ''
-			);
+			$grupos[ $y ][ $ym ] = $m;
 		}
-		echo '</div><small>' . esc_html( pm_t( 'viaje.meses.ayuda' ) ) . '</small></fieldset>';
+		foreach ( $grupos as $y => $lista ) {
+			echo '<div class="meses-anio"><span class="anio" id="' . esc_attr( $prefijo ) . '-anio-' . (int) $y . '">' . (int) $y . '</span><div class="chips-radio" role="group" aria-labelledby="' . esc_attr( $prefijo ) . '-anio-' . (int) $y . '">';
+			foreach ( $lista as $ym => $m ) {
+				printf(
+					'<span><input type="checkbox" name="meses[]" id="%1$s-mes-%2$s" value="%2$s"%5$s><label for="%1$s-mes-%2$s"><span aria-hidden="true">%3$s</span><span class="visually-hidden">%4$s</span></label></span>',
+					esc_attr( $prefijo ),
+					esc_attr( $ym ),
+					esc_html( pm_t( "viaje.mes.corto.{$m}" ) ),
+					esc_html( pm_consulta_mes_etiqueta( $ym, pm_lang() ) ),
+					in_array( $ym, $marcados, true ) ? ' checked' : ''
+				);
+			}
+			echo '</div></div>';
+		}
+		echo '<small>' . esc_html( pm_t( 'viaje.meses.ayuda' ) ) . '</small></fieldset>';
 	}
 	echo '</div>';
 }

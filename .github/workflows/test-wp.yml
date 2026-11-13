@@ -239,7 +239,7 @@ jobs:
           check /paquetes-de-pesca/esquina/ 200 'consulta--boutique'
           check /paquetes-de-pesca/esquina/ 200 'INTRO-DE-PRUEBA'
           check /paquetes-de-pesca/esquina/ 200 'content="DESC-DE-PRUEBA"'
-          check /paquetes-de-pesca/esquina/ 200 'Pedir mi cotización'
+          check /paquetes-de-pesca/esquina/ 200 'Pedir mis opciones'
           check /paquetes-de-pesca/esquina/ 200 'barra-pedir'
           # Same phone bar on the destination guide (to its own form) and on notes (to the trip form).
           check /litoral/corrientes/pesca-en-esquina/ 200 'class="barra-pedir" href="#consulta"'
@@ -358,7 +358,31 @@ jobs:
           done
           check /armar-viaje/ 200 'Cuándo y quiénes'
           check /armar-viaje/ 200 'Te respondemos en 48 horas'
-          check /armar-viaje/ 200 'Acompañantes que no pescan'
+          check /armar-viaje/ 200 'Acompañantes (no pescan)'
+          check /armar-viaje/ 200 'Pedir mis opciones'
+          check /en/plan-your-trip/ 200 'Request my options'
+          check /pt/planejar-viagem/ 200 'Pedir minhas opções'
+          # Months: compact grid (12 inputs, short label shown, full "mes año" in the accessible name), year once per group.
+          M0=$(date +%Y-%m-01)
+          for spec in "/armar-viaje/:es:Nov:noviembre" "/pt/planejar-viagem/:pt:Nov:novembro" "/en/plan-your-trip/:en:Nov:November"; do
+            IFS=: read -r r l corto largo <<< "$spec"
+            check $r 200 'class="anio"'
+            n=$(grep -o 'name="meses\[\]"' page.html | wc -l); [[ "$n" == "12" ]] && echo "✓ $r: 12 meses" || { echo "✖ $r: $n meses (esperado 12)"; fail=1; }
+            m6=$(date -d "$M0 +3 month" +%-m); y6=$(date -d "$M0 +3 month" +%Y)
+            nombre=$(wp --path="$WP" eval "echo pm_t( 'viaje.mes.$m6', [], '$l' ) . ' $y6';")
+            grep -q "class=\"visually-hidden\">$nombre</span>" page.html && echo "✓ $r: nombre accesible '$nombre'" || { echo "✖ $r: falta el nombre accesible '$nombre'"; fail=1; }
+            grep -q "aria-hidden=\"true\">$(wp --path="$WP" eval "echo pm_t( 'viaje.mes.corto.$m6', [], '$l' );")</span>" page.html && echo "✓ $r: etiqueta corta" || { echo "✖ $r: falta la etiqueta corta"; fail=1; }
+            [[ "$(grep -o 'class="anio"' page.html | wc -l)" =~ ^[12]$ ]] && echo "✓ $r: año por grupo" || { echo "✖ $r: grupos de año"; fail=1; }
+          done
+          # "Fine-tune" disclosure: closed by default, in the three languages; the fields live inside it.
+          for spec in "/armar-viaje/:Afinar el pedido (opcional)" "/pt/planejar-viagem/:Ajustar o pedido (opcional)" "/en/plan-your-trip/:Fine-tune your request (optional)"; do
+            r=${spec%%:*}; t=${spec#*:}
+            check $r 200 "<summary>$t</summary>"
+            grep -q '<details class="afinar">' page.html && echo "✓ $r: afinar cerrado por defecto" || { echo "✖ $r: afinar no está cerrado"; fail=1; }
+            sed -n '/<details class="afinar"/,/<\/details>/p' page.html | grep -q 'name="modalidad"' && sed -n '/<details class="afinar"/,/<\/details>/p' page.html | grep -q 'name="alojamiento"' && sed -n '/<details class="afinar"/,/<\/details>/p' page.html | grep -q 'name="experiencia"' && echo "✓ $r: modalidad, alojamiento y experiencia dentro" || { echo "✖ $r: campos fuera de afinar"; fail=1; }
+          done
+          # The sticky bar on a note/guide uses the shared short label.
+          check /litoral/corrientes/pesca-en-esquina/ 200 'Pedir opciones'
           check /armar-viaje/ 200 'incluidos los waders'
           check /pt/planejar-viagem/ 200 'Quando e quem'
           check /pt/planejar-viagem/ 200 'Respondemos em 48 horas'
@@ -412,6 +436,11 @@ jobs:
           for t in 'value="Revisar"' 'Texto que no se pierde' 'value="a@b"' 'value="dos-tres" checked' 'value="dias" checked' 'value="esquina" selected' 'aria-invalid="true"' 'class="error-campo"' 'Revisá el email'; do
             grep -q -- "$t" page.html && echo "✓ tras el error: $t" || { echo "✖ tras el error falta: $t"; fail=1; }
           done
+          grep -q '<details class="afinar">' page.html && echo "✓ tras el error sin esos campos: afinar sigue cerrado" || { echo "✖ afinar abierto sin valores"; fail=1; }
+          # Restored data inside the disclosure (none of its fields can come from the query string): it opens by itself.
+          loc=$(enviar -d nombre=Afinar -d contacto_via=email -d contacto_email=a@b -d modalidad=mosca)
+          curl -sS -o page.html "$loc"
+          grep -q '<details class="afinar" open>' page.html && grep -q 'value="mosca" checked' page.html && echo "✓ tras el error con modalidad: afinar abierto" || { echo "✖ afinar no se abrió con datos restaurados"; fail=1; }
           [[ -z "$(wp --path="$WP" post list --post_type=pm_consulta --post_status=private --s=Revisar --format=ids)" ]] && echo "✓ el pedido con error no se guardó" || { echo "✖ se guardó un pedido inválido"; fail=1; }
           loc=$(enviar -d nombre= -d contacto_via=whatsapp -d contacto_tel=abc)
           curl -sS -o page.html "$loc"

@@ -408,10 +408,10 @@
 .pm-form .opciones { border: 0; padding: 0; margin: 0; min-width: 0; }
 .pm-form .opciones legend { display: block; font: 600 var(--fs-small)/1.4 var(--font-body); padding: 0; margin-bottom: 8px; }
 .pm-form .opciones small { display: block; margin-top: 8px; font-weight: 400; color: var(--muted); font-size: var(--fs-caption); }
-.pm-form .chips-radio { display: flex; flex-wrap: wrap; gap: 8px; }
-.pm-form .chips-radio span { position: relative; }
+.pm-form .chips-radio { display: flex; flex-wrap: wrap; gap: 6px; }
+.pm-form .chips-radio > span { position: relative; }
 .pm-form .chips-radio input { position: absolute; opacity: 0; inset: 0; width: 100%; height: 100%; min-height: 0; margin: 0; padding: 0; cursor: pointer; }
-.pm-form .chips-radio label { display: flex; align-items: center; min-height: 44px; box-sizing: border-box; padding: 8px 16px; border: 1px solid var(--line); border-radius: 99px; background: var(--paper); font-weight: 400; font-size: var(--fs-small); line-height: 1.25; color: var(--moss); }
+.pm-form .chips-radio label { display: flex; align-items: center; min-height: 44px; box-sizing: border-box; padding: 6px 9px; border: 1px solid var(--line); border-radius: 99px; background: var(--paper); font-weight: 400; font-size: var(--fs-small); line-height: 1.2; color: var(--moss); }
 .pm-form .chips-radio input:checked + label { background: var(--forest); border-color: var(--forest); color: var(--white); }
 .pm-form .chips-radio input:focus-visible + label { outline: 2px solid var(--forest); outline-offset: 2px; }
 .pm-form .stepper { display: flex; align-items: stretch; gap: 8px; }
@@ -423,13 +423,39 @@
 .pm-form .error-campo { margin: 0; padding: 8px 12px; border-left: 3px solid var(--warn-line); background: var(--warn-bg); border-radius: 0 10px 10px 0; font-size: var(--fs-small); font-weight: 600; color: var(--ink); }
 .pm-form [aria-invalid="true"] { border-color: var(--ink); box-shadow: 0 0 0 2px var(--warn-line); }
 .consulta .pm-form .fechas-bloque { display: grid; gap: 12px; }
+/* Months: 4 columns on a phone (6 from tablet), short names, the year once per group as a small label. */
+.pm-form .meses { display: grid; gap: 10px; }
+.pm-form .meses legend { margin-bottom: 8px; }
+.pm-form .meses-anio { display: grid; gap: 4px; }
+.pm-form .meses .anio { font: 400 var(--fs-label)/1 var(--font-label); letter-spacing: 0.08em; color: var(--olive); }
+.pm-form .meses .chips-radio { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.pm-form .meses .chips-radio label { justify-content: center; padding-inline: 4px; }
+@media (min-width: 600px) {
+	.pm-form .meses .chips-radio { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+}
+/* Optional questions, closed by default: a native disclosure, nothing to script. */
+.pm-form .afinar { padding: 0; border: 1px solid var(--line); border-radius: 10px; background: var(--paper); }
+.pm-form .afinar summary { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 48px; padding: 8px 14px; cursor: pointer; list-style: none; font: 600 var(--fs-small)/1.3 var(--font-body); color: var(--moss); }
+.pm-form .afinar summary::-webkit-details-marker { display: none; }
+.pm-form .afinar summary::after { content: "+"; flex: none; font: 700 var(--fs-lead)/1 var(--font-body); }
+.pm-form .afinar[open] summary::after { content: "−"; }
+.pm-form .afinar summary:focus-visible { outline: 2px solid var(--forest); outline-offset: 2px; border-radius: 10px; }
+.pm-form .afinar-campos { display: grid; gap: 14px; padding: 4px 14px 16px; }
 @media (max-width: 480px) {
 	.pm-form .grilla-2 { gap: 10px; }
-	.pm-form .chips-radio label { padding-inline: 14px; }
-}
-@media (max-width: 480px) {
 	.pm-form .stepper { gap: 6px; }
 	.pm-form .stepper button { width: 44px; height: 44px; align-self: center; }
+	.v-viaje .viaje-form form { padding: 16px; gap: 22px; }
+	.v-viaje .paso { gap: 14px; }
+	.v-viaje .paso legend { margin-bottom: 4px; }
+}
+/* Anglers and companions: one block each on a phone (label on one line, then stepper and hint on the same line) so the controls line up. */
+@media (max-width: 420px) {
+	.pm-form .personas { grid-template-columns: minmax(0, 1fr); gap: 12px; }
+	.pm-form .personas .campo { grid-template-columns: auto minmax(0, 1fr); column-gap: 12px; row-gap: 6px; align-items: center; }
+	.pm-form .personas .campo > label { grid-column: 1 / -1; white-space: nowrap; }
+	.pm-form .personas .campo > small { grid-column: 2; grid-row: 2; line-height: 1.3; }
+	.pm-form .personas .stepper input { flex: none; width: 56px; padding-inline: 0; }
 }
 @media (max-width: 480px) {
 	.v-viaje .enviar .button { width: 100%; justify-content: center; text-align: center; }

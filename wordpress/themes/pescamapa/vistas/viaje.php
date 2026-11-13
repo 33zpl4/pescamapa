@@ -76,8 +76,6 @@ get_header(); ?>
 						</div>
 						<?php
 						pm_chips( 'fijo', 'fijo', pm_t( 'viaje.fijo' ), pm_previo_lista( 'fijo' ), true, pm_t( 'viaje.fijo.ayuda' ), [ 'especie', 'lugar' ] );
-						pm_chips( 'modalidad', 'modalidad', pm_t( 'viaje.modalidad' ), $v( 'modalidad' ) );
-						pm_chips( 'alojamiento', 'alojamiento', pm_t( 'viaje.alojamiento' ), $v( 'alojamiento' ) );
 						?>
 					</fieldset>
 
@@ -87,9 +85,19 @@ get_header(); ?>
 						pm_campos_fechas( true );
 						pm_chips( 'estadia', 'estadia', pm_t( 'viaje.estadia' ), $v( 'estadia' ) );
 						pm_campos_personas();
-						pm_chips( 'experiencia', 'experiencia', pm_t( 'viaje.experiencia' ), $v( 'experiencia' ) );
 						pm_chips( 'traeequipo', 'equipo_propio', pm_t( 'viaje.equipo' ), $v( 'equipo_propio' ) );
 						?>
+						<?php // Optional questions: closed by default, open when one has a value (data restored after an error). ?>
+						<details class="afinar"<?php echo $v( 'modalidad' ) . $v( 'alojamiento' ) . $v( 'experiencia' ) ? ' open' : ''; ?>>
+							<summary><?php pm_e( 'viaje.afinar' ); ?></summary>
+							<div class="afinar-campos">
+								<?php
+								pm_chips( 'modalidad', 'modalidad', pm_t( 'viaje.modalidad' ), $v( 'modalidad' ) );
+								pm_chips( 'alojamiento', 'alojamiento', pm_t( 'viaje.alojamiento' ), $v( 'alojamiento' ) );
+								pm_chips( 'experiencia', 'experiencia', pm_t( 'viaje.experiencia' ), $v( 'experiencia' ) );
+								?>
+							</div>
+						</details>
 					</fieldset>
 
 					<fieldset class="paso">
