@@ -39,6 +39,14 @@ todas a nosotros (centralizar datos y cobrar comisión más adelante).
   sigue como notas PENDIENTE (no se ven). Investigación:
   `docs/investigacion/esquina.md`.
 
+## Al 13/11/2026: Karku acordó 20 % y pidió no publicar su tarifa
+
+- **Acuerdo por correo (13/11):** 20 % sobre reservas de pescadores que llegan por Pescamapa; reconoce a quien nombre a Pescamapa; podemos encargarnos de la venta. Tabla de los tres acuerdos: `docs/prestadores.md` → "Acuerdos con operadores".
+- **Ficha aplicada** (`karku-acuerdo-2026-11-13`): programa sábado a sábado (y otras estadías según disponibilidad), temporada "Desde diciembre; la oficial del río va del 1/11 al 30/5", plazas 2027 con fecha, "recibe 4 pescadores por semana", estado "Trabajamos juntos" y consentimiento.
+- **Tarifa:** el operador pidió que no se publique; está solo en las notas internas de la ficha ("NO PUBLICAR"). Precio y fecha del precio siguen vacíos; la guía dice que la da a quien pide una cotización.
+- **Reglas nuevas:** las comparaciones se ordenan por encaje, nunca por comisión; `docs/condiciones-operadores.md` ya no fija el 10 % y suma la cláusula de tarifas no publicadas.
+- **Sin verificar:** que "pagás el mismo precio" lo dijera el operador; las 40+ km y la cabaña siguen del sitio leído el 4/11.
+
 ## Al 13/11/2026: posicionamiento "pedí una vez, comparamos por vos" (rama, sin mergear)
 
 - **Decisión del dueño:** el mensaje para el pescador es "Decinos qué querés pescar. Nosotros encontramos dónde." (preguntamos a los operadores que encajan y respondemos en 48 horas con las opciones comparadas). Reglas de copy y consentimiento: `docs/viaje.md` y `docs/prestadores.md` → "Posicionamiento (13/11/2026)".

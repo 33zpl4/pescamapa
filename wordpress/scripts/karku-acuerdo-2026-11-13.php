@@ -18,7 +18,7 @@
  * Idempotent. Dry run first ($aplicar = false). Run with wp-script.yml (script = karku-acuerdo-2026-11-13).
  */
 
-$aplicar = false;
+$aplicar = true;
 $hoy     = '20261113';
 $nombre  = 'Karku Fly Fishing';
 
@@ -130,7 +130,7 @@ foreach ( $guias as $i => $g ) {
 				$hallada = true;
 				[ $filas[ $k ]['respuesta'], $e ] = pm_kk_cambiar( (string) $f['respuesta'], $viejo, $nuevo );
 				$estados[] = 'FAQ «' . mb_substr( $pregunta, 0, 40 ) . "»: $e";
-				'cambia' === $e && WP_CLI::log( "  guía ($i) FAQ «$pregunta»\n      ANTES (respuesta completa):   {$f['respuesta']}\n      DESPUÉS (respuesta completa): {$filas[ $k ]['respuesta']}" );
+				'cambia' === $e && WP_CLI::log( "  guía ($i) FAQ «{$pregunta}»\n      ANTES (respuesta completa):   {$f['respuesta']}\n      DESPUÉS (respuesta completa): {$filas[ $k ]['respuesta']}" );
 			}
 		}
 		$hallada || $estados[] = 'FAQ «' . mb_substr( $pregunta, 0, 40 ) . '»: falta (pregunta no encontrada)';
