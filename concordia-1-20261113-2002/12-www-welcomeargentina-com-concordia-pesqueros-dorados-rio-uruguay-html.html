@@ -1,0 +1,771 @@
+
+<!doctype html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Pesca de dorados en Concordia</title>
+	<meta name="description" content="Concordia se hizo conocida por ser uno de los mejores pesqueros de dorados del río Uruguay. Hoy, la represa de Salto Grande le ha dado una ayudita. Un premio casi divino.">
+	<meta property="og:title" content="Pesca de dorados en Concordia">
+	<meta property="og:type" content="activity">
+	<meta property="og:url" content="https://www.welcomeargentina.com/concordia/pesqueros-dorados-rio-uruguay.html">
+	<meta property="og:image" content="https://www.welcomeargentina.com/paseos/pesca-dorados-concordia/concordia-pesca-dorados-1.jpg">
+	<meta property="og:site_name" content="Welcome Argentina">
+	<meta property="og:description" content="Concordia se hizo conocida por ser uno de los mejores pesqueros de dorados del río Uruguay. Hoy, la represa de Salto Grande le ha dado una ayudita. Un premio casi divino.">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="shortcut icon" href="https://www.welcomeargentina.com/favicon.ico">
+	<meta name="date" content="Friday, November 13, 2026 20:02:17">
+	<link rel="alternate" hreflang="es" href="https://www.welcomeargentina.com/concordia/pesqueros-dorados-rio-uruguay.html">
+	<link rel="alternate" hreflang="en" href="https://www.welcomeargentina.com/concordia/fisheries-dorados-uruguay-river.html">
+	<link rel="alternate" media="only screen and (max-width: 640px)" href="https://www.welcomeargentina.com/concordia/pesqueros-dorados-rio-uruguay.html">
+	<meta itemprop="name" content="Welcome Argentina">
+	<meta itemprop="url" content="https://www.welcomeargentina.com/concordia/pesqueros-dorados-rio-uruguay.html">
+	<link rel="stylesheet" href="/css5_a_paseo_753.css">
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.0-rc.3/dist/leaflet.css" />
+	  <meta name="referrer" content="strict-origin-when-cross-origin">
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+	<!-- Navegacion principal - logo - buscador - idiomas -->
+	<nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+		<div class="container">
+			<div class="navbar-brand">
+				<a class="navbar-item" href="/">
+					<img src="/img5/svg/welcome-argentina.svg" alt="Welcome Argentina" width="300" height="40">
+				</a>
+			</div>
+
+			<div class="navbar-menu">
+				<div class="navbar-end">
+					<div class="navbar-item">
+						<form id="all" autocomplete="off">
+						   <span class="modal-close is-large" aria-label="close"></span>
+							<p class="control has-icons-right">
+								<input class="input" type="text" id="search" name="search" rel="e" placeholder="¿A donde quieres ir?">
+								<span class="icon is-small is-right">
+									<img src="/img5/svg/search-w.svg" alt="Web" width="15" height="15" />
+								</span>
+							</p>
+							<p class="csj has-text-grey is-size-7">* Ingrese al menos 4 letras de su búsqueda</p>
+							<div class="res">
+								<div class="mres"></div>
+							</div>
+						</form>
+					</div>
+					<a  href="/publicar/" class="navbar-item">
+                    Publicar
+                  </a>
+					<div class="navbar-item has-dropdown is-hoverable">
+						<a class="navbar-link">
+							Es
+						</a>
+
+						<div class="navbar-dropdown">
+							<a href="/concordia/pesqueros-dorados-rio-uruguay.html" class="navbar-item">
+								Espanol
+							</a>
+							<a href="/concordia/fisheries-dorados-uruguay-river.html" class="navbar-item">
+								English
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</nav>
+	<!-- Navegacion secundaria ciudad -->
+	<nav class="navbar" role="navigation" aria-label="main navigation" id="navSec">
+		<div class="container">
+			<div class="navbar-brand">
+				<a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+					<span aria-hidden="true"></span>
+					<span aria-hidden="true"></span>
+					<span aria-hidden="true"></span>
+				</a>
+			</div>
+			<div class="navbar-menu">
+				<div class="navbar-start menu">
+
+                    
+                    <a href="/concordia/" class="navbar-item ">Concordia</a>
+                    
+
+
+                    <div class="navbar-item a-dropdown is-hoverable">
+                    <a href="/concordia/alojamientos.html" class="navbar-item navbar-link">Alojamientos</a>
+                    <div class="navbar-dropdown">
+                    <a href="/concordia/alojamientos.html" class="navbar-item">Todos los Alojamientos</a>
+                    <a href="/concordia/hoteles.html" class="navbar-item">Hoteles</a>
+                    </div>
+                    </div>
+
+
+                    
+                    <a href="/concordia/serviciosturisticos.html" class="navbar-item ">Servicios turísticos</a>
+                    
+
+
+                    
+                    <a href="/concordia/gastronomia.html" class="navbar-item ">Restaurantes</a>
+                    
+
+
+                    
+                    <a href="/concordia/paseos.html" class="navbar-item ">Qué hacer</a>
+                    
+
+
+                    
+                    <a href="/concordia/inmobiliario.html" class="navbar-item ">Inmobiliarias</a>
+                    
+
+
+                    
+                    <a href="/concordia/fotografias.html" class="navbar-item ">Galería de fotos</a>
+                    
+
+
+                    
+                    <a href="/concordia/mapa.html" class="navbar-item ">Mapa de la ciudad</a>
+                    
+
+
+                    
+                    <a href="/concordia/historia.html" class="navbar-item ">Historia</a>
+                    
+
+
+                    
+                    <a href="/concordia/blog.html" class="navbar-item ">Blog de turismo en Argentina</a>
+                    
+
+					<div class="navbar-item has-dropdown is-hoverable">
+						<a class="navbar-link">
+							Más
+						</a>
+						<div class="navbar-dropdown vermas">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</nav>
+	<div class="container">
+		<div class="bpxhrs c970 rotasuper" rel="382" data="/concordia/pesqueros-dorados-rio-uruguay.html"></div>
+	</div>
+	<div class="container is-hidden-touch">
+		<!-- Breadcrumbs -->
+		<nav class="breadcrumb" aria-label="breadcrumbs">
+			<ol class="breadcrumb" itemprop="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
+				<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/" itemprop="item" title="Welcome Argentina"><span itemprop="name">Welcome Argentina</span></a>
+					<meta itemprop="url" content="/">
+					<meta itemprop="position" content="1" />
+				</li>
+				<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/entrerios/" itemprop="item" title="Turismo en Entre Ríos"><span itemprop="name">Turismo en Entre Ríos</span></a>
+                    <meta itemprop="url" content="">
+                    <meta itemprop="position" content="2" />
+                </li>
+				<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/concordia/" itemprop="item" title="Concordia"><span itemprop="name">Concordia</span></a>
+					<meta itemprop="url" content="/concordia/">
+					<meta itemprop="position" content="3" />
+				</li>
+				<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+					<a href="/concordia/paseos.html" itemprop="item"><span itemprop="name">Que hacer</span></a>
+					<meta itemprop="url" content="/concordia/paseos.html" />
+					<meta itemprop="position" content="4" />
+				</li>
+				<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+					<a href="/concordia/pesqueros-dorados-rio-uruguay.html" itemprop="item"><span itemprop="name">Los dorados más grandes del mundo</span></a>
+					<meta itemprop="url" content="/concordia/pesqueros-dorados-rio-uruguay.html" />
+					<meta itemprop="position" content="5" />
+				</li>
+			</ol>
+		</nav>
+	</div>
+	<div class="container">
+		<div class="columns">
+			<div class="column">
+				<h1 class="is-size-3">Los dorados más grandes del mundo</h1>
+                <div class="is-size-5 abs">Concordia se hizo conocida por ser uno de los mejores pesqueros de dorados del río Uruguay. Hoy, la represa de Salto Grande le ha dado una ayudita. Un premio casi divino.</div>
+				<div class="content">
+				<p><t>Represa, paredón y después…</t>
+<e>
+<strong><a href="/concordia/">Concordia</a></strong> se ubica frente a un grupo de saltos, donde se construyó <a href="/concordia/complejo-salto-grande.html">la famosa represa de Salto Grande</a>, una de las  más importantes de la cuenca del río Uruguay.
+<e>
+El dorado es un pez que, para cumplir su ciclo vital, debe subir y bajar los ríos para desovar y lo hacía, hasta que la mano del hombre ubicó en este sector del río uno de sus proyectos más ambiciosos: Salto Grande.
+<e>
+A diferencia de lo que se pensaba cuando se llevó a cabo el proyecto, los dorados no suben el río. Si bien se pensaron ascensores para que los peces pasaran de un lado al otro, lo cierto es que cuando el pez siente el peligro, automáticamente frena su recorrido. </p>
+				</div>
+				<div class="swiffy-slider slider-item-reveal slider-nav-visible slider-nav-page slider-indicators-round slider-indicators-dark slider-indicators-sm sw">
+                <ul class="slider-container">
+				<li>
+				<img  src="/paseos/pesca-dorados-concordia/concordia-pesca-dorados-1.jpg" alt="Un premio casi divino" />
+				<p class="ep">Un premio casi divino</p>
+				</li>
+				<li>
+				<img  src="/paseos/pesca-dorados-concordia/concordia-pesca-dorados-2.jpg" alt="Salto Chico" />
+				<p class="ep">Salto Chico</p>
+				</li>
+				<li>
+				<img  src="/paseos/pesca-dorados-concordia/concordia-pesca-dorados-3.jpg" alt="Un paraíso para el pescador" />
+				<p class="ep">Un paraíso para el pescador</p>
+				</li>
+				<li>
+				<img  src="/paseos/pesca-dorados-concordia/concordia-pesca-dorados-4.jpg" alt="Es bueno que el pez vuelva al agua" />
+				<p class="ep">Es bueno que el pez vuelva al agua</p>
+				</li>
+				</ul>
+				<button type="button" class="slider-nav"></button>
+                <button type="button" class="slider-nav slider-nav-next"></button>
+                
+                <ul class="slider-indicators">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+				</div>
+				<div class="content">
+				<p>Aguas abajo de la represa, hasta un sector denominado Salto Chico, el río se transforma en una inmensa cancha con aguas claras y por momentos calmas que se vuelven rápidas y de gran oxigenación cuando el hombre abre las compuertas. Allí comienza la buena pesca. 
+<e>
+<t>Tan mística como los dorados</t>
+<e>
+La Tortuga Alegre es una de las instituciones más típicas que tiene la ciudad de Concordia. Se trata de un <k>camping</k> a la vera del río Uruguay que cumple la función de centro de operaciones de todos los pescadores que llegan en sus lanchas, gomones y botes a buscar el tigre de los ríos.
+<e>
+En nuestro caso, nos estaban esperando Cacho Marcogiuseppe y su hijo, Francisco, dos guías profesionales de esta ciudad, para llevarnos a conocer las bondades de este hermoso río. 
+
+<vermas>Se sabe que, por cuestiones naturales, el dorado llega hasta la presa y se queda allí, desorientado. Por ello se ha establecido una zona de exclusión en donde sólo pescadores autorizados pueden pescarlo con mosca y devolver los ejemplares que obtienen. 
+<e>
+Así, han salido verdaderos tesoros de más de veinte kilos, pero esto está lamentablemente reservado para algunos privilegiados. Los demás debemos contentarnos con pescar debajo de los mil metros que marca la presa y, ahí sí, tentar nuestro trofeo. 
+<e>
+Pero dorados hay por todos lados, vale la pena decirlo. Aunque la presencia de los pescadores furtivos uruguayos, quienes a plena luz del día ponen y sacan sus redes, muchas veces dificulta la pesca deportiva. 
+
+<t>Un paraíso para el pescador</t>
+<e>
+Concordia, al igual que todas las ciudades que se han desarrollado a la vera del río Paraná, cuenta con maravillosos mitos y leyendas acerca de dorados enormes jamás pescados, pero que dejaron huellas de su existencia.
+<e>
+En nuestro caso, medio día alcanzó para develar parte del misterio que esconden estas aguas. Obtuvimos tres hermosos dorados, de siete, diez y dos kilos, aproximadamente. Todos fueron devueltos al agua, una vez terminadas las fotografías de rigor, esas con las cuales se contenta el ego propio y el de los amigos. Pero es bueno que el pez vuelva al agua. 
+<e>
+Lemas como “Pesca y devolución” han comenzado a practicarse para frenar la disminución no sólo de los portes de los peces, sino también de su cantidad. 
+
+Y Concordia está escuchando conscientemente estos consejos. La Fiesta Nacional de la Boga, que se practica todos los meses de enero, es un claro ejemplo de esto. Desde hace algunos años llegan a puerto sólo los ejemplares que se necesitan para ganar el torneo, el resto queda en el río para las futuras generaciones. </vermas></p>
+				</div>
+				<p class="is-size-6 credits">
+				<img src="/img5/svg/autor.svg" alt="Autor" width="15" height="15"> Pablo Etchevers
+				<img src="/img5/svg/fotografo.svg" alt="Fotografo" width="15" height="15"> Pablo Etchevers
+				</p>
+				
+								
+				<div class="columns">
+				<div class="column">
+				<div class="box contacto">
+				<h2 class="is-size-5">Contacto de la excursión o paseo</h2>
+				
+				<hr>
+				<p class="is-size-5"><strong>Dirección de Turismo - Municipalidad de Concordia</strong></p>
+				<p class="is-size-7">J.J. de Urquiza N 636 - P.B. , Concordia, Entre Ríos, Agentina</p>
+                    <p class="is-size-7"><img src="/img5/svg/telefono.svg" alt="Teléfono" width="14" height="14"> Teléfono: +54 345-4213905 </p>
+				
+				</div>
+				</div>
+				
+				</div>
+				
+			</div>
+			<div class="column is-300px is-narrow">
+                <ul class="menu-list mb-5">
+                <li class="is-size-5 mb-2">Alojamientos más buscados <br><b>en Concordia</b></li>
+                <li class="card"><a href="/concordia/hoteles-precios.html" class="card-content">Sólo hoteles con precios publicados</a></li>
+                </ul>
+
+				<div class="bpxhrs cpromo rotapromo" rel="638"></div>
+				<div class="bpxhrs cpromo rotapromo" rel="639"></div>
+				<div class="bpxhrs cpromo rotapromo" rel="640"></div>
+				<div class="bpxhrs cpromo rotapromo" rel="641"></div>
+				<div class="bpxhrs cpromo rotapromo" rel="642"></div>
+				<div class="cpromo">
+				</div>
+				<div class="cpromo">
+				</div>
+
+			</div>
+			<div class="columns">
+				<div class="column is-full">
+				</div>
+			</div>
+		</div>
+	
+	</div>
+		<div class="container">
+		<div class="columns">
+				<div class="column is-full">
+				
+				<h3 class="is-size-4 mt-6 mb-5">Ubicación</h3>
+				<div id='map'>
+				   
+				</div>
+<!-- Carrusel alojamiento -->
+
+        <div class="container mt-5 mb-5" id="sl">
+           <hr>
+            <h2 class="is-size-4 has-text-centered"><a target="_blank" href="alojamientos.html">Alojamientos en  Concordia</a></h2>
+            <section class="section">
+                <div class="container">
+
+
+                    <div class="swiffy-slider slider-item-show4 slider-item-show2-sm slider-item-reveal slider-nav-visible slider-nav-page slider-indicators-round slider-indicators-outside slider-indicators-sm">
+                       <ul class="slider-container">
+                            <li class="card">
+                                <div class="card-image is-relative">
+                                    <a href="/concordia/esquina-yerua.html" data-reck="fo-67227-d" target="_blank">
+                                        <img src="/plantillas/67227-00.jpg" alt="Esquina Yerùa ">
+                                    </a>
+                                </div>
+                                <div class="card-content">
+                                    <p class="is-size-7">Alquiler temporario</p>
+                                    <p class="title is-6"><a href="/concordia/esquina-yerua.html" target="_blank" data-reck="na--d">Esquina Yerùa </a></p>
+
+                                </div>
+                            </li>
+                            <li class="card">
+                                <div class="card-image is-relative">
+                                    <a href="/concordia/hoteles-h2o-termal.html" data-reck="fo-45166-d" target="_blank">
+                                        <img src="/plantillas/45166-00.jpg" alt="H2o Termal">
+                                    </a>
+                                </div>
+                                <div class="card-content">
+                                    <p class="is-size-7"></p>
+                                    <p class="title is-6"><a href="/concordia/hoteles-h2o-termal.html" target="_blank" data-reck="na--d">H2o Termal</a></p>
+
+                                </div>
+                            </li>
+                            <li class="card">
+                                <div class="card-image is-relative">
+                                    <a href="/concordia/hotel-centro-plaza.html" data-reck="fo-50855-d" target="_blank">
+                                        <img src="/plantillas/50855-00.jpg" alt="Centro Plaza Hotel">
+                                    </a>
+                                </div>
+                                <div class="card-content">
+                                    <p class="is-size-7"></p>
+                                    <p class="title is-6"><a href="/concordia/hotel-centro-plaza.html" target="_blank" data-reck="na--d">Centro Plaza Hotel</a></p>
+
+                                </div>
+                            </li>
+                            <li class="card">
+                                <div class="card-image is-relative">
+                                    <a href="/concordia/cabanas-joaquin.html" data-reck="fo-45223-d" target="_blank">
+                                        <img src="/plantillas/45223-00.jpg" alt="Joaquín">
+                                    </a>
+                                </div>
+                                <div class="card-content">
+                                    <p class="is-size-7"></p>
+                                    <p class="title is-6"><a href="/concordia/cabanas-joaquin.html" target="_blank" data-reck="na--d">Joaquín</a></p>
+
+                                </div>
+                            </li>
+                            <li class="card">
+                                <div class="card-image is-relative">
+                                    <a href="/concordia/hotel-palmar.html" data-reck="fo-11728-d" target="_blank">
+                                        <img src="/plantillas/11728-00.jpg" alt="Palmar Hotel Casino">
+                                    </a>
+                                </div>
+                                <div class="card-content">
+                                    <p class="is-size-7"></p>
+                                    <p class="title is-6"><a href="/concordia/hotel-palmar.html" target="_blank" data-reck="na--d">Palmar Hotel Casino</a></p>
+
+                                </div>
+                            </li>
+                            <li class="card">
+                                <div class="card-image is-relative">
+                                    <a href="/concordia/aparthotel-amanzi.html" data-reck="fo-50850-d" target="_blank">
+                                        <img src="/plantillas/50850-00.jpg" alt="Amanzi Termal">
+                                    </a>
+                                </div>
+                                <div class="card-content">
+                                    <p class="is-size-7"></p>
+                                    <p class="title is-6"><a href="/concordia/aparthotel-amanzi.html" target="_blank" data-reck="na--d">Amanzi Termal</a></p>
+
+                                </div>
+                            </li>
+                            <li class="card">
+                                <div class="card-image is-relative">
+                                    <a href="/concordia/hotel-los-origenes.html" data-reck="fo-42413-d" target="_blank">
+                                        <img src="/plantillas/42413-00.jpg" alt="Los Orígenes">
+                                    </a>
+                                </div>
+                                <div class="card-content">
+                                    <p class="is-size-7"></p>
+                                    <p class="title is-6"><a href="/concordia/hotel-los-origenes.html" target="_blank" data-reck="na--d">Los Orígenes</a></p>
+
+                                </div>
+                            </li>
+                            <li class="card">
+                                <div class="card-image is-relative">
+                                    <a href="/concordia/hotel-ypf-km-248.html" data-reck="fo-11741-d" target="_blank">
+                                        <img src="/plantillas/11741-00.jpg" alt="YPF KM 248">
+                                    </a>
+                                </div>
+                                <div class="card-content">
+                                    <p class="is-size-7"></p>
+                                    <p class="title is-6"><a href="/concordia/hotel-ypf-km-248.html" target="_blank" data-reck="na--d">YPF KM 248</a></p>
+
+                                </div>
+                            </li>
+                            <li class="card">
+                                <div class="card-image is-relative">
+                                    <a href="/concordia/hotel-los-origenes.html" data-reck="fo-42414-d" target="_blank">
+                                        <img src="/plantillas/42414-00.jpg" alt="Los Orígenes">
+                                    </a>
+                                </div>
+                                <div class="card-content">
+                                    <p class="is-size-7"></p>
+                                    <p class="title is-6"><a href="/concordia/hotel-los-origenes.html" target="_blank" data-reck="na--d">Los Orígenes</a></p>
+
+                                </div>
+                            </li>
+                        <li class="card">
+                            <div class="card-image is-relative">
+                                <a href="alojamientos.html"><img src="https://www.welcomeargentina.com/img5/sfa.png" alt="Ver más alojamientos"></a>
+                            </div>
+                            <div class="card-content">
+                                <p class="is-size-7">Concordia</p>
+                                <p class="title is-6"><a href="alojamientos.html">Ver más alojamientos</a></p>
+                            </div>
+                        </li>
+                    </ul>
+                    <button type="button" class="slider-nav"></button>
+                    <button type="button" class="slider-nav slider-nav-next"></button>
+                     </div>
+                </div>
+            </section>
+        </div>
+          
+			
+
+<!-- Carrusel paseos y excursiones -->
+           
+			     <hr>
+					<h2 class="is-size-4 has-text-centered mt-6"><a target="_blank" href="paseos.html">Que hacer en  Concordia</a></h2>
+
+					<div class="swiffy-slider slider-item-show4 slider-item-show2-sm slider-item-reveal slider-nav-visible slider-nav-page slider-indicators-round slider-indicators-outside slider-indicators-sm">
+                       <ul class="slider-container">
+							<li class="card">
+								<div class="card-image is-relative">
+										<a href="/concordia/complejo-salto-grande.html" target="_blank">
+												<img src="../paseos/complejo-salto-grande/copete_360x220.jpg" alt="Complejo Salto Grande, puente entre dos naciones">
+										</a>
+								</div>
+								<div class="card-content">
+									<p class="title is-6">
+										<a href="/concordia/complejo-salto-grande.html" target="_blank">Complejo Salto Grande, puente entre dos naciones</a>
+									</p>
+
+								</div>
+							</li>
+							<li class="card">
+								<div class="card-image is-relative">
+										<a href="/concordia/pesqueros-dorados-rio-uruguay.html" target="_blank">
+												<img src="../paseos/pesca-dorados-concordia/copete_360x220.jpg" alt="Los dorados más grandes del mundo">
+										</a>
+								</div>
+								<div class="card-content">
+									<p class="title is-6">
+										<a href="/concordia/pesqueros-dorados-rio-uruguay.html" target="_blank">Los dorados más grandes del mundo</a>
+									</p>
+
+								</div>
+							</li>
+							<li class="card">
+								<div class="card-image is-relative">
+										<a href="/concordia/paseo-costanera.html" target="_blank">
+												<img src="../paseos/paseo-costanera/copete_360x220.jpg" alt="La costanera de Concordia">
+										</a>
+								</div>
+								<div class="card-content">
+									<p class="title is-6">
+										<a href="/concordia/paseo-costanera.html" target="_blank">La costanera de Concordia</a>
+									</p>
+
+								</div>
+							</li>
+							<li class="card">
+								<div class="card-image is-relative">
+										<a href="/concordia/parque-nacional-el-palmar.html" target="_blank">
+												<img src="../paseos/visita-parque-nacional-el-palmar/copete_360x220.jpg" alt="Parque Nacional El Palmar">
+										</a>
+								</div>
+								<div class="card-content">
+									<p class="title is-6">
+										<a href="/concordia/parque-nacional-el-palmar.html" target="_blank">Parque Nacional El Palmar</a>
+									</p>
+
+								</div>
+							</li>
+							<li class="card">
+								<div class="card-image is-relative">
+										<a href="/concordia/citytour-concordia-alrededores.html" target="_blank">
+												<img src="../paseos/citytour-concordia/copete_360x220.jpg" alt="A la vera del Salto">
+										</a>
+								</div>
+								<div class="card-content">
+									<p class="title is-6">
+										<a href="/concordia/citytour-concordia-alrededores.html" target="_blank">A la vera del Salto</a>
+									</p>
+
+								</div>
+							</li>
+							<li class="card">
+								<div class="card-image is-relative">
+										<a href="/concordia/termas-perilago-salto-grande.html" target="_blank">
+												<img src="/paseos/a/1673_copete_ch.jpg" alt="Termas Del Ayui Parque Acuático y Termas Punta Viracho">
+										</a>
+								</div>
+								<div class="card-content">
+									<p class="title is-6">
+										<a href="/concordia/termas-perilago-salto-grande.html" target="_blank">Termas Del Ayui Parque Acuático y Termas Punta Viracho</a>
+									</p>
+
+								</div>
+							</li>
+							<li class="card">
+								<div class="card-image is-relative">
+										<a href="/concordia/carnaval-de-concordia.html" target="_blank">
+												<img src="../paseos/carnaval-concordia/copete_360x220.jpg" alt="El Carnaval de Concordia">
+										</a>
+								</div>
+								<div class="card-content">
+									<p class="title is-6">
+										<a href="/concordia/carnaval-de-concordia.html" target="_blank">El Carnaval de Concordia</a>
+									</p>
+
+								</div>
+							</li>
+							<li class="card">
+								<div class="card-image is-relative">
+										<a href="/concordia/zoologico-arca-enrimir.html" target="_blank">
+												<img src="../paseos/zoologico-arca-enrimir/copete_360x220.jpg" alt="Los jubilados del circo">
+										</a>
+								</div>
+								<div class="card-content">
+									<p class="title is-6">
+										<a href="/concordia/zoologico-arca-enrimir.html" target="_blank">Los jubilados del circo</a>
+									</p>
+
+								</div>
+							</li>
+							<li class="card">
+								<div class="card-image is-relative">
+										<a href="/concordia/termas-concordia.html" target="_blank">
+												<img src="../paseos/termas-concordia/copete_360x220.jpg" alt="Las Termas de Concordia">
+										</a>
+								</div>
+								<div class="card-content">
+									<p class="title is-6">
+										<a href="/concordia/termas-concordia.html" target="_blank">Las Termas de Concordia</a>
+									</p>
+
+								</div>
+							</li>
+							<li class="card">
+								<div class="card-image is-relative">
+										<a href="/entrerios/" target="_blank">
+												<img src="../entrerios/imagenes/copete_360x220.jpg" alt="Turismo en Entre Ríos, &quot;una tierra diferente&quot;">
+										</a>
+								</div>
+								<div class="card-content">
+									<p class="title is-6">
+										<a href="/entrerios/" target="_blank">Turismo en Entre Ríos, "una tierra diferente"</a>
+									</p>
+
+								</div>
+							</li>
+						<li class="card">
+							<div class="card-image is-relative">
+                                <a href="paseos.html"><img src="/img5/sft.png" alt="Ver más paseos y excursiones"></a>
+							</div>
+							<div class="card-content">
+								<p class="title is-6"><a href="paseos.html">Ver más paseos y excursiones</a></p>
+							</div>
+						</li>
+					</ul>
+					<button type="button" class="slider-nav"></button>
+                    <button type="button" class="slider-nav slider-nav-next"></button>
+					</div>
+
+				
+				
+				</div>
+			</div>
+	</div>
+    <!-- Pie de pagina -->
+    <footer class="footer">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-two-fifths">
+                    <p class="is-size-4">Suscripción al newsletter</p>
+                    <form id="newsletter" name="newsletter" method="post"  class="columns is-multiline">
+                       <div class="column is-half">
+                        <input type="hidden" name="msg" value="Muchas gracias por suscribirse a nuestro newsletter!&lt;br&gt;Pronto estaremos en contacto.">
+                        <div>
+                        <label for="Nombrenews" class="label">Su nombre y apellido</label>
+                        <div class="control has-icons-left">
+                            <input name="Nombre" id="Nombrenews" type="text" class="input" placeholder="Su nombre y apellido" required>
+                            <span class="icon is-small is-left">
+                                <img src="/img5/svg/user.svg" alt="Newsletter" width="15" height="15" />
+                            </span>
+                        </div>
+                        </div>
+                        </div>
+                        <div class="column is-half">
+                        <label for="Emailnews" class="label">Ingrese su Email</label>
+                        <div class="control has-icons-left">
+                            <input name="Email" id="Emailnews" type="email" class="input" placeholder="Ingrese su Email" required>
+                            <span class="icon is-small is-left">
+                                <img src="/img5/svg/email.svg" alt="Newsletter" width="15" height="15" />
+                            </span>
+                        </div>
+                        </div>
+                        <div class="column is-full">
+                        <button class="button is-dark">¡Suscribite!</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="column has-text-right">
+                    <div class="buttons is-right">
+                        <a href="https://www.facebook.com/WelcomeArgentina" class="button social" target="_blank">
+                            <span class="icon is-small">
+                                <img src="/img5/svg/facebook.svg" alt="Facebook" width="20">
+                            </span>
+                        </a>
+                        <a href="https://www.instagram.com/welcomeargentinaok" class="button social" target="_blank" rel="noopener">
+                            <span class="icon is-small">
+                                 <img src="/img5/svg/instagram.svg" alt="Instagram"  width="20" height="20">
+                            </span>
+                        </a>
+                    </div>
+                    <p><a href="/publicar/empresa.html" target="_blank">Quienes somos</a> - <a href="#modal-tyc" onclick="return false;" id="tyc">Términos y condiciones</a> - <a href="#modal-ctc" onclick="return false;" id="ctc">Contacto</a> - <a  href="/publicar/">Publicar establecimiento</a></p>
+                    <p class="is-size-7">
+                        <a href="/">Welcome Argentina</a> - Que hacer en Concordia: Los dorados más grandes del mundo<br>
+                        © 2003-2026 Prohibida su reproducción total o parcial. Derechos de Autor 675246 Ley 11723
+
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+<div class="bpxhrs c970 rotastick" rel="20" data="/concordia-e"></div>
+    
+	<!-- Modal terminos y condiciones -->
+	<div class="modal" id="modal-tyc">
+		<div class="modal-background"></div>
+		<div class="modal-card">
+			<header class="modal-card-head">
+				<p class="modal-card-title">Terminos y condiciones</p>
+			</header>
+			<section class="modal-card-body">
+			</section>
+			<footer class="modal-card-foot">
+			</footer>
+		</div>
+		<button class="modal-close is-large" aria-label="close"></button>
+	</div>
+	<!-- Modal contacto -->
+	<div class="modal" id="modal-ctc">
+		<div class="modal-background"></div>
+		<div class="modal-card">
+			<header class="modal-card-head">
+				<p class="modal-card-title">Contacto</p>
+			</header>
+			<section class="modal-card-body">
+			</section>
+			<footer class="modal-card-foot">
+				<small>* Recuerde completar sus datos correctamente para poder recibir una respuesta.</small>
+			</footer>
+		</div>
+		<button class="modal-close is-large" aria-label="close"></button>
+	</div>
+	<!-- Modal email clientes -->
+    <div id="modalc" class="modal">
+       <div class="modal-background"></div>
+       <div class="modal-content">
+			<div class="box" id="modalcli">
+			</div>
+		</div>
+   <button class="modal-close is-large" aria-label="close"></button>
+    </div>
+	<!-- Carga dinamica de modales -->
+	<div class="modalestop">
+	</div>
+	
+	    <link rel="stylesheet" href="/css5/fuente/photoswipe.css">
+       
+    <script type="module">
+    import PhotoSwipeLightbox from '/js5/fuente/a-photoswipe-lightbox.esm.min.js';
+    const lightbox = new PhotoSwipeLightbox({
+      gallery: '#gallery',
+      children: '.lightbox',
+      pswpModule: () => import('/js5/fuente/a-photoswipe.esm.min.js')
+    });
+    lightbox.init();
+    </script>
+   
+    <script type="module">
+    import {swiffyslider} from '/js5/fuente/swiffy-slider.esm.min.js'; 
+    window.swiffyslider = swiffyslider; 
+    window.swiffyslider.init();
+    </script>
+	<script type="text/javascript">
+		var idioma = "e"; 
+		var Mapa = "1"; 
+		var latitud = "1"; 
+		var longitud = "1"; 
+		var latitud1 = ""; 
+		var longitud1 = ""; 
+		var zoom = "8"; 
+		var Titulo = "";
+			
+		var someFeatures = [
+		{
+  "type": "FeatureCollection",
+  "features": [],
+  "MapType": "roadmap",
+  "bbox": "[-31.453854,-58.232986,-31.099982,-57.666504]"
+}
+			];
+	</script>
+	<script async src="/js5_a_paseo_433.js"></script>
+	
+  <script type="text/javascript" async>
+    var _paq = window._paq = window._paq || [];
+
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+
+      var u="//stats.niro.com.ar/";
+      _paq.push(['setTrackerUrl', u+'mtp']);
+      _paq.push(['setSiteId', '1']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.async=true; g.src=u+'mtj'; s.parentNode.insertBefore(g,s);
+    })();
+    var _mtm = window._mtm = window._mtm || [];
+    _mtm.push({'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start'});
+    (function() {
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.async=true; g.src='//stats.niro.com.ar/mtmj'; s.parentNode.insertBefore(g,s);
+    })();
+  </script>
+
+
+
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<script>
+	     (adsbygoogle = window.adsbygoogle || []).push({});
+	</script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"390c144d437c4418b41246a507917a85","r":1,"spa":2}' crossorigin="anonymous"></script>
+</body>
+
+</html>

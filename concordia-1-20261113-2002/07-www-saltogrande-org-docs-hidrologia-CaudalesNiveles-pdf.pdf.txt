@@ -1,0 +1,56 @@
+                                   COMISION TECNICA MIXTA DE SALTO GRANDE
+                                   Gerencia General - Area Hidrologia
+
+
+
+                                   Reporte de caudales (m³/s) y niveles (m) observados a las 09:00hs de día 13/11/2026
+
+
+
+
+                                                                                       Volumenes Hora 07:00 (%)
+                                                                          10/11/2026         11/11/2026         12/11/2026     13/11/2026
+                                                 Machadinho                   81                 81                 77
+                                                     Itá                      70                 69                 67
+
+                                                                               Caudales Medios Diarios Hora 07:00 (m3/s)
+                                                                          10/11/2026         11/11/2026           12/11/2026   13/11/2026
+                                               Machadinho                    3695               2334                 2758         2872
+                                                   Itá                       4870               3171                 3554         3810
+                                             Foz de Chapecó                  6459               3845                 4416         4820
+                                                                                     Caudales Hora 07:00 (m3/s)
+                                                                          10/11/2026        11/11/2026          12/11/2026     13/11/2026
+                                              El Soberbio                   10079               4839               4698           5195
+                                               San Javier                   12737               8687               5066           5433
+                                              Garruchos                     14103              12969               8915           6117
+                                              Santo Tomé                    13409              13343              11489           8471
+                                                 Alvear                     11595              12310              12676          11885
+                                           Paso de los Libres               11573              12253              12755          13089
+                                                 Aporte                     10451              11603              12469          12955
+                                                                         Salto Grande - Erogado Medio Diario (m3/s)
+                                                             10/11/2026          11/11/2026            12/11/2026     13/11/2026
+                                             Hora       QTurb QVert QTotal QTurb QVert QTotal QTurb QVert QTotal QTurb QVert QTotal
+                                             0a0        8058 2672 10730 7388 4187 11575 8102 3747 11849 8157 3630 11787
+                                             7a7        7388 3653 11041 8076 3739 11815 7995 3819 11814 8211 3562 11773
+                                                                                        Niveles Hora 07:00 (m)
+                                                                          10/11/2026          11/11/2026         12/11/2026    13/11/2026
+                                              El Soberbio                    7.90                 4.55               4.45          4.80
+                                               San Javier                    7.20                 5.70               4.10          4.28
+                                              Garruchos                     11.42                10.82               8.40          6.37
+                                              Santo Tomé                    10.99                10.96              10.10          8.50
+                                                 Alvear                      8.90                 9.14               9.26          9.00
+                                           Paso de los Libres                7.42                 7.68               7.86          7.98
+                                              Federación                    34.50                34.46              34.53         34.70
+                                             Salto Grande                   34.51                34.39              34.48         34.63
+                                               Concordia                     8.21                 8.60               8.66          8.57
+
+
+
+
+                                     Gerencia General - Area Hidrologia                                                            Pagina 1 de 1
+
+
+
+
+Powered by TCPDF (www.tcpdf.org)
+
