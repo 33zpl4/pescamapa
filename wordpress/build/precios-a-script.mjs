@@ -98,7 +98,7 @@ foreach ( [ 'es', 'en', 'pt' ] as $l ) {
 			}
 			$id     = reset( $ya )->ID;
 			$cuerpo = pm_pp_resolver( pm_pp_cuerpo( $pg, $datos[ $l ]['cierre'] ), $l );
-			WP_CLI::log( ( $aplicar ? 'ACTUALIZA' : 'SIMULACRO' ) . ": $clave ($l) #$id — " . mb_strlen( wp_strip_all_tags( $cuerpo ) ) . ' car., ' . count( $pg['datos'] ) . ' datos' );
+			WP_CLI::log( ( $aplicar ? 'ACTUALIZA' : 'SIMULACRO' ) . ": $clave ($l) #$id slug=" . get_post_field( 'post_name', $id ) . ' (no cambia) — vivo ' . mb_strlen( wp_strip_all_tags( get_post_field( 'post_content', $id ) ) ) . ' car. → nuevo ' . mb_strlen( wp_strip_all_tags( $cuerpo ) ) . ' car., ' . count( pm_filas( 'nota_datos', $id ) ) . ' → ' . count( $pg['datos'] ) . ' datos' );
 			if ( $aplicar ) {
 				wp_update_post( [ 'ID' => $id, 'post_content' => wp_slash( $cuerpo ) ] );
 				update_field( 'nota_datos', array_map( fn( $x ) => [ 'dato' => $x ], $pg['datos'] ), $id );
