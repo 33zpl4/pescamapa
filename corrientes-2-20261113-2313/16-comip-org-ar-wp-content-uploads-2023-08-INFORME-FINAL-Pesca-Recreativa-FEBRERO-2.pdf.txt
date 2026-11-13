@@ -1,0 +1,2462 @@
+                        CONVENIO:
+
+
+
+          COMIP – FACULTAD DE CIENCIAS
+            VETERINARIAS DE LA UNNE
+
+
+
+
+                         PROGRAMA:
+
+
+
+EVALUACIÓN DE LA PESCA RECREATIVA EN EL RÍO PARANÁ EN
+  TRAMOS COMPARTIDOS ENTRE ARGENTINA Y PARAGUAY.
+             ACTA COMPLEMENTARIA Nº 3
+
+
+
+
+                       Informe Final
+                 febrero 2019 - enero 2020
+
+
+
+
+               Instituto de Ictiología del Nordeste
+               Facultad de Ciencias Veterinarias
+               Universidad Nacional del Nordeste
+
+                        CORRIENTES
+                Convenio COMIP-FCV. UNNE. Acta Complementaria N° 3.
+       Instituto de Ictiología del Nordeste. Fac. de Ciencias Veterinarias. Univ. Nacional del Nordeste
+
+
+
+
+                                            INFORME FINAL
+
+
+
+
+EVALUACIÓN DE LA PESCA RECREATIVA EN EL RÍO PARANÁ EN TRAMOS
+COMPARTIDOS ENTRE ARGENTINA Y PARAGUAY. CARACTERIZACIÓN DE
+LA PESQUERÍA Y ENSAYO PILOTO DE MARCACIÓN DE PECES DE ESPECIES
+                           BLANCO.
+
+
+                                                  PERIODO
+
+                                   FEBRERO 2019 – ENERO 2020
+
+
+
+
+                                                  AUTORES
+
+       SÁNCHEZ, Sebastián; SILVA, Natalia A.; BARRIOS, Carlos E.;
+ GONZÁLEZ, Alfredo O.; AICHINO, Danilo R.; MASIN, Andrés S.; ACOSTA, José;
+   FLORENTÍN, Pedro; ROJAS, María T.; GARRIDO, Gladis; ROUX, Juan P.
+
+
+ A efectos de unificar las referencias bibliográficas del presente informe, el mismo debería
+                       citarse preferentemente de la siguiente manera:
+SÁNCHEZ, Sebastián; SILVA, Natalia A.; BARRIOS, Carlos E.; GONZÁLEZ, Alfredo O.;
+AICHINO, Danilo R.; MASIN, Andrés S.; ACOSTA, José; FLORENTÍN, Pedro; ROJAS,
+María T.; GARRIDO, Gladis; ROUX, Juan P. 2020. Evaluación de la pesca recreativa en el
+río Paraná en tramos compartidos entre Argentina y Paraguay. Caracterización de la
+pesquería y ensayo piloto de marcación de peces de especies blanco.
+Informe Final periodo 2019-2020, presentado por el Instituto de Ictiología del Nordeste de
+la Facultad de Ciencias Veterinarias de la UNNE a la Comisión Mixta del Río Paraná.
+Convenio COMIP-UNNE, Acta Complementaria N° 3. Corrientes (Argentina), 60 pp.
+
+          S. Cabral 2139. -3400- Corrientes. Tel.: 0379-4425753, int. 171 Fax: 4425753, int. 113.
+                                      e-mail: sanchez@vet.unne.edu.ar
+                                                      1
+                Convenio COMIP-FCV. UNNE. Acta Complementaria N° 3.
+       Instituto de Ictiología del Nordeste. Fac. de Ciencias Veterinarias. Univ. Nacional del Nordeste
+                                            PARTICIPANTES
+
+Dr. Sebastián SÁNCHEZ: Responsable de Proyecto y Representante Técnico ante
+COMIP, obtención de datos de campo en margen izquierdo aguas abajo de Yacyretá por el
+Instituto de Ictiología del Nordeste (INICNE-FCV-UNNE), análisis de datos, redacción de
+informes.
+Dr. Juan Pablo ROUX: Director del INICNE y Representante Técnico Alterno ante
+COMIP, supervisión de actividades e informes.
+Dra. Natalia SILVA: Obtención de datos de campo, mantenimiento de base de datos,
+redacción de informes.
+Lic. Carlos BARRIOS: Obtención de datos de campo.
+MSc. Gladys Graciela GARRIDO: Responsable Técnica del equipo encargado del
+monitoreo de margen izquierdo aguas arriba de Yacyretá por el Proyecto Biología Pesquera
+Regional, Instituto de Biología Subtropical (CONICET-UNaM).
+Lic. Danilo Ramón AICHINO: Responsable Técnico Adjunto y Jefe de Campo del equipo
+encargado del monitoreo de margen izquierdo aguas arriba de Yacyretá por el Proyecto
+Biología Pesquera Regional, Instituto de Biología Subtropical (CONICET-UNaM),
+obtención de datos de campo, redacción de informes.
+Ing. Bruno VERGARA: Jefe del Sector Medio Ambiente y responsable del proyecto de
+Monitoreo de la Fauna Íctica en Margen Derecho del Río Paraná.
+Dra. María Teresita ROJAS: Responsable del Programa de Fauna Ictica de la EBY.
+Dr. José ACOSTA: Responsable de trabajos de campo en margen derecho del río Paraná.
+Dr. Pedro FLORENTÍN: Técnico y apoyo en redacción de informes.
+Lic. Antonio CÁCERES: Obtención de datos de campo.
+Méd. Vet. Julio ORTIZ: Obtención de datos de campo.
+Méd. Vet. Carlos AGÜERO: Obtención de datos de campo.
+MSc. Alfredo GONZÁLEZ: Obtención de datos de campo.
+Lic. Juan José SANTINÓN: Obtención de datos de campo.
+Dr. David HERNÁNDEZ: Obtención de datos de campo.
+Sr. Hernán GIMÉNEZ: Obtención de datos de campo.
+Lic. Emanuel ROMERO MARANO: Obtención de datos de campo.
+Lic. Enzo MORENO: Obtención de datos de campo.
+Sr. Andrés Sebastián MASIN: Obtención de datos de campo.
+Sr. Estanislao Insaurralde: Obtención de datos de campo.
+Sr. Raúl Galeano: Obtención de datos de campo.
+Sr. Lucas Centurión: Obtención de datos de campo.
+
+                                 REPRESENTANTES TÉCNICOS
+
+                                  Lic. Enrique GUARDO (COMIP)
+
+              Dr. Sebastián SÁNCHEZ (Universidad Nacional del Nordeste)
+          S. Cabral 2139. -3400- Corrientes. Tel.: 0379-4425753, int. 171 Fax: 4425753, int. 113.
+                                      e-mail: sanchez@vet.unne.edu.ar
+                                                      2
+                Convenio COMIP-FCV. UNNE. Acta Complementaria N° 3.
+       Instituto de Ictiología del Nordeste. Fac. de Ciencias Veterinarias. Univ. Nacional del Nordeste
+
+
+                                         AGRADECIMIENTOS
+
+   Al personal de COMIP, que prestó su valiosa colaboración durante la realización del
+proyecto, brindando apoyo logístico administrativo así como en la organización, difusión y
+elaboración de material publicitario utilizado.
+
+   A los establecimientos, guías de pesca y pescadores particulares de Argentina y Paraguay
+que colaboraron activamente en el proyecto aportando información valiosa sobre la
+actividad de pesca recreativa en la región.
+
+   Al personal de la Prefectura Naval Argentina y Marina Paraguaya que acompañó desde el
+lanzamiento del proyecto y colaboró con el equipo de campo cuando se solicitó apoyo en las
+diferentes delegaciones zonales.
+
+   A las autoridades de las localidades en que se desarrolla el proyecto por su colaboración
+facilitando instalaciones y personal para la realización de eventos y colecta de datos en
+largaderos municipales, aportando datos de concursos de pesca y padrones y contactos de
+guías de pesca.
+
+
+
+
+          S. Cabral 2139. -3400- Corrientes. Tel.: 0379-4425753, int. 171 Fax: 4425753, int. 113.
+                                      e-mail: sanchez@vet.unne.edu.ar
+                                                      3
+           Convenio COMIP-FCV. UNNE. Acta Complementaria N° 3.
+  Instituto de Ictiología del Nordeste. Fac. de Ciencias Veterinarias. Univ. Nacional del Nordeste
+                                               ÍNDICE
+Introducción                                                                                          6
+Objetivos                                                                                             7
+Metodología Empleada                                                                                  8
+Sitios de muestreo                                                                                    8
+Colecta de datos                                                                                     12
+Actividades realizadas                                                                               12
+Resultados                                                                                           13
+Caracterización hidrológica del río durante el período de estudios                                   13
+Marcación de peces                                                                                   15
+Relevamiento pesquero                                                                                16
+Estadísticas pesqueras                                                                               19
+Variación espacial y temporal del esfuerzo de pesca                                                  21
+Artes de pesca utilizadas                                                                            24
+Especies capturadas según artes de pesca utilizadas                                                  27
+Pesca Extractiva versus Pesca con Devolución                                                         31
+Peces marcados                                                                                       33
+Rutas migratorias                                                                                    34
+Estimación globales para la pesquería                                                                36
+Tamaño de las poblaciones                                                                            37
+Aspectos Socioeconómicos                                                                             37
+Discusión                                                                                            37
+Proyección del Proyecto a Futuro                                                                     42
+Bibliografía                                                                                         43
+ANEXO FOTOS                                                                                          44
+
+
+
+
+     S. Cabral 2139. -3400- Corrientes. Tel.: 0379-4425753, int. 171 Fax: 4425753, int. 113.
+                                 e-mail: sanchez@vet.unne.edu.ar
+                                                 4
+                Convenio COMIP-FCV. UNNE. Acta Complementaria N° 3.
+       Instituto de Ictiología del Nordeste. Fac. de Ciencias Veterinarias. Univ. Nacional del Nordeste
+                                       RESUMEN EJECUTIVO
+
+SÁNCHEZ, Sebastián; SILVA, Natalia A.; BARRIOS, Carlos E.; GONZÁLEZ,
+Alfredo O.; AICHINO, Danilo R.; MASIN, Andrés S.; ACOSTA, José; FLORENTÍN,
+Pedro; ROJAS, María T.; GARRIDO, Gladis; ROUX, Juan P. 2020. Evaluación de la
+pesca recreativa en el río Paraná en tramos compartidos entre Argentina y Paraguay.
+Caracterización de la pesquería y ensayo piloto de marcación de peces de especies
+blanco. Informe final del período 2019-2020, presentado por el Instituto de Ictiología
+del Nordeste de la Facultad de Ciencias Veterinarias de la UNNE a la Comisión Mixta
+del Río Paraná. Convenio COMIP-UNNE, Acta Complementaria N° 3. Corrientes
+(Argentina), 60 pp.
+
+Se presentan los resultados de doce meses de monitoreo de la pesca recreativa en el río
+Paraná en tramos compartidos entre Argentina y Paraguay, obtenidos entre febrero de 2019
+y enero de 2020. La información presentada corresponde principalmente a 9 sitios sobre
+margen izquierdo (Argentina), tres de ellos aguas arriba de Yacyretá (Posadas, Puerto Maní
+y Eldorado) y 6 aguas abajo (Ituzaingó, Itá Ibaté, Yahapé, Puerto Abra, Itatí y Paso de la
+Patria) y 7 sitios emplazados en margen derecho (Paraguay), cuatro aguas abajo de la
+represa (Itá Corá, Cerrito, Ayolas y Corateí) y los 3 restantes aguas arriba de la
+hidroeléctrica (San Cosme y Damián, Carmen del Paraná y Capitán Meza). En el inicio del
+presente proyecto se dio continuidad al diálogo establecido con pescadores particulares,
+guías de pesca y prestadores de servicios varios vinculados a la pesca recreativa que
+participaron como colaboradores durante la caracterización preliminar de la pesca
+recreacional realizado en el período 2017-2018 dentro del tramo estudiado. Al inicio del
+período anual la actividad en general fue activa aunque con altibajos, registrándose un
+incremento de la afluencia de pescadores que alcanzó su valor máximo en octubre de 2019.
+En noviembre, Paraguay inició una veda pesquera tradicional, mientras que en Argentina,
+aguas arriba de Yacyretá Misiones adoptó la misma modalidad y en Corrientes, aguas abajo
+de la represa, se optó por la modalidad de veda extendida, la que también se aplica en el río
+Paraguay en Chaco y Formosa. La inclusión de la marcación de peces determinó que varios
+colaboradores incrementaran su compromiso, colocando marcas a numerosos ejemplares
+además de continuar proporcionando datos de esfuerzo pesquero y de capturas. Con el paso
+del tiempo se sumaron numerosos pescadores, algunos de los cuales marcaron ejemplares en
+los ríos Uruguay y Paraguay, además de numerosas localidades emplazadas a la vera del
+Paraná fuera del tramo compartido. Lamentablemente, en el ciclo informado no se contó con
+el aporte del equipo de la EBY, quienes por cuestiones organizativas interrumpieron sus
+viajes de campaña. Se realizaron charlas de difusión y talleres de capacitación en la
+colocación de marcas, alcanzándose un total de 479 ejemplares marcados por los
+colaboradores a lo largo del tramo compartido, destacándose 16 peces recapturados. Con la
+inclusión de colaboradores que pescan fuera del tramo compartido, el total de peces
+marcados ascendió a 1079 (con 38 recapturas), registrándose 16 marcas en el río Paraguay,
+37 en el Uruguay y 547 en el Paraná aguas abajo de la confluencia con el Paraguay (entre el
+km 20 próximo a confluencia hasta el Paraná Pavón al sur de Entre Ríos). Se espera que con
+el desarrollo del proyecto y su difusión en redes sociales se incremente rápidamente la
+cantidad de colaboradores, peces marcados y recapturas, lo que permitirá analizar la
+dinámica de los procesos migratorios de las principales especies blanco del sistema.
+
+
+          S. Cabral 2139. -3400- Corrientes. Tel.: 0379-4425753, int. 171 Fax: 4425753, int. 113.
+                                      e-mail: sanchez@vet.unne.edu.ar
+                                                      5
+                Convenio COMIP-FCV. UNNE. Acta Complementaria N° 3.
+       Instituto de Ictiología del Nordeste. Fac. de Ciencias Veterinarias. Univ. Nacional del Nordeste
+Introducción
+
+    La pesca recreativa es una actividad con enorme potencial económico en gran número de
+naciones y es considerada como un motor de crecimiento, al generar importantes flujos de
+empleos, divisas y expandir sus efectos a otras actividades y servicios.
+    En la actualidad, la pesca recreativa es considerada una de las actividades turísticas más
+relevantes a nivel internacional. Los pescadores están dispuestos a viajar grandes distancias
+en busca de regiones con atributos excepcionales para su práctica. Antecedentes reportados
+por Fundación Chile en 2001, indican que la participación de Argentina en el mercado de la
+pesca recreativa mundial sería de un 32%. De acuerdo con el Servicio Nacional de Pesca, los
+principales destinos mundiales para practicar la pesca recreativa serían Estados Unidos,
+Canadá, Escocia, Noruega, Rusia, Nueva Zelanda y Argentina.
+    La expansión del turismo de pesca recreativa involucra importantes desafíos para el
+manejo de los recursos pesqueros recreativos. El pescador internacional o de larga distancia
+incurre en altos costos de viaje y estadía en busca de un producto turístico de muy alta
+calidad. En este sentido, las capturas, tallas y la presencia de otros pescadores se encuentran
+entre las variables que afectan las decisiones de visita de los pescadores (Hunt, 2005; Salz &
+Loomis, 2005; Shelby & Vaske, 2007).
+    En las localidades ribereñas del río Paraná emplazadas en tramos compartidos entre
+Argentina y Paraguay, la actividad de pesca recreativa representa en la actualidad uno de los
+principales recursos económicos de la región, en especial en la Provincia de Corrientes,
+donde se ha incrementado de modo significativo durante la última década.
+    La tendencia antes mencionada motivó que las agencias relacionadas directamente con la
+preservación del recurso íctico redoblaran sus esfuerzos en un intento de conservarlo de
+manera adecuada, objetivo que intentaron alcanzar adaptando la legislación vigente, en
+especial en lo que se relaciona a las medidas mínimas de los ejemplares de las diferentes
+especies y al número permitido por embarcación y por día, así como a la implementación de
+vedas en el período reproductivo (COMIP, 1994). Más recientemente, las provincias de
+Chaco y Corrientes iniciaron una experiencia piloto denominada veda extendida, donde se
+aumentó el período total de veda pesquera a lo largo del año, iniciativa sostenida de manera
+ininterrumpida desde 2011 hasta la actualidad. Esta alternativa se extendió recientemente al
+río Paraguay (Chaco y Formosa) así como al Alto Paraná (Corrientes) en los tramos
+limítrofes entre Argentina y Paraguay, al tiempo que la Provincia de Misiones y la
+República de Paraguay decidieron continuar con la veda tradicional que incluye una
+cantidad menor de días en que la pesca se encuentra prohibida. Estos esfuerzos, permiten en
+la actualidad mantener una actividad pesquera de significativa importancia económica para
+la región, aunque no existen estudios científicos que puedan dar cuenta con relativa
+precisión de la presión que la pesca en su conjunto está ejerciendo sobre las poblaciones
+naturales de peces.
+    El proyecto financiado por la COMIP a partir de 2017 (Convenio COMIP-UNNE Acta
+1) aparece como la primer iniciativa en la que la pesca recreativa se evaluó de manera
+sistemática. El desarrollo de este estudio permitió adaptar la metodología de trabajo a la
+          S. Cabral 2139. -3400- Corrientes. Tel.: 0379-4425753, int. 171 Fax: 4425753, int. 113.
+                                      e-mail: sanchez@vet.unne.edu.ar
+                                                      6
+                Convenio COMIP-FCV. UNNE. Acta Complementaria N° 3.
+       Instituto de Ictiología del Nordeste. Fac. de Ciencias Veterinarias. Univ. Nacional del Nordeste
+situación regional de la actividad, logrando una excelente interacción con diferentes actores
+relacionados a la pesca, así como la incorporación de nuevas metodologías de monitoreo
+espacial y temporal empleando herramientas digitales como WhatsApp, Youtube, Facebook
+e Instagram, entre otras. En este primer estudio se evidenció una asociación entre el esfuerzo
+pesquero y el comportamiento hidrológico del río Paraná. Además, se pudo confirmar que
+las poblaciones de peces migradores son menos importantes aguas arriba de Yacyretá y que
+un alto porcentaje de los peces capturados son devueltos, entre otros aspectos de interés
+pesquero (Sánchez et al., 2018).
+    En el marco del primer año evaluación, varios pescadores manifestaron su interés en
+colaborar en la implementación de marcación de peces, puesto que ofrecería un atractivo
+adicional al permitirles conocer algo más sobre los peces que habitualmente devuelven,
+propuesta que fue incorporada en el proyecto que aquí se informa.
+    A continuación se presentan los objetivos, metodología empleada y principales
+resultados del estudio, incluyendo estimaciones del rendimiento de la pesca recreativa del
+ciclo febrero 2019 – enero 2020, junto a la información correspondiente a los registros de
+captura y recaptura de los peces marcados, incluyendo una estimación preliminar del tamaño
+de los stocks de las especies blanco así como de sus movimientos espaciales en la zona de
+muestreos.
+
+Objetivo general
+
+
+
+   Obtener información válida sobre la actividad de pesca recreativa y establecer patrones
+de movimiento de las principales especies de interés económico y ecológico en tramos
+compartidos del río Paraná.
+
+
+Objetivos específicos
+
+
+Determinar los principales patrones espaciales y temporales de variación del esfuerzo de
+    pesca y del rendimiento pesquero.
+
+Establecer una metodología de marcación de peces adecuada para ser implementada por los
+    pescadores recreativos.
+
+Determinar los patrones de movimiento de las especies blanco de la pesca recreativa.
+
+Estimar la cantidad de ejemplares de las diferentes especies blanco en los diferentes puertos.
+
+
+
+
+          S. Cabral 2139. -3400- Corrientes. Tel.: 0379-4425753, int. 171 Fax: 4425753, int. 113.
+                                      e-mail: sanchez@vet.unne.edu.ar
+                                                      7
+                Convenio COMIP-FCV. UNNE. Acta Complementaria N° 3.
+       Instituto de Ictiología del Nordeste. Fac. de Ciencias Veterinarias. Univ. Nacional del Nordeste
+Recomendar acciones tendientes a la utilización sustentable del recurso pesquero,
+   equilibrando la actividad socioeconómica regional actual con la preservación del
+   mismo.
+
+Metodología Empleada
+
+Sitios de muestreo
+   Se seleccionaron puertos de desembarco sobre ambas márgenes del río Paraná.
+Considerando que la afluencia de pescadores varía según los distintos puertos de
+desembarco, se diseñaron diferentes estrategias para obtener información sobre cantidad de
+pescadores, artes de pesca, especies capturadas entre otras.
+   Los sitios seleccionados fueron: Posadas, Puerto Maní y Eldorado (Misiones, Argentina)
+y Cerrito, Itá Corá, Ayolas, Corateí (aguas abajo de Yacyretá), Encarnación, San Cosme y
+Damián, Carmen del Paraná y Capitán Meza (aguas arriba de Yacyretá) en Paraguay. La
+distribución geográfica de los sitios mencionados se presenta en la Figura 1.
+
+
+
+
+Figura 1. Ubicación geográfica de las localidades seleccionadas para el estudio de pesca
+recreativa en el río Paraná en tramos compartidos de Argentina y Paraguay.
+
+   A continuación se presenta la caracterización realizada previamente de los sitios
+seleccionados.
+
+Margen izquierdo
+PASO DE LA PATRIA (km 1.240 del río Paraná).
+   Esta localidad tiene una gran afluencia de pescadores locales procedentes de las ciudades
+de Corrientes y Resistencia. Adicionalmente, se reciben turistas de otras provincias de
+Argentina, así como extranjeros, principalmente de Brasil, cuya afluencia viene creciendo
+con el paso de los años. Muchos de los pescadores locales tienen sus lanchas alojadas en
+alguna de las guarderías existentes en Paso de la Patria, o bien las trasladan por vía terrestre
+desde sus domicilios particulares. Estos pescadores en general realizan su actividad en
+horario diurno y principalmente los fines de semana. Adicionalmente, se observa el uso de
+esta zona por parte de pescadores locales que llegan en lancha procedentes de localidades
+
+          S. Cabral 2139. -3400- Corrientes. Tel.: 0379-4425753, int. 171 Fax: 4425753, int. 113.
+                                      e-mail: sanchez@vet.unne.edu.ar
+                                                      8
+                Convenio COMIP-FCV. UNNE. Acta Complementaria N° 3.
+       Instituto de Ictiología del Nordeste. Fac. de Ciencias Veterinarias. Univ. Nacional del Nordeste
+emplazadas aguas abajo tales como Perichón o Corrientes. Hay alrededor de 200 guías de
+pesca, los que según la demanda trabajan con turistas alojados en algún complejo hotelero o
+por cuenta propia empleando sus propias embarcaciones.
+   En Paso de la Patria se realizan dos torneos de pesca con devolución, el Torneo Apertura
+de la Pesca del Dorado en abril y la Fiesta Nacional del Dorado en agosto. Dichos torneos
+aparecen dentro del circuito nacional de pesca deportiva, y determinan que un gran número
+de pescadores se acerquen a la localidad, generando un movimiento económico de
+consideración.
+
+ITATÍ (km 1.279 del río Paraná).
+   La afluencia de pescadores locales procedentes de las ciudades de Corrientes y
+Resistencia es baja, especialmente si se compara con Paso de la Patria. Hay 3 complejos
+hoteleros de mediana dimensión que ofrecen a los turistas el servicio completo de
+alojamiento y lancha con guía. En esta localidad hay alrededor de 60 guías de pesca que
+trabajan generalmente por cuenta propia. No se observaron guarderías que alberguen una
+cantidad importante de embarcaciones, y hay una bajada de lanchas pública así como otros
+accesos para embarcaciones en algunos campings particulares.
+   Considerando que en esta ciudad la afluencia de pescadores locales y turistas es baja,
+puede considerarse a este sitio como de bajo impacto para la pesca recreacional.
+   En Itatí se realiza el Concurso de Pesca Variada Embarcada con Devolución en octubre
+de cada año.
+
+PUERTO ABRA (km 1.315 del río Paraná).
+   Este sitio se localiza en un brazo menor, activo, del río Paraná donde existe un
+emprendimiento privado en el que se ofrece servicio completo de pesca recreacional a
+pescadores turistas. La empresa no permite el acceso a pescadores que traigan sus propias
+embarcaciones, por lo que el servicio ofrecido incluye alojamiento, embarcaciones con guía
+e implementos de pesca. En general trabajan con turistas de Brasil que acceden al predio en
+tours contratados a empresas de San Pablo así como de otros estados del sur de dicho país.
+También reciben turistas de otras provincias del país, aunque en este caso suelen llegar en
+sus vehículos particulares y no en tours de pescadores.
+   Debido a que la empresa cuenta con un número limitado de embarcaciones (alrededor de
+30) el impacto de la actividad de pesca recreativa es bajo.
+
+YAHAPÉ (km 1.347 del río Paraná).
+   Este sitio se localiza muy próximo al canal principal del río Paraná. Existen tres
+emprendimientos privados que ofrecen servicio completo de pesca recreacional a turistas y
+algunos campings donde los visitantes pueden alojarse en carpas o cabañas. Los
+establecimientos generalmente trabajan con turistas de Brasil y en menor medida de
+Argentina. Hay un número limitado de embarcaciones por lo que el impacto de la actividad
+de pesca recreativa es bajo.
+
+          S. Cabral 2139. -3400- Corrientes. Tel.: 0379-4425753, int. 171 Fax: 4425753, int. 113.
+                                      e-mail: sanchez@vet.unne.edu.ar
+                                                      9
+                Convenio COMIP-FCV. UNNE. Acta Complementaria N° 3.
+       Instituto de Ictiología del Nordeste. Fac. de Ciencias Veterinarias. Univ. Nacional del Nordeste
+ITA IBATE (km 1375 del río Paraná).
+   Esta localidad tiene una gran afluencia de pescadores turistas de diferentes provincias de
+Argentina así como extranjeros, principalmente de Brasil. Algunos de los empresarios
+entrevistados son de origen brasileño, al tiempo que los argentinos en general ofrecen sus
+servicios en páginas web en castellano y portugués, evidenciando la importancia del turismo
+internacional en esta localidad. A estos pescadores deben agregarse numerosos pescadores
+locales, los que, si bien en general realizan pesca de costa o en canoas sin motor, ejercen
+una presión sostenida sobre el recurso.
+   En Itá Ibaté hay 20 complejos de mediana a gran envergadura con con buena
+infraestructura a lo largo de la costa del río Paraná, determinando que la actividad de pesca
+recreacional sea considerada como una de las principales fuentes de ingresos del municipio.
+En este sitio hay 120 guías de pesca, la mayoría de los cuales trabaja en relación completa o
+parcial con las empresas que brindan servicio completo a los turistas.
+   En esta localidad se realiza el Concurso del Mercosur de Boga y Pacú con Devolución en
+junio.
+
+ITUZAINGÓ (km 1.467 del Río Paraná).
+   En esta localidad tuvo un gran auge la pesca recreacional luego del cierre del río
+producido por la construcción de Yacyretá, lo que generó grandes acumulaciones de
+cardúmenes al pie de la represa. Con el paso de los años y la disminución del tamaño de las
+poblaciones de las especies blanco en la zona, el atractivo se fue reduciendo y el turismo
+pesquero disminuyó de buen modo. Sin embargo, existen alrededor de 50 guías de pesca y
+tres empresas que ofrecen servicio completo en asociación con hosterías de la ciudad.
+Además, existe en Ituzaingó un importante número de pescadores locales que realizan pesca
+de costa o embarcada. En julio se realiza el Concurso Internacional de Pesca del Surubí.
+
+POSADAS (km 1.530 del Río Paraná).
+   En esta capital provincial, la pesca recreacional fue una actividad importante para la
+población local hasta el emplazamiento de Yacyretá. En la actualidad, existe actividad de
+pesca de costa en la costanera de Posadas, así como un mínimo movimiento asociado a la
+pesca embarcada, la que se realiza principalmente en modalidad anclada en busca de boga y
+especies menores, y en menor grado se practica trolling en cercanías del puente internacional
+Posadas-Encarnación, en las correderas generadas por diferentes estructuras de hormigón.
+En febrero se realiza en Candelaria un concurso de Pesca Variada con Devolución en Kajak
+y en septiembre la Maratón Internacional de Pesca Variada Embarcada con Devolución 20
+Horas organizada por el Club Pirá Pytá de Posadas.
+
+PUERTO MANÍ (km 1.687 del Río Paraná).
+   Corresponde a un destacamento de la Prefectura Naval Argentina localizado sobre el
+margen izquierdo del río Paraná próximo a Corpus, Misiones. El sitio fue seleccionado
+debido a que según algunos pobladores de la zona es utilizado como acceso al río por los
+pescadores recreativos. En general se practica pesca variada de costa de especies menores,
+          S. Cabral 2139. -3400- Corrientes. Tel.: 0379-4425753, int. 171 Fax: 4425753, int. 113.
+                                      e-mail: sanchez@vet.unne.edu.ar
+                                                      10
+                Convenio COMIP-FCV. UNNE. Acta Complementaria N° 3.
+       Instituto de Ictiología del Nordeste. Fac. de Ciencias Veterinarias. Univ. Nacional del Nordeste
+mientas que la pesca embarcada permite la captura de algunos ejemplares de especies trofeo,
+aunque con frecuencia baja. En cercanías de Puerto Maní se realiza el Torneo de Pesca
+Interno de San Ignacio en agosto.
+
+ELDORADO (km 1.806 del Río Paraná).
+   Existen varios campings y accesos al río Paraná, así como un destacamento de la PNA.
+Como en la mayoría de las ciudades de Misiones, existen clubes de pesca y tradición por
+torneos de pesca variada. La mayoría de los pescadores realizan pesca de costa, aunque
+todavía existen pescadores embarcados que buscan capturar ejemplares de dorado y surubí.
+En esta zona se realiza el Torneo de Pesca Provincial Embarcado 20 hs. en Montecarlo en
+febrero y el Torneo Interno Club de Pesca Eldorado en junio. En Puerto Rico se desarrollan
+numerosos torneos de pequeña envergadura que convocan solo a pescadores locales de la
+zona, con un calendario que incluye unos 10 encuentros anuales.
+
+Margen derecho
+ITÁ CORÁ (km 1.280 del Río Paraná).
+   Se evidencia un movimiento creciente con relación a la oferta de alternativas dirigidas al
+turismo de la pesca recreacional, existiendo dos establecimientos que ofrecen el servicio
+completo a los turistas, destacándose la afluencia de pescadores de Asunción y Brasil. Como
+en otros sitios de Paraguay, la actividad se desarrolla de manera simultánea a la pesca
+comercial, algo que no ocurre en Argentina debido a que en la Provincia de Corrientes el
+tramo que va desde la confluencia con el río Paraná hasta el límite con Misiones es
+considerado zona de reserva.
+
+CERRITO (km 1.347 del Río Paraná).
+  Presenta un movimiento relativamente importante relacionado con la pesca comercial, la
+que predomina sobre la modalidad recreacional. Al igual que en Itá Corá, en los últimos
+años empezaron a desarrollarse algunos complejos destinados a atraer al turismo de pesca, lo
+que ha comenzado a dar visibilidad a este sitio como destino pesquero.
+
+CORATEÍ (km 1.450 del Río Paraná).
+   Es uno de los sitios preferidos por los pescadores recreacionales. Si bien hay pescadores
+locales, es frecuente encontrar pescadores provenientes de Asunción, Encarnación y Brasil.
+Las especies buscadas por estos son las mismas que se mencionaron anteriormente,
+alternando entre especies menores o de tamaño trofeo según la presencia de cardúmenes.
+
+AYOLAS (km 1.467 del Río Paraná).
+   Presenta un importante movimiento relacionado con la pesca comercial, la que predomina
+de manera importante sobre la modalidad recreacional. El balneario de Ayolas es utilizado
+por numerosos pescadores comerciales y en menor medida por los recreacionales como
+puerto de desembarco. Las especies más buscadas por pescadores recreativos son el dorado,
+surubí, boga y bagre amarillo.
+          S. Cabral 2139. -3400- Corrientes. Tel.: 0379-4425753, int. 171 Fax: 4425753, int. 113.
+                                      e-mail: sanchez@vet.unne.edu.ar
+                                                      11
+                Convenio COMIP-FCV. UNNE. Acta Complementaria N° 3.
+       Instituto de Ictiología del Nordeste. Fac. de Ciencias Veterinarias. Univ. Nacional del Nordeste
+SAN COSME Y DAMIÁN (km 1.510 del Río Paraná).
+   La pesca recreacional pasó de ser una actividad tradicional antes del emplazamiento de
+Yacyretá a prácticamente desaparecer. La actividad pesquera se restringe casi
+exclusivamente a pescadores comerciales que pescan con redes de espera y espineles.
+
+CAPITAN MEZA (km 1.710 del Río Paraná).
+   La actividad pesquera se restringe casi exclusivamente a la actividad comercial y de
+subsistencia mediante el uso de redes de espera y espineles. Sin embargo, es frecuente
+encontrar pescadores recreativos cuando aparece algún cardumen importante de peces.
+
+Colecta de datos
+   A efectos de facilitar la logística y disminuir el tiempo de traslado para acceder a los
+diferentes sitios de muestreo, se planificó que el equipo de Fauna Íctica del Sector Medio
+Ambiente de la EBY visitara los sitios localizados sobre margen derecha, integrantes del
+laboratorio de Biología Pesquera Regional de la UNaM lo hiciera en margen izquierda aguas
+arriba de Yacyretá, y el equipo del INICNE los sitios localizados aguas abajo de la represa
+en la provincia de Corrientes. Lamentablemente, por problemas asociados a cuestiones
+logísticas, el equipo de Fauna Íctica del Sector Medio Ambiente de la EBY no pudo realizar
+ninguna actividad en el tramo estudiado correspondiente a margen derecho (Paraguay), por
+lo que no se dispone de datos referidos a la pesca recreativa en Paraguay.
+   La colecta de datos referidos a esfuerzo de pesca y capturas de realizó exclusivamente
+por medio de chats de WhatsApp, metodología que resultó ser la más adecuada para
+intercambiar información con un grupo de colaboradores tan amplio y diverso como los
+actores relacionados a la pesca recreativa (Sánchez et al., 2018).
+   A lo largo del año, se establecieron comunicaciones frecuentes con los colaboradores, en
+general una o dos veces por semana, obteniendo respuestas satisfactorias en la mayoría de
+los casos, lo que permite suponer que se contó con un buen nivel de cobertura. Además, se
+recibieron mensajes informando la colocación de marcas en reiteradas oportunidades,
+reforzando la relación entre el equipo de trabajo y los pescadores.
+
+Actividades realizadas
+   Se realizaron varias visitas a distintos sitios pesqueros de la franja costera sobre margen
+izquierdo del río Paraná. En cada uno de estos lugares, se realizaron talleres con la mayor
+cantidad posible de colaboradores, realizándose reuniones bastante numerosas en algunos, y
+entrevistas personalizadas en otros.
+   En estos talleres se presentó a los participantes el objetivo general de la propuesta de
+marcación de peces así como de las cuestiones particulares referidas a aspectos
+metodológicos relacionados con las actividades y cuidados que debían tenerse a la hora de
+colocar las marcas. Al mismo tiempo, se insistió en continuar con la colaboración brindada
+en el período anterior en todo aquello que se refiere al envío periódico de información
+referida a salidas de pesca y las capturas obtenidas, haciendo hincapié en que buena parte de
+los resultados esperados podrán cuantificarse de manera adecuada solamente si se cuenta
+          S. Cabral 2139. -3400- Corrientes. Tel.: 0379-4425753, int. 171 Fax: 4425753, int. 113.
+                                      e-mail: sanchez@vet.unne.edu.ar
+                                                      12
+                Convenio COMIP-FCV. UNNE. Acta Complementaria N° 3.
+       Instituto de Ictiología del Nordeste. Fac. de Ciencias Veterinarias. Univ. Nacional del Nordeste
+con una estimación aceptable del volumen total de peces capturados paralelamente a la
+marcación.
+   Además de las diferentes reuniones realizadas, surgieron numerosos contactos radiales y
+televisivos con medios locales, lo que aumentó mucho la difusión del proyecto respecto de
+lo informado para el primer trimestre. Dentro de tales actividades, la creación de una página
+en Facebook así como una cuenta en Instagram, contribuyeron a difundir los resultados del
+proyecto, contando al presente con más de 5700 seguidores que comparten en sus redes
+sociales la información producida en el marco del proyecto.
+   Además de los colaboradores del proyecto, resulta destacable el impulso recibido al
+realizar notas en el programa Amigos de Pesca de Carlos Solís, que se emitía en canales
+locales hasta fines de junio y que actualmente puede verse en América Sport. De igual
+forma, el apoyo recibido de parte de Pablo De Santi, uno de los pescadores recreativos
+argentinos que más seguidores tiene en las redes sociales, al realizarnos una entrevista para
+su programa Tiempo de Pesca, determinó que numerosos colaboradores se interesaran en
+apoyar desinteresadamente el proyecto, permitiéndonos extender la zona en que se colocan
+las marcas mucho más allá de lo previsto en el convenio. También se realizaron entrevistas
+con el equipo de Naturaltube, Flydreamers, entre otros que regularmente visibilizan las
+actividades realizadas en sus redes sociales.
+   A continuación, se presentan los resultados obtenidos entre febrero de 2019 y enero de
+2020, destacándose las cuestiones consideradas relevantes para el crecimiento futuro de la
+iniciativa propuesta en el marco del Convenio COMIP-UNNE.
+
+Resultados
+
+Caracterización hidrológica del río Paraná durante el período de estudios
+   Las variaciones del nivel hidrométrico pueden tener consecuencias importantes sobre la
+pesca, ya que niveles muy bajos dificultan la navegación por el afloramiento en la superficie
+del río de bancos de arena y piedras, mientras que durante las crecientes extraordinarias en
+que el río desborda permiten que los peces salgan del cauce principal y se dispersen en el
+valle de inundación, al tiempo que las variaciones bruscas de niveles de mediana magnitud
+estimulan a los peces a realizar migraciones ascendentes y descendentes de acuerdo con el
+cambio de las corrientes, remansos, veriles, etc., dificultando la captura a los pescadores
+recreativos. Las variaciones de altura hidrométrica para Itatí, Itá Ibaté, Ituzaingó, Posadas y
+Puerto Libertador General San Martín durante el período informado se presentan en la
+Figura 2.
+
+
+
+
+          S. Cabral 2139. -3400- Corrientes. Tel.: 0379-4425753, int. 171 Fax: 4425753, int. 113.
+                                      e-mail: sanchez@vet.unne.edu.ar
+                                                      13
+                                             Convenio COMIP-FCV. UNNE. Acta Complementaria N° 3.
+                                    Instituto de Ictiología del Nordeste. Fac. de Ciencias Veterinarias. Univ. Nacional del Nordeste
+
+                                                                                                                                        12
+               10
+
+
+
+
+                                                                                                                                             Alturas Puerto Libertador (m)
+Nivel hidrométrico (m)
+
+
+
+
+                         8                                                                                                              9
+
+
+                         6
+                                                                                                                                        6
+
+                         4
+                                                                                                                                        3
+                         2
+
+
+                         0                                                                                                              0
+                             26/04/2019
+                             03/05/2019
+                             10/05/2019
+                             17/05/2019
+                             24/05/2019
+                             31/05/2019
+                             07/06/2019
+                             14/06/2019
+                             21/06/2019
+                             28/06/2019
+                             05/07/2019
+                             12/07/2019
+                             19/07/2019
+                             26/07/2019
+                             02/08/2019
+                             09/08/2019
+
+
+
+
+                             15/11/2019
+                             22/11/2019
+                             29/11/2019
+                             06/12/2019
+                             13/12/2019
+                             20/12/2019
+                             27/12/2019
+                             03/01/2020
+                             10/01/2020
+                             17/01/2020
+                             24/01/2020
+                             31/01/2020
+                             01/02/2019
+                             08/02/2019
+                             15/02/2019
+                             22/02/2019
+                             01/03/2019
+                             08/03/2019
+                             15/03/2019
+                             22/03/2019
+                             29/03/2019
+                             05/04/2019
+                             12/04/2019
+                             19/04/2019
+
+
+
+
+                             16/08/2019
+                             23/08/2019
+                             30/08/2019
+                             06/09/2019
+                             13/09/2019
+                             20/09/2019
+                             27/09/2019
+                             04/10/2019
+                             11/10/2019
+                             18/10/2019
+                             25/10/2019
+                             01/11/2019
+                             08/11/2019
+                                         Itatí         Itá Ibaté          Ituzaingó             Posadas             Puerto Libertador
+                             Figura 2. Variaciones del nivel hidrométrico del río Paraná en Itatí, Itá Ibaté, Ituzaingó,
+                             Posadas y Puerto Libertador General San Martín desde febrero de 2019 a enero de 2020.
+
+                                El ciclo hidrológico se caracterizó por la ocurrencia de niveles hidrométricos bajos,
+                             caracterizado por problemas para la navegación en la mayor parte de este con excepción de
+                             un breve lapso durante el otoño de 2019, donde se registró un leve incremento. Este
+                             comportamiento particular del río Paraná determinó que entre julio y diciembre de 2019 se
+                             registrara una bajante histórica, y si bien a inicios de 2020 el nivel del río Paraná ascendió
+                             levemente, las proyecciones de diferentes instituciones relacionadas al estudio de la
+                             hidrología indican que no se registrarán crecientes durante todo el verano de 2020.
+                                La bajante extraordinaria registrada en octubre de 2019 determinó la emergencia de
+                             numerosos bancos de arena en el Alto Paraná así como el aislamiento de manera importante
+                             del valle de inundación respecto del cauce principal. En estas condiciones de bajante
+                             extrema, los grandes cardúmenes de las especies blanco comenzaron a concentrarse en el
+                             canal del río, siendo frecuentes los avistajes de peces desde las embarcaciones, algo que fue
+                             facilitado por la elevada transparencia del agua. Esta particularidad atrajo a muchos
+                             pescadores, algunos de los cuales comenzaron a extraer cantidades de ejemplares mayores a
+                             lo habitual. Lo antes mencionado fue percibido por los pescadores como un peligro latente,
+                             ya que la actividad de pesca se veía muy facilitada y, ante las dificultades de las autoridades
+                             para controlar que se produzcan infracciones relacionadas a la violación de los cupos de
+                             extracción, comenzaron a levantarse voces pidiendo la suspensión de la pesca. El mayor
+                             nivel de conflictividad se alcanzó cuando la provincia de Corrientes decidió ampliar la zona
+                             de aplicación de la veda extendida al Alto Paraná, lo que fue percibido negativamente por
+                             algunos pescadores, especialmente al considerar la gran exposición de los cardúmenes
+                             generada por la bajante extraordinaria.
+
+
+                                       S. Cabral 2139. -3400- Corrientes. Tel.: 0379-4425753, int. 171 Fax: 4425753, int. 113.
+                                                                   e-mail: sanchez@vet.unne.edu.ar
+                                                                                   14
+                Convenio COMIP-FCV. UNNE. Acta Complementaria N° 3.
+       Instituto de Ictiología del Nordeste. Fac. de Ciencias Veterinarias. Univ. Nacional del Nordeste
+   Ante esta situación las autoridades de la región tomaron decisiones diferentes. Paraguay y
+la provincia argentina de Misiones decidieron continuar con la veda tradicional de 45 días
+corridos entre el 4 de noviembre y el 20 de diciembre de 2019, mientras que las provincias
+de Corrientes, Chaco y Formosa (las dos últimas sobre el río Paraguay) decidieron mantener
+la propuesta de veda extendida e iniciar su aplicación a modo de prueba piloto el 1 de
+noviembre de 2019 por el término de un año. Hacia finales de octubre, ante la ocurrencia de
+un nuevo descenso del nivel del río Paraná, Corrientes decidió vedar completamente la
+pesca en el Paraná hasta el 26 de diciembre, y posteriormente, considerando que los niveles
+hidrológicos no se recuperaron se habilitó la pesca recreativa en el Alto Paraná manteniendo
+una prohibición total de extracción de ejemplares de surubí y dorado hasta finales de
+febrero, por considerarlas especies vulnerables en un escenario de incremento del esfuerzo
+de pesca. Esta decisión también generó polémicas, ya que en Paraguay, a partir del 21 de
+diciembre de 2019 la pesca en sus modalidades recreativa y comercial volvió a desarrollarse
+normalmente, determinando que se generaran conflictos entre pescadores y autoridades de
+aplicación de ambas márgenes que nunca antes tuvieron reglamentaciones tan disímiles. Los
+aspectos antes mencionados afectaron de manera negativa el desarrollo de la pesca
+recreativa, ya que los turistas no pudieron prever los cambios en la normativa y en ocasiones
+desistieron de realizar sus viajes de pesca, solicitando devolución de señas o bien dejaban
+sin efecto las reservas.
+
+
+
+Marcación de peces
+
+    En cada sitio se realizaron talleres destinados a capacitar a los colaboradores del
+proyecto en la colocación de las marcas en los peces con el objetivo de transmitirles las
+buenas prácticas de manejo que esta metodología conlleva. Se hizo especial hincapié en la
+necesidad de contar con las medidas de peso y longitud de los ejemplares marcados así
+como con fotos tomadas a diferente distancia donde se aprecie claramente al pez y pueda
+leerse el número de la marca colocada. Finalmente, se realizaron recomendaciones para la
+devolución de los ejemplares en el lugar de captura, vivos. Si bien todos los colaboradores
+recibieron estas instrucciones, se registraron casos en que en lugar de colocarse la marca por
+debajo de la aleta dorsal, lo hicieron muy por detrás o inclusive por delante, lo que si bien
+permite la identificación de los ejemplares, posiblemente se desprenda del pez en un tiempo
+relativamente corto, de 2 a 3 meses, impidiendo que pueda ser recapturado transcurrido este
+tiempo.
+    Hacia el final del primer año de estudios, se registraron 1079 peces marcados, de los
+cuales 479 se marcaron en el tramo compartido del río Paraná objeto del presente proyecto,
+y 600 fuera de dicho tramo. El total de recapturas asciende a 34, 16 dentro del tramo
+compartido y 18 fuera del mismo. De este total de recapturas, solo en tres ocasiones no pudo
+identificarse el número de la marca debido a una mala fotografía tomada por el colaborador.
+De los 35 ejemplares recapturados, 14 fueron sacrificados y 21 se devolvieron en buenas
+
+          S. Cabral 2139. -3400- Corrientes. Tel.: 0379-4425753, int. 171 Fax: 4425753, int. 113.
+                                      e-mail: sanchez@vet.unne.edu.ar
+                                                      15
+                Convenio COMIP-FCV. UNNE. Acta Complementaria N° 3.
+       Instituto de Ictiología del Nordeste. Fac. de Ciencias Veterinarias. Univ. Nacional del Nordeste
+condiciones, destacándose un caso en que un ejemplar de dorado fue recapturado en 2
+oportunidades.
+
+Relevamiento pesquero
+
+
+PASO DE LA PATRIA (km 1.240 del río Paraná).
+   En esta localidad se recogió información de diez establecimientos que ofrecen diferentes
+servicios a los pescadores, sean simplemente bajadas de lanchas, hasta aquellos que brindan
+alojamiento y alquiler de lanchas con guía. La cantidad de embarcaciones por
+establecimiento y por día varió desde 0 a 48, con un promedio diario para la localidad en el
+año de 11.
+   En lo que respecta a las capturas, en la mayoría de los casos hubo alguna pieza cobrada,
+variando de 1 a 33 peces, promediando 3 ejemplares por embarcación por día.
+   En lo que se refiere a las especies capturadas predominó la boga con 102 ejemplares,
+seguida por dorado con 74, pacú con 26, salmón con 20, surubí con 12 y manguruyú con 3
+piezas. La mayoría de las capturas de boga, pacú y salmón se realizaron con maíz, los
+surubíes y manguruyúes con carnada viva (morena) y en menor medida con señuelo
+(trolling), y los dorados con carnada viva y con señuelo. Los pescadores se repartieron entre
+locales y turistas en cantidades similares.
+   En esta localidad de marcaron 134 ejemplares, correspondiendo a 2 surubíes atigrados, 4
+surubíes pintados, 5 manguruyúes y 123 dorados. Se registraron un total de 3 recapturas en
+este puerto, todas correspondientes a dorados, una de las cuales no se logró identificar el
+número. De los dos restantes, uno fue marcado el 15 de junio y recapturado el 29 del mismo
+mes y el segundo marcado el 19 de diciembre y recapturado el 18 de enero, ambos marcados
+y recapturados en Paso de la Patria.
+
+ITATÍ, PUERTO ABRA y YAHAPÉ (km 1.279, 1.315 del río Paraná y 1.347 del río
+Paraná, respectivamente).
+   Se obtuvo información válida para las estadísticas pesqueras de nueve establecimientos y
+tres bajadas de lanchas, los que presentaron un buen nivel de actividad. En este período el
+máximo de lanchas con pescadores en un establecimiento fue 38, correspondiendo el
+promedio mensual a 8, registrándose varios días sin actividad en algunos establecimientos.
+En esta zona la afluencia de colectivos con turistas de Brasil es más importante que en Paso
+de la Patria, siendo en consecuencia menor la incidencia de pescadores locales.
+   En lo que respecta a las capturas, la mayoría de las lanchas regresaron con registros
+positivos, especialmente quienes prefirieron pescar bogas. Además, se registraron otras
+especies menos frecuentes en las capturas como manguruyú, armado y palometa, aunque en
+general la mayoría de los turistas intentó pescar boga, pacú, surubí y dorado, promediando 4
+ejemplares por salida. Cabe mencionar que quienes buscaron las especies de mayor porte
+capturaron entre 1 y 6 peces por día, en tanto que los que pescaron boga, pacú y salmón,
+capturaron entre 3 y 32 ejemplares. En esta zona, los pescadores en general son turistas, al
+
+          S. Cabral 2139. -3400- Corrientes. Tel.: 0379-4425753, int. 171 Fax: 4425753, int. 113.
+                                      e-mail: sanchez@vet.unne.edu.ar
+                                                      16
+                Convenio COMIP-FCV. UNNE. Acta Complementaria N° 3.
+       Instituto de Ictiología del Nordeste. Fac. de Ciencias Veterinarias. Univ. Nacional del Nordeste
+tiempo que los locales predominan en la costa. Las especies con más capturas fueron el
+dorado con 252 registros, seguido de boga (217), surubí (128), salmón (79) y pacú (48).
+   En esta zona se marcaron 134 ejemplares, 70 dorados, 26 surubíes, 9 manguruyúes, 28
+pacúes y 1 boga, se registraron 5 recapturas de las cuales 3 fueron de dorados que fueron
+marcados y recapturados en Itatí, uno marcado el 28/4 y recapturado el 2/11, el segundo
+marcado el 28/12 y recapturado el 29/12 y el tercero que recorrió 30 km de Paso de la Patria
+hasta Itatí, fue marcado el 23 de septiembre y recapturado el 3 de enero. Además se
+recapturaron dos surubíes, uno marcado el 6 de enero en Puerto Corazón y recapturado en el
+mismo lugar al día siguiente y el segundo marcado y recapturado en Itatí.
+
+ITA IBATE (km 1375 del río Paraná).
+   En esta localidad se recogió información de doce establecimientos de pesca recreativa
+además de algunos guías de pesca que realizan su actividad profesional de manera
+independiente. La cantidad de embarcaciones por establecimiento y por día varió desde 0 a
+30 (llegó a 40 en la bajada de lanchas municipal), con un promedio para el ciclo anual de 10.
+Los mayores registros corresponden al mes de octubre, posiblemente porque se esperaba la
+implementación de la veda tradicional a partir de noviembre. La mayoría de las
+embarcaciones eran conducidas por un guía (pescadores turistas), con excepción de algunos
+grupos de pescadores locales que accedieron al río empleando la bajada municipal con
+embarcación propia.
+   En casi la totalidad de las salidas de pesca se registraron capturas, en especial quienes
+intentaron pescar boga y pacú (entre ambas especies se registraron 717 capturas), especies
+que fueron las más pescadas en el mes de febrero. A partir de marzo, cuando la afluencia de
+turistas aumentó se elevaron los registros de surubí y dorado y disminuyó la captura de
+boga, que prácticamente desapareció para volver a repuntar desde mediados de junio. La
+mayor cantidad de capturas correspondió a la boga con 559 ejemplares, seguida de surubí
+(288), dorado (163) y pacú (158).
+   En este sitio se realizó la primera marcación realizada en el marco del proyecto,
+colocándose durante este primer año 91 marcas distribuidas de la siguiente manera: 50
+surubíes, 31 dorados, 6 manguruyúes y 4 pacúes. El 23 de febrero tuvo lugar la primera
+recaptura, correspondiendo a un ejemplar de surubí que fue marcado y recapturado luego de
+8 días en el mismo sitio de pesca, “Punta Gallino”. La segunda recaptura también
+correspondió a un surubí que fue marcado el 15 de febrero y recapturado el 31 de julio, la
+tercera a un manguruyú marcado el 4 de octubre y recapturado el 23 del mismo mes y la
+cuarta recaptura corresponde a un pacú marcado el 27 de diciembre y recaturado el 1 de
+enero en el mismo lugar. En los cuatro casos los ejemplares fueron devueltos en buenas
+condiciones después de ser recapturados.
+
+ITUZAINGO (km 1.467 del Río Paraná).
+   Se obtuvieron datos pesqueros de tres empresas que ofrecen servicio completo de pesca,
+las que contratan a varios guías locales que colaboraron activamente en la marcación. La
+cantidad de embarcaciones por establecimiento y por día varió desde 0 a 7, con un promedio
+          S. Cabral 2139. -3400- Corrientes. Tel.: 0379-4425753, int. 171 Fax: 4425753, int. 113.
+                                      e-mail: sanchez@vet.unne.edu.ar
+                                                      17
+                Convenio COMIP-FCV. UNNE. Acta Complementaria N° 3.
+       Instituto de Ictiología del Nordeste. Fac. de Ciencias Veterinarias. Univ. Nacional del Nordeste
+para el período informado de 3. En este sitio, los mayores registros de embarcaciones
+correspondieron a septiembre y octubre.
+   En lo que respecta a las capturas, casi en la totalidad de los casos hubo alguna pieza
+cobrada, ya que con excepción de cuatro salidas de pesca en que no hubo capturas, en el
+resto se registraron de 1 a 22 peces, promediando 5 ejemplares por embarcación por día.
+   En lo que se refiere a las especies capturadas predominó la boga con 274 piezas, seguido
+por ejemplares de salmón (273), pacú (83), bagre (40), surubí (16), dorado (15) y
+manguruyú (1). La mayoría de las capturas se realizaron con carnada, incluyendo maíz,
+trozos de pescado, salamín, masa, etc.
+   En esta localidad se marcaron 30 ejemplares de especies blanco, 17 surubíes, 9 dorados, 2
+manguruyúes y dos pacúes, uno de los cuales, habiendo sido marcado el 2 de abril, fue
+recapturado el 20 de abril por un pescador particular que desconocía la existencia del
+proyecto, pero que informó la captura al equipo de trabajo empleando el número telefónico
+disponible en la marca para el envío de mensajes de WhatsApp. Como en el caso del surubí
+recapturado en Itá Ibaté, el pacú fue recapturado casi en el mismo lugar donde fue marcado,
+en proximidades de la boya 63 que demarca la zona de reserva de 3 km aguas abajo de la
+represa de Yacyretá.
+
+POSADAS (km 1.530 del Río Paraná).
+   El equipo de la UNaM realizó numerosas salidas de campo en Posadas, ya que en esta
+localidad la pesca se realiza preferentemente de costa. Recorrieron la costanera y el club
+Pyrá Pytá, así como la costanera de Candelaria y el club del Río en San Ignacio.
+   En las entrevistas realizadas, registraron 165 capturas obtenidas por los pescadores de
+costa, registrándose 7 dorados, 26 bogas, 28 bagres, 12 armados y 7 corvinas,
+correspondiendo el resto a especies no deseadas como pirañas y rayas, entre otras.
+   Solo se registró una lancha sin capturas en cercanías del puente Posadas-Encarnación,
+evidenciando que la pesca embarcada fue muy poco frecuente.
+   Varios colaboradores de Posadas viajaron a pescar embarcados a Ituzaingó, donde
+capturaron boga, surubí, dorado, pacú y salmón. De igual forma, otros pescadores de
+Misiones viajaron a acampar a Itá Ibaté e Ituzaingó, donde capturaron bogas, dorados,
+bagres y salmones practicando pesca de costa, quedando de manifiesto la preferencia por
+pescar en los sitios ubicados aguas abajo de Yacyretá.
+   Los colaboradores de Posadas no marcaron ningún ejemplar en el ciclo informado.
+
+PUERTO MANÍ (km 1.687 del Río Paraná).
+  En esta localidad no se registraron pescadores durante las visitas realizadas en 7
+oportunidades por el equipo de la UNaM. Personal de Prefectura informó que cada vez es
+menos frecuente el uso de la bajada de lanchas por parte de pescadores recreativos.
+
+ELDORADO (km 1.806 del Río Paraná).
+   En Eldorado se registraron 40 salidas de pesca embarcada, sin superar 5 en un día
+particular. La pesca de costa fue escasa y en general restringida a los clubes de pesca. Las
+          S. Cabral 2139. -3400- Corrientes. Tel.: 0379-4425753, int. 171 Fax: 4425753, int. 113.
+                                      e-mail: sanchez@vet.unne.edu.ar
+                                                      18
+                Convenio COMIP-FCV. UNNE. Acta Complementaria N° 3.
+       Instituto de Ictiología del Nordeste. Fac. de Ciencias Veterinarias. Univ. Nacional del Nordeste
+capturas registradas fueron escasas, destacándose un surubí, tres dorados, 9 bagres, 7 bogas,
+5 armados y 2 mandurés, acompañados en general por pirañas u otras especies no deseadas.
+   Los colaboradores de Eldorado no marcaron ningún ejemplar en el ciclo informado.
+
+PARAGUAY
+    Lamentablemente no se cuenta con datos correspondientes a esfuerzo de pesca y capturas.
+Sin embargo, se participó de tres torneos de pesca en donde se pudieron realizar
+marcaciones, difundir el proyecto e incluso hacer notas periodísticas. El primer encuentro de
+pescadores deportivos se realizó en la localidad de Capitán Meza el 3 y 4 de Agosto donde
+se marcaron un total de 6 piezas, de las cuales 2 fueron bagres, 2 bogas y 2 mandurés. El
+segundo torneo realizado en la localidad de Bella Vista Itapúa, fue un evento de gran
+envergadura, el cual año a año viene creciendo en cuanto a la cantidad de participantes
+superando en esta oportunidad los 400 equipos. Sin embargo, como en la mayoría de los
+sitios emplazados aguas arriba de la represa, las capturas son poco frecuentes y de especies
+de poca importancia. En este evento se marcaron 19 ejemplares: 16 bagres, 1 manduré y 2
+dorados. El ultimo evento de pesca deportiva fue el torneo del dorado que organiza el club
+de pesca de Ayolas, el que históricamente fue un evento de pesca sin devolución, y que
+gracias al esfuerzo del equipo de la Entidad Binacional Yacyretá margen derecho se logró
+que por primera vez los equipos puedan participar en la modalidad de pesca y devolución y
+de esa forma apoyar al proyecto de marcación de peces. Se lograron marcar 63 piezas,
+dentro de las cuales 39 fueron bogas, 16 salmones, 7 bagres y 1 surubí. Dentro de las piezas
+marcadas se encontraron las ganadoras del evento, lo cual motivo a la comisión directiva a
+replantear la modalidad del torneo expresando que posiblemente de ahora en más sea un
+evento de pesca y devolución.
+
+
+Estadísticas pesqueras
+   A continuación, se presenta la información obtenida de pescadores, guías de pesca y
+establecimientos vinculados al turismo de pesca recreacional principalmente mediante
+mensajes de WhatsApp. En la figura 3 se presenta una estimación preliminar de la
+representatividad que poseen los colaboradores respecto del universo total de actores de la
+localidad en que se encuentran. En Posadas y Eldorado, donde casi la totalidad de los
+pescadores son particulares y realizan la actividad de pesca recreativa como esparcimiento,
+el porcentaje de colaboradores se estimó a partir del número de personas que brindan
+información al proyecto con relación al total estimado a nivel global. En Posadas, el total
+corresponde al número medio de personas que pescan diariamente tanto de costa en la
+costanera como embarcados, mientras que, en Eldorado, el total se estimó a partir de los
+socios del club de pesca, quienes realizan la actividad de manera frecuente. Por otro lado, en
+Corrientes, donde la actividad está fuertemente relacionada al ejercicio profesional de
+cientos de guías de pesca, la estimación se realizó considerando principalmente a estos
+actores, ya que muchos de ellos colaboran activamente con el envío de datos y tienen una
+presencia casi permanente en el río.
+
+          S. Cabral 2139. -3400- Corrientes. Tel.: 0379-4425753, int. 171 Fax: 4425753, int. 113.
+                                      e-mail: sanchez@vet.unne.edu.ar
+                                                      19
+                         Convenio COMIP-FCV. UNNE. Acta Complementaria N° 3.
+                Instituto de Ictiología del Nordeste. Fac. de Ciencias Veterinarias. Univ. Nacional del Nordeste
+
+
+           En los análisis que se presentan a continuación los resultados referidos como Itatí,
+        corresponden a la combinación de lo registrado para Itatí, Puerto Abra y Yahapé, sitios
+        considerados de bajo impacto para la pesca recreativa, pero que en su conjunto cobran
+        importancia regional, especialmente si se considera la baja densidad poblacional que
+        caracteriza a este segmento costero del río Paraná. Además, es importante considerar que al
+        hallarse estos tres sitios ubicados en una zona de escasos 60 km, es habitual que se
+        comporten como una unidad, siendo muy frecuente que los pescadores y guías se trasladen
+        por vía terrestre o en lancha de un sitio a otro; por ejemplo, si hay muy buen pique en
+        Yahapé casi no se pesca en Puerto Abra o Itatí, o si aparece un cardumen grande en Puerto
+        Abra o Itatí casi todos los pescadores van hacia allí. De esta forma, considerar a cada punto
+        como un sitio separado arrojaría variabilidad en exceso, y en los tres lugares aparecerían
+        muchos días sin pescadores, así como otros con valores muy elevados al sumar pescadores
+        procedentes de una localidad cercana a los propios del lugar.
+
+           Para cada análisis se presentan los resultados obtenidos en el ciclo anual previamente
+        analizado, lo que será discutido de manera comparativa posteriormente.
+
+
+
+
+Figura 3. Cantidad relativa de actores que colaboran con el proyecto según sitio de pesca recreativa sobre margen
+izquierdo del río Paraná.
+
+           Como puede apreciarse en la Figura 3, el porcentaje de colaboradores es muy variable,
+        aunque en todos los casos es suficiente como para caracterizar el esfuerzo de pesca, las artes
+        empleadas y las especies capturadas. En casi todos los sitios se incremento la cantidad
+        porcentual de colaboradores respecto del total de pescadores con excepción de Itatí, sitio en
+        el que la cantidad de usuarios se incrementó de manera notable en el último año, lo que
+        dificultó llegar al obtener información de muchos de ellos.
+           A continuación, se presentan las principales estadísticas pesqueras obtenidas durante el
+        desarrollo del proyecto. En la Tabla II, se presenta la composición porcentual de especies
+        capturadas, discriminada por tramos del río, las que pertenecen a por lo menos 16 entidades
+        taxonómicas diferentes. Posteriormente, se presenta información pormenorizada por sitio de
+        muestreo correspondiente a artes de pesca y especies capturadas por arte empleado.
+
+                   S. Cabral 2139. -3400- Corrientes. Tel.: 0379-4425753, int. 171 Fax: 4425753, int. 113.
+                                               e-mail: sanchez@vet.unne.edu.ar
+                                                               20
+                    Convenio COMIP-FCV. UNNE. Acta Complementaria N° 3.
+           Instituto de Ictiología del Nordeste. Fac. de Ciencias Veterinarias. Univ. Nacional del Nordeste
+    Finalmente, se presentan resultados asociados a los movimientos de los peces y tamaño de
+    los cardúmenes estimados a partir del marcado y recaptura.
+
+Tabla II. Abundancia porcentual de las especies capturadas en el río Paraná en tramos compartidos de
+Argentina y Paraguay. En Puerto Maní no se encontraron pescadores en las visitas realizadas. En los
+pesqueros de Paraguay no se colectaron datos. En negrita se destacan los porcentajes máximos
+correspondientes a cada sitio. Se informan los porcentajes para el presente ciclo (19-20) así como
+respecto del estudio previo (17-18).
+     Especies          Paso                                                          Total Total
+                                  Itatí Itá Ibaté Ituzaingó Posadas Eldorado
+    agrupadas      de la Patria                                                      19-20 17-18
+ Boga                  43,04      28,70 46,39        39,03      21,67      16,67     38,70 49,64
+ Dorado                31,22      33,33 13,53         2,14       5,83       7,14     16,79 6,86
+ Surubí                 5,06      16,93 23,90         2,28       0,00       2,38     14,53 6,42
+ Salmón                 8,44      10,45    1,99      38,89       0,00       0,00     12,93 6,67
+ Pacú                  10,97       6,35   13,11      11,82       0,00       0,00     10,29 16,15
+ Bagre                  0,00       0,00    0,00       5,70      23,33      21,43      2,51   3,63
+ Palometa               0,00       0,93    0,00       0,00      19,17      33,33      1,44   2,09
+ Armado                 0,00       1,06    0,00       0,00      10,00      11,90      0,82   4,21
+ Manguruyú              1,27       0,53    1,08       0,14       0,00       0,00      0,69   0,46
+ Sábalo                 0,00       1,72    0,00       0,00       0,00       0,00      0,42   0,03
+ Raya                   0,00       0,00    0,00       0,00      10,00       0,00      0,39   0,12
+ Corvina                0,00       0,00    0,00       0,00       5,83       0,00      0,23   0,03
+ Mojarra                0,00       0,00    0,00       0,00       2,50       0,00      0,10   0,02
+ Manduré                0,00       0,00    0,00       0,00       0,00       4,76      0,07   0,04
+ L. acutidens           0,00       0,00    0,00       0,00       1,67       0,00      0,07   0,21
+ Patí                   0,00       0,00    0,00       0,00       0,00       2,38      0,03   0,20
+
+       La boga, el dorado y el surubí fueron las especies más capturadas, las que junto al salmón
+    y el pacú se registraron sin excepción en todos los sitios aguas abajo de la represa (Tabla II).
+    Coincidiendo con lo esperado, aguas arriba de la represa se observa una caída en la
+    importancia relativa de estas especies a expensas de un incremento de otras de menor
+    preferencia por parte de los pescadores recreativos como bagre, palometa y raya.
+
+    Variación espacial y temporal del esfuerzo de pesca
+
+    PASO DE LA PATRIA
+       En la Figura 4 se presenta el promedio diario de embarcaciones por establecimiento
+    registrado por mes. Esta información se obtuvo a partir de información de las guarderías de
+    lanchas existentes en la localidad, las que generalmente trabajan con pescadores locales, así
+    como de cinco de los ocho establecimientos que ofrecen diferentes servicios a los
+    pescadores (generalmente turistas), tales como bajada de lanchas, alojamiento y alquiler de
+    lanchas con y sin guía. La cantidad de embarcaciones por establecimiento y por día varió
+    desde 0 a 35. En la guardería la amplitud fue mayor, variando desde 0 hasta 48
+    embarcaciones largadas en una sola jornada. Se observó un mayor esfuerzo de pesca los
+              S. Cabral 2139. -3400- Corrientes. Tel.: 0379-4425753, int. 171 Fax: 4425753, int. 113.
+                                          e-mail: sanchez@vet.unne.edu.ar
+                                                          21
+                              Convenio COMIP-FCV. UNNE. Acta Complementaria N° 3.
+                     Instituto de Ictiología del Nordeste. Fac. de Ciencias Veterinarias. Univ. Nacional del Nordeste
+           fines de semana, cuando las guarderías bajan en promedio 23 lanchas por día, mientras que
+           los días de semana dicho valor disminuye a 5.
+              Los meses de mayor actividad fueron los de primavera-verano, con valores mínimos en
+           los meses más fríos. Este comportamiento se diferenció al correspondiente al ciclo anual
+           estudiado previamente, ya que enero de 2017 se caracterizó por caudales altos de agua y
+           lluvias intensas lo que derivó en una escasa afluencia de pescadores. Debe mencionarse que
+           en general los meses de noviembre y diciembre suelen ser meses de baja afluencia de
+           pescadores turistas, ya que coinciden con la veda pesquera, las fiestas de fin de año y el
+           inicio de las vacaciones familiares.
+
+
+                  Promedio diario de lanchas                                                  Promedio diario de lanchas
+ 15                                                                        21
+                                                                           18
+ 12
+                                                                           15
+  9                                                                        12
+
+  6                                                                         9
+                                                                            6
+  3
+                                                                            3
+  0                                                                         0
+      oct. nov. dic. ene. feb. mar. abr. may. jun. jul. ago. sep.               feb. mar. abr. may. jun. jul. ago. sep. oct. nov. dic. ene.
+       17 17 17 18 18 18 18 18 18 18 18 18                                       19 19 19 19 19 19 19 19 19 19 19 20
+Figura 4. Promedio diario de número de lanchas por establecimiento registrado en la zona de Paso de la Patria. Se
+presentan los resultados obtenidos en los dos ciclos anuales estudiados.
+
+           ITATÍ
+              En la Figura 5 se presenta la información recogida a partir de nueve establecimientos que
+           ofrecen servicio completo a turistas y tres bajadas de lanchas. Como en Paso de la Patria los
+           meses de menor actividad correspondieron al invierno, registrándose los mayores guarismos
+           en primavera verano.
+
+
+                  Promedio diario de lanchas                                                  Promedio diario de lanchas
+ 12                                                                       18
+
+                                                                          15
+  9
+                                                                          12
+
+  6                                                                         9
+
+                                                                            6
+  3
+                                                                            3
+
+  0                                                                         0
+      oct. nov. dic. ene. feb. mar. abr. may. jun. jul. ago. sep.               feb. mar. abr. may. jun. jul. ago. sep. oct. nov. dic. ene.
+       17 17 17 18 18 18 18 18 18 18 18 18                                       19 19 19 19 19 19 19 19 19 19 19 20
+Figura 5. Promedio diario de número de lanchas por establecimiento registrado en la zona de Itatí, Puerto Abra y
+Yahapé. Se presentan los resultados obtenidos en los dos ciclos anuales estudiados.
+                        S. Cabral 2139. -3400- Corrientes. Tel.: 0379-4425753, int. 171 Fax: 4425753, int. 113.
+                                                    e-mail: sanchez@vet.unne.edu.ar
+                                                                    22
+                             Convenio COMIP-FCV. UNNE. Acta Complementaria N° 3.
+                    Instituto de Ictiología del Nordeste. Fac. de Ciencias Veterinarias. Univ. Nacional del Nordeste
+          ITA IBATE
+             En esta localidad se recogió información de doce establecimientos de pesca recreativa así
+          como de la bajada de lanchas municipal. La cantidad de embarcaciones por establecimiento
+          y por día varió desde 0 a 40. A diferencia de otros sitios no se evidenció una caída tan
+          marcada de la actividad en invierno, estimándose los mayores guarismos en octubre de
+          2019, previo al inicio de la veda (Figura 6). En este sitio la mayoría de las embarcaciones
+          eran conducidas por un guía (pescadores turistas), con excepción de algunos grupos de
+          pescadores que accedieron al río empleando la bajada municipal con lancha propia, siendo
+          en general pescadores locales.
+
+
+                  Promedio diario de lanchas                                                 Promedio diario de lanchas
+15                                                                        21
+                                                                          18
+12
+                                                                          15
+ 9                                                                        12
+
+ 6                                                                         9
+                                                                           6
+ 3
+                                                                           3
+ 0                                                                         0
+     oct. nov. dic. ene. feb. mar. abr. may. jun. jul. ago. sep.                feb. mar. abr. may. jun. jul. ago. sep. oct. nov. dic. ene.
+      17 17 17 18 18 18 18 18 18 18 18 18                                        19 19 19 19 19 19 19 19 19 19 19 20
+Figura 6. Promedio diario de número de lanchas por establecimiento registrado en la zona de Itá Ibaté. Se
+presentan los resultados obtenidos en los dos ciclos anuales estudiados.
+
+          ITUZAINGÓ
+             En esta localidad se cuenta con la colaboración de tres empresas que ofrecen servicio de
+          alquiler de lanchas con guía. La cantidad de embarcaciones por establecimiento y por día
+          varió desde 0 a 7. También en este sitio comenzó a aumentar el número diario de
+          embarcaciones dedicadas a la pesca recreativa previo a la veda (Figura 7).
+
+
+                  Promedio diario de lanchas                                                 Promedio diario de lanchas
+9                                                                         9
+
+
+
+6                                                                         6
+
+
+
+3                                                                         3
+
+
+
+0                                                                         0
+     oct. nov. dic. ene. feb. mar. abr. may. jun. jul. ago. sep.               feb. mar. abr. may. jun. jul. ago. sep. oct. nov. dic. ene.
+      17 17 17 18 18 18 18 18 18 18 18 18                                       19 19 19 19 19 19 19 19 19 19 19 20
+Figura 7. Promedio diario de número de lanchas por establecimiento registrado en la zona de Ituzaingó. Se
+presentan los resultados obtenidos en los dos ciclos anuales estudiados.
+                       S. Cabral 2139. -3400- Corrientes. Tel.: 0379-4425753, int. 171 Fax: 4425753, int. 113.
+                                                   e-mail: sanchez@vet.unne.edu.ar
+                                                                   23
+                            Convenio COMIP-FCV. UNNE. Acta Complementaria N° 3.
+                   Instituto de Ictiología del Nordeste. Fac. de Ciencias Veterinarias. Univ. Nacional del Nordeste
+          POSADAS
+            En este sitio no se encontraron operadores que ofrezcan servicio completo de pesca, se
+          observaron embarcaciones particulares con la excepción de una ocasión en proximidades del
+          puente. La mayoría de los colaboradores del proyecto viajaron a pescar en Corrientes.
+
+          PUERTO MANÍ
+            Durante las visitas del equipo de trabajo al destacamento de la Prefectura Naval
+          Argentina no se registró actividad de pesca recreacional en el presente ciclo anual.
+
+          ELDORADO
+             Como en otros sitios la actividad disminuyó durante el invierno y fue superior en
+          primavera previo a la veda (Figura 8).
+
+
+                 Promedio diario de lanchas                                                 Promedio diario de lanchas
+24                                                                       18
+21
+                                                                         15
+18
+15                                                                       12
+
+12                                                                        9
+ 9
+                                                                          6
+ 6
+ 3                                                                        3
+
+ 0                                                                        0
+     oct. nov. dic. ene. feb. mar. abr. may. jun. jul. ago. sep.              feb. mar. abr. may. jun. jul. ago. sep. oct. nov. dic. ene.
+      17 17 17 18 18 18 18 18 18 18 18 18                                      19 19 19 19 19 19 19 19 19 19 19 20
+Figura 8. Total mensual del número de salidas de pesca realizadas por colaboradores locales en la zona de
+Eldorado. Se presentan los resultados obtenidos en los dos ciclos anuales estudiados.
+
+          Artes de pesca utilizadas
+
+          PASO DE LA PATRIA
+             En la Figura 9 se presenta la distribución relativa de los diferentes artes de pesca
+          utilizados en Paso de la Patria. Como puede observarse, la mayor parte de los pescadores
+          utilizó artes dirigidos a la captura de peces de gran porte, generalmente surubí y dorado,
+          especies que superaron el 35% de las capturas (Tabla II). Entre ellos se destaca el uso del
+          señuelo o la carnada viva, en general morena o mamacha, usadas principalmente para
+          captura de surubí. Solo aquellos que realizaron pesca de costa o con carnada anclado,
+          dirigirían su esfuerzo a la pesca de boga, la cual representó el 43% de las capturas. Las
+          carnadas empleadas en su mayoría fueron maíz, lombrices, corazón, masas, entre otras.
+
+
+
+
+                      S. Cabral 2139. -3400- Corrientes. Tel.: 0379-4425753, int. 171 Fax: 4425753, int. 113.
+                                                  e-mail: sanchez@vet.unne.edu.ar
+                                                                  24
+                      Convenio COMIP-FCV. UNNE. Acta Complementaria N° 3.
+             Instituto de Ictiología del Nordeste. Fac. de Ciencias Veterinarias. Univ. Nacional del Nordeste
+
+           ARTES DE PESCA 2017-2018                                          ARTES DE PESCA 2019-2020
+                                                                                                                carnada
+                                                                                                                anclado
+
+
+señuelo                                        carnada
+trolling                                       anclado
+                                                                                                                     Carnada
+                                                                                                                      garete
+                                                                 señuelo
+                                                                 trolling                                        De Costa
+                                      Carnada
+           De Costa                    garete
+Figura 9. Cantidad relativa de artes de pesca empleados por los pescadores recreativos en la zona de
+Paso de la Patria. Se presentan los resultados obtenidos en los dos ciclos anuales estudiados.
+
+   ITATÍ
+      En la zona de Itatí, donde se incluye además a Puerto Abra y Yahapé, la cantidad
+   porcentual de pescadores que realizaron exclusivamente trolling es menor respecto de Paso
+   de la Patria, aunque aumentó respecto del ciclo analizado previamente, disminuyendo en
+   consecuencia el porcentaje de aquellos que pescaron con carnada anclados (Figura 10). En la
+   Tabla II se observa un equilibrio entre las especies blanco de mediano porte en las capturas
+   (pacú, boga y salmón) y las consideradas trofeo (dorado y surubí).
+
+           ARTES DE PESCA 2017-2018                                            ARTES DE PESCA 2019-2020
+            señuelo                                                                señuelo
+            trolling                                                               trolling
+De Costa mosca
+    Carnada
+     garete
+
+
+                                                                  De Costa
+                                                                          al golpe
+
+                                                                        Carnada                                  carnada
+                                       carnada                           garete                                  anclado
+                                       anclado
+Figura 10. Cantidad relativa de artes de pesca empleados por los pescadores recreativos en la zona de
+Itatí (incluye Itatí, Puerto Abra y Yahapé). Se presentan los resultados obtenidos en los dos ciclos
+anuales estudiados.
+
+   ITÁ IBATÉ
+      En este sitio la mayor cantidad relativa de pescadores que utilizan carnada dirigida a
+   especies de mediano porte, principalmente en la modalidad anclado (Figura 11). Se observa
+   además un interesante porcentaje del total que pesca de costa, en especial si se considera que
+   en la mayoría de los registros se trata de turistas más que de pescadores locales. Las especies
+   de mediano porte boga, pacú y salmón, contribuyeron con alrededor del 60% de las capturas,
+   mientras que el surubí representó en esta localidad más del 20%, alcanzando al igual que en
+   el ciclo previo el valor relativo más alto de capturas de esta especie sobre el tramo (Tabla II).
+                S. Cabral 2139. -3400- Corrientes. Tel.: 0379-4425753, int. 171 Fax: 4425753, int. 113.
+                                            e-mail: sanchez@vet.unne.edu.ar
+                                                            25
+                       Convenio COMIP-FCV. UNNE. Acta Complementaria N° 3.
+              Instituto de Ictiología del Nordeste. Fac. de Ciencias Veterinarias. Univ. Nacional del Nordeste
+
+
+            ARTES DE PESCA 2017-2018                                              ARTES DE PESCA 2019-2020
+                               al golpe                                                               al golpe
+            señuelo
+            trolling
+                                                                                señuelo
+                                                                                trolling
+ señuelo
+ spinning
+                                                                             señuelo
+      De Costa
+                                                                             spinning                            carnada
+      Carnada                                                                                                    anclado
+       garete                                carnada                           De Costa
+                                             anclado
+                                                                                    Carnada
+                                                                                     garete
+Figura 11. Cantidad relativa de artes de pesca empleados por los pescadores recreativos en la zona de Itá
+Ibaté. Se presentan los resultados obtenidos en los dos ciclos anuales estudiados.
+
+    ITUZAINGÓ
+       A diferencia de otros puertos, la cantidad relativa de pescadores que utilizan carnada
+    dirigida a especies de mediano porte aumentó en Ituzaingó, en especial en la modalidad
+    anclado, acompañada de una disminución de aquellos pescadores que intentan capturar
+    ejemplares de gran porte con señuelo o mosca (Figura 12). Como consecuencia de esto, Las
+    especies de mediano porte boga, pacú y salmón contribuyeron con alrededor del 90% de las
+    capturas (Tabla II).
+
+             ARTES DE PESCA 2017-2018
+                señuelo
+                trolling     al golpe
+      señuelo
+      spinning
+
+        mosca
+
+
+       De Costa
+
+                                                carnada
+            Carnada                             anclado
+             garete
+
+
+
+  Figura 12. Cantidad relativa de artes de pesca empleados por los pescadores recreativos en la zona
+  de Ituzaingó. Se presentan los resultados obtenidos en los dos ciclos anuales estudiados.
+
+    POSADAS
+       En posadas predominó claramente la pesca de costa, registrándose una sola salida de
+    pesca con señuelo (Figura 13). Como cabría esperar la mayoría de las capturas
+    correspondieron a especies de mediano porte como las bogas, bagres y armados, que
+    alcanzaron en conjunto alrededor del 60% de las capturas. En este sitio aparecen un
+    porcentaje elevado de palometas y rayas, que alcanzan en conjunto cerca del 30% del total
+    capturado (Tabla II).
+
+
+                 S. Cabral 2139. -3400- Corrientes. Tel.: 0379-4425753, int. 171 Fax: 4425753, int. 113.
+                                             e-mail: sanchez@vet.unne.edu.ar
+                                                             26
+                    Convenio COMIP-FCV. UNNE. Acta Complementaria N° 3.
+          Instituto de Ictiología del Nordeste. Fac. de Ciencias Veterinarias. Univ. Nacional del Nordeste
+
+        ARTES DE PESCA 2017-2018                                          ARTES DE PESCA 2019-2020
+           señuelo                                                           señuelo
+           trolling                                                          trolling
+
+
+                                            carnada
+                                            anclado
+
+
+
+
+       De Costa
+
+                                                                                           De Costa
+Figura 13. Cantidad relativa de artes de pesca empleados por los pescadores recreativos en la zona
+de Posadas. Se presentan los resultados obtenidos en los dos ciclos anuales estudiados.
+
+
+  ELDORADO
+     En este sitio predominaron aquellos pescadores que realizaron pesca con carnada anclado
+  buscando especies de mediano porte, aunque existe un porcentaje interesante que pescaron
+  con señuelo intentando capturar dorado (Figura 14). La especie predominante fue la
+  palometa, especie no deseada, seguida por bagre, La boga apenas superó el 20% de las
+  capturas, mientras que entre dorado y surubí se alcanzó alrededor del 10% (Tabla II).
+
+
+         ARTES DE PESCA 2017-2018                                          ARTES DE PESCA 2019-2020
+        señuelo
+        trolling                                                  señuelo
+       De Costa                                                   trolling
+
+     Carnada
+      garete
+
+
+                                                                  De Costa
+
+                                                                                                             carnada
+                                                                                                             anclado
+                                    carnada
+                                    anclado
+ Figura 14. Cantidad relativa de artes de pesca empleados por los pescadores recreativos en la zona
+ de Eldorado. Se presentan los resultados obtenidos en los dos ciclos anuales estudiados.
+
+  Especies capturadas según artes de pesca utilizadas
+
+  PASO DE LA PATRIA
+     En la Figura 15 puede observarse la selectividad en las capturas en Paso de la Patria. Las
+  especies trofeo de gran porte, dorado, surubí y manguruyú, fueron capturadas pescando con
+  señuelo en modalidad trolling o bien pescando con carnada al garete, en este caso con
+  carnadas vivas, generalmente mamacha o anguila. Por otro lado, quienes practicaron pesca
+  de costa o embarcada anclada capturaron principalmente boga, pacú y salmón (Figura 14).
+
+               S. Cabral 2139. -3400- Corrientes. Tel.: 0379-4425753, int. 171 Fax: 4425753, int. 113.
+                                           e-mail: sanchez@vet.unne.edu.ar
+                                                           27
+                              Convenio COMIP-FCV. UNNE. Acta Complementaria N° 3.
+                     Instituto de Ictiología del Nordeste. Fac. de Ciencias Veterinarias. Univ. Nacional del Nordeste
+
+               Paso de la Patria 2017-2018                                                Paso de la Patria 2019-2020
+100%                                                                      100%
+
+
+80%                                                                         80%
+
+
+60%                                                                         60%
+
+
+40%                                                                         40%
+
+
+20%                                                                         20%
+
+
+ 0%                                                                          0%
+          Carnada         Carnada         De Costa           Señuelo                 Carnada           Carnada          De Costa      Señuelo
+          anclado          garete                             trolling                anclado           garete                         trolling
+                                                                                   Bagre                  Boga                     Dorado
+       Bagre    Boga     Dorado      Palometa         Patí    Surubí               Palometa               Patí                     Surubí
+                                                                                   Salmón                 Pacú                     Manguruyú
+Figura 15. Composición relativa de especies en las capturas según el arte de pesca empleado por los pescadores
+recreativos en Paso de la Patria. Se presentan los resultados obtenidos en los dos ciclos anuales estudiados.
+
+
+           ITATÍ
+             De manera similar a lo observado en Paso de la Patria, quienes usaron señuelo en
+           modalidad trolling o pescaron al garete capturaron principalmente dorado y surubí, mientras
+           que quienes pescaron con carnada anclados o al golpe capturaron cantidades importantes de
+           boga, pacú y salmón (Figura 16).
+
+
+                       Itatí 2017-2018                                                              Itatí 2019-2020
+100%                                                                       100%
+ 90%                                                                         90%
+ 80%                                                                         80%
+ 70%                                                                         70%
+ 60%                                                                         60%
+ 50%                                                                         50%
+                                                                             40%
+ 40%
+                                                                             30%
+ 30%
+                                                                             20%
+ 20%
+                                                                             10%
+ 10%
+                                                                              0%
+  0%                                                                                  Carnada    Carnada    Señuelo      al golpe
+           Carnada        Carnada         Señuelo            mosca                    anclado     garete     trolling
+           anclado         garete          trolling                                Boga       Dorado     Moncholo     Pacú
+        Boga           Dorado         Moncholo        Pacú                         Patí            Salmón          Surubí          Manguruyú
+        Patí           Salmón         Surubí          Manguruyú                    Palometa        Armado          Sábalo
+
+Figura 16. Composición relativa de especies en las capturas según el arte de pesca empleado por los pescadores
+recreativos en la zona de Itatí. Se presentan los resultados obtenidos en los dos ciclos anuales estudiados.
+                        S. Cabral 2139. -3400- Corrientes. Tel.: 0379-4425753, int. 171 Fax: 4425753, int. 113.
+                                                    e-mail: sanchez@vet.unne.edu.ar
+                                                                    28
+                         Convenio COMIP-FCV. UNNE. Acta Complementaria N° 3.
+                Instituto de Ictiología del Nordeste. Fac. de Ciencias Veterinarias. Univ. Nacional del Nordeste
+        ITÁ IBATÉ
+           En este sitio se emplearon una gran variedad de artes de pesca, aunque a diferencia del
+        ciclo previo en el que se capturaron numerosas especies, en el período aquí informado solo
+        se registraron 6 (Tabla II). Las capturas realizadas con modalidad señuelo spinning
+        capturaron exclusivamente dorado, mientras que la modalidad trolling capturó
+        preferentemente surubí, seguido por dorado y manguruyú. Estas especies también
+        predominaron en la pesca con carnada al garete, evidenciando que se pescó con carnadas
+        vivas buscando peces tamaño trofeo. Las modalidades de costa, con carnada anclado y al
+        golpe permitieron capturar un importante número de especies, con predominio de la boga y
+        el pacú (Figura 17). Precisamente la boga fue la especie más abundante en las capturas de Itá
+        Ibaté (46%) (Tabla II), evidenciando la importancia del uso de modalidades de pesca
+        dirigidas a la captura de esta especie.
+
+
+               Itá Ibaté 2017-2018                                                         Itá Ibaté 2019-2020
+100%                                                                 100%
+
+80%                                                                   80%
+
+60%                                                                   60%
+
+40%                                                                   40%
+
+20%                                                                   20%
+
+ 0%                                                                     0%
+     Al golpe Carnada Carnada De Costa Señuelo Señuelo                       Al golpe Carnada Carnada De Costa Señuelo Señuelo
+              anclado garete           spinning trolling                              anclado garete           spinning trolling
+   Armado            Bagre              Boga                               Armado            Bagre              Boga
+   Dorado            Manguruyú          Mojarra                            Dorado            Manguruyú          Mojarra
+   Moncholo          Otros madures      Pacú                               Moncholo          Otros madures      Pacú
+   Palometa          Patí               Sábalo                             Palometa          Patí               Sábalo
+   Salmón            Surubí                                                Salmón            Surubí
+Figura 17. Composición relativa de especies en las capturas según el arte de pesca empleado por los pescadores
+recreativos en la zona de Itá Ibaté. Se presentan los resultados obtenidos en los dos ciclos anuales estudiados.
+
+
+
+
+                   S. Cabral 2139. -3400- Corrientes. Tel.: 0379-4425753, int. 171 Fax: 4425753, int. 113.
+                                               e-mail: sanchez@vet.unne.edu.ar
+                                                               29
+                            Convenio COMIP-FCV. UNNE. Acta Complementaria N° 3.
+                   Instituto de Ictiología del Nordeste. Fac. de Ciencias Veterinarias. Univ. Nacional del Nordeste
+          ITUZAINGÓ
+             En este sitio también se utilizó una buena diversidad de artes de pesca, aunque a
+          diferencia del ciclo previo nadie manifestó haber practicado pesca al golpe. Al igual que en
+          Itá Ibaté, quienes pescaron con señuelo spinning capturaron exclusivamente dorado,
+          mientras que la modalidad trolling capturó dorado y surubí en proporciones similares. Con
+          mosca, las principales especies capturadas fueron salmón, pacú y boga casi en idénticas
+          proporciones y dorado en menor medida. En la pesca de costa predominó la captura de boga,
+          seguida de salmón y bagre. Como en otros sitios, con la modalidad de pesca carnada viva al
+          garete se pescó surubí, dorado y manguruyú, mientras que con carnada anclado se
+          capturaron principalmente bogas, salmón y pacú (Figura 18).
+
+                  Ituzaingó 2017-2018                                                         Ituzaingó 2019-2020
+100%                                                                    100%
+
+ 80%                                                                     80%
+
+ 60%                                                                     60%
+
+ 40%                                                                     40%
+
+
+ 20%                                                                     20%
+
+                                                                           0%
+  0%                                                                             Al golpe Carnada Carnada De           Mosca Señuelo Señuelo
+       Al golpe Carnada Carnada De         Mosca Señuelo Señuelo                          anclado garete Costa               spinning trolling
+                anclado garete Costa             spinning trolling
+                                                                              Armado                   Bagre                 Bagre picudo
+  Armado          Bagre             Bagre picudo       Boga                   Boga                     M. obtusidens         Dorado
+  M. obtusidens   Dorado            Manduré            Manguruyú              Manduré                  Manguruyú             Mojarra
+  Mojarra         Pacú              Palometa           Patí                   Pacú                     Palometa              Patí
+  Salmón          Surubí                                                      Salmón                   Surubí
+Figura 18. Composición relativa de especies en las capturas según el arte de pesca empleado por los pescadores
+recreativos en la zona de Ituzaingó. Se presentan los resultados obtenidos en los dos ciclos anuales estudiados.
+
+          POSADAS
+             Todas las capturas registradas en Posadas se realizaron practicando pesca de costa con
+          carnada.
+
+          ELDORADO
+             En el ciclo previo, la modalidad de pesca con carnada anclado permitió capturar 32
+          especies diferentes, muchas de ellas consideradas sin valor para los pescadores. En el
+          presente ciclo, considerando todas las modalidades solo se informó la captura de 8 especies,
+          evidenciando una diversidad mucho menor. Con señuelo se capturó dorado, surubí y
+          armado, mientras que de costa o con carnada anclado se cobraron principalmente especies
+          menores (Figura 19).
+
+
+
+                      S. Cabral 2139. -3400- Corrientes. Tel.: 0379-4425753, int. 171 Fax: 4425753, int. 113.
+                                                  e-mail: sanchez@vet.unne.edu.ar
+                                                                  30
+                 Convenio COMIP-FCV. UNNE. Acta Complementaria N° 3.
+        Instituto de Ictiología del Nordeste. Fac. de Ciencias Veterinarias. Univ. Nacional del Nordeste
+                                                                              Virr eyn a (M. p lata num)
+                 Eldorado 2017-2018                                           Tiburon cito (Pseudo sep tosis g obiode s)
+                                                                              Sur ubí
+100%                                                                          Sar dina (L. gr osside ns)
+                                                                              Salmón
+                                                                              Relojito (T. argen teu s)
+                                                                              Raya
+                                                                              Pirá Ya guá (Rhaphio don vulpinus)
+ 80%                                                                          Pico de pato
+                                                                              Paty azul (P. pinirampu s)
+                                                                              Patí
+                                                                              Palo me ta
+                                                                              Pacú
+                                                                              Otros mad ures
+ 60%                                                                          Otros b agres
+                                                                              Otros
+                                                                              Myl eus tiete
+                                                                              Morena
+                                                                              Mangu ruyú
+ 40%                                                                          Mandu ré
+                                                                              L. a cutiden s
+                                                                              G. b alzani
+                                                                              Dorado
+                                                                              Dientudo (G. humeralis)
+                                                                              Corvina (p. terne tzi)
+ 20%                                                                          Bog a L . octofasciatu s
+                                                                              Bog a M. o btu side ns
+                                                                              Bog a p late ada (H. orthono ps)
+                                                                              Bog a
+                                                                              Boca amarga
+  0%                                                                          Bag re picu do (I. lbrosus)
+                                                                              Bag re
+          Carnada Carnada De Costa Señuelo                                    Armado amar illo
+                                                                              Armado
+          anclado  garete           trolling                                  Apr eta dor
+                                                                              A. p antaneiro
+
+                                            Eldorado 2019-2020
+               100%
+
+
+                80%
+
+
+                60%
+
+
+                40%
+
+
+                20%
+
+
+                  0%
+                        Carnada anclado Carnada garete               De Costa         Señuelo trolling
+                    boga    Dorado      surubí    Bagre    Palometa      Armado       Manduré        Patí
+
+Figura 19. Composición relativa de especies en las capturas según el arte de pesca
+empleado por los pescadores recreativos en la zona de Eldorado.
+
+ Pesca Extractiva versus Pesca con Devolución
+     En la figura 20 pueden observarse las proporciones de ejemplares extraídos para
+ consumo así como aquellos devueltos vivos, discriminadas por especie y sitio de pesca. Los
+ resultados se presentan para los dos ciclos anuales estudiados. En la figura 20 se aprecia que
+ la boga y el pacú fueron las especies que presentaron el mayor porcentaje de extracción,
+ mientras que dorado, salmón y surubí en general fueron devueltos con vida.
+
+           S. Cabral 2139. -3400- Corrientes. Tel.: 0379-4425753, int. 171 Fax: 4425753, int. 113.
+                                       e-mail: sanchez@vet.unne.edu.ar
+                                                       31
+                             Convenio COMIP-FCV. UNNE. Acta Complementaria N° 3.
+                  Instituto de Ictiología del Nordeste. Fac. de Ciencias Veterinarias. Univ. Nacional del Nordeste
+
+
+                                     2017-2018                                                                 2019-2020
+         100%                                                                      100%
+
+         80%                                                                       80%
+
+  BOGA   60%                                                                       60%
+
+         40%                                                                       40%
+
+         20%                                                                       20%
+
+           0%                        2017-2018                                       0%                        2019-2020
+         100%   Paso de     Itatí    Itá Ibaté Ituzaingó Posadas Puerto Eldorado   100%   Paso de     Itatí    Itá Ibaté Ituzaingó Posadas Puerto Eldorado
+                la Patria                                       Mani                      la Patria                                       Mani
+         80%                        Devuelto    Extraído                           80%                        Devuelto    Extraído
+         60%                                                                       60%
+DORADO
+         40%                                                                       40%
+
+         20%                                                                       20%
+
+           0%                        2017-2018                                       0%                        2019-2020
+         100%   Paso de     Itatí    Itá Ibaté Ituzaingó Posadas Puerto Eldorado   100%   Paso de     Itatí    Itá Ibaté Ituzaingó Posadas Puerto Eldorado
+                la Patria                                         Mani                    la Patria                                         Mani
+         80%                                                                       80%
+                                    Devuelto    Extraído                                                      Devuelto    Extraído
+         60%                                                                       60%
+  PACÚ
+         40%                                                                       40%
+
+         20%                                                                       20%
+
+           0%                        2017-2018                                       0%                        2019-2020
+         100%   Paso de     Itatí    Itá Ibaté Ituzaingó Posadas Puerto Eldorado   100%   Paso de     Itatí    Itá Ibaté Ituzaingó Posadas Puerto Eldorado
+                la Patria                                         Mani                    la Patria                                         Mani
+         80%                                                                       80%
+                                    Devuelto    Extraído                                                      Devuelto    Extraído
+         60%                                                                       60%
+SALMÓN
+         40%                                                                       40%
+
+         20%                                                                       20%
+
+           0%                        2017-2018                                       0%                        2019-2020
+         100%   Paso de     Itatí    Itá Ibaté Ituzaingó Posadas Puerto Eldorado   100%   Paso de     Itatí    Itá Ibaté Ituzaingó Posadas Puerto Eldorado
+                la Patria                                         Mani                    la Patria                                         Mani
+         80%                                                                       80%
+                                    Devuelto    Extraído                                                      Devuelto    Extraído
+         60%                                                                       60%
+
+         40%                                                                       40%
+SURUBÍ
+         20%                                                                       20%
+
+          0%                                                                        0%
+                Paso de     Itatí    Itá Ibaté Ituzaingó Posadas Puerto Eldorado          Paso de     Itatí    Itá Ibaté Ituzaingó Posadas Puerto Eldorado
+                la Patria                                         Mani                    la Patria                                         Mani
+
+                                    Devuelto    Extraído                                                      Devuelto    Extraído
+
+ Figura 20. Distribución proporcional de ejemplares extraídos y devueltos en el tramo compartido del río Paraná
+ discriminados por especie blanco y localidad.
+                      S. Cabral 2139. -3400- Corrientes. Tel.: 0379-4425753, int. 171 Fax: 4425753, int. 113.
+                                                  e-mail: sanchez@vet.unne.edu.ar
+                                                                  32
+                Convenio COMIP-FCV. UNNE. Acta Complementaria N° 3.
+       Instituto de Ictiología del Nordeste. Fac. de Ciencias Veterinarias. Univ. Nacional del Nordeste
+Peces marcados
+   Luego de realizados los talleres de capacitación y la entrega de marcas a los
+colaboradores comenzaron a llegar las primeras fotografías que daban cuenta del inicio de la
+marcación. El primer pez marcado fue un surubí atigrado (Pseudoplatystoma reticulatum)
+capturado en Itá Ibaté el 10 de febrero de 2019. El 31 de enero de 2020 se marcó el ejemplar
+1079, un surubí pintado (Pseudoplatystoma corruscans) capturado en Itatí. En la figura 21
+se presenta la distribución temporal de marcas colocadas en el tramo compartido del río
+Paraná así como fuera del mismo. Cabe mencionar que del total de marcas identificadas
+como de fuera del tramo compartido, 11 marcas se colocaron en el río Paraguay y 49 en el
+Uruguay.
+
+
+
+        200
+
+        160
+
+        120
+
+         80
+
+         40
+
+           0
+                  feb mar abr may jun jul ago sep oct nov dic ene
+                   19 19 19 19 19 19 19 19 19 19 19 20
+                           TRAMO COMPARTIDO                          FUERA DE TRAMO
+
+       Figura 21. Distribución espacial y temporal de la colocación de marcas por parte
+       de los colaboradores del proyecto.
+
+   En la Tabla III se presenta la totalidad de los peces marcados en el presente ciclo anual,
+incluyendo información de la especie, así como del sitio de captura (solo para aquellos peces
+marcados en el tramo compartido). De las especies de mayor valor comercial, deportivo y
+ecológico, hasta la fecha se marcaron dorado (580), surubí (312), pacú (46), boga (44) y
+manguruyú (27). Los peces marcados en Ayolas y Capitán Mesa fueron capturados en
+concursos de pesca realizados en estas localidades.
+
+
+
+
+          S. Cabral 2139. -3400- Corrientes. Tel.: 0379-4425753, int. 171 Fax: 4425753, int. 113.
+                                      e-mail: sanchez@vet.unne.edu.ar
+                                                      33
+                         Convenio COMIP-FCV. UNNE. Acta Complementaria N° 3.
+                Instituto de Ictiología del Nordeste. Fac. de Ciencias Veterinarias. Univ. Nacional del Nordeste
+
+
+                       PARAGUAY                         ARGENTINA
+                              Bella Capitán Paso de        Itá             Fuera    Total
+  ESPECIE      Cerrito Ayolas                       Itatí       Ituzaingó
+                              Vista Meza la Patria        Ibaté           de tramo General
+   Dorado                       2             123    70    31       9        345     580
+    Surubí       2       1                     6     26    50       17       210     312
+     Pacú                                            28     4       2         12      46
+     Boga               39            2               1                        2      44
+ Manguruyú                            1        5      9     6       2          4      27
+Bagre amarillo           7     16                                                     23
+     Patí                                                                     19      19
+   Salmón               16                                                            16
+  Bagre tape                          1                                        8       9
+  Manduré                       1     2                                                3
+ Total general   2      63     19     6       134   134 91          30       600    1079
+
+         Del total de peces marcados se registraron 38 recapturas, 20 de las cuales se corresponden
+      a peces marcados en el tramo compartido. Algunas recapturas se realizaron en lugares muy
+      próximos a aquel donde fue capturado el pez y se colocó la marca (excepcionalmente en la
+      misma piedra o boya de navegación), mientras que en otras oportunidades los ejemplares
+      recorrieron distancias considerables, dentro de un rango de 50 hasta 1500 kilómetros.
+
+                  PARAGUAY                                         ARGENTINA
+                                                                                                                    Total
+                       Ayolas             Paso de la patria             Itatí     Itá ibaté         Ituzaingó
+                                                                                                                   general
+  Dorado                                             3                    3                                           6
+   Surubí                                                                 2             2                             4
+    Boga                   3                                                                                          3
+    Pacú                                                                                1                 1           2
+Manguruyú                                                                               1                             1
+Total general              3                         3                    5             4                 1          16
+
+      Rutas migratorias
+         A partir de las recapturas registradas se observó que algunos ejemplares se mantuvieron
+      dentro de la zona en que fueron marcados, mientras que otro se desplazaron muchos
+      kilómetros. Todas las recapturas que se realizaron a una distancia mayor a los 10 kilómetros
+      del lugar donde fueran marcados correspondieron a ejemplares de dorado y surubí. Con esta
+      información se realizaron mapas (figuras 22 y 23) indicando la dirección y la cantidad de
+      kilómetros que recorrieron aquellos ejemplares que realizaron desplazamientos. La menor
+      distancia recorrida fue de 30 km en ambas especies, siendo destacable el recorrido realizado
+      por un dorado marcado en paso de la patria y recapturado 1500 km al sur sobre el río
+      Uruguay. La mayoría de los recorridos se hicieron en sentido norte-sur fuera del tramo
+      estudiado (aguas abajo).
+
+                   S. Cabral 2139. -3400- Corrientes. Tel.: 0379-4425753, int. 171 Fax: 4425753, int. 113.
+                                               e-mail: sanchez@vet.unne.edu.ar
+                                                               34
+         Convenio COMIP-FCV. UNNE. Acta Complementaria N° 3.
+Instituto de Ictiología del Nordeste. Fac. de Ciencias Veterinarias. Univ. Nacional del Nordeste
+
+
+
+
+       Figura 22. Desplazamientos realizados por ejemplares de dorado.
+       Cada flecha corresponde a un individuo. Los números indican la
+       cantidad de kilómetros recorridos.
+
+
+
+
+   S. Cabral 2139. -3400- Corrientes. Tel.: 0379-4425753, int. 171 Fax: 4425753, int. 113.
+                               e-mail: sanchez@vet.unne.edu.ar
+                                               35
+                Convenio COMIP-FCV. UNNE. Acta Complementaria N° 3.
+       Instituto de Ictiología del Nordeste. Fac. de Ciencias Veterinarias. Univ. Nacional del Nordeste
+
+
+
+
+              Figura 23. Desplazamientos realizados por ejemplares de surubí.
+              Cada flecha corresponde a un individuo. Los números indican la
+              cantidad de kilómetros recorridos.
+
+Estimaciones globales para la pesquería
+   Los resultados obtenidos confirman que el esfuerzo de pesca de la pesca recreativa aguas
+abajo de Yacyretá se dirige a un escaso número de especies entre las que se destacan boga,
+dorado, surubí, pacú, salmón y manguruyú, y en segundo término pueden agregarse bagres,
+mandurés y armados. Aguas arriba de la represa este grupo pasa a ser menos representativo,
+debido a la captura de especies menores sin interés para los pescadores tales como rayas,
+pirañas y bagres de pequeña talla, determinando que la pesca recreativa no sea una actividad
+relevante en este tramo del Alto Paraná.
+   La estimación global de las capturas del presente ciclo anual asciende a 108.350
+ejemplares, de los cuales 94.775 fueron capturados aguas abajo de la represa. Cabe
+mencionar que estas estimaciones solo incluyen los resultados correspondientes a los
+
+          S. Cabral 2139. -3400- Corrientes. Tel.: 0379-4425753, int. 171 Fax: 4425753, int. 113.
+                                      e-mail: sanchez@vet.unne.edu.ar
+                                                      36
+                Convenio COMIP-FCV. UNNE. Acta Complementaria N° 3.
+       Instituto de Ictiología del Nordeste. Fac. de Ciencias Veterinarias. Univ. Nacional del Nordeste
+pesqueros argentinos, los que según los resultados obtenidos en 2017-2018 corresponderían
+al 68% del total, correspondiendo a Paraguay el 32% restante.
+   Del total de capturas estimado para Corrientes, alrededor del 40% correspondería a
+ejemplares de boga (38.000 ejemplares aproximadamente), el 20% a dorado (19.000
+ejemplares aproximadamente), 12% a surubí y pacú (11.000 ejemplares aproximadamente
+de cada especie) y 10% a salmón de río (10.000 ejemplares aproximadamente).
+
+Tamaño de las poblaciones
+   Uno de los objetivos de la implementación del procedimiento de marcación de peces es la
+estimación del tamaño de las poblaciones. Para ello se consideró la cantidad de peces
+marcados y recapturados de cada especie, así como el total estimado de capturas a nivel
+global durante el desarrollo del proyecto en el tramo compartido aguas abajo de Yacyretá.
+Este análisis se realizó para dorado, surubí (incluye ambas especies) y pacú, ya que son las 3
+especies que cuentan con mayor cantidad de peces marcados y recapturados.
+   En el caso del dorado considerando un total estimado de 19.000 peces capturados, 233
+marcados y 9 recapturados (3,86%), el tamaño de la población ascendería a alrededor de
+500.000 ejemplares.
+   Aplicando la misma metodología para surubí con un total estimado de 11.000 peces
+capturados, 99 marcados y 5 recapturados (5,05%), el tamaño de la población ascendería a
+alrededor de 215.000 ejemplares.
+   Para pacú, con un total estimado de 11.000 peces capturados, 34 marcados y 2
+recapturados (5,88%), el tamaño de la población ascendería a alrededor de 187.000
+ejemplares.
+
+Aspectos Socioeconómicos
+     Como se observó en el ciclo previo, el movimiento económico de muchas de las
+localidades costeras emplazadas aguas abajo de Yacyretá dependen de buen modo de la
+pesca recreacional. En el ciclo informado se observó la instalación de nuevos
+emprendimientos especializados en la atención de pescadores turistas en Paso de la Patria,
+Itatí y Yahapé, otros que ya se encontraban trabajando desde hace tiempo ampliaron sus
+instalaciones y la cantidad de embarcaciones.
+     Durante los meses de noviembre y diciembre de 2019, cuando el gobierno de Corrientes
+implementó una veda pesquera extraordinaria dirigida a proteger a los cardúmenes de peces
+ante la extrema bajante del río Paraná, la situación económica fue afectada de manera
+negativa, al quedar sin trabajo numerosos actores vinculados a la pesca de manera directa o
+indirecta.
+
+Discusión
+   La pesca recreativa es una actividad con enorme potencial económico tanto a nivel
+mundial como en nuestro país, con diferentes regiones que atraen cada vez más turistas y
+permiten el desarrollo de prestadores de servicios especializados. Tal situación se observa
+con particular importancia en el tramo estudiado en la Provincia de Corrientes, donde luego
+          S. Cabral 2139. -3400- Corrientes. Tel.: 0379-4425753, int. 171 Fax: 4425753, int. 113.
+                                      e-mail: sanchez@vet.unne.edu.ar
+                                                      37
+                Convenio COMIP-FCV. UNNE. Acta Complementaria N° 3.
+       Instituto de Ictiología del Nordeste. Fac. de Ciencias Veterinarias. Univ. Nacional del Nordeste
+de tan solo un año del informe del ciclo de estudios previos se aprecia un notable
+crecimiento de la infraestructura de servicios ofrecidos al pescador, lo que se potencia aún
+más si se considera la recesión económica en que se encuentra la Argentina desde hace
+alrededor de una década. Contrariamente, aguas arriba de Yacyretá la pesca recreativa
+continúa siendo una actividad de poco impacto económico-social.
+    Además del crecimiento en la infraestructura de servicios ofrecidos al pescador, en
+Corrientes se observó un incremento del esfuerzo de pesca así como de las capturas. Con
+relación al ciclo de estudios precedente, aumentaron las capturas de salmón, pacú y dorado,
+y en menor medida de manguruyú, mientras que las de boga y surubí se mantuvieron
+relativamente estables. Por otro lado, se estimó una disminución en la cantidad de especies
+no deseadas por los pescadores, lo que probablemente podría asociarse a que la bajante del
+río Paraná obligó a pescar exclusivamente sobre el canal principal del río, donde se
+incrementa la proporción relativa de los ejemplares de mayor porte.
+    Más allá del impacto económico de la pesca vinculado al turismo, los pobladores de la
+región ribereña de Argentina y Paraguay incorporan la pesca al disfrute de la naturaleza,
+generando un fuerte sentido de pertenencia que valoriza la actividad con un fuerte sentido
+social relacionado al esparcimiento que llevan adelante miles de pobladores locales a lo
+largo de ambas márgenes del río Paraná. Lo antes mencionado resulta relevante en el
+análisis realizado en este estudio, ya que la mayor parte de los resultados obtenidos incluyen
+datos obtenidos de la modalidad de pesca organizada como servicio al pescador turista,
+resultando prácticamente imposible caracterizar a los pescadores locales, en especial en las
+ciudades más populosas.
+    Tal como surge de los datos presentados anteriormente, aguas arriba de Yacyretá la
+pesca recreativa es una actividad de bajo impacto que se sostiene principalmente por la
+actividad de aficionados y clubes de pesca creados antes de la construcción de la represa,
+cuando en este tramo del río podían obtenerse capturas de ejemplares de gran porte de todas
+las especies blanco. La escasez actual de tales especies hace poco probable pensar en un
+desarrollo futuro de la actividad, ya que la abundancia de peces en el río es el principal
+determinante que mueve a los pescadores a dirigirse a un pesquero determinado, quedando
+la pesca recreativa limitada a pescadores locales que realizan pesca de costa y eventualmente
+alguna salida aislada en una embarcación.
+    Aguas abajo de Yacyretá la actividad pesquera es muy importante en ambas márgenes,
+diferenciándose claramente en cuanto a las modalidades habilitadas, ya que en Corrientes se
+encuentra prohibida la pesca comercial y en Paraguay es la actividad predominante. Si bien
+en el presente informe no se dispuso de datos correspondientes a Paraguay, los
+colaboradores argentinos frecuentemente informaron la intensa actividad de pesca comercial
+realizada en margen derecho, y en menor medida la ocurrencia de pescadores recreativos.
+    Aunque el análisis de la pesca comercial no está dentro de los objetivos del presente
+estudio, cabe mencionar que la FAO reconoce que los pescadores comerciales que ejercen su
+actividad en aguas continentales y cuyos medios de vida dependen exclusivamente de la
+pesca se encuentran entre las poblaciones rurales más pobres y vulnerables del mundo,
+resultando una actividad relevante solamente donde se carece de un empleo alternativo
+          S. Cabral 2139. -3400- Corrientes. Tel.: 0379-4425753, int. 171 Fax: 4425753, int. 113.
+                                      e-mail: sanchez@vet.unne.edu.ar
+                                                      38
+                Convenio COMIP-FCV. UNNE. Acta Complementaria N° 3.
+       Instituto de Ictiología del Nordeste. Fac. de Ciencias Veterinarias. Univ. Nacional del Nordeste
+(Informe SOFIA 2018). Las condiciones mencionadas por la FAO caracterizaron
+históricamente a muchas de las poblaciones costeras emplazadas en ambas márgenes del río
+Paraná en tramos compartidos entre Argentina y Paraguay, aunque con el avance de la
+modernidad esta situación se está modificando en nuestra región. En efecto, en los últimos
+años se observó un gran desarrollo en el tramo compartido del río Paraná relacionado al
+crecimiento de la agricultura (arroz, soja) y la producción forestal, determinando la
+necesidad de crear molinos, aserraderos y puertos, así como de reiniciar el dragado para
+permitir el transporte por la hidrovía de millones de toneladas de las materias primas
+producidas. Si bien aún es arriesgado postular que Paraguay está actualmente en condiciones
+de avanzar hacia el reemplazo de la pesca comercial por la modalidad recreativa en el Alto
+Paraná, sería probable que tal decisión política traiga consigo un estímulo para el
+crecimiento de los servicios asociados al turismo vinculados a la pesca recreativa tal como
+ocurrió en Corrientes a partir de 1994 tras la sanción de la Ley 4.827 que prohíbe la pesca
+comercial en el Alto Paraná. A partir de este momento, la afluencia de turistas comenzó a
+crecer, al tiempo que la mayoría de los pescadores comerciales se volcaron al trabajo de
+guías de pesca, mejorando sustancialmente sus ingresos.
+    Aunque no se cuenta con información correspondiente al presente año, la estimación
+realizada en el ciclo anual precedente indicó que los pesqueros recreativos paraguayos del
+Alto Paraná recibieron un total aproximado de 15.500 turistas, los que habrían aportado a la
+economía regional un total estimado de U$D 2.325.000. Este monto representa un ingreso
+genuino a la región, da trabajo a numerosos guías y permite el desarrollo de proveedores
+locales que brindan alojamiento, venden combustibles, carnadas, artículos de pesca, etc.
+Dicho monto resulta similar al aporte generado por la pesca comercial de Paraguay en el
+mismo tramo según las estadísticas pesqueras informadas para Ayolas por el Ministerio de
+Ambiente y Desarrollo Sostenible de Paraguay, obtenido al comercializar unos 200.000
+ejemplares de surubí, dorado, pacú y boga, especies blanco de la pesca recreativa.
+    En Corrientes, el total de pescadores recreativos que desarrollaron la actividad en el Alto
+Paraná es muy superior, alcanzando un total estimado de 20.000 pescadores locales y 60.000
+turistas, con un aporte económico para la región de alrededor de U$D 8.000.000, cifra más
+que interesante si se considera que es producida por una actividad no contaminante y
+orientada hacia la conservación.
+    El crecimiento de la pesca recreativa en el Alto Paraná en Corrientes está siendo tomado
+como ejemplo por pescadores de otras zonas de la República Argentina, los que ven el
+modelo de desarrollo existente sin pesca comercial como una meta a alcanzar. Así, en zonas
+tales como Goya, Esquina, La Paz, Reconquista o San Javier, por solo mencionar algunas
+localidades ribereñas, se aprecia un constante crecimiento de la pesca recreacional asociado
+a mejoras en la infraestructura existente y oferta de trabajo estable para los pobladores
+locales, mientras que los pescadores comerciales en general no pueden acceder a ingresos
+acordes a las necesidades de la vida moderna, carecen de servicios básicos y en general
+dependen de algún tipo de subsidios del estado para poder vivir. En tales condiciones, son
+cada vez más las voces que se manifiestan a favor de disminuir fuertemente la extracción
+
+          S. Cabral 2139. -3400- Corrientes. Tel.: 0379-4425753, int. 171 Fax: 4425753, int. 113.
+                                      e-mail: sanchez@vet.unne.edu.ar
+                                                      39
+                Convenio COMIP-FCV. UNNE. Acta Complementaria N° 3.
+       Instituto de Ictiología del Nordeste. Fac. de Ciencias Veterinarias. Univ. Nacional del Nordeste
+autorizada a los pescadores comerciales, priorizando el desarrollo de la pesca recreativa y la
+devolución de los peces capturados.
+    Respecto de los resultados obtenidos con la marcación de peces, varios aspectos
+favorables merecen ser destacados. En primer lugar, se logró sumar al proyecto a una gran
+cantidad de colaboradores que se comunicaron con el equipo de trabajo atraídos por la
+posibilidad de poder marcar peces, ampliando de manera notable la cantidad de personas que
+aportan datos de la pesca recreativa tanto dentro como fuera del tramo estudiado en el marco
+del proyecto. Cabe mencionar que varios guías de pesca que colaboran con el proyecto
+manifestaron que la incorporación de la marcación dentro de su tarea diaria facilitó de buen
+modo la devolución de los peces capturados, algo que en ocasiones no era aceptado con
+agrado por los turistas que querían extraer los peces para consumo.
+    Además, se pudo observar que es posible llevar adelante una iniciativa científica
+apoyada en el trabajo de personas que no tienen una formación técnica previa en biología
+pesquera, pero que si son debidamente capacitadas pueden llevar adelante la tarea de
+marcación de manera confiable, permitiendo que el número de peces marcados se
+incremente de manera constante, alcanzando una amplitud espacial y temporal que sería
+muy difícil de alcanzar a cualquier equipo de investigadores.
+    Respecto de los movimientos realizados por los peces recapturados, se pudo observar
+que algunos peces se desplazaron dentro de una zona muy amplia, al tiempo que otros
+permanecieron en la misma zona en que fueron capturados. Si bien es necesario aumentar la
+cantidad de información para comprender si existen algunos patrones de comportamiento
+generales, es posible que dentro de las poblaciones de las diferentes especies que puedan
+considerarse como individuos migrantes y otros residentes, tal como se describió para otras
+especies. De todas formas, el desplazamiento de 1500 km realizado por un dorado indica la
+necesidad de avanzar en legislaciones que consideren a los peces del río Paraná más allá de
+las jurisdicciones provinciales. En relación con esto, cabe resaltar que el mismo recorrido
+realizado por este dorado fue previamente registrado para un sábalo marcado por el equipo
+de trabajo de Itaipú y Yacyretá en los ascensores de la EBY, indicando la ocurrencia de una
+ruta migratoria de larga distancia. Esto enfatiza aún más la necesidad de empezar a estudiar
+la ictiofauna a escala de cuenca para lograr una mejor comprensión de los patrones
+migratorios que realizan, lo cual será de gran utilidad para realizar mejores gestiones de los
+recursos pesqueros e implementar medidas de conservación acorde para estos sistemas tan
+complejos.
+    Finalmente, la posibilidad de contar con una cantidad estimada de peces capturados,
+marcados y recapturados permitió realizar una primera aproximación al tamaño de las
+poblaciones de las especies blanco en la región. Dicha información, más allá del error que
+pueda tener debido al escaso número de peces marcados y recapturados, así como al total de
+capturas estimados para el tramo, representa la primera estimación de este tipo en el marco
+de los estudios ictiológicos realizados en el río Paraná.
+   Resulta oportuno mencionar que las poblaciones de las especies blanco poseen un techo
+de extracción que no debe superarse para asegurar su conservación futura. En tal sentido, la
+complejidad del sistema dificulta realizar estimaciones realistas del total de capturas por
+          S. Cabral 2139. -3400- Corrientes. Tel.: 0379-4425753, int. 171 Fax: 4425753, int. 113.
+                                      e-mail: sanchez@vet.unne.edu.ar
+                                                      40
+                Convenio COMIP-FCV. UNNE. Acta Complementaria N° 3.
+       Instituto de Ictiología del Nordeste. Fac. de Ciencias Veterinarias. Univ. Nacional del Nordeste
+especie que ocurriría en toda la cuenca del Paraná en nuestro país, resultando más
+dificultoso aún estimar el tamaño de sus poblaciones. En este marco, los datos aquí
+aportados evidenciarían de manera preliminar el efecto que la pesca comercial (datos
+aportados por el Ministerio de Ambiente de Paraguay) más la extracción permitida a
+pescadores recreativos podría representar a las poblaciones de las diferentes especies blanco.
+En el caso del dorado, especie para la cual se estimó una población de 500.000 ejemplares,
+los 70.000 ejemplares extraídos al año (alrededor de 65.000 por la pesca comercial y 5.000
+por la recreacional) representarían un 14% del total.
+   Aplicando la misma metodología para surubí con un tamaño poblacional estimado de
+215.000 ejemplares, los 60.000 ejemplares extraídos al año (alrededor de 55.000 por la
+pesca comercial y 5.000 por la recreacional) representarían un 28% del total, mientras que
+en el caso del pacú, con una población de 187.000 ejemplares y 20.000 extracciones (12.000
+por la pesca comercial y 8.000 por la recreacional), se extraería alrededor del 11%. Estos
+resultados indicarían una presión importante para estas especies, en especial para el surubí
+con un porcentaje elevado de ejemplares adultos extraídos respecto del total estimado para la
+zona. Sin embargo, los datos de las pesquerías comerciales de Paraguay, Chaco y Corrientes
+(cerca de la zona de confluencia de los ríos Paraná y Paraguay) evidencian una marcada
+estabilidad en las capturas, indicando un buen estado de conservación de las especies blanco.
+En este contexto, el carácter migratorio de estos peces estaría permitiendo el sostenimiento
+de la pesca en el tramo estudiado, ya que en general no se detectaron grandes zonas aptas
+para el reclutamiento y crecimiento de la etapa juvenil como para sostener estos niveles de
+extracción. Así, los pescadores del Alto Paraná podrían estar extrayendo una cantidad de
+peces de gran tamaño que se repondrían desde aguas abajo luego de crecer y desarrollarse a
+cientos de kilómetros.
+    Considerando esta situación, resulta relevante continuar realizando estudios de marcado
+y recaptura, así como comenzar a cuantificar de mejor manera los niveles de extracción de
+pescado de río en el resto de la cuenca. Esta información resulta fundamental para mantener
+los stocks de las poblaciones de las principales especies del río Paraná, las que hasta el
+momento parecen soportar bien la presión de pesca actual. De todos modos, no podemos
+dejar de mencionar que en la actualidad la mayor cantidad de especies de los recursos
+pesqueros existentes alrededor del mundo, especialmente en los océanos, se encuentran
+sobreexplotadas o explotadas al máximo de su capacidad de soporte (SOFIA, 2018), lo que
+obliga a incrementar los niveles precautorios en los ríos de agua dulce como el Paraná. La
+provincia de Corrientes ha tomado nota de esta situación, disminuyendo los cupos de
+extracción para la pesca recreativa, introduciendo medidas que protegen a los
+megareproductores, y aplicando medidas extraordinarias como la prohibición total de
+extracción de surubí y dorado dictaminada para la pesca recreativa entre noviembre de 2019
+y febrero de 2020 atendiendo a las condiciones de bajante extraordinarias del río Paraná.
+Resta sin embargo, avanzar en acuerdos con la República del Paraguay, donde la pesca
+comercial viene creciendo de manera sostenida, lo que podría poner en peligro la
+sustentabilidad de las poblaciones de las especies blanco. El fomento de la pesca recreativa
+
+          S. Cabral 2139. -3400- Corrientes. Tel.: 0379-4425753, int. 171 Fax: 4425753, int. 113.
+                                      e-mail: sanchez@vet.unne.edu.ar
+                                                      41
+                Convenio COMIP-FCV. UNNE. Acta Complementaria N° 3.
+       Instituto de Ictiología del Nordeste. Fac. de Ciencias Veterinarias. Univ. Nacional del Nordeste
+en este país podría ser una alternativa futura para disminuir los niveles de extracción,
+mejorando al mismo tiempo los ingresos económicos de los pescadores.
+    La promoción de la pesca recreativa con devolución en desmedro de las modalidades
+extractivas aparece como una alternativa interesante para garantizar la perpetuidad de la
+ictiofauna en el Alto Paraná, y con ello, el desarrollo del turismo nacional e internacional
+relacionado a la pesca recreativa así como el aprovechamiento sustentable por parte de las
+poblaciones locales para consumo propio y esparcimiento.
+
+
+Proyección del Proyecto a Futuro
+
+   El desarrollo del segundo año del proyecto fue satisfactorio. Se incrementó de manera
+importante el número de colaboradores en todos los sitios de pesca localizados sobre margen
+izquierdo, así como fuera del tramo informado. Desafortunadamente, no se pudo articular el
+intercambio de información con pescadores o empresarios de Paraguay que pudieran estar
+interesados en aportar información al proyecto, la que resultaría fundamental para
+determinar si Paraguay está iniciando un proceso similar al ocurrido en Argentina hace años,
+cuando comenzaron a incrementarse las ofertas de servicios de calidad al pescador
+recreativo, situación que de consolidarse posiblemente determine un predominio de esta
+actividad por sobre la pesca comercial en este tramo del río Paraná.
+   En relación con los aspectos metodológicos, se consolidó como principal herramienta
+para la obtención de datos por parte de los colaboradores el uso de WhatsApp. Esta
+herramienta, resultó muy buena para obtener información relacionada con las recapturas, ya
+que muchos de los pescadores que recapturaron alguno de los peces marcados desconocían
+de la existencia del proyecto, y luego de observar la marca y reconocer el símbolo de
+WhatsApp junto a la leyenda “enviar foto” se comunicaron al número telefónico indicado de
+manera muy eficiente.
+   A diferencia del primer ciclo de estudios, donde se registró una creciente de gran
+magnitud que impidió el desarrollo normal de la pesca recreacional durante más de un mes,
+en este ciclo se destacaron los momentos de bajante extraordinaria, situación que afectó
+buena parte del estudio y que según las proyecciones se prolongará hasta mediados de 2020.
+En este contexto, la pesca pudo desarrollarse bien, aunque aparecieron medidas adicionales
+de protección de los peces que determinaron que algunos pescadores no quedaran conformes
+al impedirse la extracción de ejemplares para consumo que habitualmente se encuentran
+habilitados. Lo antes mencionado muestra que las decisiones deben ser debidamente
+analizadas y ampliamente comunicadas, ya que por más que se basen en la mejor
+información científica disponible, siempre habrá sectores que se sientan afectados. En esta
+línea, habrá que monitorear el desarrollo de la pesca en el Alto Paraná durante 2020, ya que
+por primera vez en Corrientes se aprobó la modalidad de veda extendida con prohibición de
+extracción a los pescadores recreativos todos los martes y miércoles del año, lo que
+permitirá aumentar la cantidad de días en que no pueden sacrificarse los peces, así como la
+cantidad de días que se podrá pescar en este tramo. Por un lado, la provincia de Misiones y
+          S. Cabral 2139. -3400- Corrientes. Tel.: 0379-4425753, int. 171 Fax: 4425753, int. 113.
+                                      e-mail: sanchez@vet.unne.edu.ar
+                                                      42
+                Convenio COMIP-FCV. UNNE. Acta Complementaria N° 3.
+       Instituto de Ictiología del Nordeste. Fac. de Ciencias Veterinarias. Univ. Nacional del Nordeste
+Paraguay decidieron continuar con la veda tradicional, lo que seguramente traerá tensiones
+cuando en noviembre y diciembre los pescadores recreativos puedan pescar en Corrientes y
+no lo puedan hacer fuera de la jurisdicción de esta provincia. Con relación a esto, y
+considerando que al momento de la elaboración del presente informe se están definiendo los
+términos de la renovación del proyecto por un nuevo ciclo anual, se espera que durante el
+próximo año de trabajo se logre sumar nuevos actores colaboradores, especialmente de
+Paraguay. Con relación a la nueva propuesta, se propuso mantener el protocolo de
+marcación de peces, actividad que permitió realizar la primera estimación de la numerosidad
+de tres especies blanco de la pesquería, información fundamental para futuras evaluaciones
+del estado de los recursos pesqueros.
+   A continuación de la bibliografía se presenta un anexo con fotografías representativas de
+las actividades realizadas.
+
+Bibliografía
+
+Bechara, J. 2000. La Biología Pesquera como instrumento de ordenación y conservación de
+   las pesquerías del río Paraná. Jornadas Regionales de Conservación de los Recursos
+   Naturales. Facultad de Ciencias Exactas y Naturales y Agrimensura, UNNE, Corrientes.
+   61 pp.
+Comisión Mixta Argentino-Paraguaya del Río Paraná. 1994. La Fauna Íctica del Río Paraná.
+   COMIP, 256 pp.
+Fundación Chile. 2001. Informe final del proyecto “Modelo de gestión para el desarrollo de
+   la pesca recreativa en Chile”. Financiado por el Fondo de Desarrollo e Innovación (FDI)
+   de la Corporación de Fomento (CORFO), Santiago, Chile.
+Hunt, L. 2005. Recreational fishing site choice models: insights and future opportunities.
+   Human Dimensions of Wildlife 10: 153-172.
+FAO. 2018. El estado mundial de la pesca y la acuicultura. Disponible en
+   http://www.fao.org/state-of-fisheries-aquaculture/es/
+Salz, R. & Loomis, D. 2005. Recreation specialization and anglers attitudes towards
+   restricted fishing areas. Human Dimensions of Wildlife. 10: 187-199.
+Sánchez, S.; Silva, N.A.; Barrios, C.E.; González, A O.; Aichino, D.R.; Masin, A.S.; Acosta,
+   J.; Florentín, P.; Rojas, M.T.; Garrido, G. & Roux, J.P. 2019. Evaluación de la pesca
+   recreativa en el río Paraná en tramos compartidos entre Argentina y Paraguay. Informe
+   Final periodo 2017-2018, presentado por el Instituto de Ictiología del Nordeste de la
+   Facultad de Ciencias Veterinarias de la UNNE a la Comisión Mixta del Río Paraná.
+   Convenio COMIP-UNNE, Acta Complementaria N° 1. Corrientes (Argentina), 81 pp.
+Servicio Nacional de Pesca. 2008. Manual de pesca recreativa. Disponible en:
+   http://www.sernapesca.cl/index.php?option=com_remository&Itemid=246&func=select
+   &id=353.
+Shelby, L. & Vaske, J. 2007. Perceived crowding among hunters and anglers: a meta-
+   analysis. Human Dimensions of Wildlife, 12: 241-261.
+
+          S. Cabral 2139. -3400- Corrientes. Tel.: 0379-4425753, int. 171 Fax: 4425753, int. 113.
+                                      e-mail: sanchez@vet.unne.edu.ar
+                                                      43
+         Convenio COMIP-FCV. UNNE. Acta Complementaria N° 3.
+Instituto de Ictiología del Nordeste. Fac. de Ciencias Veterinarias. Univ. Nacional del Nordeste
+                                        ANEXO FOTOS
+
+
+
+
+           Primera marcación realizada en Itá Ibaté, en posada El Refugio
+
+
+
+
+Primer video de difusión del proyecto realizado por el área de prensa de la UNNE
+
+
+
+   S. Cabral 2139. -3400- Corrientes. Tel.: 0379-4425753, int. 171 Fax: 4425753, int. 113.
+                               e-mail: sanchez@vet.unne.edu.ar
+                                               44
+               Convenio COMIP-FCV. UNNE. Acta Complementaria N° 3.
+      Instituto de Ictiología del Nordeste. Fac. de Ciencias Veterinarias. Univ. Nacional del Nordeste
+
+
+
+
+Participación en torneos de pesca realizados sobre margen izquierda, aguas abajo de EBY.
+
+
+
+
+    Torneo de pesca en Bella Vista Itapúa con el equipo de Fauna Íctica de Paraguay.
+
+
+
+
+         S. Cabral 2139. -3400- Corrientes. Tel.: 0379-4425753, int. 171 Fax: 4425753, int. 113.
+                                     e-mail: sanchez@vet.unne.edu.ar
+                                                     45
+         Convenio COMIP-FCV. UNNE. Acta Complementaria N° 3.
+Instituto de Ictiología del Nordeste. Fac. de Ciencias Veterinarias. Univ. Nacional del Nordeste
+
+
+
+
+        Marcaciones realizadas con el equipo de Fauna Íctica de la EBY
+
+                                         ITUZAINGÓ
+
+
+
+
+                                        NINO PESCA
+
+
+
+
+   S. Cabral 2139. -3400- Corrientes. Tel.: 0379-4425753, int. 171 Fax: 4425753, int. 113.
+                               e-mail: sanchez@vet.unne.edu.ar
+                                               46
+         Convenio COMIP-FCV. UNNE. Acta Complementaria N° 3.
+Instituto de Ictiología del Nordeste. Fac. de Ciencias Veterinarias. Univ. Nacional del Nordeste
+
+
+
+
+                                        NINO PESCA
+
+                                          ITÁ IBATÉ
+
+
+
+
+                                 POSADA EL REFUGIO
+   S. Cabral 2139. -3400- Corrientes. Tel.: 0379-4425753, int. 171 Fax: 4425753, int. 113.
+                               e-mail: sanchez@vet.unne.edu.ar
+                                               47
+         Convenio COMIP-FCV. UNNE. Acta Complementaria N° 3.
+Instituto de Ictiología del Nordeste. Fac. de Ciencias Veterinarias. Univ. Nacional del Nordeste
+
+
+
+
+                                 POSADA EL REFUGIO
+
+
+
+
+                                  POSADA LA SERENA
+
+   S. Cabral 2139. -3400- Corrientes. Tel.: 0379-4425753, int. 171 Fax: 4425753, int. 113.
+                               e-mail: sanchez@vet.unne.edu.ar
+                                               48
+         Convenio COMIP-FCV. UNNE. Acta Complementaria N° 3.
+Instituto de Ictiología del Nordeste. Fac. de Ciencias Veterinarias. Univ. Nacional del Nordeste
+
+
+
+
+                          POSADA AURAS DE LOURDESS
+
+
+
+
+                                      POWER PESCA
+
+
+
+   S. Cabral 2139. -3400- Corrientes. Tel.: 0379-4425753, int. 171 Fax: 4425753, int. 113.
+                               e-mail: sanchez@vet.unne.edu.ar
+                                               49
+         Convenio COMIP-FCV. UNNE. Acta Complementaria N° 3.
+Instituto de Ictiología del Nordeste. Fac. de Ciencias Veterinarias. Univ. Nacional del Nordeste
+
+
+
+
+                                      POWER PESCA
+
+
+                                              ITATI
+
+
+
+
+                                         LA REGINA
+
+   S. Cabral 2139. -3400- Corrientes. Tel.: 0379-4425753, int. 171 Fax: 4425753, int. 113.
+                               e-mail: sanchez@vet.unne.edu.ar
+                                               50
+         Convenio COMIP-FCV. UNNE. Acta Complementaria N° 3.
+Instituto de Ictiología del Nordeste. Fac. de Ciencias Veterinarias. Univ. Nacional del Nordeste
+
+
+
+
+                   COMPLEJO MURMULLOS DEL PARANÁ
+
+
+
+
+                   COMPLEJO MURMULLOS DEL PARANÁ
+   S. Cabral 2139. -3400- Corrientes. Tel.: 0379-4425753, int. 171 Fax: 4425753, int. 113.
+                               e-mail: sanchez@vet.unne.edu.ar
+                                               51
+         Convenio COMIP-FCV. UNNE. Acta Complementaria N° 3.
+Instituto de Ictiología del Nordeste. Fac. de Ciencias Veterinarias. Univ. Nacional del Nordeste
+
+
+
+
+                       EXCURSION DE PESCA DON JUAN
+
+
+
+
+                       EXCURSION DE PESCA DON JUAN
+   S. Cabral 2139. -3400- Corrientes. Tel.: 0379-4425753, int. 171 Fax: 4425753, int. 113.
+                               e-mail: sanchez@vet.unne.edu.ar
+                                               52
+         Convenio COMIP-FCV. UNNE. Acta Complementaria N° 3.
+Instituto de Ictiología del Nordeste. Fac. de Ciencias Veterinarias. Univ. Nacional del Nordeste
+
+
+
+
+                       EXCURSION DE PESCA DON JUAN
+
+
+
+
+   S. Cabral 2139. -3400- Corrientes. Tel.: 0379-4425753, int. 171 Fax: 4425753, int. 113.
+                               e-mail: sanchez@vet.unne.edu.ar
+                                               53
+         Convenio COMIP-FCV. UNNE. Acta Complementaria N° 3.
+Instituto de Ictiología del Nordeste. Fac. de Ciencias Veterinarias. Univ. Nacional del Nordeste
+
+
+
+
+                       EXCURSION DE PESCA DON JUAN
+
+
+
+
+   S. Cabral 2139. -3400- Corrientes. Tel.: 0379-4425753, int. 171 Fax: 4425753, int. 113.
+                               e-mail: sanchez@vet.unne.edu.ar
+                                               54
+         Convenio COMIP-FCV. UNNE. Acta Complementaria N° 3.
+Instituto de Ictiología del Nordeste. Fac. de Ciencias Veterinarias. Univ. Nacional del Nordeste
+                                  PASO DE LA PATRIA
+
+
+
+
+                                        PATO PESCA
+
+
+
+
+                                      GERMAN DIAZ
+   S. Cabral 2139. -3400- Corrientes. Tel.: 0379-4425753, int. 171 Fax: 4425753, int. 113.
+                               e-mail: sanchez@vet.unne.edu.ar
+                                               55
+         Convenio COMIP-FCV. UNNE. Acta Complementaria N° 3.
+Instituto de Ictiología del Nordeste. Fac. de Ciencias Veterinarias. Univ. Nacional del Nordeste
+
+
+
+
+                                   MAURO SOLIMANO
+
+
+
+
+   S. Cabral 2139. -3400- Corrientes. Tel.: 0379-4425753, int. 171 Fax: 4425753, int. 113.
+                               e-mail: sanchez@vet.unne.edu.ar
+                                               56
+         Convenio COMIP-FCV. UNNE. Acta Complementaria N° 3.
+Instituto de Ictiología del Nordeste. Fac. de Ciencias Veterinarias. Univ. Nacional del Nordeste
+
+
+                       ALGUNAS NOTAS PERIODISTICAS
+
+
+
+
+                                         RADIO DOS
+
+
+
+
+                                     SENTI LA PESCA
+
+
+
+   S. Cabral 2139. -3400- Corrientes. Tel.: 0379-4425753, int. 171 Fax: 4425753, int. 113.
+                               e-mail: sanchez@vet.unne.edu.ar
+                                               57
+         Convenio COMIP-FCV. UNNE. Acta Complementaria N° 3.
+Instituto de Ictiología del Nordeste. Fac. de Ciencias Veterinarias. Univ. Nacional del Nordeste
+
+
+
+
+                                DIARIO LA REPÚBLICA
+
+
+
+
+                    DIARIO MAS PRODUCCIÓN MISIONES
+
+   S. Cabral 2139. -3400- Corrientes. Tel.: 0379-4425753, int. 171 Fax: 4425753, int. 113.
+                               e-mail: sanchez@vet.unne.edu.ar
+                                               58
+           Convenio COMIP-FCV. UNNE. Acta Complementaria N° 3.
+  Instituto de Ictiología del Nordeste. Fac. de Ciencias Veterinarias. Univ. Nacional del Nordeste
+
+
+
+
+                               DIARIO DE RADIO LA DOS
+
+
+
+
+NOTICIA DE LA RECAPTURA DE UN DORADO QUE RECORRIO 1500 KM
+          LEVANTADO EN EL PORTAL DE RADIO LA DOS
+
+
+     S. Cabral 2139. -3400- Corrientes. Tel.: 0379-4425753, int. 171 Fax: 4425753, int. 113.
+                                 e-mail: sanchez@vet.unne.edu.ar
+                                                 59
+                    Convenio COMIP-FCV. UNNE. Acta Complementaria N° 3.
+           Instituto de Ictiología del Nordeste. Fac. de Ciencias Veterinarias. Univ. Nacional del Nordeste
+
+
+
+
+EL PROYECTO ALCANZA LOS 1000 PECES MARCADOS Y ES NOTA DEL DIARIO EL LITORAL.
+
+
+
+
+              S. Cabral 2139. -3400- Corrientes. Tel.: 0379-4425753, int. 171 Fax: 4425753, int. 113.
+                                          e-mail: sanchez@vet.unne.edu.ar
+                                                          60
+

@@ -1,0 +1,1628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async="" data-turbo-track="reload" src="https://ga.jspm.io/npm:es-module-shims@1.8.2/dist/es-module-shims.js"></script>
+<script type="importmap" data-turbo-track="reload">{
+  "imports": {
+    "application": "/assets/application-8e9153c6e6f7b7537c6c7c0ec415c2b7469ccbb6ba5e67d6dd7e3e879913161b.js",
+    "vue": "https://ga.jspm.io/npm:vue@3.5.4/dist/vue.esm-browser.prod.js",
+    "@hotwired/turbo-rails": "/assets/turbo.min-b86d83036ff04169e5bf3ebbc82e0ad528456259e47091b448f41a3cadabdb40.js",
+    "maplibre-gl": "https://ga.jspm.io/npm:maplibre-gl@4.7.1/dist/maplibre-gl.js",
+    "chart.js": "https://ga.jspm.io/npm:chart.js@4.4.4/dist/chart.js",
+    "@kurkle/color": "https://ga.jspm.io/npm:@kurkle/color@0.3.2/dist/color.esm.js",
+    "litepicker": "https://ga.jspm.io/npm:litepicker@2.0.12/dist/litepicker.umd.js",
+    "components/ScrollTop": "/assets/components/ScrollTop-33c62d8a1761b45c297f8bcf02f714ffcca31abbbd3d9587d554a3458e4336f8.js"
+  }
+}</script>
+<link rel="modulepreload" href="/assets/application-8e9153c6e6f7b7537c6c7c0ec415c2b7469ccbb6ba5e67d6dd7e3e879913161b.js">
+<link rel="modulepreload" href="https://ga.jspm.io/npm:vue@3.5.4/dist/vue.esm-browser.prod.js">
+<link rel="modulepreload" href="/assets/turbo.min-b86d83036ff04169e5bf3ebbc82e0ad528456259e47091b448f41a3cadabdb40.js">
+<link rel="modulepreload" href="https://ga.jspm.io/npm:maplibre-gl@4.7.1/dist/maplibre-gl.js">
+<link rel="modulepreload" href="https://ga.jspm.io/npm:chart.js@4.4.4/dist/chart.js">
+<link rel="modulepreload" href="https://ga.jspm.io/npm:@kurkle/color@0.3.2/dist/color.esm.js">
+<link rel="modulepreload" href="https://ga.jspm.io/npm:litepicker@2.0.12/dist/litepicker.umd.js">
+<link rel="modulepreload" href="/assets/components/ScrollTop-33c62d8a1761b45c297f8bcf02f714ffcca31abbbd3d9587d554a3458e4336f8.js">
+<script type="module">import "application"</script>
+<script>
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5G6K89S');
+window.dataLayer = window.dataLayer || [];
+window.dataLayer.push({ "tracking_id": "8b0471ca1bae4cddb0506ae67611b548" });
+</script>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"NRJS-f053825086b44bacff3","applicationID":"996597226","transactionName":"egpeQEtWWF1UFxgOCloERF1WV0ceQg1YFQ==","queueTime":0,"applicationTime":79,"agent":""}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).init={"ajax":{"deny_list":["bam.nr-data.net"]},"feature_flags":["rum_v2"]};(window.NREUM||(NREUM={})).loader_config={"licenseKey":"NRJS-f053825086b44bacff3","applicationID":"996597226","browserID":"1134663928"};;/*! For license information please see nr-loader-rum-1.324.1.min.js.LICENSE.txt */
+(()=>{var e={8122(e,t,r){"use strict";r.d(t,{a:()=>i});var n=r(944);function i(e,t){try{if(!e||"object"!=typeof e)return(0,n.R)(3);if(!t||"object"!=typeof t)return(0,n.R)(4);const r=Object.create(Object.getPrototypeOf(t),Object.getOwnPropertyDescriptors(t)),a=0===Object.keys(r).length?e:r;for(let s in a)if(void 0!==e[s])try{if(null===e[s]){r[s]=null;continue}Array.isArray(e[s])&&Array.isArray(t[s])?r[s]=Array.from(new Set([...e[s],...t[s]])):e[s]instanceof Map||e[s]instanceof Set||e[s]instanceof Date||e[s]instanceof RegExp?r[s]=e[s]:"object"==typeof e[s]&&null!==t[s]&&"object"==typeof t[s]?r[s]=i(e[s],t[s]):r[s]=e[s]}catch(e){r[s]||(0,n.R)(1,e)}return r}catch(e){(0,n.R)(2,e)}}},2555(e,t,r){"use strict";r.d(t,{f:()=>s});var n=r(384),i=r(8122);const a={beacon:n.NT.beacon,errorBeacon:n.NT.errorBeacon,licenseKey:void 0,applicationID:void 0,sa:void 0,queueTime:void 0,applicationTime:void 0,ttGuid:void 0,user:void 0,account:void 0,product:void 0,extra:void 0,jsAttributes:{},userAttributes:void 0,atts:void 0,transactionName:void 0,tNamePlain:void 0};function s(e){try{return!!e.licenseKey&&!!e.errorBeacon&&!!e.applicationID}catch(e){return!1}}r.d(t,["D",0,e=>(0,i.a)(e,a)])},7699(e,t,r){"use strict";var n=r(860);const i=1e6,a={[n.K7.logging]:!0,[n.K7.genericEvents]:!0,[n.K7.jserrors]:!0,[n.K7.ajax]:!0};r.d(t,["It",0,i,"KC",0,a,"qh",0,"SESSION_ERROR","zd",0,5e5])},9324(e,t,r){"use strict";r.d(t,["xv",0,"1.324.1"])},981(e,t,r){"use strict";r.d(t,["R",0,{AJAX:"AjaxRequest",PA:"PageAction",UA:"UserAction",BP:"BrowserPerformance",WS:"WebSocket",SPV:"SecurityPolicyViolation",JSE:"JavaScriptError",LOG:"Log",PVE:"PageView",PVT:"PageViewTiming",SR:"SessionReplay",ST:"SessionTrace",BI:"BrowserInteraction"}])},6154(e,t,r){"use strict";var n=r(1863);const i="undefined"!=typeof window&&!!window.document,a="undefined"!=typeof WorkerGlobalScope&&("undefined"!=typeof self&&self instanceof WorkerGlobalScope&&self.navigator instanceof WorkerNavigator||"undefined"!=typeof globalThis&&globalThis instanceof WorkerGlobalScope&&globalThis.navigator instanceof WorkerNavigator),s=i?window:"undefined"!=typeof WorkerGlobalScope&&("undefined"!=typeof self&&self instanceof WorkerGlobalScope&&self||"undefined"!=typeof globalThis&&globalThis instanceof WorkerGlobalScope&&globalThis),o=Boolean("hidden"===s?.document?.visibilityState),c=""+s?.location,u=/iPad|iPhone|iPod/.test(s.navigator?.userAgent),d=u&&"undefined"==typeof SharedWorker,l=((()=>{const e=s.navigator?.userAgent?.match(/Firefox[/\s](\d+\.\d+)/);Array.isArray(e)&&e.length>=2&&e[1]})(),Date.now()-(0,n.t)());r.d(t,["OF",0,u,"RI",0,i,"WN",0,l,"bv",0,a,"gm",0,s,"m",0,c,"mw",0,o,"sb",0,d,"zk",0,()=>{const e=s?.performance?.getEntriesByType?.("navigation")?.[0];if(e&&e.responseStart>0&&e.responseStart<s.performance.now())return e}])},3241(e,t,r){"use strict";r.d(t,{W:()=>i});var n=r(6154);function i(e={}){try{n.gm.dispatchEvent(new CustomEvent("newrelic",{detail:e}))}catch(e){}}},1687(e,t,r){"use strict";r.d(t,{Ak:()=>o,Ze:()=>u,x3:()=>c});var n=r(3241),i=r(3606),a=r(860),s=r(2646);function o(e,t){if(!e)return;const r={staged:!1,priority:a.P3[t]||0};e.runtime.drainRegistry.get(t)||e.runtime.drainRegistry.set(t,r)}function c(e,t){if(!e)return;const r=e.runtime.drainRegistry;r&&(r.get(t)&&r.delete(t),l(e,t,!1),r.size&&d(e))}function u(e,t="feature",r=!1){if(e){if(!e.runtime.drainRegistry.get(t)||r)return l(e,t);e.runtime.drainRegistry.get(t).staged=!0,d(e)}}function d(e){if(!e)return;const t=Array.from(e.runtime.drainRegistry);t.every(([e,t])=>t.staged)&&(t.sort((e,t)=>e[1].priority-t[1].priority),t.forEach(([t])=>{e.runtime.drainRegistry.delete(t),l(e,t)}))}function l(e,t,r=!0){if(!e)return;const a=e.ee,o=i.i.handlers;if(a&&!a.aborted&&a.backlog&&o){if((0,n.W)({type:"lifecycle",name:"drain",feature:t}),r){const e=a.backlog[t],r=o[t];if(r){for(let t=0;e&&t<e.length;++t)f(e[t],r);Object.entries(r).forEach(([e,t])=>{Object.values(t||{}).forEach(t=>{t[0]?.on&&t[0].context()instanceof s.y&&!t[0].listeners(e).includes(t[1])&&t[0].on(e,t[1])})})}}a.isolatedBacklog||delete o[t],a.backlog[t]=null,a.emit("drain-"+t,[])}}function f(e,t){var r=e[1];Object.values(t[r]||{}).forEach(t=>{var r=e[0];if(t[0]===r){var n=t[1],i=e[3],a=e[2];n.apply(i,a)}})}},7836(e,t,r){"use strict";var n=r(384),i=r(8990),a=r(2646),s=r(5607);const o="nr@context:".concat(s.W),c=function e(t,r){var n={},s={},d={},l=!1;try{l=16===r.length&&u.initializedAgents?.[r]?.runtime.isolatedBacklog}catch(e){}var f={on:p,addEventListener:p,removeEventListener:function(e,t){var r=n[e];if(!r)return;for(var i=0;i<r.length;i++)r[i]===t&&r.splice(i,1)},emit:function(e,r,n,i,a){!1!==a&&(a=!0);if(c.aborted&&!i)return;t&&a&&t.emit(e,r,n);var o=g(n);m(e).forEach(e=>{e.apply(o,r)});var u=v()[s[e]];u&&u.push([f,e,r,o]);return o},get:h,listeners:m,context:g,buffer:function(e,t){const r=v();if(t=t||"feature",f.aborted)return;Object.entries(e||{}).forEach(([e,n])=>{s[n]=t,t in r||(r[t]=[])})},abort:function(){f._aborted=!0,Object.keys(f.backlog).forEach(e=>{delete f.backlog[e]})},isBuffering:function(e){return!!v()[s[e]]},debugId:r,backlog:l?{}:t&&"object"==typeof t.backlog?t.backlog:{},isolatedBacklog:l};return Object.defineProperty(f,"aborted",{get:()=>{let e=f._aborted||!1;return e||(t&&(e=t.aborted),e)}}),f;function g(e){return e&&e instanceof a.y?e:e?(0,i.I)(e,o,()=>new a.y(o)):new a.y(o)}function p(e,t){n[e]=m(e).concat(t)}function m(e){return n[e]||[]}function h(t){return d[t]=d[t]||e(f,t)}function v(){return f.backlog}}(void 0,"globalEE"),u=(0,n.Zm)();u.ee||(u.ee=c),r.d(t,["P",0,o,"ee",0,c])},2646(e,t,r){"use strict";r.d(t,{y:()=>n});class n{constructor(e){this.contextId=e}}},9908(e,t,r){"use strict";r.d(t,{d:()=>n,p:()=>i});var n=r(7836).ee.get("handle");function i(e,t,r,i,a){a?(a.buffer([e],i),a.emit(e,t,r)):(n.buffer([e],i),n.emit(e,t,r))}},3606(e,t,r){"use strict";r.d(t,{i:()=>a});var n=r(9908);a.on=s;var i=a.handlers={};function a(e,t,r,a){s(a||n.d,i,e,t,r)}function s(e,t,r,i,a){a||(a="feature"),e||(e=n.d);var s=t[a]=t[a]||{};(s[r]=s[r]||[]).push([e,i])}},3878(e,t,r){"use strict";function n(e,t){return{capture:e,passive:!1,signal:t}}function i(e,t,r=!1,i){window.addEventListener(e,t,n(r,i))}function a(e,t,r=!1,i){document.addEventListener(e,t,n(r,i))}r.d(t,{DD:()=>a,jT:()=>n,sp:()=>i})},5607(e,t,r){"use strict";const n=(0,r(9566).bz)();r.d(t,["W",0,n])},9566(e,t,r){"use strict";r.d(t,{LA:()=>s,bz:()=>a});var n=r(6154);function i(e,t){return e?15&e[t]:16*Math.random()|0}function a(){const e=n.gm?.crypto||n.gm?.msCrypto;let t,r=0;return e&&e.getRandomValues&&(t=e.getRandomValues(new Uint8Array(30))),"xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".split("").map(e=>"x"===e?i(t,r++).toString(16):"y"===e?(3&i()|8).toString(16):e).join("")}function s(e){const t=n.gm?.crypto||n.gm?.msCrypto;let r,a=0;t&&t.getRandomValues&&(r=t.getRandomValues(new Uint8Array(e)));const s=[];for(var o=0;o<e;o++)s.push(i(r,a++).toString(16));return s.join("")}},2614(e,t,r){"use strict";r.d(t,["BB",0,18e5,"Wt",0,"NRBA_SESSION::","iL",0,{SAME_TAB:"same-tab",CROSS_TAB:"cross-tab"},"tS",0,{STARTED:"session-started",PAUSE:"session-pause",RESET:"session-reset",RESUME:"session-resume",UPDATE:"session-update"},"wk",0,144e5])},1863(e,t,r){"use strict";function n(){return Math.floor(performance.now())}r.d(t,{t:()=>n})},944(e,t,r){"use strict";r.d(t,{R:()=>i});var n=r(3241);function i(e,t){"function"==typeof console.debug&&(console.debug("New Relic Warning: https://github.com/newrelic/newrelic-browser-agent/blob/main/docs/warning-codes.md#".concat(e),t),(0,n.W)({drained:null,type:"data",name:"warn",feature:"warn",data:{code:e,secondary:t}}))}},8990(e,t,r){"use strict";r.d(t,{I:()=>i});var n=Object.prototype.hasOwnProperty;function i(e,t,r){if(n.call(e,t))return e[t];var i=r();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:i,writable:!0,enumerable:!1}),i}catch(e){}return e[t]=i,i}},6389(e,t,r){"use strict";function n(e,t=500,r={}){const n=r?.leading||!1;let i;return(...r)=>{n&&void 0===i&&(e.apply(this,r),i=setTimeout(()=>{i=clearTimeout(i)},t)),n||(clearTimeout(i),i=setTimeout(()=>{e.apply(this,r)},t))}}function i(e){let t=!1;return(...r)=>{t||(t=!0,e.apply(this,r))}}r.d(t,{J:()=>i,s:()=>n})},1910(e,t,r){"use strict";r.d(t,{i:()=>a});var n=r(944);const i=new Map;function a(...e){return e.every(e=>{if(i.has(e))return i.get(e);const t="function"==typeof e?e.toString():"",r=t.includes("[native code]"),a=t.includes("nrWrapper");return r||a||(0,n.R)(64,e?.name||t),i.set(e,r),r})}},5289(e,t,r){"use strict";r.d(t,{GG:()=>s,Qr:()=>c,sB:()=>o});var n=r(3878),i=r(6389);function a(){return"undefined"==typeof document||"complete"===document.readyState}function s(e,t){if(a())return e();const r=(0,i.J)(e),s=setInterval(()=>{a()&&(clearInterval(s),r())},500);(0,n.sp)("load",r,t)}function o(e){if(a())return e();(0,n.DD)("DOMContentLoaded",e)}function c(e){if(a())return e();(0,n.sp)("popstate",e)}},384(e,t,r){"use strict";r.d(t,{Zm:()=>c,bQ:()=>d,dV:()=>u,pV:()=>l});var n=r(6154),i=r(1863),a=r(944),s=r(1910);const o={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net"};function c(){return n.gm.NREUM||(n.gm.NREUM={}),void 0===n.gm.newrelic&&(n.gm.newrelic=n.gm.NREUM),n.gm.NREUM}function u(){let e=c();return e.o||(e.o={ST:n.gm.setTimeout,SI:n.gm.setImmediate||n.gm.setInterval,CT:n.gm.clearTimeout,XHR:n.gm.XMLHttpRequest,REQ:n.gm.Request,EV:n.gm.Event,PR:n.gm.Promise,MO:n.gm.MutationObserver,FETCH:n.gm.fetch,WS:n.gm.WebSocket},(0,s.i)(...Object.values(e.o))),e}function d(e,t){let r=c();r.initializedAgents??={},t.initializedAt={ms:(0,i.t)(),date:new Date},r.initializedAgents[e]=t,2===Object.keys(r.initializedAgents).length&&(0,a.R)(69)}function l(){return function(){let e=c();const t=e.info||{};e.info={beacon:o.beacon,errorBeacon:o.errorBeacon,...t}}(),function(){let e=c();const t=e.init||{};e.init={...t}}(),u(),function(){let e=c();const t=e.loader_config||{};e.loader_config={...t}}(),c()}r.d(t,["NT",0,o])},2843(e,t,r){"use strict";r.d(t,{G:()=>a,u:()=>i});var n=r(3878);function i(e,t=!1,r,i){(0,n.DD)("visibilitychange",function(){if(t)return void("hidden"===document.visibilityState&&e());e(document.visibilityState)},r,i)}function a(e,t,r){(0,n.sp)("pagehide",e,t,r)}},9300(e,t,r){"use strict";r(860).K7.ajax;r.d(t,["mo",0,{NONE:"none",FAILURES:"failures",ALL:"all"}])},3969(e,t,r){"use strict";const n=r(860).K7.metrics;r.d(t,["TZ",0,n,"XG",0,"storeEventMetrics","xV",0,"storeSupportabilityMetrics"])},6630(e,t,r){"use strict";const n=r(860).K7.pageViewEvent;r.d(t,["T",0,n])},782(e,t,r){"use strict";const n=r(860).K7.pageViewTiming;r.d(t,["T",0,n])},4234(e,t,r){"use strict";r.d(t,{W:()=>i});var n=r(1687);class i{constructor(e,t){this.agentRef=e,this.ee=e?.ee,this.featureName=t,this.blocked=!1}deregisterDrain(){(0,n.x3)(this.agentRef,this.featureName)}}},7767(e,t,r){"use strict";var n=r(6154);r.d(t,["V",0,e=>n.RI&&!0===e?.privacy.cookies_enabled])},8362(e,t,r){"use strict";r.d(t,{d:()=>a});var n=r(9566),i=r(1741);class a extends i.W{agentIdentifier=(0,n.LA)(16)}},1741(e,t,r){"use strict";r.d(t,{W:()=>a});var n=r(944),i=r(4261);class a{#e(e,...t){if(this[e]!==a.prototype[e])return this[e](...t);(0,n.R)(35,e)}addPageAction(e,t){return this.#e(i.hG,e,t)}register(e){return this.#e(i.eY,e)}recordCustomEvent(e,t){return this.#e(i.fF,e,t)}setPageViewName(e,t){return this.#e(i.Fw,e,t)}setCustomAttribute(e,t,r){return this.#e(i.cD,e,t,r)}noticeError(e,t){return this.#e(i.o5,e,t)}setUserId(e,t=!1){return this.#e(i.Dl,e,t)}setApplicationVersion(e){return this.#e(i.nb,e)}setErrorHandler(e){return this.#e(i.bt,e)}addRelease(e,t){return this.#e(i.k6,e,t)}log(e,t){return this.#e("log",e,t)}start(){return this.#e("start")}finished(e){return this.#e(i.BL,e)}recordReplay(){return this.#e(i.CH)}pauseReplay(){return this.#e(i.Tb)}addToTrace(e){return this.#e(i.U2,e)}setCurrentRouteName(e){return this.#e(i.PA,e)}interaction(e){return this.#e(i.dT,e)}wrapLogger(e,t,r){return this.#e(i.Wb,e,t,r)}measure(e,t){return this.#e(i.V1,e,t)}consent(e){return this.#e(i.Pv,e)}}},4261(e,t,r){"use strict";r.d(t,["BL",0,"finished","CH",0,"recordReplay","Dl",0,"setUserId","Fw",0,"setPageViewName","PA",0,"setCurrentRouteName","Pv",0,"consent","Tb",0,"pauseReplay","U2",0,"addToTrace","V1",0,"measure","Wb",0,"wrapLogger","bt",0,"setErrorHandler","cD",0,"setCustomAttribute","dT",0,"interaction","eY",0,"register","fF",0,"recordCustomEvent","hG",0,"addPageAction","k6",0,"addRelease","nb",0,"setApplicationVersion","o5",0,"noticeError"])},1738(e,t,r){"use strict";r.d(t,{U:()=>l,Y:()=>d});var n=r(3241),i=r(9908),a=r(1863),s=r(944),o=r(3969),c=r(8362),u=r(860);function d(e,t,r,a){const d=a||r;!d||d[e]&&d[e]!==c.d.prototype[e]||(d[e]=function(){(0,i.p)(o.xV,["API/"+e+"/called"],void 0,u.K7.metrics,r.ee),(0,n.W)({drained:!!r.runtime?.activatedFeatures,type:"data",name:"api",feature:"api-"+e,data:{}});try{return t.apply(this,arguments)}catch(e){(0,s.R)(23,e)}})}function l(e,t,r,n,s){const o=e.info;null===r?delete o.jsAttributes[t]:o.jsAttributes[t]=r,(s||null===r)&&(0,i.p)("api-"+n,[(0,a.t)(),t,r],void 0,"session",e.ee)}},8374(e,t,r){r.nc=(()=>{try{return document?.currentScript?.nonce}catch(e){}return""})()},860(e,t,r){"use strict";const n="events",i="jserrors",a="browser/blobs",s="browser/logs",o={ajax:"ajax",genericEvents:"generic_events",jserrors:i,logging:"logging",metrics:"metrics",pageAction:"page_action",pageViewEvent:"page_view_event",pageViewTiming:"page_view_timing",sessionReplay:"session_replay",sessionTrace:"session_trace",softNav:"soft_navigations"},c={[o.pageViewEvent]:1,[o.pageViewTiming]:2,[o.metrics]:3,[o.jserrors]:4,[o.softNav]:5,[o.ajax]:6,[o.sessionTrace]:7,[o.sessionReplay]:8,[o.logging]:9,[o.genericEvents]:10},u={[o.pageViewEvent]:"rum",[o.pageViewTiming]:n,[o.ajax]:n,[o.softNav]:n,[o.metrics]:i,[o.jserrors]:i,[o.sessionTrace]:a,[o.sessionReplay]:a,[o.logging]:s,[o.genericEvents]:"ins"};r.d(t,["$J",0,u,"K7",0,o,"P3",0,c,"XX",0,i,"Yy",0,s,"df",0,a,"hg",0,"connect"])}};const t={};function r(n){const i=t[n];if(void 0!==i)return i.exports;const a=t[n]={exports:{}};return e[n](a,a.exports,r),a.exports}r.m=e,r.d=(e,t)=>{if(Array.isArray(t))for(var n=0;n<t.length;){var i=t[n++],a=t[n++];r.o(e,i)?0===a&&n++:0===a?Object.defineProperty(e,i,{enumerable:!0,value:t[n++]}):Object.defineProperty(e,i,{enumerable:!0,get:a})}else for(var i in t)r.o(t,i)&&!r.o(e,i)&&Object.defineProperty(e,i,{enumerable:!0,get:t[i]})},r.f={},r.e=e=>Promise.all(Object.keys(r.f).reduce((t,n)=>(r.f[n](e,t),t),[])),r.u=e=>"nr-rum-1.324.1.min.js",r.o=(e,t)=>Object.prototype.hasOwnProperty.call(e,t),(()=>{const e={},t="NRBA-1.324.1.PROD:";r.l=(n,i,a,s)=>{if(e[n])return void e[n].push(i);let o,c;if(void 0!==a){const e=document.getElementsByTagName("script");for(var u=0;u<e.length;u++){const r=e[u];if(r.getAttribute("src")==n||r.getAttribute("data-webpack")==t+a){o=r;break}}}if(!o){c=!0;var d={296:"sha512-zuv39xzZ8AH/HwpVrtkixvcBuOFo2ydcFzMtXjx+3Iwr5g++inX+6YDH7J/8fOCAtBetz8aDyaYCRkGy2nnG/w=="};o=document.createElement("script"),o.charset="utf-8",r.nc&&o.setAttribute("nonce",r.nc),o.setAttribute("data-webpack",t+a),o.src=n,0!==o.src.indexOf(window.location.origin+"/")&&(o.crossOrigin="anonymous"),d[s]&&(o.integrity=d[s])}e[n]=[i];const l=(t,r)=>{o.onerror=o.onload=null,clearTimeout(f);const i=e[n];if(delete e[n],o.parentNode?.removeChild(o),i?.forEach(e=>e(r)),t)return t(r)},f=setTimeout(l.bind(null,void 0,{type:"timeout",target:o}),12e4);o.onerror=l.bind(null,o.onerror),o.onload=l.bind(null,o.onload),c&&document.head.appendChild(o)}})(),r.r=e=>{Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},r.p="https://js-agent.newrelic.com/",(()=>{const e={374:0,840:0};r.f.j=(t,n)=>{let i=r.o(e,t)?e[t]:void 0;if(0!==i)if(i)n.push(i[2]);else{const a=new Promise((r,n)=>i=e[t]=[r,n]);n.push(i[2]=a);const s=r.p+r.u(t),o=new Error,c=n=>{if(r.o(e,t)&&(i=e[t],0!==i&&(e[t]=void 0),i)){const e=n&&("load"===n.type?"missing":n.type),r=n&&n.target&&n.target.src;o.message="Loading chunk "+t+" failed: ("+e+": "+r+")",o.name="ChunkLoadError",o.type=e,o.request=r,i[1](o)}};r.l(s,c,"chunk-"+t,t)}};const t=(t,n)=>{let[i,a,s]=n;var o,c,u=0;if(i.some(t=>0!==e[t])){for(o in a)r.o(a,o)&&(r.m[o]=a[o]);if(s)s(r)}for(t&&t(n);u<i.length;u++)c=i[u],r.o(e,c)&&e[c]&&e[c][0](),e[c]=0},n=self["webpackChunk:NRBA-1.324.1.PROD"]=self["webpackChunk:NRBA-1.324.1.PROD"]||[];n.forEach(t.bind(null,0)),n.push=t.bind(null,n.push.bind(n))})(),(()=>{"use strict";r(8374);var e=r(8362),t=r(860);const n=Object.values(t.K7);var i=r(384),a=r(1741);var s=r(2555),o=r(981);t.K7.genericEvents,o.R.PA,o.R.UA,o.R.BP;const c={RESOURCES:"experimental.resources",REGISTER:"register"};var u=r(9300);const d=e=>{if(!e||"string"!=typeof e)return!1;try{document.createDocumentFragment().querySelector(e)}catch{return!1}return!0};var l=r(2614),f=r(944),g=r(8122);const p="[data-nr-mask]",m=e=>(0,g.a)(e,(()=>{const e={feature_flags:[],experimental:{register:!1,resources:!1,iframe_bridge:!1,iframe_domains:[]},mask_selector:"*",block_selector:"[data-nr-block]",mask_input_options:{color:!1,date:!1,"datetime-local":!1,email:!1,month:!1,number:!1,range:!1,search:!1,tel:!1,text:!1,time:!1,url:!1,week:!1,textarea:!1,select:!1,password:!0}};return{ajax:{deny_list:void 0,block_internal:!0,enabled:!0,autoStart:!0,capture_payloads:u.mo.NONE},api:{register:{get enabled(){return e.feature_flags.includes(c.REGISTER)||e.experimental.register},set enabled(t){e.experimental.register=t},duplicate_data_to_container:!1,get allow_iframe_bridge(){return e.feature_flags.includes(c.IFRAME_BRIDGE)||e.experimental.iframe_bridge},set allow_iframe_bridge(t){e.experimental.iframe_bridge=t},get iframe_domains(){return e.experimental.iframe_domains},set iframe_domains(t){Array.isArray(t)?e.experimental.iframe_domains=t:(0,f.R)(1,t)}}},browser_consent_mode:{enabled:!1},distributed_tracing:{enabled:void 0,exclude_newrelic_header:void 0,cors_use_newrelic_header:void 0,cors_use_tracecontext_headers:void 0,allowed_origins:void 0},get feature_flags(){return e.feature_flags},set feature_flags(t){e.feature_flags=t},generic_events:{enabled:!0,autoStart:!0},harvest:{interval:30},jserrors:{enabled:!0,autoStart:!0},logging:{enabled:!0,autoStart:!0},metrics:{enabled:!0,autoStart:!0},obfuscate:void 0,page_action:{enabled:!0},page_view_event:{enabled:!0,autoStart:!0},page_view_timing:{enabled:!0,autoStart:!0},performance:{capture_marks:!1,capture_measures:!1,capture_detail:!0,resources:{get enabled(){return e.feature_flags.includes(c.RESOURCES)||e.experimental.resources},set enabled(t){e.experimental.resources=t},asset_types:[],first_party_domains:[],ignore_newrelic:!0}},privacy:{cookies_enabled:!0},proxy:{assets:void 0,beacon:void 0},session:{expiresMs:l.wk,inactiveMs:l.BB},session_replay:{autoStart:!0,enabled:!1,preload:!1,collect_fonts:!1,inline_images:!1,fix_stylesheets:!0,mask_all_inputs:!0,get mask_text_selector(){return e.mask_selector},set mask_text_selector(t){d(t)?e.mask_selector="".concat(t,",").concat(p):""===t||null===t?e.mask_selector=p:(0,f.R)(5,t)},get block_class(){return"nr-block"},get ignore_class(){return"nr-ignore"},get mask_text_class(){return"nr-mask"},get block_selector(){return e.block_selector},set block_selector(t){d(t)?e.block_selector+=",".concat(t):""!==t&&(0,f.R)(6,t)},get mask_input_options(){return e.mask_input_options},set mask_input_options(t){t&&"object"==typeof t?e.mask_input_options={...t,password:!0}:(0,f.R)(7,t)}},session_trace:{enabled:!0,autoStart:!0},soft_navigations:{enabled:!0,autoStart:!0},ssl:void 0,user_actions:{enabled:!0,elementAttributes:["id","className","tagName","type"]},web_sockets:{enabled:!1}}})());var h=r(6154),v=r(9324);let b=0;const y={buildEnv:"PROD",distMethod:"CDN",version:v.xv,originTime:h.WN},_={consented:!1},w={activatedFeatures:void 0,appMetadata:{},configured:!1,get consented(){return this.session?.state?.consent||_.consented},set consented(e){_.consented=e},customTransaction:void 0,denyList:[],disabled:!1,drainRegistry:new Map,connector:void 0,harvester:void 0,v2Target:void 0,isolatedBacklog:!1,isRecording:!1,loaderType:void 0,maxBytes:3e4,obfuscator:void 0,onerror:void 0,ptid:void 0,releaseIds:{},session:void 0,timeKeeper:void 0,registeredEntities:[],jsAttributesMetadata:{bytes:0},get harvestCount(){return++b},listeningForIframeMessages:!1},R="BA";var A=r(7836),x=r(3241);const E={accountID:void 0,trustKey:void 0,agentID:void 0,licenseKey:void 0,applicationID:void 0,xpid:void 0};var S=r(9908);const k="newrelic-iframe-";function T(e,t={},n,o){let{init:c,info:u,loader_config:d,runtime:l={},exposed:f=!0}=t;if(!u){const e=(0,i.pV)();c=e.init,u=e.info,d=e.loader_config}var p;e.init=m(c||{}),e.loader_config=(p=d||{},(0,g.a)(p,E)),u.jsAttributes??={},h.bv&&(u.jsAttributes.isWorker=!0),e.info=(0,s.D)(u);const v=e.init;e.runtime??=(e=>{const t=(0,g.a)(e,w),r=Object.keys(y).reduce((e,t)=>(e[t]={value:y[t],writable:!1,configurable:!0,enumerable:!0},e),{});return Object.defineProperties(t,r)})(l),e.runtime.v2Target??={type:R,instance:e.agentIdentifier,get id(){return e.runtime.appMetadata?.agents?.[0]?.entityGuid},get attributes(){return{"entity.guid":this.id,appId:e.info.applicationID}}},v.proxy.assets&&(e=>{const t=e.startsWith("http");e+="/",r.p=t?e:"https://"+e})(v.proxy.assets),e.runtime.configured||(Object.defineProperty(e,"beacons",{get:()=>[e.info.beacon,e.info.errorBeacon,e.init.proxy.assets,e.init.proxy.beacon].filter(Boolean)}),Object.defineProperty(e.runtime,"denyList",{get:()=>[...e.init.ajax.deny_list||[],...e.init.ajax.block_internal?e.beacons:[]]}),e.runtime.ptid=e.agentIdentifier,function(e){const t=(0,i.pV)();Object.getOwnPropertyNames(a.W.prototype).forEach(r=>{const n=a.W.prototype[r];if("function"!=typeof n||"constructor"===n)return;let i=t[r];e[r]&&!1!==e.exposed&&"micro-agent"!==e.runtime?.loaderType&&(t[r]=(...t)=>{const n=e[r](...t);return i?i(...t):n})})}(e),e.runtime.loaderType=n,e.ee=A.ee.get(e.agentIdentifier),e.exposed=f,(0,x.W)({drained:!!e.runtime.activatedFeatures,type:"lifecycle",name:"initialize",feature:void 0,data:e.config}),e.init.api.register.allow_iframe_bridge&&h.gm.addEventListener("message",t=>{"string"==typeof t.data?.type&&t.data.type.startsWith(k)&&(0,S.p)("iframe-message",[t],void 0,"IFRAME",e.ee)}),e.runtime.configured=!0)}var j=r(1863),P=r(4261),N=r(1738);var O=r(1687),M=r(4234),I=r(5289),D=r(7767);function V(e){return!!(0,i.dV)().o.MO&&(0,D.V)(e)&&!0===e?.session_trace.enabled}var W=r(6389),B=r(7699);const C=new WeakSet,K=new WeakMap;class U extends M.W{constructor(e,t){super(e,t),this.abortHandler=void 0,this.featAggregate=void 0,this.loadedSuccessfully=void 0,this.onAggregateImported=new Promise(e=>{this.loadedSuccessfully=e}),this.deferred=Promise.resolve(),!1===e.init[this.featureName].autoStart?this.deferred=new Promise((t,r)=>{this.ee.on("manual-start-all",(0,W.J)(()=>{(0,O.Ak)(e,this.featureName),t()}))}):(0,O.Ak)(e,t)}importAggregator(e,t,n={}){if(this.featAggregate)return;const i=async()=>{if(await this.deferred,this.#t(e),!(0,s.f)(e.info))return(0,f.R)(43),e.ee.abort(),void this.loadedSuccessfully(!1);try{await async function(e,t,n){if(K.has(e))return K.get(e);const i=(async()=>{if((0,D.V)(e.init))try{const{setupAgentSession:t}=await r.e(296).then(r.bind(r,1768));t(e)}catch(e){(0,f.R)(20,e),t.emit("internal-error",[e]),(0,S.p)(B.qh,[e],void 0,n,t)}if(e.init.api.register.allow_iframe_bridge)try{const{setupIframeMFEMessageListener:t}=await Promise.resolve().then(function(){const e=new Error("Cannot find module '../../loaders/configure/iframe-message-handler'");throw e.code="MODULE_NOT_FOUND",e});t(e)}catch(e){(0,f.R)(23,e)}const[{Connector:i},{Harvester:a}]=await Promise.all([r.e(296).then(r.bind(r,6589)),r.e(296).then(r.bind(r,5237))]);e.runtime.connector=new i(e),e.runtime.harvester=new a(e);const s=Object.values(e.features).filter(t=>e.runtime.drainRegistry.has(t.featureName));Promise.all(s.map(e=>e.onAggregateImported)).then(()=>e.runtime.harvester.startTimer())})();K.set(e,i),await i}(e,this.ee,this.featureName)}catch(e){return(0,f.R)(79,e),this.ee.abort(),void this.loadedSuccessfully(!1)}try{if(!this.#r(this.featureName,e.runtime.session,e.init))return this.abortHandler?.(),(0,O.Ze)(this.agentRef,this.featureName),void this.loadedSuccessfully(!1);const{Aggregate:r}=await t();this.featAggregate=new r(e,n),e.runtime.harvester.initializedAggregates.push(this.featAggregate),this.loadedSuccessfully(!0)}catch(e){(0,f.R)(34,e),this.abortHandler?.(),(0,O.Ze)(this.agentRef,this.featureName,!0),this.loadedSuccessfully(!1)}};h.RI?(0,I.GG)(()=>i(),!0):i()}#r(e,r,n){if(this.blocked)return!1;switch(e){case t.K7.sessionReplay:return V(n)&&!!r;case t.K7.sessionTrace:return!!r;default:return!0}}#t(e){if(!C.has(e)&&(C.add(e),!(0,s.f)(e.info))){const t=(0,i.pV)();let r={...t.info?.jsAttributes};try{r={...r,...e.info?.jsAttributes}}catch(e){}T(e,{...t,info:{...t.info,jsAttributes:r},runtime:e.runtime},e.runtime.loaderType)}}}var L=r(6630);class F extends U{static featureName=L.T;constructor(e){var t;super(e,L.T),this.setupInspectionEvents(),t=e,(0,N.Y)(P.Fw,function(e,r){"string"==typeof e&&("/"!==e.charAt(0)&&(e="/"+e),t.runtime.customTransaction=(r||"http://custom.transaction")+e,(0,S.p)("api-"+P.Fw,[(0,j.t)()],void 0,void 0,t.ee))},t),this.importAggregator(e,()=>e.init.feature_flags.includes("rum_v2")?r.e(296).then(r.bind(r,908)):r.e(296).then(r.bind(r,7927)))}setupInspectionEvents(){const e=(e,t)=>{e&&(0,x.W)({timeStamp:e.timeStamp,loaded:"complete"===e.target.readyState,type:"window",name:t,data:e.target.location+""})};(0,I.sB)(t=>{e(t,"DOMContentLoaded")}),(0,I.GG)(t=>{e(t,"load")}),(0,I.Qr)(t=>{e(t,"navigate")}),this.ee.on(l.tS.UPDATE,(e,t)=>{(0,x.W)({type:"lifecycle",name:"session",data:t})})}}class G extends e.d{constructor(e){var t;(super(),h.gm)?(this.features={},(0,i.bQ)(this.agentIdentifier,this),this.desiredFeatures=new Set(e.features||[]),this.desiredFeatures.add(F),T(this,e,e.loaderType||"agent"),t=this,(0,N.Y)(P.cD,function(e,r,n=!1){if("string"==typeof e){if(["string","number","boolean"].includes(typeof r)||null===r)return(0,N.U)(t,e,r,P.cD,n);(0,f.R)(40,typeof r)}else(0,f.R)(39,typeof e)},t),function(e){(0,N.Y)(P.Dl,function(t,r=!1){if("string"!=typeof t&&null!==t)return void(0,f.R)(41,typeof t);const n=e.info.jsAttributes["enduser.id"];r&&null!=n&&n!==t?(0,S.p)("api-setUserIdAndResetSession",[t],void 0,"session",e.ee):(0,N.U)(e,"enduser.id",t,P.Dl,!0)},e)}(this),function(e){(0,N.Y)(P.nb,function(t){if("string"==typeof t||null===t)return(0,N.U)(e,"application.version",t,P.nb,!1);(0,f.R)(42,typeof t)},e)}(this),function(e){(0,N.Y)("start",function(){e.ee.emit("manual-start-all")},e)}(this),function(e){(0,N.Y)(P.Pv,function(t=!0){if("boolean"==typeof t){if((0,S.p)("api-"+P.Pv,[t],void 0,"session",e.ee),e.runtime.consented=t,t){const t=e.features.page_view_event;t.onAggregateImported.then(e=>{const r=t.featAggregate;e&&!r.sentRum&&r.sendRum?.()})}}else(0,f.R)(65,typeof t)},e)}(this),this.run()):(0,f.R)(21)}get config(){return{info:this.info,init:this.init,loader_config:this.loader_config,runtime:this.runtime}}get api(){return this}run(){try{const e=function(e){const t={};return n.forEach(r=>{t[r]=!!e[r]?.enabled}),t}(this.init),r=[...this.desiredFeatures],i=this.init.feature_flags.includes("rum_v2");r.sort((e,r)=>t.P3[e.featureName]-t.P3[r.featureName]),r.forEach(r=>{if(!e[r.featureName]&&(i||r.featureName!==t.K7.pageViewEvent))return;const n=function(e){switch(e){case t.K7.ajax:return[t.K7.jserrors];case t.K7.sessionTrace:return[t.K7.ajax,t.K7.pageViewEvent];case t.K7.sessionReplay:return[t.K7.sessionTrace];case t.K7.pageViewTiming:return[t.K7.pageViewEvent];default:return[]}}(r.featureName).filter(e=>!(e in this.features));n.length>0&&(0,f.R)(36,{targetFeature:r.featureName,missingDependencies:n}),this.features[r.featureName]=new r(this)})}catch(e){(0,f.R)(22,e);for(const e in this.features)this.features[e].abortHandler?.();const t=(0,i.Zm)();delete t.initializedAgents[this.agentIdentifier]?.features,delete this.sharedAggregator;return t.ee.get(this.agentIdentifier).abort(),!1}}}var H=r(2843),z=r(782);class Y extends U{static featureName=z.T;constructor(e){super(e,z.T),h.RI&&((0,H.u)(()=>(0,S.p)("docHidden",[(0,j.t)()],void 0,z.T,this.ee),!0),(0,H.G)(()=>(0,S.p)("winPagehide",[(0,j.t)()],void 0,z.T,this.ee)),this.importAggregator(e,()=>r.e(296).then(r.bind(r,9981))))}}var Z=r(3969);class q extends U{static featureName=Z.TZ;constructor(e){super(e,Z.TZ),this.importAggregator(e,()=>r.e(296).then(r.bind(r,9623)))}}new G({features:[F,Y,q],loaderType:"lite"})})()})();</script>
+<meta content="yes" name="mobile-web-app-capable">
+<meta content="width=device-width,initial-scale=1" name="viewport">
+<meta content="false" name="turbo-prefetch">
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="4mBJ-HlxuWlNtiUc_0BqJYcg6kUaKdQgPUKMJDdmKE0ul7m_d4n2et2K7ddkWCfqSNt2Yeuooktu2gm8xQ9GBw" />
+
+
+<link href="/favicon.png" rel="icon" type="image/png">
+<link href="/favicon.svg" rel="icon" type="image/svg+xml">
+<link href="/favicon.png" rel="apple-touch-icon">
+<link as="style" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&amp;display=swap" onload="this.onload=null;this.rel=&#39;stylesheet&#39;" rel="preload">
+<link rel="stylesheet" href="/assets/application-2cda62255d18e13dcb396754e7795d672cabb467b3cdf51f19ef259a6e08f7d0.css" data-turbo-track="reload" />
+<title id="page-title">The best hotels in Carlos Pellegrini, Argentina | The Hotel Guru</title>
+<meta name="description" content="Find the best places to stay in Carlos Pellegrini using our very fast highlights search">
+<link rel="canonical" href="https://www.thehotelguru.com/best-hotels-in/argentina/carlos-pellegrini">
+<meta property="og:site_name" content="The Hotel Guru">
+<script>
+window.trackingProfileId = "8b0471ca1bae4cddb0506ae67611b548";
+</script>
+<meta name="sentry-trace" content="2f277a124479411dbb88452b180ba108-ab1288ac9da744eb-0">
+<meta name="baggage" content="sentry-trace_id=2f277a124479411dbb88452b180ba108,sentry-sample_rate=0.002,sentry-sample_rand=0.745687,sentry-sampled=false,sentry-environment=production,sentry-release=b2309c7afa0a74a06752f0a6852cacce119cbce9,sentry-public_key=5d26ca9ba714e9374e0641a63d8bfd37,sentry-org_id=1087604">
+<link href="https://www.thehotelguru.com/de-de/beste-hotels-in/argentinien/carlos-pellegrini" hreflang="de" rel="alternate">
+<link href="https://www.thehotelguru.com/best-hotels-in/argentina/carlos-pellegrini" hreflang="en" rel="alternate">
+<link href="https://www.thehotelguru.com/es-es/best-hotels-in/argentina/carlos-pellegrini" hreflang="es" rel="alternate">
+<link href="https://www.thehotelguru.com/fr-fr/best-hotels-in/argentina/carlos-pellegrini" hreflang="fr" rel="alternate">
+<link href="https://www.thehotelguru.com/it-it/best-hotels-in/argentina/carlos-pellegrini" hreflang="it" rel="alternate">
+<link href="https://www.thehotelguru.com/best-hotels-in/argentina/carlos-pellegrini" hreflang="x-default" rel="alternate">
+<script type="application/ld+json">
+{"@context":"https://schema.org/","@type":["Organization","OnlineBusiness"],"@id":"https://www.thehotelguru.com/#org","url":"https://www.thehotelguru.com/","name":"The Hotel Guru","alternateName":"TheHotelGuru","slogan":"The expert view","description":"Founded by leading hotel critics, The Hotel Guru provides trusted expert reviews and handpicked recommendations to help travellers find the best boutique and luxury hotels across the globe.","sameAs":["https://x.com/The_Hotel_Guru","https://www.instagram.com/the_hotel_guru/","https://www.facebook.com/thehotelguru","https://www.linkedin.com/company/the-hotel-guru/","https://uk.pinterest.com/the_hotel_guru/"],"logo":{"@type":"ImageObject","url":"https://www.thehotelguru.com/images/global/logo_mobile.png"},"address":{"@type":"PostalAddress","streetAddress":"Unit LG.03 Cargo Works, 1-2 Hatfields","addressLocality":"London","addressRegion":"London","postalCode":"SE1 9PG","addressCountry":"GB"},"contactPoint":{"@type":"ContactPoint","telephone":"+44(0)203 1370694","contactType":"Customer Service","areaServed":"World Wide"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org/","@type":"WebSite","@id":"https://www.thehotelguru.com#website","url":"https://www.thehotelguru.com","name":"The Hotel Guru","publisher":{"@id":"https://www.thehotelguru.com#org"},"inLanguage":"en-US"}
+</script>
+<script type="application/ld+json">
+{"@type":"WebPage","name":"The best hotels in Carlos Pellegrini, Argentina","url":"https://www.thehotelguru.com/best-hotels-in/argentina/carlos-pellegrini","lastReviewed":"2019-08-01","@context":"https://schema.org/"}
+</script>
+<script type="application/ld+json">
+{"@type":"TouristDestination","name":"Carlos Pellegrini","description":null,"@id":"https://www.thehotelguru.com/best-hotels-in/argentina/carlos-pellegrini#dest","touristType":{"@type":"Audience","audienceType":["Tourists","Cultural tourism"]},"geo":{"@type":"GeoCoordinates","latitude":-28.5335599508,"longitude":-57.1677017212},"@context":"https://schema.org/"}
+</script>
+<script type="application/ld+json">
+{"@type":"CollectionPage","@id":"https://www.thehotelguru.com/best-hotels-in/argentina/carlos-pellegrini#location","mainEntity":{"@type":"ItemList","numberOfItems":2,"itemListElement":[{"@type":"ListItem","position":1,"url":"https://www.thehotelguru.com/hotel/aguape-lodge-carlos-pellegrini","item":{"@id":"https://www.thehotelguru.com/hotel/aguape-lodge-carlos-pellegrini#hotel"}},{"@type":"ListItem","position":2,"url":"https://www.thehotelguru.com/hotel/posada-de-la-laguna-carlos-pellegrini","item":{"@id":"https://www.thehotelguru.com/hotel/posada-de-la-laguna-carlos-pellegrini#hotel"}}]},"@context":"https://schema.org/"}
+</script>
+<script type="application/ld+json">
+{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"The Hotel Guru","item":"https://www.thehotelguru.com/"},{"@type":"ListItem","position":2,"name":"Argentina","item":"https://www.thehotelguru.com/best-hotels-in/argentina"},{"@type":"ListItem","position":3,"name":"Corrientes Province","item":"https://www.thehotelguru.com/best-hotels-in/argentina/corrientes-province"},{"@type":"ListItem","position":4,"name":"Carlos Pellegrini"}],"@context":"https://schema.org/"}
+</script>
+<script>!function(t,e){if(void 0===e[t]){e[t]=function(){e[t].clients.push(this),this._init=[Array.prototype.slice.call(arguments)]},e[t].clients=[];for(var r=function(t){return function(){return this["_"+t]=this["_"+t]||[],this["_"+t].push(Array.prototype.slice.call(arguments)),this}},n=["addRecord","blockEvents","fetchServerCookie","fetchGlobalID","fetchUserSegments","resetUUID","ready","setSignedMode","setAnonymousMode","set","trackEvent","trackPageview","trackClicks","unblockEvents","collectTags"],s=0;s<n.length;s++){var i=n[s];e[t].prototype[i]=r(i)}var a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src=("https:"===document.location.protocol?"https:":"http:")+"//cdn.treasuredata.com/sdk/4.1/td.min.js";var c=document.getElementsByTagName("script")[0];c.parentNode.insertBefore(a,c)}}("Treasure",this)</script>
+</head>
+<body>
+<noscript>
+<iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-5G6K89S" style="display:none;visibility:hidden" width="0"></iframe>
+</noscript>
+<div class="snaptrip_banner">
+<div class="container">
+<div class="row">
+<div class="col-1 hidden-sm"></div>
+<div class="col-10">
+<a target="_blank" href="https://www.snaptrip.com">Part of the <img alt="Snaptrip" src="/assets/global/snaptrip_logo_white-6d6384a3a7d79b9b89c9534828cc9436f63b456b0f4643bec859f0f847058be1.svg" width="48" height="13" /> family</a>
+</div>
+</div>
+</div>
+</div>
+
+<header class="header" id="header">
+<div class="container">
+<div class="row">
+<div class="col-1 hidden-sm"></div>
+<div class="col-10 col-12-sm">
+<div class="header-container">
+<a aria-label="Return home" class="logo" href="/">
+<img alt="The Hotel Guru" class="mobile" src="/assets/global/logo_mobile-4db62adba4066218c7da798e025767ec040830f8c406b26c95d61b0c02f3f9d6.png">
+<img alt="The Hotel Guru" class="desktop" src="/assets/global/logo-2e2786f4ab2f6aff73a720d72223e797b6cf9a72f300e8518f342c1930afafdb.svg">
+</a>
+<div class="content">
+<button aria-label="Toggle sidebar" class="toggle-button" id="toggle-button"></button>
+<div class="menu_container">
+<ul id="menu-list">
+<li><a href="/destinations">Destinations</a></li>
+<li><a href="/best-hotels-in">Best hotels in</a></li>
+<li><a href="/where-to-stay">Where to stay</a></li>
+</ul>
+<div>
+<div class="currency-pretty">
+<button aria-controls="currency-dropdown" aria-expanded="false" aria-haspopup="listbox" aria-label="Change currency" class="currency-pretty__trigger" id="currency-trigger" type="button">
+<span class="currency-pretty__active" id="active-currency" title="Currency: USD">USD</span>
+</button>
+<select name="currency" id="currency-selector" class="currency-pretty__native"><option value="GBP">GBP</option>
+<option value="EUR">EUR</option>
+<option value="CAD">CAD</option>
+<option selected="selected" value="USD">USD</option>
+<option value="AUD">AUD</option></select>
+<div aria-label="Select currency" class="currency-pretty__dropdown hidden" id="currency-dropdown" role="listbox">
+<button aria-selected="false" class="currency-pretty__option" data-currency-value="GBP" role="option" type="button">
+<div class="currency-pretty_box">
+<span class="currency-pretty__icon">£</span>
+<span class="currency-pretty__code">GBP</span>
+</div>
+<span class="currency-pretty__name">British Pound</span>
+</button>
+<button aria-selected="false" class="currency-pretty__option" data-currency-value="EUR" role="option" type="button">
+<div class="currency-pretty_box">
+<span class="currency-pretty__icon">€</span>
+<span class="currency-pretty__code">EUR</span>
+</div>
+<span class="currency-pretty__name">Euro</span>
+</button>
+<button aria-selected="false" class="currency-pretty__option" data-currency-value="CAD" role="option" type="button">
+<div class="currency-pretty_box">
+<span class="currency-pretty__icon">CA$</span>
+<span class="currency-pretty__code">CAD</span>
+</div>
+<span class="currency-pretty__name">Canadian Dollar</span>
+</button>
+<button aria-selected="true" class="currency-pretty__option" data-currency-value="USD" role="option" type="button">
+<div class="currency-pretty_box">
+<span class="currency-pretty__icon">$</span>
+<span class="currency-pretty__code">USD</span>
+</div>
+<span class="currency-pretty__name">United States Dollar</span>
+</button>
+<button aria-selected="false" class="currency-pretty__option" data-currency-value="AUD" role="option" type="button">
+<div class="currency-pretty_box">
+<span class="currency-pretty__icon">A$</span>
+<span class="currency-pretty__code">AUD</span>
+</div>
+<span class="currency-pretty__name">Australian Dollar</span>
+</button>
+</div>
+</div>
+<script>
+  document.addEventListener('turbo:load', () => {
+    const trigger  = document.getElementById('currency-trigger')
+    const dropdown = document.getElementById('currency-dropdown')
+    const select   = document.getElementById('currency-selector')
+    const active   = document.getElementById('active-currency')
+  
+    if (!trigger || !dropdown || !select || !active) return
+  
+    const open = () => {
+      dropdown.classList.remove('hidden')
+      trigger.setAttribute('aria-expanded', 'true')
+    }
+  
+    const close = () => {
+      dropdown.classList.add('hidden')
+      trigger.setAttribute('aria-expanded', 'false')
+    }
+  
+    // Toggle dropdown visibility
+    const toggle = () => {
+      dropdown.classList.contains('hidden') ? open() : close()
+    }
+  
+    // Update visible active currency label
+    const setActive = (code) => {
+      active.textContent = code
+      active.setAttribute('title', `Currency: ${code}`)
+    }
+  
+    // Initial state sync from select
+    setActive(select.value)
+  
+    // Toggle dropdown on trigger click
+    trigger.addEventListener('click', (e) => {
+      e.preventDefault()
+      e.stopPropagation()
+      toggle()
+    })
+  
+    // Handle currency button click inside dropdown
+    dropdown.querySelectorAll('[data-currency-value]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const code = btn.dataset.currencyValue
+  
+        // Sync hidden select value
+        select.value = code
+        setActive(code)
+        close()
+  
+        // Trigger change event to keep existing behavior
+        select.dispatchEvent(new Event('change', { bubbles: true }))
+      })
+    })
+  
+    // Close dropdown when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!dropdown.contains(e.target) && !trigger.contains(e.target)) close()
+    })
+  
+    // Close dropdown on ESC key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') close()
+    })
+  
+    // Persist currency preference and reload page
+    select.addEventListener('change', () => {
+      const selectedCurrency = select.value
+      setActive(selectedCurrency)
+  
+      fetch('/preferences/currency', {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-CSRF-Token': document.querySelector('[name="csrf-token"]').content
+        },
+        body: JSON.stringify({ value: selectedCurrency })
+      })
+      .then(response => {
+        // Reload page after successful update
+        if (response.status === 204) {
+          window.location.reload()
+        }
+      })
+    })
+  })
+</script>
+
+</div>
+<div>
+<div class="switch">
+<button aria-controls="switch_content" aria-expanded="false" aria-haspopup="listbox" aria-label="Selected language" class="selected-language" data-locale="en-us" id="selected-language" type="button">
+EN
+</button>
+<div aria-label="Selected language" class="switch_content" id="switch_content" role="listbox">
+<a aria-label="de-de" aria-selected="false" class="de-de" href="/de-de/beste-hotels-in/argentinien/carlos-pellegrini" rel="" role="option">
+<span class="switch__code">DE</span>
+<span class="switch__name">Deutsch</span>
+</a>
+<a aria-label="en-us" aria-selected="true" class="en-us active" href="/best-hotels-in/argentina/carlos-pellegrini" rel="" role="option">
+<span class="switch__code">EN</span>
+<span class="switch__name">English</span>
+</a>
+<a aria-label="es-es" aria-selected="false" class="es-es" href="/es-es/best-hotels-in/argentina/carlos-pellegrini" rel="" role="option">
+<span class="switch__code">ES</span>
+<span class="switch__name">Español</span>
+</a>
+<a aria-label="fr-fr" aria-selected="false" class="fr-fr" href="/fr-fr/best-hotels-in/argentina/carlos-pellegrini" rel="" role="option">
+<span class="switch__code">FR</span>
+<span class="switch__name">Français</span>
+</a>
+<a aria-label="it-it" aria-selected="false" class="it-it" href="/it-it/best-hotels-in/argentina/carlos-pellegrini" rel="" role="option">
+<span class="switch__code">IT</span>
+<span class="switch__name">Italiano</span>
+</a>
+</div>
+</div>
+<script>
+  document.addEventListener('turbo:load', () => {
+    const selector = document.querySelector('.switch');
+    if (!selector) return;
+  
+    const button = selector.querySelector('.selected-language');
+    const menu = selector.querySelector('.switch_content');
+    if (!button || !menu) return;
+  
+    const close = () => {
+      menu.classList.remove('show');
+      button.setAttribute('aria-expanded', 'false');
+    };
+  
+    button.addEventListener('click', () => {
+      const open = menu.classList.toggle('show');
+      button.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  
+    document.addEventListener('pointerdown', (event) => {
+      if (!menu.contains(event.target) && !button.contains(event.target)) close();
+    }, true);
+  
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') close();
+    });
+  });
+</script>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</header>
+<script src="/assets/header-cda4f538bd65f6a2380dba34c9d4b9b4219ad2659f39e4fa16544c84229cde25.js"></script>
+
+<div class="breadcrumbs">
+<div class="container">
+<div class="row">
+<div class="col-1 hidden-sm"></div>
+<div class="col-10 col-12-sm">
+<div>
+<h1 id="title">
+The best hotels in Carlos Pellegrini
+</h1>
+<ul>
+<li>
+<a aria-label="Return home" href="/">
+<span>The Hotel Guru</span>
+</a>
+</li>
+<li>
+<a href="/best-hotels-in/argentina">
+<span>Argentina</span>
+</a>
+</li>
+<li>
+<a href="/best-hotels-in/argentina/corrientes-province">
+<span>Corrientes Province</span>
+</a>
+</li>
+<li>
+<span>Carlos Pellegrini</span>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="gallery">
+<div class="container">
+<div class="row">
+<div class="col-1 hidden-sm"></div>
+<div class="col-10 col-12-sm">
+<div class="gallery_container">
+<div class="main_image skeleton">
+<img alt="Photo of Carlos Pellegrini" src="https://www.thehotelguru.com/_images/f4/ef/f4efdf55df5098c4841d61494161e170/s1180x560.jpg">
+</div>
+<div class="side_images">
+<div class="image skeleton">
+<img alt="Photo of Carlos Pellegrini" loading="lazy" src="https://www.thehotelguru.com/_images/5a/2a/5a2aadea5e41e971964377d53da5b101/s1180x560.jpg">
+</div>
+<div class="image skeleton">
+<img alt="Photo of Carlos Pellegrini" loading="lazy" src="https://www.thehotelguru.com/_images/c9/5a/c95a31e754055d17d932b2e3cb1c7288/s1180x560.jpg">
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="keyword_links">
+<div class="container">
+<div class="row">
+<div class="col-1 hidden-sm"></div>
+<div class="col-10 col-12-sm">
+<div class="links">
+<a class="btn" href="/search?locname=Carlos+Pellegrini">
+All hotels in Carlos Pellegrini
+</a>
+<a class="btn" data-region="Carlos Pellegrini" href="https://www.booking.com/searchresults.html?aid=2422287&amp;label=THG-apartments-villas-uuid-8b0471ca1bae4cddb0506ae67611b548&amp;lang=en-us&amp;selected_currency=usd&amp;nflt=ht_id%253D201%253Bht_id%253D213%253B&amp;rsf=ht_id-213&amp;lsf=ht_id%257C213%257C371&amp;ss=Carlos+Pellegrini%2C+Argentina&amp;ssne=Carlos+Pellegrini%2C+Argentina&amp;ssne_untouched=Carlos+Pellegrini%2C+Argentina" id="btn-apartments-villas" target="_blank">
+Apartments &amp; villas in Carlos Pellegrini
+</a>
+<a class="btn" data-region="Carlos Pellegrini" href="https://www.booking.com/searchresults.html?aid=2422287&amp;label=THG-more-hotels-button-search-uuid-8b0471ca1bae4cddb0506ae67611b548&amp;lang=en-us&amp;selected_currency=usd&amp;ss=Carlos+Pellegrini%2C+Argentina&amp;ssne=Carlos+Pellegrini%2C+Argentina&amp;ssne_untouched=Carlos+Pellegrini%2C+Argentina" id="btn-find-more-hotels" target="_blank">
+Find more hotels in Carlos Pellegrini
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const apartmentsVillasButton = document.getElementById("btn-apartments-villas") || null;
+    const findMoreHotelsButton = document.getElementById("btn-find-more-hotels") || null;
+  
+    function setupPartnerButton(button, buttonId) {
+      if (button) {
+        button.addEventListener("click", function() {
+          if (window.td) {
+            const region = button.getAttribute("data-region");
+            const destinationUrl = button.href;
+  
+            window.td.trackEvent("click_to_partner_website", {
+              trackingProfileID: window.trackingProfileId,
+              locale: "en-us",
+              value: {
+                button_type: "view_more_properties",
+                button_name: buttonId,
+                partner: "booking_com",
+                region: region,
+                destination_url: destinationUrl
+              }
+            });
+            window.td.set('$global', 'td_global_id', 'td_global_id');
+          }
+        });
+      }
+    }
+  
+    if (apartmentsVillasButton) {
+      setupPartnerButton(apartmentsVillasButton,'apartment_and_villas');
+    }
+  
+    if (findMoreHotelsButton) {
+      setupPartnerButton(findMoreHotelsButton,'find_more_hotels_in');
+    }
+  })
+</script>
+
+
+<div class="summary">
+<div class="container">
+<div class="row">
+<div class="col-1 hidden-sm"></div>
+<div class="col-10 col-12-sm">
+<h2>About Carlos Pellegrini</h2>
+<div class="description" data-view-less="View less" data-view-more="View more" id="description">
+<p>Carlos Pellegrini is a small town in Argentina's Corrientes Province lying within the Ibera Provincial Reserve. The best place to stay in Carlos Pellegrini offers a comfortable base from which to experience all the delights of this natural paradise.</p>
+<p>The Ibera wetlands are one of the most important fresh water reservoirs in South America and the second largest in the world. They comprise a series of lakes, lagoons, swamps and marshes. The shape of the land is in a state of constant flux due to the effect of the water. This park (covering some 5,000 square miles is home to an enormous and diverse selection of rare flora and fauna. There are giant otters, caimans, pampas deer, manded wolves, anacondas, howler monkeys, armadillos, 350 species of bird… put simply it's a nirvana for nature lovers, birders and ecotourists! It is also somewhere where you can come to relax and enjoy the ultimate Gaucho experience.</p>
+<p>Carlos Pellegrini itself is a town of less than 1,000 permanent inhabitants. It's a three hour drive by dirt road from Mercedes - so the trip out here is an adventure in itself. But obviously the wetlands are the real reason for visiting the town and we can recommend a great hotel here that will set you up to get the most out of this fascinating region.</p>
+<h3>For a luxurious back to nature experience</h3>
+<ul>
+<li>
+<p><a href="/hotel/posada-de-la-laguna-carlos-pellegrini">Posada de la Laguna</a> is a luxury lodge in a tranquil spot overlooking a picturesque lagoon. The rooms are charming, with whitewashed walls, antique furniture, and tiled floors. The restaurant serves delicious home cooked regional dishes. Explore the surrounding natural beauty or relax by the pool. Boat cruises and cookery classes are also available.</p>
+</li>
+</ul>
+<h3>Travel Information</h3>
+<ul>
+<li>The closest airport to Carlos Pellegrini is Rosario - Islas Malvinas International Airport which is 156km from Carlos Pellegrini, with connecting flights through Buenos Aires, Cordoba, and Sau Paulo.</li>
+<li>The time to catch the best weather in Carlos Pellegrini is from November through until February, with temperatures around 25 celsius.</li>
+<li>For car hire prices, we recommend you visit our online partner <a href="https://www.booking.com/cars/index.en.html?aid=2422287" rel="nofollow">Rentalcars</a>
+</li>
+</ul>
+<h3>Still not sure?</h3>
+<ul>
+<li>
+<p>Browse our list of the <a href="https://www.thehotelguru.com/search?searchbox=topbar&amp;loc=&amp;locname=carlos+pellegrini">best places to stay in Carlos Pellegrini</a></p>
+</li>
+<li>
+<p>Expand your search to include all our recommendations in <a href="/best-hotels-in/argentina/corrientes-province" target="_blank" rel="noopener" data-pu-bhi-url="/bcom?label=THG-in-content-click&amp;location_handle=argentina%2Fcorrientes-province">Corrientes Province</a>,</p>
+</li>
+<li>
+<p>Or<a href="https://www.thehotelguru.com/advice-and-booking/enquire" target="_self"> contact</a> a friendly guru for advice.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="location_weather">
+<div class="container">
+<div class="row">
+<div class="col-1 hidden-sm"></div>
+<div class="col-10 col-12-sm">
+<div class="weather_content">
+<div class="left"></div>
+<div class="right" id="weather_content">
+<h3>Weather</h3>
+<div class="chart_container" id="weather_chart" style="display: none;">
+<h4 class="title">
+Monthly Weather in Carlos Pellegrini
+</h4>
+<div class="chart_block">
+<div class="header_row">
+<img alt="Min Average Daily Temperature (Celsius)" loading="lazy" src="/assets/locations/min_temperature-5cd7a0cf27740394e02a1305ce6181bdb17a1fd2b713964eecef81374e0cf42c.svg">
+<h4>Min Average Daily Temperature (Celsius)</h4>
+</div>
+
+<div>
+  <canvas id="min-average-daily-temperature-celsiusChart"></canvas>
+</div>
+
+<script type="module">
+  import { Chart, registerables } from 'chart.js';
+  Chart.register(...registerables);
+
+  const ctx = document.getElementById('min-average-daily-temperature-celsiusChart');
+  new Chart(ctx, {
+      type: 'bar',
+      data: {
+          labels: ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
+          datasets: [{
+              label: 'Min Average Daily Temperature (Celsius)',
+              data: [21.0,20.9,18.5,16.0,13.3,11.1,10.1,11.8,13.2,15.3,17.3,19.6],
+              backgroundColor: "#FFA733",
+              borderColor: "#FFA733",
+              borderWidth: 1,
+          }],
+      },
+      options: {
+        animations: false,
+        plugins: {
+          legend: {
+            display: false
+          }
+        },
+        scales: {
+          y: {
+            display: true,
+            beginAtZero: true,
+              title: {
+                display: true,
+                text: 'Celsius',
+              },
+          }
+        },
+      },
+  });
+</script>
+
+</div>
+<div class="chart_block">
+<div class="header_row">
+<img alt="Max Average Daily Temperature (Celsius)" loading="lazy" src="/assets/locations/max_temperature-013ce46dd0417fbea1469455663c56fac03b97109c28d972d1fcecb2c42abc8f.svg">
+<h4>Max Average Daily Temperature (Celsius)</h4>
+</div>
+
+<div>
+  <canvas id="max-average-daily-temperature-celsiusChart"></canvas>
+</div>
+
+<script type="module">
+  import { Chart, registerables } from 'chart.js';
+  Chart.register(...registerables);
+
+  const ctx = document.getElementById('max-average-daily-temperature-celsiusChart');
+  new Chart(ctx, {
+      type: 'bar',
+      data: {
+          labels: ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
+          datasets: [{
+              label: 'Max Average Daily Temperature (Celsius)',
+              data: [32.5,32.1,30.1,26.5,21.6,18.8,18.4,21.3,23.6,26.2,29.1,31.5],
+              backgroundColor: "#FF6D33",
+              borderColor: "#FF6D33",
+              borderWidth: 1,
+          }],
+      },
+      options: {
+        animations: false,
+        plugins: {
+          legend: {
+            display: false
+          }
+        },
+        scales: {
+          y: {
+            display: true,
+            beginAtZero: true,
+              title: {
+                display: true,
+                text: 'Celsius',
+              },
+          }
+        },
+      },
+  });
+</script>
+
+</div>
+<div class="chart_block">
+<div class="header_row center">
+<img alt="Average Daily Sunshine Hours" loading="lazy" src="/assets/locations/average_sun-71b2f41ad9a8840f58b1789dd7f3661f0b4907b3ecb965a2c767e6be51568fca.png">
+<h4>Average Daily Sunshine Hours</h4>
+</div>
+
+<div>
+  <canvas id="average-daily-hours-of-sunshineChart"></canvas>
+</div>
+
+<script type="module">
+  import { Chart, registerables } from 'chart.js';
+  Chart.register(...registerables);
+
+  const ctx = document.getElementById('average-daily-hours-of-sunshineChart');
+  new Chart(ctx, {
+      type: 'bar',
+      data: {
+          labels: ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
+          datasets: [{
+              label: 'Average Daily Hours of Sunshine',
+              data: [8.72,8.85,8.73,8.42,7.08,7.06,7.44,8.08,7.83,8.13,8.93,8.93],
+              backgroundColor: "linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(255,167,51,1) 100%)",
+              borderColor: "rgba(255, 206, 86, 1)",
+              borderWidth: 1,
+          }],
+      },
+      options: {
+        animations: false,
+        plugins: {
+          legend: {
+            display: false
+          }
+        },
+        scales: {
+          y: {
+            display: true,
+            beginAtZero: true,
+              title: {
+                display: true,
+                text: 'Hours',
+              },
+          }
+        },
+      },
+  });
+</script>
+
+</div>
+<div class="chart_block">
+<div class="header_row center">
+<img alt="Average Daily Rainfall (mm)" loading="lazy" src="/assets/locations/average_rain-7bea62328a15a67fb1aa3bb3110ef708e6b7effc374e66316728091a7507497e.png">
+<h4>Average Daily Rainfall (mm)</h4>
+</div>
+
+<div>
+  <canvas id="average-daily-rainfall-mmChart"></canvas>
+</div>
+
+<script type="module">
+  import { Chart, registerables } from 'chart.js';
+  Chart.register(...registerables);
+
+  const ctx = document.getElementById('average-daily-rainfall-mmChart');
+  new Chart(ctx, {
+      type: 'bar',
+      data: {
+          labels: ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
+          datasets: [{
+              label: 'Average Daily Rainfall (mm)',
+              data: [3.02,1.78,1.93,2.98,3.19,1.79,2.15,1.5,2.12,3.24,4.04,3.01],
+              backgroundColor: "#62CCDD",
+              borderColor: "#62CCDD",
+              borderWidth: 1,
+          }],
+      },
+      options: {
+        animations: false,
+        plugins: {
+          legend: {
+            display: false
+          }
+        },
+        scales: {
+          y: {
+            display: true,
+            beginAtZero: true,
+              title: {
+                display: true,
+                text: 'mm',
+              },
+          }
+        },
+      },
+  });
+</script>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="margin">
+<div class="container">
+<div class="row">
+<div class="col-1 hidden-sm"></div>
+<div class="col-10 col-12-sm" style="display: flex; justify-content: center;">
+<a href="https://www.snaptrip.com/?utm_source=the_hotel_guru&utm_medium=affiliate_site&utm_campaign=site_banners" rel="nofollow" target="_blank" style="width: 100%;">
+<picture>
+  <!-- Mobile image (loads on smaller screens) -->
+  <source media="(max-width: 1099px)" srcset="https://www.thehotelguru.com/_images/18/23/1823202dc73b3f9706c3b2de3d604cf9/original.png">
+  
+  <!-- Desktop image (loads on larger screens) -->
+  <source media="(min-width: 1100px)" srcset="https://www.thehotelguru.com/_images/ef/52/ef5247d8fa83a7169c6397f7eb000fa8/original.png">
+  
+  <!-- Fallback for browsers that don't support picture -->
+  <img src="https://www.thehotelguru.com/_images/ef/52/ef5247d8fa83a7169c6397f7eb000fa8/original.png" loading="lazy" style="width: 100%;" alt="One search for every trip with Snaptrip">
+</picture>
+</a>
+</div>
+</div>
+</div>
+</div>
+<div class="sign_up" id="sign_up">
+<div class="container">
+<div class="row">
+<div class="col-1 hidden-sm"></div>
+<div class="col-10 col-12-sm">
+<div class="content">
+<div class="copy_block_container">
+<h3>Sign up to our weekly newsletter</h3>
+<p>
+The Hotel Guru is a curated hotel recommendation platform that delivers expert-selected luxury and boutique properties straight to your inbox. No spam. Only sweet updates about the latest hotel openings and the best places to stay.
+</p>
+</div>
+<form action="/newsletter_signups" class="form" method="post" name="sign_form">
+<input autocomplete="email" name="email" placeholder="Email" required type="email">
+<button class="btn light" type="submit">
+Sign up
+</button>
+</form>
+<div class="success_message hidden" id="success_message">
+<p>Thank you for signing up for our newsletter!</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const form = document.forms['sign_form'];
+    const successMessage = document.getElementById('success_message');
+  
+    function showSuccessMessage() {
+      form.classList.add('hidden');
+      successMessage.classList.remove('hidden');
+    }
+  
+    function trackSignupEvent(email) {
+      if (window.td) {
+        const trackingProfileId = window.trackingProfileId;
+        window.td.trackEvent('email_sign_up', {
+          locale: "en-us",
+          trackingProfileID: trackingProfileId,
+          value: {
+            email: email
+          }
+        });
+        window.td.set('$global', 'td_global_id', 'td_global_id');
+      }
+    }
+  
+    form.addEventListener('submit', async function (event) {
+      event.preventDefault();
+      const email = form.elements['email'].value;
+      const url = window.location.href;
+  
+      fetch('/newsletter_signups', {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Referer": window.location.href
+        },
+        body: JSON.stringify({ email, url })
+      })
+      .then(response => {
+        if (response.ok) {
+          showSuccessMessage();
+          trackSignupEvent(email);
+          return response.json();
+        }
+        if (response.status === 400) throw new Error("Invalid email address.");
+        if (response.status === 422) throw new Error("Unprocessable entity.");
+        throw new Error("Unexpected error occurred.");
+      })
+      .then(data => console.log("Response data:", data))
+      .catch(error => console.error('Error:', error.message));
+    });
+  });
+</script>
+
+<div class="margin">
+<div class="container">
+<div class="row">
+<div class="col-1 hidden-sm"></div>
+<div class="col-10 col-12-sm">
+<div class="map_container">
+<div id="location-map-20023" style="width: 100%; height: 400px;"></div>
+
+<script type="module">
+  import maplibregl from "maplibre-gl";
+
+  function wrapLng(lng) {
+    return ((((lng + 180) % 360) + 360) % 360) - 180;
+  }
+
+  const app = {
+    mapInitialized: false,
+    markers: [],
+    el: document.getElementById("location-map-20023"),
+    hotels: document.querySelectorAll('.hotel_card'),
+    map: null,
+
+    createMap: function () {
+      if (this.mapInitialized) return;
+      this.mapInitialized = true;
+
+      this.clearMarkers();
+      this.hotels = document.querySelectorAll('.hotel_card');
+
+      if (!this.hotels.length) return;
+
+      if (!this.map) {
+        const firstHotel = this.hotels[0];
+        const firstLat = parseFloat(firstHotel.dataset.latitude);
+        const firstLng = wrapLng(parseFloat(firstHotel.dataset.longitude));
+
+        this.map = new maplibregl.Map({
+          container: this.el.id,
+          style: 'https://maps.geo.eu-west-1.amazonaws.com/maps/v0/maps/esrinav/style-descriptor?key=v1.public.eyJqdGkiOiI3MzZlYzI0ZS01NDA5LTRlMTAtOGZiMS01MjRhMTJhOTk1NDYifU1JoF2LfT4zW6B6vybaiYCh7KpG4zATM4r3rZm6udel1nPEz1sI-Ua8gP35gC-ursYNtX0mrPAgaHbCRDWzdGlVAeBjl09CBJgleA4TfahGyYnpGgKmSbyN4C6vAZ3-WpgrZYNguOT4VC9gbOkSS66Lhf68_N7uk-0Nv1Z5ojX_MZlcnrtE2NHAKirN3f3Qa4LXLu1HhxAgpL_laHOg9iBkQ8yC4LkpjEO5Kcd6bEHlc19K9o4WdUdDNqIpwqEyCquF6_p1EBeScrOR7lUdIb9n7VWfakjBAnIKYiuN7TVKxyP3b909PCleUC9yhwoVX10Wl4k8agl7dEtWf-AWA2o.ZGQzZDY2OGQtMWQxMy00ZTEwLWIyZGUtOGVjYzUzMjU3OGE4',
+          center: [firstLng, firstLat],
+          zoom: 6
+        });
+
+        this.map.setRenderWorldCopies(true);
+        this.map.scrollZoom.disable();
+
+        this.map.addControl(new maplibregl.NavigationControl(), 'top-left');
+        this.map.addControl(new maplibregl.FullscreenControl(), 'top-right');
+        this.map.addControl(new maplibregl.ScaleControl(), 'bottom-right');
+
+        this.map.on('mouseenter', () => {
+          this.map.scrollZoom.enable();
+        });
+
+        this.map.on('mouseleave', () => {
+          this.map.scrollZoom.disable();
+        });
+      }
+
+      const bounds = new maplibregl.LngLatBounds();
+      const coords = [];
+      let currentPopup = null;
+
+      this.hotels.forEach((hotel) => {
+        const title = hotel.querySelector('.title').textContent.trim();
+        const lat = parseFloat(hotel.dataset.latitude);
+        const lng = wrapLng(parseFloat(hotel.dataset.longitude));
+        const id = hotel.id;
+        const link = hotel.querySelector('.title').getAttribute('href');
+        const location = hotel.querySelector('.location').textContent.trim();
+        const imageSrc = hotel.querySelector('.skeleton img')?.getAttribute('src');
+
+        coords.push({ lat, lng });
+
+        const marker = new maplibregl.Marker()
+          .setLngLat([lng, lat])
+          .addTo(this.map);
+
+        this.markers.push({ id: id, marker: marker });
+
+        const popup = new maplibregl.Popup({ closeButton: false, closeOnClick: false })
+          .setHTML(`
+            <div>
+              <button id="close-popup"></button>
+              <a href="${link}" target="_blank">
+                  <div class="popup-content">
+                      ${imageSrc
+                      ? `<img src="${imageSrc}" alt="${title}" class="skeleton">`
+                      : `<div class="skeleton"></div>`}
+                      <div class="details">
+                          <h3>${title}</h3>
+                          <p>${location}</p>
+                      </div>
+                  </div>
+              </a>
+            </div>
+          `);
+
+        marker.getElement().addEventListener('click', () => {
+          if (currentPopup) {
+            currentPopup.remove();
+          }
+
+          popup.setLngLat([lng, lat]).addTo(this.map);
+          currentPopup = popup;
+
+          document.getElementById('close-popup').addEventListener('click', (event) => {
+            event.stopPropagation();
+            popup.remove();
+            currentPopup = null;
+          });
+        });
+      });
+
+      if (coords.length) {
+        const lngs = coords.map(c => c.lng);
+        const minLng = Math.min(...lngs);
+        const maxLng = Math.max(...lngs);
+
+        const fixedCoords =
+          (maxLng - minLng > 180)
+            ? coords.map(c => ({ lat: c.lat, lng: c.lng < 0 ? c.lng + 360 : c.lng }))
+            : coords;
+
+        fixedCoords.forEach(c => bounds.extend([c.lng, c.lat]));
+      }
+
+      if (!bounds.isEmpty()) {
+        this.map.fitBounds(bounds, { padding: 50, maxZoom: 15 });
+      }
+
+      this.addHotelListeners();
+    },
+
+    clearMarkers: function () {
+      this.markers.forEach(markerData => {
+        markerData.marker.remove();
+      });
+      this.markers = [];
+    },
+
+    addHotelListeners: function () {
+      this.hotels.forEach((hotel) => {
+        const id = hotel.id;
+        const markerData = this.markers.find(marker => marker.id === id);
+
+        if (markerData) {
+          hotel.addEventListener('mouseenter', () => {
+            this.addMarkerHoverClass(markerData.marker.getElement());
+          });
+
+          hotel.addEventListener('mouseleave', () => {
+            this.removeMarkerHoverClass(markerData.marker.getElement());
+          });
+        }
+      });
+    },
+
+    addMarkerHoverClass: function(markerElement) {
+      markerElement.classList.add('hovered-marker');
+    },
+
+    removeMarkerHoverClass: function(markerElement) {
+      markerElement.classList.remove('hovered-marker');
+    }
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        app.createMap();
+        observer.unobserve(app.el);
+      }
+    });
+  }, {
+    rootMargin: '0px',
+    threshold: 0.1
+  });
+
+  document.addEventListener("turbo:load", function () {
+    observer.observe(app.el);
+  });
+</script>
+
+<style>
+  .hovered-marker {
+    z-index: 1;
+  }
+
+  .hovered-marker svg {
+    transform: scale(1.2);
+    transition: transform 0.3s ease;
+  }
+
+  .hovered-marker g[fill="#3FB1CE"] {
+    fill: #55d6be !important;
+  }
+
+  .maplibregl-marker svg {
+    transition: transform 0.3s ease;
+  }
+</style>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="hotel_list">
+<div class="container">
+<div class="row">
+<div class="col-1 hidden-sm"></div>
+<div class="col-10 col-12-sm">
+<div class="hotel_list_content">
+<div>
+<h2>
+The best hotels in Carlos Pellegrini
+</h2>
+<div class="side_block" data-bcom-url="https://www.booking.com/searchresults.html?aid=2422287&amp;label=THG-more-hotels-button-search-uuid-8b0471ca1bae4cddb0506ae67611b548&amp;lang=en-us&amp;selected_currency=usd&amp;ss=Carlos+Pellegrini%2C+Argentina&amp;ssne=Carlos+Pellegrini%2C+Argentina&amp;ssne_untouched=Carlos+Pellegrini%2C+Argentina" data-region="Carlos Pellegrini, Argentina" id="side_block">
+<button class="btn" id="side_bcom_button">
+View the best hotels in Carlos Pellegrini
+</button>
+<label for="side_bcom_checkbox">
+<input checked class="toggle-checkbox" id="side_bcom_checkbox" type="checkbox">
+Compare deals on Booking.com
+</label>
+</div>
+</div>
+<div class="hotel_cards">
+<div class="hotel_card" data-latitude="-28.540625" data-longitude="-57.172014" id="hotel-131103">
+<div class="skeleton">
+<a href="/hotel/aguape-lodge-carlos-pellegrini" target="_blank">
+<img alt="Aguapé Lodge" loading="lazy" src="https://www.thehotelguru.com/_images/4d/b1/4db1fec413f534afd50fc3bba650cf11/s880x600.jpg">
+</a>
+</div>
+<div class="hotel_details">
+<h3>
+<a class="title" href="/hotel/aguape-lodge-carlos-pellegrini" target="_blank">Aguapé Lodge</a>
+</h3>
+<p class="location">
+Carlos Pellegrini
+</p>
+<p class="description">
+This unique lodge sits on the shores of the Iberá Lake in a national park in Argentina. Rooms are warm and inviting, featuring traditional textiles, local artwork and views of the lagoon; book a room in the small house for a cosy fireplace. Explore the beautiful wetlands; a charming nature retreat.
+</p>
+<ul class="overview_tags">
+<li>
+<span>
+Local exploring
+</span>
+- There is plenty to see local to the hotel, with the Iberá Wetlands within walking distance and lake activities available
+</li>
+<li>
+<span>
+Country Escape
+</span>
+- With a unique location in the Iberá National Park, this hotel is great for a country escape
+</li>
+<li>
+<span>
+Romantic Break
+</span>
+- Couples love this peaceful nature getaway, and the warm, romantic lodge suites
+</li>
+<li>
+<span>
+Traditional
+</span>
+</li>
+</ul>
+<div class="price">
+<b>
+<span>from</span>
+$210
+</b>
+<span>for 1 room, 1 night</span>
+<span>including taxes &amp; fees</span>
+</div>
+<div class="buttons">
+<button class="btn" data-propertyId="131103" id="hotel_card_booking_com_btn" onclick="window.open(&#39;https://www.booking.com/searchresults.html?aid=2422287&amp;label=THG-check-availability-button-uuid-8b0471ca1bae4cddb0506ae67611b548&amp;lang=en-us&amp;selected_currency=usd&amp;dest_id=857159&amp;dest_type=hotel&#39;, &#39;_blank&#39;)">
+Check availability on Booking.com
+</button>
+<a class="btn laterooms" data-propertyId="131103" href="/hotel/aguape-lodge-carlos-pellegrini/redirect?aff=lr&amp;label=property_listings" id="hotel_card_laterooms_btn" rel="nofollow" target="_blank">
+Book for less on Snaptrip
+</a>
+</div>
+</div>
+</div>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const bookingComButtons = document.querySelectorAll("#hotel_card_booking_com_btn");
+    const expediaButtons = document.querySelectorAll("#hotel_card_expedia_btn");
+    const lateroomsButtons = document.querySelectorAll("#hotel_card_laterooms_btn");
+  
+    const getCookie = (name) => {
+      if (typeof document !== `undefined`){
+          const value = `; ${document.cookie}`;
+          const parts = value.split(`; ${name}=`);
+          let result;
+  
+          if (parts.length >= 2) {
+              if(name === "tracking_profile_id") {
+                  result = parts.pop().split(';').shift();
+                  if(result.charAt(0) === ',') {
+                      result  = result.substring(1);
+                  }
+                  return result
+              }
+              return parts.pop().split(';').shift()
+          } else {
+              return false
+          }
+      }
+    }
+  
+    function setupPartnerButton(button, supplierName) {
+      if (button && !button.dataset.listenerAdded) {
+        button.addEventListener("click", function() {
+          let destinationUrl;
+  
+          if (supplierName === "booking_com") {
+            destinationUrl = button?.getAttribute("onclick")?.split("'")[1];
+          } else if (supplierName === "expedia" || supplierName === "laterooms") {
+            destinationUrl = button?.getAttribute("href");
+          }
+  
+          if (window.td) {
+            window.td.trackEvent('click_to_partner_website', {
+              trackingProfileID: window.trackingProfileId,
+              locale: "en-us",
+              value: {
+                button_type: "check_availability",
+                button_name: "check_availability",
+                property_id: button.dataset.propertyid,
+                partner: supplierName,
+                destination_url : destinationUrl,
+                ga4Cookie: getCookie("_ga_441Q0BCT69"),
+                gaclient: getCookie("_ga")
+              }
+            });
+            window.td.set('$global', 'td_global_id', 'td_global_id');
+          }
+          if (window.dataLayer) {
+            window.dataLayer.push({
+              event: 'partner_click',
+              click_type: 'button',
+              click_target: supplierName
+            });
+          }
+        });
+        button.dataset.listenerAdded = "true";
+      }
+    }
+  
+    bookingComButtons.forEach(button => {
+      setupPartnerButton(button, "booking_com");
+    });
+  
+    expediaButtons.forEach(button => {
+      setupPartnerButton(button, "expedia");
+    });
+  
+    lateroomsButtons.forEach(button => {
+      setupPartnerButton(button, "my_luxury_hotel");
+    });
+  })
+</script>
+<div class="hotel_card" data-latitude="-28.539832557162" data-longitude="-57.169429063797" id="hotel-80133">
+<div class="skeleton">
+<a href="/hotel/posada-de-la-laguna-carlos-pellegrini" target="_blank">
+<img alt="Posada de la Laguna" loading="lazy" src="https://www.thehotelguru.com/_images/ef/e5/efe5c5c0b503c47add816e03099db121/s880x600.jpg">
+</a>
+</div>
+<div class="hotel_details">
+<h3>
+<a class="title" href="/hotel/posada-de-la-laguna-carlos-pellegrini" target="_blank">Posada de la Laguna</a>
+</h3>
+<p class="location">
+Carlos Pellegrini
+</p>
+<p class="description">
+A luxury lodge in a wonderfully tranquil location, overlooking a picturesque lagoon. Charming rooms have white washed walls, antique furniture and tiled floors. Excellent home-cooked regional dishes are served. Get outside and involved in nature or simply unwind with a book by the pool. Glorious.
+</p>
+<ul class="overview_tags">
+<li>
+<span>
+Back to Nature
+</span>
+- A tranquil property sat in the picturesque wetlands of northeast Argentina.
+</li>
+<li>
+<span>
+Sailing
+</span>
+- Take a hotel boat cruise on the lagoon and admire the picturesque flora and fauna and wildlife.
+</li>
+<li>
+<span>
+Cooking classes
+</span>
+- Take a course with the locally famed González Alzaga who runs a restaurant in Buenos Aires.
+</li>
+<li>
+<span>
+Swimming Pool
+</span>
+- Outdoor pool.
+</li>
+</ul>
+<div class="price">
+<b>
+<span>from</span>
+$320
+</b>
+<span>for 1 room, 1 night</span>
+<span>including taxes &amp; fees</span>
+</div>
+<div class="buttons">
+<button class="btn" data-propertyId="80133" id="hotel_card_booking_com_btn" onclick="window.open(&#39;https://www.booking.com/searchresults.html?aid=2422287&amp;label=THG-check-availability-button-uuid-8b0471ca1bae4cddb0506ae67611b548&amp;lang=en-us&amp;selected_currency=usd&amp;dest_id=469334&amp;dest_type=hotel&#39;, &#39;_blank&#39;)">
+Check availability on Booking.com
+</button>
+<a class="btn laterooms" data-propertyId="80133" href="/hotel/posada-de-la-laguna-carlos-pellegrini/redirect?aff=lr&amp;label=property_listings" id="hotel_card_laterooms_btn" rel="nofollow" target="_blank">
+Book for less on Snaptrip
+</a>
+</div>
+</div>
+</div>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const bookingComButtons = document.querySelectorAll("#hotel_card_booking_com_btn");
+    const expediaButtons = document.querySelectorAll("#hotel_card_expedia_btn");
+    const lateroomsButtons = document.querySelectorAll("#hotel_card_laterooms_btn");
+  
+    const getCookie = (name) => {
+      if (typeof document !== `undefined`){
+          const value = `; ${document.cookie}`;
+          const parts = value.split(`; ${name}=`);
+          let result;
+  
+          if (parts.length >= 2) {
+              if(name === "tracking_profile_id") {
+                  result = parts.pop().split(';').shift();
+                  if(result.charAt(0) === ',') {
+                      result  = result.substring(1);
+                  }
+                  return result
+              }
+              return parts.pop().split(';').shift()
+          } else {
+              return false
+          }
+      }
+    }
+  
+    function setupPartnerButton(button, supplierName) {
+      if (button && !button.dataset.listenerAdded) {
+        button.addEventListener("click", function() {
+          let destinationUrl;
+  
+          if (supplierName === "booking_com") {
+            destinationUrl = button?.getAttribute("onclick")?.split("'")[1];
+          } else if (supplierName === "expedia" || supplierName === "laterooms") {
+            destinationUrl = button?.getAttribute("href");
+          }
+  
+          if (window.td) {
+            window.td.trackEvent('click_to_partner_website', {
+              trackingProfileID: window.trackingProfileId,
+              locale: "en-us",
+              value: {
+                button_type: "check_availability",
+                button_name: "check_availability",
+                property_id: button.dataset.propertyid,
+                partner: supplierName,
+                destination_url : destinationUrl,
+                ga4Cookie: getCookie("_ga_441Q0BCT69"),
+                gaclient: getCookie("_ga")
+              }
+            });
+            window.td.set('$global', 'td_global_id', 'td_global_id');
+          }
+          if (window.dataLayer) {
+            window.dataLayer.push({
+              event: 'partner_click',
+              click_type: 'button',
+              click_target: supplierName
+            });
+          }
+        });
+        button.dataset.listenerAdded = "true";
+      }
+    }
+  
+    bookingComButtons.forEach(button => {
+      setupPartnerButton(button, "booking_com");
+    });
+  
+    expediaButtons.forEach(button => {
+      setupPartnerButton(button, "expedia");
+    });
+  
+    lateroomsButtons.forEach(button => {
+      setupPartnerButton(button, "my_luxury_hotel");
+    });
+  })
+</script>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const sideBlock = document.getElementById("side_block");
+    const bcomCheckbox = document.getElementById("side_bcom_checkbox");
+    const sideBlockButton = document.getElementById("side_bcom_button");
+    const region = sideBlock.dataset.region;
+  
+    function redirectToSearch(event) {
+      event.preventDefault();
+      const searchUrl = `/search?locname=${encodeURIComponent(region)}`;
+  
+      if (bcomCheckbox && bcomCheckbox.checked) {
+        let bcomUrl = sideBlock.dataset.bcomUrl.replace(/DESTINATION/g, encodeURIComponent(region));
+  
+        window.open(searchUrl, '_blank');
+        window.open(bcomUrl, '_self');
+      } else {
+        window.open(searchUrl, '_self');
+      }
+    }
+  
+    if (sideBlockButton) {
+        sideBlockButton.addEventListener("click", redirectToSearch);
+    }
+  });
+</script>
+
+
+<div class="sticky_banner" data-bcom-url="https://www.booking.com/searchresults.html?aid=2422287&amp;label=THG-more-hotels-button-search-uuid-8b0471ca1bae4cddb0506ae67611b548&amp;lang=en-us&amp;selected_currency=usd&amp;ss=Carlos+Pellegrini%2C+Argentina&amp;ssne=Carlos+Pellegrini%2C+Argentina&amp;ssne_untouched=Carlos+Pellegrini%2C+Argentina" data-region="Carlos Pellegrini, Argentina" id="sticky_banner">
+<button class="btn" id="banner_button">
+View the best hotels in Carlos Pellegrini
+</button>
+<label class="toggle" for="bcom_checkbox">
+<input checked class="toggle-checkbox" id="bcom_checkbox" type="checkbox">
+Compare deals on Booking.com
+</label>
+</div>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const banner = document.getElementById("sticky_banner");
+    const bcomCheckbox = document.getElementById("bcom_checkbox");
+    const bannerButton = document.getElementById("banner_button");
+    const region = banner.dataset.region;
+    const bcomUrl = banner.dataset.bcomUrl;
+  
+    function redirectToSearch(event) {
+      event.preventDefault();
+      const searchUrl = `/search?locname=${encodeURIComponent(region)}`;
+  
+      if (window.td ) {
+        window.td.trackEvent("click_to_partner_website", {
+          trackingProfileID: window.trackingProfileId,
+          locale: "en-us",
+          value: {
+            button_type: "search_pop_under",
+            button_name: "view_the_best_hotels_in_bottom_page",
+            partner: "booking_com",
+            region: region,
+            destination_url: bcomUrl
+          }
+        });
+  
+        window.td.set('$global', 'td_global_id', 'td_global_id');
+      }
+  
+      if (window.td) {
+        window.td.trackEvent("click_to_partner_website", {
+          trackingProfileID: window.trackingProfileId,
+          locale: "en-us",
+          value: {
+            button_type: "check_availability",
+            button_name: "view_the_best_hotels_in_bottom_page",
+            partner: "booking_com",
+            destination_url: bcomUrl
+          }
+        });
+  
+        window.td.set('$global', 'td_global_id', 'td_global_id');
+      }
+  
+      if (bcomCheckbox && bcomCheckbox.checked) {
+        window.open(searchUrl, '_blank');
+        window.open(bcomUrl, '_self');
+      } else {
+        window.open(searchUrl, '_self');
+      }
+    }
+  
+    if (bannerButton) {
+        bannerButton.addEventListener("click", redirectToSearch);
+    }
+  
+    function updateBannerVisibility() {
+      const scrollPosition = window.scrollY;
+      const viewportHeight = window.innerHeight / 3;
+  
+      if (scrollPosition > viewportHeight) {
+        if (!banner.classList.contains("visible")) {
+          banner.classList.add("visible");
+        }
+      } else {
+        if (banner.classList.contains("visible")) {
+          banner.classList.remove("visible");
+        }
+      }
+    }
+  
+    updateBannerVisibility();
+  
+    window.addEventListener("scroll", updateBannerVisibility);
+  });
+</script>
+
+<div id="app">
+<scroll-top class="location_page"></scroll-top>
+</div>
+<script src="/assets/locations_links-78a729d043154c3756881d4b256c8d32f061ab4fadd4b794ffe88963feaecd50.js"></script>
+<script src="/assets/location_summary-3e26e13645fbef71cd81c4db01c0550e18f7bf64bb0516ac5304d41046730c9b.js"></script>
+<script src="/assets/location_weather-d461f62cd2ad09f50b312bf0420a3ed57059c2307e5cafff2f684391ec0a9fa7.js"></script>
+
+<footer class="footer" id="footer">
+<div class="container">
+<div class="row">
+<div class="col-1 hidden-sm"></div>
+<div class="col-10 col-12-sm">
+<div class="footer_content">
+<a aria-label="Return home" class="logo" href="/">
+<img alt="The Hotel Guru" class="mobile" src="/assets/global/logo_mobile-4db62adba4066218c7da798e025767ec040830f8c406b26c95d61b0c02f3f9d6.png">
+<img alt="The Hotel Guru" class="desktop" src="/assets/global/logo_mobile-4db62adba4066218c7da798e025767ec040830f8c406b26c95d61b0c02f3f9d6.png">
+</a>
+<div></div>
+<ul>
+<li>
+<b>
+<a aria-label="Return home" href="/">
+The Hotel Guru
+</a>
+</b>
+</li>
+<li>
+<a href="/destinations">
+Destinations
+</a>
+</li>
+<li>
+<a href="/best-hotels-in">
+Best hotels in
+</a>
+</li>
+<li>
+<a href="/where-to-stay">
+Where to stay
+</a>
+</li>
+<li>
+<a href="/the-gurus">
+About us
+</a>
+</li>
+<li>
+<a href="/privacy-policy">
+Privacy policy
+</a>
+</li>
+<li>
+<a href="/cookies">
+Cookies
+</a>
+</li>
+<li>
+<a href="/terms">
+Terms of use
+</a>
+</li>
+<li>
+<a href="/advice-and-booking/enquire">
+Contact us
+</a>
+</li>
+</ul>
+<p class="copyright">
+Copyright © The Hotel Guru 2026
+</p>
+<div class="social_bar">
+<a aria-label="Follow The Hotel Guru on Twitter" class="twitter" href="https://twitter.com/The_Hotel_Guru" rel="nofollow" target="_blank">
+<img alt="Twitter" src="data:image/svg+xml;base64,PHN2ZyBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGZpbGwtcnVsZT0iZXZlbm9kZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLW1pdGVybGltaXQ9IjIiCiAgICAgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgMzYwIDMwMCI+CiAgICA8cGF0aCBkPSJtMTc4LjU3IDEyNy4xNSAxMTEuNy0xMjcuMTVoLTI2LjQ2bC05Ny4wMyAxMTAuMzgtNzcuNDQtMTEwLjM4aC04OS4zNGwxMTcuMTMgMTY2LjkzLTExNy4xMyAxMzMuMzJoMjYuNDZsMTAyLjQtMTE2LjU5IDgxLjggMTE2LjU5aDg5LjM0bS0yNjMuOTktMjgwLjcxaDQwLjY1bDE4Ny4xMyAyNjIuMTNoLTQwLjY2IgogICAgICAgICAgZmlsbC1ydWxlPSJub256ZXJvIiBmaWxsPSIjRkZGIi8+Cjwvc3ZnPgo=">
+</a>
+<a aria-label="Follow The Hotel Guru on Facebook" class="fb" href="https://www.facebook.com/pages/The-Hotel-Guru/112527392107595" rel="nofollow" target="_blank">
+<img alt="Facebook" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMTJweCIgaGVpZ2h0PSIyMHB4IiB2aWV3Qm94PSIwIDAgMTIgMjAiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8dGl0bGU+R3JvdXA8L3RpdGxlPgogICAgPGcgaWQ9IlBhZ2UtMSIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPGcgaWQ9IkhlYWRlci0mYW1wOy1mb290ZXIiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xMTUzLCAtNDQwKSIgZmlsbD0iI0ZGRkZGRiI+CiAgICAgICAgICAgIDxnIGlkPSJHcm91cC0yIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLCAxNzYpIj4KICAgICAgICAgICAgICAgIDxnIGlkPSJHcm91cC04IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxNDAsIDI2NCkiPgogICAgICAgICAgICAgICAgICAgIDxnIGlkPSJHcm91cCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTAxMywgMCkiPgogICAgICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNMi41MzYyNDgyMiwxMC4yNTk0MTAzIEwwLDEwLjI1OTQxMDMgTDAsNi42MjMwNDY3MSBMMi41MzYyNDgyMiw2LjYyMzA0NjcxIEwyLjc2MzA5OTM0LDMuNzQ3NDIyOTYgQzIuNzYzMDk5MzQsMS43OTI4ODMxNSA0LjYwNDM1MjM4LDAuMDIxMzI1MjUyNSA1LjUzMjU0NzkyLDAuMDIxMzI1MjUyNSBDNy4wNDI5NDc5MiwwLjAyMTMyNTI1MjUgMTAuNjg2NzkxMSwtMC4wMjY2NTY1NjU3IDExLjA2NTA5NTgsMC4wMjEzMjUyNTI1IEwxMS4wNjUwOTU4LDMuNTQ3MzUyNTMgTDguODc4MjEwMTMsMy41NDgyOTc5OCBDNi44MzEzMDUzNywzLjU0NzM1MjUzIDYuODMxMzA1MzcsNC40ODA5NjYyMiA2LjgzMTMwNTM3LDYuNjIzMDQ2NzEgTDEwLjY2NDY2MDgsNi40MjkwNzUyMSBMMTAuNjY0NjYwOCwxMC4yNTk0MTAzIEw2LjgzMTMwNTM3LDEwLjI1OTQxMDMgTDYuODMxMzA1MzcsMTkuODY2MDA3MSBMMi41NjYyNzY4LDE5Ljg2NjAwNzEgTDIuNTM2MjQ4MjIsMTAuMjU5NDEwMyBaIiBpZD0iU2hhcGUiPjwvcGF0aD4KICAgICAgICAgICAgICAgICAgICA8L2c+CiAgICAgICAgICAgICAgICA8L2c+CiAgICAgICAgICAgIDwvZz4KICAgICAgICA8L2c+CiAgICA8L2c+Cjwvc3ZnPg==">
+</a>
+<a aria-label="Follow The Hotel Guru on Instagram" class="instagram" href="https://www.instagram.com/the_hotel_guru/" rel="nofollow" target="_blank">
+<img alt="Instagram" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjxzdmcgd2lkdGg9IjgwMHB4IiBoZWlnaHQ9IjgwMHB4IiB2aWV3Qm94PSIwIDAgMjQgMjQiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+DQo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTEyIDE4QzE1LjMxMzcgMTggMTggMTUuMzEzNyAxOCAxMkMxOCA4LjY4NjI5IDE1LjMxMzcgNiAxMiA2QzguNjg2MjkgNiA2IDguNjg2MjkgNiAxMkM2IDE1LjMxMzcgOC42ODYyOSAxOCAxMiAxOFpNMTIgMTZDMTQuMjA5MSAxNiAxNiAxNC4yMDkxIDE2IDEyQzE2IDkuNzkwODYgMTQuMjA5MSA4IDEyIDhDOS43OTA4NiA4IDggOS43OTA4NiA4IDEyQzggMTQuMjA5MSA5Ljc5MDg2IDE2IDEyIDE2WiIgZmlsbD0iI0ZGRiIvPg0KPHBhdGggZD0iTTE4IDVDMTcuNDQ3NyA1IDE3IDUuNDQ3NzIgMTcgNkMxNyA2LjU1MjI4IDE3LjQ0NzcgNyAxOCA3QzE4LjU1MjMgNyAxOSA2LjU1MjI4IDE5IDZDMTkgNS40NDc3MiAxOC41NTIzIDUgMTggNVoiIGZpbGw9IiNGRkYiLz4NCjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMS42NTM5NiA0LjI3NjA2QzEgNS41NTk1MyAxIDcuMjM5NjkgMSAxMC42VjEzLjRDMSAxNi43NjAzIDEgMTguNDQwNSAxLjY1Mzk2IDE5LjcyMzlDMi4yMjkyIDIwLjg1MjkgMy4xNDcwOCAyMS43NzA4IDQuMjc2MDYgMjIuMzQ2QzUuNTU5NTMgMjMgNy4yMzk2OSAyMyAxMC42IDIzSDEzLjRDMTYuNzYwMyAyMyAxOC40NDA1IDIzIDE5LjcyMzkgMjIuMzQ2QzIwLjg1MjkgMjEuNzcwOCAyMS43NzA4IDIwLjg1MjkgMjIuMzQ2IDE5LjcyMzlDMjMgMTguNDQwNSAyMyAxNi43NjAzIDIzIDEzLjRWMTAuNkMyMyA3LjIzOTY5IDIzIDUuNTU5NTMgMjIuMzQ2IDQuMjc2MDZDMjEuNzcwOCAzLjE0NzA4IDIwLjg1MjkgMi4yMjkyIDE5LjcyMzkgMS42NTM5NkMxOC40NDA1IDEgMTYuNzYwMyAxIDEzLjQgMUgxMC42QzcuMjM5NjkgMSA1LjU1OTUzIDEgNC4yNzYwNiAxLjY1Mzk2QzMuMTQ3MDggMi4yMjkyIDIuMjI5MiAzLjE0NzA4IDEuNjUzOTYgNC4yNzYwNlpNMTMuNCAzSDEwLjZDOC44ODY4NCAzIDcuNzIyMjUgMy4wMDE1NiA2LjgyMjA4IDMuMDc1MUM1Ljk0NTI0IDMuMTQ2NzQgNS40OTY4NCAzLjI3NjU5IDUuMTg0MDQgMy40MzU5N0M0LjQzMTM5IDMuODE5NDcgMy44MTk0NyA0LjQzMTM5IDMuNDM1OTcgNS4xODQwNEMzLjI3NjU5IDUuNDk2ODQgMy4xNDY3NCA1Ljk0NTI0IDMuMDc1MSA2LjgyMjA4QzMuMDAxNTYgNy43MjIyNSAzIDguODg2ODQgMyAxMC42VjEzLjRDMyAxNS4xMTMyIDMuMDAxNTYgMTYuMjc3NyAzLjA3NTEgMTcuMTc3OUMzLjE0Njc0IDE4LjA1NDggMy4yNzY1OSAxOC41MDMyIDMuNDM1OTcgMTguODE2QzMuODE5NDcgMTkuNTY4NiA0LjQzMTM5IDIwLjE4MDUgNS4xODQwNCAyMC41NjRDNS40OTY4NCAyMC43MjM0IDUuOTQ1MjQgMjAuODUzMyA2LjgyMjA4IDIwLjkyNDlDNy43MjIyNSAyMC45OTg0IDguODg2ODQgMjEgMTAuNiAyMUgxMy40QzE1LjExMzIgMjEgMTYuMjc3NyAyMC45OTg0IDE3LjE3NzkgMjAuOTI0OUMxOC4wNTQ4IDIwLjg1MzMgMTguNTAzMiAyMC43MjM0IDE4LjgxNiAyMC41NjRDMTkuNTY4NiAyMC4xODA1IDIwLjE4MDUgMTkuNTY4NiAyMC41NjQgMTguODE2QzIwLjcyMzQgMTguNTAzMiAyMC44NTMzIDE4LjA1NDggMjAuOTI0OSAxNy4xNzc5QzIwLjk5ODQgMTYuMjc3NyAyMSAxNS4xMTMyIDIxIDEzLjRWMTAuNkMyMSA4Ljg4Njg0IDIwLjk5ODQgNy43MjIyNSAyMC45MjQ5IDYuODIyMDhDMjAuODUzMyA1Ljk0NTI0IDIwLjcyMzQgNS40OTY4NCAyMC41NjQgNS4xODQwNEMyMC4xODA1IDQuNDMxMzkgMTkuNTY4NiAzLjgxOTQ3IDE4LjgxNiAzLjQzNTk3QzE4LjUwMzIgMy4yNzY1OSAxOC4wNTQ4IDMuMTQ2NzQgMTcuMTc3OSAzLjA3NTFDMTYuMjc3NyAzLjAwMTU2IDE1LjExMzIgMyAxMy40IDNaIiBmaWxsPSIjRkZGIi8+DQo8L3N2Zz4=">
+</a>
+<a aria-label="Follow The Hotel Guru on Pinterest" class="pinterest" href="https://www.pinterest.co.uk/bestplacestostay/" rel="nofollow" target="_blank">
+<img alt="Pinterest" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+DQo8c3ZnIHdpZHRoPSI4MDBweCIgaGVpZ2h0PSI4MDBweCIgdmlld0JveD0iMCAwIDIwIDIwIiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPg0KICAgIDxnIGlkPSJQYWdlLTEiIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPg0KICAgICAgICA8ZyBpZD0iRHJpYmJibGUtTGlnaHQtUHJldmlldyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTIyMC4wMDAwMDAsIC03Mzk5LjAwMDAwMCkiIGZpbGw9IiNGRkYiPg0KICAgICAgICAgICAgPGcgaWQ9Imljb25zIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg1Ni4wMDAwMDAsIDE2MC4wMDAwMDApIj4NCiAgICAgICAgICAgICAgICA8cGF0aCBkPSJNMTczLjg3Niw3MjM5IEMxNjguMzk5LDcyMzkgMTY0LDcyNDMuNDM0ODEgMTY0LDcyNDguOTU4NjYgQzE2NCw3MjUzLjA1ODY5IDE2Ni40MDcsNzI1Ni40ODkxNiAxNjkuODkzLDcyNTguMDc5MzYgQzE2OS44OTMsNzI1Ni4yMTE4NiAxNjkuODgsNzI1Ni40NTI4NiAxNzEuMzAzLDcyNTAuMzgwNDYgQzE3MC41MjEsNzI0OC44MDIzNiAxNzEuMTI5LDcyNDYuMTk2NzMgMTcyLjg4LDcyNDYuMTk2NzMgQzE3NS4zMSw3MjQ2LjE5NjczIDE3My42NTksNzI0OS43OTk2NCAxNzMuMzc4LDcyNTEuMjE3NCBDMTczLjEyOSw3MjUyLjMwNTQ0IDE3My45NTksNzI1My4xNDIzOCAxNzQuOTU1LDcyNTMuMTQyMzggQzE3Ni44NjQsNzI1My4xNDIzOCAxNzguMTA4LDcyNTAuNzE1MjQgMTc4LjEwOCw3MjQ3Ljg3MDYzIEMxNzguMTA4LDcyNDUuNjk0NTYgMTc2LjYxNSw3MjQ0LjEwNDM3IDE3NC4wNDIsNzI0NC4xMDQzNyBDMTY5LjQ2Nyw3MjQ0LjEwNDM3IDE2OC4zMDcsNzI0OS4xOTk2NiAxNjkuODkzLDcyNTAuNzk4OTMgQzE3MC4yOTIsNzI1MS40MDI5NCAxNjkuODkzLDcyNTEuNDMxMTggMTY5Ljg5Myw3MjUyLjIyMTc0IEMxNjkuNjE2LDcyNTMuMDU3NjggMTY3LjQwMyw3MjUxLjg0MjU5IDE2Ny40MDMsNzI0OC43MDc1NyBDMTY3LjQwMyw3MjQ1Ljg2MTk1IDE2OS43MjcsNzI0Mi41MTUxOCAxNzQuNDU3LDcyNDIuNTE1MTggQzE3OC4xOTEsNzI0Mi41MTUxOCAxODAuNjgxLDcyNDUuMjc2MDkgMTgwLjY4MSw3MjQ4LjIwNTQgQzE4MC42ODEsNzI1Mi4xMzgwNSAxNzguNTIzLDcyNTQuOTgzNjYgMTc1LjM3LDcyNTQuOTgzNjYgQzE3NC4yOTEsNzI1NC45ODM2NiAxNzMuMjk1LDcyNTQuMzk3OCAxNzIuOTYzLDcyNTMuNzI4MjQgQzE3Mi4zNiw3MjU2LjA3MzcxIDE3Mi4yMzgsNzI1Ny4yNjI1OCAxNzEuMzAzLDcyNTguNTgxNTMgQzE3Mi4yMTYsNzI1OC44MzI2MSAxNzMuMTI5LDcyNTkgMTc0LjEyNSw3MjU5IEMxNzkuNjAyLDcyNTkgMTg0LDcyNTQuNTY1MTkgMTg0LDcyNDkuMDQyMzUgQzE4My43NTIsNzI0My40MzQ4MSAxNzkuMzUzLDcyMzkgMTczLjg3Niw3MjM5IiBpZD0icGludGVyZXN0LVsjMTgwXSIvPg0KICAgICAgICAgICAgPC9nPg0KICAgICAgICA8L2c+DQogICAgPC9nPg0KPC9zdmc+">
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</footer>
+
+</body>
+<script>
+  window.td = window.Treasure ? new window.Treasure({
+    host: 'us01.records.in.treasuredata.com',
+    writeKey: '6494/0c677229366728ed4ae683e9a71cd66df7161506',
+    database: 'thg_events_production'
+  }) : null;
+  
+  document.addEventListener('DOMContentLoaded', function () {
+  
+    function trackPageViewEvent() {
+    const locale = "en-us";
+      if (window.td) {
+        window.td.trackEvent('pageviews', {
+          trackingProfileID: window.trackingProfileId,
+          locale: locale
+        });
+        window.td.set('$global', 'td_global_id', 'td_global_id');
+      }
+    }
+  
+    function trackPageViewLocally() {
+      if(true) return;
+  
+      const token = document.querySelector('meta[name="csrf-token"]')?.content;
+      const form = new FormData();
+      form.append('authenticity_token', token);
+      navigator.sendBeacon('https://www.thehotelguru.com/page-views/type/id', form);
+    }
+  
+    trackPageViewEvent();
+    trackPageViewLocally();
+  
+    document.addEventListener('click', function(event) {
+      let clickedElement = event.target;
+      if (window.td) {
+        window.td.trackEvent('page_click_events', {
+          trackingProfileID: window.trackingProfileId,
+          value: {
+            text: clickedElement.innerText || clickedElement.textContent || '',
+            url: clickedElement.href || '',
+            target: clickedElement.target || '',
+            id: clickedElement.id || '',
+            classes: clickedElement.className || '',
+            element: clickedElement.tagName || '',
+            page: window.location.href
+          }
+        });
+        window.td.set('$global', 'td_global_id', 'td_global_id');
+      }
+    });
+  
+    // TODO - references to the getCookie constant could probably be replaced with this function
+    function getTrackingCookie(name) {
+      if (typeof document !== `undefined`){
+        const value = `; ${document.cookie}`;
+        const parts = value.split(`; ${name}=`);
+        let result;
+  
+        if (parts.length >= 2) {
+            if(name === "tracking_profile_id") {
+                result = parts.pop().split(';').shift();
+                if(result.charAt(0) === ',') {
+                    result  = result.substring(1);
+                }
+                return result
+            }
+            return parts.pop().split(';').shift()
+        } else {
+            return false
+        }
+      }
+    }
+  
+    document.addEventListener('click', function(e) {
+      const link = e.target.closest('a[data-pu-bhi-url]');
+      if (!link) return;
+  
+      const bcomUrl = link.dataset.puBhiUrl;
+      if (!bcomUrl) return;
+  
+      e.preventDefault();
+  
+      try {
+        const url = new URL(link.href);
+        url.searchParams.append('pu_bhi', 'true');
+  
+        if (window.td) {
+          window.td.trackEvent("click_to_partner_website", {
+            trackingProfileID: window.trackingProfileId,
+            locale: "en-us",
+            value: {
+              text: link.innerText,
+              url: url.toString(),
+              bcom_url: bcomUrl,
+              page: window.location.href,
+              ga4Cookie: getTrackingCookie("_ga_441Q0BCT69"),
+              gaclient: getTrackingCookie("_ga")
+            }
+          });
+  
+          window.td.set('$global', 'td_global_id', 'td_global_id');
+        }
+  
+        window.open(url.toString(), '_blank');
+        window.open(bcomUrl, '_self');
+      } catch (error) {
+        console.error('Error in click handler:', error);
+        if (link.target) {
+          window.open(link.href, link.target);
+        } else {
+          window.location.href = link.href;
+        }
+      }
+    }, true); // use capture phase to ensure we catch the event before other handlers which may break popunder
+  });
+</script>
+</html>
