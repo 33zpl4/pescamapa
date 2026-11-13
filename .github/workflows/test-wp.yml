@@ -136,8 +136,42 @@ jobs:
             $r = wp_insert_post( [ "post_type" => "pm_prestador", "post_status" => "publish", "post_title" => "PRESTADOR-DE-PRUEBA" ] );
             foreach ( [ "tipo" => [ "guia" ], "prest_destino" => "esquina", "prest_modalidades" => [ "mosca" ], "prest_especies" => [ "dorado" ], "equipo" => [ "motor_electrico" ], "incluye" => [ "carnada", "comida" ], "precio" => "Desde $ 1", "precio_fecha" => "20261020", "prest_consentimiento" => 1, "whatsapp" => "CONTACTO-INTERNO-123" ] as $k => $v ) { update_field( $k, $v, $r ); }
           '
+      - name: SEO consultas fixtures (FAQ in content, overrides, season FAQ)
+        run: |
+          cat > /tmp/seo-consultas.php <<'PHP'
+          <?php
+          $faq = "<!-- wp:group {\"className\":\"pm-faq\"} -->\n<div class=\"wp-block-group pm-faq\"><!-- wp:heading {\"level\":3} -->\n<h3 class=\"wp-block-heading\">PREGUNTA-DE-PRUEBA</h3>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph -->\n<p>RESPUESTA-DE-PRUEBA con <a href=\"https://example.com\">enlace</a>.</p>\n<!-- /wp:paragraph --></div>\n<!-- /wp:group -->";
+          $e = pm_buscar( 'pm_especie', 'dorado', 'es' );
+          $n = get_page_by_path( 'nota-de-prueba', OBJECT, 'pm_nota' );
+          ( $e && $n ) || WP_CLI::error( 'faltan la especie o la nota de prueba' );
+          foreach ( [ $e, $n ] as $p ) {
+              wp_update_post( [ 'ID' => $p->ID, 'post_content' => wp_slash( $p->post_content . "\n\n" . $faq ) ] );
+          }
+          $f = pm_faqs_contenido( get_post( $n->ID )->post_content );
+          ( 1 === count( $f ) && 'PREGUNTA-DE-PRUEBA' === $f[0]['pregunta'] && 'RESPUESTA-DE-PRUEBA con enlace.' === $f[0]['respuesta'] ) || WP_CLI::error( 'pm_faqs_contenido: ' . wp_json_encode( $f ) );
+          ( [] === pm_faqs_contenido( '<p>sin faq</p>' ) ) || WP_CLI::error( 'pm_faqs_contenido sin grupo debe dar []' );
+          // Optional per-destination texts: the override wins, the template stays for every other guide.
+          ( 'Fly fishing guides and outfitters in Esquel and Trevelin, Argentina' === pm_t_clave( 'guias.title', 'esquel-trevelin', [ 'lugar' => 'X' ], 'en' ) ) || WP_CLI::error( 'override guias.title' );
+          ( pm_t( 'guias.title', [ 'lugar' => 'Goya' ], 'en' ) === pm_t_clave( 'guias.title', 'goya', [ 'lugar' => 'Goya' ], 'en' ) ) || WP_CLI::error( 'sin override debe usar la plantilla' );
+          ( pm_t_existe( 'prov.intro.tierra-del-fuego', 'en' ) && ! pm_t_existe( 'prov.intro.corrientes', 'en' ) ) || WP_CLI::error( 'prov.intro' );
+          foreach ( [ 'es', 'en', 'pt' ] as $i ) {
+              $w = count( preg_split( '/\s+/', pm_t( 'prov.intro.tierra-del-fuego', [], $i ) ) );
+              ( $w >= 60 && $w <= 100 ) || WP_CLI::error( "prov.intro.tierra-del-fuego ($i): $w palabras" );
+              ( mb_strlen( pm_t( 'prov.description.tierra-del-fuego', [], $i ) ) <= 160 ) || WP_CLI::error( "prov.description.tierra-del-fuego ($i) > 160" );
+          }
+          // Season FAQ of the guides page: composed from the guide's own fields, with its source and check date.
+          $d = [ 'idioma' => 'en', 'nombre' => 'Esquel', 'abre' => '2026-11-01', 'cierra' => '2027-05-01', 'temporada_nota' => 'Futaleufú until 30 June 2027.', 'reglamento' => [ 'autoridad' => 'AUTORIDAD-DE-PRUEBA', 'verificado' => '2026-11-04' ] ];
+          $q = pm_guias_faqs( $d, 'esquel-trevelin' );
+          ( 5 === count( $q ) && 'When is the fly fishing season in Esquel and Trevelin?' === $q[4]['pregunta'] && false !== strpos( $q[4]['respuesta'], '1 November 2026 to 1 May 2027' ) && false !== strpos( $q[4]['respuesta'], 'AUTORIDAD-DE-PRUEBA' ) && false !== strpos( $q[4]['respuesta'], '4 November 2026' ) ) || WP_CLI::error( 'pm_guias_faqs: ' . wp_json_encode( $q ) );
+          $d['abre'] = '';
+          ( 4 === count( pm_guias_faqs( $d, 'esquel-trevelin' ) ) ) || WP_CLI::error( 'sin fechas no hay pregunta de temporada' );
+          WP_CLI::success( 'SEO consultas: helpers ok' );
+          PHP
+          sed -i 's/^          //' /tmp/seo-consultas.php
+          wp --path="$WP" eval-file /tmp/seo-consultas.php
       - name: Render pages
         run: |
+          exec > >(tee /tmp/render-all.log) 2>&1
           wp --path="$WP" server --host=localhost --port=8080 > /tmp/server.log 2>&1 &
           sleep 3
           fail=0
@@ -217,6 +251,24 @@ jobs:
           check /wp-sitemap-vistas-1.xml 200 'calendario-de-pesca'
           check / 200 'Cuándo ir, qué dice el reglamento y con quién pescar'
           check /litoral/corrientes/pesca-en-esquina/ 200 'Mosca (flycast)' 'flycast) (flycast'
+          check /especies/dorado/ 200 'RESPUESTA-DE-PRUEBA'
+          check /especies/dorado/ 200 '"FAQPage"'
+          check /especies/dorado/ 200 'class="cta-nota"'
+          check /especies/dorado/ 200 '/armar-viaje/?especie=dorado'
+          check /especies/surubi/ 200 '/armar-viaje/?especie=surubi'
+          check /especies/surubi/ 200 'class="barra-pedir"'
+          check /notas/nota-de-prueba/ 200 '"FAQPage"'
+          check /notas/nota-de-prueba/ 200 'PREGUNTA-DE-PRUEBA'
+          check /especies/surubi/ 200 'Ver todas las especies' '"FAQPage"'
+          check / 200 'class="atajos"'
+          check / 200 '/especies/dorado/'
+          check /litoral/corrientes/pesca-en-esquina/ 200 'Pedí opciones para pescar en Esquina'
+          check /litoral/corrientes/pesca-en-esquina/ 200 'Pedir mis opciones' 'Enviar consulta'
+          check /armar-viaje/ 200 'Pedí opciones para tu viaje de pesca en Argentina | Pescamapa'
+          check /en/plan-your-trip/ 200 'Request options for your fishing trip in Argentina | Pescamapa'
+          check /pt/planejar-viagem/ 200 'Peça opções para a sua viagem de pesca na Argentina | Pescamapa'
+          check /en/ 200 'Fishing in Argentina: when to go and who to fish with | Pescamapa'
+          check /paquetes-de-pesca/esquina/ 200 'Pedir esta opción'
           check /robots.txt 200 'Sitemap'
           check /llms.txt 200 'pesca-en-esquina'
           check /llms.txt 200 'prueba-el-rio-manda' 'sin-permiso'
@@ -235,7 +287,7 @@ jobs:
           check /litoral/corrientes/pesca-en-esquina/ 200 'rel="sponsored noopener"'
           check /litoral/corrientes/pesca-en-esquina/ 200 'MAS-GRATIS'
           check /paquetes-de-pesca/esquina/ 200 'v-paquetes' 'PENDIENTE'
-          check /paquetes-de-pesca/esquina/ 200 'Pedir cotización de esta opción'
+          check /paquetes-de-pesca/esquina/ 200 'Pedir esta opción'
           check /paquetes-de-pesca/esquina/ 200 'consulta--boutique'
           check /paquetes-de-pesca/esquina/ 200 'INTRO-DE-PRUEBA'
           check /paquetes-de-pesca/esquina/ 200 'content="DESC-DE-PRUEBA"'
@@ -316,7 +368,7 @@ jobs:
           check /en/plan-your-trip/ 200 'hreflang="es"'
           check / 200 'href="[^"]*/armar-viaje/"'
           check /en/ 200 'plan-your-trip'
-          check /llms.txt 200 'Armá tu viaje'
+          check /llms.txt 200 'Pedí opciones para tu viaje'
           check /wp-sitemap-vistas-1.xml 200 'armar-viaje'
           loc=$(curl -sS -o /dev/null -w '%{http_code} %{redirect_url}' \
             -d action=pm_consulta -d pm_tipo=viaje -d pm_idioma=en -d pm_destino=goya \
@@ -731,6 +783,7 @@ jobs:
             echo "== debug.log"; cat "$WP/wp-content/debug.log"
             grep -qE 'PHP (Fatal|Warning|Parse)' "$WP/wp-content/debug.log" && { echo "✖ errores PHP"; fail=1; }
           fi
+          sleep 2; echo "--- FALLOS ---"; grep "✖" /tmp/render-all.log | head -30; echo "--- FIN FALLOS ---"
           exit $fail
 
       - name: Editor can replace a guide's photo and save (no blocking validation)

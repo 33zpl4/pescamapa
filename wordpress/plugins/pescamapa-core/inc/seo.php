@@ -33,6 +33,47 @@ function pm_recortar_meta( string $s, int $max = 160 ): string {
 	return mb_strlen( $s ) > $max ? rtrim( mb_substr( $s, 0, $max - 1 ) ) . '…' : $s;
 }
 
+/**
+ * FAQ written inside a note or species page: a group block with the class `pm-faq`, one <h3> per question and the answer
+ * (paragraphs and lists) after it. The same markup is the visible FAQ and the source of the FAQPage JSON-LD, so the two
+ * cannot drift apart (added 13/11/2026; notes and species have no FAQ field). Returns [ [ 'pregunta' => …, 'respuesta' => … ], … ];
+ * a question without an answer is dropped, and nothing is returned for content without the group.
+ */
+function pm_faqs_contenido( string $html ): array {
+	if ( ! preg_match_all( '#<div class="[^"]*\bpm-faq\b[^"]*">(.*?)</div>#su', $html, $grupos ) ) {
+		return [];
+	}
+	$out = [];
+	foreach ( $grupos[1] as $g ) {
+		$trozos = preg_split( '#(<h3\b[^>]*>.*?</h3>)#su', $g, -1, PREG_SPLIT_DELIM_CAPTURE );
+		$q      = '';
+		foreach ( $trozos as $t ) {
+			if ( preg_match( '#^<h3\b[^>]*>(.*?)</h3>$#su', $t, $m ) ) {
+				$q = trim( wp_strip_all_tags( $m[1] ) );
+			} elseif ( '' !== $q ) {
+				$a = trim( preg_replace( '/\s+/u', ' ', wp_strip_all_tags( preg_replace( '#</(p|li)>#', '$0 ', $t ) ) ) );
+				if ( '' !== $a ) {
+					$out[] = [ 'pregunta' => $q, 'respuesta' => $a ];
+				}
+				$q = '';
+			}
+		}
+	}
+	return $out;
+}
+
+/** FAQPage JSON-LD for a list of [pregunta, respuesta] pairs; [] when there are none. */
+function pm_jsonld_faq( array $faqs ): array {
+	if ( ! $faqs ) {
+		return [];
+	}
+	return [
+		'@context'   => 'https://schema.org',
+		'@type'      => 'FAQPage',
+		'mainEntity' => array_values( array_map( fn( $f ) => [ '@type' => 'Question', 'name' => $f['pregunta'], 'acceptedAnswer' => [ '@type' => 'Answer', 'text' => $f['respuesta'] ] ], $faqs ) ),
+	];
+}
+
 /** What the current request is about: title, description, alternates, draft, JSON-LD. */
 function pm_seo(): array {
 	static $s = null;
@@ -162,8 +203,8 @@ function pm_seo(): array {
 		$destinos = pm_destinos_provincia( $region, $prov, pm_lang() );
 		$a        = [ 'prov' => PM_PROVINCIAS[ $prov ] ?? $prov, 'region' => PM_REGIONES[ $region ][ pm_lang() ] ?? $region, 'n' => (string) count( $destinos ) ];
 		$url      = pm_url_provincia( $region, $prov, pm_lang() );
-		$s['title']       = pm_t( 'prov.title', $a );
-		$s['description'] = pm_t( 'prov.description', $a );
+		$s['title']       = pm_t_clave( 'prov.title', $prov, $a );
+		$s['description'] = pm_recortar_meta( pm_t_clave( 'prov.description', $prov, $a ) );
 		$s['alternas']    = pm_alternas_fijas( fn( $i ) => pm_url_provincia( $region, $prov, $i ) );
 		$s['jsonld'][]    = [
 			'@context'    => 'https://schema.org',
@@ -289,8 +330,8 @@ function pm_seo(): array {
 		$dp  = pm_buscar( 'pm_destino', $k, pm_lang() );
 		$d   = $dp ? pm_destino( $dp->ID ) : null;
 		$a   = [ 'lugar' => $d['nombre'] ?? '' ];
-		$s['title']       = pm_t( 'guias.title', $a );
-		$s['description'] = pm_t( 'guias.description', $a );
+		$s['title']       = pm_t_clave( 'guias.title', $k, $a );
+		$s['description'] = pm_recortar_meta( pm_t_clave( 'guias.description', $k, $a ) );
 		$s['alternas']    = pm_alternas_guias( $k );
 		if ( $d ) {
 			$url   = pm_url_guias( $k, pm_lang() );
@@ -311,11 +352,11 @@ function pm_seo(): array {
 				}
 				$items[] = $item;
 			}
-			$s['jsonld'][] = [ '@context' => 'https://schema.org', '@type' => 'ItemList', 'name' => pm_t( 'guias.h1', $a ), 'numberOfItems' => count( $items ), 'itemListElement' => $items ];
+			$s['jsonld'][] = [ '@context' => 'https://schema.org', '@type' => 'ItemList', 'name' => pm_t_clave( 'guias.h1', $k, $a ), 'numberOfItems' => count( $items ), 'itemListElement' => $items ];
 			$s['jsonld'][] = [
 				'@context'     => 'https://schema.org',
 				'@type'        => 'CollectionPage',
-				'name'         => pm_t( 'guias.h1', $a ),
+				'name'         => pm_t_clave( 'guias.h1', $k, $a ),
 				'description'  => $s['description'],
 				'url'          => $url,
 				'inLanguage'   => pm_meta_idioma()['html'],
@@ -324,11 +365,7 @@ function pm_seo(): array {
 				'publisher'    => [ '@type' => 'Organization', 'name' => 'Pescamapa', 'url' => pm_url_inicio( pm_lang() ) ],
 				'about'        => [ '@type' => 'Place', 'name' => $d['nombre'] ],
 			];
-			$s['jsonld'][] = [
-				'@context'   => 'https://schema.org',
-				'@type'      => 'FAQPage',
-				'mainEntity' => array_map( fn( $n ) => [ '@type' => 'Question', 'name' => pm_t( "guias.faq.$n.q", $a ), 'acceptedAnswer' => [ '@type' => 'Answer', 'text' => pm_t( "guias.faq.$n.a", $a ) ] ], [ 1, 2, 3, 4 ] ),
-			];
+			$s['jsonld'][] = pm_jsonld_faq( pm_guias_faqs( $d, $k ) );
 			if ( $d['foto'] ) {
 				$s['imagen'] = wp_get_attachment_image_url( $d['foto'], 'large' );
 			}
@@ -338,7 +375,7 @@ function pm_seo(): array {
 				'itemListElement' => [
 					[ '@type' => 'ListItem', 'position' => 1, 'name' => 'Pescamapa', 'item' => pm_url_inicio( pm_lang() ) ],
 					[ '@type' => 'ListItem', 'position' => 2, 'name' => $d['nombre'], 'item' => $d['url'] ],
-					[ '@type' => 'ListItem', 'position' => 3, 'name' => pm_t( 'guias.h1', $a ), 'item' => $url ],
+					[ '@type' => 'ListItem', 'position' => 3, 'name' => pm_t_clave( 'guias.h1', $k, $a ), 'item' => $url ],
 				],
 			];
 		}
@@ -412,7 +449,7 @@ function pm_jsonld_especie( array $e ): array {
 	if ( $citas ) {
 		$art['citation'] = $citas;
 	}
-	return [
+	$out = [
 		$art,
 		[
 			'@context'        => 'https://schema.org',
@@ -423,6 +460,11 @@ function pm_jsonld_especie( array $e ): array {
 			],
 		],
 	];
+	$faq = pm_jsonld_faq( pm_faqs_contenido( (string) get_post_field( 'post_content', $e['id'] ) ) );
+	if ( $faq ) {
+		$out[] = $faq;
+	}
+	return $out;
 }
 
 function pm_jsonld_destino( array $d ): array {

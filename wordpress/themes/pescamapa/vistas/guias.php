@@ -37,7 +37,7 @@ get_header(); ?>
 				</ol>
 			</nav>
 			<div class="eyebrow"><?php pm_e( 'guias.eyebrow' ); ?></div>
-			<h1><?php pm_e( 'guias.h1', $a ); ?></h1>
+			<h1><?php echo esc_html( pm_t_clave( 'guias.h1', $clave, $a ) ); ?></h1>
 			<p class="bajada"><?php pm_e( 'guias.bajada', $a ); ?></p>
 			<p class="confianza"><?php pm_e( 'ficha.por' ); ?> <?php echo esc_html( $d['autor'] ?: 'Equipo Pescamapa' ); ?> · <?php pm_e( 'ficha.actualizado' ); ?> <time datetime="<?php echo esc_attr( $modificado ); ?>"><?php echo esc_html( pm_fecha( $modificado, $idioma ) ); ?></time></p>
 		</div>
@@ -89,9 +89,9 @@ get_header(); ?>
 		</div>
 		<section class="faq" aria-labelledby="faq-h">
 			<h2 id="faq-h"><?php pm_e( 'guias.faq.h', $a ); ?></h2>
-			<?php foreach ( [ 1, 2, 3, 4 ] as $n ) : ?>
-				<h3><?php pm_e( "guias.faq.$n.q", $a ); ?></h3>
-				<p><?php pm_e( "guias.faq.$n.a", $a ); ?></p>
+			<?php foreach ( pm_guias_faqs( $d, $clave ) as $f ) : ?>
+				<h3><?php echo esc_html( $f['pregunta'] ); ?></h3>
+				<p><?php echo esc_html( $f['respuesta'] ); ?></p>
 			<?php endforeach; ?>
 		</section>
 		<p><a href="<?php echo esc_url( $d['url'] ); ?>"><?php pm_e( 'guias.guia', $a ); ?></a></p>

@@ -21,7 +21,7 @@ $resultado = pm_consulta_resultado();
 			</ul>
 		</div>
 	<?php else : ?>
-		<h2 id="consulta-h"><?php pm_e( 'consulta.h2' ); ?></h2>
+		<h2 id="consulta-h"><?php pm_e( 'consulta.h2', [ 'lugar' => $args['lugar'] ] ); ?></h2>
 		<p><?php pm_e( 'consulta.p', [ 'lugar' => $args['lugar'] ] ); ?></p>
 	<?php endif; ?>
 	<div class="formulario">

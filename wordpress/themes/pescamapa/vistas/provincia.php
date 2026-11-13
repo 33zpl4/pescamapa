@@ -32,6 +32,8 @@ get_header(); ?>
 		</div>
 	</header>
 	<div class="shell cuerpo">
+		<?php // Optional intro per province (ui.json `prov.intro.<provincia>`): dated facts already published in the guides; none by default. ?>
+		<?php if ( pm_t_existe( "prov.intro.$prov" ) ) : ?><p class="prov-intro"><?php echo esc_html( pm_t( "prov.intro.$prov", $a ) ); ?></p><?php endif; ?>
 		<h2 id="destinos"><?php pm_e( 'prov.destinos.h2' ); ?></h2>
 		<div class="prov-destinos">
 			<?php foreach ( $destinos as $d ) : $rio = pm_rio_destino( $d['clave'] ); $np = count( pm_prestadores_destino( $d['clave'] ) ); ?>
