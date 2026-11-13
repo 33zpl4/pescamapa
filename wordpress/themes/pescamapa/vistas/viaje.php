@@ -20,22 +20,23 @@ foreach ( pm_especies_lista( $idioma ) as $e ) {
 $especie = sanitize_key( $_GET['especie'] ?? '' );
 $especie = isset( $especies[ $especie ] ) ? $especie : '';
 
-/** A group of radio "chips" for one option list. */
-$chips = function ( string $campo, string $leyenda, ?string $valor = null ): void {
+/** A group of "chips" for one option list: radios, or checkboxes ($multiple: name[] and several can be ticked). */
+$chips = function ( string $campo, string $leyenda, ?string $valor = null, bool $multiple = false, string $ayuda = '' ): void {
 	$claves = array_keys( pm_ui()['opciones'][ $campo ] );
 	echo '<fieldset class="opciones"><legend>' . esc_html( $leyenda ) . '</legend><div class="chips-radio">';
 	foreach ( $claves as $k ) {
 		$id = "viaje-{$campo}-{$k}";
 		printf(
-			'<span><input type="radio" name="%1$s" id="%2$s" value="%3$s"%5$s><label for="%2$s">%4$s</label></span>',
-			esc_attr( $campo ),
+			'<span><input type="%6$s" name="%1$s" id="%2$s" value="%3$s"%5$s><label for="%2$s">%4$s</label></span>',
+			esc_attr( $campo . ( $multiple ? '[]' : '' ) ),
 			esc_attr( $id ),
 			esc_attr( $k ),
 			esc_html( pm_opcion( $campo, $k ) ),
-			checked( $valor, $k, false )
+			checked( $valor, $k, false ),
+			$multiple ? 'checkbox' : 'radio'
 		);
 	}
-	echo '</div></fieldset>';
+	echo '</div>' . ( '' !== $ayuda ? '<small>' . esc_html( $ayuda ) . '</small>' : '' ) . '</fieldset>';
 };
 
 get_header(); ?>
@@ -106,6 +107,7 @@ get_header(); ?>
 						$chips( 'modalidad', pm_t( 'viaje.modalidad' ) );
 						$chips( 'experiencia', pm_t( 'viaje.experiencia' ) );
 						$chips( 'alojamiento', pm_t( 'viaje.alojamiento' ) );
+						$chips( 'fijo', pm_t( 'viaje.fijo' ), null, true, pm_t( 'viaje.fijo.ayuda' ) );
 						?>
 					</fieldset>
 

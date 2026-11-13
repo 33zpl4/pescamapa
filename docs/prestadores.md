@@ -133,3 +133,15 @@ Resumen de lo decidido con el dueño para que ninguna sesión lo vuelva a discut
 8. **Fotos.** Solo las que el dueño aporta como disponibles o cedidas, siempre con el crédito del fotógrafo (`docs/contenido.md`). Nunca descargadas del sitio del lodge. **Ratificado el 1/11/2026 con el modo Uber:** los datos de un perfil público se listan; las fotos de ese perfil no se copian ni se embeben (la foto tiene titular, a veces un fotógrafo, y embeber Instagram regala el salto). Ficha sin foto a todo el ancho; la página por ciudad lleva la foto del destino; al contactar al guía, lo primero que se le pide son tres fotos suyas.
 9. **Agencia: resuelto (dueño, 1/11/2026).** Si vender un paquete exige figura de agencia, se opera a través de Bitácora, la agencia registrada de Cheyenne. Sigue abierta la consulta sobre Ley 25.326 y uso de nombres comerciales en fichas de nivel 1.
 10. **Dossier por lodge** (`docs/investigacion/lodges-lote1-dossiers-2026-10-30.md`): 10 campos (nombre y dominio, acceso, aguas y tipo de acceso, especies, temporada, capacidad, tarifa publicada con temporada, qué incluye, qué no, canal de contacto). Lo no confirmado en el dominio del lodge: `NO CONFIRMADO`. Una tarifa sin temporada explícita no se usa. Acceso privado no es exclusividad: la exclusividad exige una prueba específica.
+
+## Posicionamiento (13/11/2026)
+
+Mensaje para el pescador: **"Decinos qué querés pescar. Nosotros encontramos dónde."** Les preguntamos a los operadores que encajan con su viaje y en 48 horas le respondemos con las opciones comparadas (quién tiene lugar, a qué precio, qué incluye). Detalle, reglas de copy y consentimiento: `docs/viaje.md` → "Posicionamiento (13/11/2026)".
+
+Qué cambia para los prestadores:
+
+- **Comparamos con y sin acuerdo.** Figurar no depende de tener un acuerdo; el nivel 2 sigue existiendo y se dice. Los operadores no son intercambiables: solo preguntamos a los que encajan con el pedido.
+- **La consulta de una ficha pide el viaje, no ese prestador.** El prestador desde el que se pidió queda como primera referencia (`prestador` en la Consulta), pero también preguntamos a otros que encajen.
+- **La fuga** (un pescador encontró a un operador en nuestra página y le escribió directo) se ataca con: (a) registro del lead ante el operador, con correo fechado y **sin datos personales** apenas llega el pedido, y términos acordados (cliente nuestro si lo registramos nosotros o nombra a Pescamapa, 12 meses); (b) decirle al pescador cómo nos pagamos y pedirle que mencione a Pescamapa; (c) que el pedido sea el camino más fácil del sitio.
+- **Términos estándar:** borrador de una página en `docs/condiciones-operadores.md` (no enviado; el dueño decide). El primer operador ofreció 10 % por correo el 13/11/2026.
+- Esto matiza el punto 7 de "Estrategia de listados" (el formulario ya no pasa la consulta a quien se elija: consulta sin datos personales y solo pasa el contacto cuando el pescador lo autoriza para un operador).

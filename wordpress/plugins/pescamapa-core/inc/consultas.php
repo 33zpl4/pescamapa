@@ -28,6 +28,7 @@ const PM_CONSULTA_CAMPOS = [
 	'experiencia' => [ 'Experiencia', 40 ],
 	'alojamiento' => [ 'Alojamiento', 40 ],
 	'pais'      => [ 'País desde el que viaja', 60 ],
+	'fijo'      => [ 'Fijo (lo demás es flexible)', 120 ],
 	'especie'   => [ 'Especie', 40 ],
 	'localidad' => [ 'Localidad', 80 ],
 	'ofrece'    => [ 'Qué ofrece', 200 ],
@@ -129,6 +130,9 @@ function pm_recibir_consulta(): void {
 		$clave = sanitize_key( wp_unslash( $_POST[ $campo ] ?? '' ) );
 		$datos[ $campo ] = isset( pm_ui()['opciones'][ $campo ][ $clave ] ) ? pm_opcion( $campo, $clave, 'es' ) : '';
 	}
+	// Optional "what is fixed" checkboxes (fijo[]): saved as one line of Spanish labels in the list's order; '' when none ticked.
+	$marcadas = array_map( fn( $c ) => sanitize_key( is_string( $c ) ? $c : '' ), (array) wp_unslash( $_POST['fijo'] ?? [] ) );
+	$datos['fijo'] = implode( ', ', array_map( fn( $k ) => pm_opcion( 'fijo', $k, 'es' ), array_values( array_intersect( array_keys( pm_ui()['opciones']['fijo'] ), $marcadas ) ) ) );
 	if ( '' === $datos['nombre'] || '' === $datos['contacto'] ) {
 		$ir( 'error' );
 	}

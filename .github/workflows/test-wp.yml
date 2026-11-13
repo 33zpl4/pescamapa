@@ -153,9 +153,13 @@ jobs:
           check / 200 'class="menu-btn"'
           check / 200 'id="menu-principal"'
           check /en/ 200 'aria-label="Menu"'
-          check / 200 'Armá tu viaje →'
+          check / 200 'Pedir opciones →'
           check / 200 'Investigación propia'
-          check /en/ 200 'Plan your trip →'
+          check /en/ 200 'Request options →'
+          check / 200 'id="pedido"'
+          check / 200 'Decinos qué querés pescar'
+          check /en/ 200 'id="pedido"'
+          check /en/ 200 'Tell us what you want to fish'
           check /mapa/ 200
           check /litoral/corrientes/pesca-en-esquina/ 200 'TouristDestination' 'PENDIENTE'
           check /litoral/corrientes/pesca-en-esquina/ 200 'CITA-DE-PRUEBA' 'CITA-SIN-PERMISO'
@@ -166,6 +170,8 @@ jobs:
           check /litoral/corrientes/pesca-en-esquina/ 200 'mailto:info@pescamapa.com?subject='
           check /litoral/corrientes/pesca-en-esquina/ 200 'sin verificar con el prestador'
           check /litoral/corrientes/pesca-en-esquina/ 200 'Precio: a consultar'
+          check /litoral/corrientes/pesca-en-esquina/ 200 'Pedir opciones para pescar en'
+          check /litoral/corrientes/pesca-en-esquina/ 200 'Tu primera referencia:'
           # Dates on cards are relative words, never an exact date (owner, 1/11/2026).
           check /litoral/corrientes/pesca-en-esquina/ 200 'precio revisado en los últimos' 'precio consultado el'
           check /llms.txt 200 'se corrigen o se quitan a pedido' 'PRESTADOR-NO-PUBLICO'   # public listings ARE in llms.txt since 1/11/2026; non-public never
@@ -297,11 +303,16 @@ jobs:
           n=$(wp --path="$WP" post list --post_type=pm_consulta --post_status=private --format=count)
           [[ "$n" == 1 ]] && echo "✓ 1 consulta guardada" || { echo "✖ consultas guardadas: $n (esperado 1)"; fail=1; }
           # Trip request page (/armar-viaje/): renders in 3 languages, preselects from the URL, saves the new fields as Spanish labels.
-          check /armar-viaje/ 200 'Armá tu viaje de pesca a Argentina' 'PENDIENTE'
+          check /armar-viaje/ 200 'Decinos qué querés pescar. Nosotros encontramos dónde.' 'PENDIENTE'
+          check /armar-viaje/ 200 'name="fijo\[\]"'
+          check /armar-viaje/ 200 'Preguntamos y comparamos'
+          check /armar-viaje/ 200 'sin tu nombre ni tu contacto'
           check /armar-viaje/ 200 'name="contacto"'
           check '/armar-viaje/?destino=esquina&especie=dorado' 200 'value="esquina" selected'
-          check /pt/planejar-viagem/ 200 'Monte sua viagem de pesca à Argentina'
-          check /en/plan-your-trip/ 200 'Plan your fishing trip to Argentina'
+          check /pt/planejar-viagem/ 200 'Diga o que você quer pescar. Nós encontramos onde.'
+          check /pt/planejar-viagem/ 200 'name="fijo\[\]"'
+          check /en/plan-your-trip/ 200 'Tell us what you want to fish. We will find where.'
+          check /en/plan-your-trip/ 200 'name="fijo\[\]"'
           check /en/plan-your-trip/ 200 'hreflang="es"'
           check / 200 'href="[^"]*/armar-viaje/"'
           check /en/ 200 'plan-your-trip'
@@ -312,6 +323,7 @@ jobs:
             -d pm_volver="$URL/en/plan-your-trip/" -d pm_t=$(( $(date +%s) - 60 )) \
             -d nombre=Tester -d contacto=tester@example.com -d cuando=November -d personas=2 \
             -d duracion=semana -d experiencia=alguna -d alojamiento=lodge -d pais=Chile -d modalidad=mosca \
+            -d 'fijo[]=fechas' -d 'fijo[]=especie' -d 'fijo[]=invalida' \
             --data-urlencode 'pm_entrada=/en/notes/nota-de-prueba/?utm_source=chatgpt.com' -d pm_referente=www.chatgpt.com -d pm_campana=chatgpt.com \
             "$URL/wp-admin/admin-post.php")
           [[ "$loc" == *"consulta=ok"* ]] && echo "✓ viaje → $loc" || { echo "✖ viaje: $loc"; fail=1; }
@@ -319,15 +331,21 @@ jobs:
           # Attribution (footer script → hidden fields): entry page, referrer host without www, channel label.
           check /en/plan-your-trip/ 200 'name="pm_entrada"'
           check /en/plan-your-trip/ 200 "sessionStorage.setItem('pm-entrada'"
-          for par in "duracion:5 a 7 días" "experiencia:Algo de experiencia" "alojamiento:Lodge con todo incluido" "pais:Chile" "canal:ChatGPT" "referente:chatgpt.com" "entrada:/en/notes/nota-de-prueba/?utm_source=chatgpt.com"; do
+          for par in "duracion:5 a 7 días" "experiencia:Algo de experiencia" "alojamiento:Lodge con todo incluido" "pais:Chile" "fijo:Especie, Fechas" "canal:ChatGPT" "referente:chatgpt.com" "entrada:/en/notes/nota-de-prueba/?utm_source=chatgpt.com"; do
             k=${par%%:*}; e=${par#*:}; g=$(wp --path="$WP" post meta get "$v" "$k")
             [[ "$g" == "$e" ]] && echo "✓ $k = $g" || { echo "✖ $k = '$g' (esperado '$e')"; fail=1; }
           done
           check '/en/plan-your-trip/?consulta=ok' 200 'Thank you, we got your request'
+          # "What is fixed" is optional: the first inquiry (sent without it) saved no value for it.
+          v0=$(wp --path="$WP" post list --post_type=pm_consulta --post_status=private --s=Prueba --format=ids | head -n1)
+          [[ -z "$(wp --path="$WP" post meta get "$v0" fijo)" ]] && echo "✓ fijo vacío sin marcar" || { echo "✖ fijo debería estar vacío"; fail=1; }
           # Terms of use and privacy policy, 3 languages; linked from the footer and the forms.
           check /terminos/ 200 'Términos de uso'
           check /terminos/ 200 'Las fotos pueden estar recortadas'
           check /privacidad/ 200 'Política de privacidad'
+          check /privacidad/ 200 'sin tu nombre ni tu contacto'
+          check /en/privacy/ 200 'without your name or contact'
+          check /pt/privacidade/ 200 'sem o seu nome nem o seu contato'
           check /privacidad/ 200 'info@pescamapa.com'
           # Season dates: the month bar and the computed "can I fish now?" answer (idea from the PESQA review, 4/11/2026).
           check /litoral/corrientes/pesca-en-esquina/ 200 'id="preguntas"' 'barra-meses'
@@ -377,6 +395,7 @@ jobs:
             $ver( pm_acuse_cuerpo( "viaje", "es", "" ) === $base( "viaje", "es" ), "es sin destino: igual que hoy" );
             $ver( pm_acuse_cuerpo( "prestador", "en", "esquina" ) === $base( "prestador", "en" ), "prestador: sin enlaces" );
             foreach ( [ "es", "pt", "en" ] as $i ) { $ver( str_contains( pm_t( "acuse.viaje", [], $i ), "48" ) && str_contains( pm_t( "viaje.gracias.p", [], $i ), "48" ), "plazo de 48 horas en $i" ); $ver( ! str_contains( pm_t( "acuse.prestador", [], $i ), "48" ), "acuse.prestador sin plazo en $i" ); }
+            foreach ( [ "es", "pt", "en" ] as $i ) { $ver( str_contains( pm_t( "consulta.ok.pescador", [], $i ), "48" ), "consulta.ok.pescador lleva el plazo de 48 horas en $i" ); $ver( ! str_contains( pm_t( "consulta.ok.prestador", [], $i ), "48" ), "consulta.ok.prestador sin plazo en $i" ); $ver( "consulta.ok" === pm_t( "consulta.ok", [], $i ), "consulta.ok (clave compartida) ya no existe en $i" ); $ver( str_contains( pm_t( "acuse.viaje", [], $i ), "Pescamapa" ) && ! str_contains( pm_t( "acuse.prestador", [], $i ), "comisi" ), "acuse.viaje pide mencionar a Pescamapa en $i" ); }
             foreach ( [ "es", "pt", "en" ] as $i ) { $ver( "" !== pm_t( "acuse.ayuda", [], $i ) && "acuse.ayuda" !== pm_t( "acuse.ayuda", [], $i ), "acuse.ayuda en $i" ); }
             echo pm_acuse_cuerpo( "viaje", "en", "esquina" ), "\n---\n";
             // Subject: plain text.

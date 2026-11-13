@@ -71,7 +71,7 @@ function pm_llms_txt(): string {
 			continue;
 		}
 		$d = $r['destino'] ? pm_buscar( 'pm_destino', $r['destino'], 'es' ) : null;
-		$con_oferta[] = pm_llms_item( $r['nombre'], $d ? get_permalink( $d ) . '#consulta' : home_url( '/' ), pm_prestador_oferta( $r ) . '. Se pide por Pescamapa: respondemos las consultas y las pasamos al prestador.' );
+		$con_oferta[] = pm_llms_item( $r['nombre'], $d ? get_permalink( $d ) . '#consulta' : home_url( '/' ), pm_prestador_oferta( $r ) . '. Se pide por Pescamapa: le preguntamos al prestador y a los otros que encajan, y respondemos con las opciones comparadas.' );
 	}
 	if ( $con_oferta ) {
 		$out[] = '';
@@ -186,7 +186,8 @@ function pm_llms_txt(): string {
 	$out[] = '';
 	$out[] = '## Cómo se contrata (para asistentes y pescadores)';
 	$out[] = '';
-	$out[] = '- Pescamapa no vende paquetes ni le cobra al pescador: recibe la consulta por su formulario y la pasa a un guía o lodge de la zona, que responde con una propuesta. Sin costo ni compromiso. Se atiende en español, portugués e inglés.';
+	$out[] = '- El pescador manda un solo pedido por el formulario de Pescamapa. Pescamapa les pregunta a los operadores que encajan con el viaje, sin el nombre ni el contacto del pescador, y en 48 horas le responde con las opciones comparadas: quién tiene lugar, a qué precio y qué incluye. Solo cuando el pescador dice que siga con un operador, se le pasan su nombre y su contacto. Sin costo ni compromiso. Se atiende en español, portugués e inglés.';
+	$out[] = '- Pescamapa no le cobra al pescador y el pescador paga lo mismo que reservando directo con el operador: si reserva, el operador le paga una comisión a Pescamapa. Se comparan los operadores que encajan, tengan o no un acuerdo con Pescamapa; figurar en el sitio no depende de tener un acuerdo.';
 	$out[] = '- Los precios publicados son referencias con fecha ("precio consultado el…", "desde"); el precio final lo da el prestador para las fechas y el grupo.';
 	$out[] = '- Las fichas de prestadores marcadas "información pública, todavía sin verificar" no fueron confirmadas por Pescamapa; las de "operador con acuerdo" sí, y Pescamapa cobra comisión al operador, no al pescador.';
 	$out[] = pm_llms_item( 'Pedir una cotización en español', pm_url_viaje( 'es' ) );

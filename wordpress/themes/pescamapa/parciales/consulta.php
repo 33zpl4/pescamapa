@@ -26,12 +26,12 @@ $resultado = pm_consulta_resultado();
 	<?php endif; ?>
 	<div class="formulario">
 	<?php if ( 'ok' === $resultado ) : ?>
-		<p class="aviso ok" role="status"><?php pm_e( 'consulta.ok' ); ?></p>
+		<p class="aviso ok" role="status"><?php pm_e( 'consulta.ok.pescador' ); ?></p>
 	<?php else : ?>
 		<?php if ( 'error' === $resultado ) : ?><p class="aviso error" role="alert"><?php pm_e( 'consulta.error' ); ?></p><?php endif; ?>
 		<form method="post" action="<?php echo esc_url( pm_consulta_url_envio() ); ?>">
 			<?php echo pm_consulta_ocultos( 'viaje', [ 'pm_destino' => $args['destino'], 'pm_prestador' => '' ] ); // phpcs:ignore -- escaped inside ?>
-			<p class="sobre" hidden><?php pm_e( 'consulta.sobre' ); ?> <strong></strong></p>
+			<p class="sobre" hidden><?php pm_e( 'consulta.sobre' ); ?> <strong></strong><br><?php pm_e( 'consulta.sobre.linea' ); ?></p>
 			<div class="grilla">
 				<label><?php pm_e( 'consulta.nombre' ); ?> <input name="nombre" required maxlength="80" autocomplete="name"></label>
 				<label><?php pm_e( 'consulta.contacto' ); ?> <input name="contacto" required maxlength="120" autocomplete="tel"<?php echo $boutique ? ' placeholder="' . esc_attr( pm_t( 'consulta.ph.contacto' ) ) . '"' : ''; ?>></label>

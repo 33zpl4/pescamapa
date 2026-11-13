@@ -63,6 +63,6 @@ $filas = [
 				<?php if ( $r['fuente'] ) : ?>· <?php pm_e( 'prest.fuente' ); ?>: <a href="<?php echo esc_url( $r['fuente'] ); ?>" rel="noopener nofollow"><?php echo esc_html( preg_replace( '/^www\./', '', (string) wp_parse_url( $r['fuente'], PHP_URL_HOST ) ) ); ?></a><?php endif; ?>
 			</p>
 		<?php endif; ?>
-		<a class="button dark" href="#consulta" data-prestador="<?php echo (int) $r['id']; ?>" data-nombre="<?php echo esc_attr( $r['nombre'] ); ?>"><?php pm_e( 'prest.consultar' ); ?></a>
+		<a class="button dark" href="#consulta" data-prestador="<?php echo (int) $r['id']; ?>" data-nombre="<?php echo esc_attr( $r['nombre'] ); ?>"><?php pm_e( 'prest.consultar', [ 'lugar' => $r['lugar'] ?? '' ] ); ?></a>
 	</div>
 </article>

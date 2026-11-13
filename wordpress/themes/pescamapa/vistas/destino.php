@@ -134,7 +134,7 @@ get_header(); ?>
 				<h2 id="prestadores"><?php pm_e( 'ficha.prestadores.h2' ); ?></h2>
 				<p><?php pm_e( 'ficha.prestadores.p', [ 'lugar' => $d['nombre'] ] ); ?></p>
 				<?php foreach ( $prestadores as $r ) {
-					get_template_part( 'parciales/prestador', null, $r );
+					get_template_part( 'parciales/prestador', null, $r + [ 'lugar' => $d['nombre'] ] );
 				} ?>
 				<?php if ( pm_destino_guias( $d['clave'], $idioma ) ) : ?>
 					<p class="a-guias"><a href="<?php echo esc_url( pm_url_guias( $d['clave'], $idioma ) ); ?>"><?php pm_e( 'guias.desde_guia', [ 'lugar' => $d['nombre'] ] ); ?></a></p>
