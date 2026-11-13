@@ -22,7 +22,7 @@
 					"h": "Prestadores y viajes",
 					"p": [
 						"Mostramos guías, alojamientos y otros prestadores. Algunos figuran con información pública y están marcados como no verificados; otros trabajan con nosotros.",
-						"Cuando pedís un viaje o una cotización, tu consulta llega a Pescamapa y la pasamos a quien elijas o a quien te recomendemos. El servicio lo presta y lo cobra el prestador: Pescamapa no es parte del contrato entre vos y él, no organiza la salida de pesca y no garantiza el servicio. Pedir una cotización no tiene costo ni compromiso."
+						"Cuando pedís un viaje o una cotización, tu consulta llega a Pescamapa; les preguntamos a los operadores que encajan sin tu nombre ni tu contacto, y se los pasamos a un operador solo cuando nos decís que sigamos con ese. El servicio lo presta y lo cobra el prestador: Pescamapa no es parte del contrato entre vos y él, no organiza la salida de pesca y no garantiza el servicio. Pedir una cotización no tiene costo ni compromiso."
 					]
 				},
 				{
@@ -70,7 +70,7 @@
 					]
 				}
 			],
-			"actualizado": "2026-10-26"
+			"actualizado": "2026-11-13"
 		},
 		"pt": {
 			"title": "Termos de uso | Pescamapa",
@@ -94,7 +94,7 @@
 					"h": "Prestadores e viagens",
 					"p": [
 						"Mostramos guias, hospedagens e outros prestadores. Alguns aparecem com informação pública e estão marcados como não verificados; outros trabalham conosco.",
-						"Quando você pede uma viagem ou um orçamento, a consulta chega ao Pescamapa e a repassamos a quem você escolher ou a quem recomendarmos. O serviço é prestado e cobrado pelo prestador: o Pescamapa não faz parte do contrato entre você e ele, não organiza a pescaria e não garante o serviço. Pedir um orçamento não tem custo nem compromisso."
+						"Quando você pede uma viagem ou um orçamento, a consulta chega ao Pescamapa; perguntamos aos operadores que combinam sem o seu nome nem o seu contato, e só os repassamos a um operador quando você nos disser para seguir com ele. O serviço é prestado e cobrado pelo prestador: o Pescamapa não faz parte do contrato entre você e ele, não organiza a pescaria e não garante o serviço. Pedir um orçamento não tem custo nem compromisso."
 					]
 				},
 				{
@@ -142,7 +142,7 @@
 					]
 				}
 			],
-			"actualizado": "2026-10-26"
+			"actualizado": "2026-11-13"
 		},
 		"en": {
 			"title": "Terms of use | Pescamapa",
@@ -166,7 +166,7 @@
 					"h": "Outfitters and trips",
 					"p": [
 						"We show guides, lodges and other providers. Some appear with public information and are marked as unverified; others work with us.",
-						"When you ask for a trip or a quote, your request comes to Pescamapa and we pass it on to whoever you choose or we recommend. The service is provided and charged by the outfitter: Pescamapa is not a party to the contract between you and them, does not run the fishing trip and does not guarantee the service. Asking for a quote has no cost or commitment."
+						"When you ask for a trip or a quote, your request comes to Pescamapa; we ask the operators that fit without your name or contact, and pass them to an operator only when you tell us to go ahead with that one. The service is provided and charged by the outfitter: Pescamapa is not a party to the contract between you and them, does not run the fishing trip and does not guarantee the service. Asking for a quote has no cost or commitment."
 					]
 				},
 				{
@@ -214,7 +214,7 @@
 					]
 				}
 			],
-			"actualizado": "2026-10-26"
+			"actualizado": "2026-11-13"
 		}
 	},
 	"privacidad": {
@@ -232,7 +232,7 @@
 				{
 					"h": "Qué datos recogemos y para qué",
 					"li": [
-						"Si pedís un viaje o una cotización: tu nombre, WhatsApp o email, país, fechas, cantidad de personas, preferencias (especie, modalidad, experiencia, alojamiento) y el mensaje que escribas. Los usamos para responderte y pasar tu consulta a quien elijas o te recomendemos. Con la consulta se guarda también por qué página entraste al sitio y desde qué sitio llegaste (por ejemplo, un buscador o un asistente), para saber qué contenido le sirve a la gente.",
+						"Si pedís un viaje o una cotización: tu nombre, WhatsApp o email, país, fechas, cantidad de personas, preferencias (especie, modalidad, experiencia, alojamiento) y el mensaje que escribas. Los usamos para responderte. Les preguntamos a los operadores que encajan con tu pedido sin tu nombre ni tu contacto, y se los damos a un operador solo cuando nos decís que sigamos con ese. Con la consulta se guarda también por qué página entraste al sitio y desde qué sitio llegaste (por ejemplo, un buscador o un asistente), para saber qué contenido le sirve a la gente.",
 						"Si sos prestador y pedís figurar: nombre, contacto, localidad y lo que ofrecés. Los usamos para contactarte y armar tu ficha; no se publica nada sin tu permiso.",
 						"Si enviás un reporte de pique: la zona (un cuadrado de unos 1.000 m), la especie, el día y el resultado. No recibimos ni guardamos tu posición exacta ni tu nombre: tu posición exacta no sale de tu teléfono.",
 						"Para frenar el spam y los abusos: guardamos por una hora un código derivado de tu dirección IP para limitar los envíos, y con cada reporte de pique un código irreversible derivado de tu IP para evitar duplicados. No guardamos tu IP en claro."
@@ -247,7 +247,7 @@
 				{
 					"h": "Con quién los compartimos",
 					"p": [
-						"Con el prestador que elijas o te recomendemos: solo lo necesario para que te conteste (tu consulta y tu contacto).",
+						"Con un operador, solo cuando nos decís que sigamos con ese: tu nombre y tu contacto, para que te conteste. A los operadores que consultamos antes les mandamos tu pedido sin tu nombre ni tu contacto.",
 						"Con quienes hacen funcionar el sitio: el servidor donde está alojado, Cloudflare (red y seguridad; procesa las visitas y las direcciones IP) y el servicio de correo con el que recibimos las consultas.",
 						"Cuando ves un mapa, tu navegador pide las imágenes a OpenStreetMap, que recibe tu IP según su propia política.",
 						"No los compartimos con nadie más, salvo que lo exija una autoridad."
@@ -273,7 +273,7 @@
 					]
 				}
 			],
-			"actualizado": "2026-10-26"
+			"actualizado": "2026-11-13"
 		},
 		"pt": {
 			"title": "Política de privacidade | Pescamapa",
@@ -289,7 +289,7 @@
 				{
 					"h": "Que dados coletamos e para quê",
 					"li": [
-						"Se você pede uma viagem ou um orçamento: nome, WhatsApp ou e-mail, país, datas, número de pessoas, preferências (espécie, modalidade, experiência, hospedagem) e a mensagem que escrever. Usamos para responder e repassar a consulta a quem você escolher ou recomendarmos. Com a consulta guardamos também por qual página você entrou no site e de qual site veio (por exemplo, um buscador ou um assistente), para saber que conteúdo é útil.",
+						"Se você pede uma viagem ou um orçamento: nome, WhatsApp ou e-mail, país, datas, número de pessoas, preferências (espécie, modalidade, experiência, hospedagem) e a mensagem que escrever. Usamos para responder a você. Perguntamos aos operadores que combinam com o seu pedido sem o seu nome nem o seu contato, e só os passamos a um operador quando você nos disser para seguir com ele. Com a consulta guardamos também por qual página você entrou no site e de qual site veio (por exemplo, um buscador ou um assistente), para saber que conteúdo é útil.",
 						"Se você é prestador e pede para aparecer: nome, contato, localidade e o que oferece. Usamos para entrar em contato e montar a sua ficha; nada é publicado sem a sua permissão.",
 						"Se você envia um relato de pique: a zona (um quadrado de cerca de 1.000 m), a espécie, o dia e o resultado. Não recebemos nem guardamos a sua posição exata nem o seu nome: a posição exata não sai do seu celular.",
 						"Para conter spam e abusos: guardamos por uma hora um código derivado do seu endereço IP para limitar os envios e, com cada relato de pique, um código irreversível derivado do IP para evitar duplicados. Não guardamos o IP em claro."
@@ -304,7 +304,7 @@
 				{
 					"h": "Com quem compartilhamos",
 					"p": [
-						"Com o prestador que você escolher ou recomendarmos: só o necessário para ele responder (a consulta e o seu contato).",
+						"Com um operador, só quando você nos disser para seguir com ele: o seu nome e o seu contato, para ele responder. Aos operadores que consultamos antes enviamos o seu pedido sem o seu nome nem o seu contato.",
 						"Com quem faz o site funcionar: o servidor onde ele está hospedado, a Cloudflare (rede e segurança; processa as visitas e os endereços IP) e o serviço de e-mail com o qual recebemos as consultas.",
 						"Quando você vê um mapa, o seu navegador pede as imagens ao OpenStreetMap, que recebe o seu IP conforme a política dele.",
 						"Não compartilhamos com mais ninguém, salvo exigência de uma autoridade."
@@ -330,7 +330,7 @@
 					]
 				}
 			],
-			"actualizado": "2026-10-26"
+			"actualizado": "2026-11-13"
 		},
 		"en": {
 			"title": "Privacy policy | Pescamapa",
@@ -346,7 +346,7 @@
 				{
 					"h": "What we collect and why",
 					"li": [
-						"If you ask for a trip or a quote: your name, WhatsApp or email, country, dates, number of people, preferences (species, style, experience, lodging) and the message you write. We use them to reply and to pass your request on to whoever you choose or we recommend. With the request we also keep which page you entered the site on and which site you came from (a search engine or an assistant, for example), to learn which content is useful.",
+						"If you ask for a trip or a quote: your name, WhatsApp or email, country, dates, number of people, preferences (species, style, experience, lodging) and the message you write. We use them to reply to you. We ask the operators that fit your request without your name or contact, and give them to an operator only when you tell us to go ahead with that one. With the request we also keep which page you entered the site on and which site you came from (a search engine or an assistant, for example), to learn which content is useful.",
 						"If you are an outfitter and ask to be listed: name, contact, town and what you offer. We use them to contact you and build your listing; nothing is published without your permission.",
 						"If you send a bite-zone report: the zone (a square of about 1,000 m), the species, the day and the result. We never receive or store your exact position or your name: your exact position does not leave your phone.",
 						"To stop spam and abuse: for one hour we keep a code derived from your IP address to limit submissions, and with each bite-zone report an irreversible code derived from your IP to avoid duplicates. We do not store your IP in the clear."
@@ -361,7 +361,7 @@
 				{
 					"h": "Who we share it with",
 					"p": [
-						"With the outfitter you choose or we recommend: only what they need to answer you (your request and contact).",
+						"With an operator, only when you tell us to go ahead with that one: your name and contact, so they can answer you. The operators we ask beforehand get your request without your name or contact.",
 						"With the services that run the site: the server it is hosted on, Cloudflare (network and security; it processes visits and IP addresses) and the email service we receive requests through.",
 						"When you view a map, your browser requests the images from OpenStreetMap, which receives your IP under its own policy.",
 						"We share it with no one else, unless an authority requires it."
@@ -387,7 +387,7 @@
 					]
 				}
 			],
-			"actualizado": "2026-10-26"
+			"actualizado": "2026-11-13"
 		}
 	}
 }

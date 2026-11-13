@@ -45,7 +45,7 @@ get_header(); ?>
 		<section id="consulta" class="consulta" aria-labelledby="form-h">
 			<h2 id="form-h"><?php pm_e( 'pg.form.h' ); ?></h2>
 			<?php if ( 'ok' === pm_consulta_resultado() ) : ?>
-				<p class="aviso ok" role="status"><?php pm_e( 'consulta.ok' ); ?></p>
+				<p class="aviso ok" role="status"><?php pm_e( 'consulta.ok.prestador' ); ?></p>
 			<?php else : ?>
 				<?php if ( 'error' === pm_consulta_resultado() ) : ?><p class="aviso error" role="alert"><?php pm_e( 'consulta.error' ); ?></p><?php endif; ?>
 				<form method="post" action="<?php echo esc_url( pm_consulta_url_envio() ); ?>">

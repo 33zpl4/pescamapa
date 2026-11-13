@@ -5,7 +5,7 @@
  */
 defined( 'ABSPATH' ) || exit;
 ?>
-<a class="barra-pedir" href="<?php echo esc_url( $args['url'] ); ?>"><?php pm_e( 'paquetes.barra' ); ?></a>
+<a class="barra-pedir" href="<?php echo esc_url( $args['url'] ); ?>"><?php pm_e( 'viaje.barra' ); ?></a>
 <script>
 (() => {
 	const barra = document.querySelector('.barra-pedir'), hasta = document.querySelector(<?php echo wp_json_encode( $args['hasta'] ); ?>);

@@ -153,9 +153,13 @@ jobs:
           check / 200 'class="menu-btn"'
           check / 200 'id="menu-principal"'
           check /en/ 200 'aria-label="Menu"'
-          check / 200 'Armá tu viaje →'
+          check / 200 'Pedir opciones →'
           check / 200 'Investigación propia'
-          check /en/ 200 'Plan your trip →'
+          check /en/ 200 'Request options →'
+          check / 200 'id="pedido"'
+          check / 200 'Decinos qué querés pescar'
+          check /en/ 200 'id="pedido"'
+          check /en/ 200 'Tell us what you want to catch'
           check /mapa/ 200
           check /litoral/corrientes/pesca-en-esquina/ 200 'TouristDestination' 'PENDIENTE'
           check /litoral/corrientes/pesca-en-esquina/ 200 'CITA-DE-PRUEBA' 'CITA-SIN-PERMISO'
@@ -166,6 +170,8 @@ jobs:
           check /litoral/corrientes/pesca-en-esquina/ 200 'mailto:info@pescamapa.com?subject='
           check /litoral/corrientes/pesca-en-esquina/ 200 'sin verificar con el prestador'
           check /litoral/corrientes/pesca-en-esquina/ 200 'Precio: a consultar'
+          check /litoral/corrientes/pesca-en-esquina/ 200 'Pedir opciones para pescar en'
+          check /litoral/corrientes/pesca-en-esquina/ 200 'Tu primera referencia:'
           # Dates on cards are relative words, never an exact date (owner, 1/11/2026).
           check /litoral/corrientes/pesca-en-esquina/ 200 'precio revisado en los últimos' 'precio consultado el'
           check /llms.txt 200 'se corrigen o se quitan a pedido' 'PRESTADOR-NO-PUBLICO'   # public listings ARE in llms.txt since 1/11/2026; non-public never
@@ -233,7 +239,7 @@ jobs:
           check /paquetes-de-pesca/esquina/ 200 'consulta--boutique'
           check /paquetes-de-pesca/esquina/ 200 'INTRO-DE-PRUEBA'
           check /paquetes-de-pesca/esquina/ 200 'content="DESC-DE-PRUEBA"'
-          check /paquetes-de-pesca/esquina/ 200 'Pedir mi cotización'
+          check /paquetes-de-pesca/esquina/ 200 'Pedir mis opciones'
           check /paquetes-de-pesca/esquina/ 200 'barra-pedir'
           # Same phone bar on the destination guide (to its own form) and on notes (to the trip form).
           check /litoral/corrientes/pesca-en-esquina/ 200 'class="barra-pedir" href="#consulta"'
@@ -297,11 +303,16 @@ jobs:
           n=$(wp --path="$WP" post list --post_type=pm_consulta --post_status=private --format=count)
           [[ "$n" == 1 ]] && echo "✓ 1 consulta guardada" || { echo "✖ consultas guardadas: $n (esperado 1)"; fail=1; }
           # Trip request page (/armar-viaje/): renders in 3 languages, preselects from the URL, saves the new fields as Spanish labels.
-          check /armar-viaje/ 200 'Armá tu viaje de pesca a Argentina' 'PENDIENTE'
-          check /armar-viaje/ 200 'name="contacto"'
+          check /armar-viaje/ 200 'Decinos qué querés pescar. Nosotros encontramos dónde.' 'PENDIENTE'
+          check /armar-viaje/ 200 'name="fijo\[\]"'
+          check /armar-viaje/ 200 'Preguntamos y comparamos'
+          check /armar-viaje/ 200 'sin tu nombre ni tu contacto'
+          check /armar-viaje/ 200 'name="contacto_email"'
           check '/armar-viaje/?destino=esquina&especie=dorado' 200 'value="esquina" selected'
-          check /pt/planejar-viagem/ 200 'Monte sua viagem de pesca à Argentina'
-          check /en/plan-your-trip/ 200 'Plan your fishing trip to Argentina'
+          check /pt/planejar-viagem/ 200 'Diga o que você quer pescar. Nós encontramos onde.'
+          check /pt/planejar-viagem/ 200 'name="fijo\[\]"'
+          check /en/plan-your-trip/ 200 'Tell us what you want to catch'
+          check /en/plan-your-trip/ 200 'name="fijo\[\]"'
           check /en/plan-your-trip/ 200 'hreflang="es"'
           check / 200 'href="[^"]*/armar-viaje/"'
           check /en/ 200 'plan-your-trip'
@@ -312,6 +323,7 @@ jobs:
             -d pm_volver="$URL/en/plan-your-trip/" -d pm_t=$(( $(date +%s) - 60 )) \
             -d nombre=Tester -d contacto=tester@example.com -d cuando=November -d personas=2 \
             -d duracion=semana -d experiencia=alguna -d alojamiento=lodge -d pais=Chile -d modalidad=mosca \
+            -d 'fijo[]=fechas' -d 'fijo[]=especie' -d 'fijo[]=invalida' \
             --data-urlencode 'pm_entrada=/en/notes/nota-de-prueba/?utm_source=chatgpt.com' -d pm_referente=www.chatgpt.com -d pm_campana=chatgpt.com \
             "$URL/wp-admin/admin-post.php")
           [[ "$loc" == *"consulta=ok"* ]] && echo "✓ viaje → $loc" || { echo "✖ viaje: $loc"; fail=1; }
@@ -319,15 +331,147 @@ jobs:
           # Attribution (footer script → hidden fields): entry page, referrer host without www, channel label.
           check /en/plan-your-trip/ 200 'name="pm_entrada"'
           check /en/plan-your-trip/ 200 "sessionStorage.setItem('pm-entrada'"
-          for par in "duracion:5 a 7 días" "experiencia:Algo de experiencia" "alojamiento:Lodge con todo incluido" "pais:Chile" "canal:ChatGPT" "referente:chatgpt.com" "entrada:/en/notes/nota-de-prueba/?utm_source=chatgpt.com"; do
+          for par in "duracion:5 a 7 días" "experiencia:Algo de experiencia" "alojamiento:Lodge con todo incluido" "pais:Chile" "fijo:Especie, Fechas" "canal:ChatGPT" "referente:chatgpt.com" "entrada:/en/notes/nota-de-prueba/?utm_source=chatgpt.com"; do
             k=${par%%:*}; e=${par#*:}; g=$(wp --path="$WP" post meta get "$v" "$k")
             [[ "$g" == "$e" ]] && echo "✓ $k = $g" || { echo "✖ $k = '$g' (esperado '$e')"; fail=1; }
           done
           check '/en/plan-your-trip/?consulta=ok' 200 'Thank you, we got your request'
+          # "What is fixed" is optional: the first inquiry (sent without it) saved no value for it.
+          v0=$(wp --path="$WP" post list --post_type=pm_consulta --post_status=private --s=Prueba --format=ids | head -n1)
+          [[ -z "$(wp --path="$WP" post meta get "$v0" fijo)" ]] && echo "✓ fijo vacío sin marcar" || { echo "✖ fijo debería estar vacío"; fail=1; }
+          # --- Trip form UX (13/11/2026): native date range, flexibility, stay, anglers + companions, gear, contact channel. ---
+          meta() { wp --path="$WP" post meta get "$1" "$2" 2>/dev/null || true; }
+          igual() { [[ "$2" == "$3" ]] && echo "✓ $1" || { echo "✖ $1: '$2' (esperado '$3')"; fail=1; }; }
+          reset_limite() { wp --path="$WP" db query "DELETE FROM wp_options WHERE option_name LIKE '%pm_consultas_%'" >/dev/null 2>&1; }
+          enviar() { [[ -n "${SIN_RESET:-}" ]] || reset_limite; curl -sS -o /dev/null -w '%{redirect_url}' -d action=pm_consulta -d pm_tipo=viaje -d pm_idioma=es -d pm_volver="$URL/armar-viaje/" -d pm_t=$(( $(date +%s) - 60 )) "$@" "$URL/wp-admin/admin-post.php"; }
+          reset_limite
+          # The old short card posted cuando/personas as free text: still saved as typed.
+          igual "viejo: cuando = marzo" "$(meta "$v0" cuando)" "marzo"
+          igual "viejo: personas = 3" "$(meta "$v0" personas)" "3"
+          # Rendering in 3 languages (the fields exist in the served HTML: this is also the no-JS baseline).
+          for r in /armar-viaje/ /pt/planejar-viagem/ /en/plan-your-trip/; do
+            for f in 'type="date"' 'name="fecha_desde"' 'name="fecha_hasta"' 'min="20[0-9][0-9]-' 'name="flexibilidad"' 'name="estadia"' 'name="pescadores"' 'name="acompanantes"' 'name="equipo_propio"' 'name="contacto_via"' 'type="email"' 'type="tel"' 'name="meses\[\]"' 'name="fijo\[\]"'; do check $r 200 "$f"; done
+            # No JavaScript: months and both contact fields are in the HTML and nothing is hidden or required by the server markup.
+            check $r 200 'data-meses' 'data-meses hidden'
+            grep -o '<input[^>]*name="contacto_email"[^>]*>' page.html | grep -qv required && echo "✓ $r: contacto_email sin required (sin JS lo valida el servidor)" || { echo "✖ $r: contacto_email con required"; fail=1; }
+            check $r 200 'name="nombre" required'
+          done
+          check /armar-viaje/ 200 'Cuándo y quiénes'
+          check /armar-viaje/ 200 'Te respondemos en 48 horas'
+          check /armar-viaje/ 200 'Acompañantes (no pescan)'
+          check /armar-viaje/ 200 'Pedir mis opciones'
+          check /en/plan-your-trip/ 200 'Request my options'
+          check /pt/planejar-viagem/ 200 'Pedir minhas opções'
+          # Months: compact grid (12 inputs, short label shown, full "mes año" in the accessible name), year once per group.
+          M0=$(date +%Y-%m-01)
+          for spec in "/armar-viaje/:es:Nov:noviembre" "/pt/planejar-viagem/:pt:Nov:novembro" "/en/plan-your-trip/:en:Nov:November"; do
+            IFS=: read -r r l corto largo <<< "$spec"
+            check $r 200 'class="anio"'
+            n=$(grep -o 'name="meses\[\]"' page.html | wc -l); [[ "$n" == "12" ]] && echo "✓ $r: 12 meses" || { echo "✖ $r: $n meses (esperado 12)"; fail=1; }
+            m6=$(date -d "$M0 +3 month" +%-m); y6=$(date -d "$M0 +3 month" +%Y)
+            nombre=$(wp --path="$WP" eval "echo pm_t( 'viaje.mes.$m6', [], '$l' ) . ' $y6';")
+            grep -q "class=\"visually-hidden\">$nombre</span>" page.html && echo "✓ $r: nombre accesible '$nombre'" || { echo "✖ $r: falta el nombre accesible '$nombre'"; fail=1; }
+            grep -q "aria-hidden=\"true\">$(wp --path="$WP" eval "echo pm_t( 'viaje.mes.corto.$m6', [], '$l' );")</span>" page.html && echo "✓ $r: etiqueta corta" || { echo "✖ $r: falta la etiqueta corta"; fail=1; }
+            [[ "$(grep -o 'class="anio"' page.html | wc -l)" =~ ^[12]$ ]] && echo "✓ $r: año por grupo" || { echo "✖ $r: grupos de año"; fail=1; }
+          done
+          # "Fine-tune" disclosure: closed by default, in the three languages; the fields live inside it.
+          for spec in "/armar-viaje/:Afinar el pedido (opcional)" "/pt/planejar-viagem/:Ajustar o pedido (opcional)" "/en/plan-your-trip/:Fine-tune your request (optional)"; do
+            r=${spec%%:*}; t=${spec#*:}
+            check $r 200 "<summary>$t</summary>"
+            grep -q '<details class="afinar">' page.html && echo "✓ $r: afinar cerrado por defecto" || { echo "✖ $r: afinar no está cerrado"; fail=1; }
+            sed -n '/<details class="afinar"/,/<\/details>/p' page.html | grep -q 'name="modalidad"' && sed -n '/<details class="afinar"/,/<\/details>/p' page.html | grep -q 'name="alojamiento"' && sed -n '/<details class="afinar"/,/<\/details>/p' page.html | grep -q 'name="experiencia"' && echo "✓ $r: modalidad, alojamiento y experiencia dentro" || { echo "✖ $r: campos fuera de afinar"; fail=1; }
+          done
+          # The sticky bar on a note/guide uses the shared short label.
+          check /litoral/corrientes/pesca-en-esquina/ 200 'Pedir opciones'
+          check /armar-viaje/ 200 'incluidos los waders'
+          check /pt/planejar-viagem/ 200 'Quando e quem'
+          check /pt/planejar-viagem/ 200 'Respondemos em 48 horas'
+          check /en/plan-your-trip/ 200 'When and who'
+          check /en/plan-your-trip/ 200 'Do you bring your own tackle?'
+          check /en/plan-your-trip/ 200 'waders included'
+          check /en/plan-your-trip/ 200 'We reply within 48 hours'
+          # "What is fixed" now offers species and place (dates and stay have their own fields).
+          check /en/plan-your-trip/ 200 'value="lugar"' 'viaje-fijo-estadia'
+          check /armar-viaje/ 200 'name="nombre"' 'name="cuando"'
+          # The short card on a guide shares the fields (and no longer has the free-text "when").
+          check /litoral/corrientes/pesca-en-esquina/ 200 'name="fecha_desde"'
+          check /litoral/corrientes/pesca-en-esquina/ 200 'name="acompanantes"' 'name="cuando"'
+          check /litoral/corrientes/pesca-en-esquina/ 200 'name="flexibilidad"'
+          # New fields → own metas + Spanish summaries.
+          D1=$(date -d '+60 days' +%F); D2=$(date -d '+62 days' +%F); F1=$(date -d '+60 days' +%d/%m/%Y); F2=$(date -d '+62 days' +%d/%m/%Y)
+          loc=$(enviar -d nombre=Calendario -d contacto_via=whatsapp -d contacto_email= --data-urlencode 'contacto_tel=+1 (555) 123-4567' -d fecha_desde=$D1 -d fecha_hasta=$D2 -d flexibilidad=semana -d estadia=dos-tres -d pescadores=1 -d acompanantes=1 -d equipo_propio=no -d 'fijo[]=especie' -d 'fijo[]=lugar' -d pm_destino=goya)
+          [[ "$loc" == *"consulta=ok"* ]] && echo "✓ nuevo formulario → ok" || { echo "✖ nuevo formulario: $loc"; fail=1; }
+          n1=$(wp --path="$WP" post list --post_type=pm_consulta --post_status=private --s=Calendario --format=ids | head -n1)
+          igual "cuando compuesto" "$(meta "$n1" cuando)" "$F1 al $F2 · ± una semana · 2–3 días de pesca"
+          igual "personas compuesto" "$(meta "$n1" personas)" "1 pescador + 1 acompañante que no pesca"
+          for par in "fecha_desde:$D1" "fecha_hasta:$D2" "flexibilidad:± una semana" "estadia:2–3 días" "pescadores:1" "acompanantes:1" "equipo_propio:No, necesito todo (incluidos los waders)" "fijo:Especie, Lugar" "contacto_via:whatsapp" "contacto:+1 (555) 123-4567"; do
+            igual "meta ${par%%:*}" "$(meta "$n1" "${par%%:*}")" "${par#*:}"
+          done
+          # "I do not know yet": months instead of dates; a month outside the next 12 is ignored.
+          M1=$(date -d "$(date +%Y-%m-01) +2 month" +%Y-%m); M2=$(date -d "$(date +%Y-%m-01) +3 month" +%Y-%m)
+          loc=$(enviar -d nombre=Meses -d contacto_via=email -d contacto_email=meses@example.com -d contacto_tel= -d flexibilidad=nose -d "meses[]=$M2" -d "meses[]=$M1" -d "meses[]=1999-01" -d pescadores=3)
+          [[ "$loc" == *"consulta=ok"* ]] && echo "✓ meses → ok" || { echo "✖ meses: $loc"; fail=1; }
+          n2=$(wp --path="$WP" post list --post_type=pm_consulta --post_status=private --s=Meses --format=ids | head -n1)
+          igual "cuando con meses" "$(meta "$n2" cuando)" "fechas sin definir, meses posibles: $(wp --path="$WP" eval "echo pm_consulta_mes_etiqueta( '$M1', 'es' ) . ', ' . pm_consulta_mes_etiqueta( '$M2', 'es' );")"
+          igual "personas sin acompañantes" "$(meta "$n2" personas)" "3 pescadores"
+          igual "contacto email" "$(meta "$n2" contacto)" "meses@example.com"
+          # Never trust the client: impossible, past or reversed dates are dropped; numbers are clamped.
+          loc=$(enviar -d nombre=Malas -d contacto_via=email -d contacto_email=malas@example.com -d fecha_desde=2027-02-30 -d fecha_hasta=2001-01-01 -d pescadores=9999 -d acompanantes=abc -d estadia=inventada -d flexibilidad=otra)
+          [[ "$loc" == *"consulta=ok"* ]] && echo "✓ datos malos → se guarda lo válido" || { echo "✖ datos malos: $loc"; fail=1; }
+          n3=$(wp --path="$WP" post list --post_type=pm_consulta --post_status=private --s=Malas --format=ids | head -n1)
+          igual "fecha imposible descartada" "$(meta "$n3" fecha_desde)" ""
+          igual "fecha pasada descartada" "$(meta "$n3" fecha_hasta)" ""
+          igual "cuando vacío" "$(meta "$n3" cuando)" ""
+          igual "pescadores acotado" "$(meta "$n3" pescadores)" "99"
+          igual "acompañantes no numérico = 0" "$(meta "$n3" acompanantes)" ""
+          igual "personas acotado" "$(meta "$n3" personas)" "99 pescadores"
+          igual "opción inventada ignorada" "$(meta "$n3" estadia)$(meta "$n3" flexibilidad)" ""
+          loc=$(enviar -d nombre=Reves -d contacto_via=email -d contacto_email=reves@example.com -d fecha_desde=$D2 -d fecha_hasta=$D1)
+          n4=$(wp --path="$WP" post list --post_type=pm_consulta --post_status=private --s=Reves --format=ids | head -n1)
+          igual "hasta antes de desde: solo desde" "$(meta "$n4" cuando)" "desde el $F2"
+          # Validation errors: nothing saved, the form comes back with what was typed and the field to fix.
+          loc=$(enviar -d nombre=Revisar -d contacto_via=email -d contacto_email=a@b -d pescadores=2 -d estadia=dos-tres -d flexibilidad=dias --data-urlencode 'mensaje=Texto que no se pierde' -d pm_destino=esquina)
+          [[ "$loc" == *"consulta=error"* && "$loc" == *"pm_r="* ]] && echo "✓ error de validación vuelve con pm_r" || { echo "✖ validación: $loc"; fail=1; }
+          curl -sS -o page.html "$loc"
+          for t in 'value="Revisar"' 'Texto que no se pierde' 'value="a@b"' 'value="dos-tres" checked' 'value="dias" checked' 'value="esquina" selected' 'aria-invalid="true"' 'class="error-campo"' 'Revisá el email'; do
+            grep -q -- "$t" page.html && echo "✓ tras el error: $t" || { echo "✖ tras el error falta: $t"; fail=1; }
+          done
+          grep -q '<details class="afinar">' page.html && echo "✓ tras el error sin esos campos: afinar sigue cerrado" || { echo "✖ afinar abierto sin valores"; fail=1; }
+          # Restored data inside the disclosure (none of its fields can come from the query string): it opens by itself.
+          loc=$(enviar -d nombre=Afinar -d contacto_via=email -d contacto_email=a@b -d modalidad=mosca)
+          curl -sS -o page.html "$loc"
+          grep -q '<details class="afinar" open>' page.html && grep -q 'value="mosca" checked' page.html && echo "✓ tras el error con modalidad: afinar abierto" || { echo "✖ afinar no se abrió con datos restaurados"; fail=1; }
+          [[ -z "$(wp --path="$WP" post list --post_type=pm_consulta --post_status=private --s=Revisar --format=ids)" ]] && echo "✓ el pedido con error no se guardó" || { echo "✖ se guardó un pedido inválido"; fail=1; }
+          loc=$(enviar -d nombre= -d contacto_via=whatsapp -d contacto_tel=abc)
+          curl -sS -o page.html "$loc"
+          grep -q 'Escribí tu nombre' page.html && grep -q 'Dejanos un email o un WhatsApp' page.html && echo "✓ errores de nombre y contacto" || { echo "✖ faltan los errores de nombre/contacto"; fail=1; }
+          loc=$(enviar -d nombre=Corto -d contacto_via=whatsapp -d contacto_tel=12345)
+          curl -sS -o page.html "$loc"; grep -q 'código de país' page.html && echo "✓ número corto → error de WhatsApp" || { echo "✖ número corto aceptado"; fail=1; }
+          # Old fields only (cached pages, the guide card before this change): still works, summaries are what was typed.
+          loc=$(enviar -d nombre=Antiguo -d contacto=antiguo@example.com -d cuando='del 3 al 10 de marzo' -d personas=4 -d duracion=semana)
+          [[ "$loc" == *"consulta=ok"* ]] && echo "✓ solo campos viejos → ok" || { echo "✖ campos viejos: $loc"; fail=1; }
+          n5=$(wp --path="$WP" post list --post_type=pm_consulta --post_status=private --s=Antiguo --format=ids | head -n1)
+          igual "viejo cuando" "$(meta "$n5" cuando)" "del 3 al 10 de marzo"; igual "viejo personas" "$(meta "$n5" personas)" "4"; igual "viejo duracion" "$(meta "$n5" duracion)" "5 a 7 días"
+          igual "viejo sin pescadores" "$(meta "$n5" pescadores)" ""
+          # The admin box and the notice read the summaries.
+          wp --path="$WP" eval '$d = pm_consulta_datos( '"$n1"' ); echo $d["Cuándo"] . " | " . $d["Personas"] . " | " . $d["Equipo propio"];' | grep -q "al .* · ± una semana · 2–3 días de pesca | 1 pescador + 1 acompañante que no pesca | No, necesito todo" && echo "✓ la caja del admin lee los resúmenes" || { echo "✖ caja del admin"; fail=1; }
+          # Anti-spam still works: honeypot, minimum fill time, per-IP limit.
+          curl -sS -o /dev/null -d action=pm_consulta -d pm_tipo=viaje -d pm_web=spam -d pm_t=1 -d nombre=Trampa -d contacto_email=t@example.com "$URL/wp-admin/admin-post.php"
+          curl -sS -o /dev/null -d action=pm_consulta -d pm_tipo=viaje -d pm_t=$(date +%s) -d nombre=Apurado -d contacto_via=email -d contacto_email=ap@example.com "$URL/wp-admin/admin-post.php"
+          [[ -z "$(wp --path="$WP" post list --post_type=pm_consulta --post_status=private --s=Trampa --format=ids)$(wp --path="$WP" post list --post_type=pm_consulta --post_status=private --s=Apurado --format=ids)" ]] && echo "✓ trampa y tiempo mínimo: no se guardan" || { echo "✖ spam guardado"; fail=1; }
+          reset_limite
+          for i in 1 2 3 4 5 6; do SIN_RESET=1 enviar -d nombre= -d contacto_via=email > /dev/null; done
+          loc=$(SIN_RESET=1 enviar -d nombre=Limite -d contacto_via=email -d contacto_email=lim@example.com)
+          [[ "$loc" == *"consulta=error"* ]] && echo "✓ límite por IP" || { echo "✖ límite por IP: $loc"; fail=1; }
+          curl -sS -o page.html "$loc"; grep -q 'Mandaste varios pedidos' page.html && echo "✓ mensaje del límite" || { echo "✖ mensaje del límite"; fail=1; }
+          reset_limite
           # Terms of use and privacy policy, 3 languages; linked from the footer and the forms.
           check /terminos/ 200 'Términos de uso'
           check /terminos/ 200 'Las fotos pueden estar recortadas'
           check /privacidad/ 200 'Política de privacidad'
+          check /privacidad/ 200 'sin tu nombre ni tu contacto'
+          check /en/privacy/ 200 'without your name or contact'
+          check /pt/privacidade/ 200 'sem o seu nome nem o seu contato'
           check /privacidad/ 200 'info@pescamapa.com'
           # Season dates: the month bar and the computed "can I fish now?" answer (idea from the PESQA review, 4/11/2026).
           check /litoral/corrientes/pesca-en-esquina/ 200 'id="preguntas"' 'barra-meses'
@@ -377,6 +521,7 @@ jobs:
             $ver( pm_acuse_cuerpo( "viaje", "es", "" ) === $base( "viaje", "es" ), "es sin destino: igual que hoy" );
             $ver( pm_acuse_cuerpo( "prestador", "en", "esquina" ) === $base( "prestador", "en" ), "prestador: sin enlaces" );
             foreach ( [ "es", "pt", "en" ] as $i ) { $ver( str_contains( pm_t( "acuse.viaje", [], $i ), "48" ) && str_contains( pm_t( "viaje.gracias.p", [], $i ), "48" ), "plazo de 48 horas en $i" ); $ver( ! str_contains( pm_t( "acuse.prestador", [], $i ), "48" ), "acuse.prestador sin plazo en $i" ); }
+            foreach ( [ "es", "pt", "en" ] as $i ) { $ver( str_contains( pm_t( "consulta.ok.pescador", [], $i ), "48" ), "consulta.ok.pescador lleva el plazo de 48 horas en $i" ); $ver( ! str_contains( pm_t( "consulta.ok.prestador", [], $i ), "48" ), "consulta.ok.prestador sin plazo en $i" ); $ver( "consulta.ok" === pm_t( "consulta.ok", [], $i ), "consulta.ok (clave compartida) ya no existe en $i" ); $ver( str_contains( pm_t( "acuse.viaje", [], $i ), "Pescamapa" ) && ! str_contains( pm_t( "acuse.prestador", [], $i ), "comisi" ), "acuse.viaje pide mencionar a Pescamapa en $i" ); }
             foreach ( [ "es", "pt", "en" ] as $i ) { $ver( "" !== pm_t( "acuse.ayuda", [], $i ) && "acuse.ayuda" !== pm_t( "acuse.ayuda", [], $i ), "acuse.ayuda en $i" ); }
             echo pm_acuse_cuerpo( "viaje", "en", "esquina" ), "\n---\n";
             // Subject: plain text.

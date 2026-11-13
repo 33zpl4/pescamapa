@@ -107,6 +107,22 @@ get_header(); ?>
 		</div>
 	</section>
 
+	<section id="pedido" class="section pedido" aria-labelledby="pedido-h">
+		<div class="shell">
+			<div class="head">
+				<div>
+					<div class="eyebrow"><?php pm_e( 'inicio.pedido.eyebrow' ); ?></div>
+					<h2 id="pedido-h"><?php pm_e( 'inicio.pedido.h2' ); ?></h2>
+				</div>
+				<div>
+					<p><?php pm_e( 'inicio.pedido.p1' ); ?></p>
+					<p><?php pm_e( 'inicio.pedido.p2' ); ?></p>
+				</div>
+			</div>
+			<a class="button primary" href="<?php echo esc_url( pm_url_viaje( $idioma ) ); ?>"><?php pm_e( 'inicio.pedido.cta' ); ?></a>
+		</div>
+	</section>
+
 	<?php $notas_inicio = array_slice( pm_notas_lista( $idioma ), 0, 3 ); ?>
 	<?php if ( $notas_inicio ) : ?>
 	<section class="section notas-inicio" id="notas">
@@ -169,7 +185,7 @@ get_header(); ?>
 			</div>
 			<div id="consulta" class="consulta">
 				<?php if ( 'ok' === pm_consulta_resultado() ) : ?>
-					<p class="aviso ok" role="status"><?php pm_e( 'consulta.ok' ); ?></p>
+					<p class="aviso ok" role="status"><?php pm_e( 'consulta.ok.prestador' ); ?></p>
 				<?php else : ?>
 					<?php if ( 'error' === pm_consulta_resultado() ) : ?><p class="aviso error" role="alert"><?php pm_e( 'consulta.error' ); ?></p><?php endif; ?>
 					<form method="post" action="<?php echo esc_url( pm_consulta_url_envio() ); ?>">

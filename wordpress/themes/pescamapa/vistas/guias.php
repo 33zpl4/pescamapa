@@ -69,7 +69,7 @@ get_header(); ?>
 			<h2 id="lista-h"><?php pm_e( 'guias.lista.h', $a ); ?></h2>
 			<p><?php pm_e( 'guias.lista.p' ); ?></p>
 			<?php foreach ( $prestadores as $r ) {
-				get_template_part( 'parciales/prestador', null, $r );
+				get_template_part( 'parciales/prestador', null, $r + [ 'lugar' => $d['nombre'] ] );
 			} ?>
 		</section>
 		<section class="armadas" aria-labelledby="armadas-h">
