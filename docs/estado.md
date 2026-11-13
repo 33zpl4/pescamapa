@@ -39,6 +39,14 @@ todas a nosotros (centralizar datos y cobrar comisión más adelante).
   sigue como notas PENDIENTE (no se ven). Investigación:
   `docs/investigacion/esquina.md`.
 
+## Al 13/11/2026: primera consulta real de viaje y tarifas 2027 de Las Buitreras
+
+- **Primera consulta real por el formulario (12/11/2026):** Río Gallegos, desde la ficha de Las Buitreras de la guía en inglés; llegó por Google. Sin datos personales acá.
+- **Enviado:** respuesta al pescador; consultas a Solid Adventures (Las Buitreras), Karku, El Rincón, First Cast Fly Fishing y la oficina de turismo de Santa Cruz.
+- **Respuesta de Solid Adventures (13/11):** solo semanas completas y enero de 2027 ya completo; mandó el programa "Las Buitreras – Season 2027" (PDF, no está en el repo). Tarifa: US$ 9.990 por pescador, semana de 7 noches y 6 días de pesca, del 30/12/2026 al 24/4/2027; acompañante US$ 3.000; individual +US$ 500. Cargado en la ficha y en la guía de Río Gallegos con `las-buitreras-2027-2026-11-13` (fuente "programa 2027 enviado por Solid Adventures, 13/11/2026"); la ficha sigue como información pública, sin acuerdo. Foto del programa con crédito "Solid Adventures" (regla del dueño del 13/11: foto del material de la propia fuente, con crédito visible, se quita si la piden).
+- **Abierto:** esperar las otras respuestas; Truchaike y Güer Aike sin verificar (solo teléfonos). Idea aprobada por el dueño: una nota sobre estadías cortas en el Gallegos, a escribir con las respuestas de los operadores.
+- **Sitio (PR 169, ya mergeado):** estado de envío en Consultas, enlaces en el acuse de recibo y promesa de respuesta en 48 horas.
+
 ## Al 11/11/2026: paquetes por operador en Bariloche y guías de El Calafate y Ushuaia
 
 - **Bariloche:** 5 paquetes de operador publicados, cada uno con precio y fuente (script `paquetes-bariloche-operadores-2026-11-11`).
