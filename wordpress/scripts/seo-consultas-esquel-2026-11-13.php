@@ -80,7 +80,7 @@ if ( ! function_exists( 'pm_sc_h2' ) ) {
 		$leido = get_post( $id )->post_content;
 		foreach ( $debe_contener as $t ) {
 			if ( false === strpos( $leido, $t ) ) {
-				WP_CLI::error( "$etiqueta: la lectura de vuelta no contiene «$t»." );
+				WP_CLI::error( "$etiqueta: la lectura de vuelta no contiene «{$t}»." );
 			}
 		}
 	}
@@ -106,7 +106,7 @@ foreach ( [ 'es', 'en', 'pt' ] as $i ) {
 		continue;
 	}
 	$actual = (string) pm_campo( 'seo_title', $p->ID );
-	WP_CLI::log( "LEÍDO esquel-trevelin ($i) #{$p->ID}: seo_title «$actual» · h1 «" . pm_campo( 'h1', $p->ID ) . '»' );
+	WP_CLI::log( "LEÍDO esquel-trevelin ($i) #{$p->ID}: seo_title «{$actual}» · h1 «" . pm_campo( 'h1', $p->ID ) . '»' );
 	if ( 'en' !== $i ) {
 		continue;
 	}
@@ -114,7 +114,7 @@ foreach ( [ 'es', 'en', 'pt' ] as $i ) {
 		WP_CLI::log( 'esquel-trevelin (en): el title ya está.' );
 		continue;
 	}
-	WP_CLI::log( pm_sc_modo( $aplicar ) . ": esquel-trevelin (en): ANTES «$actual» → DESPUÉS «$nuevo» (" . mb_strlen( $nuevo ) . ')' );
+	WP_CLI::log( pm_sc_modo( $aplicar ) . ": esquel-trevelin (en): ANTES «{$actual}» → DESPUÉS «{$nuevo}» (" . mb_strlen( $nuevo ) . ')' );
 	$cambios++;
 	if ( $aplicar ) {
 		pm_sc_campo( $p->ID, 'seo_title', $nuevo, 'esquel-trevelin (en)' );

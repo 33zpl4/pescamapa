@@ -84,7 +84,7 @@ if ( ! function_exists( 'pm_sc_h2' ) ) {
 		$leido = get_post( $id )->post_content;
 		foreach ( $debe_contener as $t ) {
 			if ( false === strpos( $leido, $t ) ) {
-				WP_CLI::error( "$etiqueta: la lectura de vuelta no contiene «$t»." );
+				WP_CLI::error( "$etiqueta: la lectura de vuelta no contiene «{$t}»." );
 			}
 		}
 	}
@@ -114,7 +114,7 @@ if ( ! $p ) {
 } else {
 	WP_CLI::log( pm_sc_modo( $aplicar ) . ": nota pacotes (pt) #{$p->ID} " . get_permalink( $p->ID ) );
 	WP_CLI::log( '  ANTES seo_title: «' . pm_campo( 'seo_title', $p->ID ) . '» · slug: ' . $p->post_name );
-	WP_CLI::log( "  DESPUÉS seo_title: «$nuevo_titulo» (" . mb_strlen( $nuevo_titulo ) . ') · slug igual' );
+	WP_CLI::log( "  DESPUÉS seo_title: «{$nuevo_titulo}» (" . mb_strlen( $nuevo_titulo ) . ') · slug igual' );
 	$cambios++;
 	if ( $aplicar ) {
 		pm_sc_campo( $p->ID, 'seo_title', $nuevo_titulo, 'nota pacotes (pt)' );

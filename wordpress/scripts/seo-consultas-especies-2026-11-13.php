@@ -84,7 +84,7 @@ if ( ! function_exists( 'pm_sc_h2' ) ) {
 		$leido = get_post( $id )->post_content;
 		foreach ( $debe_contener as $t ) {
 			if ( false === strpos( $leido, $t ) ) {
-				WP_CLI::error( "$etiqueta: la lectura de vuelta no contiene «$t»." );
+				WP_CLI::error( "$etiqueta: la lectura de vuelta no contiene «{$t}»." );
 			}
 		}
 	}
