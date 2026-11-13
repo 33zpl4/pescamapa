@@ -695,7 +695,8 @@
    "datos": [
     "A week at a sea trout lodge in Río Grande (Tierra del Fuego) costs from US$ 12,950 to US$ 14,950 per person, depending on the date, in the 2026/27 season.",
     "That lodge rate is for a single room and shared guide, and includes meals, drinks, and transfer from the airport.",
-    "A week at Jurassic Lake (Santa Cruz) costs US$ 8,000 per angler according to the lodge's rate page; 4- and 3-night programs cost US$ 5,200 and US$ 4,200, from January to April.",
+    "A week at Villa María Lodge (Río Grande) costs from US$ 12,950 to US$ 14,950 per person in the 2027 season, according to its page on Nervous Waters (read on 13/11/2026); a non-fishing companion pays US$ 650 per night per person.",
+    "A week at Jurassic Lake (Santa Cruz) costs US$ 8,000 per angler according to the lodge's rate page; 4- and 3-night programs cost US$ 5,200 and US$ 4,200, from January to April. According to the lodge's pre-trip page, that rate includes the fishing licence, the ground transfer from El Calafate and the drinks (except the whiskey selection); the charter flight and tips are extra.",
     "In El Calafate, a half-day trip (5 hours) costs $ 440,000 per angler and a full-day trip (9 hours) $ 720,000.",
     "In El Calafate, fishing is from the shore, wading; non-fishing companions pay $ 185,000 for half-day and $ 335,000 for full-day."
    ],
@@ -735,7 +736,40 @@
     },
     {
      "t": "p",
-     "h": "Río Grande lodge rate for the season from 26 December 2026 to 17 April 2027, checked on 4 November 2026. Includes lodging, transfer from Río Grande airport, all meals and drinks, professional guide (two anglers per guide), and loaner gear. Does not include flights, fishing license (the lodge estimates about US$ 550 per angler), laundry, or tips. A 50% deposit is required and is non-refundable. Other operators we found in Río Grande do not publish rates; the destination guide is at <a href=\"{n:rio-grande}\">fishing in Río Grande</a>."
+     "h": "Río Grande lodge rate for the season from 26 December 2026 to 17 April 2027, checked on 4 November 2026. Includes lodging, transfer from Río Grande airport, all meals and drinks, professional guide (two anglers per guide), and loaner gear. Does not include flights, fishing license (the lodge estimates about US$ 550 per angler), laundry, or tips. A 50% deposit is required and is non-refundable. Villa María Lodge publishes its own (below); the other operators we found in Río Grande do not publish rates; the destination guide is at <a href=\"{n:rio-grande}\">fishing in Río Grande</a>."
+    },
+    {
+     "t": "h2",
+     "h": "Villa María Lodge (Río Grande): week in 2027"
+    },
+    {
+     "t": "tabla",
+     "cab": [
+      "Week",
+      "Per person",
+      "Conditions"
+     ],
+     "filas": [
+      [
+       "25 December to 8 January",
+       "US$ 13,950",
+       "Single room, shared guide"
+      ],
+      [
+       "8 January to 5 March",
+       "US$ 14,950",
+       "Single room, shared guide"
+      ],
+      [
+       "5 March to 26 March",
+       "US$ 12,950",
+       "Single room, shared guide"
+      ]
+     ]
+    },
+    {
+     "t": "p",
+     "h": "Villa María Lodge 2027 rate (season from 25 December 2026 to 26 March 2027), published on the page the lodge has on Nervous Waters and read on 13 November 2026; it is seven nights and 6.5 fishing days, Friday to Friday. It includes lodging in a single room (subject to availability), transfer from Río Grande airport, all meals, wines, beer and spirits, a professional guide (two anglers per guide) and loaner gear. According to the operator, Friday-to-Friday weeks add one night at its Delta Eco Lodge (shared rooms) with one day of guided dorado fishing, subject to availability. It does not include flights, the round-trip transfer from Ushuaia, the fishing licence (its 2025/26 rate sheet estimated about US$ 595 per angler), laundry, an overnight in Ushuaia on the arrival day or tips. A non-fishing companion pays US$ 650 per night per person, at both Villa María and Kau Tapen (according to each lodge's page on Nervous Waters, read on 13 November 2026)."
     },
     {
      "t": "h2",
@@ -772,7 +806,7 @@
     },
     {
      "t": "p",
-     "h": "Final rate per angler from the lodge's own rate page, checked on 10 November 2026; the page does not show date or season. Fishing is wading or from the shore, in Strobel Lake and the Barrancoso River. The page mentions guides, lodging, meals, and logistics, but does not list what is included or what is charged separately: license, transfers, drinks, and tips are not confirmed. <strong>A different figure:</strong> the same website has another plans page showing a \"Jurassic Full Week\" of 7 nights and 6.5 days of fishing at US$ 6,900, with round-trip charter flight, valid for 12 months and no date; we could not reconcile the two figures, so ask which applies for your date. The lodge lists representative agencies, but says nothing about commissions."
+     "h": "Final rate per angler from the lodge's own rate page, checked on 10 November 2026; the page does not show date or season. Fishing is wading or from the shore, in Strobel Lake and the Barrancoso River. The rate page does not list what is included, but the same lodge's pre-trip page (read on 13 November 2026) says that every package includes the fishing licence and the ground transfer from El Calafate (about six hours), and that beer, wine and spirits are included, except the whiskey selection, which is paid by the shot or the bottle; it also says one guide takes two or three anglers. It does not include the charter flight from El Calafate (on certain Saturdays, at a separate rate) or tips, which it suggests at US$ 80 to 100 per person per day, in cash at the lodge. <strong>A different figure:</strong> the same website has another plans page showing a \"Jurassic Full Week\" of 7 nights and 6.5 days of fishing at US$ 6,900, with round-trip charter flight, valid for 12 months and no date; we could not reconcile the two figures, so ask which applies for your date. The lodge lists representative agencies, but says nothing about commissions."
     },
     {
      "t": "h2",
@@ -810,7 +844,7 @@
      "t": "lista",
      "items": [
       "<strong>Flights</strong> to Río Grande or El Calafate: lodge rates start at the airport.",
-      "<strong>Fishing license</strong> in Tierra del Fuego: the lodge estimates about US$ 550 per angler per week.",
+      "<strong>Fishing license</strong> in Tierra del Fuego: the lodge estimates about US$ 550 per angler per week (at Villa María, its 2025/26 rate sheet estimated about US$ 595).",
       "<strong>Tips</strong> for guides and staff."
      ]
     },
