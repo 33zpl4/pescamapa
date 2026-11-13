@@ -110,7 +110,7 @@ if ( ! function_exists( 'pm_t_cambiar' ) ) {
 	}
 }
 
-$aplicar = false;
+$aplicar = true;
 $hoy     = '20261113';
 $cambios = 0;
 
