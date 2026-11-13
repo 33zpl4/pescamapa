@@ -226,3 +226,14 @@ la "información pública" se escribe con nuestras palabras con la fuente en
 schema.org natural para programa o exclusiones en una ficha sin
 `LocalBusiness`, y los datos de negocio solo salen con la ficha confirmada).
 
+## Operadores cargados con campos nuevos (13/11/2026)
+
+| Destino | Ficha | Fuente de lo publicado | Precio publicado (fecha) | Notas |
+|---|---|---|---|---|
+| Jurassic Lake | Jurassic Lake Lodge | Su sitio: `/rates` (10/11), `/pre-trip-info`, `/seasons`, `/the-lodge` (13/11) | US$ 8.000 / 5.200 / 4.200, sin año ni temporada en la página (10/11/2026) | La cifra "Jurassic Full Week US$ 6.900" y el suplemento de individual de una agencia no se publican |
+| Jurassic Lake | Estancia Laguna Verde | Su sitio: `/the-lodge`, `/about-us-why` | Ninguno | Cifras de agencia (Tight Loop) no se publican |
+| Jurassic Lake | Tres Amigos Outfitters | Su página del combo (modificada en 2024) | Ninguno | |
+| Río Grande | Villa María Lodge (nueva) | Su página en Nervous Waters (grupo que opera el lodge) y planilla 2025/26 | US$ 13.950 / 14.950 / 12.950 por semana, temporada 25/12/2026 a 26/3/2027; acompañante US$ 650 por noche (13/11/2026) | Se trata Nervous Waters como página propia del operador porque dice operar sus lodges; si se prefiere tratarla como intermediaria (punto 5 de la estrategia de listados), bajar la tarifa |
+| Río Grande | Kau Tapen Lodge | Su sitio y su página en Nervous Waters | Igual que antes; acompañante US$ 650 por noche (13/11/2026) | |
+| Río Gallegos | Estancia Glencross (nueva) | Página de Solid Adventures | Ninguno ("a consultar") | Días de la semana y tarifa solo en una agencia: no se publican |
+| Río Gallegos | Las Buitreras, Karku | Ver arriba | Las Buitreras como estaba; Karku ninguno | Karku pidió no publicar su tarifa |
