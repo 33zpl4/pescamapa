@@ -29,15 +29,13 @@ $resultado = pm_consulta_resultado();
 		<p class="aviso ok" role="status"><?php pm_e( 'consulta.ok.pescador' ); ?></p>
 	<?php else : ?>
 		<?php if ( 'error' === $resultado ) : ?><p class="aviso error" role="alert"><?php pm_e( 'consulta.error' ); ?></p><?php endif; ?>
-		<form method="post" action="<?php echo esc_url( pm_consulta_url_envio() ); ?>">
+		<form class="pm-form" method="post" action="<?php echo esc_url( pm_consulta_url_envio() ); ?>">
 			<?php echo pm_consulta_ocultos( 'viaje', [ 'pm_destino' => $args['destino'], 'pm_prestador' => '' ] ); // phpcs:ignore -- escaped inside ?>
 			<p class="sobre" hidden><?php pm_e( 'consulta.sobre' ); ?> <strong></strong><br><?php pm_e( 'consulta.sobre.linea' ); ?></p>
 			<div class="grilla">
-				<label><?php pm_e( 'consulta.nombre' ); ?> <input name="nombre" required maxlength="80" autocomplete="name"></label>
-				<label><?php pm_e( 'consulta.contacto' ); ?> <input name="contacto" required maxlength="120" autocomplete="tel"<?php echo $boutique ? ' placeholder="' . esc_attr( pm_t( 'consulta.ph.contacto' ) ) . '"' : ''; ?>></label>
-				<label><?php pm_e( 'consulta.cuando' ); ?> <input name="cuando" maxlength="80"<?php echo $boutique ? ' placeholder="' . esc_attr( pm_t( 'consulta.ph.cuando' ) ) . '"' : ''; ?>></label>
-				<label><?php pm_e( 'consulta.pais' ); ?> <input name="pais" maxlength="60" autocomplete="country-name"></label>
-				<label><?php pm_e( 'consulta.personas' ); ?> <input name="personas" type="number" min="1" max="99" value="2" inputmode="numeric"></label>
+				<label><?php pm_e( 'consulta.nombre' ); ?> <input name="nombre" required maxlength="80" autocomplete="name" value="<?php echo esc_attr( pm_previo( 'nombre' ) ); ?>"></label>
+				<label><?php pm_e( 'consulta.contacto' ); ?> <input name="contacto" required maxlength="120" autocomplete="tel" value="<?php echo esc_attr( pm_previo( 'contacto' ) ); ?>"<?php echo $boutique ? ' placeholder="' . esc_attr( pm_t( 'consulta.ph.contacto' ) ) . '"' : ''; ?>></label>
+				<label><?php pm_e( 'consulta.pais' ); ?> <input name="pais" maxlength="60" autocomplete="country-name" value="<?php echo esc_attr( pm_previo( 'pais' ) ); ?>"></label>
 				<label><?php pm_e( 'consulta.modalidad' ); ?>
 					<select name="modalidad">
 						<option value=""><?php pm_e( 'consulta.indistinto' ); ?></option>
@@ -58,7 +56,12 @@ $resultado = pm_consulta_resultado();
 					</select>
 				</label>
 			</div>
-			<label><?php pm_e( 'consulta.mensaje' ); ?> <textarea name="mensaje" rows="3" maxlength="2000"></textarea></label>
+			<?php
+			// Same fields as the long form (/armar-viaje/): dates with the system calendar, how flexible, anglers and companions.
+			pm_campos_fechas( false, 'consulta' );
+			pm_campos_personas( 'consulta', false );
+			?>
+			<label><?php pm_e( 'consulta.mensaje' ); ?> <textarea name="mensaje" rows="3" maxlength="2000"><?php echo esc_textarea( pm_previo( 'mensaje' ) ); ?></textarea></label>
 			<button class="button dark" type="submit"><?php pm_e( $boutique ? 'consulta.boutique.enviar' : 'consulta.enviar' ); ?></button>
 			<p class="note"><?php pm_e( 'consulta.privacidad' ); ?> <?php echo pm_enlace_privacidad(); // phpcs:ignore -- escaped inside ?></p>
 		</form>
@@ -76,3 +79,4 @@ document.querySelectorAll('[data-prestador]').forEach((b) => b.addEventListener(
 	s.querySelector('strong').textContent = b.dataset.nombre;
 }));
 </script>
+<?php if ( 'ok' !== $resultado ) { get_template_part( 'parciales/viaje-js' ); } ?>

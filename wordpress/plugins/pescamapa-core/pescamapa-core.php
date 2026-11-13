@@ -34,6 +34,7 @@ require PM_DIR . 'inc/entrevistas.php';
 require PM_DIR . 'inc/prestadores.php';
 require PM_DIR . 'inc/notas.php';
 require PM_DIR . 'inc/consultas.php';
+require PM_DIR . 'inc/consulta-campos.php';
 require PM_DIR . 'inc/correo.php';
 require PM_DIR . 'inc/pique.php';
 require PM_DIR . 'inc/legal.php';

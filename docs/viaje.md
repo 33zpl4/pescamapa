@@ -3,7 +3,7 @@
 Decidido el 26/10/2026: no enlazamos guías ni lodges concretos en las notas. Todo pedido de viaje llega a Pescamapa por este formulario, y nosotros armamos las opciones (guía + alojamiento) y cobramos **comisión** al prestador; no revendemos por ahora. Los tráficos y los pedidos reales deciden si más adelante pasamos a vender paquetes propios.
 
 - URLs: `/armar-viaje/`, `/pt/planejar-viagem/`, `/en/plan-your-trip/`. Vista `themes/pescamapa/vistas/viaje.php`, textos `viaje.*` en `data/ui.json`.
-- Mismo endpoint y misma bandeja que el formulario de las guías (`inc/consultas.php`, Consultas en wp-admin, aviso por email). Campos nuevos: duración, experiencia, alojamiento, país y, desde el 13/11/2026, **"¿Qué es fijo y qué es flexible?"** (opcional, casillas `fijo[]`: especie, fechas, lugar, duración de la estadía; se guarda como una línea de etiquetas en español en el meta `fijo`, sale en el aviso y en la caja "Lo que nos escribió"; sirve para saber qué tan amplio buscar). Las opciones de elección se guardan con la etiqueta en español para que el email se lea natural.
+- Mismo endpoint y misma bandeja que el formulario de las guías (`inc/consultas.php`, Consultas en wp-admin, aviso por email). Las opciones de elección se guardan con la etiqueta en español para que el email se lea natural. Los campos están en la sección "Formulario (UX del 13/11/2026)" de abajo.
 - Se preselecciona con `?destino=<clave>&especie=<clave>`: las notas enlazan así ("Armá tu viaje a Goya").
 - Obligatorios: nombre y contacto. Anti-spam: honeypot `pm_web`, tiempo mínimo y límite por IP (igual que el resto).
 - Plazo de respuesta prometido (dueño, 13/11/2026): **48 horas**, en `viaje.como.2.d`, `viaje.gracias.p` y `acuse.viaje` (es/pt/en). `acuse.prestador` y `consulta.ok.prestador` (alta de prestadores) no lo llevan; la confirmación del pescador en las fichas es `consulta.ok.pescador` (con 48 horas). La clave compartida `consulta.ok` ya no existe (13/11/2026).
@@ -31,3 +31,41 @@ Mensaje aprobado (es; en/pt en `data/ui.json`):
 3. **Que el pedido sea el camino más fácil del sitio:** el botón de cada ficha pasó de "Consultar disponibilidad" a "Pedir opciones para pescar en <lugar>" (pide el viaje, no ese operador; el operador elegido queda como primera referencia en el meta `prestador`), y la portada lleva un bloque con el mensaje.
 
 Pendiente (no hecho): el envío automático del correo de registro al operador (comportamiento nuevo de correo saliente: lo decide el dueño) y el aviso en la ficha de que se muestran datos de contacto (hoy no se publican contactos).
+
+## Formulario (UX del 13/11/2026)
+
+**Por qué:** el primer pedido real (un pescador extranjero, lodge de gama alta) mostró lo que el formulario no captaba: fechas aproximadas ("alrededor del 11 al 13, con una semana de margen"), un acompañante que no pesca y comparte la habitación, sin equipo ni waders, estadía corta (2-3 días), especie fija y lugar abierto. El equipo tenía que escribir por email para saber qué era fijo y qué flexible.
+
+**Estructura** (3 secciones; solo nombre y contacto son obligatorios):
+
+1. **Qué y dónde:** destino, especie, `fijo` (casillas), modalidad, alojamiento.
+2. **Cuándo y quiénes:** fechas, flexibilidad, meses, días de pesca, pescadores, acompañantes, experiencia, equipo propio.
+3. **Cómo te escribimos:** nombre, país, canal de contacto (email o WhatsApp), mensaje. Al lado del botón: "48 horas, gratis, no compartimos tu contacto hasta que vos elijas" (`viaje.garantia`).
+
+**Campos y metas** (vista `vistas/viaje.php`; renderers compartidos en `pescamapa-core/inc/consulta-campos.php`; la tarjeta corta de cada guía, `parciales/consulta.php`, usa los mismos: fechas, flexibilidad, pescadores, acompañantes):
+
+| Campo posteado | Meta | Notas |
+|---|---|---|
+| `fecha_desde`, `fecha_hasta` | `fecha_desde`, `fecha_hasta` (Y-m-d) | dos `<input type="date">`, `min` = hoy; ver "Por qué fechas nativas" |
+| `flexibilidad` (exacta, dias, semana, mes, nose) | `flexibilidad` (etiqueta en español) | chips |
+| `meses[]` (hasta 12, `AAAA-MM`) | `meses` ("enero 2027, febrero 2027") | chips; con JS solo aparecen con "Todavía no sé" |
+| `estadia` (uno, dos-tres, cuatro-cinco, semana, mas) | `estadia` | días de pesca, aparte de las fechas de viaje |
+| `pescadores` (1-99, por defecto 1), `acompanantes` (0-30, por defecto 0) | `pescadores`, `acompanantes` | con 0 acompañantes el meta no se guarda |
+| `equipo_propio` (si, parte, no) | `equipo_propio` | lista `traeequipo`; "no" incluye waders |
+| `fijo[]` | `fijo` | ahora solo **Especie** y **Lugar** (las fechas y la estadía tienen su campo). La lista conserva las claves viejas `fechas` y `estadia` para que un POST viejo se siga aceptando |
+| `contacto_via` (email, whatsapp), `contacto_email`, `contacto_tel` | `contacto` + `contacto_via` | `contacto` sigue siendo el valor elegido (el acuse usa `is_email`) |
+| `cuando`, `personas` (viejos) | `cuando`, `personas` | siguen aceptándose |
+
+**Resúmenes en español** (el aviso al equipo, "Lo que nos escribió" y la lista de Consultas leen `cuando` y `personas`): se arman en `pm_consulta_componer_cuando()` y `pm_consulta_componer_personas()`. Ejemplos: `12/01/2027 al 14/01/2027 · ± una semana · 2–3 días de pesca`; `fechas sin definir, meses posibles: enero 2027, febrero 2027`; `1 pescador + 1 acompañante que no pesca`; `3 pescadores`. Si llega un `cuando` escrito (formulario viejo) va primero, tal cual.
+
+**Compatibilidad:** un POST con solo `cuando`/`personas`/`contacto`/`duracion` (páginas en caché, tarjeta vieja) se guarda como antes. Los resúmenes nuevos solo reemplazan a los viejos si llegaron los campos nuevos (`personas` solo si llegó `pescadores` o `acompanantes`).
+
+**Validación en el servidor (nunca se confía en el cliente):** una fecha que no existe (30 de febrero), pasada (más de un día atrás) o a más de 2 años se descarta sin rechazar el pedido; `fecha_hasta` anterior a `fecha_desde` se descarta; meses fuera de los próximos 12 (más uno de margen por caché) se ignoran; los números se acotan a 1-99 y 0-30; una opción que no está en la lista se ignora. El pedido solo se rechaza por nombre vacío o contacto vacío o inválido (email con `is_email`; WhatsApp de 7 a 15 dígitos).
+
+**Errores y datos conservados:** si el pedido falla, lo escrito se guarda 30 minutos en un transient (`pm_previo_<token>`, token de 16 caracteres en `?pm_r=`), el formulario vuelve con todo completado y el error junto al campo (`aria-invalid`, `aria-describedby`, foco en el primero con JS). Solo los pedidos de viaje; no se guarda nada si no hay error. Anti-spam intacto: honeypot `pm_web`, tiempo mínimo (4 s) y 6 pedidos por hora por IP (un exceso también devuelve el formulario con lo escrito).
+
+**Por qué fechas nativas (`<input type="date">`):** abre el calendario del sistema en todos los teléfonos y escritorios, sin librería (no hay dependencia que mantener ni que pese), con teclado y lector de pantalla del navegador. El formato lo pone el navegador según el idioma del dispositivo, y el valor viaja siempre como `AAAA-MM-DD`. El rango se ayuda con `min`/`max` y, con JS, "hasta" no puede ser anterior a "desde"; sin JS, lo valida el servidor.
+
+**Sin JavaScript:** todos los campos son inputs comunes; los chips de meses siempre se ven; ambos campos de contacto se ven (la elección email/WhatsApp oculta el otro con CSS `:has()`; sin `:has()` se ven los dos y se usa el que se llene). Con JS: botones − / + en los contadores, meses solo con "Todavía no sé" (que oculta las fechas), un chip elegido se desmarca al tocarlo de nuevo, `required` sigue al canal elegido.
+
+**Qué no se verificó:** los selectores de fecha reales de iOS/Android, lectores de pantalla, el comportamiento de `:has()` en navegadores viejos, y el correo (el aviso con los resúmenes se prueba leyendo "Lo que nos escribió", no el email enviado).

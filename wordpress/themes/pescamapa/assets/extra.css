@@ -171,14 +171,19 @@
 .v-viaje .opciones { border: 0; padding: 0; margin: 0; min-width: 0; }
 .v-viaje .opciones small { display: block; margin-top: 8px; font-weight: 400; color: var(--muted); font-size: var(--fs-caption); }
 .v-viaje .opciones legend { display: block; font: 600 var(--fs-small)/1.4 var(--font-body); padding: 0; margin-bottom: 8px; }
-.v-viaje .chips-radio { display: flex; flex-wrap: wrap; gap: 8px; }
-.v-viaje .chips-radio span { position: relative; }
-.v-viaje .chips-radio input { position: absolute; opacity: 0; inset: 0; width: 100%; height: 100%; margin: 0; cursor: pointer; }
-.v-viaje .chips-radio label { display: block; padding: 10px 16px; border: 1px solid var(--line); border-radius: 99px; background: var(--paper); font-weight: 400; font-size: var(--fs-small); color: var(--moss); }
-.v-viaje .chips-radio input:checked + label { background: var(--forest); border-color: var(--forest); color: var(--white); }
-.v-viaje .chips-radio input:focus-visible + label { outline: 2px solid var(--forest); outline-offset: 2px; }
 .v-viaje .enviar { display: grid; gap: 12px; }
-.v-viaje .enviar .button { justify-self: start; }
+.v-viaje .enviar .button { justify-self: start; min-height: 52px; padding-inline: 28px; }
+.v-viaje .garantia { margin: 0; font: 600 var(--fs-small)/1.5 var(--font-body); color: var(--ink); }
+.v-viaje .intro-form { margin: 0; color: var(--muted); font-size: var(--fs-small); }
+.v-viaje .campo { display: grid; gap: 6px; align-content: start; min-width: 0; }
+.v-viaje .campo > label, .v-viaje .titulo-campo { font-size: var(--fs-small); font-weight: 600; }
+.v-viaje .titulo-campo { margin: 0 0 8px; }
+.v-viaje .campo small, .v-viaje .fechas-bloque small { font-weight: 400; color: var(--muted); font-size: var(--fs-caption); }
+.v-viaje .fechas-bloque { display: grid; gap: 16px; }
+.v-viaje .fechas-exactas { display: grid; gap: 8px; }
+.v-viaje .contacto-campos { display: grid; gap: 16px; }
+.v-viaje .contacto-via:has(#viaje-via-whatsapp:checked) + .contacto-campos .c-email,
+.v-viaje .contacto-via:has(#viaje-via-email:checked) + .contacto-campos .c-tel { display: none; }
 .v-viaje button[disabled] { opacity: 0.6; cursor: wait; }
 .v-viaje .gracias { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: 28px; }
 .v-viaje .gracias h2 { margin-top: 0; font-size: var(--fs-h2); }
@@ -391,4 +396,41 @@
 @media (max-width: 860px) {
 	body:has(.barra-pedir:not(.oculta)) .sugerencia-idioma { bottom: 80px; }
 	body:has(.barra-pedir) footer { padding-bottom: 88px; }
+}
+
+
+/* Trip-request forms (long page and short card): chips, dates, steppers, inline errors. Tap targets are at least 44 px. */
+.pm-form [hidden] { display: none !important; }
+.pm-form .grilla-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.pm-form input[type="date"] { appearance: none; -webkit-appearance: none; min-height: 48px; font-family: var(--font-body); }
+.pm-form input, .pm-form select, .pm-form textarea { min-height: 48px; }
+.pm-form input:focus-visible, .pm-form select:focus-visible, .pm-form textarea:focus-visible, .pm-form button:focus-visible { outline: 2px solid var(--forest); outline-offset: 2px; }
+.pm-form .opciones { border: 0; padding: 0; margin: 0; min-width: 0; }
+.pm-form .opciones legend { display: block; font: 600 var(--fs-small)/1.4 var(--font-body); padding: 0; margin-bottom: 8px; }
+.pm-form .opciones small { display: block; margin-top: 8px; font-weight: 400; color: var(--muted); font-size: var(--fs-caption); }
+.pm-form .chips-radio { display: flex; flex-wrap: wrap; gap: 8px; }
+.pm-form .chips-radio span { position: relative; }
+.pm-form .chips-radio input { position: absolute; opacity: 0; inset: 0; width: 100%; height: 100%; min-height: 0; margin: 0; padding: 0; cursor: pointer; }
+.pm-form .chips-radio label { display: flex; align-items: center; min-height: 44px; box-sizing: border-box; padding: 8px 16px; border: 1px solid var(--line); border-radius: 99px; background: var(--paper); font-weight: 400; font-size: var(--fs-small); line-height: 1.25; color: var(--moss); }
+.pm-form .chips-radio input:checked + label { background: var(--forest); border-color: var(--forest); color: var(--white); }
+.pm-form .chips-radio input:focus-visible + label { outline: 2px solid var(--forest); outline-offset: 2px; }
+.pm-form .stepper { display: flex; align-items: stretch; gap: 8px; }
+.pm-form .stepper input { text-align: center; min-width: 0; }
+.pm-form.js .stepper input { appearance: textfield; -moz-appearance: textfield; flex: 1; }
+.pm-form.js .stepper input::-webkit-inner-spin-button, .pm-form.js .stepper input::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
+.pm-form .stepper button { flex: none; width: 48px; height: 48px; padding: 0; border: 1px solid var(--line); border-radius: 99px; background: var(--paper); color: var(--moss); font: 700 var(--fs-lead)/1 var(--font-body); cursor: pointer; justify-self: auto; }
+.pm-form .stepper button:active { background: var(--cream); }
+.pm-form .error-campo { margin: 0; padding: 8px 12px; border-left: 3px solid var(--warn-line); background: var(--warn-bg); border-radius: 0 10px 10px 0; font-size: var(--fs-small); font-weight: 600; color: var(--ink); }
+.pm-form [aria-invalid="true"] { border-color: var(--ink); box-shadow: 0 0 0 2px var(--warn-line); }
+.consulta .pm-form .fechas-bloque { display: grid; gap: 12px; }
+@media (max-width: 480px) {
+	.pm-form .grilla-2 { gap: 10px; }
+	.pm-form .chips-radio label { padding-inline: 14px; }
+}
+@media (max-width: 480px) {
+	.pm-form .stepper { gap: 6px; }
+	.pm-form .stepper button { width: 44px; height: 44px; align-self: center; }
+}
+@media (max-width: 480px) {
+	.v-viaje .enviar .button { width: 100%; justify-content: center; text-align: center; }
 }

@@ -17,7 +17,11 @@ defined( 'ABSPATH' ) || exit;
 
 const PM_CONSULTA_ESTADOS = [ 'nueva' => 'Nueva', 'respondida' => 'Respondida', 'derivada' => 'Derivada a un prestador', 'concretada' => 'Concretada', 'cerrada' => 'Cerrada sin viaje' ];
 
-/** Fields the forms send: name => [label, max length]. */
+/**
+ * Fields the forms send: name => [label, max length]. Shown in the notice and in "Lo que nos escribió".
+ * `cuando` and `personas` are also BUILT from the newer fields (pm_consulta_componer_*), so the team reads one natural
+ * line; the newer fields are saved as their own metas too (PM_CONSULTA_METAS_EXTRA) and are not repeated in the notice.
+ */
 const PM_CONSULTA_CAMPOS = [
 	'nombre'    => [ 'Nombre', 80 ],
 	'contacto'  => [ 'WhatsApp o email', 120 ],
@@ -29,11 +33,15 @@ const PM_CONSULTA_CAMPOS = [
 	'alojamiento' => [ 'Alojamiento', 40 ],
 	'pais'      => [ 'País desde el que viaja', 60 ],
 	'fijo'      => [ 'Fijo (lo demás es flexible)', 120 ],
+	'equipo_propio' => [ 'Equipo propio', 80 ],
 	'especie'   => [ 'Especie', 40 ],
 	'localidad' => [ 'Localidad', 80 ],
 	'ofrece'    => [ 'Qué ofrece', 200 ],
 	'mensaje'   => [ 'Mensaje', 2000 ],
 ];
+
+/** Metas saved from the newer form fields, not shown one by one (their summary is `cuando` / `personas`). */
+const PM_CONSULTA_METAS_EXTRA = [ 'fecha_desde', 'fecha_hasta', 'flexibilidad', 'meses', 'estadia', 'pescadores', 'acompanantes', 'contacto_via' ];
 
 function pm_url_viaje( string $i ): string {
 	return pm_url( PM_SEGMENTOS[ $i ]['viaje'], $i );
@@ -104,9 +112,14 @@ function pm_consulta_canal( string $host, string $campana ): string {
 
 function pm_recibir_consulta(): void {
 	$volver = wp_validate_redirect( esc_url_raw( wp_unslash( $_POST['pm_volver'] ?? '' ) ), home_url( '/' ) );
-	$ir     = function ( string $r ) use ( $volver ): void {
-		wp_safe_redirect( add_query_arg( 'consulta', $r, $volver ) . '#consulta', 303 );
+	$ir     = function ( string $r, array $extra = [] ) use ( $volver ): void {
+		wp_safe_redirect( add_query_arg( [ 'consulta' => $r ] + $extra, $volver ) . '#consulta', 303 );
 		exit;
+	};
+	$tipo   = 'prestador' === ( $_POST['pm_tipo'] ?? '' ) ? 'prestador' : 'viaje';
+	// A trip request that fails validation goes back with what was typed (30 minutes) and the fields to fix.
+	$fallar = function ( array $errores ) use ( $ir, $tipo ): void {
+		$ir( 'error', 'viaje' === $tipo ? [ 'pm_r' => pm_consulta_guardar_previo( $errores ) ] : [] );
 	};
 
 	$t = (int) ( $_POST['pm_t'] ?? 0 );
@@ -116,7 +129,7 @@ function pm_recibir_consulta(): void {
 	$ip    = 'pm_consultas_' . md5( (string) ( $_SERVER['HTTP_CF_CONNECTING_IP'] ?? $_SERVER['REMOTE_ADDR'] ?? '' ) );
 	$veces = (int) get_transient( $ip );
 	if ( $veces >= 6 ) {
-		$ir( 'error' );
+		$fallar( [ 'limite' ] );
 	}
 	set_transient( $ip, $veces + 1, HOUR_IN_SECONDS );
 
@@ -126,17 +139,55 @@ function pm_recibir_consulta(): void {
 		$datos[ $k ] = mb_substr( $v, 0, $max );
 	}
 	// Choice fields arrive as keys; keep the Spanish label so the email and the admin read naturally.
-	foreach ( [ 'duracion', 'experiencia', 'alojamiento' ] as $campo ) {
+	$etiqueta_es = function ( string $campo, string $lista ): array {
 		$clave = sanitize_key( wp_unslash( $_POST[ $campo ] ?? '' ) );
-		$datos[ $campo ] = isset( pm_ui()['opciones'][ $campo ][ $clave ] ) ? pm_opcion( $campo, $clave, 'es' ) : '';
+		return isset( pm_ui()['opciones'][ $lista ][ $clave ] ) ? [ $clave, pm_opcion( $lista, $clave, 'es' ) ] : [ '', '' ];
+	};
+	foreach ( [ 'duracion' => 'duracion', 'experiencia' => 'experiencia', 'alojamiento' => 'alojamiento', 'equipo_propio' => 'traeequipo' ] as $campo => $lista ) {
+		$datos[ $campo ] = $etiqueta_es( $campo, $lista )[1];
 	}
+	[ $estadia, $datos['estadia'] ]           = $etiqueta_es( 'estadia', 'estadia' );
+	[ $flexibilidad, $datos['flexibilidad'] ] = $etiqueta_es( 'flexibilidad', 'flexibilidad' );
 	// Optional "what is fixed" checkboxes (fijo[]): saved as one line of Spanish labels in the list's order; '' when none ticked.
 	$marcadas = array_map( fn( $c ) => sanitize_key( is_string( $c ) ? $c : '' ), (array) wp_unslash( $_POST['fijo'] ?? [] ) );
 	$datos['fijo'] = implode( ', ', array_map( fn( $k ) => pm_opcion( 'fijo', $k, 'es' ), array_values( array_intersect( array_keys( pm_ui()['opciones']['fijo'] ), $marcadas ) ) ) );
-	if ( '' === $datos['nombre'] || '' === $datos['contacto'] ) {
-		$ir( 'error' );
+
+	// Dates and months (never trusted from the client: anything that is not a real, sensible date is dropped), people and the summaries.
+	$desde = pm_consulta_fecha( sanitize_text_field( wp_unslash( $_POST['fecha_desde'] ?? '' ) ) );
+	$hasta = pm_consulta_fecha( sanitize_text_field( wp_unslash( $_POST['fecha_hasta'] ?? '' ) ) );
+	if ( $desde && $hasta && $hasta < $desde ) {
+		$hasta = '';
 	}
-	$tipo      = 'prestador' === ( $_POST['pm_tipo'] ?? '' ) ? 'prestador' : 'viaje';
+	$meses = pm_consulta_meses_validos( wp_unslash( $_POST['meses'] ?? [] ) );
+	$datos['fecha_desde'] = $desde;
+	$datos['fecha_hasta'] = $hasta;
+	$datos['meses']       = implode( ', ', array_map( fn( $ym ) => pm_consulta_mes_etiqueta( $ym, 'es' ), $meses ) );
+	$cuando = pm_consulta_componer_cuando( [ 'cuando' => $datos['cuando'], 'fecha_desde' => $desde, 'fecha_hasta' => $hasta, 'meses' => $meses, 'flexibilidad' => $flexibilidad, 'estadia' => $estadia ] );
+	$datos['cuando'] = mb_substr( $cuando, 0, 400 );
+	if ( isset( $_POST['pescadores'] ) || isset( $_POST['acompanantes'] ) ) {
+		$pesc = pm_consulta_entero( wp_unslash( $_POST['pescadores'] ?? '' ), 1, PM_CONSULTA_MAX_PESCADORES, 1 );
+		$acom = pm_consulta_entero( wp_unslash( $_POST['acompanantes'] ?? '' ), 0, PM_CONSULTA_MAX_ACOMPANANTES, 0 );
+		$datos['pescadores']   = (string) $pesc;
+		$datos['acompanantes'] = (string) $acom;
+		$datos['personas']     = pm_consulta_componer_personas( $pesc, $acom );
+	}
+
+	// Contact: the new form sends contacto_email / contacto_tel and the chosen channel; the old forms send `contacto`.
+	$errores = [];
+	if ( isset( $_POST['contacto_email'] ) || isset( $_POST['contacto_tel'] ) ) {
+		[ $datos['contacto'], $datos['contacto_via'], $error ] = pm_consulta_resolver_contacto();
+		if ( $error ) {
+			$errores[] = $error;
+		}
+	} elseif ( '' === $datos['contacto'] ) {
+		$errores[] = 'contacto';
+	}
+	if ( '' === $datos['nombre'] ) {
+		array_unshift( $errores, 'nombre' );
+	}
+	if ( $errores ) {
+		$fallar( $errores );
+	}
 	$destino   = sanitize_key( $_POST['pm_destino'] ?? '' );
 	$prestador = (int) ( $_POST['pm_prestador'] ?? 0 );
 	if ( $prestador && 'pm_prestador' !== get_post_type( $prestador ) ) {
@@ -165,7 +216,7 @@ function pm_recibir_consulta(): void {
 		],
 	], true );
 	if ( is_wp_error( $id ) ) {
-		$ir( 'error' );
+		$fallar( [ 'general' ] );
 	}
 	pm_avisar_consulta( $id );
 	pm_acusar_consulta( $id );
