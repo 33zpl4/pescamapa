@@ -12,12 +12,14 @@ $nombre  = pm_ui()['etiquetas'][ $especie ][ $idioma ] ?? $especie;
 if ( '' === $especie ) {
 	return;
 }
-$filas = [];
+// A guide may list the species under a narrower key (the Río Grande lodges list "trucha-marron-anadroma"): it still is trout.
+$claves = [ 'trucha' => [ 'trucha', 'trucha-marron-anadroma' ] ][ $especie ] ?? [ $especie ];
+$filas  = [];
 foreach ( pm_destinos_lista( $idioma ) as $d ) {
 	if ( ! pm_destino_guias( $d['clave'], $idioma ) ) {
 		continue;
 	}
-	$lista = array_values( array_filter( pm_prestadores_destino( $d['clave'] ), fn( $r ) => in_array( $especie, $r['especies'], true ) ) );
+	$lista = array_values( array_filter( pm_prestadores_destino( $d['clave'] ), fn( $r ) => (bool) array_intersect( $claves, $r['especies'] ) ) );
 	if ( ! $lista ) {
 		continue;
 	}

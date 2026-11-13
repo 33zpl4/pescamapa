@@ -5,6 +5,8 @@ defined( 'ABSPATH' ) || exit;
 $e        = pm_especie( get_queried_object_id() );
 $idioma   = $e['idioma'];
 $destinos = pm_destinos_con_especie( $e['clave'], $idioma );
+// The way from the facts to an inquiry (13/11/2026): the species is preselected in the trip form (?especie=<clave>).
+$url_pedir = pm_url_viaje( $idioma ) . '?' . http_build_query( [ 'especie' => $e['clave'] ] );
 
 get_header(); ?>
 <div class="v-especie">
@@ -19,6 +21,7 @@ get_header(); ?>
 		</div>
 	</header>
 	<div class="shell body">
+		<p class="cta-nota"><?php pm_e( 'especie.cta', [ 'especie' => mb_strtolower( $e['nombre'] ) ] ); ?> <a class="button dark" href="<?php echo esc_url( $url_pedir ); ?>"><?php pm_e( 'inicio.armar' ); ?></a></p>
 		<div class="prose"><?php while ( have_posts() ) : the_post(); the_content(); endwhile; ?></div>
 		<?php if ( $e['fuentes'] ) : ?>
 			<details id="fuentes" class="fuentes-det">
@@ -44,4 +47,5 @@ get_header(); ?>
 		<p class="especies-todas"><a href="<?php echo esc_url( pm_url_especies( $idioma ) ); ?>"><?php pm_e( 'especies.todas' ); ?></a></p>
 	</div>
 </div>
+<?php get_template_part( 'parciales/barra-pedir', null, [ 'url' => $url_pedir, 'hasta' => '.cta-nota' ] ); ?>
 <?php get_footer();

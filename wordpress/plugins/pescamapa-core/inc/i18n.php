@@ -45,6 +45,20 @@ function pm_t( string $clave, array $vars = [], ?string $idioma = null ): string
 	return strtr( $texto, $reemplazos );
 }
 
+/**
+ * Interface string with an optional per-destination override: `<base>.<clave>` wins over `<base>` when it exists in ui.json
+ * (e.g. guias.title.esquel-trevelin). Used where one page needs its own title, H1, meta or intro without a new field.
+ */
+function pm_t_clave( string $base, string $clave, array $vars = [], ?string $idioma = null ): string {
+	$i = $idioma ?? pm_lang();
+	return isset( pm_ui()['textos'][ $i ][ "$base.$clave" ] ) ? pm_t( "$base.$clave", $vars, $i ) : pm_t( $base, $vars, $i );
+}
+
+/** Does ui.json carry this exact key in this language? (Optional texts: print nothing when absent.) */
+function pm_t_existe( string $clave, ?string $idioma = null ): bool {
+	return isset( pm_ui()['textos'][ $idioma ?? pm_lang() ][ $clave ] );
+}
+
 /** Chip label for a species/technique key on planned destinations. */
 function pm_etiqueta( string $clave, ?string $idioma = null ): string {
 	return pm_ui()['etiquetas'][ $clave ][ $idioma ?? pm_lang() ] ?? $clave;

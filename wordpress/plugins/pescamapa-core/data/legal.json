@@ -74,13 +74,13 @@
 		},
 		"pt": {
 			"title": "Termos de uso | Pescamapa",
-			"description": "Regras simples para usar o Pescamapa: o que é, o que não garante, como funcionam os prestadores, os relatos de pique e as fotos.",
+			"description": "Regras simples para usar a Pescamapa: o que é, o que não garante, como funcionam os prestadores, os relatos de pique e as fotos.",
 			"h1": "Termos de uso",
 			"secciones": [
 				{
 					"h": "Quem somos",
 					"p": [
-						"O Pescamapa (pescamapa.com) é um projeto de Cheyenne Justiniano e Alberto Ayala. É um guia para pescar na Argentina: aonde ir, quando, o que diz o regulamento e com quem sair. Para qualquer dúvida, escreva para {email}."
+						"A Pescamapa (pescamapa.com) é um projeto de Cheyenne Justiniano e Alberto Ayala. É um guia para pescar na Argentina: aonde ir, quando, o que diz o regulamento e com quem sair. Para qualquer dúvida, escreva para {email}."
 					]
 				},
 				{
@@ -94,13 +94,13 @@
 					"h": "Prestadores e viagens",
 					"p": [
 						"Mostramos guias, hospedagens e outros prestadores. Alguns aparecem com informação pública e estão marcados como não verificados; outros trabalham conosco.",
-						"Quando você pede uma viagem ou um orçamento, a consulta chega ao Pescamapa; perguntamos aos operadores que combinam sem o seu nome nem o seu contato, e só os repassamos a um operador quando você nos disser para seguir com ele. O serviço é prestado e cobrado pelo prestador: o Pescamapa não faz parte do contrato entre você e ele, não organiza a pescaria e não garante o serviço. Pedir um orçamento não tem custo nem compromisso."
+						"Quando você pede uma viagem ou um orçamento, a consulta chega à Pescamapa; perguntamos aos operadores que combinam sem o seu nome nem o seu contato, e só os repassamos a um operador quando você nos disser para seguir com ele. O serviço é prestado e cobrado pelo prestador: a Pescamapa não faz parte do contrato entre você e ele, não organiza a pescaria e não garante o serviço. Pedir um orçamento não tem custo nem compromisso."
 					]
 				},
 				{
 					"h": "Comissões e links pagos",
 					"p": [
-						"O Pescamapa cobra uma comissão dos prestadores com quem trabalhamos quando uma viagem se concretiza; você paga o mesmo. Não ordenamos nem destacamos por comissão. Todo link pago ou de afiliado é identificado como publicidade."
+						"A Pescamapa cobra uma comissão dos prestadores com quem trabalhamos quando uma viagem se concretiza; você paga o mesmo. Não ordenamos nem destacamos por comissão. Todo link pago ou de afiliado é identificado como publicidade."
 					]
 				},
 				{
@@ -119,7 +119,7 @@
 				{
 					"h": "Textos e fotos",
 					"p": [
-						"Os textos, a organização e os dados próprios do Pescamapa são protegidos; você pode citá-los com um link para a fonte.",
+						"Os textos, a organização e os dados próprios da Pescamapa são protegidos; você pode citá-los com um link para a fonte.",
 						"Cada foto leva o nome de quem a tirou. Algumas são usadas com permissão do autor e outras sob licenças livres (por exemplo, Wikimedia Commons ou Unsplash), com o crédito à vista. As fotos podem estar recortadas ou redimensionadas para aparecer no site. Os nomes e as marcas de terceiros pertencem aos seus donos."
 					]
 				},
@@ -277,7 +277,7 @@
 		},
 		"pt": {
 			"title": "Política de privacidade | Pescamapa",
-			"description": "Que dados o Pescamapa coleta, para que os usa, com quem os compartilha e como você pode pedir para vê-los, corrigi-los ou apagá-los.",
+			"description": "Que dados a Pescamapa coleta, para que os usa, com quem os compartilha e como você pode pedir para vê-los, corrigi-los ou apagá-los.",
 			"h1": "Política de privacidade",
 			"secciones": [
 				{

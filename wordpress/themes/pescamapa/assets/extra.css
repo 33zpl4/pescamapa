@@ -460,3 +460,8 @@
 @media (max-width: 480px) {
 	.v-viaje .enviar .button { width: 100%; justify-content: center; text-align: center; }
 }
+
+/* Quick links under the home notes (13/11/2026) and the optional province intro */
+.notas-inicio .atajos { display: flex; flex-wrap: wrap; gap: 8px 20px; list-style: none; margin: -48px 0 64px; padding: 0; }
+.notas-inicio .atajos a { color: var(--moss); font-weight: 600; }
+.v-provincia .prov-intro { max-width: 70ch; margin: 0 0 1.6em; }

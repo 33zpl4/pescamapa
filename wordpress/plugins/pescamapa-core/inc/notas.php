@@ -158,7 +158,7 @@ function pm_jsonld_nota( array $n ): array {
 	if ( $citas ) {
 		$art['citation'] = $citas;
 	}
-	return [
+	$out = [
 		$art,
 		[
 			'@context'        => 'https://schema.org',
@@ -170,6 +170,12 @@ function pm_jsonld_nota( array $n ): array {
 			],
 		],
 	];
+	// FAQ written in the note body (group block `pm-faq`, see pm_faqs_contenido): same text on the page and in the JSON-LD.
+	$faq = pm_jsonld_faq( pm_faqs_contenido( (string) get_post_field( 'post_content', $n['id'] ) ) );
+	if ( $faq ) {
+		$out[] = $faq;
+	}
+	return $out;
 }
 
 // Admin list: type and destination.

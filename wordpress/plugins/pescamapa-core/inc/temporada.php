@@ -79,3 +79,33 @@ function pm_temporada_faq( array $d, ?string $hoy = null ): array {
 function pm_faqs_destino( array $d ): array {
 	return array_merge( pm_temporada_faq( $d ), $d['faqs'] );
 }
+
+/**
+ * Questions and answers of the "Guías de pesca en <lugar>" page: the four fixed ones plus, when the guide carries official
+ * season dates, "When is the fishing season in <lugar>?" (13/11/2026). The answer is composed from the same fields the guide
+ * shows (opening and closing dates, the per-language note for waters with other dates, the authority and the date the
+ * regulation was checked), so it names its source and cannot disagree with the guide. The question wording may be overridden
+ * per guide in ui.json (`guias.faq.temp.q.<clave>`), e.g. fly fishing in Esquel or the sea-run brown trout of the Río Grande.
+ * @return array<int, array{pregunta: string, respuesta: string}>
+ */
+function pm_guias_faqs( array $d, string $clave ): array {
+	$i   = $d['idioma'];
+	$a   = [ 'lugar' => $d['nombre'] ];
+	$out = [];
+	foreach ( [ 1, 2, 3, 4 ] as $n ) {
+		$out[] = [ 'pregunta' => pm_t( "guias.faq.$n.q", $a, $i ), 'respuesta' => pm_t( "guias.faq.$n.a", $a, $i ) ];
+	}
+	if ( pm_temporada_hay( $d ) ) {
+		$resp = pm_t( 'guias.faq.temp.a', $a + [ 'abre' => pm_fecha( $d['abre'], $i ), 'cierra' => pm_fecha( $d['cierra'], $i ) ], $i );
+		if ( $d['temporada_nota'] ) {
+			$resp .= ' ' . rtrim( $d['temporada_nota'], '.' ) . '.';
+		}
+		$aut   = $d['reglamento']['autoridad'];
+		$resp .= ' ' . pm_t( $aut ? 'temp.faq.fuente' : 'temp.faq.sinfuente', [ 'fuente' => $aut ], $i );
+		if ( ! empty( $d['reglamento']['verificado'] ) ) {
+			$resp .= ' ' . pm_t( 'guias.faq.temp.verif', [ 'fecha' => pm_fecha( $d['reglamento']['verificado'], $i ) ], $i );
+		}
+		$out[] = [ 'pregunta' => pm_t_clave( 'guias.faq.temp.q', $clave, $a, $i ), 'respuesta' => $resp ];
+	}
+	return $out;
+}

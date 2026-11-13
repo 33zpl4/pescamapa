@@ -143,6 +143,28 @@ get_header(); ?>
 					</a>
 				<?php endforeach; ?>
 			</div>
+			<?php // Quick links (13/11/2026): the pages people search for by name; each one only when it exists in this language. ?>
+			<?php
+			$atajos = [];
+			$hub    = pm_buscar( 'pm_nota', PM_NOTA_LICENCIA_EXTRANJEROS, $idioma );
+			if ( $hub ) {
+				$atajos[] = [ get_permalink( $hub->ID ), pm_t( 'inicio.atajo.licencia' ) ];
+			}
+			foreach ( [ 'trucha' => 'inicio.atajo.trucha', 'dorado' => 'inicio.atajo.dorado' ] as $clave_esp => $k_atajo ) {
+				if ( pm_buscar( 'pm_especie', $clave_esp, $idioma ) ) {
+					$atajos[] = [ pm_url_especie( $clave_esp, $idioma ), pm_t( $k_atajo ) ];
+				}
+			}
+			$hub_paq = pm_buscar( 'pm_nota', 'paquetes-de-pesca-argentina', $idioma );
+			if ( $hub_paq ) {
+				$atajos[] = [ get_permalink( $hub_paq->ID ), pm_t( 'inicio.atajo.paquetes' ) ];
+			}
+			?>
+			<?php if ( $atajos ) : ?>
+				<ul class="atajos">
+					<?php foreach ( $atajos as [ $url_atajo, $texto_atajo ] ) : ?><li><a href="<?php echo esc_url( $url_atajo ); ?>"><?php echo esc_html( $texto_atajo ); ?></a></li><?php endforeach; ?>
+				</ul>
+			<?php endif; ?>
 		</div>
 	</section>
 	<?php endif; ?>
