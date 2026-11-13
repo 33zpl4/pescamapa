@@ -12,7 +12,7 @@
  * Idempotent. Dry run first ($aplicar = false). Run with wp-script.yml (script = jurassic-fichas-2026-11-13).
  */
 
-$aplicar = false;
+$aplicar = true;
 $hoy     = '20261113';
 
 // ---- helpers (same pattern as las-buitreras-2027-2026-11-13 / karku-acuerdo-2026-11-13) -------------------------------------------
