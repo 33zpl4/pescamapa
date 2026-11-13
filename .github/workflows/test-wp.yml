@@ -169,6 +169,8 @@ jobs:
           PHP
           sed -i 's/^          //' /tmp/seo-consultas.php
           wp --path="$WP" eval-file /tmp/seo-consultas.php
+      - name: Prestador card fields (programme, minimum stay, companion, not included, capacity unit)
+        run: wp --path="$WP" eval-file "$GITHUB_WORKSPACE/.github/scripts/prestador-campos.php"
       - name: Render pages
         run: |
           exec > >(tee /tmp/render-all.log) 2>&1

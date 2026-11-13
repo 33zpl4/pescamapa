@@ -7,10 +7,15 @@ $es    = fn( string $campo ) => in_array( $campo, $r['en_espanol'] ?? [], true )
 // 'vista-previa' cards only reach logged-in editors (pm_prestadores_destino).
 $filas = [
 	'prest.modalidades' => array_map( fn( $k ) => pm_opcion( 'modalidad', $k ), $r['modalidades'] ),
-	'prest.lancha'      => array_filter( [ $r['lancha'], $r['capacidad'] ? pm_t( 'prest.capacidad', [ 'n' => (string) $r['capacidad'] ] ) : '' ] ),
+	'prest.lancha'      => array_filter( [ $r['lancha'], 'lancha' === $r['capacidad_unidad'] ? pm_prestador_capacidad( $r ) : '' ] ),
+	'prest.capacidad_fila' => 'lancha' === $r['capacidad_unidad'] ? [] : array_filter( [ pm_prestador_capacidad( $r ) ] ),
 	'prest.motor'       => array_filter( [ $r['motor'] ] ),
 	'prest.equipo'      => array_map( fn( $k ) => pm_opcion( 'equipo', $k ), $r['equipo'] ),
 	'prest.incluye'     => array_map( fn( $k ) => pm_opcion( 'incluye', $k ), $r['incluye'] ),
+	'prest.programa'    => array_filter( [ $r['programa'] ] ),
+	'prest.estadia'     => array_filter( [ $r['estadia'] ] ),
+	'prest.acompanante' => array_filter( [ $r['acompanante'] ] ), // price-like: dated or "a consultar", see below
+	'prest.no_incluye'  => array_filter( [ $r['no_incluye'] ] ),
 	'prest.temporada'   => array_filter( [ $r['temporada'] ] ),
 	'prest.idiomas'     => array_map( fn( $k ) => pm_opcion( 'idioma', $k ), $r['idiomas'] ),
 	'prest.accesible'   => 'si' === $r['accesible'] ? [ '♿ ' . pm_t( 'prest.accesible.si' ) ] : [],
@@ -43,7 +48,11 @@ $filas = [
 		<dl>
 			<?php foreach ( $filas as $clave => $valores ) :
 				if ( $valores ) : ?>
-					<div><dt><?php pm_e( $clave ); ?></dt><dd<?php echo $es( [ 'prest.lancha' => 'lancha', 'prest.motor' => 'motor', 'prest.temporada' => 'temporada' ][ $clave ] ?? '' ); // phpcs:ignore ?>><?php echo esc_html( implode( ' · ', $valores ) ); ?></dd></div>
+					<div><dt><?php pm_e( $clave ); ?></dt><?php if ( 'prest.acompanante' === $clave ) : // Same rule as the price: the figure only shows with its review date. ?>
+						<dd><?php if ( $r['precio_fecha'] ) { echo wp_kses( pm_t( 'prest.precio', [ 'precio' => '<span' . $es( 'acompanante' ) . '>' . esc_html( implode( ' · ', $valores ) ) . '</span>', 'cuando' => esc_html( pm_fecha_relativa( $r['precio_fecha'] ) ) ] ), [ 'span' => [ 'lang' => true ] ] ); } else { pm_e( 'prest.acompanante_consultar' ); } ?></dd>
+					<?php else : ?>
+						<dd<?php echo $es( [ 'prest.lancha' => 'lancha', 'prest.motor' => 'motor', 'prest.temporada' => 'temporada', 'prest.programa' => 'programa', 'prest.estadia' => 'estadia', 'prest.no_incluye' => 'no_incluye' ][ $clave ] ?? '' ); // phpcs:ignore ?>><?php echo esc_html( implode( ' · ', $valores ) ); ?></dd>
+					<?php endif; ?></div>
 				<?php endif;
 			endforeach; ?>
 		</dl>
