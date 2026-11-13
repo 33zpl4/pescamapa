@@ -1,0 +1,543 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="https://gmpg.org/xfn/11">
+	<title>Golden Dorado Tailwater (the zone)</title>
+
+	<style>
+		.wpcf7-submit{
+			display:none;
+		}
+		.recaptcha-btn{
+			display:block;
+		}
+		.grecaptcha-badge {display: none;} 
+	</style>
+	<script type="text/javascript">
+		var contactform = [];
+		var checkIfCalled = true;
+		var renderGoogleInvisibleRecaptchaFront = function() {
+			// prevent form submit from enter key
+			jQuery("input[name=_wpcf7]").attr("class","formid");
+				jQuery('.wpcf7-form').on('keyup keypress', "input", function(e) {
+				  var keyCode = e.keyCode || e.which;
+				  if (keyCode === 13) {
+					e.preventDefault();
+					return false;
+				  }
+				});
+
+			jQuery('.wpcf7-submit').each(function(index){
+
+				var checkexclude = 0;
+				var form = jQuery(this).closest('.wpcf7-form');
+				var value = jQuery(form).find(".formid").val();
+				// check form exclude from invisible recaptcha
+								if(checkexclude == 0){
+					// Hide the form orig submit button
+					form.find('.wpcf7-submit').hide();
+
+					// Fetch class and value of orig submit button
+					btnClasses = form.find('.wpcf7-submit').attr('class');
+					btnValue = form.find('.wpcf7-submit').attr('value');
+
+					// Add custom button and recaptcha holder
+
+					form.find('.wpcf7-submit').after('<input type="button" id="wpcf-custom-btn-'+index+'" class="'+btnClasses+'  recaptcha-btn recaptcha-btn-type-css" value="'+btnValue+'" title="'+btnValue+'" >');
+					form.append('<div class="recaptcha-holder" id="recaptcha-holder-'+index+'"></div>');
+					// Recaptcha rendenr from here
+					var holderId = grecaptcha.render('recaptcha-holder-'+index,{
+								'sitekey':'6LetpS0eAAAAAATcxIfAUsO35m7iWGn4trNWaFf2',
+								'size': 'invisible',
+								'badge' : 'bottomright', // possible values: bottomright, bottomleft, inline
+								'callback' : function (recaptchaToken) {
+									//console.log(recaptchaToken);
+									var response=jQuery('#recaptcha-holder-'+index).find('.g-recaptcha-response').val();
+									//console.log(response);
+									//Remove old response and store new respone
+									jQuery('#recaptcha-holder-'+index).parent().find(".respose_post").remove();
+									jQuery('#recaptcha-holder-'+index).after('<input type="hidden" name="g-recaptcha-response"  value="'+response+'" class="respose_post">')
+									grecaptcha.reset(holderId);
+
+									if(typeof customCF7Validator !== 'undefined'){
+										if(!customCF7Validator(form)){
+											return;
+										}
+									}
+									// Call default Validator function
+									else if(contactFormDefaultValidator(form)){
+										return;
+									}
+									else{
+										// hide the custom button and show orig submit button again and submit the form
+										jQuery('#wpcf-custom-btn-'+index).hide();
+										form.find('input[type=submit]').show();
+										form.find("input[type=submit]").click();
+										form.find('input[type=submit]').hide();
+										jQuery('#wpcf-custom-btn-'+index).attr('style','');
+									}
+								}
+						},false);
+
+					// action call when click on custom button
+					jQuery('#wpcf-custom-btn-'+index).click(function(event){
+						event.preventDefault();
+						// Call custom validator function
+						if(typeof customCF7Validator == 'function'){
+							if(!customCF7Validator(form)){
+								return false;
+							}
+						}
+						// Call default Validator function
+						else if(contactFormDefaultValidator(form)){
+							return false;
+						}
+						else if(grecaptcha.getResponse(holderId) != ''){
+							grecaptcha.reset(holderId);
+						}
+						else{
+							// execute the recaptcha challenge
+							grecaptcha.execute(holderId);
+						}
+					});
+				}
+			});
+		}
+	</script><script  src="https://www.google.com/recaptcha/api.js?onload=renderGoogleInvisibleRecaptchaFront&render=explicit" async defer></script><meta name='robots' content='max-image-preview:large' />
+<link rel='dns-prefetch' href='//www.google.com' />
+<link rel="alternate" type="application/rss+xml" title="Golden Dorado Tailwater (the zone) &raquo; Feed" href="https://www.riverplatedorados.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Golden Dorado Tailwater (the zone) &raquo; Comments Feed" href="https://www.riverplatedorados.com/comments/feed/" />
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://www.riverplatedorados.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.riverplatedorados.com%2F" />
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://www.riverplatedorados.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.riverplatedorados.com%2F&#038;format=xml" />
+<style id="wp-img-auto-sizes-contain-inline-css">
+img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+</style>
+<style id="wp-emoji-styles-inline-css">
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+/*# sourceURL=wp-emoji-styles-inline-css */
+</style>
+<link rel='stylesheet' id='cf7apps-honeypot-frontend-css' href='https://www.riverplatedorados.com/wp-content/plugins/contact-form-7-honeypot/legacy-honeypot/includes/css/honeypot-frontend.css?ver=3.9.0' media='all' />
+<link rel='stylesheet' id='contact-form-7-css' href='https://www.riverplatedorados.com/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=6.2.5' media='all' />
+<link rel='stylesheet' id='hello-elementor-css' href='https://www.riverplatedorados.com/wp-content/themes/hello-elementor/assets/css/reset.css?ver=3.5.2' media='all' />
+<link rel='stylesheet' id='hello-elementor-theme-style-css' href='https://www.riverplatedorados.com/wp-content/themes/hello-elementor/assets/css/theme.css?ver=3.5.2' media='all' />
+<link rel='stylesheet' id='hello-elementor-header-footer-css' href='https://www.riverplatedorados.com/wp-content/themes/hello-elementor/assets/css/header-footer.css?ver=3.5.2' media='all' />
+<link rel='stylesheet' id='elementor-frontend-css' href='https://www.riverplatedorados.com/wp-content/plugins/elementor/assets/css/frontend.min.css?ver=4.4.0' media='all' />
+<link rel='stylesheet' id='elementor-post-77-css' href='https://www.riverplatedorados.com/wp-content/uploads/elementor/css/post-77.css?ver=1794536155' media='all' />
+<link rel='stylesheet' id='elementor-icons-css' href='https://www.riverplatedorados.com/wp-content/plugins/elementor/assets/lib/eicons/css/elementor-icons.min.css?ver=5.57.0' media='all' />
+<link rel='stylesheet' id='elementor-pro-css' href='https://www.riverplatedorados.com/wp-content/plugins/elementor-pro/assets/css/frontend.min.css?ver=3.23.2' media='all' />
+<link rel='stylesheet' id='widget-image-css' href='https://www.riverplatedorados.com/wp-content/plugins/elementor/assets/css/widget-image.min.css?ver=4.4.0' media='all' />
+<link rel='stylesheet' id='widget-heading-css' href='https://www.riverplatedorados.com/wp-content/plugins/elementor/assets/css/widget-heading.min.css?ver=4.4.0' media='all' />
+<link rel='stylesheet' id='elementor-post-169-css' href='https://www.riverplatedorados.com/wp-content/uploads/elementor/css/post-169.css?ver=1794536155' media='all' />
+<link rel='stylesheet' id='elementor-post-166-css' href='https://www.riverplatedorados.com/wp-content/uploads/elementor/css/post-166.css?ver=1794536155' media='all' />
+<link rel='stylesheet' id='elementor-post-171-css' href='https://www.riverplatedorados.com/wp-content/uploads/elementor/css/post-171.css?ver=1794536155' media='all' />
+<link rel='stylesheet' id='elementor-gf-local-roboto-css' href='https://www.riverplatedorados.com/wp-content/uploads/elementor/google-fonts/css/roboto.css?ver=1742261273' media='all' />
+<link rel='stylesheet' id='elementor-gf-local-robotoslab-css' href='https://www.riverplatedorados.com/wp-content/uploads/elementor/google-fonts/css/robotoslab.css?ver=1742261280' media='all' />
+<link rel='stylesheet' id='elementor-gf-local-rocksalt-css' href='https://www.riverplatedorados.com/wp-content/uploads/elementor/google-fonts/css/rocksalt.css?ver=1742261280' media='all' />
+<link rel='stylesheet' id='elementor-icons-shared-0-css' href='https://www.riverplatedorados.com/wp-content/plugins/elementor/assets/lib/font-awesome/css/fontawesome.min.css?ver=5.15.3' media='all' />
+<link rel='stylesheet' id='elementor-icons-fa-solid-css' href='https://www.riverplatedorados.com/wp-content/plugins/elementor/assets/lib/font-awesome/css/solid.min.css?ver=5.15.3' media='all' />
+<link rel='stylesheet' id='elementor-icons-fa-brands-css' href='https://www.riverplatedorados.com/wp-content/plugins/elementor/assets/lib/font-awesome/css/brands.min.css?ver=5.15.3' media='all' />
+<script id="jquery-core-js" src="https://www.riverplatedorados.com/wp-includes/js/jquery/jquery.min.js?ver=3.7.1"></script>
+<script id="jquery-migrate-js" src="https://www.riverplatedorados.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1"></script>
+<script id="cf7_invisible_recaptcha_functions-js" src="https://www.riverplatedorados.com/wp-content/plugins/cf7-invisible-recaptcha/js/cf7_invisible_recaptcha.js?ver=1.3.5"></script>
+<link rel="https://api.w.org/" href="https://www.riverplatedorados.com/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="https://www.riverplatedorados.com/wp-json/wp/v2/pages/169" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.riverplatedorados.com/xmlrpc.php?rsd" />
+<meta name="generator" content="WordPress 7.1.4" />
+<link rel="canonical" href="https://www.riverplatedorados.com/" />
+<link rel='shortlink' href='https://www.riverplatedorados.com/' />
+<meta name="generator" content="Elementor 4.4.0; features: additional_custom_breakpoints; settings: css_print_method-external, google_font-enabled, font_display-auto">
+<!-- Código de instalación Cliengo para https://www.riverplatedorados.com/ --> <script type="text/javascript">(function () { var ldk = document.createElement('script'); ldk.type = 'text/javascript'; ldk.async = true; ldk.src = 'https://s.cliengo.com/weboptimizer/5d5d566be4b06fbf44efa5a7/64417e2df4c77500250e8f11.js?platform=onboarding_modular'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ldk, s); })();</script>
+			<style>
+				.e-con.e-parent:nth-of-type(n+4):not(.e-lazyloaded):not(.e-no-lazyload),
+				.e-con.e-parent:nth-of-type(n+4):not(.e-lazyloaded):not(.e-no-lazyload) * {
+					background-image: none !important;
+				}
+				@media screen and (max-height: 1024px) {
+					.e-con.e-parent:nth-of-type(n+3):not(.e-lazyloaded):not(.e-no-lazyload),
+					.e-con.e-parent:nth-of-type(n+3):not(.e-lazyloaded):not(.e-no-lazyload) * {
+						background-image: none !important;
+					}
+				}
+				@media screen and (max-height: 640px) {
+					.e-con.e-parent:nth-of-type(n+2):not(.e-lazyloaded):not(.e-no-lazyload),
+					.e-con.e-parent:nth-of-type(n+2):not(.e-lazyloaded):not(.e-no-lazyload) * {
+						background-image: none !important;
+					}
+				}
+			</style>
+							<style type="text/css" id="c4wp-checkout-css">
+					.woocommerce-checkout .c4wp_captcha_field {
+						margin-bottom: 10px;
+						margin-top: 15px;
+						position: relative;
+						display: inline-block;
+					}
+				</style>
+								<style type="text/css" id="c4wp-v3-lp-form-css">
+					.login #login, .login #lostpasswordform {
+						min-width: 350px !important;
+					}
+					.wpforms-field-c4wp iframe {
+						width: 100% !important;
+					}
+				</style>
+							<style type="text/css" id="c4wp-v3-lp-form-css">
+				.login #login, .login #lostpasswordform {
+					min-width: 350px !important;
+				}
+				.wpforms-field-c4wp iframe {
+					width: 100% !important;
+				}
+			</style>
+			</head>
+<body data-rsssl=1 class="home wp-singular page-template page-template-elementor_header_footer page page-id-169 wp-embed-responsive wp-theme-hello-elementor hello-elementor-default elementor-default elementor-template-full-width elementor-kit-77 elementor-page elementor-page-169">
+
+
+<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+
+		<div data-elementor-type="header" data-elementor-id="166" class="elementor elementor-166 elementor-location-header" data-elementor-post-type="elementor_library">
+					<section class="elementor-section elementor-top-section elementor-element elementor-element-44993ba elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="44993ba" data-element_type="section" data-e-type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-3ccbd73" data-id="3ccbd73" data-element_type="column" data-e-type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-0f8b5cd elementor-icon-list--layout-inline elementor-align-center elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list" data-id="0f8b5cd" data-element_type="widget" data-e-type="widget" data-widget_type="icon-list.default">
+				<div class="elementor-widget-container">
+							<ul class="elementor-icon-list-items elementor-inline-items">
+							<li class="elementor-icon-list-item elementor-inline-item">
+											<span class="elementor-icon-list-icon">
+							<i aria-hidden="true" class="fas fa-phone-alt"></i>						</span>
+										<span class="elementor-icon-list-text"> 1-800-231-4975</span>
+									</li>
+						</ul>
+						</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-f952ad0 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="f952ad0" data-element_type="section" data-e-type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-406d060" data-id="406d060" data-element_type="column" data-e-type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-78d5ebe elementor-widget elementor-widget-image" data-id="78d5ebe" data-element_type="widget" data-e-type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+															<img fetchpriority="high" width="600" height="218" src="https://www.riverplatedorados.com/wp-content/uploads/2021/10/DORADOS.png" class="attachment-large size-large wp-image-106" alt="" srcset="https://www.riverplatedorados.com/wp-content/uploads/2021/10/DORADOS.png 600w, https://www.riverplatedorados.com/wp-content/uploads/2021/10/DORADOS-300x109.png 300w" sizes="(max-width: 600px) 100vw, 600px" />															</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-bd4ef0d" data-id="bd4ef0d" data-element_type="column" data-e-type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-876c113 elementor-nav-menu__align-end elementor-nav-menu--stretch elementor-nav-menu--dropdown-tablet elementor-nav-menu__text-align-aside elementor-nav-menu--toggle elementor-nav-menu--burger elementor-widget elementor-widget-nav-menu" data-id="876c113" data-element_type="widget" data-e-type="widget" data-settings="{&quot;full_width&quot;:&quot;stretch&quot;,&quot;layout&quot;:&quot;horizontal&quot;,&quot;submenu_icon&quot;:{&quot;value&quot;:&quot;&lt;i class=\&quot;fas fa-caret-down\&quot;&gt;&lt;\/i&gt;&quot;,&quot;library&quot;:&quot;fa-solid&quot;},&quot;toggle&quot;:&quot;burger&quot;}" data-widget_type="nav-menu.default">
+				<div class="elementor-widget-container">
+								<nav aria-label="Menu" class="elementor-nav-menu--main elementor-nav-menu__container elementor-nav-menu--layout-horizontal e--pointer-none">
+				<ul id="menu-1-876c113" class="elementor-nav-menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-169 current_page_item menu-item-262"><a href="https://www.riverplatedorados.com/" aria-current="page" class="elementor-item elementor-item-active">Home</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-261"><a href="https://www.riverplatedorados.com/why-us/" class="elementor-item">Why Choose Us?</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-260"><a href="https://www.riverplatedorados.com/best-times/" class="elementor-item">Best Times</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-259"><a href="https://www.riverplatedorados.com/rates/" class="elementor-item">Rates</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-412"><a href="https://www.riverplatedorados.com/fishing-reports/" class="elementor-item">Fishing Reports</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-258"><a href="https://www.riverplatedorados.com/peacock-bass/" class="elementor-item">Peacock Bass</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-257"><a href="https://www.riverplatedorados.com/other-programs/" class="elementor-item">Other Programs</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-256"><a href="https://www.riverplatedorados.com/contact-us/" class="elementor-item">Contact Us</a></li>
+</ul>			</nav>
+					<div class="elementor-menu-toggle" role="button" tabindex="0" aria-label="Menu Toggle" aria-expanded="false">
+			<i aria-hidden="true" role="presentation" class="elementor-menu-toggle__icon--open eicon-menu-bar"></i><i aria-hidden="true" role="presentation" class="elementor-menu-toggle__icon--close eicon-close"></i>			<span class="elementor-screen-only">Menu</span>
+		</div>
+					<nav class="elementor-nav-menu--dropdown elementor-nav-menu__container" aria-hidden="true">
+				<ul id="menu-2-876c113" class="elementor-nav-menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-169 current_page_item menu-item-262"><a href="https://www.riverplatedorados.com/" aria-current="page" class="elementor-item elementor-item-active" tabindex="-1">Home</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-261"><a href="https://www.riverplatedorados.com/why-us/" class="elementor-item" tabindex="-1">Why Choose Us?</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-260"><a href="https://www.riverplatedorados.com/best-times/" class="elementor-item" tabindex="-1">Best Times</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-259"><a href="https://www.riverplatedorados.com/rates/" class="elementor-item" tabindex="-1">Rates</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-412"><a href="https://www.riverplatedorados.com/fishing-reports/" class="elementor-item" tabindex="-1">Fishing Reports</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-258"><a href="https://www.riverplatedorados.com/peacock-bass/" class="elementor-item" tabindex="-1">Peacock Bass</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-257"><a href="https://www.riverplatedorados.com/other-programs/" class="elementor-item" tabindex="-1">Other Programs</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-256"><a href="https://www.riverplatedorados.com/contact-us/" class="elementor-item" tabindex="-1">Contact Us</a></li>
+</ul>			</nav>
+						</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				</div>
+				<div data-elementor-type="wp-page" data-elementor-id="169" class="elementor elementor-169" data-elementor-post-type="page">
+						<section class="elementor-section elementor-top-section elementor-element elementor-element-82508a0 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="82508a0" data-element_type="section" data-e-type="section">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-7e5d4c8" data-id="7e5d4c8" data-element_type="column" data-e-type="column">
+			<div class="elementor-widget-wrap">
+							</div>
+		</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-b21ee83 elementor-reverse-mobile elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="b21ee83" data-element_type="section" data-e-type="section">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-c3e4c28" data-id="c3e4c28" data-element_type="column" data-e-type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<section class="elementor-section elementor-inner-section elementor-element elementor-element-703147b elementor-reverse-tablet elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="703147b" data-element_type="section" data-e-type="section">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-a64af6c" data-id="a64af6c" data-element_type="column" data-e-type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-93a1d10 elementor-widget elementor-widget-image" data-id="93a1d10" data-element_type="widget" data-e-type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+															<img decoding="async" width="800" height="600" src="https://www.riverplatedorados.com/wp-content/uploads/2023/03/RP-6-1024x768.png" class="attachment-large size-large wp-image-283" alt="" srcset="https://www.riverplatedorados.com/wp-content/uploads/2023/03/RP-6-1024x768.png 1024w, https://www.riverplatedorados.com/wp-content/uploads/2023/03/RP-6-300x225.png 300w, https://www.riverplatedorados.com/wp-content/uploads/2023/03/RP-6-768x576.png 768w, https://www.riverplatedorados.com/wp-content/uploads/2023/03/RP-6-1536x1151.png 1536w, https://www.riverplatedorados.com/wp-content/uploads/2023/03/RP-6.png 2048w" sizes="(max-width: 800px) 100vw, 800px" />															</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-8d2e65c" data-id="8d2e65c" data-element_type="column" data-e-type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-5cce1de elementor-widget elementor-widget-image" data-id="5cce1de" data-element_type="widget" data-e-type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+															<img decoding="async" width="768" height="576" src="https://www.riverplatedorados.com/wp-content/uploads/2023/04/Banner-Home-min-768x576.jpg" class="attachment-medium_large size-medium_large wp-image-353" alt="" srcset="https://www.riverplatedorados.com/wp-content/uploads/2023/04/Banner-Home-min-768x576.jpg 768w, https://www.riverplatedorados.com/wp-content/uploads/2023/04/Banner-Home-min-300x225.jpg 300w, https://www.riverplatedorados.com/wp-content/uploads/2023/04/Banner-Home-min-1024x768.jpg 1024w, https://www.riverplatedorados.com/wp-content/uploads/2023/04/Banner-Home-min.jpg 1440w" sizes="(max-width: 768px) 100vw, 768px" />															</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				<div class="elementor-element elementor-element-c5dc3fd elementor-widget elementor-widget-heading" data-id="c5dc3fd" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+					<h2 class="elementor-heading-title elementor-size-default">Golden Dorado Tailwater <br> (the zone)</h2>				</div>
+				</div>
+				<div class="elementor-element elementor-element-d54c41c elementor-widget elementor-widget-html" data-id="d54c41c" data-element_type="widget" data-e-type="widget" data-widget_type="html.default">
+				<div class="elementor-widget-container">
+					<div id="vid_64e4e5d45d4157000942d0d0" style="position:relative;width:100%;padding: 56.25% 0 0;"><img decoding="async" id="thumb_64e4e5d45d4157000942d0d0" src="https://images.converteai.net/4d3c02a0-4dc6-47bc-b11c-8a5548c079a9/players/64e4e5d45d4157000942d0d0/thumbnail.jpg" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;"><div id="backdrop_64e4e5d45d4157000942d0d0" style="position:absolute;top:0;width:100%;height:100%;-webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px);"></div></div><script type="text/javascript" id="scr_64e4e5d45d4157000942d0d0">var s=document.createElement("script");s.src="https://scripts.converteai.net/4d3c02a0-4dc6-47bc-b11c-8a5548c079a9/players/64e4e5d45d4157000942d0d0/player.js",s.async=!0,document.head.appendChild(s);</script>				</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-3d55944 elementor-reverse-mobile elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="3d55944" data-element_type="section" data-e-type="section">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-882b4b8" data-id="882b4b8" data-element_type="column" data-e-type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-b3f8000 elementor-widget elementor-widget-heading" data-id="b3f8000" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+					<h2 class="elementor-heading-title elementor-size-default">Our 3 Keys</h2>				</div>
+				</div>
+				<section class="elementor-section elementor-inner-section elementor-element elementor-element-9367cf5 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="9367cf5" data-element_type="section" data-e-type="section">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-8603b74" data-id="8603b74" data-element_type="column" data-e-type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-6ca356f elementor-widget elementor-widget-image" data-id="6ca356f" data-element_type="widget" data-e-type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+															<img loading="lazy" decoding="async" width="768" height="576" src="https://www.riverplatedorados.com/wp-content/uploads/2023/02/IMGP1114-min-768x576.jpg" class="attachment-medium_large size-medium_large wp-image-149" alt="" srcset="https://www.riverplatedorados.com/wp-content/uploads/2023/02/IMGP1114-min-768x576.jpg 768w, https://www.riverplatedorados.com/wp-content/uploads/2023/02/IMGP1114-min-300x225.jpg 300w, https://www.riverplatedorados.com/wp-content/uploads/2023/02/IMGP1114-min-1024x768.jpg 1024w, https://www.riverplatedorados.com/wp-content/uploads/2023/02/IMGP1114-min-1536x1152.jpg 1536w, https://www.riverplatedorados.com/wp-content/uploads/2023/02/IMGP1114-min-2048x1536.jpg 2048w" sizes="(max-width: 768px) 100vw, 768px" />															</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-46f2cf5" data-id="46f2cf5" data-element_type="column" data-e-type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-34780e3 elementor-widget elementor-widget-heading" data-id="34780e3" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+					<h2 class="elementor-heading-title elementor-size-default">Key # 01:</h2>				</div>
+				</div>
+				<div class="elementor-element elementor-element-94082bc elementor-widget elementor-widget-text-editor" data-id="94082bc" data-element_type="widget" data-e-type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									<p><strong>The Only Proven Non-Fickle Fishery.</strong></p><p>A total of <strong> twenty three (23) IFGA </strong>baitcasting and fly fishing<strong> world records </strong>were broken in various categories<strong>.</strong> The <strong>All-Tackle World Record was broken twice.</strong> The second fish was so large it reigns supreme now for more than a decade!</p><p>Expect over <strong>20 dorados </strong>for <strong>each</strong> of the <strong>only two</strong> authorized  boats allowed in this private fishery. A <strong>third</strong> of those fish should weigh <strong>more than 15 pounds!</strong> </p>								</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-inner-section elementor-element elementor-element-c0955ac elementor-reverse-tablet elementor-reverse-mobile elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="c0955ac" data-element_type="section" data-e-type="section">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-6f5a907" data-id="6f5a907" data-element_type="column" data-e-type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-5216f9f elementor-widget elementor-widget-heading" data-id="5216f9f" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+					<h2 class="elementor-heading-title elementor-size-default">Key # 02:</h2>				</div>
+				</div>
+				<div class="elementor-element elementor-element-37cac81 elementor-widget elementor-widget-text-editor" data-id="37cac81" data-element_type="widget" data-e-type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									<p><strong>World’s Best Habitat with No Fishing Pressure.</strong></p><p>Back in 2013, River Plate acquired the rights at a public auction for the exclusive right to use the only two boats for the Uruguay River Tailwaters. The large amount of food being flushed through the dam’s turbines coupled with a superabundance of oxygen due to the whirling of the turbines, creates a uniquely rich, Jurassic-like environment presided over by outsized apex-predator dorados that just get larger and larger as they age in staggering numbers .</p>								</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-068a42c" data-id="068a42c" data-element_type="column" data-e-type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-1d72f85 elementor-widget elementor-widget-image" data-id="1d72f85" data-element_type="widget" data-e-type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+															<img loading="lazy" decoding="async" width="768" height="576" src="https://www.riverplatedorados.com/wp-content/uploads/2023/03/RP-768x576.png" class="attachment-medium_large size-medium_large wp-image-175" alt="" srcset="https://www.riverplatedorados.com/wp-content/uploads/2023/03/RP-768x576.png 768w, https://www.riverplatedorados.com/wp-content/uploads/2023/03/RP-300x225.png 300w, https://www.riverplatedorados.com/wp-content/uploads/2023/03/RP-1024x768.png 1024w, https://www.riverplatedorados.com/wp-content/uploads/2023/03/RP-1536x1152.png 1536w, https://www.riverplatedorados.com/wp-content/uploads/2023/03/RP-2048x1536.png 2048w" sizes="(max-width: 768px) 100vw, 768px" />															</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-inner-section elementor-element elementor-element-65955af elementor-reverse-tablet elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="65955af" data-element_type="section" data-e-type="section">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-ab1a41a" data-id="ab1a41a" data-element_type="column" data-e-type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-7cbc4b6 elementor-widget elementor-widget-image" data-id="7cbc4b6" data-element_type="widget" data-e-type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+															<img loading="lazy" decoding="async" width="768" height="511" src="https://www.riverplatedorados.com/wp-content/uploads/2023/04/KEY-03-min-768x511.jpg" class="attachment-medium_large size-medium_large wp-image-354" alt="" srcset="https://www.riverplatedorados.com/wp-content/uploads/2023/04/KEY-03-min-768x511.jpg 768w, https://www.riverplatedorados.com/wp-content/uploads/2023/04/KEY-03-min-300x199.jpg 300w, https://www.riverplatedorados.com/wp-content/uploads/2023/04/KEY-03-min-1024x681.jpg 1024w, https://www.riverplatedorados.com/wp-content/uploads/2023/04/KEY-03-min-1536x1021.jpg 1536w, https://www.riverplatedorados.com/wp-content/uploads/2023/04/KEY-03-min-2048x1362.jpg 2048w" sizes="(max-width: 768px) 100vw, 768px" />															</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-0b8183b" data-id="0b8183b" data-element_type="column" data-e-type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-1855c6d elementor-widget elementor-widget-heading" data-id="1855c6d" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+					<h2 class="elementor-heading-title elementor-size-default">Key # 03:</h2>				</div>
+				</div>
+				<div class="elementor-element elementor-element-fa6a81d elementor-widget elementor-widget-text-editor" data-id="fa6a81d" data-element_type="widget" data-e-type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									<p><strong>The Best Cast &amp; Blast</strong></p><p>The Tailwater lodging is 500 yards from the fishery but, most importantly, it also finds itself in the<strong> perfect mixed-bag location</strong> where partridge (perdiz) cover is abundant, where pigeon grain fields are everywhere, where ponds &amp; lagoons full of duck, and dove roosts are just a short drive away on good roads. And, none better than River Plate’s 35-year experience to replicate the high level of service that we offer throughout our 9 world-class wing shooting lodges.</p><p>We can easily combine a long week’s fishing of Dorado with Amazon Peacock Bass for the true Tropical Fish Grand Slam.</p>								</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+					</div>
+		</div>
+					</div>
+		</section>
+				</div>
+				<div data-elementor-type="footer" data-elementor-id="171" class="elementor elementor-171 elementor-location-footer" data-elementor-post-type="elementor_library">
+					<section class="elementor-section elementor-top-section elementor-element elementor-element-3bd4847 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="3bd4847" data-element_type="section" data-e-type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-ac09f24" data-id="ac09f24" data-element_type="column" data-e-type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-a16cead elementor-widget elementor-widget-heading" data-id="a16cead" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+					<p class="elementor-heading-title elementor-size-default">Copyright 2013 River Plate Dorados, All Right Reserved
+</p>				</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-60f8430" data-id="60f8430" data-element_type="column" data-e-type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-8b32a51 elementor-shape-rounded elementor-grid-0 e-grid-align-center elementor-widget elementor-widget-social-icons" data-id="8b32a51" data-element_type="widget" data-e-type="widget" data-widget_type="social-icons.default">
+				<div class="elementor-widget-container">
+							<div class="elementor-social-icons-wrapper elementor-grid" role="list">
+							<span class="elementor-grid-item" role="listitem">
+					<a class="elementor-icon elementor-social-icon elementor-social-icon-facebook elementor-repeater-item-2416b22" target="_blank">
+						<span class="elementor-screen-only">Facebook</span>
+						<i aria-hidden="true" class="fab fa-facebook"></i>					</a>
+				</span>
+							<span class="elementor-grid-item" role="listitem">
+					<a class="elementor-icon elementor-social-icon elementor-social-icon-instagram elementor-repeater-item-e701d0b" target="_blank">
+						<span class="elementor-screen-only">Instagram</span>
+						<i aria-hidden="true" class="fab fa-instagram"></i>					</a>
+				</span>
+					</div>
+						</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-6d0ee5d" data-id="6d0ee5d" data-element_type="column" data-e-type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-50025b7 elementor-align-right elementor-mobile-align-center elementor-widget elementor-widget-button" data-id="50025b7" data-element_type="widget" data-e-type="widget" data-widget_type="button.default">
+				<div class="elementor-widget-container">
+									<div class="elementor-button-wrapper">
+					<a class="elementor-button elementor-button-link elementor-size-sm" href="/contact-us">
+						<span class="elementor-button-content-wrapper">
+									<span class="elementor-button-text">Contact Us</span>
+					</span>
+					</a>
+				</div>
+								</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				</div>
+		
+<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/hello-elementor/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+			<script>
+				( () => {
+					const lazyloadRunObserver = () => {
+						const lazyloadBackgrounds = document.querySelectorAll( `.e-con.e-parent:not(.e-lazyloaded)` );
+						const lazyloadBackgroundObserver = new IntersectionObserver( ( entries ) => {
+							entries.forEach( ( entry ) => {
+								if ( entry.isIntersecting ) {
+									let lazyloadBackground = entry.target;
+									if( lazyloadBackground ) {
+										lazyloadBackground.classList.add( 'e-lazyloaded' );
+									}
+									lazyloadBackgroundObserver.unobserve( entry.target );
+								}
+							});
+						}, { rootMargin: '200px 0px 200px 0px' } );
+						lazyloadBackgrounds.forEach( ( lazyloadBackground ) => {
+							lazyloadBackgroundObserver.observe( lazyloadBackground );
+						} );
+					};
+					const events = [
+						'DOMContentLoaded',
+						'elementor/lazyload/observe',
+					];
+					events.forEach( ( event ) => {
+						document.addEventListener( event, lazyloadRunObserver );
+					} );
+				} )();
+			</script>
+			<link rel='stylesheet' id='widget-icon-list-css' href='https://www.riverplatedorados.com/wp-content/plugins/elementor/assets/css/widget-icon-list.min.css?ver=4.4.0' media='all' />
+<link rel='stylesheet' id='widget-social-icons-css' href='https://www.riverplatedorados.com/wp-content/plugins/elementor/assets/css/widget-social-icons.min.css?ver=4.4.0' media='all' />
+<link rel='stylesheet' id='e-apple-webkit-css' href='https://www.riverplatedorados.com/wp-content/plugins/elementor/assets/css/conditionals/apple-webkit.min.css?ver=4.4.0' media='all' />
+<script id="wp-hooks-js" src="https://www.riverplatedorados.com/wp-includes/js/dist/hooks.min.js?ver=f0f188028580e8dc1255"></script>
+<script id="wp-i18n-js" src="https://www.riverplatedorados.com/wp-includes/js/dist/i18n.min.js?ver=1dfe7db3940c23ea9216"></script>
+<script id="wp-i18n-js-after">
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+//# sourceURL=wp-i18n-js-after
+</script>
+<script id="swv-js" src="https://www.riverplatedorados.com/wp-content/plugins/contact-form-7/includes/swv/js/index.js?ver=6.2.5"></script>
+<script id="contact-form-7-js-before">
+var wpcf7 = {
+    "api": {
+        "root": "https:\/\/www.riverplatedorados.com\/wp-json\/",
+        "namespace": "contact-form-7\/v1"
+    }
+};
+//# sourceURL=contact-form-7-js-before
+</script>
+<script id="contact-form-7-js" src="https://www.riverplatedorados.com/wp-content/plugins/contact-form-7/includes/js/index.js?ver=6.2.5"></script>
+<script id="hello-theme-frontend-js" src="https://www.riverplatedorados.com/wp-content/themes/hello-elementor/assets/js/hello-frontend.js?ver=3.5.2"></script>
+<script data-wp-strategy="defer" defer id="c4wp-method-provider-js" src="https://www.google.com/recaptcha/api.js?render=6LdAiSIeAAAAAE8hfV5mLKRM1XJGliQW0bmXjUbs&#038;hl=en&#038;ver=7.6.2"></script>
+<script id="c4wp-method-js-extra">
+var c4wpConfig = {"ajax_url":"https://www.riverplatedorados.com/wp-admin/admin-ajax.php","captcha_version":"v3","disable_submit":"","site_key":"6LdAiSIeAAAAAE8hfV5mLKRM1XJGliQW0bmXjUbs","size":"normal","theme":"light","badge":"bottomright","failure_action":"nothing","additional_js":"","fallback_js":"\"\\t\\t\\t\\n\\t\\t\\t\\/* @v3-fallback-js:start *\\/\\n\\t\\t\\tif ( typeof captcha_div == 'undefined' && form.classList.contains( 'wc-block-checkout__form' ) ) {\\n\\t\\t\\t\\tvar captcha_div = form.querySelector( '#additional-information-c4wp-c4wp-wc-checkout' );\\n\\t\\t\\t}\\n\\n\\t\\t\\tif ( ! captcha_div && form.classList.contains( 'wc-block-checkout__form' ) ) {\\n\\t\\t\\t\\tvar captcha_div = form.querySelector( '#order-c4wp-c4wp-wc-checkout' );\\n\\t\\t\\t}\\n\\n\\t\\t\\tif ( typeof captcha_div == 'undefined' ) {\\n\\t\\t\\t\\tvar captcha_div = form.querySelector( '.c4wp_captcha_field_div' );\\n\\t\\t\\t}\\n\\n\\t\\t\\tvar parentElem = captcha_div.parentElement;\\n\\n\\t\\t\\tif ( ( form.classList.contains( 'c4wp-primed' ) ) || ( ! form.classList.contains( 'c4wp_verify_underway' ) && captcha_div.parentElement.getAttribute( 'data-c4wp-use-ajax' ) == 'true' ) ) {\\n\\n\\t\\t\\t\\tform.classList.add('c4wp_verify_underway' );\\n\\t\\t\\t\\tconst flagMarkup =  '\u003Cinput id=\\\"c4wp_ajax_flag\\\" type=\\\"hidden\\\" name=\\\"c4wp_ajax_flag\\\" value=\\\"c4wp_ajax_flag\\\"\u003E';\\n\\t\\t\\t\\tvar flagMarkupDiv = document.createElement('div');\\n\\t\\t\\t\\tflagMarkupDiv.innerHTML = flagMarkup.trim();\\n\\n\\t\\t\\t\\tform.appendChild( flagMarkupDiv );\\n\\t\\n\\t\\t\\t\\tvar nonce = captcha_div.parentElement.getAttribute( 'data-nonce' );\\n\\n\\t\\t\\t\\tvar formData = new FormData();\\n\\n\\t\\t\\t\\tformData.append( 'action', 'c4wp_ajax_verify' );\\n\\t\\t\\t\\tformData.append( 'nonce', nonce );\\n\\t\\t\\t\\tformData.append( 'response', data );\\n\\t\\t\\t\\t\\n\\t\\t\\t\\tfetch( 'https:\\/\\/www.riverplatedorados.com\\/wp-admin\\/admin-ajax.php', {\\n\\t\\t\\t\\t\\tmethod: 'POST',\\n\\t\\t\\t\\t\\tbody: formData,\\n\\t\\t\\t\\t} ) \\/\\/ wrapped\\n\\t\\t\\t\\t\\t.then( \\n\\t\\t\\t\\t\\t\\tres =\u003E res.json()\\n\\t\\t\\t\\t\\t)\\n\\t\\t\\t\\t\\t.then( data =\u003E {\\n\\t\\t\\t\\t\\t\\tif ( data['success'] ) {\\n\\n\\t\\t\\t\\t\\t\\t\\tform.classList.add( 'c4wp_verified' );\\n\\n\\t\\t\\t\\t\\t\\t\\tvar existingFlag = document.getElementById('c4wp_ajax_flag');\\n\\t\\t\\t\\t\\t\\t\\tif (existingFlag) {\\n\\t\\t\\t\\t\\t\\t\\t\\texistingFlag.value = data.data.token; \\n\\t\\t\\t\\t\\t\\t\\t} else {\\n\\t\\t\\t\\t\\t\\t\\t\\tconst flagMarkup = '\u003Cinput id=\\\"c4wp_ajax_flag\\\" type=\\\"hidden\\\" name=\\\"c4wp_ajax_flag\\\" value=\\\"' + data.data.token + '\\\"\u003E';\\n\\t\\t\\t\\t\\t\\t\\t\\tvar flagMarkupDiv = document.createElement('div');\\n\\t\\t\\t\\t\\t\\t\\t\\tflagMarkupDiv.innerHTML = flagMarkup.trim();\\n\\t\\t\\t\\t\\t\\t\\t\\tform.appendChild( flagMarkupDiv );\\n\\t\\t\\t\\t\\t\\t\\t}\\n\\n\\t\\t\\t\\t\\t\\t\\t\\/\\/ Submit as usual.\\n\\t\\t\\t\\t\\t\\t\\tif ( foundSubmitBtn ) {\\n\\t\\t\\t\\t\\t\\t\\t\\tfoundSubmitBtn.click();\\n\\t\\t\\t\\t\\t\\t\\t} else if ( form.classList.contains( 'wc-block-checkout__form' ) ) {\\n\\t\\t\\t\\t\\t\\t\\t\\tjQuery( form ).find( '.wc-block-components-checkout-place-order-button:not(.c4wp-submit)' ).click(); \\n\\t\\t\\t\\t\\t\\t\\t} else {\\t\\t\\t\\t\\t\\t\\t\\t\\n\\t\\t\\t\\t\\t\\t\\t\\tif ( typeof form.submit === 'function' ) {\\n\\t\\t\\t\\t\\t\\t\\t\\t\\tform.submit();\\n\\t\\t\\t\\t\\t\\t\\t\\t} else {\\n\\t\\t\\t\\t\\t\\t\\t\\t\\tHTMLFormElement.prototype.submit.call(form);\\n\\t\\t\\t\\t\\t\\t\\t\\t}\\n\\t\\t\\t\\t\\t\\t\\t}\\n\\n\\t\\t\\t\\t\\t\\t} else {\\n\\t\\t\\t\\t\\t\\t\\t\\/\\/jQuery( '.nf-form-cont' ).trigger( 'nfFormReady' );\\n\\n\\t\\t\\t\\t\\t\\t\\tif ( 'redirect' === 'nothing' ) {\\n\\t\\t\\t\\t\\t\\t\\t\\twindow.location.href = '';\\n\\t\\t\\t\\t\\t\\t\\t}\\n\\n\\t\\t\\t\\t\\t\\t\\tif ( 'v2_checkbox' === 'nothing' ) {\\n\\t\\t\\t\\t\\t\\t\\t\\tif ( form.classList.contains( 'wc-block-checkout__form' ) ) {\\n\\t\\t\\t\\t\\t\\t\\t\\t\\tcaptcha_div = captcha_div.parentElement;\\n\\t\\t\\t\\t\\t\\t\\t\\t}\\n\\n\\t\\t\\t\\t\\t\\t\\t\\tcaptcha_div.innerHTML = '';\\n\\t\\t\\t\\t\\t\\t\\t\\tform.classList.add( 'c4wp_v2_fallback_active' );\\n\\t\\t\\t\\t\\t\\t\\t\\tflagMarkupDiv.firstChild.setAttribute( 'name', 'c4wp_v2_fallback' );\\n\\n\\t\\t\\t\\t\\t\\t\\t\\tvar c4wp_captcha = grecaptcha.render( captcha_div,{\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t'sitekey' : '',\\t\\t\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t'size'  : 'normal',\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t'theme' : 'light',\\t\\t\\t\\t\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t'expired-callback' : function(){\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t\\tgrecaptcha.reset( c4wp_captcha );\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t}\\n\\t\\t\\t\\t\\t\\t\\t\\t}); \\n\\t\\t\\t\\t\\t\\t\\t\\tjQuery( '.ninja-forms-field.c4wp-submit' ).prop( 'disabled', false );\\n\\t\\t\\t\\t\\t\\t\\t}\\n\\n\\t\\t\\t\\t\\t\\t\\tif ( form.classList.contains( 'wc-block-checkout__form' ) ) {\\n\\t\\t\\t\\t\\t\\t\\t\\treturn true;\\n\\t\\t\\t\\t\\t\\t\\t}\\n\\n\\t\\t\\t\\t\\t\\t\\tif ( form.parentElement.classList.contains( 'nf-form-layout' ) ) {\\n\\t\\t\\t\\t\\t\\t\\t\\tjQuery( '.ninja-forms-field.c4wp-submit' ).prop( 'disabled', false );\\n\\t\\t\\t\\t\\t\\t\\t\\treturn false;\\n\\t\\t\\t\\t\\t\\t\\t}\\n\\n\\t\\t\\t\\t\\t\\t\\t\\/\\/ Prevent further submission\\n\\t\\t\\t\\t\\t\\t\\tevent.preventDefault();\\n\\t\\t\\t\\t\\t\\t\\treturn false;\\n\\t\\t\\t\\t\\t\\t}\\n\\t\\t\\t\\t\\t} )\\n\\t\\t\\t\\t\\t.catch( err =\u003E console.error( err ) );\\n\\n\\t\\t\\t\\t\\/\\/ Prevent further submission\\n\\t\\t\\t\\tevent.preventDefault();\\n\\t\\t\\t\\treturn false;\\n\\t\\t\\t}\\n\\t\\t\\t\\/* @v3-fallback-js:end *\\/\\n\\t\\t\\t\\n\\t\\t\\t\"","flag_markup":"\u003Cinput id=\"c4wp_ajax_flag\" type=\"hidden\" name=\"c4wp_ajax_flag\" value=\"c4wp_ajax_flag\"\u003E","field_markup":"\u003Cdiv class=\"c4wp_captcha_field\" style=\"margin-bottom: 10px;\" data-nonce=\"c1fb005c68\" \u003E\u003Cdiv id=\"c4wp_captcha_field_0\" class=\"c4wp_captcha_field_div\"\u003E\u003Cinput type=\"hidden\" name=\"g-recaptcha-response\" class=\"c4wp_response\" aria-label=\"do not use\" aria-readonly=\"true\" value=\"\"/\u003E\u003C/div\u003E\u003C/div\u003E","redirect":"","failure_v2_site_key":""};
+//# sourceURL=c4wp-method-js-extra
+</script>
+<script data-wp-strategy="defer" defer id="c4wp-method-js" src="https://www.riverplatedorados.com/wp-content/plugins/advanced-nocaptcha-recaptcha/includes/methods/js/c4wp-v3.js?ver=7.6.2"></script>
+<script id="elementor-webpack-runtime-js" src="https://www.riverplatedorados.com/wp-content/plugins/elementor/assets/js/webpack.runtime.min.js?ver=4.4.0"></script>
+<script id="elementor-frontend-modules-js" src="https://www.riverplatedorados.com/wp-content/plugins/elementor/assets/js/frontend-modules.min.js?ver=4.4.0"></script>
+<script id="jquery-ui-core-js-before">
+jQuery.uiBackCompat = true;
+//# sourceURL=jquery-ui-core-js-before
+</script>
+<script id="jquery-ui-core-js" src="https://www.riverplatedorados.com/wp-includes/js/jquery/ui/core.min.js?ver=1.14.2"></script>
+<script id="elementor-frontend-js-before">
+var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false,"isScriptDebug":false},"i18n":{"shareOnFacebook":"Share on Facebook","shareOnX":"Share on X","pinIt":"Pin it","download":"Download","downloadImage":"Download image","fullscreen":"Fullscreen","zoom":"Zoom","share":"Share","playVideo":"Play Video","previous":"Previous","next":"Next","close":"Close","a11yCarouselPrevSlideMessage":"Previous slide","a11yCarouselNextSlideMessage":"Next slide","a11yCarouselFirstSlideMessage":"This is the first slide","a11yCarouselLastSlideMessage":"This is the last slide","a11yCarouselPaginationBulletMessage":"Go to slide"},"is_rtl":false,"breakpoints":{"xs":0,"sm":480,"md":768,"lg":1025,"xl":1440,"xxl":1600},"responsive":{"breakpoints":{"mobile":{"label":"Mobile Portrait","value":767,"default_value":767,"direction":"max","is_enabled":true},"mobile_extra":{"label":"Mobile Landscape","value":880,"default_value":880,"direction":"max","is_enabled":false},"tablet":{"label":"Tablet Portrait","value":1024,"default_value":1024,"direction":"max","is_enabled":true},"tablet_extra":{"label":"Tablet Landscape","value":1200,"default_value":1200,"direction":"max","is_enabled":false},"laptop":{"label":"Laptop","value":1366,"default_value":1366,"direction":"max","is_enabled":false},"widescreen":{"label":"Widescreen","value":2400,"default_value":2400,"direction":"min","is_enabled":false}},"hasCustomBreakpoints":false},"version":"4.4.0","is_static":false,"experimentalFeatures":{"additional_custom_breakpoints":true,"theme_builder_v2":true,"hello-theme-header-footer":true,"e_mcp_revision_snapshots":true,"import-export-customization":true,"display-conditions":true,"form-submissions":true,"taxonomy-filter":true},"urls":{"assets":"https:\/\/www.riverplatedorados.com\/wp-content\/plugins\/elementor\/assets\/","ajaxurl":"https:\/\/www.riverplatedorados.com\/wp-admin\/admin-ajax.php","uploadUrl":"https:\/\/www.riverplatedorados.com\/wp-content\/uploads"},"nonces":{"floatingButtonsClickTracking":"b2ee493878","atomicFormsSendForm":"852abe06f4"},"swiperClass":"swiper","settings":{"page":[],"editorPreferences":[]},"kit":{"active_breakpoints":["viewport_mobile","viewport_tablet"],"global_image_lightbox":"yes","lightbox_enable_counter":"yes","lightbox_enable_fullscreen":"yes","lightbox_enable_zoom":"yes","lightbox_enable_share":"yes","lightbox_title_src":"title","lightbox_description_src":"description","hello_header_logo_type":"title","hello_header_menu_layout":"horizontal","hello_footer_logo_type":"logo"},"post":{"id":169,"title":"Golden%20Dorado%20Tailwater%20%28the%20zone%29","excerpt":"","featuredImage":false}};
+//# sourceURL=elementor-frontend-js-before
+</script>
+<script id="elementor-frontend-js" src="https://www.riverplatedorados.com/wp-content/plugins/elementor/assets/js/frontend.min.js?ver=4.4.0"></script>
+<script id="smartmenus-js" src="https://www.riverplatedorados.com/wp-content/plugins/elementor-pro/assets/lib/smartmenus/jquery.smartmenus.min.js?ver=1.2.1"></script>
+<script id="elementor-pro-webpack-runtime-js" src="https://www.riverplatedorados.com/wp-content/plugins/elementor-pro/assets/js/webpack-pro.runtime.min.js?ver=3.23.2"></script>
+<script id="elementor-pro-frontend-js-before">
+var ElementorProFrontendConfig = {"ajaxurl":"https:\/\/www.riverplatedorados.com\/wp-admin\/admin-ajax.php","nonce":"0f8ef18215","urls":{"assets":"https:\/\/www.riverplatedorados.com\/wp-content\/plugins\/elementor-pro\/assets\/","rest":"https:\/\/www.riverplatedorados.com\/wp-json\/"},"shareButtonsNetworks":{"facebook":{"title":"Facebook","has_counter":true},"twitter":{"title":"Twitter"},"linkedin":{"title":"LinkedIn","has_counter":true},"pinterest":{"title":"Pinterest","has_counter":true},"reddit":{"title":"Reddit","has_counter":true},"vk":{"title":"VK","has_counter":true},"odnoklassniki":{"title":"OK","has_counter":true},"tumblr":{"title":"Tumblr"},"digg":{"title":"Digg"},"skype":{"title":"Skype"},"stumbleupon":{"title":"StumbleUpon","has_counter":true},"mix":{"title":"Mix"},"telegram":{"title":"Telegram"},"pocket":{"title":"Pocket","has_counter":true},"xing":{"title":"XING","has_counter":true},"whatsapp":{"title":"WhatsApp"},"email":{"title":"Email"},"print":{"title":"Print"},"x-twitter":{"title":"X"},"threads":{"title":"Threads"}},"facebook_sdk":{"lang":"en_US","app_id":""},"lottie":{"defaultAnimationUrl":"https:\/\/www.riverplatedorados.com\/wp-content\/plugins\/elementor-pro\/modules\/lottie\/assets\/animations\/default.json"}};
+//# sourceURL=elementor-pro-frontend-js-before
+</script>
+<script id="elementor-pro-frontend-js" src="https://www.riverplatedorados.com/wp-content/plugins/elementor-pro/assets/js/frontend.min.js?ver=3.23.2"></script>
+<script id="pro-elements-handlers-js" src="https://www.riverplatedorados.com/wp-content/plugins/elementor-pro/assets/js/elements-handlers.min.js?ver=3.23.2"></script>
+<script id="wp-emoji-settings" type="application/json">
+{"baseUrl":"https://s.w.org/images/core/emoji/17.0.2/72x72/","ext":".png","svgUrl":"https://s.w.org/images/core/emoji/17.0.2/svg/","svgExt":".svg","source":{"concatemoji":"https://www.riverplatedorados.com/wp-includes/js/wp-emoji-release.min.js?ver=7.1.4"}}
+</script>
+<script type="module">
+/*! This file is auto-generated */
+var e="script#wp-emoji-settings",t=document.querySelector(e);if(!(t instanceof HTMLScriptElement))throw new Error("Element missing: "+e);const r=JSON.parse(t.text),s=(window._wpemojiSettings=r,"wpEmojiSettingsSupports"),o=["flag","emoji"];function i(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(s,JSON.stringify(t))}catch(e){}}function c(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0);const r=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);return t.every((e,t)=>e===r[t])}function p(e,t){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var n=e.getImageData(16,16,1,1);for(let e=0;e<n.data.length;e++)if(0!==n.data[e])return!1;return!0}function u(e,t,n,r){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\udde8\ud83c\uddf6","\ud83c\udde8\u200b\ud83c\uddf6")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!r(e,"\ud83e\u1fac8")}return!1}function f(e,t,n,r){let a;const s=(a="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):document.createElement("canvas")).getContext("2d",{willReadFrequently:!0}),o=(s.textBaseline="top",s.font="600 32px Arial",{});return e.forEach(e=>{o[e]=t(s,e,n,r)}),o}function a(e){var t=document.createElement("script");t.src=e,t.defer=!0,document.head.appendChild(t)}r.supports={everything:!0,everythingExceptFlag:!0},new Promise(t=>{let n=function(){try{var e=JSON.parse(sessionStorage.getItem(s));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(o),u.toString(),c.toString(),p.toString()].join(",")+"));",r=new Blob([e],{type:"text/javascript"});const a=new Worker(URL.createObjectURL(r),{name:"wpTestEmojiSupports"});return void(a.onmessage=e=>{i(n=e.data),a.terminate(),t(n)})}catch(e){}i(n=f(o,u,c,p))}t(n)}).then(e=>{for(const n in e)r.supports[n]=e[n],r.supports.everything=r.supports.everything&&r.supports[n],"flag"!==n&&(r.supports.everythingExceptFlag=r.supports.everythingExceptFlag&&r.supports[n]);var t;r.supports.everythingExceptFlag=r.supports.everythingExceptFlag&&!r.supports.flag,r.supports.everything||((t=r.source||{}).concatemoji?a(t.concatemoji):t.wpemoji&&t.twemoji&&(a(t.twemoji),a(t.wpemoji)))});
+//# sourceURL=https://www.riverplatedorados.com/wp-includes/js/wp-emoji-loader.min.js
+</script>
+
+</body>
+</html>
