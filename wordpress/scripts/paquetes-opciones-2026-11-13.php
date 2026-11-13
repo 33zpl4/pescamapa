@@ -129,7 +129,7 @@ foreach ( $nuevo as $destino => $idiomas ) {
 			continue;
 		}
 		mb_strlen( $desc ) <= 160 || WP_CLI::error( "$destino ($i): " . mb_strlen( $desc ) . ' car.' );
-		WP_CLI::log( pm_sc_modo( $aplicar ) . ": $destino ($i) #{$p->ID}: «$actual» (" . mb_strlen( $actual ) . ") → «$desc» (" . mb_strlen( $desc ) . ')' );
+		WP_CLI::log( pm_sc_modo( $aplicar ) . ": $destino ($i) #{$p->ID}: «{$actual}» (" . mb_strlen( $actual ) . ") → «{$desc}» (" . mb_strlen( $desc ) . ')' );
 		$cambios++;
 		if ( $aplicar ) {
 			pm_sc_campo( $p->ID, 'paquetes_description', $desc, "$destino ($i)" );
