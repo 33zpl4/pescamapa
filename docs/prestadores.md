@@ -207,7 +207,7 @@ La versión en inglés (para operadores extranjeros) sigue la misma estructura. 
 
 Pensados para lodges semanales (un pescador extranjero compara programa,
 estadía mínima, acompañante y exclusiones de un vistazo). Todos opcionales:
-vacío no muestra nada y las ffichas viejas no cambian. En la tarjeta salen
+vacío no muestra nada y las fichas viejas no cambian. En la tarjeta salen
 después de "Incluye", como filas de la misma lista (Programa, Estadía mínima,
 Acompañante que no pesca, No incluye). Código: `inc/prestadores.php`,
 `parciales/prestador.php`; claves de interfaz `prest.*` en `data/ui.json`.
