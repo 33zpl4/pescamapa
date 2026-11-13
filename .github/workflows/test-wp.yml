@@ -171,6 +171,7 @@ jobs:
           wp --path="$WP" eval-file /tmp/seo-consultas.php
       - name: Render pages
         run: |
+          exec > >(tee /tmp/render-all.log) 2>&1
           wp --path="$WP" server --host=localhost --port=8080 > /tmp/server.log 2>&1 &
           sleep 3
           fail=0
@@ -782,6 +783,7 @@ jobs:
             echo "== debug.log"; cat "$WP/wp-content/debug.log"
             grep -qE 'PHP (Fatal|Warning|Parse)' "$WP/wp-content/debug.log" && { echo "✖ errores PHP"; fail=1; }
           fi
+          sleep 2; echo "--- FALLOS ---"; grep "✖" /tmp/render-all.log | head -30; echo "--- FIN FALLOS ---"
           exit $fail
 
       - name: Editor can replace a guide's photo and save (no blocking validation)
