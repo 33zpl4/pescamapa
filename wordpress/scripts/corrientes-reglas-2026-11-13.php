@@ -12,7 +12,7 @@
  *  - La Paz (Entre Ríos) publishes no size or bag limit ("no pudimos confirmarlo"): nothing to change. Not touched.
  * Idempotent. Simulacro first ($aplicar = false). Run with wp-script.yml (script = corrientes-reglas-2026-11-13).
  */
-$aplicar = false;
+$aplicar = true;
 $hoy     = '20261113';
 $bo_url  = 'https://boletinoficial.corrientes.gob.ar/assets/articulo_adjuntos/7523/original/26-12-2022.pdf';
 $bo_fila = [ 'nombre' => 'Boletín Oficial de Corrientes: Disposición 853/22 (tallas y cupos)', 'url' => $bo_url, 'oficial' => 1, 'consultada' => '20261021' ];
