@@ -376,6 +376,7 @@ jobs:
             $ver( pm_acuse_cuerpo( "viaje", "pt", "esquina" ) === $base( "viaje", "pt" ), "pt sin guía ni nota en pt: igual que hoy" );
             $ver( pm_acuse_cuerpo( "viaje", "es", "" ) === $base( "viaje", "es" ), "es sin destino: igual que hoy" );
             $ver( pm_acuse_cuerpo( "prestador", "en", "esquina" ) === $base( "prestador", "en" ), "prestador: sin enlaces" );
+            foreach ( [ "es", "pt", "en" ] as $i ) { $ver( str_contains( pm_t( "acuse.viaje", [], $i ), "48" ) && str_contains( pm_t( "viaje.gracias.p", [], $i ), "48" ), "plazo de 48 horas en $i" ); $ver( ! str_contains( pm_t( "acuse.prestador", [], $i ), "48" ), "acuse.prestador sin plazo en $i" ); }
             foreach ( [ "es", "pt", "en" ] as $i ) { $ver( "" !== pm_t( "acuse.ayuda", [], $i ) && "acuse.ayuda" !== pm_t( "acuse.ayuda", [], $i ), "acuse.ayuda en $i" ); }
             echo pm_acuse_cuerpo( "viaje", "en", "esquina" ), "\n---\n";
             // Subject: plain text.
