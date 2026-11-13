@@ -11,7 +11,7 @@
  * from Goya, and gives no km), so it is not touched.
  * Idempotent. Simulacro first ($aplicar = false). Run with wp-script.yml (script = vedas-pasado-2026-11-13).
  */
-$aplicar = false;
+$aplicar = true;
 $hoy     = '20261113';
 
 $u = [
