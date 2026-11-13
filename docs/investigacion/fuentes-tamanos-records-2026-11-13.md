@@ -60,3 +60,7 @@ Lo ya publicado antes y que no se tocó porque está bien: lago Argentino (2 por
 | Los Plateados: lodge de Tres Amigos Outfitters sobre el río Santa Cruz inferior; steelhead, marzo a mayo; 4 pescadores, 6 días de pesca; «Running Since 2015»; Half Week US$ 3.000 / Full Week US$ 5.200, sin año | Tres Amigos Outfitters (página del operador) | operador | F1 `26-www-tresamigosoutfitters…md` | atribuido |
 | Truchaike: sin evidencia de operación en 2024 a 2026 | directorios sin fecha, teléfonos de Buenos Aires que no coinciden | agregadores | (sin archivo propio; ver `docs/pendientes-y-mejoras.md` 1.4b) | no se publica |
 | Club Pescazaike (Güer Aike): club y camping, sitio propio, novedades del 28/10/2026 | clubpescazaike.com.ar | sitio propio | F1 `28-clubpescazaike…md` | atribuido; no es prestador de pesca con guía |
+
+## Lectura en vivo (`investigar.yml`, etiqueta `verif-tamanos`, carpeta `verif-tamanos-20261113-2258` de la rama `investigacion`)
+
+Leídos los `.html` (el `.md` corta a unos 12.000 caracteres) de las 24 URL tocadas (es/en/pt): todas las cadenas nuevas están, la frase «solo el peso» ya no está en ninguna, el Barrancoso no dice «100 m» en ninguna, Truchaike y Los Plateados ya no están en el Gallegos, y el JSON-LD `FAQPage` trae las preguntas nuevas de dorado, surubí, trucha, Gallegos, Jurassic Lake y El Calafate. No se leyó de vuelta lo que no cambió.
