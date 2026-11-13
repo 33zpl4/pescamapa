@@ -226,7 +226,7 @@ foreach ( $t as $i => $x ) {
 		if ( false === strpos( $txt, 'De Button' ) || false === strpos( $txt, 'IGFA' ) ) {
 			return $m[0];
 		}
-		if ( preg_match( '/certific/iu', $txt ) ) {
+		if ( preg_match( '/certif/iu', $txt ) ) {
 			$hechos['sec'] = true;
 			return $m[1] . $x['record'] . $m[3];
 		}
