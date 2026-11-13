@@ -1,0 +1,249 @@
+<!DOCTYPE html><html lang="es"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <title>Turismo Río Gallegos | Guía Oficial</title>
+    <meta name="description" content="Portal oficial de turismo de Río Gallegos, Santa Cruz. Descubrí atracciones, museos, monumentos, hoteles, restaurantes y servicios locales.">
+    <link rel="icon" href="assets/images/cropped-escudoceleste-32x32.png" sizes="32x32">
+    <link rel="icon" href="assets/images/cropped-escudoceleste-192x192.png" sizes="192x192">
+    <link rel="apple-touch-icon" href="assets/images/cropped-escudoceleste-180x180.png">
+    
+    <!-- Premium Stylesheet -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <!-- Header Glass Navigation -->
+    <header class="header-glass">
+        <div class="header-container">
+            <a href="#inicio" class="logo-wrapper active">
+                <img class="logo-img" src="assets/images/logo-turismo-2-768x768.png" alt="Río Gallegos Turismo" onerror="this.style.display='none'">
+                <span class="logo-text">RÍO GALLEGOS</span>
+            </a>
+
+            <!-- Desktop Links -->
+            <ul class="nav-links">
+                <li><a href="#inicio" class="nav-item">Inicio</a></li>
+                
+                <li class="nav-dropdown">
+                    <a href="javascript:void(0)" class="nav-item" id="nav-servicios">Servicios</a>
+                    <ul class="dropdown-menu">
+                        <li class="dropdown-item"><a href="#hoteles">Hoteles y Alojamiento</a></li>
+                        <li class="dropdown-item"><a href="#gastronomia">Gastronomía</a></li>
+                        <li class="dropdown-item"><a href="#farmacia">Farmacias de Turno</a></li>
+                        <li class="dropdown-item"><a href="#entidades-bancarias">Bancos y Cajeros</a></li>
+                        <li class="dropdown-item"><a href="#traslado">Taxis y Traslados</a></li>
+                        <li class="dropdown-item"><a href="#talleres">Talleres Mecánicos</a></li>
+                    </ul>
+                </li>
+                
+                <li class="nav-dropdown">
+                    <a href="javascript:void(0)" class="nav-item" id="nav-oferta">Oferta Turística</a>
+                    <ul class="dropdown-menu">
+                        <li class="dropdown-item"><a href="#museos">Museos</a></li>
+                        <li class="dropdown-item"><a href="#monumentos">Monumentos</a></li>
+                        <li class="dropdown-item"><a href="#circuitos-turisticos-urbanos">Circuitos Urbanos</a></li>
+                        <li class="dropdown-item"><a href="#principales-atractivos">Alrededores</a></li>
+                        <li class="dropdown-item"><a href="#zona-franca">Zona Franca</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+            <!-- Search input -->
+            <div class="header-search">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                <input type="text" id="global-search" placeholder="Buscar atractivo o servicio...">
+            </div>
+
+            <!-- Hamburger Button -->
+            <button class="menu-toggle" aria-label="Abrir Menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Dynamic Main SPA Content -->
+    <main id="app">
+            <!-- Hero Dashboard -->
+            <section class="hero">
+                <div class="hero-overlay"></div>
+                <div class="hero-content">
+                    <h1 class="hero-title">Río Gallegos</h1>
+                    <h2 class="hero-subtitle">Te Sorprende</h2>
+                    <p class="hero-text">Explorá la naturaleza salvaje, la historia patagónica, la rica oferta cultural y los principales servicios de la capital santacruceña.</p>
+                </div>
+            </section>
+
+            <!-- Atractivos Principales -->
+            <section class="section-padding container-wide">
+                <div class="section-header">
+                    <span class="section-badge">Naturaleza e Historia</span>
+                    <h2 class="section-title">Principales Atractivos</h2>
+                    <div class="section-divider"></div>
+                </div>
+                <div class="attractions-grid">
+                    
+                        <div class="attraction-card" onclick="window.location.hash='#punta-loyola'">
+                            <img class="attraction-img" src="assets/images/loyola-atras-1.jpg" alt="Punta Loyola" onerror="this.src='assets/images/default.jpg'">
+                            <div class="attraction-gradient"></div>
+                            <div class="attraction-info">
+                                <h3 class="attraction-name">Punta Loyola</h3>
+                                <p class="attraction-desc">Ría local, pesca y los restos del icónico buque encallado Marjory Glen.</p>
+                            </div>
+                        </div>
+                    
+                        <div class="attraction-card" onclick="window.location.hash='#laguna-azul-2'">
+                            <img class="attraction-img" src="assets/images/default.jpg" alt="Laguna Azul" onerror="this.src='assets/images/default.jpg'">
+                            <div class="attraction-gradient"></div>
+                            <div class="attraction-info">
+                                <h3 class="attraction-name">Laguna Azul</h3>
+                                <p class="attraction-desc">Espejo de agua cristalina ubicado en el cráter de un volcán extinto.</p>
+                            </div>
+                        </div>
+                    
+                        <div class="attraction-card" onclick="window.location.hash='#museo-cabo-virgenes'">
+                            <img class="attraction-img" src="assets/images/default.jpg" alt="Cabo Vírgenes" onerror="this.src='assets/images/default.jpg'">
+                            <div class="attraction-gradient"></div>
+                            <div class="attraction-info">
+                                <h3 class="attraction-name">Cabo Vírgenes</h3>
+                                <p class="attraction-desc">Uno de los puntos continentales más australes con su reserva de pingüinos de Magallanes.</p>
+                            </div>
+                        </div>
+                    
+                </div>
+            </section>
+
+            <!-- Categorias de Servicios -->
+            <section class="section-padding" style="background-color: rgba(0, 119, 194, 0.02);">
+                <div class="container-wide">
+                    <div class="section-header">
+                        <span class="section-badge">Guía Local</span>
+                        <h2 class="section-title">Servicios al Turista</h2>
+                        <div class="section-divider"></div>
+                    </div>
+                    <div class="categories-grid">
+                        <div class="category-card" onclick="window.location.hash='#hoteles'">
+                            <div class="category-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg></div>
+                            <span class="category-title">Hoteles y Alojamiento</span>
+                        </div>
+                        <div class="category-card" onclick="window.location.hash='#gastronomia'">
+                            <div class="category-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg></div>
+                            <span class="category-title">Gastronomía</span>
+                        </div>
+                        <div class="category-card" onclick="window.location.hash='#farmacia'">
+                            <div class="category-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></div>
+                            <span class="category-title">Farmacias de Turno</span>
+                        </div>
+                        <div class="category-card" onclick="window.location.hash='#entidades-bancarias'">
+                            <div class="category-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg></div>
+                            <span class="category-title">Bancos y Cajeros</span>
+                        </div>
+                        <div class="category-card" onclick="window.location.hash='#traslado'">
+                            <div class="category-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="22" height="13" rx="2" ry="2"></rect><path d="M4 16v4M20 16v4M9 20h6M5 7h14M12 3v13"></path></svg></div>
+                            <span class="category-title">Traslados y Taxis</span>
+                        </div>
+                        <div class="category-card" onclick="window.location.hash='#talleres'">
+                            <div class="category-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg></div>
+                            <span class="category-title">Talleres Mecánicos</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Atractivos Culturales / Qué hacer -->
+            <section class="section-padding container-wide">
+                <div class="section-header">
+                    <span class="section-badge">Exploración Urbana</span>
+                    <h2 class="section-title">Qué Hacer en la Ciudad</h2>
+                    <div class="section-divider"></div>
+                </div>
+                <div class="attractions-grid">
+                    <div class="attraction-card" onclick="window.location.hash='#museos'">
+                        <img class="attraction-img" src="assets/images/MUSEO-PIONEROS_29-scaled.jpg" alt="Museos Históricos" onerror="this.src='assets/images/default.jpg'">
+                        <div class="attraction-gradient"></div>
+                        <div class="attraction-info">
+                            <h3 class="attraction-name">Museos Históricos</h3>
+                            <p class="attraction-desc">Conocé el pasado ferroviario, policial, marítimo y pionero en los museos locales.</p>
+                        </div>
+                    </div>
+                    <div class="attraction-card" onclick="window.location.hash='#monumentos'">
+                        <img class="attraction-img" src="assets/images/MONUM-PILOTOS-MALVINAS_2-6-1-1024x683.jpg" alt="Monumentos" onerror="this.src='assets/images/default.jpg'">
+                        <div class="attraction-gradient"></div>
+                        <div class="attraction-info">
+                            <h3 class="attraction-name">Monumentos y Plazas</h3>
+                            <p class="attraction-desc">Esculturas y plazas de valor patriótico e histórico distribuidos en la ciudad.</p>
+                        </div>
+                    </div>
+                    <div class="attraction-card" onclick="window.location.hash='#circuitos-turisticos-urbanos'">
+                        <img class="attraction-img" src="assets/images/MUELLE-CARBONERO_7-1024x683.jpg" alt="Circuitos Urbanos" onerror="this.src='assets/images/default.jpg'">
+                        <div class="attraction-gradient"></div>
+                        <div class="attraction-info">
+                            <h3 class="attraction-name">Circuitos Urbanos</h3>
+                            <p class="attraction-desc">Recorridos peatonales temáticos sobre la gobernación, el legado salesiano y Néstor Kirchner.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-container container-wide">
+            <div class="footer-logo-block">
+                <span class="footer-logo-text">RÍO GALLEGOS</span>
+                <p class="footer-desc">Capital de la provincia de Santa Cruz, portal de entrada a la Patagonia Austral y cuna de pioneros.</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/turismorgl/" target="_blank" class="social-icon" aria-label="Facebook">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                    </a>
+                    <a href="https://www.instagram.com/turismoriogallegos/" target="_blank" class="social-icon" aria-label="Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                    </a>
+                    <a href="https://www.youtube.com/channel/UCSoqw7zPuofY8oi5oX_X9Hw" target="_blank" class="social-icon" aria-label="Youtube">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+                    </a>
+                    <a href="https://wa.me/+542966585192" target="_blank" class="social-icon" aria-label="Whatsapp">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                    </a>
+                </div>
+            </div>
+
+            <div>
+                <h4 class="footer-title">Enlaces Útiles</h4>
+                <ul class="footer-links">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#hoteles">Alojamiento</a></li>
+                    <li><a href="#gastronomia">Gastronómica</a></li>
+                    <li><a href="#museos">Museos</a></li>
+                    <li><a href="#monumentos">Monumentos</a></li>
+                    <li><a href="#circuitos-turisticos-urbanos">Circuitos Turísticos</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="footer-title">Contacto</h4>
+                <div class="footer-contact">
+                    <div class="footer-contact-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                        <span>Av. Beccar 126, Río Gallegos, Santa Cruz (Centro de Informes)</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                        <span>2966-585192 / 2966-585146</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 Secretaría de Estado de Turismo de Río Gallegos. Rediseñado y optimizado para alto rendimiento y adaptabilidad móvil.</p>
+        </div>
+    </footer>
+
+    <!-- App scripts -->
+    <script src="assets/js/data.js"></script>
+    <script src="assets/js/app.js"></script>
+
+</body></html>
