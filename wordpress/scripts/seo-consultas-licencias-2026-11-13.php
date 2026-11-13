@@ -99,7 +99,7 @@ if ( ! function_exists( 'pm_sc_h2' ) ) {
 	}
 }
 
-$aplicar = false;
+$aplicar = true;
 $clave_hub = 'licencias-extranjeros-argentina';
 $cambios   = 0;
 

@@ -99,7 +99,7 @@ if ( ! function_exists( 'pm_sc_h2' ) ) {
 	}
 }
 
-$aplicar = false;
+$aplicar = true;
 $cambios = 0;
 
 /** Permalink of a guide in this language (else Spanish); '' when it does not exist. First clave that exists wins. */

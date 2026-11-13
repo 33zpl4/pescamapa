@@ -95,7 +95,7 @@ if ( ! function_exists( 'pm_sc_h2' ) ) {
 	}
 }
 
-$aplicar = false;
+$aplicar = true;
 $cambios = 0;
 $nuevo   = 'Fly fishing in Esquel, Argentina: season, rules and permit 2026/27';
 // EN destination page <title> (query "fly fishing esquel argentina"). ES/PT are only read and logged: the decision is in the report.
