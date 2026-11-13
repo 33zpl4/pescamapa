@@ -1,0 +1,41 @@
+# La Comisión Administradora del Río Uruguay participó en una instancia de coordinación interinstitucional orientada al control y resguardo de la zona de veda permanente próxima a Puerto Yeruá y de la zona de seguridad de la represa de Salto Grande. % C.A.R.U. imagen
+- URL pedida: https://caru.org.uy/nuevositio/2026/10/28/la-comision-administradora-del-rio-uruguay-participo-en-una-instancia-de-coordinacion-interinstitucional-orientada-al-control-y-resguardo-de-la-zona-de-veda-permanente-proxima-a-puerto-yerua-y-de-la-z/
+- URL final: https://caru.org.uy/nuevositio/2026/10/28/la-comision-administradora-del-rio-uruguay-participo-en-una-instancia-de-coordinacion-interinstitucional-orientada-al-control-y-resguardo-de-la-zona-de-veda-permanente-proxima-a-puerto-yerua-y-de-la-z/  (HTTP 200)
+- Canonical: https://caru.org.uy/nuevositio/2026/10/28/la-comision-administradora-del-rio-uruguay-participo-en-una-instancia-de-coordinacion-interinstitucional-orientada-al-control-y-resguardo-de-la-zona-de-veda-permanente-proxima-a-puerto-yerua-y-de-la-z/   · lang: es   · robots meta: index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1
+- Meta description (0 car.): —
+- og:title: La Comisión Administradora del Río Uruguay participó en una instancia de coordinación interinstitucional orientada al control y resguardo de la zona de veda permanente próxima a Puerto Yeruá y de la zona de seguridad de la represa de Salto Grande. % C.A.R.U. imagen   · og:image: https://caru.org.uy/nuevositio/wp-content/uploads/2026/10/DSC_3660-scaled.jpg
+- Palabras: 246 · imágenes: 11 · enlaces internos: 91 · externos: 2
+- Secciones más enlazadas: /nuevositio (89), /cdn-cgi (2)
+- hreflang: ninguno
+- Datos estructurados:
+  - Article/BlogPosting
+    {"@type":["Article","BlogPosting"],"@id":"https://caru.org.uy/nuevositio/2026/10/28/la-comision-administradora-del-rio-uruguay-participo-en-una-instancia-de-coordinacion-interinstitucional-orientada-al-control-y-resguardo-de-la-zona-de-veda-permanente-proxima-a-puerto-yerua-y-de-la-z/#article","isPartOf":{"@id":"https://caru.org.uy/nuevositio/2026/10/28/la-comision-administradora-del-rio-uruguay-participo-en-una-instancia-de-coordinacion-interinstitucional-orientada-al-control-y-resguardo-de-la-zona-de-veda-permanente-proxima-a-puerto-yerua-y-de-la-z/"},"author":{"name":"Federico","@id":"https…
+  - WebPage · La Comisión Administradora del Río Uruguay participó en una instancia de coordinación interinstitucional orientada al control y resguardo de la zona de veda permanente próxima a Puerto Yeruá y de la zona de seguridad de la represa de Salto Grande. % C.A.R.U. imagen
+    {"@type":"WebPage","@id":"https://caru.org.uy/nuevositio/2026/10/28/la-comision-administradora-del-rio-uruguay-participo-en-una-instancia-de-coordinacion-interinstitucional-orientada-al-control-y-resguardo-de-la-zona-de-veda-permanente-proxima-a-puerto-yerua-y-de-la-z/","url":"https://caru.org.uy/nuevositio/2026/10/28/la-comision-administradora-del-rio-uruguay-participo-en-una-instancia-de-coordinacion-interinstitucional-orientada-al-control-y-resguardo-de-la-zona-de-veda-permanente-proxima-a-puerto-yerua-y-de-la-z/","name":"La Comisión Administradora del Río Uruguay participó en una instancia…
+  - ImageObject
+    {"@type":"ImageObject","inLanguage":"es","@id":"https://caru.org.uy/nuevositio/2026/10/28/la-comision-administradora-del-rio-uruguay-participo-en-una-instancia-de-coordinacion-interinstitucional-orientada-al-control-y-resguardo-de-la-zona-de-veda-permanente-proxima-a-puerto-yerua-y-de-la-z/#primaryimage","url":"https://caru.org.uy/nuevositio/wp-content/uploads/2026/10/DSC_3660-scaled.jpg","contentUrl":"https://caru.org.uy/nuevositio/wp-content/uploads/2026/10/DSC_3660-scaled.jpg","width":2560,"height":1707}
+  - BreadcrumbList
+    {"@type":"BreadcrumbList","@id":"https://caru.org.uy/nuevositio/2026/10/28/la-comision-administradora-del-rio-uruguay-participo-en-una-instancia-de-coordinacion-interinstitucional-orientada-al-control-y-resguardo-de-la-zona-de-veda-permanente-proxima-a-puerto-yerua-y-de-la-z/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Portada","item":"https://caru.org.uy/nuevositio/"},{"@type":"ListItem","position":2,"name":"La Comisión Administradora del Río Uruguay participó en una instancia de coordinación interinstitucional orientada al control y resguardo de la zona de veda pe…
+  - WebSite · C.A.R.U.
+    {"@type":"WebSite","@id":"https://caru.org.uy/nuevositio/#website","url":"https://caru.org.uy/nuevositio/","name":"C.A.R.U.","description":"Comisión Administradora del Río Uruguay","publisher":{"@id":"https://caru.org.uy/nuevositio/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://caru.org.uy/nuevositio/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"es"}
+  - Organization · C.A.R.U.
+    {"@type":"Organization","@id":"https://caru.org.uy/nuevositio/#organization","name":"C.A.R.U.","url":"https://caru.org.uy/nuevositio/","logo":{"@type":"ImageObject","inLanguage":"es","@id":"https://caru.org.uy/nuevositio/#/schema/logo/image/","url":"https://caru.org.uy/nuevositio/wp-content/uploads/2023/11/logo-nuevo.jpg","contentUrl":"https://caru.org.uy/nuevositio/wp-content/uploads/2023/11/logo-nuevo.jpg","width":1,"height":1,"caption":"C.A.R.U."},"image":{"@id":"https://caru.org.uy/nuevositio/#/schema/logo/image/"}}
+  - Person · Federico
+    {"@type":"Person","@id":"https://caru.org.uy/nuevositio/#/schema/person/fba625b864836c52fe4d995c9dc2869d","name":"Federico","image":{"@type":"ImageObject","inLanguage":"es","@id":"https://secure.gravatar.com/avatar/542d68923246b6c29256d811c3ce7f803fe17d6a190c813a52ef45fcda4733ad?s=96&d=mm&r=g","url":"https://secure.gravatar.com/avatar/542d68923246b6c29256d811c3ce7f803fe17d6a190c813a52ef45fcda4733ad?s=96&d=mm&r=g","contentUrl":"https://secure.gravatar.com/avatar/542d68923246b6c29256d811c3ce7f803fe17d6a190c813a52ef45fcda4733ad?s=96&d=mm&r=g","caption":"Federico"},"url":"https://caru.org.uy/nuevo…
+## Encabezados
+H2: La Comisión Administradora del Río Uruguay participó en una instancia de coordinación interinstitucional orientada al control y resguardo de la zona de veda permanente próxima a Puerto Yeruá y de la zona de seguridad de la represa de Salto Grande.
+H1: La Comisión Administradora del Río Uruguay participó en una instancia de coordinación interinstitucional orientada al control y resguardo de la zona de veda permanente próxima a Puerto Yeruá y de la zona de seguridad de la represa de Salto Grande.
+H2: República Oriental del Uruguay
+H2: República Argentina
+H2: © 2019. Todos los derechos reservados.
+## Texto (primeras 12.000 caracteres)
+La Comisión Administradora del Río Uruguay participó en una instancia de coordinación interinstitucional orientada al control y resguardo de la zona de veda permanente próxima a Puerto Yeruá y de la zona de seguridad de la represa de Salto Grande.
+La Comisión Administradora del Río Uruguay participó en una instancia de coordinación interinstitucional orientada al control y resguardo de la zona de veda permanente próxima a Puerto Yeruá y de la zona de seguridad de la represa de Salto Grande.
+Publicado el octubre 28, 2026
+La Comisión Administradora del Río Uruguay (CARU), a través del Área de Coordinación de Pesca de la Secretaría Técnica, participó en una instancia de coordinación interinstitucional orientada al control y resguardo de la zona de veda permanente próxima a Puerto Yeruá y de la zona de seguridad de la represa de Salto Grande.
+La reunión contó con la participación de la presidenta de CARU Dra. María Cecilia Bottino Fiuri, junto con representantes de la Dirección de Recursos Naturales y Fiscalización de Entre Ríos, la Dirección Nacional de Recursos Acuáticos, la Prefectura Naval Argentina, la Prefectura Nacional Naval y la Comisión Técnica Mixta de Salto Grande.
+El encuentro se desarrolló en Paysandú el 28 de octubre de 2026, con el propósito de fortalecer la coordinación entre los organismos competentes en estas áreas.
+VEDA DEL DORADO 2026 (1/09) - (31-12)
+Anterior
+El Área de Control Integral del paso fronterizo agilizará el paso vehicular por la visita del papa León XIV a Paysandú
+Siguiente
