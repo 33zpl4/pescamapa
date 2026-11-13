@@ -159,7 +159,7 @@ jobs:
           check / 200 'id="pedido"'
           check / 200 'Decinos qué querés pescar'
           check /en/ 200 'id="pedido"'
-          check /en/ 200 'Tell us what you want to fish'
+          check /en/ 200 'Tell us what you want to catch'
           check /mapa/ 200
           check /litoral/corrientes/pesca-en-esquina/ 200 'TouristDestination' 'PENDIENTE'
           check /litoral/corrientes/pesca-en-esquina/ 200 'CITA-DE-PRUEBA' 'CITA-SIN-PERMISO'
@@ -311,7 +311,7 @@ jobs:
           check '/armar-viaje/?destino=esquina&especie=dorado' 200 'value="esquina" selected'
           check /pt/planejar-viagem/ 200 'Diga o que você quer pescar. Nós encontramos onde.'
           check /pt/planejar-viagem/ 200 'name="fijo\[\]"'
-          check /en/plan-your-trip/ 200 'Tell us what you want to fish. We will find where.'
+          check /en/plan-your-trip/ 200 'Tell us what you want to catch'
           check /en/plan-your-trip/ 200 'name="fijo\[\]"'
           check /en/plan-your-trip/ 200 'hreflang="es"'
           check / 200 'href="[^"]*/armar-viaje/"'

@@ -23,7 +23,7 @@ Contexto: `docs/viaje.md` y `docs/prestadores.md` → "Posicionamiento (13/11/20
 
 **Terms for Pescamapa operators**
 
-1. **What we do.** The angler sends one request to Pescamapa. We ask the operators that fit their trip and reply with the options compared. We compare operators whether or not they have an agreement with us.
+1. **What we do.** The angler sends one request to Pescamapa. We ask the operators that fit their trip and reply with a side-by-side comparison of the options. We compare operators whether or not they have an agreement with us.
 2. **Commission.** The operator pays Pescamapa a commission of **10 %** of the operator's published rate, on trips booked by clients Pescamapa registered (point 5). The operator pays it, never the client.
 3. **Price for the client.** The client pays the same as booking direct with the operator.
 4. **Invoicing.** The operator invoices the client for the service. Pescamapa invoices the operator for the commission once the service has been paid.
