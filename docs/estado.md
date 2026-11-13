@@ -2,6 +2,8 @@
 
 Última actualización: 13/11/2026 (posicionamiento y consentimiento; antes, 9/11/2026: revisión del negocio y origen de las consultas; antes, 31/10/2026: idiomas completados en es/pt/en, estrategia SEO v2, auditoría con lente de IA, fichas de guías de día en Bariloche). Actualizá este archivo al cerrar cada sesión.
 
+> **13/11/2026, consultas de Search Console:** FAQ visibles y en JSON-LD en notas y especies, botón de pedido en las fichas de especie, títulos y textos por página (Esquel, Río Grande, Tierra del Fuego), hub de licencias reforzado, índice de paquetes (es/en/pt), sección del Río Uruguay en el pilar del dorado y wording "opciones" en lugar de "cotización". Detalle, tabla de clusters, lo que falta de fuente y cuándo medir: `docs/seo-consultas-2026-11-13.md`.
+
 ## Objetivo (del dueño)
 
 **Ser útil para la gente que quiere pescar**, y que Google y las IA nos
