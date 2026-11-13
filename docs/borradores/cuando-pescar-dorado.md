@@ -26,10 +26,12 @@ Las ventanas, según cada fuente:
 | [Dorados on the Fly](https://www.orvis.com/dorados-on-the-fly/28FE.html) (V) | Alto Paraná, cerca de Itá Ibaté | Octubre a principios de enero, y de fines de marzo a mayo. De fines de enero a principios de marzo el agua se calienta y el dorado "se apaga" (se pescan pacú y pira pitá) |
 | [Yellow Dog](https://www.yellowdogflyfishing.com/blogs/back-stage-pass/4-must-visit-golden-dorado-fishing-destinations-in-argentina) (V) | Alto Paraná | Octubre a principios de noviembre, y de fines de diciembre a abril |
 | [Paraná River Outfitters](https://www.youtube.com/watch?v=uHt3QY83Vt0) | Corrientes (tramo no precisado) | Junio a octubre, con la migración del forraje en primavera |
-| [Karandá Lodge](https://www.frontierstravel.com/sight-fishing-for-golden-dorado-at-karanda-lodge) (V) | Paraná | Junio a diciembre |
+| [Karandá Lodge](https://www.nervouswaters.com/the-lodges/karanda-lodge/) (página del operador, leída el 13/11/2026) | Paraná medio (hotel en Bella Vista, Corrientes) | Junio a diciembre: "Season: June to December"; la página divide el año en invierno (junio a agosto) y primavera, hasta diciembre |
 | [Atando Piques](https://www.youtube.com/watch?v=TzHxMam_h38) | Ituzaingó (Alto Paraná) | Junio y julio no son plena temporada: el agua todavía está fría y hay que pescar abajo, con línea de hundimiento |
 
 *(Citas en inglés traducidas por nosotros. Los enlaces con (V) los vimos solo en el resumen de la búsqueda.)*
+
+*Nota del 13/11/2026:* la fila de Karandá estaba apoyada en una página de una agencia (Frontiers) que no pudimos abrir (403); ahora cita la página del operador (Nervous Waters). Una página de agencia y la del operador no tienen por qué coincidir, y entre las agencias del lodge del Alto Paraná de la primera fila tampoco: Farbank publica "September, November-April", Yellow Dog "Year-Round" y el resumen de Orvis que vimos (V) "octubre a principios de enero y fines de marzo a mayo". Para el Iberá pasa lo mismo (Pirá: todo el año según el operador, octubre a abril o noviembre a abril según una agencia). Detalle en `docs/investigacion/corrientes-dorado-lodges-2026-11-13.md`.
 
 ### Por qué las ventanas no coinciden: depende de la zona del Paraná
 

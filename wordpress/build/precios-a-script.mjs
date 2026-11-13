@@ -6,6 +6,7 @@ const aplicar = process.argv.includes('--aplicar');
 const actualizar = process.argv.includes('--actualizar'); // reescribe contenido de notas que ya existen (no crea)
 const solo = (process.argv.find(a => a.startsWith('--solo=')) || '').slice(7); // claves a actualizar, separadas por coma
 const marcador = (process.argv.find(a => a.startsWith('--marcador=')) || '').slice(11); // texto que debe quedar en el contenido (verificación)
+const hoy = (process.argv.find(a => a.startsWith('--hoy=')) || '').slice(6) || '20261105'; // fecha (AAAAMMDD) que queda como «actualizado» y como consultada de las fuentes
 const d = new URL('../contenido/precios/', import.meta.url).pathname;
 const es0 = JSON.parse(readFileSync(`${d}paginas.es.json`, 'utf8'));
 // Las claves, la especie y los tipos de bloque son del original: la traducción no los toca.
@@ -23,7 +24,7 @@ $aplicar = ${aplicar ? 'true' : 'false'};
 $actualizar = ${actualizar ? 'true' : 'false'};
 $solo = array_filter( explode( ',', '${solo}' ) );
 $marcador = '${marcador}';
-$hoy     = '20261105';
+$hoy     = '${hoy}';
 $datos   = [
 	'es' => json_decode( <<<'JSON_ES'
 ${j('es')}

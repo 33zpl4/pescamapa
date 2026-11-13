@@ -1,6 +1,6 @@
 {
  "fecha": "20261105",
- "cierre": "<strong>Cómo armamos esta página.</strong> Es investigación propia a partir de datos públicos y proveedores asociados. Los precios son los publicados o informados a los pasajeros al 5 de noviembre de 2026, en la moneda en que se publican. Los totales y los precios por día de pesca son cálculos nuestros. Las tarifas cambian: confirmalas antes de reservar. Si sos operador y tu tarifa cambió, escribinos y la actualizamos.",
+ "cierre": "<strong>Cómo armamos esta página.</strong> Es investigación propia a partir de datos públicos y proveedores asociados. Los precios son los publicados o informados a los pasajeros al 5 de noviembre de 2026 (salvo donde la página indica otra fecha), en la moneda en que se publican. Los totales y los precios por día de pesca son cálculos nuestros. Las tarifas cambian: confirmalas antes de reservar. Si sos operador y tu tarifa cambió, escribinos y la actualizamos.",
  "paginas": [
   {
    "clave": "viaje-dorado-amigos-precios",
@@ -13,9 +13,9 @@
    "datos": [
     "Posada en Esquina (Corrientes): 2 días de pesca y 3 noches desde US$ 605 por persona en un grupo de tres y desde US$ 705 en uno de dos, con comidas, lancha, guía y licencia.",
     "Barco-hotel en el Delta del Paraná: 3 noches desde US$ 1.260 y 4 noches desde US$ 1.680 por persona.",
-    "Lodge todo incluido en Corrientes: 3 noches y 2 días de pesca desde US$ 4.050 por persona; 7 noches y 6 días US$ 7.950.",
+    "Lodge todo incluido en Corrientes (Alto Paraná o Iberá): 3 noches y 2 días de pesca desde US$ 4.050 por persona; 7 noches y 6 días US$ 7.950.",
     "Cuantos más días, más barato sale cada día de pesca: en una posada de Esquina baja de US$ 353 a US$ 326 por persona entre 2 y 4 días.",
-    "La veda extraordinaria del Paraná en Corrientes se levantó el 29 de septiembre de 2026."
+    "La veda extraordinaria del Paraná en Corrientes se levantó el 29 de septiembre de 2026, según la prensa (Perfil)."
    ],
    "bloques": [
     {
@@ -66,23 +66,23 @@
       ],
       [
        "<strong>Lodge todo incluido</strong>",
-       "Paraná, Corrientes",
+       "Alto Paraná o Iberá, Corrientes",
        "3 noches, 2 días",
        "US$ 4.050",
        "Alojamiento doble, todas las comidas y bebidas, guía y equipo de préstamo"
       ],
       [
        "<strong>Lodge todo incluido</strong>",
-       "Paraná, Corrientes",
+       "Alto Paraná o Iberá, Corrientes",
        "7 noches, 6 días",
        "US$ 7.950",
-       "Lo mismo; no incluye licencia, traslados ni pasajes"
+       "Lo mismo; en esos lodges no incluye licencia, traslados ni pasajes"
       ]
      ]
     },
     {
      "t": "p",
-     "h": "Precios publicados o informados al 5 de noviembre de 2026, por persona en habitación doble y guía compartido. Las tarifas de cada lodge por cantidad de noches están en <a href=\"{n:precio-viaje-dorado-lodge}\">cuánto cuesta un viaje de pesca de dorado</a>."
+     "h": "Precios publicados o informados al 5 de noviembre de 2026 (las filas de lodge, releídas el 13 de noviembre de 2026), por persona en habitación doble y guía compartido. Las tarifas de cada lodge por cantidad de noches están en <a href=\"{n:precio-viaje-dorado-lodge}\">cuánto cuesta un viaje de pesca de dorado</a>."
     },
     {
      "t": "h2",
@@ -212,22 +212,30 @@
      ],
      "filas": [
       [
-       "30 de mayo de 2026",
-       "Disposición 618: veda entre los km 1232 y 1238, por una concentración de surubíes"
+       "Fines de mayo de 2026",
+       "Disposición 618/26: prohíbe toda pesca entre los km 1232 y 1238, por una concentración de surubíes"
+      ],
+      [
+       "Hacia el 4 de junio de 2026",
+       "Disposición 639/26: levanta esa veda; vuelven a regir las modalidades de la Disposición 853/22"
+      ],
+      [
+       "9 de septiembre de 2026, 18:00",
+       "Nueva veda entre los km 1109 y 1150, por una concentración de dorados; número de disposición pendiente. Multa de 500 litros de nafta súper e inhabilitación mínima de seis meses"
       ],
       [
        "16 de septiembre de 2026",
-       "Se amplía a los km 1180 a 1239, jurisdicción de Paso de la Patria, por dorados y sábalos"
+       "Se suma el tramo de los km 1180 a 1239, del riacho INTA a la zona de Confluencia, jurisdicción de Paso de la Patria; número de disposición pendiente"
       ],
       [
        "29 de septiembre de 2026, 13:00",
-       "Disposición 1054: se levanta la veda y se restablecen las modalidades de la Disposición 853/22"
+       "Disposición 1054: levanta la veda y restablece las modalidades de la Disposición 853/22"
       ]
      ]
     },
     {
      "t": "p",
-     "h": "Dirección de Recursos Naturales de Corrientes. No encontramos una veda posterior al 4 de noviembre de 2026, pero la norma permite reimponerla si reaparecen concentraciones de peces: preguntale a tu guía antes de salir. Desde la Disposición 853/22 el dorado y el surubí se pescan con devolución obligatoria en Corrientes."
+     "h": "Fuente: la prensa (Perfil, notas del 4 de junio y del 10, 16 y 29 de septiembre de 2026), no el texto de las disposiciones: no lo leímos en el Boletín Oficial, y donde dice «número pendiente» la nota no lo publicó. Dirección de Recursos Naturales de Corrientes. No encontramos una veda posterior al 4 de noviembre de 2026, pero la norma permite reimponerla si reaparecen concentraciones de peces: preguntale a tu guía antes de salir. Desde la Disposición 853/22 el dorado y el surubí se pescan con devolución obligatoria en Corrientes."
     },
     {
      "t": "h2",
@@ -235,7 +243,7 @@
     },
     {
      "t": "p",
-     "h": "Sí. En Corrientes se saca la licencia de pesca deportiva en línea y se lleva con el documento. En los paquetes de posada de Esquina y en algunos lodges ya está incluida; en otros no (los lodges de Corrientes de la tabla de noches no la incluyen). Siempre preguntalo."
+     "h": "Sí. En Corrientes se saca la licencia de pesca deportiva en línea y se lleva con el documento. En los paquetes de posada de Esquina ya está incluida; en los lodges depende: no la incluyen los dos lodges de la escalera de precios por noches, y sí la incluyen, según el operador o agencias, otros lodges de Corrientes (mirá la tabla de otros lodges en <a href=\"{n:precio-viaje-dorado-lodge}\">cuánto cuesta un viaje de pesca de dorado</a>). Siempre preguntalo."
     },
     {
      "t": "p",
@@ -256,24 +264,24 @@
    "slug": "cuanto-cuesta-viaje-pesca-dorado",
    "especie": "dorado",
    "titulo": "Cuánto cuesta un viaje de pesca de dorado en Argentina: lodges todo incluido, por cantidad de noches (2026/27)",
-   "bajada": "Tarifas por persona de lodges de dorado en Corrientes, Iberá, el Paraná de Santa Fe y el Delta, con lo que incluye cada una y el costo por día de pesca.",
+   "bajada": "Tarifas por persona de lodges de dorado en el Alto Paraná, el Paraná medio, los Esteros del Iberá, el Paraná de Santa Fe y el Delta, con lo que incluye cada una y el costo por día de pesca.",
    "seo_title": "Cuánto cuesta un viaje de pesca de dorado (2026/27)",
    "seo_description": "Precios de lodges de dorado en Argentina para 2026/27: de US$ 4.050 por 3 noches a US$ 7.950 por 7 noches, por persona, con lo que incluye y el costo por día.",
    "datos": [
-    "Un lodge todo incluido del Alto Paraná en Corrientes cuesta de US$ 4.050 (3 noches, 2 días de pesca) a US$ 7.950 (7 noches, 6 días) por persona en doble.",
+    "Dos lodges de un mismo grupo, uno en el Alto Paraná y otro en los Esteros del Iberá, cobran lo mismo: de US$ 4.050 (3 noches, 2 días de pesca) a US$ 7.950 (7 noches, 6 días) por persona en doble.",
     "Cada día de pesca extra baja el precio por día: de US$ 2.025 con 2 días a US$ 1.325 con 6 días en el mismo lodge.",
-    "Esteros del Iberá: un lodge publica 7 noches y 6 días desde US$ 6.400 por persona, en habitación individual.",
+    "Esteros del Iberá: un lodge publica 7 noches y 6 días a US$ 6.400 por persona en habitación individual (según la página de su operador, sin año y sujeta a cambios); el otro lodge de la escalera cobra US$ 7.950 por la semana en doble.",
     "Paraná de Santa Fe: 4 días de pesca desde US$ 3.600; una oferta de 3 días y 4 noches a US$ 2.500 en fechas elegidas de diciembre de 2026 a febrero de 2027.",
-    "Las licencias de pesca y los traslados suelen quedar fuera del precio: sumalos."
+    "La licencia de pesca y los traslados dependen del lodge: mirá la tabla antes de sumarlos."
    ],
    "bloques": [
     {
      "t": "p",
-     "h": "<strong>Respuesta corta.</strong> Un viaje de dorado en un lodge todo incluido en Argentina cuesta, por persona y en habitación doble, <strong>de US$ 4.050 por 3 noches y 2 días de pesca a US$ 7.950 por 7 noches y 6 días</strong> en el Alto Paraná (Corrientes). En Iberá y en el Paraná de Santa Fe hay opciones de US$ 2.500 a US$ 6.400. Para un viaje más barato, mirá <a href=\"{n:viaje-dorado-amigos-precios}\">el viaje con amigos en posada</a> (desde US$ 605)."
+     "h": "<strong>Respuesta corta.</strong> Un viaje de dorado en un lodge todo incluido en Argentina cuesta, por persona, <strong>de US$ 4.050 por 3 noches y 2 días de pesca a US$ 7.950 por 7 noches y 6 días</strong> (en habitación doble) en el Alto Paraná y en los Esteros del Iberá, en Corrientes. Un lodge del Paraná medio publica de US$ 3.950 a US$ 7.950, y en el Paraná de Santa Fe hay una oferta de US$ 2.500. Para un viaje más barato, mirá <a href=\"{n:viaje-dorado-amigos-precios}\">el viaje con amigos en posada</a> (desde US$ 605)."
     },
     {
      "t": "h2",
-     "h": "Escalera de precios por cantidad de noches (Paraná, Corrientes)"
+     "h": "Escalera de precios por cantidad de noches (un lodge del Alto Paraná y otro del Iberá, mismo precio)"
     },
     {
      "t": "tabla",
@@ -312,7 +320,7 @@
     },
     {
      "t": "p",
-     "h": "Tarifa 2026/27 de dos lodges del Alto Paraná en Corrientes (uno abierto de octubre de 2026 a mayo de 2027 y otro todo el año), con el mismo precio. Por persona, en habitación doble y guía compartido. Incluye alojamiento, todas las comidas, vinos, cerveza y bebidas, guía profesional y equipo de préstamo (cañas, reeles y líneas). No incluye pasajes, traslados, licencia de pesca, lavandería ni propinas. Habitación y lancha individuales: 60 % de recargo. Acompañante que no pesca: US$ 650 por noche. Día completo de pesca el día de llegada o salida: US$ 950 por lancha."
+     "h": "Tarifa 2026/27 de dos lodges de un mismo grupo, con el mismo precio, leída en la página de cada uno el 13 de noviembre de 2026: uno en la ribera argentina del Alto Paraná (temporada de octubre de 2026 a mayo de 2027, según su página) y otro en los Esteros del Iberá (todo el año, según su página; una agencia lo publica de octubre a abril). Por persona, en habitación doble y guía compartido. Incluye alojamiento, todas las comidas, vinos, cerveza y bebidas, guía profesional y equipo de préstamo (cañas, reeles y líneas). No incluye pasajes, traslados, licencia de pesca, lavandería ni propinas. Habitación y lancha individuales: 60 % de recargo. Acompañante que no pesca: US$ 650 por noche. Día completo de pesca el día de llegada o salida: US$ 950 por lancha."
     },
     {
      "t": "h2",
@@ -331,7 +339,7 @@
        "Itatí, Corrientes (Alto Paraná)",
        "7 noches, 6 días",
        "US$ 7.850",
-       "Doble. Incluye vuelos chárter desde Buenos Aires, traslados, licencia, moscas y equipo. Temporada 2026/27"
+       "Doble. Según una agencia (2026/27): incluye vuelos chárter desde Buenos Aires, traslados, licencia, moscas y equipo. La página del operador y la de la agencia dan la temporada de septiembre a mayo"
       ],
       [
        "Itatí, Corrientes (Alto Paraná)",
@@ -340,16 +348,46 @@
        "Igual que arriba"
       ],
       [
-       "Esteros del Iberá, Corrientes",
+       "Un lodge del Alto Paraná, Corrientes",
        "7 noches, 6 días",
-       "US$ 6.400",
-       "Habitación individual y guía compartido; tarifa de lanzamiento 2x1 según el lodge"
+       "US$ 7.000",
+       "Doble y guía compartido. Según agencias (2026): 6 noches US$ 6.250, 5 noches US$ 5.100 y 4 noches US$ 4.250. Licencia incluida según una agencia (otras dos no la mencionan). Temporada: septiembre y noviembre a abril según una agencia, todo el año según otra"
+      ],
+      [
+       "Un lodge del Alto Paraná, Corrientes",
+       "4 noches, 3 días",
+       "US$ 4.250",
+       "Igual que arriba, según agencias (2026)"
+      ],
+      [
+       "Un lodge del Paraná medio, Corrientes",
+       "7 noches, 6 días",
+       "US$ 7.950",
+       "Tarifa 2027, temporada de junio a diciembre según la página de su operador. La página dice «habitación individual y lancha compartida» y, en otro punto, habitación compartida: confirmar. 6, 5 y 4 noches: US$ 6.950, US$ 5.950 y US$ 4.950. Lancha individual: 50 % de recargo; acompañante que no pesca: US$ 650 por noche; licencia aparte, US$ 100 por persona; no incluye el traslado desde Corrientes o Resistencia al hotel"
+      ],
+      [
+       "Un lodge del Paraná medio, Corrientes",
+       "3 noches, 2 días",
+       "US$ 3.950",
+       "Igual que arriba"
       ],
       [
        "Esteros del Iberá, Corrientes",
-       "7 noches, 6 días (tarifa de 2025)",
-       "US$ 6.340",
-       "Doble; incluye traslado desde Corrientes y licencia. Tarifa publicada para septiembre a mayo de 2025: reconfirmar"
+       "7 noches, 6 días",
+       "US$ 7.850",
+       "Doble. Según dos agencias (2026/27): incluye alojamiento, comidas y bebidas con alcohol, traslados, pesca guiada, licencia, moscas y equipo. Temporada: de septiembre a mayo (operador y una agencia) o de septiembre a abril (otra agencia)"
+      ],
+      [
+       "Esteros del Iberá, Corrientes",
+       "4 noches, 3 días",
+       "US$ 4.500",
+       "Igual que arriba, según una agencia (2026/27)"
+      ],
+      [
+       "Esteros del Iberá, Corrientes",
+       "7 noches, 6 días",
+       "US$ 6.400",
+       "Habitación individual y guía compartido, según la página de su operador (sin año, «sujeta a cambios»; menciona una tarifa de lanzamiento 2x1). Incluye licencia y tasas del gobierno. Temporada de octubre a abril según esa página"
       ],
       [
        "Paraná, Santa Fe",
@@ -379,7 +417,7 @@
     },
     {
      "t": "p",
-     "h": "Precios publicados o informados al 5 de noviembre de 2026, en dólares, tal como los muestra cada operador. Cada operador incluye cosas distintas: comparar solo el número engaña."
+     "h": "Precios en dólares, tal como los muestra cada operador o agencia. Las filas de Itatí, del Alto Paraná, del Paraná medio y del Iberá, y la escalera de arriba, se leyeron el 13 de noviembre de 2026; las de Santa Fe y el Delta, al 5 de noviembre de 2026. «Según una agencia» quiere decir que el dato viene de la página de una agencia que vende el viaje y no del operador: las dos pueden diferir en la temporada y en lo que incluyen. En el Iberá hay dos precios para la semana: US$ 6.400 en habitación individual (un lodge de esta tabla) y US$ 7.950 en habitación doble (el lodge de la escalera). Cada operador incluye cosas distintas: comparar solo el número engaña."
     },
     {
      "t": "h2",
@@ -396,7 +434,7 @@
     {
      "t": "lista",
      "items": [
-      "<strong>La licencia de pesca</strong>: en Corrientes se saca en línea; algunos lodges la incluyen y otros no.",
+      "<strong>La licencia de pesca</strong>: en Corrientes se saca en línea. Según sus páginas, no la incluyen los dos lodges de la escalera ni el del Paraná medio (que la cobra aparte, US$ 100 por persona); sí la incluyen, según el operador o agencias, Itatí y los lodges del Iberá de la tabla, y una agencia dice lo mismo del lodge del Alto Paraná de US$ 7.000.",
       "<strong>Pasajes y traslados</strong> hasta el lodge, salvo que figuren como incluidos.",
       "<strong>Propinas</strong> para guías y personal.",
       "<strong>El recargo individual</strong>: si viajás solo y querés habitación y lancha propias, el recargo llega al 60 %."
