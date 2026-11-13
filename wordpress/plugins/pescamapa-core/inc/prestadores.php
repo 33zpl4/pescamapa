@@ -65,7 +65,8 @@ add_action( 'acf/include_fields', function () {
 			[ 'key' => 'field_pm_r_equipo', 'name' => 'equipo', 'label' => 'Lancha y equipo', 'type' => 'checkbox', 'choices' => pm_opciones( 'equipo' ), 'layout' => 'horizontal' ],
 			[ 'key' => 'field_pm_r_lancha', 'name' => 'lancha', 'label' => 'Lancha (se publica)', 'type' => 'text', 'wrapper' => [ 'width' => 50 ], 'instructions' => 'Tipo y largo. Ej. "Tracker de 5,5 m con plataforma de lanzamiento".' ],
 			[ 'key' => 'field_pm_r_motor', 'name' => 'motor', 'label' => 'Motor (se publica)', 'type' => 'text', 'wrapper' => [ 'width' => 50 ], 'instructions' => 'Ej. "Fuera de borda 90 HP + eléctrico de proa".' ],
-			[ 'key' => 'field_pm_r_capacidad', 'name' => 'capacidad', 'label' => 'Pescadores por lancha', 'type' => 'number', 'min' => 1, 'max' => 20, 'wrapper' => [ 'width' => 50 ] ],
+			[ 'key' => 'field_pm_r_capacidad', 'name' => 'capacidad', 'label' => 'Cantidad de pescadores', 'type' => 'number', 'min' => 1, 'max' => 20, 'wrapper' => [ 'width' => 25 ] ],
+			[ 'key' => 'field_pm_r_capacidad_unidad', 'name' => 'prest_capacidad_unidad', 'label' => 'La cantidad es…', 'type' => 'select', 'choices' => [ 'lancha' => 'Por lancha (guías)', 'semana' => 'Por semana (lodges)', 'total' => 'Capacidad total' ], 'default_value' => 'lancha', 'wrapper' => [ 'width' => 25 ], 'instructions' => 'Cambia la frase: "Hasta N pescadores por lancha", "Recibe N pescadores por semana" o "Capacidad: N pescadores".' ],
 			[ 'key' => 'field_pm_r_temporada', 'name' => 'prest_temporada', 'label' => 'Cuándo trabaja (se publica)', 'type' => 'text', 'wrapper' => [ 'width' => 50 ], 'instructions' => 'Ej. "Todo el año; dorado de septiembre a marzo".' ],
 
 			[ 'key' => 'field_pm_r_idiomas', 'name' => 'prest_idiomas', 'label' => 'Idiomas en que atiende (se publica)', 'type' => 'checkbox', 'choices' => [ 'es' => 'Español', 'pt' => 'Portugués', 'en' => 'Inglés', 'fr' => 'Francés', 'de' => 'Alemán', 'it' => 'Italiano' ], 'layout' => 'horizontal', 'instructions' => 'Los idiomas que habla quien guía o atiende. Ej. si un guía del servicio habla portugués, marcá Portugués.' ],
@@ -75,6 +76,10 @@ add_action( 'acf/include_fields', function () {
 			[ 'key' => 'field_pm_r_incluye', 'name' => 'incluye', 'label' => 'Qué incluye', 'type' => 'checkbox', 'choices' => pm_opciones( 'incluye' ), 'layout' => 'horizontal' ],
 			[ 'key' => 'field_pm_r_precio', 'name' => 'precio', 'label' => 'Precio de referencia (se publica)', 'type' => 'text', 'wrapper' => [ 'width' => 50 ], 'instructions' => 'Ej. "Desde $ 180.000 por lancha, día completo".' ],
 			[ 'key' => 'field_pm_r_precio_fecha', 'name' => 'precio_fecha', 'label' => 'Fecha del precio', 'type' => 'date_picker', 'display_format' => 'd/m/Y', 'return_format' => 'Y-m-d', 'wrapper' => [ 'width' => 50 ], 'instructions' => 'Sin fecha, el precio no se muestra.' ],
+			[ 'key' => 'field_pm_r_programa', 'name' => 'prest_programa', 'label' => 'Programa (se publica)', 'type' => 'text', 'wrapper' => [ 'width' => 50 ], 'instructions' => 'Duración y formato. Ej. "7 noches, 6 días de pesca con guía; sábado a sábado". Opcional.' ],
+			[ 'key' => 'field_pm_r_estadia', 'name' => 'prest_estadia_minima', 'label' => 'Estadía mínima (se publica)', 'type' => 'text', 'wrapper' => [ 'width' => 50 ], 'instructions' => 'Ej. "3 noches" o "Solo semanas completas". Opcional.' ],
+			[ 'key' => 'field_pm_r_acompanante', 'name' => 'prest_acompanante', 'label' => 'Acompañante que no pesca (se publica con la fecha del precio)', 'type' => 'text', 'wrapper' => [ 'width' => 50 ], 'instructions' => 'Tarifa y condiciones. Es un precio: sin "Fecha del precio" la ficha dice "a consultar" y no muestra el monto. Solo lo que el prestador publica, nunca un precio de otra fuente.' ],
+			[ 'key' => 'field_pm_r_no_incluye', 'name' => 'prest_no_incluye', 'label' => 'Qué no incluye (se publica)', 'type' => 'text', 'wrapper' => [ 'width' => 50 ], 'instructions' => 'Ej. "Vuelos, equipo de pesca, licencia, propinas". Complementa "Qué incluye". Opcional.' ],
 			[ 'key' => 'field_pm_r_oferta', 'name' => 'prest_oferta', 'label' => 'Condición especial para quienes piden por Pescamapa (se publica)', 'type' => 'text', 'maxlength' => 140, 'instructions' => 'Una frase concreta que ya acordaron con nosotros. Ej. "Carnada incluida" o "5 % menos". Se publica solo si el Estado (pestaña "Referencias y estado") es "Trabajamos juntos". Ver docs/prestadores.md.' ],
 
 			...pm_prestador_campos_traduccion(),
@@ -115,6 +120,10 @@ const PM_PREST_TEXTOS = [
 	'motor'       => [ 'meta' => 'motor', 'label' => 'Motor', 'tipo' => 'text' ],
 	'temporada'   => [ 'meta' => 'prest_temporada', 'label' => 'Cuándo trabaja', 'tipo' => 'text' ],
 	'precio'      => [ 'meta' => 'precio', 'label' => 'Precio de referencia', 'tipo' => 'text' ],
+	'programa'    => [ 'meta' => 'prest_programa', 'label' => 'Programa', 'tipo' => 'text' ],
+	'estadia'     => [ 'meta' => 'prest_estadia_minima', 'label' => 'Estadía mínima', 'tipo' => 'text' ],
+	'acompanante' => [ 'meta' => 'prest_acompanante', 'label' => 'Acompañante que no pesca (con la moneda)', 'tipo' => 'text' ],
+	'no_incluye'  => [ 'meta' => 'prest_no_incluye', 'label' => 'Qué no incluye', 'tipo' => 'text' ],
 ];
 
 /** ACF tab with the pt/en version of each free-text field (empty = the Spanish text is shown, marked lang="es"). */
@@ -160,7 +169,12 @@ function pm_prestador( int $post_id ): array {
 		'lancha'         => pm_prestador_texto( $post_id, 'lancha' )[0],
 		'motor'          => pm_prestador_texto( $post_id, 'motor' )[0],
 		'capacidad'      => (int) pm_campo( 'capacidad', $post_id ),
+		'capacidad_unidad' => in_array( $u = (string) pm_campo( 'prest_capacidad_unidad', $post_id ), [ 'semana', 'total' ], true ) ? $u : 'lancha',
 		'temporada'      => pm_prestador_texto( $post_id, 'temporada' )[0],
+		'programa'       => pm_prestador_texto( $post_id, 'programa' )[0],
+		'estadia'        => pm_prestador_texto( $post_id, 'estadia' )[0],
+		'acompanante'    => pm_prestador_texto( $post_id, 'acompanante' )[0],
+		'no_incluye'     => pm_prestador_texto( $post_id, 'no_incluye' )[0],
 		'idiomas'        => $lista( 'prest_idiomas' ),
 		'accesible'      => (string) pm_campo( 'prest_accesible', $post_id ),
 		'incluye'        => $lista( 'incluye' ),
@@ -177,6 +191,15 @@ function pm_prestador( int $post_id ): array {
 		'fuente'         => (string) pm_campo( 'prest_fuente', $post_id ),
 		'ejemplo'        => (bool) pm_campo( 'datos_ejemplo', $post_id ),
 	];
+}
+
+/** The capacity sentence in the current language; the default unit ("lancha") is the original wording. */
+function pm_prestador_capacidad( array $r ): string {
+	if ( ! $r['capacidad'] ) {
+		return '';
+	}
+	$clave = [ 'semana' => 'prest.capacidad.semana', 'total' => 'prest.capacidad.total' ][ $r['capacidad_unidad'] ?? 'lancha' ] ?? 'prest.capacidad';
+	return pm_t( $clave, [ 'n' => (string) $r['capacidad'] ] );
 }
 
 /** Public: agreed to appear, or listed from public information; never example data. */

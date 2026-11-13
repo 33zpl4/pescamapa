@@ -135,6 +135,12 @@ function pm_llms_txt(): string {
 			if ( $r['incluye'] ) {
 				$partes[] = 'incluye ' . implode( ', ', array_map( fn( $k ) => mb_strtolower( pm_opcion( 'incluye', $k, 'es' ) ), $r['incluye'] ) );
 			}
+			if ( $r['programa'] ) {
+				$partes[] = 'programa: ' . $r['programa'];
+			}
+			if ( $r['estadia'] ) {
+				$partes[] = 'estadía mínima: ' . $r['estadia'];
+			}
 			if ( $r['precio'] && $r['precio_fecha'] ) {
 				$partes[] = $r['precio'] . ' (según el prestador, consultado el ' . pm_fecha( $r['precio_fecha'], 'es' ) . ')';
 			}

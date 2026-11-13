@@ -202,3 +202,27 @@ Sin nombres de personas. Las comisiones y las tarifas de abajo son internas: no 
 > Pescamapa
 
 La versión en inglés (para operadores extranjeros) sigue la misma estructura. Los datos entre llaves salen de los campos del pedido (`destino`, `especie`, `fecha_desde`/`fecha_hasta`, `flexibilidad`, `estadia`, `pescadores`, `acompanantes`, `equipo_propio`, país).
+
+## Campos de la ficha (13/11/2026)
+
+Pensados para lodges semanales (un pescador extranjero compara programa,
+estadía mínima, acompañante y exclusiones de un vistazo). Todos opcionales:
+vacío no muestra nada y las ffichas viejas no cambian. En la tarjeta salen
+después de "Incluye", como filas de la misma lista (Programa, Estadía mínima,
+Acompañante que no pesca, No incluye). Código: `inc/prestadores.php`,
+`parciales/prestador.php`; claves de interfaz `prest.*` en `data/ui.json`.
+
+| Campo (meta) | Qué es | ¿Traducible? | Cuándo se muestra | Qué nunca va |
+| --- | --- | --- | --- | --- |
+| `prest_programa` | Duración y formato ("7 noches, 6 días de pesca con guía; sábado a sábado") | Sí: `prest_programa_en`, `_pt` (vacío = español, marcado `lang="es"`) | Si tiene texto. También en la línea de la ficha en `llms.txt` | Contacto, marketing sin fuente |
+| `prest_estadia_minima` | Estadía mínima o "solo semanas completas" | Sí: `_en`, `_pt` | Si tiene texto. También en `llms.txt` | Contacto |
+| `prest_acompanante` | Tarifa y condiciones del acompañante que no pesca | Sí: `_en`, `_pt` (escribir la moneda) | **Solo con "Fecha del precio" cargada**, con la misma nota "(precio revisado …)" que el precio; sin fecha la fila dice "a consultar" y no muestra el monto. No va a `llms.txt` | Monto sin fecha; precio sacado por un agente o de otra fuente que no sea la del propio prestador; contacto |
+| `prest_no_incluye` | Qué no incluye (vuelos, equipo, licencia, propinas) | Sí: `_en`, `_pt` | Si tiene texto | Contacto; promesas ("sin costos ocultos") |
+| `prest_capacidad_unidad` | `lancha` (por defecto) \| `semana` \| `total`; cambia la frase de `capacidad` | No (la frase está en `ui.json`) | Con `capacidad` cargada: "Hasta N pescadores por lancha" / "Recibe N pescadores por semana" / "Capacidad: N pescadores". `semana` y `total` salen en su propia fila "Capacidad" | Cargar `capacidad` sin saber a qué se refiere |
+
+Reglas que siguen valiendo: sin datos de contacto, el precio solo con fecha, y
+la "información pública" se escribe con nuestras palabras con la fuente en
+`prest_fuente`. No hay JSON-LD de estos campos (no existe una propiedad
+schema.org natural para programa o exclusiones en una ficha sin
+`LocalBusiness`, y los datos de negocio solo salen con la ficha confirmada).
+
