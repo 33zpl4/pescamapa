@@ -670,7 +670,7 @@ jobs:
             read -r code loc < <(curl -sS -o /dev/null -w '%{http_code} %{redirect_url}\n' "$URL$viejo")
             if [[ "$code" == "301" && "$loc" == *"$nuevo" ]]; then echo "✓ 301 $viejo → $nuevo"; else echo "✖ $viejo: $code $loc (esperado 301 a $nuevo)"; fail=1; fi
           done
-          check /en/species/trout/ 200 'hreflang="x-default" href="[^"]*/en/'
+          check /en/species/trout/ 200 'hreflang="x-default" href="[^"]*/especies/trucha/'
           check /especies/trucha/ 200 'cuando-pescar-trucha-patagonia'
           # Titles, display dates and cover photos of the three notes (photos are skipped here: no wordpress/fotos on the runner's WP).
           sed 's/^\$aplicar = false;/$aplicar = true;/' wordpress/scripts/notas-fotos-titulos-2026-10-26.php > /tmp/fotos.php

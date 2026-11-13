@@ -159,3 +159,46 @@ Sin nombres de personas. Las comisiones y las tarifas de abajo son internas: no 
 
 **Karku en el sitio (13/11/2026, `karku-acuerdo-2026-11-13`):** la ficha pasa a "Trabajamos juntos" (`estado` = `acuerdo`) y "Aceptó aparecer" (`prest_consentimiento`). Efecto público de la combinación, tal como está en `main`: (1) rótulo "Operador con acuerdo con Pescamapa" con la nota "Si pedís por Pescamapa pagás el mismo precio; el operador nos paga una comisión por el viaje." (en: "Operator with an agreement with Pescamapa" / "If you ask through Pescamapa you pay the same price; the operator pays us a commission on the trip."; pt: "Operador com acordo com a Pescamapa" / "Se você pede pela Pescamapa paga o mesmo preço; o operador nos paga uma comisão pela viagem."); (2) desaparece el aviso "Información pública, todavía sin verificar" y el enlace de corrección; (3) sube al principio de la lista del destino; (4) entra al JSON-LD de la guía como `LocalBusiness` (antes solo un ítem con nombre); (5) `llms.txt` lo describe como "operador con acuerdo con Pescamapa". La condición especial (`prest_oferta`) queda vacía: no hay una. La frase "pagás el mismo precio" se apoya en que la comisión la paga el operador; el operador no lo dijo con esas palabras: si se quiere ser estricto, volver `estado` a `contactado`. El campo `capacidad` se vació (la ficha mostraba "Hasta 4 pescadores por lancha"); "recibe 4 pescadores por semana" va en la descripción, igual que la disponibilidad 2027 con fecha, que no tiene campo propio.
 
+
+## Correo de registro del pedido a los operadores (decisión del dueño, 13/11/2026)
+
+**Regla:** cuando entra un pedido, se consulta a los operadores que encajan, tengan o no acuerdo con nosotros, **sin nombre ni contacto del pescador** (lo prometemos en el consentimiento). Es lo que se hizo a mano con el primer pedido (Solid Adventures, Karku, El Rincón, un anfitrión local). Dos variantes:
+
+- **Con acuerdo:** es un aviso de pedido. El correo fechado es el registro de que el cliente vino de Pescamapa, aunque el pescador luego escriba directo.
+- **Sin acuerdo:** es una consulta: "tenemos a alguien interesado, ¿tenéis establecida alguna comisión por derivaciones?". Nada de exigir nada.
+
+**Cómo debe sonar:** como lo escribiría una persona, no un sistema. Texto plano, sin logo, sin HTML, sin pie de "mensaje automático". Saludo por el nombre, el pedido contado en una o dos frases (no una tabla), firmado por quien lo envía, `Reply-To` a una bandeja que lee una persona, y una línea natural para dejar de recibirlos. Nunca inventar toques personales ("vi tu web…"). El orden de los datos nunca incluye nombre ni contacto.
+
+**Cómo sale:** a mano mientras haya pocos pedidos (plantillas abajo). Se construye el envío desde Consultas (borrador listo con un clic, registrado en la consulta) al segundo pedido, según la regla de construir la herramienta en la segunda repetición. Automático del todo solo para operadores con acuerdo que hayan dicho que sí. Requiere un campo interno (no público) con el correo de cada operador; los que solo tienen formulario o WhatsApp siguen a mano.
+
+### Plantilla A, operador con acuerdo
+**Asunto:** Pedido de un pescador: {especie} en {destino}, {mes}
+
+> Hola {nombre}:
+>
+> Nos acaba de llegar por Pescamapa un pedido que encaja con vosotros: {personas}, desde {país}, quiere {especie} en {destino}, {fechas}, {días de pesca}{, sin equipo propio}. {Las fechas son flexibles.}
+>
+> ¿Tenéis lugar? Si es así, ¿qué opciones y precio le pasaríais? Con vuestra respuesta le preparo la comparación y se la mando; si decide seguir con vosotros, le paso su contacto.
+>
+> Como acordamos, si reserva con vosotros lo contáis como cliente de Pescamapa.
+>
+> Un saludo,
+> {nombre de quien envía}
+> Pescamapa
+
+### Plantilla B, operador sin acuerdo
+**Asunto:** Consulta: {personas}, {especie} en {destino}, {mes}
+
+> Hola {nombre}:
+>
+> Soy {nombre de quien envía} de Pescamapa (pescamapa.com), una guía para pescar en Argentina. Tenemos a alguien interesado en vuestro servicio: {personas}, desde {país}, quiere {especie} en {destino}, {fechas}, {días de pesca}.
+>
+> ¿Tenéis lugar en esas fechas y qué le ofreceríais? Y una pregunta para el futuro: ¿tenéis establecida alguna comisión para los clientes que os derivamos? No hace falta decidir nada hoy.
+>
+> Si preferís que no os escribamos por pedidos como este, decídmelo y lo dejo de hacer.
+>
+> Un saludo,
+> {nombre de quien envía}
+> Pescamapa
+
+La versión en inglés (para operadores extranjeros) sigue la misma estructura. Los datos entre llaves salen de los campos del pedido (`destino`, `especie`, `fecha_desde`/`fecha_hasta`, `flexibilidad`, `estadia`, `pescadores`, `acompanantes`, `equipo_propio`, país).
