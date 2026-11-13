@@ -8,7 +8,7 @@
  * (https://rdi.uncoma.edu.ar/bitstreams/…/download) answer the runner with an anti-robot page; no file we could open contains those numbers.
  * Idempotent. Simulacro first ($aplicar = false). Run with wp-script.yml (script = trucha-igfa-mar-2026-11-13).
  */
-$aplicar = false;
+$aplicar = true;
 $hoy     = '20261113';
 
 $t = [
