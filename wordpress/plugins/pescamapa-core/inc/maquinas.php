@@ -190,9 +190,9 @@ function pm_llms_txt(): string {
 	$out[] = '- Pescamapa no le cobra al pescador y el pescador paga lo mismo que reservando directo con el operador: si reserva, el operador le paga una comisión a Pescamapa. Se comparan los operadores que encajan, tengan o no un acuerdo con Pescamapa; figurar en el sitio no depende de tener un acuerdo.';
 	$out[] = '- Los precios publicados son referencias con fecha ("precio consultado el…", "desde"); el precio final lo da el prestador para las fechas y el grupo.';
 	$out[] = '- Las fichas de prestadores marcadas "información pública, todavía sin verificar" no fueron confirmadas por Pescamapa; las de "operador con acuerdo" sí, y Pescamapa cobra comisión al operador, no al pescador.';
-	$out[] = pm_llms_item( 'Pedir una cotización en español', pm_url_viaje( 'es' ) );
-	$out[] = pm_llms_item( 'Pedir cotação em português', pm_url_viaje( 'pt' ) );
-	$out[] = pm_llms_item( 'Ask for a quote in English', pm_url_viaje( 'en' ) );
+	$out[] = pm_llms_item( 'Pedir opciones en español', pm_url_viaje( 'es' ) );
+	$out[] = pm_llms_item( 'Pedir opções em português', pm_url_viaje( 'pt' ) );
+	$out[] = pm_llms_item( 'Request options in English', pm_url_viaje( 'en' ) );
 	$out[] = '- Cada guía de destino termina con su propio formulario (ancla #consulta) y la sección "Guías y alojamientos".';
 	$out[] = '';
 	$out[] = '## Otras páginas';
