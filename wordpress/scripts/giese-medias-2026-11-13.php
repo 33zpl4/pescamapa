@@ -9,7 +9,7 @@
  * the repository abstract does not contain them. No year, no claim about how the fish were sampled, and the observed ranges (from one reply only) are left out.
  * Idempotent. Simulacro first ($aplicar = false). Run with wp-script.yml (script = giese-medias-2026-11-13).
  */
-$aplicar = false;
+$aplicar = true;
 $hoy     = '20261113';
 
 $t = [
