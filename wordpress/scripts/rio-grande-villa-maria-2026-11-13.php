@@ -13,7 +13,7 @@
  * Idempotent. Dry run first ($aplicar = false). Run with wp-script.yml (script = rio-grande-villa-maria-2026-11-13).
  */
 
-$aplicar = false;
+$aplicar = true;
 $hoy     = '20261113';
 $vm_url  = 'https://www.nervouswaters.com/the-lodges/villa-maria-lodge/';
 
