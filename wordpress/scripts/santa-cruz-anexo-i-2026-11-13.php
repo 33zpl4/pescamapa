@@ -124,7 +124,7 @@ function pm_t_aplicar( string $texto, array $pares, string $donde, array &$tarea
 		}
 		$r = pm_t_cambiar( $texto, $viejo, $nuevo );
 		if ( null === $r ) {
-			WP_CLI::warning( "$donde: no encontré el texto de «$etiqueta»." );
+			WP_CLI::warning( "$donde: no encontré el texto de «{$etiqueta}»." );
 			continue;
 		}
 		$texto    = $r;
@@ -359,7 +359,7 @@ function pm_t_destino( string $clave, string $i, array $o, array $fuentes, strin
 				$hecho = true;
 			}
 		}
-		$hecho || WP_CLI::warning( "$clave ($i): no encontré la FAQ de «$et»." );
+		$hecho || WP_CLI::warning( "$clave ($i): no encontré la FAQ de «{$et}»." );
 	}
 	foreach ( $o['faq_reemplazos'] ?? [] as [ $q, $viejo, $nv, $et ] ) {
 		$visto = false;
@@ -373,16 +373,16 @@ function pm_t_destino( string $clave, string $i, array $o, array $fuentes, strin
 				$faqs_n[ $k ]['respuesta'] = $r;
 				$tareas[] = $et;
 			} elseif ( false === strpos( (string) $f['respuesta'], $nv ) ) {
-				WP_CLI::warning( "$clave ($i): la FAQ «$q» no tiene el texto esperado." );
+				WP_CLI::warning( "$clave ($i): la FAQ «{$q}» no tiene el texto esperado." );
 			}
 		}
-		$visto || WP_CLI::warning( "$clave ($i): no existe la FAQ «$q»." );
+		$visto || WP_CLI::warning( "$clave ($i): no existe la FAQ «{$q}»." );
 	}
 	$preg = array_column( $faqs_n, 'pregunta' );
 	foreach ( $o['faqs'] ?? [] as [ $q, $a ] ) {
 		if ( ! in_array( $q, $preg, true ) ) {
 			$faqs_n[] = [ 'pregunta' => $q, 'respuesta' => $a ];
-			$tareas[] = "FAQ nueva «$q»";
+			$tareas[] = "FAQ nueva «{$q}»";
 		}
 	}
 	// Summary field.
@@ -431,13 +431,13 @@ function pm_t_destino( string $clave, string $i, array $o, array $fuentes, strin
 	foreach ( $o['verificar'] ?? [] as $t ) {
 		if ( false === strpos( $leido, $t ) && false === strpos( $resl, $t ) && false === strpos( $rf, $t ) && ! in_array( $t, $pf, true ) ) {
 			$ok = false;
-			WP_CLI::warning( "$clave ($i): la lectura de vuelta no contiene «$t»." );
+			WP_CLI::warning( "$clave ($i): la lectura de vuelta no contiene «{$t}»." );
 		}
 	}
 	foreach ( $o['no_debe'] ?? [] as $t ) {
 		if ( false !== strpos( $leido, $t ) ) {
 			$ok = false;
-			WP_CLI::warning( "$clave ($i): la lectura de vuelta todavía contiene «$t»." );
+			WP_CLI::warning( "$clave ($i): la lectura de vuelta todavía contiene «{$t}»." );
 		}
 	}
 	WP_CLI::log( ( $ok ? 'VERIFIED' : 'FALLÓ' ) . ": $clave ($i) #{$p->ID} " . get_permalink( $p->ID ) );
