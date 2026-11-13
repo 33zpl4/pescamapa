@@ -32,16 +32,24 @@ Base: auditoría query × página de Search Console (14/10–11/11/2026) y el HT
 
 ## Pendiente de fuente ("needs a source")
 
-- Dorado: sección "dónde vive / rango" (no hay afirmación con fuente en el repo).
+Resuelto el 13/11/2026 (segunda tanda, scripts `dorado-rango-record-2026-11-13`, `santa-cruz-reglamento-general-2026-11-13`, `nota-la-zona-2026-11-13`; detalle en `docs/investigacion/la-zona-salto-grande-2026-11-13.md`):
+
+- ~~Dorado: sección "dónde vive / rango"~~: sección "Dónde vive el dorado" con FishBase y CARU (Serra et al. 2019, reed. 2023), tamaño máximo (100 cm de longitud estándar) y mayor peso publicado (31,4 kg, aparte y rotulado), UICN "Preocupación menor" vía FishBase, FAQ "¿Dónde vive el dorado?".
+- ~~"La Zona" (Río Uruguay) y reglamento, veda y operadores~~: nota nueva `la-zona-salto-grande` (es/en/pt) con reglamento de la CARU, veda 1/9–31/12, quién puede llevarte y lo que no se sabe; el pilar del dorado y la ficha la enlazan.
+- Corrección de atribución: la ficha de la IGFA muestra solo el peso (25,28 kg); río, año y pescador salen de la prensa (Diario Uno). Reescrito en datos clave, párrafo, FAQ, descripción para Google y pilar.
+- Reglamento general de Santa Cruz (Disposición N° 241/2026): sección y 4 FAQ en Río Gallegos; ajustes en Jurassic Lake y El Calafate; sale "no leímos el reglamento general".
+
+Sigue pendiente de fuente:
+
 - Surubí: tamaño y peso típicos; récord (el borrador menciona un video de 70 kg, sin fuente verificada).
 - Trucha: tamaño típico y récord por especie (la página ya dice que no se publican sin fuente); dónde está la trucha de arroyo en el sur (solo sale lo de Macchi y Vigliano 2014).
-- "La Zona" (Río Uruguay): ningún archivo del repo la define; no se usa.
-- Río Uruguay: reglamento, licencia, operadores y meses del dorado.
+- Dorado: tamaño y peso típicos con una fuente que los mida (los rangos son de la pesca deportiva y bibliografía general; el máximo ya tiene fuente).
+- Río Uruguay: tasas de licencia, tallas y cupos de Entre Ríos; quién tiene el permiso argentino; si la veda rige dentro de La Zona (preguntas en el doc de investigación).
 - Licencia: compra en línea en Patagonia y Tierra del Fuego (la nota solo lo dice para Santa Cruz y Corrientes).
 
 ## Qué queda
 
-- Guía nueva de Concordia (hoy "próximamente").
+- Guía nueva de Concordia (hoy "próximamente"; la tarjeta del inicio no puede enlazar a la nota de La Zona sin un cambio de plantilla, y Concordia no está en `data/rio.json`).
 - Índice de paquetes: se crearon es/en/pt con el mismo mecanismo; si alguno se salteó, ver el log.
 - Pilar EN de la Patagonia.
 - Chequeo http→https: del lado del dueño.
@@ -51,3 +59,7 @@ Base: auditoría query × página de Search Console (14/10–11/11/2026) y el HT
 ## Wording "opciones" (arreglo 8)
 
 Reemplazos de "cotización/quote/orçamento" como etiqueta de botón o promesa por "opciones": `consulta.h2/p/enviar`, `consulta.boutique.h2/t2/t3`, `ficha.prestadores.p` (sin "conectamos"), `ns.contacto.viaje`, `paquetes.cta` ("Pedir esta opción"), `paquetes.barra`, `nota.cta` y `nota.cta.boton`, `paquetes.description/licencia/faq.2.a/3.a/4.q/4.a/incluye.vacio`, `viaje.privacidad`, `viaje.title/description` y el ítem de `llms.txt`. Se dejó, porque habla legítimamente de cotizar: `paquetes.precio.consultar`, `paquetes.intro`, `guias.resumen.sinprecio`, `pg.como.3` (el operador cotiza), `*.mensaje*` ("presupuesto" = budget) y el texto legal (`legal.json`). El género de la marca en PT queda "a Pescamapa" en `ui.json` y `legal.json`.
+
+## Wording "opciones": lo que quedaba (13/11/2026)
+
+La descripción para Google de las páginas de paquetes de Goya y Esquina (campo guardado `paquetes_description`, cargado por `paquetes-intros-2026-10-28`) decía "Cotización sin costo" / "Free quote" / "Cotação sem custo": no vino del tema ni de `ui.json`. Corregida con `paquetes-opciones-2026-11-13` (solo si el campo conserva ese texto). El ítem de `llms.txt` ("Pedir una cotización en español", "Ask for a quote in English", "Pedir cotação…") sí era del plugin (`maquinas.php`): ahora "Pedir opciones…". La etiqueta "Pedir cotización" como botón no existe en el tema: el botón de cada paquete en vivo dice "Pedir esta opción" (verificado el 13/11/2026); la cadena solo queda en un comentario de `vistas/paquetes.php` y en `docs/auditoria-seo-ia-2026-10-31.md` (histórico).
