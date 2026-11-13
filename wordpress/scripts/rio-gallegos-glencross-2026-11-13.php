@@ -13,7 +13,7 @@
  * Idempotent. Dry run first ($aplicar = false). Run with wp-script.yml (script = rio-gallegos-glencross-2026-11-13).
  */
 
-$aplicar = false;
+$aplicar = true;
 $hoy     = '20261113';
 $gl_url  = 'https://www.solidadventures.com/glencross/';
 
