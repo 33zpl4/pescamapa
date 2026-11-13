@@ -101,7 +101,7 @@ if ( ! function_exists( 'pm_sc_h2' ) ) {
 }
 
 
-$aplicar = false;
+$aplicar = true;
 $hoy     = '20261113';
 $cambios = 0;
 
