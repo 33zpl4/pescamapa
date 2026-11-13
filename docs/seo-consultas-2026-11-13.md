@@ -53,7 +53,7 @@ Sigue pendiente de fuente:
 - Índice de paquetes: se crearon es/en/pt con el mismo mecanismo; si alguno se salteó, ver el log.
 - Pilar EN de la Patagonia.
 - Chequeo http→https: del lado del dueño.
-- Revisar `x-default`: el código apunta a EN por decisión del dueño del 3/11/2026 (comentario en `seo.php`), pero `CLAUDE.md` y `docs/auditoria-seo-ia-2026-10-31.md` dicen "→ es". Documentación a alinear; no se cambió el código.
+- `x-default`: resuelto el 13/11/2026 por el dueño: apunta al español (idioma fuente) cuando la página existe en español, si no al inglés. Antes apuntaba al inglés (3/11/2026). `seo.php`, el test y `CLAUDE.md` coinciden. Documentación a alinear; no se cambió el código.
 - **Re-correr `gsc-consultas.yml` en ~2 semanas (≈27/11/2026)** y comparar posiciones de cada cluster contra esta tabla.
 
 ## Wording "opciones" (arreglo 8)
