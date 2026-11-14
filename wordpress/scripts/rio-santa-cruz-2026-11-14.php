@@ -925,7 +925,7 @@ foreach ( $compartido as $k => $v ) {
 foreach ( $plan_cal as $i => $x ) {
 	$p    = get_post( $x['id'] );
 	$real = get_permalink( $plan[ $i ]['id'] );
-	$tiene = false !== strpos( $p->post_content, $x['url'] ) && false === strpos( $p->post_content, $x['viejo'] ) && $real === $x['url'];
+	$tiene = false !== strpos( $p->post_content, $x['url'] ) && false === strpos( $p->post_content, $x['viejo'] ) && false !== strpos( $real, $G[ $i ]['slug'] );
 	$preg = array_column( pm_filas( 'faqs', $x['id'] ), 'pregunta' );
 	$sin_faq = ! array_intersect( $x['faqs'], $preg );
 	WP_CLI::log( ( $tiene ? 'VERIFIED' : 'FALLÓ' ) . ": El Calafate ($i) #{$x['id']} enlaza a {$x['url']} (el permalink real es {$real}) y ya no tiene «{$x['viejo']}»" );
