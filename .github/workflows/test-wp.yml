@@ -269,14 +269,14 @@ jobs:
                 if ( "el-calafate" === $c ) { update_field( "faqs", array_map( fn( $f ) => [ "pregunta" => $f[0], "respuesta" => $f[1] ], $faq[ $i ] ), $id ); }
               }
             }'
-          cp "wordpress/scripts/$s.php" "/tmp/$s-dry.php"   # committed with $aplicar = false: the dry run must write nothing
+          sed 's/^\$aplicar = true;/$aplicar = false;/' "wordpress/scripts/$s.php" > "/tmp/$s-dry.php"   # committed with $aplicar = true (already applied live): the dry run copy forces false and must write nothing
           wp --path="$WP" eval-file "/tmp/$s-dry.php"
           n=$(w post list --post_type=pm_destino --post_status=any --meta_key=clave --meta_value=rio-santa-cruz --format=count)
           [[ "$n" == 0 ]] || { echo "✖ el simulacro escribió $n guías"; exit 1; }
           n=$(w post list --post_type=pm_prestador --post_status=any --title="Los Plateados (Tres Amigos Outfitters)" --format=count)
           [[ "$n" == 0 ]] || { echo "✖ el simulacro escribió $n fichas"; exit 1; }
           w eval '$p = get_posts( [ "post_type" => "pm_destino", "post_status" => "any", "meta_key" => "_prueba_rsc", "meta_value" => 1, "numberposts" => -1 ] ); foreach ( $p as $x ) { if ( false !== strpos( $x->post_content, "BLOQUE-VIEJO-DE-PRUEBA" ) ) { $n = ( $n ?? 0 ) + 1; } } ( 3 === ( $n ?? 0 ) ) || WP_CLI::error( "el simulacro tocó El Calafate" );'
-          sed 's/^\$aplicar = false;/$aplicar = true;/' "wordpress/scripts/$s.php" > "/tmp/$s.php"
+          cp "wordpress/scripts/$s.php" "/tmp/$s.php"
           wp --path="$WP" eval-file "/tmp/$s.php"
           wp --path="$WP" eval-file "/tmp/$s.php"   # idempotent: nothing is touched the second time
           n=$(w post list --post_type=pm_destino --post_status=publish --meta_key=clave --meta_value=rio-santa-cruz --format=count)
