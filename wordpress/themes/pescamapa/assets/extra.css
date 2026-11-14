@@ -17,6 +17,8 @@
 	--fs-h1: clamp(30px, 4.6vw, 52px);     /* page headline */
 	--fs-label: 16px;                      /* Bebas Neue labels (eyebrow, pills) */
 	--measure: 720px;                      /* reading column width */
+	--line-strong: color-mix(in oklab, var(--forest) 50%, var(--white)); /* borders of components on paper/cream: 3.6 on white, 3.2 on cream (WCAG 1.4.11) */
+	--band-y: clamp(40px, 6vw, 72px);      /* vertical padding of a home band */
 }
 
 /* Hero: the guide card sits next to its pin; the "what do you want to
@@ -55,8 +57,6 @@
 .v-inicio .pedido .pregunta-h { display: none; }
 .v-inicio .pedido .pregunta .solo a { color: var(--moss); }
 .v-inicio .pedido .pregunta .solo span { color: var(--muted); }
-.v-inicio .hacemos { list-style: none; margin: 0; padding: 0; display: grid; gap: 0 40px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); max-width: 980px; }
-.v-inicio .hacemos li { border-top: 1px solid var(--line); padding: 14px 0; font-size: var(--fs-body); }
 footer .negocio { margin: 24px 0 0; font-size: var(--fs-small); color: var(--on-dark); }
 footer .negocio a { color: var(--white); text-decoration: underline; text-underline-offset: 3px; white-space: nowrap; }
 
@@ -479,6 +479,50 @@ footer .negocio a { color: var(--white); text-decoration: underline; text-underl
 }
 
 /* Quick links under the home notes (13/11/2026) and the optional province intro */
-.notas-inicio .atajos { display: flex; flex-wrap: wrap; gap: 8px 20px; list-style: none; margin: -48px 0 64px; padding: 0; }
+.notas-inicio .atajos { display: flex; flex-wrap: wrap; gap: 8px 20px; list-style: none; margin: 28px 0 0; padding: 0; }
 .notas-inicio .atajos a { color: var(--moss); font-weight: 600; }
 .v-provincia .prov-intro { max-width: 70ch; margin: 0 0 1.6em; }
+
+/* Surface rhythm of the home (14/11/2026; docs/marca.md "Ritmo de superficies"):
+   hero forest > sources strip lime > benefits cream > "what we do" forest > destinations paper > the question cream >
+   notes paper > map cream > providers lime > footer forest. Only tokens; tints come from color-mix() over tokens. */
+.v-inicio .section { padding-block: var(--band-y); }
+.v-inicio .head { margin-bottom: clamp(22px, 3vw, 32px); }
+.v-inicio .head h2 { font-size: clamp(30px, 3.6vw, 44px); }
+.v-inicio .head p { max-width: var(--measure); font-size: var(--fs-body); }
+.v-inicio .ico { display: inline-grid; place-items: center; flex: none; width: 44px; height: 44px; border-radius: 50%; background: var(--forest); color: var(--lime); }
+.v-inicio .icono { width: 24px; height: 24px; }
+
+/* Benefits: three white cards with a visible border, on cream */
+.v-inicio .beneficios { background: var(--cream); }
+.v-inicio .purpose { gap: clamp(14px, 2vw, 22px); }
+.v-inicio .purpose article { background: var(--white); border: 1px solid var(--line-strong); border-radius: var(--radius); padding: clamp(20px, 2.4vw, 28px); }
+.v-inicio .purpose .cab { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 18px; }
+.v-inicio .purpose .num { margin: 0; font-size: var(--fs-h3); }
+.v-inicio .purpose h3 { font-size: var(--fs-h3); margin: 0 0 8px; }
+.v-inicio .purpose p { margin: 0; font-size: var(--fs-lead); line-height: 1.55; color: var(--muted); }
+
+/* "What we do for you": forest band, two columns, lime icons */
+.v-inicio .hacemos-sec { background: var(--forest); color: var(--on-dark); }
+.v-inicio .hacemos-sec h2 { color: var(--white); }
+.v-inicio .hacemos { list-style: none; margin: 0; padding: 0; display: grid; gap: 0 clamp(24px, 4vw, 56px); grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); }
+.v-inicio .hacemos li { display: flex; align-items: center; gap: 16px; padding: 16px 0; border-top: 1px solid color-mix(in oklab, var(--white) 16%, var(--forest)); font-size: var(--fs-lead); line-height: 1.45; color: var(--on-dark); }
+.v-inicio .hacemos .ico { background: var(--lime); color: var(--forest); }
+
+/* Destinations on paper: live cards keep the forest border; the "coming soon" ones are cream with a dashed edge */
+.v-inicio .card.soon { background: var(--cream); border: 1px dashed var(--line-strong); }
+
+/* The question, second time: cream band; the lime buttons get a forest edge (lime on cream is 1.2:1) */
+.v-inicio .pedido { background: var(--cream); }
+.v-inicio .pedido .button.primary { border: 1px solid var(--forest); }
+.v-inicio .pedido .head p { color: var(--ink); }
+
+/* Phones: question buttons in a 2 x 2 grid (stack to one column below 340 px), no horizontal scroll */
+@media (max-width: 480px) {
+	.v-inicio .pregunta .opciones { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+	.v-inicio .pregunta .opciones .button { width: 100%; justify-content: center; text-align: center; padding-inline: 12px; }
+	.v-inicio .hacemos li { align-items: flex-start; }
+}
+@media (max-width: 340px) { .v-inicio .pregunta .opciones { grid-template-columns: minmax(0, 1fr); } }
+/* The language pill is fixed at the bottom: leave room under the footer so it never hides the last links. */
+@media (max-width: 860px) { body:has(.sugerencia-idioma) footer { padding-bottom: 80px; } }

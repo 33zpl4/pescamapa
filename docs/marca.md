@@ -46,6 +46,7 @@ texto normal):
 | `--olive` | `#5e6b33` | Etiquetas (Bebas) sobre fondo claro | 5.5 sobre paper |
 | `--moss` | `#344a3d` | Texto de chips y sellos | 8.5 sobre cream |
 | `--on-dark` | `#cbd3c9` | Texto secundario sobre forest | 10.5 |
+| `--line-strong` | `color-mix(in oklab, forest 50%, white)` (≈ `#7f8a86`) | Borde de componentes sobre paper/cream (tarjetas); `--line` queda para separadores | 3.6 sobre white, 3.4 sobre paper, 3.2 sobre cream |
 | `--orange` | `#ee7a48` | **Solo gráficos del mapa** (pines) | 2.7 sobre paper: nunca texto sobre claro |
 | `--warn-bg` / `--warn-line` | amarillo | **Solo avisos y vista previa interna** | — |
 
@@ -77,6 +78,47 @@ Radios: 16 px (tarjetas, cuadros), 10 px (campos), 99 px (botones, píldoras).
 Ancho de página `--shell` (1180 px) con `--gutter`. Fotos horizontales 4:3,
 con el crédito del autor sobre la imagen (`pm_foto()`); nunca una foto sin
 autor. Sombras solo en elementos flotantes.
+
+## Ritmo de superficies (14/11/2026)
+
+Problema (dueño): "el bloque blanco por todos lados no se siente bien": después del hero oscuro, ocho bandas seguidas sobre el mismo `--paper`. Regla: **dos bandas contiguas no comparten superficie**, y la oscura (forest) y la lime se reservan para lo que más importa. Solo tokens; los tintes salen de `color-mix(in oklab, var(--token) X%, var(--otro))` (`--line-strong`, separadores sobre forest). Sin hex ni `style=""` en las plantillas de la home (`revisar-marca.mjs` lo verifica en `inicio.php`, `pregunta.php`, `icono.php`).
+
+| Banda (home) | Superficie | Por qué |
+| --- | --- | --- |
+| Hero + mapa | `--forest` | Entrada y marca; lime solo en la palabra de énfasis y los botones |
+| Franja de fuentes | `--lime` | Separador fino; la prueba ("más de N fuentes") va primero |
+| Beneficios | `--cream` + tarjetas `--white`, borde `--line-strong`, radio 16 | Las tarjetas flotan sobre cream sin sombra (la sombra es solo para elementos flotantes); número en Bebas, título en Playfair, texto 18 px |
+| Qué hacemos por vos | `--forest`, lista en 2 columnas, íconos lime, texto `--on-dark` | Rompe la secuencia clara y marca "lo que recibís"; es la segunda banda oscura, lejos del hero |
+| Destinos | `--paper` | Fondo neutro para las fotos; tarjetas con borde forest (vivas) o cream con borde punteado (próximas: el estado no depende del color) |
+| La pregunta repetida | `--cream` | Un solo acento por pantalla: el acento son los botones lime con texto forest; una banda forest o lime al lado de la franja de prestadores (lime) habría puesto dos acentos. Los botones llevan borde forest 1 px porque lime sobre cream es 1.2:1 |
+| Notas | `--paper` | Lectura; las fotos mandan |
+| Mapa | `--cream` | El mapa de OSM es celeste: cream lo separa mejor que blanco |
+| Prestadores | `--lime` | Ya estaba; es el único lime de relleno grande |
+| Pie | `--forest` | Cierre |
+
+Aire: el padding vertical de banda es `--band-y: clamp(40px, 6vw, 72px)` (antes hasta 94 px); los textos largos de cabecera usan `--measure`; el texto de las tarjetas de beneficios y de la lista "qué hacemos" va a 18 px (`--fs-lead`).
+
+Íconos: SVG inline en `parciales/icono.php`, trazo 1.75 sobre rejilla 24, `currentColor`, `aria-hidden`; son decoración, el significado está en el texto (no se usa color solo, WCAG 1.4.1).
+
+Contraste de los pares nuevos (WCAG 2.x, calculados con la fórmula de luminancia relativa; los tintes `color-mix` en oklab):
+
+| Par | Contraste | Mínimo |
+| --- | --- | --- |
+| `--ink` sobre `--white` (título tarjeta) | 16.0 | 4.5 |
+| `--muted` sobre `--white` (texto tarjeta) | 5.8 | 4.5 |
+| `--olive` sobre `--white` (número Bebas) | 5.8 | 4.5 |
+| `--on-dark` sobre `--forest` (lista) | 10.5 | 4.5 |
+| `--white` sobre `--forest` (título de banda) | 16.1 | 4.5 |
+| `--lime` sobre `--forest` (eyebrow, ícono) | 11.6 | 3 |
+| `--forest` sobre `--lime` (botón, ícono en círculo lime) | 11.6 | 4.5 |
+| `--muted` sobre `--cream` (notas al pie en cream) | 5.2 | 4.5 |
+| `--moss` sobre `--cream` (enlace "solo quiero saber las reglas") | 8.5 | 4.5 |
+| `--line-strong` vs `--white` / `--paper` / `--cream` (borde de tarjeta) | 3.6 / 3.4 / 3.2 | 3 |
+| `--forest` vs `--paper` (borde de tarjeta viva, borde de botón sobre cream) | 15.4 | 3 |
+| `--line` vs `--paper` (antes, borde de tarjetas) | 1.3 | 3: no cumplía, por eso `--line-strong` |
+| Separadores sobre forest (`--white` 16 % sobre forest) | 1.5 | decorativo, no es un componente |
+
+Pendiente: otras vistas (guías, notas) siguen con `--paper` plano y tarjetas con `--line`; se revisan aparte.
 
 ## Componentes que ya existen (se reutilizan, no se reinventan)
 

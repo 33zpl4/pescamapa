@@ -57,14 +57,17 @@ get_header(); ?>
 				</div>
 			</div>
 			<div class="purpose">
-				<?php foreach ( [ 1, 2, 3 ] as $n ) : ?>
-					<article><div class="num"><?php pm_e( "inicio.prop{$n}.n" ); ?></div><h3><?php pm_e( "inicio.prop{$n}.h" ); ?></h3><p><?php pm_e( "inicio.prop{$n}.p" ); ?></p></article>
+				<?php foreach ( [ 1 => 'pedido', 2 => 'lugar', 3 => 'sorpresas' ] as $n => $icono ) : ?>
+					<article>
+						<div class="cab"><span class="ico"><?php get_template_part( 'parciales/icono', null, [ 'n' => $icono ] ); ?></span><div class="num"><?php pm_e( "inicio.prop{$n}.n" ); ?></div></div>
+						<h3><?php pm_e( "inicio.prop{$n}.h" ); ?></h3><p><?php pm_e( "inicio.prop{$n}.p" ); ?></p>
+					</article>
 				<?php endforeach; ?>
 			</div>
 		</div>
 	</section>
 
-	<section class="section hacemos-sec">
+	<section class="section hacemos-sec on-dark">
 		<div class="shell">
 			<div class="head">
 				<div>
@@ -73,7 +76,9 @@ get_header(); ?>
 				</div>
 			</div>
 			<ul class="hacemos">
-				<?php foreach ( [ 1, 2, 3, 4, 5 ] as $n ) : ?><li><?php pm_e( "inicio.hacemos.$n" ); ?></li><?php endforeach; ?>
+				<?php foreach ( [ 1 => 'consultar', 2 => 'normas', 3 => 'incluye', 4 => 'disponible', 5 => 'actualizar' ] as $n => $icono ) : ?>
+					<li><span class="ico"><?php get_template_part( 'parciales/icono', null, [ 'n' => $icono ] ); ?></span><span><?php pm_e( "inicio.hacemos.$n" ); ?></span></li>
+				<?php endforeach; ?>
 			</ul>
 		</div>
 	</section>

@@ -4,6 +4,7 @@
 //   - a hex colour anywhere in extra.css or the theme PHP, outside the :root token blocks;
 //   - a font-family that is not one of the three tokens;
 //   - more literal pixel font sizes than BASELINE_TAMANOS (new CSS uses var(--fs-*));
+//   - the home templates (inicio, pregunta, icono): any hex, style="" or non-currentColor SVG paint;
 //   - a colour/font token used but not defined in pescamapa.css / extra.css.
 // pescamapa.css is generated from the Astro components and is not scanned.
 // The baseline only shrinks: when you replace a literal size with a token,
@@ -41,6 +42,14 @@ for (const f of archivos(TEMA, '.php')) {
 	for (const m of php.matchAll(/style="[^"]*"/g)) {
 		if (/#[0-9a-fA-F]{3,8}\b|font-family|font-size/.test(m[0])) errores.push(`${f.replace(TEMA, '')}: estilo inline con color/tipografía (${m[0].slice(0, 60)})`);
 	}
+}
+
+// Home templates (14/11/2026): no hex colour and no style="" at all (colour comes from classes + tokens; the SVG icons use currentColor).
+for (const f of ['vistas/inicio.php', 'parciales/pregunta.php', 'parciales/icono.php']) {
+	const php = readFileSync(join(TEMA, f), 'utf8');
+	for (const m of php.matchAll(/#[0-9a-fA-F]{3,8}\b/g)) if (!/&#\d+;|href="#/.test(php.slice(Math.max(0, m.index - 8), m.index + m[0].length))) errores.push(`${f}: color hex ${m[0]} en la plantilla de la home (usá clases y tokens)`);
+	if (/\sstyle\s*=/.test(php)) errores.push(`${f}: style="" en la plantilla de la home`);
+	for (const m of php.matchAll(/\b(?:fill|stroke)="(?!none|currentColor)[^"]*"/g)) errores.push(`${f}: ${m[0]} (los íconos usan currentColor)`);
 }
 
 const tokens = new Set([...readFileSync(join(TEMA, 'assets/pescamapa.css'), 'utf8').matchAll(/(--[a-z0-9-]+)\s*:/g)].map((m) => m[1]));
