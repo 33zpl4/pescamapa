@@ -1,0 +1,1106 @@
+Received: 20 April 2023      Revised: 21 December 2023          Accepted: 25 February 2024
+DOI: 10.1111/jfb.15722
+
+
+REGULAR ARTICLE                                                                                                          FISH
+
+
+Ancestry and genetic structure of resident and anadromous
+rainbow trout (Oncorhynchus mykiss) in Argentina
+
+Carolina Lázari 1 |                  Carla Riva-Rossi 2 |                   Javier Ciancio 3               |    Miguel Pascual 4                 |
+                                     1,5                                        1,5                                          1,5
+Anthony J. Clemento                            |   Devon E. Pearse                      |    John Carlos Garza
+
+1
+ Ocean Sciences Department, University of
+California Santa Cruz, Santa Cruz,                     Abstract
+California, USA
+                                                       Since the first introduction from North America more than a century ago, rainbow
+2
+  Instituto de Diversidad y Evolución Austral
+(IDEAus-CONICET), Puerto Madryn, Argentina
+                                                       trout (Oncorhynchus mykiss) have rapidly established self-sustaining populations in
+3
+ Centro para el Estudio de Sistemas Marinos            major river basins of Patagonia. Many generations later, only the freshwater resident
+(CESIMAR-CONICET), Puerto Madryn,                      life history is expressed in the Chubut and Negro rivers of northern Argentinian Pata-
+Argentina
+4
+ Instituto Patagónico para el Estudio de los
+                                                       gonia, whereas both the resident and anadromous life histories are found in the Santa
+Ecosistemas Continentales (IPEEC-CONICET),             Cruz River of southern Argentina. Despite previous studies that have tried to identify
+Puerto Madryn, Argentina
+5
+                                                       the sources of these introduced populations, uncertainty still exists. Here we com-
+ Southwest Fisheries Science Center, National
+Oceanic and Atmospheric Administration,                bined data from many single-nucleotide polymorphisms and microsatellite loci in
+Santa Cruz, California, USA                            O. mykiss populations from Argentina and North America to evaluate putative source
+Correspondence                                         populations, gene flow between Argentinian river basins, and genetic diversity differ-
+John Carlos Garza, Southwest Fisheries                 ences between Argentinian and North American populations. We found that popula-
+Science Center, National Oceanic and
+Atmospheric Administration, 110 MacAllister            tions from northern and southern Patagonia are highly differentiated and have
+Way, Santa Cruz, CA 95060, USA.                        limited gene flow between them. Phylogeographic analysis also confirmed that they
+Email: carlos.garza@noaa.gov
+                                                       have separate origins, with the northern populations most closely related to the
+                                                       domesticated rainbow trout strains that are raised worldwide and the Santa Cruz
+                                                       River populations most closely related to North American populations from California
+                                                       and Oregon that have an anadromous component. In addition, fish with different life
+                                                       histories in the Santa Cruz River were found to constitute a single interbreeding pop-
+                                                       ulation. No evidence was found of reduced genetic variation in introduced rainbow
+                                                       trout, suggesting multiple contributing sources. In spite of these advances in under-
+                                                       standing, significant questions remain regarding the origins and evolution of the
+                                                       introduced O. mykiss in Patagonia.
+
+                                                       KEYWORDS
+                                                       anadromy, Argentina, microsatellite, rainbow trout, SNPs, steelhead
+
+
+
+
+This is an open access article under the terms of the Creative Commons Attribution-NonCommercial-NoDerivs License, which permits use and distribution in any
+medium, provided the original work is properly cited, the use is non-commercial and no modifications or adaptations are made.
+© 2024 The Authors. Journal of Fish Biology published by John Wiley & Sons Ltd on behalf of Fisheries Society of the British Isles. This article has been contributed to
+by U.S. Government employees and their work is in the public domain in the USA.
+
+1972      wileyonlinelibrary.com/journal/jfb                                                                                          J Fish Biol. 2024;104:1972–1989.
+LÁZARI ET AL.
+                                                                                                   FISH                                           1973
+
+
+
+1     |    I N T RO DU CT I O N                                                  Historical records reveal rainbow trout propagation and exports
+                                                                             commencing in 1870, when the California Acclimatization Society ini-
+Rainbow trout and steelhead, the non-anadromous and anadromous               tiated artificial propagation in the San Francisco Bay area
+forms of Oncorhynchus mykiss, have a native distribution extending           (Behnke, 2002). In contrast to the long-standing belief that the
+from the Kamchatka Peninsula in eastern Russia eastward to southern          McCloud River was the exclusive source of early hatchery rainbow
+Alaska and coastal and interior regions of British Columbia,                 trout domestication, the origin of hatchery trout strains is notably
+Washington,      Oregon,    California,   and   northwestern      Mexico     diverse (Behnke, 2002). After the initial domestication of trout from
+(Behnke, 1992).                                                              the San Francisco Bay area, later contributions to hatchery strains
+     The parallel evolution of anadromy and residency across different       came from Clear Lake, California, and the McCloud River, in 1873 and
+phylogeographic lineages of O. mykiss has led to a complex network           1877, respectively (Leitritz, 1970). Interestingly, the initial transloca-
+of populations with anadromous and resident life histories, and has          tions of rainbow trout beyond their native range, to New York and
+led to inconsistencies in the delineation of conservation units based        Michigan, occurred in 1874 and 1876, but did not originate from the
+on migratory life-history traits (Clemento et al., 2009). Presently, there   McCloud River area (Behnke, 1992; Wales, 1939). However, by 1888,
+is general consensus that rather than distinct evolutionary lines, the       c. 2.5 million rainbow trout eggs of anadromous and resident stocks
+relationship between anadromous and resident rainbow trout appears           sourced from the Baird Station hatchery on the McCloud River and
+to be more concordant with geography than with life-history strategy         coastal rivers in northern California and southern Oregon were
+(Clemento et al., 2009; Docker & Heath, 2003; Garza et al., 2014;            shipped    to   establish   broodstocks    in   other    US    hatcheries
+McEwan, 2001; Olsen et al., 2006; Pearse et al., 2019). For example,         (Behnke, 1992, 2002; Busack & Gall, 1980; Leitritz, 1970). Early over-
+large genetic differences have been reported between populations of          seas exports of rainbow trout to Japan and Europe occurred in 1877,
+O. mykiss in some major river systems (Busby et al., 1996; Hendry            and these exports extended to various global destinations, including
+et al., 2002). However, within these river systems, anadromous and           Sri Lanka, New Zealand, China, and Argentina (MacCrimmon, 1971;
+resident fish in a given tributary are usually more closely related to       Stankovic et al., 2015).
+one another than to populations of the same life history in other tribu-         The introduction of rainbow trout across the geographical gradi-
+taries and river systems, supporting the view that within a geographic       ent of Patagonia, Argentina, provides an opportunity to evaluate the
+area, alternative forms share an evolutionary legacy (Allendorf, 1975;       establishment of new populations and the maintenance of anadromy
+Busby et al., 1996; Currens et al., 1997). Conversely, substantial           and residency in this species. In Patagonia, rainbow trout were first
+genetic divergence has been recorded between non-anadromous/                 introduced in the early 1900s, reportedly from the McCloud River in
+resident and anadromous trout in areas where the two forms have              northern California, and then later between 1950 and 1970, with
+been isolated by long-standing natural barriers, allowing for indepen-       imports from Denmark using strains sourced from secondary and ter-
+dent evolution (Busby et al., 1996; Deiner et al., 2007; Kostow, 2003;       tiary transfers of rainbow trout within Europe in the late 1800s (see
+Nielsen et al., 2003). In sympatry, the relationship between steelhead       below, MacCrimmon, 1971; Pascual et al., 2001; Riva Rossi
+and resident rainbow trout may vary from complete genetic isolation          et al., 2004; Stankovic et al., 2015). These introductions led to the
+to genetically indistinguishable groups (Busby et al., 1996; McPhee          establishment of self-sustaining populations in the major river basins
+et al., 2007; Narum et al., 2004; Zimmerman & Reeves, 2000).                 of northern Patagonia, the Negro (38 S) and Chubut rivers (43 S),
+     The complex relationship between anadromous and resident                and in the Santa Cruz River (50 S) in southern Patagonia (Figure 1).
+forms of trout in different river systems has led many authors to pro-       Over 10–25 generations after these introductions, both resident and
+pose that the expression of alternative life histories in O. mykiss, and     migratory (anadromous) life histories are found in the Santa Cruz
+in salmonids more generally, is the outcome of interacting genetic var-      River, whereas only the resident life history has been recorded in
+iation and environmental factors. Whether an individual migrates or          northern Patagonian populations (Pascual et al., 2001; Riva Rossi
+not depends on a combination of its genetic constitution and specific        et al., 2004). In the Santa Cruz River, the anadromous and resident
+environmentally triggered threshold traits (Phillis et al., 2016; Thrower    forms are genetically similar (Pascual et al., 2001), and both forms can
+et al., 2004). This concept also holds true for other salmonid species,      give rise to each other, suggesting a single population with alternative
+including Arctic charr (Jonsson & Jonsson, 1993), brook charr                phenotypes (Riva-Rossi et al., 2007).
+(Thériault & Dodson, 2003), Atlantic salmon (Thorpe et al., 1998), and           Understanding the origins of O. mykiss populations in Argentina
+others (Aubin-Horth & Dodson, 2004; Garant et al., 2002). Because            will help to clarify whether current life-history diversity is a conse-
+threshold values for traits that lead to different strategies may differ     quence of introduction from populations with life-history variation or
+among populations, due to environmental selection pressures (Aubin-          whether this variation has arisen de novo in the recipient environ-
+Horth & Dodson, 2004) or random genetic drift (e.g., Moczek                  ments. Previous analysis of the mtDNA control region indicated that
+et al., 2002; Roff, 1996), the incidence and expression of anadromy          O. mykiss populations from the Santa Cruz River and northern Patago-
+often vary among individuals, populations, and environments. For             nia derived from different source populations (Riva Rossi et al., 2004).
+example, a relationship has been described between juvenile body size        However, considerable uncertainty exists regarding the origin of the
+and the proportions of mature parr and smolts in white-spotted charr         Santa Cruz River population and specifically if it was established from
+across various latitudes (Yamamoto et al., 1999).                            a single source in the McCloud River, California, United States, or if it
+1974
+                       FISH                                                                                                                 LÁZARI ET AL.
+
+
+
+resulted from multiple mixed sources, possibly from California or else-      southern Oregon, including the Klamath River, Redwood Creek, Kern
+where on the West Coast of North America. In addition, it is unclear         River, and Rogue River, as well as from hatcheries in Caledonia, New
+whether the source population(s) consisted only of individuals with a        York, and Northville, Michigan, containing different varieties of O. mykiss,
+single life history or with both resident and anadromous life histories      including redband trout, golden trout, and coastal steelhead trout, all of
+(Behnke, 2002; Nielsen et al., 2005; Pascual et al., 2002; Riva Rossi        which were commonly utilized during the early 1900s as broodstock
+et al., 2004).                                                               sources (Behnke, 1992, 2002; Busack & Gall, 1980; Colihueque
+      Here, we survey genetic variation at 93 single-nucleotide poly-        et al., 2019).
+morphisms (SNPs) and 14 microsatellite loci to investigate the evolu-              Rainbow trout introductions to Argentina briefly restarted in 1930
+tionary relationships among and between steelhead and rainbow trout          from Chile (of German origin, Colihueque et al., 2019) but intensified in
+populations from Argentina and the West Coast of North America.              the period 1950–1970, mostly with stocks raised in Denmark. Danish
+Because of the differences in migratory life history found among             hatchery rainbow trout stocks also have complex ancestry. The first
+Argentinian populations and the uncertainty about their origins, we          translocation of rainbow trout to Europe was when eggs from the Baird
+evaluate if Argentinian populations came from the same or different          Station were shipped to Paris in 1879 and then to Germany in 1882
+ancestral populations from North America and, more specifically,             (Baird, 1886; Behr, 1882; Clark, 1884). Rainbow trout were then trans-
+whether they came from the California Central Valley (where the              ferred extensively across Europe, particularly from German hatcheries to
+McCloud River is located), hatchery strains or other populations from        Austria, Bulgaria, Denmark, Poland, Sweden, Switzerland, Russia,
+California and Oregon. We also study gene flow between the popula-           Slovakia, Slovenia, and the Czech Republic (Crawford & Muir, 2008).
+tions of O. mykiss in Argentina, as it may be an important factor to         Rainbow trout most likely arrived in Danish trout farms from Germany
+maintain population structure. In some rivers, the presence of differ-       around 1894. Since then, eggs from the United States, Canada,
+ent migratory ecotypes is indicative of separate populations, so here        New Zealand, and France have been imported to Patagonia
+we investigate whether the anadromous and resident ecotypes found            (MacCrimmon, 1971; Stankovic et al., 2015).
+in the Santa Cruz River represent different populations and if they                These imports were maintained by the Bariloche hatchery in
+share ancestral origins. Genotype data from a locus within a large           Argentina, which propagated them extensively throughout Patagonia,
+chromosomal inversion on chromosome Omy5 associated with migra-              particularly into northern basins (e.g., Negro and Chubut rivers) for
+tory life-history variation in some steelhead populations (Pearse            commercial (aquaculture) and recreational fishery purposes, including
+et al., 2019) offer further potential insights into the evolution of ana-    stock enhancement of public and private waters. Descendants of the
+dromy in O. mykiss in Patagonia. Finally, when populations are               Danish strain from the Bariloche hatchery were utilized as the brood-
+founded by a few individuals, founder effects and bottlenecks can            stock source of the Piedra Buena hatchery, a small aquaculture facility
+produce a decrease in genetic diversity, so we also evaluate whether         established on the Santa Cruz River in 1991, dedicated to the produc-
+introduced O. mykiss populations in Argentina have reduced genetic           tion of trout for human consumption and to a lesser extent for stock
+variation in contrast with native populations.                               enhancement. These fish were used for trout farming rather than river
+                                                                             stocking, but they were planted in low abundances in small tributaries
+                                                                             of the upper Santa Cruz River basin, including small creeks flowing
+2      |       METHODS                                                       into Lake Roca and the De las Vueltas River (R. Hudson, Manager Pie-
+                                                                             dra Buena Hatchery, personal communication).
+2.1        |     Stocking history
+
+Introductions of O. mykiss in Patagonia started in the early 1900s, mainly   2.2      |   Sample collection
+with eggs exported from the United States, but with occasional imports
+from Germany and France (Riva Rossi et al., 2004). Within a few genera-      Pelvic-fin clips and scales were taken from adult anadromous
+tions of the original introduction, successful populations of presumably     (n = 113) and non-anadromous trout (n = 115) at three sites in the
+resident trout were well established, and natural reproduction was           mainstem Santa Cruz River during March–April 1997, 1998, 2000,
+observed in every basin in the region where they had been introduced         and 2001 (fall in the Southern Hemisphere); September–October
+(Valette, 1922). In the Santa Cruz River, imported rainbow trout presum-     1999, 2000, and 2001 (spring); and May–September 2004 (fall to
+ably from California or Oregon, United States, were stocked between          spring). In addition, dry pelvic tissue and scale samples were taken
+1906 and 1910, and naturalized populations were well established and         from adult resident trout during the period 1994–2000 from the
+widely         distributed   throughout   the   basin   by   the   1920s     Negro (n = 21) and Chubut rivers (n = 18) in northern Patagonia, as
+(MacCrimmon, 1971; Pascual et al., 2001; Riva Rossi et al., 2004;            well as Lake Argentino (n = 18), Lake Roca (n = 7), La Leona River
+Valette, 1924). Because trout introductions in the Santa Cruz River          (n = 7), and De las Vueltas River (n = 5) in the upper basin of the
+occurred over a decade after the Baird Station hatchery on the McCloud       Santa Cruz River (Figure 1; Table 1). Fish ecotype (e.g., anadromous,
+River had closed (Pascual et al., 2002), Behnke (2002) proposed that the     non-anadromous) was determined using scale pattern analysis
+introduced stock may actually derive from multiple sources from the          (Pascual et al., 2001; Riva-Rossi et al., 2007). Although Argentina did
+McCloud River and various coastal rivers in northern California and          not have specific regulations for care or use of nonnative animals in
+LÁZARI ET AL.
+                                                                                                FISH                                        1975
+
+
+
+F I G U R E 1 Geographic locations of
+Oncorhynchus mykiss sampling sites in
+Argentina. From north to south—Negro
+River: RNegr, Chubut River: RChub, Las
+Vueltas River: RLVue, La Leona River:
+LaLeo, Lake Argentino: LaArg, Lake Roca:
+LaRoc, Santa Cruz River-Resident: SCRes,
+and Santa Cruz-Anadromous: SCAna.
+
+
+
+
+place at the time of this study, all fish capture and handling proce-       studies of population structure and evolutionary history of O. mykiss
+dures were approved by the Ministerio de Agricultura, Ganadería y           throughout the southern portion of their native range (Abadía-
+Pesca of Río Negro Province; by the Instituto Provincial del Agua,          Cardoso et al., 2016; Arciniega et al., 2016; Clemento et al., 2009;
+Administración General de Recursos Hídricos of Chubut Province; and         Garza et al., 2014; Pearse & Garza, 2015).
+by the Subsecretaría de Pesca y Asuntos Portuarios of Santa Cruz
+Province and were conducted using the best-available science and
+veterinary practices for minimizing stress and ensuring fish survival.      2.3    |   Microsatellite and SNP procedures
+     In addition, to investigate the ancestry and origins of these intro-
+duced fish, data from 54 natural and hatchery O. mykiss populations         DNA was extracted from all the samples using DNeasy 96 tissue
+from the native range (California and Oregon; Table 1) were included        extraction kits on a BioRobot 3000 (Qiagen, Inc.) following the manu-
+in this study. These samples were collected and analysed as part of         facturer's procedures.
+                                                                                                                                                                                               1976
+
+
+
+TABLE 1      Summary statistics of the 93 SNPs and 14 microsatellite assays in Oncorhynchus mykiss populations from Argentina and North America.
+
+ O. mykiss
+
+                                                                                                                                                                        Omy05 ancestral
+ River-sampling site                              Population code       Sample size        Loci typed       He          Ho          AR             % Polymorphic loci   haplotype freqency
+
+ Patagonia Argentina
+                                                                                                                                                                                             FISH
+
+
+
+
+   Rio Negro-Paso Córdoba/Curso inferior          RNegr                   21               107              0.40        0.37             2.0        88                  77
+   Rio Chubut-Curso inferior/Dique                RChub                   18               107              0.39        0.39             2.5        87                  78
+   Río de las Vueltas-SC                          RLVue                    5               107              0.38        0.39        N/A             63                  60
+   La Leona-Santa Cruz                            LaLeo                    7               107              0.31        0.33        N/A             60                  42
+   Lago Argentino-Santa Cruz                      LaArg                   18               107              0.33        0.32             2.9        74                  47
+   Lago Roca-Santa Cruz                           LaRoc                   17               107              0.36        0.35             3.2        87                  41
+   Santa Cruz River-Resident                      SCRes                 113                107              0.35        0.34             2.5        92                  48
+   Santa Cruz River-Anadromous                    SCAna                 112                107              0.34        0.34             3.0        86                  56
+ North America
+   Columbia River-Still Creek/Summer              ColSC                   24               100              0.30        0.29             3.4        84                   7
+   Columbia River-Wiley                           ColWy                   23               100              0.25        0.26             2.0        78                   0
+   Umpqua River-Winter                            UmpWi                   24               101              0.34        0.32             3.0        92                  73
+   Umpqua River-Summer                            UmpSu                   21               101              0.33        0.31             2.9        89                  86
+   Rogue River-Lobster Creek/Winter               RouLb                   17               100              0.36        0.35             2.9        97                  47
+   Rogue River-Lawson Creek/Winter                RouLw                   23               100              0.36        0.35             2.8        94                  64
+   Smith River-South Fork Rowdy Creek             SmiSF                   48               107              0.38        0.37             2.8        94                  39
+   Klamath-Horse Linto Creek                      KlaHL                   72               107              0.34        0.35             2.0        96                  56
+   Klamath-New River/Summer                       KlaNR                   47               101              0.35        0.34             3.6        96                  52
+   Mad River-Canon                                MadRC                   48               107              0.38        0.38             2.0       100                  69
+   Mattole River                                  Matto                   31               106              0.39        0.40             3.3        97                  61
+   Eel River-Hollow Tree Creek                    EelHT                   45               107              0.39        0.38             2.3        95                  84
+   Eel River-Willits Creek                        EelWC                   38               107              0.41        0.41             2.0        98                  41
+   Eel River-Middle Fork Summer                   EelMF                   24               100              0.39        0.39             3.1        96                  59
+   Noyo River-Little North Fork                   NoyLF                   64               107              0.40        0.40             2.4        99                  86
+   Gualala River                                  Guala                   61               106              0.43        0.44             2.9        99                  75
+ Central
+   Russian River-Willow                           RussW                   64               107              0.40        0.42             2.0        97                  71
+   Lagunitas Creek-Olema Creek                    LagOC                   56               107              0.41        0.41             2.3        98                  96
+   San Francisquito Creek-Los Trancos Creek       SaFLT                   24               106              0.40        0.40             2.9        96                  77
+                                                                                                                                                                                               LÁZARI ET AL.
+TABLE 1      (Continued)
+                                                                                                                                                             LÁZARI ET AL.
+
+
+
+
+ O. mykiss
+
+                                                                                                                                     Omy05 ancestral
+ River-sampling site                      Population code   Sample size   Loci typed   He     Ho     AR         % Polymorphic loci   haplotype freqency
+
+ South-Central/South
+   Scott Creek                            Scott              64           107          0.42   0.42        3.7    99                  80
+   San Lorenzo-Boulder                    SanLB              50           107          0.41   0.43        3.0    98                  60
+   Carmel River                           CarmR              32           106          0.41   0.41        4.0    98                  95
+   Big Sur River                          BigSR              46           107          0.41   0.42        3.4    98                  89
+   San Simeon Creek                       SimeC              31           106          0.41   0.43        3.3    98                  79
+   Santa Maria-Sisquoc/Manzana            SmSiM              47           107          0.33   0.34        2.2    87                  16
+   Santa Ynez-Salsipuedes Creek           SYSal              47           107          0.37   0.35        3.3    95                  83
+   Santa Ynez-Santa Cruz Creek            SYSt               34           107          0.38   0.37        3.0    92                  18
+   Ventura-North Fork Matilija Creek      VenMC              46           107          0.37   0.37        2.7    96                  39
+   Santa Clara-Sespe Creek                SClSe              39           105          0.36   0.35        3.7    98                  63
+   Santa Clara-Sta Paula                  SClPa              45           107          0.41   0.40        4.2    97                  34
+   Santa Ana-Coldwater Canyon Creek       SACaC              19           105          0.12   0.12        2.0    31                   0
+   San Luis Rey-West Fork                 LuRWF              12           105          0.25   0.26        3.0    65                  21
+   Santa Domingo-Mexico (O. m. nelsoni)   SaDom              38           107          0.18   0.16        2.0    54                  76
+ Central Valley
+   McCloud River-Butcherknife Creek       McClB              21           107          0.21   0.21        2.4    66                   0
+   McCloud River-Claiborne Creek          McClC              33           107          0.37   0.36        2.0    92                   0
+   Clear Creek                            ClrCk              94           107          0.39   0.37        2.5   100                  25
+   Battle Creek                           Battl              92           107          0.41   0.40        2.6   100                  39
+                                                                                                                                                           FISH
+
+
+
+
+   Feather River-Upper                    FeaUp              47           107          0.37   0.32        2.4   100                   3
+   Yuba River-Upper                       YubUp              26           107          0.42   0.42        2.7   100                   4
+   Yuba River-Pauley Creek                YubPC              24           107          0.33   0.32        2.8    89                   0
+   Mokelumne River-North Fork             MokNF              51           107          0.38   0.37        2.6   100                  12
+   Mokelumne River-South Fork             MokSF              49           107          0.35   0.35        3.1   100                  24
+   Stanislaus River-Upper                 StanUp             52           107          0.38   0.35        2.4    99                  31
+   Tuolumne River-Upper                   TuoUp              47           107          0.38   0.35        2.7    99                  17
+   Merced River-Upper                     MrdUp              35           107          0.39   0.34        2.8   100                  40
+
+                                                                                                                                             (Continues)
+                                                                                                                                                             1977
+ 1978
+                                                           FISH                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     LÁZARI ET AL.
+
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              A total of 93 SNPs and 14 microsatellite loci were used for the
+
+
+
+                           haplotype freqency
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        current study, including markers described by different authors
+                           Omy05 ancestral
+
+
+
+
+                                                                                                                                                                                                                                                                                              Note: Reported are the expected heterozygosity (He), observed heterozygosity (Ho), allelic richness (AR), and percentage of polymorphic loci (%Pl). Chromosome Omy05 ancestral (noninversion) haplotype
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        (Table S1). The 14 microsatellite loci were previously optimized for
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        use in O. mykiss (Garza et al., 2014). Extracted DNA was diluted c.
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        10:1 and used for PCR amplification using the conditions described by
+
+
+
+
+                                                                                                                                                                                               0
+
+
+                                                                                                                                                                                                                                               6
+                                                                              35
+                                                                                                 54
+                                                                                                                             54
+                                                                                                                                                        35
+                                                                                                                                                                            30
+
+
+                                                                                                                                                                                                                    28
+
+
+                                                                                                                                                                                                                                                                      52
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        Garza et al. (2014). PCR products were electrophoresed on ABI
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        377 sequencers, and microsatellite genotypes were called using Gen-
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        escan 3.0 and Genotyper 2.1 software (Applied Biosystems, Inc.). All
+                                     % Polymorphic loci
+
+
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        the SNP loci were genotyped using TaqMan 50 -nuclease chemistry
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        (Applied Biosystems) on an EP1 system, with the SNP Genotyping
+
+
+
+
+                                                                                                                                                                                                                                                                                              frequency was estimated from SNP locus Omy_114448-87. AR was not estimated for sample sizes <10. NA means not applicable for this parameter for the two populations.
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        Analysis software, version 3.1.1 (Fluidigm Corporation), used to call all
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        genotypes. All genotypes were checked independently by two people
+                                                                              98
+                                                                                                 93
+                                                                                                                             92
+                                                                                                                                                        90
+                                                                                                                                                                            93
+                                                                                                                                                                                               80
+                                                                                                                                                                                                                    87
+                                                                                                                                                                                                                                               99
+                                                                                                                                                                                                                                                                      91
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        to ensure correct and consistent calling. The few discrepancies found
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        between the two calls were resolved by consensus, by re-genotyping,
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        or by deletion of that genotype from the data set.
+                                                                              2.0
+                                                                                                 3.0
+                                                                                                                             2.8
+                                                                                                                                                        2.9
+                                                                                                                                                                            2.5
+                                                                                                                                                                                               2.6
+                                                                                                                                                                                                                    1.7
+                                                                                                                                                                                                                                               3.0
+                                                                                                                                                                                                                                                                      3.0
+                                    AR
+
+
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        2.4     |   Population genetic analyses
+                                                                              0.36
+                                                                                                 0.37
+                                                                                                                             0.35
+                                                                                                                                                        0.29
+                                                                                                                                                                            0.37
+                                                                                                                                                                                               0.27
+                                                                                                                                                                                                                    0.29
+                                                                                                                                                                                                                                               0.28
+                                                                                                                                                                                                                                                                      0.34
+                                    Ho
+
+
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        Within-population genetic diversity at microsatellite and SNP loci was
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        evaluated using descriptive statistics, including unbiased heterozygos-
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ity (HE), observed heterozygosity (HO), and the mean number of alleles
+                                                                              0.37
+                                                                                                 0.37
+                                                                                                                             0.36
+                                                                                                                                                        0.31
+                                                                                                                                                                            0.37
+                                                                                                                                                                                               0.28
+                                                                                                                                                                                                                    0.30
+                                                                                                                                                                                                                                               0.29
+                                                                                                                                                                                                                                                                      0.35
+                                    He
+
+
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        per locus, all employing the Microsatellite Toolkit (Park 2001). Allelic
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        richness (AR) was calculated using the diveRsity R package (Keenan
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        et al., 2013). The proportion of polymorphic loci is also reported.
+                                     Loci typed
+
+
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        Hardy–Weinberg equilibrium (HWE) was also evaluated using Pear-
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        son's χ2 test from the genetics R package (Warnes & Leisch, 2005),
+                                                                              107
+                                                                                                 106
+                                                                                                                             106
+                                                                                                                                                        107
+                                                                                                                                                                            107
+                                                                                                                                                                                               106
+                                                                                                                                                                                                                    107
+                                                                                                                                                                                                                                               107
+                                                                                                                                                                                                                                                                      106
+
+
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        and pair-wise population differentiation for the 62 populations was
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        quantified for each locus based on average FST values obtained using
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        the strataG R package (Archer et al., 2017). Pair-wise linkage disequi-
+                                     Sample size
+
+
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        librium between all the loci was calculated using the genetics R pack-
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        age (Warnes & Leisch, 2005).
+                                                                              47
+                                                                                                 24
+                                                                                                                             24
+                                                                                                                                                        48
+                                                                                                                                                                            47
+                                                                                                                                                                                               47
+                                                                                                                                                                                                                    47
+                                                                                                                                                                                                                                               47
+                                                                                                                                                                                                                                                                      47
+
+
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              Evolutionary relationships and population genetic structure
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        between and within native and introduced O. mykiss populations and
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        hatchery strains were estimated using several methods. Because the
+                                     Population code
+
+
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        Argentinean populations have been established over a period of only
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        c. 100 years, which equates to c. 25–30 generations, changes in
+                                                                                                                                                                            WyomM
+                                                                                                 MtWhE
+                                                                                                                             MtWhL
+
+
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        microsatellite allele frequencies through mutation (at rates of 103–
+                                                                                                                                                                                               HCKml
+
+
+
+
+                                                                                                                                                                                                                                                                      ShasM
+                                                                              ColeM
+
+
+
+
+                                                                                                                                                                                                                    Moccs
+                                                                                                                                                                                                                                               EaglM
+                                                                                                                                                        VirgM
+
+
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        104 per locus per generation) are not likely to have a major influence
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        on allele frequencies compared to the effects of genetic drift. There-
+                                                                                                                                                                                                                                                                                              Abbreviation: SNP, single-nucleotide polymorphism.
+
+
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        fore, methods that are based on evolutionary models of genetic drift
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        rather than mutation were favored (e.g., Tessier & Bernatchez, 1999;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        Wenburg et al., 1998). As such, evolutionary relationships between
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        the North America and Argentinian populations were summarized
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        using pair-wise chord distances (Cavalli-Sforza & Edwards, 1967),
+                                                                                                                                                                                                                    Moccasin Creek-Hot Creek
+                                                                                                 Mt Whitney Early-Fillmore
+                                                                                                                             Mt Whitney Late-Fillmore
+
+
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        which were then used to construct neighbor-joining (NJ) trees with
+ (Continued)
+
+
+
+
+                                                                                                                                                                                                                                                                      Shasta-American River
+                                                                                                                                                                                                                                               Eagle-American River
+
+
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        PHYLIP (Felsenstein, 1993). Bootstrap-consensus trees were built
+                                                                                                                                                                                               Kamloops-Hot Creek
+                                                                                                                                                                            Wyoming-Fillmore
+                                                                              Coleman-Fillmore
+
+
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        using 1000 bootstrap replicates to confirm consistency of the tree
+                                     River-sampling site
+
+
+
+
+                                                                                                                                                        Virginia-Fillmore
+                                                           Hatchery Strains
+
+
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        structure obtained. All trees were plotted using Dendroscope, version
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        3 (Huson & Scornavacca, 2012).
+               O. mykiss
+TABLE 1
+
+
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              Discriminant analysis of principal components (DAPC; Jombart
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        et al., 2010) was used to identify patterns of genetic relatedness
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        among populations and performed using the adegenet R package
+LÁZARI ET AL.
+                                                                                                FISH                                           1979
+
+
+
+
+F I G U R E 2 Neighbor-joining tree of all populations is included in the analysis. Northern Patagonian populations are in red, and southern
+Patagonian populations are in blue.
+
+
+
+(Jombart, 2008). The Bayesian model–based clustering method from           individuals were assigned to a cluster based on only their multilocus
+structure (Pritchard et al., 2000) was used to look for evidence of        genotypic profile. The admixture parameter, α, estimated with each
+admixed ancestry and multiple origins, and to infer population clusters    k value was also estimated. Burn-in was set at 5000, with the next
+from the multilocus genotype data of both Patagonian and North             15,000 iterations used for data collection, and each test yielded a log-
+American fish. A series of evaluations were performed using different      likelihood value of the data (ln probability). The ad hoc statistic based
+numbers of potential genetic clusters (k = 2–6) to guide an empirical      on the rate of change in the log likelihood of the data (Δk) was used
+estimate of the number of identifiable genetic groups in Argentina,        as proposed by Evanno et al. (2005) to accurately determine the level
+under a model assuming admixture and correlated allele frequencies.        of structure. Runs were replicated five times at each k value to con-
+The probability of how the data best fit into each number of assumed       firm consistency of log-likelihood probabilities. Individuals were
+clusters was estimated in each case (ln probability of the data) without   assigned probabilistically to a population based on qi values, or to mul-
+using any prior population information (USEPOPINFO = 0), so that           tiple populations, if their genotype profile indicated admixture. For
+1980
+                  FISH                                                                                                                LÁZARI ET AL.
+
+
+
+
+F I G U R E 3 Bootstrap-consensus tree of all populations included in the analysis, with bootstrap support for internal branches of greater than
+50% indicated. Northern Patagonian populations are in red, and southern Patagonian populations are in blue.
+
+
+
+visualization purposes, CLUMPP (Jakobsson & Rosenberg, 2007) and           study are presented in Table 1. Among the North American popula-
+Distruct (Rosenberg, 2004) were used to reorder clusters and plot          tions, the expected heterozygosity (HE) ranged from 0.12 (Santa Ana-
+individual qi values.                                                      Coldwater Creek, SACaC) to 0.43 (Gualala River, Guala), whereas the
+    One of the SNP loci (Omy_114448-87) is located within an               observed heterozygosity (HO) ranged from 0.12 to 0.44 at the same
+inverted region of the genome on chromosome Omy5 that is strongly          locations. For the Argentinian populations, HE ranged from 0.31
+associated with life history in some O. mykiss populations (Abadía-        (La Leona, LaLeo) to 0.40 (Negro River, RNegr), and HO values ranged
+Cardoso et al., 2011; Pearse et al., 2014; Pearse et al., 2019). Here,     from 0.32 (Lake Argentino, LaArg) to 0.39 (Chubut River, RChub).
+we use the allele frequencies for Omy_114448-87 to estimate the fre-            For the native range, microsatellite allelic richness (AR) ranged
+quencies of the Omy5 inversion haplotypes for the populations in the       from 1.7 (Moccasin Creek-Hot Creek, Moccs) to 4.2 (Santa Clara-Sta
+present study.                                                             Paula, SClPa), and the proportion of polymorphic SNPs ranged from
+                                                                           31 (SACaC) to 100% (Mad River-Canon, MadRC, and multiple popula-
+                                                                           tions from the California Central Valley). For the Argentinean
+3      |   RESULTS                                                         populations, AR values ranged from 2.0 (RNegr) to 3.2 (Lake Roca,
+                                                                           LaRoc), and the proportion of polymorphic loci ranged from 60 (LaLeo)
+Newly      generated    and   previously   published   (Abadía-Cardoso     to 92% (Santa Cruz River-Resident, SCRes) (Table 1). Overall, the
+et al., 2016; Arciniega et al., 2016; Clemento et al., 2009; Garza         values obtained for both AR and the proportion of polymorphic loci in
+et al., 2014; Pearse et al., 2019; Pearse & Garza, 2015) microsatellite    Argentinean populations were marginally lower than those obtained
+and SNP data from 2568 fish in Argentina and North America were            for the native-range populations.
+combined for this study. The standard descriptive statistics for these          Among the Argentinian populations, test results indicated that
+genotypes of 100–107 loci and for all the populations included in this     only the Santa Cruz River resident fish had a significant departure
+LÁZARI ET AL.
+                                                                                                   FISH                              1981
+
+
+
+
+FIGURE 4         Discriminant analysis of principal components plot with (a) all populations and (b) Argentinian populations only.
+1982
+                    FISH                                                                                                                 LÁZARI ET AL.
+
+
+
+
+F I G U R E 5 Results from structure showing ancestry and genetic relationships of (a) all populations and (b) the Argentinian populations only.
+Each vertical line represents the genetic relationships between an individual and each potential genetic cluster (k). Populations are aligned from
+north to south.
+
+
+
+from    HWE         following   Bonferroni   correction   for   multiple     Valley of California (with bootstrap values of 99%), whereas the
+tests (p < 0.01).                                                            southern populations from the Santa Cruz River basin—SCRes, SCAna,
+    FST among Argentinian populations showed a high degree of dif-           LaArg, LaLeo, and LaRoc—clustered with natural populations from
+ferentiation in the northern populations of Patagonia, RNegr and             northern California and Oregon (with bootstrap values greater than
+RChub, from the southern populations in the Santa Cruz River basin           90%). RLVue was grouped separately from all other Argentinian popu-
+(Table S2). The exception to this is the De las Vueltas River (RLVue)        lations and was also related to the hatchery strains and Central Valley
+population, which is also differentiated from all other Santa Cruz River     populations.
+populations and slightly more similar to the two northern populations.           The results obtained using the DAPC analysis (Figure 4) were
+In contrast, the two northern populations are genetically differenti-        consistent with the NJ and bootstrap-consensus tree results. When
+ated from each other, but with a much smaller FST value between              looking at all the populations (Figure 4a), the northern Patagonian
+them, than with the southern populations. Similarly, in the Santa Cruz       populations were grouped with hatchery strains, and the southern
+River basin, most populations were modestly differentiated, with the         Patagonian populations were grouped with northern California and
+exception of the mainstem resident (SCRes) and anadromous (Santa             Oregon populations, with nominal clustering by one hatchery strain
+Cruz River–Anadromous, SCAna) groups, which were not significantly           domesticated from a Canadian source and a McCloud River popula-
+differentiated. FST among all the populations, native and Argentinean,       tion, and the RLVue fish were grouped with the California Central Val-
+showed that northern Patagonian populations are more similar to Cali-        ley and the hatchery rainbow trout strains that were domesticated
+fornia Central Valley and hatchery rainbow trout strains, whereas            from California source populations. The DAPC plot for the Argentin-
+southern Patagonian populations are more similar to populations from         ian populations (Figure 4b) showed only four different groups, where
+coastal North America, including California and Oregon.                      the two northern populations (RChub and RNegr) represent different
+    Genetic differentiation (FST) among populations within the intro-        groups.
+duced range was far less than that between introduced and native                 The individual-based analysis performed using structure assigned
+populations. Overall FST among Argentinean populations was 0.061             fish to their population and also identified ancestry (Figure 5). Using
+( p = 0), and that between native and introduced samples was                 Δk as calculated following Evanno et al. (2005), the greatest rate of
+0.189 ( p = 0).                                                              change was found when k = 2, indicating that this level of structure is
+    NJ tree relationships (Figure 2) were supported by the bootstrap-        the most appropriate to describe Patagonian populations. Also, at this
+consensus tree with bootstrap values greater than 50% (Figure 3).            level we obtained an α = 0.016, indicating that fish in Argentina are
+Both grouped the northern Argentinean populations RChub and                  best characterized as essentially from either the northern Patagonia
+RNegr with the hatchery strains and populations from the Central             or the Santa Cruz River basin cluster.
+LÁZARI ET AL.
+                                                                                                    FISH                                        1983
+
+
+
+     In general, and regardless of k values, the results indicate that           Northern Patagonian populations formed a separate cluster from
+populations from northern and southern Patagonia have different ori-        the southern populations and were strongly associated with hatchery
+gins. Santa Cruz River populations (SCRes and SCAna), LaArg, and            rainbow trout strains and with California Central Valley populations.
+LaRoc seem to share ancestry with populations from northern Califor-        Southern Patagonian populations from the Santa Cruz River basin, on
+nia and Oregon in the native range, whereas RNegr and RChub popu-           the contrary, clustered distinctly from the northern populations and
+lations have ancestry from the hatchery trout strains. RLVue, as in the     with populations from coastal basins of California and Oregon in
+other analyses, was not grouped with the other southern populations,        North America. These potential progenitor populations are comprised
+and its ancestry was closer to the hatchery strains. These results are      predominantly of anadromous steelhead forms. Although the present
+consistent with the clusters obtained from the NJ and bootstrap-            results clearly demonstrate multiple origins for O. mykiss populations
+consensus trees, as well as the patterns observed on the DAPC plots,        in   Patagonia,   the   lack   of   clear   clustering   of   Argentinean
+which suggest different origins for northern and southern Patagonian        populations with any specific native populations does not allow strong
+O. mykiss populations. Even though it is clear that Argentinian popula-     conclusions about the specific ancestral sources. Previous work with
+tions constituted two clearly differentiated clusters, separating RNegr     mitochondrial DNA also supported the idea that the Santa Cruz River
+and RChub from the rest of the populations, these results do not            populations were founded by a mixture of multiple sources from Cali-
+allow us to clearly identify the ancestral populations.                     fornia and did not originate from a single source (Riva Rossi
+     Frequencies of the A (ancestral/anadromy-associated) allele at the     et al., 2004).
+locus Omy_114448-87 were highly variable among populations                       NJ trees based on chord distances supported a close genetic rela-
+(Table 1). Within the native range, ancestral allele frequencies ranged     tionship between Santa Cruz River O. mykiss and various populations
+from 0% to 96% for natural populations and from 0% to 54% for hatch-        from California and Oregon (Figure 2). FST values were consistent with
+ery strains. Frequencies of the same allele in the Santa Cruz basin popu-   this and also supported closer genetic relationships with some Califor-
+lations ranged from 41 (LaRoc) to 56% (SCAna), whereas for the              nia Central Valley populations, notably the McCloud River populations
+northern Patagonian populations, the frequencies were 78% (RChub)           (Table S2). The NJ tree also suggests an ancestral contribution from
+and 77% (RNegr), considerably higher than in the hatchery strains.          the McCloud River redband trout to the Santa Cruz River population,
+     Linkage disequilibrium (LD) for all the other loci in the Argentin-    a result concordant with previous studies that indicated that this relic-
+ean populations was generally not significant after Bonferroni correc-      tual O. mykiss stock, broadly propagated around the world by the turn
+tion. However, a modest but significant excess of LD, beyond that           of the 20th century and now almost extinct locally, is one of the origi-
+expected due to type 1 error of 0.05, remained in the LaRoc (5.1%)          nal sources from which anadromous and resident Santa Cruz River
+and Santa Cruz River (8.1%) populations.                                    rainbow trout evolved (Pascual et al., 2002; Riva Rossi et al., 2004).
+                                                                            However, the Claiborne Creek-McCloud population is also known to
+                                                                            have been introgressed with nonnative rainbow trout since the Baird
+4     |    DISCUSSION                                                       Station closed at the beginning of the 20th century (Simmons
+                                                                            et al., 2010).
+The principal results that emerged from this study are as follows:               Together, these results also confirm Behnke's (2002) suggestion
+(i) introduced O. mykiss from northern and southern Patagonia had sepa-     that the McCloud River was not the only source used in early propa-
+rate origins, possibly with different genetic capabilities for anadromy;    gation of rainbow trout in Argentina and, in particular, for the Santa
+(ii) fish with alternative life-history forms (resident and anadromous)     Cruz River. Indeed, the present study suggests several sources (likely
+within the Santa Cruz River basin are not genetically differentiated, and   representing a mixture of anadromous and non-anadromous life histo-
+there is high gene flow between them; (iii) low levels of gene flow occur   ries) for the Santa Cruz River and supports the idea that anadromous
+among basins in Patagonia; and (iv) Santa Cruz River fish may have origi-   coastal populations of O. mykiss (e.g., from San Francisco Bay, the
+nated from multiple sources, as there is not a clear relationship between   Klamath, Rogue, and/or Willamette rivers; Behnke, 2002) made a sig-
+them and any potential progenitor population.                               nificant contribution to the genetic foundation of these populations.
+     The present study confirms the genetic relationships between
+populations of introduced O. mykiss in Argentina, as well as relation-
+ships with their potential sources from North America. Even so, signif-     4.2 |        Gene flow among and within Patagonian
+icant questions regarding origins and life-history evolution of             basins
+Patagonian trout remain.
+                                                                            NJ trees, the distribution of alleles and genotypes across fish, and the
+                                                                            associated clustering results (DAPC; Figure 4b, structure; Figure 5)
+4.1 | Ancestral origins of rainbow trout in                                 were all consistent with high divergence between northern Patagonia
+Patagonia                                                                   and the Santa Cruz River, providing strong support for the idea of
+                                                                            independent historical colonization and current geographical isolation
+Combined microsatellite and SNP data demonstrate multiple and sep-          between basins. Tests of genetic differentiation were significant for
+arate sources for the northern Patagonian basins (Chubut and Negro          most of the between-population comparisons, with the highest signifi-
+rivers) and for the Santa Cruz River populations.                           cant values recovered between northern Patagonian basins and the
+1984
+                    FISH                                                                                                               LÁZARI ET AL.
+
+
+
+Santa Cruz River, and a low but still significant FST between              admixed individuals may reflect introgression with hatchery rainbow
+the RChub and RNegr populations (Table S2). These results were also        trout from RLVue or other historic introductions.
+consistent with the structure analysis that used no prior information          In contrast, the admixed individuals in the northern populations
+about geographic origin of the samples, which found that the northern      may reflect the occurrence of recent introgression of anadromous fish
+Patagonian populations (RNegr and RChub) formed one group and the          that migrated to northern Patagonia and hybridized with the resident
+Santa Cruz River populations formed another, with a hypothesis of          trout there, or the presence of ancestry from introduced fish that
+two genetic groups present in the eight Argentinian populations            were originally hybrids. The structure analysis that includes North
+(Figure 5).                                                                American populations shows that those admixed individuals have
+       In addition, no genetic differentiation was detected between fish   ancestry very similar to the Santa Cruz populations, supporting the
+with anadromous and resident life histories within the Santa Cruz          idea that they are the result of anadromous migrants from southern
+River, with non-significant FST and close associations on NJ trees and     Patagonia, as other salmonid species introduced in Patagonia have
+with clustering methods. Also, both the resident and anadromous fish       also expanded their range to the north (Figueroa-Muñoz et al., 2023).
+from the Santa Cruz River have intermediate frequencies of the             Consistent with this idea is the observation of multiple incidental
+anadromy-associated allele of the migration-associated inversion           marine catches of O. mykiss occurring along the Atlantic coast
+polymorphism on chromosome Omy05 (Pearse et al., 2019). This sug-          between the two river estuaries (J. Ciancio, personal communication).
+gests that expression of life-history strategy in this population is           Such introgression could disrupt any local adaptation that has
+mostly environmental and that individuals of the two types consist of      arisen in these resident populations since introduction or colonization
+a single polymorphic population, in agreement with previous studies        of these basins. Conversely, gene flow among basins could introduce
+(e.g., Liberoff et al., 2014; Riva-Rossi et al., 2007). Consistent with    new alleles, allowing more phenotypic variation and increases in pop-
+previous work (Abadía-Cardoso et al., 2016, 2019), the association         ulation fitness.
+between the inversion polymorphism and migratory life history breaks
+down in hatchery rainbow trout strains, which is reflected in the rela-
+tively high frequency of the ancestral haplotype in the northern Pata-     4.3 | Genetic diversity in Santa Cruz River
+gonian populations, in spite of their predominant resident life history.   rainbow trout
+       Within the Santa Cruz River, almost all individuals had nonad-
+mixed genotypes assigned to the “Santa Cruz” cluster by DAPC and           When populations are founded by a small number of individuals from
+structure, a result consistent with the lack of clear genetic divisions    the same source, founder effects are expected to reduce the genetic
+between the life-history forms and further indicating that they are not    diversity of the resulting populations in relation to their source popu-
+derived from separate genetic lineages nor from multiple colonizations     lations and theoretically also reduce their capacity to adapt to novel
+by allopatric populations. The one exception is the De las Vueltas         conditions (Lee, 2002; Sakai et al., 2001). This study found no evi-
+River (RLVue) population, which forms a distinct group from the rest       dence to support the hypothesis that introduced rainbow trout popu-
+of the Santa Cruz River populations and shared ancestry with Central       lations in northern Patagonian basins and in the Santa Cruz River have
+Valley and hatchery rainbow trout strains. This is the furthest upriver    reduced genetic variation due to founder effects during the initial
+population, separated from the main Santa Cruz River populations by        colonizations.
+several hundred river kilometers, and these fish are likely the results        Heterozygosity levels in the introduced populations were rela-
+of transplants from the Piedra Buena fish farm at the mouth of the         tively high (HO = 0.32–0.39) and overlapped completely with the
+Santa Cruz River that were released in the area for angling purposes       native populations analysed in this study and those reported else-
+and kept isolated from downstream locations by an impassable water-        where in the literature surveyed at the same loci (Abadía-Cardoso
+fall   (R.    Hudson,   Manager   Piedra   Buena   Hatchery,    personal   et al., 2016; Pearse & Garza, 2015). The high overall genetic diversity
+communication).                                                            of the introduced populations further supports the idea that Patago-
+       Two individuals from the main Santa Cruz River populations had      nian populations were founded by a mixture from multiple North
+a high degree of ancestry from the cluster of northern Patagonian          American sources. Even the northern Patagonian populations that are
+populations, derived from hatchery rainbow trout. One resident fish        genetically similar to, and were founded by hatchery rainbow trout,
+had entirely hatchery trout ancestry and may have come downriver           have higher heterozygosity than their source hatchery strains.
+from the RLVue population or upriver from the Piedra Buena hatch-              In contrast, the patterns of allelic variation are more complicated.
+ery. One other resident fish was clearly admixed and may have been a       The proportion of polymorphic SNP loci (Table 1) is slightly lower in
+first-generation hybrid between Santa Cruz River and hatchery par-         the Argentinean populations than in most of the North American
+ents. The presence of these individuals likely explains the significant    populations but overlaps with the less diverse native populations.
+departures from HWE found in the SCRes fish.                               However, some of the native populations are those that were used to
+       Individuals from La Leona (LaLeo) and Lake Roca (LaRoc) also        ascertain these SNP markers (Abadía-Cardoso et al., 2011), so this
+showed some degree of ancestry from hatchery rainbow trout,                small difference might be entirely due to ascertainment bias
+whereas two individuals from RChub had signals of ancestry from fish       (Albrechtsen et al., 2010). Values of allelic richness (AR) for Argentin-
+similar to those in the Santa Cruz basin. The LaLeo and LaRoc              ean populations were also slightly lower but still overlapping with
+LÁZARI ET AL.
+                                                                                                   FISH                                             1985
+
+
+
+values obtained for the North American populations. This suggests             migratory rainbow trout population, where a fraction of the popula-
+that naturalized O. mykiss populations in Argentina do not have lower         tion expresses an ocean migratory behavior and the rest are resident
+genetic diversity due to bottlenecks or founder effects.                      (Zimmerman & Reeves, 2000).
+     In the Santa Cruz River, another potential factor that could have            In addition, there is documented differentiation between native
+maintained relatively high genetic variation in the introduced fish is        and introduced rainbow trout populations in behavioral traits that
+the coexistence of resident and migratory forms. Different life-history       may reflect modifications resulting from directional selection in the
+forms can have different reproductive success in different circum-            new environment. For example, in the Santa Cruz River, anadromous
+stances, and interbreeding between life-history forms might buffer            rainbow trout have apparently evolved increased iteroparity and asso-
+fluctuations in the effective population size (NE). For example, if abun-     ciated post-reproductive survival (Pascual et al., 2001; Riva-Rossi
+dance of one life-history form fluctuates widely, whereas that of the         et al., 2007), traits directly associated with fitness and possibly under
+other form is relatively stable, then overall NE will be stabilized           selection (Crespi & Teo, 2002; Fleming & Reynolds, 2004;
+through time by interbreeding between forms (Araki et al., 2007). In          Willson, 1997). Although iteroparity is a naturally occurring reproduc-
+the Santa Cruz River, where anadromous and non-anadromous forms               tive strategy in O. mykiss, its prevalence is highly variable. In pristine
+interbreed, it could be possible that a genetic compensation for NE           populations from Kamchatka, it is expressed with rates as high as 79%
+(and hence genetic variation) exists between life-history forms, in           (Savvaitova et al., 1999). Relatively high rates of iteroparity have also
+which the NE per generation is augmented by the reproductive contri-          been reported for O. mykiss populations in rivers from Oregon and
+bution between life-history forms.                                            California (Busby et al., 1996). In contrast, much lower iteroparity
+                                                                              rates for hatchery steelhead than for natural-origin fish have been
+                                                                              reported in populations throughout the native range (Abadía-Cardoso
+4.4 | Anadromy in the Santa Cruz River rainbow                                et al., 2013; Hallock, 1989; Keefer et al., 2008), which may explain
+trout: Evolution or re-creation                                               such highly variable rates in the different populations studied. Con-
+                                                                              struction of hydropower dams in the United States during the 20th
+The Santa Cruz River rainbow trout has received attention among               century has greatly reduced iteroparity rates across native popula-
+evolutionary biologists interested in salmonid conservation, because          tions, mainly due to high mortality of downstream-migrating kelts
+initial work postulated that this population may represent a case in          (Hatch et al., 2004). The existence of highly iteroparous native popula-
+which introduced non-anadromous rainbow trout have developed                  tions and the fact that, despite strong selection against downstream
+anadromy in situ. However, the results from the present study suggest         adult passage, iteroparity still remains in several dammed river sys-
+that Santa Cruz River populations result from an introduction of indi-        tems (Narum et al., 2008) suggest that the potential for expressing
+viduals from populations with both life-history strategies, resident and      high levels of iteroparity is an ancestral capability of O. mykiss (i.e., a
+anadromous. As such, it is likely the case that Santa Cruz River fish         pre-adaptation) and not a novel adaptation unique to the Santa Cruz
+have just expressed these life-history strategies in a novel environ-         population. Whether selection for changes in iteroparity in Santa
+ment, which was facilitated by the underlying genetic variation and           Cruz River steelhead actually occurred and, if so, if it operated directly
+flexibility present in their ancestral populations. Although it seems         on anadromy or indirectly on growth-related threshold traits
+likely that the Santa Cruz River populations were founded by fish             (e.g., Thériault et al., 2007; Thorpe et al., 1998) are unknown.
+from populations with both resident and anadromous life histories                 In the Santa Cruz River, the close genetic relationship between
+(Behnke, 2002; Pascual et al., 2002; Riva Rossi et al., 2004), other          alternative ecotypes and the fact that each type of parent typically
+questions remain.                                                             gives rise to fish with both anadromous and resident phenotypes
+     First, introduced rainbow trout in Patagonia and the Santa Cruz          (Riva-Rossi et al., 2007) suggest a strong role for the environment in
+River have widely varying physiological, behavioral, and life-history         determining the expression of life history in this combined mainstem
+responses to environmental variables (e.g., Liberoff et al., 2013, 2014,      population (Liberoff et al., 2013, 2014, 2015, 2019). However,
+2015, 2019). To what extent fish from each ancestral source contrib-          because the (additive) genetic and environmental influences on the
+uted to the basis and genetic legacy of Santa Cruz River fish is              adoption of the life-history tactic have not been studied for this popu-
+unknown. However, at the time of initial propagation (the turn of the         lation, it remains difficult to establish whether the life-history strategy
+20th century), historical runs in the upper McCloud River, one of             depends on an environmentally cued threshold or constitutes a direct
+the potential sources, sustained both anadromous and resident forms           response to the environment. The estimated frequencies of the Omy5
+(Nielsen, 1999). It has been found that in some tributaries of the            ancestral haplotype in the Santa Cruz River populations do not indi-
+Columbia River basin, sympatric steelhead and rainbow trout are               cate a clear association with anadromy, but this may be confounded
+genetically more similar to each other than to their corresponding            by the variable association of the Omy5 inversion with migratory life
+forms in other basins (Docker & Heath, 2003; McCusker et al., 2000).          history, temperature, and development rate (Nichols et al., 2008;
+Similar results have been found elsewhere in the North American               Pearse & Garza, 2015; Pearse et al., 2019). Evidence from a study of
+range of O. mykiss (Clemento et al., 2009; Pearse & Garza, 2015;              the early phases of growth revealed that the expression of anadromy
+Thrower et al., 2004). Thus, it is likely that diversity of ancestral life-   in the Santa Cruz River is linked to fast growth during the first year of
+history forms could have provided the genetic basis for a partially           life, whereas residency is associated with slow growth, suggesting that
+1986
+                  FISH                                                                                                                         LÁZARI ET AL.
+
+
+
+alternative forms within this river may result from a body size–based        Carlos Garza drafted the manuscript. All authors contributed critically
+threshold for life-history determination (Liberoff, 2013; Liberoff           to the manuscript drafts and gave final approval for publication.
+et al., 2013, 2014; Riva Rossi, 2004). In the introduced range, the fit-
+ness value of a tactic for a given condition could be very different         ACKNOWLEDG MENTS
+from the value in the native range and could also vary along the envi-       We thank C. Gallardo, C. Dean, C. Columbus, E. Campbell, and
+ronmental gradient of Patagonia, resulting in differences in the body        E. Correa for assistance with laboratory analyses. We thank
+size for which anadromy conferred greater advantages and was                 M. García-Asorey, M. Carrasco, P. Fernández, and R. Hudson for help
+selected for in the native range (Riva Rossi, 2004).                         with field collections.
+    Finally, O. mykiss is considered to have one of the most diverse
+portfolios of life-history strategies in Salmonidae, including resident,     FUNDING INF ORMATI ON
+estuarine, adfluvial, and anadromous ecotypes, and a wide range of           Funding for this research was provided by the US/Argentina Fulbright
+reproductive strategies including precocity, and highly variable rates       Commission to Carolina Lázari, the Consejo Nacional de Investiga-
+of iteroparity (Abadía-Cardoso et al., 2013; Busby et al., 1996; Narum       ciones Científicas y Técnicas (CONICET) of Argentina to Carla Riva-
+et al., 2008; Willson, 1997). Although there is little doubt that this       Rossi and Miguel Pascual, and the Agencia Nacional de Promoción
+complex array of life-history variation contributes to persistence in        Científica y Tecnológica of Argentina and the Subsecretaría de Pesca
+environmental conditions that vary substantially in space and time           y Asuntos Portuarios de la Provincia de Santa Cruz, Argentina, to
+(Fleming & Reynolds, 2004), there is uncertainty about the potential         Miguel Pascual.
+for (sub)populations with predominantly resident fish (e.g., above
+waterfalls) to generate anadromous migrants. Indeed, loss of anadro-         OR CID
+mous fitness in landlocked resident populations, and the unidirectional      John Carlos Garza      https://orcid.org/0000-0002-7325-6803
+evolution of landlocked populations away from anadromy (Thrower
+et al., 2004), raises significant questions regarding the ability of resi-   RE FE RE NCE S
+dent O. mykiss to regain anadromous life history. In light of this and       Abadía-Cardoso, A., Anderson, E. C., Pearse, D. E., & Garza, J. C. (2013).
+the results from the present study, it appears most likely that the par-         Large-scale parentage analysis reveals reproductive patterns and heri-
+                                                                                 tability of spawn timing in a hatchery population of steelhead (Oncor-
+tially anadromous O. mykiss population in the Santa Cruz River was
+                                                                                 hynchus mykiss). Molecular Ecology, 22, 4733–4746. https://doi.org/
+founded by a collection of fish from populations with anadromous                 10.1111/mec.12426
+and resident life histories that subsequently evolved in the introduced      Abadía-Cardoso, A., Brodsky, A., Cavallo, B., Arciniega, M., Garza, J. C.,
+range in response to the particular environmental conditions of this             Hannon, J., & Pearse, D. E. (2019). Anadromy Redux? Genetic Analysis
+river. Conversely, this population may be partly the result of unique            to Inform Development of an Indigenous American River Steelhead
+                                                                                 Broodstock. Journal of Fish and Wildlife Management, 10(1), 137–147.
+introduction histories, presumably stemming from features of the spe-
+                                                                                 https://doi.org/10.3996/072018-jfwm-063
+cific founding lineages and chance events.                                   Abadía-Cardoso, A., Clemento, A. J., & Garza, J. C. (2011). Discovery and char-
+    In either case, the apparent distinctiveness of this population              acterization of single-nucleotide polymorphisms in steelhead/rainbow
+raises questions as to whether the re-creation of anadromous life his-           trout, Oncorhynchus mykiss. Molecular Ecology Resources, 11, 31–49.
+                                                                                 https://doi.org/10.1111/j.1755-0998.2010.02971.x
+tory could be a recurring experiment in this river, if for any reason
+                                                                             Abadía-Cardoso, A., Pearse, D. E., Jacobson, S., Marshall, J., Dalrymple, D.,
+anadromy is prevented for this population. This question has height-             Kawasaki, F., Ruiz-Campos, G., & Garza, J. C. (2016). Population
+ened importance due to the construction of two large hydroelectric               genetic structure and ancestry of steelhead/rainbow trout (Oncor-
+dams in the upper and middle portions of the Santa Cruz River that               hynchus mykiss) at the extreme southern edge of their range in North
+                                                                                 America. Conservation Genetics, 17, 675–689. https://doi.org/10.
+will block the migratory corridor and impede anadromous adults from
+                                                                                 1007/s10592-016-0814-9
+reaching the current spawning grounds located exclusively farther            Aguilar, A., & Garza, J. C. (2008). Isolation of 15 single nucleotide polymor-
+upstream (Riva-Rossi et al., 2007). In light of this, the Santa Cruz River       phisms from coastal steelhead, Oncorhynchus mykiss (Salmonidae).
+O. mykiss population appears to be on the verge of losing the only               Molecular Ecology Resources, 8, 659–662. https://doi.org/10.1111/j.
+                                                                                 1471-8286.2007.02038.x
+trait for which it is unique among introduced trout. Providing ongoing
+                                                                             Albrechtsen, A., Nielsen, F. C., & Nielsen, R. (2010). Ascertainment biases in
+connectivity between life-history forms in this river, at both the eco-          SNP chips affect measures of population divergence. Molecular Biology
+logical and evolutionary time scales, is particularly crucial to preserve        and Evolution, 27, 2534–2547. https://doi.org/10.1093/molbev/msq148
+the full expression of life-history diversity in this population.            Allendorf, F. (1975). Genetic variability in a species possessing extensive gene
+                                                                                 duplication: Genetic interpretation of duplicate loci and examination of
+                                                                                 genetic variation in populations of rainbow trout. Dissertation. Univer-
+AUTHOR CONTRIBUTIONS                                                             sity of Washington.
+Carolina Lázari, Carla Riva-Rossi, Miguel Pascual, and John Carlos           Araki, H., Cooper, B., & Blouin, M. S. (2007). Genetic effects of captive
+Garza conceived the ideas and designed the methodology; Carla Riva-              breeding cause a rapid, cumulative fitness decline in the wild. Science,
+Rossi, Javier Ciancio, and Miguel Pascual collected biological samples;          318, 100–103. https://doi.org/10.1126/science.1145621
+                                                                             Archer, F. I., Adams, P. E., & Schneiders, B. B. (2017). Stratag: An r package
+Carolina Lázari, Carla Riva-Rossi, and Devon E. Pearse collected
+                                                                                 for manipulating, summarizing and analysing population genetic data.
+genetic data; Carolina Lázari, Anthony J. Clemento, and John Carlos              Molecular Ecology Resources, 17, 5–11. https://doi.org/10.1111/1755-
+Garza analysed the data; Carolina Lázari, Carla Riva-Rossi, and John             0998.12559
+LÁZARI ET AL.
+                                                                                                           FISH                                                1987
+
+
+
+Arciniega, M., Clemento, A. J., Miller, M. R., Peterson, M., Garza, J. C., &            below natural and man-made barriers in the Russian River, California.
+    Pearse, D. E. (2016). Parallel evolution of the summer steelhead eco-               Conservation Genetics, 8, 437–454. https://doi.org/10.1007/s10592-
+    type in multiple populations from Oregon and northern California.                   006-9183-0
+    Conservation Genetics, 17, 165–175. https://doi.org/10.1007/s10592-             Docker, M. F., & Heath, D. D. (2003). Genetic comparison between sym-
+    015-0769-2                                                                          patric anadromous steelhead and freshwater resident rainbow trout in
+Aubin-Horth, N., & Dodson, J. J. (2004). Influence of individual body size              British Columbia, Canada. Conservation Genetics, 4, 227–231. https://
+    and variable thresholds on the incidence of a sneaker male reproduc-                doi.org/10.1023/A:1023355114612
+    tive tactic in Atlantic Salmon. Evolution, 58, 136–144. https://doi.org/        Evanno, G., Regnaut, S., & Goudet, J. (2005). Detecting the number of clus-
+    10.1111/j.0014-3820.2004.tb01580.x                                                  ters of individuals using the software STRUCTURE: A simulation study.
+Baird, S. F. (1886). Report of the commissioner. In Report of the commis-               Molecular Ecology, 14, 2611–2620. https://doi.org/10.1111/j.1365-
+    sioner for 1884. Washington: United States Commission for Fish and                  294X.2005.02553.x
+    Fisheries (pp. XII–LXXI). Government Printing Office.                           Felsenstein, J. (1993). PHYLIP (phylogeny inference package). version 3.5
+Behnke, R. L. (1992). Native trout of western North America. American Fish-             c. https://evolution.genetics.washington.edu/phylip.html
+    eries Society.                                                                  Figueroa-Muñoz, G., Olivos, J. A., Arismendi, I., Fabiano, G., Laporta, M.,
+Behnke, R. L. (2002). First documented case of anadromy in a population                 Silveira, S., González-Bergonzoni, I., Pavez, G., Ernst, B., & Ciancio, J. E.
+    of introduced rainbow trout in Patagonia, Argentina: Response to                    (2023). Contemporary distribution of non-native Chinook salmon
+    comment. Transactions of the American Fisheries Society, 131, 585–                  (Oncorhynchus tshawytscha) in South America. Biological Invasions, 25,
+    588.               https://doi.org/10.1577/1548-8659(2002)131<0582:                 2727–2735. doi:10.1007/s10530-023-03083-7
+    CFDCOA>2.0.CO;2                                                                 Fleming, I. A., & Reynolds, J. D. (2004). Salmonid Breeding Systems. In
+Behr, H. (1882). Five American Salmonidae in Germany. Bulletin of                       A. P. Hendry & S. C. Stearns (Eds.), Evolution illuminated - Salmon and
+    the United States Fish Commission, 2, 237–246.                                      their relatives (pp. 264–294). Oxford University Press.
+Busack, C. A., & Gall, G. A. E. (1980). Ancestry of artificially propagated         Garant, D., Fontaine, P. M., Good, S. P., Dodson, J. J., & Bernatchez, L.
+    California rainbow trout strains. California Fish and Game, 66(1),                  (2002). The influence of male parental identity on growth and survival
+    17–24.                                                                              of offspring in Atlantic salmon (Salmo salar). Evolutionary Ecology
+Busby, P. J., Wainwright, T. C., Bryant, G. J., Lierheimer, L. J., Waples, R. S.,       Research, 4, 537–549. https://www.evolutionary-ecology.com/issues/
+    Waknitz, F. W., & Lagomarsino, I. V. (1996). Status review of west coast            v04n04/ffar1352.pdf
+    steelhead from Washington, Idaho, Oregon, and California. NOAA Tech-            Garza, J. C., Gilbert-Horvath, E. A., Spence, B. C., Williams, T. H., Fish, H.,
+    nical Memorandum NMFS-NWFSC-27 https://www.webapps.nwfsc.                           Gough, S. A., Anderson, J. H., Hamm, D., & Anderson, E. C. (2014).
+    noaa.gov/assets/25/5592_06172004_122523_steelhead.pdf                               Population structure of steelhead in coastal California. Transactions of
+Campbell, N. R., Overturf, K., & Narum, S. R. (2009). Characterization of               the American Fisheries Society, 143, 134–152. https://doi.org/10.
+    22 novel single nucleotide polymorphism markers in steelhead and                    1080/00028487.2013.822420
+    rainbow trout. Molecular Ecology Resources, 9, 318–322. https://doi.            Hallock, R. J. (1989). Upper Sacramento River steelhead, Oncorhynchus
+    org/10.1111/j.1755-0998.2008.02376.x                                                mykiss, 1952–1988. In Report to U.S. Fish and Wildlife Service (p. 86).
+Cavalli-Sforza, L. L., & Edwards, A. W. (1967). Phylogenetic analysis.                  US Fish and Wildlife Service. https://nrm.dfg.ca.gov FileHandler
+    Models and estimation procedures. American Journal of Human Genet-              Hatch DR, Branstetter RD, Whiteaker J (2004) Kelt reconditioning: A
+    ics, 19, 233–257. https://doi.org/10.2307/2406616                                   research project to enhance Iteroparity in Columbia Basin steelhead
+Clark, F. N. (1884). Report of work at the United States hatchery, North-               (Oncorhynchus mykiss), 2004 Annual Report. Office of Scientific and
+    ville, Mich., 1881–’82. In Report of the commissioner for 1882                      Technical Information (OSTI). Bonneville Power Administration, US
+    (pp. 1037–1062). United States Commission for Fish and Fisheries,                   Department of Energy. https://doi.org/10.2172/903055
+    Government Printing Office.                                                     Hendry, M. A., Wenburg, J. K., Myers, K. W., & Hendry, A. P. (2002).
+Clemento, A. J., Anderson, E. C., Boughton, D., Girman, D., & Garza, J. C.              Genetic and phenotypic variation through the migratory season pro-
+    (2009). Population genetic structure and ancestry of Oncorhynchus                   vides evidence for multiple populations of wild steelhead in the Dean
+    mykiss populations above and below dams in south-central California.                River, British Columbia. Transactions of the American Fisheries Society,
+    Conservation Genetics, 10, 1321–1336. https://doi.org/10.1007/                      131(3),        418–434.      https://doi.org/10.1577/1548-8659(2002)
+    s10592-008-9712-0                                                                   131<0418:GAPVTT>2.0.CO;2
+Colihueque, N., Estay, F. J., Crespo, J. E., Arriagada, A., Baessolo, L.,           Huson, D. H., & Scornavacca, C. (2012). Dendroscope 3: An interactive
+    Canales-Aguirre, C. B., Marín, J., & Carrasco, R. (2019). Genetic differ-           tool for rooted phylogenetic trees and networks. Systematic Biology,
+    entiation and origin of naturalized rainbow trout populations from                  61, 1061–1067. https://doi.org/10.1093/sysbio/sys062
+    southern Chile, revealed by the mtDNA control region marker. Fron-              Jakobsson, M., & Rosenberg, N. A. (2007). CLUMPP: A cluster matching
+    tiers in Genetics, 10, 1–14. https://doi.org/10.3389/fgene.2019.01212               and permutation program for dealing with label switching and multi-
+Crawford, S. S., & Muir, A. M. (2008). Global introductions of salmon and               modality in analysis of population structure. Bioinformatics, 23, 1801–
+    trout in the genus Oncorhynchus: 1870–2007. Reviews in Fish Biology                 1806. https://doi.org/10.1093/bioinformatics/btm233
+    and Fisheries, 18(3), 313–344. https://doi.org/10.1007/s11160-007-              Jombart, T. (2008). Adegenet: A R package for the multivariate analysis of
+    9079-1                                                                              genetic markers. Bioinformatics, 24, 1403–1405. https://doi.org/10.
+Crespi, B. J., & Teo, R. (2002). Comparative phylogenetic analysis of the               1093/bioinformatics/btn129
+    evolution of semelparity and life history in salmonid fishes. Evolution,        Jombart, T., Devillard, S., & Balloux, F. (2010). Discriminant analysis of
+    56,       1008–1020.         https://doi.org/10.1111/j.0014-3820.2002.              principal components: A new method for the analysis of genetically
+    tb01412.x                                                                           structured populations. BMC Genetics, 11, 1–15. https://doi.org/10.
+Currens, K. P., Hemmingsen, A. R., French, R. A., Buchanan, D. V.,                      1186/1471-2156-11-94
+    Schreck, C. B., & Li, H. W. (1997). Introgression and susceptibility to         Jonsson, B., & Jonsson, N. (1993). Partial migration: Niche shift versus sex-
+    disease in a wild population of rainbow trout. North American Journal               ual maturation in fishes. Reviews in Fish Biology and Fisheries, 3, 348–
+    of Fisheries Management, 17, 1065–1078. https://doi.org/10.1577/                    365. https://doi.org/10.1007/BF00043384
+    1548-8675(1997)017<1065:iastdi>2.3.co;2                                         Keefer, M. L., Wertheimer, R. H., Evans, A. F., Boggs, C. T., & Peery, C. A.
+Deiner, K., Garza, J. C., Coey, R., & Girman, D. J. (2007). Population struc-           (2008). Iteroparity in Columbia River summer-run steelhead (Oncor-
+    ture and genetic diversity of trout (Oncorhynchus mykiss) above and                 hynchus mykiss): Implications for conservation. Canadian Journal of
+1988
+                    FISH                                                                                                                                   LÁZARI ET AL.
+
+
+
+    Fisheries and Aquatic Sciences, 65, 2592–2605. https://doi.org/10.                    salmonids. Canadian Journal of Fisheries and Aquatic Sciences, 53, 120–
+    1139/F08-160                                                                          126. https://doi.org/10.1139/f95-161
+Keenan, K., Mcginnity, P., Cross, T. F., Crozier, W. W., & Prodöh, P. A. (2013).     Narum, S. R., Contor, C., Talbot, A., & Powell, M. S. (2004). Genetic diver-
+    DiveRsity: An R package for the estimation and exploration of population              gence of sympatric resident and anadromous forms of Oncorhynchus
+    genetics parameters and their associated errors. Methods in Ecology and               mykiss in the Walla Walla River, U.S.A. Journal of Fish Biology, 65, 471–
+    Evolution, 4, 782–788. https://doi.org/10.1111/2041-210X.12067                        488. https://doi.org/10.1111/j.0022-1112.2004.00461.x
+Kostow, K. (2003). Factors that influence evolutionarily significant unit            Narum, S. R., Hatch, D., Talbot, A. J., Moran, P., & Powell, M. S. (2008).
+    boundaries and status assessment in a highly polymorphic species, Oncor-              Iteroparity in complex mating systems of steelhead Oncorhynchus
+    hynchus mykiss, in the Columbia Basin. Oregon Department of Fish and                  mykiss (Walbaum). Journal of Fish Biology, 72, 45–60. https://doi.org/
+    Wildlife https://www.semanticscholar.org/paper/Factors-that-Influe                    10.1111/j.1095-8649.2007.01649.x
+    nce-Evolutionarily-Significant-a-Kostow/dc7f753bc9cb04cf9859025a                 Nichols, K. M., Edo, A. F., Wheeler, P. A., & Thorgaard, G. H. (2008). The
+    98926417f03a868a                                                                      Genetic Basis of Smoltification-Related Traits in Oncorhynchus
+Lee, C. E. (2002). Evolutionary genetics of invasive species. Trends in Ecol-             mykiss. Genetics, 179(3), 1559–1575. https://doi.org/10.1534/
+    ogy & Evolution, 17, 386–391. https://doi.org/10.1016/S0169-5347                      genetics.107.084251
+    (02)02554-5                                                                      Nielsen, C., Aarestrup, K., Nørum, U., & Madsen, S. S. (2003). Pre-
+Leitritz, E. (1970). A history of California's fish hatcheries,1870–1960. Fish            migratory differentiation of wild brown trout into migrant and resident
+    Bulletin, 150, 1–87. http://escholarship.org/uc/item/2z8648k3                         individuals. Journal of Fish Biology, 63, 1184–1196. https://doi.org/10.
+Liberoff AL (2013) Bases ambientales del comportamiento migratorio de la                  1046/j.1095-8649.2003.00237.x
+    trucha arco iris (Oncorhynchus mykiss) del río Santa Cruz. Ph.D. Thesis.         Nielsen, J. L. (1999). The evolutionary history of steelhead (Oncorhynchus
+    Universidad Nacional de Córdoba. http://hdl.handle.net/11086/5530                     mykiss) along the US Pacific coast: Developing a conservation strategy
+Liberoff, A. L., Leal, A. A., Díaz De Vivar, M. E., Riva-Rossi, C. M., &                  using genetic diversity. ICES Journal of Marine Science, 56, 449–458.
+    Pascual, M. A. (2019). Maternal influence on early lipid content in an                https://doi.org/10.1006/jmsc.1999.0452
+    introduced partially anadromous population of Oncorhynchus mykiss. Jour-         Nielsen, J. L., Pavey, S. A., Wiacek, T., & Williams, I. (2005). Genetics of
+    nal of Fish Biology, 95, 959–964. https://doi.org/10.1111/jfb.14062                   Central Valley O. Mykiss populations: Drainage and watershed scale
+Liberoff, A. L., Miller, J. A., Riva-Rossi, C. M., Hidalgo, F. J., Fogel, M. L., &        analyses. San Francisco Estuary and Watershed Science, 3. https://doi.
+    Pascual, M. A. (2014). Transgenerational effects of anadromy on juve-                 org/10.15447/sfews.2005v3iss2art3
+    nile growth traits in an introduced population of rainbow trout (Oncor-          Olsen, E. M., Knutsen, H., Simonsen, J. H., Jonsson, B., & Knutsen, J. A.
+    hynchus mykiss). Canadian Journal of Fisheries and Aquatic Sciences, 71,              (2006). Seasonal variation in marine growth of sea trout, Salmo trutta,
+    398–407. https://doi.org/10.1139/cjfas-2013-0466                                      in coastal Skagerrak. Ecology of Freshwater Fish, 15, 446–452. https://
+Liberoff, A. L., Quiroga, A. P., Riva-Rossi, C. M., Miller, J. A., &                      doi.org/10.1111/j.1600-0633.2006.00176.x
+    Pascual, M. A. (2015). Influence of maternal habitat choice, environ-            Pascual, M., Kinnison, M., & Riva Rossi, C. (2002). First documented case
+    ment and spatial distribution of juveniles on their propensity for ana-               of anadromy in a population of introduced rainbow trout in Patagonia,
+    dromy in a partially anadromous population of rainbow trout                           Argentina: Response to comment. Transactions of the American Fisher-
+    (Oncorhynchus mykiss). Ecology of Freshwater Fish, 24, 424–434.                       ies Society, 131, 585–588. https://doi.org/10.1577/1548-8659(2002)
+    https://doi.org/10.1111/eff.12157                                                     131<0585:FDCOAI>2.0.CO;2
+Liberoff, A. L., Riva Rossi, C. M., Fogel, M. L., Ciancio, J. E., &                  Pascual, M., Kinnison, M., Riva Rossi, C., Mackey, G., Kinnison, M. T., &
+    Pascual, M. A. (2013). Shifts in δ15N signature following the onset of                Walker, R. (2001). First documented case of anadromy in a population
+    exogenous feeding in rainbow trout Oncorhynchus mykiss: Importance                    of introduced rainbow trout in Patagonia, Argentina. Transactions of
+    of combining length and age data. Journal of Fish Biology, 82, 1423–                  the American Fisheries Society, 130, 53–67. https://doi.org/10.1577/
+    1432. https://doi.org/10.1111/jfb.12063                                               1548-8659(2001)130<0053:FDCOAI>2.0.CO;2
+MacCrimmon, H. R. (1971). World distribution of rainbow trout (Salmo                 Pearse, D., & Garza, J. C. (2015). You can't unscramble an egg: Population
+    gairdneri). Journal of the Fisheries Research Board of Canada, 28, 663–               genetic structure of Oncorhynchus mykiss in the California Central Val-
+    704. https://doi.org/10.1139/f71-098                                                  ley inferred from combined microsatellite and single nucleotide poly-
+McCusker, M. R., Parkinson, E., & Taylor, E. B. (2000). Mitochondrial DNA                 morphism data. San Francisco Estuary and Watershed Science, 13(4).
+    variation in rainbow trout (Oncorhynchus mykiss) across its native                    https://doi.org/10.15447/sfews.2015v13iss4art3
+    range: Testing biogeographical hypotheses and their relevance to con-            Pearse, D. E., Barson, N. J., Nome, T., Gao, G., Campbell, M. A., Abadía-
+    servation. Molecular Ecology, 9, 2089–2108. https://doi.org/10.1046/                  Cardoso, A., Anderson, E. C., Rundio, D. E., Williams, T. H., Naish, K. A.,
+    j.1365-294X.2000.01121.x                                                              Moen, T., Liu, S., Kent, M., Moser, M., Minkley, D. R., Rondeau, E. B.,
+McEwan, D. R. (2001). Central Valley steelhead. In R. L. Brown (Ed.), Contribu-           Brieuc, M. S. O., Sandve, S. R., Miller, M. R., … Lien, S. (2019). Sex-
+    tions to the Biology of Central Valley Salmonids Fish Bull (Vol. 179, pp. 1–          dependent dominance maintains migration supergene in rainbow
+    43), California Department of Fish and Game. UC San Diego: Library -                  trout. Nature Ecology & Evolution, 3, 1731–1742. https://doi.org/10.
+    Scripps Digital Collection. https://escholarship.org/uc/item/6sd4z5b2                 1038/s41559-019-1044-6
+McPhee, M. V., Utter, F., Stanford, J. A., Kuzishchin, K. V.,                        Pearse, D. E., Miller, M. R., Abadía-Cardoso, A., & Garza, J. C. (2014). Rapid
+    Savvaitova, K. A., Pavlov, D. S., & Allendorf, F. W. (2007). Population               parallel evolution of standing variation in a single, complex, genomic
+    structure and partial anadromy in Oncorhynchus mykiss from Kam-                       region is associated with life history in steelhead/rainbow trout. Pro-
+    chatka: Relevance for conservation strategies around the Pacific rim.                 ceedings of the Royal Society B: Biological Sciences, 281, 20140012.
+    Ecology of Freshwater Fish, 16, 539–547. https://doi.org/10.1111/j.                   https://doi.org/10.1098/rspb.2014.0012
+    1600-0633.2007.00248.x                                                           Phillis, C. C., Moore, J. W., Buoro, M., Hayes, S. A., Garza, J. C., & Pearse, D. E.
+Moczek, A. P., Hunt, J., Emlen, D. J., & Simmons, L. W. (2002). Threshold                 (2016). Shifting thresholds: Rapid evolution of migratory life histories in
+    evolution in exotic populations of a polyphenic beetle. Evolutionary                  steelhead/rainbow trout, Oncorhynchus mykiss. The Journal of Heredity,
+    Ecology Research, 4, 587–601. https://scholarworks.umt.edu/biosci_                    107, 51–60. https://doi.org/10.1093/jhered/esv085
+    pubs/189                                                                         Pritchard, J. K., Stephens, M., & Donnelly, P. (2000). Inference of popula-
+Morris, D. B., Richard, K. R., & Wright, J. M. (1996). Microsatellites from               tion structure using multilocus genotype data. Genetics, 155, 945–959.
+    rainbow trout (Oncorhynchus mykiss) and their use for genetic study of                https://doi.org/10.1093/genetics/155.2.945
+LÁZARI ET AL.
+                                                                                                          FISH                                               1989
+
+
+
+Riva Rossi, C. M. (2004). Origen y desarrollo de historias de vida alternativas         application to Atlantic salmon, Salmo salar L. Evolutionary Ecology, 12,
+    en poblaciones introducidas de trucha arco iris (Oncorhynchus mykiss) en            581–599. https://doi.org/10.1023/A:1022351814644
+    Patagonia. Ph.D. Thesis. Universidad Nacional del Comahue.                      Thrower, F. P., Hard, J. J., & Joyce, J. E. (2004). Genetic architecture of
+Riva Rossi, C. M., Lessa, E. P., & Pascual, M. A. (2004). The origin of intro-          growth and early life-history transitions in anadromous and derived
+    duced rainbow trout (Oncorhynchus mykiss) in the Santa Cruz River,                  freshwater populations of steelhead. Journal of Fish Biology, 65, 286–
+    Patagonia, Argentina, as inferred from mitochondrial DNA. Canadian                  307. https://doi.org/10.1111/j.0022-1112.2004.00551.x
+    Journal of Fisheries and Aquatic Sciences, 61, 1095–1101. https://doi.          Valette, L. H. (1922). Apuntes sobre la industria pesquera nacional: someras
+    org/10.1139/F04-056                                                                 consideraciones. Tall. Gráf. del Ministerio de Agricultura de la Nación.
+Riva-Rossi, C., Pascual, M. A., Babaluk, J. A., García-Asorey, M., &                Valette, L. H. (1924). Servicio de piscicultura. Sus resultados hasta 1922
+    Halden, N. M. (2007). Intra-population variation in anadromy and                    inclusive. Ministerio de Agricultura de la Nación, Circular 338, Buenos
+    reproductive life span in rainbow trout introduced in the Santa Cruz                Aires.
+    River, Argentina. Journal of Fish Biology, 70, 1780–1797. https://doi.          Wales, J. H. (1939). General report of the investigation on theMcCloud
+    org/10.1111/j.1095-8649.2007.01449.x                                                river drainage in 1938. California Department of Fish and Game, 25,
+Roff, D. A. (1996). The evolution of threshold traits in animals. The Quar-             272–309.
+    terly Review of Biology, 71, 3–35. https://doi.org/10.1086/419266               Warnes, G., & Leisch, F. (2005). Genetics: Population genetics. R Package Ver-
+Rosenberg, N. A. (2004). DISTRUCT: A program for the graphical display                  sion 1.2.0. https://cran.r-project.org/web/packages/genetics/genetics.pdf
+    of population structure. Molecular Ecology Notes, 4, 137–138. https://          Wenburg, J. K., Bentzen, P., & Foote, C. J. (1998). Microsatellite analysis of
+    doi.org/10.1046/j.1471-8286.2003.00566.x                                            genetic population structure in an endangered salmonid: The coastal
+Sakai, A. K., Allendorf, F. W., Holt, J. S., Lodge, D. M., Molofsky, J.,                cutthroat trout (Oncorhynchus clarki clarki). Molecular Ecology, 7, 733–
+    With, K. A., Baughman, S., Cabin, R. J., Cohen, J. E., Ellstrand, N. C., &          749. https://doi.org/10.1046/j.1365-294x.1998.00386.x
+    McCauley, D. E. (2001). The population biology of invasive species.             Williamson, K. S., Cordes, J. F., & May, B. (2002). Characterization of
+    Annual Review of Ecology and Systematics, 32, 305–332.                              microsatellite loci in chinook salmon (Oncorhynchus tshawytscha) and
+Savvaitova, K. A., Kuzishchin, K. V. A., & Pavlov, D. S. (1999). Population             cross-species amplification in other salmonids. Molecular Ecology
+    structure of Mikizha Parasalmo mykiss from Rivers of northwestern                   Notes, 2, 17–19. https://doi.org/10.1046/j.1471-8286.2002.00129.x
+    Kamchatka and North America. Journal of Ichthyology, 39, 504–516.               Willson, M. (1997). Variation in salmonid life histories: patterns and per-
+Scribner, K. T., Gust, J. R., & Fields, R. L. (1996). Isolation and characteriza-       spectives. USDA Research Paper 498. https://www.fs.fed.us/pnw/
+    tion of novel salmon microsatellite loci: Cross-species amplification               pubs/pnw_rp498.pdf
+    and population genetic applications. Canadian Journal of Fisheries and          Yamamoto, S., Morita, K., & Goto, A. (1999). Marine growth and survival
+    Aquatic Sciences, 53, 833–841. https://doi.org/10.1139/f95-254                      of white-spotted charr, Salvelinus leucomaenis, in relation to smolt
+Simmons, R. E., Lavretsky, P., & May, B. (2010). Introgressive hybridization            size. Ichthyological Research, 46, 85–92. https://doi.org/10.1007/
+    of Redband trout in the upper McCloud River watershed. Transactions                 BF02674951
+    of the American Fisheries Society, 139, 201–213. https://doi.org/10.            Zimmerman, C. E., & Reeves, G. H. (2000). Population structure of sympat-
+    1577/T08-245.1                                                                      ric anadromous and nonanadromous Oncorhynchus mykiss: Evidence
+Stankovic, D., Crivelli, A. J., & Snoj, A. (2015). Rainbow trout in Europe:            from surveys and otolith microchemistry. Canadian Journal of Fisheries
+    Introduction, naturalization, and impacts. Reviews in Fisheries Science &           and Aquatic Sciences, 57, 2152–2162. https://doi.org/10.1139/
+    Aquacultur, 23(1), 39–71. https://doi.org/10.1080/23308249.2015.                    f00-192
+    1024825
+Tessier, N., & Bernatchez, L. (1999). Stability of population structure and
+    genetic diversity across generations assessed by microsatellites among          SUPPORTING INF ORMATION
+    sympatric populations of landlocked Atlantic salmon (Salmo salar L.).           Additional supporting information can be found online in the Support-
+    Molecular Ecology, 8, 169–179. https://doi.org/10.1046/j.1365-294X.
+                                                                                    ing Information section at the end of this article.
+    1999.00547.x
+Thériault, V., & Dodson, J. J. (2003). Body size and the adoption of a migra-
+    tory tactic in brook charr. Journal of Fish Biology, 63, 1144–1159.
+    https://doi.org/10.1046/j.1095-8649.2003.00233.x                                    How to cite this article: Lázari, C., Riva-Rossi, C., Ciancio, J.,
+Thériault, V., Garant, D., Bernatchez, L., & Dodson, J. J. (2007). Heritability         Pascual, M., Clemento, A. J., Pearse, D. E., & Garza, J. C.
+    of life-history tactics and genetic correlation with body size in a natu-           (2024). Ancestry and genetic structure of resident and
+    ral population of brook charr (Salvelinus fontinalis). Journal of Evolution-
+                                                                                        anadromous rainbow trout (Oncorhynchus mykiss) in Argentina.
+    ary Biology, 20, 2266–2277. https://doi.org/10.1111/j.1420-9101.
+    2007.01417.x                                                                        Journal of Fish Biology, 104(6), 1972–1989. https://doi.org/10.
+Thorpe, J. E., Mangel, M., Metcalfe, N. B., & Huntingford, F. A. (1998).                1111/jfb.15722
+    Modelling the proximate basis of salmonid life-history variation, with
+
