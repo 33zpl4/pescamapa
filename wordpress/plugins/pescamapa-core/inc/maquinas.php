@@ -45,6 +45,12 @@ function pm_llms_item( string $nombre, string $url, string $nota = '', array $al
 	return $linea . ( $otros ? ' (' . implode( ' · ', $otros ) . ')' : '' );
 }
 
+/** " Hoy las guías y notas publicadas citan N fuentes distintas (al <fecha>)." — empty when there are none. */
+function pm_llms_fuentes_frase(): string {
+	$c = pm_fuentes_conteo();
+	return $c['unicas'] > 0 ? ' Hoy las guías y notas publicadas citan ' . $c['unicas'] . ' fuentes distintas (al ' . pm_fecha( $c['fecha'], 'es' ) . ').' : '';
+}
+
 /** The whole llms.txt (llmstxt.org format), in Spanish with links to pt/en. */
 function pm_llms_txt(): string {
 	$es  = fn( $k ) => pm_t( $k, [], 'es' );
@@ -52,6 +58,8 @@ function pm_llms_txt(): string {
 		'# Pescamapa',
 		'',
 		'> ' . $es( 'marca.definicion' ),
+		'',
+		$es( 'marca.lema' ) . ' ' . $es( 'marca.saber' ) . pm_llms_fuentes_frase(),
 		'',
 		'Pescamapa (https://pescamapa.com) publica en español rioplatense, con versión en portugués (/pt/) e inglés (/en/) de las guías. Cada guía muestra la fecha de actualización y enlaza a la autoridad oficial del reglamento; los reglamentos y las vedas cambian cada año, así que conviene confirmarlos con esa autoridad antes de citar una fecha o una medida. No publicamos coordenadas de pesqueros, solo áreas generales. Las fichas de guías y alojamientos se arman con su consentimiento o con información pública (y están marcadas como sin verificar mientras el prestador no las confirme); se corrigen o se quitan a pedido. Los precios figuran solo con fecha. Contacto: ' . PM_EMAIL_PUBLICO . '.',
 		'',

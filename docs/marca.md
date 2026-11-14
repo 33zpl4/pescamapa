@@ -5,23 +5,15 @@ Definido el 21/10/2026 a partir de lo que el sitio ya usa. **Todo lo nuevo
 alcanza, se cambia acá primero.** Verificación automática:
 `node wordpress/build/revisar-marca.mjs` (corre en `test-wp.yml`).
 
-## Qué es Pescamapa (una frase)
+## Qué es Pescamapa (desde el 14/11/2026)
 
-> Pescamapa reúne todo lo que necesitás saber antes de ir a pescar a la
-> Argentina: cuándo ir, qué dice el reglamento y con quién salir. Lo
-> investigamos nosotros y mostramos las fuentes. Y si querés, te armamos el
-> viaje.
+Dos promesas, SABER e IR (`docs/estrategia-contenido.md` → "Posicionamiento (14/11/2026)"). Textos en `data/ui.json`:
 
-(Definición cambiada el 26/10/2026, por decisión del dueño: antes decía
-"la guía para pescar en toda la Argentina…". Se dice lo que ofrecemos con las
-preguntas del pescador, no con nuestras etiquetas internas, y sin superlativos
-sin fuente: "la más completa" se dirá cuando se pueda probar.)
+- `marca.definicion` (descripción larga): "Pescamapa es un servicio gratuito para pescadores que viajan a la Argentina. Enviás un pedido, consultamos a los lodges, guías y paquetes que encajan y en 48 horas te devolvemos una comparación de precios, qué incluye y disponibilidad. Algunos operadores nos pagan una comisión por las reservas que llegan por Pescamapa; el pescador paga lo mismo. Antes de decidir, cada destino tiene su reglamento, su temporada y sus fuentes."
+- `marca.saber` (pilar SABER): "Pescamapa reúne en un solo lugar lo que está disperso en cientos de webs y PDFs oficiales: licencias, dónde pescar, normas, vedas y temporadas, con la fuente a la vista."
+- `marca.lema` (tagline paraguas, pie de página y descripción por defecto): **"Todo para pescar en la Argentina, en un solo lugar."** (pt: "Tudo para pescar na Argentina, em um só lugar."; en: "Everything for fishing in Argentina, in one place.")
 
-Lema corto (pie de página y títulos): **"Cuándo ir, qué dice el reglamento y
-con quién pescar en Argentina."** (pt: "Quando ir, o que diz o regulamento e
-com quem pescar na Argentina."; en: "When to go, what the rules say and who to
-fish with in Argentina."). Viven en `data/ui.json`
-(`marca.definicion`, `marca.lema`, `inicio.title`, `inicio.description`).
+(Historia: el 26/10/2026 la definición era "Pescamapa reúne todo lo que necesitás saber antes de ir a pescar…" y el lema "Cuándo ir, qué dice el reglamento y con quién pescar en Argentina". Sin superlativos sin fuente: "la más completa" se dirá cuando se pueda probar.)
 
 ## Voz
 

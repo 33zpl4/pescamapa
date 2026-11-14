@@ -93,7 +93,7 @@ function pm_seo(): array {
 			'name'        => 'Pescamapa',
 			'url'         => pm_url_inicio( pm_lang() ),
 			'inLanguage'  => pm_meta_idioma()['html'],
-			'description' => pm_t( 'marca.lema' ),
+			'description' => pm_t( 'marca.definicion' ),
 			'creator'     => [
 				[ '@type' => 'Person', 'name' => 'Cheyenne Justiniano' ],
 				[ '@type' => 'Person', 'name' => 'Alberto Ayala' ],
@@ -175,6 +175,7 @@ function pm_seo(): array {
 				'name'    => 'Pescamapa',
 				'url'     => pm_url_inicio( pm_lang() ),
 				'email'   => PM_EMAIL_PUBLICO,
+				'description' => pm_t( 'marca.definicion' ),
 				'founder' => array_map( fn( $n ) => [ '@type' => 'Person', 'name' => pm_t( "ns.p$n.nombre" ), 'description' => pm_t( "ns.p$n.texto" ) ], [ 1, 2 ] ),
 			],
 		];

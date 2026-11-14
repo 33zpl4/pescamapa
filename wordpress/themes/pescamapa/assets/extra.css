@@ -41,7 +41,24 @@
 .aviso.error { background: var(--warn-bg); border: 1px solid var(--warn-line); }
 .v-inicio .join-inner { max-width: 980px; display: grid; gap: 8px; }
 .v-inicio .pedido .head p { max-width: 560px; color: var(--ink); }
-.v-inicio .pedido .head p + p { margin-top: 12px; }
+
+/* Home (14/11/2026): the question with buttons (hero and closing section), benefits, "what we do for you". */
+.v-inicio .hero h1 { font-size: var(--fs-h1); line-height: 1.1; }
+.v-inicio .pregunta { margin-top: 28px; }
+.v-inicio .pregunta-h { margin: 0 0 12px; font: 700 var(--fs-lead) var(--font-body); }
+.v-inicio .pregunta .opciones { display: flex; flex-wrap: wrap; gap: 10px; list-style: none; margin: 0; padding: 0; }
+.v-inicio .pregunta .solo { margin: 14px 0 0; font-size: var(--fs-small); }
+.v-inicio .pregunta .solo a { font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+.v-inicio .hero .pregunta .solo { color: var(--on-dark); }
+.v-inicio .hero .pregunta .solo a { color: var(--white); }
+.v-inicio .pedido .pregunta { margin-top: 24px; }
+.v-inicio .pedido .pregunta-h { display: none; }
+.v-inicio .pedido .pregunta .solo a { color: var(--moss); }
+.v-inicio .pedido .pregunta .solo span { color: var(--muted); }
+.v-inicio .hacemos { list-style: none; margin: 0; padding: 0; display: grid; gap: 0 40px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); max-width: 980px; }
+.v-inicio .hacemos li { border-top: 1px solid var(--line); padding: 14px 0; font-size: var(--fs-body); }
+footer .negocio { margin: 24px 0 0; font-size: var(--fs-small); color: var(--on-dark); }
+footer .negocio a { color: var(--white); text-decoration: underline; text-underline-offset: 3px; white-space: nowrap; }
 
 /* Quotes inside article text (any language, any type): the pull quote.
    The yellow box is for warnings and internal notes only (--warn-*); a real

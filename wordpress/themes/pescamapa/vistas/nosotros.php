@@ -16,6 +16,11 @@ get_header(); ?>
 		</div>
 	</header>
 	<div class="shell cuerpo">
+		<section aria-labelledby="que-h">
+			<h2 id="que-h"><?php pm_e( 'ns.que.h' ); ?></h2>
+			<p><?php pm_e( 'marca.definicion' ); ?></p>
+			<p><?php pm_e( 'marca.saber' ); ?></p>
+		</section>
 		<section aria-labelledby="porque-h">
 			<h2 id="porque-h"><?php pm_e( 'ns.porque.h' ); ?></h2>
 			<p><?php pm_e( 'ns.porque.p' ); ?></p>
@@ -35,7 +40,7 @@ get_header(); ?>
 			<h2 id="goya-h"><?php pm_e( 'ns.goya.h' ); ?></h2>
 			<p><?php pm_e( 'ns.goya.p' ); ?></p>
 		</section>
-		<section aria-labelledby="plata-h">
+		<section id="como-funciona" aria-labelledby="plata-h">
 			<h2 id="plata-h"><?php pm_e( 'ns.plata.h' ); ?></h2>
 			<p><?php pm_e( 'ns.plata.p' ); ?></p>
 		</section>
