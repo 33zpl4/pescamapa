@@ -10,7 +10,7 @@
  * Run with wp-script.yml (script = fotos-notas-2026-11-14).
  */
 
-$aplicar = false;
+$aplicar = true;
 $carpeta = '/tmp/pm-fotos';
 $hoy     = '2026-11-14';
 $unsplash_lic = 'https://unsplash.com/license';
