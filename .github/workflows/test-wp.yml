@@ -757,8 +757,10 @@ jobs:
           check /wp-sitemap.xml 200 'wp-sitemap-vistas'
           check / 200 '/pique/'
           check /llms.txt 200 'Zonas de pique'
+          # The site's "today" follows WordPress's timezone (Argentina), not the runner's UTC clock: after 00:00 UTC the runner's date is a day ahead and the report is rejected as a future day.
+          HOY=$(wp --path="$WP" eval 'echo wp_date( "Ymd" );')
           pique() { # lat lon especie resultado → body
-            curl -sS -d action=pm_pique -d pm_t=$(( $(date +%s) - 60 )) -d celda_lat="$1" -d celda_lon="$2" -d especie="$3" -d resultado="$4" -d dia=$(date +%Y%m%d) "$URL/wp-admin/admin-post.php"
+            curl -sS -d action=pm_pique -d pm_t=$(( $(date +%s) - 60 )) -d celda_lat="$1" -d celda_lon="$2" -d especie="$3" -d resultado="$4" -d dia=$HOY "$URL/wp-admin/admin-post.php"
           }
           r=$(pique -2784 -5812 dorado bueno)
           [[ "$r" == *'"ok":true'* ]] && echo "✓ reporte de pique guardado" || { echo "✖ reporte: $r"; fail=1; }
@@ -767,7 +769,7 @@ jobs:
           [[ "$r" == *'"ok":false'* ]] && echo "✓ celda fuera de la Argentina rechazada" || { echo "✖ celda inválida aceptada: $r"; fail=1; }
           r=$(pique -2784 -5812 ballena bueno)
           [[ "$r" == *'"ok":false'* ]] && echo "✓ especie inválida rechazada" || { echo "✖ especie inválida aceptada: $r"; fail=1; }
-          curl -sS -o /dev/null -d action=pm_pique -d pm_web=spam -d pm_t=1 -d celda_lat=-2785 -d celda_lon=-5813 -d especie=surubi -d resultado=bueno -d dia=$(date +%Y%m%d) "$URL/wp-admin/admin-post.php"
+          curl -sS -o /dev/null -d action=pm_pique -d pm_web=spam -d pm_t=1 -d celda_lat=-2785 -d celda_lon=-5813 -d especie=surubi -d resultado=bueno -d dia=$HOY "$URL/wp-admin/admin-post.php"
           n=$(wp --path="$WP" post list --post_type=pm_reporte --post_status=private --format=count)
           [[ "$n" == 1 ]] && echo "✓ 1 reporte (duplicado, inválidos y bot descartados)" || { echo "✖ reportes guardados: $n (esperado 1)"; fail=1; }
           # Privacy: only the cell is stored, never a point; no name.
