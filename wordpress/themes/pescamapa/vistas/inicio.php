@@ -148,7 +148,7 @@ get_header(); ?>
 		</div>
 	</section>
 
-	<?php $notas_inicio = array_slice( pm_notas_lista( $idioma ), 0, 3 ); ?>
+	<?php $notas_inicio = pm_notas_portada( $idioma, 3 ); ?>
 	<?php if ( $notas_inicio ) : ?>
 	<section class="section notas-inicio" id="notas">
 		<div class="shell">
@@ -161,11 +161,7 @@ get_header(); ?>
 			</div>
 			<div class="lista">
 				<?php foreach ( $notas_inicio as $n ) : ?>
-					<a class="tarjeta" href="<?php echo esc_url( $n['url'] ); ?>"<?php echo $n['idioma'] !== $idioma ? ' hreflang="' . esc_attr( pm_meta_idioma( $n['idioma'] )['html'] ) . '"' : ''; ?>>
-						<?php echo pm_foto( $n['foto'], $n['titulo'], '(max-width: 720px) 100vw, 360px', [ 'enlaces' => false ] ); // phpcs:ignore ?>
-						<strong><?php echo esc_html( $n['titulo'] ); ?></strong>
-						<span class="note"><?php echo esc_html( pm_fecha( $n['fecha'], $n['idioma'] ) ); ?></span>
-					</a>
+					<?php get_template_part( 'parciales/nota-tarjeta', null, [ 'nota' => $n, 'idioma' => $idioma ] ); ?>
 				<?php endforeach; ?>
 			</div>
 			<?php // Quick links (13/11/2026): the pages people search for by name; each one only when it exists in this language. ?>

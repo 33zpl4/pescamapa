@@ -280,10 +280,10 @@ add_action( 'acf/include_fields', function () {
 		'location' => [ [ [ 'param' => 'attachment', 'operator' => '==', 'value' => 'all' ] ] ],
 		'fields'   => [
 			[ 'key' => 'field_pm_f_autor', 'name' => 'foto_autor', 'label' => 'Autor de la foto', 'type' => 'text', 'instructions' => 'Quién la sacó. En la web sale "Foto: Nombre Apellido".' ],
-			[ 'key' => 'field_pm_f_origen', 'name' => 'foto_origen', 'label' => 'Origen', 'type' => 'select', 'choices' => [ 'propia' => 'Propia (la sacaste vos)', 'cedida' => 'Cedida con permiso del autor', 'licencia' => 'Licencia libre (Wikimedia, etc.)' ], 'allow_null' => 1 ],
-			[ 'key' => 'field_pm_f_licencia', 'name' => 'foto_licencia', 'label' => 'Licencia (solo si es libre, ej. CC BY-SA 4.0)', 'type' => 'text' , 'conditional_logic' => [ [ [ 'field' => 'field_pm_f_origen', 'operator' => '==', 'value' => 'licencia' ] ] ] ],
-			[ 'key' => 'field_pm_f_licencia_url', 'name' => 'foto_licencia_url', 'label' => 'Enlace a la licencia', 'type' => 'url' , 'conditional_logic' => [ [ [ 'field' => 'field_pm_f_origen', 'operator' => '==', 'value' => 'licencia' ] ] ] ],
-			[ 'key' => 'field_pm_f_pagina', 'name' => 'foto_pagina', 'label' => 'Página de origen de la foto', 'type' => 'url' , 'conditional_logic' => [ [ [ 'field' => 'field_pm_f_origen', 'operator' => '==', 'value' => 'licencia' ] ] ] ],
+			[ 'key' => 'field_pm_f_origen', 'name' => 'foto_origen', 'label' => 'Origen', 'type' => 'select', 'choices' => [ 'propia' => 'Propia (la sacaste vos)', 'cedida' => 'Cedida con permiso del autor', 'licencia' => 'Licencia libre (Wikimedia, etc.)', 'unsplash' => 'Unsplash (Licencia Unsplash)' ], 'allow_null' => 1 ],
+			[ 'key' => 'field_pm_f_licencia', 'name' => 'foto_licencia', 'label' => 'Licencia (solo si es libre, ej. CC BY-SA 4.0)', 'type' => 'text' , 'conditional_logic' => [ [ [ 'field' => 'field_pm_f_origen', 'operator' => '==', 'value' => 'licencia' ] ], [ [ 'field' => 'field_pm_f_origen', 'operator' => '==', 'value' => 'unsplash' ] ] ] ],
+			[ 'key' => 'field_pm_f_licencia_url', 'name' => 'foto_licencia_url', 'label' => 'Enlace a la licencia', 'type' => 'url', 'instructions' => 'Unsplash: https://unsplash.com/license' , 'conditional_logic' => [ [ [ 'field' => 'field_pm_f_origen', 'operator' => '==', 'value' => 'licencia' ] ], [ [ 'field' => 'field_pm_f_origen', 'operator' => '==', 'value' => 'unsplash' ] ] ] ],
+			[ 'key' => 'field_pm_f_pagina', 'name' => 'foto_pagina', 'label' => 'Página de origen de la foto', 'type' => 'url', 'instructions' => 'El nombre del autor enlaza acá (Commons: la página del archivo; Unsplash: el perfil del fotógrafo, solo si lo conocés).' , 'conditional_logic' => [ [ [ 'field' => 'field_pm_f_origen', 'operator' => '==', 'value' => 'licencia' ] ], [ [ 'field' => 'field_pm_f_origen', 'operator' => '==', 'value' => 'unsplash' ] ] ] ],
 		],
 	] );
 } );

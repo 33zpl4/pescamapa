@@ -115,6 +115,10 @@ footer .negocio a { color: var(--white); text-decoration: underline; text-underl
 .v-entrevistas .quien, .v-notas .quien { font-size: var(--fs-caption); color: var(--muted); }
 .v-entrevistas .tarjeta .foto, .v-notas .tarjeta .foto, .notas-inicio .tarjeta .foto { aspect-ratio: 4 / 3; border-radius: var(--radius); overflow: hidden; }
 .notas-inicio .lista { padding-block: 24px 0; }
+.v-notas .tarjeta, .notas-inicio .tarjeta { align-content: start; }
+/* Note without photo (14/11/2026): same 4:3 box as the photos, brand placeholder (tokens only), so the grid stays even. */
+.tarjeta .foto-vacia { display: grid; place-items: center; width: 100%; background: var(--cream); border: 1px dashed var(--line-strong); color: var(--olive); }
+.tarjeta .foto-vacia .icono { width: 44px; height: 44px; }
 .v-especies .lista { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr)); gap: 24px; padding-block: 40px 80px; }
 .v-especies .tarjeta { display: grid; gap: 8px; align-content: start; background: var(--cream); border-radius: var(--radius); padding: 20px 22px; }
 .v-especies .tarjeta h2 { font: 700 var(--fs-h3)/1.2 var(--font-head); margin: 0; }

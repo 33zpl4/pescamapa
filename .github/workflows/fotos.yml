@@ -11,7 +11,7 @@ on:
   workflow_dispatch:
     inputs:
       modo:
-        description: "candidatas | bajar | bajar-wp (WordPress: scripts/fotos-wp-elegidas.json -> wordpress/fotos/)"
+        description: "candidatas | bajar | bajar-wp (WordPress: scripts/fotos-wp-elegidas.json -> wordpress/fotos/) | bajar-wp-notas (scripts/fotos-wp-notas-elegidas.json, recortadas a 4:3)"
         required: true
         default: candidatas
       lugares:
@@ -70,4 +70,15 @@ jobs:
           git config user.email "noreply@anthropic.com"
           git add wordpress/fotos
           git commit -qm "Fotos de Commons para guías sin foto (WordPress), con créditos" || echo "sin cambios"
+          git push origin HEAD:${{ github.ref_name }}
+
+      - name: Bajar elegidas para las notas de WordPress
+        if: steps.modo.outputs.modo == 'bajar-wp-notas'
+        run: |
+          pip install --quiet pillow
+          python3 scripts/commons.py bajar-wp-notas scripts/fotos-wp-notas-elegidas.json
+          git config user.name "Claude"
+          git config user.email "noreply@anthropic.com"
+          git add wordpress/fotos
+          git commit -qm "Fotos de Commons para notas sin foto (WordPress), con créditos" || echo "sin cambios"
           git push origin HEAD:${{ github.ref_name }}

@@ -171,6 +171,8 @@ jobs:
           wp --path="$WP" eval-file /tmp/seo-consultas.php
       - name: Prestador card fields (programme, minimum stay, companion, not included, capacity unit)
         run: wp --path="$WP" eval-file "$GITHUB_WORKSPACE/.github/scripts/prestador-campos.php"
+      - name: Notes - photo first on the home block, placeholder card without photo
+        run: wp --path="$WP" eval-file "$GITHUB_WORKSPACE/.github/scripts/notas-foto-portada.php"
       - name: Corrientes lodge guides - create, read back, render, clean up
         run: |
           w() { wp --path="$WP" "$@"; }
@@ -553,6 +555,8 @@ jobs:
           check /wp-sitemap-vistas-1.xml 200 'paquetes-de-pesca/esquina'
           check /llms.txt 200 'Paquetes de pesca en Esquina'
           check /notas/ 200 'Nota de prueba'
+          check /notas/ 200 'class="foto foto-vacia"'
+          check / 200 'class="foto foto-vacia"'
           check /en/notes/ 200 'v-notas'
           check /notas/nota-de-prueba/ 200 'DATO-CLAVE-DE-PRUEBA' 'dato sin confirmar'
           check /notas/nota-de-prueba/ 200 'FUENTE-DE-PRUEBA'

@@ -19,12 +19,7 @@ get_header(); ?>
 			<p><?php pm_e( 'notas.vacio' ); ?></p>
 		<?php endif; ?>
 		<?php foreach ( $notas as $n ) : ?>
-			<a class="tarjeta" href="<?php echo esc_url( $n['url'] ); ?>"<?php echo $n['idioma'] !== $idioma ? ' hreflang="' . esc_attr( pm_meta_idioma( $n['idioma'] )['html'] ) . '"' : ''; ?>>
-				<?php echo pm_foto( $n['foto'], $n['titulo'], '(max-width: 720px) 100vw, 360px', [ 'enlaces' => false ] ); // phpcs:ignore ?>
-				<?php if ( $n['tipo'] ) : ?><span class="quien"><?php echo esc_html( pm_opcion( 'nota_tipo', $n['tipo'], $n['idioma'] ) ); ?></span><?php endif; ?>
-				<strong><?php echo esc_html( $n['titulo'] ); ?></strong>
-				<span class="note"><?php echo esc_html( pm_fecha( $n['fecha'], $n['idioma'] ) ); ?></span>
-			</a>
+			<?php get_template_part( 'parciales/nota-tarjeta', null, [ 'nota' => $n, 'idioma' => $idioma, 'tipo' => true ] ); ?>
 		<?php endforeach; ?>
 	</div>
 </div>

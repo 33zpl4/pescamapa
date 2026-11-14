@@ -5,7 +5,7 @@ defined( 'ABSPATH' ) || exit;
 $n       = pm_nota( get_queried_object_id() );
 $idioma  = $n['idioma'];
 $destino = $n['destino'] ? ( pm_buscar( 'pm_destino', $n['destino'], $idioma ) ?? pm_buscar( 'pm_destino', $n['destino'], 'es' ) ) : null;
-$foto    = pm_foto( $n['foto'], $n['titulo'], '(max-width: 960px) 100vw, 400px', [ 'clase' => 'portada', 'prioridad' => true ] );
+$foto    = pm_foto( $n['foto'], pm_alt_foto( (int) $n['foto'], $idioma, $n['titulo'] ), '(max-width: 960px) 100vw, 400px', [ 'clase' => 'portada', 'prioridad' => true ] );
 
 get_header(); ?>
 <div class="v-destino v-nota">
