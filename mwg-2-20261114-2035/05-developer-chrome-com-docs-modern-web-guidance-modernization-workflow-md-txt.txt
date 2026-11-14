@@ -1,0 +1,192 @@
+(text/markdown; charset=utf-8, no es HTML)
+Most web development doesn't happen from scratch. It happens in existing
+codebases that have accumulated years of legacy workarounds, polyfills, and
+JavaScript utilities (autosize, custom checkbox styling hacks, `scrollHeight`
+listeners) for things the browser now handles natively. But here's the problem:
+Old code doesn't break. It works, so nobody files a bug. It also takes trust to
+refactor working code---even if it is old---so developers are understandably
+reluctant.
+
+On the other hand, not refactoring old code to use modern web features will
+quietly cost you in bundle size, page responsiveness, and accessibility. Worse,
+when you use coding agents in these projects, they copy the surrounding 2015
+conventions along with the outdated patterns from their training data.
+
+When you're building something new, Modern Web Guidance steers your agent toward
+modern [Baseline](https://web.dev/baseline) features. For existing code, Modern
+Web Guidance 1.0 adds a modernization workflow that scans your project for
+legacy patterns and helps your agent upgrade them.
+
+## What the modernization workflow does
+
+When you ask your agent to modernize a project (or by running the `legacy-scan`
+command directly), here is how it works:
+
+- **Deterministic local scanning:** HTML, CSS, JavaScript/TypeScript, framework-specific components, and `package.json` files are quickly scanned with Abstract Syntax Tree (AST), DOM, and CSS parsers locally with zero LLM calls or token cost.
+- **Legacy rule catalog:** A scanner that flags too many things on every run gets ignored. We tested candidate rules across approximately 45,000 open-source repositories split in half: Rules were written and tuned on the rule-writing half, and graded on an unseen held-out half. We threw out more candidate rules than we kept, skipping features that have no legacy code equivalent and retiring syntax-only swaps with no real payoff (like rewriting working `+` or `~` sibling selectors into `:has()`). To ship by default, a rule must hit at least 80% static matcher precision and 90% post-verification precision on unseen code.
+- **Context-aware false-positive filtering:** Every rule match comes with explicit `keepWhen`/`dropWhen` rubrics. This tells the agent to evaluate surrounding code, and discard intentional fallbacks, CSS `@supports` guards, or lookalikes before presenting its findings.
+- **Scoped to high-confidence legacy patterns (and growing):** `legacy-scan` checks the subset of our roughly 200 guides (about 20%) where legacy code can be spotted deterministically without false positives, and we're expanding that coverage over time. For the rest of the catalog, your agent searches and retrieves guides as you build.
+
+## How to invoke the modernization workflow
+
+Modernizing code with Modern Web Guidance requires version 1.0 or better.
+Install or update it with npm, or your agent's plugin marketplace:
+
+```bash
+# Install Modern Web Guidance 1.0 in your project
+npx modern-web-guidance@latest install
+
+# Or update an existing installation
+npx modern-web-guidance@latest update
+```
+
+Because the modernization workflow is part of [the core skill
+definition](https://github.com/GoogleChrome/modern-web-guidance/blob/main/skills/modern-web-guidance/SKILL.md),
+you can trigger the scanner with natural language by asking your agent to check
+for "legacy patterns" or "modernize" across a repository or folder.
+
+**Note:** Naming a single component will perform a regular guide lookup instead.
+
+To demonstrate, the following is an example prompt to scan an entire repository:
+
+    Modernize this repository using Modern Web Guidance. Scan our frontend files for legacy patterns, verify the findings, and propose a modernization plan before making any code edits.
+
+You can also point it at a specific folder:
+
+    Check src/components/forms for legacy web patterns that can be refactored to modern Baseline features.
+
+While you can currently run `legacy-scan` manually in your terminal, automated
+CI/CD pipeline integrations are currently in development.
+
+## Example patterns it catches and fixes
+
+The qualified rules target common legacy antipatterns across four domains:
+**Forms and UI** , **dialogs and controls** , **CSS layout, typography, and visual
+design** , and **Security**. The following is a table of example legacy patterns,
+and their modern replacements:
+
+| Domain | Legacy pattern detected | Modern replacement |
+|---|---|---|
+| Forms and UI | JS `scrollHeight` textarea auto-resize hooks | CSS `field-sizing: content` ([form-fields-automatically-fit-contents](https://developer.chrome.com/docs/modern-web-guidance/guides/forms/form-fields-automatically-fit-contents.md.txt)) |
+| Forms and UI | Enter `keydown` submit handlers missing IME guards | `if (e.isComposing || e.keyCode === 229) return;` ([ime-safe-enter-submit](https://developer.chrome.com/docs/modern-web-guidance/guides/forms/ime-safe-enter-submit.md.txt)) |
+| Forms and UI | Premature `:invalid` CSS styling untouched inputs on load | `:user-invalid` and `:user-valid` pseudo-classes ([validate-input-after-interaction](https://developer.chrome.com/docs/modern-web-guidance/guides/forms/validate-input-after-interaction.md.txt)) |
+| Forms and UI | Missing `autocomplete` tokens on auth and checkout forms | Standardized `autocomplete` values ([autofill-sign-in-form](https://developer.chrome.com/docs/modern-web-guidance/guides/forms/autofill-sign-in-form.md.txt), [autofill-payment-form](https://developer.chrome.com/docs/modern-web-guidance/guides/forms/autofill-payment-form.md.txt)) |
+| Dialogs and controls | `e.target === dialog` click listeners that break drag-selection | `<dialog closedby="any">` with progressive enhancement ([dialog](https://developer.chrome.com/docs/modern-web-guidance/guides/ui-components/dialog.md.txt)) |
+| Dialogs and controls | Imperative `addEventListener` click listeners for overlays | Declarative `popover` and `popovertarget` attributes ([declarative-dialog-popover-control](https://developer.chrome.com/docs/modern-web-guidance/guides/ui-behaviors/declarative-dialog-popover-control.md.txt)) |
+| CSS layout, typography, and visual design | `max-height: 9999px` accordion animation hacks | `interpolate-size: allow-keywords` and `calc-size()` ([animate-to-intrinsic-sizes](https://developer.chrome.com/docs/modern-web-guidance/guides/css/animate-to-intrinsic-sizes.md.txt)) |
+| CSS layout, typography, and visual design | JS parent-class toggling based on child state | Relational `:has(:checked)` / `:has(:focus-visible)` selectors ([child-state-based-styling](https://developer.chrome.com/docs/modern-web-guidance/guides/css/child-state-based-styling.md.txt)) |
+| CSS layout, typography, and visual design | Duplicated `@media (prefers-color-scheme: dark)` blocks | CSS `light-dark()` function ([dark-mode](https://developer.chrome.com/docs/modern-web-guidance/guides/visual-design/dark-mode.md.txt), [dark-mode-toggle](https://developer.chrome.com/docs/modern-web-guidance/guides/ui-components/dark-mode-toggle.md.txt)) |
+| Security | External CDN script tags missing Subresource Integrity | `integrity` and `crossorigin="anonymous"` attributes ([secure-external-subresources](https://developer.chrome.com/docs/modern-web-guidance/guides/security/secure-external-subresources.md.txt)) |
+
+## Code transformation examples
+
+When prompted, your coding agent can transform legacy antipatterns into modern
+ones with the modernization workflow. Here are a few examples:
+
+### Auto-growing `<textarea>` elements
+
+Legacy JavaScript measuring `scrollHeight` on every `input` event forces layout
+thrashing. This can cause performance issues---specifically with [Interaction to
+Next Paint (INP)](https://web.dev/articles/inp). Using the modernization
+workflow, your agent can fix it:
+
+```javascript
+// Before: Imperative layout recalculation on every keystroke
+textarea.addEventListener('input', () => {
+  textarea.style.height = 'auto';
+  textarea.style.height = `${textarea.scrollHeight}px`;
+});
+```
+
+You don't need JavaScript for this today. The modernization workflow guides your
+agent to replace it with CSS:
+
+```css
+/* After: Native declarative field sizing */
+textarea {
+  field-sizing: content;
+  min-block-size: 3lh;
+  max-block-size: 15lh;
+}
+```
+
+### Declarative popovers
+
+Custom modal and popup logic using JavaScript event listeners can be replaced
+with standard HTML attributes:
+
+```html
+<!-- Before: a click listener that only calls showPopover() -->
+<button id="openBtn">Open Menu</button>
+<div id="menu" popover>Menu Content</div>
+<script>
+  openBtn.addEventListener('click', () => menu.showPopover());
+</script>
+
+<!-- After: declarative control, no JavaScript -->
+<button popovertarget="menu">Open Menu</button>
+<div id="menu" popover>Menu Content</div>
+```
+
+### IME-safe enter submission
+
+Unprotected enter-key listeners trigger message submission prematurely when
+users type in Japanese, Chinese, or Korean Input Method Editors (IMEs).
+
+Your agent adds composition state guards:
+
+```javascript
+// Before: Fires mid-composition when confirming kanji/hanzi characters
+textarea.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter' && !e.shiftKey) {
+    e.preventDefault();
+    sendMessage();
+  }
+});
+
+
+// After: Accurately checks IME composition state
+textarea.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter' && !e.shiftKey) {
+    e.preventDefault();
+    if (e.isComposing || e.keyCode === 229) return;
+    sendMessage();
+  }
+});
+```
+
+## How it works: The four-step modernization workflow
+
+Refactoring working code in an existing app takes trust, because nobody wants
+automated churn or subtle regressions. That's also why there isn't a `--fix`
+flag: Even modernizations that appear to be straightforward often turn out to be
+cross-layer refactors---such as deleting an imperative JS listener or npm package
+and moving the behavior into HTML and CSS---with subtle behavior and
+browser-support challenges.
+
+Instead, the modernization workflow runs a four-step loop with your coding
+agent:
+
+1. **Scan (`legacy-scan`):** The agent runs `npx modern-web-guidance
+   legacy-scan <path> --json`, which pre-screens files for relevant substrings so it only spins up AST, CSS, and HTML parsers on candidate files and rules. If a finding gets this far, there's already high probability (about 92%) that it's not a false positive. Every match includes a verification checklist for the agent.
+2. **Contextual verification (`keepWhen`/`dropWhen`):** Because the coding agent has the repository open, it inspects the code surrounding each match against that rule's verification rubric. If a `scrollHeight` read is part of virtualized scrolling rather than a `<textarea>` hack, or if an `@supports` check already protects the property, the finding is silently dropped.
+3. **Report:** The agent summarizes the verified findings (noting that `legacy-scan` covers the subset of guides with deterministic rules, plus the modernization plan if you asked to review a plan before making edits).
+4. **Guide retrieval, refactoring, and test verification:** When asked to modernize, the agent runs `npx modern-web-guidance retrieve <guide-id>` to fetch the appropriate guide. It executes the code refactor according to the guide's Baseline compatibility patterns, and re-runs `legacy-scan <path>` on the modified files alongside the project's test suite to confirm resolution.
+
+## Try it out
+
+Whether running a one-off `legacy-scan` in the terminal, or asking your coding
+agent to modernize an older module, the modernization workflow helps you pay
+down legacy web platform debt without the noise of traditional linters.
+
+Pair Modern Web Guidance with Chrome DevTools for agents when you want to go
+from static code modernization to live browser verification, benchmarking, and
+debugging.
+
+### Next steps and resources
+
+- [Documentation](https://developer.chrome.com/docs/modern-web-guidance.md.txt)
+- [Guide Catalog](https://developer.chrome.com/docs/modern-web-guidance/guides.md.txt)
+- [Public Evaluation Dashboard](https://googlechrome.github.io/modern-web-guidance-src/)
+- [GitHub Repository](https://github.com/GoogleChrome/modern-web-guidance)
+- [Chrome DevTools for agents](https://developer.chrome.com/docs/devtools/agents)
