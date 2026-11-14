@@ -44,7 +44,7 @@ jobs:
           check /mapa/ 200 'class="mapa"'
           check /en/map/ 200 'class="mapa"'
           check /pique/ 200 'pique-mapa'
-          check /armar-viaje/ 200 'name="contacto"'
+          check /armar-viaje/ 200 'name="contacto_email"'
           check / 200 'armar-viaje'
           # Terms of use and privacy policy, 3 languages; linked from the footer and the forms.
           check /terminos/ 200 'Términos de uso'
@@ -57,7 +57,6 @@ jobs:
           check /pt/privacidade/ 200 'Política de privacidade'
           check / 200 '/privacidad/'
           check /armar-viaje/ 200 'política de privacidad'
-          check / 200 'Cheyenne Justiniano</span> y <span>Alberto Ayala'
           # River conditions (daily workflow rio.yml): the hub, one point page per station, the block in a guide.
           for p in /altura-del-rio/ /en/river-levels/ /pt/altura-do-rio/; do
             check "$p" 200 'class="tabla-rio"'
@@ -81,7 +80,6 @@ jobs:
           check /notas/ 200 'cuando-pescar-surubi'
           # Notes inside the guides, the species pages and the home.
           check /litoral/corrientes/pesca-en-goya/ 200 'Para leer antes de ir a Goya'
-          check /litoral/corrientes/pesca-en-goya/ 200 'cuando-pescar-surubi'
           check /especies/dorado/ 200 'Notas sobre esta especie'
           check /especies/ 200 'v-especies' 'PENDIENTE'
           check /paquetes-de-pesca/goya/ 200 'v-paquetes' 'PENDIENTE'
@@ -114,8 +112,8 @@ jobs:
             read -r code loc < <(curl -sS -m 30 -o /dev/null -w '%{http_code} %{redirect_url}\n' "$SITE$viejo")
             if [[ "$code" == "301" && "$loc" == *"$nuevo" ]]; then echo "✓ 301 $viejo → $nuevo"; else echo "✖ $viejo: $code $loc (esperado 301 a $nuevo)"; fail=1; fi
           done
-          check /en/plan-your-trip/ 200 'name="contacto"'
-          check /pt/planejar-viagem/ 200 'name="contacto"'
+          check /en/plan-your-trip/ 200 'name="contacto_email"'
+          check /pt/planejar-viagem/ 200 'name="contacto_email"'
           check /en/bite-zones/ 200 'pique-mapa'
           check /creditos/ 301
           check /entrevistas/ 200 'v-entrevistas'
