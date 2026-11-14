@@ -12,7 +12,7 @@
  * Run with wp-script.yml (script = corrientes-enlaces-2026-11-14). Run it AFTER itati-, ita-ibate- and esteros-del-ibera-2026-11-14.
  */
 
-$aplicar = false;
+$aplicar = true;
 
 function pm_ce_guia( string $clave, string $i ): ?WP_Post {
 	$ps = get_posts( [ 'post_type' => 'pm_destino', 'post_status' => 'publish', 'meta_key' => 'clave', 'meta_value' => $clave, 'numberposts' => -1 ] );

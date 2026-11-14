@@ -137,6 +137,16 @@ jobs:
             grep -qE "name=[\"']robots[\"'][^>]*noindex" page.html && { echo "✖ $p tiene noindex"; fail=1; }
             grep -q 'PENDIENTE' page.html && { echo "✖ $p muestra una nota PENDIENTE"; fail=1; }
           done
+          # Corrientes lodge guides (14/11/2026): Itatí, Itá Ibaté, Esteros del Iberá, three languages. Code and script guarantees only (no prices or texts).
+          for p in /litoral/corrientes/pesca-en-itati/ /en/litoral/corrientes/fishing-in-itati/ /pt/litoral/corrientes/pesca-em-itati/ \
+                   /litoral/corrientes/pesca-en-ita-ibate/ /en/litoral/corrientes/fishing-in-ita-ibate/ /pt/litoral/corrientes/pesca-em-ita-ibate/ \
+                   /litoral/corrientes/pesca-en-los-esteros-del-ibera/ /en/litoral/corrientes/fishing-in-the-ibera-wetlands/ /pt/litoral/corrientes/pesca-nos-esteros-do-ibera/; do
+            check "$p" 200 'TouristDestination'
+            grep -qE "name=[\"']robots[\"'][^>]*noindex" page.html && { echo "✖ $p tiene noindex"; fail=1; }
+            grep -q 'PENDIENTE' page.html && { echo "✖ $p muestra una nota PENDIENTE"; fail=1; }
+            grep -q 'FAQPage' page.html || { echo "✖ $p sin FAQPage"; fail=1; }
+            grep -q 'hreflang="x-default"' page.html || { echo "✖ $p sin hreflang"; fail=1; }
+          done
           # La Paz (Entre Ríos): licence fees from the Dirección de Entre Ríos, honest "not confirmed" for sizes.
           for p in /litoral/entre-rios/pesca-en-la-paz/ /pt/litoral/entre-rios/pesca-em-la-paz/; do
             check "$p" 200 'TouristDestination'

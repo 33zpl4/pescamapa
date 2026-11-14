@@ -22,7 +22,7 @@
  * Run with wp-script.yml (script = itati-2026-11-14).
  */
 
-$aplicar = false;
+$aplicar = true;
 $hoy     = '20261114'; // date of the guide text
 $leido   = '20261113'; // date the operators' pages and the press were read (branch `investigacion`)
 
