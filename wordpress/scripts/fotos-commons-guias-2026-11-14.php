@@ -9,7 +9,7 @@
  * Idempotent: the attachment is reused by file name. Dry run first ($aplicar = false). Run with wp-script.yml.
  */
 
-$aplicar = false;
+$aplicar = true;
 $carpeta = '/tmp/pm-fotos';
 $datos   = json_decode( (string) @file_get_contents( "$carpeta/fotos-wp.json" ), true );
 if ( ! is_array( $datos ) || ! $datos ) {
