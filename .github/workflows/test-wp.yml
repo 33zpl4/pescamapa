@@ -185,17 +185,19 @@ jobs:
               }
             }'
           for s in itati-2026-11-14 ita-ibate-2026-11-14 esteros-del-ibera-2026-11-14; do
-            wp --path="$WP" eval-file "wordpress/scripts/$s.php"   # dry run: must write nothing
+            sed 's/^\$aplicar = true;/$aplicar = false;/' "wordpress/scripts/$s.php" > "/tmp/$s-dry.php"
+            wp --path="$WP" eval-file "/tmp/$s-dry.php"   # dry run: must write nothing
             n=$(w post list --post_type=pm_destino --post_status=any --meta_key=clave --meta_value="${s%-2026-11-14}" --format=count)
             [[ "$n" == 0 ]] || { echo "✖ el simulacro de $s escribió $n guías"; exit 1; }
-            sed 's/^\$aplicar = false;/$aplicar = true;/' "wordpress/scripts/$s.php" > "/tmp/$s.php"
+            cp "wordpress/scripts/$s.php" "/tmp/$s.php"   # committed with $aplicar = true (already applied live)
             wp --path="$WP" eval-file "/tmp/$s.php"
             wp --path="$WP" eval-file "/tmp/$s.php"   # idempotent: nothing is touched the second time
             n=$(w post list --post_type=pm_destino --post_status=publish --meta_key=clave --meta_value="${s%-2026-11-14}" --format=count)
             [[ "$n" == 3 ]] && echo "✓ $s: guía en 3 idiomas" || { echo "✖ $s: $n guías (esperado 3)"; exit 1; }
           done
-          sed 's/^\$aplicar = false;/$aplicar = true;/' wordpress/scripts/corrientes-enlaces-2026-11-14.php > /tmp/enlaces.php
-          wp --path="$WP" eval-file wordpress/scripts/corrientes-enlaces-2026-11-14.php
+          sed 's/^\$aplicar = true;/$aplicar = false;/' wordpress/scripts/corrientes-enlaces-2026-11-14.php > /tmp/enlaces-dry.php
+          cp wordpress/scripts/corrientes-enlaces-2026-11-14.php /tmp/enlaces.php
+          wp --path="$WP" eval-file /tmp/enlaces-dry.php
           wp --path="$WP" eval-file /tmp/enlaces.php
           wp --path="$WP" eval-file /tmp/enlaces.php   # idempotent
           wp --path="$WP" server --host=localhost --port=8081 > /tmp/server-corrientes.log 2>&1 &
