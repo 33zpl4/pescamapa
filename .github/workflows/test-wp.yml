@@ -171,6 +171,77 @@ jobs:
           wp --path="$WP" eval-file /tmp/seo-consultas.php
       - name: Prestador card fields (programme, minimum stay, companion, not included, capacity unit)
         run: wp --path="$WP" eval-file "$GITHUB_WORKSPACE/.github/scripts/prestador-campos.php"
+      - name: Corrientes lodge guides - create, read back, render, clean up
+        run: |
+          w() { wp --path="$WP" "$@"; }
+          # Stub notes the guides link to (the real ones are created later in this workflow); removed again at the end of this step.
+          w eval '
+            $claves = [ "tallas-cupos-vedas", "pesca-desde-brasil-corrientes", "precio-viaje-dorado-lodge", "viaje-dorado-amigos-precios", "licencias-extranjeros-argentina", "cuando-pescar-dorado", "golden-dorado-guia" ];
+            foreach ( [ "es", "en", "pt" ] as $i ) {
+              foreach ( $claves as $c ) {
+                $cuerpo = "golden-dorado-guia" === $c ? "<!-- wp:table --><figure class=\"wp-block-table\"><table><tbody><tr><td>Alto Paraná</td><td>Itatí, Ituzaingó, Paso de la Patria</td></tr></tbody></table></figure><!-- /wp:table -->" : "Nota de prueba";
+                $id = wp_insert_post( [ "post_type" => "pm_nota", "post_status" => "publish", "post_title" => "Prueba {$c} {$i}", "post_name" => "prueba-{$c}-{$i}", "post_content" => $cuerpo ], true );
+                update_field( "idioma", $i, $id ); update_field( "clave", $c, $id ); update_post_meta( $id, "_prueba_corrientes", 1 );
+              }
+            }'
+          for s in itati-2026-11-14 ita-ibate-2026-11-14 esteros-del-ibera-2026-11-14; do
+            sed 's/^\$aplicar = true;/$aplicar = false;/' "wordpress/scripts/$s.php" > "/tmp/$s-dry.php"
+            wp --path="$WP" eval-file "/tmp/$s-dry.php"   # dry run: must write nothing
+            n=$(w post list --post_type=pm_destino --post_status=any --meta_key=clave --meta_value="${s%-2026-11-14}" --format=count)
+            [[ "$n" == 0 ]] || { echo "✖ el simulacro de $s escribió $n guías"; exit 1; }
+            cp "wordpress/scripts/$s.php" "/tmp/$s.php"   # committed with $aplicar = true (already applied live)
+            wp --path="$WP" eval-file "/tmp/$s.php"
+            wp --path="$WP" eval-file "/tmp/$s.php"   # idempotent: nothing is touched the second time
+            n=$(w post list --post_type=pm_destino --post_status=publish --meta_key=clave --meta_value="${s%-2026-11-14}" --format=count)
+            [[ "$n" == 3 ]] && echo "✓ $s: guía en 3 idiomas" || { echo "✖ $s: $n guías (esperado 3)"; exit 1; }
+          done
+          sed 's/^\$aplicar = true;/$aplicar = false;/' wordpress/scripts/corrientes-enlaces-2026-11-14.php > /tmp/enlaces-dry.php
+          cp wordpress/scripts/corrientes-enlaces-2026-11-14.php /tmp/enlaces.php
+          wp --path="$WP" eval-file /tmp/enlaces-dry.php
+          wp --path="$WP" eval-file /tmp/enlaces.php
+          wp --path="$WP" eval-file /tmp/enlaces.php   # idempotent
+          wp --path="$WP" server --host=localhost --port=8081 > /tmp/server-corrientes.log 2>&1 &
+          sleep 3
+          fail=0
+          chk() { # path must-contain [must-not-contain]
+            code=$(curl -sS -o page-c.html -w '%{http_code}' "http://localhost:8081$1")
+            if [[ "$code" != 200 ]]; then echo "✖ $code $1"; fail=1; return; fi
+            if [[ -n "${2:-}" ]] && ! grep -q -- "$2" page-c.html; then echo "✖ $1 no contiene: $2"; fail=1; return; fi
+            if [[ -n "${3:-}" ]] && grep -q -- "$3" page-c.html; then echo "✖ $1 contiene: $3"; fail=1; return; fi
+            echo "✓ 200 $1"
+          }
+          for p in /litoral/corrientes/pesca-en-itati/ /litoral/corrientes/pesca-en-ita-ibate/ /litoral/corrientes/pesca-en-los-esteros-del-ibera/ \
+                   /en/litoral/corrientes/fishing-in-itati/ /en/litoral/corrientes/fishing-in-ita-ibate/ /en/litoral/corrientes/fishing-in-the-ibera-wetlands/ \
+                   /pt/litoral/corrientes/pesca-em-itati/ /pt/litoral/corrientes/pesca-em-ita-ibate/ /pt/litoral/corrientes/pesca-nos-esteros-do-ibera/; do
+            chk "$p" 'TouristDestination' 'PENDIENTE'
+            grep -q 'FAQPage' page-c.html || { echo "✖ $p sin FAQPage"; fail=1; }
+            grep -q 'hreflang="x-default"' page-c.html || { echo "✖ $p sin x-default"; fail=1; }
+            grep -qE 'class="prestador' page-c.html || { echo "✖ $p sin tarjetas de prestador"; fail=1; }
+            grep -qE '7[.,]850|Farbank|Orvis|Yellow Dog' page-c.html && { echo "✖ $p muestra una cifra o un nombre de agencia"; fail=1; }
+          done
+          chk /litoral/corrientes/pesca-en-itati/ 'US\$ 7.950' 'jazmin'
+          chk /litoral/corrientes/pesca-en-los-esteros-del-ibera/ 'sin año' 
+          chk /litoral/corrientes/pesca-en-itati/ 'Otros destinos de dorado en Corrientes'
+          chk /en/litoral/corrientes/fishing-in-the-ibera-wetlands/ 'Other dorado destinations in Corrientes'
+          chk /notas/prueba-golden-dorado-guia-es/ 'Lodges con guía en Corrientes'
+          chk /en/notes/prueba-golden-dorado-guia-en/ 'Guided lodges in Corrientes'
+          chk /especies/dorado/ 'pesca-en-itati'
+          chk /litoral/corrientes/ 'pesca-en-itati'
+          chk /llms.txt 'pesca-en-ita-ibate'
+          chk /wp-sitemap-posts-pm_destino-1.xml 'pesca-en-los-esteros-del-ibera'
+          # Clean up: this step must leave no trace for the checks that follow.
+          w eval '
+            foreach ( [ "pm_destino", "pm_nota" ] as $t ) {
+              foreach ( get_posts( [ "post_type" => $t, "post_status" => "any", "posts_per_page" => -1, "suppress_filters" => true ] ) as $p ) {
+                $c = (string) get_post_meta( $p->ID, "clave", true );
+                if ( get_post_meta( $p->ID, "_prueba_corrientes", true ) || ( "pm_destino" === $t && in_array( $c, [ "itati", "ita-ibate", "esteros-del-ibera" ], true ) ) ) { wp_delete_post( $p->ID, true ); }
+              }
+            }
+            foreach ( [ "Suindá Lodge (Nervous Waters)", "Itatí Lodge (SET Fly Fishing)", "Dorados on the Fly (Pinti’s)", "Pirá Lodge (Nervous Waters)", "La Alondra’i (SET Fly Fishing)", "Uguay Lodge (Pointer Outfitters)" ] as $n ) {
+              foreach ( get_posts( [ "post_type" => "pm_prestador", "post_status" => "any", "title" => $n, "numberposts" => -1 ] ) as $p ) { wp_delete_post( $p->ID, true ); }
+            }'
+          kill %1 2>/dev/null || true
+          exit $fail
       - name: Render pages
         run: |
           exec > >(tee /tmp/render-all.log) 2>&1
