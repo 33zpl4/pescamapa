@@ -1,0 +1,233 @@
+# Pescamapa: todo para pescar en la Argentina, en un solo lugar
+- URL pedida: https://pescamapa.com/
+- URL final: https://pescamapa.com/  (HTTP 200)
+- Canonical: https://pescamapa.com/   · lang: es-AR   · robots meta: max-image-preview:large
+- Meta description (145 car.): Servicio gratuito para pescadores que viajan a la Argentina: un pedido y, en 48 horas, opciones comparadas. Reglamento y fuentes de cada destino.
+- og:title: Pescamapa: todo para pescar en la Argentina, en un solo lugar   · og:image: —
+- Palabras: 1302 · imágenes: 15 · enlaces internos: 79 · externos: 6
+- Secciones más enlazadas: /patagonia (18), /litoral (14), /armar-viaje (10), /notas (8), / (5), /mapa (3), /calendario-de-pesca (3), /pique (2), /entrevistas (2), /pampa (2), /especies (2), /para-guias-y-lodges (2)
+- hreflang:
+  - es → https://pescamapa.com/
+  - pt-BR → https://pescamapa.com/pt/
+  - en → https://pescamapa.com/en/
+  - x-default → https://pescamapa.com/
+- Datos estructurados:
+  - WebSite · Pescamapa
+    {"@context":"https://schema.org","@type":"WebSite","name":"Pescamapa","url":"https://pescamapa.com/","inLanguage":"es-AR","description":"Pescamapa es un servicio gratuito para pescadores que viajan a la Argentina. Enviás un pedido, consultamos a los lodges, guías y paquetes que encajan y en 48 horas te devolvemos una comparación de precios, qué incluye y disponibilidad. Algunos operadores nos pagan una comisión por las reservas que llegan por Pescamapa; el pescador paga lo mismo. Antes de decidir, cada destino tiene su reglamento, su temporada y sus fuentes.","creator":[{"@type":"Person","name…
+## Encabezados
+H1: Decinos qué querés pescar. Nosotros encontramos dónde.
+H2: Todo para pescar en la Argentina, en un solo lugar.
+H3: Un solo pedido
+H3: Todo en un lugar
+H3: Sin sorpresas
+H2: Qué hacemos por vos
+H2: Destinos que dejan huella.
+H3: Goya
+H3: Esquina
+H3: Paso de la Patria
+H3: La Paz
+H3: San Martín y Junín de los Andes
+H3: Chascomús
+H3: Lago Strobel
+H3: Bariloche y el Nahuel Huapi
+H3: Río Grande (Tierra del Fuego)
+H3: Río Gallegos (Santa Cruz)
+H3: Esquel y Trevelin (Chubut)
+H3: El Calafate (Santa Cruz)
+H3: Ushuaia (Tierra del Fuego)
+H3: Itatí
+H3: Esteros del Iberá
+H3: Itá Ibaté
+H3: Río Santa Cruz (Piedra Buena)
+H3: Reconquista
+H3: Concordia
+H3: Mar del Plata
+H2: ¿Qué querés pescar?
+H2: Antes de reservar, leé cuándo conviene.
+H2: Un mapa para encontrar tu río.
+H2: El buen trabajo local merece encontrarse.
+## Texto (primeras 12.000 caracteres)
+Saber e ir, en un solo lugar
+Decinos qué querés pescar.
+Nosotros encontramos dónde.
+Gratis y sin compromiso. Respuesta en 48 horas.
+¿Qué querés pescar?
+Dorado
+Trucha
+Surubí
+Todavía no sé
+Solo quiero saber las reglas
+Licencias, vedas y normas.
+Mapa ilustrativo
+✳ Más de 235 fuentes consultadas · actualizado el 14 de noviembre de 2026 ✳ Reglamentos con fecha de revisión
+✳ Gratis y sin compromiso
+Saber e ir
+Todo para pescar en la Argentina, en un solo lugar.
+01
+Un solo pedido
+Contanos fechas y presupuesto una vez. No hace falta escribirle a diez lugares.
+02
+Todo en un lugar
+Licencias, vedas, normas y dónde pescar, con la fuente a la vista. Sin buscar en veinte webs y PDFs.
+03
+Sin sorpresas
+Te mandamos la comparación lado a lado: qué incluye cada opción, cuánto sale y si hay lugar.
+Con tu pedido
+Qué hacemos por vos
+Consultamos a los operadores que encajan con lo que pedís.
+Te explicamos las normas del destino antes de que reserves.
+Te decimos qué incluye cada opción y qué no.
+Te ayudamos a confirmar disponibilidad en un solo paso.
+Si algo cambia (una veda, un permiso), lo actualizamos con la fecha.
+Por dónde empezar
+Destinos que dejan huella.
+Arrancamos por el Paraná correntino. Cada guía se publica cuando sus datos están verificados con fuentes oficiales.
+Foto: Tomás Frattini LITORAL · CORRIENTES
+Goya
+La Fiesta Nacional del Surubí le dio fama. El Paraná, el riacho Goya y los humedales del Isoró le dan pesca las cuatro estaciones, si sabés leer el río.
+Dorado
+Surubí
+Ver la guía↗
+Foto: Cheyenne Justiniano LITORAL · CORRIENTES
+Esquina
+Donde el río Corriente se abre al Paraná hay islas, riachos y bañados. Dorado, surubí y pacú con devolución, y cómo leer el río antes de ir.
+Dorado
+Surubí
+Ver la guía↗
+Foto: Jim Klug LITORAL · CORRIENTES
+Paso de la Patria
+El dorado es el emblema de Paso de la Patria, sobre el Paraná y cerca de la confluencia con el Paraguay. Qué podés llevarte, qué licencia hace falta y cuándo son los torneos.
+Dorado
+Surubí
+Ver la guía↗
+Foto: Roque Mario Erazun LITORAL · ENTRE RÍOS
+La Paz
+La Paz, sobre el Paraná: dorado y surubí. Qué licencia hace falta en Entre Ríos y cuánto cuesta (aranceles al 22/10/2026) y qué consultar antes de salir.
+Dorado
+Surubí
+Ver la guía↗
+Foto: Chad Shmukler PATAGONIA · NEUQUÉN
+San Martín y Junín de los Andes
+Chimehuín, Malleo y Quilquihue en el suroeste de Neuquén. Las reglas por río de la temporada 2026/27, el permiso de no residente y cómo se llega.
+Trucha
+Ver la guía↗
+Foto: Pinpa82, CC BY-SA 4.0 PAMPA Y LAGUNAS · BUENOS AIRES
+Chascomús
+La laguna de Chascomús, en la provincia de Buenos Aires: qué licencia hace falta, la talla mínima de 25 cm, la veda del 1 de septiembre al 30 de noviembre y el viento del día.
+Pejerrey
+Ver la guía↗
+Foto: Red Kulper PATAGONIA · SANTA CRUZ
+Lago Strobel
+El Lago Strobel, que los pescadores extranjeros conocen como Jurassic Lake, en el centro de Santa Cruz. Reglas de la temporada 2026/27, permiso de no residente y cómo se llega.
+Trucha
+Ver la guía↗
+Foto: arique.com PATAGONIA · RÍO NEGRO
+Bariloche y el Nahuel Huapi
+El lago Nahuel Huapi y los ríos Manso, Traful y Limay del Parque Nacional. Las reglas 2026/27 que leímos, el permiso de Río Negro y lo que falta leer.
+Trucha
+Ver la guía↗
+Foto: Facundo Santana PATAGONIA · TIERRA DEL FUEGO
+Río Grande (Tierra del Fuego)
+La trucha marrón anádroma del río Grande y del Menéndez. Las reglas 2026/27 leídas del texto oficial, el permiso, las tarifas que publican los lodges y lo que falta confirmar.
+Trucha
+Ver la guía↗
+Foto: tripin.travel PATAGONIA · SANTA CRUZ
+Río Gallegos (Santa Cruz)
+La trucha marrón anádroma del río Gallegos. Las reglas 2026/27 leídas del anexo oficial, el permiso, lo que publican los lodges y lo que falta confirmar.
+Trucha
+Ver la guía↗
+Foto: pesca.chubut.gob.ar PATAGONIA · CHUBUT
+Esquel y Trevelin (Chubut)
+El Futaleufú, el Carrileufú y los lagos Rosario y Fontana. La temporada y las reglas 2026/27 leídas del anexo oficial de Chubut, el permiso y lo que falta leer.
+Trucha
+Ver la guía↗
+PATAGONIA · SANTA CRUZ
+El Calafate (Santa Cruz)
+El lago Argentino, el río Santa Cruz y La Leona. Las reglas 2026/27 leídas del reglamento de Santa Cruz, el permiso, lo que cuesta una salida con guía y lo que falta leer.
+Trucha
+Ver la guía↗
+PATAGONIA · TIERRA DEL FUEGO
+Ushuaia (Tierra del Fuego)
+Truchas en los ríos, lagunas y lagos del sur de Tierra del Fuego. Las reglas 2026/27 leídas de la resolución oficial, el permiso, lo que cuesta una salida con guía y lo que falta leer.
+Trucha
+Ver la guía↗
+LITORAL · CORRIENTES
+Itatí
+Itatí, sobre el Alto Paraná, tiene lodges de dorado con guía que encontramos. Qué dice la página de cada operador, qué podés llevarte, qué licencia hace falta y qué pasó con las vedas de 2026.
+Dorado
+Ver la guía↗
+LITORAL · CORRIENTES
+Esteros del Iberá
+Tres lodges que encontramos pescan dorado en los Esteros del Iberá y el río Corriente. Qué publica cada página, qué podés llevarte, qué licencia hace falta y cuándo, según cada operador.
+Dorado
+Ver la guía↗
+LITORAL · CORRIENTES
+Itá Ibaté
+Itá Ibaté, sobre el Alto Paraná, vive de la pesca recreativa y recibe sobre todo pescadores de Brasil. Qué dice el informe COMIP–UNNE, qué publica el único lodge con página propia que encontramos y qué reglas valen.
+Dorado
+Ver la guía↗
+PATAGONIA · SANTA CRUZ
+Río Santa Cruz (Piedra Buena)
+La trucha arco iris que sube del mar por el río Santa Cruz. Qué dice el Anexo I 2026/27, cuándo van los operadores, qué permiso hace falta y lo que publica el único lodge que encontramos.
+Trucha
+Ver la guía↗
+Foto: Claudio Bertonatti
+, CC BY-SA 4.0
+LITORAL · SANTA FE
+Humedal Jaaukanigás
+Reconquista
+Pesca variada
+Próximamente
+Foto: Consejo General de Educación de Entre Ríos
+, CC BY-SA 4.0
+LITORAL · ENTRE RÍOS
+Río Uruguay
+Concordia
+Dorado
+Próximamente
+Foto: Leandro Kibisz (Loco085)
+, CC BY-SA 2.5
+COSTA ATLÁNTICA · BUENOS AIRES
+Costa atlántica
+Mar del Plata
+Pesca de mar
+Próximamente
+Las temporadas, especies habilitadas, tallas, cupos y modalidades dependen del ambiente y del reglamento vigente. Confirmá siempre con la autoridad local antes de salir.
+Un solo pedido
+¿Qué querés pescar?
+Gratis y sin compromiso. Respuesta en 48 horas.
+¿Qué querés pescar?
+Dorado
+Trucha
+Surubí
+Todavía no sé
+Solo quiero saber las reglas
+Licencias, vedas y normas.
+Para leer antes de salir
+Antes de reservar, leé cuándo conviene.
+Ver todas las notas
+Foto: Francois Botha La Zona (Salto Grande): reglas del dorado y acceso, 2026
+13 de noviembre de 2026
+Paquetes de pesca en Argentina: dónde hay, cuánto cuestan y qué incluyen
+13 de noviembre de 2026
+Cuánto cuesta pescar en Tierra del Fuego y El Calafate: trucha de mar y salidas de un día (2026/27)
+5 de noviembre de 2026
+Licencia de pesca para extranjeros en Argentina 2026/27
+Trucha en la Patagonia: tipos, reglas y dónde pescarla
+Dorado: récord mundial, tamaño y reglas
+Paquetes de pesca en Argentina: qué incluye y cuánto cuesta
+Argentina, agua por agua
+Un mapa para encontrar tu río.
+Empezá por una región y afiná por especie, modalidad y el tipo de viaje que querés hacer.
+Abrir el mapa completo ↗
+Para guías y alojamientos
+El buen trabajo local merece encontrarse.
+Recibí pedidos ya calificados, con fechas, grupo y presupuesto. Pagás solo si se concreta la reserva. Publicamos tu ficha con tu consentimiento.
+Más detalles para guías y lodges →
+Web
+Tu nombre
+WhatsApp o email
+Localidad
+Qué ofrecés (guía, alojamiento, salidas…)
+Quiero sumarme
+Usamos tus datos solo para contactarte y armar tu ficha. No se publica nada sin tu permiso. política de privacidad
