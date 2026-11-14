@@ -149,7 +149,25 @@ def bajar(picks_file):
     creditos_file.write_text(json.dumps(creditos, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
 
-def bajar_wp(picks_file, ancho=1600):
+def recortar_43(ruta):
+    """Centre-crop to 4:3 (house rule: horizontal 4:3) when the photo is wider or taller; needs Pillow."""
+    from PIL import Image
+    im = Image.open(ruta)
+    w, h = im.size
+    if abs(w / h - 4 / 3) < 0.03:
+        return w, h
+    if w / h > 4 / 3:
+        nw = round(h * 4 / 3)
+        box = ((w - nw) // 2, 0, (w - nw) // 2 + nw, h)
+    else:
+        nh = round(w * 3 / 4)
+        box = (0, (h - nh) // 2, w, (h - nh) // 2 + nh)
+    im = im.convert("RGB").crop(box)
+    im.save(ruta, quality=88)
+    return im.size
+
+
+def bajar_wp(picks_file, ancho=1600, salida="fotos-wp.json", recortar=False):
     """WordPress: picks {clave: "File:..."} -> wordpress/fotos/commons-<clave>.jpg (<= `ancho` px) + fotos-wp.json
     (author, licence, licence URL, Commons page, description, categories, date read) read from Commons at run time."""
     from datetime import date
@@ -167,11 +185,14 @@ def bajar_wp(picks_file, ancho=1600):
         nombre = f"commons-{clave}.jpg"
         download(f["thumb"], dest / nombre)
         f.pop("thumb")
+        if recortar:
+            f["recorte"] = "centrado 4:3"
+            f["ancho_final"], f["alto_final"] = recortar_43(dest / nombre)
         f["archivo_local"] = nombre
         f["leida"] = date.today().isoformat()
         out[clave] = f
         print(f"✓ {clave}: {archivo} — {f['autor']} ({f['licencia']}) {f['ancho']}x{f['alto']} -> {nombre} {(dest / nombre).stat().st_size // 1024} KB")
-    (dest / "fotos-wp.json").write_text(json.dumps(out, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    (dest / salida).write_text(json.dumps(out, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
 
 if __name__ == "__main__":
@@ -179,6 +200,9 @@ if __name__ == "__main__":
         candidatas(sys.argv[2:])
     elif sys.argv[1:2] == ["bajar-wp"] and len(sys.argv) == 3:
         bajar_wp(sys.argv[2])
+    elif sys.argv[1:2] == ["bajar-wp-notas"] and len(sys.argv) == 3:
+        # notes (14/11/2026): same, but centre-cropped to 4:3 and written to fotos-wp-notas.json (the guides' file stays as it was)
+        bajar_wp(sys.argv[2], salida="fotos-wp-notas.json", recortar=True)
     elif sys.argv[1:2] == ["bajar"] and len(sys.argv) == 3:
         bajar(sys.argv[2])
     else:

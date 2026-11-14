@@ -118,6 +118,22 @@ function pm_notas_lista( string $idioma, string $destino = '' ): array {
 	return array_values( $out );
 }
 
+/** Does this note row have a usable cover photo? (The id can point at a deleted or non-image attachment.) */
+function pm_nota_tiene_foto( array $n ): bool {
+	return ! empty( $n['foto'] ) && wp_attachment_is_image( (int) $n['foto'] );
+}
+
+/**
+ * Notes for the home block (14/11/2026, owner: "las notas de portada deben tener foto"): the notes WITH a photo first
+ * (newest first), then the rest, so the block only shows a note without photo when fewer than $max have one.
+ */
+function pm_notas_portada( string $idioma, int $max = 3 ): array {
+	$todas = pm_notas_lista( $idioma );
+	$con   = array_values( array_filter( $todas, 'pm_nota_tiene_foto' ) );
+	$sin   = array_values( array_filter( $todas, fn( $n ) => ! pm_nota_tiene_foto( $n ) ) );
+	return array_slice( array_merge( $con, $sin ), 0, $max );
+}
+
 /** Is there any public note? (Menus and sitemaps list the index only then.) */
 function pm_hay_notas(): bool {
 	return (bool) pm_posts( 'pm_nota' );

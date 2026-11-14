@@ -25,6 +25,7 @@ function pm_credito( int $att ): array {
 		'licencia_url' => (string) pm_campo( 'foto_licencia_url', $att ),
 		'pagina'       => (string) pm_campo( 'foto_pagina', $att ),
 		'archivo'      => get_the_title( $att ),
+		'origen'       => (string) pm_campo( 'foto_origen', $att ),
 	];
 }
 
@@ -48,7 +49,11 @@ function pm_foto( int $att, string $alt, string $sizes, array $op = [] ): string
 	$credito = '';
 	if ( $c['autor'] ) {
 		$etiqueta = esc_html( pm_t( 'foto' ) );
-		if ( $op['enlaces'] && $c['pagina'] ) {
+		if ( 'unsplash' === $c['origen'] ) {
+			// Unsplash (14/11/2026): "Foto: <author>, Unsplash"; the author links to their profile when we have it, "Unsplash" to the licence.
+			$autor = $op['enlaces'] && $c['pagina'] ? '<a href="' . esc_url( $c['pagina'] ) . '" rel="noopener">' . esc_html( $c['autor'] ) . '</a>' : esc_html( $c['autor'] );
+			$lic   = ', ' . ( $op['enlaces'] && $c['licencia_url'] ? '<a href="' . esc_url( $c['licencia_url'] ) . '" rel="noopener license">Unsplash</a>' : 'Unsplash' );
+		} elseif ( $op['enlaces'] && $c['pagina'] ) {
 			$autor = '<a href="' . esc_url( $c['pagina'] ) . '" rel="noopener">' . esc_html( $c['autor'] ) . '</a>';
 			$lic   = $c['licencia'] ? ', ' . ( $c['licencia_url'] ? '<a href="' . esc_url( $c['licencia_url'] ) . '" rel="noopener license">' . esc_html( $c['licencia'] ) . '</a>' : esc_html( $c['licencia'] ) ) : '';
 		} else {
