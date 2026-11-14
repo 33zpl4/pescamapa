@@ -128,7 +128,23 @@ BY-SA), nunca de Google: `scripts/commons.py` vía el workflow `fotos.yml`
 (candidatas → rama `fotos-candidatas`; elegidas en
 `scripts/fotos-elegidas.json` → `src/assets/fotos/` + créditos en
 `src/data/fotos.json`). El crédito se muestra sobre la foto y en
-`/creditos/`; una foto sin crédito rompe el build.
+`/creditos/`; una foto sin crédito rompe el build. Desde el 14/11/2026 también
+entran fotos que el dueño elige (p. ej. de Unsplash, con «Foto: autor,
+Unsplash» y enlace a su licencia) y las que ceda un operador con permiso; las de
+Commons cargadas por falta de foto son provisorias y están en la tabla de
+`docs/estado.md`. En WordPress se cargan con los campos de crédito de
+`pm_foto()` (ver `docs/wordpress.md`).
+
+## Navegadores y front-end (14/11/2026)
+
+Objetivo: Baseline **Widely available** (≥ 30 meses en los navegadores
+principales). Una función más nueva solo entra con fallback verificado (mejora
+progresiva o `@supports`, sin polyfills nuevos). Para consultar patrones web
+modernos: `DISABLE_TELEMETRY=1 npx --yes modern-web-guidance@1.0.0 search|retrieve`
+desde una carpeta temporal fuera del repo; nunca `install`, plugins ni `@latest`
+(telemetría activa y actualización automática por defecto). `legacy-scan` sobre
+el tema dio 0 hallazgos el 14/11/2026. Es ayuda para escribir, no una fuente
+para citar en el sitio.
 
 ## URLs
 
