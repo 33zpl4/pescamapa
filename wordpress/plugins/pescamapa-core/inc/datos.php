@@ -38,6 +38,37 @@ function pm_buscar( string $tipo, string $clave, string $idioma ): ?WP_Post {
 	return null;
 }
 
+/**
+ * How many sources the published guides and notes cite (home proof line, llms.txt; 14/11/2026). Read straight from the
+ * database. `unicas` = distinct sources (same URL in es/en/pt, or in several guides, counts once; a row without URL counts
+ * by name); `filas` = every row; `fecha` = last modification (Y-m-d) of any of those posts, i.e. the day this count was
+ * last able to change.
+ */
+function pm_fuentes_conteo(): array {
+	static $c = null;
+	if ( null !== $c ) {
+		return $c;
+	}
+	$vistas = [];
+	$filas  = 0;
+	$fecha  = '';
+	foreach ( [ 'pm_destino', 'pm_nota' ] as $tipo ) {
+		foreach ( pm_posts( $tipo ) as $p ) {
+			for ( $i = 0, $n = (int) get_post_meta( $p->ID, 'fuentes', true ); $i < $n; $i++ ) {
+				$nombre = trim( (string) get_post_meta( $p->ID, "fuentes_{$i}_nombre", true ) );
+				$url    = trim( (string) get_post_meta( $p->ID, "fuentes_{$i}_url", true ) );
+				if ( '' === $nombre && '' === $url ) {
+					continue;
+				}
+				++$filas;
+				$vistas[ '' !== $url ? strtolower( rtrim( preg_replace( '#^https?://(www\.)?#i', '', $url ), '/' ) ) : mb_strtolower( $nombre ) ] = true;
+			}
+			$fecha = max( $fecha, substr( (string) $p->post_modified, 0, 10 ) );
+		}
+	}
+	return $c = [ 'unicas' => count( $vistas ), 'filas' => $filas, 'fecha' => $fecha ];
+}
+
 /** Repeater rows as arrays (SCF), [] when empty. */
 function pm_filas( string $nombre, int $post_id ): array {
 	$v = pm_campo( $nombre, $post_id );

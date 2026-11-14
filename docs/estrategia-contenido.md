@@ -104,3 +104,18 @@ Cada nota lleva el campo **Especie** (y, si es de un lugar, **Destino**). Con es
 ## Hechos descriptivos con fuente nombrada (dueño, 13/11/2026)
 
 Los hechos **descriptivos** (tamaños, récords, historia) en los que coinciden varios informes independientes y cuya fuente de fondo tiene nombre **se publican, escritos como atribuidos** («según X…»), **sin la salvedad** «no pudimos leer el original». Se atribuye a un portador que podamos nombrar (la IGFA, la CARU, FishBase, una tesis, un diario); un documento de fondo (por ejemplo la guía de récords del IBAMA) se nombra como fuente **solo cuando una página legible lo confirma**. Lo que **no** entra en esta regla: reglamentos, precios, permisos y condiciones de comisión, que siguen necesitando una fuente primaria. Y lo que ninguna página legible confirma no se publica, aunque lo repitan resúmenes: el 13/11/2026 quedaron afuera, por eso, los promedios de adultos de la tesis de Giese (el resumen que sí leímos solo dice que el largo es mayor en el río Gallegos y que no hay diferencia de peso). Tabla de lo publicado ese día, con su fuente y su estado: `docs/investigacion/fuentes-tamanos-records-2026-11-13.md`.
+
+## Posicionamiento (14/11/2026)
+
+**Decisión del dueño.** Pescamapa se explica con dos promesas, escritas **desde el visitante** (segunda persona rioplatense, voseo, frases cortas, beneficios en verbo):
+
+- **SABER:** información verificada, con fuente, en un solo lugar. Definición independiente (`marca.saber`): «Pescamapa reúne en un solo lugar lo que está disperso en cientos de webs y PDFs oficiales: licencias, dónde pescar, normas, vedas y temporadas, con la fuente a la vista.» «Cientos» lo respalda el conteo del 14/11/2026 (más de 900 URLs únicas entre las fuentes de los scripts de guías y notas, `docs/investigacion/` y las carpetas de la rama `investigacion`; cómo se contó, en el PR).
+- **IR:** un pedido, comparación lado a lado en 48 horas, gratis (`marca.definicion`, la descripción larga que usan la meta, el JSON-LD, `llms.txt` y Quiénes somos). Tagline paraguas (`marca.lema`): «Todo para pescar en la Argentina, en un solo lugar.»
+
+**Estructura de la portada** (la de un comparador): titular + «Gratis y sin compromiso. Respuesta en 48 horas.», pregunta con botones arriba, franja con la prueba verificable, tres beneficios (Un solo pedido, Todo en un lugar, Sin sorpresas), «Qué hacemos por vos», guías, notas, mapa, **la misma pregunta al final** y el negocio en letra chica.
+
+**Prueba verificable en lugar de reseñas:** «Más de N fuentes consultadas · actualizado el <fecha>», con N calculado (`pm_fuentes_conteo()`: fuentes únicas de guías y notas publicadas; fecha = última modificación de esas fichas). Nada de reseñas, estrellas, ratings, «miles de personas» ni testimonios.
+
+**Prohibido** (el test de la portada lo vigila en los tres idiomas): «mejor precio», «el más barato», «los mejores», «líder», «negociamos por vos», «todas las opciones» (se dice «los operadores que relevamos y que encajan»), cualquier promesa de ahorro, ranking/estrellas/«recomendado», «reembolso» y cualquier mención de depósito (en este sitio no existe).
+
+**El negocio va en letra chica; al operador se le habla de "pagás solo si se concreta".** Al visitante: «Servicio gratuito para vos: pagás lo mismo que si reservaras directo. Algunos operadores nos pagan una comisión por las reservas que llegan por Pescamapa» (pie de todas las páginas, enlace «Cómo funciona» → `/quienes-somos/#como-funciona`). Al operador: «Recibí pedidos ya calificados, con fechas, grupo y presupuesto. Pagás solo si se concreta la reserva.» Nunca porcentajes ni «no publican precios».

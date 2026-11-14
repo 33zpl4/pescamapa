@@ -378,13 +378,38 @@ jobs:
           check / 200 'class="menu-btn"'
           check / 200 'id="menu-principal"'
           check /en/ 200 'aria-label="Menu"'
-          check / 200 'Pedir opciones →'
-          check / 200 'Investigación propia'
-          check /en/ 200 'Request options →'
-          check / 200 'id="pedido"'
-          check / 200 'Decinos qué querés pescar'
-          check /en/ 200 'id="pedido"'
+          # Home repositioned 14/11/2026 (SABER + IR, written from the visitor): headline, question with buttons at the top and
+          # at the end, three benefits, "what we do for you", the business in the small print, the sources count.
+          check / 200 'Decinos qué querés pescar.'
+          check / 200 'Gratis y sin compromiso. Respuesta en 48 horas.'
+          grep -c 'class="pregunta"' page.html | grep -qx 2 && echo "✓ la pregunta con botones está dos veces" || { echo "✖ la pregunta con botones no está exactamente dos veces"; fail=1; }
+          awk '/id="pedido"/{f=1} f&&/class="pregunta"/{ok=1} END{exit !ok}' page.html && echo "✓ la pregunta se repite al final (después de #pedido)" || { echo "✖ falta la pregunta al final de la home"; fail=1; }
+          grep -q '¿Qué querés pescar?' page.html || { echo "✖ falta ¿Qué querés pescar?"; fail=1; }
+          for e in dorado trucha surubi; do grep -q "href=\"[^\"]*/armar-viaje/?especie=$e\"" page.html && echo "✓ botón $e → formulario con la especie" || { echo "✖ botón $e sin precarga"; fail=1; }; done
+          grep -q 'Todavía no sé' page.html && grep -q 'Solo quiero saber las reglas' page.html && grep -q 'calendario-de-pesca' page.html && echo "✓ segundo camino: reglas" || { echo "✖ falta el camino 'Solo quiero saber las reglas'"; fail=1; }
+          check / 200 'Un solo pedido'
+          check / 200 'Todo en un lugar'
+          check / 200 'Sin sorpresas'
+          check / 200 'Qué hacemos por vos'
+          check / 200 'Si algo cambia (una veda, un permiso), lo actualizamos con la fecha.'
+          check / 200 'Más de [0-9.,]* fuentes consultadas · actualizado el'
+          check / 200 'Recibí pedidos ya calificados, con fechas, grupo y presupuesto. Pagás solo si se concreta la reserva.'
+          check / 200 'class="negocio"'
+          check / 200 'pagás lo mismo que si reservaras directo. Algunos operadores nos pagan una comisión por las reservas que llegan por Pescamapa'
+          check / 200 'quienes-somos/#como-funciona'
+          for h in / /en/ /pt/; do
+            check "$h" 200 'id="pedido"'
+            grep -qiE 'mejor precio|el más barato|los mejores|líder|negociamos|todas las opciones|reembolso|depósito|best price|cheapest|the best|melhor preço|o mais barato|reembolso|depósito' page.html && { echo "✖ $h usa una palabra prohibida del posicionamiento"; fail=1; } || echo "✓ $h sin palabras prohibidas"
+          done
           check /en/ 200 'Tell us what you want to catch'
+          check /en/ 200 'plan-your-trip/?especie=dorado'
+          check /en/ 200 'Everything in one place'
+          check /en/ 200 'Some operators pay us a commission on bookings that come through Pescamapa'
+          check /en/ 200 'plan-your-trip'
+          check /pt/ 200 'Diga o que você quer pescar'
+          check /pt/ 200 'planejar-viagem/?especie=dorado'
+          check /pt/ 200 'Tudo em um só lugar'
+          check /pt/ 200 'Alguns operadores nos pagam uma comissão pelas reservas que chegam pela Pescamapa'
           check /mapa/ 200
           check /litoral/corrientes/pesca-en-esquina/ 200 'TouristDestination' 'PENDIENTE'
           check /litoral/corrientes/pesca-en-esquina/ 200 'CITA-DE-PRUEBA' 'CITA-SIN-PERMISO'
@@ -440,7 +465,7 @@ jobs:
           check /llms.txt 200 'Qué se pesca cada mes y qué está vedado'
           check /llms.txt 200 'Para guías y lodges: sumar o reclamar una ficha'
           check /wp-sitemap-vistas-1.xml 200 'calendario-de-pesca'
-          check / 200 'Cuándo ir, qué dice el reglamento y con quién pescar'
+          check / 200 'Todo para pescar en la Argentina, en un solo lugar'
           check /litoral/corrientes/pesca-en-esquina/ 200 'Mosca (flycast)' 'flycast) (flycast'
           check /especies/dorado/ 200 'RESPUESTA-DE-PRUEBA'
           check /especies/dorado/ 200 '"FAQPage"'
@@ -458,7 +483,7 @@ jobs:
           check /armar-viaje/ 200 'Pedí opciones para tu viaje de pesca en Argentina | Pescamapa'
           check /en/plan-your-trip/ 200 'Request options for your fishing trip in Argentina | Pescamapa'
           check /pt/planejar-viagem/ 200 'Peça opções para a sua viagem de pesca na Argentina | Pescamapa'
-          check /en/ 200 'Fishing in Argentina: when to go and who to fish with | Pescamapa'
+          check /en/ 200 'Fishing in Argentina, all in one place | Pescamapa'
           check /paquetes-de-pesca/esquina/ 200 'Pedir esta opción'
           check /robots.txt 200 'Sitemap'
           check /llms.txt 200 'pesca-en-esquina'
@@ -533,7 +558,14 @@ jobs:
           check /notas/nota-de-prueba/ 200 'FUENTE-DE-PRUEBA'
           check /notas/nota-de-prueba/ 200 '"citation"'
           check / 200 '/notas/'
-          check /llms.txt 200 'Pescamapa reúne todo lo que necesitás' 'CONTACTO-INTERNO-123'
+          check /llms.txt 200 'Pescamapa es un servicio gratuito para pescadores que viajan a la Argentina' 'CONTACTO-INTERNO-123'
+          check /llms.txt 200 'Pescamapa reúne en un solo lugar lo que está disperso en cientos de webs y PDFs oficiales'
+          check /llms.txt 200 'Todo para pescar en la Argentina, en un solo lugar.'
+          check /llms.txt 200 'Hoy las guías y notas publicadas citan [0-9]* fuentes distintas'
+          check /quienes-somos/ 200 'Qué es Pescamapa'
+          check /quienes-somos/ 200 'id="como-funciona"'
+          check /quienes-somos/ 200 'servicio gratuito para pescadores'
+          check /en/about/ 200 'Pescamapa is a free service for anglers travelling to Argentina'
           # Inquiry through the real form (pm_t in the past: passes the timing check).
           loc=$(curl -sS -o /dev/null -w '%{http_code} %{redirect_url}' \
             -d action=pm_consulta -d pm_tipo=viaje -d pm_idioma=es -d pm_destino=esquina \

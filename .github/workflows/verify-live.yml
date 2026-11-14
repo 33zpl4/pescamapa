@@ -46,6 +46,18 @@ jobs:
           check /pique/ 200 'pique-mapa'
           check /armar-viaje/ 200 'name="contacto_email"'
           check / 200 'armar-viaje'
+          # Home repositioned 14/11/2026: what the template guarantees (headline, question with buttons top and bottom, benefits, fine print).
+          check / 200 'Decinos qué querés pescar.'
+          grep -c 'class="pregunta"' page.html | grep -qx 2 || { echo "✖ la portada no repite la pregunta con botones (esperadas 2)"; fail=1; }
+          check / 200 'armar-viaje/?especie=dorado'
+          check / 200 'class="beneficios'
+          check / 200 'class="hacemos"'
+          check / 200 'class="negocio"'
+          check / 200 'quienes-somos/#como-funciona'
+          check / 200 'fuentes consultadas · actualizado el'
+          check /en/ 200 'plan-your-trip/?especie=dorado'
+          check /pt/ 200 'planejar-viagem/?especie=dorado'
+          check /quienes-somos/ 200 'id="como-funciona"'
           # Terms of use and privacy policy, 3 languages; linked from the footer and the forms.
           check /terminos/ 200 'Términos de uso'
           check /terminos/ 200 'Las fotos pueden estar recortadas'
@@ -119,7 +131,8 @@ jobs:
           check /entrevistas/ 200 'v-entrevistas'
           check /en/interviews/ 200 'v-entrevistas'
           check /robots.txt 200 'Sitemap'
-          check /llms.txt 200 'Pescamapa reúne todo lo que necesitás'
+          check /llms.txt 200 'Pescamapa es un servicio gratuito para pescadores'
+          check /llms.txt 200 'Pescamapa reúne en un solo lugar'
           grep -q 'pesca-en-goya' page.html || { echo "✖ llms.txt no lista Goya"; fail=1; }
           check /wp-sitemap.xml 200 'vistas'
           check /esto-no-existe/ 404

@@ -28,17 +28,9 @@ get_header(); ?>
 		<div class="shell hero-grid">
 			<div class="hero-text">
 				<div class="eyebrow"><?php pm_e( 'inicio.eyebrow' ); ?></div>
-				<h1><?php pm_e( 'inicio.h1a' ); ?><br><?php pm_e( 'inicio.h1b' ); ?><br><em><?php pm_e( 'inicio.h1c' ); ?></em></h1>
+				<h1><?php pm_e( 'inicio.h1a' ); ?><br><em><?php pm_e( 'inicio.h1c' ); ?></em></h1>
 				<p class="copy"><?php pm_e( 'inicio.copy' ); ?></p>
-				<div class="actions">
-					<a class="button primary" href="<?php echo esc_url( pm_url_viaje( $idioma ) ); ?>"><?php pm_e( 'inicio.armar' ); ?></a>
-					<a class="button secondary" href="#destinos"><?php pm_e( 'inicio.explorar' ); ?></a>
-				</div>
-				<ul class="stats">
-					<li><strong><?php pm_e( 'inicio.stat1a' ); ?></strong><?php pm_e( 'inicio.stat1b' ); ?></li>
-					<li><strong><?php pm_e( 'inicio.stat2a' ); ?></strong><?php pm_e( 'inicio.stat2b' ); ?></li>
-					<li><strong><?php pm_e( 'inicio.stat3a' ); ?></strong><?php pm_e( 'inicio.stat3b' ); ?></li>
-				</ul>
+				<?php get_template_part( 'parciales/pregunta', null, [ 'id' => 'arriba' ] ); ?>
 			</div>
 			<div class="hero-map">
 				<?php echo pm_mapa_hero( $puntos_hero, pm_t( 'inicio.hero.mapa' ) ); // phpcs:ignore -- escaped inside ?>
@@ -47,13 +39,44 @@ get_header(); ?>
 		</div>
 	</section>
 
+	<?php $fuentes = pm_fuentes_conteo(); ?>
 	<div class="strip">
 		<div class="shell strip-inner">
-			<span>✳ <?php pm_e( 'inicio.strip1' ); ?></span>
+			<?php if ( $fuentes['unicas'] > 0 ) : ?><span>✳ <?php pm_e( 'inicio.strip1', [ 'n' => number_format_i18n( $fuentes['unicas'] ), 'fecha' => pm_fecha( $fuentes['fecha'] ) ] ); ?></span><?php endif; ?>
 			<span>✳ <?php pm_e( 'inicio.strip2' ); ?></span>
 			<span>✳ <?php pm_e( 'inicio.strip3' ); ?></span>
 		</div>
 	</div>
+
+	<section class="section beneficios">
+		<div class="shell">
+			<div class="head">
+				<div>
+					<div class="eyebrow"><?php pm_e( 'inicio.prop.eyebrow' ); ?></div>
+					<h2><?php pm_e( 'inicio.prop.h2' ); ?></h2>
+				</div>
+			</div>
+			<div class="purpose">
+				<?php foreach ( [ 1, 2, 3 ] as $n ) : ?>
+					<article><div class="num"><?php pm_e( "inicio.prop{$n}.n" ); ?></div><h3><?php pm_e( "inicio.prop{$n}.h" ); ?></h3><p><?php pm_e( "inicio.prop{$n}.p" ); ?></p></article>
+				<?php endforeach; ?>
+			</div>
+		</div>
+	</section>
+
+	<section class="section hacemos-sec">
+		<div class="shell">
+			<div class="head">
+				<div>
+					<div class="eyebrow"><?php pm_e( 'inicio.hacemos.eyebrow' ); ?></div>
+					<h2><?php pm_e( 'inicio.hacemos.h2' ); ?></h2>
+				</div>
+			</div>
+			<ul class="hacemos">
+				<?php foreach ( [ 1, 2, 3, 4, 5 ] as $n ) : ?><li><?php pm_e( "inicio.hacemos.$n" ); ?></li><?php endforeach; ?>
+			</ul>
+		</div>
+	</section>
 
 	<section id="destinos" class="section">
 		<div class="shell">
@@ -112,14 +135,11 @@ get_header(); ?>
 			<div class="head">
 				<div>
 					<div class="eyebrow"><?php pm_e( 'inicio.pedido.eyebrow' ); ?></div>
-					<h2 id="pedido-h"><?php pm_e( 'inicio.pedido.h2' ); ?></h2>
+					<h2 id="pedido-h"><?php pm_e( 'inicio.q.h' ); ?></h2>
 				</div>
-				<div>
-					<p><?php pm_e( 'inicio.pedido.p1' ); ?></p>
-					<p><?php pm_e( 'inicio.pedido.p2' ); ?></p>
-				</div>
+				<p><?php pm_e( 'inicio.copy' ); ?></p>
 			</div>
-			<a class="button primary" href="<?php echo esc_url( pm_url_viaje( $idioma ) ); ?>"><?php pm_e( 'inicio.pedido.cta' ); ?></a>
+			<?php get_template_part( 'parciales/pregunta', null, [ 'id' => 'abajo' ] ); ?>
 		</div>
 	</section>
 
@@ -178,22 +198,6 @@ get_header(); ?>
 				<a class="button dark" href="<?php echo esc_url( pm_url_mapa( $idioma ) ); ?>"><?php pm_e( 'inicio.mapa.cta' ); ?></a>
 			</div>
 			<?php echo pm_mapa_interactivo( $pins, pm_t( 'mapa.etiqueta' ), [ 'alto' => '460px' ] ); // phpcs:ignore ?>
-		</div>
-	</section>
-
-	<section class="section">
-		<div class="shell">
-			<div class="head">
-				<div>
-					<div class="eyebrow"><?php pm_e( 'inicio.prop.eyebrow' ); ?></div>
-					<h2><?php pm_e( 'inicio.prop.h2' ); ?></h2>
-				</div>
-			</div>
-			<div class="purpose">
-				<?php foreach ( [ 1, 2, 3 ] as $n ) : ?>
-					<article><div class="num"><?php pm_e( "inicio.prop{$n}.n" ); ?></div><h3><?php pm_e( "inicio.prop{$n}.h" ); ?></h3><p><?php pm_e( "inicio.prop{$n}.p" ); ?></p></article>
-				<?php endforeach; ?>
-			</div>
 		</div>
 	</section>
 
