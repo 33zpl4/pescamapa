@@ -183,6 +183,7 @@ jobs:
                 // Closure texts as they were before corrientes-correcciones-2026-11-14 (the script rewrites them): list items and the price notes.
                 $li = fn( $t ) => "<!-- wp:list -->\n<ul class=\"wp-block-list\"><!-- wp:list-item --><li>{$t}</li><!-- /wp:list-item --></ul>\n<!-- /wp:list -->";
                 if ( "tallas-cupos-vedas" === $c ) { $cuerpo = $li( "Desde el 29 de mayo de 2026 rigió una veda extraordinaria en el Paraná entre los km 1232 y 1238 (prueba)" ) . $li( "Según la prensa (Perfil): el 9 de septiembre de 2026 se dispuso una veda extraordinaria entre los km 1109 y 1150, aguas arriba de Goya, por una concentración de dorados (número de disposición pendiente)" ) . $li( "Otro ítem que no se toca" ); }
+                if ( "golden-dorado-guia" === $c ) { $cuerpo .= $li( "Según la prensa (Perfil): el 9 de septiembre de 2026 se dispuso una veda extraordinaria entre los km 1109 y 1150 (prueba)" ); }
                 if ( "cuando-pescar-dorado" === $c ) { $cuerpo = $li( "Desde el 9 de septiembre de 2026 rige una veda extraordinaria entre los km 1109 y 1150. No tiene fecha de fin" ); }
                 if ( "cuando-pescar-surubi" === $c ) { $cuerpo = $li( "Desde el 29 de mayo de 2026 rige una veda en el Paraná entre los km 1232 y 1238" ); }
                 $h2 = fn( $t ) => "<!-- wp:heading -->\n<h2 class=\"wp-block-heading\">{$t}</h2>\n<!-- /wp:heading -->";
