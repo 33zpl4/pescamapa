@@ -242,6 +242,94 @@ jobs:
             }'
           kill %1 2>/dev/null || true
           exit $fail
+      - name: Río Santa Cruz guide - create, move the El Calafate block, read back, render, clean up
+        run: |
+          w() { wp --path="$WP" "$@"; }
+          s=rio-santa-cruz-2026-11-14
+          # Stubs the script links to or edits (removed again at the end of this step): the two notes, Río Gallegos and El Calafate with the block and the two FAQs.
+          w eval '
+            $h2 = [ "es" => [ "El río Santa Cruz en detalle", "El permiso y cuánto cuesta" ], "en" => [ "The Santa Cruz River in detail", "The permit and what it costs" ], "pt" => [ "O rio Santa Cruz em detalhe", "A licença e quanto custa" ] ];
+            $faq = [
+              "es" => [ [ "¿Se puede pescar róbalo en el río Santa Cruz?", "r1" ], [ "¿Cuándo se pesca el salmón chinook en el río Santa Cruz?", "r2" ], [ "Pregunta que queda", "r3" ] ],
+              "en" => [ [ "Can I fish róbalo in the Santa Cruz River?", "r1" ], [ "When can I fish Chinook salmon in the Santa Cruz River?", "r2" ], [ "Question that stays", "r3" ] ],
+              "pt" => [ [ "Posso pescar robalo no rio Santa Cruz?", "r1" ], [ "Quando se pesca o salmão-chinook no rio Santa Cruz?", "r2" ], [ "Pergunta que fica", "r3" ] ],
+            ];
+            foreach ( [ "es", "en", "pt" ] as $i ) {
+              foreach ( [ "cuando-pescar-trucha-patagonia", "licencias-extranjeros-argentina" ] as $c ) {
+                $id = wp_insert_post( [ "post_type" => "pm_nota", "post_status" => "publish", "post_title" => "Prueba {$c} {$i}", "post_name" => "prueba-rsc-{$c}-{$i}", "post_content" => "Nota de prueba" ], true );
+                update_field( "idioma", $i, $id ); update_field( "clave", $c, $id ); update_post_meta( $id, "_prueba_rsc", 1 );
+              }
+              $cuerpo = "<!-- wp:heading -->\n<h2 class=\"wp-block-heading\">Intro</h2>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph -->\n<p>Texto.</p>\n<!-- /wp:paragraph -->\n\n"
+                . "<!-- wp:heading -->\n<h2 class=\"wp-block-heading\">{$h2[$i][0]}</h2>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph -->\n<p>BLOQUE-VIEJO-DE-PRUEBA</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:list -->\n<ul class=\"wp-block-list\"><!-- wp:list-item --><li>x</li><!-- /wp:list-item --></ul>\n<!-- /wp:list -->\n\n"
+                . "<!-- wp:heading -->\n<h2 class=\"wp-block-heading\">{$h2[$i][1]}</h2>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph -->\n<p>Permiso.</p>\n<!-- /wp:paragraph -->";
+              foreach ( [ "el-calafate" => "El Calafate", "rio-gallegos" => "Río Gallegos" ] as $c => $t ) {
+                $id = wp_insert_post( [ "post_type" => "pm_destino", "post_status" => "publish", "post_title" => $t, "post_name" => "prueba-rsc-{$c}-{$i}", "post_content" => "el-calafate" === $c ? $cuerpo : "Texto." ], true );
+                update_field( "idioma", $i, $id ); update_field( "clave", $c, $id ); update_post_meta( $id, "_prueba_rsc", 1 );
+                if ( "es" === $i ) { update_field( "region", "patagonia", $id ); update_field( "provincia", "santa-cruz", $id ); update_field( "lat", -50.34, $id ); update_field( "lon", -72.27, $id ); update_field( "especies", [ "trucha" ], $id ); }
+                if ( "el-calafate" === $c ) { update_field( "faqs", array_map( fn( $f ) => [ "pregunta" => $f[0], "respuesta" => $f[1] ], $faq[ $i ] ), $id ); }
+              }
+            }'
+          cp "wordpress/scripts/$s.php" "/tmp/$s-dry.php"   # committed with $aplicar = false: the dry run must write nothing
+          wp --path="$WP" eval-file "/tmp/$s-dry.php"
+          n=$(w post list --post_type=pm_destino --post_status=any --meta_key=clave --meta_value=rio-santa-cruz --format=count)
+          [[ "$n" == 0 ]] || { echo "✖ el simulacro escribió $n guías"; exit 1; }
+          n=$(w post list --post_type=pm_prestador --post_status=any --title="Los Plateados (Tres Amigos Outfitters)" --format=count)
+          [[ "$n" == 0 ]] || { echo "✖ el simulacro escribió $n fichas"; exit 1; }
+          w eval '$p = get_posts( [ "post_type" => "pm_destino", "post_status" => "any", "meta_key" => "_prueba_rsc", "meta_value" => 1, "numberposts" => -1 ] ); foreach ( $p as $x ) { if ( false !== strpos( $x->post_content, "BLOQUE-VIEJO-DE-PRUEBA" ) ) { $n = ( $n ?? 0 ) + 1; } } ( 3 === ( $n ?? 0 ) ) || WP_CLI::error( "el simulacro tocó El Calafate" );'
+          sed 's/^\$aplicar = false;/$aplicar = true;/' "wordpress/scripts/$s.php" > "/tmp/$s.php"
+          wp --path="$WP" eval-file "/tmp/$s.php"
+          wp --path="$WP" eval-file "/tmp/$s.php"   # idempotent: nothing is touched the second time
+          n=$(w post list --post_type=pm_destino --post_status=publish --meta_key=clave --meta_value=rio-santa-cruz --format=count)
+          [[ "$n" == 3 ]] && echo "✓ rio-santa-cruz: guía en 3 idiomas" || { echo "✖ rio-santa-cruz: $n guías (esperado 3)"; exit 1; }
+          n=$(w post list --post_type=pm_prestador --post_status=any --title="Los Plateados (Tres Amigos Outfitters)" --format=count)
+          [[ "$n" == 1 ]] && echo "✓ una sola ficha de Los Plateados" || { echo "✖ $n fichas de Los Plateados"; exit 1; }
+          w eval '
+            foreach ( get_posts( [ "post_type" => "pm_destino", "post_status" => "any", "meta_key" => "_prueba_rsc", "meta_value" => 1, "numberposts" => -1 ] ) as $x ) {
+              ( false === strpos( $x->post_content, "BLOQUE-VIEJO-DE-PRUEBA" ) ) || WP_CLI::error( "El Calafate sigue con el bloque viejo: #{$x->ID}" );
+              if ( "el-calafate" === get_post_meta( $x->ID, "clave", true ) ) {
+                $q = array_column( pm_filas( "faqs", $x->ID ), "pregunta" );
+                ( 1 === count( $q ) ) || WP_CLI::error( "El Calafate debía quedar con 1 FAQ: " . implode( " | ", $q ) );
+              }
+            }'
+          wp --path="$WP" server --host=localhost --port=8082 > /tmp/server-rsc.log 2>&1 &
+          sleep 3
+          fail=0
+          chk() { # path must-contain [must-not-contain]
+            code=$(curl -sS -o page-r.html -w '%{http_code}' "http://localhost:8082$1")
+            if [[ "$code" != 200 ]]; then echo "✖ $code $1"; fail=1; return; fi
+            if [[ -n "${2:-}" ]] && ! grep -q -- "$2" page-r.html; then echo "✖ $1 no contiene: $2"; fail=1; return; fi
+            if [[ -n "${3:-}" ]] && grep -qE -- "$3" page-r.html; then echo "✖ $1 contiene: $3"; fail=1; return; fi
+            echo "✓ 200 $1"
+          }
+          for p in /patagonia/santa-cruz/pesca-en-el-rio-santa-cruz/ /en/patagonia/santa-cruz/fishing-the-santa-cruz-river/ /pt/patagonia/santa-cruz/pesca-no-rio-santa-cruz/; do
+            chk "$p" 'TouristDestination' 'PENDIENTE|First Cast|Glacier|Guanaco'
+            grep -q 'FAQPage' page-r.html || { echo "✖ $p sin FAQPage"; fail=1; }
+            grep -q 'hreflang="x-default"' page-r.html || { echo "✖ $p sin x-default"; fail=1; }
+            grep -qE 'class="prestador' page-r.html || { echo "✖ $p sin la tarjeta de prestador"; fail=1; }
+            grep -qE 'Where Wise Men Fish' page-r.html || { echo "✖ $p sin la referencia de agencia"; fail=1; }
+          done
+          chk /patagonia/santa-cruz/pesca-en-el-rio-santa-cruz/ 'única población silvestre de linaje atlántico' 'jazmin'
+          chk /patagonia/santa-cruz/ 'pesca-en-el-rio-santa-cruz'
+          chk /llms.txt 'pesca-en-el-rio-santa-cruz'
+          chk /wp-sitemap-posts-pm_destino-1.xml 'pesca-en-el-rio-santa-cruz'
+          w eval '
+            foreach ( get_posts( [ "post_type" => "pm_destino", "post_status" => "any", "meta_key" => "_prueba_rsc", "meta_value" => 1, "numberposts" => -1 ] ) as $x ) {
+              if ( "el-calafate" === get_post_meta( $x->ID, "clave", true ) && "es" === pm_idioma_de( $x->ID ) ) { echo get_permalink( $x->ID ), "\n"; }
+            }' > /tmp/cal-url.txt
+          cat /tmp/cal-url.txt
+          code=$(curl -sS -o page-r.html -w '%{http_code}' "$(head -1 /tmp/cal-url.txt | sed 's#^https\?://[^/]*#http://localhost:8082#')")
+          [[ "$code" == 200 ]] && grep -q 'pesca-en-el-rio-santa-cruz' page-r.html && ! grep -q 'BLOQUE-VIEJO-DE-PRUEBA' page-r.html && echo "✓ El Calafate apunta a la guía nueva" || { echo "✖ El Calafate ($code) no apunta a la guía nueva"; fail=1; }
+          # Clean up: this step must leave no trace for the checks that follow.
+          w eval '
+            foreach ( [ "pm_destino", "pm_nota" ] as $t ) {
+              foreach ( get_posts( [ "post_type" => $t, "post_status" => "any", "posts_per_page" => -1, "suppress_filters" => true ] ) as $p ) {
+                $c = (string) get_post_meta( $p->ID, "clave", true );
+                if ( get_post_meta( $p->ID, "_prueba_rsc", true ) || ( "pm_destino" === $t && "rio-santa-cruz" === $c ) ) { wp_delete_post( $p->ID, true ); }
+              }
+            }
+            foreach ( get_posts( [ "post_type" => "pm_prestador", "post_status" => "any", "title" => "Los Plateados (Tres Amigos Outfitters)", "numberposts" => -1 ] ) as $p ) { wp_delete_post( $p->ID, true ); }'
+          kill %1 2>/dev/null || true
+          exit $fail
       - name: Render pages
         run: |
           exec > >(tee /tmp/render-all.log) 2>&1

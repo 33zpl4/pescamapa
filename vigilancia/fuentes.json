@@ -340,8 +340,16 @@
 		"nombre": "Santa Cruz: Anexo I, ambientes 2026/27 (portal de Pesca y Acuicultura)",
 		"url": "https://pesca.santacruz.gob.ar/ambientes/",
 		"vigilar": "texto",
-		"afecta": "Guía de Río Gallegos y de Lago Strobel: fechas y reglas por río",
-		"accion": "Si cambia una fecha, un límite o una veda, actualizar las dos guías de Santa Cruz y sus FAQ."
+		"afecta": "Guías de Río Gallegos, Lago Strobel y Río Santa Cruz (Piedra Buena): fechas y reglas por río",
+		"accion": "Si cambia una fecha, un límite o una veda, actualizar las tres guías de Santa Cruz y sus FAQ."
+	},
+	{
+		"id": "sc-disposicion-241-pdf",
+		"nombre": "Santa Cruz: Disposición 241/2026, texto del reglamento y del Anexo I (PDF del Boletín Oficial)",
+		"url": "https://boletinoficial.santacruz.gob.ar/adjuntos/DISPOSICION_N_241_-_REGLAMENTO_2.pdf",
+		"vigilar": "pdf",
+		"afecta": "Guía del río Santa Cruz (Piedra Buena): citas textuales de la ficha «SANTA CRUZ (RÍO)» (steelhead, chinook, róbalo, trolling, motores, Didymo)",
+		"accion": "Si cambia el archivo, releer la ficha del río Santa Cruz y comparar cada cita de la guía (es/en/pt) palabra por palabra."
 	},
 	{
 		"id": "sc-valores",
