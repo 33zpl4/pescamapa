@@ -18,6 +18,12 @@ add_filter( 'big_image_size_threshold', fn() => 2000 );
 add_filter( 'jpeg_quality', fn() => 75 );
 add_filter( 'wp_editor_set_quality', fn() => 75 );
 
+/** Alt text of a photo in a language (meta _pm_alt_<es|en|pt>, set by the loading script); the fallback when there is none. */
+function pm_alt_foto( int $att, string $idioma, string $fallback ): string {
+	$a = $att ? (string) get_post_meta( $att, '_pm_alt_' . $idioma, true ) : '';
+	return '' !== $a ? $a : $fallback;
+}
+
 function pm_credito( int $att ): array {
 	return [
 		'autor'        => (string) pm_campo( 'foto_autor', $att ),

@@ -16,7 +16,7 @@ if ( ! $n ) {
 ?>
 <a class="tarjeta" href="<?php echo esc_url( $n['url'] ); ?>"<?php echo $n['idioma'] !== $idioma ? ' hreflang="' . esc_attr( pm_meta_idioma( $n['idioma'] )['html'] ) . '"' : ''; ?>>
 	<?php if ( pm_nota_tiene_foto( $n ) ) : ?>
-		<?php echo pm_foto( $n['foto'], $n['titulo'], '(max-width: 720px) 100vw, 360px', [ 'enlaces' => false ] ); // phpcs:ignore ?>
+		<?php echo pm_foto( $n['foto'], pm_alt_foto( (int) $n['foto'], $n['idioma'], $n['titulo'] ), '(max-width: 720px) 100vw, 360px', [ 'enlaces' => false ] ); // phpcs:ignore ?>
 	<?php else : ?>
 		<span class="foto foto-vacia" aria-hidden="true"><?php get_template_part( 'parciales/icono', null, [ 'n' => 'nota' ] ); ?></span>
 	<?php endif; ?>
