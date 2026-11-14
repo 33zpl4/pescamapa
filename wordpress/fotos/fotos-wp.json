@@ -1,0 +1,80 @@
+{
+  "el-calafate": {
+    "archivo": "File:El Calafate Landscape.jpg",
+    "ancho": 5286,
+    "alto": 2942,
+    "pagina": "https://commons.wikimedia.org/wiki/File:El_Calafate_Landscape.jpg",
+    "autor": "Justraveling.com",
+    "licencia": "CC BY-SA 4.0",
+    "licencia_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "descripcion": "El Calafate Landscape, Argentine Patagonia",
+    "categorias": "El Calafate|Patagonia, Argentina|Horses of Argentina|Horses on pasture|Landscapes of Patagonia|Semi-feral horses",
+    "archivo_local": "commons-el-calafate.jpg",
+    "leida": "2026-11-14"
+  },
+  "ushuaia": {
+    "archivo": "File:Moored boats and edge of town Ushuaia Argentina Coral Prines.jpg",
+    "ancho": 5184,
+    "alto": 3888,
+    "pagina": "https://commons.wikimedia.org/wiki/File:Moored_boats_and_edge_of_town_Ushuaia_Argentina_Coral_Prines.jpg",
+    "autor": "amanderson2",
+    "licencia": "CC BY 2.0",
+    "licencia_url": "https://creativecommons.org/licenses/by/2.0",
+    "descripcion": "Photo from the Antarctic scientific expedition.",
+    "categorias": "Ushuaia|December 2019|Flickr images reviewed by FlickreviewR 2|Files from amanderson2 Flickr stream",
+    "archivo_local": "commons-ushuaia.jpg",
+    "leida": "2026-11-14"
+  },
+  "itati": {
+    "archivo": "File:Playa Itatí.jpg",
+    "ancho": 4448,
+    "alto": 3024,
+    "pagina": "https://commons.wikimedia.org/wiki/File:Playa_Itat%C3%AD.jpg",
+    "autor": "User Pertile in es.wikipedia",
+    "licencia": "CC BY-SA 3.0",
+    "licencia_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "descripcion": "Paraná River in Itatí, Corrientes, Argentina. Photo is taken from a camping that has a sand beach 200 meters away from main square.",
+    "categorias": "Paraná River|Itatí|Self-published work",
+    "archivo_local": "commons-itati.jpg",
+    "leida": "2026-11-14"
+  },
+  "esteros-del-ibera": {
+    "archivo": "File:Atardecer en los Esteros del Iberá - Portal Carambola.jpg",
+    "ancho": 6000,
+    "alto": 4000,
+    "pagina": "https://commons.wikimedia.org/wiki/File:Atardecer_en_los_Esteros_del_Iber%C3%A1_-_Portal_Carambola.jpg",
+    "autor": "Puya Raimondi",
+    "licencia": "CC BY-SA 4.0",
+    "licencia_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "descripcion": "Dragonflies fly over the wetland while the sun set",
+    "categorias": "Esteros del Iberá|Self-published work|Sunsets of Argentina|Categoría 1 - Cuerpos de agua (Concurso Fotografía de Naturaleza 2026)|Uploaded via Campaign:Categoría 1 - Cuerpos de agua (Concurso Fotografía de Naturaleza 2026)|Categoría 1 - Cuerpos de agua - Primer corte (Concurso Fotografía de Naturale",
+    "archivo_local": "commons-esteros-del-ibera.jpg",
+    "leida": "2026-11-14"
+  },
+  "rio-santa-cruz": {
+    "archivo": "File:River santa cruz argentina.JPG",
+    "ancho": 2048,
+    "alto": 1536,
+    "pagina": "https://commons.wikimedia.org/wiki/File:River_santa_cruz_argentina.JPG",
+    "autor": "James Cadwell",
+    "licencia": "CC BY-SA 4.0",
+    "licencia_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "descripcion": "Crossing the River Santa Cruz at Comandante Luis Piedra Buena, Argentina.",
+    "categorias": "GFDL|Taken with Canon PowerShot A75|License migration redundant|Isla Pavón|CC-BY-SA-4.0,3.0,2.5,2.0,1.0|Self-published work|Cultural heritage monuments in Argentina with known IDs|Files tagged CC-by-sa-old",
+    "archivo_local": "commons-rio-santa-cruz.jpg",
+    "leida": "2026-11-14"
+  },
+  "ita-ibate": {
+    "archivo": "File:Itá Ibaté main entry.jpg",
+    "ancho": 2864,
+    "alto": 2304,
+    "pagina": "https://commons.wikimedia.org/wiki/File:It%C3%A1_Ibat%C3%A9_main_entry.jpg",
+    "autor": "Pertile",
+    "licencia": "CC BY-SA 4.0",
+    "licencia_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "descripcion": "Itá Ibaté (Corrientes Province, Argentina) main entry seen from National Route 12.",
+    "categorias": "National Route 12 (Argentina)|GFDL|Taken with Kodak EasyShare C743|Itá Ibaté|License migration redundant|CC-BY-SA-4.0,3.0,2.5,2.0,1.0|Self-published work|Files with coordinates missing SDC location of creation",
+    "archivo_local": "commons-ita-ibate.jpg",
+    "leida": "2026-11-14"
+  }
+}
