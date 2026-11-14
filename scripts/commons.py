@@ -154,15 +154,19 @@ def recortar_43(ruta):
     from PIL import Image
     im = Image.open(ruta)
     w, h = im.size
-    if abs(w / h - 4 / 3) < 0.03:
+    if abs(w / h - 4 / 3) < 0.03 and w <= 1600:
         return w, h
-    if w / h > 4 / 3:
+    if abs(w / h - 4 / 3) < 0.03:
+        box = (0, 0, w, h)
+    elif w / h > 4 / 3:
         nw = round(h * 4 / 3)
         box = ((w - nw) // 2, 0, (w - nw) // 2 + nw, h)
     else:
         nh = round(w * 3 / 4)
         box = (0, (h - nh) // 2, w, (h - nh) // 2 + nh)
     im = im.convert("RGB").crop(box)
+    if im.size[0] > 1600:  # Commons returns standard widths (1920...): keep <= 1600 px
+        im = im.resize((1600, round(im.size[1] * 1600 / im.size[0])), Image.LANCZOS)
     im.save(ruta, quality=88)
     return im.size
 
