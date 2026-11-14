@@ -43,6 +43,15 @@ LUGARES = {
     "esteros-del-ibera": ["Esteros del Iberá", "Laguna Iberá", "Iberá Corrientes", "Colonia Carlos Pellegrini Iberá", "Iberá camalotes laguna"],
     "ita-ibate": ["Itá Ibaté", "Ita Ibate Corrientes", "Itá Ibaté río Paraná", "Ita Ibate costanera", "Itá Ibaté Paraná", "Ita Ibate pesca surubí", "Itá Ibaté Corrientes río", "Itá Ibaté puerto", "Itá Ibaté playa"],
     "rio-santa-cruz": ["Río Santa Cruz Piedra Buena", "Piedra Buena Santa Cruz", "Río Santa Cruz Argentina", "Isla Pavón Piedra Buena", "Río Santa Cruz Comandante Luis Piedra Buena"],
+    # 14/11/2026: notes without a cover photo (WordPress notes; keys are the note keys)
+    "viaje-dorado-amigos-precios": ["Dorado fishing Paraná", "Pesca del dorado Corrientes", "Pescadores bote río Paraná Corrientes", "golden dorado fishing Argentina", "Salminus brasiliensis fishing", "Pesca deportiva dorado"],
+    "precio-viaje-dorado-lodge": ["Río Paraná Corrientes", "Paraná river Corrientes sunset", "Río Paraná Ituzaingó", "Embalse Yacyretá Ituzaingó", "Río Paraná isla Corrientes costa"],
+    "precio-pesca-bariloche-limay": ["Río Limay", "Río Limay Neuquén", "Limay River Patagonia", "Río Limay Bariloche", "Fly fishing Patagonia"],
+    "precio-semana-trucha-patagonia-norte": ["Río Chimehuín", "Río Malleo", "Río Futaleufú Chubut", "Lago Futalaufquen", "Río Collón Curá", "Río Traful", "Río Alumine"],
+    "licencia-pesca-patagonia-precios": ["Pesca con mosca Patagonia", "fly fishing Patagonia Argentina", "Pescador caña Patagonia", "Fishing Patagonia river bank", "Lago Nahuel Huapi orilla"],
+    "pesca-desde-brasil-corrientes": ["Río Uruguay Santo Tomé", "Río Uruguay Paso de los Libres", "Paso de los Libres", "Río Uruguay Corrientes", "Santo Tomé Corrientes"],
+    "paquete-incluye-no-incluye": ["Fishing lodge Patagonia", "Fishing lodge Argentina", "Bote de pesca río Argentina", "fishing boat Paraná Argentina", "Pesca Río Paraná embarcación"],
+    "licencias-extranjeros-argentina": ["Pescador río Argentina", "fisherman Argentina river", "Pesca con caña orilla Argentina", "Pesca deportiva Argentina", "Fishing Argentina rod shore"],
 }
 
 # Places with few free photos accept smaller ones (still landscape, still free licence).
