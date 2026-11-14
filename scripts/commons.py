@@ -36,6 +36,13 @@ LUGARES = {
     "rio-grande": ["Río Grande Tierra del Fuego"],
     "chascomus": ["Laguna de Chascomús", "Chascomús"],
     "mar-del-plata": ["Mar del Plata"],
+    # 14/11/2026: guides that had no photo (WordPress, wordpress/fotos + fotos-wp.json)
+    "el-calafate": ["El Calafate", "Lago Argentino", "Lago Argentino El Calafate costanera", "Bahía Redonda El Calafate", "Laguna Nimez"],
+    "ushuaia": ["Ushuaia", "Bahía de Ushuaia", "Canal Beagle Ushuaia", "Ushuaia puerto montañas", "Río Pipo Ushuaia", "Lago Escondido Tierra del Fuego"],
+    "itati": ["Itatí Corrientes", "Itatí río Paraná", "Basílica de Itatí", "Costanera Itatí", "Itatí Argentina"],
+    "esteros-del-ibera": ["Esteros del Iberá", "Laguna Iberá", "Iberá Corrientes", "Colonia Carlos Pellegrini Iberá", "Iberá camalotes laguna"],
+    "ita-ibate": ["Itá Ibaté", "Ita Ibate Corrientes", "Itá Ibaté río Paraná", "Ita Ibate costanera"],
+    "rio-santa-cruz": ["Río Santa Cruz Piedra Buena", "Piedra Buena Santa Cruz", "Río Santa Cruz Argentina", "Isla Pavón Piedra Buena", "Río Santa Cruz Comandante Luis Piedra Buena"],
 }
 
 
@@ -76,7 +83,8 @@ def ficha(page):
         "autor": text(meta, "Artist") or "Autor desconocido",
         "licencia": text(meta, "LicenseShortName"),
         "licencia_url": text(meta, "LicenseUrl"),
-        "descripcion": text(meta, "ImageDescription")[:200],
+        "descripcion": text(meta, "ImageDescription")[:300],
+        "categorias": text(meta, "Categories")[:300],
     }
 
 
@@ -92,17 +100,17 @@ def candidatas(solo=()):
             data = get({
                 "action": "query", "generator": "search", "gsrnamespace": 6,
                 "gsrsearch": f"{q} filetype:bitmap", "gsrlimit": 20,
-                "prop": "imageinfo", "iiprop": "url|size|extmetadata|mime", "iiurlwidth": 480,
+                "prop": "imageinfo", "iiprop": "url|size|extmetadata|mime", "iiurlwidth": 480, "gsroffset": 0,
             })
             for page in sorted(data.get("query", {}).get("pages", []), key=lambda p: p.get("index", 0)):
                 if page["title"] in vistos or "imageinfo" not in page:
                     continue
                 vistos.add(page["title"])
                 f = ficha(page)
-                if not FREE.match(f["licencia"]) or f["ancho"] < 1200 or f["ancho"] <= f["alto"]:
+                if not FREE.match(f["licencia"]) or f["ancho"] < 1000 or f["ancho"] <= f["alto"]:
                     continue
                 lista.append(f)
-        lista = lista[:12]
+        lista = lista[:16]
         for i, f in enumerate(lista):
             f["n"] = i
             download(f["thumb"], out_dir / f"{lugar}-{i}.jpg")
@@ -129,9 +137,36 @@ def bajar(picks_file):
     creditos_file.write_text(json.dumps(creditos, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
 
+def bajar_wp(picks_file, ancho=1600):
+    """WordPress: picks {clave: "File:..."} -> wordpress/fotos/commons-<clave>.jpg (<= `ancho` px) + fotos-wp.json
+    (author, licence, licence URL, Commons page, description, categories, date read) read from Commons at run time."""
+    from datetime import date
+    picks = json.loads(Path(picks_file).read_text(encoding="utf-8"))
+    dest = ROOT / "wordpress" / "fotos"
+    dest.mkdir(parents=True, exist_ok=True)
+    out = {}
+    for clave, archivo in picks.items():
+        page = info([archivo], ancho)[0]
+        f = ficha(page)
+        if not FREE.match(f["licencia"]):
+            sys.exit(f"✖ {archivo}: licencia {f['licencia']!r} no admitida")
+        if f["autor"] == "Autor desconocido":
+            sys.exit(f"✖ {archivo}: sin autor")
+        nombre = f"commons-{clave}.jpg"
+        download(f["thumb"], dest / nombre)
+        f.pop("thumb")
+        f["archivo_local"] = nombre
+        f["leida"] = date.today().isoformat()
+        out[clave] = f
+        print(f"✓ {clave}: {archivo} — {f['autor']} ({f['licencia']}) {f['ancho']}x{f['alto']} -> {nombre} {(dest / nombre).stat().st_size // 1024} KB")
+    (dest / "fotos-wp.json").write_text(json.dumps(out, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+
+
 if __name__ == "__main__":
     if sys.argv[1:2] == ["candidatas"]:
         candidatas(sys.argv[2:])
+    elif sys.argv[1:2] == ["bajar-wp"] and len(sys.argv) == 3:
+        bajar_wp(sys.argv[2])
     elif sys.argv[1:2] == ["bajar"] and len(sys.argv) == 3:
         bajar(sys.argv[2])
     else:

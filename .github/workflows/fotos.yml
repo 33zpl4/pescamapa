@@ -11,7 +11,7 @@ on:
   workflow_dispatch:
     inputs:
       modo:
-        description: "candidatas | bajar"
+        description: "candidatas | bajar | bajar-wp (WordPress: scripts/fotos-wp-elegidas.json -> wordpress/fotos/)"
         required: true
         default: candidatas
       lugares:
@@ -60,4 +60,14 @@ jobs:
           git config user.email "noreply@anthropic.com"
           git add src/assets/fotos src/data/fotos.json
           git commit -qm "Fotos elegidas desde Wikimedia Commons, con créditos" || echo "sin cambios"
+          git push origin HEAD:${{ github.ref_name }}
+
+      - name: Bajar elegidas para WordPress
+        if: steps.modo.outputs.modo == 'bajar-wp'
+        run: |
+          python3 scripts/commons.py bajar-wp scripts/fotos-wp-elegidas.json
+          git config user.name "Claude"
+          git config user.email "noreply@anthropic.com"
+          git add wordpress/fotos
+          git commit -qm "Fotos de Commons para guías sin foto (WordPress), con créditos" || echo "sin cambios"
           git push origin HEAD:${{ github.ref_name }}
