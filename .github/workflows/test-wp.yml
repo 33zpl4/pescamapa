@@ -180,6 +180,16 @@ jobs:
             foreach ( [ "es", "en", "pt" ] as $i ) {
               foreach ( $claves as $c ) {
                 $cuerpo = "golden-dorado-guia" === $c ? "<!-- wp:table --><figure class=\"wp-block-table\"><table><tbody><tr><td>Alto Paraná</td><td>Itatí, Ituzaingó, Paso de la Patria</td></tr></tbody></table></figure><!-- /wp:table -->" : "Nota de prueba";
+                // Closure texts as they were before corrientes-correcciones-2026-11-14 (the script rewrites them): list items and the price notes.
+                $li = fn( $t ) => "<!-- wp:list -->\n<ul class=\"wp-block-list\"><!-- wp:list-item --><li>{$t}</li><!-- /wp:list-item --></ul>\n<!-- /wp:list -->";
+                if ( "tallas-cupos-vedas" === $c ) { $cuerpo = $li( "Desde el 29 de mayo de 2026 rigió una veda extraordinaria en el Paraná entre los km 1232 y 1238 (prueba)" ) . $li( "Según la prensa (Perfil): el 9 de septiembre de 2026 se dispuso una veda extraordinaria entre los km 1109 y 1150, aguas arriba de Goya, por una concentración de dorados (número de disposición pendiente)" ) . $li( "Otro ítem que no se toca" ); }
+                if ( "cuando-pescar-dorado" === $c ) { $cuerpo = $li( "Desde el 9 de septiembre de 2026 rige una veda extraordinaria entre los km 1109 y 1150. No tiene fecha de fin" ); }
+                if ( "cuando-pescar-surubi" === $c ) { $cuerpo = $li( "Desde el 29 de mayo de 2026 rige una veda en el Paraná entre los km 1232 y 1238" ); }
+                $h2 = fn( $t ) => "<!-- wp:heading -->\n<h2 class=\"wp-block-heading\">{$t}</h2>\n<!-- /wp:heading -->";
+                $hv = [ "es" => "¿Hay veda en el Paraná en Corrientes ahora?", "en" => "Is there a fishing ban on the Paraná in Corrientes now?", "pt" => "Há proibição no Paraná em Corrientes agora?" ];
+                if ( "viaje-dorado-amigos-precios" === $c ) { $cuerpo = "<!-- wp:paragraph -->\n<p>Antes</p>\n<!-- /wp:paragraph -->\n\n" . $h2( $hv[ $i ] ) . "\n\n<!-- wp:table -->\n<figure class=\"wp-block-table\"><table><tbody><tr><td>618/26</td><td>número de disposición pendiente</td></tr></tbody></table></figure>\n<!-- /wp:table -->\n\n<!-- wp:paragraph -->\n<p>no lo leímos en el Boletín Oficial</p>\n<!-- /wp:paragraph -->\n\n" . $h2( "Siguiente sección" ) . "\n\n<!-- wp:paragraph -->\n<p>Sigue</p>\n<!-- /wp:paragraph -->"; }
+                $lic = [ "es" => "sí la incluyen, según el operador o agencias, Itatí y los lodges del Iberá de la tabla, y una agencia dice lo mismo del lodge del Alto Paraná de US\$ 7.000", "en" => "Itatí and the Iberá lodges in the table do include it, according to the operator or agencies, and one agency says the same of the US\$ 7,000 Upper Paraná lodge", "pt" => "incluem, segundo o operador ou agências, Itatí e os lodges do Iberá da tabela, e uma agência diz o mesmo do lodge do Alto Paraná de US\$ 7.000" ];
+                if ( "precio-viaje-dorado-lodge" === $c ) { $cuerpo = "<!-- wp:paragraph -->\n<p>La licencia: {$lic[ $i ]}.</p>\n<!-- /wp:paragraph -->"; }
                 $id = wp_insert_post( [ "post_type" => "pm_nota", "post_status" => "publish", "post_title" => "Prueba {$c} {$i}", "post_name" => "prueba-{$c}-{$i}", "post_content" => $cuerpo ], true );
                 update_field( "idioma", $i, $id ); update_field( "clave", $c, $id ); update_post_meta( $id, "_prueba_corrientes", 1 );
               }
@@ -200,6 +210,20 @@ jobs:
           wp --path="$WP" eval-file /tmp/enlaces-dry.php
           wp --path="$WP" eval-file /tmp/enlaces.php
           wp --path="$WP" eval-file /tmp/enlaces.php   # idempotent
+          # Corrientes corrections (closure timeline, Iberá rules, pins, notes): committed with $aplicar = true (already applied live), so the dry copy forces false.
+          sc=corrientes-correcciones-2026-11-14
+          sed 's/^\$aplicar = true;/$aplicar = false;/' "wordpress/scripts/$sc.php" > "/tmp/$sc-dry.php"
+          wp --path="$WP" eval-file "/tmp/$sc-dry.php"   # dry run: must write nothing
+          w eval '$v = 0; foreach ( get_posts( [ "post_type" => "pm_destino", "post_status" => "publish", "meta_key" => "clave", "meta_value" => "itati", "numberposts" => -1 ] ) as $x ) { if ( preg_match( "/no leímos las disposiciones|we have not read the orders|não lemos as disposições/u", $x->post_content ) ) { $v++; } } ( 3 === $v ) || WP_CLI::error( "el simulacro cambió las guías de Itatí: {$v} de 3 con el texto viejo" );'
+          w eval '$p = get_posts( [ "post_type" => "pm_nota", "post_status" => "publish", "meta_key" => "_prueba_corrientes", "meta_value" => 1, "numberposts" => -1 ] ); foreach ( $p as $x ) { if ( false !== strpos( $x->post_content, "1249/26" ) ) { WP_CLI::error( "el simulacro escribió en la nota #{$x->ID}" ); } }'
+          cp "wordpress/scripts/$sc.php" "/tmp/$sc.php"
+          wp --path="$WP" eval-file "/tmp/$sc.php" | tee /tmp/correcciones-1.log
+          grep -q 'FALLÓ' /tmp/correcciones-1.log && { echo "✖ la lectura de vuelta de las correcciones falló"; exit 1; }
+          grep -q 'APLICADO' /tmp/correcciones-1.log || { echo "✖ la primera corrida no terminó"; exit 1; }
+          grep -c 'VERIFIED' /tmp/correcciones-1.log
+          wp --path="$WP" eval-file "/tmp/$sc.php" | tee /tmp/correcciones-2.log   # idempotent: nothing changes the second time
+          grep -qE ' bytes|campos:' /tmp/correcciones-2.log && { echo "✖ la segunda corrida volvió a cambiar algo"; exit 1; }
+          grep -q 'APLICADO' /tmp/correcciones-2.log || { echo "✖ la segunda corrida no terminó"; exit 1; }
           wp --path="$WP" server --host=localhost --port=8081 > /tmp/server-corrientes.log 2>&1 &
           sleep 3
           fail=0
@@ -222,6 +246,11 @@ jobs:
           chk /litoral/corrientes/pesca-en-itati/ 'US\$ 7.950' 'jazmin'
           chk /litoral/corrientes/pesca-en-los-esteros-del-ibera/ 'sin año' 
           chk /litoral/corrientes/pesca-en-itati/ 'Otros destinos de dorado en Corrientes'
+          chk /litoral/corrientes/pesca-en-itati/ 'Disposición 1249/26' 'no leímos\|número pendiente\|Disposición 942'
+          chk /litoral/corrientes/pesca-en-ita-ibate/ 'La Tribuna TV' 'no leímos\|número pendiente'
+          chk /litoral/corrientes/pesca-en-los-esteros-del-ibera/ 'Decreto 1304/78' 'no leímos\|número pendiente'
+          chk /en/litoral/corrientes/fishing-in-the-ibera-wetlands/ 'Disposición 09/10' 'have not read\|number pending'
+          chk /pt/litoral/corrientes/pesca-nos-esteros-do-ibera/ 'Decreto 1304/78' 'não lemos\|número pendente'
           chk /en/litoral/corrientes/fishing-in-the-ibera-wetlands/ 'Other dorado destinations in Corrientes'
           chk /notas/prueba-golden-dorado-guia-es/ 'Lodges con guía en Corrientes'
           chk /en/notes/prueba-golden-dorado-guia-en/ 'Guided lodges in Corrientes'
