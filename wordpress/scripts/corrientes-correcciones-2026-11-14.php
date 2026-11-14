@@ -21,7 +21,7 @@
  * Solo se reemplaza lo que se reconoce; lo que no se encuentra se avisa y no se toca. Idempotente. Simulacro primero ($aplicar = false).
  * Se corre con wp-script.yml (script = corrientes-correcciones-2026-11-14).
  */
-$aplicar = false;
+$aplicar = true;
 $hoy     = '20261114';
 
 $D = json_decode( <<<'JSON'
