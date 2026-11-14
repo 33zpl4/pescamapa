@@ -41,9 +41,12 @@ LUGARES = {
     "ushuaia": ["Ushuaia", "Bahía de Ushuaia", "Canal Beagle Ushuaia", "Ushuaia puerto montañas", "Río Pipo Ushuaia", "Lago Escondido Tierra del Fuego"],
     "itati": ["Itatí Corrientes", "Itatí río Paraná", "Basílica de Itatí", "Costanera Itatí", "Itatí Argentina"],
     "esteros-del-ibera": ["Esteros del Iberá", "Laguna Iberá", "Iberá Corrientes", "Colonia Carlos Pellegrini Iberá", "Iberá camalotes laguna"],
-    "ita-ibate": ["Itá Ibaté", "Ita Ibate Corrientes", "Itá Ibaté río Paraná", "Ita Ibate costanera"],
+    "ita-ibate": ["Itá Ibaté", "Ita Ibate Corrientes", "Itá Ibaté río Paraná", "Ita Ibate costanera", "Itá Ibaté Paraná", "Ita Ibate pesca surubí", "Itá Ibaté Corrientes río", "Itá Ibaté puerto", "Itá Ibaté playa"],
     "rio-santa-cruz": ["Río Santa Cruz Piedra Buena", "Piedra Buena Santa Cruz", "Río Santa Cruz Argentina", "Isla Pavón Piedra Buena", "Río Santa Cruz Comandante Luis Piedra Buena"],
 }
+
+# Places with few free photos accept smaller ones (still landscape, still free licence).
+MIN_ANCHO = {"ita-ibate": 700}
 
 
 def get(params):
@@ -107,7 +110,7 @@ def candidatas(solo=()):
                     continue
                 vistos.add(page["title"])
                 f = ficha(page)
-                if not FREE.match(f["licencia"]) or f["ancho"] < 1000 or f["ancho"] <= f["alto"]:
+                if not FREE.match(f["licencia"]) or f["ancho"] < MIN_ANCHO.get(lugar, 1000) or f["ancho"] <= f["alto"]:
                     continue
                 lista.append(f)
         lista = lista[:16]
