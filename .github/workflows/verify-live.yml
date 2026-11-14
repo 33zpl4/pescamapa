@@ -147,6 +147,14 @@ jobs:
             grep -q 'FAQPage' page.html || { echo "✖ $p sin FAQPage"; fail=1; }
             grep -q 'hreflang="x-default"' page.html || { echo "✖ $p sin hreflang"; fail=1; }
           done
+          # Río Santa Cruz guide (14/11/2026), three languages. Code and script guarantees only (no texts or rules). The en/pt URLs are the pretty ones: the script log prints ?pm_destino=... only because it runs before the shared region/province are readable from the Spanish guide (pm_destino_ruta).
+          for p in /patagonia/santa-cruz/pesca-en-el-rio-santa-cruz/ /en/patagonia/santa-cruz/fishing-the-santa-cruz-river/ /pt/patagonia/santa-cruz/pesca-no-rio-santa-cruz/; do
+            check "$p" 200 'TouristDestination'
+            grep -qE "name=[\"']robots[\"'][^>]*noindex" page.html && { echo "✖ $p tiene noindex"; fail=1; }
+            grep -q 'PENDIENTE' page.html && { echo "✖ $p muestra una nota PENDIENTE"; fail=1; }
+            grep -q 'FAQPage' page.html || { echo "✖ $p sin FAQPage"; fail=1; }
+            grep -q 'hreflang="x-default"' page.html || { echo "✖ $p sin hreflang"; fail=1; }
+          done
           # La Paz (Entre Ríos): licence fees from the Dirección de Entre Ríos, honest "not confirmed" for sizes.
           for p in /litoral/entre-rios/pesca-en-la-paz/ /pt/litoral/entre-rios/pesca-em-la-paz/; do
             check "$p" 200 'TouristDestination'
