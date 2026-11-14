@@ -25,7 +25,7 @@
  * there is left alone). Dry run first ($aplicar = false). Run with wp-script.yml (script = rio-santa-cruz-2026-11-14).
  */
 
-$aplicar = false;
+$aplicar = true;
 $hoy     = '20261114'; // date of the guide text
 $leido   = '20261114'; // date the pages and papers were read (branch `investigacion`); the Boletín Oficial text was read on 13/11/2026
 
