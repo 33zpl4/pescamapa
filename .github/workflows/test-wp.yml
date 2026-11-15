@@ -378,6 +378,86 @@ jobs:
             foreach ( get_posts( [ "post_type" => "pm_prestador", "post_status" => "any", "title" => "Los Plateados (Tres Amigos Outfitters)", "numberposts" => -1 ] ) as $p ) { wp_delete_post( $p->ID, true ); }'
           kill %1 2>/dev/null || true
           exit $fail
+      - name: River House card + Itá Ibaté sentence - dry run, apply on stubs, read back, render, clean up
+        run: |
+          w() { wp --path="$WP" "$@"; }
+          rh=river-house-2026-11-15
+          iu=ita-ibate-unico-2026-11-15
+          # Stubs (removed at the end): the three Río Gallegos guides with the sentence the script anchors on, an operator with agreement (Karku-like) and a public-information card,
+          # and the three Itá Ibaté guides with the old "only lodge" wording in body, FAQ, bajada and meta description.
+          w eval '
+            $rg = [ "es" => "de fines de enero a principios de abril, y no muestra tarifa.", "en" => "from late January to early April, and it shows no rate.", "pt" => "do fim de janeiro ao começo de abril, e não mostra tarifa." ];
+            $ii = [
+              "es" => [ "el único lodge con página propia que encontramos es <strong>Dorados on the Fly</strong> (Pinti’s), y su página no publica tarifa. Lo que sigue es lo que sí tiene fuente.", "¿Cuándo conviene ir a pescar dorado a Itá Ibaté?", "La página de Dorados on the Fly, el único lodge con página propia que encontramos, no publica temporada: consultalo.", "Itá Ibaté vive de la pesca. Qué dice el informe, qué publica el único lodge con página propia que encontramos y qué reglas valen.", "Pesca de dorado en Itá Ibaté: el informe, el lodge con página propia, pesca y devolución." ],
+              "en" => [ "the only lodge with a page of its own that we found is <strong>Dorados on the Fly</strong> (Pinti’s), and its page publishes no rate. What follows is what has a source.", "When is the best time to fish dorado in Itá Ibaté?", "The page of Dorados on the Fly, the only lodge with a page of its own that we found, publishes no season: ask.", "Itá Ibaté lives off fishing. What the report says, what the one lodge with a page of its own that we found publishes, and which rules apply.", "Golden dorado fishing in Itá Ibaté: the report, the lodge with its own page, catch and release." ],
+              "pt" => [ "o único lodge com página própria que encontramos é o <strong>Dorados on the Fly</strong> (Pinti’s), e a página não publica tarifa. O que segue é o que tem fonte.", "Quando convém ir pescar dourado em Itá Ibaté?", "A página do Dorados on the Fly, o único lodge com página própria que encontramos, não publica temporada: consulte.", "Itá Ibaté vive da pesca. O que diz o relatório, o que publica a pousada de pesca (lodge) cuja página lemos e quais regras valem.", "Pescaria de dourado em Itá Ibaté: o relatório, a pousada de pesca com página própria, devolução." ],
+            ];
+            foreach ( [ "es", "en", "pt" ] as $i ) {
+              $id = wp_insert_post( [ "post_type" => "pm_destino", "post_status" => "publish", "post_title" => "Río Gallegos", "post_name" => "prueba-rh-rio-gallegos-{$i}", "post_content" => "<!-- wp:paragraph -->\n<p>Solid Adventures ofrece Glencross, " . $rg[ $i ] . "</p>\n<!-- /wp:paragraph -->" ], true );
+              update_field( "idioma", $i, $id ); update_field( "clave", "rio-gallegos", $id ); update_post_meta( $id, "_prueba_rh", 1 );
+              if ( "es" === $i ) { update_field( "region", "patagonia", $id ); update_field( "provincia", "santa-cruz", $id ); update_field( "lat", -51.62, $id ); update_field( "lon", -69.21, $id ); update_field( "especies", [ "trucha" ], $id ); }
+              $id = wp_insert_post( [ "post_type" => "pm_destino", "post_status" => "publish", "post_title" => "Itá Ibaté", "post_name" => "prueba-rh-ita-ibate-{$i}", "post_content" => "<!-- wp:paragraph -->\n<p>Esta guía es corta: " . $ii[ $i ][0] . "</p>\n<!-- /wp:paragraph -->" ], true );
+              update_field( "idioma", $i, $id ); update_field( "clave", "ita-ibate", $id ); update_post_meta( $id, "_prueba_rh", 1 );
+              update_field( "faqs", [ [ "pregunta" => $ii[ $i ][1], "respuesta" => $ii[ $i ][2] ] ], $id );
+              update_field( "bajada", $ii[ $i ][3], $id ); update_field( "seo_description", $ii[ $i ][4], $id );
+              if ( "es" === $i ) { update_field( "region", "litoral", $id ); update_field( "provincia", "corrientes", $id ); update_field( "lat", -27.42, $id ); update_field( "lon", -57.32, $id ); update_field( "especies", [ "dorado" ], $id ); }
+            }
+            foreach ( [ "Karku Fly Fishing" => [ "acuerdo", 1, 0 ], "Estancia Glencross (Solid Adventures)" => [ "relevado", 0, 1 ] ] as $n => [ $est, $cons, $pub ] ) {
+              $id = wp_insert_post( [ "post_type" => "pm_prestador", "post_status" => "publish", "post_title" => $n ], true );
+              update_field( "prest_destino", "rio-gallegos", $id ); update_field( "descripcion", "Ficha de prueba.", $id ); update_field( "tipo", [ "alojamiento" ], $id );
+              update_field( "estado", $est, $id ); update_field( "prest_consentimiento", $cons, $id ); update_field( "prest_publico", $pub, $id ); update_field( "datos_ejemplo", 0, $id );
+              update_post_meta( $id, "_prueba_rh", 1 );
+            }'
+          # Dry run (flag forced to false): writes nothing.
+          for s in $rh $iu; do sed 's/^\$aplicar = [a-z]*;/$aplicar = false;/' "wordpress/scripts/$s.php" > "/tmp/$s-dry.php"; wp --path="$WP" eval-file "/tmp/$s-dry.php" | tee "/tmp/$s-dry.log"; done
+          grep -q 'SIMULACRO: no se escribió nada' /tmp/$rh-dry.log && grep -q 'SIMULACRO: no se escribió nada' /tmp/$iu-dry.log || { echo "✖ un simulacro no terminó como tal"; exit 1; }
+          grep -q 'WARNING\|Warning:' /tmp/$rh-dry.log /tmp/$iu-dry.log && { echo "✖ el simulacro avisó de algo"; exit 1; }
+          n=$(w post list --post_type=pm_prestador --post_status=any --title="River House" --format=count)
+          [[ "$n" == 0 ]] || { echo "✖ el simulacro escribió $n fichas de River House"; exit 1; }
+          w eval '$n = 0; foreach ( get_posts( [ "post_type" => "pm_destino", "post_status" => "any", "meta_key" => "_prueba_rh", "meta_value" => 1, "numberposts" => -1 ] ) as $x ) { if ( preg_match( "/River House|cuya página leímos|whose page we read|cuja página lemos/u", $x->post_content . " " . get_post_meta( $x->ID, "seo_description", true ) ) ) { $n++; } } ( 0 === $n ) || WP_CLI::error( "el simulacro escribió en las guías de prueba" );'
+          # Apply path (flag forced to true), twice (idempotent), reading the logs.
+          for s in $rh $iu; do
+            sed 's/^\$aplicar = [a-z]*;/$aplicar = true;/' "wordpress/scripts/$s.php" > "/tmp/$s.php"
+            wp --path="$WP" eval-file "/tmp/$s.php" | tee "/tmp/$s-1.log"
+            grep -q 'FALLÓ' "/tmp/$s-1.log" && { echo "✖ $s: la lectura de vuelta falló"; exit 1; }
+            grep -q 'APLICADO' "/tmp/$s-1.log" || { echo "✖ $s: la primera corrida no terminó"; exit 1; }
+            wp --path="$WP" eval-file "/tmp/$s.php" | tee "/tmp/$s-2.log"
+            grep -qE ' bytes|campos:|ANTES:' "/tmp/$s-2.log" && { echo "✖ $s: la segunda corrida volvió a cambiar algo"; exit 1; }
+            grep -q 'APLICADO' "/tmp/$s-2.log" || { echo "✖ $s: la segunda corrida no terminó"; exit 1; }
+          done
+          n=$(w post list --post_type=pm_prestador --post_status=any --title="River House" --format=count)
+          [[ "$n" == 1 ]] && echo "✓ una sola ficha de River House" || { echo "✖ $n fichas de River House"; exit 1; }
+          grep -q 'Orden de la lista de rio-gallegos: Karku Fly Fishing \[acuerdo\] > River House \[acuerdo\] > Estancia Glencross' /tmp/$rh-1.log && echo "✓ orden: acuerdos primero" || { echo "✖ orden de la lista"; exit 1; }
+          wp --path="$WP" server --host=localhost --port=8083 > /tmp/server-rh.log 2>&1 &
+          sleep 3
+          fail=0
+          chk() { # path must-contain [must-not-contain (regex)]
+            code=$(curl -sS -o page-rh.html -w '%{http_code}' "http://localhost:8083$1")
+            if [[ "$code" != 200 ]]; then echo "✖ $code $1"; fail=1; return; fi
+            if [[ -n "${2:-}" ]] && ! grep -q -- "$2" page-rh.html; then echo "✖ $1 no contiene: $2"; fail=1; return; fi
+            if [[ -n "${3:-}" ]] && grep -qE -- "$3" page-rh.html; then echo "✖ $1 contiene: $3 -> $(grep -oE -- ".{0,60}($3).{0,60}" page-rh.html | head -3)"; fail=1; return; fi
+            echo "✓ 200 $1"
+          }
+          chk /guias-de-pesca/rio-gallegos/ 'Alquila el equipo completo' '10 % pagado|pagado por el lodge|INTERNO'
+          [[ "$(grep -o '"@type":"LocalBusiness"' page-rh.html | wc -l)" == 2 ]] && echo "✓ LocalBusiness solo para los dos operadores con acuerdo" || { echo "✖ LocalBusiness: $(grep -o '"@type":"LocalBusiness"' page-rh.html | wc -l) (esperado 2)"; fail=1; }
+          grep -q 'Precio: a consultar\|Price: on request\|Preço: a consultar' page-rh.html && echo "✓ la ficha dice «a consultar»" || { echo "✖ falta «a consultar»"; fail=1; }
+          w eval '
+            foreach ( get_posts( [ "post_type" => "pm_destino", "post_status" => "any", "meta_key" => "_prueba_rh", "meta_value" => 1, "numberposts" => -1 ] ) as $x ) { echo get_permalink( $x->ID ), "\n"; }' > /tmp/rh-urls.txt
+          cat /tmp/rh-urls.txt
+          while read -r u; do
+            [[ -n "$u" ]] || continue
+            code=$(curl -sS -o page-rh.html -w '%{http_code}' "$(echo "$u" | sed 's#^https\?://[^/]*#http://localhost:8083#')")
+            [[ "$code" == 200 ]] || { echo "✖ $code $u"; fail=1; continue; }
+            case "$u" in *ita-ibate*) grep -q 'FAQPage' page-rh.html || { echo "✖ $u sin FAQPage"; fail=1; } ;; esac
+            echo "✓ 200 $u"
+          done < /tmp/rh-urls.txt
+          # Clean up: this step must leave no trace for the checks that follow.
+          w eval '
+            foreach ( get_posts( [ "post_type" => [ "pm_destino", "pm_prestador" ], "post_status" => "any", "posts_per_page" => -1, "suppress_filters" => true ] ) as $p ) {
+              if ( get_post_meta( $p->ID, "_prueba_rh", true ) || ( "pm_prestador" === $p->post_type && "River House" === $p->post_title ) ) { wp_delete_post( $p->ID, true ); }
+            }'
+          kill %1 2>/dev/null || true
+          exit $fail
       - name: Trout pillar note - dry run, create es/en/pt, hreflang, FAQ, inbound links, clean up
         run: |
           w() { wp --path="$WP" "$@"; }

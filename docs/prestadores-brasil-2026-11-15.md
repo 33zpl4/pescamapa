@@ -31,7 +31,7 @@ Estado de relación en el repo: ninguno tiene ficha de prestador, ninguno figura
 1. **Hay una capa de agencias brasileñas** que vende a los mismos operadores. Romani Pesca vende Hambaré, Puerto Yacarey y Matute; en las búsquedas aparecen además páginas de otras agencias con el nombre del operador (BCA Fishing en pacotesdepesca.com.br, que lista Gêmeos, La Regina y Matute, y también «Pousada Aventura Esquina», «Pousada Dourado Pesca» y «Pousada Pesca Argentina» de las que no encontramos sitio propio; Venturatur, Cobras Pesca, Fishing Viagens, Brava Pesca). No se leyeron. Antes de preguntar por comisión conviene saber **quién cobra**: el operador, la agencia, o los dos.
 2. **Pedrinho Pesca no parece un lodge**, sino una agencia con base en Paso de la Patria: lo que se anuncia ahí es el servicio, no un alojamiento propio. Falta saber con quién opera en el destino.
 3. **Precios**: ninguno publica un precio vigente con fecha en las páginas leídas hoy. Sirven Hambaré (4–5/11/2026, en notas) y la referencia vencida de La Regina. Matute y Gêmeos mandan a WhatsApp.
-4. **La guía de Itá Ibaté** (es/en/pt) dice que Dorados on the Fly es el único lodge con página propia que encontramos. Hoy leímos la de Gêmeos. Se ajustó la frase del subtítulo en portugués (script `pt-pousadas-titulos-2026-11-15`) para no afirmar eso; el cuerpo de la guía y las versiones es/en lo siguen diciendo y se corrigen cuando el dueño decida si lista a Gêmeos.
+4. **La guía de Itá Ibaté** (es/en/pt) dice que Dorados on the Fly es el único lodge con página propia que encontramos. Hoy leímos la de Gêmeos. Se ajustó la frase del subtítulo en portugués (script `pt-pousadas-titulos-2026-11-15`) y, el mismo 15/11/2026, el resto (cuerpo, FAQ, bajada y meta description en es/en/pt; script `ita-ibate-unico-2026-11-15`): ahora dicen «el lodge cuya página leímos» y que hay otros alojamientos de pesca con sitio propio que todavía no tienen ficha. No se creó ninguna ficha ni se nombró a otro operador.
 5. **Qué páginas nuestras ya cubren cada nombre**: ninguna. «pousada gêmeos» y «pedrinho pesca» (100–1.000 cada una) caerían hoy en la guía de Itá Ibaté y en la de Paso de la Patria, que no los nombran. Nombrarlos en una ficha solo con la regla de `docs/prestadores.md` (listado con información pública, marcado sin verificar, con enlace de corrección o baja; sin contacto ni fotos ajenas; precio solo con fecha).
 
 ## Borradores de correo (para que los envíe una persona, uno a uno)
@@ -85,7 +85,6 @@ Nota: la línea opcional va solo si se sabe que venden por agencia. Revisar el t
 - Si se crea ficha (con la regla de `docs/prestadores.md`) para Gêmeos, Hambaré, Matute, La Regina y Puerto Yacarey; Pedrinho Pesca y Romani Pesca son agencias: se listarían como «operador», no como alojamiento.
 - Quién envía los correos y desde qué bandeja (`Reply-To`).
 - Si se pregunta primero a los operadores o a las agencias que los venden.
-- Cuándo corregir la frase de la guía de Itá Ibaté (es/en y cuerpo en pt) sobre «el único lodge con página propia».
 
 ## Qué no se verificó
 

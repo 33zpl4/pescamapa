@@ -32,6 +32,8 @@ Mensaje aprobado (es; en/pt en `data/ui.json`):
 
 Pendiente (no hecho): el envío automático del correo de registro al operador (comportamiento nuevo de correo saliente: lo decide el dueño) y el aviso en la ficha de que se muestran datos de contacto (hoy no se publican contactos).
 
+**Seguimiento al cliente (15/11/2026):** al pasar un cliente a un operador, el cierre del mensaje es «el operador sigue desde aquí; te escribo en unos días para asegurarme de que todo va bien» (con una fecha real, cumplida), no «tratá directo con el operador». Frases en es/en/pt y reglas en `docs/prestadores.md` → «Seguimiento al cliente».
+
 ## Formulario (UX del 13/11/2026)
 
 **Por qué:** el primer pedido real (un pescador extranjero, lodge de gama alta) mostró lo que el formulario no captaba: fechas aproximadas ("alrededor del 11 al 13, con una semana de margen"), un acompañante que no pesca y comparte la habitación, sin equipo ni waders, estadía corta (2-3 días), especie fija y lugar abierto. El equipo tenía que escribir por email para saber qué era fijo y qué flexible.

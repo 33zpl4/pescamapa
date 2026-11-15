@@ -154,10 +154,12 @@ Sin nombres de personas. Las comisiones y las tarifas de abajo son internas: no 
 | Operador | Comisión | Cómo se atribuye el cliente | Quién factura | Restricciones | Estado |
 |---|---|---|---|---|---|
 | Solid Adventures (Las Buitreras, Glencross) | 10 %, ofrecida por el operador por correo | Pedido enviado por nosotros; el operador le contesta directo al cliente | A fijar: o ellos facturan al cliente y nosotros les facturamos el 10 %, o al revés | Solo semanas completas (programa 2027) | Ofrecido, pendiente de confirmar: mandamos nuestra confirmación con tres preguntas, esperamos respuesta |
-| Guía local y anfitrión en Río Gallegos (semanas "River House" y días de pesca guiados) | 10 % de comisión de agencia, dicha por el operador | A confirmar por el operador | A confirmar | Precios informados por el operador: US$ 2.000 por persona por semana en habitación doble, todo incluido salvo la licencia (semanas del 9 al 16 y del 16 al 23 de enero de 2027) y unos US$ 350 por día guiado. **Sin publicar hasta que confirme que se puede** | Aceptado por nosotros (13/11), pendiente de su confirmación |
+| River House (lodge cerca de Río Gallegos: semanas y días de pesca guiados) | 10 %, pagado por el lodge al terminar la estadía sobre lo que abonan los huéspedes por la estancia; la licencia de pesca queda excluida (gasto que el lodge gestiona por cuenta del pescador; lo propuso el dueño y falta la confirmación escrita del operador) | A confirmar por el operador | A confirmar | Precios informados por el operador (US$ 2.000 por persona por semana en habitación doble, todo incluido salvo la licencia, semanas del 9 al 16 y del 16 al 23 de enero de 2027, y unos US$ 350 por día guiado): **decisión del dueño (15/11/2026): no se publican, solo se cotizan al cliente** | Acordado por correo el 15/11/2026: 10 %, pagado por el lodge al terminar la estadía sobre lo que abonan los huéspedes por la estancia (excluida la licencia, a confirmar por escrito por el operador); ficha acordada; fotos ofrecidas |
 | Karku Fly Fishing | 20 % sobre reservas de pescadores que llegan por Pescamapa | El operador reconoce a los clientes que mencionan Pescamapa, sin códigos ni enlaces | Pescamapa también puede encargarse de la venta; el reparto de facturas no está fijado | **Pidió que su tarifa no se publique en ningún sitio**: se la da solo a quien pide una cotización. La tarifa está solo en las notas internas de la ficha, marcada "NO PUBLICAR" | Acordado por correo (13/11/2026) |
 
 **Karku en el sitio (13/11/2026, `karku-acuerdo-2026-11-13`):** la ficha pasa a "Trabajamos juntos" (`estado` = `acuerdo`) y "Aceptó aparecer" (`prest_consentimiento`). Efecto público de la combinación, tal como está en `main`: (1) rótulo "Operador con acuerdo con Pescamapa" con la nota "Si pedís por Pescamapa pagás el mismo precio; el operador nos paga una comisión por el viaje." (en: "Operator with an agreement with Pescamapa" / "If you ask through Pescamapa you pay the same price; the operator pays us a commission on the trip."; pt: "Operador com acordo com a Pescamapa" / "Se você pede pela Pescamapa paga o mesmo preço; o operador nos paga uma comisão pela viagem."); (2) desaparece el aviso "Información pública, todavía sin verificar" y el enlace de corrección; (3) sube al principio de la lista del destino; (4) entra al JSON-LD de la guía como `LocalBusiness` (antes solo un ítem con nombre); (5) `llms.txt` lo describe como "operador con acuerdo con Pescamapa". La condición especial (`prest_oferta`) queda vacía: no hay una. La frase "pagás el mismo precio" se apoya en que la comisión la paga el operador; el operador no lo dijo con esas palabras: si se quiere ser estricto, volver `estado` a `contactado`. El campo `capacidad` se vació (la ficha mostraba "Hasta 4 pescadores por lancha"); "recibe 4 pescadores por semana" va en la descripción, igual que la disponibilidad 2027 con fecha, que no tiene campo propio.
+
+**River House en el sitio (15/11/2026, `river-house-2026-11-15`):** ficha nueva en Río Gallegos con la misma combinación que Karku (`estado` = `acuerdo` + `prest_consentimiento`: el operador aceptó expresamente que se publique), así que valen los mismos cinco efectos públicos de arriba (rótulo de operador con acuerdo, sin aviso de «sin verificar», primero en la lista, `LocalBusiness` en el JSON-LD, `llms.txt`). **Sin tarifa** (precio y fecha vacíos: «a consultar»; decisión del dueño: solo se cotiza al cliente), sin contacto, sin nombres de personas, sin foto por ahora y **sin la comisión en ninguna página pública** (el 10 % vive solo en el campo interno `comision`). Texto público solo con lo que dijo el operador, atribuido («según el operador»): queda cerca de la ciudad de Río Gallegos; según su folleto pesca distintos tramos del río Gallegos y sus afluentes cada día según cómo esté el río, con guías locales; hay tramos de acceso público y fáciles de alcanzar desde la ruta, así que a veces se puede coincidir con otros pescadores; alquila equipo completo (cañas, reels, líneas, waders y botas) y vende moscas en el lodge; gestiona la licencia unos días antes de la llegada con la copia del pasaporte del pescador; la mayoría de los lugares de vadeo son accesibles. **Fotos:** el operador ofreció fotos en alta calidad (por correo o WhatsApp); cuando lleguen se suman en el campo Fotos con «Autor de la foto» = River House. **Qué no se afirma:** que la licencia esté incluida (el operador la gestiona por cuenta del pescador; no dijo si el costo está incluido), capacidad, temporada, tarifas, ni nada de otros prestadores (Karku y Solid Adventures no contestaron sobre equipo).
 
 
 ## Correo de registro del pedido a los operadores (decisión del dueño, 13/11/2026)
@@ -202,6 +204,26 @@ Sin nombres de personas. Las comisiones y las tarifas de abajo son internas: no 
 > Pescamapa
 
 La versión en inglés (para operadores extranjeros) sigue la misma estructura. Los datos entre llaves salen de los campos del pedido (`destino`, `especie`, `fecha_desde`/`fecha_hasta`, `flexibilidad`, `estadia`, `pescadores`, `acompanantes`, `equipo_propio`, país).
+
+## Seguimiento al cliente (decisión del dueño, 15/11/2026)
+
+**Estándar:** al pasar un cliente a un operador (cuando el pescador dijo que sigamos con ese y le damos su contacto, o cuando le mandamos las opciones comparadas), el cierre del mensaje **no** es «tratá directo con el operador». Es que el operador sigue desde acá y que nosotros volvemos a escribirle en unos días. Frase de cierre:
+
+| Idioma | Frase |
+|---|---|
+| es | «[Operador] sigue desde aquí. Te escribo en unos días para asegurarme de que todo va bien.» |
+| en | «[Operator] will take it from here. I'll check in with you in a few days to make sure everything is going well.» |
+| pt | «[Operador] segue a partir daqui. Volto a falar com você em alguns dias para garantir que está tudo bem.» |
+
+**Reglas:**
+
+1. **Una fecha real.** En el mensaje va el día del seguimiento («te escribo el jueves»), no un «en unos días» suelto, y **se cumple**. Quien envía lo anota en la consulta (wp-admin → Consultas, notas) el mismo día.
+2. **El seguimiento es corto.** Pregunta si el operador ya le contestó y si hay algo que podamos destrabar. **No** pregunta por el pago, por la tarifa ni por detalles de lo que hablaron con el operador: eso es entre ellos.
+3. **Después del viaje, un último mensaje:** «¿Cómo fue?».
+4. **La opinión del cliente es la única prueba social aceptada**, y solo con su permiso (por escrito, en el mismo hilo). Se publica atribuida como la dio, sin retoques que cambien el sentido; nada inventado, ni reseñas fabricadas, ni cifras de «pescadores atendidos» (ver reglas de copy de `docs/viaje.md`).
+5. Sigue valiendo lo de siempre: el nombre y el contacto del pescador solo se le dan al operador que el pescador eligió, y la comparación se ordena por cuánto encaja con el pedido, nunca por comisión.
+
+Dónde se aplica: el mensaje de las opciones comparadas, el aviso de «te paso con X» y cualquier cierre de una consulta derivada. No hay envío automático (correo saliente nuevo lo decide el dueño): lo escribe una persona.
 
 ## Campos de la ficha (13/11/2026)
 
