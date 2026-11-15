@@ -22,7 +22,7 @@ get_header(); ?>
 				</ol>
 			</nav>
 			<div class="eyebrow"><?php pm_e( 'paquetes.eyebrow' ); ?></div>
-			<h1><?php pm_e( 'paquetes.h1', $a ); ?></h1>
+			<h1><?php echo esc_html( pm_t_clave( 'paquetes.h1', (string) $d['clave'], $a ) ); ?></h1>
 			<p class="bajada"><?php pm_e( 'paquetes.bajada', $a ); ?></p>
 			<p class="confianza"><?php pm_e( 'ficha.por' ); ?> <?php echo esc_html( $d['autor'] ?: 'Equipo Pescamapa' ); ?> · <?php pm_e( 'ficha.actualizado' ); ?> <time datetime="<?php echo esc_attr( $modificado ); ?>"><?php echo esc_html( pm_fecha( $modificado, $idioma ) ); ?></time></p>
 		</div>
