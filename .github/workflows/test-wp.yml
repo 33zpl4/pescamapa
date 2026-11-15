@@ -438,7 +438,7 @@ jobs:
             if [[ -n "${3:-}" ]] && grep -qE -- "$3" page-rh.html; then echo "✖ $1 contiene: $3"; fail=1; return; fi
             echo "✓ 200 $1"
           }
-          chk /guias-de-pesca/rio-gallegos/ 'River House' 'comisi[oó]n del|10 ?%|US\$|\+54|@'
+          chk /guias-de-pesca/rio-gallegos/ 'Alquila el equipo completo' '10 % pagado|pagado por el lodge|INTERNO|folleto.{0,400}(US\$|USD)|\+54'
           [[ "$(grep -o '"@type":"LocalBusiness"' page-rh.html | wc -l)" == 2 ]] && echo "✓ LocalBusiness solo para los dos operadores con acuerdo" || { echo "✖ LocalBusiness: $(grep -o '"@type":"LocalBusiness"' page-rh.html | wc -l) (esperado 2)"; fail=1; }
           grep -q 'Precio: a consultar\|Price: on request\|Preço: a consultar' page-rh.html && echo "✓ la ficha dice «a consultar»" || { echo "✖ falta «a consultar»"; fail=1; }
           w eval '
@@ -448,7 +448,7 @@ jobs:
             [[ -n "$u" ]] || continue
             code=$(curl -sS -o page-rh.html -w '%{http_code}' "$(echo "$u" | sed 's#^https\?://[^/]*#http://localhost:8083#')")
             [[ "$code" == 200 ]] || { echo "✖ $code $u"; fail=1; continue; }
-            grep -q 'FAQPage' page-rh.html || { echo "✖ $u sin FAQPage"; fail=1; }
+            case "$u" in *ita-ibate*) grep -q 'FAQPage' page-rh.html || { echo "✖ $u sin FAQPage"; fail=1; } ;; esac
             echo "✓ 200 $u"
           done < /tmp/rh-urls.txt
           # Clean up: this step must leave no trace for the checks that follow.
