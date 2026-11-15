@@ -10,7 +10,7 @@
  * left alone and logged as DISTINTO. Idempotent. Dry run first ($aplicar = false). Run with wp-script.yml (script = pt-pousadas-titulos-2026-11-15).
  * The "Quanto custa pescar em <lugar>?" FAQ rows are in a separate script (pt-faq-custo-2026-11-15): they need the theme that renders a link in an answer.
  */
-$aplicar = false;
+$aplicar = true;
 
 $norm = fn( string $s ): string => trim( preg_replace( '/\s+/u', ' ', html_entity_decode( wp_strip_all_tags( $s ), ENT_QUOTES, 'UTF-8' ) ) );
 $cambios = 0;
@@ -66,7 +66,7 @@ $notas = [
 	'viaje-dorado-amigos-precios' => [
 		'titulo'          => [ [ 'Viagem de pesca de dourado com amigos: quantos dias, quanto custa e onde se hospedar (2026/27)' ], 'Viagem de pesca de dourado com amigos: quantos dias, quanto custa e onde se hospedar (valores 2026/27)' ],
 		'seo_title'       => [ [ 'Viagem de pesca de dourado com amigos: preços 2026/27' ], 'Pesca de dourado com amigos: quanto custa, valores 2026/27' ],
-		'seo_description' => [ [ 'Quanto custa uma viagem de pesca de dourado com amigos na Argentina: a partir de US$ 605 por pessoa em pousada até US$ 4.050 em lodge. Dias e o que inclui.' ], 'Quanto custa pescar dourado com amigos na Argentina: valores 2026/27, de US$ 605 por pessoa em pousada a US$ 4.050 em lodge. Dias e o que inclui.' ],
+		'seo_description' => [ [ 'Quanto custa uma viagem de pesca de dourado com amigos na Argentina: a partir de US$ 605 por pessoa em pousada até US$ 4.050 em lodge. Dias e o que inclui.', 'Quanto custa uma viagem de pesca de dourado com amigos na Argentina: de US$ 605 por pessoa em pousada até US$ 4.050 em lodge. Dias e o que está incluso.' ], 'Quanto custa pescar dourado com amigos na Argentina: valores 2026/27, de US$ 605 por pessoa em pousada a US$ 4.050 em lodge. Dias e o que inclui.' ],
 	],
 	'precio-viaje-dorado-lodge' => [
 		'titulo'          => [ [ 'Quanto custa uma viagem de pesca de dourado na Argentina: lodges all inclusive, por quantidade de noites (2026/27)' ], 'Quanto custa uma viagem de pesca de dourado na Argentina: lodges all inclusive, por quantidade de noites (valores 2026/27)' ],
@@ -75,7 +75,7 @@ $notas = [
 	],
 	'pesca-desde-brasil-corrientes' => [
 		'titulo'          => [ [ 'Pesca em Corrientes desde o Brasil: licença, documentos, rotas e custos (2026/27)' ], 'Pesca em Corrientes desde o Brasil: quanto custa a licença, documentos, rotas e custos (valores 2026/27)' ],
-		'seo_title'       => [ [ 'Pescar em Corrientes desde o Brasil: licença e rotas' ], 'Pescar em Corrientes vindo do Brasil: quanto custa, 2026/27' ],
+		'seo_title'       => [ [ 'Pescar em Corrientes desde o Brasil: licença e rotas', 'Pescar em Corrientes desde o Brasil: licença e como chegar' ], 'Pescar em Corrientes vindo do Brasil: quanto custa, 2026/27' ],
 		'seo_description' => [ [ 'Como pescar em Corrientes vindo do Brasil: licença de turista estrangeiro (a partir de $ 35.000 por dia), documentos de entrada e rotas com tempos.' ], 'Quanto custa pescar em Corrientes vindo do Brasil: valores 2026/27 da licença de turista estrangeiro (a partir de $ 35.000 por dia), documentos e rotas.' ],
 	],
 	'paquete-incluye-no-incluye' => [
