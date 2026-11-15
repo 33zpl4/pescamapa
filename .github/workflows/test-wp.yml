@@ -520,7 +520,7 @@ jobs:
           # Public listing: shown, labelled unverified, with the removal link; no listing flag, no card.
           check /litoral/corrientes/pesca-en-esquina/ 200 'PRESTADOR-PUBLICO' 'PRESTADOR-NO-PUBLICO'
           # FAQ answer with a link to one of our notes (15/11/2026): the link prints, other markup does not, and the FAQPage JSON-LD carries the text without tags.
-          check /litoral/corrientes/pesca-en-esquina/ 200 '<a href="https://example.com/faq-enlace">ENLACE-FAQ-PRUEBA</a>' 'alert(1)'
+          check /litoral/corrientes/pesca-en-esquina/ 200 '<a href="https://example.com/faq-enlace">ENLACE-FAQ-PRUEBA</a>' '<script>alert(1)'
           check /litoral/corrientes/pesca-en-esquina/ 200 'Texto previo ENLACE-FAQ-PRUEBA y final'
           check /litoral/corrientes/pesca-en-esquina/ 200 'mailto:info@pescamapa.com?subject='
           check /litoral/corrientes/pesca-en-esquina/ 200 'sin verificar con el prestador'
