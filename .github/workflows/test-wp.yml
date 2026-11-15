@@ -431,6 +431,9 @@ jobs:
           sys.exit(0 if ok else 1)
           PY
           done
+          chk /en/notes/trout-fishing-in-patagonia/ 'Trout fishing in Patagonia, Argentina' 'PENDIENTE'
+          grep -q 'fishing lodge' page-tp.html && grep -q 'fly fishing package' page-tp.html && echo "✓ el pilar EN dice fishing trip / lodge / guides / packages" || { echo "✖ el pilar EN no trae las variantes de viaje"; fail=1; }
+          wp --path="$WP" eval-file wordpress/scripts/nota-trucha-patagonia-pilar-en-2026-11-15.php   # correction script: the title already says Argentina, so it touches nothing
           chk /llms.txt 'pesca-de-trucha-en-la-patagonia'
           chk /wp-sitemap-posts-pm_nota-1.xml 'trout-fishing-in-patagonia'
           # Clean up: this step must leave no trace for the checks that follow.

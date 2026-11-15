@@ -133,10 +133,10 @@ $N = [];
 // ENGLISH
 // =====================================================================================================================================
 $N['en'] = [
-	'titulo'          => 'Trout fishing in Patagonia: brown, rainbow and sea-run',
+	'titulo'          => 'Trout fishing in Patagonia, Argentina: brown, rainbow and sea-run',
 	'slug'            => 'trout-fishing-in-patagonia',
-	'seo_title'       => 'Trout fishing in Patagonia: brown, rainbow, sea-run',
-	'seo_description' => 'Brown, rainbow and sea-run trout in Argentine Patagonia: where each is fished, when the season runs and which permit you need, with sources and dates.',
+	'seo_title'       => 'Trout fishing in Patagonia, Argentina: brown and rainbow',
+	'seo_description' => 'Trout fishing in Patagonia, Argentina: brown, rainbow and sea-run trout, where to go, when, which permit and how to book a fishing trip, with sources.',
 	'bajada'          => 'Which trout you can fish in Argentine Patagonia, where, when and with which permit, and what the sources say about brown, rainbow and sea-run fish: with dates and links.',
 	'datos'           => [
 		'Three trout are fished in Patagonia: rainbow, brown and brook. None is native: the first official stocking of salmonids was in 1904 (Macchi and Vigliano, Ecología Austral, 2014).',
@@ -145,7 +145,7 @@ $N['en'] = [
 		'You need the season permit of the province whose water you fish; the permit notes are linked below.',
 		'No price is quoted here: dated prices are in three separate notes.',
 	],
-	'p0'              => '<strong>Short answer.</strong> Patagonia has three different trout fisheries that people often mix up: rainbow and brown trout that live in rivers and lakes, sea-run brown trout in the far south, and the steelhead, a sea-run rainbow, in the Santa Cruz River.',
+	'p0'              => '<strong>Short answer.</strong> Argentine Patagonia has three different trout fisheries that people often mix up: rainbow and brown trout that live in rivers and lakes, sea-run brown trout in the far south, and the steelhead, a sea-run rainbow, in the Santa Cruz River.',
 	'resp'            => [
 		'<strong>Which trout:</strong> rainbow, brown and brook; none is native. The sea-run forms are the brown trout of the Río Grande and the Río Gallegos and the rainbow (steelhead) of the Santa Cruz River.',
 		'<strong>Where:</strong> from Neuquén to Tierra del Fuego; the table below links to our guide for each base.',
@@ -153,8 +153,8 @@ $N['en'] = [
 		'<strong>Permit:</strong> the season permit of the province where you fish ({n:licencias-extranjeros-argentina|permits for foreigners by region}; {n:licencia-pesca-patagonia-precios|the Patagonian permit}).',
 		'<strong>Cost:</strong> not quoted here; dated prices are in three notes, linked in the cost section below.',
 	],
-	'h_donde'         => 'Where to fish trout in Patagonia',
-	'donde_i'         => 'Our guide for each base, from north to south. The rules, the permit and the operators that publish information are in the guide itself.',
+	'h_donde'         => 'Where to go on a trout fishing trip in Patagonia',
+	'donde_i'         => 'Our guide for each base, from north to south. The rules, the permit and the fishing lodges and fishing guides that publish information are in the guide itself.',
 	'donde_cols'      => [ 'Base', 'Waters in the guide', 'Trout in the guide' ],
 	'donde_rows'      => [
 		[ '<a href="{g:san-martin-junin}">San Martín and Junín de los Andes</a> (Neuquén)', 'Chimehuín, Malleo and Quilquihue rivers; Collón Curá and Aluminé a little further out', 'Trout in rivers and lakes; rules by water' ],
@@ -165,7 +165,7 @@ $N['en'] = [
 		[ '<a href="{g:rio-gallegos}">Río Gallegos</a> (Santa Cruz)', 'Río Gallegos', 'Sea-run brown trout' ],
 		[ '<a href="{g:rio-grande}">Río Grande</a> (Tierra del Fuego)', 'Río Grande and its tributary the Menéndez', 'Sea-run brown trout' ],
 	],
-	'h_marron'        => 'Brown trout (Salmo trutta)',
+	'h_marron'        => 'Brown trout in Patagonia and Tierra del Fuego (Salmo trutta)',
 	'm1'              => 'The brown trout is not native. <a href="{u:macchi}" rel="noopener">Macchi and Vigliano (<em>Ecología Austral</em>, 2014)</a> analysed the stocking of 54 basins between 1904 and 2011: brown trout was stocked in 67.3% of them, rainbow in 96.4% and brook trout in 72.7% (read 10/11/2026).',
 	'm2'              => '<strong>Resident browns</strong> are brown trout that never go to the sea. Which species you meet depends on the water and on its stocking history, so our guides list the waters and the rules for each one and do not rank them. One Esquel-area lodge says that March and early April can be exceptional for browns: it is one operator’s description, in our <a href="{g:esquel-trevelin}">Esquel guide</a> (read 4/11/2026).',
 	'm3'              => '<strong>Sea-run brown trout</strong> live part of their life in the Atlantic and come up a river to spawn. Our guides cover two rivers where they are fished: the <a href="{g:rio-grande}">Río Grande</a>, in Tierra del Fuego, and the <a href="{g:rio-gallegos}">Río Gallegos</a>, in Santa Cruz. According to Todd Moen, in a <a href="{u:moen}" rel="noopener">Catch Magazine video</a>, the introduced browns of the Río Grande developed the habit of migrating to the Atlantic to feed because the river holds little forage. Farbank writes that fish start entering the Río Grande in November and keep entering until April, and that operators concentrate the best between the first week of January and the first week of April (<a href="{u:fb_rg}" rel="noopener">Río Grande seasonal breakdown</a>, read 26/10/2026).',
@@ -209,14 +209,14 @@ $N['en'] = [
 		'Dates, permits and fees change every season: your guide and the provincial authority have them up to date.',
 	],
 	'caja_pie'        => 'This box is updated once a year; the rest of the note does not change.',
-	'h_costo'         => 'How much a trout trip costs',
-	'co1'             => 'We do not repeat prices here: each one is valid for one operator, a number of nights and a season. Dated prices, with their source, are in three notes:',
+	'h_costo'         => 'How much a trout fishing trip costs',
+	'co1'             => 'We do not repeat prices here: each one is valid for one operator, a number of nights and a season. Dated prices for fishing lodges and guided fly fishing days, with their source, are in three notes:',
 	'co_l'            => [
 		'{n:precio-semana-trucha-patagonia-norte|How much does a week of trout fishing cost in Neuquén and Chubut: all-inclusive lodges (2026/27)}',
 		'{n:precio-pesca-bariloche-limay|How much does a day of fly fishing cost in Bariloche and the Limay River (2026/27)}',
 		'{n:precio-pesca-patagonia-sur|How much does it cost to fish in Tierra del Fuego and El Calafate: sea trout and one-day trips (2026/27)}',
 	],
-	'cta'             => '<strong>Want us to ask the operators that fit?</strong> Tell us your dates and group size in <a href="{viaje}">the form</a>; we ask the operators that fit and reply within 48 hours with the options side by side, at no cost to you.',
+	'cta'             => '<strong>Planning a trout fishing trip?</strong> Tell us your dates and group size in <a href="{viaje}">the form</a>; we ask the operators that fit and reply within 48 hours with the options side by side, at no cost to you.',
 	'faq_h'           => 'Frequently asked questions',
 	'faq'             => [
 		[ 'When is the best time to fish trout in Patagonia?', 'The season opens in early November and closes between April and May, with different dates for each water (Patagonian regulation, as in our guides). The best window depends on the zone: operators describe January to March as the most requested in the north (Yellow Dog Fly Fishing), the start of the season and the autumn at Lago Strobel (Farbank), the autumn for the Santa Cruz River steelhead, and January to early April for sea-run browns in Tierra del Fuego (Farbank). These are operators’ descriptions read on 26/10/2026, not official dates; the details are in {n:cuando-pescar-trucha-patagonia|When to fish trout in Patagonia}.' ],
@@ -225,8 +225,8 @@ $N['en'] = [
 		[ 'What is a sea-run brown trout, and where is it fished?', 'It is a brown trout that lives part of its life in the Atlantic and comes up a river to spawn. Our guides cover two rivers: the Río Grande (Tierra del Fuego) and the Río Gallegos (Santa Cruz). According to Todd Moen (Catch Magazine video), the introduced browns of the Río Grande began to migrate to the ocean to feed because the river holds little forage. The IGFA lists the brown trout record under a single name, “Trout, brown (Salmo trutta)”, with “sea trout” among its alternative names and no separate category for the sea form (read 13/11/2026).' ],
 		[ 'Is there steelhead in Argentina?', 'Yes, in one river: the Santa Cruz River, near Comandante Luis Piedra Buena. The steelhead is a rainbow trout that goes to the sea and comes back. Disposición 241/2026 calls it, in its recitals, “la única población silvestre de linaje atlántico en el continente americano” (quoted word for word; our translation: “the only wild population of Atlantic lineage in the American continent”), and Riva Rossi, Arguimbau and Pascual (2003) call the river “the only environment in the world where introduced rainbow trout developed facultative migratory populations” (our translation). Studies and operators place the run in the autumn, from late February to May; the river is open all year. See the {g:rio-santa-cruz|Santa Cruz River guide}.' ],
 		[ 'Can I keep the trout I catch in Patagonia?', 'It depends on the water and the season. Many Patagonian waters are fly-only, with barbless hooks and mandatory release, and others allow a limit (Patagonian regulation, as in our guides). For the Santa Cruz River steelhead, Annex I of Disposición 241/2026 sets a quota of one fish per angler per season and mandatory release from 15/03/2027 to 30/09/2027 (read 13/11/2026); we do not present that as permission to keep a fish. Confirm with your guide or the provincial authority before you fish, and see {n:reglas-equipo-patagonia|the gear and rules note}.' ],
-		[ 'Where in Patagonia can I fish for trout?', 'Our guides cover San Martín and Junín de los Andes (Neuquén), Bariloche (Río Negro), Esquel and Trevelin (Chubut), Lago Strobel or “Jurassic Lake”, the Santa Cruz River and the Río Gallegos (Santa Cruz) and the Río Grande (Tierra del Fuego). The table above links to each one, with its waters, rules and permit.' ],
-		[ 'How much does a trout fishing trip to Patagonia cost?', 'We do not quote a price here, because each price is valid for one operator, a number of nights and a season. Dated prices with their source are in three notes: a week of trout fishing in Neuquén and Chubut, a day of fly fishing in Bariloche and the Limay, and Tierra del Fuego and El Calafate (all 2026/27). Their links are in the cost section above.' ],
+		[ 'Where can I book a trout fishing trip or a fishing lodge in Patagonia?', 'Our guides cover San Martín and Junín de los Andes (Neuquén), Bariloche (Río Negro), Esquel and Trevelin (Chubut), Lago Strobel or “Jurassic Lake”, the Santa Cruz River and the Río Gallegos (Santa Cruz) and the Río Grande (Tierra del Fuego). The table above links to each one, with its waters, rules and permit, and the fishing lodges and fishing guides that publish information. To compare a fly fishing package, send your dates in the form linked in this note and we ask the operators that fit.' ],
+		[ 'How much does a trout fishing trip to Patagonia cost?', 'We do not quote a price here, because each price is valid for one operator, a number of nights and a season. Dated prices for fishing lodges, guided days and fly fishing packages, with their source, are in three notes: a week of trout fishing in Neuquén and Chubut, a day of fly fishing in Bariloche and the Limay, and Tierra del Fuego and El Calafate (all 2026/27). Their links are in the cost section above.' ],
 	],
 	'cierre'          => '<em>We have not spoken with the operators or authors cited, nor fished with them. This note summarises public information already published on this site, each fact with its source and the date it was read; the reading is ours and may contain mistakes.</em>',
 ];
