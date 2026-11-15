@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+			<style>
+			.fuse_social_icons_links {
+			    display: block;
+			}
+			.facebook-awesome-social::before {
+			    content: "\f09a" !important;
+			}
+			
+
+
+			.awesome-social-img img {
+			    position: absolute;
+			    top: 50%;
+			    left: 50%;
+			    transform: translate(-50%,-50%);
+			}
+
+			.awesome-social-img {
+			    position: relative;
+			}			
+			.icon_wrapper .awesome-social {
+			    font-family: 'FuseAwesome' !important;
+			}
+			#icon_wrapper .fuse_social_icons_links .awesome-social {
+			    font-family: "FuseAwesome" !important;
+			    ext-rendering: auto !important;
+			    -webkit-font-smoothing: antialiased !important;
+			    -moz-osx-font-smoothing: grayscale !important;
+			}
+									
+			
+			#icon_wrapper{
+				position: fixed;
+				top: 50%;
+				left: 0px;
+				z-index: 99999;
+			}
+			
+			.awesome-social
+
+			{
+
+            margin-top:2px;
+
+			color: #fff !important;
+
+			text-align: center !important;
+
+			display: block;
+
+			
+			line-height: 34px !important;
+
+			width: 32px !important;
+
+			height: 32px !important;
+
+			font-size:16px !important;
+
+			
+				-moz-transition: width 0.5s, height 0.5s, -webkit-transform 0.5s; /* For Safari 3.1 to 6.0 */
+
+
+
+				-webkit-transition: width 0.5s, height 0.5s, -webkit-transform 0.5s; /* For Safari 3.1 to 6.0 */
+
+				transition: width 0.5s, height 0.5s, transform 0.5s;
+
+
+
+				
+
+
+			}
+
+			
+			.awesome-social:hover
+
+			{
+
+
+
+			-webkit-transform: rotate(360deg); /* Chrome, Safari, Opera */
+
+				transform: rotate(deg);
+
+					-moz-transform: rotate(360deg); /* Chrome, Safari, Opera */
+
+							-ms-transform: rotate(360deg); /* Chrome, Safari, Opera */
+
+
+
+			}
+
+				
+			.fuse_social_icons_links
+
+			{
+
+			outline:0 !important;
+
+
+
+			}
+
+			.fuse_social_icons_links:hover{
+
+			text-decoration:none !important;
+
+			}
+
+			
+			.fb-awesome-social
+
+			{
+
+			background: #3b5998;
+			border-color: #3b5998;
+			
+			}
+			.facebook-awesome-social
+
+			{
+
+			background: #3b5998;
+			border-color: #3b5998;
+						}
+			
+			.fuseicon-threads.threads-awesome-social.awesome-social::before {
+			    content: "\e900";
+			    font-family: 'FuseCustomIcons' !important;
+			    			}
+
+			.fuseicon-threads.threads-awesome-social.awesome-social {
+			    background: #000;
+			}
+
+
+			.tw-awesome-social
+
+			{
+
+			background:#00aced;
+			border-color: #00aced;
+			
+			}
+			.twitter-awesome-social
+
+			{
+
+			background:#000;
+			border-color: #000;
+			
+			}
+			.rss-awesome-social
+
+			{
+
+			background:#FA9B39;
+			border-color: #FA9B39;
+			
+			}
+
+			.linkedin-awesome-social
+
+			{
+
+			background:#007bb6;
+			border-color: #007bb6;
+						}
+
+			.youtube-awesome-social
+
+			{
+
+			background:#bb0000;
+			border-color: #bb0000;
+						}
+
+			.flickr-awesome-social
+
+			{
+
+			background: #ff0084;
+			border-color: #ff0084;
+						}
+
+			.pinterest-awesome-social
+
+			{
+
+			background:#cb2027;
+			border-color: #cb2027;
+						}
+
+			.stumbleupon-awesome-social
+
+			{
+
+			background:#f74425 ;
+			border-color: #f74425;
+						}
+
+			.google-plus-awesome-social
+
+			{
+
+			background:#f74425 ;
+			border-color: #f74425;
+						}
+
+			.instagram-awesome-social
+
+			{
+
+			    background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+			    background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+			    background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+			    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+			    border-color: #f09433;
+					    
+
+			}
+
+			.tumblr-awesome-social
+
+			{
+
+			background: #32506d ;
+			border-color: #32506d;
+						}
+
+			.vine-awesome-social
+
+			{
+
+			background: #00bf8f ;
+			border-color: #00bf8f;
+						}
+
+            .vk-awesome-social {
+
+
+
+            background: #45668e ;
+            border-color: #45668e;
+            
+            }
+
+            .soundcloud-awesome-social
+
+                {
+
+            background: #ff3300 ;
+            border-color: #ff3300;
+            
+                }
+
+                .reddit-awesome-social{
+
+
+
+            background: #ff4500 ;
+            border-color: #ff4500;
+
+                            }
+
+                .stack-awesome-social{
+
+
+
+            background: #fe7a15 ;
+            border-color: #fe7a15;
+            
+                }
+
+                .behance-awesome-social{
+
+            background: #1769ff ;
+            border-color: #1769ff;
+            
+                }
+
+                .github-awesome-social{
+
+            background: #999999 ;
+            border-color: #999999;
+            
+
+
+                }
+
+                .envelope-awesome-social{
+
+                  background: #ccc ;
+ 				  border-color: #ccc;                 
+ 				                  }
+
+/*  Mobile */
+
+
+
+
+
+
+
+
+
+             
+
+
+
+
+			</style>
+
+<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+<link rel="alternate" href="https://www.globe-truiteur.com/2026/07/27/materiel-peche-dorado-mouche/" hreflang="fr" />
+<link rel="alternate" href="https://www.globe-truiteur.com/en/2026/07/27/fly-fishing-gear-golden-dorado/" hreflang="en" />
+<link rel="alternate" href="https://www.globe-truiteur.com/2026/07/27/materiel-peche-dorado-mouche/" hreflang="x-default" />
+<script id="gt-consent">window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('consent','default',{'ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','analytics_storage':'denied','functionality_storage':'granted','security_storage':'granted','wait_for_update':500}); gtag('set','ads_data_redaction',true); gtag('set','url_passthrough',true); (function(){ function gtLire(n){var p=('; '+document.cookie).split('; '+n+'=');return p.length===2?p.pop().split(';').shift():'';} function gtOui(){gtag('consent','update',{'ad_storage':'granted','ad_user_data':'granted','ad_personalization':'granted','analytics_storage':'granted'});} function gtNon(){gtag('consent','update',{'ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','analytics_storage':'denied'});gtEffacer();} function gtEffacer(){var h=location.hostname;var b=h.replace(/^www\./,'');var mort='=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/';document.cookie.split(';').forEach(function(c){var n=c.split('=')[0].trim();if(n.indexOf('_ga')===0){document.cookie=n+mort;document.cookie=n+mort+'; domain='+h;document.cookie=n+mort+'; domain=.'+b;}});} var gtChoix=gtLire('cookie_notice_accepted'); if(gtChoix==='true'){gtOui();} else if(gtChoix==='false'){gtEffacer();} document.addEventListener('click',function(e){ if(!e.target||!e.target.closest){return;} if(e.target.closest('#cn-close-notice')){e.preventDefault();e.stopImmediatePropagation();var rf=document.getElementById('cn-refuse-cookie');if(rf){rf.click();}return;} if(e.target.closest('#cn-accept-cookie')){setTimeout(gtOui,150);return;} if(e.target.closest('#cn-refuse-cookie')){setTimeout(gtNon,150);return;} },true); })();</script>
+	<!-- This site is optimized with the Yoast SEO plugin v28.7 - https://yoast.com/product/yoast-seo-wordpress/ -->
+	<title>Golden Dorado Fly Fishing Gear: a Guide’s Packing List</title>
+	<meta name="description" content="Rods, lines, wire leaders, streamers: the gear for fly fishing golden dorado in Argentina, and how it changes from the Paraná to the clear water of Corrientes." />
+	<link rel="canonical" href="https://www.globe-truiteur.com/en/2026/07/27/fly-fishing-gear-golden-dorado/" />
+	<meta property="og:locale" content="en_GB" />
+	<meta property="og:locale:alternate" content="fr_FR" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="Golden Dorado Fly Fishing Gear: a Guide’s Packing List | Globe-Truiteur" />
+	<meta property="og:description" content="Rods, lines, wire leaders, streamers: the gear for fly fishing golden dorado in Argentina, and how it changes from the Paraná to the clear water of Corrientes." />
+	<meta property="og:url" content="https://www.globe-truiteur.com/en/2026/07/27/fly-fishing-gear-golden-dorado/" />
+	<meta property="og:site_name" content="Moniteur Guide de Pêche en Aveyron" />
+	<meta property="article:publisher" content="https://www.facebook.com/globetruiteur/?view_public_for=113407687148027" />
+	<meta property="article:published_time" content="2026-07-27T18:23:14+00:00" />
+	<meta property="article:modified_time" content="2026-08-05T21:39:06+00:00" />
+	<meta property="og:image" content="https://www.globe-truiteur.com/wp-content/uploads/2026/07/materiel-dorado-ensemble-1152x1536.jpg" /><meta property="og:image" content="https://www.globe-truiteur.com/wp-content/uploads/2026/07/materiel-dorado-bandeau.jpg" />
+	<meta property="og:image:width" content="1920" />
+	<meta property="og:image:height" content="1280" />
+	<meta property="og:image:type" content="image/jpeg" />
+	<meta name="author" content="Baptiste Conquet" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:label1" content="Written by" />
+	<meta name="twitter:data1" content="Baptiste Conquet" />
+	<meta name="twitter:label2" content="Estimated reading time" />
+	<meta name="twitter:data2" content="5 minutes" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https:\/\/schema.org","@graph":[{"@type":"Article","@id":"https:\/\/www.globe-truiteur.com\/en\/2026\/07\/27\/fly-fishing-gear-golden-dorado\/#article","isPartOf":{"@id":"https:\/\/www.globe-truiteur.com\/en\/2026\/07\/27\/fly-fishing-gear-golden-dorado\/"},"author":{"name":"Baptiste Conquet","@id":"https:\/\/www.globe-truiteur.com\/en\/home-english\/#\/schema\/person\/67c7abf6a51bcbca76c24f41b873bab0"},"headline":"Gear: what you really need to fly fish for golden dorado","datePublished":"2026-07-27T18:23:14+00:00","dateModified":"2026-08-05T21:39:06+00:00","mainEntityOfPage":{"@id":"https:\/\/www.globe-truiteur.com\/en\/2026\/07\/27\/fly-fishing-gear-golden-dorado\/"},"wordCount":992,"commentCount":0,"publisher":{"@id":"https:\/\/www.globe-truiteur.com\/en\/home-english\/#organization"},"image":{"@id":"https:\/\/www.globe-truiteur.com\/en\/2026\/07\/27\/fly-fishing-gear-golden-dorado\/#primaryimage"},"thumbnailUrl":"https:\/\/www.globe-truiteur.com\/wp-content\/uploads\/2026\/07\/materiel-dorado-bandeau.jpg","articleSection":["Gear &amp; equipment"],"inLanguage":"en-GB"},{"@type":"WebPage","@id":"https:\/\/www.globe-truiteur.com\/en\/2026\/07\/27\/fly-fishing-gear-golden-dorado\/","url":"https:\/\/www.globe-truiteur.com\/en\/2026\/07\/27\/fly-fishing-gear-golden-dorado\/","name":"Golden Dorado Fly Fishing Gear: a Guide’s Packing List | Globe-Truiteur","isPartOf":{"@id":"https:\/\/www.globe-truiteur.com\/en\/home-english\/#website"},"primaryImageOfPage":{"@id":"https:\/\/www.globe-truiteur.com\/en\/2026\/07\/27\/fly-fishing-gear-golden-dorado\/#primaryimage"},"image":{"@id":"https:\/\/www.globe-truiteur.com\/en\/2026\/07\/27\/fly-fishing-gear-golden-dorado\/#primaryimage"},"thumbnailUrl":"https:\/\/www.globe-truiteur.com\/wp-content\/uploads\/2026\/07\/materiel-dorado-bandeau.jpg","datePublished":"2026-07-27T18:23:14+00:00","dateModified":"2026-08-05T21:39:06+00:00","description":"Rods, lines, wire leaders, streamers: the gear for fly fishing golden dorado in Argentina, and how it changes from the Paraná to the clear water of Corrientes.","breadcrumb":{"@id":"https:\/\/www.globe-truiteur.com\/en\/2026\/07\/27\/fly-fishing-gear-golden-dorado\/#breadcrumb"},"inLanguage":"en-GB","potentialAction":[{"@type":"ReadAction","target":["https:\/\/www.globe-truiteur.com\/en\/2026\/07\/27\/fly-fishing-gear-golden-dorado\/"]}]},{"@type":"ImageObject","inLanguage":"en-GB","@id":"https:\/\/www.globe-truiteur.com\/en\/2026\/07\/27\/fly-fishing-gear-golden-dorado\/#primaryimage","url":"https:\/\/www.globe-truiteur.com\/wp-content\/uploads\/2026\/07\/materiel-dorado-bandeau.jpg","contentUrl":"https:\/\/www.globe-truiteur.com\/wp-content\/uploads\/2026\/07\/materiel-dorado-bandeau.jpg","width":1920,"height":1280,"caption":"Matériel de pêche à la mouche pour le dorado"},{"@type":"BreadcrumbList","@id":"https:\/\/www.globe-truiteur.com\/en\/2026\/07\/27\/fly-fishing-gear-golden-dorado\/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https:\/\/www.globe-truiteur.com\/en\/home-english\/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https:\/\/www.globe-truiteur.com\/en\/blog\/"},{"@type":"ListItem","position":3,"name":"Gear: what you really need to fly fish for golden dorado"}]},{"@type":"WebSite","@id":"https:\/\/www.globe-truiteur.com\/en\/home-english\/#website","url":"https:\/\/www.globe-truiteur.com\/en\/home-english\/","name":"Globe-Truiteur","description":"Guide de Pêche à la Mouche Aveyron et Lozère ","publisher":{"@id":"https:\/\/www.globe-truiteur.com\/en\/home-english\/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https:\/\/www.globe-truiteur.com\/en\/home-english\/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"en-GB"},{"@type":"Organization","@id":"https:\/\/www.globe-truiteur.com\/en\/home-english\/#organization","name":"GLOBE-TRUITEUR","url":"https:\/\/www.globe-truiteur.com\/en\/home-english\/","logo":{"@type":"ImageObject","inLanguage":"en-GB","@id":"https:\/\/www.globe-truiteur.com\/en\/home-english\/#\/schema\/logo\/image\/","url":"https:\/\/www.globe-truiteur.com\/wp-content\/uploads\/2020\/11\/LogoFinal_200x150.jpg","contentUrl":"https:\/\/www.globe-truiteur.com\/wp-content\/uploads\/2020\/11\/LogoFinal_200x150.jpg","width":250,"height":129,"caption":"GLOBE-TRUITEUR"},"image":{"@id":"https:\/\/www.globe-truiteur.com\/en\/home-english\/#\/schema\/logo\/image\/"},"sameAs":["https:\/\/www.facebook.com\/globetruiteur\/?view_public_for=113407687148027","https:\/\/www.instagram.com\/globe_truiteur\/?hl=fr","https:\/\/www.youtube.com\/channel\/UCToecq7NqThUQ2aTx_I6Iqw?view_as=subscriber"]},{"@type":"Person","@id":"https:\/\/www.globe-truiteur.com\/en\/home-english\/#\/schema\/person\/67c7abf6a51bcbca76c24f41b873bab0","name":"Baptiste Conquet","image":{"@type":"ImageObject","inLanguage":"en-GB","@id":"https:\/\/secure.gravatar.com\/avatar\/7ac0af0efd098d3d5c78678d72dae07177a1a6eaf7b2deefffe4347020f43510?s=96&d=mm&r=g","url":"https:\/\/secure.gravatar.com\/avatar\/7ac0af0efd098d3d5c78678d72dae07177a1a6eaf7b2deefffe4347020f43510?s=96&d=mm&r=g","contentUrl":"https:\/\/secure.gravatar.com\/avatar\/7ac0af0efd098d3d5c78678d72dae07177a1a6eaf7b2deefffe4347020f43510?s=96&d=mm&r=g","caption":"Baptiste Conquet"},"url":"https:\/\/www.globe-truiteur.com\/en\/author\/yhu78klj89fdd430cxde3aqwmp076tyt\/"}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://www.globe-truiteur.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.globe-truiteur.com%2Fen%2F2026%2F07%2F27%2Ffly-fishing-gear-golden-dorado%2F&#038;lang=en" />
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://www.globe-truiteur.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.globe-truiteur.com%2Fen%2F2026%2F07%2F27%2Ffly-fishing-gear-golden-dorado%2F&#038;format=xml&#038;lang=en" />
+<link rel='stylesheet' id='sbi-tokens-local-css' href='https://www.globe-truiteur.com/wp-content/plugins/instagram-feed/assets/tokens/sb-tokens-local.css?ver=6.14.0' media='all' />
+<link rel='stylesheet' id='sbi_styles-css' href='https://www.globe-truiteur.com/wp-content/plugins/instagram-feed/css/sbi-styles.min.css?ver=6.14.0' media='all' />
+<style id="wp-block-library-inline-css">
+:root{--wp-block-synced-color:#7a00df;--wp-block-synced-color--rgb:122,0,223;--wp-bound-block-color:var(--wp-block-synced-color);--wp-editor-canvas-background:#ddd;--wp-admin-theme-color:#007cba;--wp-admin-theme-color--rgb:0,124,186;--wp-admin-theme-color-darker-10:#006ba1;--wp-admin-theme-color-darker-10--rgb:0,107,160.5;--wp-admin-theme-color-darker-20:#005a87;--wp-admin-theme-color-darker-20--rgb:0,90,135;--wp-admin-border-width-focus:2px}@media (min-resolution:192dpi){:root{--wp-admin-border-width-focus:1.5px}}.wp-element-button{cursor:pointer}:root .has-very-light-gray-background-color{background-color:#eee}:root .has-very-dark-gray-background-color{background-color:#313131}:root .has-very-light-gray-color{color:#eee}:root .has-very-dark-gray-color{color:#313131}:root .has-vivid-green-cyan-to-vivid-cyan-blue-gradient-background{background:linear-gradient(135deg,#00d084,#0693e3)}:root .has-purple-crush-gradient-background{background:linear-gradient(135deg,#34e2e4,#4721fb 50%,#ab1dfe)}:root .has-hazy-dawn-gradient-background{background:linear-gradient(135deg,#faaca8,#dad0ec)}:root .has-subdued-olive-gradient-background{background:linear-gradient(135deg,#fafae1,#67a671)}:root .has-atomic-cream-gradient-background{background:linear-gradient(135deg,#fdd79a,#004a59)}:root .has-nightshade-gradient-background{background:linear-gradient(135deg,#330968,#31cdcf)}:root .has-midnight-gradient-background{background:linear-gradient(135deg,#020381,#2874fc)}:root{--wp--preset--font-size--normal:16px;--wp--preset--font-size--huge:42px}.has-regular-font-size{font-size:1em}.has-larger-font-size{font-size:2.625em}.has-normal-font-size{font-size:var(--wp--preset--font-size--normal)}.has-huge-font-size{font-size:var(--wp--preset--font-size--huge)}:root .has-text-align-center{text-align:center}:root .has-text-align-left{text-align:left}:root .has-text-align-right{text-align:right}.has-fit-text{white-space:nowrap!important}#end-resizable-editor-section{display:none}.aligncenter{clear:both}.items-justified-left{justify-content:flex-start}.items-justified-center{justify-content:center}.items-justified-right{justify-content:flex-end}.items-justified-space-between{justify-content:space-between}.screen-reader-text{word-wrap:normal!important;border:0;clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;word-break:normal!important}.screen-reader-text:focus{background-color:#ddd;clip-path:none;color:#444;display:block;font-size:1em;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}html :where(.has-border-color){border-style:solid}html :where([style^=border-color],[style*=";border-color"],[style*="; border-color"]){border-style:solid}html :where([style^=border-top-color],[style*=";border-top-color"],[style*="; border-top-color"]){border-top-style:solid}html :where([style^=border-right-color],[style*=";border-right-color"],[style*="; border-right-color"]){border-right-style:solid}html :where([style^=border-bottom-color],[style*=";border-bottom-color"],[style*="; border-bottom-color"]){border-bottom-style:solid}html :where([style^=border-left-color],[style*=";border-left-color"],[style*="; border-left-color"]){border-left-style:solid}html :where([style^=border-width],[style*=";border-width"],[style*="; border-width"]){border-style:solid}html :where([style^=border-top-width],[style*=";border-top-width"],[style*="; border-top-width"]){border-top-style:solid}html :where([style^=border-right-width],[style*=";border-right-width"],[style*="; border-right-width"]){border-right-style:solid}html :where([style^=border-bottom-width],[style*=";border-bottom-width"],[style*="; border-bottom-width"]){border-bottom-style:solid}html :where([style^=border-left-width],[style*=";border-left-width"],[style*="; border-left-width"]){border-left-style:solid}html :where(img[class*=wp-image-]){height:auto;max-width:100%}:where(figure){margin:0 0 1em}html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:var(--wp-admin--admin-bar--height,0px)}@media screen and (max-width:600px){html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:0px}}
+
+/*# sourceURL=/wp-includes/css/dist/block-library/common.min.css */
+</style>
+<style id="classic-theme-styles-inline-css">
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+/*# sourceURL=/wp-includes/css/classic-themes.min.css */
+</style>
+
+<style id="global-styles-inline-css">
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);}.wp-block-button{--wp--preset--dimension--25: 25%;--wp--preset--dimension--50: 50%;--wp--preset--dimension--75: 75%;--wp--preset--dimension--100: 100%;}:where(body) { margin: 0; }:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}body{padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;}:root :where(.wp-element-button, .wp-block-button__link){background-color: #32373c;border-width: 0;color: #fff;font-family: inherit;font-size: inherit;font-style: inherit;font-weight: inherit;letter-spacing: inherit;line-height: inherit;padding-top: calc(0.667em + 2px);padding-right: calc(1.333em + 2px);padding-bottom: calc(0.667em + 2px);padding-left: calc(1.333em + 2px);text-decoration: none;text-transform: inherit;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+/*# sourceURL=global-styles-inline-css */
+</style>
+
+<link rel='stylesheet' id='cookie-notice-front-css' href='https://www.globe-truiteur.com/wp-content/plugins/cookie-notice/css/front.min.css?ver=3.1.17' media='all' />
+<link rel='stylesheet' id='redux-extendify-styles-css' href='https://www.globe-truiteur.com/wp-content/plugins/fuse-social-floating-sidebar/framework/redux-core/assets/css/extendify-utilities.css?ver=4.4.0' media='all' />
+<link rel='stylesheet' id='fuse-awesome-css' href='https://www.globe-truiteur.com/wp-content/plugins/fuse-social-floating-sidebar/inc/font-awesome/css/font-awesome.min.css?ver=5.4.13' media='all' />
+<link rel='stylesheet' id='gt-style-css' href='https://www.globe-truiteur.com/wp-content/themes/globetruiteur/style.css?ver=2.0.39' media='all' />
+<script id="cookie-notice-front-js-before">
+var cnArgs = {"ajaxUrl":"https:\/\/www.globe-truiteur.com\/wp-admin\/admin-ajax.php","nonce":"baa4b33d8f","hideEffect":"fade","position":"bottom","onScroll":false,"onScrollOffset":100,"onClick":false,"cookieName":"cookie_notice_accepted","cookieTime":2592000,"cookieTimeRejected":2592000,"globalCookie":false,"redirection":false,"cache":true,"revokeCookies":true,"revokeCookiesOpt":"manual"};
+
+//# sourceURL=cookie-notice-front-js-before
+</script>
+<script id="cookie-notice-front-js" src="https://www.globe-truiteur.com/wp-content/plugins/cookie-notice/js/front.min.js?ver=3.1.17"></script>
+<script id="jquery-core-js" src="https://www.globe-truiteur.com/wp-includes/js/jquery/jquery.min.js?ver=3.7.1"></script>
+<script id="jquery-migrate-js" src="https://www.globe-truiteur.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1"></script>
+<script id="fuse-social-script-js-extra">
+var fuse_social = {"ajax_url":"https://www.globe-truiteur.com/wp-admin/admin-ajax.php"};
+//# sourceURL=fuse-social-script-js-extra
+</script>
+<script id="fuse-social-script-js" src="https://www.globe-truiteur.com/wp-content/plugins/fuse-social-floating-sidebar/inc/js/fuse_script.js?ver=1770273798"></script>
+<link rel="https://api.w.org/" href="https://www.globe-truiteur.com/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="https://www.globe-truiteur.com/wp-json/wp/v2/posts/2258" /><link rel='shortlink' href='https://www.globe-truiteur.com/?p=2258' />
+<meta name="generator" content="Redux 4.4.0" />
+		<!-- GA Google Analytics @ https://m0n.co/ga -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-L8JV3NC64S"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 'G-L8JV3NC64S');
+		</script>
+
+	<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Which rod if I only bring one?","acceptedAnswer":{"@type":"Answer","text":"A 9 or 10 foot rod with an 8 weight line, fast action. It covers the Paraná as well as the clear waters of Corrientes, from sinking streamers to surface fishing."}},{"@type":"Question","name":"Is the wire leader really mandatory?","acceptedAnswer":{"@type":"Answer","text":"Yes. Without it you will lose the fish of your trip to one clean cut. It is the one item in the bag that is not up for debate."}},{"@type":"Question","name":"Can you buy flies over there?","acceptedAnswer":{"@type":"Answer","text":"Partly, depending on stock. The safest plan is to travel with your own boxes, or to ask me for a kit tied by the local team before departure."}}]}</script>
+<link rel="icon" href="https://www.globe-truiteur.com/wp-content/uploads/2026/08/gt-favicon-picto2-150x150.png" sizes="32x32" />
+<link rel="icon" href="https://www.globe-truiteur.com/wp-content/uploads/2026/08/gt-favicon-picto2-300x300.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://www.globe-truiteur.com/wp-content/uploads/2026/08/gt-favicon-picto2-300x300.png" />
+<meta name="msapplication-TileImage" content="https://www.globe-truiteur.com/wp-content/uploads/2026/08/gt-favicon-picto2-300x300.png" />
+<style id="gt-hero-left">/* Hero : texte calé à gauche, aligné sur le logo, pour dégager la vidéo */ @media (min-width:1025px){ header.hero > .wide{flex:1 1 auto;max-width:1120px;margin-left:auto;margin-right:auto;padding-left:24px;padding-right:24px} header.hero > .wide h1{max-width:620px} header.hero > .wide p.lit{max-width:440px} } </style><style id="gt-mediatext">.entry .wp-block-media-text{align-items:start;gap:24px;margin:2.2em 0}.entry .wp-block-media-text.is-image-fill .wp-block-media-text__media{background-size:cover;background-position:50% 50%;aspect-ratio:4/3;height:auto;min-height:0;border-radius:2px}@media(max-width:760px){.entry .wp-block-media-text{grid-template-columns:1fr}}</style><style id="gt-la-css">.gt-lire-aussi{margin:2.6em 0 0;padding:1.2em 1.4em;border-left:3px solid #009ABB;background:#f7fbfc}.gt-lire-aussi .gt-la-titre{margin:0 0 .6em;font-family:"Bebas Neue",sans-serif;letter-spacing:.06em;text-transform:uppercase;color:#111}.gt-lire-aussi ul{margin:0;padding-left:1.1em}.gt-lire-aussi li{margin:.35em 0}.gt-lire-aussi a{color:#0b6e82;text-decoration:underline}</style></head>
+<body class="wp-singular post-template-default single single-post postid-2258 single-format-standard wp-embed-responsive wp-theme-globetruiteur cookies-not-set">
+<div class="grain"></div>
+
+<nav id="mainnav" class="gt-nav">
+  <div class="wide">
+    <a href="https://www.globe-truiteur.com/en/home-english/" class="logo-link" aria-label="Globe Truiteur, accueil">
+      <img class="logo-img" src="https://www.globe-truiteur.com/wp-content/themes/globetruiteur/assets/logo_nav_contour.png" alt="Globe Truiteur" width="180" height="46">
+    </a>
+    <button class="burger" id="gtBurger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+        <div class="navlinks" id="gtNavLinks">
+          <a href="https://www.globe-truiteur.com/en/fly-fishing-guide-france/">Your guide</a>
+      <div>
+        <a href="https://www.globe-truiteur.com/en/fly-fishing-aveyron-france/">France ▾</a>
+        <div class="dropdown">
+          <a href="https://www.globe-truiteur.com/en/fly-fishing-aveyron-france/">Aveyron</a>
+          <a href="https://www.globe-truiteur.com/en/fly-fishing-lozere-france/">Lozère</a>
+          <a href="https://www.globe-truiteur.com/en/fly-fishing-other-french-rivers/">Other territories</a>
+        </div>
+      </div>
+      <div>
+        <a href="https://www.globe-truiteur.com/en/fly-fishing-patagonia-argentina/">Trips ▾</a>
+        <div class="dropdown">
+          <a href="https://www.globe-truiteur.com/en/fly-fishing-patagonia-argentina/">Patagonia Argentina</a>
+          <a href="https://www.globe-truiteur.com/en/jurassic-lake-fly-fishing-trip/">Jurassic Lake</a>
+          <a href="https://www.globe-truiteur.com/en/golden-dorado-fly-fishing-argentina/">Golden Dorado</a>
+          <a href="https://www.globe-truiteur.com/en/sea-trout-fishing-tierra-del-fuego/">Tierra del Fuego</a>
+        </div>
+      </div>
+      <a href="https://www.globe-truiteur.com/en/blog/">Blog</a>
+      <div>
+        <a href="https://www.globe-truiteur.com/en/fly-fishing-photos-videos/">Media ▾</a>
+        <div class="dropdown">
+          <a href="https://www.globe-truiteur.com/en/fly-fishing-photos-videos/">Photos and videos</a>
+          <a href="https://www.globe-truiteur.com/en/fly-fishing-websites-worth-reading/">Shared sites</a>
+        </div>
+      </div>
+      <div>
+        <a href="https://www.globe-truiteur.com/en/fly-fishing-gear-partners/">Partners ▾</a>
+        <div class="dropdown">
+          <a href="https://www.globe-truiteur.com/en/fly-fishing-gear-partners/">Gear</a>
+        <a href="https://www.globe-truiteur.com/en/fishing-lodging-france/">Fishing lodging</a>
+        </div>
+      </div>
+      <div>
+        <a href="https://www.globe-truiteur.com/en/fly-fishing-rates-france/">Rates ▾</a>
+        <div class="dropdown">
+          <a href="https://www.globe-truiteur.com/en/fly-fishing-rates-france/">Rates and services</a>
+          <a href="https://www.globe-truiteur.com/en/gift-fly-fishing-course/">Gift a course</a>
+          <a href="https://www.globe-truiteur.com/en/terms-and-legal/">Terms and legal</a>
+        </div>
+      </div>
+      <a href="https://www.globe-truiteur.com/en/contact-fly-fishing-guide/">Contact</a>
+            <a href="https://www.globe-truiteur.com/2026/07/27/materiel-peche-dorado-mouche/" class="lang-switch">FR</a>
+        </div>
+  </div>
+</nav>
+	<header class="hero small">
+		<div class="hero-media parallax" id="heroMedia">
+			<div class="pattern"></div>
+			<img width="1920" height="1280" src="https://www.globe-truiteur.com/wp-content/uploads/2026/07/materiel-dorado-bandeau.jpg" class="active wp-post-image" alt="Matériel de pêche à la mouche pour le dorado" loading="eager" decoding="async" fetchpriority="high" srcset="https://www.globe-truiteur.com/wp-content/uploads/2026/07/materiel-dorado-bandeau.jpg 1920w, https://www.globe-truiteur.com/wp-content/uploads/2026/07/materiel-dorado-bandeau-300x200.jpg 300w, https://www.globe-truiteur.com/wp-content/uploads/2026/07/materiel-dorado-bandeau-1024x683.jpg 1024w, https://www.globe-truiteur.com/wp-content/uploads/2026/07/materiel-dorado-bandeau-768x512.jpg 768w, https://www.globe-truiteur.com/wp-content/uploads/2026/07/materiel-dorado-bandeau-1536x1024.jpg 1536w" sizes="(max-width: 1920px) 100vw, 1920px" />		</div>
+		<div class="wide">
+			<div class="tag">Practical advice · 5 min read</div>			<h1 data-split>Gear: what you really need to fly fish for golden dorado</h1>
+		</div>
+	</header>
+	<main class="entry">
+	<p>You do not fish for dorado the way you fish for trout, and you do not pack the same bag either. It is the first thing I tell the anglers who join me in northern Argentina: we are going after a fish that grinds steel, finesse can wait. Here is what I carry, and above all what changes from one river to the next, because the dorado of the Paraná and the dorado of the clear waters of Corrientes do not ask for quite the same gear.</p>
+<figure class="portrait-photo"><img width="1152" height="1536" src="https://www.globe-truiteur.com/wp-content/uploads/2026/07/materiel-dorado-ensemble-1152x1536.jpg" class="attachment-1536x1536 size-1536x1536" alt="Fly fishing gear laid out for a golden dorado trip" sizes="(max-width: 800px) 100vw, 772px" decoding="async" loading="lazy" srcset="https://www.globe-truiteur.com/wp-content/uploads/2026/07/materiel-dorado-ensemble-1152x1536.jpg 1152w, https://www.globe-truiteur.com/wp-content/uploads/2026/07/materiel-dorado-ensemble-225x300.jpg 225w, https://www.globe-truiteur.com/wp-content/uploads/2026/07/materiel-dorado-ensemble-768x1024.jpg 768w, https://www.globe-truiteur.com/wp-content/uploads/2026/07/materiel-dorado-ensemble.jpg 1536w" /></figure>
+<h2>Gear that follows the water</h2>
+<p>Before we talk rods and flies, one thing needs saying: &#8220;the dorado&#8221; covers several very different kinds of fishing. On the Paraná and its huge side channels, you hunt big fish in big water, often with sinking streamers and tackle built for power. In the province of Corrientes, on the río Corriente and its surprisingly clear waters, the fishing turns visual, sometimes sight fishing proper, and you can lighten up a little. Further north, in the small rivers of Salta like the río Dorado, you walk, you cast short, you look for more modest fish in mountain country wrapped in jungle. The bag adapts to each of these waters.</p>
+<figure class="full-photo"><img width="1536" height="864" src="https://www.globe-truiteur.com/wp-content/uploads/2026/07/materiel-dorado-riviere-corrientes-1536x864.jpg" class="attachment-1536x1536 size-1536x1536" alt="Clear waters in the province of Corrientes" sizes="(max-width: 800px) 100vw, 772px" decoding="async" loading="lazy" srcset="https://www.globe-truiteur.com/wp-content/uploads/2026/07/materiel-dorado-riviere-corrientes-1536x864.jpg 1536w, https://www.globe-truiteur.com/wp-content/uploads/2026/07/materiel-dorado-riviere-corrientes-300x169.jpg 300w, https://www.globe-truiteur.com/wp-content/uploads/2026/07/materiel-dorado-riviere-corrientes-1024x576.jpg 1024w, https://www.globe-truiteur.com/wp-content/uploads/2026/07/materiel-dorado-riviere-corrientes-768x432.jpg 768w, https://www.globe-truiteur.com/wp-content/uploads/2026/07/materiel-dorado-riviere-corrientes-1600x900.jpg 1600w, https://www.globe-truiteur.com/wp-content/uploads/2026/07/materiel-dorado-riviere-corrientes.jpg 1920w" /></figure>
+<h2>Rods</h2>
+<p>The do-everything dorado rod is a <a href="https://angefly.com/product/stratege-exo-9-7-8/" target="_blank" rel="noopener">9 foot 8 weight</a>, fast action. It throws big streamers into the wind, absorbs the runs and lets you turn a fish bolting for the deadfalls. For the Paraná and its heavy fish, a 9 weight earns its keep on windy days or when the flies get bulky. On the clear waters of Corrientes, where you sometimes fish by sight, a lively 7 or 8 is enough and adds to the pleasure. For the clear water of the río Dorado, plan on a 6, maybe a 7, with adjusted leaders, because a little more discretion is needed there. Always bring a spare rod: a break on the banks of the Paraná, hours from the nearest shop, cannot be fixed.</p>
+<figure class="portrait-photo"><img width="1320" height="1536" src="https://www.globe-truiteur.com/wp-content/uploads/2026/07/materiel-dorado-terrain-1320x1536.jpg" class="attachment-1536x1536 size-1536x1536" alt="On the water with golden dorado gear" sizes="(max-width: 800px) 100vw, 772px" decoding="async" loading="lazy" srcset="https://www.globe-truiteur.com/wp-content/uploads/2026/07/materiel-dorado-terrain-1320x1536.jpg 1320w, https://www.globe-truiteur.com/wp-content/uploads/2026/07/materiel-dorado-terrain-258x300.jpg 258w, https://www.globe-truiteur.com/wp-content/uploads/2026/07/materiel-dorado-terrain-880x1024.jpg 880w, https://www.globe-truiteur.com/wp-content/uploads/2026/07/materiel-dorado-terrain-768x894.jpg 768w, https://www.globe-truiteur.com/wp-content/uploads/2026/07/materiel-dorado-terrain-1759x2048.jpg 1759w, https://www.globe-truiteur.com/wp-content/uploads/2026/07/materiel-dorado-terrain.jpg 1920w" /></figure>
+<h2>Reels, lines and backing</h2>
+<p>The reel matters more here than in trout fishing. You want a large spool, a strong and well-sealed drag, and a real reserve of backing: a dorado takes the line and gets into the backing without warning. On the line side, a tropical floating line with an aggressive taper covers most of it, especially in clear water and on the surface; it carries big flies without strain. To reach the deep fish of the Paraná, add a sink-tip line of 300 to 350 grains. On very hot days, standard lines turn soft: the tropical versions keep their body.</p>
+<figure class="full-photo"><img width="1536" height="1483" src="https://www.globe-truiteur.com/wp-content/uploads/2026/07/materiel-dorado-soie-1536x1483.jpg" class="attachment-1536x1536 size-1536x1536" alt="Reel and tropical fly line for golden dorado" sizes="(max-width: 800px) 100vw, 772px" decoding="async" loading="lazy" srcset="https://www.globe-truiteur.com/wp-content/uploads/2026/07/materiel-dorado-soie-1536x1483.jpg 1536w, https://www.globe-truiteur.com/wp-content/uploads/2026/07/materiel-dorado-soie-300x290.jpg 300w, https://www.globe-truiteur.com/wp-content/uploads/2026/07/materiel-dorado-soie-1024x989.jpg 1024w, https://www.globe-truiteur.com/wp-content/uploads/2026/07/materiel-dorado-soie-768x742.jpg 768w, https://www.globe-truiteur.com/wp-content/uploads/2026/07/materiel-dorado-soie.jpg 1897w" /></figure>
+<h2>Leaders: wire is not optional</h2>
+<p>This is the point nobody neglects twice. The dorado has a razor of a jaw and cuts nylon like sewing thread. So you always finish with a shock tippet of supple wire, 20 to 45 pounds, or heavy fluorocarbon when the fish grow wary in very clear water. The body of the leader stays nylon or fluoro of 30 to 40 pounds, short and strong, to turn over heavy flies. Perfect loops on every section, loop to loop between them. Plan to rebuild your leaders several times: you leave some in fish and some in the wood. To attach the flies, use strong streamer clips or a knot on the wire tip.</p>
+<figure class="portrait-photo"><img width="1152" height="1536" src="https://www.globe-truiteur.com/wp-content/uploads/2026/07/materiel-dorado-hamecon-1152x1536.jpg" class="attachment-1536x1536 size-1536x1536" alt="Strong hook and wire leader for golden dorado" sizes="(max-width: 800px) 100vw, 772px" decoding="async" loading="lazy" srcset="https://www.globe-truiteur.com/wp-content/uploads/2026/07/materiel-dorado-hamecon-1152x1536.jpg 1152w, https://www.globe-truiteur.com/wp-content/uploads/2026/07/materiel-dorado-hamecon-225x300.jpg 225w, https://www.globe-truiteur.com/wp-content/uploads/2026/07/materiel-dorado-hamecon-768x1024.jpg 768w, https://www.globe-truiteur.com/wp-content/uploads/2026/07/materiel-dorado-hamecon.jpg 1536w" /></figure>
+<h2>Flies</h2>
+<p>The dorado strikes out of anger as much as hunger, and it likes big mouthfuls. The base is streamers in the Andino deceiver style, tied on strong saltwater hooks from 1/0 to 3/0, five to fifteen centimetres long, in black or in the fire and yellow tones that blaze in stained water. Streamers in black and red or black and purple, with volume and vibration, are a real plus. Most of the time they fish unweighted, the line does the sinking. Add a few poppers, big foam bugs in the Chernobyl style with rubber legs, and mouse patterns for the surface: a dorado attack on a mouse is not something you forget. In clear water, more sober and slightly smaller patterns work better on fish you can see. Bring plenty, you lose a lot. And if you would rather not think about it, the local team can tie a box matched to the season, just ask me before departure.</p>
+<figure class="portrait-photo"><img width="1152" height="1536" src="https://www.globe-truiteur.com/wp-content/uploads/2026/07/materiel-dorado-mouches-1152x1536.jpg" class="attachment-1536x1536 size-1536x1536" alt="Streamers and flies for golden dorado" sizes="(max-width: 800px) 100vw, 772px" decoding="async" loading="lazy" srcset="https://www.globe-truiteur.com/wp-content/uploads/2026/07/materiel-dorado-mouches-1152x1536.jpg 1152w, https://www.globe-truiteur.com/wp-content/uploads/2026/07/materiel-dorado-mouches-225x300.jpg 225w, https://www.globe-truiteur.com/wp-content/uploads/2026/07/materiel-dorado-mouches-768x1024.jpg 768w, https://www.globe-truiteur.com/wp-content/uploads/2026/07/materiel-dorado-mouches.jpg 1536w" /></figure>
+<h2>Clothing and accessories</h2>
+<p>In northern Argentina, heat and sun set the kit: a long-sleeved UV shirt, a cap with a neck flap, a neck gaiter, and polarised glasses I consider essential for spotting fish and reading the water. Good long-nosed pliers to unhook without getting close to that dentition, tie knots and cut heavy line and wire, a tool that counts for more than you would think. Sunscreen, a water bottle, a dry bag for the boat or a backpack for the walks, and something against the mosquitoes in the wetlands of the Esteros del Iberá or the jungle. One suitcase and one backpack per angler: everyone will thank you in the transfers.</p>
+<h2>Frequently asked questions</h2>
+<dl class="faq">
+<dt>Which rod if I only bring one?</dt>
+<dd>A 9 or 10 foot rod with an 8 weight line, fast action. It covers the Paraná as well as the clear waters of Corrientes, from sinking streamers to surface fishing.</dd>
+<dt>Is the wire leader really mandatory?</dt>
+<dd>Yes. Without it you will lose the fish of your trip to one clean cut. It is the one item in the bag that is not up for debate.</dd>
+<dt>Can you buy flies over there?</dt>
+<dd>Partly, depending on stock. The safest plan is to travel with your own boxes, or to ask me for a kit tied by the local team before departure.</dd>
+</dl>
+<p>This list goes with the anglers who join me to chase dorado in the province of Corrientes. The trip, the waters and the packages are laid out on the <a href="/en/golden-dorado-fly-fishing-argentina/">golden dorado fly fishing in Argentina</a> page. And if you are still torn between the dorado of the north and the trout of Patagonia, the two combine very well: <a href="/en/contact-fly-fishing-guide/">write to me</a> and we will talk it over.</p>
+
+	<div class="author-box">
+		<img src="https://www.globe-truiteur.com/wp-content/uploads/2026/07/guide-parcours-espalion.jpg" alt="Baptiste Conquet, moniteur-guide de pêche à la mouche" loading="lazy">
+		<div>
+			<div class="meta">The author</div>
+			<h3>Baptiste Conquet</h3>
+			<p>State-certified fly fishing guide and instructor. I guide in Aveyron and Lozère, and design fishing trips to Argentine Patagonia, Jurassic Lake and the golden dorado waters.</p>
+			<a class="softlink" href="https://www.globe-truiteur.com/en/contact-fly-fishing-guide/">Plan a trip with me →</a>
+		</div>
+	</div>
+
+		<div class="related">
+		<div class="meta">Keep reading</div>
+		<div class="related-grid">
+					<a class="related-card" href="https://www.globe-truiteur.com/en/2026/08/26/handcrafted-flies-chubby-chernobyl-step-by-step/">
+				<span class="plate"><img src="https://www.globe-truiteur.com/wp-content/uploads/2026/07/materiel-bandeau-2-800x500.jpg" alt="Handcrafted flies: why tying makes all the difference" loading="lazy" width="800" height="500"></span> <span class="rc-title">Handcrafted flies: why tying makes all the difference</span>
+			</a>
+					<a class="related-card" href="https://www.globe-truiteur.com/en/2026/08/25/best-time-fly-fishing-patagonia-argentina/">
+				<span class="plate"><img src="https://www.globe-truiteur.com/wp-content/uploads/2026/08/bandeau-800x500.jpg" alt="The best time to fly fish in Argentine Patagonia" loading="lazy" width="800" height="500"></span> <span class="rc-title">The best time to fly fish in Argentine Patagonia</span>
+			</a>
+				</div>
+	</div>
+	
+	<nav class="gt-pagination" aria-label="More stories">
+		<a href="https://www.globe-truiteur.com/en/2026/07/24/patagonia-trashumante-team/" rel="prev">← Previous story</a>		<a href="https://www.globe-truiteur.com/en/blog/">All stories</a>
+		<a href="https://www.globe-truiteur.com/en/2026/07/28/wild-patagonia-fly-fishing-rematch/" rel="next">Next story →</a>	</nav>
+</main>
+<footer class="gt-footer">
+  <div class="wide">
+    <div>
+      <img class="footer-logo" src="https://www.globe-truiteur.com/wp-content/themes/globetruiteur/assets/logo_footer_contour.png" alt="Globe Truiteur" width="203" height="52" loading="lazy">
+      <div class="legal">Baptiste Conquet, French state-certified fly fishing guide and instructor. Patagonia trips designed with <a href="https://patagonia-trashumante.com/" target="_blank" rel="noopener">Patagonia Trashumante</a>, whose certified guides handle the guiding on site, and sold in France through partner agencies. &copy;2026 Baptiste Conquet. All rights reserved. <a href="https://www.globe-truiteur.com/en/terms-and-legal/" style="opacity:.7">Terms &amp; legal</a></div>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/globe_truiteur/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.facebook.com/globetruiteur/" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://www.youtube.com/channel/UCToecq7NqThUQ2aTx_I6Iqw" target="_blank" rel="noopener">YouTube</a>
+      </div>
+    </div>
+    <div class="navlinks">
+          <a href="https://www.globe-truiteur.com/en/fly-fishing-guide-france/">Your guide</a>
+      <a href="https://www.globe-truiteur.com/en/fly-fishing-aveyron-france/">Aveyron</a>
+      <a href="https://www.globe-truiteur.com/en/fly-fishing-lozere-france/">Lozère</a>
+      <a href="https://www.globe-truiteur.com/en/fly-fishing-patagonia-argentina/">Patagonia</a>
+      <a href="https://www.globe-truiteur.com/en/blog/">Blog</a>
+      <a href="https://www.globe-truiteur.com/en/fly-fishing-photos-videos/">Media</a>
+      <a href="https://www.globe-truiteur.com/en/fly-fishing-rates-france/">Rates</a>
+      <a href="https://www.globe-truiteur.com/en/contact-fly-fishing-guide/">Contact</a>
+        </div>
+  </div>
+</footer>
+<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/globetruiteur/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+<style>
+.lang-switch .lang-flag{display:inline-flex;align-items:center;vertical-align:middle}
+.lang-switch .lang-sep{display:inline-block;margin:0 3px;opacity:.65;font-weight:600}
+.lang-switch .lang-flag-us svg{display:block}
+</style>
+<script>
+(function(){
+ var US='<svg viewBox="0 0 60 30" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="60" height="30" fill="#fff"/><g fill="#B22234"><rect y="0" width="60" height="2.31"/><rect y="4.62" width="60" height="2.31"/><rect y="9.23" width="60" height="2.31"/><rect y="13.85" width="60" height="2.31"/><rect y="18.46" width="60" height="2.31"/><rect y="23.08" width="60" height="2.31"/><rect y="27.69" width="60" height="2.31"/></g><rect width="24" height="16.15" fill="#3C3B6E"/><g fill="#fff"><circle cx="4" cy="3" r="1.1"/><circle cx="10" cy="3" r="1.1"/><circle cx="16" cy="3" r="1.1"/><circle cx="21" cy="3" r="1.1"/><circle cx="7" cy="6.5" r="1.1"/><circle cx="13" cy="6.5" r="1.1"/><circle cx="19" cy="6.5" r="1.1"/><circle cx="4" cy="10" r="1.1"/><circle cx="10" cy="10" r="1.1"/><circle cx="16" cy="10" r="1.1"/><circle cx="21" cy="10" r="1.1"/><circle cx="7" cy="13.4" r="1.1"/><circle cx="13" cy="13.4" r="1.1"/><circle cx="19" cy="13.4" r="1.1"/></g></svg>';
+ function add(){
+  document.querySelectorAll('a.lang-switch').forEach(function(a){
+   if(a.getAttribute('data-us')==='1') return;
+   var href=a.getAttribute('href')||'';
+   if(href.indexOf('/en')===-1) return;
+   var f=a.querySelector('.lang-flag');
+   if(!f) return;
+   var w=f.offsetWidth||18, h=f.offsetHeight||0;
+   var sep=document.createElement('span'); sep.className='lang-sep'; sep.textContent='/';
+   var us=document.createElement('span'); us.className='lang-flag lang-flag-us'; us.innerHTML=US;
+   var svg=us.querySelector('svg');
+   if(svg){ svg.setAttribute('width', w); if(h){ svg.setAttribute('height', Math.round(h)); } }
+   f.parentNode.insertBefore(sep, f.nextSibling);
+   sep.parentNode.insertBefore(us, sep.nextSibling);
+   a.setAttribute('data-us','1');
+  });
+ }
+ if(document.readyState!=='loading'){add();}else{document.addEventListener('DOMContentLoaded',add);}
+ setTimeout(add,400); setTimeout(add,1200);
+})();
+</script>
+<script>
+(function(){
+ var map = [
+  ['\u2190 R\u00e9cit pr\u00e9c\u00e9dent','\u2190 Article pr\u00e9c\u00e9dent'],
+  ['R\u00e9cit suivant \u2192','Article suivant \u2192'],
+  ['R\u00e9cit pr\u00e9c\u00e9dent','Article pr\u00e9c\u00e9dent'],
+  ['R\u00e9cit suivant','Article suivant'],
+  ['Tous les r\u00e9cits','Tout le Carnet'],
+  ['\u2190 Previous story','\u2190 Previous article'],
+  ['Next story \u2192','Next article \u2192'],
+  ['Previous story','Previous article'],
+  ['Next story','Next article'],
+  ['All stories','All articles']
+ ];
+ var cat = "Gear & equipment";
+ function fix(){
+  document.querySelectorAll('a, span, button').forEach(function(el){
+   if(el.children.length) return;
+   var t = (el.textContent||'').trim();
+   for(var i=0;i<map.length;i++){
+     if(t === map[i][0]){ el.textContent = map[i][1]; return; }
+   }
+  });
+  if(cat){
+   var el = document.querySelector('.wide > .tag') || document.querySelector('.tag');
+   if(el && !el.children.length){
+    var t = (el.textContent||'').trim();
+    var m = t.match(/^([^\u00b7]+)\u00b7\s*(.+)$/);
+    if(m && m[1].trim() !== cat){ el.textContent = cat + ' \u00b7 ' + m[2]; }
+   }
+  }
+ }
+ if(document.readyState!=='loading'){fix();}else{document.addEventListener('DOMContentLoaded',fix);}
+ setTimeout(fix,400); setTimeout(fix,1200);
+})();
+</script>
+<script>
+(function(){
+ var conseil = ["handcrafted-flies-chubby-chernobyl-step-by-step","best-time-fly-fishing-patagonia-argentina","how-many-days-fly-fishing-patagonia","jurassic-lake-trout-gear","fly-fishing-gear-golden-dorado","fly-fishing-gear-patagonia"];
+ var isEN = (document.documentElement.lang||'').indexOf('en')===0;
+ var LAB = isEN ? 'Practical advice' : 'Conseils pratiques';
+ var CTA = isEN ? 'Read the article \u2192' : 'Lire l\u2019article \u2192';
+ function slugOf(href){ try{ var u=new URL(href, location.origin); var p=u.pathname.replace(/\/$/,'').split('/'); return p[p.length-1]; }catch(e){ return ''; } }
+ function fixSchema(){
+  var scripts = [].slice.call(document.querySelectorAll('script[type="application/ld+json"]'));
+  var graphHasArticle = false;
+  scripts.forEach(function(sc){ var d; try{ d=JSON.parse(sc.textContent); }catch(e){ return; }
+   if (d && d['@graph']) { d['@graph'].forEach(function(n){ var t=n['@type']; if(Array.isArray(t)) t=t[0]; if(t==='Article'||t==='BlogPosting'||t==='NewsArticle') graphHasArticle=true; }); } });
+  if (!graphHasArticle) return;
+  scripts.forEach(function(sc){ var d; try{ d=JSON.parse(sc.textContent); }catch(e){ return; }
+   if (!d || d['@graph']) return;
+   var t=d['@type']; if(Array.isArray(t)) t=t[0];
+   if (t==='Article'||t==='BlogPosting'||t==='NewsArticle') { sc.remove(); } });
+ }
+ function fixAlt(){
+  document.querySelectorAll('article.article-card, a.rcard, .rcard, .card, a.related-card, article').forEach(function(card){
+   var t = card.querySelector('h1,h2,h3,h4');
+   var titre0 = t ? (t.textContent||'').trim() : (card.tagName==='A' ? (card.textContent||'').trim() : '');
+   if(!t && titre0){ card.querySelectorAll('img').forEach(function(im){ if(!(im.getAttribute('alt')||'').trim()) im.setAttribute('alt', titre0.slice(0,110)); }); return; }
+   if(!t) return; var titre = (t.textContent||'').trim(); if(!titre) return;
+   card.querySelectorAll('img').forEach(function(im){
+    if((im.getAttribute('alt')||'').trim()) return;
+    im.setAttribute('alt', titre);
+   });
+  });
+ }
+ function fix(){
+  document.querySelectorAll('article.article-card, a.rcard, .rcard, .card, article').forEach(function(card){
+   var a = (card.tagName==='A' && card.getAttribute('href')) ? card : card.querySelector('a[href]'); if(!a) return;
+   if(conseil.indexOf(slugOf(a.getAttribute('href'))) === -1) return;
+   card.querySelectorAll('*').forEach(function(el){
+    if(el.children.length) return;
+    var t=(el.textContent||'').trim();
+    if(t==='R\u00e9cit'||t==='Story'){ el.textContent = LAB; }
+    else if(/^Lire le r\u00e9cit|^Read the story/i.test(t)){ el.textContent = CTA; }
+   });
+  });
+ }
+ if(document.readyState!=='loading'){fix();fixAlt();fixSchema();}else{document.addEventListener('DOMContentLoaded',function(){fix();fixAlt();fixSchema();});}
+ setTimeout(function(){fix();fixAlt();fixSchema();},400); setTimeout(function(){fix();fixAlt();fixSchema();},1200);
+})();
+</script>
+ <!-- YouTube Feeds JS -->
+<script type="text/javascript">
+
+</script>
+<!-- Instagram Feed JS -->
+<script type="text/javascript">
+var sbiajaxurl = "https://www.globe-truiteur.com/wp-admin/admin-ajax.php";
+</script>
+<script id="pll_cookie_script-js-after">
+(function() {
+				var expirationDate = new Date();
+				expirationDate.setTime( expirationDate.getTime() + 31536000 * 1000 );
+				document.cookie = "pll_language=en; expires=" + expirationDate.toUTCString() + "; path=/; secure; SameSite=Lax";
+			}());
+
+//# sourceURL=pll_cookie_script-js-after
+</script>
+<script id="gt-gsap-js" src="https://www.globe-truiteur.com/wp-content/themes/globetruiteur/js/vendor/gsap.min.js?ver=3.12.5"></script>
+<script id="gt-scrolltrigger-js" src="https://www.globe-truiteur.com/wp-content/themes/globetruiteur/js/vendor/ScrollTrigger.min.js?ver=3.12.5"></script>
+<script id="gt-main-js" src="https://www.globe-truiteur.com/wp-content/themes/globetruiteur/js/main.js?ver=2.0.39"></script>
+<script>
+(function(){
+	var ls=document.querySelector('.navlinks .lang-switch');
+	var wide=document.querySelector('.gt-nav .wide');
+	var burger=document.getElementById('gtBurger');
+	if(!ls||!wide||!burger)return;
+	var c=ls.cloneNode(true);
+	c.classList.add('lang-top');
+	wide.insertBefore(c,burger);
+})();
+</script>
+<style>
+a.lang-switch .lang-flag{display:inline-block;width:1.15em;height:.8em;margin-right:.4em;vertical-align:-.08em;border-radius:2px;overflow:hidden;box-shadow:0 0 0 1px rgba(255,255,255,.45);line-height:0}
+a.lang-switch .lang-flag svg{display:block;width:100%;height:100%}
+</style>
+<script>
+(function(){
+var UK='<svg viewBox="0 0 60 30" xmlns="http://www.w3.org/2000/svg"><clipPath id="ujs"><path d="M0 0v30h60V0z"/></clipPath><clipPath id="ujt"><path d="M30 15h30v15zv15H30zH0v-15zV0h30z"/></clipPath><g clip-path="url(#ujs)"><path d="M0 0v30h60V0z" fill="#012169"/><path d="M0 0l60 30m0-30L0 30" stroke="#fff" stroke-width="6"/><path d="M0 0l60 30m0-30L0 30" clip-path="url(#ujt)" stroke="#C8102E" stroke-width="4"/><path d="M30 0v30M0 15h60" stroke="#fff" stroke-width="10"/><path d="M30 0v30M0 15h60" stroke="#C8102E" stroke-width="6"/></g></svg>';
+var FR='<svg viewBox="0 0 3 2" xmlns="http://www.w3.org/2000/svg"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#0055A4"/><rect x="2" width="1" height="2" fill="#EF4135"/></svg>';
+function run(){document.querySelectorAll('a.lang-switch').forEach(function(a){if(a.getAttribute('data-flagged'))return;var t=(a.textContent||'').trim().toUpperCase();var flag=t.indexOf('EN')===0?UK:FR;a.innerHTML='<span class="lang-flag">'+flag+'</span>'+t;a.setAttribute('data-flagged','1');});}
+if(document.readyState!=='loading')run();else document.addEventListener('DOMContentLoaded',run);
+})();
+</script>	<script>
+	(function(){
+		function tr(){
+			var t=document.getElementById('cn-notice-text');
+			if(t) t.textContent='This site uses a few cookies to measure its traffic and display external content (videos, social media). You can accept or decline.';
+			var a=document.getElementById('cn-accept-cookie'); if(a){a.textContent='Accept';a.setAttribute('aria-label','Accept');}
+			var r=document.getElementById('cn-refuse-cookie'); if(r){r.textContent='Decline';r.setAttribute('aria-label','Decline');}
+			var m=document.getElementById('cn-more-info'); if(m){m.textContent='Learn more';m.setAttribute('aria-label','Learn more');}
+		}
+		if(document.readyState!=='loading') tr(); else document.addEventListener('DOMContentLoaded',tr);
+		setTimeout(tr,400);
+	})();
+	</script>
+	<div id='icon_wrapper'><a target="_blank" class='fuse_social_icons_links' data-nonce='feee965ed5' data-title='facebook' href='https://www.facebook.com/globetruiteur/?view_public_for=113407687148027' ><i class='fsf fuseicon-facebook facebook-awesome-social awesome-social'></i></a><a target="_blank" class='fuse_social_icons_links' data-nonce='feee965ed5' data-title='youtube' href='https://www.youtube.com/channel/UCToecq7NqThUQ2aTx_I6Iqw?view_as=subscriber' ><i class='fsf fuseicon-youtube youtube-awesome-social awesome-social'></i></a><a target="_blank" class='fuse_social_icons_links' data-nonce='feee965ed5' data-title='instagram' href='https://www.instagram.com/globe_truiteur/?hl=fr' ><i class='fsf fuseicon-instagram instagram-awesome-social awesome-social'></i></a></div>
+		<!-- Cookie Compliance for WordPress (formerly Compliance by Hu-manity.co) plugin v3.1.17 https://cookie-compliance.co/ -->
+		<div id="cookie-notice" role="dialog" class="cookie-notice-hidden cookie-revoke-hidden cn-position-bottom" aria-label="Cookie Compliance" style="background-color: rgba(50,50,58,1);"><div class="cookie-notice-container" style="color: #fff"><span id="cn-notice-text" class="cn-text-container">Ce site utilise quelques cookies pour mesurer sa fréquentation et afficher des contenus externes (vidéos, réseaux sociaux). Vous pouvez accepter ou refuser.</span><span id="cn-notice-buttons" class="cn-buttons-container"><button id="cn-accept-cookie" data-cookie-set="accept" class="cn-set-cookie cn-button" aria-label="Accepter" style="background-color: #00a99d">Accepter</button><button id="cn-refuse-cookie" data-cookie-set="refuse" class="cn-set-cookie cn-button" aria-label="Refuser" style="background-color: #00a99d">Refuser</button><button data-link-url="https://www.globe-truiteur.com/politique-de-confidentialite/" data-link-target="_blank" id="cn-more-info" class="cn-more-info cn-button" aria-label="En savoir plus" style="background-color: #00a99d">En savoir plus</button></span><button type="button" id="cn-close-notice" data-cookie-set="accept" class="cn-close-icon" aria-label="Refuser" tabindex="0"></button></div>
+			<div class="cookie-revoke-container" style="color: #fff"><span id="cn-revoke-text" class="cn-text-container">Vous pouvez révoquer votre consentement à tout moment en utilisant le bouton « Révoquer le consentement ».</span><span id="cn-revoke-buttons" class="cn-buttons-container"><button id="cn-revoke-cookie" class="cn-revoke-cookie cn-button" aria-label="Révoquer le consentement" style="background-color: #00a99d">Révoquer le consentement</button></span>
+			</div>
+		</div>
+		<!-- / Cookie Compliance for WordPress plugin --><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"74c8bda19e2a4c828af005f7fa549bef","r":1,"spa":2}' crossorigin="anonymous"></script>
+</body>
+</html>
+<!-- Dynamic page generated in 0.158 seconds. -->
+<!-- Cached page generated by WP-Super-Cache on 2026-11-15 21:46:37 -->
+
+<!-- super cache -->
