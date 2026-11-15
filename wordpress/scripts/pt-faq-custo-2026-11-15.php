@@ -7,7 +7,7 @@
  * JSON-LD (seo.php). RUN ONLY AFTER that theme is deployed, or the answer prints the raw tags. Skipped when the guide already has a "Quanto custa pescar em…"
  * question. Dry run first ($aplicar = false). Run with wp-script.yml (script = pt-faq-custo-2026-11-15).
  */
-$aplicar = false;
+$aplicar = true;
 
 $guias = [
 	'esquina'           => 'Esquina',
