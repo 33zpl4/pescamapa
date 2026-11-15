@@ -101,7 +101,7 @@ if ( ! function_exists( 'pm_tp_tabla' ) ) {
 	}
 }
 
-$aplicar = false;
+$aplicar = true;
 $hoy     = '20261115';
 $clave   = 'trucha-patagonia-pilar';
 $foto_de = 'precio-semana-trucha-patagonia-norte'; // note whose cover photo is reused (Commons, Boca del Chimehuín)
