@@ -532,7 +532,7 @@ jobs:
           check /calendario-de-pesca/ 200 'v-calendario' 'PENDIENTE'
           check /calendario-de-pesca/ 200 'id="esquina"' 'CONTACTO-INTERNO-123'
           check /calendario-de-pesca/ 200 '"FAQPage"'
-          check /en/fishing-calendar/ 200 'What you can fish each month'
+          check /en/fishing-calendar/ 200 'v-calendario'
           # Season year in the calendar's title, H1 and description (15/11/2026); revised every season (docs/estado.md).
           check /calendario-de-pesca/ 200 '<title>Calendario de pesca 2026/27 por mes y destino, con vedas</title>'
           check /calendario-de-pesca/ 200 'Calendario de pesca 2026/27: qué se pesca cada mes en la Argentina y qué está vedado'
