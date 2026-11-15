@@ -109,7 +109,7 @@ foreach ( $guias as $clave => $campos ) {
 			continue;
 		}
 		if ( $norm( $ahora ) !== $norm( $antes ) ) {
-			WP_CLI::warning( "DISTINTO guía $clave #{$p->ID} $campo: tiene «$ahora» y esperaba «$antes»; no lo toco." );
+			WP_CLI::warning( "DISTINTO guía $clave #{$p->ID} $campo: tiene «{$ahora}» y esperaba «{$antes}»; no lo toco." );
 			$distintos++;
 			continue;
 		}
@@ -144,7 +144,7 @@ foreach ( $notas as $clave => $campos ) {
 			continue;
 		}
 		if ( ! in_array( $norm( $ahora ), array_map( $norm, $antes_ok ), true ) ) {
-			WP_CLI::warning( "DISTINTO nota $clave #{$p->ID} $campo: tiene «$ahora» y esperaba «{$antes_ok[0]}»; no lo toco." );
+			WP_CLI::warning( "DISTINTO nota $clave #{$p->ID} $campo: tiene «{$ahora}» y esperaba «{$antes_ok[0]}»; no lo toco." );
 			$distintos++;
 			continue;
 		}

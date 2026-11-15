@@ -47,7 +47,7 @@ foreach ( $guias as $clave => $lugar ) {
 	$a = 'Depende dos dias de pesca, do tipo de hospedagem (pousada ou lodge) e de o pacote incluir ou não a licença e os traslados: confirme isso com o operador antes de reservar. '
 		. 'Os valores que cada pousada e lodge publica, com a data em que os lemos, estão em <a href="' . esc_url( $u_lodge ) . '">Quanto custa uma viagem de pesca de dourado na Argentina (valores 2026/27)</a>; '
 		. 'para quem vem do Brasil, a licença de Corrientes, os documentos e as rotas estão em <a href="' . esc_url( $u_brasil ) . '">Pesca em Corrientes desde o Brasil</a>.';
-	WP_CLI::log( ( $aplicar ? 'APLICA' : 'SIMULACRO' ) . ": guía $clave #{$p->ID}: pregunta nº " . ( count( $filas ) + 1 ) . " «$q» (" . count( $filas ) . ' preguntas antes)' );
+	WP_CLI::log( ( $aplicar ? 'APLICA' : 'SIMULACRO' ) . ": guía $clave #{$p->ID}: pregunta nº " . ( count( $filas ) + 1 ) . " «{$q}» (" . count( $filas ) . ' preguntas antes)' );
 	$cambios++;
 	if ( ! $aplicar ) {
 		continue;
