@@ -51,7 +51,7 @@ Sigue pendiente de fuente:
 
 - Guía nueva de Concordia (hoy "próximamente"; la tarjeta del inicio no puede enlazar a la nota de La Zona sin un cambio de plantilla, y Concordia no está en `data/rio.json`).
 - Índice de paquetes: se crearon es/en/pt con el mismo mecanismo; si alguno se salteó, ver el log.
-- Pilar EN de la Patagonia.
+- ~~Pilar EN de la Patagonia~~: hecho el 15/11/2026, nota `trucha-patagonia-pilar` (es/en/pt; `/en/notes/trout-fishing-in-patagonia/`), a partir de las consultas «patagonia brown trout fishing», «brown trout fishing in patagonia», «trout fishing in patagonia», «trout patagonia», «patagonia trout». Medir con `gsc-consultas.yml` junto con el resto (≈27/11/2026).
 - Chequeo http→https: del lado del dueño.
 - `x-default`: resuelto el 13/11/2026 por el dueño: apunta al español (idioma fuente) cuando la página existe en español, si no al inglés. Antes apuntaba al inglés (3/11/2026). `seo.php`, el test y `CLAUDE.md` coinciden. Documentación a alinear; no se cambió el código.
 - **Re-correr `gsc-consultas.yml` en ~2 semanas (≈27/11/2026)** y comparar posiciones de cada cluster contra esta tabla.

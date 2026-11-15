@@ -362,6 +362,90 @@ jobs:
             foreach ( get_posts( [ "post_type" => "pm_prestador", "post_status" => "any", "title" => "Los Plateados (Tres Amigos Outfitters)", "numberposts" => -1 ] ) as $p ) { wp_delete_post( $p->ID, true ); }'
           kill %1 2>/dev/null || true
           exit $fail
+      - name: Trout pillar note - dry run, create es/en/pt, hreflang, FAQ, inbound links, clean up
+        run: |
+          w() { wp --path="$WP" "$@"; }
+          s=nota-trucha-patagonia-pilar-2026-11-15
+          w eval-file "$GITHUB_WORKSPACE/.github/scripts/trucha-pilar-fixtures.php"
+          # The committed script may be $aplicar = true (already applied live): the dry-run copy forces false and must write nothing.
+          sed 's/^\$aplicar = true;/$aplicar = false;/' "wordpress/scripts/$s.php" > "/tmp/$s-dry.php"
+          wp --path="$WP" eval-file "/tmp/$s-dry.php"
+          n=$(w post list --post_type=pm_nota --post_status=any --meta_key=clave --meta_value=trucha-patagonia-pilar --format=count)
+          [[ "$n" == 0 ]] || { echo "✖ el simulacro escribió $n notas"; exit 1; }
+          n=$(w eval 'echo count( array_filter( get_posts( [ "post_type" => [ "pm_especie", "pm_nota" ], "post_status" => "any", "meta_key" => "_prueba_tp", "meta_value" => 1, "numberposts" => -1 ] ), fn( $x ) => false !== strpos( $x->post_content, "trout-fishing-in-patagonia" ) || false !== strpos( $x->post_content, "pesca-de-trucha-en-la-patagonia" ) || false !== strpos( $x->post_content, "pesca-de-truta-na-patagonia" ) ) );')
+          [[ "$n" == 0 ]] || { echo "✖ el simulacro editó $n páginas"; exit 1; }
+          cp "wordpress/scripts/$s.php" "/tmp/$s.php"
+          sed -i 's/^\$aplicar = false;/$aplicar = true;/' "/tmp/$s.php"   # the test always exercises the applying path
+          wp --path="$WP" eval-file "/tmp/$s.php"
+          wp --path="$WP" eval-file "/tmp/$s.php"   # idempotent: nothing is touched the second time
+          n=$(w post list --post_type=pm_nota --post_status=publish --meta_key=clave --meta_value=trucha-patagonia-pilar --format=count)
+          [[ "$n" == 3 ]] && echo "✓ trucha-patagonia-pilar: nota en 3 idiomas" || { echo "✖ trucha-patagonia-pilar: $n notas (esperado 3)"; exit 1; }
+          n=$(w eval 'echo count( array_filter( get_posts( [ "post_type" => [ "pm_especie", "pm_nota" ], "post_status" => "any", "meta_key" => "_prueba_tp", "meta_value" => 1, "numberposts" => -1 ] ), fn( $x ) => false !== strpos( $x->post_content, "/notes/trout-fishing-in-patagonia/" ) || false !== strpos( $x->post_content, "/notas/pesca-de-trucha-en-la-patagonia/" ) || false !== strpos( $x->post_content, "/notas/pesca-de-truta-na-patagonia/" ) ) );')
+          [[ "$n" == 6 ]] && echo "✓ la ficha de trucha y la nota de temporada enlazan el pilar en los 3 idiomas (una sola vez cada una)" || { echo "✖ $n páginas enlazan el pilar (esperadas 6)"; exit 1; }
+          n=$(w eval 'foreach ( get_posts( [ "post_type" => "pm_nota", "post_status" => "any", "meta_key" => "_prueba_tp", "meta_value" => 1, "numberposts" => -1 ] ) as $x ) { if ( "cuando-pescar-trucha-patagonia" === get_post_meta( $x->ID, "clave", true ) && "es" === pm_idioma_de( $x->ID ) ) { echo substr_count( $x->post_content, "pesca-de-trucha-en-la-patagonia" ); } }')
+          [[ "$n" == 1 ]] || { echo "✖ la nota de temporada (es) enlaza el pilar $n veces (esperado 1)"; exit 1; }
+          wp --path="$WP" server --host=localhost --port=8083 > /tmp/server-tp.log 2>&1 &
+          sleep 3
+          fail=0
+          chk() { # path must-contain [must-not-contain regex]
+            code=$(curl -sS -o page-tp.html -w '%{http_code}' "http://localhost:8083$1")
+            if [[ "$code" != 200 ]]; then echo "✖ $code $1"; fail=1; return; fi
+            if [[ -n "${2:-}" ]] && ! grep -q -- "$2" page-tp.html; then echo "✖ $1 no contiene: $2"; fail=1; return; fi
+            if [[ -n "${3:-}" ]] && grep -qE -- "$3" page-tp.html; then echo "✖ $1 contiene: $3"; fail=1; return; fi
+            echo "✓ 200 $1"
+          }
+          for p in /notas/pesca-de-trucha-en-la-patagonia/ /en/notes/trout-fishing-in-patagonia/ /pt/notas/pesca-de-truta-na-patagonia/; do
+            chk "$p" '"Article"' 'PENDIENTE|\{g:|\{n:|\{u:|\{esp:'
+            grep -q '"BreadcrumbList"' page-tp.html || { echo "✖ $p sin BreadcrumbList"; fail=1; }
+            grep -q '"FAQPage"' page-tp.html || { echo "✖ $p sin FAQPage"; fail=1; }
+            grep -q 'hreflang="x-default"' page-tp.html || { echo "✖ $p sin x-default"; fail=1; }
+            for h in 'hreflang="es"' 'hreflang="en"' 'hreflang="pt-BR"'; do grep -q "$h" page-tp.html || { echo "✖ $p sin $h"; fail=1; }; done
+            grep -q 'especie=trucha' page-tp.html || { echo "✖ $p sin el botón de pedido con ?especie=trucha"; fail=1; }
+            grep -q 'AUTOR-PORTADA-TP' page-tp.html || { echo "✖ $p sin la foto de portada con su autor"; fail=1; }
+            grep -q 'prueba-tp-rio-santa-cruz' page-tp.html || { echo "✖ $p sin el enlace a la guía del río Santa Cruz"; fail=1; }
+            python3 - "$p" <<'PY' || fail=1
+          import html, json, re, sys
+          t = open("page-tp.html", encoding="utf-8").read()
+          p = sys.argv[1]
+          blocks = [json.loads(b) for b in re.findall(r'<script type="application/ld\+json">(.*?)</script>', t, re.S)]
+          flat = []
+          for b in blocks:
+              flat += b if isinstance(b, list) else [b]
+          bc = [b for b in flat if b.get("@type") == "BreadcrumbList"]
+          faq = [b for b in flat if b.get("@type") == "FAQPage"]
+          ok = True
+          if not bc or not all(li.get("item") for li in bc[0]["itemListElement"]):
+              print("✖", p, "BreadcrumbList sin item en algún ListItem"); ok = False
+          if not faq or len(faq[0]["mainEntity"]) != 8:
+              print("✖", p, "FAQPage con", len(faq[0]["mainEntity"]) if faq else 0, "preguntas (esperadas 8)"); ok = False
+          visibles = re.search(r'class="wp-block-group pm-faq">(.*?)</div>', t, re.S)
+          n_h3 = len(re.findall(r"<h3", visibles.group(1))) if visibles else 0
+          if n_h3 != 8:
+              print("✖", p, "FAQ visible con", n_h3, "preguntas (esperadas 8)"); ok = False
+          title = html.unescape(re.search(r"<title>(.*?)</title>", t, re.S).group(1))
+          desc = html.unescape(re.search(r'name="description" content="(.*?)"', t, re.S).group(1))
+          if len(title) > 60 or not (70 <= len(desc) <= 160):
+              print("✖", p, "title", len(title), "description", len(desc)); ok = False
+          if ok:
+              print("✓", p, "JSON-LD con item, FAQ visible = FAQPage (8), title", len(title), "description", len(desc))
+          sys.exit(0 if ok else 1)
+          PY
+          done
+          chk /en/notes/trout-fishing-in-patagonia/ 'Trout fishing in Patagonia, Argentina' 'PENDIENTE'
+          grep -q 'fishing lodge' page-tp.html && grep -q 'fly fishing package' page-tp.html && echo "✓ el pilar EN dice fishing trip / lodge / guides / packages" || { echo "✖ el pilar EN no trae las variantes de viaje"; fail=1; }
+          wp --path="$WP" eval-file wordpress/scripts/nota-trucha-patagonia-pilar-en-2026-11-15.php   # correction script: the title already says Argentina, so it touches nothing
+          chk /llms.txt 'pesca-de-trucha-en-la-patagonia'
+          chk /wp-sitemap-posts-pm_nota-1.xml 'trout-fishing-in-patagonia'
+          # Clean up: this step must leave no trace for the checks that follow.
+          w eval '
+            foreach ( [ "pm_destino", "pm_nota", "pm_especie", "attachment" ] as $t ) {
+              foreach ( get_posts( [ "post_type" => $t, "post_status" => "any", "posts_per_page" => -1, "suppress_filters" => true ] ) as $p ) {
+                $c = (string) get_post_meta( $p->ID, "clave", true );
+                if ( get_post_meta( $p->ID, "_prueba_tp", true ) || ( "pm_nota" === $t && "trucha-patagonia-pilar" === $c ) ) { wp_delete_post( $p->ID, true ); }
+              }
+            }'
+          kill %1 2>/dev/null || true
+          exit $fail
       - name: Render pages
         run: |
           exec > >(tee /tmp/render-all.log) 2>&1
@@ -448,7 +532,15 @@ jobs:
           check /calendario-de-pesca/ 200 'v-calendario' 'PENDIENTE'
           check /calendario-de-pesca/ 200 'id="esquina"' 'CONTACTO-INTERNO-123'
           check /calendario-de-pesca/ 200 '"FAQPage"'
-          check /en/fishing-calendar/ 200 'What you can fish each month'
+          check /en/fishing-calendar/ 200 'v-calendario'
+          # Season year in the calendar's title, H1 and description (15/11/2026); revised every season (docs/estado.md).
+          check /calendario-de-pesca/ 200 '<title>Calendario de pesca 2026/27 por mes y destino, con vedas</title>'
+          check /calendario-de-pesca/ 200 'Calendario de pesca 2026/27: qué se pesca cada mes en la Argentina y qué está vedado'
+          check /calendario-de-pesca/ 200 'name="description" content="Qué se pesca cada mes en 2026/27'
+          check /en/fishing-calendar/ 200 '<title>Argentina fishing calendar 2026/27 by month, with closures</title>'
+          check /en/fishing-calendar/ 200 'Argentina fishing calendar 2026/27: what you can fish each month, and what is closed'
+          check /pt/calendario-de-pesca/ 200 '<title>Melhor época para pescar na Argentina 2026/27, com defesos</title>'
+          check /pt/calendario-de-pesca/ 200 'Melhor época para pescar na Argentina em 2026/27: o que se pesca em cada mês e o que está em defeso'
           check /pt/calendario-de-pesca/ 200 'hreflang="x-default"'
           check /para-guias-y-lodges/ 200 'v-paraguias'
           check /para-guias-y-lodges/ 200 'name="pm_tipo" value="prestador"'
