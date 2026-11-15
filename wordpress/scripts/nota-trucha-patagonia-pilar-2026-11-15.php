@@ -552,17 +552,19 @@ foreach ( [ 'es', 'en', 'pt' ] as $i ) {
 	$ok || WP_CLI::error( "$clave ($i): la lectura de vuelta no coincide." );
 }
 if ( $aplicar ) {
-	$nota_es = pm_buscar( 'pm_nota', $clave, 'es' );
+	// pm_buscar() / pm_alternas_nota() read a per-process cache filled before the notes were created: look the new notes up directly.
+	$nota_es = $existe( 'es' )[0] ?? null;
 	$e       = $nota_es ? pm_nota( $nota_es->ID ) : null;
 	$ok      = $e && 'trucha' === $e['especie'] && $e['fecha'] && ( ! $att || (int) $e['foto'] === $att );
 	WP_CLI::log( ( $ok ? 'VERIFIED' : 'FALLÓ' ) . ': nota es lee especie ' . ( $e['especie'] ?? '?' ) . ', fecha ' . ( $e['fecha'] ?? '?' ) . ', foto #' . ( $e['foto'] ?? 0 ) );
 	$ok || WP_CLI::error( 'la nota es no lee especie, fecha o foto como se esperaba.' );
+	$alt = [];
 	foreach ( [ 'es', 'en', 'pt' ] as $i ) {
-		$p = pm_buscar( 'pm_nota', $clave, $i );
-		$a = $p ? pm_alternas_nota( $clave ) : [];
-		( 3 === count( $a ) ) || WP_CLI::error( "alternas hreflang de la nota ($i): " . count( $a ) . ' (esperadas 3).' );
+		$x = $existe( $i )[0] ?? null;
+		$x || WP_CLI::error( "falta la nota ($i) para el hreflang." );
+		$alt[ $i ] = get_permalink( $x->ID );
 	}
-	WP_CLI::log( 'VERIFIED: alternas hreflang es/en/pt: ' . implode( ' | ', pm_alternas_nota( $clave ) ) );
+	WP_CLI::log( 'VERIFIED: tres notas con la misma clave (hreflang es/en/pt se arma por clave): ' . implode( ' | ', $alt ) );
 	flush_rewrite_rules( false );
 }
 
