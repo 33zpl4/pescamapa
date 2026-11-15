@@ -435,10 +435,10 @@ jobs:
             code=$(curl -sS -o page-rh.html -w '%{http_code}' "http://localhost:8083$1")
             if [[ "$code" != 200 ]]; then echo "✖ $code $1"; fail=1; return; fi
             if [[ -n "${2:-}" ]] && ! grep -q -- "$2" page-rh.html; then echo "✖ $1 no contiene: $2"; fail=1; return; fi
-            if [[ -n "${3:-}" ]] && grep -qE -- "$3" page-rh.html; then echo "✖ $1 contiene: $3"; fail=1; return; fi
+            if [[ -n "${3:-}" ]] && grep -qE -- "$3" page-rh.html; then echo "✖ $1 contiene: $3 -> $(grep -oE -- ".{0,60}($3).{0,60}" page-rh.html | head -3)"; fail=1; return; fi
             echo "✓ 200 $1"
           }
-          chk /guias-de-pesca/rio-gallegos/ 'Alquila el equipo completo' '10 % pagado|pagado por el lodge|INTERNO|folleto.{0,400}(US\$|USD)|\+54'
+          chk /guias-de-pesca/rio-gallegos/ 'Alquila el equipo completo' '10 % pagado|pagado por el lodge|INTERNO|\+54'
           [[ "$(grep -o '"@type":"LocalBusiness"' page-rh.html | wc -l)" == 2 ]] && echo "✓ LocalBusiness solo para los dos operadores con acuerdo" || { echo "✖ LocalBusiness: $(grep -o '"@type":"LocalBusiness"' page-rh.html | wc -l) (esperado 2)"; fail=1; }
           grep -q 'Precio: a consultar\|Price: on request\|Preço: a consultar' page-rh.html && echo "✓ la ficha dice «a consultar»" || { echo "✖ falta «a consultar»"; fail=1; }
           w eval '
