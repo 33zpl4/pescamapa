@@ -10,7 +10,7 @@
  * Also adds the three pages to the note's sources (skipping URLs already there). Idempotent: skipped when a heading "What to bring / Qué llevar / O que levar" already exists.
  * Dry run first ($aplicar = false). Run with wp-script.yml (script = dorado-equipo-2026-11-15).
  */
-$aplicar = false;
+$aplicar = true;
 $clave   = 'golden-dorado-guia';
 $hoy     = '20261115';
 

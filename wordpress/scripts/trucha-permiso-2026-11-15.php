@@ -10,7 +10,7 @@
  * Each replacement needs the old sentence exactly once; anything else is logged as DISTINTO and left alone. Idempotent (skipped when the new sentence is there).
  * Dry run first ($aplicar = false). Run with wp-script.yml (script = trucha-permiso-2026-11-15).
  */
-$aplicar = false;
+$aplicar = true;
 $clave   = 'trucha-patagonia-pilar';
 $clave_n = 'licencia-pesca-patagonia-precios';
 
