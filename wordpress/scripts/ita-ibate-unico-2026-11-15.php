@@ -13,7 +13,7 @@
  * Idempotent. Dry run first ($aplicar = false). Run with wp-script.yml (script = ita-ibate-unico-2026-11-15).
  */
 
-$aplicar = false;
+$aplicar = true;
 $hoy     = '20261115';
 
 $guias = [

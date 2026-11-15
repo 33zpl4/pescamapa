@@ -16,7 +16,7 @@
  * Idempotent. Dry run first ($aplicar = false). Run with wp-script.yml (script = river-house-2026-11-15).
  */
 
-$aplicar = false;
+$aplicar = true;
 $hoy     = '20261115';
 
 // ---- helpers (same pattern as las-buitreras-2027-2026-11-13 / karku-acuerdo-2026-11-13) -------------------------------------------
