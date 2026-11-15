@@ -8,7 +8,7 @@
  * Idempotent: skipped when the title already says "Argentina". Dry run first ($aplicar = false). Run with wp-script.yml
  * (script = nota-trucha-patagonia-pilar-en-2026-11-15).
  */
-$aplicar = false;
+$aplicar = true;
 $clave   = 'trucha-patagonia-pilar';
 $titulo  = 'Trout fishing in Patagonia, Argentina: brown, rainbow and sea-run';
 $seo_t   = 'Trout fishing in Patagonia, Argentina: brown and rainbow';
