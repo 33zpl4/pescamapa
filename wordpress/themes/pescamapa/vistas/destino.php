@@ -152,7 +152,7 @@ get_header(); ?>
 				<?php $faqs_todas = pm_faqs_destino( $d ); if ( $faqs_todas ) : ?>
 					<h2 id="preguntas"><?php pm_e( 'ficha.faqs' ); ?></h2>
 					<?php foreach ( $faqs_todas as $f ) : ?>
-						<details><summary><?php echo esc_html( $f['pregunta'] ); ?></summary><p><?php echo esc_html( $f['respuesta'] ); ?></p></details>
+						<details><summary><?php echo esc_html( $f['pregunta'] ); ?></summary><p><?php echo wp_kses( $f['respuesta'], [ 'a' => [ 'href' => [] ] ] ); // answers are plain text; a link to one of our own notes is the only markup allowed (15/11/2026) ?></p></details>
 					<?php endforeach; ?>
 				<?php endif; ?>
 

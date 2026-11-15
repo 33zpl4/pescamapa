@@ -284,8 +284,8 @@ function pm_seo(): array {
 		$d   = $dp ? pm_destino( $dp->ID ) : null;
 		$paq = $d ? pm_paquetes( $dp->ID ) : [];
 		$a   = [ 'lugar' => $d['nombre'] ?? '' ];
-		$s['title']       = pm_t( 'paquetes.title', $a );
-		$s['description'] = ( $dp ? trim( (string) pm_campo( 'paquetes_description', $dp->ID ) ) : '' ) ?: pm_t( 'paquetes.description', $a );
+		$s['title']       = pm_t_clave( 'paquetes.title', $k, $a );
+		$s['description'] = ( $dp ? trim( (string) pm_campo( 'paquetes_description', $dp->ID ) ) : '' ) ?: pm_t_clave( 'paquetes.description', $k, $a );
 		$s['alternas']    = pm_alternas_paquetes( $k );
 		if ( $d ) {
 			$items = [];
@@ -296,11 +296,11 @@ function pm_seo(): array {
 				}
 				$items[] = [ '@type' => 'ListItem', 'position' => $n + 1, 'item' => $trip ];
 			}
-			$s['jsonld'][] = [ '@context' => 'https://schema.org', '@type' => 'ItemList', 'name' => pm_t( 'paquetes.h1', $a ), 'itemListElement' => $items ];
+			$s['jsonld'][] = [ '@context' => 'https://schema.org', '@type' => 'ItemList', 'name' => pm_t_clave( 'paquetes.h1', $k, $a ), 'itemListElement' => $items ];
 			$s['jsonld'][] = [
 				'@context'     => 'https://schema.org',
 				'@type'        => 'WebPage',
-				'name'         => pm_t( 'paquetes.h1', $a ),
+				'name'         => pm_t_clave( 'paquetes.h1', $k, $a ),
 				'description'  => $s['description'],
 				'url'          => pm_url_paquetes( $k, pm_lang() ),
 				'inLanguage'   => pm_meta_idioma()['html'],
@@ -322,7 +322,7 @@ function pm_seo(): array {
 				'itemListElement' => [
 					[ '@type' => 'ListItem', 'position' => 1, 'name' => 'Pescamapa', 'item' => pm_url_inicio( pm_lang() ) ],
 					[ '@type' => 'ListItem', 'position' => 2, 'name' => $d['nombre'], 'item' => $d['url'] ],
-					[ '@type' => 'ListItem', 'position' => 3, 'name' => pm_t( 'paquetes.h1', $a ), 'item' => pm_url_paquetes( $k, pm_lang() ) ],
+					[ '@type' => 'ListItem', 'position' => 3, 'name' => pm_t_clave( 'paquetes.h1', $k, $a ), 'item' => pm_url_paquetes( $k, pm_lang() ) ],
 				],
 			];
 		}
@@ -508,7 +508,7 @@ function pm_jsonld_destino( array $d ): array {
 		$out[] = [
 			'@context'   => 'https://schema.org',
 			'@type'      => 'FAQPage',
-			'mainEntity' => array_values( array_map( fn( $f ) => [ '@type' => 'Question', 'name' => $f['pregunta'], 'acceptedAnswer' => [ '@type' => 'Answer', 'text' => $f['respuesta'] ] ], $faqs ) ),
+			'mainEntity' => array_values( array_map( fn( $f ) => [ '@type' => 'Question', 'name' => $f['pregunta'], 'acceptedAnswer' => [ '@type' => 'Answer', 'text' => wp_strip_all_tags( $f['respuesta'] ) ] ], $faqs ) ),
 		];
 	}
 	return $out;

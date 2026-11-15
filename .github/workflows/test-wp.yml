@@ -112,6 +112,15 @@ jobs:
               && "2026-10-30" === pm_paquetes_modificado( [ [ "precio" => [ "fecha" => "2026-10-01" ] ] ], "2026-10-30" );
             $ok || WP_CLI::error( "pm_paquete_precio_txt / pm_paquetes_modificado: resultado inesperado" );
           '
+          # Per-destination Portuguese titles of the package pages (15/11/2026): the override wins, the generic text stays for the rest.
+          w eval '
+            $ok = "Pacotes e pousadas de pesca em Esquina, Corrientes" === pm_t_clave( "paquetes.title", "esquina", [ "lugar" => "Esquina" ], "pt" )
+              && "Pacotes de pescaria em Goya, Corrientes, Argentina" === pm_t_clave( "paquetes.h1", "goya", [ "lugar" => "Goya" ], "pt" )
+              && "Pacotes de pescaria em Zzz: opções e preços | Pescamapa" === pm_t_clave( "paquetes.title", "zzz", [ "lugar" => "Zzz" ], "pt" )
+              && "Paquetes de pesca en Esquina: opciones y precios | Pescamapa" === pm_t_clave( "paquetes.title", "esquina", [ "lugar" => "Esquina" ], "es" );
+            foreach ( [ "paquetes.title.esquina", "paquetes.h1.esquina", "paquetes.title.goya", "paquetes.title.bariloche", "paquetes.description.bariloche" ] as $k ) { $ok = $ok && mb_strlen( pm_t( $k, [], "pt" ) ) <= ( false !== strpos( $k, "description" ) ? 160 : 60 ) + ( "paquetes.h1.esquina" === $k ? 10 : 0 ); }
+            $ok || WP_CLI::error( "paquetes: los textos por destino en portugués no resuelven como se esperaba" );
+          '
           w eval '
             $id = wp_insert_post( [ "post_type" => "pm_entrevista", "post_status" => "publish", "post_title" => "Prueba: el río manda", "post_name" => "prueba-el-rio-manda", "post_content" => "<!-- wp:paragraph --><p>Charla de prueba.</p><!-- /wp:paragraph -->" ] );
             foreach ( [ "idioma" => "es", "clave" => "prueba", "persona" => "Persona Prueba", "destino" => "esquina", "fecha" => "20261020", "consentimiento" => 1, "rol" => "Guía de prueba", "bajada" => "Bajada de prueba", "seo_title" => "Prueba", "seo_description" => "Descripción de prueba" ] as $k => $v ) { update_field( $k, $v, $id ); }
@@ -125,6 +134,7 @@ jobs:
             update_field( "fuentes", [ [ "nombre" => "FUENTE-DE-PRUEBA", "url" => "https://example.com/fuente", "oficial" => 0, "consultada" => "20261021" ] ], $n );
             $esq = pm_buscar( "pm_destino", "esquina", "es" );
             update_field( "mas", [ [ "nombre" => "MAS-GRATIS", "url" => "https://example.com/a", "texto" => "Un paseo", "patrocinado" => 0 ], [ "nombre" => "MAS-PAGO", "url" => "https://example.com/b", "texto" => "Un aviso", "patrocinado" => 1 ] ], $esq->ID );
+            $fq = pm_filas( "faqs", $esq->ID ); $fq[] = [ "pregunta" => "FAQ-ENLACE-PREGUNTA", "respuesta" => "Texto previo <a href=\"https://example.com/faq-enlace\">ENLACE-FAQ-PRUEBA</a> y final <script>alert(1)</script>" ]; update_field( "faqs", $fq, $esq->ID );
             $pub = wp_insert_post( [ "post_type" => "pm_prestador", "post_status" => "publish", "post_title" => "PRESTADOR-PUBLICO" ] );
             foreach ( [ "tipo" => [ "operador" ], "prest_destino" => "esquina", "prest_publico" => 1, "prest_fuente" => "https://example.com/prestador" ] as $k => $v ) { update_field( $k, $v, $pub ); }
             $ac = wp_insert_post( [ "post_type" => "pm_prestador", "post_status" => "publish", "post_title" => "PRESTADOR-CON-ACUERDO" ] );
@@ -227,6 +237,12 @@ jobs:
           wp --path="$WP" eval-file "/tmp/$sc.php" | tee /tmp/correcciones-2.log   # idempotent: nothing changes the second time
           grep -qE ' bytes|campos:' /tmp/correcciones-2.log && { echo "✖ la segunda corrida volvió a cambiar algo"; exit 1; }
           grep -q 'APLICADO' /tmp/correcciones-2.log || { echo "✖ la segunda corrida no terminó"; exit 1; }
+          # 15/11/2026 content scripts (PT titles, dorado equipment section, trout permit sentence, PT cost FAQ): the throwaway site has none of that content, so the
+          # dry copies (the flag is forced to false) must log what is missing, touch nothing and not raise a PHP error.
+          for sc in pt-pousadas-titulos-2026-11-15 dorado-equipo-2026-11-15 trucha-permiso-2026-11-15 pt-faq-custo-2026-11-15; do
+            sed 's/^\$aplicar = true;/$aplicar = false;/' "wordpress/scripts/$sc.php" > "/tmp/$sc-dry.php"
+            wp --path="$WP" eval-file "/tmp/$sc-dry.php"
+          done
           wp --path="$WP" server --host=localhost --port=8081 > /tmp/server-corrientes.log 2>&1 &
           sleep 3
           fail=0
@@ -503,6 +519,9 @@ jobs:
           check /litoral/corrientes/pesca-en-esquina/ 200 'admin-post.php'
           # Public listing: shown, labelled unverified, with the removal link; no listing flag, no card.
           check /litoral/corrientes/pesca-en-esquina/ 200 'PRESTADOR-PUBLICO' 'PRESTADOR-NO-PUBLICO'
+          # FAQ answer with a link to one of our notes (15/11/2026): the link prints, other markup does not, and the FAQPage JSON-LD carries the text without tags.
+          check /litoral/corrientes/pesca-en-esquina/ 200 '<a href="https://example.com/faq-enlace">ENLACE-FAQ-PRUEBA</a>' '<script>alert(1)'
+          check /litoral/corrientes/pesca-en-esquina/ 200 'Texto previo ENLACE-FAQ-PRUEBA y final'
           check /litoral/corrientes/pesca-en-esquina/ 200 'mailto:info@pescamapa.com?subject='
           check /litoral/corrientes/pesca-en-esquina/ 200 'sin verificar con el prestador'
           check /litoral/corrientes/pesca-en-esquina/ 200 'Precio: a consultar'
