@@ -773,8 +773,8 @@ jobs:
           chk /notas/fiesta-nacional-del-surubi-2027/ 'AUTOR-PORTADA-GOYA'
           grep -q 'especie=surubi' page-ds.html || { echo "✖ la nota de la Fiesta sin ?especie=surubi"; fail=1; }
           # The surubí species page: the new section and 3 FAQ (1 existing + 2 new), in 3 languages.
-          chk /especies/surubi/ 'Nombres del surub'
-          grep -c '<h3' page-ds.html > /dev/null
+          n=$(w eval 'foreach ( get_posts( [ "post_type" => "pm_especie", "post_status" => "any", "meta_key" => "_prueba_ds", "meta_value" => 1, "numberposts" => -1 ] ) as $x ) { if ( "surubi" === get_post_meta( $x->ID, "clave", true ) ) { echo count( pm_faqs_contenido( $x->post_content ) ) . ( false !== strpos( $x->post_content, "wp-block-group pm-faq" ) ? "f" : "-" ); } }')
+          [[ "$n" == "3f3f3f" ]] && echo "✓ la ficha del surubí (3 idiomas) quedó con la sección y 3 preguntas (1 + 2)" || { echo "✖ fichas del surubí: $n (esperado 3f3f3f)"; fail=1; }
           # Home shortcut to the pillar.
           for h in / /en/ /pt/; do chk "$h" 'class="atajos"'; grep -q 'prueba-ds-pilar' page-ds.html || { echo "✖ $h sin el atajo al pilar"; fail=1; }; done
           chk /llms.txt 'fiesta-nacional-del-surubi-2027'
