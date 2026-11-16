@@ -98,7 +98,7 @@ if ( ! function_exists( 'pm_sc_h2' ) ) {
 
 
 
-$aplicar = false;
+$aplicar = true;
 $hoy     = '20261116';
 
 // Which pages get which links. Each entry: [ post type, clave, [ keys of the pages to link ] ]. A link already present in the page is skipped; a page with nothing to add is not touched.
