@@ -153,7 +153,8 @@ foreach ( $post as [ $tipo, $c, $por_idioma ] ) {
 		$cambios++;
 		if ( $aplicar ) {
 			pm_sc_guardar( $p->ID, str_replace( $viejo, $nuevo, $cont ), [ $nuevo ], "$tipo $c ($i)" );
-			false === strpos( get_post( $p->ID )->post_content, $viejo ) || WP_CLI::error( "$tipo $c ($i): el texto viejo sigue en la página." );
+			// When the new text only appends to the old one (the guide sentence) the old text is rightly still there.
+			false !== strpos( $nuevo, $viejo ) || false === strpos( get_post( $p->ID )->post_content, $viejo ) || WP_CLI::error( "$tipo $c ($i): el texto viejo sigue en la página." );
 			WP_CLI::log( "VERIFIED: $tipo $c ($i) #{$p->ID} corregido y sin el texto viejo" );
 		}
 	}
