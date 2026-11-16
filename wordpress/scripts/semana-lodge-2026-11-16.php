@@ -552,6 +552,7 @@ $resolver = function ( string $html, string $i ) use ( &$u ): string {
 		return '<a href="' . esc_url( pm_url_especie( $m[1], $i ) ) . '">' . $m[2] . '</a>';
 	}, $html );
 	$html = preg_replace_callback( '/\{viaje:([a-z0-9-]+)\}/', fn( $m ) => esc_url( pm_url_viaje( $i ) . '?especie=' . $m[1] ), $html );
+	$html = preg_replace_callback( '/\{cal\|([^}]+)\}/', fn( $m ) => '<a href="' . esc_url( pm_url_calendario( $i ) ) . '">' . $m[1] . '</a>', $html );
 	$html = str_replace( '{viaje}', esc_url( pm_url_viaje( $i ) ), $html );
 	$html = str_replace( '{cal}', esc_url( pm_url_calendario( $i ) ), $html );
 	if ( preg_match( '/\{(n:|g:|u:|x:|viaje|cal|esp:)[^}]*\}?/', $html, $m ) ) {
