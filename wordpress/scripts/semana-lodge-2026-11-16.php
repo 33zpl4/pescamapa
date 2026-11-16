@@ -111,7 +111,7 @@ if ( ! function_exists( 'pm_pp_olista' ) ) {
 	}
 }
 
-$aplicar = false;
+$aplicar = true;
 $hoy          = '20261116';
 $clave        = 'semana-de-pesca-en-lodge-argentina';
 $foto_de      = 'paquete-incluye-no-incluye'; // note whose cover photo is reused (Commons, silhouette of a boat at sunset)
