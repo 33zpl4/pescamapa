@@ -607,6 +607,27 @@ jobs:
             n=$(cuenta "$h"); [[ "$n" == 4 ]] || { echo "✖ el hub $h está enlazado desde $n notas de prueba (esperadas 4: permiso, costo, dorado, trucha; la nota de la semana se crea sin la marca de prueba)"; exit 1; }
           done
           echo "✓ enlaces entrantes: una vez por página"
+          # --- Copy fix (visa sentence of the hub + «operadores» in permit/cost notes): dry run writes nothing, apply, second run finds nothing.
+          sc=copy-visa-operadores-2026-11-16
+          w eval 'foreach ( get_posts( [ "post_type" => "pm_nota", "post_status" => "any", "meta_key" => "clave", "meta_value" => "permiso-pesca-argentina-paso-a-paso", "numberposts" => -1 ] ) as $x ) { $i = pm_idioma_de( $x->ID ); $t = [ "es" => "opciones de los operadores que encajan", "en" => "options from the operators that fit", "pt" => "opções dos operadores que se encaixam" ][ $i ] ?? ""; if ( $t ) { wp_update_post( [ "ID" => $x->ID, "post_content" => wp_slash( $x->post_content . "\n<p>" . $t . "</p>" ) ] ); } }'
+          sed 's/^\$aplicar = [a-z]*;/$aplicar = false;/' "wordpress/scripts/$sc.php" > "/tmp/$sc-dry.php"
+          wp --path="$WP" eval-file "/tmp/$sc-dry.php" | tee /tmp/copy-dry.log
+          grep -q 'Simulacro terminado' /tmp/copy-dry.log || { echo "✖ el simulacro de $sc no terminó"; exit 1; }
+          [[ $(grep -c 'SIMULACRO: hub' /tmp/copy-dry.log) == 3 ]] || { echo "✖ el simulacro no vio el hub en 3 idiomas"; exit 1; }
+          n=$(w eval 'echo count( array_filter( get_posts( [ "post_type" => "pm_nota", "post_status" => "any", "numberposts" => -1 ] ), fn( $x ) => preg_match( "/no necesitan visa|do not need a visa|n[ãa]o precisam de visto/u", $x->post_content ) ) );')
+          [[ "$n" == 3 ]] || { echo "✖ antes de aplicar debía haber 3 hubs con la frase vieja y hay $n"; exit 1; }
+          cp "wordpress/scripts/$sc.php" "/tmp/$sc.php"
+          sed -i 's/^\$aplicar = [a-z]*;/$aplicar = true;/' "/tmp/$sc.php"
+          wp --path="$WP" eval-file "/tmp/$sc.php" | tee /tmp/copy-1.log
+          grep -q 'FALLÓ' /tmp/copy-1.log && { echo "✖ $sc: la lectura de vuelta falló"; exit 1; }
+          [[ $(grep -c 'VERIFIED: hub' /tmp/copy-1.log) == 3 ]] || { echo "✖ $sc: se esperaban 3 VERIFIED del hub"; exit 1; }
+          wp --path="$WP" eval-file "/tmp/$sc.php" | tee /tmp/copy-2.log
+          grep -q 'Aplicado: 0 cambios' /tmp/copy-2.log || { echo "✖ la segunda corrida de $sc volvió a cambiar algo"; exit 1; }
+          n=$(w eval 'echo count( array_filter( get_posts( [ "post_type" => "pm_nota", "post_status" => "any", "numberposts" => -1 ] ), fn( $x ) => preg_match( "/no necesitan visa|do not need a visa|n[ãa]o precisam de visto|opciones de los operadores que encajan|options from the operators that fit|opções dos operadores que se encaixam/u", $x->post_content ) ) );')
+          [[ "$n" == 0 ]] || { echo "✖ quedan $n notas con el texto viejo"; exit 1; }
+          n=$(w eval 'echo count( array_filter( get_posts( [ "post_type" => "pm_nota", "post_status" => "any", "numberposts" => -1 ] ), fn( $x ) => false !== strpos( $x->post_content, "https://www.argentina.gob.ar/migraciones/turistas" ) ) );')
+          [[ "$n" == 3 ]] || { echo "✖ el enlace oficial está en $n notas (esperadas 3)"; exit 1; }
+          echo "✓ $sc: simulacro sin escribir, aplicado, idempotente"
           wp --path="$WP" server --host=localhost --port=8084 > /tmp/server-vn.log 2>&1 &
           sleep 3
           fail=0
