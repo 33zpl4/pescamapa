@@ -108,7 +108,7 @@ if ( ! function_exists( 'pm_pp_olista' ) ) {
 	}
 }
 
-$aplicar = false;
+$aplicar = true;
 $hoy          = '20261116';
 $clave        = 'como-preparar-viaje-pesca-argentina';
 $foto_de      = 'precio-viaje-dorado-lodge'; // note whose cover photo is reused (Commons, sunrise over the Paraná River, no people)
