@@ -90,6 +90,14 @@ jobs:
             check "$p" 200 '<figcaption>'   # the cover photo shows its credit (whoever the editor named)
           done
           check /notas/ 200 'cuando-pescar-surubi'
+          # Dorado pillar and National Surubí Festival note (16/11/2026), 3 languages: the page exists, JSON-LD with an FAQPage, a cover photo with a credit, no internal markers (not their wording).
+          for p in /notas/pesca-del-dorado-en-la-argentina/ /en/notes/golden-dorado-fishing-argentina/ /pt/notas/pesca-de-dourado-na-argentina/ \
+                   /notas/fiesta-nacional-del-surubi-2027/ /en/notes/national-surubi-festival-goya-2027/ /pt/notas/festa-nacional-do-surubim-goya-2027/; do
+            check "$p" 200 'application/ld+json' 'PENDIENTE'
+            grep -q '"FAQPage"' page.html || { echo "✖ $p sin FAQPage"; fail=1; }
+            grep -q '<figcaption>' page.html || { echo "✖ $p sin la foto de portada con su crédito"; fail=1; }
+          done
+          check / 200 'pesca-del-dorado-en-la-argentina'   # home shortcut to the dorado pillar
           # Notes inside the guides, the species pages and the home.
           check /litoral/corrientes/pesca-en-goya/ 200 'Para leer antes de ir a Goya'
           check /especies/dorado/ 200 'Notas sobre esta especie'

@@ -686,6 +686,111 @@ jobs:
             }'
           kill %1 2>/dev/null || true
           exit $fail
+      - name: Dorado pillar, surubí festival note, links and home shortcut - dry run, apply on stubs (twice), render, clean up
+        run: |
+          w() { wp --path="$WP" "$@"; }
+          w eval-file "$GITHUB_WORKSPACE/.github/scripts/dorado-surubi-fixtures.php"
+          # --- Dry runs (the committed scripts may be $aplicar = true or false; the dry copy forces false and must write nothing).
+          for sc in pilar-dorado-2026-11-16 surubi-fiesta-2026-11-16; do
+            sed 's/^\$aplicar = [a-z]*;/$aplicar = false;/' "wordpress/scripts/$sc.php" > "/tmp/$sc-dry.php"
+            wp --path="$WP" eval-file "/tmp/$sc-dry.php" | tee "/tmp/$sc-dry.log"
+            grep -q 'Simulacro terminado' "/tmp/$sc-dry.log" || { echo "✖ el simulacro de $sc no terminó"; exit 1; }
+          done
+          n=$(w post list --post_type=pm_nota --post_status=any --meta_key=clave --meta_value=fiesta-nacional-del-surubi-2027 --format=count)
+          [[ "$n" == 0 ]] || { echo "✖ el simulacro escribió $n notas de la Fiesta"; exit 1; }
+          n=$(w eval 'echo count( array_filter( get_posts( [ "post_type" => [ "pm_nota", "pm_especie" ], "post_status" => "any", "meta_key" => "_prueba_ds", "meta_value" => 1, "numberposts" => -1 ] ), fn( $x ) => false !== strpos( $x->post_content, "wp-block-group pm-faq" ) && ( "pm_nota" === $x->post_type || false !== strpos( $x->post_content, "Nombres del surub" ) ) ) );')
+          [[ "$n" == 0 ]] || { echo "✖ el simulacro editó $n páginas"; exit 1; }
+          # --- Apply (always the applying path), twice each: the second run must write nothing.
+          for sc in pilar-dorado-2026-11-16 pilar-dorado-set-2026-11-16 surubi-fiesta-2026-11-16 enlaces-dorado-surubi-2026-11-16; do
+            cp "wordpress/scripts/$sc.php" "/tmp/$sc.php"
+            sed -i 's/^\$aplicar = [a-z]*;/$aplicar = true;/' "/tmp/$sc.php"
+            wp --path="$WP" eval-file "/tmp/$sc.php" | tee "/tmp/$sc-1.log"
+            wp --path="$WP" eval-file "/tmp/$sc.php" | tee "/tmp/$sc-2.log"
+            grep -q 'FALLÓ' "/tmp/$sc-1.log" && { echo "✖ $sc: la lectura de vuelta falló"; exit 1; }
+            grep -q 'VERIFIED' "/tmp/$sc-1.log" || { echo "✖ $sc: ningún VERIFIED"; exit 1; }
+            grep -q 'APLICA:' "/tmp/$sc-2.log" && { echo "✖ $sc: la segunda corrida volvió a escribir"; exit 1; }
+            echo "✓ $sc: aplicado y sin cambios la segunda vez"
+          done
+          n=$(w post list --post_type=pm_nota --post_status=publish --meta_key=clave --meta_value=fiesta-nacional-del-surubi-2027 --format=count)
+          [[ "$n" == 3 ]] && echo "✓ fiesta-nacional-del-surubi-2027: nota en 3 idiomas" || { echo "✖ $n notas de la Fiesta (esperadas 3)"; exit 1; }
+          n=$(w eval 'foreach ( get_posts( [ "post_type" => "pm_nota", "post_status" => "any", "meta_key" => "_prueba_ds", "meta_value" => 1, "numberposts" => -1 ] ) as $x ) { if ( "golden-dorado-guia" === get_post_meta( $x->ID, "clave", true ) ) { echo count( pm_faqs_contenido( $x->post_content ) ); } }')
+          [[ "$n" == 888 ]] && echo "✓ el pilar tiene 8 preguntas en los 3 idiomas" || { echo "✖ preguntas del pilar: $n (esperado 888)"; exit 1; }
+          # Any guide counts: pm_buscar() finds the sample-content Esquina and Paso de la Patria guides before the stubs with the same clave.
+          n=$(w eval 'echo count( array_filter( get_posts( [ "post_type" => "pm_destino", "post_status" => "any", "numberposts" => -1 ] ), fn( $x ) => false !== strpos( $x->post_content, "prueba-ds-pilar" ) ) );')
+          [[ "$n" == 21 ]] && echo "✓ las 7 guías enlazan el pilar en los 3 idiomas" || { echo "✖ $n guías enlazan el pilar (esperadas 21)"; exit 1; }
+          wp --path="$WP" server --host=localhost --port=8085 > /tmp/server-ds.log 2>&1 &
+          sleep 3
+          fail=0
+          chk() { # path must-contain [must-not-contain regex]
+            code=$(curl -sS -o page-ds.html -w '%{http_code}' "http://localhost:8085$1")
+            if [[ "$code" != 200 ]]; then echo "✖ $code $1"; fail=1; return; fi
+            if [[ -n "${2:-}" ]] && ! grep -q -- "$2" page-ds.html; then echo "✖ $1 no contiene: $2"; fail=1; return; fi
+            if [[ -n "${3:-}" ]] && grep -qE -- "$3" page-ds.html; then echo "✖ $1 contiene: $3"; fail=1; return; fi
+            echo "✓ 200 $1"
+          }
+          for par in "/notas/prueba-ds-pilar-es/:8" "/en/notes/prueba-ds-pilar-en/:8" "/pt/notas/prueba-ds-pilar-pt/:8" "/notas/fiesta-nacional-del-surubi-2027/:5" "/en/notes/national-surubi-festival-goya-2027/:5" "/pt/notas/festa-nacional-do-surubim-goya-2027/:5"; do
+            p="${par%:*}"; nfaq="${par##*:}"
+            chk "$p" '"Article"' 'PENDIENTE|\{g:|\{n:|\{u:|\{esp:|\{viaje'
+            grep -q '"BreadcrumbList"' page-ds.html || { echo "✖ $p sin BreadcrumbList"; fail=1; }
+            grep -q 'hreflang="x-default"' page-ds.html || { echo "✖ $p sin x-default"; fail=1; }
+            for h in 'hreflang="es"' 'hreflang="en"' 'hreflang="pt-BR"'; do grep -q "$h" page-ds.html || { echo "✖ $p sin $h"; fail=1; }; done
+            python3 - "$p" "$nfaq" <<'PY' || fail=1
+          import html, json, re, sys
+          t = open("page-ds.html", encoding="utf-8").read()
+          p, nfaq = sys.argv[1], int(sys.argv[2])
+          blocks = [json.loads(b) for b in re.findall(r'<script type="application/ld\+json">(.*?)</script>', t, re.S)]
+          flat = []
+          for b in blocks:
+              flat += b if isinstance(b, list) else [b]
+          bc = [b for b in flat if b.get("@type") == "BreadcrumbList"]
+          faq = [b for b in flat if b.get("@type") == "FAQPage"]
+          ok = True
+          if not bc or not all(li.get("item") for li in bc[0]["itemListElement"]):
+              print("✖", p, "BreadcrumbList sin item en algún ListItem"); ok = False
+          if not faq or len(faq[0]["mainEntity"]) != nfaq:
+              print("✖", p, "FAQPage con", len(faq[0]["mainEntity"]) if faq else 0, "preguntas (esperadas", nfaq, ")"); ok = False
+          visibles = re.search(r'class="wp-block-group pm-faq">(.*?)</div>', t, re.S)
+          n_h3 = len(re.findall(r"<h3", visibles.group(1))) if visibles else 0
+          if n_h3 != nfaq:
+              print("✖", p, "FAQ visible con", n_h3, "preguntas (esperadas", nfaq, ")"); ok = False
+          if "prueba-ds-pilar" not in p:
+              title = html.unescape(re.search(r"<title>(.*?)</title>", t, re.S).group(1))
+              desc = html.unescape(re.search(r'name="description" content="(.*?)"', t, re.S).group(1))
+              if len(title) > 60 or not (70 <= len(desc) <= 160):
+                  print("✖", p, "title", len(title), "description", len(desc)); ok = False
+          if ok:
+              print("✓", p, "JSON-LD con item, FAQ visible = FAQPage (", nfaq, ")")
+          sys.exit(0 if ok else 1)
+          PY
+          done
+          # The pillar: comparison table with the phone class, the new call to action, the old wording gone, the button with ?especie=dorado.
+          chk /notas/prueba-ds-pilar-es/ 'wp-block-table pm-estilo' 'operadores que encajan'
+          grep -q 'te armamos la mejor opción para vos' page-ds.html || { echo "✖ el pilar (es) sin el mensaje nuevo"; fail=1; }
+          grep -q 'especie=dorado' page-ds.html || { echo "✖ el pilar (es) sin ?especie=dorado"; fail=1; }
+          chk /en/notes/prueba-ds-pilar-en/ 'put together the best option for you' 'operators that fit'
+          chk /pt/notas/prueba-ds-pilar-pt/ 'montamos a melhor opção para você' 'operadores que combinam'
+          # The festival note: the Goya cover photo with its author, the species and destination boxes.
+          chk /notas/fiesta-nacional-del-surubi-2027/ 'AUTOR-PORTADA-GOYA'
+          grep -q 'especie=surubi' page-ds.html || { echo "✖ la nota de la Fiesta sin ?especie=surubi"; fail=1; }
+          # The surubí species page: the new section and 3 FAQ (1 existing + 2 new), in 3 languages.
+          # Any surubí species page counts (the sample content may hold one with the same clave as the stub).
+          n=$(w eval 'echo count( array_filter( get_posts( [ "post_type" => "pm_especie", "post_status" => "any", "numberposts" => -1 ] ), fn( $x ) => "surubi" === get_post_meta( $x->ID, "clave", true ) && preg_match( "/Nombres del surub|Names for the surub|Nomes do surubim/u", $x->post_content ) ) );')
+          # The sample content has a Spanish surubí page of its own, without an FAQ heading: the script leaves it alone and warns, so en and pt (the stubs) are the two that must carry the section.
+          [[ "$n" -ge 2 ]] && echo "✓ la ficha del surubí tiene la sección de nombres ($n idiomas)" || { echo "✖ fichas del surubí con la sección: $n (esperadas al menos 2)"; fail=1; }
+          # Home shortcut to the pillar.
+          for h in / /en/ /pt/; do chk "$h" 'class="atajos"'; grep -q 'prueba-ds-pilar' page-ds.html || { echo "✖ $h sin el atajo al pilar"; fail=1; }; done
+          chk /llms.txt 'fiesta-nacional-del-surubi-2027'
+          chk /wp-sitemap-posts-pm_nota-1.xml 'national-surubi-festival-goya-2027'
+          # Clean up: this step must leave no trace for the checks that follow.
+          w eval '
+            foreach ( [ "pm_destino", "pm_nota", "pm_especie", "attachment" ] as $t ) {
+              foreach ( get_posts( [ "post_type" => $t, "post_status" => "any", "posts_per_page" => -1, "suppress_filters" => true ] ) as $p ) {
+                $c = (string) get_post_meta( $p->ID, "clave", true );
+                if ( get_post_meta( $p->ID, "_prueba_ds", true ) || ( "pm_nota" === $t && "fiesta-nacional-del-surubi-2027" === $c ) ) { wp_delete_post( $p->ID, true ); }
+              }
+            }'
+          kill %1 2>/dev/null || true
+          exit $fail
       - name: Render pages
         run: |
           exec > >(tee /tmp/render-all.log) 2>&1

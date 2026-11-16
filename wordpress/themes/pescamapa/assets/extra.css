@@ -530,3 +530,14 @@ footer .negocio a { color: var(--white); text-decoration: underline; text-underl
 @media (max-width: 340px) { .v-inicio .pregunta .opciones { grid-template-columns: minmax(0, 1fr); } }
 /* The language pill is fixed at the bottom: leave room under the footer so it never hides the last links. */
 @media (max-width: 860px) { body:has(.sugerencia-idioma) footer { padding-bottom: 80px; } }
+
+/* Comparison table of the dorado pillar ("Qué destino te conviene", 16/11/2026): on phones each row becomes a card instead of a 560px table that scrolls sideways. */
+@media (max-width: 640px) {
+	.prose .wp-block-table.pm-estilo { overflow: visible; background: none; }
+	.prose .wp-block-table.pm-estilo table { min-width: 0; display: block; }
+	.prose .wp-block-table.pm-estilo thead { display: none; }
+	.prose .wp-block-table.pm-estilo tbody, .prose .wp-block-table.pm-estilo tr, .prose .wp-block-table.pm-estilo td { display: block; }
+	.prose .wp-block-table.pm-estilo tr { border: 1px solid var(--line); border-radius: 10px; margin: 0 0 12px; padding: 6px 0; }
+	.prose .wp-block-table.pm-estilo td { border-bottom: 0; padding: 4px 12px; }
+	.prose .wp-block-table.pm-estilo td:first-child { font-size: 1.05em; }
+}
