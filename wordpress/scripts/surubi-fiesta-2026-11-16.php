@@ -100,7 +100,7 @@ if ( ! function_exists( 'pm_sc_h2' ) ) {
 
 
 
-$aplicar = false;
+$aplicar = true;
 $clave   = 'fiesta-nacional-del-surubi-2027';
 $hoy     = '20261116';
 

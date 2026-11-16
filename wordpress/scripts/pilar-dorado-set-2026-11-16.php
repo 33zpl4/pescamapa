@@ -99,7 +99,7 @@ if ( ! function_exists( 'pm_sc_h2' ) ) {
 
 
 
-$aplicar = false;
+$aplicar = true;
 $clave   = 'golden-dorado-guia';
 $hoy     = '20261116';
 $u = [ 'set3' => 'https://setflyfishing.com/en/3-lodges-3-experiences/' ];
