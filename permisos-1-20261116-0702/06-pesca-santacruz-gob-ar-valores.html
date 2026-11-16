@@ -1,0 +1,484 @@
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Pesca</title>
+  
+  
+  <link rel="icon" type="image/x-icon" href="/static/img/favicon.ico">
+  
+
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" integrity="sha384-tViUnnbYAV00FLIhhi3v/dWt3Jxw4gZQcNoSCxCIFNJVCx7/D55/wXsrNIRANwdD" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/main.css">
+
+  
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+  
+  <link rel="stylesheet" type="text/css" href="/static/css/icono-arg.min.css">
+
+  
+  <link rel="stylesheet" href="/static/css/home.css">
+
+  
+  
+
+  
+  <link rel="stylesheet" type="text/css" href="/static/css/project.css">
+</head>
+
+<body>
+
+  
+  
+
+
+<header class="custom-header">
+  <div class="container d-flex align-items-center justify-content-between header-inner">
+
+    <!-- Logo -->
+    <a href="/" class="d-flex align-items-center gap-1 text-decoration-none">
+      <img src="/static/img/logo-santacruz.png"
+           alt="Escudo Gobierno de Santa Cruz"
+           class="logo-img">
+
+      <div class="logo-text">
+        <p class="logo-top">Gobierno de Santa Cruz</p>
+        <p class="logo-bottom">Pesca y Acuicultura</p>
+      </div>
+    </a>
+
+    <!-- NAV DESKTOP -->
+    <nav class="nav-desktop d-none d-md-flex align-items-center gap-2">
+
+      <a href="/ayuda/" class="btn btn-ghost btn-sm d-flex align-items-center gap-2">
+        <i class="bi-question-circle"></i>
+        Ayuda
+      </a>
+
+      
+        <!-- Invitado -->
+        <a href="/accounts/login/"
+           class="btn btn-primary d-flex align-items-center gap-2">
+          <i class="bi-box-arrow-in-right"></i>
+          Inicio de sesión
+        </a>
+
+      
+
+    </nav>
+
+    <!-- BOTON MOBILE -->
+    <button class="menu-toggle d-md-none" id="menuToggle">
+      <i class="bi-list"></i>
+    </button>
+  </div>
+
+  <!-- NAV MOBILE -->
+  <div class="nav-mobile d-md-none" id="mobileMenu">
+    <div class="container py-3 d-flex flex-column gap-2">
+
+      <a href="/ayuda/" class="btn btn-ghost w-100 text-start d-flex align-items-center gap-2">
+        <i class="bi-question-circle"></i>
+        Ayuda
+      </a>
+
+      
+
+        <a href="/accounts/login/"
+           class="btn btn-primary w-100 text-start d-flex align-items-center gap-2">
+          <i class="bi-box-arrow-in-right"></i>
+          Inicio de sesión
+        </a>
+
+      
+
+    </div>
+  </div>
+</header>
+
+  <span class="alert-mensaje">
+      
+  </span>
+
+  
+  
+
+  <a id="ir-arriba" class="ir-arriba d-print-none" href="#" title="Volver arriba">
+    <span class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center shadow"
+          style="width:48px;height:48px;">
+      <i class="bi bi-arrow-up" style="font-size:1.5rem;"></i>
+    </span>
+  </a>
+  
+  
+
+<section class="border-bottom bg-light">
+  <div class="container pt-5 pb-2">
+
+    <a href="/ayuda/" class="btn btn-link px-0 mb-3 text-decoration-none text-muted">
+      <i class="bi bi-arrow-left me-2"></i>
+      Volver a la Ayuda
+    </a>
+
+    <p class="text-uppercase small fw-semibold text-secondary mb-2" style="letter-spacing: 0.15em;">
+      Aranceles · Temporada 2026/2027
+    </p>
+
+    <h1 class="fw-bold text-primary display-5">
+      Valores y Categorías
+    </h1>
+
+  </div>
+</section>
+
+<section class="pt-3 pb-5">
+  <div class="container">
+
+    <p class="text-muted mb-4">
+      Tipos de permisos disponibles, categorías y precios vigentes para la temporada
+      2026/2027 (Disposición Nº 242/2026 · EXPTE 443.691). El permiso es
+      <strong>personal, nominativo e intransferible</strong>.
+    </p>
+
+    <!-- Permisos ordinarios -->
+    <div class="table-responsive mb-5">
+      <table class="table table-bordered align-middle">
+        <thead class="table-primary">
+          <tr>
+            <th>Permisos ordinarios</th>
+            <th style="width: 130px;">Categoría</th>
+            <th style="width: 180px;">Precio (ARS)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Permiso residente país diario</td>
+            <td class="fw-semibold text-primary">RP-D</td>
+            <td>$ 15.000</td>
+          </tr>
+          <tr>
+            <td>Permiso residente país fin de semana (sábado y domingo)</td>
+            <td class="fw-semibold text-primary">RP-F</td>
+            <td>$ 20.000</td>
+          </tr>
+          <tr>
+            <td>Permiso residente país semanal</td>
+            <td class="fw-semibold text-primary">RP-S</td>
+            <td>$ 25.000</td>
+          </tr>
+          <tr>
+            <td>Permiso residente país por temporada</td>
+            <td class="fw-semibold text-primary">RP-T</td>
+            <td class="fw-semibold">$ 40.000</td>
+          </tr>
+          <tr>
+            <td>
+              <p class="mb-1">Permiso residente país menores de 13 a 17 años inclusive, por temporada.</p>
+              <p class="mb-0 small text-muted">
+                Debe ser solicitado por el padre, madre o tutor, quien firmará el recibo del
+                permiso y será responsable por las infracciones del menor.
+              </p>
+            </td>
+            <td class="fw-semibold text-primary">RPM-T</td>
+            <td>$ 15.000</td>
+          </tr>
+          <tr>
+            <td>
+              <p class="mb-1">Permiso para residentes país por temporada:</p>
+              <ul class="mb-0 small">
+                <li>Mayores de 65 años</li>
+                <li>Jubilados/as</li>
+                <li>Pensionados/as</li>
+                <li>Niños/as (hasta 12 años, solicitado por padre, madre o tutor)</li>
+                <li>Personas con discapacidad (con acreditación oficial)</li>
+              </ul>
+            </td>
+            <td class="fw-semibold text-primary">RP-JPM</td>
+            <td>Sin cargo</td>
+          </tr>
+          <tr>
+            <td>
+              <p class="mb-1">Permiso por temporada para socios de club de pesca.</p>
+              <p class="mb-0 small text-muted">
+                50% del valor RP-T. El club debe poseer Personería Jurídica vigente.
+              </p>
+            </td>
+            <td class="fw-semibold text-primary">SC-T</td>
+            <td>$ 20.000</td>
+          </tr>
+          <tr>
+            <td>
+              <p class="mb-1">Permiso Único para Excombatientes de Malvinas Argentinas.</p>
+              <p class="mb-0 small text-muted">
+                Vigencia permanente, sin fecha de caducidad, supeditado a la presentación de la
+                certificación oficial. Rinde honores al "Ex combatiente, Teniente Coronel Zunino,
+                Rubén Oscar".
+              </p>
+            </td>
+            <td class="fw-semibold text-primary">E-MALVINAS</td>
+            <td>Sin cargo</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- No residentes -->
+    <div class="table-responsive mb-5">
+      <table class="table table-bordered align-middle">
+        <thead class="table-primary">
+          <tr>
+            <th>Permisos no residentes</th>
+            <th style="width: 130px;">Categoría</th>
+            <th style="width: 180px;">Precio (ARS)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Permiso para no residentes en el país diario</td>
+            <td class="fw-semibold text-primary">E-D</td>
+            <td>$ 90.000</td>
+          </tr>
+          <tr>
+            <td>Permiso para no residentes en el país semanal</td>
+            <td class="fw-semibold text-primary">E-S</td>
+            <td>$ 300.000</td>
+          </tr>
+          <tr>
+            <td>Permiso para no residentes en el país temporada</td>
+            <td class="fw-semibold text-primary">E-T</td>
+            <td>$ 450.000</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Permisos adicionales de trolling -->
+    <div class="table-responsive mb-5">
+      <table class="table table-bordered align-middle">
+        <thead class="table-primary">
+          <tr>
+            <th>Permisos adicionales de trolling</th>
+            <th style="width: 130px;">Categoría</th>
+            <th style="width: 180px;">Precio (ARS)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <p class="mb-1">Permiso para pesca de arrastre o trolling diario.</p>
+              <p class="mb-0 small text-muted">Válido para todos los pescadores.</p>
+            </td>
+            <td class="fw-semibold text-primary">AT-D</td>
+            <td>$ 20.000</td>
+          </tr>
+          <tr>
+            <td>
+              <p class="mb-1">Permiso para pesca de arrastre o trolling semanal.</p>
+              <p class="mb-0 small text-muted">Válido para todos los pescadores.</p>
+            </td>
+            <td class="fw-semibold text-primary">AT-S</td>
+            <td>$ 30.000</td>
+          </tr>
+          <tr>
+            <td>
+              <p class="mb-1">Permiso para pesca de arrastre o trolling temporada.</p>
+              <p class="mb-0 small text-muted">Válido para todos los pescadores.</p>
+            </td>
+            <td class="fw-semibold text-primary">AT-T</td>
+            <td>$ 40.000</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="alert alert-info d-flex align-items-start gap-3">
+      <i class="bi bi-info-circle fs-5 mt-1"></i>
+      <div>
+        <strong>NOTA:</strong> los permisos de trolling son <strong>adicionales</strong> y deben
+        contar, además, con un permiso ordinario. El valor del módulo PD (base de multas) equivale
+        al permiso RP-T de la temporada.
+      </div>
+    </div>
+
+    <!-- Datos bancarios. Va despues de las tablas y de la nota de trolling, y no
+         antes: el tarifario se lee de punta a punta y una tabla de cuenta en el
+         medio hace que el lector pierda que sigue siendo una tabla de precios. -->
+    <div class="mb-5 mt-5">
+      <div class="d-flex align-items-center gap-2 mb-3">
+        <i class="bi bi-bank text-primary fs-4"></i>
+        <h2 class="h4 fw-bold text-primary mb-0">Datos para transferencia</h2>
+      </div>
+
+      <p class="text-muted">
+        El permiso se paga por transferencia bancaria. Depositá en la cuenta
+        siguiente y adjuntá el comprobante al finalizar la solicitud.
+      </p>
+
+      
+
+<div class="rounded-3 p-3 mb-4" style="background:#f0f4f8;border:1px solid #c8d8e8;">
+  <div class="row g-3">
+    <div class="col-12">
+      <div style="font-size:11px;color:#666;text-transform:uppercase;letter-spacing:.06em;margin-bottom:2px;">CBU</div>
+      <div class="fw-semibold font-monospace" style="font-size:15px;letter-spacing:.04em;">0860001101800041612586</div>
+    </div>
+    <div class="col-sm-6">
+      <div style="font-size:11px;color:#666;text-transform:uppercase;letter-spacing:.06em;margin-bottom:2px;">CUIT</div>
+      <div class="fw-semibold font-monospace">30-71066083-9</div>
+    </div>
+    <div class="col-sm-6">
+      <div style="font-size:11px;color:#666;text-transform:uppercase;letter-spacing:.06em;margin-bottom:2px;">CC N°</div>
+      <div class="fw-semibold font-monospace">1-416125-8</div>
+    </div>
+  </div>
+</div>
+
+<div class="d-flex flex-column gap-2">
+  <div class="d-flex gap-2 align-items-start p-2 rounded-2" style="background:#e8f4fd;border:1px solid #90caf9;">
+    <i class="bi bi-info-circle-fill text-primary flex-shrink-0 mt-1" style="font-size:13px;"></i>
+    <div style="font-size:13px;color:#0d3a5c;">
+      Si transferís por <strong>MercadoPago</strong>, informá en el comprobante el <strong>nombre completo del titular</strong> del pago.
+    </div>
+  </div>
+  <div class="d-flex gap-2 align-items-start p-2 rounded-2" style="background:#fce4ec;border:1px solid #f48fb1;">
+    <i class="bi bi-x-circle-fill flex-shrink-0 mt-1" style="font-size:13px;color:#c62828;"></i>
+    <div style="font-size:13px;color:#7b0000;">
+      <strong>No aceptamos transferencias en moneda extranjera.</strong>
+    </div>
+  </div>
+</div>
+
+    </div>
+
+    <p class="small text-muted mb-0">
+      * Los precios pueden actualizarse según la disposición vigente. Consulte el reglamento
+      oficial para más información.
+    </p>
+
+    <div class="card border-primary shadow-sm mt-4">
+      <div class="card-body p-4">
+        <div class="d-flex align-items-start gap-3">
+          <i class="bi bi-file-earmark-pdf fs-1 text-danger"></i>
+          <div class="flex-grow-1">
+            <h5 class="fw-bold mb-1">Disposición Nº 242 — Valores de Permisos 2026/2027</h5>
+            <p class="small text-muted mb-2">
+              Aranceles de las categorías de permisos de la temporada (EXPTE 443.691), actualizados
+              por la variación interanual del IPC (INDEC) entre julio de 2025 y julio de 2026.
+            </p>
+            <a href="/static/docs/valores-permisos-2026-2027.pdf"
+               target="_blank" rel="noreferrer" download
+               class="btn btn-outline-primary">
+              <i class="bi bi-download me-2"></i>Descargar PDF
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+  
+  
+  
+<footer class="footer">
+
+  <div class="container px-4 py-5">
+    <div class="row g-4">
+
+      
+
+      
+       <!-- Columna 1 -->
+      <div class="col-6 col-md-4">
+        <h4 class="footer-heading">Contacto</h4>
+        <ul class="footer-links">
+          <li><a href="mailto:pesca-continental@santacruz.gob.ar">pesca-continental@santacruz.gob.ar</a></li>
+          <li><a href="tel:+542966429462">+54 2966 429462</a></li>
+          <li><a href="/contacto/">Datos de contacto</a></li>
+        </ul>
+      </div>
+
+      <!-- Columna 2 -->
+      <div class="col-6 col-md-4">
+        <h4 class="footer-heading">Recursos</h4>
+        <ul class="footer-links">
+          <li><a href="/ayuda/">Ayuda</a></li>
+          <li><a href="/reglamento/">Reglamento de pesca</a></li>
+          <li><a href="/valores/">Valores y categorías</a></li>
+          <li><a href="/multas/">Valores de multas</a></li>
+        </ul>
+      </div>
+
+      <!-- Columna 3 -->
+      <div class="col-6 col-md-4">
+        <h4 class="footer-heading">Sitios oficiales</h4>
+        <ul class="footer-links">
+          <li><a href="https://minpro.santacruz.gob.ar/pesca" target="_blank" rel="noreferrer">Secretaría de Pesca y Acuicultura</a></li>
+          <li><a href="https://www.santacruzpatagonia.gob.ar/" target="_blank" rel="noreferrer">Turismo en Santa Cruz</a></li>
+          <li><a href="https://www.hidro.gov.ar/observatorio/Astronomia.asp?op=10" target="_blank" rel="noreferrer">Salida y puesta del sol</a></li>
+          <li><a href="https://informatica.santacruz.gob.ar/" target="_blank" rel="noreferrer">Subsecretaría de Informática</a></li>
+          <li><a href="https://cap.santacruz.gob.ar/%C3%A1reas-protegidas" target="_blank" rel="noreferrer">Áreas Protegidas (CAP)</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Desarrollo del sistema -->
+  <div class="container px-4 py-3">
+    <div class="d-flex flex-column flex-sm-row justify-content-between align-items-center gap-2 small">
+      <div class="d-flex align-items-center gap-2 text-center text-sm-start">
+        <img src="/static/img/LogoSubse.png"
+             alt="Logo Subsecretaría de Informática"
+             style="height: 22px; width: auto;">
+        <span>
+          Desarrollado por
+          <strong>Subsecretaría de Informática</strong>
+        </span>
+      </div>
+      <div>
+        <a href="mailto:pesca@santacruz.gob.ar"
+           class="text-white text-decoration-none" style="opacity: 0.85;">
+          Soporte técnico: pesca@santacruz.gob.ar
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom -->
+  <div class="footer-bottom">
+    <div class="container px-4 d-flex flex-column flex-sm-row justify-content-between align-items-center gap-2">
+      <p class="mb-0">
+        © 2026 Gobierno de la Provincia de Santa Cruz. Todos los derechos reservados.
+      </p>
+      <p class="mb-0">
+        Secretaría de Estado de Pesca y Acuicultura - Subsecretaría de Informática
+      </p>
+    </div>
+  </div>
+
+</footer>
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="/static/js/frontend.js" defer></script>
+  <script src="/static/js/pesca-behaviors.js" defer></script>
+  
+  <script src="https://captcha.santacruz.gob.ar/static/js/captcha-widget.js" defer></script>
+  
+  
+  
+  
+
+</body>
+</html>
