@@ -77,6 +77,7 @@ $ops = [
 			[ 'Algunos operadores incluyen', 'Algunos lugares y guías incluyen' ],
 			[ 'de operadores distintos', 'de lugares y guías distintos' ],
 			[ 'con estos operadores', 'con estos lugares y guías' ],
+			[ 'opciones de los operadores que encajan', 'opciones de los lugares y guías que encajan' ],
 		],
 		'en' => [
 			[ 'figures operators publish', 'figures places and guides publish' ],
@@ -84,6 +85,9 @@ $ops = [
 			[ 'we ask the operators that fit', 'we ask the places and guides that fit' ],
 			[ 'A few operators include', 'A few places and guides include' ],
 			[ 'with these operators', 'with these places and guides' ],
+			[ 'pages operators publish', 'pages places and guides publish' ],
+			[ 'from different operators', 'from different places and guides' ],
+			[ 'options of the operators that fit', 'options of the places and guides that fit' ],
 		],
 		'pt' => [
 			[ 'que os operadores publicam', 'que os lugares e guias publicam' ],
@@ -92,6 +96,7 @@ $ops = [
 			[ 'Alguns operadores incluem', 'Alguns lugares e guias incluem' ],
 			[ 'de operadores diferentes', 'de lugares e guias diferentes' ],
 			[ 'com esses operadores', 'com esses lugares e guias' ],
+			[ 'opções dos operadores que se encaixam', 'opções dos lugares e guias que se encaixam' ],
 		],
 	],
 ];
