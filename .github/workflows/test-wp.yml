@@ -722,7 +722,14 @@ jobs:
           n=$(w eval 'echo count( array_filter( get_posts( [ "post_type" => [ "pm_nota", "pm_especie" ], "post_status" => "any", "meta_key" => "_prueba_ds", "meta_value" => 1, "numberposts" => -1 ] ), fn( $x ) => false !== strpos( $x->post_content, "wp-block-group pm-faq" ) && ( "pm_nota" === $x->post_type || false !== strpos( $x->post_content, "Nombres del surub" ) ) ) );')
           [[ "$n" == 0 ]] || { echo "✖ el simulacro editó $n páginas"; exit 1; }
           # --- Apply (always the applying path), twice each: the second run must write nothing.
-          for sc in pilar-dorado-2026-11-16 pilar-dorado-set-2026-11-16 surubi-fiesta-2026-11-16 enlaces-dorado-surubi-2026-11-16; do
+          for sc in pilar-dorado-2026-11-16 pilar-dorado-set-2026-11-16 surubi-fiesta-2026-11-16 surubi-fiesta-oficial-2026-11-16 enlaces-dorado-surubi-2026-11-16; do
+            if [[ "$sc" == surubi-fiesta-oficial-2026-11-16 ]]; then
+              # The rewrite of the festival note: its dry run (on the press version the previous script just created) must build the text and write nothing.
+              sed 's/^\$aplicar = [a-z]*;/$aplicar = false;/' "wordpress/scripts/$sc.php" > "/tmp/$sc-dry.php"
+              wp --path="$WP" eval-file "/tmp/$sc-dry.php" | tee "/tmp/$sc-dry.log"
+              grep -q 'Simulacro terminado' "/tmp/$sc-dry.log" && grep -q 'SIMULACRO:' "/tmp/$sc-dry.log" || { echo "✖ el simulacro de $sc no construyó el texto"; exit 1; }
+              grep -q 'APLICA:' "/tmp/$sc-dry.log" && { echo "✖ el simulacro de $sc escribió"; exit 1; }
+            fi
             cp "wordpress/scripts/$sc.php" "/tmp/$sc.php"
             sed -i 's/^\$aplicar = [a-z]*;/$aplicar = true;/' "/tmp/$sc.php"
             wp --path="$WP" eval-file "/tmp/$sc.php" | tee "/tmp/$sc-1.log"
@@ -749,7 +756,7 @@ jobs:
             if [[ -n "${3:-}" ]] && grep -qE -- "$3" page-ds.html; then echo "✖ $1 contiene: $3"; fail=1; return; fi
             echo "✓ 200 $1"
           }
-          for par in "/notas/prueba-ds-pilar-es/:8" "/en/notes/prueba-ds-pilar-en/:8" "/pt/notas/prueba-ds-pilar-pt/:8" "/notas/fiesta-nacional-del-surubi-2027/:5" "/en/notes/national-surubi-festival-goya-2027/:5" "/pt/notas/festa-nacional-do-surubim-goya-2027/:5"; do
+          for par in "/notas/prueba-ds-pilar-es/:8" "/en/notes/prueba-ds-pilar-en/:8" "/pt/notas/prueba-ds-pilar-pt/:8" "/notas/fiesta-nacional-del-surubi-2027/:6" "/en/notes/national-surubi-festival-goya-2027/:6" "/pt/notas/festa-nacional-do-surubim-goya-2027/:6"; do
             p="${par%:*}"; nfaq="${par##*:}"
             chk "$p" '"Article"' 'PENDIENTE|\{g:|\{n:|\{u:|\{esp:|\{viaje'
             grep -q '"BreadcrumbList"' page-ds.html || { echo "✖ $p sin BreadcrumbList"; fail=1; }
@@ -792,6 +799,12 @@ jobs:
           chk /pt/notas/prueba-ds-pilar-pt/ 'montamos a melhor opção para você' 'operadores que combinam'
           # The festival note: the Goya cover photo with its author, the species and destination boxes.
           chk /notas/fiesta-nacional-del-surubi-2027/ 'AUTOR-PORTADA-GOYA'
+          # The rewrite with the official site: it links the organiser's rules, carries the registration fee and no longer cites the press-only cap note or the 2025 magazine.
+          for par in "/notas/fiesta-nacional-del-surubi-2027/" "/en/notes/national-surubi-festival-goya-2027/" "/pt/notas/festa-nacional-do-surubim-goya-2027/"; do
+            chk "$par" 'goyasurubi.com/index/index.php/concurso/reglamento-2027' 'fiesta-del-surubi-agotaron|revista_surubi_2025|PENDIENTE'
+            grep -q '1.350.000\|1,350,000' page-ds.html || { echo "✖ $par sin el valor de la inscripción"; fail=1; }
+            grep -q 'Co.Mu.Pe.' page-ds.html || { echo "✖ $par sin el organizador"; fail=1; }
+          done
           grep -q 'especie=surubi' page-ds.html || { echo "✖ la nota de la Fiesta sin ?especie=surubi"; fail=1; }
           # The surubí species page: the new section and 3 FAQ (1 existing + 2 new), in 3 languages.
           # Any surubí species page counts (the sample content may hold one with the same clave as the stub).
