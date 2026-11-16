@@ -715,7 +715,7 @@ jobs:
           [[ "$n" == 3 ]] && echo "✓ fiesta-nacional-del-surubi-2027: nota en 3 idiomas" || { echo "✖ $n notas de la Fiesta (esperadas 3)"; exit 1; }
           n=$(w eval 'foreach ( get_posts( [ "post_type" => "pm_nota", "post_status" => "any", "meta_key" => "_prueba_ds", "meta_value" => 1, "numberposts" => -1 ] ) as $x ) { if ( "golden-dorado-guia" === get_post_meta( $x->ID, "clave", true ) ) { echo count( pm_faqs_contenido( $x->post_content ) ); } }')
           [[ "$n" == 888 ]] && echo "✓ el pilar tiene 8 preguntas en los 3 idiomas" || { echo "✖ preguntas del pilar: $n (esperado 888)"; exit 1; }
-          n=$(w eval 'echo count( array_filter( get_posts( [ "post_type" => "pm_destino", "post_status" => "any", "meta_key" => "_prueba_ds", "meta_value" => 1, "numberposts" => -1 ] ), fn( $x ) => false !== strpos( $x->post_content, "prueba-ds-golden-dorado-guia" ) ) );')
+          n=$(w eval 'echo count( array_filter( get_posts( [ "post_type" => "pm_destino", "post_status" => "any", "meta_key" => "_prueba_ds", "meta_value" => 1, "numberposts" => -1 ] ), fn( $x ) => false !== strpos( $x->post_content, "prueba-ds-pilar" ) ) );')
           [[ "$n" == 21 ]] && echo "✓ las 7 guías enlazan el pilar en los 3 idiomas" || { echo "✖ $n guías enlazan el pilar (esperadas 21)"; exit 1; }
           wp --path="$WP" server --host=localhost --port=8085 > /tmp/server-ds.log 2>&1 &
           sleep 3
