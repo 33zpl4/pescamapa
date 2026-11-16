@@ -27,7 +27,7 @@ Registro del programa. Cada paso se marca al terminarlo, con el ID de la corrida
 | 4 | **Surubí**: reforzar la ficha de la especie; nota de la 50.ª Fiesta Nacional del Surubí (Goya, 28/4 al 2/5/2027) con fuentes; nombres en portugués («surubim», «pintado») | Nota y ficha actualizadas | Hecho 16/11 (aplicado; ver «Registro») |
 | 5 | **Enlaces internos**: portada, fichas de especie y guías del Litoral enlazan al pilar y a las notas de costo; el pilar enlaza a todas | Grafo de enlaces antes y después | Hecho 16/11 (contenido aplicado; portada con el merge) |
 | 6 | **Lugares que los asistentes nombran** (Pirá, Suindá, Karandá, Don Joaquín y los programas de SET): cuáles ya tienen ficha, cuáles tienen información pública reciente y un canal para escribirles; propuesta, no creación | Tabla para que el dueño decida | Hecho 16/11 (propuesta, sin crear fichas) |
-| 7 | **Medición**: línea de base de hoy (Grok no nos nombra en dorado) y protocolo mensual con las preguntas en inglés y portugués | Sección en `docs/estado.md` | |
+| 7 | **Medición**: línea de base de hoy (Grok no nos nombra en dorado) y protocolo mensual con las preguntas en inglés y portugués | Sección en `docs/estado.md` | Hecho 16/11 |
 | 8 | **Verificación final**: cada URL en vivo, datos estructurados, hreflang, `llms.txt` y capturas miradas (escritorio y móvil) | Informe con IDs de corridas | |
 
 ## Registro
@@ -171,3 +171,9 @@ Estado de las fichas leído en vivo con `listar-prestadores-2026-10-24` (solo le
 
 - **Queda fuera**: `paquetes-de-pesca-argentina` sigue sin enlaces entrantes en el contenido (no es del dorado; lo enlaza la plantilla); la ficha del surubí sigue con pocos entrantes (2): sus guías la enlazan por la plantilla de «Guías que pescan surubí». Los enlaces de plantilla no están en esta cuenta.
 - **No verificado**: el HTML en vivo de las guías (se mira en el paso 8) y que los enlaces de plantilla de las guías y de las fichas sigan donde estaban.
+
+### Paso 7: medición (16/11/2026)
+
+- **`docs/estado.md`**: sección «Medición del dorado y el surubí: línea de base (16/11/2026) y protocolo mensual». Línea de base: en dos respuestas de Grok sobre dorado (dónde y cuánto cuesta) Pescamapa no aparece; nombrados, nos describe como sitio de trucha. ChatGPT, Gemini y Perplexity: sin medición propia todavía.
+- **`docs/preguntas-llm.md`**: preguntas 22 a 28 (dorado en inglés y en portugués, mosca y cerca de Buenos Aires, «pousadas», Fiesta del Surubí 2027 en tres idiomas) y dos filas en el Registro con lo de Grok del 16/11. Protocolo: una vez por mes, las mismas preguntas en Grok, ChatGPT, Gemini y Perplexity, pegando las respuestas textuales. Indicador: que Pescamapa aparezca en la lista genérica.
+- **No verificado**: la redacción exacta de las dos preguntas que se le hicieron a Grok no se guardó; las preguntas 22 y 23 son nuestra redacción y se reemplazan por las textuales si el dueño las pasa.
