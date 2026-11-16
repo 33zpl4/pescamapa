@@ -28,7 +28,7 @@ Registro del programa. Cada paso se marca al terminarlo, con el ID de la corrida
 | 5 | **Enlaces internos**: portada, fichas de especie y guías del Litoral enlazan al pilar y a las notas de costo; el pilar enlaza a todas | Grafo de enlaces antes y después | Hecho 16/11 (contenido aplicado; portada con el merge) |
 | 6 | **Lugares que los asistentes nombran** (Pirá, Suindá, Karandá, Don Joaquín y los programas de SET): cuáles ya tienen ficha, cuáles tienen información pública reciente y un canal para escribirles; propuesta, no creación | Tabla para que el dueño decida | Hecho 16/11 (propuesta, sin crear fichas) |
 | 7 | **Medición**: línea de base de hoy (Grok no nos nombra en dorado) y protocolo mensual con las preguntas en inglés y portugués | Sección en `docs/estado.md` | Hecho 16/11 |
-| 8 | **Verificación final**: cada URL en vivo, datos estructurados, hreflang, `llms.txt` y capturas miradas (escritorio y móvil) | Informe con IDs de corridas | |
+| 8 | **Verificación final**: cada URL en vivo, datos estructurados, hreflang, `llms.txt` y capturas miradas (escritorio y móvil) | Informe con IDs de corridas | Hecho 16/11 (ver «Registro») |
 
 ## Registro
 
@@ -177,3 +177,28 @@ Estado de las fichas leído en vivo con `listar-prestadores-2026-10-24` (solo le
 - **`docs/estado.md`**: sección «Medición del dorado y el surubí: línea de base (16/11/2026) y protocolo mensual». Línea de base: en dos respuestas de Grok sobre dorado (dónde y cuánto cuesta) Pescamapa no aparece; nombrados, nos describe como sitio de trucha. ChatGPT, Gemini y Perplexity: sin medición propia todavía.
 - **`docs/preguntas-llm.md`**: preguntas 22 a 28 (dorado en inglés y en portugués, mosca y cerca de Buenos Aires, «pousadas», Fiesta del Surubí 2027 en tres idiomas) y dos filas en el Registro con lo de Grok del 16/11. Protocolo: una vez por mes, las mismas preguntas en Grok, ChatGPT, Gemini y Perplexity, pegando las respuestas textuales. Indicador: que Pescamapa aparezca en la lista genérica.
 - **No verificado**: la redacción exacta de las dos preguntas que se le hicieron a Grok no se guardó; las preguntas 22 y 23 son nuestra redacción y se reemplazan por las textuales si el dueño las pasa.
+
+### Paso 8: verificación final (16/11/2026)
+
+PR #200 se mergeó con `test` verde sobre su head (`7da601a`, run 43849305429; antes fallaron tres corridas por errores del propio paso de test, no del sitio: el slug del pilar de prueba, las guías de muestra que comparten clave con los stubs y la ficha del surubí de muestra, que no tiene encabezado de preguntas). Merge `562b383`; deploy `deploy-wp.yml` run **43850324115**, éxito. Nada se afirma de lo anterior al deploy: lo de abajo se leyó en vivo después.
+
+**Lecturas en vivo** (`investigar.yml`): `final-nuevas-20261116-1038` (run 43850470951, 16 URLs) y `final-tocadas-20261116-1040` (run 43850714272, 16 URLs).
+
+| URL | HTTP | Datos estructurados | hreflang | Título SEO / descripción | Otros |
+|---|---|---|---|---|---|
+| `/notas/fiesta-nacional-del-surubi-2027/` | 200 | Article, BreadcrumbList (con `item`), FAQPage de 5 = FAQ visible | es, en, pt-BR, x-default | 55 / 150 | foto con crédito; botón nuevo |
+| `/en/notes/national-surubi-festival-goya-2027/` | 200 | ídem (5) | ídem | 58 / 146 | ídem |
+| `/pt/notas/festa-nacional-do-surubim-goya-2027/` | 200 | ídem (5) | ídem | 53 / 143 | ídem |
+| `/notas/pesca-del-dorado-en-la-argentina/` (pilar es) | 200 | Article, BreadcrumbList, FAQPage de 8 = visible | ídem | 54 / 134 | ~4.050 palabras; botón nuevo |
+| `/en/notes/golden-dorado-fishing-argentina/` | 200 | ídem (8) | ídem | 52 / 147 | ídem |
+| `/pt/notas/pesca-de-dourado-na-argentina/` | 200 | ídem (8) | ídem | 49 / 127 | ídem |
+| `/especies/surubi/`, `/en/species/surubi/`, `/pt/especies/surubim/` | 200 | Article, BreadcrumbList, FAQPage de 6 = visible (antes 4) | ídem | 58, **62**, 49 / 127, 126, 121 | la ficha en inglés pasa de 60 caracteres de título (ya era así; no se tocó) |
+| `/especies/dorado/` | 200 | con FAQPage de 4 | ídem | 51 / 140 | enlaza el pilar |
+| `/`, `/en/`, `/pt/` | 200 | WebSite | ídem | 61, 50, 56 | atajo «Pesca del dorado en la Argentina…» al pilar (visto en la captura de escritorio); el título de la portada en español mide 61 (ya era así) |
+| Siete guías del Litoral (es), notas de costo, temporada, permiso y tallas (es), dos notas en portugués, ficha del dorado en inglés | 200 | los mismos tipos que antes | — | — | todas con el párrafo «Para planificar»; las siete guías y las notas enlazan el pilar (la nota de temporada del surubí enlaza la Fiesta, no el pilar, a propósito); las dos notas en portugués ya no enlazan la guía de Esquina en español |
+
+- **`llms.txt`** (200): lista la nota de la Fiesta con sus versiones en inglés y portugués. **Sitemap** (`wp-sitemap-posts-pm_nota-1.xml`, 200): trae las tres URLs de la Fiesta; el índice `wp-sitemap.xml` lista los cuatro sitemaps de contenido. Los hreflang de los tres idiomas salen de la misma clave de la nota (aquí no hay clústeres a mano: el sitemap de WordPress y `seo.php` los arman).
+- **Capturas** (`capturas.yml`, run 43850475638, rama `capturas`, prefijo `2026-11-16-final-`; antes, prefijo `2026-11-16-pilar-`): miradas las del pilar en español (escritorio y móvil: la tabla ya se apila en tarjetas), la nota de la Fiesta en español (escritorio) y en portugués (móvil), la ficha del surubí en español (escritorio) y la portada (escritorio). Se ve la tabla, la FAQ, la lista «para seguir», el botón nuevo y el atajo; sin desbordes en el móvil que miré. **No miradas**: el resto de los mosaicos de las mismas ocho páginas (inglés y portugués del pilar y de la Fiesta en escritorio y móvil, la ficha del surubí en móvil, la portada en móvil).
+- **Otros**: `verify-live.yml` ahora comprueba las seis páginas nuevas y el atajo de la portada. `docs/wordpress.md` lista los scripts de este programa.
+
+**Lo que quedó afuera y por qué**: nota del Delta y de Bella Vista (paso 3: sin fuente con fecha); fichas de Karandá, Don Joaquín y el programa Jetu'u de SET (paso 6: propuesta, decide el dueño); la ley de Entre Ríos (solo prensa); tamaños, rangos de precio y costo total de Grok (sin fuente leída); fotos de las fichas de especie.
