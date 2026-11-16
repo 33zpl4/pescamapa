@@ -1,0 +1,1580 @@
+          ISSN 2318-1400
+          Dezembro, 2015   21
+A pesca e a aquicultura de
+surubins no Brasil: Panorama
+e considerações para a
+sustentabilidade
+                                          ISSN 2318-1400
+                                           Dezembro, 2015
+
+
+Empresa Brasileira de Pesquisa Agropecuária
+Embrapa Pesca e Aquicultura
+Ministério da Agricultura, Pecuária e Abastecimento
+
+
+
+
+Documentos 21
+
+A pesca e a aquicultura de
+surubins no Brasil: Panorama
+e considerações para a
+sustentabilidade
+
+
+
+
+Embrapa Pesca e Aquicultura
+Palmas, TO
+2015
+Exemplares desta publicação podem ser adquiridos na:
+
+
+Embrapa Pesca e Aquicultura                    Unidade responsável pela edição
+Quadra 104 Sul, Av. LO 1, nº 34, Conjunto 4,   Embrapa Pesca e Aquicultura
+1º e 2º pavimentos, Plano Diretor Sul
+CEP 70020-901 Palmas, TO                       Editoração eletrônica e
+Fone: (63) 3229.7800 / 3229.7850               tratamento das ilustrações
+www.embrapa.br                                 Iury Felipe Alves de Souza
+www.embrapa.br/fale-conosco/sac/
+                                               Capa
+Unidade responsável pelo conteúdo              Jefferson Cristiano Christofoletti
+Embrapa Pesca e Aquicultura
+                                               1ª edição
+Comitê de Publicações                          Versão eletrônica (2015)
+Presidente: Eric Arthur Bastos Routledge
+
+Secretária-Executiva: Renata Melon Barroso
+
+Membros: Alisson Moura Santos, Andrea
+Elena Pizarro Munoz, Hellen Christina G. de
+Almeida, Jefferson Christofoletti, Marcelo
+Könsgen Cunha, Marta Eichemberger
+Ummus
+
+
+
+
+                              Todos os direitos reservados
+          A reprodução não autorizada desta publicação, no todo ou em parte,
+                 constitui violação dos direitos autorais (Lei nº 9.610).
+
+                Dados Internacionais de Catalogação na Publicação (CIP)
+                             Embrapa Pesca e Aquicultura
+
+      A pesca e a aquicultura de surubins no Brasil: Panorama e considerações para
+
+          a sustentabilidade / autores, Adriano Prysthon da Silva, Adriana Ferreira
+          Lima, Lícia Maria Lundstedt. Palmas, TO : Embrapa Pesca e Aquicultura,
+          2015.
+
+          42 p. (Documentos / Embrapa Pesca e Aquicultura, ISSN 2318-1400 ; 21).
+
+         1. Piscicultura. 2. Pintado. 3. Cachara. 4. Híbridos I. Silva, Adriano
+      Prysthon da. II. Lima, Adriana Ferreira. III. Lundstedt, Lícia Maria. IV. Embrapa
+      Pesca e Aquicultura. V. Série.
+                                                                           CDD 664.942
+                                                                      © Embrapa 2015
+Autores
+
+
+
+
+Adriano Prysthon da Silva
+Engenheiro de Pesca, mestre em Recursos
+Pesqueiros e Aquicultura, pesquisador da Embrapa
+Pesca e Aquicultura, Palmas, TO
+
+Adriana Ferreira Lima
+Engenheira de Pesca, mestre em Recursos
+Pesqueiros e Aquicultura, pesquisadora da Embrapa
+Pesca e Aquicultura, Palmas, TO
+
+Lícia Maria Lundstedt
+Bióloga, doutora em Genética e Evolução,
+pesquisadora da Embrapa Pesca e Aquicultura,
+Palmas, TO
+                    Apresentação
+
+
+
+
+Surubim é uma denominação ampla e popular que engloba peixes
+de diferentes gêneros da Ordem Siluriformes. Tanto na pesca
+quanto na aquicultura, os principais representantes dos surubins
+são as espécies do gênero Pseudoplatystoma. Neste sentido, nesta
+apresentação buscou-se traçar um panorama e alertar sobre a
+importância dos surubins para o Brasil, sugerindo ainda, caminhos
+para a sustentabilidade da produção, bem como a necessidade
+de correta identificação comercial deste grupo de animais, seja por
+questões ambientais, seja por questões econômicas e de proteção
+ao consumidor. Como recomendação, independente da origem do
+surubim, seja como alimento proveniente da pesca ou aquicultura,
+do lazer pela pesca esportiva, ou ainda como peixe ornamental na
+aquariofilia, o futuro de sua produção depende essencialmente da
+forma como as diferentes atividades produtivas incorporam o conceito
+e a lógica da sustentabilidade. Este entendimento é fundamental para
+que os usuários e gestores dos recursos pesqueiros desenvolvam,
+conjuntamente, um pensamento crítico e sistêmico que envolva as
+dimensões ambientais, econômicas e sociais, assim como fomentem
+ações complementares e multidisciplinares visando a conservação e a
+exploração racional de surubins no Brasil.
+
+
+                   Eric Arthur Bastos Routledge
+               Chefe de Pesquisa e Desenvolvimento
+                           Sumário
+
+
+
+
+Introdução...............................................................................09
+A pesca...................................................................................13
+A aquicultura..........................................................................17
+Sistemas de produção............................................................22
+Ração......................................................................................28
+Manejo alimentar....................................................................29
+Qualidade de água..................................................................30
+Abate e processamento.........................................................30
+Comportamento em cativeiro................................................32
+Impactos ambientais da produção de surubins em
+cativeiro..................................................................................32
+Considerações finais..............................................................35
+Referencias.............................................................................35
+                           A pesca e a aquicultura de
+                           surubins no Brasil. Panorama
+                           e considerações para a
+                           sustentabilidade.
+                           Adriano Prysthon da Silva
+                           Adriana Ferreira Lima
+                           Licia Maria Lundstedt
+
+
+
+
+                           Introdução
+Surubim é uma denominação ampla e popular que engloba peixes de
+diferentes gêneros da Ordem Siluriformes. Na pesca, e principalmente
+na aquicultura, os principais representantes dos surubins são as espécies
+do gênero Pseudoplatystoma (BLEEKER, 1862). Segundo Lauder e Liem
+(1983), os surubins ocupam a seguinte posição sistemática:
+     Super Classe Pisces
+     Classe Osteichthyes
+     Subclasse Actinopterygii
+     Ordem Siluriformes
+     Subordem Siluroidei
+     Família Pimelodidae
+     Gênero Pseudoplatystoma (BLEEKER, 1862)
+
+Buitrago-Suárez e Burr (2007)1 analisaram espécimens do gênero
+Pseudoplatystoma com base na forma do corpo, padrão de coloração
+(por exemplo, listas, manchas e pontos), anatomia esquelética, e
+número de vértebras, propondo a subdivisão das três espécies originais
+
+1
+    Ao longo deste documento, todas as referências que envolvem as espécies do gênero
+    Pseudoplatystoma preservam a classificação original do documento citado.
+       A pesca e a aquicultura de surubins no Brasil:
+10     Panorama e considerações para a sustentabilidade
+
+
+     (três primeiras da sequência abaixo) em oito, dentre as quais cinco são
+     consideradas novas espécies, a saber:
+
+        Pseudoplatystoma corruscans (SPIX e AGASSIZ, 1829)
+        Pseudoplatystoma reticulatum (EIGENMANN e EIGENMANN, 1889)
+        Pseudoplatystoma fasciatum (LINNAEUS, 1766)
+        Pseudoplatystoma tigrinum (VALENCIENNES in CUVIER e
+        VALENCIENNES, 1840)
+        Pseudoplatystoma orinocoense (BUITRAGO-SUÁREZ e BURR, 2007)
+        Pseudoplatystoma metaense (BUITRAGO-SUÁREZ e BURR, 2007)
+        Pseudoplatystoma magdaleniatum (BUITRAGO-SUÁREZ e BURR,
+        2007)
+        Pseudoplatystoma punctifer (CASTELNAU,1855)
+
+     A ordem Siluriformes inclui os chamados peixes de couro (SANTOS,
+     1981), cuja principal característica externa é a ausência de escamas
+     pelo corpo, que é revestido apenas de pele espessa ou coberto,
+     parcial ou totalmente, por placas ósseas. A Família Pimelodidae
+     compreende formas muito diversificadas, de porte variado, aberturas
+     branquiais amplas e, frequentemente, a nadadeira dorsal e as peitorais
+     são precedidas por acúleo (BRITSKI et al., 1988). Esta família, a
+     mais numerosa da subordem, é composta por um grande número
+     de gêneros. Estas espécies são de água doce e de hábito carnívoro,
+     preferencialmente piscívoro (RESENDE et al. 1996), migratórios no
+     período de reprodução (CREPALDI et al., 2006; LEONARDO et al., 2004)
+     e possuem desova total (ZANIBONI-FILHO E WEINGARTNER, 2007).
+     Os Pimelodidae estão entre os maiores peixes e são considerados
+     predadores importantes nas principais bacias hidrográficasda América
+     do Sul. Pseudoplatystoma é um gênero amplamente distribuído em
+     grandes rios da Região Neotropical, e as principais áreas de ocorrência
+     são as bacias Amazônica/Orinoco, Bacia do Prata/Sub-bacia do Paraná
+     e Bacia do São Francisco, Magdalena, Rupununi, Essequibo e Suriname
+     (BIGNOTTO et al., 2009; ARAGÃO et al., 2008; BARTHEM e GOULDING,
+     1997; TAVARES, 1997; BURGESS, 1989) (Figura 1).
+                               A pesca e a aquicultura de surubins no Brasil:
+                           Panorama e considerações para a sustentabilidade
+                                                                                11
+
+
+Devido à ocorrência de diferentes espécies do gênero Pseudoplatystoma
+em uma grande dimensão territorial (Figura 1) e, principalmente, por
+serem exploradas por diversas comunidades pesqueiras, os diferentes
+nomes populares dados a elas refletem a diversidade cultural na
+qual estão inseridas. As espécies deste gênero são conhecidas
+popularmente como surubim ou pintado, porém outros nomes são
+dados como sorubim, surubim pintado, piracajara, piracajiara, pirá
+para, jarapoca, moleque ou brutelo (FOWLER, 1951; TRAVASSOS,
+1960), sendo importante destacar que o mesmo nome popular pode
+representar diferentes espécies desse grupo, nas diferentes regiões do
+país. Apesar do esforço em padronizar nacionalmente os nomes de
+peixes para fins estatísticos, os nomes populares possuem fortes e
+importantes laços culturais e linguísticos para os pescadores (FREIRE
+e CARVALHO FILHO, 2009). Para fins de convenção, chamaremos este
+grupo de animais do gênero Pseudoplatystoma de Surubins.
+
+Os peixes do gênero Pseudoplatystoma, tanto puros como os híbridos
+interespecíficos, são muito apreciados pela qualidade de sua carne,
+valor de comercialização e marcante participação na pesca comercial.
+Apresentam potencial não só para a criação destinada ao consumo
+como peixes de mesa, como para a pesca esportiva ou mesmo como
+peixe ornamental de interesse para exportação. Segundo Molina et
+al. (2001), P. corruscans, é o peixe de água doce mais comercializado
+na Argentina e, de acordo com Pereira et al. (2015) os híbridos (P.
+corruscans x P. reticulatum) tem alta aceitabilidade na Europa e Estados
+Unidos devido ao excelente sabor nos filés. Por estas razões, as
+espécies do gênero Pseudoplatystoma vêm sofrendo acentuado esforço
+de pesca nas regiões em que ocorrem. Ainda que não seja uma espécie
+com risco iminente de extinção, sua captura indiscriminada, somada
+ao fato da espécie ocupar um habitat em crescente alteração antrópica,
+poluição ambiental, desbaste de matas ciliares e construção de
+barragens (BEHR e HAYASHI, 1997, MACHADO et al., 2011; OLIVEIRA
+e BENNEMANN, 2005), vem se observando uma diminuição gradativa
+em seus estoques naturais. Ademais, há poucas publicações sobre
+surubins que reúnam informações gerais sobre a atividade pesqueira
+          A pesca e a aquicultura de surubins no Brasil:
+12        Panorama e considerações para a sustentabilidade
+
+
+     e aquícola no Brasil, e suas interações, tendo em vista sua importância
+     biológica e econômica. Neste sentido, esta publicação objetiva traçar
+     um panorama e alertar sobre a importância dos surubins para a
+     pesca e para a aquicultura brasileira, sugerindo ainda, caminhos
+     para a sustentabilidade da produção , bem como a necessidade
+     de correta identificação comercial deste grupo de animais, seja por
+     questões ambientais, seja por questões econômicas e de proteção ao
+     consumidor.
+
+
+
+
+         Distribuição de Pseudoplatystoma fasciatum ( ),     Distribuição de Pseudoplatystoma corruscans ( ),
+                   Neótipo2 ( ) e P. tigrinum ( ).            Neótipo (cruz), P. orinocoense ( ), holótipo3 ( ).
+
+
+
+
+         Distribuição de Pseudoplatystoma punctifer ( ), e   Distribuição de Pseudoplatystoma magdaleniatum
+               P. metaense ( ) e Localidade tipo4 ( ).           ( ), Localidade tipo ( ), P. reticulatum ( ),
+                                                                            Localidade tipo (cruz).
+
+     Figura 1. Distribuição geográfica das espécies do gênero Pseudoplatystoma. Adaptado de
+     Buitrago-Suárez e Burr (2007).
+
+
+
+
+     2
+         Espécime ou ilustração selecionado para servir de tipo quando o holótipo encontra-se
+         desaparecido.
+     3
+         Espécime ou ilustração que o autor designou no momento da descrição dessa espécie.
+     4
+         Localização geográfica onde um espécime tipo foi originalmente encontrado.
+                                      A pesca e a aquicultura de surubins no Brasil:
+                                  Panorama e considerações para a sustentabilidade
+                                                                                            13
+
+
+                          A pesca
+As espécies de surubins mais representativas da pesca são o P.
+corruscans, P. tigrinum e P. punctifer, havendo diferença eu seu porte.
+Já foram registrados P. corruscans com 100 kg, enquanto o P. tigrinum
+dificilmente ultrapassa 20 kg (Tabela 1). O P. tigrinum e P. fasciatum,
+apesar de ocorrerem na mesma bacia, se distinguem facilmente pela
+forma da cabeça e coloração (FERREIRA et al., 1998). A importância
+ecológica dos surubins como o P. corruscans, por exemplo, é
+evidenciada por ser o segundo maior predador da sub-bacia do Paraná
+e o primeiro da bacia do São Francisco (SOUZA, 2006).
+
+As diferentes espécies do gênero Pseudoplatystoma são classificadas
+oficialmente como surubins/pintados nas estatísticas brasileiras.
+Segundo o Ministério da Pesca e Aquicultura (2013), a captura de
+surubins pela pesca continental em 2011 registrou 8.752 toneladas
+(Figura 2), colocando-os na 10ª posição das espécies de água doce
+mais capturada. Esta produção foi 1% maior em relação a 2010, com
+8.688 toneladas. Porém, em 2009 houve um decréscimo de 8,8% em
+relação a 2008. Apesar do sutil incremento em 2011, o comportamento
+da produção é estável e oscilou nos patamares de 8 a 9 mil toneladas/
+ano entre 2007 e 2011 (Figura 2). Quanto à participação relativa, os
+surubins vêm representando 3,5% da produção total anual, mesmo em
+anos mais produtivos.
+
+
+
+
+Figura 2. Oscilação da produção e participação relativa de surubins capturados pela pesca
+continental no Brasil entre 2007 e 2011 (fonte: BRASIL, 2013).
+          A pesca e a aquicultura de surubins no Brasil:
+14        Panorama e considerações para a sustentabilidade
+
+
+     No que diz respeito à sustentabilidade ambiental bem como as
+     estruturas populacionais dos estoques de surubins, as espécies deste
+     gênero possuem níveis de vulnerabilidade de moderado a muito
+     alto (Cheung et al., 2005) (Tabela 1). Porém, segundo a Convenção
+     Internacional de Comércio de Espécies Ameaçadas da Flora e
+     Fauna – CITES, não há uma avaliação específica a este gênero. Tal
+     classificação sugere baixa preocupação global sobre estes estoques.
+     No entanto, estudos sobre vulnerabilidade realizados em meados de
+     1990, destacam que o surubins-tigre (P. tigrinum) já se encontravam
+     explorados em seus limites de sustentabilidade (RUFFINO e ISAAC,
+     1999), o que sinaliza que as demais espécies deste gênero também
+     necessitam especial atenção.
+
+
+     Tabela 1. Principais índices corporais e situação de vulnerabilidade das espécies do
+     gênero Pseudoplatystoma.
+
+
+                            Comprimento       Peso         Avaliação         Condição de
+             Espécie
+                              máximo         máximo         CITES2          vulnerabilidade1
+
+                             registrado1    registrado1
+                                (cm)            (kg)
+      P. corruscans              166           100        Não avaliada   Alto para muito alto**
+      P. tigrinum                130            17        Não avaliada          Alto**
+      P. orinocoense            52,4             -        Não avaliada       Moderado**
+      P. reticulatum            60,5             -        Não avaliada       Moderado**
+      P. metaense               55,9             -        Não avaliada    Moderado a alto**
+      P. magdaleniatum           100             -        Não avaliada    Moderado a alto**
+      P. fasciatum               104            70        Não avaliada       Moderado **
+      P. punctifer              100*          10,5*       Não avaliada
+      1
+          Fishbase (www.fishbase.org); 2 CITES (2013); *Luca (2010); **Cheung et al.(2005).
+
+     Por serem economicamente importantes, os surubins ocorrem tanto
+     na pesca artesanal como na industrial. Na artesanal, capturada em
+     maior volume e praticada com maior intensidade ao longo do rio
+     São Francisco e no eixo Solimões – Amazonas e Bacia do Paraguai,
+     as espécies de surubins mais frequentemente capturadas são o P.
+                               A pesca e a aquicultura de surubins no Brasil:
+                           Panorama e considerações para a sustentabilidade
+                                                                                15
+
+
+corruscans e P. fasciatum. Porém, estão inseridas num contexto
+multiespecífico de captura. Ou seja, ocorrem junto com outras espécies
+na pesca. Na pesca industrial, considerada monoespecífica e ocorrente
+na foz do rio Amazonas, apesar da espécie alvo ser a piramutaba,
+Brachyplatystoma vaillantii (família Pimelodidae), cuja maior parte é
+exportada para outros estados e para o exterior (FREITAS e RIVAS,
+2006), os surubins P. tigrinum e P. punctifer também ocorrem nestas
+pescarias. O P. tigrinum também ocorre em outras bacias da América
+do Sul como na do Orinoco, com produções significativas, sendo
+uma das espécies mais capturadas na Venezuela (PEREZ et al., 2012;
+GONZÁLEZ et al., 2010). Os surubins também são capturados pela
+pesca esportiva, principalmente o P. corruscans e P. reticulatum, sendo
+mais representativa na bacia do Alto Paraguai em Mato Grosso do Sul
+(CATELLA et al., 2013) e Mato Grosso (MATEUS et al., 2004).
+
+De forma geral, a frota pesqueira que atua na captura de surubins
+é bastante heterogênea, tanto em estratégia quanto no tipo de
+embarcação (BARTHEM, 1990). As embarcações movidas à vela ou
+motor podem ser de pequeno porte (casco de madeira ou alumínio) ou
+de porte industrial (casco e convés em metal). A dinâmica de captura é
+balizada pelas oscilações no nível dos rios (cheia e seca) e pelo regime
+de chuvas (ZACARKIM, et al., 2015). As principais estratégias de pesca
+para os surubins são as linhas e anzóis (de mão e espinhel), redes de
+emalhe, redes de arrasto e mergulho (arpoar). Na pesca com linhas e
+anzóis, os surubins são capturados utilizando preferencialmente iscas
+vivas (peixes de pequeno porte).
+
+Sob a percepção ambiental, um aspecto relevante e preocupante é
+o fato destas espécies ocuparem um habitat em crescente alteração
+antrópica, o que aumenta o risco de degradação e declínio nas capturas
+(PETRERE et al., 2002; MIRANDA, 1997). O cenário de degradação
+generalizada dos ecossistemas continentais vem comprometendo
+significativamente a perpetuação destas e demais espécies de peixes
+(GODINHO et al., 2006; PETRERE, 1995; CURY, 1992). As principais
+ameaças ao surubim e à sua pesca estão ligadas diretamente ao
+bloqueio do ciclo migratório em função da construção e hidrelétricas,
+       A pesca e a aquicultura de surubins no Brasil:
+16     Panorama e considerações para a sustentabilidade
+
+
+     ao assoreamento dos rios e à sobrepesca (MELLO et al., 2009; BEHR
+     e HAYASHI, 1997). Mateus e colaboradores (2004) demonstraram
+     que o P. corruscans e P. reticulatum, espécies mais capturadas na
+     bacia do rio Cuiabá, tiveram suas produções aquém da década de
+     1980, principalmente em distribuição e abundância. O estudo alerta,
+     contudo, que não se pode creditar a redução das capturas apenas à
+     sobrepesca, mas a uma degradação ambiental associada ainda às
+     mudanças de preferência de mercado e medidas legais mais restritivas.
+     O esforço demasiado de pesca também é preocupante, pois contribui
+     para a redução dos estoques naturais (MARQUES, 1993), somado ao
+     fato de haver, por parte do setor produtivo, falta de conhecimento ou
+     conscientização acerca dos limites naturais da exploração sustentável.
+
+     Outro fator agravante é a utilização de métodos e aparelhos de pesca
+     inadequados, pouco seletivos e depredatórios, que acometem com altos
+     índices a fauna acompanhante, ocasionando descartes, desperdícios e
+     alterando negativamente a cadeia produtiva. Adicionalmente, o modelo
+     de gestão pesqueira adotado é considerado convencional, inadequado
+     e ainda desconsidera a participação direta dos usuários (pescadores)
+     no planejamento e manejo dos estoques. Normalmente, pesquisadores
+     estudam a dinâmica do recurso pesqueiro e repassam às agências de
+     manejo, que criam e implementam as normas, que muitas vezes não
+     são bem sucedidas (CASTELLO, 2008; CASTELLO et al., 2007). Uma
+     prova é que mais da metade dos recursos pesqueiros considerados
+     “manejados” sobre esta abordagem estão sobre-explorados (PAIVA,
+     1997), incluindo os surubins.
+
+        •   Considerando os novos desafios de gestão pesqueira para
+            os surubins e as demais espécies afetadas pela pesca, são
+            apontados caminhos para a conservação e perpetuação da
+            atividade, que passam necessariamente por:
+        •   Pesca mais seletiva e, neste sentido, pesquisas são necessárias
+            para aumentar a eficiência das pescarias sem comprometer a
+            manutenção dos estoques naturais e diminuir o alto índice de
+            desperdício verificado na atividade. Ou seja, que as capturas
+                                        A pesca e a aquicultura de surubins no Brasil:
+                                    Panorama e considerações para a sustentabilidade
+                                                                                           17
+
+
+          estejam nos patamares do Rendimento Máximo Sustentável
+          (RMS);
+      •   Entendimento de que as populações destas espécies de peixes
+          são complexas e fortemente correlacionadas com a área da
+          bacia hidrográfica onde ocorrem e oscilam de acordo com as
+          variações anuais de precipitação e inundação;
+      •   Entendimento que as pescarias são complexas tanto em
+          petrechos quanto em estratégias de captura, além de estarem
+          inseridas em diferentes contextos regionais, sociais e culturais
+          do território brasileiro;
+      •   Entendimento do atual processo de degradação generalizada
+          aos quais os ecossistemas continentais estão submetidos, o que
+          afeta direta e indiretamente os estoques naturais de surubins;
+      •   Entendimento da cadeia produtiva e como seus mecanismos
+          de governança afetam e são afetados pela atividade pesqueira;
+      •   Necessidade urgente de aumento no grau de participação das
+          comunidades pesqueiras na gestão dos recursos explorados.
+          Modelos como os Acordos de Pesca5 são considerados
+          promissores por terem objetivos múltiplos, que atuam na
+          gestão do recurso pesqueiro e da própria pesca;
+      •   Compreensão de que as dimensões econômicas, sociais e
+          ambientais são complementares e indissociáveis, e que a
+          abordagem integrada (sistêmica e/ou ecossistêmica) precisa
+          ser devidamente apropriada para que haja compatibilidade
+          de interesses entre os usuários dos recursos pesqueiros,
+          as instituições externas afins (governo, pesquisa, etc.) e à
+          manutenção da biodiversidade.
+
+
+
+
+5
+    Instrução Normativa IBAMA no 29, de 31 de dezembro de 2002. Modelo considerado
+    importante nas estratégias de administração pesqueira, os quais reúnem um número
+    significativo de comunidades de pescadores e definem normas específicas, regulando
+    assim a pesca de acordo com os interesses da população local e com a preservação dos
+    estoques pesqueiros.
+       A pesca e a aquicultura de surubins no Brasil:
+18     Panorama e considerações para a sustentabilidade
+
+
+
+                            A aquicultura
+     Os surubins podem ser considerados como potencial para a criação
+     como peixes de corte, para a pesca esportiva ou mesmo como peixe
+     ornamental de interesse inclusive para exportação, juntamente com
+     outras espécies nacionais de hábito alimentar carnívoro, como o
+     pirarucu (Arapaima gigas), o dourado (Salminus brasiliensis), os tucunarés
+     (Cichla spp) e a pirarara (Phractocephalus hemiliopterus) (TOLEDO, 1991;
+     CURY, 1992; KUBITZA, 1995; BEELEN et al., 1998, LUNDSTEDT, 2003).
+     Considerando que os surubins apresentam estoques relativamente
+     limitados, uma alternativa viável para o aumento da produção e de
+     grande potencial econômico é a produção dos surubins em cativeiro.
+
+     Os surubins são peixes reofílicos (peixes que realizam migração
+     reprodutiva), de desova total, e para que ocorra a reprodução em
+     cativeiros, os reprodutores, em estágio adequado de maturação
+     gonadal, devem receber doses injetáveis de hormônios hipofisários. A
+     larvicultura ainda é um dos maiores gargalos na produção de surubins.
+     Normalmente são registradas grandes perdas por canibalismo,
+     indicando que são necessários esforços de pesquisa para compreensão
+     e controle dos parâmetros fisiológicos, nutricionais, comportamentais
+     e de manejo.
+
+     Na década de 90, houve um investimento alto do setor privado para
+     o desenvolvimento da tecnologia da reprodução dessa espécie
+     em cativeiro, o que possibilitou a produção da espécie (KUBITZA
+     et al., 1998). Somado a isso, trabalhos realizados pela Companhia
+     de Desenvolvimento do Vale do São Francisco – CODEVASF e pela
+     Universidade Federal de Minas Gerais (UFMG) demonstraram o
+     potencial desta espécie sugerindo que o surubim apresenta um
+     crescimento total aparentemente isométrico. Considerando-se os seus
+     índices zootécnicos e características de rendimento de carcaça, esta
+     espécie apresenta alto potencial para a produção comercial (CREPALDI
+     et al., 2006; MIRANDA, 1993).
+                                A pesca e a aquicultura de surubins no Brasil:
+                            Panorama e considerações para a sustentabilidade
+                                                                                 19
+
+
+Características do surubim como rápido crescimento no ambiente de
+cultivo, boa conversão alimentar e alto valor comercial (MIRANDA,
+1997), contribuem para o interesse dos produtores na produção desses
+peixes. Adicionalmente, a ausência de espinhas intramusculares
+(SATO et al., 1988), o excelente sabor da carne (BATLOUNI et al., 2005;
+CASTANGNOLLI, 1992) e a pouca diferença na qualidade da carne entre
+as espécies desse grupo (BALDISSEROTTO e GOMES, 2005), resultam
+em uma grande aceitação e interesse dos consumidores pelo filé (CAL,
+2006).
+
+As três espécies de surubins mais representativas para piscicultura são
+o P.corruscans, P.fasciatum, P. reticulatum e P. punctifer. Os principais
+híbridos são conhecidos por “Cachapinta” ( P. reticulatum x P.
+corruscans), “Pintachara” ou “Ponto e vírgula” ( P. corruscans x
+P. reticulatum) (CARVALHO et al., 2007). Além dessas, uma prática que
+tem se tornado bastante comum é a produção de híbridos a partir
+de cruzamentos intergenéricos da ordem Siluriforme, que visam
+obter linhagens com maior desempenho zootécnico, melhor manejo
+reprodutivo e rusticidade. Dentre elas estão o “jundiara”, “pintado
+da Amazônia” ou “pintadiá” ( P. punctifer x        Leiarius marmoratus
+ou P. corruscans x L. marmoratus ou ( P. reticulatum x Leiarius
+marmoratus) (Tabela 2). Todos esses peixes são agrupados nas
+estatísticas como pintados e os híbridos e atualmente respondem pela
+maior parte da produção desse grupo no país (ALVES et al., 2014).
+        A pesca e a aquicultura de surubins no Brasil:
+20      Panorama e considerações para a sustentabilidade
+
+
+     Tabela 2. Principais surubins utilizados na piscicultura brasileira (Modificado de ALVES
+     et al., 2014).
+
+      Denominação
+                                          Ilustração                        Espécie/híbrido
+        popular
+
+
+         Cachara                                                               P. punctifer
+
+
+
+
+         Pintado                                                              P. corruscans
+
+
+
+
+        Jundiá da                                                              Leiaurius
+        Amazônia                                                              marmoratus
+
+
+
+
+         Ponto e                                                               P. corruscans
+        vírgula ou                                                                  x
+        Pintachara                                                             P. reticulatum
+
+
+
+       Pintado da                                                              P. punctifer
+      Amazônia ou                                                                  x
+        Jundiara                                                                 Leiaurius
+                                                                              marmoratus
+
+
+     O crescimento mais significativo da produção de surubins em cativeiro
+     ocorreu entre 2010 e 2011, período no qual a produção mais que
+     triplicou (BRASIL, 2008; BRASIL, 2013; IBGE, 2013) (Figura 3). Este
+     significativo aumento coincide com o início da produção comercial
+     dos híbridos considerando diferentes gêneros de Siluriformes, além
+     de Pseudoplatystoma. O ano de 2013 também foi significativo com
+     crescimento de 80% em relação a 2011.
+                                      A pesca e a aquicultura de surubins no Brasil:
+                                  Panorama e considerações para a sustentabilidade
+                                                                                       21
+
+
+A produção desses híbridos vem crescendo continuamente, sustentada
+pelas melhorias de manejo e eficiência produtiva resultantes da
+hibridação (ALVES et al., 2014). Frequentemente, os animais híbridos
+se diferenciam dos parentais puros quanto à sua biologia, o que
+pode expressar melhor desempenho do que a média dos parentais,
+fenômeno conhecido como vigor híbrido ou heterose (BARTLEY
+et al., 2001; HELFMAN et al., 2009; ALVES et al., 2014). A hibridação
+pode transferir características desejáveis, tais como maior taxa
+de crescimento, diminuição da exigência nutricional, resistência a
+doenças, maior qualidade de carne, comportamento menos agressivo,
+redução de canibalismo em formas jovens, bem como a obtenção de
+indivíduos com maior aptidão ao manejo produtivo (BARTLEY et al.,
+2001; ALVES et al., 2014).
+
+
+
+
+Figura 3. Evolução da produção de surubins no Brasil pela aquicultura. Fonte: BRAZIL
+(2008); BRAZIL (2013); IBGE (2013).
+
+
+O híbrido ponto e vírgula foi o primeiro a ser produzido amplamente
+entre os surubins, pois apresentava melhor desempenho zootécnico
+em relação ao parental P. corruscans (CREPALDI et al., 2004). Este
+híbrido já era considerado promissor para a aquicultura no início da
+década de 90 (COELHO e CYRINO, 2006) e ainda hoje é cultivado no
+país. Entretanto, nos últimos anos, os híbridos pintado da Amazônia e
+pintadiá vem ganhando expressão e já superam em produção o híbrido
+ponto e vírgula. O híbrido pintado da Amazônia permite um manejo
+       A pesca e a aquicultura de surubins no Brasil:
+22     Panorama e considerações para a sustentabilidade
+
+
+     alimentar para peixe onívoro, diminuição dos custos de produção,
+     menor canibalismo na larvicultura e, consequentemente, aumentando
+     a produtividade de alevinos (ALVES et al., 2014).
+
+     No entanto, mesmo sendo uma espécie com grande potencial e
+     produção crescente, ainda há uma grande demanda por conhecimentos
+     e tecnologias que permitam uma maior eficiência da produção em
+     cativeiro dos surubins híbridos. A produção dominante de híbridos em
+     relação aos parentais é um reflexo dessa escassez. São necessárias
+     ainda tecnologias e/ou processos produtivos que resultem em uma
+     maior eficiência na produção dos alevinos e jovens das espécies puras.
+     Altas taxas de mortalidade na larvicultura, devido ao alto canibalismo,
+     tem se mostrado o principal gargalo para a produção de puros. Outra
+     deficiência tecnológica está relacionada à necessidade de treinamento
+     alimentar na fase jovem, para que os peixes carnívoros se adaptem
+     ao consumo de ração na produção, permitindo uma maior produção
+     das espécies puras. Esses fatores refletem diretamente no preço do
+     alevino (INOUE et al., 2009) e na sua disponibilidade no mercado.
+     Considerando essas diferenças, Crepaldi e colaboradores (2004)
+     avaliaram o desempenho do híbrido ponto e vírgula e do parental P.
+     corruscans em três densidades de estocagem e observaram um melhor
+     desempenho em peso do híbrido. Essa superioridade no desempenho
+     produtivo é um dos fatores que contribui para que o setor produtivo
+     adote a produção de híbridos.
+
+
+                            Sistemas de produção
+     Atualmente, os surubins são cultivados principalmente em viveiros
+     escavados e açudes, mas também existem produtores que realizam
+     a produção em tanques-rede e raceways. Esse cenário reflete a
+     tendência da piscicultura nacional, na qual os viveiros e açudes são
+     predominantes na produção (BRASIL, 2008).
+
+     Avaliando a produção do surubim P. corruscans em diferentes
+     sistemas de produção: viveiros escavados (0,75 peixes/m²) e tanques-
+                               A pesca e a aquicultura de surubins no Brasil:
+                           Panorama e considerações para a sustentabilidade
+                                                                                23
+
+
+rede (67 e 133 peixes/m³) por 273 dias, Scorvo-Filho e colaboradores
+(2008) observaram que a produção dessa espécie em viveiros
+resulta em um melhor desempenho, melhor conversão alimentar
+e maior sobrevivência do que quando cultivados em tanques-rede.
+Esse fato pode estar relacionado à maior adaptação dos animais a
+esse ambiente de cultivo, sobretudo devido a maior disponibilidade
+de espaço, além de permitir menor disputa por alimento. Liranço e
+colaboradores (2011) também encontraram melhor desempenho em
+peso, conversão alimentar e sobrevivência de P. corruscans cultivados
+em viveiros (0,25 peixes/m²) do que em tanques-rede (22 peixes/m³). O
+maior desempenho de peixes criados em viveiros escavados quando
+comparado aos criados em tanques-rede é comum também em outras
+espécies (ARBELAEZ-ROJAS et al., 2002).
+
+1. Densidade de estocagem
+
+A densidade de estocagem é um parâmetro importante para a
+produção de peixes, pois interfere no desempenho produtivo dos
+animais (ANDRADE et al., 2004). Em geral, o aumento da densidade
+de estocagem resulta na diminuição no crescimento e aumento da
+heterogeneidade do lote (SAHOO et al., 2004; BRANDÃO et al., 2004;
+SANCHES e HAYASHI, 1999). A diminuição do crescimento pode
+também estar associada à diminuição da qualidade de água, maior
+competição por acesso ao alimento e consequente aumento do
+estresse entre os animais (IGUCHI et al., 2003; OLIVEIRA et al., 2007).
+A densidade é um parâmetro produtivo que depende do sistema de
+produção adotado, variando conforme este. Dessa forma, para cada
+sistema de produção descritos nos itens seguintes, apresentam-se as
+melhores densidades de estocagem avaliadas em diversos estudos
+(Tabelas 3 e 4) .
+
+1.1 Viveiros escavados
+
+A densidade de estocagem do jundiá da Amazônia L. marmoratus
+cultivado em viveiros escavados (0,5; 1 e 2 peixes/m²) foi avaliada por
+Cruz-Casallas e colaboradores (2010), em um cultivo com duração
+       A pesca e a aquicultura de surubins no Brasil:
+24     Panorama e considerações para a sustentabilidade
+
+
+     de cinco meses (peso inicial de 20,4g). A densidade de 1 peixe/m²
+     apresentou o melhor desempenho produtivo, com peso final de 561 g.
+     Nessa densidade, foi encontrada uma conversão alimentar de 1,51:1.
+     Já o híbrido pintado da Amazônia ( P. tigrinum x       L. marmoratus)
+     apresentou uma diminuição no desempenho em peso quando
+     estocados em maiores densidades, em cultivo de nove meses (Gomides,
+     2011). Quando estocadas nas densidades de 0,5; 0,8; 1,1 e 1,4 peixes/m²
+     apresentaram um peso final de 939; 784; 859 e 611g, respectivamente,
+     evidenciando uma relação inversamente proporcional entre o peso e
+     a densidade de estocagem. Por outro lado, a conversão alimentar não
+     foi afetada pela densidade de estocagem, que apresentou valor médio
+     de 1,08:1. Adicionalmente, as diferentes densidades não influenciaram
+     na qualidade de água e a densidade de 0,8 peixes/m² apresentou a
+     melhor rentabilidade econômica. Analisando os dois estudos, observa-
+     se uma melhor resposta produtiva do híbrido pintado da Amazônia
+     em comparação ao parental jundiá da Amazônia, principalmente em
+     relação a melhor aproveitamento da ração, o que conferiu melhor
+     conversão alimentar. Adicionalmente, a conversão alimentar parece
+     melhorar com o aumento da densidade de estocagem nos dois estudos,
+     mesmo sem diferenças significativas em Gomides (2011). Esta relação
+     também foi observada para o pirarucu (Cavero et al, 2003) e pode
+     estar relacionada a diminuição das relações hierárquicas (Wedemeyer,
+     1996; Iwama et al., 1997), favorecendo a alimentação. Em termo de
+     densidade, ambos parecem se adaptar a condições semelhantes de
+     adensamento, contudo o híbrido apresentou maior peso final. Essas
+     diferenças podem ser resultado do vigor híbrido, no qual há uma
+     melhora de desempenho do híbrido em relação ao parental.
+
+     Entre os protocolos de produção propostos para surubins, Campos
+     (2010) sugere a divisão do cultivo em duas fases em viveiros escavados,
+     sendo a primeira para a produção de animais até 200g, comumente
+     chamada de recria, e a segunda até o tamanho de abate. Para a
+     primeira fase, sugere a estocagem de 10 a 18 juvenis/m², enquanto
+     na segunda fase a densidade de 0,390 peixes/m² quando se deseja
+     abater animais com peso de 1.300g. Já o protocolo apresentado por
+                                       A pesca e a aquicultura de surubins no Brasil:
+                                   Panorama e considerações para a sustentabilidade
+                                                                                           25
+
+
+Kubitza e colaboradores (1998) recomenda divisão do cultivo em
+três fases. A primeira fase compreende o animal com peso de 5 a 50
+gramas, estocados na densidade de 200 a 300 peixes/m³, em sistemas
+de raceways. Na segunda fase, chamada de recria, os animais vão de
+50 a 600g, estocados a uma densidade de 1 peixes/m² em viveiros de
+terra. E a terceira fase, de finalização, os animais vão de 600g a 3 kg,
+estocados a uma densidade 0,165 peixes/m².
+
+É possível observar que as densidades de estocagem devem ser
+ajustadas nas diferentes fases de produção, buscando adequar a
+biomassa total dos animais à capacidade do sistema de produção. A
+densidade utilizada na recria é naturalmente maior que nas fases finais
+de engorda. As densidades próximas de 1 peixe/m² apareceram tanto
+nos experimentos quanto nos protocolos de produção propostos para
+animais com tamanho de até cerca de 700g. Para peixes maiores, a
+densidade deve ser diminuída para cerca de 500g peixes/m², variando
+a quantidade de peixes de acordo com o peso final pretendido.
+
+Tabela 3. Densidade de estocagem sugerida para a produção de surubins em viveiros
+escavados.
+
+                                                       Tempo
+                     Densidade       Peso      Peso
+                                                          de     Conversão
+       Peixe           sugerida      Inicial   final                         Referência
+                                                       cultivo   alimentar
+                     (peixes/m²)       (g)      (g)
+                                                        (dias)
+      Jundiá da                                                                  Cruz-
+     Amazônia -           1          20,4      561      150        1,51      Casallas et
+   L. marmoratus                                                              al., 2010.
+      Pintado
+         da
+     Amazônia                                                                Gomides,
+                         0,8          82       784      270        1,08
+   ( P. tigrinum                                                              2011.
+          x
+    L. marmoratus)
+                       10 - 18         5        200     90-100    1,2-1,4
+                                                                             Campos,
+      Surubins         0,390          200      1.300   200-220    1,9-2,2
+                                                                              2010.
+
+                          1            50       600    110-130    1,4-1,7
+                                                                             Kubitza et
+      Surubins          0,165         600      3.000   330-390    1,9-2,1
+                                                                             al., 1998.
+         A pesca e a aquicultura de surubins no Brasil:
+26       Panorama e considerações para a sustentabilidade
+
+
+     1.2 Tanques-rede
+
+     Coelho (2005) avaliou o cultivo do híbrido ponto e vírgula em tanques-
+     rede de diferentes volumes (27,5; 22,5 e 13,5 m³), estocados com
+     diferentes densidades (25; 50 e 75 peixes/m³). O autor observou que
+     nos tanques-rede de 13,5 m³ e 27,5 m³, o maior ganho de peso foi
+     observado na densidade de 25 peixes/m³, sendo o aumento da
+     densidade inversamente proporcional ao ganho de peso. Enquanto a
+     biomassa aumentou proporcionalmente com o aumento da densidade
+     em todos os volumes de tanques.
+
+     Já Coelho e Cyrino (2006) avaliaram diferentes densidades de
+     estocagem (50; 75; 100 e 125 peixes/m³) na produção do híbrido ponto
+     e vírgula em tanques-rede de 10,8 m³. A conversão alimentar foi melhor
+     na menor densidade, apresentando em decréscimo proporcional ao
+     aumento da densidade. Já a sobrevivência apresentou tendência
+     oposta, com melhores valores na maior densidade. A biomassa,
+     como esperado, aumentou com o aumento da densidade. Em termos
+     econômicos, a densidade de 125 peixes/m³ resulta em uma maior taxa
+     interna de retorno (89,75%), seguidas da densidade de 100 peixes/
+     m³ (76,77%) e 75 peixes/m³ (56,71%), mesmo que a densidade de 75
+     peixes/m³ tenha apresentado o menor custo unitário por kg de peixe
+     produzido. Turra e colaboradores (2009) também avaliaram diferentes
+     densidades de estocagem (35, 70 e 105 alevinos/m³) para surubins
+     estocados em tanques-rede de pequeno volume (13,5 m³) por 105 dias
+     e concluíram que as menores densidades de estocagem resultaram em
+     maior peso final, numa relação inversamente proporcional, enquanto
+     que para biomassa, houve uma relação diretamente proporcional, com
+     as maiores densidades apresentando as melhores biomassas finais.
+     A sobrevivência e a conversão alimentar não foram afetadas pela
+     densidade.
+
+     Ainda em tanques-rede, Lucas Salgado (com. pessoal)6 relatou que na
+     fase de recria do pintado da Amazônia são estocados 200 alevinos/m³
+     e na fase de engorda são estocados 30 peixes/m³, em tanques-rede de
+
+     6
+         Correspondência do Zootecnista Lucas Salgado, referente a dados da Fazenda Miradouro,
+         enviada por e-mail em 23/03/2015.
+                                       A pesca e a aquicultura de surubins no Brasil:
+                                   Panorama e considerações para a sustentabilidade
+                                                                                                         27
+
+
+96m³. Nesse manejo, os peixes atingem peso final entre 1,8 a 2,0 kg
+em 10 meses de cultivo, sendo alimentados inicialmente com rações
+comerciais contendo 45% de proteína bruta (PB) e terminando com
+rações contendo 40% PB. Entre os entraves na produção do pintado
+da Amazônia estão o alto custo dos alevinos e mortalidade contínua
+durante o ciclo de produção.
+
+De forma geral, percebe-se que a produção em tanques-rede é
+influenciada pela densidade, havendo uma diminuição gradativa de
+peso à medida que se aumenta a densidade. Contudo, um aumento
+da biomassa final ocorre com o aumento da densidade, o que sinaliza
+para uma maior eficiência na produção, resultando em melhores
+taxas de retorno. Portanto, para decisão de qual densidade utilizar,
+é interessante considerar não apenas os dados de desempenho dos
+animais, como também os reflexos do desempenho dos animais no
+retorno econômico da atividade. Por este motivo, muitas vezes se
+justifica a utilização de maiores densidades.
+
+Tabela 4. Densidade de estocagem sugerida para a produção de surubins em tanques-
+rede.
+
+                           Densidade   Volume
+                                                 Peso      Peso
+                            sugerida      do                       Período   Conversão
+            Peixe                                Inicial   final                         Referência
+                            (peixes/   tanque-                      (dias)   alimentar
+                                                   (g)      (g)
+                              m³)        rede
+
+        Ponto e vírgula
+                              25        13,5      275      560      170        4,46
+         (P. fasciatum                                                                     Coelho,
+                              25        27,5      450      820      190        4,82
+                ×                                                                           2005.
+                              75        22,5      200      440      190        3,69
+         P. coruscans)
+
+        Ponto e vírgula
+                                                                                           Coelho
+         (P. fasciatum
+                              75        10,8      564      1.105    140        4,34       e Cyrino,
+                ×
+                                                                                            2006.
+         P. coruscans)
+
+        Surubim                                                                          Turra et al.,
+                             105        13,5      50       161      105        1,56
+ (Pseudoplatystoma spp.)                                                                   2009.
+
+   Pintado da Amazônia
+ (Pseudoplatystoma spp.                                                                   Salgado,
+                              30         96        5       2.000    300          -
+            x                                                                              2015.
+      L. marmoratus)
+       A pesca e a aquicultura de surubins no Brasil:
+28     Panorama e considerações para a sustentabilidade
+
+
+     1.3 Sistemas de recirculação
+
+     Apesar dos sistemas de recirculação não serem muito utilizados no
+     Brasil, os resultados do desempenho de surubins neste sistema podem
+     ajudar a compreender o desempenho destes em sistemas intensivos.
+     O efeito da densidade na produtividade do cachadiá (Pseudoplatystoma
+     fasciatum x Leiarius marmoratus) foi avaliado por Faria e colaboradores
+     (2011) em sistema de recirculação de água. O cultivo foi dividido
+     em quatro fases, totalizando 207 dias. Nas duas primeiras fases,
+     com 27 e 40 dias respectivamente, foram testadas as densidades de
+     40, 60 e 80 peixes/m³. Já na terceira e quarta fase, com 41 e 99 dias
+     respectivamente, foram avaliadas as densidades de 10, 20, 30 e 40
+     peixes/m³. O peso apresentou tendência inversamente proporcional
+     em relação à densidade em todas as fases, semelhante aos demais
+     sistemas de produção anteriormente citados. O cachadiá atingiu peso
+     1,1kg, ao final de 207 dias de cultivo.
+
+
+                            Ração
+     A produção de peixes carnívoros pressupõe o uso de rações específicas
+     com maior densidade proteica, quando comparadas àquelas para
+     peixes omnívoros. Como não existem no mercado rações específicas
+     para surubins, os produtores utilizam rações para peixes carnívoros,
+     com níveis de proteína de aproximadamente 40% de proteína bruta
+     (PB) (MORO et al., 2013). Alguns estudos vêm sendo desenvolvidos
+     com a finalidade de avaliar se a concentração de proteína disponível
+     nas rações comerciais atende as necessidades dos surubins.
+     Pilecco e colaboradores (2007) avaliando a alimentação de surubins
+     Pseudoplatystoma spp com rações comerciais de 40, 45 e 46% PB,
+     não observaram diferença significativa no peso médio final, ganho de
+     peso, biomassa final e conversão alimentar. Gonçalves (2014) também
+     avaliou diferentes níveis de proteína (44, 40 e 36%) e carboidratos (25
+     e 15%) no desempenho da cachara P. reticulatum e observou que os
+     níveis de proteína testados não resultaram em diferenças no ganho de
+     peso dos animais. Contudo, a conversão alimentar foi superior para
+     os animais alimentados com ração contendo 44% PB. Em relação aos
+                               A pesca e a aquicultura de surubins no Brasil:
+                           Panorama e considerações para a sustentabilidade
+                                                                                29
+
+
+níveis de carboidratos, dietas com 15% de carboidratos resultaram em
+melhores índices de desempenho zootécnico.
+
+Lundstedt e colaboradores (2004) avaliaram diferentes níveis de proteína
+bruta (20; 30; 40 e 50%) para o P. corruscans e observaram que o melhor
+ganho de peso foi encontrado para os animais alimentados com ração
+contendo 40% de proteína bruta, enquanto o menor desempenho foi
+observado na menor quantidade de proteína na dieta. Lundstedt (2003)
+realizou ensaios com diferentes níveis de energia (3.500; 3.850; 4.200
+e 4.550 kcal de energia digestível/kg de ração) e encontrou um peso
+superior para os animais alimentados com ração contendo 3.500 kcal
+de energia/kg de ração. Tal resultado corrobora que é necessário que
+haja um balanceamento entre os nutrientes proteicos e energéticos da
+dieta, e que quantidades excedentes de energia causam uma menor
+ingestão do alimento, com prejuízos no crescimento. Por outro lado, a
+deposição de gordura visceral foi menor nos animais arraçoados com
+a maior densidade energética, o que permite afirmar que o excesso
+de energia não é, isoladamente, a causa do excesso de gordura
+visceral, apresentada por muitos surubins. De forma complementar,
+Lundstedt e Moraes (2011) avaliaram a resposta de surubins híbridos
+Pseudoplatystoma spp a dietas contendo 3.200; 3.600; 4.000 ou 4.400
+kcal de energia (EB) e 32; 36; 40 e 44 % de proteína bruta (PB). As
+combinações 3.600EB/36PB, 4.000EB/40PB e 4.400 EB/44PB foram
+semelhantes em desempenho e superiores às demais combinações.
+Uma maior deposição de gordura visceral foi observada nos animais
+alimentados com a dieta 4.000EB/40PB, sendo então recomendado se
+adotar dietas para surubins contendo valores inferiores a 4.000 kcal
+de energia e 40% de proteína bruta, de forma a evitar a deposição de
+gordura visceral.
+
+
+                     Manejo alimentar
+Os surubins apresentam hábito noturno, o que confere melhor
+adaptação à alimentação nesses horários. O híbrido ponto e vírgula
+também apresenta essa característica, mas com maior capacidade
+adaptativa em se alimentar durante o dia. Já o híbrido pintado da
+       A pesca e a aquicultura de surubins no Brasil:
+30     Panorama e considerações para a sustentabilidade
+
+
+     Amazônia parece se adaptar facilmente a alimentação diurna, o que
+     configura como uma das vantagens na utilização desses híbridos
+     ressaltada pelos produtores. No manejo alimentar dos surubins, assim
+     como de qualquer peixe, a regularidade no momento da alimentação
+     é importante para o sucesso do cultivo. Campos (2010) ressalta que
+     em caso de temperaturas abaixo de 21oC os animais devem ser
+     alimentados apenas 1 vez ao dia. Uma proposta de manejo alimentar
+     para os surubins está apresentada na Tabela 3, a partir das informações
+     propostas por Campos (2010) e Kubitza e colaboradores (1998).
+
+     Tabela 5. Manejo alimentar para produção de surubins.
+
+                                                      Taxa de
+                           Tamanho do pélete                         Número de lances/
+             Peso                                  alimentação
+                                (mm)                                       dia
+                                                 (% peso vivo/dia)
+          15 a 200g                 4                  10-4                 6-3
+          200 a 500                 8                                       2
+         500 a 1.000               15                  3-1,5                2
+         1.000 a 2.000           15 a 30                                    2
+      Fonte: Adaptado de Campos (2010) e Kubitza (1998).
+
+
+
+                              Qualidade de água
+     Em geral, os surubins são tolerantes a baixas temperaturas,
+     sobrevivendo em temperaturas mínimas de até 11oC. Contudo, por ser
+     um peixe tropical, a temperatura adequada para produção deve ser de
+     26 a 28oC. Em relação ao oxigênio dissolvido, os surubins são tolerantes
+     a exposições temporárias a baixos teores de oxigênio dissolvido (0,5 a
+     1,0 mg de O2/L) (KUBITZA et al., 1998; CAMPOS, 2010). Em relação aos
+     demais parâmetros de água, não existem estudos específicos para a
+     espécie. Por isso admite-se para a produção os parâmetros sugeridos
+     por Moro e colaboradores (2013) para as espécies de peixes tropicais.
+     O pH deve estar em torno de 6,5 a 8,5, sem grandes variações diárias.
+     Por isso, a alcalinidade deve estar acima de 20 mg CacO /L. A amônia
+                                                               ³
+     deve ser controlada, de forma que apresente valores abaixo de 1,0
+     mg/L. E a transparência deve estar em torno de 40 cm.
+                              A pesca e a aquicultura de surubins no Brasil:
+                          Panorama e considerações para a sustentabilidade
+                                                                               31
+
+
+                    Abate e processamento
+O peso de abate comercialmente praticado para os surubins está
+entre 1,3 a 1,4kg (CAMPOS, 2010). Contudo é comum a produção de
+animais de até 3 kg (KUBITZA et al., 1998). Os surubins apresentam
+aproveitamento de filé variando entre 47% e 50% (BURKERT et al.,
+2008). Valores inferiores às da truta arco-íris (Oncorhynchus mykiss),
+com 57,8%, e da carpa capim (Ctenopharingodon idella), com 55%,
+mas superior ao da tilápia nilótica (Oreochromis niloticus), com 33%,
+e mesmo a do bagre de canal (Ictalurus punctatus), com 37%, sendo
+esta última a espécie cultivada de maior relação filogenética com os
+surubins (RIBEIRO e MIRANDA, 1997).
+
+Burkert e colaboradores (2008) analisaram o rendimento de surubins
+cultivados em tanques-rede com diferentes rações e observaram que
+não há diferença no rendimento de processamento para machos e
+fêmeas da espécie. Adicionalmente, observou que alimentar os peixes
+com rações contendo diferentes níveis de proteína (43,5; 42,6 e 42,1%)
+e extrato etéreo (5.078; 4.931 e 4.994 kcal) não acarreta em mudanças
+na qualidade e quantidade dos principais cortes do surubim, além de
+não terem efeito na composição químico-bromatológica do filé (filé
+lateral e abdominal).
+
+Um dos problemas atuais relatado pelos produtores na produção dos
+híbridos de surubins é o maior acúmulo de gordura visceral quando
+comparado aos parentais puros. Muitos produtores relacionam
+esse acúmulo com os altos níveis de energia nas rações comerciais.
+Entretanto, como mencionado acima, Lundstedt (2003) observou
+que diferentes níveis de inclusão de energia nas dietas não são
+isoladamente, o maior acúmulo de gordura visceral para surubins
+Pseudoplatystoma spp. Adicionalmente, Arbelaez-Rojas e colaboradores
+(2002) demonstram que para o tambaqui Colossoma macropomum
+o acúmulo de gordura visceral é maior para peixes cultivados em
+viveiros escavados em comparação àqueles cultivados em tanques-
+rede, mostrando uma influência do sistema de cultivo na deposição de
+gordura visceral. Como não existe um estudo similar para os surubins,
+       A pesca e a aquicultura de surubins no Brasil:
+32     Panorama e considerações para a sustentabilidade
+
+
+     não é possível afirmar que eles possuem essa mesma tendência em
+     acumular gordura visceral, apesar de já apresentarem maior deposição
+     de gordura no filé quando cultivados em viveiros escavados (FRASCÁ-
+     SCORVO et al., 2008).
+
+
+                            Comportamento em cativeiro
+     Scorvo-Filho e colaboradores (2008) relataram que os surubins são
+     calmos e tolerantes ao manejo. No entanto, uma das preocupações
+     no manejo de surubins é em relação à presença de acúleos ou ferrões.
+     É necessário cuidado na manipulação dos peixes, pois os ferrões nas
+     nadadeiras laterais e dorsais dos animais podem causar ferimentos
+     entre os peixes e no manipulador durante o manejo.
+
+     Outra característica de peixes carnívoros que interfere na produção é
+     a grande variação nos pesos dos animais (CAMPOS, 2010), resultado
+     do padrão hierárquico de dominância normalmente observado em
+     espécies de peixes carnívoras. Esta característica indica a necessidade
+     de classificações periódicas dos animais por tamanho (KUBITZA et
+     al., 1998; CAMPOS, 2010), sobretudo quando produzidos em tanques-
+     rede. Esse manejo objetiva uma uniformização do lote, fator repercute
+     positivamente na comercialização.
+
+
+                            Impactos ambientais da produção
+                            de surubins em cativeiro
+     A condição de cativeiro não elimina a possibilidade de escapes para o
+     ambiente natural, sejam espécies puras ou híbridas. Em se tratando de
+     híbridos férteis, esses escapes representam uma ameaça à integridade
+     genética das populações selvagens devido principalmente ao risco de
+     retrocruzamento e introgressão gênica (AVISE, 2004; BIGNOTTO et al.,
+     2009). Em locais onde os surubins selvagens têm populações reduzidas,
+     como na Bacia do Alto Rio Paraná, a presença de híbridos férteis
+     são particularmente ameaçadores. Adicionalmente, a construção de
+     barragens isola populações e comprometem a reprodução natural dos
+                               A pesca e a aquicultura de surubins no Brasil:
+                           Panorama e considerações para a sustentabilidade
+                                                                                33
+
+
+surubins. Desta forma, o monitoramento das populações é essencial
+para preservar as espécies do gênero Pseudoplatystoma (BIGNOTTO
+et al., 2009).
+
+
+                     Garantia de origem e mercado
+Atualmente, a maior parte da produção aquícola de surubins no
+Brasil é representada pelos híbridos, devido a uma série se fatores,
+anteriormente citados. No entanto, um dos maiores problemas
+enfrentados na cadeia produtiva é a concorrência pela comercialização
+de outros tipos de peixes considerados menos nobres para a produção
+de filés e produtos processados, erroneamente vendidos com o rótulo
+de surubim. Porém, já existem ferramentas moleculares que permitem
+identificação e detecção de fraudes ou substituição de espécies em
+transações comerciais (SMITH et al., 2008), uma vez que a maioria das
+características morfológicas utilizadas na identificação das espécies
+são eliminadas durante a filetagem e processamento do pescado.
+
+Um exemplo de ferramenta molecular é a técnica DNA Barcoding que
+identifica possíveis fraudes em pescado por meio de sequenciamento
+de fragmentos de DNA, confrontados com base de dados previamente
+depositadas (BarCode of Life Database, BOLD, www.boldsystems.org),
+atuando como uma espécie de “bioidentificador”, semelhante a códigos
+de barras universais (CARVALHO et al., 2008). Carvalho e colaboradores
+(2011) identificaram, por meio desta técnica, adulterações no pescado
+vendido como surubim (P. corruscans) por outras espécies de menor
+valor comercial, demonstrando que a detecção de supostas espécies de
+surubins “puros” é uma ferramenta de grande aplicação na aquicultura
+brasileira. Portanto, esta ferramenta se mostra uma excelente opção
+para confirmar a taxonomia clássica, principalmente em espécies de
+difícil identificação (TRESBACH et al., 2012) ou quando se apresenta no
+mercado na forma de filé ou mesmo após o processamento.
+
+Da mesma forma, Neto (2013) avaliou diferentes espécies de peixes
+marinhos in natura e processados, e também verificou fraudes na
+identificação e composição de espécies de merluzas e bacalhaus. Este
+       A pesca e a aquicultura de surubins no Brasil:
+34     Panorama e considerações para a sustentabilidade
+
+
+     autor conclui ainda que o número de fraudes encontradas mostra
+     que o consumidor brasileiro está sendo economicamente lesado.
+     Como sugestão para a cadeia produtiva o autor ainda recomenda o
+     estabelecimento de uma lista oficial de nomes comerciais e científicos
+     para os peixes comercializados no Brasil, que também se faz necessário
+     para os surubins. Tal referência possibilitaria aos órgãos reguladores a
+     detecção de fraudes na comercialização de pescados. Adicionalmente,
+     os serviços aduaneiros teriam respaldo para regular e fiscalizar itens
+     importados/exportados, para fins de tributação e também para a
+     proteção do consumidor.
+
+     Atualmente, observa-se uma tendência generalizada a consumir
+     alimentos mais saudáveis, refletindo-se em um aumento da demanda
+     por organismos aquáticos. As espécies carnívoras como os surubins,
+     normalmente alcançam maiores valores de mercado. Entretanto,
+     mesmo devido à sua importância, seja na pesca ou na aquicultura,
+     o conhecimento da biologia, e manejo produtivo ainda é bastante
+     limitado. Portanto, os principais desafios para a produção em cativeiro
+     dos surubins passam necessariamente por:
+
+        •   Avanço nas tecnologias de produção, principalmente no manejo
+            da larvicultura, nutrição, comportamento e monitoramento
+            dos surubins, sendo estes especialmente importantes tanto
+            sob os aspectos ambientais quanto da comercialização. Neste
+            sentido, conjuntamente com a regulamentação pelos órgãos de
+            competência, devem ser amplamente estimuladas pesquisas
+            científicas para o desenvolvimento de pacotes tecnológicos que
+            viabilizem economicamente a produção das espécies puras,
+            assim como ferramentas de identificação e rastreabilidade.
+        •   Reconhecimento dos riscos ambientais e das medidas
+            mitigadoras necessárias relativas ao escape de surubins
+            híbridos em ambientes naturais, assim como seus impactos
+            nas espécies selvagens e na cadeia trófica. Não se pode
+            negligenciar a produção de peixes híbridos no Brasil, pois é
+            um cenário crescente e dominante. No entanto, deve-se
+                                    A pesca e a aquicultura de surubins no Brasil:
+                                Panorama e considerações para a sustentabilidade
+                                                                                        35
+
+
+        considerar que estas são práticas que devem ser urgentemente
+        regulamentadas, sob o risco de ameaça à biodiversidade;
+    •   Investigação, validação, certificação e oficialização dos surubins
+        como espécies a serem diferenciadas visando à eliminação de
+        fraudes na cadeia produtiva. As atuais ferramentas disponíveis
+        devem ser utilizadas para a caracterização eficiente dos produtos
+        comercializados. Esta identificação atuaria como um mecanismo
+        de defesa do consumidor, considerando que atualmente são
+        comercializados diferentes espécies e híbridos, principalmente
+        aqueles provenientes de cruzamentos entre espécies do gênero
+        Pseudoplatystoma e diferentes gêneros de Siluriformes, de
+        valor comercial inferior, que são genericamente denominados
+        surubins, , mas que apresentam características de composição
+        de carcaça e organolépticas consideradas inferiores às daquela
+        dos surubins do gênero Pseudoplatystoma.
+
+
+                         Considerações finais
+Independente da origem do surubim, seja como alimento proveniente
+da pesca ou aquicultura, do lazer pela pesca esportiva, ou ainda como
+peixe ornamental na aquariofilia, o futuro de sua produção depende
+essencialmente da forma como as diferentes atividades produtivas
+incorporam o conceito e a lógica da sustentabilidade. Este entendimento
+é fundamental para que os usuários e gestores dos recursos
+pesqueiros desenvolvam, conjuntamente, um pensamento crítico e
+sistêmico que envolva as dimensões ambientais, econômicas e sociais,
+assim como fomentem ações institucionalmente complementares e
+multidisciplinares visando a conservação, a exploração e a produção
+racional de surubins no Brasil.
+
+
+                         Referências
+ALVES, A.L.; VARELA, E.S.; MORO, G.V.; KIRSCHNIK, L.N.G. 2014. Riscos Genéticos da
+Produção de Híbridos de Peixes Nativos. Palmas: Embrapa Pesca e Aquicultura, 2014. 60
+p. (Documentos / Embrapa Pesca e Aquicultura).
+        A pesca e a aquicultura de surubins no Brasil:
+36      Panorama e considerações para a sustentabilidade
+
+
+     ANDRADE, L.S.; HAYASHI, C.; SOUZA, S. R.; SOARES, C. M. Canibalismo entre larvas
+     de pintado, Pseudoplatystoma corruscans, cultivadas sob diferentes densidades de
+     estocagem. Acta Scientiarum. Biological Sciences. Maringá, v. 26, n. 3, p. 299-302. 2004.
+     ARAGÃO, D.G.; BARROS, M.C.; FRAGA, E.C. Caracterização genética de Pseudoplatystoma
+     cf. punctifer de bacias da região nordeste, Brasil baseado em sequências do DNA
+     mitocondrial. In: 54º Congresso Brasileiro de Genética, 2008, Salvador-BA. Anais...
+     Slavador, BA. v 1.
+     ARBELAEZ-ROJAS, G.A.; FRACALOSSI, D.M.; FIM, J.D.I. Composição corporal de
+     tambaqui, Colossoma macropomum, e matrinxã, Brycon cephalus, em sistemas de cultivo
+     intensivo, em igarapé, e semi-intensivo, em viveiros. Revista Brasileira de Zootecnia, v. 31,
+     n. 3, p. 1059-1069, 2002.
+     AVISE, J.C. Molecular markers, natural history and evolution molecular markers.2a ed.
+     Sunderland: Sinauer Associates; Inc. Publishers, 2004. p. 475-540.
+     BALDISSEROTTO, B.; GOMES, C.L. Espécies nativas para piscicultura no Brasil. Ed. UFSM,
+     2005. 468p.
+     BARTHEM, R.B.; GOULDING, M. Os bagres balizadores: ecologia, migração e conservação
+     de peixes amazônicos. SCM/MCT-CNPq/IPAAM, 1997. 140 p.
+     BARTHEM, R.B. Descrição da pesca da piramutaba (Brachyplatystoma vaillantii.
+     Pimelodidae) no estuário e na calha do rio amazonas. 1990. Boletim do Museu Paraense
+     Emílio Goeldi, Série. Antropologia, 6 (1).
+     BARTLEY, D.M.; RANA, K.; IMMINK, A. J. The use of inter-specific hybrids in aquaculture
+     and fisheries. Reviews in Fish Biology and Fisheries, v. 10, p. 325–337, 2001.
+     BATLOUNI, S.R.; CARRENO, F.R.; ROMAGOSA, E.; BORELLA, M. Cell junctions in
+     the germinal epithelium may play an important role in spermatogenesis of the catfish
+     Pseudoplatystoma fasciatum (Pisces, Siluriformes). Journal of Molecular Histology, v. 36,
+     p. 97–110, 2005.
+     BEELEN, R.; VAN DER HEIJDEN, T.; BOOMS, R.; VERDEGEM, M.; PAVANELLI, G.C. Blood
+     values of Young Brazilian catfish Pseudoplatystoma corruscans (Agassiz, 1829). Acta
+     Scientiarum, v. 20, n. 2, p. 147-150, 1998.
+     BEHR, E.R.; HAYASHI, C. 1997. Alimentação de larvas de Pseudoplatystoma corruscans
+     (Agassiz, 1829) em bandejas berçário durante o período crítico. In: Encontro Brasileiro de
+     Ictiologia, 12, 1997, São Paulo. Resumos... São Paulo: SBI. p.51.
+     BIGNOTTO, T.S.; PRIOLI, A.J.; PRIOLI, S.M.A.P.; MANIGLIA, T.C.; BONI, T.A.; LUCIO, L.C.;
+     GOMES, V.N.; PRIOLI, R.A.; OLIVEIRA, A.V.; JÚLIO-JUNIOR, H.F.; PRIOLI, L.M. Genetic
+     divergence between Pseudoplatystoma corruscans and Pseudoplatystoma reticulatum
+     (Siluriformes: Pimelodidae) in the Paraná River. Brazilian Journal of Biology, v. 69, n. 2, p.
+     681-689, 2009. http://dx.doi.org/10.1590/S1519-69842009000300022.
+     BRANDÃO, FR, GOMES, LC, CHAGAS, E C.; ARAÚJO, L.D. Densidade de estocagem de
+     juvenis de tambaqui durante a recria em tanques-rede. Pesquisa Agropecuária Brasileira,
+     v. 39, n. 4, p. 357-362, 2004.
+     BRASIL. Ministério da Pesca e Aquicultura. Boletim Estatístico da Pesca e Aquicultura
+     2011. Brasília: MPA. 2013. 60p. Disponível em: http://www.mpa.gov.br/files/docs/
+     Boletim_MPA_2011_pub.pdf
+                                      A pesca e a aquicultura de surubins no Brasil:
+                                  Panorama e considerações para a sustentabilidade
+                                                                                              37
+
+
+BRASIL. Ministério da Pesca e Aquicultura. Censo Aquícola Nacional. Brasília: Ministério
+da Pesca e Aquicultura. 2008. 336p.
+BRITSKI, H.A.; SATO, Y.; ROSA, A.B.S. Manual de identificação de peixes da região de Três
+Marias (com chave de identificação para peixes da bacia do São Francisco). 3ed. Brasília:
+CODEVASF, 1988. 115p.
+BUITRAGO-SUÁREZ, U.A.; BURR, B.M. Taxonomy of the catfish genus Pseudoplatystoma
+Bleeker (Siluriformes: Pimelodidae) with recognition of eight species. Zootaxa, v. 1512, p.
+1-38, 2007.
+BURKERT, D.; ANDRADE, D.C.; SIROL, R.N.; SALARO, A.L.; RASGUIDO, J.E.A.; QUIRINO,
+C.R. Rendimentos do processamento e composição química de filés de surubim cultivado
+em tanques-rede. Revista Brasileira de Zootecnia, v.37, n.7, p.1137-1143, 2008.
+BURGESS, W.E. An Atlas of Freshwater and Marine Catfishes: a Preliminary Survey of the
+Siluriformes. T. F. H. Publications, Neptune City, 1989. 784 pp.
+CAL, J.A. Histologia do trato digestório do surubim-pintado (Pseudoplatystoma corruscans
+– Agassiz, 1829). 2006. 87f. Dissertação (mestrado) – Universidade de São Paulo,
+Faculdade de Medicina Veterinária e Zootecnia, Departamento de Cirurgia, São Paulo.
+CAMPOS, J.L. O cultivo do pintado, Pseudoplatystoma corruscans (Spix e Agassiz, 1829),
+outras espécies do gênero Pseudoplatystoma e seus híbridos. In: BALDISSEROTTO, B.;
+GOMES, L. C. (Eds.) Espécies nativas para piscicultura no Brasil. Santa Maria: UFSM, 2ª
+ed., 2010. p. 335-361.
+CARVALHO, D.C.; NETO, D.A.P.; BRASIL, B.S.A.F.; OLIVEIRA, D.A. DNA Barcoding unveils
+a high rate of mislabeling in a commercial freshwater catfish from Brazil. Mitochondrial
+DNA, v. 22, n. 1, p. 97-105, 2011. DOI: 10.3109/19401736.2011.588219.
+CARVALHO, D.C; SEERIG, A; MELO, D. C. SOUSA, A.B.; PIMENTA, D.; OLIVEIRA, D.A.A.
+Identificação molecular de peixes: O caso do surubim (Pseudoplatystoma spp.). Revista
+Brasileira de Reprodução Animal, v.32, n.4, p.215-219, 2008.
+CARVALHO, D. C. DE; ANDRADE, D.A.O. DE; SOUSA, A.B. de; TEIXEIRA, E.A.;
+SEERING, A.S.; FARIA, P.M.C.; RIBEIRO, L.P. 2007. Diversidade genética de surubim
+(Pseudoplatystoma corruscans), cachara (P. fasciatum) e do seu híbrido interespecífico. In:
+Congresso Brasileiro de produção de Peixes Nativos de Água doce, 1., 2007, Dourados,
+MS. Anais... Dourados-MS: Congresso Brasileiro de produção de Peixes Nativos de Água
+doce.
+CASTELLO, L. 2008. Re-pensando o estudo e o manejo da pesca no Brasil. Pan-American
+Journal of Aquatic Sciences,v. 3, n. 1, p 17-22, 2008.
+CASTELLO, L.; CASTELLO, J.P.; HALL, C.A.S. Problemas en el manejo de las pesquerias
+tropicales. Gaceta Ecológica, v. 84-85, p. 65-73, 2007.
+CATELLA, A. C.; ALBUQUERQUE, S. P.; CAMPOS, F. L. R.; SANTOS, D. C. 2013. Sistema
+de controle da pesca de Mato Grosso do Sul. SCPESCA/MS 18 - 2011. Corumbá: Embrapa
+Pantanal,. 54 p. (Embrapa Pantanal. Boletim de Pesquisa e Desenvolvimento, 123).
+CAVERO, B.A.S.; PEREIRA-FILHO, M.; ROUBACH, R. ITUASSÚ, D.R.; GANDRA, A.L.;
+CRESCÊNCIO, 229 R. 2003. Efeito da densidade de estocagem na homogeneidade do
+crescimento de juvenis de pirarucu em ambiente confinado. Pesqui. Agropecu. Bras.,
+38: 103-107
+        A pesca e a aquicultura de surubins no Brasil:
+38      Panorama e considerações para a sustentabilidade
+
+
+     CHEUNG, W.W.L.; Pitcher, T.J.; Pauly, D. A fuzzy logic expert system to estimate intrinsic
+     extinction vulnerabilities of marine fishes to fishing. Biological Conservation, v. 124, p.
+     97-111, 2005.
+     CITES, 2013. Appendices I, II and III valid from 5 February 2015.UNEP. Disponível em:
+     https://www.cites.org/eng/app/appendices.php. Acessado em 19/04/2015.
+     COELHO, S.R.C.; CYRINO, J.E.P. Custos na produção intensiva de surubins em gaiolas.
+     Informações Econômicas, v.36, n.4, 2006. Disponível em: ftp://ftp.sp.gov.br/ftpiea/
+     publicacoes/tec1-0406.pdf
+     COELHO, S.R.C. Produção intensiva de surubins híbridos em gaiolas: estudo de caso. 2005.
+     84 fl.Tese (Doutorado em Agronomia) - Escola Superior de Agricultura Luiz de Queiroz,
+     Piracicaba.
+     CREPALDI, D.V.; FARIA, P.M.C.; TEIXEIRA, E. de A.; RIBEIRO, L.P.; COSTA, A.A.P.; MELO,
+     D.C.; CINTRA, A.P.R.; PRADO, S. de A.; COSTA, F.A.A.; DRUMOND,M.L.; LOPES, V.E.;
+     MORAES, V.E. Biologia reprodutiva do surubim (Pseudoplatystoma corruscans). Revista
+     Brasileira de Reprodução Animal, Belo Horizonte, v.30, n.3/4, p.159-167, jul./dez, 2006.
+     CREPALDI, D.V.; MIRANDA, M.O.T.; RIBEIRO, L.P.; TEIXEIRA, E.A.; MELO, D.C.; SOUSA,
+     A.B. Comparação do desempenho de surubim puro, “Pseudoplatystoma corruscans” e o
+     híbrido “P. corruscans x Peseudoplatystoma fasciatum” em três densidades de estocagem.
+     In: Reunião Anual da Sociedade Brasileira de Zootecnia, 41, 2004, Campo Grande, MS.
+     Anais... Campo Grande: Reunião Anual da Sociedade Brasileira de Zootecnia.
+     CRUZ-CASALLAS, N.E.; MARCIALES-CARO, L.J.; DIAZ-OLARTE, J.J. Productive
+     performance of yaque (Leiarius marmoratus Gill, 1870) under different stocking densities
+     in ground ponds. Revista Colombiana de Ciencias Pecuarias, Medellín, v. 23, n. 3, p. 325-
+     335, 2010.
+     CURY, M. X. Cultivo de pintado e cachara. Revista Panorama da Aquicultura, v.8, n.3, p.
+     8-9, 1992.
+     FARIA, P.M.C et al. Produção do híbrido "cachadia" em diferentes densidades de estocagem
+     em sistema de recirculação de água. Arq. Bras. Med. Vet. Zootec., Out 2011, vol.63, no.5,
+     p.1208-1214.
+     FERREIRA, E.J.G.; ZUANON, J.A.S.; SANTOS, G.M. Peixes comerciais do médio
+     Amazonas: região de Santarém, Pará. IBAMA. Coleção meio Ambiente. Serie Estudos
+     Pesca, (18), 1998, 214 p.
+     FOWLER, H.W. Os peixes de água doce do Brasil. Arquivos de Zoologia, v. 6, n. 3, p. 405-
+     625, 1951.
+     FRASCÁ-SCORVO, C.M.D.; BACARIN LEONARDO, A.E.; VIDOTTI, R.M.; ROMAGOSA,
+     E.; SCORVO FILHO, J.D.; AYROZA, L.M.S. Influência da densidade de estocagem e dos
+     sistemas de criação intensivo e semi intensivo no rendimento de carcaça, na qualidade
+     nutricional do filé e nas características organolépticas do pintado Pseudoplatystoma
+     corruscans. B. Inst. Pesca, São Paulo, v.34, n.4. p. 511 - 518, 2008.
+     FREIRE, K.M.F; CARVALHO FILHO, A. Richness of common names of Brazilian reef fishes.
+     Pan-American Journal of Aquatic Sciences, v. 4, n. 2, p. 96-145, 2009. DOI: http://dx.doi.
+     org/10.2993/0278-0771(2005)25[279:ROCNOB]2.0.CO;2
+     FREITAS, C.E.C.; RIVAS, A.A. F. A pesca e os recursos pesqueiros na Amazônia Ocidental.
+     Ciência e Cultura, São Paulo, v. 58, n. 3, 2006. Disponível em: http://cienciaecultura.bvs.
+                                      A pesca e a aquicultura de surubins no Brasil:
+                                  Panorama e considerações para a sustentabilidade
+                                                                                             39
+
+
+br/scielo.php?script=sci_arttext&pid=S0009-67252006000300014&lng=en&nrm=iso>.
+Access em: 23/04/2015.
+GODINHO, A.L; KYNARD, B. Migration and spawning of radio-tagged zulega (Prochilodus
+argenteus, Prochilodontidae) in a dammed Brazilian River. Transactions of the American
+Fisheries Society, v. 135, p. 811-824, 2006.
+GOMIDES, P.F.V. Densidade de estocagem do híbrido pintado amazônico (Pseudoplatystoma
+tigrinum fêmea x Leiarius marmoratus macho) em viveiros escavados. 2011. 61fl.
+Dissertação (Mestre em Ciência Animal) - Escola de Veterinária e Zootecnia, Universidade
+Federal de Goiás, Goiás.
+GONÇALVES, A.F.N. Desempenho produtivo e respostas fisiológicas de juvenis de
+cachara (Pseudoplatystoma reticulatum) alimentados com diferentes níveis de proteína
+e carboidrato. 2014. 50fl. Dissertação (Mestrado em Ciência e Tecnologia Animal) -
+Universidade Estadual Paulista, Campus Experimental de Dracena/Campus de Ilha
+Solteira. Dracena/Ilha Solteira, SP.
+HELFMAN, G.; COLLETTE, B.B.; FACEY, D.E.; BOWEN, B.W. The diversity of fishes:
+Biology, Evolution, and Ecology, Cap.V Behavior and Ecology. 2. Ed. Wiley-Blackwell.
+2009. 736p.
+INSTITUTO BRASILEIRO DE GEOGRAFIA E ESTATÍSTICA (IBGE). Produção da pecuária
+municipal 2013. Produção Pecuária Municipal, v.41, 2013.
+GONZÁLEZ, Á.R.S.; MENDOZA, J.; AROCHA, F.; MÁRQUEZ, 2010. A. Edad y crecimiento
+del bagre rayado Pseudoplatystoma orinocoense del Orinoco medioen Venezuela. Zootecnia
+Trop., 28(2): 283-293.
+IGUCHI, K.; OGAWA, K.; NAGAE, M.; ITO, F. The influence of rearing density on stress
+response and disease susceptibility of ayu (Plecoglossus altivelis). Aquaculture, v.220,
+p.515-523, 2003.
+INOUE, L.A.K.A.; HISANO, H.; ISHIKAWA, M.M.; 2009. Princípios básicos para produção
+de alevinos de surubins (pintado e cachara). Dourados: Embrapa Agropecuária Oeste;
+Manaus: Embrapa Amazônia Ocidental; Corumbá: Embrapa Pantanal, 2009, 26 p.
+IWAMA, G. K.; PICKERING, A. D.; SUMPTER, J. P. ; SCHRECK, C. B. (Eds.). 1997. Fish
+Stress and Health 238 in Aquaculture. University Press, Cambridge. 290p.
+KUBITZA, F.; CAMPOS, J.L.; BRUM, J.A. Produção Intensiva no Projeto Pacu Ltda. e
+Agropeixe Ltda. Panorama da Aquicultura, v.8, p.41-49, 1998.
+KUBITZA, F. Preparo de rações e estratégias de alimentação no cultivo intensivo de
+peixes carnívoros. In: Simpósio Internacional sobre nutrição de peixes e crustáceos, 1995.
+Campos do Jordão, Colégio Brasileiro de Nutrição Animal. Anais…p. 91-115.
+LAUDER, G.V.; LIEM, K.F. The evolution and interrelationships of the Actinopterygian
+fishes. Bulletin of the Museum of comparative Zoology, v. 150, n. 3, p. 95-197, 1983.
+LEONARDO, A.F.G.; ROMAGOSA,E.; BORELLA M.I.; BATLOUNI S.R. Induced spawning of
+hatchery-raised Brazilian catfish, cachara Pseudoplatystoma fasciatum (LINNAEUS,1766).
+Aquaculture, v. 240, P. 451–461, 2004.
+LIRANÇO, A.D.S.; ROMAGOSA, E.; SCORVO-FILHO, J.D. Desempenho produtivo de
+Pseudoplatystoma corruscans estocados em sistemas de criação: semi-intensivo (viveiro
+        A pesca e a aquicultura de surubins no Brasil:
+40      Panorama e considerações para a sustentabilidade
+
+
+     escavado) e intensivo (tanque-rede). Ciência Rural, Santa Maria, v. 41, n.3, p.524-530,
+     2011.
+     LUCA. A. S. 2010. Aspectos da reprodução e da alimentação de Pseudoplatystoma punctifer
+     (Castelnau, 1855) (Siluriformes, Pimelodidae) na bacia do rio Teles Pires, Alta Floresta-MT.
+     2010. 92 f.Tese (Doutorado em Ecologia de Recursos Naturais) – Universidade Federal de
+     São Carlos. Centro de ciências Biológicas e da Saúde, São Carlos.
+     LUNDSTEDT, L.M. Aspectos adaptativos dos processos digestivo e metabólico de juvenis
+     de pintado (Pseudoplatystoma corruscans) arraçoados com diferentes níveis de proteína e
+     energia. 2003. 140 f. Tese (Doutorado em Ciências) - Universidade Federal de São Carlos,
+     Centro de ciências Biológicas e da Saúde, São Carlos.
+     LUNDSTEDT, L.M.; MELO, J.F.B.; MORAES, G. Digestive enzymes and metabolic profile
+     of Pseudoplatystoma corruscans (Teleostei: Siluriformes) in response to diet composition.
+     Comparative Biochemistry and Physiology - Part B: Biochemistry & Molecular Biology, v.
+     137, p. 331-339, 2004.
+     LUNDSTEDT, L.M.; MORAES, G. 2011. Influência do incremento proteico e energético da
+     dieta no ganho de peso e deposição de gordura visceral em juvenis de surubins híbridos
+     (Pseudoplatystoma sp). In: Congresso brasileiro de produção de peixes nativos, 3, Lavras,
+     MG. Anais... Lavras-MG: Congresso brasileiro de produção de peixes nativos,.
+     MACHADO, N.G; VENTICINQUE, E.M.; PENHA, J. Effect of environmental quality and
+     mesohabitat structure on a Biotic Integrity Index based on fish assemblages of cerrado
+     streams from Rio Cuiabá basin, Brazil. Braz. J. Biol. [online]. 2011, vol.71, n.3 [cited
+     2015-10-27], pp. 577-586 . Available from: <http://www.scielo.br/scielo.php?script=sci_
+     arttext&pid=S1519-69842011000400002&lng=en&nrm=iso>. ISSN 1519-6984.              http://
+     dx.doi.org/10.1590/S1519-69842011000400002.
+     MARQUES, E.E. Biologia reprodutiva, alimentação natural e dinâmica da nutrição do
+     pintado Pseudoplatystoma corruscans (Agassiz, 1829) (Osteichtyes,Pimelodidae) no alto
+     rio Paraná. 1993. 104 f. Dissertação (Mestrado em Ciências Biológicas) - Universidade
+     Federal do Paraná, Curitiba.
+     MATEUS, L. A. F.; PENHA, J. M. F.; PETRERE, M. Fishing resources in the rio Cuiabá basin,
+     Pantanal do Mato Grosso, Brazil. Neotropical Ichthyology, v. 2, n.4, pp. 217-227, 2004.
+     Disponível em: http://dx.doi.org/10.1590/S1679-62252004000400004.
+     MELLO, P. H.; VENTURIERI, R.L. L.; HONJI, R.M.; MOREIRA, R. G. Threatened fishes
+     of the world: Pseudoplatystoma corruscans (Agassiz, 1829) (Siluriformes: Pimelodidae).
+     Environmental Biology of Fish, v. 85, p. 359–360, 2009. DOI 10.1007/s10641-009-9508-1.
+     MIRANDA, M.O.T. Surubim. Belo Horizonte: Instituto Brasileiro do Meio Ambiente e dos
+     Recursos Naturais Renováveis, 1997. 157p.
+     MIRANDA, M.O.T. Características zootécnicas e rendimento de carcaça do surubim
+     (Pseudoplatystoma corruscans) do rio São Francisco. 1993. 50 f. Dissertação (Mestrado em
+     Zootecnia, Área de Produção Animal) - Universidade Federal de Minas Gerais, Escola de
+     Veterinária da UFMG, Belo Horizonte.
+     MOLINA, M.R.; GARRO, O.A.; JUDIS, M.A. Calidad alimenticia y estabilidad oxidativa de
+     Pseudoplatystoma corruscans. Ciencia y Tecnología Alimentaria, v. 3, n. 2, p. 89-95, 2001.
+     MORO, G.V.; REZENDE, F.P.; ALVES, A.L.; HASHIMOTO, D.T.; VARELA, E.S.; TORATI,
+     L.S. Espécies de peixe para piscicultura. In: RODRIGUES, A.P.O.; LIMA, A.F.; ALVES, A.L.;
+                                      A pesca e a aquicultura de surubins no Brasil:
+                                  Panorama e considerações para a sustentabilidade
+                                                                                             41
+
+
+ROSA, D.K.; TORATI, L.S.; SANTOS, V.R.V. Piscicultura de Água Doce: Multiplicando
+conhecimentos. Brasília: Embrapa, 2013. 440p.
+NETO, D.A.P. 2013. Detecção de adulteração de espécies em pescado e derivados por
+meio da técnica de DNA Barcoding. 2013. 43 f. Dissertação (Mestrado em Zootecnia) -
+Universidade Federal de Minas Gerais, Belo Horizonte.
+OLIVEIRA, R.P.C.; SILVA, P.C.; PADUA, D.M.C.; AGUIAR, M.; MAEDA, H.; MACHADO,
+N.P.; RODRIGUES, V.; SILVA, R.H. Efeitos da densidade de estocagem sobre a qualidade da
+água na criação do tambaqui (Colossoma macropomum, CUVIER, 1818) durante a segunda
+alevinagem, em tanques fertilizados. Ciência Animal Brasileira, v.8, n.4, p.705-711, 2007.
+OLIVEIRA, D. C.; BENNEMANN, S. T. Ictiofauna, recursos alimentares e relações com as
+interferências antrópicas em um riacho urbano no sul do Brasil. Biota Neotrop. [online].
+2005, vol.5, n.1 [cited 2015-10-27], pp. 95-107 . Available from: <http://www.scielo.br/
+scielo.php?script=sci_arttext&pid=S1676-06032005000100011&lng=en&nrm=iso>. ISSN
+1676-0611. http://dx.doi.org/10.1590/S1676-06032005000100011.
+PAIVA, M.P. Recursos pesqueiros estuarinos e marinhos do Brasil. Fortaleza: UFC edições,
+1997. 286p.
+PEREIRA, G.V.; SILVA, B.C.; VIEIRA, F.N.; SEIFFERT, W.Q.; USHIZIMA, T.T.; MOURIÑO,
+J.L.P.; MARTINS, L.M. Vaccination strategies with oral booster for surubim hybrid
+(Pseudoplatystoma corruscans x P. reticulatum). Aquaculture Research, v. 46, p. 1831–
+1841, 2015. DOI: doi:10.1111/are.12339.
+PEREZ, A.; CASTILLO, O.; BARBARINO, A.;FABRÉ, N. 2012. Aspectos reproductivos del
+bagre rayado Pseudoplatystoma tigrinum (Siluriformes, Pimelodidae) en la Cuenca del río
+Apure, Venezuela. Zootecnia Tropical, v. 30, n.3, p. 251-262. 2012.
+PETRERE Jr., M.; AGOSTINHO, A.; OKADA, E.K.; JÚLIO Jr., H.F. Review of the Fisheries
+in the Brazilian Portion of the Paraná/Pantanal Basin. In: COWX, I.G. (Ed.). Management
+and ecology of lake and reservoir fisheries. London: Fishing New Book. 2002. p. 123-143.
+PETRERE Jr, M. A pesca de água doce no Brasil. Ciência Hoje, v. 19, p. 28-33, 1995.
+PILECCO, J.L.; REDONDO, M.A.S.; OLIVEIRA, A.M.; NUNES, A.L.; BARROS, A.F.;
+USHIZIMA, T.T.; CAPPI, N.; OLIVEIRA, C.A.L.; CAMPOS, C.M. Desempenho zootécnico
+de Pseudoplatystoma spp., criados em viveiros escavados alimentados com rações
+comerciais. In: Congresso Brasileiro de produção de peixes nativos de água doce, 1, 2007,
+Campo Grande, MS. Anais... Campo Grande, MS: Congresso Brasileiro de produção de
+peixes nativos de água doce.
+RESENDE, E.K.; CATELLA, A.C.; NASCIMENTO, F.L.; PALMEIRA, S. da S.; PEREIRA,
+R.A.C.; LIMA, M. de S.; ALMEIDA, V.L.L. Biologia do curimbatá (Prochilodus lineatus),
+pintado (Pseudoplatystoma corruscans) e cachara (Pseudoplatystoma fasciatum) na bacia
+hidrográfica do rio Miranda, Pantanal do Mato Grosso do Sul, Brasil. Corumbá, MS:
+EMBRAPA-CPAP, 1996. 75p. (EMBRAPA-CPAP. Boletim de Pesquisa, 02).
+RIBEIRO, L.P.; MIRANDA, M.O.T.        Rendimentos de processamento do surubim
+Pseudoplatystoma corruscans. In: MIRANDA, M.O.T. (org). Surubim. Belo Horizonte:
+IBAMA, 1997. p. 101-111 (Coleção Meio Ambiente, Série Estudos Pesca, 19).
+RUFFINO, M.L; ISAAC, V.J. Dinâmica populacional do surubim-tigre, Pseudoplatystoma
+tigrinum (Valenciennes, 1840) no médio Amazonas (SIRULIFORMES, PIMELODIDAE). Acta
+Amazonica, v. 29, n. 3, p. 463-476, 1999.
+        A pesca e a aquicultura de surubins no Brasil:
+42      Panorama e considerações para a sustentabilidade
+
+
+     SAHOO, S.K.; GIRI, S.S.; SAHU, A.K. Effect of stocking density on growth and survival
+     of Clariasbatrachus (Linn.) larvae and fry during hatchery rearing. Journal of Applied
+     Ichthyology, v.20, p. 302-305, 2004.
+     SANCHES, L.E.F.; HAYASHI, C. Densidade de estocagem no desempenho de larvas de
+     tilápia- do-Nilo (Oreochromisniloticus L.), durante a reversão sexual. Acta Scientiarum,
+     v.23, n.3, p.619-625, 1999.
+     SANTOS, E. Peixes de água doce (Vida e costumes dos peixes do Brasil). Belo Horizonte:
+     Ed. Italiana, (Coleção Zoologia Brasílica, v.2), 1981. 267 p.
+     SATO, Y.; CARDOSO, E.L.; SALLUM, W.B.           Reprodução induzida do surubim
+     (Pseudoplatystoma corruscans) da bacia do São Francisco. In: ENCONTRO ANUAL DE
+     AQUICULTURA, 6, 1988, Belo Horizonte. Resumos... Belo Horizonte: Associação Mineira
+     de Aquicultura – AMA, p.20.
+     SCORVO-FILHO, J.D.; ROMAGOSA, E.; AYROZA, L.M.S.; FRASCÁ-SCORVO, C.M.D.
+     Desempenho produtivo do pintado, Pseudoplatystoma corruscans (Spix & Agassiz, 1829),
+     submetidos a diferentes densidades de estocagem em dois sistemas de criação: intensivo
+     e semi-intensivo. Boletim do Instituto de Pesca, São Paulo, v. 34, n.2, p. 181-188, 2008.
+     SMITH, P.J.; MCVEAGH, S.M.; STEINKE, D. DNA barcoding for the identification of
+     smoked fish products. Journal of Fish Biology, v.72, p.464-471, 2008.
+     SOUZA, A.B.; CARVALHO, D.; MELO D.C.; OLIVEIRA, D.A.A.; RIBEIRO, L.P.; TEIXEIRA,
+     E.A.; CREPALD, D.V.; FARIA, P.M.C. A utilização de baixo número de matrizes em
+     piscicultura: perda de recursos genéticos para programas de repovoamento. Revista
+     Brasileira Reprodução Animal, Belo Horizonte, v. 30, n. 3/4, p. 100-104, 2006.
+     TAVARES, M. P. O surubim. In: MIRANDA, M. O. T. (Org.). Surubim. Belo Horizonte :
+     IBAMA,.1997. p. 9-25. (IBAMA. Coleção meio ambiente; Série estudos pesca, 19).
+     TOLEDO, L.R. Novo hóspede dos açudes. Globo Rural, Editora Globo. Rio de Janeiro, ano
+     6, 68: 54-61, 1991.
+     TRAVASSOS, H. Catálogo dos peixes do vale do rio São Francisco. Boletim da Sociedade
+     Cearense de Agronomia, v. 1, p. 1-66, 1960.
+     TRESBACH, R. H.; PONTE, LETIANE, N. da; CERQUEIRA, N. M.; RODRIGUES, M. D. N. DNA
+     barcoding: uma ferramenta de apoio molecular para identificação de espécies de peixes.
+     21º Congresso de Iniciação Científica. 4ª mostra científica, 2012. Anais.... Universidade
+     Federal de Pelotas.
+     TURRA, E.M.; QUEIROZ, B.M.; TEIXEIRA, E.A.; FARIA, P.M.C.; CREPALDI, D.V.; RIBEIRO,
+     L.P. Densidade de estocagem do surubim Pseudoplatystoma spp. cultivado em tanque-
+     rede. Revista Brasileira de Saúde e Produção Animal, v.10, n.1, p.177-187, 2009.
+     WEDEMEYER, G.A. 1996. Physiology of Fish in Intensive Culture Systems. Chapman
+     & Hall, New York. 232p.
+     ZACARKIM, C.E.; PIANA, P.A.; BAUMGARTNER, G.; ARANHA, J.M.R. The panorama of
+     artisanal fisheries of the Araguaia River, Brazil. Fisheries Science, v. 81, n.3, p. 409-416,
+     2015.
+     ZANOBONI-FILHO, E.; WEINGARTNER, M. Técnicas de indução da reprodução de peixes
+     migradores. Revista Brasileira de Reprodução Animal, Belo Horizonte, v.31, n.3, p.367-
+     373, jul./set. 2007. Disponível em www.cbra.org.br.
+Pesca e Aquicultura
+
+
+
+
+                      CGPE 12438
+
