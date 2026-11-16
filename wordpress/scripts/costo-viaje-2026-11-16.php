@@ -438,8 +438,8 @@ foreach ( [ 'es', 'en', 'pt' ] as $i ) {
 	( $tl <= 60 && $dl >= 70 && $dl <= 160 ) || WP_CLI::error( "$i: SEO fuera de rango: title $tl / description $dl" );
 	count( $n['faq'] ) >= 8 && count( $n['faq'] ) <= 10 || WP_CLI::error( "$i: la FAQ debe tener entre 8 y 10 preguntas." );
 	$cuerpo = $resolver( $armar( $n ), $i );
-	if ( preg_match( '/PENDIENTE|no pudimos|agencia|agency|agência|pudemos/iu', wp_strip_all_tags( $cuerpo ) ) ) {
-		WP_CLI::error( "$i: el texto tiene una palabra prohibida." );
+	if ( preg_match( '/PENDIENTE|no pudimos|agencia|agency|agência|pudemos/iu', wp_strip_all_tags( $cuerpo ), $mm ) ) {
+		WP_CLI::error( "$i: el texto tiene una palabra prohibida: {$mm[0]}." );
 	}
 	$datos   = array_map( fn( $d ) => [ 'dato' => $d ], $n['datos'] );
 	$fuentes = [];

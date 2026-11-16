@@ -301,7 +301,7 @@ $N['es'] = [
 		'Tené a mano los documentos: la lista del portal nombra el frente del documento de identidad y el comprobante de pago. El formulario ofrece pasaporte como tipo de documento y una casilla «No soy residente del país».',
 		'Elegí el tipo de permiso; las categorías de no residentes son diario, semanal y temporada (<a href="{u:sc_valor}" rel="noopener">página de valores</a>).',
 		'Pagá por transferencia bancaria o MercadoPago, en pesos, con los datos de la página de valores, y adjuntá el comprobante. La página dice que no acepta transferencias en moneda extranjera y que el pago por MercadoPago debe informar el nombre completo del titular.',
-		'El portal dice que el permiso queda apto para pescar desde su creación y que la solicitud sigue pendiente de validación administrativa.',
+		'El portal dice que el permiso queda apto para pescar desde su creación y que la solicitud queda a la espera de la validación administrativa.',
 	],
 	'sc_c'            => 'El steelhead del río Santa Cruz, Jurassic Lake, el río Gallegos y El Calafate están todos en Santa Cruz: mirá las guías enlazadas en la tabla.',
 	'h_tdf'           => 'Tierra del Fuego',
@@ -610,8 +610,8 @@ foreach ( [ 'es', 'en', 'pt' ] as $i ) {
 	( $tl <= 60 && $dl >= 70 && $dl <= 160 ) || WP_CLI::error( "$i: SEO fuera de rango: title $tl / description $dl" );
 	count( $n['faq'] ) >= 8 && count( $n['faq'] ) <= 10 || WP_CLI::error( "$i: la FAQ debe tener entre 8 y 10 preguntas." );
 	$cuerpo = $resolver( $armar( $n ), $i );
-	if ( preg_match( '/PENDIENTE|no pudimos|agencia|agency|agência|pudemos/iu', wp_strip_all_tags( $cuerpo ) ) ) {
-		WP_CLI::error( "$i: el texto tiene una palabra prohibida." );
+	if ( preg_match( '/PENDIENTE|no pudimos|agencia|agency|agência|pudemos/iu', wp_strip_all_tags( $cuerpo ), $mm ) ) {
+		WP_CLI::error( "$i: el texto tiene una palabra prohibida: {$mm[0]}." );
 	}
 	$datos   = array_map( fn( $d ) => [ 'dato' => $d ], $n['datos'] );
 	$fuentes = [];
