@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="es">
+  <head>  
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" type="text/css" href="https://siped.ar/css/app.css">
+      <link rel="stylesheet"  href="https://fonts.googleapis.com/css?family=Archivo+Black">
+      <link rel="icon" href="https://siped.ar/bandera.png">
+      <meta name="description" content="Dirección General de Recursos Hídricos">    
+      <title>SIPED | Acerca</title>  
+  </head> 
+  <body>   
+  <nav class="nav-fixed">
+    <div class="nav-wrapper container">
+      <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+      <a href="https://siped.ar" class="brand-logo"> SIPED </a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a class='dropdown-button' href='#' data-activates='dropdown1'>Registro</a></li>
+        <li><a href="https://siped.ar/acerca">Acerca</a></li>
+        <!--<li><a href="https://siped.ar/pesca-deportiva-reglamento-2019-2020.pdf" target="_blank">Reglamento</a></li>-->
+        <li><a href="http://saptdf.ar/">SAPTDF</a></li>
+        <li><a href="https://siped.ar/ingresar">Ingresar</a></li>        
+      </ul>
+    </div>
+</nav>
+<ul id="slide-out" class="side-nav">      
+      <li><a class="dropdown-button" href="#!" data-activates="dropdown2">Registro<i class="material-icons right">arrow_drop_down</i></a></li>
+      <ul id='dropdown2' class='dropdown-content'>
+        <li><a href="https://siped.ar/residente-pais/form">Residente país</a></li>
+        <li><a href="https://siped.ar/no-residente-pais/form">No residente país</a></li>        
+      </ul>
+      <li><a href="https://siped.ar/acerca">Acerca</a></li>
+      <!--<li><a href="https://siped.ar/pesca-deportiva-reglamento-2019-2020.pdf">Reglamento <i class="material-icons right">file_download</i></a> </li><li><a href="http://saptdf.tierradelfuego.gov.ar/">SAPTDF</a></li>-->   
+      <li><a href="https://siped.ar/ingresar">Ingresar</a></li>  
+</ul>
+<ul id='dropdown1' class='dropdown-content'>
+    <li><a href="https://siped.ar/residente-pais/form">Residente país</a></li>
+    <li><a href="https://siped.ar/no-residente-pais/form">No residente país</a></li>    
+</ul>
+
+
+<style type="text/css">
+  .nav-fixed {
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 0;
+    margin-bottom: 0px;
+    z-index: 997;
+  }
+</style>  <div class="container">   
+   <div  class="card-panel">
+   <h2 class="center">Acerca de SIPED </h2>
+   <p class="flow-text">SIPED es el sistema de información de pesca deportiva de Tierra del Fuego. Contiene información actualizada 
+   de los pescadores que practican la actividad en la provincia. Además cuenta con una API que mantiene actualizada una aplicación offline
+   (utilizada por los Inspectores para fiscalizar) y proveerá de información sobre ambientes de pesca a una aplicación smartphone que se
+   encuentra en desarrollo.</p>
+   </div>   
+   <div  class="card-panel">
+   <h3 class="center">Cómo puedo conseguir un permiso de pesca.</h3>
+                    <p class="flow-text">El sistema cuenta con una página web en la cual puede realizar el registro de todos sus datos personales incluyendo fotografía, de manera previa a la emisión del permiso.</p>
+
+<p class="flow-text">Posteriormente deberá concurrir a algún punto de venta con su documento de identidad, en donde se completará el proceso de registro, generación de credencial virtual y finalmente la emisión del permiso de pesca deportiva, según la categoría y duración correspondiente, abonando el mismo en el momento.</p>
+
+<p class="flow-text">En caso de que no haya realizado la carga previa de sus datos desde la página del sistema, en el punto de venta completarán ese proceso verificando los datos antedichos.</p>
+
+<p class="flow-text">Recibirá un Comprobante de Emisión de Permiso de Pesca Deportiva, que le servirá de constancia por el permiso adquirido, el cual será obligatoria su exhibición junto al Documento de Identidad al momento de ser fiscalizado por el Inspector de Pesca.</p>
+
+<p class="flow-text">Con posterioridad recibirá un mensaje a través de correo electrónico o sms, comunicándole que podrá retirar la credencial tarjeta plástica por el punto de venta en donde adquirió su permiso de pesca.</p>
+
+<p class="flow-text">Esta Credencial plástica tiene una validez de dos (2) años, no obstante para la futura temporada deberá adquirir el correspondiente permiso de pesca abonando el valor correspondiente a la misma, según la categoría y duración.</p>
+</div>
+  </div>
+<footer class="section">
+  <div class="container">
+
+    <div class="row">     
+
+      
+      <div class="col s6">
+         <h5>Enlaces de interés</h5>
+          <ul>
+          <li><a class="black-text text-lighten-3" href="http://saptdf.ar/">SAPTDF | Sistema de Acceso de Pesca de Tierra del Fuego</a></li>
+          <ul>        
+                
+      </div>
+
+    </div>
+
+  </div>
+  <div class="footer-copyright">
+            <div class="container">
+         <p> © Dirección General de Recursos Hídricos <br/>
+          Ministerio de Producción y Ambiente</p>
+            </div>
+          </div>
+</footer>      
+  <script src="https://siped.ar/js/app.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+  <script>
+    $(".button-collapse").sideNav();
+    $('.dropdown-button').dropdown('open');
+    $('select').material_select();
+    $('.modal').modal();
+    $(document).ready(function(){
+      $('.carousel').carousel();
+    });
+
+   
+  </script>
+   
+ </body>    
+</html> 

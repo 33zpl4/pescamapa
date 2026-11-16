@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+
+<html>
+    <head lang="es">       
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <!-- Le styles -->
+        <link rel="icon" href="/saptdf/images/Bandera.png">
+        <link rel="stylesheet" href="/saptdf/assets/bootstrap.min-f4dfeac3241d5abb240395f8661cd122.css" />  
+        <link rel="stylesheet" href="/saptdf/grays/css/grayscale.css" />
+        <link rel="stylesheet" href="/saptdf/grays/font-awesome/css/font-awesome.min.css" />
+        <link rel="stylesheet" href="/saptdf/css/fontg1.css" />
+        <link rel="stylesheet" href="/saptdf/css/fontg2.css" />
+        <link rel="stylesheet" href="/saptdf/css/leaflet.css" />
+        <script src="/saptdf/js/leaflet.js" type="text/javascript"></script>
+
+        <script src="/saptdf/js/holder.js" type="text/javascript"></script>
+
+        <script src="/saptdf/js/jsB/jquery.min.js" type="text/javascript"></script>
+
+        <script src="/saptdf/js/grays/js/jquery.js" type="text/javascript"></script>
+
+        <script src="/saptdf/js/jsB/bootstrap.min.js" type="text/javascript"></script>
+        
+        <script src="/saptdf/grays/js/jquery.easing.min.js" type="text/javascript"></script>        
+        <script src="/saptdf/grays/js/grayscale.js" type="text/javascript"></script>
+
+        <title>SAPTDF</title> 
+
+    <style type="text/css">
+        /* Cada titulo queda cerca de su contenido y separado del bloque anterior */
+        #acerca h4, #acerca h5 {
+            margin-top: 40px;
+            margin-bottom: 4px;
+        }
+        #acerca ul, #acerca ol {
+            margin-top: 6px;
+        }
+        #acerca .senales img {
+            margin: 6px;
+        }
+        #acerca .pie-informativo {
+            margin-top: 30px;
+            line-height: 1.6;
+        }
+    </style>
+
+<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+<!--[if lt IE 9]>
+  <script src="../assets/js/html5shiv.js"></script>
+<![endif]-->
+
+    <!-- Fav and touch icons -->
+
+    </head>
+
+    <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+    <!-- Navigation -->
+        <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <a style="padding-top:0px" class="navbar-brand" href="http://recursoshidricos.tierradelfuego.gov.ar/">
+                        <p style="text-align:center;padding:0px;margin:0px;font-size:0.6em;font-family:Helvetica;text-transform:none;font-weight:normal;">Direcci&oacute;n Gral de Recursos H&iacute;dricos</p>
+                        <p style="text-align:center;padding:0px;margin:0px;font-size:0.6em;font-family:Helvetica;text-transform:none;font-weight:normal;">S.A.-M.P.yA.</p>
+                    </a>
+                </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+
+                        <a href="#" data-toggle="modal" data-target="#exampleModal"><span class="glyphicon glyphicon-log-in" aria-hidden="true"></span> Ingresar </a>
+
+
+                    </ul>
+
+
+
+
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container -->
+        </nav>
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="exampleModalLabel">New message</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form action="/saptdf/pescador/login" method="post" role="form" >
+
+                            <div class="form-group">
+                                <label for="recipient-name" class="control-label">Usuario</label>
+                                <input name="dni" type="text" placeholder="Usuario (dni)" class="form-control" required=""   maxlength="9">
+                            </div>
+                            <div class="form-group">
+                                <label for="message-text" class="control-label">Contrase&ntilde;a</label>
+                                <input  name="password" type="password" placeholder="Contrase&ntilde;a" class="form-control" required=""   maxlength="25">
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary">Ingresar</button>  
+                            </div> 
+                            <div class="form-group">					  
+                                <a href="/saptdf/mail/restablecer_pass">(&iquest;Olvid&oacute; su contrase&ntilde;a?)</a>
+                                </div>
+
+                        </form>    
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <!-- Intro Header -->
+        <header class="intro">
+            <div class="intro-body">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8 col-md-offset-2">
+                            <div class="navbar-form pull-right">  
+                                 
+                            </div>
+                             
+                            <h2>Sistema de acceso de pesca para residentes de Tierra del Fuego</h2>
+                            <p>Decreto Provincial N&ordm;2180/09, Anexo I, art&iacute;culo 25</p>
+                            <p>Resoluci&oacute;n SDSyA N&ordm;653/10</p>
+                            <p>
+                            <noscript>
+                            <div class="alert alert-danger"> 
+
+                                Para utilizar las funcionalidades completas de este sitio es necesario tener
+                                JavaScript habilitado. Aquí están las <a href="http://www.enable-javascript.com/es/"
+                                target="_blank"> instrucciones para habilitar JavaScript en tu navegador web</a>.
+
+                            </div>  
+                            </noscript>
+                            </p>
+                            <a href="#acerca" class="btn btn-circle page-scroll">
+                                <i class="fa fa-angle-double-down animated"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+    <!-- About Section -->
+        <section id="acerca" class="container content-section text-center">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <h2>SISTEMA DE ACCESO DE PESCA PARA RESIDENTES DE TIERRA DEL FUEGO</h2>
+                    <p><strong>Marco Normativo:</strong> Decreto Provincial N&ordm; 2180/09 (Anexo I, Art. 25) y Resoluci&oacute;n SDSyA N&ordm; 653/10.</p>
+                    <p>La Secretar&iacute;a de Ambiente informa que el acceso a cotos de pesca y ambientes controlados se gestiona exclusivamente a trav&eacute;s del <strong>Sistema de Reservas Online</strong>.</p>
+
+                    <h4>I. PROCEDIMIENTO DE REGISTRO</h4>
+                    <p>Para obtener las credenciales de acceso (usuario y contrase&ntilde;a), el interesado deber&aacute; remitir un correo electr&oacute;nico a <a href="mailto:pescacontinentaltdf@gmail.com"><strong>pescacontinentaltdf@gmail.com</strong></a> adjuntando la siguiente documentaci&oacute;n e informaci&oacute;n:</p>
+                    <ul style="text-align:left;">
+                        <li><strong>Documentaci&oacute;n Personal:</strong> Imagen de frente y dorso del DNI.</li>
+                        <li><strong>Credencial de Pesca:</strong> Imagen del Permiso de Pesca vigente.</li>
+                        <li><strong>Datos de Contacto:</strong> Domicilio real y n&uacute;mero de tel&eacute;fono.</li>
+                    </ul>
+                    <p><em>En caso de menores de 18 a&ntilde;os, el tr&aacute;mite deber&aacute; ser efectuado por el padre, madre o tutor legal, adjuntando la documentaci&oacute;n correspondiente de ambas partes.</em></p>
+
+                    <h4>II. GESTI&Oacute;N DE RESERVAS</h4>
+                    <p>Una vez habilitado el usuario en la plataforma:</p>
+                    <ol style="text-align:left;">
+                        <li><strong>Selecci&oacute;n:</strong> Elija la zona, el r&iacute;o y verifique las fechas disponibles.</li>
+                        <li><strong>Antelaci&oacute;n:</strong> Las reservas podr&aacute;n efectuarse con una antelaci&oacute;n m&aacute;xima de <strong>48 horas</strong> previas al d&iacute;a de pesca.</li>
+                        <li><strong>Reservas de Terceros:</strong> El sistema permite realizar reservas para otros pescadores, siempre que estos se encuentren debidamente registrados.</li>
+                    </ol>
+
+                    <h4>III. MODIFICACIONES Y R&Eacute;GIMEN DE SANCIONES</h4>
+                    <ul style="text-align:left;">
+                        <li><strong>Cancelaciones:</strong> Toda modificaci&oacute;n o baja de reserva deber&aacute; gestionarse con una antelaci&oacute;n m&iacute;nima de <strong>48 horas</strong>.</li>
+                        <li><strong>Incomparecencia:</strong> El incumplimiento de una reserva confirmada sin aviso previo dar&aacute; lugar a la aplicaci&oacute;n de <strong>sanciones (d&iacute;as de espera)</strong> que restringir&aacute;n futuras solicitudes de reserva.</li>
+                    </ul>
+
+                    <h4>IV. ATENCI&Oacute;N AL P&Uacute;BLICO</h4>
+                    <p>Para consultas presenciales, las oficinas de la <strong>Direcci&oacute;n de Recursos H&iacute;dricos</strong> atienden en d&iacute;as h&aacute;biles de <strong>10:00 a 16:00 hs</strong>:</p>
+                    <ul style="text-align:left;">
+                        <li><strong>Ushuaia:</strong> San Mart&iacute;n 1401.</li>
+                        <li><strong>R&iacute;o Grande:</strong> Piedrabuena 671.</li>
+                    </ul>
+
+                    <h4>PROTOCOLO Y NORMAS DE INGRESO PARA EL PESCADOR</h4>
+                    <p>Para el ingreso y permanencia en los &aacute;mbitos de pesca, es requisito indispensable la presentaci&oacute;n del <strong>Documento Nacional de Identidad (DNI)</strong> y el <strong>Permiso de Pesca vigente</strong>, sin excepci&oacute;n. El acceso a predios privados queda sujeto a las normas internas y al <strong>derecho de admisi&oacute;n</strong> de cada establecimiento.</p>
+
+                    <h5>1. FISCALIZACI&Oacute;N Y CONTROL PREVENTIVO</h5>
+                    <ul style="text-align:left;">
+                        <li><strong>Consentimiento:</strong> Al ingresar, el visitante deber&aacute; dar consentimiento informado que autoriza el registro visual preventivo de su veh&iacute;culo al egreso.</li>
+                        <li><strong>Autoridad:</strong> Los inspectores de pesca cuentan con autoridad para labrar actas y decomisar elementos ante cualquier infracci&oacute;n a la normativa vigente.</li>
+                    </ul>
+
+                    <h5>2. CONDICIONES OPERATIVAS Y ACCESIBILIDAD</h5>
+                    <ul style="text-align:left;">
+                        <li><strong>Veh&iacute;culos:</strong> El ingreso queda limitado exclusivamente a unidades con <strong>tracci&oacute;n 4x4</strong>. Se proh&iacute;be terminantemente el acceso en motocicletas o cuatriciclos.</li>
+                        <li><strong>Contingencias Clim&aacute;ticas:</strong> Los cotos permanecer&aacute;n cerrados si el clima o el estado de los caminos impiden el tr&aacute;nsito seguro. En tales casos, las reservas quedar&aacute;n canceladas autom&aacute;ticamente.</li>
+                        <li><strong>Horarios:</strong> Se exige el cumplimiento estricto de los horarios de ingreso y egreso para garantizar la operatividad de las instalaciones.</li>
+                    </ul>
+
+                    <h5>3. PRESERVACI&Oacute;N DEL ENTORNO Y CIRCULACI&Oacute;N</h5>
+                    <ul style="text-align:left;">
+                        <li><strong>Tr&aacute;nsito:</strong> La circulaci&oacute;n debe realizarse &uacute;nicamente por caminos habilitados a una velocidad m&aacute;xima de <strong>40 km/h</strong> (Art. 52, Ley 24.449).</li>
+                        <li><strong>Prohibiciones:</strong> Queda prohibido el ingreso con mascotas y la realizaci&oacute;n de fuego.</li>
+                        <li><strong>Gesti&oacute;n de Residuos:</strong> Es responsabilidad del pescador retirar la totalidad de sus residuos al finalizar la jornada para garantizar la conservaci&oacute;n ambiental.</li>
+                    </ul>
+
+                    <h4>PARA M&Aacute;S INFORMACI&Oacute;N CONSULTE EL ENLACE: <a href="https://prodyambiente.tierradelfuego.gob.ar/pesca-deportiva-tdf/">PESCA DEPORTIVA</a></h4>
+
+                    <div class="senales">
+                        <img src="/saptdf/images/senales/no_residuos.png" alt="Prohibido arrojar residuos" width="85" height="85" title="Retirar todos los residuos">
+                        <img src="/saptdf/images/senales/no_mascotas.png" alt="Prohibido el ingreso con mascotas" width="85" height="85" title="No se permite el ingreso con mascotas">
+                        <img src="/saptdf/images/senales/no_cuatriciclo.png" alt="Prohibido el ingreso en cuatriciclos y motocicletas" width="85" height="85" title="No se permite el ingreso en cuatriciclos ni motocicletas">
+                        <img src="/saptdf/images/senales/max_40.png" alt="Velocidad m&aacute;xima 40 km/h" width="85" height="85" title="Velocidad m&aacute;xima 40 km/h">
+                        <img src="/saptdf/images/senales/no_fuego.png" alt="Prohibido hacer fuego" width="85" height="85" title="Prohibido hacer fuego">
+                    </div>
+
+                    <p class="pie-informativo">
+                        Direcci&oacute;n General de Recursos H&iacute;dricos<br/>
+                        Secretar&iacute;a de Ambiente, Ministerio de Producci&oacute;n y Ambiente<br/>
+                        Provincia de Tierra del Fuego, Ant&aacute;rtida e Islas del Atl&aacute;ntico Sur<br/>
+                        Decreto Provincial N&ordm;2180/09, Anexo I, art&iacute;culo 25.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    <!-- Download Section -->
+        <section id="download" class="content-section text-center">
+            <div class="download-section">
+                <div class="container">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <h2>Rio Grande</h2>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+<!-- Contact Section -->
+
+
+<!-- Footer -->
+        <footer>
+            <div class="container text-center">
+                <p>&copy; Direcci&oacute;n General de Recursos H&iacute;dricos</p>
+                <p>Secretar&iacute;a de Ambiente, Ministerio de Producci&oacute;n y Ambiente</p>
+                <p>Provincia de Tierra del Fuego, Ant&aacute;rtida e Islas del Atl&aacute;ntico Sur</p>
+            </div>
+        </footer>
+
+    <!-- jQuery -->
+
+
+
+    </body>
+</html>

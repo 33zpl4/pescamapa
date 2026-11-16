@@ -1,0 +1,422 @@
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Pesca</title>
+  
+  
+  <link rel="icon" type="image/x-icon" href="/static/img/favicon.ico">
+  
+
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" integrity="sha384-tViUnnbYAV00FLIhhi3v/dWt3Jxw4gZQcNoSCxCIFNJVCx7/D55/wXsrNIRANwdD" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/main.css">
+
+  
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+  
+  <link rel="stylesheet" type="text/css" href="/static/css/icono-arg.min.css">
+
+  
+  <link rel="stylesheet" href="/static/css/home.css">
+
+  
+  
+
+  
+  <link rel="stylesheet" type="text/css" href="/static/css/project.css">
+</head>
+
+<body>
+
+  
+  
+
+
+<header class="custom-header">
+  <div class="container d-flex align-items-center justify-content-between header-inner">
+
+    <!-- Logo -->
+    <a href="/" class="d-flex align-items-center gap-1 text-decoration-none">
+      <img src="/static/img/logo-santacruz.png"
+           alt="Escudo Gobierno de Santa Cruz"
+           class="logo-img">
+
+      <div class="logo-text">
+        <p class="logo-top">Gobierno de Santa Cruz</p>
+        <p class="logo-bottom">Pesca y Acuicultura</p>
+      </div>
+    </a>
+
+    <!-- NAV DESKTOP -->
+    <nav class="nav-desktop d-none d-md-flex align-items-center gap-2">
+
+      <a href="/ayuda/" class="btn btn-ghost btn-sm d-flex align-items-center gap-2">
+        <i class="bi-question-circle"></i>
+        Ayuda
+      </a>
+
+      
+        <!-- Invitado -->
+        <a href="/accounts/login/"
+           class="btn btn-primary d-flex align-items-center gap-2">
+          <i class="bi-box-arrow-in-right"></i>
+          Inicio de sesión
+        </a>
+
+      
+
+    </nav>
+
+    <!-- BOTON MOBILE -->
+    <button class="menu-toggle d-md-none" id="menuToggle">
+      <i class="bi-list"></i>
+    </button>
+  </div>
+
+  <!-- NAV MOBILE -->
+  <div class="nav-mobile d-md-none" id="mobileMenu">
+    <div class="container py-3 d-flex flex-column gap-2">
+
+      <a href="/ayuda/" class="btn btn-ghost w-100 text-start d-flex align-items-center gap-2">
+        <i class="bi-question-circle"></i>
+        Ayuda
+      </a>
+
+      
+
+        <a href="/accounts/login/"
+           class="btn btn-primary w-100 text-start d-flex align-items-center gap-2">
+          <i class="bi-box-arrow-in-right"></i>
+          Inicio de sesión
+        </a>
+
+      
+
+    </div>
+  </div>
+</header>
+
+  <span class="alert-mensaje">
+      
+  </span>
+
+  
+  
+
+  <a id="ir-arriba" class="ir-arriba d-print-none" href="#" title="Volver arriba">
+    <span class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center shadow"
+          style="width:48px;height:48px;">
+      <i class="bi bi-arrow-up" style="font-size:1.5rem;"></i>
+    </span>
+  </a>
+  
+  
+
+<section class="border-bottom bg-light">
+  <div class="container pt-5 pb-2">
+
+    <a href="/" class="btn btn-link px-0 mb-3 text-decoration-none text-muted">
+      <i class="bi bi-arrow-left me-2"></i>
+      Volver al inicio
+    </a>
+
+    <p class="text-uppercase small fw-semibold text-secondary mb-2" style="letter-spacing: 0.15em;">
+      Comunicación
+    </p>
+
+    <h1 class="fw-bold text-primary display-5">
+      Datos de Contacto Importantes
+    </h1>
+
+  </div>
+</section>
+
+<section class="pt-3 pb-5">
+  <div class="container">
+
+    <p class="text-muted mb-4">
+      Contactos oficiales de la Secretaría de Estado de Pesca y Acuicultura,
+      organismos de control y emergencias.
+    </p>
+
+    <div class="row g-4">
+
+      <div class="col-12">
+        <div class="card border-primary">
+          <div class="card-body">
+
+            <h5 class="card-title text-primary fw-semibold mb-4">
+              Dirección de Pesca Continental
+            </h5>
+
+            <ul class="list-unstyled mb-0">
+
+              <li class="d-flex align-items-start mb-3">
+                <i class="bi bi-clock me-3 text-primary"></i>
+                <div>
+                  <div class="text-uppercase small text-muted">Horario de atención</div>
+                  <div>Lunes a Viernes en horario administrativo</div>
+                </div>
+              </li>
+
+              <li class="d-flex align-items-start mb-3">
+                <i class="bi bi-telephone me-3 text-primary"></i>
+                <div>
+                  <div class="text-uppercase small text-muted">Teléfono</div>
+                  <a href="tel:+542966429462" class="text-decoration-none">
+                    +54 2966 429462
+                  </a>
+                </div>
+              </li>
+
+              <li class="d-flex align-items-start mb-3">
+                <i class="bi bi-envelope me-3 text-primary"></i>
+                <div>
+                  <div class="text-uppercase small text-muted">Correo electrónico</div>
+                  <a href="mailto:pesca-continental@santacruz.gob.ar" class="text-decoration-none">
+                    pesca-continental@santacruz.gob.ar
+                  </a>
+                </div>
+              </li>
+
+              <li class="d-flex align-items-start mb-3">
+                <i class="bi bi-globe me-3 text-primary"></i>
+                <div>
+                  <div class="text-uppercase small text-muted">Sitio web</div>
+                  <a href="https://minpro.santacruz.gob.ar/pesca" target="_blank" rel="noreferrer" class="text-decoration-none">
+                    minpro.santacruz.gob.ar/pesca
+                  </a>
+                </div>
+              </li>
+
+              <li class="d-flex align-items-start">
+                <i class="bi bi-geo-alt me-3 text-primary"></i>
+                <div>
+                  <div class="text-uppercase small text-muted">Dirección postal</div>
+                  <div>Avellaneda 801, 1° Piso — Río Gallegos (CP Z9400ASQ)</div>
+                </div>
+              </li>
+
+            </ul>
+
+            <div class="alert alert-warning mt-4 mb-0">
+              <i class="bi bi-info-circle me-2"></i>
+              <strong>NOTA:</strong> Se encuentra a disposición de los pescadores y público en general un libro de quejas y sugerencias en la Secretaría de Estado de Pesca y Acuicultura.
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="card h-100">
+          <div class="card-body">
+
+            <h5 class="card-title text-primary fw-semibold mb-4">
+              Galpón Guardapescas (SOG)
+            </h5>
+
+            <ul class="list-unstyled mb-0">
+
+              <li class="d-flex align-items-start mb-3">
+                <i class="bi bi-telephone me-3 text-primary"></i>
+                <div>
+                  <div class="text-uppercase small text-muted">Teléfono</div>
+                  <a href="tel:+542966624822" class="text-decoration-none">
+                    +54 2966 783888
+                  </a>
+                </div>
+              </li>
+
+              <li class="d-flex align-items-start mb-3">
+                <i class="bi bi-envelope me-3 text-primary"></i>
+                <div>
+                  <div class="text-uppercase small text-muted">Correo electrónico</div>
+                  <a href="mailto:dpcsog@santacruz.gob.ar" class="text-decoration-none">
+                    dpcsog@santacruz.gob.ar
+                  </a>
+                </div>
+              </li>
+            </ul>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="card h-100">
+          <div class="card-body">
+
+            <h5 class="card-title text-primary fw-semibold mb-4">
+              Policía Provincial
+            </h5>
+
+            <ul class="list-unstyled mb-0">
+              <li class="d-flex align-items-start">
+                <i class="bi bi-telephone me-3 text-primary"></i>
+                <div>
+                  <div class="text-uppercase small text-muted">Emergencias</div>
+                  <a href="tel:101" class="text-decoration-none">101</a>
+                </div>
+              </li>
+            </ul>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="card h-100">
+          <div class="card-body">
+
+            <h5 class="card-title text-primary fw-semibold mb-4">
+              Prefectura Naval
+            </h5>
+
+            <ul class="list-unstyled mb-0">
+              <li class="d-flex align-items-start">
+                <i class="bi bi-telephone me-3 text-primary"></i>
+                <div>
+                  <div class="text-uppercase small text-muted">Emergencias</div>
+                  <a href="tel:106" class="text-decoration-none">106</a>
+                </div>
+              </li>
+            </ul>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="card h-100">
+          <div class="card-body">
+
+            <h5 class="card-title text-primary fw-semibold mb-4">
+              Gendarmería Nacional
+            </h5>
+
+            <ul class="list-unstyled mb-0">
+              <li class="d-flex align-items-start">
+                <i class="bi bi-telephone me-3 text-primary"></i>
+                <div>
+                  <div class="text-uppercase small text-muted">Línea gratuita</div>
+                  <a href="tel:08008888804" class="text-decoration-none">
+                    0800-888-8804
+                  </a>
+                </div>
+              </li>
+            </ul>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+
+  
+  
+  
+<footer class="footer">
+
+  <div class="container px-4 py-5">
+    <div class="row g-4">
+
+      
+
+      
+       <!-- Columna 1 -->
+      <div class="col-6 col-md-4">
+        <h4 class="footer-heading">Contacto</h4>
+        <ul class="footer-links">
+          <li><a href="mailto:pesca-continental@santacruz.gob.ar">pesca-continental@santacruz.gob.ar</a></li>
+          <li><a href="tel:+542966429462">+54 2966 429462</a></li>
+          <li><a href="/contacto/">Datos de contacto</a></li>
+        </ul>
+      </div>
+
+      <!-- Columna 2 -->
+      <div class="col-6 col-md-4">
+        <h4 class="footer-heading">Recursos</h4>
+        <ul class="footer-links">
+          <li><a href="/ayuda/">Ayuda</a></li>
+          <li><a href="/reglamento/">Reglamento de pesca</a></li>
+          <li><a href="/valores/">Valores y categorías</a></li>
+          <li><a href="/multas/">Valores de multas</a></li>
+        </ul>
+      </div>
+
+      <!-- Columna 3 -->
+      <div class="col-6 col-md-4">
+        <h4 class="footer-heading">Sitios oficiales</h4>
+        <ul class="footer-links">
+          <li><a href="https://minpro.santacruz.gob.ar/pesca" target="_blank" rel="noreferrer">Secretaría de Pesca y Acuicultura</a></li>
+          <li><a href="https://www.santacruzpatagonia.gob.ar/" target="_blank" rel="noreferrer">Turismo en Santa Cruz</a></li>
+          <li><a href="https://www.hidro.gov.ar/observatorio/Astronomia.asp?op=10" target="_blank" rel="noreferrer">Salida y puesta del sol</a></li>
+          <li><a href="https://informatica.santacruz.gob.ar/" target="_blank" rel="noreferrer">Subsecretaría de Informática</a></li>
+          <li><a href="https://cap.santacruz.gob.ar/%C3%A1reas-protegidas" target="_blank" rel="noreferrer">Áreas Protegidas (CAP)</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Desarrollo del sistema -->
+  <div class="container px-4 py-3">
+    <div class="d-flex flex-column flex-sm-row justify-content-between align-items-center gap-2 small">
+      <div class="d-flex align-items-center gap-2 text-center text-sm-start">
+        <img src="/static/img/LogoSubse.png"
+             alt="Logo Subsecretaría de Informática"
+             style="height: 22px; width: auto;">
+        <span>
+          Desarrollado por
+          <strong>Subsecretaría de Informática</strong>
+        </span>
+      </div>
+      <div>
+        <a href="mailto:pesca@santacruz.gob.ar"
+           class="text-white text-decoration-none" style="opacity: 0.85;">
+          Soporte técnico: pesca@santacruz.gob.ar
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom -->
+  <div class="footer-bottom">
+    <div class="container px-4 d-flex flex-column flex-sm-row justify-content-between align-items-center gap-2">
+      <p class="mb-0">
+        © 2026 Gobierno de la Provincia de Santa Cruz. Todos los derechos reservados.
+      </p>
+      <p class="mb-0">
+        Secretaría de Estado de Pesca y Acuicultura - Subsecretaría de Informática
+      </p>
+    </div>
+  </div>
+
+</footer>
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="/static/js/frontend.js" defer></script>
+  <script src="/static/js/pesca-behaviors.js" defer></script>
+  
+  <script src="https://captcha.santacruz.gob.ar/static/js/captcha-widget.js" defer></script>
+  
+  
+  
+  
+
+</body>
+</html>

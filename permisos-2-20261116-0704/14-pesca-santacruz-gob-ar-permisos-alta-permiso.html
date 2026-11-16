@@ -1,0 +1,3659 @@
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Permiso de pesca</title>
+  
+  
+  <link rel="icon" type="image/x-icon" href="/static/img/favicon.ico">
+  
+
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" integrity="sha384-tViUnnbYAV00FLIhhi3v/dWt3Jxw4gZQcNoSCxCIFNJVCx7/D55/wXsrNIRANwdD" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/main.css">
+
+  
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+  
+  <link rel="stylesheet" type="text/css" href="/static/css/icono-arg.min.css">
+
+  
+  <link rel="stylesheet" href="/static/css/home.css">
+
+  
+    <script src="/static/js/jquery-3.6.0.min.js"></script>
+
+  
+    <link rel="stylesheet" type="text/css" href="/static/permisos/css/style_formulario.css">
+
+
+  
+  <link rel="stylesheet" type="text/css" href="/static/css/project.css">
+</head>
+
+<body>
+
+  
+  
+
+
+<header class="custom-header">
+  <div class="container d-flex align-items-center justify-content-between header-inner">
+
+    <!-- Logo -->
+    <a href="/" class="d-flex align-items-center gap-1 text-decoration-none">
+      <img src="/static/img/logo-santacruz.png"
+           alt="Escudo Gobierno de Santa Cruz"
+           class="logo-img">
+
+      <div class="logo-text">
+        <p class="logo-top">Gobierno de Santa Cruz</p>
+        <p class="logo-bottom">Pesca y Acuicultura</p>
+      </div>
+    </a>
+
+    <!-- NAV DESKTOP -->
+    <nav class="nav-desktop d-none d-md-flex align-items-center gap-2">
+
+      <a href="/ayuda/" class="btn btn-ghost btn-sm d-flex align-items-center gap-2">
+        <i class="bi-question-circle"></i>
+        Ayuda
+      </a>
+
+      
+        <!-- Invitado -->
+        <a href="/accounts/login/"
+           class="btn btn-primary d-flex align-items-center gap-2">
+          <i class="bi-box-arrow-in-right"></i>
+          Inicio de sesión
+        </a>
+
+      
+
+    </nav>
+
+    <!-- BOTON MOBILE -->
+    <button class="menu-toggle d-md-none" id="menuToggle">
+      <i class="bi-list"></i>
+    </button>
+  </div>
+
+  <!-- NAV MOBILE -->
+  <div class="nav-mobile d-md-none" id="mobileMenu">
+    <div class="container py-3 d-flex flex-column gap-2">
+
+      <a href="/ayuda/" class="btn btn-ghost w-100 text-start d-flex align-items-center gap-2">
+        <i class="bi-question-circle"></i>
+        Ayuda
+      </a>
+
+      
+
+        <a href="/accounts/login/"
+           class="btn btn-primary w-100 text-start d-flex align-items-center gap-2">
+          <i class="bi-box-arrow-in-right"></i>
+          Inicio de sesión
+        </a>
+
+      
+
+    </div>
+  </div>
+</header>
+
+  <span class="alert-mensaje">
+      
+  </span>
+
+  
+  
+
+  <a id="ir-arriba" class="ir-arriba d-print-none" href="#" title="Volver arriba">
+    <span class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center shadow"
+          style="width:48px;height:48px;">
+      <i class="bi bi-arrow-up" style="font-size:1.5rem;"></i>
+    </span>
+  </a>
+  
+  
+<section class="border-bottom bg-light">
+  <div class="container pt-5 pb-3">
+    <a href="/" class="btn btn-link px-0 mb-3 text-decoration-none text-muted">
+      <i class="bi bi-arrow-left me-2"></i> Volver al inicio
+    </a>
+    <p class="text-uppercase small fw-semibold text-secondary mb-2" style="letter-spacing: 0.15em;">
+      Trámite Online
+    </p>
+    <h1 class="fw-bold text-primary display-5">Solicitar Permiso de Pesca</h1>
+  </div>
+</section>
+
+<section class="border-bottom">
+    <div class="container pt-5 pb-5">
+        <div class="card">
+            <div class="card-body">
+                
+
+    
+
+<div class="row g-3 mb-4">
+
+    
+    <div class="col-lg-6">
+        <div class="card h-100 border rounded-3 shadow-sm"
+             style="border-color:#b8d4f0 !important; background:linear-gradient(180deg,#eef6fd 0%,#ffffff 100%);">
+            <div class="card-body p-3">
+                <div class="d-flex align-items-center gap-2 mb-2">
+                    <span class="badge bg-primary rounded-3 p-2"><i class="bi bi-files fs-6"></i></span>
+                    <h6 class="mb-0 fw-bold text-primary">Documentación necesaria</h6>
+                </div>
+                <p class="text-muted small mb-2">
+                    Antes de comenzar tené a mano la siguiente documentación, porque deberás adjuntarla durante el trámite:
+                </p>
+                <ul class="list-unstyled small mb-1">
+                    <li class="mb-1">
+                        <i class="bi bi-person-vcard text-primary me-2"></i>Frente del documento de identidad (DNI)
+                    </li>
+                    <li class="mb-1">
+                        <i class="bi bi-receipt text-primary me-2"></i>Comprobante de pago del permiso
+                    </li>
+                </ul>
+                <div class="small text-muted mb-1">Según el tipo de permiso seleccionado también podrás necesitar:</div>
+                <ul class="list-unstyled small mb-0">
+                    <li class="mb-1">
+                        <i class="bi bi-file-earmark-medical text-primary me-2"></i>Carnet de jubilado / pensionado
+                    </li>
+                    <li class="mb-1">
+                        <i class="bi bi-shield-check text-primary me-2"></i>Carnet de socio de club de pesca
+                    </li>
+                    <li class="mb-1">
+                        <i class="bi bi-person-badge text-primary me-2"></i>Certificado Único de Discapacidad (CUD)
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="col-lg-6">
+        <div class="card h-100 border rounded-3 shadow-sm">
+            <div class="card-body p-3">
+                <div class="d-flex align-items-center gap-2 mb-2">
+                    <span class="badge bg-success rounded-3 p-2"><i class="bi bi-book fs-6"></i></span>
+                    <h6 class="mb-0 fw-bold text-success">Antes de pescar, leé el Reglamento</h6>
+                </div>
+                <p class="text-muted small mb-3">
+                    Es obligación de todo pescador conocer y cumplir la normativa vigente para la temporada.
+                </p>
+                <ul class="list-unstyled small mb-0">
+                    <li class="mb-2">
+                        <a class="text-decoration-none fw-semibold" href="/reglamento/" target="_blank" rel="noreferrer">
+                            <i class="bi bi-file-earmark-pdf me-2 text-danger"></i>Reglamento de pesca
+                        </a>
+                    </li>
+                    <li class="mb-2">
+                        <a class="text-decoration-none fw-semibold"
+                           href="/leyes/" target="_blank" rel="noreferrer">
+                            <i class="bi bi-info-circle me-2 text-primary"></i>Ver más información y normativa
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="mb-2">
+                        <a class="text-decoration-none fw-semibold" href="https://www.hidro.gov.ar/observatorio/Astronomia.asp" target="_blank" rel="noreferrer">
+                            <i class="bi bi-sunset me-2 text-warning"></i>Horario de puesta del sol
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    
+    <div class="alert alert-info border-0 shadow-sm" role="alert">
+        <div class="fw-semibold mb-1">
+            <i class="bi bi-info-circle me-1"></i>
+            Este permiso quedará apto para pescar desde su creación
+        </div>
+        <div>
+            La solicitud seguirá <strong>pendiente de validación administrativa</strong>. Si se verifica documentación
+            falsa, pueden corresponder multas o sanciones. Consulta el
+            <a href="/multas/" target="_blank" class="alert-link">cuadro de multas</a>
+            y el <a href="/reglamento/" target="_blank" class="alert-link">reglamento de pesca</a>.
+        </div>
+    </div>
+    
+
+    <div class='proceso'><div class="row justify-content-center">
+    <div class="col-12 position-relative">
+        <div class="col-12 position-relative" id="progreso_barra">
+            <div class="progress" style="height: 3px;">
+                <div class="progress-bar progress-bar-striped bg-primary" id="barra-progreso_formulario" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+        </div>
+        <div class="row justify-content-around">
+            <div class="col-3 text-center position-relative">
+                <a type="button" class="btn btn-circle btn-progreso" paso="1">
+                    <span class="container-icons">
+                        <i class="fas fa-circle fa-3x icon-base-inactivo" id="paso1"></i>
+                        <span class="icon-flotante font-weight-bold">1</span>
+                    </span>
+                </a>
+                <br>
+                <small class="titulo-btn-progreso">Datos Personales</small>
+            </div>
+            <div class="col-3 text-center position-relative">
+                <a type="button" class="btn btn-circle btn-progreso" paso="2">
+                    <i class="fas fa-circle fa-3x icon-base-inactivo" id="paso2"></i>
+                    <span class="icon-flotante font-weight-bold">2</span>
+                </a>
+                <br>
+                <small class="titulo-btn-progreso">Tipo de Permiso</small>
+            </div>
+            <div class="col-3 text-center position-relative">
+                <a type="button" class="btn btn-circle btn-progreso" paso="3">
+                    <i class="fas fa-circle fa-3x icon-base-inactivo" id="paso3"></i>
+                    <span class="icon-flotante font-weight-bold">3</span>
+                </a>
+                <br>
+                <small class="titulo-btn-progreso">Documentación</small>
+            </div>
+            <div class="col-3 text-center position-relative">
+                <a type="button" class="btn btn-circle btn-progreso" paso="4">
+                    <i class="fas fa-circle fa-3x icon-base-inactivo" id="paso4"></i>
+                    <span class="icon-flotante font-weight-bold">4</span>
+                </a>
+                <br>
+                <small class="titulo-btn-progreso">Pago</small>
+            </div>
+        </div>
+    </div>
+</div>
+<br></div>
+
+    <form id="solicitud_permiso_form" action="/permisos/alta_permiso/" method="POST" enctype="multipart/form-data" class="form-pasos"
+          data-dias-min-inicio="0"
+          data-captcha-required="true">
+        <input type="hidden" name="csrfmiddlewaretoken" value="rfeQtrM8XV7MCW0y0q5o3HLaSOvppLyDgCg7ERK2QXPthLu2dQ23EdXTdvVR0Tn2">
+
+        
+
+        <div class="paso" paso="1">
+            
+
+<section class="py-3">
+  <div class="container">
+        <!-- DATOS PERSONALES -->
+        <div class="mb-3">
+            <h5 class="text-primary mb-3">Datos del Personales</h5>
+
+            <div class="row g-3">
+                <div class="col-12 col-sm-6">
+                    <label class="form-label">Apellido</label>
+                    <input type="text" name="solicitud_apellido" minlength="1" maxlength="128" class="form-control" required id="id_solicitud_apellido">
+                    <div class="text-danger small"></div>
+                </div>
+                <div class="col-12 col-sm-6">
+                    <label class="form-label">Nombre</label>
+                    <input type="text" name="solicitud_nombre" minlength="1" maxlength="128" class="form-control" required id="id_solicitud_nombre">
+                    <div class="text-danger small"></div>
+                </div>
+
+                <div class="col-md-4">
+                    <label class="form-label">Tipo documento</label>
+                    <select name="solicitud_tipo_documento" class="form-select" id="id_solicitud_tipo_documento">
+  <option value="1" selected>D.N.I</option>
+
+  <option value="2">Pasaporte</option>
+
+  <option value="3">L.E</option>
+
+  <option value="4">L.C</option>
+
+  <option value="5">C.I</option>
+
+</select>
+                    <div class="text-danger small"></div>
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label">Número de documento</label>
+                    <input type="text" name="solicitud_numero_documento" class="form-control" placeholder="Ej: 21654987" maxlength="16" minlength="1" required aria-describedby="id_solicitud_numero_documento_helptext" id="id_solicitud_numero_documento">
+                    <div class="text-danger small"></div>
+                    <div class="form-text">
+                        (Sin espacios ni puntos)
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-4">
+                    <label class="form-label">Fecha de nacimiento</label>
+                    <input type="date" name="solicitud_fecha_nacimiento" class="form-control" required id="id_solicitud_fecha_nacimiento">
+                    <div class="text-danger small"></div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- DATOS CONTACTO -->
+        <div class="mb-2">
+            <h5 class="text-primary mb-3">Datos de contacto</h5>
+
+            <div class="row justify-content-center">
+                <div class="col-12 mb-3">
+                    <input type="checkbox" name="check_extranjero" class="form-checkbox" id="id_check_extranjero"> <label for="id_check_extranjero" class="control-label">No soy residente del pais </label>
+                </div>
+                <div class="col-12">
+                    <small id="check_extranjero-error" class="form-text text-danger"></small>
+                </div>
+            </div>
+
+            <div class="domicilio_argentino">
+                <div id="div-provincia">
+                    <div class="row justify-content-center">
+                        <div class="col-md-6 col-sm-12 mb-3">
+                            <label for="id_provincia" class="control-label">Provincia</label>
+                            <select name="provincia" class="form-select" id="id_provincia">
+  <option value="">---------</option>
+
+  <option value="2">Buenos Aires</option>
+
+  <option value="3">Catamarca</option>
+
+  <option value="16">Chaco</option>
+
+  <option value="17">Chubut</option>
+
+  <option value="1">Ciudad Autónoma de Buenos Aires (CABA)</option>
+
+  <option value="4">Córdoba</option>
+
+  <option value="5">Corrientes</option>
+
+  <option value="6">Entre Ríos</option>
+
+  <option value="18">Formosa</option>
+
+  <option value="7">Jujuy</option>
+
+  <option value="21">La Pampa</option>
+
+  <option value="9">La Rioja</option>
+
+  <option value="8">Mendoza</option>
+
+  <option value="19">Misiones</option>
+
+  <option value="20">Neuquén</option>
+
+  <option value="22">Río Negro</option>
+
+  <option value="10">Salta</option>
+
+  <option value="11">San Juan</option>
+
+  <option value="12">San Luis</option>
+
+  <option value="23" selected>Santa Cruz</option>
+
+  <option value="13">Santa Fe</option>
+
+  <option value="14">Santiago del Estero</option>
+
+  <option value="24">Tierra del Fuego</option>
+
+  <option value="15">Tucumán</option>
+
+</select>
+                        </div>
+                        <div class="col-md-6 col-sm-12 mb-3">
+                            <div id="div-localidad">
+                                <label for="id_localidad" class="control-label">Localidad</label>
+                                <select name="localidad" class="form-select" id="id_localidad">
+  <option value="" selected>---------</option>
+
+</select>
+                            </div>
+                            <div id="div-buscando_localidades">
+                                <div class="spinner-border text-primary" role="status"></div>
+                                <strong id="txt-buscando" style="padding-left: 1rem;"></strong>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <small id="provincia-error" class="form-text text-danger"></small>
+                        </div>
+                    </div>
+                    <div class="row g-3">                    
+                        <div class="col-md-6">
+                            <label class="form-label">Calle</label>
+                            <input type="text" name="solicitud_calle" maxlength="64" class="form-control" id="id_solicitud_calle">
+                            <div class="text-danger small"></div>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Altura</label>
+                            <input type="text" name="solicitud_altura" maxlength="64" class="form-control" id="id_solicitud_altura">
+                            <div class="text-danger small"></div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <label class="form-label">Piso</label>
+                            <input type="text" name="solicitud_piso" maxlength="16" class="form-control" aria-describedby="id_solicitud_piso_helptext" id="id_solicitud_piso">
+                            <div class="text-danger small"></div>
+                            <div class="form-text">(opcional)</div>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label">Departamento</label>
+                            <input type="text" name="solicitud_depatamento" maxlength="16" class="form-control" aria-describedby="id_solicitud_depatamento_helptext" id="id_solicitud_depatamento">
+                            <div class="text-danger small"></div>
+                            <div class="form-text">(opcional)</div>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label">Barrio</label>
+                            <input type="text" name="solicitud_barrio" maxlength="16" class="form-control" aria-describedby="id_solicitud_barrio_helptext" id="id_solicitud_barrio">
+                            <div class="text-danger small"></div>
+                            <div class="form-text">(opcional)</div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <label class="form-label">Código postal</label>
+                            <input type="text" name="solicitud_codigo_postal" placeholder="Ej: 9400" class="form-control" id="id_solicitud_codigo_postal">
+                            <div class="text-danger small"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-6">
+                        <label class="form-label">Teléfono principal</label>
+                        <input type="text" name="solicitud_telefono_principal" placeholder="Ej: 2966123456" minlength="6" maxlength="16" class="form-control" id="id_solicitud_telefono_principal">
+                        <div class="text-danger small"></div>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Teléfono alternativo</label>
+                        <input type="text" name="solicitud_telefono_alternativo" placeholder="Ej: 2966654321" minlength="6" maxlength="16" class="form-control" id="id_solicitud_telefono_alternativo">
+                        <div class="text-danger small"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="select_pais_extranjero row justify-content-start" id="div-pais">
+                <div class="col-md-6 col-sm-12 mb-3">
+                    <label for="id_pais" class="control-label">País</label>
+                    <select name="pais" class="form-select" id="id_pais">
+  <option value="" selected>---------</option>
+
+  <option value="1">Afganistán</option>
+
+  <option value="3">Albania</option>
+
+  <option value="83">Alemania</option>
+
+  <option value="6">Andorra</option>
+
+  <option value="7">Angola</option>
+
+  <option value="8">Anguila</option>
+
+  <option value="9">Antártida</option>
+
+  <option value="10">Antigua y Barbuda</option>
+
+  <option value="195">Arabia Saudita</option>
+
+  <option value="4">Argelia</option>
+
+  <option value="11">Argentina</option>
+
+  <option value="12">Armenia</option>
+
+  <option value="13">Aruba</option>
+
+  <option value="14">Australia</option>
+
+  <option value="15">Austria</option>
+
+  <option value="16">Azerbaiyán</option>
+
+  <option value="17">Bahamas</option>
+
+  <option value="19">Bangladés</option>
+
+  <option value="20">Barbados</option>
+
+  <option value="18">Baréin</option>
+
+  <option value="22">Bélgica</option>
+
+  <option value="23">Belice</option>
+
+  <option value="24">Benín</option>
+
+  <option value="25">Bermudas</option>
+
+  <option value="21">Bielorrusia</option>
+
+  <option value="27">Bolivia, Estado Plurinacional de</option>
+
+  <option value="28">Bonaire, San Eustaquio y Saba</option>
+
+  <option value="29">Bosnia y Herzegovina</option>
+
+  <option value="30">Botsuana</option>
+
+  <option value="32">Brasil</option>
+
+  <option value="34">Brunéi Darussalam</option>
+
+  <option value="35">Bulgaria</option>
+
+  <option value="36">Burkina Faso</option>
+
+  <option value="37">Burundi</option>
+
+  <option value="26">Bután</option>
+
+  <option value="41">Cabo Verde</option>
+
+  <option value="38">Camboya</option>
+
+  <option value="39">Camerún</option>
+
+  <option value="40">Canadá</option>
+
+  <option value="44">Chad</option>
+
+  <option value="45">Chile</option>
+
+  <option value="46">China, República Popular</option>
+
+  <option value="59">Chipre</option>
+
+  <option value="49">Colombia</option>
+
+  <option value="50">Comoras</option>
+
+  <option value="51">Congo</option>
+
+  <option value="52">Congo, La República Democrática del</option>
+
+  <option value="119">Corea, República de</option>
+
+  <option value="118">Corea, República Democrática Popular de</option>
+
+  <option value="55">Costa de Marfil</option>
+
+  <option value="54">Costa Rica</option>
+
+  <option value="56">Croacia</option>
+
+  <option value="57">Cuba</option>
+
+  <option value="58">Curazao</option>
+
+  <option value="61">Dinamarca</option>
+
+  <option value="63">Dominica</option>
+
+  <option value="65">Ecuador</option>
+
+  <option value="66">Egipto</option>
+
+  <option value="67">El Salvador</option>
+
+  <option value="234">Emiratos Árabes Unidos</option>
+
+  <option value="69">Eritrea</option>
+
+  <option value="202">Eslovaquia</option>
+
+  <option value="203">Eslovenia</option>
+
+  <option value="209">España</option>
+
+  <option value="236">Estados Unidos</option>
+
+  <option value="70">Estonia</option>
+
+  <option value="71">Etiopía</option>
+
+  <option value="183">Federacion Rusa</option>
+
+  <option value="175">Filipinas</option>
+
+  <option value="75">Finlandia</option>
+
+  <option value="74">Fiyi</option>
+
+  <option value="76">Francia</option>
+
+  <option value="80">Gabón</option>
+
+  <option value="81">Gambia</option>
+
+  <option value="82">Georgia</option>
+
+  <option value="84">Ghana</option>
+
+  <option value="85">Gibraltar</option>
+
+  <option value="88">Granada</option>
+
+  <option value="86">Grecia</option>
+
+  <option value="87">Groenlandia</option>
+
+  <option value="89">Guadalupe</option>
+
+  <option value="90">Guam</option>
+
+  <option value="91">Guatemala</option>
+
+  <option value="77">Guayana Francesa</option>
+
+  <option value="92">Guernsey</option>
+
+  <option value="93">Guinea</option>
+
+  <option value="68">Guinea Ecuatorial</option>
+
+  <option value="94">Guinea-Bisáu</option>
+
+  <option value="95">Guyana</option>
+
+  <option value="96">Haití</option>
+
+  <option value="99">Honduras</option>
+
+  <option value="100">Hong Kong</option>
+
+  <option value="101">Hungría</option>
+
+  <option value="103">India</option>
+
+  <option value="104">Indonesia</option>
+
+  <option value="106">Irak</option>
+
+  <option value="105">Irán, República Islámica de</option>
+
+  <option value="107">Irlanda</option>
+
+  <option value="31">Isla Bouvet</option>
+
+  <option value="108">Isla de Man</option>
+
+  <option value="47">Isla de Navidad</option>
+
+  <option value="164">Isla Norfolk</option>
+
+  <option value="102">Islandia</option>
+
+  <option value="2">Islas Åland</option>
+
+  <option value="42">Islas Caimán</option>
+
+  <option value="48">Islas Cocos (Keeling)</option>
+
+  <option value="53">Islas Cook</option>
+
+  <option value="72">Islas Falkland (Malvinas)</option>
+
+  <option value="73">Islas Feroe</option>
+
+  <option value="207">Islas Georgias del Sur y Sandwich del Sur</option>
+
+  <option value="97">Islas Heard y Mcdonald</option>
+
+  <option value="165">Islas Marianas del Norte</option>
+
+  <option value="139">Islas Marshall</option>
+
+  <option value="204">Islas Salomón</option>
+
+  <option value="230">Islas Turcas y Caicos</option>
+
+  <option value="237">Islas Ultramarinas Menores de Estados Unidos</option>
+
+  <option value="243">Islas Virgenes Británicas</option>
+
+  <option value="244">Islas Virgenes de Los Estados Unidos</option>
+
+  <option value="109">Israel</option>
+
+  <option value="110">Italia</option>
+
+  <option value="111">Jamaica</option>
+
+  <option value="112">Japón</option>
+
+  <option value="113">Jersey</option>
+
+  <option value="114">Jordania</option>
+
+  <option value="115">Kazajistán</option>
+
+  <option value="116">Kenia</option>
+
+  <option value="121">Kirguistán</option>
+
+  <option value="117">Kiribati</option>
+
+  <option value="120">Kuwait</option>
+
+  <option value="125">Lesoto</option>
+
+  <option value="123">Letonia</option>
+
+  <option value="124">Líbano</option>
+
+  <option value="126">Liberia</option>
+
+  <option value="127">Libia</option>
+
+  <option value="128">Liechtenstein</option>
+
+  <option value="129">Lituania</option>
+
+  <option value="130">Luxemburgo</option>
+
+  <option value="131">Macao</option>
+
+  <option value="132">Macedonia, La Antigua República Yugoslava de</option>
+
+  <option value="133">Madagascar</option>
+
+  <option value="135">Malasia</option>
+
+  <option value="134">Malaui</option>
+
+  <option value="136">Maldivas</option>
+
+  <option value="137">Malí</option>
+
+  <option value="138">Malta</option>
+
+  <option value="151">Marruecos</option>
+
+  <option value="140">Martinica</option>
+
+  <option value="142">Mauricio</option>
+
+  <option value="141">Mauritania</option>
+
+  <option value="143">Mayotte</option>
+
+  <option value="144">México</option>
+
+  <option value="145">Micronesia, Estados Federados de</option>
+
+  <option value="146">Moldavia, República de</option>
+
+  <option value="147">Mónaco</option>
+
+  <option value="148">Mongolia</option>
+
+  <option value="149">Montenegro</option>
+
+  <option value="150">Montserrat</option>
+
+  <option value="152">Mozambique</option>
+
+  <option value="153">Myanmar</option>
+
+  <option value="154">Nabimia</option>
+
+  <option value="155">Nauru</option>
+
+  <option value="156">Nepal</option>
+
+  <option value="160">Nicaragua</option>
+
+  <option value="161">Níger</option>
+
+  <option value="162">Nigeria</option>
+
+  <option value="163">Niue</option>
+
+  <option value="166">Noruega</option>
+
+  <option value="158">Nueva Caledonia</option>
+
+  <option value="159">Nueva Zelanda</option>
+
+  <option value="167">Omán</option>
+
+  <option value="157">Países Bajos</option>
+
+  <option value="168">Pakistán</option>
+
+  <option value="169">Palaos</option>
+
+  <option value="170">Palestina, Estado de</option>
+
+  <option value="171">Panamá</option>
+
+  <option value="172">Papúa Nueva Guinea</option>
+
+  <option value="173">Paraguay</option>
+
+  <option value="174">Perú</option>
+
+  <option value="176">Pitcairn</option>
+
+  <option value="78">Polinesia Francesa</option>
+
+  <option value="177">Polonia</option>
+
+  <option value="178">Portugal</option>
+
+  <option value="179">Puerto Rico</option>
+
+  <option value="180">Qatar</option>
+
+  <option value="235">Reino Unido</option>
+
+  <option value="43">República Centroafricana</option>
+
+  <option value="60">República Checa</option>
+
+  <option value="122">República Democrática Popular Lao</option>
+
+  <option value="64">República Dominicana</option>
+
+  <option value="181">Reunión</option>
+
+  <option value="184">Ruanda</option>
+
+  <option value="182">Rumania</option>
+
+  <option value="246">Sahara Occidental</option>
+
+  <option value="192">Samoa</option>
+
+  <option value="5">Samoa Americana</option>
+
+  <option value="185">San Bartolomé</option>
+
+  <option value="187">San Cristóbal y Nieves</option>
+
+  <option value="193">San Marino</option>
+
+  <option value="189">San Martín (Parte Francesa)</option>
+
+  <option value="190">San Pedro y Miquelón</option>
+
+  <option value="191">San Vicente y Las Granadinas</option>
+
+  <option value="186">Santa Helena, Ascensión y Tristán de Acuña</option>
+
+  <option value="188">Santa Lucía</option>
+
+  <option value="98">Santa Sede (Ciudad Estado Vaticano)</option>
+
+  <option value="194">Santo Tomé y Principe</option>
+
+  <option value="196">Senegal</option>
+
+  <option value="197">Serbia</option>
+
+  <option value="198">Seychelles</option>
+
+  <option value="199">Sierra Leona</option>
+
+  <option value="200">Singapur</option>
+
+  <option value="201">Sint Maarten (Parte Neerlandesa)</option>
+
+  <option value="217">Siria, República Arabe de</option>
+
+  <option value="205">Somalia</option>
+
+  <option value="210">Sri Lanka</option>
+
+  <option value="214">Suazilandia</option>
+
+  <option value="206">Sudáfrica</option>
+
+  <option value="211">Sudán</option>
+
+  <option value="208">Sudán del Sur</option>
+
+  <option value="215">Suecia</option>
+
+  <option value="216">Suiza</option>
+
+  <option value="212">Surinam</option>
+
+  <option value="213">Svalbard y Jan Mayen</option>
+
+  <option value="221">Tailandia</option>
+
+  <option value="218">Taiwán, Provincia de China</option>
+
+  <option value="220">Tanzania, República Unida de</option>
+
+  <option value="219">Tayikistán</option>
+
+  <option value="33">Territorio Británico del Océano Índico</option>
+
+  <option value="79">Territorios Australes Franceses</option>
+
+  <option value="222">Timor-Leste</option>
+
+  <option value="223">Togo</option>
+
+  <option value="224">Tokelau</option>
+
+  <option value="225">Tonga</option>
+
+  <option value="226">Trinidad y Tobago</option>
+
+  <option value="227">Túnez</option>
+
+  <option value="229">Turkmenistán</option>
+
+  <option value="228">Turquía</option>
+
+  <option value="231">Tuvalu</option>
+
+  <option value="233">Ucrania</option>
+
+  <option value="232">Uganda</option>
+
+  <option value="238">Uruguay</option>
+
+  <option value="239">Uzbekistán</option>
+
+  <option value="240">Vanuatu</option>
+
+  <option value="241">Venezuela, República Bolivariana de</option>
+
+  <option value="242">Viet Nam</option>
+
+  <option value="245">Wallis y Futuna</option>
+
+  <option value="247">Yemen</option>
+
+  <option value="62">Yibuti</option>
+
+  <option value="248">Zambia</option>
+
+  <option value="249">Zimbabue</option>
+
+</select>
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">Número de teléfono internacional</label>
+                    <input type="text" name="solicitud_telefono_internacional" placeholder="Ej: 412345" minlength="6" maxlength="16" class="form-control" id="id_solicitud_telefono_internacional">
+                    <div class="text-danger small"></div>
+                </div>
+            </div>
+
+            <div class="row mt-3">
+                <div class="col-md-12">
+                    <label class="form-label">Correo electrónico</label>
+                    <input type="email" name="solicitud_correo_electronico" placeholder="Ej: jperez@gmail.com" class="form-control" maxlength="128" required id="id_solicitud_correo_electronico">
+                    <div class="text-danger small"></div>
+                </div>
+            </div>
+        </div>
+  </div>
+</section>
+
+<script nonce="RIDS_VvIVRSpTb2xforUHA">
+  const LISTA_LOCALIDADES_URL = "/lista-localidades/";
+  const LOCALIDAD_INICIAL = "";
+</script>
+<script src="/static/permisos/js/provincia_localidad.js"></script>
+
+            <div class="row justify-content-between my-3 no-imprimir">
+                <div class="col-5">
+                </div>
+                <div class="col-5 d-grid">
+                    <button type="button" class="btn-continuar btn-success btn" >
+                        <span id="txt-btncontinuar">Continuar</span>
+                        <span id="icon-btncontinuar"><i class="fas fa-chevron-circle-right"></i></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="paso" paso="2">
+            
+<h5 class="text-primary mb-3">Tipo de Permiso</h5>
+
+
+<div class="row justify-content-center">
+    <div class="col-md-4 col-sm-12">
+        <label for="" class="control-label"><b>Situación laboral</b></label>
+        <div id="id_solicitud_situacion_laboral" class="form-radio custom-radio-list"><div>
+    <label for="id_solicitud_situacion_laboral_0"><input type="radio" name="solicitud_situacion_laboral" value="1" class="form-radio custom-radio-list" required id="id_solicitud_situacion_laboral_0" checked>
+ Activo</label>
+
+</div><div>
+    <label for="id_solicitud_situacion_laboral_1"><input type="radio" name="solicitud_situacion_laboral" value="2" class="form-radio custom-radio-list" required id="id_solicitud_situacion_laboral_1">
+ Jubilado</label>
+
+</div><div>
+    <label for="id_solicitud_situacion_laboral_2"><input type="radio" name="solicitud_situacion_laboral" value="3" class="form-radio custom-radio-list" required id="id_solicitud_situacion_laboral_2">
+ Pensionado</label>
+
+</div><div>
+    <label for="id_solicitud_situacion_laboral_3"><input type="radio" name="solicitud_situacion_laboral" value="4" class="form-radio custom-radio-list" required id="id_solicitud_situacion_laboral_3">
+ Otro</label>
+
+</div>
+</div>
+        <small id="solicitud_situacion_laboral-error" class="form-text text-danger"></small>
+    </div>
+    <div class="col-md-4 col-sm-12">
+        <label for="" class="control-label"><b>Residente argentino</b></label>
+        <div id="id_solicitud_residente_argentino" class="form-radio custom-radio-list"><div>
+    <label for="id_solicitud_residente_argentino_0"><input type="radio" name="solicitud_residente_argentino" value="1" class="form-radio custom-radio-list" required id="id_solicitud_residente_argentino_0" checked>
+ Es residente</label>
+
+</div><div>
+    <label for="id_solicitud_residente_argentino_1"><input type="radio" name="solicitud_residente_argentino" value="0" class="form-radio custom-radio-list" required id="id_solicitud_residente_argentino_1">
+ No es residente</label>
+
+</div>
+</div>
+        <small id="solicitud_residente_argentino-error" class="form-text text-danger"></small>
+    </div>
+    <div class="col-md-4 col-sm-12">
+        <label for="" class="control-label"><b>Socio de Club de Pesca</b></label>
+        <div id="id_solicitud_socio_club" class="form-radio custom-radio-list"><div>
+    <label for="id_solicitud_socio_club_0"><input type="radio" name="solicitud_socio_club" value="0" class="form-radio custom-radio-list" required id="id_solicitud_socio_club_0" checked>
+ No es socio</label>
+
+</div><div>
+    <label for="id_solicitud_socio_club_1"><input type="radio" name="solicitud_socio_club" value="1" class="form-radio custom-radio-list" required id="id_solicitud_socio_club_1">
+ Es socio</label>
+
+</div>
+</div>
+        <small id="solicitud_socio_club-error" class="form-text text-danger"></small>
+    </div>
+</div>
+
+<div class="row justify-content-center">
+  <div class="col-12 mb-2">
+    <label class="form-label fw-bold">Tipo de permiso</label>
+  </div>
+
+  <div class="col-12">
+      <div class="row g-3">
+
+          
+
+          <div class="col-xl-4 col-md-6 col-12 permiso-card position-relative"
+
+              data-grupo="permiso-jubilado"
+              data-categoria="RP-JPM"
+              data-duracion="3"
+              data-precio="0,0"
+
+              data-doc-pago="0"
+              data-doc-jubilacion="1"
+              data-doc-pension="1"
+              data-doc-socio="0"
+              data-doc-cud="0"
+              data-doc-excombatiente="0">
+
+              <input
+                  type="radio"
+                  name="solicitud_tipo_permiso"
+                  value="7"
+                  id="id_solicitud_tipo_permiso_0"
+                  class="custom-radio-list"
+                  
+                  required>
+
+              <label class="permiso-label card h-100 border rounded-3 p-3 hover-shadow"
+                    for="id_solicitud_tipo_permiso_0">
+
+                  <div class="d-flex justify-content-between align-items-start mb-2">
+                      <span class="permiso-codigo badge bg-light text-secondary border fw-semibold"
+                            style="font-size:11px;">
+                          RP-JPM
+                      </span>
+
+                      <div class="permiso-check"></div>
+                  </div>
+
+                  <div class="fw-semibold text-dark mb-1"
+                      style="font-size:14px; line-height:1.3;">
+                      Jubilados y/o pensionados
+                  </div>
+
+                  <p class="text-muted flex-grow-1 mb-3"
+                    style="font-size:12px; line-height:1.5;">
+                      Permiso por temporada para jubilados y/o pensionados argentinos o residentes en el país
+                  </p>
+
+                  <div class="d-flex justify-content-between align-items-end border-top pt-2 mt-auto">
+
+                      <div>
+                          <div class="text-muted" style="font-size:11px;">Precio</div>
+
+                          <div class="fw-bold text-success" style="font-size:14px;">
+                              $0,0.-
+                          </div>
+                      </div>
+
+                      <div class="text-end">
+
+                          <div class="text-muted" style="font-size:11px;">Duración</div>
+
+                          <div class="fw-semibold text-dark" style="font-size:13px;">
+
+                              
+                                  
+                                  TEMPORADA 2026 - 2027
+                              
+
+                          </div>
+
+                      </div>
+
+                  </div>
+
+              </label>
+
+          </div>
+
+          
+
+          <div class="col-xl-4 col-md-6 col-12 permiso-card position-relative"
+
+              data-grupo="permiso-mayor65"
+              data-categoria="RP-JPM"
+              data-duracion="3"
+              data-precio="0,0"
+
+              data-doc-pago="0"
+              data-doc-jubilacion="0"
+              data-doc-pension="0"
+              data-doc-socio="0"
+              data-doc-cud="0"
+              data-doc-excombatiente="0">
+
+              <input
+                  type="radio"
+                  name="solicitud_tipo_permiso"
+                  value="6"
+                  id="id_solicitud_tipo_permiso_1"
+                  class="custom-radio-list"
+                  
+                  required>
+
+              <label class="permiso-label card h-100 border rounded-3 p-3 hover-shadow"
+                    for="id_solicitud_tipo_permiso_1">
+
+                  <div class="d-flex justify-content-between align-items-start mb-2">
+                      <span class="permiso-codigo badge bg-light text-secondary border fw-semibold"
+                            style="font-size:11px;">
+                          RP-JPM
+                      </span>
+
+                      <div class="permiso-check"></div>
+                  </div>
+
+                  <div class="fw-semibold text-dark mb-1"
+                      style="font-size:14px; line-height:1.3;">
+                      Mayores de 65 años
+                  </div>
+
+                  <p class="text-muted flex-grow-1 mb-3"
+                    style="font-size:12px; line-height:1.5;">
+                      Permiso por temporada para mayores de 65 años argentinos o residentes en el país
+                  </p>
+
+                  <div class="d-flex justify-content-between align-items-end border-top pt-2 mt-auto">
+
+                      <div>
+                          <div class="text-muted" style="font-size:11px;">Precio</div>
+
+                          <div class="fw-bold text-success" style="font-size:14px;">
+                              $0,0.-
+                          </div>
+                      </div>
+
+                      <div class="text-end">
+
+                          <div class="text-muted" style="font-size:11px;">Duración</div>
+
+                          <div class="fw-semibold text-dark" style="font-size:13px;">
+
+                              
+                                  
+                                  TEMPORADA 2026 - 2027
+                              
+
+                          </div>
+
+                      </div>
+
+                  </div>
+
+              </label>
+
+          </div>
+
+          
+
+          <div class="col-xl-4 col-md-6 col-12 permiso-card position-relative"
+
+              data-grupo="permiso-menor12"
+              data-categoria="RP-JPM"
+              data-duracion="3"
+              data-precio="0,0"
+
+              data-doc-pago="0"
+              data-doc-jubilacion="0"
+              data-doc-pension="0"
+              data-doc-socio="0"
+              data-doc-cud="0"
+              data-doc-excombatiente="0">
+
+              <input
+                  type="radio"
+                  name="solicitud_tipo_permiso"
+                  value="5"
+                  id="id_solicitud_tipo_permiso_2"
+                  class="custom-radio-list"
+                  
+                  required>
+
+              <label class="permiso-label card h-100 border rounded-3 p-3 hover-shadow"
+                    for="id_solicitud_tipo_permiso_2">
+
+                  <div class="d-flex justify-content-between align-items-start mb-2">
+                      <span class="permiso-codigo badge bg-light text-secondary border fw-semibold"
+                            style="font-size:11px;">
+                          RP-JPM
+                      </span>
+
+                      <div class="permiso-check"></div>
+                  </div>
+
+                  <div class="fw-semibold text-dark mb-1"
+                      style="font-size:14px; line-height:1.3;">
+                      Menores de hasta 12 años
+                  </div>
+
+                  <p class="text-muted flex-grow-1 mb-3"
+                    style="font-size:12px; line-height:1.5;">
+                      Permiso por temporada para menores (hasta 12 años) argentinos o residentes en el país
+                  </p>
+
+                  <div class="d-flex justify-content-between align-items-end border-top pt-2 mt-auto">
+
+                      <div>
+                          <div class="text-muted" style="font-size:11px;">Precio</div>
+
+                          <div class="fw-bold text-success" style="font-size:14px;">
+                              $0,0.-
+                          </div>
+                      </div>
+
+                      <div class="text-end">
+
+                          <div class="text-muted" style="font-size:11px;">Duración</div>
+
+                          <div class="fw-semibold text-dark" style="font-size:13px;">
+
+                              
+                                  
+                                  TEMPORADA 2026 - 2027
+                              
+
+                          </div>
+
+                      </div>
+
+                  </div>
+
+              </label>
+
+          </div>
+
+          
+
+          <div class="col-xl-4 col-md-6 col-12 permiso-card position-relative"
+
+              data-grupo="permiso-menor17"
+              data-categoria="RPM-T"
+              data-duracion="3"
+              data-precio="15000,0"
+
+              data-doc-pago="1"
+              data-doc-jubilacion="0"
+              data-doc-pension="0"
+              data-doc-socio="0"
+              data-doc-cud="0"
+              data-doc-excombatiente="0">
+
+              <input
+                  type="radio"
+                  name="solicitud_tipo_permiso"
+                  value="4"
+                  id="id_solicitud_tipo_permiso_3"
+                  class="custom-radio-list"
+                  
+                  required>
+
+              <label class="permiso-label card h-100 border rounded-3 p-3 hover-shadow"
+                    for="id_solicitud_tipo_permiso_3">
+
+                  <div class="d-flex justify-content-between align-items-start mb-2">
+                      <span class="permiso-codigo badge bg-light text-secondary border fw-semibold"
+                            style="font-size:11px;">
+                          RPM-T
+                      </span>
+
+                      <div class="permiso-check"></div>
+                  </div>
+
+                  <div class="fw-semibold text-dark mb-1"
+                      style="font-size:14px; line-height:1.3;">
+                      Menores de hasta 17 años
+                  </div>
+
+                  <p class="text-muted flex-grow-1 mb-3"
+                    style="font-size:12px; line-height:1.5;">
+                      Permiso por temporada para menores argentinos o residentes en el país (13 a 17 años)
+                  </p>
+
+                  <div class="d-flex justify-content-between align-items-end border-top pt-2 mt-auto">
+
+                      <div>
+                          <div class="text-muted" style="font-size:11px;">Precio</div>
+
+                          <div class="fw-bold text-success" style="font-size:14px;">
+                              $15000,0.-
+                          </div>
+                      </div>
+
+                      <div class="text-end">
+
+                          <div class="text-muted" style="font-size:11px;">Duración</div>
+
+                          <div class="fw-semibold text-dark" style="font-size:13px;">
+
+                              
+                                  
+                                  TEMPORADA 2026 - 2027
+                              
+
+                          </div>
+
+                      </div>
+
+                  </div>
+
+              </label>
+
+          </div>
+
+          
+
+          <div class="col-xl-4 col-md-6 col-12 permiso-card position-relative"
+
+              data-grupo="permiso-no-residente"
+              data-categoria="E-D"
+              data-duracion="1"
+              data-precio="90000,0"
+
+              data-doc-pago="1"
+              data-doc-jubilacion="0"
+              data-doc-pension="0"
+              data-doc-socio="0"
+              data-doc-cud="0"
+              data-doc-excombatiente="0">
+
+              <input
+                  type="radio"
+                  name="solicitud_tipo_permiso"
+                  value="10"
+                  id="id_solicitud_tipo_permiso_4"
+                  class="custom-radio-list"
+                  
+                  required>
+
+              <label class="permiso-label card h-100 border rounded-3 p-3 hover-shadow"
+                    for="id_solicitud_tipo_permiso_4">
+
+                  <div class="d-flex justify-content-between align-items-start mb-2">
+                      <span class="permiso-codigo badge bg-light text-secondary border fw-semibold"
+                            style="font-size:11px;">
+                          E-D
+                      </span>
+
+                      <div class="permiso-check"></div>
+                  </div>
+
+                  <div class="fw-semibold text-dark mb-1"
+                      style="font-size:14px; line-height:1.3;">
+                      No residente país diario
+                  </div>
+
+                  <p class="text-muted flex-grow-1 mb-3"
+                    style="font-size:12px; line-height:1.5;">
+                      Permiso diario para no residentes en el país
+                  </p>
+
+                  <div class="d-flex justify-content-between align-items-end border-top pt-2 mt-auto">
+
+                      <div>
+                          <div class="text-muted" style="font-size:11px;">Precio</div>
+
+                          <div class="fw-bold text-success" style="font-size:14px;">
+                              $90000,0.-
+                          </div>
+                      </div>
+
+                      <div class="text-end">
+
+                          <div class="text-muted" style="font-size:11px;">Duración</div>
+
+                          <div class="fw-semibold text-dark" style="font-size:13px;">
+
+                              
+                                  1 día
+                              
+
+                          </div>
+
+                      </div>
+
+                  </div>
+
+              </label>
+
+          </div>
+
+          
+
+          <div class="col-xl-4 col-md-6 col-12 permiso-card position-relative"
+
+              data-grupo="permiso-no-residente"
+              data-categoria="E-S"
+              data-duracion="2"
+              data-precio="300000,0"
+
+              data-doc-pago="1"
+              data-doc-jubilacion="0"
+              data-doc-pension="0"
+              data-doc-socio="0"
+              data-doc-cud="0"
+              data-doc-excombatiente="0">
+
+              <input
+                  type="radio"
+                  name="solicitud_tipo_permiso"
+                  value="11"
+                  id="id_solicitud_tipo_permiso_5"
+                  class="custom-radio-list"
+                  
+                  required>
+
+              <label class="permiso-label card h-100 border rounded-3 p-3 hover-shadow"
+                    for="id_solicitud_tipo_permiso_5">
+
+                  <div class="d-flex justify-content-between align-items-start mb-2">
+                      <span class="permiso-codigo badge bg-light text-secondary border fw-semibold"
+                            style="font-size:11px;">
+                          E-S
+                      </span>
+
+                      <div class="permiso-check"></div>
+                  </div>
+
+                  <div class="fw-semibold text-dark mb-1"
+                      style="font-size:14px; line-height:1.3;">
+                      No residente país semanal
+                  </div>
+
+                  <p class="text-muted flex-grow-1 mb-3"
+                    style="font-size:12px; line-height:1.5;">
+                      Permiso semanal para no residentes en el país
+                  </p>
+
+                  <div class="d-flex justify-content-between align-items-end border-top pt-2 mt-auto">
+
+                      <div>
+                          <div class="text-muted" style="font-size:11px;">Precio</div>
+
+                          <div class="fw-bold text-success" style="font-size:14px;">
+                              $300000,0.-
+                          </div>
+                      </div>
+
+                      <div class="text-end">
+
+                          <div class="text-muted" style="font-size:11px;">Duración</div>
+
+                          <div class="fw-semibold text-dark" style="font-size:13px;">
+
+                              
+                                  7 días
+                              
+
+                          </div>
+
+                      </div>
+
+                  </div>
+
+              </label>
+
+          </div>
+
+          
+
+          <div class="col-xl-4 col-md-6 col-12 permiso-card position-relative"
+
+              data-grupo="permiso-no-residente"
+              data-categoria="E-T"
+              data-duracion="3"
+              data-precio="450000,0"
+
+              data-doc-pago="1"
+              data-doc-jubilacion="0"
+              data-doc-pension="0"
+              data-doc-socio="0"
+              data-doc-cud="0"
+              data-doc-excombatiente="0">
+
+              <input
+                  type="radio"
+                  name="solicitud_tipo_permiso"
+                  value="12"
+                  id="id_solicitud_tipo_permiso_6"
+                  class="custom-radio-list"
+                  
+                  required>
+
+              <label class="permiso-label card h-100 border rounded-3 p-3 hover-shadow"
+                    for="id_solicitud_tipo_permiso_6">
+
+                  <div class="d-flex justify-content-between align-items-start mb-2">
+                      <span class="permiso-codigo badge bg-light text-secondary border fw-semibold"
+                            style="font-size:11px;">
+                          E-T
+                      </span>
+
+                      <div class="permiso-check"></div>
+                  </div>
+
+                  <div class="fw-semibold text-dark mb-1"
+                      style="font-size:14px; line-height:1.3;">
+                      No residente país temporada
+                  </div>
+
+                  <p class="text-muted flex-grow-1 mb-3"
+                    style="font-size:12px; line-height:1.5;">
+                      Permiso por temporada para no residentes en el país
+                  </p>
+
+                  <div class="d-flex justify-content-between align-items-end border-top pt-2 mt-auto">
+
+                      <div>
+                          <div class="text-muted" style="font-size:11px;">Precio</div>
+
+                          <div class="fw-bold text-success" style="font-size:14px;">
+                              $450000,0.-
+                          </div>
+                      </div>
+
+                      <div class="text-end">
+
+                          <div class="text-muted" style="font-size:11px;">Duración</div>
+
+                          <div class="fw-semibold text-dark" style="font-size:13px;">
+
+                              
+                                  
+                                  TEMPORADA 2026 - 2027
+                              
+
+                          </div>
+
+                      </div>
+
+                  </div>
+
+              </label>
+
+          </div>
+
+          
+
+          <div class="col-xl-4 col-md-6 col-12 permiso-card position-relative"
+
+              data-grupo="permiso-discapacidad"
+              data-categoria="RP-JPM"
+              data-duracion="3"
+              data-precio="0,0"
+
+              data-doc-pago="0"
+              data-doc-jubilacion="0"
+              data-doc-pension="0"
+              data-doc-socio="0"
+              data-doc-cud="1"
+              data-doc-excombatiente="0">
+
+              <input
+                  type="radio"
+                  name="solicitud_tipo_permiso"
+                  value="8"
+                  id="id_solicitud_tipo_permiso_7"
+                  class="custom-radio-list"
+                  
+                  required>
+
+              <label class="permiso-label card h-100 border rounded-3 p-3 hover-shadow"
+                    for="id_solicitud_tipo_permiso_7">
+
+                  <div class="d-flex justify-content-between align-items-start mb-2">
+                      <span class="permiso-codigo badge bg-light text-secondary border fw-semibold"
+                            style="font-size:11px;">
+                          RP-JPM
+                      </span>
+
+                      <div class="permiso-check"></div>
+                  </div>
+
+                  <div class="fw-semibold text-dark mb-1"
+                      style="font-size:14px; line-height:1.3;">
+                      Persona con discapacidad
+                  </div>
+
+                  <p class="text-muted flex-grow-1 mb-3"
+                    style="font-size:12px; line-height:1.5;">
+                      Permiso por temporada para personas con discapacidad argentinas o residentes en el país (con CUD)
+                  </p>
+
+                  <div class="d-flex justify-content-between align-items-end border-top pt-2 mt-auto">
+
+                      <div>
+                          <div class="text-muted" style="font-size:11px;">Precio</div>
+
+                          <div class="fw-bold text-success" style="font-size:14px;">
+                              $0,0.-
+                          </div>
+                      </div>
+
+                      <div class="text-end">
+
+                          <div class="text-muted" style="font-size:11px;">Duración</div>
+
+                          <div class="fw-semibold text-dark" style="font-size:13px;">
+
+                              
+                                  
+                                  TEMPORADA 2026 - 2027
+                              
+
+                          </div>
+
+                      </div>
+
+                  </div>
+
+              </label>
+
+          </div>
+
+          
+
+          <div class="col-xl-4 col-md-6 col-12 permiso-card position-relative"
+
+              data-grupo="permiso-residente-pago"
+              data-categoria="RP-D"
+              data-duracion="1"
+              data-precio="15000,0"
+
+              data-doc-pago="1"
+              data-doc-jubilacion="0"
+              data-doc-pension="0"
+              data-doc-socio="0"
+              data-doc-cud="0"
+              data-doc-excombatiente="0">
+
+              <input
+                  type="radio"
+                  name="solicitud_tipo_permiso"
+                  value="1"
+                  id="id_solicitud_tipo_permiso_8"
+                  class="custom-radio-list"
+                  
+                  required>
+
+              <label class="permiso-label card h-100 border rounded-3 p-3 hover-shadow"
+                    for="id_solicitud_tipo_permiso_8">
+
+                  <div class="d-flex justify-content-between align-items-start mb-2">
+                      <span class="permiso-codigo badge bg-light text-secondary border fw-semibold"
+                            style="font-size:11px;">
+                          RP-D
+                      </span>
+
+                      <div class="permiso-check"></div>
+                  </div>
+
+                  <div class="fw-semibold text-dark mb-1"
+                      style="font-size:14px; line-height:1.3;">
+                      Residente país diario
+                  </div>
+
+                  <p class="text-muted flex-grow-1 mb-3"
+                    style="font-size:12px; line-height:1.5;">
+                      Permiso diario para pescadores argentinos o residentes en el país
+                  </p>
+
+                  <div class="d-flex justify-content-between align-items-end border-top pt-2 mt-auto">
+
+                      <div>
+                          <div class="text-muted" style="font-size:11px;">Precio</div>
+
+                          <div class="fw-bold text-success" style="font-size:14px;">
+                              $15000,0.-
+                          </div>
+                      </div>
+
+                      <div class="text-end">
+
+                          <div class="text-muted" style="font-size:11px;">Duración</div>
+
+                          <div class="fw-semibold text-dark" style="font-size:13px;">
+
+                              
+                                  1 día
+                              
+
+                          </div>
+
+                      </div>
+
+                  </div>
+
+              </label>
+
+          </div>
+
+          
+
+          <div class="col-xl-4 col-md-6 col-12 permiso-card position-relative"
+
+              data-grupo="permiso-residente-pago"
+              data-categoria="RP-F"
+              data-duracion="5"
+              data-precio="20000,0"
+
+              data-doc-pago="1"
+              data-doc-jubilacion="0"
+              data-doc-pension="0"
+              data-doc-socio="0"
+              data-doc-cud="0"
+              data-doc-excombatiente="0">
+
+              <input
+                  type="radio"
+                  name="solicitud_tipo_permiso"
+                  value="18"
+                  id="id_solicitud_tipo_permiso_9"
+                  class="custom-radio-list"
+                  
+                  required>
+
+              <label class="permiso-label card h-100 border rounded-3 p-3 hover-shadow"
+                    for="id_solicitud_tipo_permiso_9">
+
+                  <div class="d-flex justify-content-between align-items-start mb-2">
+                      <span class="permiso-codigo badge bg-light text-secondary border fw-semibold"
+                            style="font-size:11px;">
+                          RP-F
+                      </span>
+
+                      <div class="permiso-check"></div>
+                  </div>
+
+                  <div class="fw-semibold text-dark mb-1"
+                      style="font-size:14px; line-height:1.3;">
+                      Residente país fin de semana
+                  </div>
+
+                  <p class="text-muted flex-grow-1 mb-3"
+                    style="font-size:12px; line-height:1.5;">
+                      Permiso Residente País Fin de Semana (Sábado y Domingo)
+                  </p>
+
+                  <div class="d-flex justify-content-between align-items-end border-top pt-2 mt-auto">
+
+                      <div>
+                          <div class="text-muted" style="font-size:11px;">Precio</div>
+
+                          <div class="fw-bold text-success" style="font-size:14px;">
+                              $20000,0.-
+                          </div>
+                      </div>
+
+                      <div class="text-end">
+
+                          <div class="text-muted" style="font-size:11px;">Duración</div>
+
+                          <div class="fw-semibold text-dark" style="font-size:13px;">
+
+                              
+                                  2 días
+                              
+
+                          </div>
+
+                      </div>
+
+                  </div>
+
+              </label>
+
+          </div>
+
+          
+
+          <div class="col-xl-4 col-md-6 col-12 permiso-card position-relative"
+
+              data-grupo="permiso-residente-pago"
+              data-categoria="RP-S"
+              data-duracion="2"
+              data-precio="25000,0"
+
+              data-doc-pago="1"
+              data-doc-jubilacion="0"
+              data-doc-pension="0"
+              data-doc-socio="0"
+              data-doc-cud="0"
+              data-doc-excombatiente="0">
+
+              <input
+                  type="radio"
+                  name="solicitud_tipo_permiso"
+                  value="2"
+                  id="id_solicitud_tipo_permiso_10"
+                  class="custom-radio-list"
+                  
+                  required>
+
+              <label class="permiso-label card h-100 border rounded-3 p-3 hover-shadow"
+                    for="id_solicitud_tipo_permiso_10">
+
+                  <div class="d-flex justify-content-between align-items-start mb-2">
+                      <span class="permiso-codigo badge bg-light text-secondary border fw-semibold"
+                            style="font-size:11px;">
+                          RP-S
+                      </span>
+
+                      <div class="permiso-check"></div>
+                  </div>
+
+                  <div class="fw-semibold text-dark mb-1"
+                      style="font-size:14px; line-height:1.3;">
+                      Residente país semanal
+                  </div>
+
+                  <p class="text-muted flex-grow-1 mb-3"
+                    style="font-size:12px; line-height:1.5;">
+                      Permiso semanal para pescadores argentinos o residentes en el país
+                  </p>
+
+                  <div class="d-flex justify-content-between align-items-end border-top pt-2 mt-auto">
+
+                      <div>
+                          <div class="text-muted" style="font-size:11px;">Precio</div>
+
+                          <div class="fw-bold text-success" style="font-size:14px;">
+                              $25000,0.-
+                          </div>
+                      </div>
+
+                      <div class="text-end">
+
+                          <div class="text-muted" style="font-size:11px;">Duración</div>
+
+                          <div class="fw-semibold text-dark" style="font-size:13px;">
+
+                              
+                                  7 días
+                              
+
+                          </div>
+
+                      </div>
+
+                  </div>
+
+              </label>
+
+          </div>
+
+          
+
+          <div class="col-xl-4 col-md-6 col-12 permiso-card position-relative"
+
+              data-grupo="permiso-residente-pago"
+              data-categoria="RP-T"
+              data-duracion="3"
+              data-precio="40000,0"
+
+              data-doc-pago="1"
+              data-doc-jubilacion="0"
+              data-doc-pension="0"
+              data-doc-socio="0"
+              data-doc-cud="0"
+              data-doc-excombatiente="0">
+
+              <input
+                  type="radio"
+                  name="solicitud_tipo_permiso"
+                  value="3"
+                  id="id_solicitud_tipo_permiso_11"
+                  class="custom-radio-list"
+                  
+                  required>
+
+              <label class="permiso-label card h-100 border rounded-3 p-3 hover-shadow"
+                    for="id_solicitud_tipo_permiso_11">
+
+                  <div class="d-flex justify-content-between align-items-start mb-2">
+                      <span class="permiso-codigo badge bg-light text-secondary border fw-semibold"
+                            style="font-size:11px;">
+                          RP-T
+                      </span>
+
+                      <div class="permiso-check"></div>
+                  </div>
+
+                  <div class="fw-semibold text-dark mb-1"
+                      style="font-size:14px; line-height:1.3;">
+                      Residente país temporada
+                  </div>
+
+                  <p class="text-muted flex-grow-1 mb-3"
+                    style="font-size:12px; line-height:1.5;">
+                      Permiso por temporada para pescadores argentinos o residentes en el país
+                  </p>
+
+                  <div class="d-flex justify-content-between align-items-end border-top pt-2 mt-auto">
+
+                      <div>
+                          <div class="text-muted" style="font-size:11px;">Precio</div>
+
+                          <div class="fw-bold text-success" style="font-size:14px;">
+                              $40000,0.-
+                          </div>
+                      </div>
+
+                      <div class="text-end">
+
+                          <div class="text-muted" style="font-size:11px;">Duración</div>
+
+                          <div class="fw-semibold text-dark" style="font-size:13px;">
+
+                              
+                                  
+                                  TEMPORADA 2026 - 2027
+                              
+
+                          </div>
+
+                      </div>
+
+                  </div>
+
+              </label>
+
+          </div>
+
+          
+
+          <div class="col-xl-4 col-md-6 col-12 permiso-card position-relative"
+
+              data-grupo="permiso-socio"
+              data-categoria="SC"
+              data-duracion="3"
+              data-precio="20000,0"
+
+              data-doc-pago="1"
+              data-doc-jubilacion="0"
+              data-doc-pension="0"
+              data-doc-socio="1"
+              data-doc-cud="0"
+              data-doc-excombatiente="0">
+
+              <input
+                  type="radio"
+                  name="solicitud_tipo_permiso"
+                  value="9"
+                  id="id_solicitud_tipo_permiso_12"
+                  class="custom-radio-list"
+                  
+                  required>
+
+              <label class="permiso-label card h-100 border rounded-3 p-3 hover-shadow"
+                    for="id_solicitud_tipo_permiso_12">
+
+                  <div class="d-flex justify-content-between align-items-start mb-2">
+                      <span class="permiso-codigo badge bg-light text-secondary border fw-semibold"
+                            style="font-size:11px;">
+                          SC
+                      </span>
+
+                      <div class="permiso-check"></div>
+                  </div>
+
+                  <div class="fw-semibold text-dark mb-1"
+                      style="font-size:14px; line-height:1.3;">
+                      Socio de club de pesca
+                  </div>
+
+                  <p class="text-muted flex-grow-1 mb-3"
+                    style="font-size:12px; line-height:1.5;">
+                      Permiso por temporada para socios de club de pesca
+                  </p>
+
+                  <div class="d-flex justify-content-between align-items-end border-top pt-2 mt-auto">
+
+                      <div>
+                          <div class="text-muted" style="font-size:11px;">Precio</div>
+
+                          <div class="fw-bold text-success" style="font-size:14px;">
+                              $20000,0.-
+                          </div>
+                      </div>
+
+                      <div class="text-end">
+
+                          <div class="text-muted" style="font-size:11px;">Duración</div>
+
+                          <div class="fw-semibold text-dark" style="font-size:13px;">
+
+                              
+                                  
+                                  TEMPORADA 2026 - 2027
+                              
+
+                          </div>
+
+                      </div>
+
+                  </div>
+
+              </label>
+
+          </div>
+
+          
+
+          <div class="col-xl-4 col-md-6 col-12 permiso-card position-relative"
+
+              data-grupo="permiso-excombatiente"
+              data-categoria="EM"
+              data-duracion="4"
+              data-precio="0,0"
+
+              data-doc-pago="0"
+              data-doc-jubilacion="0"
+              data-doc-pension="0"
+              data-doc-socio="0"
+              data-doc-cud="0"
+              data-doc-excombatiente="1">
+
+              <input
+                  type="radio"
+                  name="solicitud_tipo_permiso"
+                  value="17"
+                  id="id_solicitud_tipo_permiso_13"
+                  class="custom-radio-list"
+                  
+                  required>
+
+              <label class="permiso-label card h-100 border rounded-3 p-3 hover-shadow"
+                    for="id_solicitud_tipo_permiso_13">
+
+                  <div class="d-flex justify-content-between align-items-start mb-2">
+                      <span class="permiso-codigo badge bg-light text-secondary border fw-semibold"
+                            style="font-size:11px;">
+                          EM
+                      </span>
+
+                      <div class="permiso-check"></div>
+                  </div>
+
+                  <div class="fw-semibold text-dark mb-1"
+                      style="font-size:14px; line-height:1.3;">
+                      Tte. Cnel. RUBEN OSCAR ZUNINO
+                  </div>
+
+                  <p class="text-muted flex-grow-1 mb-3"
+                    style="font-size:12px; line-height:1.5;">
+                      Permiso Único para Excombatientes de Malvinas Argentinas
+                  </p>
+
+                  <div class="d-flex justify-content-between align-items-end border-top pt-2 mt-auto">
+
+                      <div>
+                          <div class="text-muted" style="font-size:11px;">Precio</div>
+
+                          <div class="fw-bold text-success" style="font-size:14px;">
+                              $0,0.-
+                          </div>
+                      </div>
+
+                      <div class="text-end">
+
+                          <div class="text-muted" style="font-size:11px;">Duración</div>
+
+                          <div class="fw-semibold text-dark" style="font-size:13px;">
+
+                              
+                                  Indefinido
+                              
+
+                          </div>
+
+                      </div>
+
+                  </div>
+
+              </label>
+
+          </div>
+
+          
+
+      </div>
+  </div>
+  <div class="col-12 mt-2">
+        <small id="solicitud_tipo_permiso-error" class="form-text text-danger">
+        
+        </small>
+    </div>
+</div>
+<div class="row justify-content-center my-4">
+    <div class="col-md-6 col-sm-12 mb-3">
+        <label><b>Fecha de inicio del permiso</b></label>
+        <span class="d-flex gap-2">
+            <select name="solicitud_fecha_inicio_day" required id="id_solicitud_fecha_inicio_day" class="form-select"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16" selected>16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option></select><select name="solicitud_fecha_inicio_month" required id="id_solicitud_fecha_inicio_month" class="form-select"><option value="1">enero</option><option value="2">febrero</option><option value="3">marzo</option><option value="4">abril</option><option value="5">mayo</option><option value="6">junio</option><option value="7">julio</option><option value="8">agosto</option><option value="9">septiembre</option><option value="10">octubre</option><option value="11" selected>noviembre</option><option value="12">diciembre</option></select><select name="solicitud_fecha_inicio_year" required id="id_solicitud_fecha_inicio_year" class="form-select"><option value="2026" selected>2026</option><option value="2027">2027</option></select>
+        </span>
+        <small id="fecha_inicio-error" class="form-text text-danger">
+            
+        </small>
+        <div class="row">
+            <div class="col-3">
+                <small id="fecha_inicio_dia-error" class="form-text text-danger"></small>
+            </div>
+            <div class="col-4">
+                <small id="fecha_inicio_mes-error" class="form-text text-danger"></small>
+            </div>
+            <div class="col-4">
+                <small id="fecha_inicio_anio-error" class="form-text text-danger"></small>
+            </div>
+        </div>
+    </div>
+
+    <div id="bloque_fecha_fin" class="col-md-6 col-sm-12 mb-3" style="display:none;">
+        <label><b>Fecha de fin del permiso</b></label>
+        <span class="d-flex gap-2">
+            <select name="solicitud_fecha_fin_day" id="id_solicitud_fecha_fin_day" class="form-select"><option value="">---</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16" selected>16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option></select><select name="solicitud_fecha_fin_month" id="id_solicitud_fecha_fin_month" class="form-select"><option value="">---</option><option value="1">enero</option><option value="2">febrero</option><option value="3">marzo</option><option value="4">abril</option><option value="5">mayo</option><option value="6">junio</option><option value="7">julio</option><option value="8">agosto</option><option value="9">septiembre</option><option value="10">octubre</option><option value="11" selected>noviembre</option><option value="12">diciembre</option></select><select name="solicitud_fecha_fin_year" id="id_solicitud_fecha_fin_year" class="form-select"><option value="">---</option><option value="2026" selected>2026</option><option value="2027">2027</option></select>
+        </span>
+        <small id="fecha_fin-error" class="form-text text-danger">
+            
+        </small>
+    </div>
+
+    <!-- TOTALES -->
+    <div id="bloque_dias" class="col-12 row justify-content-center mt-2">
+        <div id="celda_total_dias" class="col-md-6 col-sm-12">
+            <b>Total de días</b>
+            <span id="total_dias">0</span>
+        </div>
+        <div class="col-md-6 col-sm-12">
+            <b>Total a pagar</b>
+            $<span id="monto_a_pagar">0</span>
+        </div>
+    </div>
+</div>
+
+<div class="row justify-content-start my-4">
+    <div class="col-md-6 col-sm-12">
+        <label class="form-label"><b>Localidad de destino principal donde va a ir a pescar</b></label>
+        <select name="localidad_destino_pesca" class="form-select" required id="id_localidad_destino_pesca">
+  <option value="" selected>---------</option>
+
+  <option value="4982">28 DE NOVIEMBRE</option>
+
+  <option value="21083">AGUADA A PIQUE</option>
+
+  <option value="21098">AGUADA ALEGRE</option>
+
+  <option value="4920">AGUADA ESCONDIDA</option>
+
+  <option value="4919">AGUADA GRANDE</option>
+
+  <option value="21084">AGUADA LA OVEJA</option>
+
+  <option value="4921">ALMA GRANDE</option>
+
+  <option value="4983">AN AIKE</option>
+
+  <option value="4923">BAHIA LANGARA</option>
+
+  <option value="21099">BAHIA LAURA</option>
+
+  <option value="5011">BAHIA TRANQUILA</option>
+
+  <option value="12983">BAJO CARACOLES</option>
+
+  <option value="21106">BAJO FUEGO</option>
+
+  <option value="4984">BELLA VISTA</option>
+
+  <option value="4924">CABO BLANCO</option>
+
+  <option value="12975">CABO DE LAS VIRGENES</option>
+
+  <option value="4925">CABO TRES PUNTAS</option>
+
+  <option value="4926">CALETA OLIVIA</option>
+
+  <option value="4927">CAMERON</option>
+
+  <option value="21101">CAMPAMENTO DOROTEA</option>
+
+  <option value="12976">CAMUZU AIKE</option>
+
+  <option value="12977">CANCHA CARRERA</option>
+
+  <option value="4895">CAÑADA DE LAS VACAS</option>
+
+  <option value="21107">CAÑADÓN 11 DE SEPTIEMBRE</option>
+
+  <option value="5035">CAÑADÓN BOTELLO</option>
+
+  <option value="4896">CAÑADÓN DE LAS VACAS</option>
+
+  <option value="4897">CAÑADÓN DEL RANCHO</option>
+
+  <option value="4898">CAÑADÓN DEL TORO</option>
+
+  <option value="4985">CAÑADÓN FABRE</option>
+
+  <option value="5051">CAÑADÓN LEÓN</option>
+
+  <option value="21111">CAÑADÓN MOLINARI</option>
+
+  <option value="5036">CAÑADÓN PLUMA</option>
+
+  <option value="4930">CAÑADÓN SECO</option>
+
+  <option value="4986">CAP</option>
+
+  <option value="4931">CARA MALA</option>
+
+  <option value="4932">CERRO ALTO</option>
+
+  <option value="4933">CERRO LA SETENTA</option>
+
+  <option value="4939">CERRO MANGRULLO</option>
+
+  <option value="4940">CERRO MORO</option>
+
+  <option value="4964">CERRO NEGRO</option>
+
+  <option value="4987">CERRO PALIQUE</option>
+
+  <option value="4941">CERRO PUNTUDO</option>
+
+  <option value="4899">CERRO REDONDO</option>
+
+  <option value="21085">CERRO REDONDO</option>
+
+  <option value="4934">CERRO RENZEL</option>
+
+  <option value="4928">CERRO SILVA</option>
+
+  <option value="4988">CHALL AIKE</option>
+
+  <option value="4900">CHONQUE</option>
+
+  <option value="4935">COLONIA CARLOS PELLEGRINI</option>
+
+  <option value="5037">COLONIA LEANDRO N ALEM</option>
+
+  <option value="4901">COMANDANTE LUIS PIEDRABUENA</option>
+
+  <option value="12978">CONDOR</option>
+
+  <option value="5012">CONDOR CLIF</option>
+
+  <option value="4989">CORONEL GUARUMBA</option>
+
+  <option value="12989">CORONEL MARTIN IRIGOYEN</option>
+
+  <option value="21093">CUEVA DE LAS MANOS</option>
+
+  <option value="21097">DESAMPARADOS</option>
+
+  <option value="4902">EL BAILE</option>
+
+  <option value="4936">EL BARBUCHO</option>
+
+  <option value="5013">EL CALAFATE</option>
+
+  <option value="5014">EL CERRITO</option>
+
+  <option value="5015">EL CHALTEN</option>
+
+  <option value="21086">EL CHARA</option>
+
+  <option value="21082">EL GUADAL</option>
+
+  <option value="4938">EL HUECO</option>
+
+  <option value="21095">EL LORO</option>
+
+  <option value="4903">EL PAN DE AZUCAR</option>
+
+  <option value="4904">EL PASO</option>
+
+  <option value="5038">EL PLUMA</option>
+
+  <option value="4970">EL PLUMA</option>
+
+  <option value="4942">EL POLVORIN</option>
+
+  <option value="5039">EL PORTEZUELO</option>
+
+  <option value="5048">EL SALADO</option>
+
+  <option value="12981">EL TURBIO</option>
+
+  <option value="4990">EL ZURDO</option>
+
+  <option value="4991">ESTACION ING ATILIO CAPPA</option>
+
+  <option value="4943">FARO CABO GUARDIAN</option>
+
+  <option value="4944">FARO CAMPANA</option>
+
+  <option value="4945">FITZ ROY</option>
+
+  <option value="4946">FLORADORA</option>
+
+  <option value="5016">FORTALEZA</option>
+
+  <option value="4992">FUENTES DE COYLE</option>
+
+  <option value="4905">GARMINUE</option>
+
+  <option value="4993">GAYPON</option>
+
+  <option value="12982">GLENCROSS</option>
+
+  <option value="5052">GOBERNADOR GREGORES</option>
+
+  <option value="4994">GOBERNADOR MAYER</option>
+
+  <option value="4947">GOBERNADOR MOYANO</option>
+
+  <option value="5017">GUARDAPARQUE FITZ ROY</option>
+
+  <option value="5054">H YRIGOYEN LAGO POSADAS</option>
+
+  <option value="12984">HOTEL LAS HORQUETAS</option>
+
+  <option value="4948">INDIA MUERTA</option>
+
+  <option value="21100">INGENIERO ATILIO CAPPA</option>
+
+  <option value="5040">INGENIERO PALLAVICINI</option>
+
+  <option value="4949">JARAMILLO</option>
+
+  <option value="4950">JELAINA</option>
+
+  <option value="4995">JULIA DUFOUR</option>
+
+  <option value="21094">KILOMETRO 8</option>
+
+  <option value="4951">KOLUEL KAIKE</option>
+
+  <option value="21087">LA AGUADA</option>
+
+  <option value="4952">LA ANTONIA</option>
+
+  <option value="4953">LA ARGENTINA</option>
+
+  <option value="5041">LA ASTURIANA</option>
+
+  <option value="4906">LA BARRETA</option>
+
+  <option value="4954">LA CENTRAL</option>
+
+  <option value="4996">LA ESPERANZA</option>
+
+  <option value="21088">LA ESTELA</option>
+
+  <option value="4929">LA ESTHER</option>
+
+  <option value="21096">LA FECUNDIDAD</option>
+
+  <option value="5018">LA FEDERICA</option>
+
+  <option value="5019">LA FLORIDA</option>
+
+  <option value="4955">LA GUARDIA</option>
+
+  <option value="4907">LA JULIA</option>
+
+  <option value="5020">LA LEONA</option>
+
+  <option value="4956">LA MADRUGADA</option>
+
+  <option value="12987">LA MANCHURIA</option>
+
+  <option value="4957">LA MARGARITA</option>
+
+  <option value="5042">LA MARIA</option>
+
+  <option value="21110">LA PENINSULA</option>
+
+  <option value="4908">LA PIGMEA</option>
+
+  <option value="4909">LA PORTE</option>
+
+  <option value="4958">LA PROTEGIDA</option>
+
+  <option value="4959">LA ROSA</option>
+
+  <option value="4960">LA ROSADA</option>
+
+  <option value="21089">LA VICTORIA</option>
+
+  <option value="4961">LA VIOLETA</option>
+
+  <option value="5021">LAGO ARGENTINO</option>
+
+  <option value="21092">LAGO BUENOS AIRES</option>
+
+  <option value="5043">LAGO BUENOS AIRES</option>
+
+  <option value="5053">LAGO CARDIEL</option>
+
+  <option value="22964">LAGO POSADAS</option>
+
+  <option value="21109">LAGO PUEYRREDON</option>
+
+  <option value="5022">LAGO ROCA</option>
+
+  <option value="5023">LAGO SAN MARTIN</option>
+
+  <option value="5055">LAGO STROBEL</option>
+
+  <option value="5024">LAGO TAR</option>
+
+  <option value="4997">LAGUNA COLORADA</option>
+
+  <option value="4910">LAGUNA GRANDE</option>
+
+  <option value="4962">LAS HERAS</option>
+
+  <option value="4998">LAS HORQUETAS</option>
+
+  <option value="4963">LAS MASITAS</option>
+
+  <option value="4911">LAS MERCEDES</option>
+
+  <option value="4974">LAS PIRAMIDES</option>
+
+  <option value="21091">LEANDRO NICEFORO ALEM</option>
+
+  <option value="5044">LOS ANTIGUOS</option>
+
+  <option value="5049">LOS MANANTIALES</option>
+
+  <option value="4965">MATA MAGALLANES</option>
+
+  <option value="4966">MAZAREDO</option>
+
+  <option value="4937">MESETA GUENGUE</option>
+
+  <option value="4999">MINA 3</option>
+
+  <option value="4967">MINERALES</option>
+
+  <option value="12979">MONTE AYMOND</option>
+
+  <option value="5045">MONTE CEBALLOS</option>
+
+  <option value="4968">MONTE VERDE</option>
+
+  <option value="5000">MORRO CHICO</option>
+
+  <option value="5046">NACIMIENTOS DEL PLUMA</option>
+
+  <option value="5001">PALERMO AIKE</option>
+
+  <option value="5002">PALI AIKE</option>
+
+  <option value="4969">PAMPA VERDUM</option>
+
+  <option value="5025">PASO CHARLES FHUR</option>
+
+  <option value="4912">PASO DE LOS INDIOS</option>
+
+  <option value="5056">PASO DEL AGUILA</option>
+
+  <option value="5003">PASO DEL MEDIO</option>
+
+  <option value="4913">PASO DEL RIO SANTA CRUZ</option>
+
+  <option value="21108">PASO GREGORES</option>
+
+  <option value="4914">PASO IBAÑEZ</option>
+
+  <option value="5026">PASO RIO LA LEONA</option>
+
+  <option value="12986">PASO ROBALLO</option>
+
+  <option value="4971">PELLEGRINI</option>
+
+  <option value="5027">PENINSULA MAIPU</option>
+
+  <option value="5047">PERITO MORENO</option>
+
+  <option value="4972">PICO TRUNCADO</option>
+
+  <option value="4973">PIEDRA CLAVADA</option>
+
+  <option value="5028">PIEDRA CLAVADA</option>
+
+  <option value="5004">PUEBLO NUEVO</option>
+
+  <option value="5005">PUENTE BLANCO</option>
+
+  <option value="4975">PUERTO DESEADO</option>
+
+  <option value="5050">PUERTO SAN JULIAN</option>
+
+  <option value="4915">PUERTO SANTA CRUZ</option>
+
+  <option value="5029">PUNTA BANDERA</option>
+
+  <option value="5030">PUNTA DEL LAGO VIEDMA</option>
+
+  <option value="5006">PUNTA DEL MONTE</option>
+
+  <option value="12980">PUNTA LOYOLA</option>
+
+  <option value="4976">PUNTA MERCEDES</option>
+
+  <option value="5031">QUIEN SABE</option>
+
+  <option value="5007">RINCON DE LOS MORROS</option>
+
+  <option value="5032">RIO BOTE</option>
+
+  <option value="21103">RIO CALAFATE</option>
+
+  <option value="4916">RIO CHICO</option>
+
+  <option value="21105">RIO FENIX</option>
+
+  <option value="21575">RIO GALLEGOS</option>
+
+  <option value="21104">RIO MITRE</option>
+
+  <option value="5008">RIO TURBIO</option>
+
+  <option value="5009">ROSPENTEK</option>
+
+  <option value="21102">ROSPENTEK AIKE</option>
+
+  <option value="4977">SARAI</option>
+
+  <option value="4917">SIERRA DE LA VENTANA</option>
+
+  <option value="12985">TAMEL AIKE</option>
+
+  <option value="5010">TAPI AIKE</option>
+
+  <option value="4918">TAUEL AIKE</option>
+
+  <option value="4978">TEHUELCHES</option>
+
+  <option value="4979">TELLIER</option>
+
+  <option value="4980">TRES CERROS</option>
+
+  <option value="5033">TRES LAGOS</option>
+
+  <option value="21090">TRES PUNTAS</option>
+
+  <option value="5057">TUCU TUCU</option>
+
+  <option value="5034">VENTISQUERO MORENO</option>
+
+  <option value="12988">YACIMIENTO CERRO VANGUARDIA</option>
+
+  <option value="4981">YEGUA MUERTA</option>
+
+  <option value="4922">ZANJON DEL PESCADO</option>
+
+</select>
+        <div class="text-danger small"></div>
+    </div>
+</div>
+
+            <div class="row justify-content-between my-3 no-imprimir">
+                <div class="col-5">
+                    <button type="button" class="btn-volver btn btn-secondary btn-block">
+                        <span id="icon-btnvolver"><i class="fas fa-chevron-circle-left"></i></span>
+                        <span id="txt-btnvolver">Volver</span>
+                    </button>
+                </div>
+                <div class="col-5 d-grid">
+                    <button type="button" class="btn-continuar btn-success btn" >
+                        <span id="txt-btncontinuar">Continuar</span>
+                        <span id="icon-btncontinuar"><i class="fas fa-chevron-circle-right"></i></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="paso" paso="3">
+            
+
+<div class="col align-content-center titulo-seccion mb-3">Adjuntar documentación</div>
+
+<div class="d-flex align-items-center gap-2 flex-wrap mb-4">
+  <span class="text-muted" style="font-size:12px;">Formatos aceptados:</span>
+    
+  <span class="badge rounded-pill bg-light text-secondary border" style="font-size:11px;">
+    PDF
+  </span>
+  
+  <span class="badge rounded-pill bg-light text-secondary border" style="font-size:11px;">
+    JPEG
+  </span>
+  
+  <span class="badge rounded-pill bg-light text-secondary border" style="font-size:11px;">
+    PNG
+  </span>
+  
+  <span class="badge rounded-pill bg-light text-secondary border" style="font-size:11px;">
+    TIFF
+  </span>
+  
+</div>
+
+<div class="mb-4">
+  <div class="doc-section-title">
+    <i class="bi bi-person-vcard"></i> Documento de identidad
+  </div>
+  <div class="row g-3">
+    <div class="documento col-md-6 col-12">
+      <div class="upload-box position-relative">
+        <i class="bi bi-cloud-arrow-up"></i>
+        <label for="id_documento_frente_adjunto">
+          Documento (frente)
+        </label>
+        <span class="upload-hint">Clic para adjuntar</span>
+        <input type="file" name="documento_frente_adjunto" class="form-control" required aria-describedby="id_documento_frente_adjunto_helptext" id="id_documento_frente_adjunto">
+      </div>
+      <small id="documento_frente_adjunto-error" class="form-text text-danger mt-1">
+        
+      </small>
+    </div>
+    <div class="documento col-md-6 col-12">
+      <div class="upload-box position-relative">
+        <i class="bi bi-cloud-arrow-up"></i>
+        <label for="id_documento_dorso_adjunto">
+          Documento (dorso)
+        </label>
+        <span class="upload-hint">Clic para adjuntar</span>
+        <input type="file" name="documento_dorso_adjunto" class="form-control" required id="id_documento_dorso_adjunto">
+      </div>
+      <small id="documento_dorso_adjunto-error" class="form-text text-danger mt-1">
+        
+      </small>
+    </div>
+  </div>
+</div>
+
+<div class="mb-4" id="documentacion-jubilacion-pension">
+  <div class="doc-section-title">
+    <i class="bi bi-file-earmark-medical"></i> Carnet de jubilado / pensionado
+  </div>
+  <div class="row g-3">
+    <div class="documento col-md-6 col-12" id="documentacion-jubilacion">
+      <div class="upload-box position-relative">
+        <i class="bi bi-cloud-arrow-up"></i>
+        <label for="id_carnet_jubilado_adjunto">
+          Carnet de jubilado y/o pensionado
+        </label>
+        <span class="upload-hint">Clic para adjuntar</span>
+        <input type="file" name="carnet_jubilado_adjunto" class="form-control" id="id_carnet_jubilado_adjunto">
+      </div>
+      <small id="carnet_jubilado_adjunto-error" class="form-text text-danger mt-1">
+        
+      </small>
+    </div>
+  </div>
+</div>
+
+<div class="mb-4">
+  <div class="doc-section-title">
+    <i class="bi bi-shield-check"></i> Certificados especiales
+  </div>
+  <div class="row g-3">
+    <div class="documento col-md-6 col-12" id="documentacion-cud">
+      <div class="upload-box position-relative">
+        <i class="bi bi-cloud-arrow-up"></i>
+        <label for="id_certificado_discapacidad">
+          Certificado Único de Discapacidad (CUD)
+        </label>
+        <span class="upload-hint">Clic para adjuntar</span>
+        <input type="file" name="certificado_discapacidad" class="form-control" id="id_certificado_discapacidad">
+      </div>
+      <small id="certificado_discapacidad-error" class="form-text text-danger mt-1">
+        
+      </small>
+    </div>
+    <div class="documento col-md-6 col-12" id="documentacion-excombatiente">
+      <div class="upload-box position-relative">
+        <i class="bi bi-cloud-arrow-up"></i>
+        <label for="id_certificado_excombatiente">
+          Permiso Único para Excombatientes de Malvinas Argentinas
+          <span class="fw-normal text-muted">(opcional)</span>
+        </label>
+        <span class="upload-hint">Clic para adjuntar</span>
+        <input type="file" name="certificado_excombatiente" class="form-control" id="id_certificado_excombatiente">
+      </div>
+      <small id="certificado_excombatiente-error" class="form-text text-danger mt-1">
+        
+      </small>
+    </div>
+  </div>
+</div>
+
+<div class="mb-4">
+  <div class="doc-section-title">
+    <i class="bi bi-receipt"></i> Comprobantes
+  </div>
+  <div class="row g-3">
+    <div class="documento col-md-6 col-12" id="documentacion-socio">
+      <div class="upload-box position-relative">
+        <i class="bi bi-cloud-arrow-up"></i>
+        <label for="id_carnet_socio_adjunto">
+          Comprobante de pago de club de pesca (al día)
+        </label>
+        <span class="upload-hint">Clic para adjuntar</span>
+        <input type="file" name="carnet_socio_adjunto" class="form-control" id="id_carnet_socio_adjunto">
+      </div>
+      <small id="carnet_socio_adjunto-error" class="form-text text-danger mt-1">
+        
+      </small>
+    </div>
+  </div>
+</div>
+
+            
+            <div class="row justify-content-between my-3 no-imprimir">
+                <div class="col-5">
+                    <button type="button" class="btn-volver btn btn-secondary btn-block">
+                        <span id="icon-btnvolver"><i class="fas fa-chevron-circle-left"></i></span>
+                        <span id="txt-btnvolver">Volver</span>
+                    </button>
+                </div>
+                <div class="col-5 d-grid">
+                    <button type="button" class="btn-continuar btn-success btn" >
+                        <span id="txt-btncontinuar">Continuar</span>
+                        <span id="icon-btncontinuar"><i class="fas fa-chevron-circle-right"></i></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="paso" paso="4">
+            <div class="col align-content-center mb-3">
+  <h5 class="text-primary mb-3">Datos de pago</h5>  
+</div>
+
+
+<div class="d-flex flex-wrap gap-2 mb-3">
+    <button type="button"
+            class="btn btn-primary fw-semibold shadow-sm"
+            data-bs-toggle="modal"
+            data-bs-target="#modal-datos_pago">
+        <i class="bi bi-bank me-2"></i>
+        Datos bancarios
+        <i class="bi bi-chevron-right ms-2"></i>
+    </button>
+    <button type="button"
+            class="btn btn-light border shadow-sm"
+            data-bs-toggle="modal"
+            data-bs-target="#modal-categorias">
+        <i class="bi bi-tags text-success me-2"></i>
+        Valores y categorías
+        <i class="bi bi-chevron-right ms-2"></i>
+    </button>
+</div>
+
+<div class="row justify-content-center">
+    <div class="d-flex justify-content-between align-items-baseline">
+      <label class="form-label fw-semibold mb-0">Seleccioná el tipo de pago</label>
+    </div>
+
+    <div class="row g-2 mb-4">
+      
+      <div class="col-xl-4 col-md-4 col-6 pago-card"
+           data-descripcion=""
+           data-identificador="pago_deposito">
+        <input type="radio"
+               name="tipo_pago"
+               value="2"
+               id="id_tipo_pago_0"
+               class="custom-radio-list"
+               
+               required>
+        <label class="pago-label w-100" for="id_tipo_pago_0">
+          <div class="pago-check"></div>
+          <i class="bi bi-pago_deposito pago-icon" aria-hidden="true"></i>
+          <span class="fw-semibold" style="font-size:13px;">DEPÓSITO BANCARIO</span>
+          
+        </label>
+      </div>
+      
+      <div class="col-xl-4 col-md-4 col-6 pago-card"
+           data-descripcion="Opción para el pago de permisos sin costo"
+           data-identificador="pago_sin_costo">
+        <input type="radio"
+               name="tipo_pago"
+               value="4"
+               id="id_tipo_pago_1"
+               class="custom-radio-list"
+               
+               required>
+        <label class="pago-label w-100" for="id_tipo_pago_1">
+          <div class="pago-check"></div>
+          <i class="bi bi-pago_sin_costo pago-icon" aria-hidden="true"></i>
+          <span class="fw-semibold" style="font-size:13px;">NINGUNO</span>
+          
+        </label>
+      </div>
+      
+      <div class="col-xl-4 col-md-4 col-6 pago-card"
+           data-descripcion=""
+           data-identificador="pago_transferencia">
+        <input type="radio"
+               name="tipo_pago"
+               value="1"
+               id="id_tipo_pago_2"
+               class="custom-radio-list"
+               
+               required>
+        <label class="pago-label w-100" for="id_tipo_pago_2">
+          <div class="pago-check"></div>
+          <i class="bi bi-pago_transferencia pago-icon" aria-hidden="true"></i>
+          <span class="fw-semibold" style="font-size:13px;">TRANSFERENCIA BANCARIA</span>
+          
+        </label>
+      </div>
+      
+    </div>
+
+    <small id="tipo_pago-error" class="form-text text-danger d-block mb-3">
+      
+    </small>
+</div>
+
+
+<!-- Total a pagar -->
+<div class="row mb-4">
+  <div class="col-12">
+    <div class="rounded-3 p-3 shadow-sm d-flex justify-content-between align-items-center" style="background:#fff;border:1px solid #e9ecef;">
+      <div>
+        <div class="text-muted" style="font-size:12px;">Total a pagar</div>
+        <div id="total-amount" class="fw-semibold text-success" style="font-size:20px;">$0</div>
+      </div>
+    </div>
+    <input type="hidden" name="total_pago" id="id_total_pago" value="">
+  </div>
+</div>
+
+
+<div class="row g-3 mb-3">
+  <div class="col-md-3 col-12" id="fecha_pago">
+    <label for="id_fecha_pago_day" class="form-label fw-semibold">
+      <i class="bi bi-calendar3 me-1 text-muted"></i>Fecha de pago
+    </label>
+    <div class="input-group date" id="datetimepicker" data-target-input="nearest">
+      <select name="fecha_pago_day" required id="id_fecha_pago_day" class="form-select"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16" selected>16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option></select><select name="fecha_pago_month" required id="id_fecha_pago_month" class="form-select"><option value="1">enero</option><option value="2">febrero</option><option value="3">marzo</option><option value="4">abril</option><option value="5">mayo</option><option value="6">junio</option><option value="7">julio</option><option value="8">agosto</option><option value="9">septiembre</option><option value="10">octubre</option><option value="11" selected>noviembre</option><option value="12">diciembre</option></select><select name="fecha_pago_year" required id="id_fecha_pago_year" class="form-select"><option value="2021">2021</option><option value="2022">2022</option><option value="2023">2023</option><option value="2024">2024</option><option value="2025">2025</option><option value="2026" selected>2026</option><option value="2027">2027</option></select>
+    </div>
+    <small id="fecha_pago-error"      class="form-text text-danger"></small>
+    <small id="fecha_pago_dia-error"  class="form-text text-danger"></small>
+    <small id="fecha_pago_mes-error"  class="form-text text-danger"></small>
+    <small id="fecha_pago_anio-error" class="form-text text-danger"></small>
+  </div>
+
+  <div class="col-md-9 col-12">
+    <label for="id_pago_transaccion" class="form-label fw-semibold">
+      <i class="bi bi-hash me-1 text-muted"></i>Número de transacción
+    </label>
+    <input type="text" name="pago_transaccion" placeholder="Ej: 1234567" class="form-control" maxlength="64" id="id_pago_transaccion">
+    <small id="pago_transaccion-error" class="form-text text-danger">
+      
+    </small>
+  </div>
+</div>
+
+<div class="row mb-4">
+  <div class="col-12">
+    <label for="id_pago_observacion" class="form-label fw-semibold">
+      <i class="bi bi-chat-left-text me-1 text-muted"></i>Observaciones
+      <span class="fw-normal text-muted">(opcional)</span>
+    </label>
+    <textarea name="pago_observacion" cols="40" rows="4" maxlength="1024" class="form-control" id="id_pago_observacion">
+</textarea>
+    <small class="form-text text-danger"></small>
+  </div>
+</div>
+
+<div class="mb-4">
+  <div class="doc-section-title">
+    <i class="bi bi-file-earmark-medical"></i> Comprobante de pago
+  </div>
+  <div class="row g-3">
+    <div class="documento col-md-6 col-12" id="documentacion-pago">
+      <div class="upload-box position-relative">
+        <i class="bi bi-cloud-arrow-up"></i>
+        <label for="id_comprobante_pago_adjunto">
+          Comprobante de pago
+        </label>
+        <span class="upload-hint">Clic para adjuntar</span>
+        <input type="file" name="comprobante_pago_adjunto" class="form-control" id="id_comprobante_pago_adjunto">
+      </div>
+      <small id="comprobante_pago_adjunto-error" class="form-text text-danger mt-1">
+        
+      </small>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<div class="modal fade" id="modal-datos_pago" tabindex="-1" aria-labelledby="modal-datos_pago-label" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header border-0 pb-0">
+        <div>
+          <p class="text-muted mb-0" style="font-size:11px;text-transform:uppercase;letter-spacing:.08em;">Ministerio de Producción, Comercio e Industria</p>
+          <h5 class="modal-title fw-semibold" id="modal-datos_pago-label">
+            <i class="bi bi-bank me-2 text-primary"></i>Datos para transferencia
+          </h5>
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+
+      <div class="modal-body pt-3">
+
+        
+        
+
+<div class="rounded-3 p-3 mb-4" style="background:#f0f4f8;border:1px solid #c8d8e8;">
+  <div class="row g-3">
+    <div class="col-12">
+      <div style="font-size:11px;color:#666;text-transform:uppercase;letter-spacing:.06em;margin-bottom:2px;">CBU</div>
+      <div class="fw-semibold font-monospace" style="font-size:15px;letter-spacing:.04em;">0860001101800041612586</div>
+    </div>
+    <div class="col-sm-6">
+      <div style="font-size:11px;color:#666;text-transform:uppercase;letter-spacing:.06em;margin-bottom:2px;">CUIT</div>
+      <div class="fw-semibold font-monospace">30-71066083-9</div>
+    </div>
+    <div class="col-sm-6">
+      <div style="font-size:11px;color:#666;text-transform:uppercase;letter-spacing:.06em;margin-bottom:2px;">CC N°</div>
+      <div class="fw-semibold font-monospace">1-416125-8</div>
+    </div>
+  </div>
+</div>
+
+<div class="d-flex flex-column gap-2">
+  <div class="d-flex gap-2 align-items-start p-2 rounded-2" style="background:#e8f4fd;border:1px solid #90caf9;">
+    <i class="bi bi-info-circle-fill text-primary flex-shrink-0 mt-1" style="font-size:13px;"></i>
+    <div style="font-size:13px;color:#0d3a5c;">
+      Si transferís por <strong>MercadoPago</strong>, informá en el comprobante el <strong>nombre completo del titular</strong> del pago.
+    </div>
+  </div>
+  <div class="d-flex gap-2 align-items-start p-2 rounded-2" style="background:#fce4ec;border:1px solid #f48fb1;">
+    <i class="bi bi-x-circle-fill flex-shrink-0 mt-1" style="font-size:13px;color:#c62828;"></i>
+    <div style="font-size:13px;color:#7b0000;">
+      <strong>No aceptamos transferencias en moneda extranjera.</strong>
+    </div>
+  </div>
+</div>
+
+
+      </div>
+
+      <div class="modal-footer border-0 pt-0">
+        <button type="button" class="btn btn-outline-secondary btn-sm" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="modal-categorias" tabindex="-1" aria-labelledby="modal-categorias-label" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+
+      <div class="modal-header border-0 pb-0">
+        <div>
+          <p class="text-muted mb-0" style="font-size:11px;text-transform:uppercase;letter-spacing:.08em;">Temporada vigente</p>
+          <h5 class="modal-title fw-semibold" id="modal-categorias-label">
+            <i class="bi bi-tag me-2 text-primary"></i>Valores y categorías
+          </h5>
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+
+      <div class="modal-body pt-3">
+
+        
+        <div class="mb-4">
+          <div class="d-flex align-items-center gap-2 mb-2">
+            <span class="badge bg-primary" style="font-size:11px;">Residentes</span>
+            <span class="text-muted" style="font-size:12px;">Permisos ordinarios</span>
+          </div>
+          <table class="table table-sm table-hover mb-0" style="font-size:13px;">
+            <thead class="table-light">
+              <tr>
+                <th>Permiso</th>
+                <th class="text-center" style="width:90px;">Categoría</th>
+                <th class="text-end" style="width:120px;">Precio</th>
+              </tr>
+            </thead>
+            <tbody>
+                
+                <tr data-price="0,0" data-permiso-id="8">
+                    <td>
+                        Persona con discapacidad
+
+                        
+                            <div class="text-muted small mt-1">
+                                Permiso por temporada para personas con discapacidad argentinas o residentes en el país (con CUD)
+                            </div>
+                        
+                    </td>
+
+                    <td class="text-center">
+                        <span class="badge bg-light text-secondary border fw-semibold">
+                            RP-JPM
+                        </span>
+                    </td>
+
+                    <td class="text-end">
+                        
+                            <span class="badge bg-success-subtle text-success border border-success fw-semibold">
+                                Sin cargo
+                            </span>
+                        
+                    </td>
+                </tr>
+                
+                <tr data-price="25000,0" data-permiso-id="2">
+                    <td>
+                        Residente país semanal
+
+                        
+                            <div class="text-muted small mt-1">
+                                Permiso semanal para pescadores argentinos o residentes en el país
+                            </div>
+                        
+                    </td>
+
+                    <td class="text-center">
+                        <span class="badge bg-light text-secondary border fw-semibold">
+                            RP-S
+                        </span>
+                    </td>
+
+                    <td class="text-end">
+                        
+                            <span class="fw-semibold">
+                                $25000
+                            </span>
+                        
+                    </td>
+                </tr>
+                
+                <tr data-price="0,0" data-permiso-id="5">
+                    <td>
+                        Menores de hasta 12 años
+
+                        
+                            <div class="text-muted small mt-1">
+                                Permiso por temporada para menores (hasta 12 años) argentinos o residentes en el país
+                            </div>
+                        
+                    </td>
+
+                    <td class="text-center">
+                        <span class="badge bg-light text-secondary border fw-semibold">
+                            RP-JPM
+                        </span>
+                    </td>
+
+                    <td class="text-end">
+                        
+                            <span class="badge bg-success-subtle text-success border border-success fw-semibold">
+                                Sin cargo
+                            </span>
+                        
+                    </td>
+                </tr>
+                
+                <tr data-price="40000,0" data-permiso-id="3">
+                    <td>
+                        Residente país temporada
+
+                        
+                            <div class="text-muted small mt-1">
+                                Permiso por temporada para pescadores argentinos o residentes en el país
+                            </div>
+                        
+                    </td>
+
+                    <td class="text-center">
+                        <span class="badge bg-light text-secondary border fw-semibold">
+                            RP-T
+                        </span>
+                    </td>
+
+                    <td class="text-end">
+                        
+                            <span class="fw-semibold">
+                                $40000
+                            </span>
+                        
+                    </td>
+                </tr>
+                
+                <tr data-price="20000,0" data-permiso-id="9">
+                    <td>
+                        Socio de club de pesca
+
+                        
+                            <div class="text-muted small mt-1">
+                                Permiso por temporada para socios de club de pesca
+                            </div>
+                        
+                    </td>
+
+                    <td class="text-center">
+                        <span class="badge bg-light text-secondary border fw-semibold">
+                            SC
+                        </span>
+                    </td>
+
+                    <td class="text-end">
+                        
+                            <span class="fw-semibold">
+                                $20000
+                            </span>
+                        
+                    </td>
+                </tr>
+                
+                <tr data-price="15000,0" data-permiso-id="1">
+                    <td>
+                        Residente país diario
+
+                        
+                            <div class="text-muted small mt-1">
+                                Permiso diario para pescadores argentinos o residentes en el país
+                            </div>
+                        
+                    </td>
+
+                    <td class="text-center">
+                        <span class="badge bg-light text-secondary border fw-semibold">
+                            RP-D
+                        </span>
+                    </td>
+
+                    <td class="text-end">
+                        
+                            <span class="fw-semibold">
+                                $15000
+                            </span>
+                        
+                    </td>
+                </tr>
+                
+                <tr data-price="0,0" data-permiso-id="17">
+                    <td>
+                        Tte. Cnel. RUBEN OSCAR ZUNINO
+
+                        
+                            <div class="text-muted small mt-1">
+                                Permiso Único para Excombatientes de Malvinas Argentinas
+                            </div>
+                        
+                    </td>
+
+                    <td class="text-center">
+                        <span class="badge bg-light text-secondary border fw-semibold">
+                            EM
+                        </span>
+                    </td>
+
+                    <td class="text-end">
+                        
+                            <span class="badge bg-success-subtle text-success border border-success fw-semibold">
+                                Sin cargo
+                            </span>
+                        
+                    </td>
+                </tr>
+                
+                <tr data-price="15000,0" data-permiso-id="4">
+                    <td>
+                        Menores de hasta 17 años
+
+                        
+                            <div class="text-muted small mt-1">
+                                Permiso por temporada para menores argentinos o residentes en el país (13 a 17 años)
+                            </div>
+                        
+                    </td>
+
+                    <td class="text-center">
+                        <span class="badge bg-light text-secondary border fw-semibold">
+                            RPM-T
+                        </span>
+                    </td>
+
+                    <td class="text-end">
+                        
+                            <span class="fw-semibold">
+                                $15000
+                            </span>
+                        
+                    </td>
+                </tr>
+                
+                <tr data-price="20000,0" data-permiso-id="18">
+                    <td>
+                        Residente país fin de semana
+
+                        
+                            <div class="text-muted small mt-1">
+                                Permiso Residente País Fin de Semana (Sábado y Domingo)
+                            </div>
+                        
+                    </td>
+
+                    <td class="text-center">
+                        <span class="badge bg-light text-secondary border fw-semibold">
+                            RP-F
+                        </span>
+                    </td>
+
+                    <td class="text-end">
+                        
+                            <span class="fw-semibold">
+                                $20000
+                            </span>
+                        
+                    </td>
+                </tr>
+                
+                <tr data-price="0,0" data-permiso-id="6">
+                    <td>
+                        Mayores de 65 años
+
+                        
+                            <div class="text-muted small mt-1">
+                                Permiso por temporada para mayores de 65 años argentinos o residentes en el país
+                            </div>
+                        
+                    </td>
+
+                    <td class="text-center">
+                        <span class="badge bg-light text-secondary border fw-semibold">
+                            RP-JPM
+                        </span>
+                    </td>
+
+                    <td class="text-end">
+                        
+                            <span class="badge bg-success-subtle text-success border border-success fw-semibold">
+                                Sin cargo
+                            </span>
+                        
+                    </td>
+                </tr>
+                
+                <tr data-price="0,0" data-permiso-id="7">
+                    <td>
+                        Jubilados y/o pensionados
+
+                        
+                            <div class="text-muted small mt-1">
+                                Permiso por temporada para jubilados y/o pensionados argentinos o residentes en el país
+                            </div>
+                        
+                    </td>
+
+                    <td class="text-center">
+                        <span class="badge bg-light text-secondary border fw-semibold">
+                            RP-JPM
+                        </span>
+                    </td>
+
+                    <td class="text-end">
+                        
+                            <span class="badge bg-success-subtle text-success border border-success fw-semibold">
+                                Sin cargo
+                            </span>
+                        
+                    </td>
+                </tr>
+                
+            </tbody>
+          </table>
+        </div>
+
+        
+        <div>
+          <div class="d-flex align-items-center gap-2 mb-2">
+            <span class="badge bg-secondary" style="font-size:11px;">No residentes</span>
+            <span class="text-muted" style="font-size:12px;">Extranjeros</span>
+          </div>
+          <table class="table table-sm table-hover mb-0" style="font-size:13px;">
+            <thead class="table-light">
+              <tr>
+                <th>Permiso</th>
+                <th class="text-center" style="width:90px;">Categoría</th>
+                <th class="text-end" style="width:120px;">Precio</th>
+              </tr>
+            </thead>
+            <tbody>
+                
+                <tr data-price="90000,0" data-permiso-id="10">
+                    <td>
+                        No residente país diario
+
+                        
+                            <div class="text-muted small mt-1">
+                                Permiso diario para no residentes en el país
+                            </div>
+                        
+                    </td>
+
+                    <td class="text-center">
+                        <span class="badge bg-light text-secondary border fw-semibold">
+                            E-D
+                        </span>
+                    </td>
+
+                    <td class="text-end">
+                        
+                            <span class="fw-semibold">
+                                $90000
+                            </span>
+                        
+                    </td>
+                </tr>
+                
+                <tr data-price="300000,0" data-permiso-id="11">
+                    <td>
+                        No residente país semanal
+
+                        
+                            <div class="text-muted small mt-1">
+                                Permiso semanal para no residentes en el país
+                            </div>
+                        
+                    </td>
+
+                    <td class="text-center">
+                        <span class="badge bg-light text-secondary border fw-semibold">
+                            E-S
+                        </span>
+                    </td>
+
+                    <td class="text-end">
+                        
+                            <span class="fw-semibold">
+                                $300000
+                            </span>
+                        
+                    </td>
+                </tr>
+                
+                <tr data-price="450000,0" data-permiso-id="12">
+                    <td>
+                        No residente país temporada
+
+                        
+                            <div class="text-muted small mt-1">
+                                Permiso por temporada para no residentes en el país
+                            </div>
+                        
+                    </td>
+
+                    <td class="text-center">
+                        <span class="badge bg-light text-secondary border fw-semibold">
+                            E-T
+                        </span>
+                    </td>
+
+                    <td class="text-end">
+                        
+                            <span class="fw-semibold">
+                                $450000
+                            </span>
+                        
+                    </td>
+                </tr>
+                
+            </tbody>
+          </table>
+        </div>
+
+        <div class="mt-3 p-2 rounded-2 d-flex gap-2 align-items-start" style="background:#f8f9fa;border:0.5px solid #dee2e6;">
+          <i class="bi bi-info-circle text-muted flex-shrink-0 mt-1" style="font-size:13px;"></i>
+          <div class="text-muted" style="font-size:12px;">
+            Los precios pueden actualizarse al inicio de cada temporada. El valor abonado queda registrado en el comprobante de pago.
+          </div>
+        </div>
+
+      </div>
+
+      <div class="modal-footer border-0 pt-0">
+        <button type="button" class="btn btn-outline-secondary btn-sm" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+            <div class="d-flex align-items-start gap-3 p-3 mb-4 rounded-3"
+                style="background:#e7f5ff; border:1px solid #0dcaf0;">
+            <input type="checkbox" name="autoriza_revisar_mochila" class="form-check-input flex-shrink-0 mt-1" style="width:16px;height:16px;" id="id_autoriza_revisar_mochila">
+            <label class="form-check-label" for="id_autoriza_revisar_mochila" style="font-size:13px;color:#055160;">
+                <strong>¿Autoriza la revisión de su mochila por parte de los inspectores de pesca, en caso de ser requerida durante un control?</strong><br><small class="text-muted">Esta autorización es voluntaria. Se informa que los inspectores de pesca podrán solicitar la revisión de la mochila durante los controles correspondientes.</small>
+                <span class="fw-normal text-muted">(opcional)</span>
+            </label>
+            </div>
+
+            <div class="d-flex align-items-start gap-3 p-3 mb-4 rounded-3"
+                style="background:#fff3cd; border:1px solid #ffc107;">
+            <input class="form-check-input flex-shrink-0 mt-1"
+                    type="checkbox"
+                    id="terminosYCondiciones"
+                    name="terminosYCondiciones"
+                    required
+                    style="width:16px;height:16px;">
+            <label class="form-check-label" for="terminosYCondiciones" style="font-size:13px;color:#664d03;">
+                Confirmo que <strong>he leído y acepto</strong> los términos y condiciones generales
+                descriptas en el
+                <a href="/reglamento/" target="_blank"
+                style="color:#664d03;font-weight:600;">reglamento de pesca</a>.
+            </label>
+            </div>
+            
+            <div class="mb-3">
+                
+                
+                <div class="captcha-widget" data-api-key="cap_pub_fc8b45c913210eade8671eb3b008574f6098a552be8457abcfd28cbbe057b8a6" data-difficulty="easy"></div>
+                <small id="captcha_token-error" class="form-text text-danger">
+                    
+                </small>
+                
+            </div>
+
+            <div class="row justify-content-between my-3 no-imprimir">
+                 <div class="col-5">
+                    <button type="button" class="btn-volver btn btn-secondary btn-block">
+                        <span id="icon-btnvolver"><i class="fas fa-chevron-circle-left"></i></span>
+                        <span id="txt-btnvolver">Volver</span>
+                    </button>
+                </div>
+                <div class="col-5 d-grid">
+                    <button type="button" class="btn-enviar btn-success btn" >
+                        <span id="txt-btncontinuar">Enviar solicitud</span>
+                        <span id="icon-btncontinuar"><i class="fas fa-chevron-circle-right"></i></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </form>
+<script src="/static/permisos/js/funciones_alta_permiso.js"></script>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+  
+  
+  
+<footer class="footer">
+
+  <div class="container px-4 py-5">
+    <div class="row g-4">
+
+      
+
+      
+       <!-- Columna 1 -->
+      <div class="col-6 col-md-4">
+        <h4 class="footer-heading">Contacto</h4>
+        <ul class="footer-links">
+          <li><a href="mailto:pesca-continental@santacruz.gob.ar">pesca-continental@santacruz.gob.ar</a></li>
+          <li><a href="tel:+542966429462">+54 2966 429462</a></li>
+          <li><a href="/contacto/">Datos de contacto</a></li>
+        </ul>
+      </div>
+
+      <!-- Columna 2 -->
+      <div class="col-6 col-md-4">
+        <h4 class="footer-heading">Recursos</h4>
+        <ul class="footer-links">
+          <li><a href="/ayuda/">Ayuda</a></li>
+          <li><a href="/reglamento/">Reglamento de pesca</a></li>
+          <li><a href="/valores/">Valores y categorías</a></li>
+          <li><a href="/multas/">Valores de multas</a></li>
+        </ul>
+      </div>
+
+      <!-- Columna 3 -->
+      <div class="col-6 col-md-4">
+        <h4 class="footer-heading">Sitios oficiales</h4>
+        <ul class="footer-links">
+          <li><a href="https://minpro.santacruz.gob.ar/pesca" target="_blank" rel="noreferrer">Secretaría de Pesca y Acuicultura</a></li>
+          <li><a href="https://www.santacruzpatagonia.gob.ar/" target="_blank" rel="noreferrer">Turismo en Santa Cruz</a></li>
+          <li><a href="https://www.hidro.gov.ar/observatorio/Astronomia.asp?op=10" target="_blank" rel="noreferrer">Salida y puesta del sol</a></li>
+          <li><a href="https://informatica.santacruz.gob.ar/" target="_blank" rel="noreferrer">Subsecretaría de Informática</a></li>
+          <li><a href="https://cap.santacruz.gob.ar/%C3%A1reas-protegidas" target="_blank" rel="noreferrer">Áreas Protegidas (CAP)</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Desarrollo del sistema -->
+  <div class="container px-4 py-3">
+    <div class="d-flex flex-column flex-sm-row justify-content-between align-items-center gap-2 small">
+      <div class="d-flex align-items-center gap-2 text-center text-sm-start">
+        <img src="/static/img/LogoSubse.png"
+             alt="Logo Subsecretaría de Informática"
+             style="height: 22px; width: auto;">
+        <span>
+          Desarrollado por
+          <strong>Subsecretaría de Informática</strong>
+        </span>
+      </div>
+      <div>
+        <a href="mailto:pesca@santacruz.gob.ar"
+           class="text-white text-decoration-none" style="opacity: 0.85;">
+          Soporte técnico: pesca@santacruz.gob.ar
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom -->
+  <div class="footer-bottom">
+    <div class="container px-4 d-flex flex-column flex-sm-row justify-content-between align-items-center gap-2">
+      <p class="mb-0">
+        © 2026 Gobierno de la Provincia de Santa Cruz. Todos los derechos reservados.
+      </p>
+      <p class="mb-0">
+        Secretaría de Estado de Pesca y Acuicultura - Subsecretaría de Informática
+      </p>
+    </div>
+  </div>
+
+</footer>
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="/static/js/frontend.js" defer></script>
+  <script src="/static/js/pesca-behaviors.js" defer></script>
+  
+  <script src="https://captcha.santacruz.gob.ar/static/js/captcha-widget.js" defer></script>
+  
+  
+    <script type="application/javascript" src="/static/permisos/js/form_pasos.js"> </script>
+
+  
+
+</body>
+</html>
