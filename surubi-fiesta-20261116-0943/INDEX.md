@@ -1,0 +1,14 @@
+# surubi-fiesta: 2026-11-16
+
+Agente: ResearchBot/1.0 (editorial research; 1 request/1.5 s; obeys robots.txt)
+Páginas pedidas: 7 · modo: HTTP simple · robots.txt respetado
+
+| URL | HTTP | Título | H1 | Palabras | Datos estructurados | Archivo / nota |
+| --- | --- | --- | --- | --- | --- | --- |
+| https://www.elonce.com/uid-882565 | 200 | Fiesta Nacional del Surubí: habrá $1.000 millones en premios / Elonce.com | Fiesta Nacional del Surubí: habrá $1.000 millones en premios y esperan 1.400 equipos | 980 | NewsArticle, BreadcrumbList, WebSite, NewsMediaOrganization | 01-www-elonce-com-uid-882565.md |
+| https://www.elonce.com/sociedad/record-en-la-fiesta-nacional-del-surubi-completo-cupo-de-inscriptos-a-siete-meses-de-su-realizacion.htm | 200 | Fiesta Nacional del Surubí: cupo de inscriptos en tiempo récord / Elonce.com | Récord en la Fiesta Nacional del Surubí: completó cupo de inscriptos a siete meses de su realización | 1113 | NewsArticle, BreadcrumbList, WebSite, NewsMediaOrganization | 02-www-elonce-com-sociedad-record-en-la-fiesta-nacional-del-surubi-completo-cupo-de.md |
+| https://www.elonce.com/uid-883717 | 200 | Fiesta del Surubí agotó cupos y analizan ampliarlos / Elonce.com | Fiesta del Surubí: agotaron los cupos en dos horas, 300 equipos quedaron afuera y analizan una ampliación | 1348 | NewsArticle, BreadcrumbList, WebSite, NewsMediaOrganization | 03-www-elonce-com-uid-883717.md |
+| https://www.canal26.com/turismo/2026/04/15/confirman-fechas-y-artistas-que-tocaran-en-la-fiesta-nacional-del-surubi-estara-la-joaqui-kapanga-y-el-polaco/ | 200 | Confirman fechas y artistas que tocarán en la Fiesta Nacional del Surubí: estará La Joaqui, Kapanga y El Polaco / canal26.com | Confirman fechas y artistas que tocarán en la Fiesta Nacional del Surubí: estará La Joaqui, Kapanga y El Polaco | 1082 | NewsArticle, BreadcrumbList, NewsMediaOrganization, WebSite | 04-www-canal26-com-turismo-2026-04-15-confirman-fechas-y-artistas-que-tocaran-en-la.md |
+| https://www.perfil.com/noticias/nea/fiesta-nacional-del-surubi-en-goya-los-ganadores-del-mundial-de-pesca-y-quien-saco-la-pieza-mayor.phtml | 200 | Fiesta Nacional del Surubí en Goya: los ganadores del Mundial de Pesca y quién sacó la pieza mayor | Fiesta Nacional del Surubí en Goya: los ganadores del Mundial de Pesca y quién sacó la pieza mayor | 480 | NewsMediaOrganization, WebSite, NewsArticle, BreadcrumbList | 05-www-perfil-com-noticias-nea-fiesta-nacional-del-surubi-en-goya-los-ganadores-del.md |
+| https://goya.gob.ar/sites/default/files/boletin_muncipal_16-04-26.pdf | 200 |  |  |  |  | 06-goya-gob-ar-sites-default-files-boletin-muncipal-16-04-26-pdf.pdf.txt |
+| https://www.goya.gob.ar/sites/default/files/revista_surubi_2025_para_web.pdf | 200 |  |  |  |  | 07-www-goya-gob-ar-sites-default-files-revista-surubi-2025-para-web-pdf.pdf.txt |
