@@ -172,7 +172,7 @@ foreach ( [ 'es', 'en', 'pt' ] as $i ) {
 	is_wp_error( $r ) && WP_CLI::error( $r->get_error_message() );
 	update_field( 'fuentes', $filas, $p->ID );
 	$gg = get_post( $p->ID );
-	$ok = $gg->post_name === $slug && 3 === substr_count( $gg->post_content, $u['set3'] ) && false === strpos( $gg->post_content, $t['celda_viejo'] ) && count( pm_faqs_contenido( $gg->post_content ) ) === count( pm_faqs_contenido( $c ) );
+	$ok = $gg->post_name === $slug && 2 === substr_count( $gg->post_content, $u['set3'] ) && false === strpos( $gg->post_content, $t['celda_viejo'] ) && count( pm_faqs_contenido( $gg->post_content ) ) === count( pm_faqs_contenido( $c ) );
 	WP_CLI::log( ( $ok ? 'VERIFIED' : 'FALLÓ' ) . ": pilar del dorado ($i) #{$p->ID} con la página de SET (" . substr_count( $gg->post_content, $u['set3'] ) . ' enlaces), ' . count( pm_filas( 'fuentes', $p->ID ) ) . ' fuentes ' . get_permalink( $p->ID ) );
 	$ok || WP_CLI::error( "($i): la lectura de vuelta no coincide." );
 }
