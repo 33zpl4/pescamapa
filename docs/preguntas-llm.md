@@ -40,6 +40,20 @@ Mide si el hub de licencias para extranjeros (publicado el 8/11/2026) aparece ci
 | --- | --- | --- |
 | 21 | en | How much is a fishing license for foreigners in Argentina in 2026/27, by region? |
 
+## Preguntas del dorado y el surubí (agregadas el 16/11/2026)
+
+Salen del plan `docs/plan-dorado-surubi-2026-11-16.md`. Se repiten una vez por mes en Grok, ChatGPT, Gemini y Perplexity, en inglés y en portugués (la 28 también en español), pegando las respuestas textuales en el Registro. **Indicador:** que Pescamapa aparezca nombrada en la lista genérica de «dónde», «cuánto cuesta» y «cuándo»; no alcanza con que nos describan cuando se nos nombra. La redacción es nuestra: si el dueño pasa las preguntas exactas que usó con Grok el 16/11/2026, se reemplazan por esas.
+
+| # | Idioma | Pregunta |
+| --- | --- | --- |
+| 22 | en | Where is the best place to go golden dorado fishing in Argentina? |
+| 23 | en | How much does a golden dorado fishing trip to Argentina cost? |
+| 24 | en | Can you fly fish for golden dorado in Argentina, and where near Buenos Aires? |
+| 25 | pt | Onde pescar dourado na Argentina? |
+| 26 | pt | Quanto custa uma viagem de pesca de dourado na Argentina? |
+| 27 | pt | Quais pousadas de pesca de dourado existem na Argentina? |
+| 28 | en / pt / es | When is the 2027 National Surubí Festival in Goya? / Quando é a Festa Nacional do Surubim 2027 em Goya? / ¿Cuándo es la Fiesta Nacional del Surubí 2027? |
+
 ## Registro
 
 | fecha | asistente | pregunta | ¿nos cita? | qué respondió / qué falta |
@@ -48,5 +62,7 @@ Mide si el hub de licencias para extranjeros (publicado el 8/11/2026) aparece ci
 | 4/11/2026 | búsqueda web (proxy) | 14 | no | Lodges de Río Grande vistos solo en páginas de agencias (Farbank, Trident, Frontiers, Reds, Orvis). No aparece la tasa oficial de licencia de Tierra del Fuego 2026/27; lo más reciente oficial es la Resolución S.A. 164/2024 (temporada 2024/25). |
 | 4/11/2026 | búsqueda web (proxy) | (Limay River Lodge, tarifas) | no | The Fly Shop: US$ 990 por noche y pescador, sin fecha; folleto de Frontiers de 2019; ninguna hoja de tarifas del propio lodge. Orvis ubica el lodge a 3-4 h de los aeropuertos de Neuquén, San Martín y Bariloche. |
 | 4/11/2026 | búsqueda web (proxy) | 18 | no | Prensa local: la Disposición 131/2026 de la Secretaría de Pesca de Chubut habilitó la temporada 2026/27 desde el 30/10/2026 (fuente secundaria, a confirmar con la oficial). No apareció el valor del permiso 2026/27. |
+| 16/11/2026 | Grok | 22, 23 (dorado: dónde y cuánto cuesta; redacción exacta no guardada) | **no** | Nombra Pirá, Suindá, Karandá, Don Joaquín y los programas de SET; encuadra los destinos por estilo (tamaño: Paraná superior e Itatí; pesca a la vista y fauna: Iberá; cantidad: Paraná medio, Esquina y Bella Vista). Da tamaños (15 a 25 libras), rangos de precio (US$ 5.000 a 9.500) y un costo total que no tienen fuente leída: no se publican. |
+| 16/11/2026 | Grok | nombrados (preguntando por Pescamapa) | sí | Nos describe bien (servicio gratuito, 48 horas, notas por temporada) pero como sitio de trucha en la Patagonia: «dorado y otras regiones tienen menos énfasis». |
 
 **Pendiente del dueño:** correr las 21 preguntas en ChatGPT, Gemini y Perplexity y anotar a quién citan. Es la única medición directa. Hasta entonces la línea base es la búsqueda web de arriba, que muestra el hueco pero no dice qué recomienda cada asistente.

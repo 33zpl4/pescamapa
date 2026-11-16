@@ -65,6 +65,23 @@
 
 > **13/11/2026, consultas de Search Console:** FAQ visibles y en JSON-LD en notas y especies, botón de pedido en las fichas de especie, títulos y textos por página (Esquel, Río Grande, Tierra del Fuego), hub de licencias reforzado, índice de paquetes (es/en/pt), sección del Río Uruguay en el pilar del dorado y wording "opciones" en lugar de "cotización". Detalle, tabla de clusters, lo que falta de fuente y cuándo medir: `docs/seo-consultas-2026-11-13.md`.
 
+## Medición del dorado y el surubí: línea de base (16/11/2026) y protocolo mensual
+
+Paso 7 de `docs/plan-dorado-surubi-2026-11-16.md`. La lista de preguntas (22 a 28) y el registro con las respuestas pegadas están en `docs/preguntas-llm.md`.
+
+**Línea de base, 16/11/2026 (Grok):** ante las dos preguntas de dorado (dónde pescarlo y cuánto cuesta) **Pescamapa no aparece**. Nombra otros sitios y lugares (Pirá, Suindá, Karandá, Don Joaquín y los programas de SET) y encuadra los destinos por estilo. Preguntado por Pescamapa por su nombre, nos describe bien pero como un sitio de trucha en la Patagonia («dorado y otras regiones tienen menos énfasis»). ChatGPT, Gemini y Perplexity: sin medición propia todavía (la primera pasada es la de diciembre). Las cifras de Grok (tamaños, rangos de precio, costo total) no tienen fuente leída y no se publican.
+
+**Qué cambió desde esa línea de base (y se mide):** el pilar del dorado en los tres idiomas con la comparación por estilo, la FAQ de ocho preguntas y los enlaces a costo, permiso y semana de pesca; la nota de la 50.ª Fiesta Nacional del Surubí; la ficha del surubí con nombres en portugués; enlaces desde guías, fichas y notas; el atajo del pilar en la portada.
+
+**Protocolo mensual (una vez por mes, la primera semana):**
+1. Las preguntas 22 a 28 de `docs/preguntas-llm.md`, en inglés y en portugués (la 28 también en español), en **Grok, ChatGPT, Gemini y Perplexity**, en una sesión nueva y sin pasarles nuestro nombre.
+2. Pegar la respuesta textual de cada una en el Registro, con la fecha.
+3. **Indicador:** ¿Pescamapa aparece nombrada en la lista genérica (dónde, cuánto cuesta, cuándo)? Sí o no por pregunta y asistente. Secundarios: ¿cita una de nuestras páginas con enlace?, ¿qué lugares nombra que no tengan ficha nuestra?, ¿qué dato falta?
+4. Lo que se nombra y no tenemos va a la tabla del paso 6 del plan; lo que se afirma sin fuente no se copia.
+5. Search Console (`gsc-consultas.yml`, hacia el 27/11/2026): comparar posiciones de «golden dorado fishing argentina» y variantes con la tabla de `docs/seo-consultas-2026-11-13.md`.
+
+No se usa `medir-ia.yml` para esto salvo pedido del dueño (regla de uso quirúrgico de las APIs de IA del 6/11/2026).
+
 ## Objetivo (del dueño)
 
 **Ser útil para la gente que quiere pescar**, y que Google y las IA nos
