@@ -300,7 +300,7 @@ $res = function ( string $html, string $i ) use ( $u ): string {
 $tabla = function ( array $cab, array $filas ): string {
 	$th = implode( '', array_map( fn( $c ) => "<th>{$c}</th>", $cab ) );
 	$tr = implode( '', array_map( fn( $f ) => '<tr>' . implode( '', array_map( fn( $c ) => "<td>{$c}</td>", $f ) ) . '</tr>', $filas ) );
-	return "<!-- wp:table -->\n<figure class=\"wp-block-table\"><table><thead><tr>{$th}</tr></thead><tbody>{$tr}</tbody></table></figure>\n<!-- /wp:table -->\n\n";
+	return "<!-- wp:table {\"className\":\"pm-estilo\"} -->\n<figure class=\"wp-block-table pm-estilo\"><table><thead><tr>{$th}</tr></thead><tbody>{$tr}</tbody></table></figure>\n<!-- /wp:table -->\n\n";
 };
 
 $cambios = 0;

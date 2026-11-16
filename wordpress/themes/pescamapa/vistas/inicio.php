@@ -181,6 +181,11 @@ get_header(); ?>
 					$atajos[] = [ pm_url_especie( $clave_esp, $idioma ), pm_t( $k_atajo ) ];
 				}
 			}
+			// Dorado pillar (16/11/2026, "Pesca del dorado en la Argentina"): right after the species page, only when the note exists in this language.
+			$pilar_dorado = pm_buscar( 'pm_nota', 'golden-dorado-guia', $idioma );
+			if ( $pilar_dorado ) {
+				$atajos[] = [ get_permalink( $pilar_dorado->ID ), pm_t( 'inicio.atajo.dorado.guia' ) ];
+			}
 			$hub_paq = pm_buscar( 'pm_nota', 'paquetes-de-pesca-argentina', $idioma );
 			if ( $hub_paq ) {
 				$atajos[] = [ get_permalink( $hub_paq->ID ), pm_t( 'inicio.atajo.paquetes' ) ];
