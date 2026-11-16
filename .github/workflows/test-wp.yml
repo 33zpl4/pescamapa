@@ -243,6 +243,18 @@ jobs:
             sed 's/^\$aplicar = true;/$aplicar = false;/' "wordpress/scripts/$sc.php" > "/tmp/$sc-dry.php"
             wp --path="$WP" eval-file "/tmp/$sc-dry.php"
           done
+          # 16/11/2026 notes (permit step by step, overview of trip costs): the throwaway site has no notes, guides or cover photo to link, so the dry copy (flag forced to
+          # false) must stop at the first missing piece with a clean message: no PHP warning, notice, deprecation or fatal, and nothing written.
+          for par in permiso-paso-a-paso-2026-11-16:permiso-pesca-argentina-paso-a-paso costo-viaje-2026-11-16:cuanto-cuesta-viaje-pesca-argentina; do
+            sc="${par%%:*}"; cl="${par##*:}"
+            sed 's/^\$aplicar = true;/$aplicar = false;/' "wordpress/scripts/$sc.php" > "/tmp/$sc-dry.php"
+            wp --path="$WP" eval-file "/tmp/$sc-dry.php" > "/tmp/$sc.log" 2>&1 || true
+            cat "/tmp/$sc.log"
+            if grep -qE 'PHP (Warning|Notice|Deprecated|Fatal)|Parse error|Fatal error' "/tmp/$sc.log"; then echo "✖ $sc: error de PHP en el simulacro"; exit 1; fi
+            grep -qE 'la foto es obligatoria|No encuentro la nota|No encuentro la guía' "/tmp/$sc.log" || { echo "✖ $sc: el simulacro no llegó a la primera comprobación"; exit 1; }
+            n=$(w post list --post_type=pm_nota --post_status=any --meta_key=clave --meta_value="$cl" --format=count)
+            [[ "$n" == 0 ]] || { echo "✖ el simulacro de $sc escribió $n notas"; exit 1; }
+          done
           wp --path="$WP" server --host=localhost --port=8081 > /tmp/server-corrientes.log 2>&1 &
           sleep 3
           fail=0
