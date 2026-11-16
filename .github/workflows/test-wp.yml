@@ -554,6 +554,138 @@ jobs:
             }'
           kill %1 2>/dev/null || true
           exit $fail
+      - name: Trip-preparation notes (week at a lodge, planning hub) + SAPTDF correction + home shortcut - dry run, apply on stubs, render, clean up
+        run: |
+          w() { wp --path="$WP" "$@"; }
+          w eval-file "$GITHUB_WORKSPACE/.github/scripts/viaje-notas-fixtures.php"
+          # --- Dry runs: the committed scripts may be $aplicar = true or false; the dry copy forces false and must write nothing.
+          for par in semana-lodge-2026-11-16:semana-de-pesca-en-lodge-argentina preparar-viaje-hub-2026-11-16:como-preparar-viaje-pesca-argentina; do
+            sc="${par%%:*}"; cl="${par##*:}"
+            sed 's/^\$aplicar = true;/$aplicar = false;/' "wordpress/scripts/$sc.php" > "/tmp/$sc-dry.php"
+            # The hub script needs the week note: in a dry run that note does not exist yet, so only the week script is dry-run before it is applied.
+            if [[ "$sc" == semana-lodge-2026-11-16 ]]; then
+              wp --path="$WP" eval-file "/tmp/$sc-dry.php" | tee "/tmp/$sc.log"
+              n=$(w post list --post_type=pm_nota --post_status=any --meta_key=clave --meta_value="$cl" --format=count)
+              [[ "$n" == 0 ]] || { echo "✖ el simulacro de $sc escribió $n notas"; exit 1; }
+              grep -q 'Simulacro terminado' "/tmp/$sc.log" || { echo "✖ el simulacro de $sc no terminó"; exit 1; }
+            fi
+          done
+          # --- SAPTDF correction: dry run writes nothing, apply fixes the three stubs, the second run finds nothing to do.
+          sc=saptdf-correccion-2026-11-16
+          sed 's/^\$aplicar = true;/$aplicar = false;/' "wordpress/scripts/$sc.php" > "/tmp/$sc-dry.php"
+          wp --path="$WP" eval-file "/tmp/$sc-dry.php" | tee /tmp/saptdf-dry.log
+          grep -q 'Simulacro terminado: 9 cambios' /tmp/saptdf-dry.log || { echo "✖ el simulacro SAPTDF no encontró los 9 cambios (hub, guía y aguas en 3 idiomas)"; exit 1; }
+          n=$(w eval 'echo count( array_filter( get_posts( [ "post_type" => [ "pm_nota", "pm_destino" ], "post_status" => "any", "meta_key" => "_prueba_vn", "meta_value" => 1, "numberposts" => -1 ] ), fn( $x ) => false !== strpos( $x->post_content, "Resolución 259/26" ) || false !== strpos( $x->post_content, "saptdf.ar, leída" ) ) );')
+          [[ "$n" == 0 ]] || { echo "✖ el simulacro SAPTDF editó $n páginas"; exit 1; }
+          cp "wordpress/scripts/$sc.php" "/tmp/$sc.php"
+          sed -i 's/^\$aplicar = false;/$aplicar = true;/' "/tmp/$sc.php"
+          wp --path="$WP" eval-file "/tmp/$sc.php" | tee /tmp/saptdf-1.log
+          [[ $(grep -c 'VERIFIED' /tmp/saptdf-1.log) == 9 ]] || { echo "✖ SAPTDF: se esperaban 9 VERIFIED"; exit 1; }
+          wp --path="$WP" eval-file "/tmp/$sc.php" | tee /tmp/saptdf-2.log   # idempotent
+          grep -q 'Aplicado: 0 cambios' /tmp/saptdf-2.log || { echo "✖ la segunda corrida SAPTDF volvió a cambiar algo"; exit 1; }
+          n=$(w eval 'echo count( array_filter( get_posts( [ "post_type" => [ "pm_nota", "pm_destino" ], "post_status" => "any", "meta_key" => "_prueba_vn", "meta_value" => 1, "numberposts" => -1 ] ), fn( $x ) => false !== strpos( $x->post_content, "hace falta estar registrado" ) || false !== strpos( $x->post_content, "you must be registered and have a prior" ) || false !== strpos( $x->post_content, "é necessário estar registrado e ter uma reserva" ) ) );')
+          [[ "$n" == 0 ]] || { echo "✖ queda el texto viejo de SAPTDF en $n páginas"; exit 1; }
+          # --- Apply the week note, then the hub (always the applying path), twice each (idempotent).
+          for par in semana-lodge-2026-11-16:semana-de-pesca-en-lodge-argentina preparar-viaje-hub-2026-11-16:como-preparar-viaje-pesca-argentina; do
+            sc="${par%%:*}"; cl="${par##*:}"
+            cp "wordpress/scripts/$sc.php" "/tmp/$sc.php"
+            sed -i 's/^\$aplicar = false;/$aplicar = true;/' "/tmp/$sc.php"
+            wp --path="$WP" eval-file "/tmp/$sc.php" | tee "/tmp/$sc-1.log"
+            wp --path="$WP" eval-file "/tmp/$sc.php" | tee "/tmp/$sc-2.log"
+            grep -q 'FALLÓ' "/tmp/$sc-1.log" && { echo "✖ $sc: la lectura de vuelta falló"; exit 1; }
+            grep -q 'ya enlaza' "/tmp/$sc-2.log" || { echo "✖ $sc: la segunda corrida no reconoció los enlaces"; exit 1; }
+            grep -q 'APLICA:' "/tmp/$sc-2.log" && { echo "✖ $sc: la segunda corrida volvió a escribir"; exit 1; }
+            n=$(w post list --post_type=pm_nota --post_status=publish --meta_key=clave --meta_value="$cl" --format=count)
+            [[ "$n" == 3 ]] && echo "✓ $cl: nota en 3 idiomas" || { echo "✖ $cl: $n notas (esperado 3)"; exit 1; }
+          done
+          # Inbound links: the week note from 4 notes, the hub from 5 notes, each page once (3 languages).
+          cuenta() { w eval "\$n = 0; foreach ( get_posts( [ 'post_type' => [ 'pm_nota' ], 'post_status' => 'any', 'meta_key' => '_prueba_vn', 'meta_value' => 1, 'numberposts' => -1 ] ) as \$x ) { if ( 1 === substr_count( \$x->post_content, '$1' ) ) { \$n++; } } echo \$n;"; }
+          n=$(cuenta /how-a-fishing-week-at-an-argentina-lodge-works/); [[ "$n" == 4 ]] || { echo "✖ la nota de la semana (en) está enlazada desde $n notas (esperadas 4)"; exit 1; }
+          n=$(cuenta /como-funciona-una-semana-de-pesca-en-un-lodge/); [[ "$n" == 4 ]] || { echo "✖ la nota de la semana (es) está enlazada desde $n notas (esperadas 4)"; exit 1; }
+          n=$(cuenta /como-funciona-uma-semana-de-pesca-em-uma-pousada/); [[ "$n" == 4 ]] || { echo "✖ la nota de la semana (pt) está enlazada desde $n notas (esperadas 4)"; exit 1; }
+          for h in /como-preparar-un-viaje-de-pesca-a-la-argentina/ /how-to-plan-a-fishing-trip-to-argentina/ /como-planejar-uma-viagem-de-pesca-na-argentina/; do
+            n=$(cuenta "$h"); [[ "$n" == 4 ]] || { echo "✖ el hub $h está enlazado desde $n notas de prueba (esperadas 4: permiso, costo, dorado, trucha; la nota de la semana se crea sin la marca de prueba)"; exit 1; }
+          done
+          echo "✓ enlaces entrantes: una vez por página"
+          wp --path="$WP" server --host=localhost --port=8084 > /tmp/server-vn.log 2>&1 &
+          sleep 3
+          fail=0
+          chk() { # path must-contain [must-not-contain regex]
+            code=$(curl -sS -o page-vn.html -w '%{http_code}' "http://localhost:8084$1")
+            if [[ "$code" != 200 ]]; then echo "✖ $code $1"; fail=1; return; fi
+            if [[ -n "${2:-}" ]] && ! grep -q -- "$2" page-vn.html; then echo "✖ $1 no contiene: $2"; fail=1; return; fi
+            if [[ -n "${3:-}" ]] && grep -qE -- "$3" page-vn.html; then echo "✖ $1 contiene: $3"; fail=1; return; fi
+            echo "✓ 200 $1"
+          }
+          for p in /notas/como-funciona-una-semana-de-pesca-en-un-lodge/ /en/notes/how-a-fishing-week-at-an-argentina-lodge-works/ /pt/notas/como-funciona-uma-semana-de-pesca-em-uma-pousada/ /notas/como-preparar-un-viaje-de-pesca-a-la-argentina/ /en/notes/how-to-plan-a-fishing-trip-to-argentina/ /pt/notas/como-planejar-uma-viagem-de-pesca-na-argentina/; do
+            chk "$p" '"Article"' 'PENDIENTE|\{g:|\{n:|\{u:|\{x:|\{esp:|\{cal|\{viaje'
+            grep -q '"BreadcrumbList"' page-vn.html || { echo "✖ $p sin BreadcrumbList"; fail=1; }
+            grep -q '"FAQPage"' page-vn.html || { echo "✖ $p sin FAQPage"; fail=1; }
+            grep -q 'hreflang="x-default"' page-vn.html || { echo "✖ $p sin x-default"; fail=1; }
+            for h in 'hreflang="es"' 'hreflang="en"' 'hreflang="pt-BR"'; do grep -q "$h" page-vn.html || { echo "✖ $p sin $h"; fail=1; }; done
+            grep -qE 'AUTOR-PORTADA-(SEMANA|HUB)' page-vn.html || { echo "✖ $p sin la foto de portada con su autor"; fail=1; }
+            grep -q 'rel="noopener"' page-vn.html || { echo "✖ $p sin enlaces externos a las fuentes"; fail=1; }
+            python3 - "$p" <<'PY' || fail=1
+          import html, json, re, sys
+          t = open("page-vn.html", encoding="utf-8").read()
+          p = sys.argv[1]
+          blocks = [json.loads(b) for b in re.findall(r'<script type="application/ld\+json">(.*?)</script>', t, re.S)]
+          flat = []
+          for b in blocks:
+              flat += b if isinstance(b, list) else [b]
+          bc = [b for b in flat if b.get("@type") == "BreadcrumbList"]
+          faq = [b for b in flat if b.get("@type") == "FAQPage"]
+          ok = True
+          if not bc or not all(li.get("item") for li in bc[0]["itemListElement"]):
+              print("✖", p, "BreadcrumbList sin item en algún ListItem"); ok = False
+          if not faq or len(faq[0]["mainEntity"]) != 10:
+              print("✖", p, "FAQPage con", len(faq[0]["mainEntity"]) if faq else 0, "preguntas (esperadas 10)"); ok = False
+          visibles = re.search(r'class="wp-block-group pm-faq">(.*?)</div>', t, re.S)
+          n_h3 = len(re.findall(r"<h3", visibles.group(1))) if visibles else 0
+          if n_h3 != 10:
+              print("✖", p, "FAQ visible con", n_h3, "preguntas (esperadas 10)"); ok = False
+          title = html.unescape(re.search(r"<title>(.*?)</title>", t, re.S).group(1))
+          desc = html.unescape(re.search(r'name="description" content="(.*?)"', t, re.S).group(1))
+          if len(title) > 60 or not (70 <= len(desc) <= 160):
+              print("✖", p, "title", len(title), "description", len(desc)); ok = False
+          if ok:
+              print("✓", p, "JSON-LD con item, FAQ visible = FAQPage (10), title", len(title), "description", len(desc))
+          sys.exit(0 if ok else 1)
+          PY
+          done
+          for p in /notas/como-preparar-un-viaje-de-pesca-a-la-argentina/ /en/notes/how-to-plan-a-fishing-trip-to-argentina/ /pt/notas/como-planejar-uma-viagem-de-pesca-na-argentina/; do
+            chk "$p" 'especie=dorado'
+            grep -q 'especie=trucha' page-vn.html || { echo "✖ $p sin el botón de pedido con ?especie=trucha"; fail=1; }
+            grep -q 'prueba-vn-itati' page-vn.html || { echo "✖ $p sin el enlace a la guía de Itatí"; fail=1; }
+            grep -q 'prueba-vn-golden-dorado-guia' page-vn.html || { echo "✖ $p sin el enlace al pilar del dorado"; fail=1; }
+          done
+          chk /notas/como-funciona-una-semana-de-pesca-en-un-lodge/ 'prueba-vn-paquete-incluye-no-incluye'
+          # Home shortcut: the hub appears first in the shortcuts row, in each language, only because the hub note exists in that language.
+          chk / 'class="atajos"'
+          grep -q 'Cómo preparar el viaje' page-vn.html || { echo "✖ / sin el atajo «Cómo preparar el viaje»"; fail=1; }
+          grep -q 'como-preparar-un-viaje-de-pesca-a-la-argentina' page-vn.html || { echo "✖ / no enlaza el hub"; fail=1; }
+          chk /en/ 'class="atajos"'
+          grep -q 'How to plan the trip' page-vn.html || { echo "✖ /en/ sin el atajo"; fail=1; }
+          chk /pt/ 'class="atajos"'
+          grep -q 'Como planejar a viagem' page-vn.html || { echo "✖ /pt/ sin el atajo"; fail=1; }
+          chk /llms.txt 'como-preparar-un-viaje-de-pesca-a-la-argentina'
+          grep -q 'como-funciona-una-semana-de-pesca-en-un-lodge' page-vn.html || { echo "✖ llms.txt sin la nota de la semana"; fail=1; }
+          chk /wp-sitemap-posts-pm_nota-1.xml 'how-to-plan-a-fishing-trip-to-argentina'
+          grep -q 'how-a-fishing-week-at-an-argentina-lodge-works' page-vn.html || { echo "✖ sitemap sin la nota de la semana"; fail=1; }
+          # Without the hub the shortcut must not appear (hub removed, home re-rendered).
+          w eval 'foreach ( get_posts( [ "post_type" => "pm_nota", "post_status" => "any", "meta_key" => "clave", "meta_value" => "como-preparar-viaje-pesca-argentina", "numberposts" => -1 ] ) as $x ) { wp_delete_post( $x->ID, true ); }'
+          code=$(curl -sS -o page-vn.html -w '%{http_code}' http://localhost:8084/)
+          [[ "$code" == 200 ]] && ! grep -q 'Cómo preparar el viaje' page-vn.html && echo "✓ sin el hub no hay atajo" || { echo "✖ el atajo sigue sin el hub (o la portada falla: $code)"; fail=1; }
+          # Clean up: this step must leave no trace for the checks that follow.
+          w eval '
+            foreach ( [ "pm_destino", "pm_nota", "pm_especie", "attachment" ] as $t ) {
+              foreach ( get_posts( [ "post_type" => $t, "post_status" => "any", "posts_per_page" => -1, "suppress_filters" => true ] ) as $p ) {
+                $c = (string) get_post_meta( $p->ID, "clave", true );
+                if ( get_post_meta( $p->ID, "_prueba_vn", true ) || ( "pm_nota" === $t && in_array( $c, [ "semana-de-pesca-en-lodge-argentina", "como-preparar-viaje-pesca-argentina" ], true ) ) ) { wp_delete_post( $p->ID, true ); }
+              }
+            }'
+          kill %1 2>/dev/null || true
+          exit $fail
       - name: Render pages
         run: |
           exec > >(tee /tmp/render-all.log) 2>&1
