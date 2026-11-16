@@ -100,7 +100,7 @@ if ( ! function_exists( 'pm_tp_tabla' ) ) {
 	}
 }
 
-$aplicar = false;
+$aplicar = true;
 $hoy     = '20261116';
 $clave   = 'cuanto-cuesta-viaje-pesca-argentina';
 $foto_de = 'precio-pesca-patagonia-sur'; // note whose cover photo is reused (owner's Unsplash photo, Fitz Roy)
