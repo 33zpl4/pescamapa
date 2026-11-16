@@ -104,7 +104,7 @@ if ( ! function_exists( 'pm_sc_h2' ) ) {
 
 
 
-$aplicar = false;
+$aplicar = true;
 $clave   = 'fiesta-nacional-del-surubi-2027';
 $hoy     = '20261116';
 $base    = 'https://www.goyasurubi.com/index/';
@@ -317,7 +317,7 @@ $N['pt'] = [
 	'h4' => 'Se você quer ir',
 	'p4' => 'Para competir em 2027 é preciso estar em uma equipe inscrita: o limite está completo, há lista de espera e só a Co.Mu.Pe. decide se o amplia ({com|comunicado oficial}); as novidades estão no {of|site oficial}. Se quer ir a Goya sem competir, a descrição da Festa no {que|site oficial} diz que a programação inclui mostra comercial e artesanal, concurso de pesca de costa e de palometa, competições esportivas e festivais gratuitos de canto e música (é a descrição geral, não a programação de 2027). Para pescar surubim em outras datas, veja {n:cuando-pescar-surubi|quando pescar o surubim}, o {g:goya|guia de Goya} e {esp:surubi|a ficha do surubim}. <strong>Conte o que você procura e montamos a melhor opção para você:</strong> <a href="{viaje}">pedir opções</a>, sem custo e com resposta em 48 horas.',
 	'h5' => 'Como se chama o peixe',
-	'p5' => 'Na Argentina se diz surubí. No Brasil, segundo a {emb|Embrapa Pesca e Aquicultura (dezembro de 2015)}, as espécies do gênero <em>Pseudoplatystoma</em> são conhecidas popularmente como «surubim» ou «pintado», e o mesmo nome pode designar espécies diferentes conforme a região. Mais em {esp:surubi|a ficha do surubim}.',
+	'p5' => 'Na Argentina se diz surubí. No Brasil, segundo a {emb|Embrapa Pesca e Aquicultura (dezembro de 2015)}, as espécies do gênero <em>Pseudoplatystoma</em> são conhecidas popularmente como «surubim» ou «pintado», e o mesmo nome pode designar espécies diferentes conforme a região. Mais na {esp:surubi|ficha do surubim}.',
 	'faq_h' => 'Perguntas frequentes sobre a Festa Nacional do Surubi',
 	'faq' => [
 		[ 'Quando é a Festa Nacional do Surubi 2027?', 'De 28 de abril a 2 de maio de 2027, em Goya, Corrientes: é a 50ª edição, segundo a Co.Mu.Pe. (site oficial, lido em 16/11/2026). O concurso de pesca vai do sábado 1º de maio (a partir das 17:00) ao domingo 2 (até as 8:00), segundo o regulamento 2027.' ],
