@@ -701,7 +701,7 @@ jobs:
           n=$(w eval 'echo count( array_filter( get_posts( [ "post_type" => [ "pm_nota", "pm_especie" ], "post_status" => "any", "meta_key" => "_prueba_ds", "meta_value" => 1, "numberposts" => -1 ] ), fn( $x ) => false !== strpos( $x->post_content, "wp-block-group pm-faq" ) && ( "pm_nota" === $x->post_type || false !== strpos( $x->post_content, "Nombres del surub" ) ) ) );')
           [[ "$n" == 0 ]] || { echo "✖ el simulacro editó $n páginas"; exit 1; }
           # --- Apply (always the applying path), twice each: the second run must write nothing.
-          for sc in pilar-dorado-2026-11-16 surubi-fiesta-2026-11-16 enlaces-dorado-surubi-2026-11-16; do
+          for sc in pilar-dorado-2026-11-16 pilar-dorado-set-2026-11-16 surubi-fiesta-2026-11-16 enlaces-dorado-surubi-2026-11-16; do
             cp "wordpress/scripts/$sc.php" "/tmp/$sc.php"
             sed -i 's/^\$aplicar = [a-z]*;/$aplicar = true;/' "/tmp/$sc.php"
             wp --path="$WP" eval-file "/tmp/$sc.php" | tee "/tmp/$sc-1.log"
