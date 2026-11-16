@@ -34,7 +34,7 @@ if ( ! function_exists( 'pm_sc_guardar' ) ) {
 	}
 }
 
-$aplicar = false;
+$aplicar = true;
 
 $url_dnm = 'https://www.argentina.gob.ar/migraciones/turistas';
 
