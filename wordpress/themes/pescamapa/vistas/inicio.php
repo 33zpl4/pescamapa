@@ -167,7 +167,12 @@ get_header(); ?>
 			<?php // Quick links (13/11/2026): the pages people search for by name; each one only when it exists in this language. ?>
 			<?php
 			$atajos = [];
-			$hub    = pm_buscar( 'pm_nota', PM_NOTA_LICENCIA_EXTRANJEROS, $idioma );
+			// Planning hub (16/11/2026, "Cómo preparar un viaje de pesca a la Argentina, paso a paso"): first in the row, only when the note exists in this language.
+			$hub_viaje = pm_buscar( 'pm_nota', 'como-preparar-viaje-pesca-argentina', $idioma );
+			if ( $hub_viaje ) {
+				$atajos[] = [ get_permalink( $hub_viaje->ID ), pm_t( 'inicio.atajo.preparar' ) ];
+			}
+			$hub = pm_buscar( 'pm_nota', PM_NOTA_LICENCIA_EXTRANJEROS, $idioma );
 			if ( $hub ) {
 				$atajos[] = [ get_permalink( $hub->ID ), pm_t( 'inicio.atajo.licencia' ) ];
 			}
