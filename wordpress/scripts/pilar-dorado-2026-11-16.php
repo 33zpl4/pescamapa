@@ -104,7 +104,7 @@ if ( ! function_exists( 'pm_sc_h2' ) ) {
 
 
 
-$aplicar = false;
+$aplicar = true;
 $clave   = 'golden-dorado-guia';
 $hoy     = '20261116';
 $leido13 = '13/11/2026';
