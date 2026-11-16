@@ -100,7 +100,7 @@ if ( ! function_exists( 'pm_pp_olista' ) ) {
 	}
 }
 
-$aplicar = false;
+$aplicar = true;
 
 /**
  * Correction (16/11/2026). Official sources read on 16/11/2026 (investigar.yml run saptdf-1): the SAPTDF page (saptdf.ar) is titled "Sistema de acceso de pesca para residentes de Tierra del
