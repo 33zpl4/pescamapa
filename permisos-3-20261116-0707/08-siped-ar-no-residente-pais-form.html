@@ -1,0 +1,1558 @@
+<!DOCTYPE html><html lang="es"><head>  
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" type="text/css" href="https://siped.ar/css/app.css">     
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Archivo+Black">
+      <link rel="icon" href="https://siped.ar/bandera.png">
+      <meta name="description" content="Dirección General de Recursos Hídricos">    
+      <title>SIPED | Tierra del Fuego</title>  
+  </head> 
+  <body>   
+  <nav class="nav-fixed">
+    <div class="nav-wrapper container">
+      <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+      <a href="https://siped.ar" class="brand-logo"> SIPED </a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a class="dropdown-button" href="#" data-activates="dropdown1">Registro</a><ul id="dropdown1" class="dropdown-content">
+    <li><a href="https://siped.ar/residente-pais/form">Residente país</a></li>
+    <li><a href="https://siped.ar/no-residente-pais/form">No residente país</a></li>    
+</ul></li>
+        <li><a href="https://siped.ar/acerca">Acerca</a></li>
+        <!--<li><a href="https://siped.ar/pesca-deportiva-reglamento-2019-2020.pdf" target="_blank">Reglamento</a></li>-->
+        <li><a href="http://saptdf.ar/">SAPTDF</a></li>
+        <li><a href="https://siped.ar/ingresar">Ingresar</a></li>        
+      </ul>
+    </div>
+</nav>
+<ul id="slide-out" class="side-nav" style="transform: translateX(-100%);">      
+      <li><a class="dropdown-button" href="#!" data-activates="dropdown2">Registro<i class="material-icons right">arrow_drop_down</i></a><ul id="dropdown2" class="dropdown-content">
+        <li><a href="https://siped.ar/residente-pais/form">Residente país</a></li>
+        <li><a href="https://siped.ar/no-residente-pais/form">No residente país</a></li>        
+      </ul></li>
+      
+      <li><a href="https://siped.ar/acerca">Acerca</a></li>
+      <!--<li><a href="https://siped.ar/pesca-deportiva-reglamento-2019-2020.pdf">Reglamento <i class="material-icons right">file_download</i></a> </li><li><a href="http://saptdf.tierradelfuego.gov.ar/">SAPTDF</a></li>-->   
+      <li><a href="https://siped.ar/ingresar">Ingresar</a></li>  
+</ul>
+
+
+
+<style type="text/css">
+  .nav-fixed {
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 0;
+    margin-bottom: 0px;
+    z-index: 997;
+  }
+</style>   
+   <div class="container">
+   <div class="row">  
+     
+   <h2 class="center">Registro - No Residente País </h2>
+   <p class="center">Este formulario es para aquellas personas que no residen en Argentina.</p>  
+         
+    <form class="col s12" method="POST" action="https://siped.ar/no-residente-pais" enctype="multipart/form-data">
+      <input type="hidden" name="_token" value="uT4Y5iuhkFMfSMBkoJCKKoaYRfrZ30UyJPj10rsu">
+      <div class="row">
+        <div class="input-field col s6">
+           <i class="material-icons prefix">account_circle</i>
+          <input placeholder="Nombre" required="" name="nombre" id="first_name" type="text" class="validate" value="">
+          <label for="first_name" class="active">Nombre</label>
+        </div>
+        <div class="input-field col s6">           
+          <input id="last_name" type="text" required="" name="apellido" class="validate" value="">
+          <label for="last_name">Apellido</label>
+        </div>
+      </div>  
+      <div class="row">
+        <div class="input-field col s6">
+          <i class="material-icons prefix">perm_identity</i>
+          <div class="select-wrapper form-control"><span class="caret">▼</span><input type="text" class="select-dropdown" readonly="true" data-activates="select-options-4b0e6249-e50c-324c-6ad7-bcc9ab9b62ad" value="DNI"><ul id="select-options-4b0e6249-e50c-324c-6ad7-bcc9ab9b62ad" class="dropdown-content select-dropdown "><li class=""><span>DNI</span></li><li class=""><span>Pasaporte</span></li></ul><select class="form-control initialized" required="" name="documento_tipo" id="documento_tipo">
+              <option value="DNI">DNI</option>                       
+              <option value="Pasaporte">Pasaporte</option>                        
+                          
+          </select></div>
+
+          <label for="documento_tipo">Tipo de documento</label>
+        </div>
+        <div class="input-field col s6">
+          
+          <input id="documento_numero" type="text" required="" name="documento_numero" class="validate" value="">
+
+          <label for="documento_numero">Número de documento</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s6">
+           <i class="material-icons prefix">date_range</i>
+          <input placeholder="" type="text" required="" name="fecha_nacimiento" id="fecha_nacimiento" class="datepicker picker__input" readonly="" tabindex="-1" aria-haspopup="true" aria-expanded="false" aria-readonly="false" aria-owns="fecha_nacimiento_root"><div class="picker" id="fecha_nacimiento_root" tabindex="0" aria-hidden="true"><div class="picker__holder"><div class="picker__frame"><div class="picker__wrap"><div class="picker__box"><div class="picker__date-display"><div class="picker__weekday-display">Lunes</div><div class="picker__month-display"><div>Nov</div></div><div class="picker__day-display"><div>16</div></div><div class="picker__year-display"><div>2026</div></div></div><div class="picker__calendar-container"><div class="picker__header"><div class="picker__month">Noviembre</div><select class="picker__select--year browser-default" disabled="" aria-controls="fecha_nacimiento_table" title="Seleccione un año"><option value="1936">1936</option><option value="1937">1937</option><option value="1938">1938</option><option value="1939">1939</option><option value="1940">1940</option><option value="1941">1941</option><option value="1942">1942</option><option value="1943">1943</option><option value="1944">1944</option><option value="1945">1945</option><option value="1946">1946</option><option value="1947">1947</option><option value="1948">1948</option><option value="1949">1949</option><option value="1950">1950</option><option value="1951">1951</option><option value="1952">1952</option><option value="1953">1953</option><option value="1954">1954</option><option value="1955">1955</option><option value="1956">1956</option><option value="1957">1957</option><option value="1958">1958</option><option value="1959">1959</option><option value="1960">1960</option><option value="1961">1961</option><option value="1962">1962</option><option value="1963">1963</option><option value="1964">1964</option><option value="1965">1965</option><option value="1966">1966</option><option value="1967">1967</option><option value="1968">1968</option><option value="1969">1969</option><option value="1970">1970</option><option value="1971">1971</option><option value="1972">1972</option><option value="1973">1973</option><option value="1974">1974</option><option value="1975">1975</option><option value="1976">1976</option><option value="1977">1977</option><option value="1978">1978</option><option value="1979">1979</option><option value="1980">1980</option><option value="1981">1981</option><option value="1982">1982</option><option value="1983">1983</option><option value="1984">1984</option><option value="1985">1985</option><option value="1986">1986</option><option value="1987">1987</option><option value="1988">1988</option><option value="1989">1989</option><option value="1990">1990</option><option value="1991">1991</option><option value="1992">1992</option><option value="1993">1993</option><option value="1994">1994</option><option value="1995">1995</option><option value="1996">1996</option><option value="1997">1997</option><option value="1998">1998</option><option value="1999">1999</option><option value="2000">2000</option><option value="2001">2001</option><option value="2002">2002</option><option value="2003">2003</option><option value="2004">2004</option><option value="2005">2005</option><option value="2006">2006</option><option value="2007">2007</option><option value="2008">2008</option><option value="2009">2009</option><option value="2010">2010</option><option value="2011">2011</option><option value="2012">2012</option><option value="2013">2013</option><option value="2014">2014</option><option value="2015">2015</option><option value="2016">2016</option><option value="2017">2017</option><option value="2018">2018</option><option value="2019">2019</option><option value="2020">2020</option><option value="2021">2021</option><option value="2022">2022</option><option value="2023">2023</option><option value="2024">2024</option><option value="2025">2025</option><option value="2026" selected="">2026</option><option value="2027">2027</option><option value="2028">2028</option><option value="2029">2029</option><option value="2030">2030</option><option value="2031">2031</option><option value="2032">2032</option><option value="2033">2033</option><option value="2034">2034</option><option value="2035">2035</option><option value="2036">2036</option><option value="2037">2037</option><option value="2038">2038</option><option value="2039">2039</option><option value="2040">2040</option><option value="2041">2041</option><option value="2042">2042</option><option value="2043">2043</option><option value="2044">2044</option><option value="2045">2045</option><option value="2046">2046</option><option value="2047">2047</option><option value="2048">2048</option><option value="2049">2049</option><option value="2050">2050</option><option value="2051">2051</option><option value="2052">2052</option><option value="2053">2053</option><option value="2054">2054</option><option value="2055">2055</option><option value="2056">2056</option><option value="2057">2057</option><option value="2058">2058</option><option value="2059">2059</option><option value="2060">2060</option><option value="2061">2061</option><option value="2062">2062</option><option value="2063">2063</option><option value="2064">2064</option><option value="2065">2065</option><option value="2066">2066</option><option value="2067">2067</option><option value="2068">2068</option><option value="2069">2069</option><option value="2070">2070</option><option value="2071">2071</option><option value="2072">2072</option><option value="2073">2073</option><option value="2074">2074</option><option value="2075">2075</option><option value="2076">2076</option><option value="2077">2077</option><option value="2078">2078</option><option value="2079">2079</option><option value="2080">2080</option><option value="2081">2081</option><option value="2082">2082</option><option value="2083">2083</option><option value="2084">2084</option><option value="2085">2085</option><option value="2086">2086</option><option value="2087">2087</option><option value="2088">2088</option><option value="2089">2089</option><option value="2090">2090</option><option value="2091">2091</option><option value="2092">2092</option><option value="2093">2093</option><option value="2094">2094</option><option value="2095">2095</option><option value="2096">2096</option><option value="2097">2097</option><option value="2098">2098</option><option value="2099">2099</option><option value="2100">2100</option><option value="2101">2101</option><option value="2102">2102</option><option value="2103">2103</option><option value="2104">2104</option><option value="2105">2105</option><option value="2106">2106</option><option value="2107">2107</option><option value="2108">2108</option><option value="2109">2109</option><option value="2110">2110</option><option value="2111">2111</option><option value="2112">2112</option><option value="2113">2113</option><option value="2114">2114</option><option value="2115">2115</option><option value="2116">2116</option></select><div class="picker__nav--prev" data-nav="-1" role="button" aria-controls="fecha_nacimiento_table" title="Anterior"> </div><div class="picker__nav--next" data-nav="1" role="button" aria-controls="fecha_nacimiento_table" title="Siguente"> </div></div><table class="picker__table" id="fecha_nacimiento_table" role="grid" aria-controls="fecha_nacimiento" aria-readonly="true"><thead><tr><th class="picker__weekday" scope="col" title="Domingo">D</th><th class="picker__weekday" scope="col" title="Lunes">L</th><th class="picker__weekday" scope="col" title="Msrtes">M</th><th class="picker__weekday" scope="col" title="Miercoles">M</th><th class="picker__weekday" scope="col" title="Jueves">J</th><th class="picker__weekday" scope="col" title="Viernes">V</th><th class="picker__weekday" scope="col" title="Sabado">S</th></tr></thead><tbody><tr><td role="presentation"><div class="picker__day picker__day--infocus" data-pick="1793491200000" role="gridcell" aria-label="1 Noviembre, 2026">1</div></td><td role="presentation"><div class="picker__day picker__day--infocus" data-pick="1793577600000" role="gridcell" aria-label="2 Noviembre, 2026">2</div></td><td role="presentation"><div class="picker__day picker__day--infocus" data-pick="1793664000000" role="gridcell" aria-label="3 Noviembre, 2026">3</div></td><td role="presentation"><div class="picker__day picker__day--infocus" data-pick="1793750400000" role="gridcell" aria-label="4 Noviembre, 2026">4</div></td><td role="presentation"><div class="picker__day picker__day--infocus" data-pick="1793836800000" role="gridcell" aria-label="5 Noviembre, 2026">5</div></td><td role="presentation"><div class="picker__day picker__day--infocus" data-pick="1793923200000" role="gridcell" aria-label="6 Noviembre, 2026">6</div></td><td role="presentation"><div class="picker__day picker__day--infocus" data-pick="1794009600000" role="gridcell" aria-label="7 Noviembre, 2026">7</div></td></tr><tr><td role="presentation"><div class="picker__day picker__day--infocus" data-pick="1794096000000" role="gridcell" aria-label="8 Noviembre, 2026">8</div></td><td role="presentation"><div class="picker__day picker__day--infocus" data-pick="1794182400000" role="gridcell" aria-label="9 Noviembre, 2026">9</div></td><td role="presentation"><div class="picker__day picker__day--infocus" data-pick="1794268800000" role="gridcell" aria-label="10 Noviembre, 2026">10</div></td><td role="presentation"><div class="picker__day picker__day--infocus" data-pick="1794355200000" role="gridcell" aria-label="11 Noviembre, 2026">11</div></td><td role="presentation"><div class="picker__day picker__day--infocus" data-pick="1794441600000" role="gridcell" aria-label="12 Noviembre, 2026">12</div></td><td role="presentation"><div class="picker__day picker__day--infocus" data-pick="1794528000000" role="gridcell" aria-label="13 Noviembre, 2026">13</div></td><td role="presentation"><div class="picker__day picker__day--infocus" data-pick="1794614400000" role="gridcell" aria-label="14 Noviembre, 2026">14</div></td></tr><tr><td role="presentation"><div class="picker__day picker__day--infocus" data-pick="1794700800000" role="gridcell" aria-label="15 Noviembre, 2026">15</div></td><td role="presentation"><div class="picker__day picker__day--infocus picker__day--today picker__day--highlighted" data-pick="1794787200000" role="gridcell" aria-label="16 Noviembre, 2026" aria-activedescendant="true">16</div></td><td role="presentation"><div class="picker__day picker__day--infocus" data-pick="1794873600000" role="gridcell" aria-label="17 Noviembre, 2026">17</div></td><td role="presentation"><div class="picker__day picker__day--infocus" data-pick="1794960000000" role="gridcell" aria-label="18 Noviembre, 2026">18</div></td><td role="presentation"><div class="picker__day picker__day--infocus" data-pick="1795046400000" role="gridcell" aria-label="19 Noviembre, 2026">19</div></td><td role="presentation"><div class="picker__day picker__day--infocus" data-pick="1795132800000" role="gridcell" aria-label="20 Noviembre, 2026">20</div></td><td role="presentation"><div class="picker__day picker__day--infocus" data-pick="1795219200000" role="gridcell" aria-label="21 Noviembre, 2026">21</div></td></tr><tr><td role="presentation"><div class="picker__day picker__day--infocus" data-pick="1795305600000" role="gridcell" aria-label="22 Noviembre, 2026">22</div></td><td role="presentation"><div class="picker__day picker__day--infocus" data-pick="1795392000000" role="gridcell" aria-label="23 Noviembre, 2026">23</div></td><td role="presentation"><div class="picker__day picker__day--infocus" data-pick="1795478400000" role="gridcell" aria-label="24 Noviembre, 2026">24</div></td><td role="presentation"><div class="picker__day picker__day--infocus" data-pick="1795564800000" role="gridcell" aria-label="25 Noviembre, 2026">25</div></td><td role="presentation"><div class="picker__day picker__day--infocus" data-pick="1795651200000" role="gridcell" aria-label="26 Noviembre, 2026">26</div></td><td role="presentation"><div class="picker__day picker__day--infocus" data-pick="1795737600000" role="gridcell" aria-label="27 Noviembre, 2026">27</div></td><td role="presentation"><div class="picker__day picker__day--infocus" data-pick="1795824000000" role="gridcell" aria-label="28 Noviembre, 2026">28</div></td></tr><tr><td role="presentation"><div class="picker__day picker__day--infocus" data-pick="1795910400000" role="gridcell" aria-label="29 Noviembre, 2026">29</div></td><td role="presentation"><div class="picker__day picker__day--infocus" data-pick="1795996800000" role="gridcell" aria-label="30 Noviembre, 2026">30</div></td><td role="presentation"><div class="picker__day picker__day--outfocus" data-pick="1796083200000" role="gridcell" aria-label="1 Diciembre, 2026">1</div></td><td role="presentation"><div class="picker__day picker__day--outfocus" data-pick="1796169600000" role="gridcell" aria-label="2 Diciembre, 2026">2</div></td><td role="presentation"><div class="picker__day picker__day--outfocus" data-pick="1796256000000" role="gridcell" aria-label="3 Diciembre, 2026">3</div></td><td role="presentation"><div class="picker__day picker__day--outfocus" data-pick="1796342400000" role="gridcell" aria-label="4 Diciembre, 2026">4</div></td><td role="presentation"><div class="picker__day picker__day--outfocus" data-pick="1796428800000" role="gridcell" aria-label="5 Diciembre, 2026">5</div></td></tr><tr><td role="presentation"><div class="picker__day picker__day--outfocus" data-pick="1796515200000" role="gridcell" aria-label="6 Diciembre, 2026">6</div></td><td role="presentation"><div class="picker__day picker__day--outfocus" data-pick="1796601600000" role="gridcell" aria-label="7 Diciembre, 2026">7</div></td><td role="presentation"><div class="picker__day picker__day--outfocus" data-pick="1796688000000" role="gridcell" aria-label="8 Diciembre, 2026">8</div></td><td role="presentation"><div class="picker__day picker__day--outfocus" data-pick="1796774400000" role="gridcell" aria-label="9 Diciembre, 2026">9</div></td><td role="presentation"><div class="picker__day picker__day--outfocus" data-pick="1796860800000" role="gridcell" aria-label="10 Diciembre, 2026">10</div></td><td role="presentation"><div class="picker__day picker__day--outfocus" data-pick="1796947200000" role="gridcell" aria-label="11 Diciembre, 2026">11</div></td><td role="presentation"><div class="picker__day picker__day--outfocus" data-pick="1797033600000" role="gridcell" aria-label="12 Diciembre, 2026">12</div></td></tr></tbody></table></div><div class="picker__footer"><button class="btn-flat picker__today" type="button" data-pick="1794787200000" disabled="" aria-controls="fecha_nacimiento">Hoy</button><button class="btn-flat picker__clear" type="button" data-clear="1" disabled="" aria-controls="fecha_nacimiento">Limpiar</button><button class="btn-flat picker__close" type="button" data-close="true" disabled="" aria-controls="fecha_nacimiento">Cerrar</button></div></div></div></div></div></div><input type="hidden" name="fecha_nacimiento_submit">
+          <label class="active" for="fecha_nacimiento">Fecha de nacimiento</label>
+        </div>
+        <div class="input-field col s6">
+          <i class="material-icons prefix">wc</i>
+          <div class="select-wrapper"><span class="caret">▼</span><input type="text" class="select-dropdown" readonly="true" data-activates="select-options-323933bf-6b35-7ad3-7c7c-31bbefdf861a" value="Masculino"><ul id="select-options-323933bf-6b35-7ad3-7c7c-31bbefdf861a" class="dropdown-content select-dropdown "><li class=""><span>Masculino</span></li><li class=""><span>Femenino</span></li></ul><select name="sexo" class="initialized">
+              <option value="Masculino">Masculino</option>  
+              <option value="Femenino">Femenino</option>              
+           </select></div>
+          <label for="last_name">Sexo</label>
+        </div>
+      </div>        
+      <div class="row">
+        <div class="input-field col s12">
+           <i class="material-icons prefix">hotel</i>
+          <input id="domicilio" name="domicilio" required="" type="text" class="validate">
+          <label for="domicilio">Domicilio Local | Hospedaje</label>
+        </div>
+      </div>
+      <div class="row">        
+        <div class="input-field col s6">
+          <i class="material-icons prefix">place</i>
+          <div class="select-wrapper"><span class="caret">▼</span><input type="text" class="select-dropdown" readonly="true" data-activates="select-options-5ddeb33e-ec58-267f-7d48-6ac66a44def8" value="Afgana"><ul id="select-options-5ddeb33e-ec58-267f-7d48-6ac66a44def8" class="dropdown-content select-dropdown "><li class=""><span>Afgana</span></li><li class=""><span>Albanesa</span></li><li class=""><span>Alemana</span></li><li class=""><span>Alto volteña</span></li><li class=""><span>Andorrana</span></li><li class=""><span>Angoleña</span></li><li class=""><span>Argelina</span></li><li class=""><span>Argentina</span></li><li class=""><span>Australiana</span></li><li class=""><span>Austriaca</span></li><li class=""><span>Bahamesa</span></li><li class=""><span>Bahreina</span></li><li class=""><span>Bangladesha</span></li><li class=""><span>Barbadesa</span></li><li class=""><span>Belga</span></li><li class=""><span>Beliceña</span></li><li class=""><span>Bermudesa</span></li><li class=""><span>Birmana</span></li><li class=""><span>Boliviana</span></li><li class=""><span>Botswanesa</span></li><li class=""><span>Brasileña</span></li><li class=""><span>Bulgara</span></li><li class=""><span>Burundesa</span></li><li class=""><span>Butana</span></li><li class=""><span>Camboyana</span></li><li class=""><span>Camerunesa</span></li><li class=""><span>Canadiense</span></li><li class=""><span>Centroafricana</span></li><li class=""><span>Chadeña</span></li><li class=""><span>Checoslovaca</span></li><li class=""><span>Chilena</span></li><li class=""><span>China</span></li><li class=""><span>China</span></li><li class=""><span>Chipriota</span></li><li class=""><span>Colombiana</span></li><li class=""><span>Congoleña</span></li><li class=""><span>Costarricense</span></li><li class=""><span>Cubana</span></li><li class=""><span>Dahoneya</span></li><li class=""><span>Danes</span></li><li class=""><span>Dominicana</span></li><li class=""><span>Ecuatoriana</span></li><li class=""><span>Egipcia</span></li><li class=""><span>Emirata</span></li><li class=""><span>Escosesa</span></li><li class=""><span>Eslovaca</span></li><li class=""><span>Española</span></li><li class=""><span>Estona</span></li><li class=""><span>Etiope</span></li><li class=""><span>Fijena</span></li><li class=""><span>Filipina</span></li><li class=""><span>Finlandesa</span></li><li class=""><span>Francesa</span></li><li class=""><span>Gabiana</span></li><li class=""><span>Gabona</span></li><li class=""><span>Galesa</span></li><li class=""><span>Ghanesa</span></li><li class=""><span>Granadeña</span></li><li class=""><span>Griega</span></li><li class=""><span>Guatemalteca</span></li><li class=""><span>Guinesa Ecuatoriana</span></li><li class=""><span>Guinesa</span></li><li class=""><span>Guyanesa</span></li><li class=""><span>Haitiana</span></li><li class=""><span>Holandesa</span></li><li class=""><span>Hondureña</span></li><li class=""><span>Hungara</span></li><li class=""><span>India</span></li><li class=""><span>Indonesa</span></li><li class=""><span>Inglesa</span></li><li class=""><span>Iraki</span></li><li class=""><span>Irani</span></li><li class=""><span>Irlandesa</span></li><li class=""><span>Islandesa</span></li><li class=""><span>Israeli</span></li><li class=""><span>Italiana</span></li><li class=""><span>Jamaiquina</span></li><li class=""><span>Japonesa</span></li><li class=""><span>Jordana</span></li><li class=""><span>Katensa</span></li><li class=""><span>Keniana</span></li><li class=""><span>Kuwaiti</span></li><li class=""><span>Laosiana</span></li><li class=""><span>Leonesa</span></li><li class=""><span>Lesothensa</span></li><li class=""><span>Letonesa</span></li><li class=""><span>Libanesa</span></li><li class=""><span>Liberiana</span></li><li class=""><span>Libeña</span></li><li class=""><span>Liechtenstein</span></li><li class=""><span>Lituana</span></li><li class=""><span>Luxemburgo</span></li><li class=""><span>Madagascar</span></li><li class=""><span>Malaca</span></li><li class=""><span>Malawi</span></li><li class=""><span>Maldivas</span></li><li class=""><span>Mali</span></li><li class=""><span>Maltesa</span></li><li class=""><span>Marfilesa</span></li><li class=""><span>Marroqui</span></li><li class=""><span>Mauricio</span></li><li class=""><span>Mauritana</span></li><li class=""><span>Mexicana</span></li><li class=""><span>Monaco</span></li><li class=""><span>Mongolesa</span></li><li class=""><span>Nauru</span></li><li class=""><span>Neozelandesa</span></li><li class=""><span>Nepalesa</span></li><li class=""><span>Nicaraguense</span></li><li class=""><span>Nigerana</span></li><li class=""><span>Nigeriana</span></li><li class=""><span>Norcoreana</span></li><li class=""><span>Norirlandesa</span></li><li class=""><span>Norteamericana</span></li><li class=""><span>Noruega</span></li><li class=""><span>Omana</span></li><li class=""><span>Pakistani</span></li><li class=""><span>Panameña</span></li><li class=""><span>Paraguaya</span></li><li class=""><span>Peruana</span></li><li class=""><span>Polaca</span></li><li class=""><span>Portoriqueña</span></li><li class=""><span>Portuguesa</span></li><li class=""><span>Rhodesiana</span></li><li class=""><span>Ruanda</span></li><li class=""><span>Rumana</span></li><li class=""><span>Rusa</span></li><li class=""><span>Salvadoreña</span></li><li class=""><span>Samoa Occidental</span></li><li class=""><span>San marino</span></li><li class=""><span>Saudi</span></li><li class=""><span>Senegalesa</span></li><li class=""><span>Sikkim</span></li><li class=""><span>Singapur</span></li><li class=""><span>Siria</span></li><li class=""><span>Somalia</span></li><li class=""><span>Sovietica</span></li><li class=""><span>Sri Lanka</span></li><li class=""><span>Suazilandesa</span></li><li class=""><span>Sudafricana</span></li><li class=""><span>Sudanesa</span></li><li class=""><span>Sueca</span></li><li class=""><span>Suiza</span></li><li class=""><span>Surcoreana</span></li><li class=""><span>Tailandesa</span></li><li class=""><span>Tanzana</span></li><li class=""><span>Tonga</span></li><li class=""><span>Tongo</span></li><li class=""><span>Trinidad y Tobago</span></li><li class=""><span>Tunecina</span></li><li class=""><span>Turca</span></li><li class=""><span>Ugandesa</span></li><li class=""><span>Uruguaya</span></li><li class=""><span>Vaticano</span></li><li class=""><span>Vietnamita</span></li><li class=""><span>Yemen Rep Arabe</span></li><li class=""><span>Yemen Rep Dem</span></li><li class=""><span>Yugoslava</span></li><li class=""><span>Zaire</span></li></ul><select required="" name="nacionalidad" id="nacionalidad" class="initialized">
+                
+                               
+                
+                  <option value="Afgana">Afgana</option>                   
+                              
+                               
+                
+                  <option value="Albanesa">Albanesa</option>                   
+                              
+                               
+                
+                  <option value="Alemana">Alemana</option>                   
+                              
+                               
+                
+                  <option value="Alto volteña">Alto volteña</option>                   
+                              
+                               
+                
+                  <option value="Andorrana">Andorrana</option>                   
+                              
+                               
+                
+                  <option value="Angoleña">Angoleña</option>                   
+                              
+                               
+                
+                  <option value="Argelina">Argelina</option>                   
+                              
+                               
+                
+                  <option value="Argentina">Argentina</option>                   
+                              
+                               
+                
+                  <option value="Australiana">Australiana</option>                   
+                              
+                               
+                
+                  <option value="Austriaca">Austriaca</option>                   
+                              
+                               
+                
+                  <option value="Bahamesa">Bahamesa</option>                   
+                              
+                               
+                
+                  <option value="Bahreina">Bahreina</option>                   
+                              
+                               
+                
+                  <option value="Bangladesha">Bangladesha</option>                   
+                              
+                               
+                
+                  <option value="Barbadesa">Barbadesa</option>                   
+                              
+                               
+                
+                  <option value="Belga">Belga</option>                   
+                              
+                               
+                
+                  <option value="Beliceña">Beliceña</option>                   
+                              
+                               
+                
+                  <option value="Bermudesa">Bermudesa</option>                   
+                              
+                               
+                
+                  <option value="Birmana">Birmana</option>                   
+                              
+                               
+                
+                  <option value="Boliviana">Boliviana</option>                   
+                              
+                               
+                
+                  <option value="Botswanesa">Botswanesa</option>                   
+                              
+                               
+                
+                  <option value="Brasileña">Brasileña</option>                   
+                              
+                               
+                
+                  <option value="Bulgara">Bulgara</option>                   
+                              
+                               
+                
+                  <option value="Burundesa">Burundesa</option>                   
+                              
+                               
+                
+                  <option value="Butana">Butana</option>                   
+                              
+                               
+                
+                  <option value="Camboyana">Camboyana</option>                   
+                              
+                               
+                
+                  <option value="Camerunesa">Camerunesa</option>                   
+                              
+                               
+                
+                  <option value="Canadiense">Canadiense</option>                   
+                              
+                               
+                
+                  <option value="Centroafricana">Centroafricana</option>                   
+                              
+                               
+                
+                  <option value="Chadeña">Chadeña</option>                   
+                              
+                               
+                
+                  <option value="Checoslovaca">Checoslovaca</option>                   
+                              
+                               
+                
+                  <option value="Chilena">Chilena</option>                   
+                              
+                               
+                
+                  <option value="China">China</option>                   
+                              
+                               
+                
+                  <option value="China">China</option>                   
+                              
+                               
+                
+                  <option value="Chipriota">Chipriota</option>                   
+                              
+                               
+                
+                  <option value="Colombiana">Colombiana</option>                   
+                              
+                               
+                
+                  <option value="Congoleña">Congoleña</option>                   
+                              
+                               
+                
+                  <option value="Costarricense">Costarricense</option>                   
+                              
+                               
+                
+                  <option value="Cubana">Cubana</option>                   
+                              
+                               
+                
+                  <option value="Dahoneya">Dahoneya</option>                   
+                              
+                               
+                
+                  <option value="Danes">Danes</option>                   
+                              
+                               
+                
+                  <option value="Dominicana">Dominicana</option>                   
+                              
+                               
+                
+                  <option value="Ecuatoriana">Ecuatoriana</option>                   
+                              
+                               
+                
+                  <option value="Egipcia">Egipcia</option>                   
+                              
+                               
+                
+                  <option value="Emirata">Emirata</option>                   
+                              
+                               
+                
+                  <option value="Escosesa">Escosesa</option>                   
+                              
+                               
+                
+                  <option value="Eslovaca">Eslovaca</option>                   
+                              
+                               
+                
+                  <option value="Española">Española</option>                   
+                              
+                               
+                
+                  <option value="Estona">Estona</option>                   
+                              
+                               
+                
+                  <option value="Etiope">Etiope</option>                   
+                              
+                               
+                
+                  <option value="Fijena">Fijena</option>                   
+                              
+                               
+                
+                  <option value="Filipina">Filipina</option>                   
+                              
+                               
+                
+                  <option value="Finlandesa">Finlandesa</option>                   
+                              
+                               
+                
+                  <option value="Francesa">Francesa</option>                   
+                              
+                               
+                
+                  <option value="Gabiana">Gabiana</option>                   
+                              
+                               
+                
+                  <option value="Gabona">Gabona</option>                   
+                              
+                               
+                
+                  <option value="Galesa">Galesa</option>                   
+                              
+                               
+                
+                  <option value="Ghanesa">Ghanesa</option>                   
+                              
+                               
+                
+                  <option value="Granadeña">Granadeña</option>                   
+                              
+                               
+                
+                  <option value="Griega">Griega</option>                   
+                              
+                               
+                
+                  <option value="Guatemalteca">Guatemalteca</option>                   
+                              
+                               
+                
+                  <option value="Guinesa Ecuatoriana">Guinesa Ecuatoriana</option>                   
+                              
+                               
+                
+                  <option value="Guinesa">Guinesa</option>                   
+                              
+                               
+                
+                  <option value="Guyanesa">Guyanesa</option>                   
+                              
+                               
+                
+                  <option value="Haitiana">Haitiana</option>                   
+                              
+                               
+                
+                  <option value="Holandesa">Holandesa</option>                   
+                              
+                               
+                
+                  <option value="Hondureña">Hondureña</option>                   
+                              
+                               
+                
+                  <option value="Hungara">Hungara</option>                   
+                              
+                               
+                
+                  <option value="India">India</option>                   
+                              
+                               
+                
+                  <option value="Indonesa">Indonesa</option>                   
+                              
+                               
+                
+                  <option value="Inglesa">Inglesa</option>                   
+                              
+                               
+                
+                  <option value="Iraki">Iraki</option>                   
+                              
+                               
+                
+                  <option value="Irani">Irani</option>                   
+                              
+                               
+                
+                  <option value="Irlandesa">Irlandesa</option>                   
+                              
+                               
+                
+                  <option value="Islandesa">Islandesa</option>                   
+                              
+                               
+                
+                  <option value="Israeli">Israeli</option>                   
+                              
+                               
+                
+                  <option value="Italiana">Italiana</option>                   
+                              
+                               
+                
+                  <option value="Jamaiquina">Jamaiquina</option>                   
+                              
+                               
+                
+                  <option value="Japonesa">Japonesa</option>                   
+                              
+                               
+                
+                  <option value="Jordana">Jordana</option>                   
+                              
+                               
+                
+                  <option value="Katensa">Katensa</option>                   
+                              
+                               
+                
+                  <option value="Keniana">Keniana</option>                   
+                              
+                               
+                
+                  <option value="Kuwaiti">Kuwaiti</option>                   
+                              
+                               
+                
+                  <option value="Laosiana">Laosiana</option>                   
+                              
+                               
+                
+                  <option value="Leonesa">Leonesa</option>                   
+                              
+                               
+                
+                  <option value="Lesothensa">Lesothensa</option>                   
+                              
+                               
+                
+                  <option value="Letonesa">Letonesa</option>                   
+                              
+                               
+                
+                  <option value="Libanesa">Libanesa</option>                   
+                              
+                               
+                
+                  <option value="Liberiana">Liberiana</option>                   
+                              
+                               
+                
+                  <option value="Libeña">Libeña</option>                   
+                              
+                               
+                
+                  <option value="Liechtenstein">Liechtenstein</option>                   
+                              
+                               
+                
+                  <option value="Lituana">Lituana</option>                   
+                              
+                               
+                
+                  <option value="Luxemburgo">Luxemburgo</option>                   
+                              
+                               
+                
+                  <option value="Madagascar">Madagascar</option>                   
+                              
+                               
+                
+                  <option value="Malaca">Malaca</option>                   
+                              
+                               
+                
+                  <option value="Malawi">Malawi</option>                   
+                              
+                               
+                
+                  <option value="Maldivas">Maldivas</option>                   
+                              
+                               
+                
+                  <option value="Mali">Mali</option>                   
+                              
+                               
+                
+                  <option value="Maltesa">Maltesa</option>                   
+                              
+                               
+                
+                  <option value="Marfilesa">Marfilesa</option>                   
+                              
+                               
+                
+                  <option value="Marroqui">Marroqui</option>                   
+                              
+                               
+                
+                  <option value="Mauricio">Mauricio</option>                   
+                              
+                               
+                
+                  <option value="Mauritana">Mauritana</option>                   
+                              
+                               
+                
+                  <option value="Mexicana">Mexicana</option>                   
+                              
+                               
+                
+                  <option value="Monaco">Monaco</option>                   
+                              
+                               
+                
+                  <option value="Mongolesa">Mongolesa</option>                   
+                              
+                               
+                
+                  <option value="Nauru">Nauru</option>                   
+                              
+                               
+                
+                  <option value="Neozelandesa">Neozelandesa</option>                   
+                              
+                               
+                
+                  <option value="Nepalesa">Nepalesa</option>                   
+                              
+                               
+                
+                  <option value="Nicaraguense">Nicaraguense</option>                   
+                              
+                               
+                
+                  <option value="Nigerana">Nigerana</option>                   
+                              
+                               
+                
+                  <option value="Nigeriana">Nigeriana</option>                   
+                              
+                               
+                
+                  <option value="Norcoreana">Norcoreana</option>                   
+                              
+                               
+                
+                  <option value="Norirlandesa">Norirlandesa</option>                   
+                              
+                               
+                
+                  <option value="Norteamericana">Norteamericana</option>                   
+                              
+                               
+                
+                  <option value="Noruega">Noruega</option>                   
+                              
+                               
+                
+                  <option value="Omana">Omana</option>                   
+                              
+                               
+                
+                  <option value="Pakistani">Pakistani</option>                   
+                              
+                               
+                
+                  <option value="Panameña">Panameña</option>                   
+                              
+                               
+                
+                  <option value="Paraguaya">Paraguaya</option>                   
+                              
+                               
+                
+                  <option value="Peruana">Peruana</option>                   
+                              
+                               
+                
+                  <option value="Polaca">Polaca</option>                   
+                              
+                               
+                
+                  <option value="Portoriqueña">Portoriqueña</option>                   
+                              
+                               
+                
+                  <option value="Portuguesa">Portuguesa</option>                   
+                              
+                               
+                
+                  <option value="Rhodesiana">Rhodesiana</option>                   
+                              
+                               
+                
+                  <option value="Ruanda">Ruanda</option>                   
+                              
+                               
+                
+                  <option value="Rumana">Rumana</option>                   
+                              
+                               
+                
+                  <option value="Rusa">Rusa</option>                   
+                              
+                               
+                
+                  <option value="Salvadoreña">Salvadoreña</option>                   
+                              
+                               
+                
+                  <option value="Samoa Occidental">Samoa Occidental</option>                   
+                              
+                               
+                
+                  <option value="San marino">San marino</option>                   
+                              
+                               
+                
+                  <option value="Saudi">Saudi</option>                   
+                              
+                               
+                
+                  <option value="Senegalesa">Senegalesa</option>                   
+                              
+                               
+                
+                  <option value="Sikkim">Sikkim</option>                   
+                              
+                               
+                
+                  <option value="Singapur">Singapur</option>                   
+                              
+                               
+                
+                  <option value="Siria">Siria</option>                   
+                              
+                               
+                
+                  <option value="Somalia">Somalia</option>                   
+                              
+                               
+                
+                  <option value="Sovietica">Sovietica</option>                   
+                              
+                               
+                
+                  <option value="Sri Lanka">Sri Lanka</option>                   
+                              
+                               
+                
+                  <option value="Suazilandesa">Suazilandesa</option>                   
+                              
+                               
+                
+                  <option value="Sudafricana">Sudafricana</option>                   
+                              
+                               
+                
+                  <option value="Sudanesa">Sudanesa</option>                   
+                              
+                               
+                
+                  <option value="Sueca">Sueca</option>                   
+                              
+                               
+                
+                  <option value="Suiza">Suiza</option>                   
+                              
+                               
+                
+                  <option value="Surcoreana">Surcoreana</option>                   
+                              
+                               
+                
+                  <option value="Tailandesa">Tailandesa</option>                   
+                              
+                               
+                
+                  <option value="Tanzana">Tanzana</option>                   
+                              
+                               
+                
+                  <option value="Tonga">Tonga</option>                   
+                              
+                               
+                
+                  <option value="Tongo">Tongo</option>                   
+                              
+                               
+                
+                  <option value="Trinidad y Tobago">Trinidad y Tobago</option>                   
+                              
+                               
+                
+                  <option value="Tunecina">Tunecina</option>                   
+                              
+                               
+                
+                  <option value="Turca">Turca</option>                   
+                              
+                               
+                
+                  <option value="Ugandesa">Ugandesa</option>                   
+                              
+                               
+                
+                  <option value="Uruguaya">Uruguaya</option>                   
+                              
+                               
+                
+                  <option value="Vaticano">Vaticano</option>                   
+                              
+                               
+                
+                  <option value="Vietnamita">Vietnamita</option>                   
+                              
+                               
+                
+                  <option value="Yemen Rep Arabe">Yemen Rep Arabe</option>                   
+                              
+                               
+                
+                  <option value="Yemen Rep Dem">Yemen Rep Dem</option>                   
+                              
+                               
+                
+                  <option value="Yugoslava">Yugoslava</option>                   
+                              
+                               
+                
+                  <option value="Zaire">Zaire</option>                   
+                              
+                     
+          </select></div>
+          <label for="nacionalidad">Nacionalidad</label>
+        </div>
+        
+       <div class="input-field col s6">
+            <div class="select-wrapper"><span class="caret">▼</span><input type="text" class="select-dropdown" readonly="true" data-activates="select-options-8c9c078a-7d2d-4bbe-3bf5-0ae02bb2e42f" value="Afganistán"><ul id="select-options-8c9c078a-7d2d-4bbe-3bf5-0ae02bb2e42f" class="dropdown-content select-dropdown "><li class=""><span>Afganistán</span></li><li class=""><span>Albania</span></li><li class=""><span>Alemania</span></li><li class=""><span>Alto volta</span></li><li class=""><span>Andorra</span></li><li class=""><span>Angola</span></li><li class=""><span>Argelia</span></li><li class=""><span>Argentina</span></li><li class=""><span>Australia</span></li><li class=""><span>Austria</span></li><li class=""><span>Bahamas</span></li><li class=""><span>Bahrein</span></li><li class=""><span>Bangladesh</span></li><li class=""><span>Barbados</span></li><li class=""><span>Belgica</span></li><li class=""><span>Belice</span></li><li class=""><span>Bermudas</span></li><li class=""><span>Birmania</span></li><li class=""><span>Bolivia</span></li><li class=""><span>Botswana</span></li><li class=""><span>Brasil</span></li><li class=""><span>Bulgaria</span></li><li class=""><span>Burundi</span></li><li class=""><span>Butan</span></li><li class=""><span>Khemer Rep de Camboya </span></li><li class=""><span>Camerun</span></li><li class=""><span>Canada</span></li><li class=""><span>Rep Centroafricana</span></li><li class=""><span>Chad</span></li><li class=""><span>Rep. Checa</span></li><li class=""><span>Chile</span></li><li class=""><span>China</span></li><li class=""><span>Taiwan</span></li><li class=""><span>Chipre</span></li><li class=""><span>Colombia</span></li><li class=""><span>Congo</span></li><li class=""><span>Costa Rica</span></li><li class=""><span>Cuba</span></li><li class=""><span>Dahoney</span></li><li class=""><span>Dinamarca</span></li><li class=""><span>Rep. Dominicana</span></li><li class=""><span>Ecuador</span></li><li class=""><span>Egipto</span></li><li class=""><span>Emiratos Arabes Udo.</span></li><li class=""><span>Escocia</span></li><li class=""><span>Rep. Eslovaca</span></li><li class=""><span>España</span></li><li class=""><span>Estonia</span></li><li class=""><span>Etiopia</span></li><li class=""><span>Fiji</span></li><li class=""><span>Filipinas</span></li><li class=""><span>Finlandia</span></li><li class=""><span>Francia</span></li><li class=""><span>Gambia</span></li><li class=""><span>Gabon</span></li><li class=""><span>Gales</span></li><li class=""><span>Ghana</span></li><li class=""><span>Granada</span></li><li class=""><span>Grecia</span></li><li class=""><span>Guatemala</span></li><li class=""><span>Guinea Ecuatorial</span></li><li class=""><span>Guinea</span></li><li class=""><span>Guyana</span></li><li class=""><span>Haiti</span></li><li class=""><span>Holanda</span></li><li class=""><span>Honduras</span></li><li class=""><span>Hungria</span></li><li class=""><span>India</span></li><li class=""><span>Indonesia</span></li><li class=""><span>Inglaterra</span></li><li class=""><span>Irak</span></li><li class=""><span>Iran</span></li><li class=""><span>Irlanda</span></li><li class=""><span>Islandia</span></li><li class=""><span>Israel</span></li><li class=""><span>Italia</span></li><li class=""><span>Jamaica</span></li><li class=""><span>Japon</span></li><li class=""><span>Jordania</span></li><li class=""><span>Katar</span></li><li class=""><span>Kenia</span></li><li class=""><span>Kwait</span></li><li class=""><span>Laos</span></li><li class=""><span>Sierra leona</span></li><li class=""><span>Lesotho</span></li><li class=""><span>Letonia</span></li><li class=""><span>Libano</span></li><li class=""><span>Liberia</span></li><li class=""><span>Libia</span></li><li class=""><span>Liechtenstein</span></li><li class=""><span>Lituania</span></li><li class=""><span>Luxemburgo</span></li><li class=""><span>Madagascar</span></li><li class=""><span>Fede. de Malasia</span></li><li class=""><span>Malawi</span></li><li class=""><span>Maldivas</span></li><li class=""><span>Mali</span></li><li class=""><span>Malta</span></li><li class=""><span>Costa de Marfil</span></li><li class=""><span>Marruecos</span></li><li class=""><span>Mauricio</span></li><li class=""><span>Mauritania</span></li><li class=""><span>México</span></li><li class=""><span>Monaco</span></li><li class=""><span>Mongolia</span></li><li class=""><span>Nauru</span></li><li class=""><span>Nueva Zelandia</span></li><li class=""><span>Nepal</span></li><li class=""><span>Nicaragua</span></li><li class=""><span>Niger</span></li><li class=""><span>Nigeria</span></li><li class=""><span>Corea del Norte</span></li><li class=""><span>Irlanda del norte</span></li><li class=""><span>Estados unidos</span></li><li class=""><span>Noruega</span></li><li class=""><span>Oman</span></li><li class=""><span>Pakistan</span></li><li class=""><span>Panama</span></li><li class=""><span>Paraguay</span></li><li class=""><span>Peru</span></li><li class=""><span>Polonia</span></li><li class=""><span>Puerto Rico</span></li><li class=""><span>Portugal</span></li><li class=""><span>Rhodesia</span></li><li class=""><span>Ruanda</span></li><li class=""><span>Rumania</span></li><li class=""><span>Russia</span></li><li class=""><span>El Salvador</span></li><li class=""><span>Samoa Occidental</span></li><li class=""><span>San Marino</span></li><li class=""><span>Arabia Saudita</span></li><li class=""><span>Senegal</span></li><li class=""><span>Sikkim</span></li><li class=""><span>Singapur</span></li><li class=""><span>Siria</span></li><li class=""><span>Somalia</span></li><li class=""><span>Union Sovietica</span></li><li class=""><span>Sri Lanka ['nacionalidad'=&gt;Ceylan] </span></li><li class=""><span>Suazilandia</span></li><li class=""><span>Sudafrica</span></li><li class=""><span>Sudan</span></li><li class=""><span>Suecia</span></li><li class=""><span>Suiza</span></li><li class=""><span>Corea del Sur</span></li><li class=""><span>Tailandia</span></li><li class=""><span>Tanzania</span></li><li class=""><span>Tonga</span></li><li class=""><span>Tongo</span></li><li class=""><span>Trinidad y Tobago</span></li><li class=""><span>Tunez</span></li><li class=""><span>Turquia</span></li><li class=""><span>Uganda</span></li><li class=""><span>Uruguay</span></li><li class=""><span>Vaticano</span></li><li class=""><span>Vietnam</span></li><li class=""><span>Yemen Rep. Arabe</span></li><li class=""><span>Yemen Rep. Dem</span></li><li class=""><span>Yugoslavia</span></li><li class=""><span>Zaire</span></li></ul><select required="" name="pais_residencia" id="pais_residencia" class="initialized">
+                
+                            
+                
+                  <option value="Afganistán">Afganistán</option>                 
+                                 
+                            
+                
+                  <option value="Albania">Albania</option>                 
+                                 
+                            
+                
+                  <option value="Alemania">Alemania</option>                 
+                                 
+                            
+                
+                  <option value="Alto volta">Alto volta</option>                 
+                                 
+                            
+                
+                  <option value="Andorra">Andorra</option>                 
+                                 
+                            
+                
+                  <option value="Angola">Angola</option>                 
+                                 
+                            
+                
+                  <option value="Argelia">Argelia</option>                 
+                                 
+                            
+                
+                  <option value="Argentina">Argentina</option>                 
+                                 
+                            
+                
+                  <option value="Australia">Australia</option>                 
+                                 
+                            
+                
+                  <option value="Austria">Austria</option>                 
+                                 
+                            
+                
+                  <option value="Bahamas">Bahamas</option>                 
+                                 
+                            
+                
+                  <option value="Bahrein">Bahrein</option>                 
+                                 
+                            
+                
+                  <option value="Bangladesh">Bangladesh</option>                 
+                                 
+                            
+                
+                  <option value="Barbados">Barbados</option>                 
+                                 
+                            
+                
+                  <option value="Belgica">Belgica</option>                 
+                                 
+                            
+                
+                  <option value="Belice">Belice</option>                 
+                                 
+                            
+                
+                  <option value="Bermudas">Bermudas</option>                 
+                                 
+                            
+                
+                  <option value="Birmania">Birmania</option>                 
+                                 
+                            
+                
+                  <option value="Bolivia">Bolivia</option>                 
+                                 
+                            
+                
+                  <option value="Botswana">Botswana</option>                 
+                                 
+                            
+                
+                  <option value="Brasil">Brasil</option>                 
+                                 
+                            
+                
+                  <option value="Bulgaria">Bulgaria</option>                 
+                                 
+                            
+                
+                  <option value="Burundi">Burundi</option>                 
+                                 
+                            
+                
+                  <option value="Butan">Butan</option>                 
+                                 
+                            
+                
+                  <option value="Khemer Rep de Camboya ">Khemer Rep de Camboya </option>                 
+                                 
+                            
+                
+                  <option value="Camerun">Camerun</option>                 
+                                 
+                            
+                
+                  <option value="Canada">Canada</option>                 
+                                 
+                            
+                
+                  <option value="Rep Centroafricana">Rep Centroafricana</option>                 
+                                 
+                            
+                
+                  <option value="Chad">Chad</option>                 
+                                 
+                            
+                
+                  <option value="Rep. Checa">Rep. Checa</option>                 
+                                 
+                            
+                
+                  <option value="Chile">Chile</option>                 
+                                 
+                            
+                
+                  <option value="China">China</option>                 
+                                 
+                            
+                
+                  <option value="Taiwan">Taiwan</option>                 
+                                 
+                            
+                
+                  <option value="Chipre">Chipre</option>                 
+                                 
+                            
+                
+                  <option value="Colombia">Colombia</option>                 
+                                 
+                            
+                
+                  <option value="Congo">Congo</option>                 
+                                 
+                            
+                
+                  <option value="Costa Rica">Costa Rica</option>                 
+                                 
+                            
+                
+                  <option value="Cuba">Cuba</option>                 
+                                 
+                            
+                
+                  <option value="Dahoney">Dahoney</option>                 
+                                 
+                            
+                
+                  <option value="Dinamarca">Dinamarca</option>                 
+                                 
+                            
+                
+                  <option value="Rep. Dominicana">Rep. Dominicana</option>                 
+                                 
+                            
+                
+                  <option value="Ecuador">Ecuador</option>                 
+                                 
+                            
+                
+                  <option value="Egipto">Egipto</option>                 
+                                 
+                            
+                
+                  <option value="Emiratos Arabes Udo.">Emiratos Arabes Udo.</option>                 
+                                 
+                            
+                
+                  <option value="Escocia">Escocia</option>                 
+                                 
+                            
+                
+                  <option value="Rep. Eslovaca">Rep. Eslovaca</option>                 
+                                 
+                            
+                
+                  <option value="España">España</option>                 
+                                 
+                            
+                
+                  <option value="Estonia">Estonia</option>                 
+                                 
+                            
+                
+                  <option value="Etiopia">Etiopia</option>                 
+                                 
+                            
+                
+                  <option value="Fiji">Fiji</option>                 
+                                 
+                            
+                
+                  <option value="Filipinas">Filipinas</option>                 
+                                 
+                            
+                
+                  <option value="Finlandia">Finlandia</option>                 
+                                 
+                            
+                
+                  <option value="Francia">Francia</option>                 
+                                 
+                            
+                
+                  <option value="Gambia">Gambia</option>                 
+                                 
+                            
+                
+                  <option value="Gabon">Gabon</option>                 
+                                 
+                            
+                
+                  <option value="Gales">Gales</option>                 
+                                 
+                            
+                
+                  <option value="Ghana">Ghana</option>                 
+                                 
+                            
+                
+                  <option value="Granada">Granada</option>                 
+                                 
+                            
+                
+                  <option value="Grecia">Grecia</option>                 
+                                 
+                            
+                
+                  <option value="Guatemala">Guatemala</option>                 
+                                 
+                            
+                
+                  <option value="Guinea Ecuatorial">Guinea Ecuatorial</option>                 
+                                 
+                            
+                
+                  <option value="Guinea">Guinea</option>                 
+                                 
+                            
+                
+                  <option value="Guyana">Guyana</option>                 
+                                 
+                            
+                
+                  <option value="Haiti">Haiti</option>                 
+                                 
+                            
+                
+                  <option value="Holanda">Holanda</option>                 
+                                 
+                            
+                
+                  <option value="Honduras">Honduras</option>                 
+                                 
+                            
+                
+                  <option value="Hungria">Hungria</option>                 
+                                 
+                            
+                
+                  <option value="India">India</option>                 
+                                 
+                            
+                
+                  <option value="Indonesia">Indonesia</option>                 
+                                 
+                            
+                
+                  <option value="Inglaterra">Inglaterra</option>                 
+                                 
+                            
+                
+                  <option value="Irak">Irak</option>                 
+                                 
+                            
+                
+                  <option value="Iran">Iran</option>                 
+                                 
+                            
+                
+                  <option value="Irlanda">Irlanda</option>                 
+                                 
+                            
+                
+                  <option value="Islandia">Islandia</option>                 
+                                 
+                            
+                
+                  <option value="Israel">Israel</option>                 
+                                 
+                            
+                
+                  <option value="Italia">Italia</option>                 
+                                 
+                            
+                
+                  <option value="Jamaica">Jamaica</option>                 
+                                 
+                            
+                
+                  <option value="Japon">Japon</option>                 
+                                 
+                            
+                
+                  <option value="Jordania">Jordania</option>                 
+                                 
+                            
+                
+                  <option value="Katar">Katar</option>                 
+                                 
+                            
+                
+                  <option value="Kenia">Kenia</option>                 
+                                 
+                            
+                
+                  <option value="Kwait">Kwait</option>                 
+                                 
+                            
+                
+                  <option value="Laos">Laos</option>                 
+                                 
+                            
+                
+                  <option value="Sierra leona">Sierra leona</option>                 
+                                 
+                            
+                
+                  <option value="Lesotho">Lesotho</option>                 
+                                 
+                            
+                
+                  <option value="Letonia">Letonia</option>                 
+                                 
+                            
+                
+                  <option value="Libano">Libano</option>                 
+                                 
+                            
+                
+                  <option value="Liberia">Liberia</option>                 
+                                 
+                            
+                
+                  <option value="Libia">Libia</option>                 
+                                 
+                            
+                
+                  <option value="Liechtenstein">Liechtenstein</option>                 
+                                 
+                            
+                
+                  <option value="Lituania">Lituania</option>                 
+                                 
+                            
+                
+                  <option value="Luxemburgo">Luxemburgo</option>                 
+                                 
+                            
+                
+                  <option value="Madagascar">Madagascar</option>                 
+                                 
+                            
+                
+                  <option value="Fede. de Malasia">Fede. de Malasia</option>                 
+                                 
+                            
+                
+                  <option value="Malawi">Malawi</option>                 
+                                 
+                            
+                
+                  <option value="Maldivas">Maldivas</option>                 
+                                 
+                            
+                
+                  <option value="Mali">Mali</option>                 
+                                 
+                            
+                
+                  <option value="Malta">Malta</option>                 
+                                 
+                            
+                
+                  <option value="Costa de Marfil">Costa de Marfil</option>                 
+                                 
+                            
+                
+                  <option value="Marruecos">Marruecos</option>                 
+                                 
+                            
+                
+                  <option value="Mauricio">Mauricio</option>                 
+                                 
+                            
+                
+                  <option value="Mauritania">Mauritania</option>                 
+                                 
+                            
+                
+                  <option value="México">México</option>                 
+                                 
+                            
+                
+                  <option value="Monaco">Monaco</option>                 
+                                 
+                            
+                
+                  <option value="Mongolia">Mongolia</option>                 
+                                 
+                            
+                
+                  <option value="Nauru">Nauru</option>                 
+                                 
+                            
+                
+                  <option value="Nueva Zelandia">Nueva Zelandia</option>                 
+                                 
+                            
+                
+                  <option value="Nepal">Nepal</option>                 
+                                 
+                            
+                
+                  <option value="Nicaragua">Nicaragua</option>                 
+                                 
+                            
+                
+                  <option value="Niger">Niger</option>                 
+                                 
+                            
+                
+                  <option value="Nigeria">Nigeria</option>                 
+                                 
+                            
+                
+                  <option value="Corea del Norte">Corea del Norte</option>                 
+                                 
+                            
+                
+                  <option value="Irlanda del norte">Irlanda del norte</option>                 
+                                 
+                            
+                
+                  <option value="Estados unidos">Estados unidos</option>                 
+                                 
+                            
+                
+                  <option value="Noruega">Noruega</option>                 
+                                 
+                            
+                
+                  <option value="Oman">Oman</option>                 
+                                 
+                            
+                
+                  <option value="Pakistan">Pakistan</option>                 
+                                 
+                            
+                
+                  <option value="Panama">Panama</option>                 
+                                 
+                            
+                
+                  <option value="Paraguay">Paraguay</option>                 
+                                 
+                            
+                
+                  <option value="Peru">Peru</option>                 
+                                 
+                            
+                
+                  <option value="Polonia">Polonia</option>                 
+                                 
+                            
+                
+                  <option value="Puerto Rico">Puerto Rico</option>                 
+                                 
+                            
+                
+                  <option value="Portugal">Portugal</option>                 
+                                 
+                            
+                
+                  <option value="Rhodesia">Rhodesia</option>                 
+                                 
+                            
+                
+                  <option value="Ruanda">Ruanda</option>                 
+                                 
+                            
+                
+                  <option value="Rumania">Rumania</option>                 
+                                 
+                            
+                
+                  <option value="Russia">Russia</option>                 
+                                 
+                            
+                
+                  <option value="El Salvador">El Salvador</option>                 
+                                 
+                            
+                
+                  <option value="Samoa Occidental">Samoa Occidental</option>                 
+                                 
+                            
+                
+                  <option value="San Marino">San Marino</option>                 
+                                 
+                            
+                
+                  <option value="Arabia Saudita">Arabia Saudita</option>                 
+                                 
+                            
+                
+                  <option value="Senegal">Senegal</option>                 
+                                 
+                            
+                
+                  <option value="Sikkim">Sikkim</option>                 
+                                 
+                            
+                
+                  <option value="Singapur">Singapur</option>                 
+                                 
+                            
+                
+                  <option value="Siria">Siria</option>                 
+                                 
+                            
+                
+                  <option value="Somalia">Somalia</option>                 
+                                 
+                            
+                
+                  <option value="Union Sovietica">Union Sovietica</option>                 
+                                 
+                            
+                
+                  <option value="Sri Lanka ['nacionalidad'=&gt;Ceylan] ">Sri Lanka ['nacionalidad'=&gt;Ceylan] </option>                 
+                                 
+                            
+                
+                  <option value="Suazilandia">Suazilandia</option>                 
+                                 
+                            
+                
+                  <option value="Sudafrica">Sudafrica</option>                 
+                                 
+                            
+                
+                  <option value="Sudan">Sudan</option>                 
+                                 
+                            
+                
+                  <option value="Suecia">Suecia</option>                 
+                                 
+                            
+                
+                  <option value="Suiza">Suiza</option>                 
+                                 
+                            
+                
+                  <option value="Corea del Sur">Corea del Sur</option>                 
+                                 
+                            
+                
+                  <option value="Tailandia">Tailandia</option>                 
+                                 
+                            
+                
+                  <option value="Tanzania">Tanzania</option>                 
+                                 
+                            
+                
+                  <option value="Tonga">Tonga</option>                 
+                                 
+                            
+                
+                  <option value="Tongo">Tongo</option>                 
+                                 
+                            
+                
+                  <option value="Trinidad y Tobago">Trinidad y Tobago</option>                 
+                                 
+                            
+                
+                  <option value="Tunez">Tunez</option>                 
+                                 
+                            
+                
+                  <option value="Turquia">Turquia</option>                 
+                                 
+                            
+                
+                  <option value="Uganda">Uganda</option>                 
+                                 
+                            
+                
+                  <option value="Uruguay">Uruguay</option>                 
+                                 
+                            
+                
+                  <option value="Vaticano">Vaticano</option>                 
+                                 
+                            
+                
+                  <option value="Vietnam">Vietnam</option>                 
+                                 
+                            
+                
+                  <option value="Yemen Rep. Arabe">Yemen Rep. Arabe</option>                 
+                                 
+                            
+                
+                  <option value="Yemen Rep. Dem">Yemen Rep. Dem</option>                 
+                                 
+                            
+                
+                  <option value="Yugoslavia">Yugoslavia</option>                 
+                                 
+                            
+                
+                  <option value="Zaire">Zaire</option>                 
+                                 
+                    
+          </select></div>
+          <label for="pais_residencia">País de residencia</label>
+              
+       </div>
+      
+       </div>
+       <div class="row">
+        
+        <div class="input-field col s6">
+          <i class="material-icons prefix">phone</i>
+          <input id="nacionalidad" type="number" name="telefono" class="validate" value="">
+          <label for="nacionalidad">Teléfono</label>
+        </div>
+        <div class="input-field col s6">
+          <i class="material-icons prefix">email</i>
+          <input id="email" type="email" name="email" class="validate" value="">
+          <label for="email">Email</label>
+        </div>
+      </div>
+      
+      <div class="file-field input-field">
+      <div class="btn">
+        <span><i class="material-icons prefix">add_a_photo</i></span>
+        <input type="file" name="imagen" accept="image/*">
+      </div>
+      <div class="file-path-wrapper">
+        <input class="file-path validate" required="" type="text" placeholder="Escoja una foto frontal tipo foto carnet.">
+      </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s12">
+          
+          <script type="text/javascript" async="" charset="utf-8" src="https://www.gstatic.com/recaptcha/releases/4i3aN5wAweL7i3ADI7BSX4B-/recaptcha__en.js" crossorigin="anonymous" integrity="sha384-9kWldX1GBV0fyoXG9yQ5yIrkqyWnjgRBm6nILiadZBzlNoT3mlsHud6Afn9RimQk"></script><script type="text/javascript">
+        var RecaptchaOptions = {"curl_timeout":1,"curl_verify":true};
+    </script>
+<script src="https://www.google.com/recaptcha/api.js?render=onload"></script>
+<div class="g-recaptcha" data-sitekey="6LfLd4AqAAAAAOV6Bk7prxF79RWq5x38KO3baOWa"><div style="width: 304px; height: 78px;"><div><iframe title="reCAPTCHA" width="304" height="78" role="presentation" name="a-5oigdyotc8s3" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation" src="https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6LfLd4AqAAAAAOV6Bk7prxF79RWq5x38KO3baOWa&amp;co=aHR0cHM6Ly9zaXBlZC5hcjo0NDM.&amp;hl=en&amp;v=4i3aN5wAweL7i3ADI7BSX4B-&amp;size=normal&amp;anchor-ms=20000&amp;execute-ms=30000&amp;ovv=CADq00gF&amp;cb=cgbjgjd353ng"></iframe></div><textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea></div><iframe style="display: none;"></iframe></div>
+<noscript>
+    <div style="width: 302px; height: 352px;">
+        <div style="width: 302px; height: 352px; position: relative;">
+            <div style="width: 302px; height: 352px; position: absolute;">
+                <iframe src="https://www.google.com/recaptcha/api/fallback?k=6LfLd4AqAAAAAOV6Bk7prxF79RWq5x38KO3baOWa"
+                        frameborder="0" scrolling="no"
+                        style="width: 302px; height:352px; border-style: none;">
+                </iframe>
+            </div>
+            <div style="width: 250px; height: 80px; position: absolute; border-style: none;
+                  bottom: 21px; left: 25px; margin: 0; padding: 0; right: 25px;">
+        <textarea id="g-recaptcha-response" name="g-recaptcha-response"
+                  class="g-recaptcha-response"
+                  style="width: 250px; height: 80px; border: 1px solid #c1c1c1;
+                         margin: 0; padding: 0; resize: none;"></textarea>
+            </div>
+        </div>
+    </div>
+</noscript>
+
+        </div>
+    </div>  
+    <button class="btn waves-effect waves-light" type="submit">Registrase
+       <i class="material-icons right">send</i>
+    </button>
+    </form>
+  
+  </div>
+  </div>
+   <footer class="section">
+  <div class="container">
+
+    <div class="row">     
+
+      
+      <div class="col s6">
+         <h5>Enlaces de interés</h5>
+          <ul>
+          <li><a class="black-text text-lighten-3" href="http://saptdf.ar/">SAPTDF | Sistema de Acceso de Pesca de Tierra del Fuego</a></li>
+          <ul>        
+                
+      </ul></ul></div>
+
+    </div>
+
+  </div>
+  <div class="footer-copyright">
+            <div class="container">
+         <p> © Dirección General de Recursos Hídricos <br>
+          Ministerio de Producción y Ambiente</p>
+            </div>
+          </div>
+</footer>  <script src="https://siped.ar/js/app.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+  <script>
+    $(".button-collapse").sideNav();
+    $('.dropdown-button').dropdown('open');
+    $('select').material_select();
+    $('.modal').modal();
+    $(document).ready(function(){
+      $('.carousel').carousel();
+    });
+
+   $('.datepicker').pickadate({
+  formatSubmit: 'yyyy/mm/dd',
+  labelMonthNext: 'Siguente',
+  labelMonthPrev: 'Anterior',
+  labelMonthSelect: 'Selecione un mes',
+  labelYearSelect: 'Seleccione un año',
+  selectYears: 180,
+  monthsFull: [ 'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre' ],
+  monthsShort: [ 'Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic' ],
+  weekdaysFull: [ 'Domingo', 'Lunes', 'Msrtes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado' ],
+  weekdaysShort: [ 'Dom', 'Lun', 'Mar', 'Mie', 'Jue', 'Vie', 'Sab' ],
+  weekdaysLetter: [ 'D', 'L', 'M', 'M', 'J', 'V', 'S' ], 
+  today: 'Hoy',
+  clear: 'Limpiar',
+  close: 'Cerrar',
+  closeOnSelect: true
+});
+  </script><div class="drag-target" data-sidenav="slide-out" style="left: 0px; touch-action: pan-y; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></div>
+
+  <script type="text/javascript"> 
+
+	
+
+	function obtenerLocalidades(provincia){
+	  //es llamado desde el frontend porque para el backend se neceita configrar el header para el login
+	  //https://developer.mozilla.org/es/docs/Web/API/Fetch_API/Utilizando_Fetch		
+	  fetch(`https://siped.ar/nacionales/localidades/${provincia}`)
+	  .then(response => response.json())  
+	  .then(localidades => insertarLodalidades(localidades))
+	  .catch(error => console.log(error));
+	  //console.log(provincia);
+
+	}
+
+	
+
+	function insertarLodalidades(localidades){
+
+		opciones='<select class="browser-default"  required  name="localidad">';
+
+		localidades.forEach(function (item) {    
+
+      		opciones += `<option value="${item.localidad}"  href="#tipo">${item.localidad}</option>`
+
+      
+    
+ 		 });
+		
+		optiones='</select>';
+		
+		document.querySelector('#localidades').innerHTML = opciones;
+
+
+	}
+
+
+
+
+	
+</script>   
+     
+ 
+<div class="hiddendiv common"></div><div style="background-color: rgb(255, 255, 255); border: 1px solid rgb(204, 204, 204); box-shadow: rgba(0, 0, 0, 0.2) 2px 2px 3px; position: absolute; transition: visibility linear 0.3s, opacity 0.3s linear; opacity: 0; visibility: hidden; z-index: 2000000000; left: 0px; top: -10000px;"><div style="width: 100%; height: 100%; position: fixed; top: 0px; left: 0px; z-index: 2000000000; background-color: rgb(255, 255, 255); opacity: 0.05;"></div><div class="g-recaptcha-bubble-arrow" style="border: 11px solid transparent; width: 0px; height: 0px; position: absolute; pointer-events: none; margin-top: -11px; z-index: 2000000000;"></div><div class="g-recaptcha-bubble-arrow" style="border: 10px solid transparent; width: 0px; height: 0px; position: absolute; pointer-events: none; margin-top: -10px; z-index: 2000000000;"></div><div style="z-index: 2000000000; position: relative;"><iframe title="recaptcha challenge expires in two minutes" name="c-5oigdyotc8s3" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation" src="https://www.google.com/recaptcha/api2/bframe?hl=en&amp;v=4i3aN5wAweL7i3ADI7BSX4B-&amp;k=6LfLd4AqAAAAAOV6Bk7prxF79RWq5x38KO3baOWa&amp;bft=0dAFcWeA6wQ6oOPfUPzceTMR4JXhAKA1p0F4gk9ncyZU053K5IR3vJwWoxJYHR7WhopvM9NdKbaTa-lQqz2SsEaa2carNuHkRlGg" style="width: 100%; height: 100%;"></iframe></div></div></body></html>
