@@ -382,7 +382,8 @@ foreach ( [ 'es', 'en', 'pt' ] as $i ) {
 	$ok || WP_CLI::error( "$clave ($i): la lectura de vuelta no coincide." );
 }
 if ( $aplicar ) {
-	$nota_es = pm_buscar( 'pm_nota', $clave, 'es' );
+	// pm_buscar() keeps a per-process cache of the published notes, loaded before this run created them: look the new one up directly.
+	$nota_es = array_values( array_filter( get_posts( [ 'post_type' => 'pm_nota', 'post_status' => 'publish', 'meta_key' => 'clave', 'meta_value' => $clave, 'numberposts' => -1 ] ), fn( $x ) => 'es' === pm_idioma_de( $x->ID ) ) )[0] ?? null;
 	$e = $nota_es ? pm_nota( $nota_es->ID ) : null;
 	WP_CLI::log( ( $e && 'surubi' === $e['especie'] && 'goya' === $e['destino'] && $e['fecha'] && ( ! $att || $e['foto'] === $att ) ? 'VERIFIED' : 'FALLÓ' ) . ': nota es lee especie ' . ( $e['especie'] ?? '?' ) . ', destino ' . ( $e['destino'] ?? '?' ) . ', fecha ' . ( $e['fecha'] ?? '?' ) . ', foto #' . ( $e['foto'] ?? 0 ) );
 	flush_rewrite_rules( false );
