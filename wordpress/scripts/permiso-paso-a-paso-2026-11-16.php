@@ -104,7 +104,7 @@ if ( ! function_exists( 'pm_tp_tabla' ) ) {
 	}
 }
 
-$aplicar = false;
+$aplicar = true;
 $hoy     = '20261116';
 $clave   = 'permiso-pesca-argentina-paso-a-paso';
 $foto_de = 'reglas-equipo-patagonia'; // note whose cover photo is reused (owner's Unsplash photo, lake in Río Negro)
