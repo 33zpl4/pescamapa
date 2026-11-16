@@ -1,0 +1,950 @@
+<!doctype html>
+<html lang="es">
+  <head>  
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" type="text/css" href="https://siped.ar/css/app.css">
+      <style type="text/css">
+        body {
+             padding-top: 50px;
+        }
+
+      </style>
+      <link rel="stylesheet"  href="https://fonts.googleapis.com/css?family=Archivo+Black">
+      <link rel="shortcut icon" href="https://www4.tierradelfuego.gov.ar/wp-content/uploads/2019/12/favicon-Melella-32.png">
+      <link rel="apple-touch-icon" href="https://www4.tierradelfuego.gov.ar/wp-content/uploads/2019/12/favicon-Melella.png">
+      <meta name="description" content="Dirección General de Recursos Hídricos">    
+      <title>SIPED | Tierra del Fuego</title>  
+  </head> 
+  <body>   
+  <nav class="nav-fixed">
+    <div class="nav-wrapper container">
+      <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+      <a href="https://siped.ar" class="brand-logo"> SIPED </a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a class='dropdown-button' href='#' data-activates='dropdown1'>Registro</a></li>
+        <li><a href="https://siped.ar/acerca">Acerca</a></li>
+        <!--<li><a href="https://siped.ar/pesca-deportiva-reglamento-2019-2020.pdf" target="_blank">Reglamento</a></li>-->
+        <li><a href="http://saptdf.ar/">SAPTDF</a></li>
+        <li><a href="https://siped.ar/ingresar">Ingresar</a></li>        
+      </ul>
+    </div>
+</nav>
+<ul id="slide-out" class="side-nav">      
+      <li><a class="dropdown-button" href="#!" data-activates="dropdown2">Registro<i class="material-icons right">arrow_drop_down</i></a></li>
+      <ul id='dropdown2' class='dropdown-content'>
+        <li><a href="https://siped.ar/residente-pais/form">Residente país</a></li>
+        <li><a href="https://siped.ar/no-residente-pais/form">No residente país</a></li>        
+      </ul>
+      <li><a href="https://siped.ar/acerca">Acerca</a></li>
+      <!--<li><a href="https://siped.ar/pesca-deportiva-reglamento-2019-2020.pdf">Reglamento <i class="material-icons right">file_download</i></a> </li><li><a href="http://saptdf.tierradelfuego.gov.ar/">SAPTDF</a></li>-->   
+      <li><a href="https://siped.ar/ingresar">Ingresar</a></li>  
+</ul>
+<ul id='dropdown1' class='dropdown-content'>
+    <li><a href="https://siped.ar/residente-pais/form">Residente país</a></li>
+    <li><a href="https://siped.ar/no-residente-pais/form">No residente país</a></li>    
+</ul>
+
+
+<style type="text/css">
+  .nav-fixed {
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 0;
+    margin-bottom: 0px;
+    z-index: 997;
+  }
+</style>    
+   <div class="">
+      <div class=""><img src="https://siped.ar/img/banner-2.jpg" class="capa-2">       
+      </div>
+   </div>
+   <div class="section white">
+    <div class="row container">     
+      <p class="grey-text text-darken-3 lighten-3"></p>
+      <div class="row">
+          <div class="col s12 m6">    
+            <div class="card small">
+            <div class="card-content"> 
+              <span class="card-title font-celeste">Consulte los datos de su último permiso</span>    
+              
+                 <div class="row">                    
+                    <div class="input-field col s6">
+                      <input id="dni" placeholder="Nro. de documento" type="text"  maxlength="10" class="validate">
+                      <label for="first_name">Documento</label>
+                    </div>                    
+                  </div> 
+                  <button class="waves-effect waves-light btn" id="consultaButt">Consultar</button>           
+              
+            </div>  
+            </div>  
+          </div>  
+          <div  class="col s12 m6">
+            <div id="credencial">
+            
+          </div>
+          </div>  
+        </div>
+        <div class="row" id="permisos">
+
+        </div>  
+      <div class="row">
+        <h1 class="font-celeste center">Puntos de venta</h1>
+        <p class="center">Lugares y comercios donde se emiten credenciales o se cargan permisos.</p>
+      </div>
+    </div>
+
+    <div id="mapa" class="map-80vh"></div>
+
+    <div class="center-align home-section home-section-gris">
+      <div class="container">
+        
+        <div class="row">
+
+                     <div class="col s12 m6 l4">
+              <div id="item-6" class="card small hoverable">
+    <div class="card-image waves-effect waves-block waves-light">
+          <img src="/storage/puntos-ventas/vNsfOHpCQwbeRpcapmtnYF3DdsIygMQC8ndiXyON.jpeg" alt="Casa de campo Fly Shop">
+        </div>
+    <div class="card-content">
+      <span class="card-title activator grey-text text-darken-4 truncate">Casa de campo Fly Shop<i class="material-icons right">more_vert</i></span>
+      <p><em>Onas 416 - Ushuaia</em></p>
+    </div>
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4">Casa de campo Fly Shop<i class="material-icons right">close</i></span>
+      
+       <p><i class="small material-icons left">local_phone</i> 2901423331</p>
+       <p><i class="small material-icons left">access_time</i> Lunes a sábado de 10hs a 13hs y de 16hs a 20hs</p>
+       
+    </div>
+  </div>            </div>
+                      <div class="col s12 m6 l4">
+              <div id="item-7" class="card small hoverable">
+    <div class="card-image waves-effect waves-block waves-light">
+          <img src="/storage/puntos-ventas/peRoXZfmY9wBAruuRMuxVysqkS4q2HAtws7IVglR.jpeg" alt="Asociación de caza y pesca Ushuaia">
+        </div>
+    <div class="card-content">
+      <span class="card-title activator grey-text text-darken-4 truncate">Asociación de caza y pesca Ushuaia<i class="material-icons right">more_vert</i></span>
+      <p><em>Maipu 822 - Ushuaia</em></p>
+    </div>
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4">Asociación de caza y pesca Ushuaia<i class="material-icons right">close</i></span>
+      
+       <p><i class="small material-icons left">local_phone</i> 2901423161</p>
+       <p><i class="small material-icons left">access_time</i> Lunes a viernes de 15:30 a 19:30</p>
+       
+    </div>
+  </div>            </div>
+                      <div class="col s12 m6 l4">
+              <div id="item-8" class="card small hoverable">
+    <div class="card-image waves-effect waves-block waves-light">
+          <img src="/storage/puntos-ventas/NfFdwgIzxXoaYZaLMxnkmnZyuJpXinXun7Tj2kRK.jpeg" alt="Asociación riograndense de pesca con mosca">
+        </div>
+    <div class="card-content">
+      <span class="card-title activator grey-text text-darken-4 truncate">Asociación riograndense de pesca con mosca<i class="material-icons right">more_vert</i></span>
+      <p><em>Manuel Montilla Nº 1040</em></p>
+    </div>
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4">Asociación riograndense de pesca con mosca<i class="material-icons right">close</i></span>
+      
+       <p><i class="small material-icons left">local_phone</i> 2964458048</p>
+       <p><i class="small material-icons left">access_time</i> -</p>
+       
+    </div>
+  </div>            </div>
+                      <div class="col s12 m6 l4">
+              <div id="item-10" class="card small hoverable">
+    <div class="card-image waves-effect waves-block waves-light">
+          <img src="/storage/puntos-ventas/k4CHWFTQNEKikQvbKJlO8nPyS8nsxKzwiF7cS3mp.jpeg" alt="Anglers Aventuras">
+        </div>
+    <div class="card-content">
+      <span class="card-title activator grey-text text-darken-4 truncate">Anglers Aventuras<i class="material-icons right">more_vert</i></span>
+      <p><em>Perito Moreno 368 - Rio Grande</em></p>
+    </div>
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4">Anglers Aventuras<i class="material-icons right">close</i></span>
+      
+       <p><i class="small material-icons left">local_phone</i> 2964478760</p>
+       <p><i class="small material-icons left">access_time</i> Lunes a sábado de 9:30hs a 12:30hs y de 15:30hs a 20:30hs</p>
+       
+    </div>
+  </div>            </div>
+                      <div class="col s12 m6 l4">
+              <div id="item-13" class="card small hoverable">
+    <div class="card-image waves-effect waves-block waves-light">
+          <img src="/storage/puntos-ventas/UCumyzreyLeTBkFBMHWfL9fMimspVAhfgow1Aykj.jpeg" alt="El Robalo">
+        </div>
+    <div class="card-content">
+      <span class="card-title activator grey-text text-darken-4 truncate">El Robalo<i class="material-icons right">more_vert</i></span>
+      <p><em>KAMI 154. Frente a Padre Zinn</em></p>
+    </div>
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4">El Robalo<i class="material-icons right">close</i></span>
+      
+       <p><i class="small material-icons left">local_phone</i> 2964657941</p>
+       <p><i class="small material-icons left">access_time</i> ...</p>
+       
+    </div>
+  </div>            </div>
+                      <div class="col s12 m6 l4">
+              <div id="item-16" class="card small hoverable">
+    <div class="card-image waves-effect waves-block waves-light">
+          <img src="/storage/puntos-ventas/cBjbSCAwKQtUdvuTZdAgndLuUqsmQK02jl4Hxvg3.jpeg" alt="Asociación Civil de Pesca Deportiva Austral">
+        </div>
+    <div class="card-content">
+      <span class="card-title activator grey-text text-darken-4 truncate">Asociación Civil de Pesca Deportiva Austral<i class="material-icons right">more_vert</i></span>
+      <p><em>Leandro Alem 3857 - Ushuaia</em></p>
+    </div>
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4">Asociación Civil de Pesca Deportiva Austral<i class="material-icons right">close</i></span>
+      
+       <p><i class="small material-icons left">local_phone</i> 2901607206</p>
+       <p><i class="small material-icons left">access_time</i> ...</p>
+       
+    </div>
+  </div>            </div>
+                      <div class="col s12 m6 l4">
+              <div id="item-18" class="card small hoverable">
+    <div class="card-image waves-effect waves-block waves-light">
+          <img src="/storage/puntos-ventas/nB2EKK5uUIeYkUNtt8lE2wWOqbcPZH6ZG3I6sPol.jpeg" alt="Yefacel">
+        </div>
+    <div class="card-content">
+      <span class="card-title activator grey-text text-darken-4 truncate">Yefacel<i class="material-icons right">more_vert</i></span>
+      <p><em>Pastor Lawren 707</em></p>
+    </div>
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4">Yefacel<i class="material-icons right">close</i></span>
+      
+       <p><i class="small material-icons left">local_phone</i> 2901483222</p>
+       <p><i class="small material-icons left">access_time</i> 24hs Online</p>
+       
+    </div>
+  </div>            </div>
+                      <div class="col s12 m6 l4">
+              <div id="item-23" class="card small hoverable">
+    <div class="card-image waves-effect waves-block waves-light">
+          <img src="/storage/puntos-ventas/TPLsGT1SOpZ8TaIuB1frYEzZExeLWAmqVihJPGYi.jpeg" alt="DLG">
+        </div>
+    <div class="card-content">
+      <span class="card-title activator grey-text text-darken-4 truncate">DLG<i class="material-icons right">more_vert</i></span>
+      <p><em>Domicilio Viedma 167 Barrio Mutual Rio Grande</em></p>
+    </div>
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4">DLG<i class="material-icons right">close</i></span>
+      
+       <p><i class="small material-icons left">local_phone</i> 2964414202</p>
+       <p><i class="small material-icons left">access_time</i> -</p>
+       
+    </div>
+  </div>            </div>
+                      <div class="col s12 m6 l4">
+              <div id="item-26" class="card small hoverable">
+    <div class="card-image waves-effect waves-block waves-light">
+          <img src="/storage/puntos-ventas/24WHZsTrYgZu5K9PDApdwKhlfyCIcxlWnSL35yBa.jpeg" alt="El Turco">
+        </div>
+    <div class="card-content">
+      <span class="card-title activator grey-text text-darken-4 truncate">El Turco<i class="material-icons right">more_vert</i></span>
+      <p><em>Uani 301 Barrio Austral</em></p>
+    </div>
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4">El Turco<i class="material-icons right">close</i></span>
+      
+       <p><i class="small material-icons left">local_phone</i> 2964417138</p>
+       <p><i class="small material-icons left">access_time</i> ...</p>
+       
+    </div>
+  </div>            </div>
+                      <div class="col s12 m6 l4">
+              <div id="item-27" class="card small hoverable">
+    <div class="card-image waves-effect waves-block waves-light">
+          <img src="/storage/puntos-ventas/0nX5IP5p28UzbPWkBdCbkOVjYt9GCUNDRXJoUYy2.jpeg" alt="AUTOSERVICIO DALEQUESEBO">
+        </div>
+    <div class="card-content">
+      <span class="card-title activator grey-text text-darken-4 truncate">AUTOSERVICIO DALEQUESEBO<i class="material-icons right">more_vert</i></span>
+      <p><em>Punta  Popper 1641</em></p>
+    </div>
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4">AUTOSERVICIO DALEQUESEBO<i class="material-icons right">close</i></span>
+      
+       <p><i class="small material-icons left">local_phone</i> 2964523960</p>
+       <p><i class="small material-icons left">access_time</i> ...</p>
+       
+    </div>
+  </div>            </div>
+                      <div class="col s12 m6 l4">
+              <div id="item-29" class="card small hoverable">
+    <div class="card-image waves-effect waves-block waves-light">
+          <img src="/storage/puntos-ventas/iCGKJCBBZHQYlgwgX5L8YZxKuDWui32VdpUd7ycL.jpeg" alt="Soldasur">
+        </div>
+    <div class="card-content">
+      <span class="card-title activator grey-text text-darken-4 truncate">Soldasur<i class="material-icons right">more_vert</i></span>
+      <p><em>Islas Malvinas 1950 - Rio Grande</em></p>
+    </div>
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4">Soldasur<i class="material-icons right">close</i></span>
+      
+       <p><i class="small material-icons left">local_phone</i> 2964422131</p>
+       <p><i class="small material-icons left">access_time</i> ATH</p>
+       
+    </div>
+  </div>            </div>
+                      <div class="col s12 m6 l4">
+              <div id="item-30" class="card small hoverable">
+    <div class="card-image waves-effect waves-block waves-light">
+          <img src="/storage/puntos-ventas/6m2wqeyiTbLYhjaTN0y9TIePndbCORC2yssuFnYj.png" alt="Khami Café y Pesca">
+        </div>
+    <div class="card-content">
+      <span class="card-title activator grey-text text-darken-4 truncate">Khami Café y Pesca<i class="material-icons right">more_vert</i></span>
+      <p><em>Avenida de los ñires 165 Tholhuin</em></p>
+    </div>
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4">Khami Café y Pesca<i class="material-icons right">close</i></span>
+      
+       <p><i class="small material-icons left">local_phone</i> 2901492202</p>
+       <p><i class="small material-icons left">access_time</i> ATH</p>
+       
+    </div>
+  </div>            </div>
+                      <div class="col s12 m6 l4">
+              <div id="item-31" class="card small hoverable">
+    <div class="card-image waves-effect waves-block waves-light">
+          <img src="/storage/puntos-ventas/mi5Nb1BRnrJIkCSuCT5wojskvIre3m1bRtUdCor9.png" alt="Panadería La Unión">
+        </div>
+    <div class="card-content">
+      <span class="card-title activator grey-text text-darken-4 truncate">Panadería La Unión<i class="material-icons right">more_vert</i></span>
+      <p><em>Cerro Jaujepen 450, Tolhuin.</em></p>
+    </div>
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4">Panadería La Unión<i class="material-icons right">close</i></span>
+      
+       <p><i class="small material-icons left">local_phone</i> 2901415666</p>
+       <p><i class="small material-icons left">access_time</i> ATH</p>
+       
+    </div>
+  </div>            </div>
+          
+        </div>
+      </div>
+    </div>
+
+  <!-- section -->
+  </div>
+
+  <footer class="section">
+  <div class="container">
+
+    <div class="row">     
+
+      
+      <div class="col s6">
+         <h5>Enlaces de interés</h5>
+          <ul>
+          <li><a class="black-text text-lighten-3" href="http://saptdf.ar/">SAPTDF | Sistema de Acceso de Pesca de Tierra del Fuego</a></li>
+          <ul>        
+                
+      </div>
+
+    </div>
+
+  </div>
+  <div class="footer-copyright">
+            <div class="container">
+         <p> © Dirección General de Recursos Hídricos <br/>
+          Ministerio de Producción y Ambiente</p>
+            </div>
+          </div>
+</footer>  <div id="popupDidymo" class="modal orange">
+     <div class="modal-content"> 
+     <h4>   
+      <i class="small material-icons">warning</i><span class="ng-binding"> Alerta Didymo</span></h4>
+     
+        <div id="video" class=" video-container">
+        </div>
+  </div>
+  <div class="modal-footer">
+    <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Cerrar</a>
+  </div>
+ </div>  
+  <div id="modal-level-1" class="modal just-card">
+    <div class="modal-content">
+    </div>
+  </div>
+
+  
+  
+  <style>
+    
+    .banner-title {      
+      text-align: center;     
+      color: white;
+      background-color: rgba(0, 0, 0, 0.2);
+      margin-top: 120px;
+      padding-top: 50px;
+      padding-bottom: 60px;
+      
+  }
+  .title {      
+       font-size: 65px;
+       font-family: 'Archivo Black';
+  }
+
+  .subtitle {
+    font-family: 'Titillium Web';
+  }
+
+  
+  </style>
+  <script src="https://siped.ar/js/app.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+  <script>
+    $(".button-collapse").sideNav();
+    $('.dropdown-button').dropdown('open');
+    $('select').material_select();
+    $('.modal').modal();
+    $(document).ready(function(){
+      $('.carousel').carousel();
+    });
+
+    $(document).ready(function(){
+      $('.parallax').parallax();
+    });
+  </script>
+  <script type="text/javascript">
+    var enableCookies = true;    
+    if (enableCookies && getCookie('loadPopupDidymo') == '') {    
+        
+        document.querySelector("#video").innerHTML = '<iframe width="560" height="315" src="https://www.youtube.com/embed/L677QiRIsdY?autoplay=1" frameborder="0" allowfullscreen></iframe> ';
+        $('#popupDidymo').modal('open');    
+      
+      createCookie('loadPopupDidymo', true, 7);      
+    }
+
+
+    function createCookie (name, value, days) {
+        var expires;
+        if (days) {
+            var date = new Date();
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+            expires = "; expires=" + date.toGMTString();
+        }
+        else {
+            expires = "";
+        }
+        document.cookie = name + "=" + value + expires + "; path=/";
+    }
+
+    function getCookie(c_name) {
+        if (document.cookie.length > 0) {
+            c_start = document.cookie.indexOf(c_name + "=");
+            if (c_start != -1) {
+                c_start = c_start + c_name.length + 1;
+                c_end = document.cookie.indexOf(";", c_start);
+                if (c_end == -1) {
+                    c_end = document.cookie.length;
+                }
+                return unescape(document.cookie.substring(c_start, c_end));
+            }
+        }
+        return "";
+    }
+  </script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDQZTweUhWDupbaWIsJZWbEXf55aWnOn2c&language=es&hl=es&region=AR"></script>
+
+<script type="text/javascript">
+  (function(google){
+    'use strict';
+
+    // data desde controller
+    var data = [{"id":6,"asociacion_id":1,"nombre_punto_venta":"Casa de campo Fly Shop","descripcion":"nnn","lat":"-54.8074110","lng":"-68.3203380","created_at":"2017-10-27 12:08:46","updated_at":"2017-11-17 08:13:28","direccion":"Onas 416 - Ushuaia","telefono":2901423331,"email":"willymolinolo@yahoo.com.ar","horarios":"Lunes a s\u00e1bado de 10hs a 13hs y de 16hs a 20hs","imagen":"puntos-ventas\/vNsfOHpCQwbeRpcapmtnYF3DdsIygMQC8ndiXyON.jpeg"},{"id":7,"asociacion_id":3,"nombre_punto_venta":"Asociaci\u00f3n de caza y pesca Ushuaia","descripcion":"nnn","lat":"-54.8084720","lng":"-68.3085990","created_at":"2017-10-28 07:46:57","updated_at":"2018-10-14 18:08:25","direccion":"Maipu 822 - Ushuaia","telefono":2901423161,"email":"cazaypescaushuaia@speedy.com.ar","horarios":"Lunes a viernes de 15:30 a 19:30","imagen":"puntos-ventas\/peRoXZfmY9wBAruuRMuxVysqkS4q2HAtws7IVglR.jpeg"},{"id":8,"asociacion_id":4,"nombre_punto_venta":"Asociaci\u00f3n riograndense de pesca con mosca","descripcion":"nnn","lat":"-53.7734850","lng":"-67.7339450","created_at":"2017-10-28 07:53:32","updated_at":"2022-10-25 22:07:01","direccion":"Manuel Montilla N\u00ba 1040","telefono":2964458048,"email":"patricia_e8048@hotmail.com","horarios":"-","imagen":"puntos-ventas\/NfFdwgIzxXoaYZaLMxnkmnZyuJpXinXun7Tj2kRK.jpeg"},{"id":10,"asociacion_id":4,"nombre_punto_venta":"Anglers Aventuras","descripcion":"nnn","lat":"-53.7886340","lng":"-67.7001250","created_at":"2017-11-17 08:25:25","updated_at":"2022-10-25 22:09:48","direccion":"Perito Moreno 368 - Rio Grande","telefono":2964478760,"email":"ventas@anglersaventuras.com","horarios":"Lunes a s\u00e1bado de 9:30hs a 12:30hs y de 15:30hs a 20:30hs","imagen":"puntos-ventas\/k4CHWFTQNEKikQvbKJlO8nPyS8nsxKzwiF7cS3mp.jpeg"},{"id":13,"asociacion_id":4,"nombre_punto_venta":"El Robalo","descripcion":"...","lat":"-53.7682650","lng":"-67.7173826","created_at":"2020-10-28 07:54:58","updated_at":"2022-10-25 22:12:11","direccion":"KAMI 154. Frente a Padre Zinn","telefono":2964657941,"email":"lucasnavarro170@hotmail.com","horarios":"...","imagen":"puntos-ventas\/UCumyzreyLeTBkFBMHWfL9fMimspVAhfgow1Aykj.jpeg"},{"id":16,"asociacion_id":6,"nombre_punto_venta":"Asociaci\u00f3n Civil de Pesca Deportiva Austral","descripcion":"nnn","lat":"-54.8195100","lng":"-68.3501250","created_at":"2020-10-29 14:47:25","updated_at":"2021-10-22 12:24:37","direccion":"Leandro Alem 3857 - Ushuaia","telefono":2901607206,"email":"erickchacon1986@hotmail.com","horarios":"...","imagen":"puntos-ventas\/cBjbSCAwKQtUdvuTZdAgndLuUqsmQK02jl4Hxvg3.jpeg"},{"id":18,"asociacion_id":6,"nombre_punto_venta":"Yefacel","descripcion":"nnn","lat":"-54.8151842","lng":"-68.3360980","created_at":"2021-10-19 09:43:12","updated_at":"2021-10-19 09:43:12","direccion":"Pastor Lawren 707","telefono":2901483222,"email":"xpoarg@mail.com","horarios":"24hs Online","imagen":"puntos-ventas\/nB2EKK5uUIeYkUNtt8lE2wWOqbcPZH6ZG3I6sPol.jpeg"},{"id":23,"asociacion_id":4,"nombre_punto_venta":"DLG","descripcion":"nnn","lat":"-54.8070318","lng":"-68.3079820","created_at":"2022-10-26 21:58:13","updated_at":"2025-10-17 19:24:52","direccion":"Domicilio Viedma 167 Barrio Mutual Rio Grande","telefono":2964414202,"email":"ventaslocaldlg@gmail.com","horarios":"-","imagen":"puntos-ventas\/TPLsGT1SOpZ8TaIuB1frYEzZExeLWAmqVihJPGYi.jpeg"},{"id":26,"asociacion_id":4,"nombre_punto_venta":"El Turco","descripcion":"nn","lat":"-54.8070318","lng":"-68.3079820","created_at":"2024-10-29 10:10:28","updated_at":"2024-10-29 10:10:28","direccion":"Uani 301 Barrio Austral","telefono":2964417138,"email":"hugocampostrini47@gmail.com","horarios":"...","imagen":"puntos-ventas\/24WHZsTrYgZu5K9PDApdwKhlfyCIcxlWnSL35yBa.jpeg"},{"id":27,"asociacion_id":4,"nombre_punto_venta":"AUTOSERVICIO DALEQUESEBO","descripcion":"nnn","lat":"-54.8070318","lng":"-68.3079820","created_at":"2024-11-05 08:21:50","updated_at":"2024-11-05 08:21:50","direccion":"Punta  Popper 1641","telefono":2964523960,"email":"martincaccia93@gmail.com","horarios":"...","imagen":"puntos-ventas\/0nX5IP5p28UzbPWkBdCbkOVjYt9GCUNDRXJoUYy2.jpeg"},{"id":29,"asociacion_id":4,"nombre_punto_venta":"Soldasur","descripcion":"nnn","lat":"-53.7906310","lng":"-67.7306000","created_at":"2025-10-21 16:19:03","updated_at":"2025-10-21 16:19:03","direccion":"Islas Malvinas 1950 - Rio Grande","telefono":2964422131,"email":"administracion@soldasur.com.ar","horarios":"ATH","imagen":"puntos-ventas\/iCGKJCBBZHQYlgwgX5L8YZxKuDWui32VdpUd7ycL.jpeg"},{"id":30,"asociacion_id":1,"nombre_punto_venta":"Khami Caf\u00e9 y Pesca","descripcion":"nn","lat":"-54.8070318","lng":"-68.3079820","created_at":"2026-10-14 22:02:36","updated_at":"2026-10-14 22:03:15","direccion":"Avenida de los \u00f1ires 165 Tholhuin","telefono":2901492202,"email":"khamicafeypesca@gmail.com","horarios":"ATH","imagen":"puntos-ventas\/6m2wqeyiTbLYhjaTN0y9TIePndbCORC2yssuFnYj.png"},{"id":31,"asociacion_id":1,"nombre_punto_venta":"Panader\u00eda La Uni\u00f3n","descripcion":"nn","lat":"-54.8070318","lng":"-68.3079820","created_at":"2026-10-14 22:32:26","updated_at":"2026-10-14 22:33:05","direccion":"Cerro Jaujepen 450, Tolhuin.","telefono":2901415666,"email":"panaderialaunion1@gmail.com","horarios":"ATH","imagen":"puntos-ventas\/mi5Nb1BRnrJIkCSuCT5wojskvIre3m1bRtUdCor9.png"}];
+    var map = null;
+    var mapGris = [
+  {
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#ebe3cd"
+      }
+    ]
+  },
+  {
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#523735"
+      }
+    ]
+  },
+  {
+    "elementType": "labels.text.stroke",
+    "stylers": [
+      {
+        "color": "#f5f1e6"
+      }
+    ]
+  },
+  {
+    "featureType": "administrative",
+    "elementType": "geometry.stroke",
+    "stylers": [
+      {
+        "color": "#c9b2a6"
+      }
+    ]
+  },
+  {
+    "featureType": "administrative.land_parcel",
+    "elementType": "geometry.stroke",
+    "stylers": [
+      {
+        "color": "#dcd2be"
+      }
+    ]
+  },
+  {
+    "featureType": "administrative.land_parcel",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#ae9e90"
+      }
+    ]
+  },
+  {
+    "featureType": "landscape.natural",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#dfd2ae"
+      }
+    ]
+  },
+  {
+    "featureType": "poi",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#dfd2ae"
+      }
+    ]
+  },
+  {
+    "featureType": "poi",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#93817c"
+      }
+    ]
+  },
+  {
+    "featureType": "poi.attraction",
+    "elementType": "labels",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "poi.business",
+    "elementType": "labels",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "poi.business",
+    "elementType": "labels.icon",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "poi.business",
+    "elementType": "labels.text",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "poi.government",
+    "elementType": "labels.icon",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "poi.government",
+    "elementType": "labels.text",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "poi.park",
+    "elementType": "geometry.fill",
+    "stylers": [
+      {
+        "color": "#a5b076"
+      }
+    ]
+  },
+  {
+    "featureType": "poi.park",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#447530"
+      }
+    ]
+  },
+  {
+    "featureType": "poi.school",
+    "elementType": "labels",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "poi.school",
+    "elementType": "labels.icon",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "road",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#f5f1e6"
+      }
+    ]
+  },
+  {
+    "featureType": "road.arterial",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#fdfcf8"
+      }
+    ]
+  },
+  {
+    "featureType": "road.highway",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#f8c967"
+      }
+    ]
+  },
+  {
+    "featureType": "road.highway",
+    "elementType": "geometry.stroke",
+    "stylers": [
+      {
+        "color": "#e9bc62"
+      }
+    ]
+  },
+  {
+    "featureType": "road.highway.controlled_access",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#e98d58"
+      }
+    ]
+  },
+  {
+    "featureType": "road.highway.controlled_access",
+    "elementType": "geometry.stroke",
+    "stylers": [
+      {
+        "color": "#db8555"
+      }
+    ]
+  },
+  {
+    "featureType": "road.local",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#806b63"
+      }
+    ]
+  },
+  {
+    "featureType": "transit.line",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#dfd2ae"
+      }
+    ]
+  },
+  {
+    "featureType": "transit.line",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#8f7d77"
+      }
+    ]
+  },
+  {
+    "featureType": "transit.line",
+    "elementType": "labels.text.stroke",
+    "stylers": [
+      {
+        "color": "#ebe3cd"
+      }
+    ]
+  },
+  {
+    "featureType": "transit.station",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#dfd2ae"
+      }
+    ]
+  },
+  {
+    "featureType": "transit.station",
+    "elementType": "labels.text",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "water",
+    "stylers": [
+      {
+        "color": "#92998d"
+      },
+      {
+        "visibility": "on"
+      },
+      {
+        "weight": 4.5
+      }
+    ]
+  },
+  {
+    "featureType": "water",
+    "elementType": "geometry.fill",
+    "stylers": [
+      {
+        "color": "#b9d3c2"
+      }
+    ]
+  },
+  {
+    "featureType": "water",
+    "elementType": "labels.text",
+    "stylers": [
+      {
+        "color": "#92998d"
+      }
+    ]
+  },
+  {
+    "featureType": "water",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#92998d"
+      }
+    ]
+  }
+];
+
+    // arreglo de markers para futuros filtros
+    var markers = [];
+    var bounds = new google.maps.LatLngBounds();
+
+    function initMap() {
+      var center = {lat: -54.455179, lng: -67.355250};
+
+      map = new google.maps.Map(document.getElementById('mapa'), {
+        zoom: 7,
+        center: center,
+        scrollwheel: false,
+        styles: mapGris
+      });
+
+      addMarkers();
+    }
+
+    function addMarkers() {
+
+      data.forEach(function(item) {
+
+        if(item.lat == 0 || item.lng== 0) return;
+
+        var markerImage = {
+          url: "https://siped.ar/img/marker-icon-red.png",
+          size: new google.maps.Size(33, 33),
+          anchor: new google.maps.Point(11, 11),
+          scaledSize: new google.maps.Size(33, 33)
+        };
+        
+        
+        var marker = new google.maps.Marker({
+          id: item.id,
+          position: new google.maps.LatLng(item.lat, item.lng),
+          map: map,
+          data: item,
+          color: 'blue',
+          //icon:  pinImage,
+        });
+
+        google.maps.event.addListener(marker, 'click', (function(marker) {
+            return function() {
+              showModal(marker.data);
+            }
+          })(marker)
+        );
+
+
+        markers.push(marker);
+        bounds.extend(marker.getPosition());
+      });
+
+      console.table(data);
+      map.fitBounds(bounds);
+    }
+
+    function showModal(data) {
+      let itemClone = $(`#item-${data.id}`).clone();
+      $('#modal-level-1').html(itemClone);
+      $('#modal-level-1').modal('open');
+    }
+
+    initMap();
+
+  })(window.google);
+</script>
+<script type="text/javascript">
+	var dni;
+  var spinner = '<div class="col s12 offset-s6"><div class="preloader-wrapper small active"> <div class="spinner-layer spinner-blue-only"> <div class="circle-clipper left">     <div class="circle"></div> </div><div class="gap-patch"> <div class="circle"></div> </div><div class="circle-clipper right">  <div class="circle"></div></div> </div></div></div>'
+
+	function getPescadorDatos(){
+	   dni = document.querySelector("#dni").value;
+       if(dni==''){
+            Materialize.toast('Debe ingresar su número de documento!', 4000);
+            
+       }else if (dni.length < 7){
+
+            Materialize.toast('El valor ingresado debe superar los 7 carácteres!', 4000);
+       }
+       else{ 
+
+        document.querySelector("#credencial").innerHTML = spinner;
+
+    	  fetch(`https://siped.ar/api/v1/permisos/permiso/${dni}`)
+          .then(response => response.json())  
+          .then(pescadorDatos => displayDatos(pescadorDatos))
+          .catch(error => console.log(error+"Manejar el error"));
+       }
+	}
+
+	function displayDatos(pescadorDatos){
+	  let data;	
+	  //let tabla;
+      //console.log(pescadorDatos.nombre);
+	  if(pescadorDatos.nombre !== undefined){
+
+      if(pescadorDatos.credencial[0].permisos_ordinarios[0].anulado){	
+  	     
+         data = '<div id="card-alert" class="card orange">              <div class="card-content white-text">                        <p> Sr./Sra. '+pescadorDatos.nombre+' '+pescadorDatos.apellido+' el permiso que tiene generado actualmente se encuantra anulado</p>                      </div>                             </div>';
+
+          document.querySelector("#credencial").innerHTML = data; 
+
+        }else{
+
+          let fechaVigencia = pescadorDatos.credencial[0].permisos_ordinarios[0].fecha_vigencia.split("-");
+          let fechaCaducidad = pescadorDatos.credencial[0].permisos_ordinarios[0].fecha_caducidad.split("-");
+          data = '<div class="card small">              <div class="card-content">              <ul class="collection">                <li class="collection-item"><i class="material-icons left">person</i> <span class="ng-binding">Pescador: '+pescadorDatos.nombre+' '+pescadorDatos.apellido+'</span> </li><li class="collection-item"><i class="material-icons left">class</i> <span class="ng-binding">Tipo de permiso: '+pescadorDatos.credencial[0].permisos_ordinarios[0].tipo_permiso_ordinario.descripcion+'</span> </li>                                  <li class="collection-item"><i class="material-icons left">date_range</i> <span class="ng-binding">Fecha de vigencia: '+fechaVigencia[2].substr(0,2)+"/"+fechaVigencia[1]+"/"+fechaVigencia[0]+'</span> </li>  <li class="collection-item"><i class="material-icons left">date_range</i> <span class="ng-binding">Fecha de Caducidad: '+fechaCaducidad[2].substr(0,2)+"/"+fechaCaducidad[1]+"/"+fechaCaducidad[0]+' </span> </li>                                   </ul>            </div>  </div>';
+
+            document.querySelector("#credencial").innerHTML = data;
+        }
+	 }else{
+	 	  data = '<div id="card-alert" class="card orange">              <div class="card-content white-text">                        <p>El pescador con el documento '+dni+' no posee una credencial, dirijase a un punto de venta para generar uno.</p>                      </div>                             </div>';
+
+          document.querySelector("#credencial").innerHTML = data; 
+	 }
+	}
+
+	/*function permisosTable(pescadorDatos){
+		let table='';
+
+		if(permisosVigentes(pescadorDatos).length>0){    
+            table = '<table class="centered"> <thead> <tr>  <th>Permiso Ordinario</th>  <th>Fecha de Emisión</th> <th>Fecha de vigencia</th><th>Fecha de caducidad</th></tr> </thead> <tbody>';
+
+            permisosVigentes(pescadorDatos).forEach(function(item){
+                
+                let fEmision = item[1].split("-")
+                let fVigencia = item[2].split("-")
+                let fCaducidad = item[3].split("-")
+
+                table += '<tr> <td>'+item[0]+'</td>'+'<td>'+fEmision[2].substr(0,2)+"/"+fEmision[1]+"/"+fEmision[0]+'</td>'+'<td>'+fVigencia[2].substr(0,2)+"/"+fVigencia[1]+"/"+fVigencia[0]+'</td>'+'<td>'+fCaducidad[2].substr(0,2)+"/"+fCaducidad[1]+"/"+fCaducidad[0]+'</td></tr>';
+            });   
+                  
+            table += '</tbody> </table>';     
+        } 
+
+		return table;
+
+	}*/
+
+	function permisosVigentes(pescadorDatos){
+        let vigentes = [];
+
+        let hoy = new Date();                             
+        
+        hoy.setHours(0,0,0,0);
+
+        pescadorDatos.credencial_vigente.permisos_ordinarios.forEach(function(item){
+            //Primero, el permiso no tiene que estar anulado.
+            
+            if(item.anulado != 1){
+
+                let fecha_vencimiento = new Date(item.fecha_caducidad);
+                
+                if(fecha_vencimiento > hoy){
+
+                    vigentes.push([item.tipo_permiso_ordinario.descripcion, item.created_at ,item.fecha_vigencia, item.fecha_caducidad])
+
+                }
+                //}
+            }
+        });
+        
+        return vigentes;
+    }
+    
+    document.querySelector('#consultaButt').addEventListener('click', getPescadorDatos)
+	
+</script>	</body>
+</html>
