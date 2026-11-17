@@ -36,6 +36,8 @@ $quitar = [
 	'kdflyfishing.com', 'wherewisemenfish.com', 'tatafishinglodge.com', 'riverplatedorados.com', 'posadadelpaso.com',
 	'pescaconguia.com.ar', 'olsenfamily.com.ar', 'lazonalodge.com', 'fishingwithlarry.com', 'challhuaquen.com',
 	'bitacoragoya.com.ar', 'fishingbraziladventures.com.br', 'pousadalapesca.com.br', 'pescanaargentina.com.br',
+	// Dueño 17/11/2026: publicador sin identificar, foro y sitio comercial
+	'reglamentodepesca.org.ar', 'comunidad.espoesia.com', 'eltransitoibera.com',
 	// Agencias de viaje, tiendas, marcas y blogs de esas empresas
 	'farbank.com', 'yellowdogflyfishing.com', 'orvis.com', 'frontierstravel.com', 'fishingworldguide.com', 'fishcolorado.com',
 	'aardvarkmcleod.com', 'sportquestholidays.com', 'globe-truiteur.com', 'fansfishing.com',
@@ -229,7 +231,7 @@ foreach ( $plan as $id => $it ) {
 	$p   = $it['p'];
 	$det = [];
 	foreach ( $it['hosts'] as $h => $n ) {
-		$det[] = "$h×$n";
+		$det[] = "{$h}×{$n}";
 	}
 	WP_CLI::log( sprintf( '%s: #%d %s:%s(%s) campos [%s]: %s', $modo, $id, substr( $p->post_type, 3 ), pm_clave_de( $id ), pm_idioma_de( $id ), implode( ', ', array_keys( $it['campos'] ) ), implode( ', ', $det ) ) );
 }
