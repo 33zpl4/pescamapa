@@ -65,6 +65,19 @@
 
 > **13/11/2026, consultas de Search Console:** FAQ visibles y en JSON-LD en notas y especies, botón de pedido en las fichas de especie, títulos y textos por página (Esquel, Río Grande, Tierra del Fuego), hub de licencias reforzado, índice de paquetes (es/en/pt), sección del Río Uruguay en el pilar del dorado y wording "opciones" en lugar de "cotización". Detalle, tabla de clusters, lo que falta de fuente y cuándo medir: `docs/seo-consultas-2026-11-13.md`.
 
+## Minutos de Actions hasta el 5/12 (17/11/2026)
+
+Se agotaron casi todos los minutos de GitHub Actions del mes; vuelven el 5/12/2026. Reglas hasta entonces (orden del dueño):
+
+- **No usar `investigar.yml`** (queda con `timeout-minutes: 15`, sin uso). Para leer páginas en vivo: `wp-script` con `leer-vivo` (corre en el servidor, solo lectura, ~1 min; las URLs van en `wordpress/scripts/leer-vivo-urls.txt`, formato `url | cadena1 ; cadena2`).
+- **Un run de `wp-script` por paso.** Nada de correr simulacro, aplicar y lectura en tres runs si se puede evitar. `wp-script` ahora acepta `aplicar=true` (pone `$aplicar = true` en una copia del script): **no se commitea solo para cambiar `$aplicar`**.
+- **Docs agrupados con el último commit de código**: un push por PR, no un push por párrafo.
+- **Deploy WordPress** (~1 min por merge) se mantiene.
+- **`Test WordPress` ya no corre por PR**: solo `workflow_dispatch`, para un cambio riesgoso de plugin o tema. Antes de pushear, correr gratis `bash wordpress/build/chequeo-local.sh` (`php -l`, marca, YAML; ver `docs/wordpress.md`).
+- **Cuando renueven los minutos:** revisar si conviene reactivar `test-wp` por push a `claude/**` con `concurrency` con `cancel-in-progress` y `paths-ignore` (docs, scripts de contenido). Ya tiene `concurrency` y `timeout-minutes: 15`.
+
+Auditoría del consumo (1 al 16/11/2026, ~1.760 min): **Test WordPress 41 %, Investigar sitios 25 %, wp-script 14 %**, el resto repartido. De 134 corridas de Test WordPress, **48 fallaron: 11 por apt caído el 11/11 y 37 por aserciones frágiles repetidas** (textos que cambian al editar contenido; ver la regla de `verify-live` en `docs/wordpress.md`). Cambios de este PR: timeouts (`medir-ia` 15 min, `investigar` 15 min, `wp-script` 10 min, `test-wp` 15 min), `timeout 150` al instalar Chromium y `ConnectTimeout 20` en el SSH de `wp-script`. Sin verificar en vivo: ningún workflow corrió con estos cambios (solo parseo local del YAML).
+
 ## Medición del dorado y el surubí: línea de base (16/11/2026) y protocolo mensual
 
 Paso 7 de `docs/plan-dorado-surubi-2026-11-16.md`. La lista de preguntas (22 a 28) y el registro con las respuestas pegadas están en `docs/preguntas-llm.md`.

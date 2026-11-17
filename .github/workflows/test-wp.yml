@@ -1,5 +1,13 @@
 name: Test WordPress (throwaway install)
 
+# SOLO A MANO desde el 17/11/2026. Se sacó el disparo por pull_request porque
+# se agotaron los minutos de GitHub Actions hasta el 5/12/2026 (este workflow
+# gastaba el 41 % y 48 de 134 corridas fallaron; ver docs/estado.md).
+# Antes de pushear, correr gratis `bash wordpress/build/chequeo-local.sh`.
+# Correrlo a mano (Actions > Test WordPress > Run workflow, sobre la rama) solo
+# antes de un cambio riesgoso de plugin o tema (una falla de PHP tira el sitio).
+# No hace falta para scripts de contenido (wordpress/scripts/*).
+#
 # There is no staging: a PHP fatal in the plugin or theme takes the live site
 # down. Every PR touching wordpress/** runs the plugin and theme on a fresh
 # WordPress (MySQL service + wp server), creates sample content (the Esquina
@@ -7,13 +15,16 @@ name: Test WordPress (throwaway install)
 # inquiry through the real form. Fails on any PHP warning or fatal.
 
 on:
-  pull_request:
-    paths: ['wordpress/**', '.github/workflows/test-wp.yml']
   workflow_dispatch:
+
+concurrency:
+  group: test-wp-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   test:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     services:
       mysql:
         image: mysql:8.0
@@ -1504,7 +1515,7 @@ jobs:
           [[ -n "$fuente_antes" ]] || { echo "✖ la guía de prueba no tiene fuentes cargadas"; exit 1; }
           w eval "update_field( 'foto_autor', 'Tomás Prueba', $foto );"
           mkdir -p /tmp/pw && cd /tmp/pw && npm init -y >/dev/null && npm i -s playwright@1.48.2 >/dev/null
-          npx playwright install --with-deps chromium >/dev/null || { echo "::warning::apt no disponible; se instala chromium sin dependencias del sistema"; npx playwright install chromium >/dev/null; }
+          timeout 150 npx playwright install --with-deps chromium >/dev/null || { echo "::warning::apt no disponible; se instala chromium sin dependencias del sistema"; timeout 150 npx playwright install chromium >/dev/null; }
           cat > editor.mjs <<'JS'
           import { chromium } from 'playwright';
           const [url, post, foto] = process.argv.slice(2);

@@ -197,6 +197,13 @@ Próximos, Entrevistas, Prestadores, Consultas, Fotos). Cuando edita en
 español, la columna "Traducciones" (solo admins) marca pt/en como
 desactualizadas; las propagamos con un script.
 
+## Antes de pushear y Actions sin minutos (17/11/2026)
+
+- **Antes de pushear, correr `bash wordpress/build/chequeo-local.sh`** (gratis, ~segundos): `php -l` sobre todo `wordpress/**/*.php`, `revisar-marca.mjs`, `node --check` de los `.mjs` y YAML de los workflows. No instala WordPress: no prueba renderizado ni el formulario.
+- **`Test WordPress` (`test-wp.yml`) corre solo por `workflow_dispatch`**, sobre la rama, para cambios de plugin o tema. No hace falta para scripts de contenido (`wordpress/scripts/*`).
+- **`wp-script.yml`**: input `aplicar` (`true` = aplicar; vacío o `false` = simulacro). Con `true` el workflow pone `$aplicar = true;` en una copia del script antes de mandarlo al servidor (`sed 's/^\$aplicar = false;/$aplicar = true;/'`), así no se commitea el cambio. Un script que usa `$aplicar` debe tener esa línea tal cual, al comienzo de la línea. Si existe `wordpress/scripts/<script>-urls.txt`, viaja a `/tmp/pm-script-urls.txt` (lo usa `leer-vivo`). Un solo run a la vez (`concurrency`), `timeout-minutes: 10`.
+- **`leer-vivo`** (solo lectura): lee las URLs de `wordpress/scripts/leer-vivo-urls.txt` desde el servidor y muestra status, title, description, nº de h1, tipos de JSON-LD y presente/ausente de las cadenas pedidas. Es el reemplazo barato de `investigar.yml`.
+
 ## Cambio de dominio (hecho el 20/10/2026)
 
 1. aaPanel → WP Toolkit → el sitio → agregar el dominio `pescamapa.com`.
