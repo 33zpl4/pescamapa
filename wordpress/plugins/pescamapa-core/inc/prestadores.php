@@ -91,7 +91,7 @@ add_action( 'acf/include_fields', function () {
 			[ 'key' => 'field_pm_r_ejemplo', 'name' => 'datos_ejemplo', 'label' => 'Datos de ejemplo (todavía no confirmados)', 'type' => 'true_false', 'ui' => 1, 'wrapper' => [ 'width' => 50 ], 'instructions' => 'Mientras esté marcado, la ficha NO se publica (aunque haya aceptado aparecer). Destildalo cuando reemplaces todos los datos por los reales.' ],
 			[ 'key' => 'field_pm_r_consentimiento', 'name' => 'prest_consentimiento', 'label' => 'Aceptó aparecer en Pescamapa', 'type' => 'true_false', 'ui' => 1, 'wrapper' => [ 'width' => 50 ] ],
 			[ 'key' => 'field_pm_r_publico', 'name' => 'prest_publico', 'label' => 'Listado con información pública (todavía sin su permiso)', 'type' => 'true_false', 'ui' => 1, 'wrapper' => [ 'width' => 50 ], 'instructions' => 'Se publica marcado como "sin verificar", con enlace para corregir o pedir la baja. Solo datos públicos y con nuestras palabras; fotos solo si las tenemos con permiso.' ],
-			[ 'key' => 'field_pm_r_fuente', 'name' => 'prest_fuente', 'label' => 'Fuente de los datos (su web o publicación)', 'type' => 'url', 'wrapper' => [ 'width' => 50 ], 'instructions' => 'Se muestra como enlace. Anotá la fecha en "Datos verificados el".' ],
+			[ 'key' => 'field_pm_r_fuente', 'name' => 'prest_fuente', 'label' => 'Fuente de los datos (su web o publicación)', 'type' => 'url', 'wrapper' => [ 'width' => 50 ], 'instructions' => 'No se muestra en la web (dueño, 17/11/2026): queda como registro interno. Anotá la fecha en "Datos verificados el".' ],
 			[ 'key' => 'field_pm_r_verificado', 'name' => 'verificado', 'label' => 'Datos verificados el', 'type' => 'date_picker', 'display_format' => 'd/m/Y', 'return_format' => 'Y-m-d', 'wrapper' => [ 'width' => 50 ] ],
 			[ 'key' => 'field_pm_r_notas', 'name' => 'notas', 'label' => 'Notas internas', 'type' => 'textarea', 'rows' => 4 ],
 		],
@@ -233,6 +233,18 @@ function pm_prestadores_destino( string $destino, bool $con_borradores = false )
 	$arriba = fn( $r ) => $r['acuerdo'] && $r['consentimiento'];
 	usort( $out, fn( $a, $b ) => [ pm_prestador_publico( $b ), $arriba( $b ) ] <=> [ pm_prestador_publico( $a ), $arriba( $a ) ] );
 	return $out;
+}
+
+/** Most recent check date (Y-m-d) among the public cards: "verificado" or the price date. '' when none has one. */
+function pm_prestadores_consultada( array $prestadores ): string {
+	$max = '';
+	foreach ( $prestadores as $r ) {
+		if ( ! pm_prestador_publico( $r ) ) {
+			continue; // editor-only previews do not count
+		}
+		$max = max( $max, (string) pm_campo( 'verificado', $r['id'] ), (string) $r['precio_fecha'] );
+	}
+	return $max;
 }
 
 // Admin list: where, what, state, consent.

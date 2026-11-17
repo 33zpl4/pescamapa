@@ -152,7 +152,7 @@ footer .negocio a { color: var(--white); text-decoration: underline; text-underl
 /* "More to do": a quiet block at the end of a guide; ads say so */
 .mas { list-style: none; padding: 0; margin: 0 0 1.6em; display: grid; gap: 12px; }
 .mas li { position: relative; border: 1px solid var(--line); border-radius: var(--radius); background: var(--white); }
-.mas a { display: grid; gap: 4px; padding: 14px 18px; text-decoration: none; color: var(--ink); }
+.mas a, .mas .mas-fila { display: grid; gap: 4px; padding: 14px 18px; text-decoration: none; color: var(--ink); }
 .mas a:hover strong { text-decoration: underline; text-underline-offset: 3px; }
 .mas strong { font: 700 var(--fs-lead)/1.3 var(--font-body); }
 .mas .texto { font-size: var(--fs-small); color: var(--muted); }

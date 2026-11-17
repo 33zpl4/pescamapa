@@ -66,10 +66,11 @@ $filas = [
 		<?php endif; ?>
 		<?php if ( ! $r['consentimiento'] && pm_prestador_publico( $r ) ) :
 			$asunto = rawurlencode( pm_t( 'prest.baja_asunto', [ 'nombre' => $r['nombre'] ] ) ); ?>
+			<?php $verificado = (string) pm_campo( 'verificado', $r['id'] ); // Sin fuente ni dominio en la ficha: una nota por sección y aquí solo la fecha del dato (dueño, 17/11/2026). ?>
 			<p class="sin-verificar note">
 				<?php pm_e( 'prest.sin_verificar' ); ?>
+				<?php if ( $verificado ) { pm_e( 'prest.al', [ 'fecha' => pm_fecha( $verificado ) ] ); } ?>
 				<a href="mailto:<?php echo esc_attr( PM_EMAIL_PUBLICO ); ?>?subject=<?php echo $asunto; // phpcs:ignore -- encoded above ?>"><?php pm_e( 'prest.corregir' ); ?></a>
-				<?php if ( $r['fuente'] ) : $verificado = (string) pm_campo( 'verificado', $r['id'] ); // Texto plano, sin enlace: la ficha no invita a irse al sitio del lugar (dueño, 17/11/2026). ?>· <?php pm_e( 'prest.fuente' ); ?>: <?php echo esc_html( preg_replace( '/^www\./', '', (string) wp_parse_url( $r['fuente'], PHP_URL_HOST ) ) ); ?><?php if ( $verificado ) : ?>, <?php pm_e( 'paquetes.consultada', [ 'fecha' => pm_fecha( $verificado ) ] ); ?><?php endif; ?><?php endif; ?>
 			</p>
 		<?php endif; ?>
 		<a class="button dark" href="#consulta" data-prestador="<?php echo (int) $r['id']; ?>" data-nombre="<?php echo esc_attr( $r['nombre'] ); ?>"><?php pm_e( 'prest.consultar', [ 'lugar' => $r['lugar'] ?? '' ] ); ?></a>

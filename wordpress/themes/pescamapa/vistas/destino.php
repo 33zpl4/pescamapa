@@ -133,6 +133,7 @@ get_header(); ?>
 
 				<h2 id="prestadores"><?php pm_e( 'ficha.prestadores.h2' ); ?></h2>
 				<p><?php pm_e( 'ficha.prestadores.p', [ 'lugar' => $d['nombre'] ] ); ?></p>
+				<?php if ( $consultada = pm_prestadores_consultada( $prestadores ) ) : ?><p class="note nota-fuentes"><?php pm_e( 'ficha.prestadores.nota', [ 'fecha' => pm_mes_anio( $consultada ) ] ); ?></p><?php endif; ?>
 				<?php foreach ( $prestadores as $r ) {
 					get_template_part( 'parciales/prestador', null, $r + [ 'lugar' => $d['nombre'] ] );
 				} ?>
@@ -162,11 +163,11 @@ get_header(); ?>
 						<?php foreach ( $d['mas'] as $m ) :
 							$pago = ! empty( $m['patrocinado'] ); ?>
 							<li>
-								<a href="<?php echo esc_url( $m['url'] ); ?>" rel="<?php echo $pago ? 'sponsored noopener' : 'noopener'; ?>">
+								<?php // Sin enlace al sitio del operador (dueño, 17/11/2026); solo la publicidad paga lleva enlace, con rel=sponsored. ?>
+								<?php if ( $pago ) : ?><a href="<?php echo esc_url( $m['url'] ); ?>" rel="sponsored noopener"><?php else : ?><div class="mas-fila"><?php endif; ?>
 									<strong><?php echo esc_html( $m['nombre'] ); ?></strong>
 									<?php if ( ! empty( $m['texto'] ) ) : ?><span class="texto"><?php echo esc_html( $m['texto'] ); ?></span><?php endif; ?>
-									<span class="sitio"><?php echo esc_html( preg_replace( '/^www\./', '', (string) wp_parse_url( $m['url'], PHP_URL_HOST ) ) ); ?> ↗</span>
-								</a>
+								<?php if ( $pago ) : ?></a><?php else : ?></div><?php endif; ?>
 								<?php if ( $pago ) : ?><span class="sello-pago"><?php pm_e( 'ficha.mas.patrocinado' ); ?></span><?php endif; ?>
 							</li>
 						<?php endforeach; ?>

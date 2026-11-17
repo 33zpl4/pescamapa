@@ -6,6 +6,7 @@ name: Measure AI assistants
 # On demand only. Baseline of 5/11/2026: docs/investigacion/medicion-ia/2026-11-05/LEEME.md.
 
 on:
+  # En pausa hasta el 5/12/2026 (minutos): solo workflow_dispatch, sin disparo push (17/11/2026).
   # Only on demand (owner ruling 6/11/2026): every call to ChatGPT/Gemini costs, so it runs when an opportunity was detected,
   # with the questions that matter. No schedule and no push trigger.
   workflow_dispatch:
