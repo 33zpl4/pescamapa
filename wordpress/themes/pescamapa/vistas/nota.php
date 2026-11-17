@@ -50,7 +50,7 @@ get_header(); ?>
 					<ul class="fuentes">
 						<?php foreach ( $n['fuentes'] as $f ) : ?>
 							<li>
-								<?php if ( ! empty( $f['url'] ) ) : ?><a href="<?php echo esc_url( $f['url'] ); ?>" rel="noopener"><?php echo esc_html( $f['nombre'] ); ?></a><?php else : echo esc_html( $f['nombre'] ); endif; ?>
+								<?php echo pm_fuente_nombre_html( $f ); // phpcs:ignore -- escaped inside ?>
 								<?php if ( ! empty( $f['oficial'] ) ) : ?><span class="ofi"><?php pm_e( 'ficha.oficial' ); ?></span><?php endif; ?>
 								<?php if ( ! empty( $f['consultada'] ) ) : ?><span class="note"><?php pm_e( 'ficha.consultada' ); ?> <?php echo esc_html( pm_fecha( $f['consultada'], $idioma ) ); ?></span><?php endif; ?>
 							</li>

@@ -69,6 +69,63 @@ function pm_fuentes_conteo(): array {
 	return $c = [ 'unicas' => count( $vistas ), 'filas' => $filas, 'fecha' => $fecha ];
 }
 
+/**
+ * Press / institutional domains that may be linked even when the source is not flagged `oficial` (owner rule, 17/11/2026:
+ * no visible links to commercial sites of places, operators or agencies, because they invite the reader to leave; official
+ * sources and the press are linked). Suffix match on whole labels ("www.perfil.com" yes, "notperfil.com" no); the `gob.ar`
+ * style entries cover every government host. This is the ONLY list: add a domain here, nowhere else. Why each one:
+ * perfil.com, lanacion.com.ar, elonce.com, ellitoral.com.ar, lavozdesantacruz.com.ar, anbariloche.com.ar,
+ * noticiasnqn.com.ar, prensamercosur.org = news outlets already cited; youtube.com / youtu.be = video of the press or of
+ * the authority (the page, not an operator's site); corrientes.tur.ar = the province's tourism body; gob.ar / gov.ar /
+ * gob.cl = governments. A copy of a regulation on a club or operator site is NOT official: text only.
+ */
+function pm_dominios_prensa(): array {
+	return [
+		'perfil.com', 'lanacion.com.ar', 'elonce.com', 'ellitoral.com.ar', 'lavozdesantacruz.com.ar', 'anbariloche.com.ar',
+		'noticiasnqn.com.ar', 'prensamercosur.org', 'youtube.com', 'youtu.be', 'corrientes.tur.ar',
+		'gob.ar', 'gov.ar', 'gob.cl',
+	];
+}
+
+/** Host of a source URL, lowercase, no "www."; '' when it is not a plain http(s) URL (fails closed). */
+function pm_fuente_host( string $url ): string {
+	$p = wp_parse_url( trim( $url ) );
+	if ( ! is_array( $p ) || empty( $p['host'] ) || ! in_array( strtolower( (string) ( $p['scheme'] ?? '' ) ), [ 'http', 'https' ], true ) ) {
+		return '';
+	}
+	return (string) preg_replace( '/^www\./', '', strtolower( rtrim( (string) $p['host'], '.' ) ) );
+}
+
+/** True when a source row ({nombre,url,oficial}) may show a clickable link: official, or a press/institutional domain. */
+function pm_fuente_enlazable( array $f ): bool {
+	$host = pm_fuente_host( (string) ( $f['url'] ?? '' ) );
+	if ( '' === $host ) {
+		return false;
+	}
+	if ( ! empty( $f['oficial'] ) ) {
+		return true;
+	}
+	foreach ( pm_dominios_prensa() as $d ) {
+		if ( $host === $d || str_ends_with( $host, '.' . $d ) ) {
+			return true;
+		}
+	}
+	return false;
+}
+
+/** Escaped name of a source: a link when pm_fuente_enlazable(), else "Nombre, dominio" as plain text (no <a>). */
+function pm_fuente_nombre_html( array $f ): string {
+	$nombre = esc_html( (string) ( $f['nombre'] ?? '' ) );
+	if ( empty( $f['url'] ) ) {
+		return $nombre;
+	}
+	if ( pm_fuente_enlazable( $f ) ) {
+		return '<a href="' . esc_url( $f['url'] ) . '" rel="noopener">' . $nombre . '</a>';
+	}
+	$host = pm_fuente_host( (string) $f['url'] );
+	return '' !== $host ? $nombre . ', ' . esc_html( $host ) : $nombre;
+}
+
 /** Repeater rows as arrays (SCF), [] when empty. */
 function pm_filas( string $nombre, int $post_id ): array {
 	$v = pm_campo( $nombre, $post_id );
