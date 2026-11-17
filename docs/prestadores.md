@@ -150,6 +150,7 @@ Qué cambia para los prestadores:
 - **La fuga** (un pescador encontró a un operador en nuestra página y le escribió directo) se ataca con: (a) registro del lead ante el operador, con correo fechado y **sin datos personales** apenas llega el pedido, y términos acordados (cliente nuestro si lo registramos nosotros o nombra a Pescamapa, 12 meses); (b) decirle al pescador cómo nos pagamos y pedirle que mencione a Pescamapa; (c) que el pedido sea el camino más fácil del sitio.
 - **Términos estándar:** borrador de una página en `docs/condiciones-operadores.md` (no enviado; el dueño decide). El primer operador ofreció 10 % por correo el 13/11/2026.
 - Esto matiza el punto 7 de "Estrategia de listados" (el formulario ya no pasa la consulta a quien se elija: consulta sin datos personales y solo pasa el contacto cuando el pescador lo autoriza para un operador).
+- **Dominios nunca enlazables (dueño, 17/11/2026):** `pm_dominios_no_enlazables()` en `inc/datos.php` (`reglamentodepesca.org.ar`, `comunidad.espoesia.com`, `eltransitoibera.com`) gana sobre `oficial=1` en el pie «Fuentes»: se muestra "Nombre, dominio" como texto; se agrega un dominio ahí, no a los datos.
 
 ## Acuerdos con operadores (13/11/2026)
 

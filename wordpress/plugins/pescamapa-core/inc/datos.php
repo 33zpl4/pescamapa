@@ -87,6 +87,18 @@ function pm_dominios_prensa(): array {
 	];
 }
 
+/**
+ * Domains that are NEVER linked, even when the source row is flagged `oficial` (owner ruling, 17/11/2026). This list wins over
+ * `oficial` and over pm_dominios_prensa(); the name and domain still show as plain text. Same whole-label match as above
+ * ("x.reglamentodepesca.org.ar" yes, "evil-reglamentodepesca.org.ar" no). Why each one:
+ * reglamentodepesca.org.ar = unidentified publisher, unofficial copy of regulations (rows were loaded with oficial=1, so they
+ * were linked from the "Fuentes" footer of the size/limits and permit notes); comunidad.espoesia.com = a forum;
+ * eltransitoibera.com = a commercial site. Add a domain here, nowhere else.
+ */
+function pm_dominios_no_enlazables(): array {
+	return [ 'reglamentodepesca.org.ar', 'comunidad.espoesia.com', 'eltransitoibera.com' ];
+}
+
 /** Host of a source URL, lowercase, no "www."; '' when it is not a plain http(s) URL (fails closed). */
 function pm_fuente_host( string $url ): string {
 	$p = wp_parse_url( trim( $url ) );
@@ -101,6 +113,11 @@ function pm_fuente_enlazable( array $f ): bool {
 	$host = pm_fuente_host( (string) ( $f['url'] ?? '' ) );
 	if ( '' === $host ) {
 		return false;
+	}
+	foreach ( pm_dominios_no_enlazables() as $d ) {
+		if ( $host === $d || str_ends_with( $host, '.' . $d ) ) {
+			return false;
+		}
 	}
 	if ( ! empty( $f['oficial'] ) ) {
 		return true;
