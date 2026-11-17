@@ -6,6 +6,10 @@ pública y se corrige o se retira a pedido. Reemplaza la regla anterior
 "solo con consentimiento". Construimos utilidad primero; cuando hay pescadores
 preguntando, los prestadores quieren figurar.
 
+## Sin enlaces al sitio del lugar (dueño, 17/11/2026)
+
+**La ficha y las tarjetas no enlazan al sitio del lugar** (hoy invitan a irse): la fuente se muestra como **texto con fecha** ("Fuente: dominio, consultada el …"), sin `<a>`; se mantiene el enlace de corrección o baja. Lo mismo en las páginas de paquetes: el bloque "antes de reservar" nombra la fuente sin enlazarla. **Las fuentes oficiales (gobiernos, reglamentos, organismos) sí se enlazan.** El campo `web` de los datos no cambia. Plantillas: `parciales/prestador.php` y `vistas/paquetes.php`. Pendiente de decisión del dueño: la lista "Fuentes" de guías y notas (`vistas/destino.php`, `especie.php`, `nota.php`) sigue enlazando a fuentes no oficiales como el sitio de un lodge.
+
 ## Dos tipos de ficha pública
 
 | Tipo | Cómo se carga | Cómo se ve |

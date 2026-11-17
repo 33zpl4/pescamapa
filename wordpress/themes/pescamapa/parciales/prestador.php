@@ -69,7 +69,7 @@ $filas = [
 			<p class="sin-verificar note">
 				<?php pm_e( 'prest.sin_verificar' ); ?>
 				<a href="mailto:<?php echo esc_attr( PM_EMAIL_PUBLICO ); ?>?subject=<?php echo $asunto; // phpcs:ignore -- encoded above ?>"><?php pm_e( 'prest.corregir' ); ?></a>
-				<?php if ( $r['fuente'] ) : ?>· <?php pm_e( 'prest.fuente' ); ?>: <a href="<?php echo esc_url( $r['fuente'] ); ?>" rel="noopener nofollow"><?php echo esc_html( preg_replace( '/^www\./', '', (string) wp_parse_url( $r['fuente'], PHP_URL_HOST ) ) ); ?></a><?php endif; ?>
+				<?php if ( $r['fuente'] ) : $verificado = (string) pm_campo( 'verificado', $r['id'] ); // Texto plano, sin enlace: la ficha no invita a irse al sitio del lugar (dueño, 17/11/2026). ?>· <?php pm_e( 'prest.fuente' ); ?>: <?php echo esc_html( preg_replace( '/^www\./', '', (string) wp_parse_url( $r['fuente'], PHP_URL_HOST ) ) ); ?><?php if ( $verificado ) : ?>, <?php pm_e( 'paquetes.consultada', [ 'fecha' => pm_fecha( $verificado ) ] ); ?><?php endif; ?><?php endif; ?>
 			</p>
 		<?php endif; ?>
 		<a class="button dark" href="#consulta" data-prestador="<?php echo (int) $r['id']; ?>" data-nombre="<?php echo esc_attr( $r['nombre'] ); ?>"><?php pm_e( 'prest.consultar', [ 'lugar' => $r['lugar'] ?? '' ] ); ?></a>

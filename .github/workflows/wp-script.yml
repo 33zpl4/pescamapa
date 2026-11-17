@@ -11,13 +11,24 @@ on:
       script:
         description: "nombre del script en wordpress/scripts (sin .php)"
         required: true
+      aplicar:
+        description: "true = aplicar de verdad (pone $aplicar = true en una copia del script, sin commitear el cambio); vacío o false = simulacro"
+        required: false
+        default: "false"
+
+# Un solo script a la vez: dos escrituras solapadas sobre el mismo sitio no.
+concurrency:
+  group: wp-script
+  cancel-in-progress: false
 
 jobs:
   run:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     env:
       WP: ${{ secrets.WP_PATH }}
       SCRIPT: ${{ github.event.inputs.script }}
+      APLICAR: ${{ github.event.inputs.aplicar || 'false' }}
     steps:
       - uses: actions/checkout@v4
       - name: SSH setup
@@ -34,14 +45,22 @@ jobs:
             User ${{ secrets.WP_SSH_USER }}
             IdentityFile ~/.ssh/deploy_key
             StrictHostKeyChecking accept-new
+            ConnectTimeout 20
           EOF
       - name: Run
         run: |
-          scp -q "wordpress/scripts/$SCRIPT.php" wp:/tmp/pm-script.php
+          # $aplicar se pone en true solo en la copia que viaja al servidor (mismo mecanismo que rio.yml); el repo no cambia.
+          if [ "$APLICAR" = "true" ]; then sed 's/^\$aplicar = false;/$aplicar = true;/' "wordpress/scripts/$SCRIPT.php" > /tmp/pm-script-local.php; else cp "wordpress/scripts/$SCRIPT.php" /tmp/pm-script-local.php; fi
+          scp -q /tmp/pm-script-local.php wp:/tmp/pm-script.php
+          # Datos de entrada de un script de lectura (wordpress/scripts/<script>-urls.txt), si existe.
+          if [ -f "wordpress/scripts/$SCRIPT-urls.txt" ]; then
+            scp -q "wordpress/scripts/$SCRIPT-urls.txt" wp:/tmp/pm-script-urls.txt
+            ssh wp "chown www:www /tmp/pm-script-urls.txt"
+          fi
           # Photos for scripts that load them (wordpress/fotos/*): copied next to the script, removed afterwards.
           if compgen -G "wordpress/fotos/*" >/dev/null; then
             ssh wp "rm -rf /tmp/pm-fotos && mkdir -p /tmp/pm-fotos"
             scp -q wordpress/fotos/* wp:/tmp/pm-fotos/
             ssh wp "chown -R www:www /tmp/pm-fotos"
           fi
-          ssh wp "chown www:www /tmp/pm-script.php && cd '$WP' && runuser -u www -- env HOME=/tmp WP_CLI_CACHE_DIR=/tmp/wp-cli-cache-www wp --path='$WP' eval-file /tmp/pm-script.php; s=\$?; rm -rf /tmp/pm-script.php /tmp/pm-fotos; exit \$s"
+          ssh wp "chown www:www /tmp/pm-script.php && cd '$WP' && runuser -u www -- env HOME=/tmp WP_CLI_CACHE_DIR=/tmp/wp-cli-cache-www wp --path='$WP' eval-file /tmp/pm-script.php; s=\$?; rm -rf /tmp/pm-script.php /tmp/pm-script-urls.txt /tmp/pm-fotos; exit \$s"

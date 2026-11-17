@@ -84,7 +84,7 @@ get_header(); ?>
 						<h3><?php echo esc_html( $b['titulo'] ); ?></h3>
 						<?php foreach ( $b['parrafos'] as $t ) : ?><p><?php echo esc_html( $t ); ?></p><?php endforeach; ?>
 						<?php if ( $b['fuente'] ) : ?>
-							<p class="note"><?php pm_e( 'paquetes.fuente' ); ?>: <?php if ( $b['url'] ) : ?><a href="<?php echo esc_url( $b['url'] ); ?>" rel="noopener"><?php echo esc_html( $b['fuente'] ); ?></a><?php else : echo esc_html( $b['fuente'] ); endif; ?><?php if ( $b['consultada'] ) : ?>, <?php pm_e( 'paquetes.consultada', [ 'fecha' => pm_fecha( $b['consultada'], $idioma ) ] ); ?><?php endif; ?></p>
+							<p class="note"><?php pm_e( 'paquetes.fuente' ); ?>: <?php echo esc_html( $b['fuente'] ); // Texto, sin enlace al sitio del operador (dueño, 17/11/2026). ?><?php if ( $b['consultada'] ) : ?>, <?php pm_e( 'paquetes.consultada', [ 'fecha' => pm_fecha( $b['consultada'], $idioma ) ] ); ?><?php endif; ?></p>
 						<?php endif; ?>
 					</div>
 				<?php endforeach; ?>

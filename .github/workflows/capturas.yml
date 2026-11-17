@@ -32,7 +32,7 @@ jobs:
           RUTAS: ${{ github.event.inputs.rutas }}
           PREFIJO: ${{ github.event.inputs.prefijo }}
         run: |
-          mkdir shots && cd shots && npm init -y >/dev/null && npm i --silent playwright@1 && npx playwright install --with-deps chromium >/dev/null
+          mkdir shots && cd shots && npm init -y >/dev/null && npm i --silent playwright@1 && timeout 150 npx playwright install --with-deps chromium >/dev/null
           cat > shot.mjs <<'JS'
           import { chromium } from 'playwright';
           const b = await chromium.launch();
