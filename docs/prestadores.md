@@ -270,3 +270,7 @@ schema.org natural para programa o exclusiones en una ficha sin
 | Esteros del Iberá | Pirá Lodge (Nervous Waters) | Su página en Nervous Waters y las preguntas frecuentes | Misma escalera que Suindá (13/11/2026); acompañante US$ 650 por noche | La página se contradice en temporada y capacidad: se dice en la ficha |
 | Esteros del Iberá | La Alondra'i (SET Fly Fishing) | Su página de SET (en español) y artículos de SET de 2023 y 2024 | Ninguno | Tarifas de dos agencias: no se publican |
 | Esteros del Iberá | Uguay Lodge (Pointer Outfitters) | La página de Pointer Outfitters | US$ 6.400 por 7 noches, individual, **sin año**, "sujeto a cambios" (13/11/2026) | **Decisión a revisar:** Pointer figura como agencia en `docs/investigacion/corrientes-dorado-lodges-2026-11-13.md`; para retirarlo, vaciar precio y fecha del precio de la ficha |
+
+## La Zona (Salto Grande): sin fichas todavía (17/11/2026)
+
+Se revisaron La Zona Fishing Lodge y River Plate Dorados (sus propios sitios, copia del 13/11) más guías de Concordia, Federación, Chajarí y Monte Caseros: **ninguno tiene una página propia con fecha de 2026 y temporada**, y el permiso del lado argentino no está resuelto en lo público; no se creó ninguna ficha. Qué haría falta (releer con `leer-vivo` o consentimiento, y una guía de Concordia donde colgarlas): `docs/investigacion/la-zona-lugares-2026-11-17.md`. Dorados on the Fly es de Itá Ibaté, no de La Zona.

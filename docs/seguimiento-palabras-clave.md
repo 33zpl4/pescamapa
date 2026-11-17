@@ -13,7 +13,7 @@ Intención: **C** = comercial (el visitante puede acabar pidiendo una propuesta)
 | argentina fishing license / fishing license | C | 2 + 2 | hub «licencia para extranjeros» y nota «permiso paso a paso» (en) | Cubierta: título, FAQ y enlaces desde inicio y guías (13 y 16/11) | Medir el 27/11 |
 | trout fishing in patagonia / trout fishing patagonia / trout patagonia / patagonia trout / trout fishing in patagonia argentina | C | 2 + 2 + 1 + 1 + 1 | pilar «Trout fishing in Patagonia: brown, rainbow and sea-run» | Cubierta desde el 15/11 | Medir el 27/11 |
 | best time to fish patagonia | I/C | 1 | pilar de la trucha y calendario en inglés | Parcial: hay «cuándo pescar trucha» en es/en/pt, sin H2 con esta frase | Revisar H2 y FAQ de temporada del pilar |
-| la zona dorado fishing / la zona fishing lodge / la zona lodge argentina / golden dorado la zona argentina | **C** | 2 + 1 + 1 + 1 | nota «La Zona (Salto Grande)» y pilar del dorado | **Brecha:** la nota dice quién te puede llevar y el reglamento, pero no hay ninguna tarjeta de lugar en La Zona; quien busca «lodge» no encuentra uno | Decisión del dueño: buscar y listar lugares de La Zona con información pública |
+| la zona dorado fishing / la zona fishing lodge / la zona lodge argentina / golden dorado la zona argentina | **C** | 2 + 1 + 1 + 1 | nota «La Zona (Salto Grande)» y pilar del dorado | **Brecha:** la nota dice quién te puede llevar y el reglamento, pero no hay ninguna tarjeta de lugar en La Zona; quien busca «lodge» no encuentra uno | **17/11/2026: revisados los candidatos, ninguno alcanza para ficha** (sin fecha de 2026 en su página, permiso argentino sin resolver; `docs/investigacion/la-zona-lugares-2026-11-17.md`). Pendiente: releer con `leer-vivo` o pedir consentimiento |
 | se puede pescar en bariloche | I/C | 2 | guía de Bariloche (la pregunta ya está en la FAQ) | Cubierta en el contenido; falta confirmar que el título/H1 la use | Leer en vivo con `leer-vivo` |
 | manso | I | 1 | guía de Bariloche (río Manso, 3 tramos con reglas) | Cubierta | — |
 | lago cholila | I/C | 1 | guía de Esquel y Trevelin | Parcial: aparece nombrado, sin sección propia | Evaluar sección en la guía de Esquel |
@@ -29,7 +29,7 @@ Intención: **C** = comercial (el visitante puede acabar pidiendo una propuesta)
 ## Lectura
 
 - **Con intención comercial y cubiertas:** licencia en inglés y trucha en la Patagonia. Falta medir (≈27/11).
-- **Con intención comercial y sin cubrir bien:** «La Zona + lodge». Hay búsqueda real (5 impresiones en cuatro formas), pero la nota actual solo informa. Es una decisión de listados, no de texto.
+- **Con intención comercial y sin cubrir bien:** «La Zona + lodge». Hay búsqueda real (5 impresiones en cuatro formas), pero la nota actual solo informa. Es una decisión de listados, no de texto; el 17/11 se revisaron los lugares y ninguno alcanzó el criterio de ficha (ver la fila).
 - **Mayor volumen del día:** altura del río en Zárate (8 impresiones), informativa. Conviene comprobar la página en vivo antes de tocarla.
 - Las impresiones son diminutas (1 a 8): sirven para ver qué aparece, no para decidir por volumen. Cada fila se mira por tendencia entre fechas.
 
