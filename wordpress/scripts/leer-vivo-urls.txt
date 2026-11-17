@@ -29,9 +29,9 @@ https://pescamapa.com/pt/notas/pesca-de-truta-na-patagonia/ | href="https://farb
 https://pescamapa.com/notas/tallas-cupos-vedas/ | href="https://reglamentodepesca.org.ar ; href="https://www.reglamentodepesca.org.ar ; href="http://reglamentodepesca.org.ar
 https://pescamapa.com/en/notes/size-bag-limits-closed-seasons/ | href="https://reglamentodepesca.org.ar ; href="https://www.reglamentodepesca.org.ar ; href="http://reglamentodepesca.org.ar
 https://pescamapa.com/pt/notas/tamanhos-limites-defesos/ | href="https://reglamentodepesca.org.ar ; href="https://www.reglamentodepesca.org.ar ; href="http://reglamentodepesca.org.ar
-https://pescamapa.com/notas/permiso-de-pesca-argentina-paso-a-paso/ | href="https://reglamentodepesca.org.ar ; href="https://www.reglamentodepesca.org.ar ; href="http://reglamentodepesca.org.ar
-https://pescamapa.com/en/notes/argentina-fishing-license-step-by-step/ | href="https://reglamentodepesca.org.ar ; href="https://www.reglamentodepesca.org.ar ; href="http://reglamentodepesca.org.ar
-https://pescamapa.com/pt/notas/licenca-de-pesca-argentina-passo-a-passo/ | href="https://reglamentodepesca.org.ar ; href="https://www.reglamentodepesca.org.ar ; href="http://reglamentodepesca.org.ar
+https://pescamapa.com/notas/permiso-de-pesca-argentina-paso-a-paso/ | href="https://reglamentodepesca.org.ar ; href="https://www.reglamentodepesca.org.ar ; href="http://reglamentodepesca.org.ar ; pesca.santacruz.gob.ar
+https://pescamapa.com/en/notes/argentina-fishing-license-step-by-step/ | href="https://reglamentodepesca.org.ar ; href="https://www.reglamentodepesca.org.ar ; href="http://reglamentodepesca.org.ar ; pesca.santacruz.gob.ar
+https://pescamapa.com/pt/notas/licenca-de-pesca-argentina-passo-a-passo/ | href="https://reglamentodepesca.org.ar ; href="https://www.reglamentodepesca.org.ar ; href="http://reglamentodepesca.org.ar ; pesca.santacruz.gob.ar
 https://pescamapa.com/notas/cuando-pescar-trucha-patagonia/ | href="https://comunidad.espoesia.com ; href="https://www.comunidad.espoesia.com ; href="http://comunidad.espoesia.com
 https://pescamapa.com/en/notes/best-time-to-fish-trout-patagonia/ | href="https://comunidad.espoesia.com ; href="https://www.comunidad.espoesia.com ; href="http://comunidad.espoesia.com
 https://pescamapa.com/pt/notas/quando-pescar-truta-patagonia/ | href="https://comunidad.espoesia.com ; href="https://www.comunidad.espoesia.com ; href="http://comunidad.espoesia.com
