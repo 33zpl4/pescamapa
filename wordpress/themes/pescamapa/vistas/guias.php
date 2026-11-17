@@ -68,6 +68,7 @@ get_header(); ?>
 		<section class="lista-prestadores" aria-labelledby="lista-h">
 			<h2 id="lista-h"><?php pm_e( 'guias.lista.h', $a ); ?></h2>
 			<p><?php pm_e( 'guias.lista.p' ); ?></p>
+			<?php if ( $consultada = pm_prestadores_consultada( $prestadores ) ) : ?><p class="note nota-fuentes"><?php pm_e( 'ficha.prestadores.nota', [ 'fecha' => pm_mes_anio( $consultada, $idioma ) ] ); ?></p><?php endif; ?>
 			<?php foreach ( $prestadores as $r ) {
 				get_template_part( 'parciales/prestador', null, $r + [ 'lugar' => $d['nombre'] ] );
 			} ?>

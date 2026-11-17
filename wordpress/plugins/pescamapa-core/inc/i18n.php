@@ -181,6 +181,15 @@ function pm_fecha_relativa( ?string $ymd, ?string $idioma = null ): string {
 	return pm_t( 'fecha.rel.mes', [ 'mes' => 'en' === $i ? $mes : mb_strtolower( $mes ) ], $idioma );
 }
 
+/** Localised month and year, e.g. "noviembre de 2026" / "November 2026" (lowercase in es/pt, for mid-sentence use). */
+function pm_mes_anio( ?string $ymd, ?string $idioma = null ): string {
+	if ( ! $ymd ) {
+		return '';
+	}
+	$f = pm_fecha( $ymd, $idioma ); // "19 de octubre de 2026" / "19 October 2026"
+	return trim( (string) preg_replace( '/^\d+( de)? /u', '', $f ) );
+}
+
 /** Localised date, e.g. "19 de octubre de 2026". */
 function pm_fecha( ?string $ymd, ?string $idioma = null ): string {
 	if ( ! $ymd ) {
