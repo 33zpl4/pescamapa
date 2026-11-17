@@ -28,7 +28,7 @@ get_header(); ?>
 				<summary><?php pm_e( 'ficha.fuentes.consultadas', [ 'n' => (string) count( array_filter( $e['fuentes'], fn( $f ) => ! empty( $f['nombre'] ) ) ) ] ); ?></summary>
 				<ul class="fuentes">
 					<?php foreach ( $e['fuentes'] as $f ) : if ( empty( $f['nombre'] ) ) { continue; } ?>
-						<li><?php if ( ! empty( $f['url'] ) ) : ?><a href="<?php echo esc_url( $f['url'] ); ?>" rel="noopener"><?php echo esc_html( $f['nombre'] ); ?></a><?php else : echo esc_html( $f['nombre'] ); endif; ?><?php if ( ! empty( $f['oficial'] ) ) : ?> <span class="ofi"><?php pm_e( 'ficha.oficial' ); ?></span><?php endif; ?></li>
+						<li><?php echo pm_fuente_nombre_html( $f ); // phpcs:ignore -- escaped inside ?><?php if ( ! empty( $f['oficial'] ) ) : ?> <span class="ofi"><?php pm_e( 'ficha.oficial' ); ?></span><?php endif; ?></li>
 					<?php endforeach; ?>
 				</ul>
 			</details>

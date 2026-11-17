@@ -65,6 +65,10 @@
 
 > **13/11/2026, consultas de Search Console:** FAQ visibles y en JSON-LD en notas y especies, botón de pedido en las fichas de especie, títulos y textos por página (Esquel, Río Grande, Tierra del Fuego), hub de licencias reforzado, índice de paquetes (es/en/pt), sección del Río Uruguay en el pilar del dorado y wording "opciones" en lugar de "cotización". Detalle, tabla de clusters, lo que falta de fuente y cuándo medir: `docs/seo-consultas-2026-11-13.md`.
 
+## Enlaces de fuentes (17/11/2026, regla del dueño)
+
+Las listas «Fuentes» de guías, especies y notas enlazan solo si `oficial=1` o el dominio está en `pm_dominios_prensa()` (`inc/datos.php`: prensa, `youtube.com`, `corrientes.tur.ar`, `.gob.ar`/`.gov.ar`/`.gob.cl`); el resto muestra «Nombre, dominio» en texto, sin `<a>`. Una copia del reglamento en un club no es oficial. Los enlaces dentro de cuerpos de notas y las tarjetas «más» de prestadores no se tocaron (decisión del dueño). Lectura en vivo pedida: `leer-vivo` sobre las 3 guías de Jurassic Lake.
+
 ## Minutos de Actions hasta el 5/12 (17/11/2026)
 
 Se agotaron casi todos los minutos de GitHub Actions del mes; vuelven el 5/12/2026. Reglas hasta entonces (orden del dueño):
