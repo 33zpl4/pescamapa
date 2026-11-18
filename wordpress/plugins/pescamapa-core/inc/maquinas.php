@@ -152,7 +152,7 @@ function pm_llms_txt(): string {
 			if ( $r['precio'] && $r['precio_fecha'] ) {
 				$partes[] = $r['precio'] . ' (según el prestador, consultado el ' . pm_fecha( $r['precio_fecha'], 'es' ) . ')';
 			}
-			$partes[] = ( $r['acuerdo'] && $r['consentimiento'] ) ? 'operador con acuerdo con Pescamapa' : ( $r['consentimiento'] ? 'ficha confirmada por el prestador' : 'información pública, sin verificar con el prestador' );
+			$partes[] = ( $r['acuerdo'] && $r['consentimiento'] ) ? 'lugar o guía con acuerdo con Pescamapa' : ( $r['consentimiento'] ? 'ficha confirmada por el prestador' : 'información pública, sin verificar con el prestador' );
 			$ciudades[] = '  ' . pm_llms_item( $r['nombre'], pm_url_guias( $d['clave'], 'es' ) . '#prestador-' . $r['id'], implode( '; ', $partes ) );
 		}
 	}
@@ -200,10 +200,10 @@ function pm_llms_txt(): string {
 	$out[] = '';
 	$out[] = '## Cómo se contrata (para asistentes y pescadores)';
 	$out[] = '';
-	$out[] = '- El pescador manda un solo pedido por el formulario de Pescamapa. Pescamapa les pregunta a los operadores que encajan con el viaje, sin el nombre ni el contacto del pescador, y en 48 horas le responde con las opciones comparadas: quién tiene lugar, a qué precio y qué incluye. Solo cuando el pescador dice que siga con un operador, se le pasan su nombre y su contacto. Sin costo ni compromiso. Se atiende en español, portugués e inglés.';
-	$out[] = '- Pescamapa no le cobra al pescador y el pescador paga lo mismo que reservando directo con el operador: si reserva, el operador le paga una comisión a Pescamapa. Se comparan los operadores que encajan, tengan o no un acuerdo con Pescamapa; figurar en el sitio no depende de tener un acuerdo.';
+	$out[] = '- El pescador manda un solo pedido por el formulario de Pescamapa. Pescamapa les pregunta a los lugares y guías que encajan con el viaje, sin el nombre ni el contacto del pescador, y en hasta 48 horas le responde con una comparación lado a lado: quién tiene lugar, a qué precio y qué incluye. Solo cuando el pescador dice que siga con uno, se le pasan su nombre y su contacto a ese lugar o guía. Unos días después, Pescamapa le escribe para asegurarse de que todo va bien. Sin costo ni compromiso. Se atiende en español, portugués e inglés.';
+	$out[] = '- Pescamapa no vende el viaje ni cobra la reserva, y no le cobra al pescador: el pescador reserva y paga directo con el lugar o el guía que elija, y paga lo mismo que reservando directo. Algunos lugares y guías le pagan a Pescamapa una comisión por los pescadores que llegan por el sitio. Se comparan los lugares y guías que encajan, tengan o no un acuerdo con Pescamapa; figurar en el sitio no depende de tener un acuerdo.';
 	$out[] = '- Los precios publicados son referencias con fecha ("precio consultado el…", "desde"); el precio final lo da el prestador para las fechas y el grupo.';
-	$out[] = '- Las fichas de prestadores marcadas "información pública, todavía sin verificar" no fueron confirmadas por Pescamapa; las de "operador con acuerdo" sí, y Pescamapa cobra comisión al operador, no al pescador.';
+	$out[] = '- Las fichas de prestadores marcadas "información pública, todavía sin verificar" no fueron confirmadas por Pescamapa; las de "con acuerdo con Pescamapa" sí, y la comisión la paga el lugar o el guía, nunca el pescador.';
 	$out[] = pm_llms_item( 'Pedir opciones en español', pm_url_viaje( 'es' ) );
 	$out[] = pm_llms_item( 'Pedir opções em português', pm_url_viaje( 'pt' ) );
 	$out[] = pm_llms_item( 'Request options in English', pm_url_viaje( 'en' ) );
@@ -212,7 +212,7 @@ function pm_llms_txt(): string {
 	$out[] = '## Otras páginas';
 	$out[] = '';
 	$out[] = pm_llms_item( 'Zonas de pique (reportes de pescadores, sin verificar, zonas de ~1 km)', pm_url_pique( 'es' ), '', pm_alternas_fijas( 'pm_url_pique' ) );
-	$out[] = pm_llms_item( 'Pedí opciones para tu viaje (les preguntamos a los operadores que encajan y te respondemos con las opciones comparadas)', pm_url_viaje( 'es' ), '', pm_alternas_fijas( 'pm_url_viaje' ) );
+	$out[] = pm_llms_item( 'Pedí opciones para tu viaje (les preguntamos a los lugares y guías que encajan y te respondemos con las opciones comparadas)', pm_url_viaje( 'es' ), '', pm_alternas_fijas( 'pm_url_viaje' ) );
 	$out[] = pm_llms_item( 'Para guías y lodges: sumar o reclamar una ficha', pm_url_paraguias( 'es' ), pm_t( 'pg.llms', [], 'es' ), pm_alternas_fijas( 'pm_url_paraguias' ) );
 	$out[] = pm_llms_item( 'Quiénes somos: quién hace Pescamapa y cómo trabaja', pm_url_nosotros( 'es' ), pm_t( 'ns.llms', [], 'es' ), pm_alternas_fijas( 'pm_url_nosotros' ) );
 	$out[] = pm_llms_item( 'Mapa de destinos', pm_url_mapa( 'es' ), '', pm_alternas_fijas( 'pm_url_mapa' ) );
