@@ -133,6 +133,7 @@ Pendiente: otras vistas (guías, notas) siguen con `--paper` plano y tarjetas co
 | Tarjeta de prestador | `.prestador` | Guías |
 | Tarjeta "más para hacer" | `.mas` (+ `.sello-pago` si es publicidad); el título de la tarjeta enlaza al sitio del negocio (`rel="noopener nofollow"`; paga: `rel="sponsored noopener"` + sello). Se quitó `.mas-fila` (18/11/2026). «Más para hacer» = actividades de terceros, con enlace; las pagas llevan sello y rel=sponsored; fichas de prestadores de pesca: sin enlace al sitio del lugar. | Guías |
 | Nota general de fuentes | `<p class="note nota-fuentes">` bajo el título de la sección de prestadores: una por sección, nunca una leyenda de fuente por ficha (17/11/2026) | Ficha del destino, guía de la ciudad |
+| Contraste «Hoy / Con Pescamapa» | `parciales/contraste.php` → `.contraste` + `.contraste-par` + `article.hoy` / `article.con` (la segunda con borde forest de 2 px) + `.rotulo` (Bebas, `--olive`); textos `contraste.*` en `ui.json` (18/11/2026) | Portada (banda `--paper` entre la franja lime y los beneficios), formulario `/armar-viaje/` (debajo del formulario, antes de la FAQ) |
 | Aviso | `.aviso.ok` / `.aviso.error` | Formularios |
 | Fuentes | `.fuentes` + `.ofi` | Guías, notas |
 

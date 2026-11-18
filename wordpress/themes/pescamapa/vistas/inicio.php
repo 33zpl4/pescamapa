@@ -48,6 +48,12 @@ get_header(); ?>
 		</div>
 	</div>
 
+	<section class="section contraste-sec">
+		<div class="shell">
+			<?php get_template_part( 'parciales/contraste', null, [ 'id' => 'contraste-h' ] ); ?>
+		</div>
+	</section>
+
 	<section class="section beneficios">
 		<div class="shell">
 			<div class="head">

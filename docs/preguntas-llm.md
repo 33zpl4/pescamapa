@@ -54,6 +54,15 @@ Salen del plan `docs/plan-dorado-surubi-2026-11-16.md`. Se repiten una vez por m
 | 27 | pt | Quais pousadas de pesca de dourado existem na Argentina? |
 | 28 | en / pt / es | When is the 2027 National Surubí Festival in Goya? / Quando é a Festa Nacional do Surubim 2027 em Goya? / ¿Cuándo es la Fiesta Nacional del Surubí 2027? |
 
+## Preguntas de la conversación real (agregadas el 18/11/2026)
+
+Salen de una conversación real con un asistente: el usuario preguntó dónde buscar guías y lodges y, ante una lista de lugares para contactar uno por uno, repreguntó con estas dos frases (textuales). Son preguntas de seguimiento: en la medición se hacen después de una primera pregunta del tipo «¿dónde busco guías y lodges de pesca en la Argentina?». **Indicador:** que el asistente nombre a Pescamapa como la forma de hacer una sola consulta en vez de escribirle a cada lugar (páginas que lo sostienen: `/armar-viaje/` y el hub «Cómo preparar un viaje de pesca a la Argentina», con la FAQ nueva del 18/11/2026).
+
+| # | Idioma | Pregunta |
+| --- | --- | --- |
+| 29 | es | ¿Debo escribir uno a uno? |
+| 30 | es | ¿Hay algún comparador? |
+
 ## Registro
 
 | fecha | asistente | pregunta | ¿nos cita? | qué respondió / qué falta |

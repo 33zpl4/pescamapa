@@ -111,6 +111,10 @@ function pm_seo(): array {
 		$s['title']       = pm_t( 'viaje.title' );
 		$s['description'] = pm_t( 'viaje.description' );
 		$s['alternas']    = pm_alternas_fijas( 'pm_url_viaje' );
+		// Visible FAQ of the request page (viaje.php) = this JSON-LD; both read ui.json, so they cannot drift apart. Not shown after sending, so not in the markup then.
+		if ( 'ok' !== pm_consulta_resultado() ) {
+			$s['jsonld'][] = pm_jsonld_faq( array_map( fn( $n ) => [ 'pregunta' => pm_t( "viaje.faq.$n.q" ), 'respuesta' => pm_t( "viaje.faq.$n.a" ) ], [ 1, 2, 3, 4 ] ) );
+		}
 	} elseif ( 'rio' === $vista ) {
 		$s['title']       = pm_t( 'rio.title' );
 		$s['description'] = pm_t( 'rio.description' );
