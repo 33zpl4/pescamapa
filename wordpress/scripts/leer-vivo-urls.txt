@@ -2,16 +2,11 @@
 # Las líneas con # y las vacías se ignoran. Lo lee wordpress/scripts/leer-vivo.php (solo lectura).
 # Las URLs anteriores ya fueron verificadas o descartadas: están en el historial de git.
 
-# 18/11/2026: guía de Concordia y La Zona (es/en/pt), páginas de guías y notas tocadas. Esperado: 'La Zona Lodge' y 'Datos al'/'Data as of'/'Dados em' presentes; ningún enlace a lazonalodge ni a instagram; ningún teléfono.
-https://pescamapa.com/litoral/entre-rios/pesca-en-concordia/ | La Zona Lodge ; Datos al ; All inclusive ; href="https://lazonalodge ; href="https://www.instagram ; href="https://instagram ; instagram.com ; Fuente: instagram || contexto: whatsapp ; telefono ; +54 ; tel.
-https://pescamapa.com/en/litoral/entre-rios/fishing-in-concordia/ | La Zona Lodge ; Data as of ; All inclusive ; href="https://lazonalodge ; href="https://www.instagram ; href="https://instagram ; instagram.com ; Fuente: instagram || contexto: whatsapp ; phone ; +54 ; tel.
-https://pescamapa.com/pt/litoral/entre-rios/pesca-em-concordia/ | La Zona Lodge ; Dados em ; All inclusive ; pousada ; href="https://lazonalodge ; href="https://www.instagram ; href="https://instagram ; instagram.com ; Fuente: instagram || contexto: whatsapp ; telefone ; +54 ; tel.
-https://pescamapa.com/guias-de-pesca/concordia/ | La Zona Lodge ; Datos al ; href="https://lazonalodge ; href="https://www.instagram ; instagram.com ; Fuente: instagram || contexto: whatsapp ; telefono ; +54 ; tel.
-https://pescamapa.com/en/fishing-guides/concordia/ | La Zona Lodge ; Data as of ; href="https://lazonalodge ; href="https://www.instagram ; instagram.com || contexto: whatsapp ; phone ; +54
-https://pescamapa.com/pt/guias-de-pesca/concordia/ | La Zona Lodge ; Dados em ; href="https://lazonalodge ; href="https://www.instagram ; instagram.com || contexto: whatsapp ; telefone ; +54
-https://pescamapa.com/notas/la-zona-salto-grande-pesca-dorado/ | Un lugar de Concordia ; pesca-en-concordia ; href="https://lazonalodge ; href="https://www.instagram ; Fuente: instagram || contexto: whatsapp ; telefono ; +54
-https://pescamapa.com/en/notes/la-zona-salto-grande-golden-dorado/ | A place in Concordia ; fishing-in-concordia ; href="https://lazonalodge ; href="https://www.instagram ; Fuente: instagram || contexto: whatsapp ; phone ; +54
-https://pescamapa.com/pt/notas/la-zona-salto-grande-pesca-dourado/ | Um lugar de Concordia ; pesca-em-concordia ; href="https://lazonalodge ; href="https://www.instagram ; Fuente: instagram || contexto: whatsapp ; telefone ; +54
-https://pescamapa.com/notas/pesca-del-dorado-en-la-argentina/ | pesca-en-concordia ; todavía no tiene guía
-https://pescamapa.com/en/notes/golden-dorado-fishing-argentina/ | fishing-in-concordia ; it has no guide yet
-https://pescamapa.com/pt/notas/pesca-de-dourado-na-argentina/ | pesca-em-concordia ; ainda não tem guia
+# 18/11/2026, lectura final tras la-zona-normas-2026-11-18: presentes 'art. 5' / 'Monday to Thursday' / 'segunda a quinta' y la frase del permiso; ausentes enlaces al sitio y a Instagram del lugar, el nombre de la empresa y el 'listing … listing'.
+https://pescamapa.com/litoral/entre-rios/pesca-en-concordia/ | art. 5 ; lunes a jueves ; Concurso ; 10/12/2026 ; 46/09 ; La Zona Lodge ; href="https://lazonalodge ; href="https://www.instagram ; instagram.com ; Untamed
+https://pescamapa.com/en/litoral/entre-rios/fishing-in-concordia/ | art. 5 ; Monday to Thursday ; 10/12/2026 ; 46/09 ; La Zona Lodge ; href="https://lazonalodge ; href="https://www.instagram ; instagram.com ; Untamed
+https://pescamapa.com/pt/litoral/entre-rios/pesca-em-concordia/ | art. 5 ; segunda a quinta ; 10/12/2026 ; 46/09 ; La Zona Lodge ; href="https://lazonalodge ; href="https://www.instagram ; instagram.com ; Untamed
+https://pescamapa.com/guias-de-pesca/concordia/ | La Zona Lodge ; dorado ; surubí ; tararira ; href="https://lazonalodge ; href="https://www.instagram ; Untamed
+https://pescamapa.com/notas/la-zona-salto-grande-pesca-dorado/ | art. 5 ; lunes a jueves ; No está publicado quién tiene hoy ; 10/12/2026 ; 46/09 ; reapertura ; href="https://lazonalodge ; href="https://www.instagram ; Untamed
+https://pescamapa.com/en/notes/la-zona-salto-grande-golden-dorado/ | art. 5 ; Monday to Thursday ; It is not published who holds ; 10/12/2026 ; 46/09 ; the Concordia guide ; public-information entry ; as a public-information listing ; href="https://lazonalodge ; href="https://www.instagram ; Untamed
+https://pescamapa.com/pt/notas/la-zona-salto-grande-pesca-dourado/ | art. 5 ; segunda a quinta ; Não está publicado quem tem hoje ; 10/12/2026 ; 46/09 ; href="https://lazonalodge ; href="https://www.instagram ; Untamed
