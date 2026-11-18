@@ -1,11 +1,17 @@
 # Una URL por línea. Opcional: "url | cadena uno ; cadena dos" (presente/ausente) y "|| contexto: palabra1 ; palabra2" (extractos, fecha, <main>).
 # Las líneas con # y las vacías se ignoran. Lo lee wordpress/scripts/leer-vivo.php (solo lectura).
-# Las 29 URLs anteriores ya fueron verificadas: se quitaron de este archivo (están en el historial de git).
+# Las URLs anteriores ya fueron verificadas o descartadas: están en el historial de git.
 
-# 17/11/2026: La Zona (prensa y sitios de los lugares)
-https://www.primeraedicion.com.ar/nota/253098/concordiazona-de-gigantes/ || contexto: zona lodge ; lodge ; reabr ; concesi ; concurso ; botes ; cuatro ; temporada ; 2026
-https://www.elheraldo.com.ar/noticias/turismo/concordia-saldra-televisada-en-el-canal-mas-importante-de-pesca-de-brasil-y-latinoamerica || contexto: zona lodge ; lodge ; reabr ; concesi ; concurso ; botes ; cuatro ; temporada ; 2026
-https://lazonalodge.com || contexto: 2026 ; 2027 ; season ; temporada ; rates ; veda ; closed ; reopen
-https://riverplatedorados.com || contexto: 2026 ; 2027 ; season ; temporada ; rates ; veda ; closed ; reopen
-https://riverplatedorados.com/rates || contexto: 2026 ; 2027 ; season ; temporada ; rates ; veda ; closed ; reopen
-https://riverplatedorados.com/best-times || contexto: 2026 ; 2027 ; season ; temporada ; rates ; veda ; closed ; reopen
+# 18/11/2026: guía de Concordia y La Zona (es/en/pt), páginas de guías y notas tocadas. Esperado: 'La Zona Lodge' y 'Datos al'/'Data as of'/'Dados em' presentes; ningún enlace a lazonalodge ni a instagram; ningún teléfono.
+https://pescamapa.com/litoral/entre-rios/pesca-en-concordia/ | La Zona Lodge ; Datos al ; All inclusive ; href="https://lazonalodge ; href="https://www.instagram ; href="https://instagram ; instagram.com ; Fuente: instagram || contexto: whatsapp ; telefono ; +54 ; tel.
+https://pescamapa.com/en/litoral/entre-rios/fishing-in-concordia/ | La Zona Lodge ; Data as of ; All inclusive ; href="https://lazonalodge ; href="https://www.instagram ; href="https://instagram ; instagram.com ; Fuente: instagram || contexto: whatsapp ; phone ; +54 ; tel.
+https://pescamapa.com/pt/litoral/entre-rios/pesca-em-concordia/ | La Zona Lodge ; Dados em ; All inclusive ; pousada ; href="https://lazonalodge ; href="https://www.instagram ; href="https://instagram ; instagram.com ; Fuente: instagram || contexto: whatsapp ; telefone ; +54 ; tel.
+https://pescamapa.com/guias-de-pesca/concordia/ | La Zona Lodge ; Datos al ; href="https://lazonalodge ; href="https://www.instagram ; instagram.com ; Fuente: instagram || contexto: whatsapp ; telefono ; +54 ; tel.
+https://pescamapa.com/en/fishing-guides/concordia/ | La Zona Lodge ; Data as of ; href="https://lazonalodge ; href="https://www.instagram ; instagram.com || contexto: whatsapp ; phone ; +54
+https://pescamapa.com/pt/guias-de-pesca/concordia/ | La Zona Lodge ; Dados em ; href="https://lazonalodge ; href="https://www.instagram ; instagram.com || contexto: whatsapp ; telefone ; +54
+https://pescamapa.com/notas/la-zona-salto-grande-pesca-dorado/ | Un lugar de Concordia ; pesca-en-concordia ; href="https://lazonalodge ; href="https://www.instagram ; Fuente: instagram || contexto: whatsapp ; telefono ; +54
+https://pescamapa.com/en/notes/la-zona-salto-grande-golden-dorado/ | A place in Concordia ; fishing-in-concordia ; href="https://lazonalodge ; href="https://www.instagram ; Fuente: instagram || contexto: whatsapp ; phone ; +54
+https://pescamapa.com/pt/notas/la-zona-salto-grande-pesca-dourado/ | Um lugar de Concordia ; pesca-em-concordia ; href="https://lazonalodge ; href="https://www.instagram ; Fuente: instagram || contexto: whatsapp ; telefone ; +54
+https://pescamapa.com/notas/pesca-del-dorado-en-la-argentina/ | pesca-en-concordia ; todavía no tiene guía
+https://pescamapa.com/en/notes/golden-dorado-fishing-argentina/ | fishing-in-concordia ; it has no guide yet
+https://pescamapa.com/pt/notas/pesca-de-dourado-na-argentina/ | pesca-em-concordia ; ainda não tem guia
