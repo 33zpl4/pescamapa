@@ -1,6 +1,49 @@
 # La Zona (Salto Grande): lugares para listar, revisión del 17/11/2026
 
-Pedido del dueño (17/11/2026): hay búsquedas reales de «la zona fishing lodge», «la zona lodge argentina», «golden dorado la zona argentina» y «la zona dorado fishing», y la nota «La Zona (Salto Grande)» no tiene ningún lugar. **Resultado: no se creó ninguna ficha.** Ningún candidato alcanza el criterio (página propia leída, con contenido fechado y actual, y oferta clara para pescadores). Este documento dice por qué y qué haría falta.
+Pedido del dueño (17/11/2026): hay búsquedas reales de «la zona fishing lodge», «la zona lodge argentina», «golden dorado la zona argentina» y «la zona dorado fishing», y la nota «La Zona (Salto Grande)» no tiene ningún lugar. **Resultado del 17/11: no se creó ninguna ficha (ver la actualización del 18/11 arriba, que sí crea una).** Ningún candidato alcanza el criterio (página propia leída, con contenido fechado y actual, y oferta clara para pescadores). Este documento dice por qué y qué haría falta.
+
+## Actualización del 18/11/2026: La Zona Lodge está activo (dato del dueño) y decisión de dónde vive la ficha
+
+**Dato nuevo y fuente.** El dueño leyó el 18/11/2026 la cuenta de Instagram verificada del lugar (más de 17.000 seguidores) y pasó capturas y las láminas del carrusel. **Fuente: publicación conjunta de la cuenta del lugar con un operador brasileño de promoción, fechada el 15/10/2026 («hace 4 semanas» al 18/11/2026), ubicación Concordia, Entre Ríos. Leída por el dueño el 18/11/2026; sin enlace en el sitio** (en las páginas va como texto: «Instagram del lugar, octubre de 2026»). El sitio web del lugar (lazonalodge.com) está caído por certificado vencido; las capturas no están en el repo (no las tengo; no se verificó nada contra imágenes).
+
+Qué dice la publicación (texto en portugués y láminas, transcripto por el dueño; sin teléfonos ni correos, que **no se guardan en ningún archivo**):
+
+- Ubicación: Concordia, a orillas del río Uruguay, «na exclusiva reserva de Salto Grande»; «destino ideal para quem busca grandes capturas sem abrir mão do conforto»; «região famosa pelos grandes dourados»; atención personalizada.
+- Régimen all inclusive: hospedaje, comidas, bebidas, jornadas de pesca e infraestructura de la estadía; traslado diario de la posada al río Uruguay.
+- Especies que menciona: dorado, surubí, tararira, patí, armado, pacú y boga.
+- Habitaciones: apartamentos amplios, climatizados y preparados para grupos (en las fotos, camas individuales con mesas de luz).
+- Comidas: desayuno, almuerzo y cena completos con bebidas (en las fotos, buffet de desayuno variado y asado a la estaca y a la parrilla).
+- Instalaciones: piscina al aire libre, salón de estar y juegos con mesa de billar y vista panorámica, comedor amplio con ventanales, jardines con palmeras y mesas con sombrillas.
+- **Solo en este documento interno:** las imágenes llevan el logo del operador brasileño de promoción. No va en la ficha ni en ninguna página.
+- Historias más viejas de la cuenta (de hace ~31 y ~40 semanas): un «buffet» con pensión completa, media pensión o solo desayuno, y una **cabaña de alquiler temporario en Concordia** (3 dormitorios, piscina, quincho): es otra oferta, no se mezcla con el lodge y no se publicó.
+- **No figura:** precio, temporada, botes, guías, días de pesca, qué permiso cubre la pesca en La Zona. No se publica nada de récords, tamaños, cantidad de botes ni reapertura (no verificado). «Uno de los mejores puntos del mundo» **no** se publica como afirmación nuestra: solo lo que dice el texto del post, atribuido («región famosa por los grandes dorados»).
+
+**Qué cambia respecto del 17/11.** La tabla de abajo decía «sin prueba de que esté activo» para La Zona Fishing Lodge. Ahora hay una publicación fechada (octubre de 2026) del propio lugar que lo muestra activo y describe la oferta. El permiso argentino de La Zona **sigue sin resolverse en lo público** y la publicación no dice qué permiso cubre la pesca: la ficha lo dice («no dice qué permiso cubre la pesca en La Zona») y la guía no afirma ni niega nada. Sigue sin leerse la web (caída) y River Plate Dorados sigue sin alcanzar el criterio.
+
+### Decisión A o B: dónde puede vivir la ficha
+
+Se miraron las plantillas el 18/11/2026 (`vistas/destino.php`, `vistas/guias.php`, `vistas/paquetes.php`, `parciales/guias-especie.php`, `vistas/nota.php`):
+
+| Opción | Qué exige | Resultado |
+|---|---|---|
+| **B. Sección con la ficha dentro de la nota de La Zona** | Un mecanismo de tarjetas en las notas | **No existe.** `nota.php` solo imprime el cuerpo, las fuentes y, si la nota tiene especie, `guias-especie` (una línea por ciudad con guía, que a su vez solo lee ciudades que ya son destinos). Las tarjetas (`parciales/prestador.php`) salen únicamente en la ficha de un destino, en la página de guías de una ciudad y en el paquete. Hacer B es cambiar plantillas (un parcial nuevo, estilos, un destino virtual en el selector de la ficha) y desplegarlo sin poder verlo desde el sandbox: más invención que A |
+| **A. Guía nueva «Pesca en Concordia y La Zona»** (destino `concordia`) | Contenido de guía (reglamento, permiso, licencia) salido de fuentes ya leídas | **Se puede sin inventar.** Cada dato sale de lo ya publicado en la nota de La Zona (CARU 27/2004, 63/2026, 111/2023, 37/2023; Decreto 3874/25; pliego 01-2026; El Cronista) y de la publicación del lugar. Lo que no se leyó (licencia, tallas y cupos de Entre Ríos para el río Uruguay; quién tiene el permiso argentino; si la veda rige en La Zona) se dice como «no lo podemos confirmar». Usa el mecanismo ya probado: mismo molde que Chascomús e Itá Ibaté; hereda la foto de la tarjeta «próximamente» de Concordia, que se oculta sola |
+
+**Elegida: A.** Es el único camino con tarjetas que existe hoy, el dueño pidió «la ficha de Concordia» y no obliga a tocar plantillas. La guía es corta a propósito (como Itá Ibaté): datos clave, reglas de La Zona en corto, veda, quién puede llevarte, cómo llegar, cuánto cuesta (a consultar), qué leer antes y la línea «Contanos qué buscás y te armamos la mejor opción para vos». Título y H1 sin «lodge» (el contenido sustenta «alojamiento», no «lodge» más allá del nombre del negocio). Es es/en/pt; en pt, «pousada» para el lugar. Script: `wordpress/scripts/concordia-la-zona-2026-11-18.php` (guía + ficha + enlaces desde la nota de La Zona y el pilar del dorado, cuyo texto «Concordia… todavía no tiene guía» deja de ser cierto).
+
+La ficha es «información pública» (sin consentimiento): La Zona Lodge, Concordia (Entre Ríos), río Uruguay, zona de Salto Grande; alojamiento y paquetes; incluye alojamiento, comidas, bebidas y traslados; especies dorado, surubí, tararira, patí, pacú y boga (el «armado» no es una especie cargada en el sitio: va solo en el texto, atribuido); **tarifa a consultar, sin foto, sin contacto, sin enlace** al sitio ni a Instagram; «Datos al 18 de noviembre de 2026». Tipo de pesca en palabras del lector: se omite (la publicación no dice si es mosca, spinning o carnada).
+
+### Preguntas para el correo al lugar (para pasar a consentimiento)
+
+Contacto por la vía interna de Pescamapa; el correo no se publica ni se guarda acá. Preguntar:
+
+1. ¿Quieren figurar en Pescamapa y que tildemos «Aceptó aparecer»? ¿Con qué texto y qué fotos (con crédito)?
+2. ¿Qué permiso o resolución cubre la pesca en La Zona en 2026/27 y qué días y horarios pescan?
+3. ¿Cómo se aplica la veda del 1/9 al 31/12 a sus fechas? ¿Operan en esos meses?
+4. Temporada, duración de las estadías, cantidad de pescadores, embarcaciones y guías, y si hablan español, portugués e inglés.
+5. Tarifa vigente (con año y moneda) y qué no incluye (licencia, equipo, propinas, bebidas fuera del régimen).
+6. ¿Siguen con la cabaña de alquiler en Concordia? (Es otra oferta; solo si quieren que se sepa.)
+7. ¿Hay otro sitio vigente (el web figura caído)?
 
 ## Cómo se hizo y qué límite tuvo
 
