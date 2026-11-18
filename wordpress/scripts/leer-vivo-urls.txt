@@ -2,22 +2,17 @@
 # Las líneas con # y las vacías se ignoran. Lo lee wordpress/scripts/leer-vivo.php (solo lectura).
 # Las URLs anteriores ya fueron verificadas o descartadas: están en el historial de git.
 
-# 18/11/2026, lectura final tras entre-rios-permiso-2026-11-18 (es/en/pt): presentes la cifra con el formato de cada página, 'Ley 11.174'/'11.174' y 'Decreto 726/25'; ausentes las frases viejas de «no leímos la tarifa o la norma de Entre Ríos».
-https://pescamapa.com/notas/permiso-de-pesca-argentina-paso-a-paso/ | 24.251,60 ; Costos Permisos y Licencias Oct2026 ; 5.488,52 ; Mitre y Pellegrini ; antes de pescar ; No confirmado ; Cuadro leído el 22/10/2026 ; href="https://portal.entrerios.gov.ar/pf/tramite/708
-https://pescamapa.com/en/notes/argentina-fishing-license-step-by-step/ | 24.251,60 ; Costos Permisos y Licencias Oct2026 ; 5.488,52 ; Mitre and Pellegrini ; before fishing ; Not confirmed ; Price list read on 22/10/2026 ; href="https://portal.entrerios.gov.ar/pf/tramite/708
-https://pescamapa.com/pt/notas/licenca-de-pesca-argentina-passo-a-passo/ | 24.251,60 ; Costos Permisos y Licencias Oct2026 ; 5.488,52 ; Mitre e Pellegrini ; antes de pescar ; Não confirmado ; Quadro lido em 22/10/2026 ; href="https://portal.entrerios.gov.ar/pf/tramite/708
-https://pescamapa.com/notas/licencia-pesca-extranjeros-argentina-2026-27/ | 24.251,60 ; ≈ US$ 16 ; La Paz, Concordia ; Santa Fe, Chaco, Misiones ; Entre Ríos, Santa Fe, Chaco ; todavía no las incluimos porque no leímos sus fuentes oficiales
-https://pescamapa.com/en/notes/fishing-license-foreigners-argentina-2026-27/ | 24,251.60 ; ≈ US$ 16 ; La Paz, Concordia ; Santa Fe, Chaco, Misiones ; Entre Ríos, Santa Fe, Chaco
-https://pescamapa.com/pt/notas/licenca-pesca-estrangeiros-argentina-2026-27/ | 24.251,60 ; ≈ US$ 16 ; La Paz, Concordia ; Santa Fé, Chaco, Misiones ; Entre Ríos, Santa Fé, Chaco
-https://pescamapa.com/litoral/entre-rios/pesca-en-la-paz/ | 11.174 ; 726/25 ; 12/5/2025 ; ¿Se puede pescar dorado en Entre Ríos? ; 24.251,60 ; oficina de turismo de La Paz ; devolución obligatoria ; FAQPage
-https://pescamapa.com/en/litoral/entre-rios/fishing-in-la-paz/ | 11.174 ; 726/25 ; 12/5/2025 ; Can you fish dorado in Entre Ríos? ; 24,251.60 ; La Paz tourist office ; mandatory release ; FAQPage
-https://pescamapa.com/pt/litoral/entre-rios/pesca-em-la-paz/ | 11.174 ; 726/25 ; 12/5/2025 ; Pode-se pescar dourado em Entre Ríos? ; 24.251,60 ; escritório de turismo de La Paz ; devolução obrigatória ; FAQPage
-https://pescamapa.com/litoral/entre-rios/pesca-en-concordia/ | 11.174 ; 726/25 ; 12/5/2025 ; ¿Se puede pescar dorado en Entre Ríos? ; Mitre y Pellegrini ; 24.251,60 ; No confirmado ; art. 5 ; lunes a jueves ; La Zona Lodge ; no la podemos confirmar ; FAQPage ; href="https://lazonalodge ; href="https://www.instagram ; Untamed
-https://pescamapa.com/en/litoral/entre-rios/fishing-in-concordia/ | 11.174 ; 726/25 ; 12/5/2025 ; Can you fish dorado in Entre Ríos? ; Mitre and Pellegrini ; 24,251.60 ; Not confirmed ; art. 5 ; Monday to Thursday ; La Zona Lodge ; we cannot confirm it ; FAQPage ; href="https://lazonalodge ; href="https://www.instagram ; Untamed
-https://pescamapa.com/pt/litoral/entre-rios/pesca-em-concordia/ | 11.174 ; 726/25 ; 12/5/2025 ; Pode-se pescar dourado em Entre Ríos? ; Mitre e Pellegrini ; 24.251,60 ; Não confirmado ; art. 5 ; segunda a quinta ; La Zona Lodge ; não podemos confirmá-la ; FAQPage ; href="https://lazonalodge ; href="https://www.instagram ; Untamed
-https://pescamapa.com/notas/la-zona-salto-grande-pesca-dorado/ | si el permiso de pesca deportiva de Entre Ríos ; art. 5 ; lunes a jueves ; Las tasas de licencia, tallas y cupos de Entre Ríos
-https://pescamapa.com/en/notes/la-zona-salto-grande-golden-dorado/ | whether the Entre Ríos sport fishing permit ; art. 5 ; Monday to Thursday ; Entre Ríos licence fees, sizes
-https://pescamapa.com/pt/notas/la-zona-salto-grande-pesca-dourado/ | se a licença de pesca esportiva de Entre Ríos ; art. 5 ; segunda a quinta ; As taxas de licença, tamanhos e cotas de Entre Ríos
-https://pescamapa.com/notas/pesca-del-dorado-en-la-argentina/ | 24.251,60 ; Todavía no leímos las tasas de licencia de Entre Ríos
-https://pescamapa.com/en/notes/golden-dorado-fishing-argentina/ | 24.251,60 ; We have not yet read the Entre Ríos licence fees
-https://pescamapa.com/pt/notas/pesca-de-dourado-na-argentina/ | 24.251,60 ; Ainda não lemos as taxas de licença de Entre Ríos
+# 18/11/2026, lectura de normas pendientes (solo organismos oficiales): CARU 63/2026, 46/16, 46/09, 111/2023, 37/2023, 01/2023, aviso de veda 2026.
+https://caru.org.uy/nuevositio/2026/09/22/caru-establece-nuevo-limite-para-la-pesca-deportiva-en-la-zona-de-seguridad-de-salto-grande-resolucion-63-26/ || contexto: dorado ; veda ; especie ; autorizar ; 1 de septiembre ; 16 de octubre ; embarcaci ; carnada ; 500
+https://www.argentina.gob.ar/normativa/nacional/resoluci%C3%B3n-46-2016-266292/texto || contexto: dorado ; veda ; especie ; autorizar ; 1 de septiembre ; 16 de octubre ; embarcaci ; carnada ; 500 ; 14.5
+https://www.argentina.gob.ar/normativa/nacional/resoluci%C3%B3n-46-2009-163143/texto || contexto: dorado ; veda ; especie ; autorizar ; 1 de septiembre ; 16 de octubre ; embarcaci ; carnada ; fracasad
+https://www.argentina.gob.ar/normativa/nacional/resoluci%C3%B3n-46-2009-163143/normas-modifican || contexto: modifica ; 2026 ; 2023 ; 2016
+https://www.argentina.gob.ar/normativa/nacional/norma-388329/texto || contexto: dorado ; veda ; 1 de septiembre ; 31 de diciembre ; deportiva ; autorizar
+https://www.boletinoficial.gob.ar/detalleAviso/primera/283750/20230331 || contexto: dorado ; 200 ; metros ; embarcaci ; reglamento ; artículo
+https://www.argentina.gob.ar/normativa/nacional/resoluci%C3%B3n-37-2023-381928/texto || contexto: dorado ; 46/09 ; 46/16 ; lunes a jueves ; 7.2
+https://caru.org.uy/nuevositio/2026/10/07/veda-del-dorado-2026-1-09-31-12/ || contexto: dorado ; veda ; 1 de septiembre ; Zona de Seguridad ; represa
+
+# Nota del permiso: ¿la sección «Qué llevar y qué guardar» está duplicada? (cada extracto es una aparición en el texto visible)
+https://pescamapa.com/notas/permiso-de-pesca-argentina-paso-a-paso/ || contexto: Qué llevar y qué guardar
+https://pescamapa.com/en/notes/argentina-fishing-license-step-by-step/ || contexto: What to bring and what to keep ; What to take and what to keep
+https://pescamapa.com/pt/notas/licenca-de-pesca-argentina-passo-a-passo/ || contexto: O que levar e o que guardar
