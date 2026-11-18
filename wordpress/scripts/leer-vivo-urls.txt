@@ -7,6 +7,8 @@
 https://pescamapa.com/notas/la-zona-salto-grande-pesca-dorado/ | especie=dorado&amp;destino=concordia ; destino=concordia&amp;especie=dorado ; especie=dorado&destino=concordia ; destino=concordia&especie=dorado ; cta-nota
 https://pescamapa.com/en/notes/la-zona-salto-grande-golden-dorado/ | especie=dorado&amp;destino=concordia ; destino=concordia&amp;especie=dorado ; especie=dorado&destino=concordia ; destino=concordia&especie=dorado ; cta-nota
 https://pescamapa.com/pt/notas/la-zona-salto-grande-pesca-dourado/ | especie=dorado&amp;destino=concordia ; destino=concordia&amp;especie=dorado ; especie=dorado&destino=concordia ; destino=concordia&especie=dorado ; cta-nota
+# Nota de Bariloche y el Limay (una sola ciudad, también completada): el botón lleva destino=bariloche.
+https://pescamapa.com/notas/cuanto-cuesta-pesca-con-mosca-bariloche/ | especie=trucha&amp;destino=bariloche ; destino=bariloche&amp;especie=trucha ; especie=trucha&destino=bariloche ; destino=bariloche&especie=trucha
 # Nota de varios destinos (permiso paso a paso): el botón no lleva destino.
 https://pescamapa.com/notas/permiso-de-pesca-argentina-paso-a-paso/ | destino=concordia || contexto: cta-nota
 # Las tres páginas del formulario: sin «operador(es)» dirigido al visitante (los extractos muestran lo que quede).
