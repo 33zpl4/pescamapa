@@ -44,7 +44,7 @@ get_header(); ?>
 	</header>
 	<div class="shell cuerpo">
 		<?php if ( $d['foto'] ) : ?>
-			<div class="portada-ciudad"><?php echo pm_foto( $d['foto'], $d['nombre'], '(max-width: 960px) 100vw, 760px', [ 'clase' => 'portada', 'prioridad' => true ] ); // phpcs:ignore -- escaped inside ?></div>
+			<div class="portada-ciudad"><?php echo pm_foto( $d['foto'], pm_alt_foto( (int) $d['foto'], $idioma, $d['nombre'] ), '(max-width: 960px) 100vw, 760px', [ 'clase' => 'portada', 'prioridad' => true ] ); // phpcs:ignore -- escaped inside ?></div>
 		<?php endif; ?>
 		<section class="respuesta" aria-labelledby="respuesta-h">
 			<h2 id="respuesta-h"><?php pm_e( 'guias.resumen.h' ); ?></h2>

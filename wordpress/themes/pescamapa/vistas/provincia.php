@@ -38,7 +38,7 @@ get_header(); ?>
 		<div class="prov-destinos">
 			<?php foreach ( $destinos as $d ) : $rio = pm_rio_destino( $d['clave'] ); $np = count( pm_prestadores_destino( $d['clave'] ) ); ?>
 				<article class="prov-destino" id="<?php echo esc_attr( $d['clave'] ); ?>">
-					<?php if ( $d['foto'] ) : ?><a class="foto" href="<?php echo esc_url( $d['url'] ); ?>"><?php echo pm_foto( $d['foto'], $d['nombre'], '(max-width: 720px) 100vw, 360px' ); // phpcs:ignore -- escaped inside ?></a><?php endif; ?>
+					<?php if ( $d['foto'] ) : ?><a class="foto" href="<?php echo esc_url( $d['url'] ); ?>"><?php echo pm_foto( $d['foto'], pm_alt_foto( (int) $d['foto'], $idioma, $d['nombre'] ), '(max-width: 720px) 100vw, 360px' ); // phpcs:ignore -- escaped inside ?></a><?php endif; ?>
 					<div>
 						<h3><a href="<?php echo esc_url( $d['url'] ); ?>"><?php echo esc_html( $d['nombre'] ); ?></a></h3>
 						<?php if ( $d['bajada'] ) : ?><p><?php echo esc_html( $d['bajada'] ); ?></p><?php endif; ?>
