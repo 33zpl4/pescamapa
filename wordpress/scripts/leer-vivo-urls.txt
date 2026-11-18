@@ -2,9 +2,5 @@
 # Las líneas con # y las vacías se ignoran. Lo lee wordpress/scripts/leer-vivo.php (solo lectura).
 # Las URLs anteriores ya fueron verificadas o descartadas: están en el historial de git.
 
-# 18/11/2026, tras publicar «Qué es Pescamapa y por qué existe» (después del merge y de Deploy WordPress verde).
-# Presentes: la bajada y «no vende el viaje», y "founder"/"jobTitle" en el JSON-LD (las cadenas se buscan en el HTML crudo); ausentes: lo retirado.
-https://pescamapa.com/quienes-somos/ | Lo difícil de un viaje de pesca no es pescar ; no vende el viaje ; Cómo empezó ; Quiénes hay detrás ; lo lee una persona ; MOMUTO ; Bitácora ; oficina de turismo ; Cofundador ; "founder" ; "jobTitle"
-https://pescamapa.com/en/about/ | The hard part of a fishing trip is not the fishing ; does not sell the trip ; How it started ; Who is behind it ; a person reads it ; MOMUTO ; Bitácora ; tourism office ; Cofundador ; Co-founder ; "founder" ; "jobTitle"
-https://pescamapa.com/pt/quem-somos/ | O difícil de uma viagem de pesca não é pescar ; não vende a viagem ; Como começou ; Quem está por trás ; lida por uma pessoa ; MOMUTO ; Bitácora ; escritório de turismo ; Cofundador ; "founder" ; "jobTitle"
-https://pescamapa.com/llms.txt | Qué es Pescamapa y por qué existe ; Hecho por Alberto Ayala y Cheyenne Justiniano ; MOMUTO ; Bitácora ; oficina de turismo ; Cofundador
+# 18/11/2026, llms.txt sin nombres de persona (presentes: no vende viajes, lugares y guías; ausentes: nombres, Hecho por, MOMUTO, Bitácora). Tras merge y Deploy WordPress verde.
+https://pescamapa.com/llms.txt | no vende viajes ; lugares y guías ; sin superlativos ni rankings ; Ayala ; Justiniano ; Cheyenne ; Hecho por ; MOMUTO ; Bitácora
