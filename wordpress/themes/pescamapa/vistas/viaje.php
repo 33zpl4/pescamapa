@@ -160,5 +160,19 @@ get_header(); ?>
 		<?php endif; ?>
 	</div>
 </div>
+<?php if ( 'ok' !== $resultado ) : ?>
+<div class="v-viaje v-viaje-mas">
+	<div class="shell">
+		<?php get_template_part( 'parciales/contraste', null, [ 'id' => 'contraste-h' ] ); ?>
+		<section class="faq" aria-labelledby="faq-h">
+			<h2 id="faq-h"><?php pm_e( 'viaje.faq.h' ); ?></h2>
+			<?php foreach ( [ 1, 2, 3, 4 ] as $n ) : ?>
+				<h3><?php pm_e( "viaje.faq.$n.q" ); ?></h3>
+				<p><?php pm_e( "viaje.faq.$n.a" ); ?></p>
+			<?php endforeach; ?>
+		</section>
+	</div>
+</div>
+<?php endif; ?>
 <?php get_template_part( 'parciales/viaje-js' ); ?>
 <?php get_footer();

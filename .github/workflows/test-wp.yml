@@ -864,6 +864,9 @@ jobs:
           for e in dorado trucha surubi; do grep -q "href=\"[^\"]*/armar-viaje/?especie=$e\"" page.html && echo "✓ botón $e → formulario con la especie" || { echo "✖ botón $e sin precarga"; fail=1; }; done
           grep -q 'Todavía no sé' page.html && grep -q 'Solo quiero saber las reglas' page.html && grep -q 'calendario-de-pesca' page.html && echo "✓ segundo camino: reglas" || { echo "✖ falta el camino 'Solo quiero saber las reglas'"; fail=1; }
           check / 200 'Un solo pedido'
+          check / 200 'Una sola consulta, en vez de diez' 'opciones disponibles'
+          check /en/ 200 'One inquiry instead of ten'
+          check /pt/ 200 'Uma só consulta, em vez de dez'
           check / 200 'Todo en un lugar'
           check / 200 'Sin sorpresas'
           check / 200 'Qué hacemos por vos'
@@ -1079,6 +1082,11 @@ jobs:
           check /armar-viaje/ 200 'Preguntamos y comparamos'
           check /armar-viaje/ 200 'sin tu nombre ni tu contacto'
           check /armar-viaje/ 200 'name="contacto_email"'
+          check /armar-viaje/ 200 'Una sola consulta, en vez de diez' 'operadores'
+          check /armar-viaje/ 200 '"FAQPage"'
+          check /armar-viaje/ 200 '¿Tengo que escribirle a cada lugar uno por uno?'
+          check /en/plan-your-trip/ 200 'Do I have to write to each place one by one?'
+          check /pt/planejar-viagem/ 200 'Preciso escrever para cada lugar, um por um?'
           check '/armar-viaje/?destino=esquina&especie=dorado' 200 'value="esquina" selected'
           check /pt/planejar-viagem/ 200 'Diga o que você quer pescar. Nós encontramos onde.'
           check /pt/planejar-viagem/ 200 'name="fijo\[\]"'

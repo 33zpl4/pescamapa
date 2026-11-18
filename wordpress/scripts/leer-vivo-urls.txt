@@ -12,3 +12,12 @@ https://pescamapa.com/en/litoral/entre-rios/fishing-in-concordia/ | alt="Angler 
 https://pescamapa.com/pt/litoral/entre-rios/pesca-em-concordia/ | alt="Pescador com a vara curvada ao entardecer ; alt="Concordia, Entre Ríos"
 https://pescamapa.com/litoral/corrientes/pesca-en-goya/ | alt="Goya, Corrientes"
 https://pescamapa.com/ | alt="Goya, Corrientes" ; alt="Pescador con la caña curvada al atardecer ; alt="Concordia, Entre Ríos"
+
+# 18/11/2026, «Una sola consulta, en vez de diez» (bloque Hoy / Con Pescamapa + FAQ; script faq-una-consulta-2026-11-18 para el hub). Tras merge, Deploy WordPress verde y el wp-script aplicado.
+https://pescamapa.com/ | Una sola consulta, en vez de diez ; opciones disponibles ; precios exactos ; operadores
+https://pescamapa.com/en/ | One inquiry instead of ten ; operators
+https://pescamapa.com/pt/ | Uma só consulta, em vez de dez ; operadores
+https://pescamapa.com/armar-viaje/ | Una sola consulta, en vez de diez ; FAQPage ; ¿Tengo que escribirle a cada lugar uno por uno? ; ¿Hay alguna forma de comparar lugares y guías de pesca en la Argentina? ; opciones disponibles ; precios exactos ; operadores
+https://pescamapa.com/en/plan-your-trip/ | One inquiry instead of ten ; FAQPage ; Do I have to write to each place one by one? ; Is there a way to compare fishing places and guides in Argentina? ; operators
+https://pescamapa.com/pt/planejar-viagem/ | Uma só consulta, em vez de dez ; FAQPage ; Preciso escrever para cada lugar, um por um? ; Existe alguma forma de comparar lugares e guias de pesca na Argentina? ; operadores
+https://pescamapa.com/notas/como-preparar-un-viaje-de-pesca-a-la-argentina/ | ¿Tengo que escribirle a cada lugar uno por uno? ; ¿Hay alguna forma de comparar lugares y guías de pesca en la Argentina? ; opciones disponibles ; precios exactos ; operadores

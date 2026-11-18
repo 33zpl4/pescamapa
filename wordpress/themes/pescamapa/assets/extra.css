@@ -216,10 +216,17 @@ footer .negocio a { color: var(--white); text-decoration: underline; text-underl
 .v-viaje .viaje-como li::before { content: counter(paso); position: absolute; left: 0; top: 0; width: 32px; height: 32px; display: grid; place-items: center; border-radius: 99px; background: var(--forest); color: var(--lime); font: 400 var(--fs-label)/1 var(--font-label); }
 .v-viaje .viaje-como strong { font-size: var(--fs-body); }
 .v-viaje .viaje-como span { font-size: var(--fs-small); color: var(--muted); }
+.v-viaje-mas { padding-block: 0 80px; }
+.v-viaje-mas .contraste { margin-bottom: clamp(32px, 5vw, 56px); }
+.v-viaje-mas .faq { max-width: 760px; }
+.v-viaje-mas .faq h2 { font-size: var(--fs-h2); margin: 0 0 8px; }
+.v-viaje-mas .faq h3 { font-size: var(--fs-h3); margin: 20px 0 6px; }
+.v-viaje-mas .faq p { margin: 0; }
 @media (max-width: 900px) {
 	.v-viaje .viaje-layout { grid-template-columns: 1fr; gap: 24px; padding-block: 28px 64px; }
 	.v-viaje .viaje-como { position: static; }
 	.v-viaje .viaje-form form { padding: 20px; }
+	.v-viaje-mas { padding-block: 0 56px; }
 }
 
 /* Legal pages: terms of use and privacy policy */
@@ -505,6 +512,16 @@ footer .negocio a { color: var(--white); text-decoration: underline; text-underl
 .v-inicio .purpose .num { margin: 0; font-size: var(--fs-h3); }
 .v-inicio .purpose h3 { font-size: var(--fs-h3); margin: 0 0 8px; }
 .v-inicio .purpose p { margin: 0; font-size: var(--fs-lead); line-height: 1.55; color: var(--muted); }
+
+/* "Today / With Pescamapa" contrast (18/11/2026), shared by the home and /armar-viaje/: two bordered cards, the second one edged in forest. Tokens only */
+.contraste h2, .contraste h3 { margin: 0 0 clamp(16px, 2.4vw, 24px); font-size: var(--fs-h2); max-width: var(--measure); }
+.contraste-par { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: clamp(14px, 2vw, 22px); }
+.contraste article { background: var(--white); border: 1px solid var(--line-strong); border-radius: var(--radius); padding: clamp(20px, 2.4vw, 28px); }
+.contraste article.con { border: 2px solid var(--forest); }
+.contraste .rotulo { margin: 0 0 12px; font: 400 var(--fs-label)/1 var(--font-label); letter-spacing: 0.1em; text-transform: uppercase; color: var(--olive); }
+.contraste article p:not(.rotulo) { margin: 0; font-size: var(--fs-lead); line-height: 1.55; color: var(--muted); }
+.contraste article.con p:not(.rotulo) { color: var(--ink); }
+.v-inicio .contraste-sec { background: var(--paper); }
 
 /* "What we do for you": forest band, two columns, lime icons */
 .v-inicio .hacemos-sec { background: var(--forest); color: var(--on-dark); }
