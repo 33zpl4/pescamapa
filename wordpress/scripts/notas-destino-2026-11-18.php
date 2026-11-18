@@ -13,7 +13,7 @@ $aplicar = false;
 
 // clave de la nota => clave de destino. Solo notas de UN destino, con guía publicada, y campo vacío.
 $asignar = [
-	'la-zona-salto-grande-pesca-dorado' => 'concordia',
+	'la-zona-salto-grande' => 'concordia',
 ];
 
 $destinos = []; // clave => [ idioma => post ]
@@ -69,7 +69,7 @@ $nombrados = function ( string $html ) use ( $nombres ): array {
 	arsort( $out );
 	return $out;
 };
-$fmt = fn( array $a ) => $a ? implode( ', ', array_map( fn( $k, $v ) => "$k×$v", array_keys( $a ), $a ) ) : '-';
+$fmt = fn( array $a ) => $a ? implode( ', ', array_map( fn( $k, $v ) => "{$k}×{$v}", array_keys( $a ), $a ) ) : '-';
 
 $posts = get_posts( [ 'post_type' => 'pm_nota', 'post_status' => 'publish', 'posts_per_page' => -1, 'no_found_rows' => true, 'orderby' => 'ID', 'order' => 'ASC' ] );
 WP_CLI::log( ( $aplicar ? 'APLICA' : 'SIMULACRO' ) . ': notas publicadas (filas): ' . count( $posts ) );
