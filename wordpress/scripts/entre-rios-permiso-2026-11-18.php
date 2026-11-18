@@ -390,7 +390,7 @@ foreach ( $plan as $k => $x ) {
 			}
 			if ( 'update' === $modo ) {
 				if ( null === $idx ) {
-					WP_CLI::warning( "{$x['que']} ({$x['i']}) FAQ «$q»: no existe, no se puede actualizar" );
+					WP_CLI::warning( "{$x['que']} ({$x['i']}) FAQ «{$q}»: no existe, no se puede actualizar" );
 					$hay_falta = true;
 					continue;
 				}
@@ -405,7 +405,7 @@ foreach ( $plan as $k => $x ) {
 					$filas[] = [ 'pregunta' => $q, 'respuesta' => $a ];
 				}
 			}
-			WP_CLI::log( ( $aplicar ? 'APLICA' : 'SIMULACRO' ) . ": {$x['que']} ({$x['i']}) #{$x['id']} FAQ «$q»: $estado" );
+			WP_CLI::log( ( $aplicar ? 'APLICA' : 'SIMULACRO' ) . ": {$x['que']} ({$x['i']}) #{$x['id']} FAQ «{$q}»: $estado" );
 		}
 		$plan[ $k ]['faqs_final'] = array_map( fn( $f ) => [ 'pregunta' => (string) ( $f['pregunta'] ?? '' ), 'respuesta' => (string) ( $f['respuesta'] ?? '' ) ], $filas );
 		WP_CLI::log( "   {$x['que']} ({$x['i']}): preguntas " . count( $filas ) );
