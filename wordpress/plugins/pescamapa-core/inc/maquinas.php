@@ -214,7 +214,7 @@ function pm_llms_txt(): string {
 	$out[] = pm_llms_item( 'Zonas de pique (reportes de pescadores, sin verificar, zonas de ~1 km)', pm_url_pique( 'es' ), '', pm_alternas_fijas( 'pm_url_pique' ) );
 	$out[] = pm_llms_item( 'Pedí opciones para tu viaje (les preguntamos a los lugares y guías que encajan y te respondemos con las opciones comparadas)', pm_url_viaje( 'es' ), '', pm_alternas_fijas( 'pm_url_viaje' ) );
 	$out[] = pm_llms_item( 'Para guías y lodges: sumar o reclamar una ficha', pm_url_paraguias( 'es' ), pm_t( 'pg.llms', [], 'es' ), pm_alternas_fijas( 'pm_url_paraguias' ) );
-	$out[] = pm_llms_item( 'Quiénes somos: quién hace Pescamapa y cómo trabaja', pm_url_nosotros( 'es' ), pm_t( 'ns.llms', [], 'es' ), pm_alternas_fijas( 'pm_url_nosotros' ) );
+	$out[] = pm_llms_item( 'Quiénes somos: qué es Pescamapa y por qué existe', pm_url_nosotros( 'es' ), pm_t( 'ns.llms', [], 'es' ), pm_alternas_fijas( 'pm_url_nosotros' ) );
 	$out[] = pm_llms_item( 'Mapa de destinos', pm_url_mapa( 'es' ), '', pm_alternas_fijas( 'pm_url_mapa' ) );
 	$out[] = pm_llms_item( 'Sitemap', home_url( '/wp-sitemap.xml' ) );
 	return implode( "\n", $out ) . "\n";

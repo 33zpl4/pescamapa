@@ -1,6 +1,6 @@
 <?php
 /**
- * About: who makes Pescamapa, how the data is researched and how the site pays its way. Texts ns.* in data/ui.json.
+ * About: what Pescamapa is and why it exists, how it works and how the site pays its way. Texts ns.* in data/ui.json.
  * /quienes-somos/, /pt/quem-somos/, /en/about/. No photos yet (owner, 9/11/2026).
  */
 defined( 'ABSPATH' ) || exit;
@@ -16,33 +16,25 @@ get_header(); ?>
 		</div>
 	</header>
 	<div class="shell cuerpo">
-		<section aria-labelledby="que-h">
-			<h2 id="que-h"><?php pm_e( 'ns.que.h' ); ?></h2>
-			<p><?php pm_e( 'marca.definicion' ); ?></p>
-			<p><?php pm_e( 'marca.saber' ); ?></p>
-		</section>
-		<section aria-labelledby="porque-h">
-			<h2 id="porque-h"><?php pm_e( 'ns.porque.h' ); ?></h2>
-			<p><?php pm_e( 'ns.porque.p' ); ?></p>
-		</section>
-		<section aria-labelledby="personas-h">
-			<h2 id="personas-h"><?php pm_e( 'ns.personas.h' ); ?></h2>
-			<?php foreach ( [ 1, 2 ] as $n ) : ?>
-				<h3><?php pm_e( "ns.p$n.nombre" ); ?></h3>
-				<p><?php pm_e( "ns.p$n.texto" ); ?></p>
-			<?php endforeach; ?>
+		<section aria-labelledby="empezo-h">
+			<h2 id="empezo-h"><?php pm_e( 'ns.empezo.h' ); ?></h2>
+			<p><?php pm_e( 'ns.empezo.p' ); ?></p>
 		</section>
 		<section aria-labelledby="como-h">
 			<h2 id="como-h"><?php pm_e( 'ns.como.h' ); ?></h2>
-			<ul><?php foreach ( [ 1, 2, 3 ] as $n ) : ?><li><?php pm_e( "ns.como.$n" ); ?></li><?php endforeach; ?></ul>
+			<p><?php pm_e( 'ns.como.p' ); ?></p>
 		</section>
-		<section aria-labelledby="goya-h">
-			<h2 id="goya-h"><?php pm_e( 'ns.goya.h' ); ?></h2>
-			<p><?php pm_e( 'ns.goya.p' ); ?></p>
+		<section aria-labelledby="no-h">
+			<h2 id="no-h"><?php pm_e( 'ns.no.h' ); ?></h2>
+			<p><?php pm_e( 'ns.no.p' ); ?></p>
 		</section>
 		<section id="como-funciona" aria-labelledby="plata-h">
 			<h2 id="plata-h"><?php pm_e( 'ns.plata.h' ); ?></h2>
 			<p><?php pm_e( 'ns.plata.p' ); ?></p>
+		</section>
+		<section aria-labelledby="quien-h">
+			<h2 id="quien-h"><?php pm_e( 'ns.quien.h' ); ?></h2>
+			<p><?php pm_e( 'ns.quien.p' ); ?></p>
 		</section>
 		<section class="respuesta" aria-labelledby="contacto-h">
 			<h2 id="contacto-h"><?php pm_e( 'ns.contacto.h' ); ?></h2>

@@ -1,6 +1,6 @@
-# «Quiénes somos»: propuesta de reemplazo (18/11/2026) — NO publicada
+# «Quiénes somos»: propuesta de reemplazo (18/11/2026) — PUBLICADA el 18/11/2026
 
-Orden del dueño (18/11/2026, punto 3): que la sección no se centre en la persona sino en el perfil y la intención con que se creó Pescamapa. Los nombres propios pueden quedar, pero el foco va en el propósito. **Nada de esto está publicado**: espera el visto bueno del dueño. No se inventó ningún hecho; cada afirmación de la propuesta sale de una fuente del repo (tabla de hechos más abajo). Lo que falta está en «Preguntas al dueño».
+Orden del dueño (18/11/2026, punto 3): que la sección no se centre en la persona sino en el perfil y la intención con que se creó Pescamapa. Los nombres propios pueden quedar, pero el foco va en el propósito. **Publicada el 18/11/2026 con el visto bueno del dueño** (ver «Publicación» al final; el texto final es el que aprobó el dueño, no esta propuesta al pie de la letra). No se inventó ningún hecho; cada afirmación de la propuesta sale de una fuente del repo (tabla de hechos más abajo). Lo que falta está en «Preguntas al dueño».
 
 Dónde vive hoy el texto: claves `ns.*` de `wordpress/plugins/pescamapa-core/data/ui.json`, vista `wordpress/themes/pescamapa/vistas/nosotros.php` (`/quienes-somos/`, `/pt/quem-somos/`, `/en/about/`). La sección «Cómo funciona y cómo se sostiene» (`ns.plata.*`) ya se corrigió en este PR (punto 1 y 2) y no cambia con esta propuesta.
 
@@ -111,3 +111,7 @@ No se usa: la trayectoria de Alberto (MOMUTO, 15 años, marketing) ni la de Chey
 8. **Datos de registro y contacto.** ¿Hay figura legal, número de legajo o WhatsApp de Pescamapa para publicar? La revisión del 9/11 lo dejaba pendiente. No se escribió nada.
 9. **Fotos.** Sigue sin fotos por decisión del 9/11; ¿se mantiene?
 10. **Fuera de esta sección (si se aprueba).** Habría que alinear `inc/seo.php` (`creator` del WebSite y `founder` del AboutPage, que hoy publican nombre y trayectoria), `ns.description`, `ns.llms` y los checks de `test-wp.yml` que buscan «Quiénes hacen Pescamapa» y «No es guía de pesca». `legal.json` («un proyecto de Cheyenne Justiniano y Alberto Ayala» en términos y privacidad) no se toca: identifica a quien trata los datos y es decisión legal del dueño.
+
+## Publicación (18/11/2026)
+
+El dueño aprobó una versión propia (H1 «Qué es Pescamapa y por qué existe»; secciones Cómo empezó, Cómo trabajamos, Qué no hacemos, Cómo funciona y cómo se sostiene —sin cambios—, Quiénes hay detrás en una línea, Escribinos). Decisiones sobre las preguntas: «lo lee una persona» se retira como promesa pública de Nosotros (queda «tecnología + un equipo de personas»); sin contacto, figura legal ni WhatsApp de Pescamapa; sin fotos. Se quitaron «Las personas» con trayectorias, «En Goya» (redundante con «Cómo empezó»), y MOMUTO, Bitácora y la oficina de turismo. JSON-LD de Nosotros: `founder` solo con nombre (Cheyenne con `jobTitle` «Técnica en turismo»), sin descripciones. `legal.json` no se tocó. Pendiente para el dueño: los acuses por correo (`acuse.viaje`, `acuse.prestador`) todavía dicen «lo lee una persona»; no se tocaron.
