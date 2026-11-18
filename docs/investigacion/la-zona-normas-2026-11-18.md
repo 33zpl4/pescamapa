@@ -39,9 +39,9 @@ Página 24, sección Concursos, aviso ID 70147 (publicado 3 veces según el avis
 - **Sigue sin confirmar:** si el permiso de Entre Ríos cubre la pesca en La Zona (donde la CARU exige contratar con el permisionario), qué se le pide a un extranjero sin DNI, qué norma fija las tarifas, la modalidad del art. 5 y las tallas y cupos de Entre Ríos para el río Uruguay.
 - Páginas tocadas (script `entre-rios-permiso-2026-11-18`, es/en/pt): nota del permiso paso a paso, hub de licencias, guías de La Paz y de Concordia (sección y FAQ «¿Se puede pescar dorado en Entre Ríos?»), nota de La Zona y pilar del dorado (frases de «no leímos la tarifa»).
 
-## Qué NO se leyó (pendiente)
+## Qué NO se leyó (actualizado el 18/11/2026, tarde; ver sección E)
 
-Res. CARU 46/09 y 46/16 (modificatorias), Res. CARU 63/2026 (500 m) y 111/2023 (veda) en su texto, Decreto 3874/25 (concurso de 2023 fracasado). Las páginas ya los citaban desde lecturas del 13/11/2026 (texto actualizado, avisos de la CARU, Boletín del 28/1/2026): no se retocaron y no se re-verificaron hoy; si el director las lee y difieren, corregir.
+Res. CARU 1/2023 y 63/2026 en su texto propio (solo el listado de modificaciones de Argentina.gob.ar, el texto actualizado y la nota de la CARU, que enlaza un PDF) y el Decreto 3874/25 (concurso de 2023 fracasado; la búsqueda no halló un texto oficial). Las páginas ya los citaban desde lecturas del 13/11/2026 (texto actualizado, avisos de la CARU, Boletín del 28/1/2026): no se retocaron. Res. CARU 46/09, 46/16 y 111/2023: **leídas** (sección E).
 
 ## Prensa y CARU leídas con `leer-vivo` (18/11/2026; la fecha sale de los metadatos de cada página)
 
@@ -63,10 +63,32 @@ La nota de El Entre Ríos del 4/6/2026 nombra a la empresa que opera La Zona (so
 - **Guía de Concordia:** «Cómo funciona» (art. 4: el permisionario habilitado por cada país es el único que lleva pescadores y el cliente contrata con él), el llamado, reglas con artículo y la aclaración de que son del texto original de 2004 y que la 37/2023 fija los días, reapertura atribuida, aclaración de especies y fuentes.
 - **Ficha La Zona Lodge:** `prest_especies` queda solo en «dorado» (las demás especies siguen nombradas en el texto, atribuidas a la publicación del lugar, con la aclaración de que no son de la zona reglamentada de la represa), reapertura atribuida a la prensa.
 
+## E. Normas leídas el 18/11/2026 (tarde) con `leer-vivo`, run 44252877973 (solo organismos oficiales)
+
+Fuentes: Argentina.gob.ar (texto original de cada norma), CARU y Boletín Oficial. Se buscó con WebSearch dónde estaban publicadas.
+
+| Norma | Qué dice (leído) | Efecto en las páginas |
+|---|---|---|
+| **CARU 46/09** (Paysandú, 17/12/2009; BO 19/1/2010, N° 31824), modifica la 27/04 | Considerando: habilitar concursos de pesca de cualquier especie, proteger los cuencos para los pasos de peces y cambiar los días. Art. 5.1: «Se autorizará la pesca deportiva de la especie dorado, salvo en los Concursos de Pesca donde excepcionalmente podrán capturarse otras especies». 5.2: hasta dos concursos con devolución por temporada y por margen en los últimos 500 m (no se publica el detalle). 6: la temporada se ajusta a la CARU y la Comisión puede modificar períodos y disponer vedas totales o parciales. 7.2 de entonces: «de viernes a lunes inclusive, exclusivamente con luz diurna». 14.5: protección de los cuencos | El aviso «no la leímos» sale; se dice «dorado, salvo en los concursos de pesca» citando el art. 5.1 y la fecha |
+| **CARU 46/16** (BO 7/10/2016, N° 33478), modifica el Digesto y la 46/09 | Prohíbe navegación, natación y pesca en los primeros 500 m aguas abajo de la presa; se exceptúa la navegación propia de la pesca con devolución en el área entre la línea de 500 m y el final de la zona de seguridad; redacta de nuevo el «Ámbito físico» del reglamento; art. 3: deroga el 14.5 y el Anexo I de la 46/09 | Se dice que cerró los primeros 500 m y derogó el 14.5; no toca el 5.1 |
+| **CARU 111/2023** (Paysandú, 1/8/2023; BO 17/8/2023, N° 35235) | Art. 1: veda del dorado, comercial y deportiva, del 1 de septiembre al 31 de diciembre de cada año (veda permanente; antes se prorrogaba cada año desde la 59/12). **No nombra La Zona** | Ya citada; se confirma la fecha con el texto |
+| **CARU 37/2023** (releída) | Cita en su «Atento» las Res. 27/04, 46/09 y 46/16; 7.2: lunes a jueves desde el 1/6/2023 | Sin cambio |
+| **Aviso CARU del 7/10/2026** (releído) | Veda del dorado del 1/9 al 31/12 de cada año, pesca deportiva y comercial, río Uruguay; no nombra La Zona | Sin cambio |
+
+**No leídas:** CARU 1/2023 (7/3/2023; listada en Argentina.gob.ar como modificatoria del reglamento) y 63/2026 (BO 28/9/2026; la nota de la CARU del 22/9/2026 solo enlaza un PDF); Decreto 3874/25 (no hay texto oficial hallado). La URL del Boletín Oficial que se probó para la 1/2023 era de otra norma (merluza, Comisión Técnica Mixta del Frente Marítimo): se descartó. **Qué cambió por lo leído:** los tres avisos de «46/09 y 46/16 no las leímos» pasaron a decir lo que dicen esos textos y a nombrar la 1/2023 y la 63/2026 como no leídas; se agregan las fuentes 46/09 y 46/16 con enlace a Argentina.gob.ar (nota y guía). **Ningún texto leído dice cómo se aplica la veda dentro de La Zona; no se afirma.** Es una pregunta abierta.
+
+## F. Página «Pesca deportiva» de la Municipalidad de Concordia (Subsecretaría de Turismo), leída por el dueño el 18/11/2026
+
+Fuente de gobierno, sin fecha de actualización ni licencia de fotos declaradas. Ya está en la guía de Concordia como sección atribuida. Datos que se publican: punto principal (Camping de Pesca La Tortuga Alegre, a 14 km del centro, aguas abajo de la represa, río Uruguay y arroyo Ayuí Grande); competencias anuales (Fiesta Nacional de la Pesca de la Boga, Torneo de Pesca del Amarillo); boga (principios de noviembre a fines de marzo; 45 cm; 3 piezas por pescador; fondeo en correderas con maíz, lombriz o masa); dorado (ejemplares mayores contra el murallón, 4 a 25 kg; a la deriva con carnada viva o señuelos, spinning o trolling); tararira (lago de Salto Grande, 0,5 a 2,5 kg; spinning, baitcast, fly); surubí (cardumen en los alrededores de Puerto Yeruá; trolling con señuelos de fondo; solo con devolución del 16/3 al 14/8); otras especies (bagres amarillos, patíes, armados, manduvíes).
+
+**Las dos vedas del dorado no coinciden:** Municipalidad, del 16 de octubre al 14 de enero (en ese período, solo con devolución); CARU (aviso del 7/10/2026 y Res. 111/2023), del 1 de septiembre al 31 de diciembre. Las páginas muestran las dos, atribuidas y con fecha, dicen que no coinciden, piden confirmar con la CARU y con la Dirección de Recursos Naturales y Fiscalización de Entre Ríos, y **no resuelven cuál rige**. Carnada viva y trolling son las modalidades que cita la página municipal para el río en general; no las de La Zona (CARU: solo mosca, spinning y baitcasting; arts. 7.1 y 8.1 del texto de 2004; no se verificó si la 46/09 tocó esos puntos). La ficha de La Zona Lodge lleva una línea con las dos fechas.
+
+Foto de portada: elegida por el dueño de esa página; la Municipalidad no declara licencia de sus fotos; se usa con crédito (riesgo conocido, `docs/prestadores.md`).
+
 ## Preguntas abiertas para el dueño
 
-1. ¿Se leen las Res. CARU 46/09, 46/16 y 63/2026 y el Decreto 3874/25 para sacar los avisos de «no leídas»?
+1. ¿Se leen la Res. CARU 1/2023 y la 63/2026 en su texto propio (PDF de la CARU) y el Decreto 3874/25? (46/09, 46/16 y 111/2023 ya se leyeron.)
 2. ¿Quién tiene hoy el permiso argentino? (la empresa dice que su concesión fue prorrogada hasta 2029; el concurso 01-2026 sigue abierto hasta el 10/12/2026). ¿Se pregunta a Recursos Naturales y Fiscalización?
-3. ¿Rige la veda del 1/9 al 31/12 dentro de La Zona? La CARU no lo dice; la prensa de septiembre muestra actividad sin mencionarla.
+3. ¿Rige la veda dentro de La Zona, y cuál: la de la CARU (1/9 al 31/12) o la de la Municipalidad de Concordia (16/10 al 14/1)? La CARU no lo dice; la prensa de septiembre muestra actividad sin mencionarla.
 4. ¿Se escribe al lugar para pasar a consentimiento (preguntas en `la-zona-lugares-2026-11-17.md`)?
 5. Capturas de las páginas en vivo: no se verificó ninguna.
