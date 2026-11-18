@@ -2,16 +2,11 @@
 # Las líneas con # y las vacías se ignoran. Lo lee wordpress/scripts/leer-vivo.php (solo lectura).
 # Las URLs anteriores ya fueron verificadas o descartadas: están en el historial de git.
 
-# 18/11/2026: guía de Concordia y La Zona (es/en/pt), páginas de guías y notas tocadas. Esperado: 'La Zona Lodge' y 'Datos al'/'Data as of'/'Dados em' presentes; ningún enlace a lazonalodge ni a instagram; ningún teléfono.
-https://pescamapa.com/litoral/entre-rios/pesca-en-concordia/ | La Zona Lodge ; Datos al ; All inclusive ; href="https://lazonalodge ; href="https://www.instagram ; href="https://instagram ; instagram.com ; Fuente: instagram || contexto: whatsapp ; telefono ; +54 ; tel.
-https://pescamapa.com/en/litoral/entre-rios/fishing-in-concordia/ | La Zona Lodge ; Data as of ; All inclusive ; href="https://lazonalodge ; href="https://www.instagram ; href="https://instagram ; instagram.com ; Fuente: instagram || contexto: whatsapp ; phone ; +54 ; tel.
-https://pescamapa.com/pt/litoral/entre-rios/pesca-em-concordia/ | La Zona Lodge ; Dados em ; All inclusive ; pousada ; href="https://lazonalodge ; href="https://www.instagram ; href="https://instagram ; instagram.com ; Fuente: instagram || contexto: whatsapp ; telefone ; +54 ; tel.
-https://pescamapa.com/guias-de-pesca/concordia/ | La Zona Lodge ; Datos al ; href="https://lazonalodge ; href="https://www.instagram ; instagram.com ; Fuente: instagram || contexto: whatsapp ; telefono ; +54 ; tel.
-https://pescamapa.com/en/fishing-guides/concordia/ | La Zona Lodge ; Data as of ; href="https://lazonalodge ; href="https://www.instagram ; instagram.com || contexto: whatsapp ; phone ; +54
-https://pescamapa.com/pt/guias-de-pesca/concordia/ | La Zona Lodge ; Dados em ; href="https://lazonalodge ; href="https://www.instagram ; instagram.com || contexto: whatsapp ; telefone ; +54
-https://pescamapa.com/notas/la-zona-salto-grande-pesca-dorado/ | Un lugar de Concordia ; pesca-en-concordia ; href="https://lazonalodge ; href="https://www.instagram ; Fuente: instagram || contexto: whatsapp ; telefono ; +54
-https://pescamapa.com/en/notes/la-zona-salto-grande-golden-dorado/ | A place in Concordia ; fishing-in-concordia ; href="https://lazonalodge ; href="https://www.instagram ; Fuente: instagram || contexto: whatsapp ; phone ; +54
-https://pescamapa.com/pt/notas/la-zona-salto-grande-pesca-dourado/ | Um lugar de Concordia ; pesca-em-concordia ; href="https://lazonalodge ; href="https://www.instagram ; Fuente: instagram || contexto: whatsapp ; telefone ; +54
-https://pescamapa.com/notas/pesca-del-dorado-en-la-argentina/ | pesca-en-concordia ; todavía no tiene guía
-https://pescamapa.com/en/notes/golden-dorado-fishing-argentina/ | fishing-in-concordia ; it has no guide yet
-https://pescamapa.com/pt/notas/pesca-de-dourado-na-argentina/ | pesca-em-concordia ; ainda não tem guia
+# 18/11/2026: prensa y CARU sobre la reapertura, la concesión y la veda de La Zona (Salto Grande).
+https://www.elentrerios.com/actualidad/pesca-deportiva-internacional-la-ldquozonardquo-vuelve-a-operar-tras-despejarse-la-incertidumbre-regulatoria-sobre-su-concesin.htm || contexto: veda ; reabri ; concesi ; permisionario ; 2026 ; temporada ; lodge
+https://dosflorines.com.ar/tras-dos-anos-reabrio-la-zona-tradicional-lodge-de-pesca-internacional-de-concordia-es-turismo-divisas-y-empleo/ || contexto: veda ; reabri ; concesi ; permisionario ; 2026 ; temporada ; lodge
+https://www.revista-airelibre.com/2026/07/02/reabrio-en-concordia-el-lodge-de-pesca-internacional-la-zona/ || contexto: veda ; reabri ; concesi ; permisionario ; 2026 ; temporada ; lodge
+https://www.elentrerios.com/actualidad/pesca-internacional-ldquola-zonardquo-encara-una-segunda-etapa-ldquoa-fondordquo.htm || contexto: veda ; reabri ; concesi ; permisionario ; 2026 ; temporada ; lodge
+https://www.elentrerios.com/actualidad/la-zona-y-turismo-de-concordia-avanzan-en-acciones-conjuntas-para-la-temporada-primavera-verano.htm || contexto: veda ; reabri ; concesi ; permisionario ; 2026 ; temporada ; lodge
+https://revistaelpato.com/2026/09/30/la-zona-de-los-grandes/ || contexto: veda ; reabri ; concesi ; permisionario ; 2026 ; temporada ; lodge
+https://caru.org.uy/nuevositio/2026/10/07/veda-del-dorado-2026-1-09-31-12/ || contexto: veda ; reabri ; concesi ; permisionario ; 2026 ; temporada ; lodge
