@@ -6,9 +6,9 @@
 https://pescamapa.com/llms.txt | no vende viajes ; lugares y guías ; sin superlativos ni rankings ; Ayala ; Justiniano ; Cheyenne ; Hecho por ; MOMUTO ; Bitácora
 
 # 18/11/2026, alt de las fotos destacadas (script alt-fotos-2026-11-18; plantillas con pm_alt_foto). Tras merge y Deploy WordPress verde.
-# Concordia: presente el alt nuevo del idioma, ausente el alt viejo «Concordia, ...». Goya y portada: ausente «Nombre, Provincia» solo si la foto tenía alt en la tabla (si sale presente, la foto quedó sin base y se lista).
+# Concordia: presente el alt nuevo del idioma, ausente el alt viejo «Concordia, Entre Ríos». Goya y portada: la foto de Goya quedó SIN BASE (no se sabe qué muestra), así que se espera «Goya, Corrientes» presente y sin «Fachada»; la portada muestra lo que haya.
 https://pescamapa.com/litoral/entre-rios/pesca-en-concordia/ | alt="Pescador con caña al atardecer sobre el agua ; alt="Concordia, Entre Ríos"
 https://pescamapa.com/en/litoral/entre-rios/fishing-in-concordia/ | alt="Angler with a rod at sunset over the water ; alt="Concordia, Entre Ríos"
 https://pescamapa.com/pt/litoral/entre-rios/pesca-em-concordia/ | alt="Pescador com vara ao entardecer sobre a água ; alt="Concordia, Entre Ríos"
-https://pescamapa.com/litoral/corrientes/pesca-en-goya/ | alt="Goya, Corrientes" ; alt="Fachada de una catedral
-https://pescamapa.com/ | alt="Goya, Corrientes" ; alt="Pescador con caña al atardecer sobre el agua ; alt="Fachada de una catedral
+https://pescamapa.com/litoral/corrientes/pesca-en-goya/ | alt="Goya, Corrientes"
+https://pescamapa.com/ | alt="Goya, Corrientes" ; alt="Pescador con caña al atardecer sobre el agua ; alt="Concordia, Entre Ríos"

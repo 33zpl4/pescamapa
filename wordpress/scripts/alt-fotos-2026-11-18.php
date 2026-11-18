@@ -134,6 +134,16 @@ $textos = [
 		'en' => 'Facade of a cathedral facing a square, in a city of the Argentine Litoral',
 		'pt' => 'Fachada de uma catedral diante de uma praça, em uma cidade do litoral argentino',
 	],
+	'paso-de-la-patria' => [
+		'es' => 'Playa Punta Mitre, en Paso de la Patria, Corrientes',
+		'en' => 'Punta Mitre beach at Paso de la Patria, Corrientes',
+		'pt' => 'Praia Punta Mitre, em Paso de la Patria, Corrientes',
+	],
+	'concordia' => [
+		'es' => 'Costanera de la ciudad de Concordia, en la provincia de Entre Ríos',
+		'en' => 'The waterfront promenade of the city of Concordia, in Entre Ríos province',
+		'pt' => 'Orla da cidade de Concordia, na província de Entre Ríos',
+	],
 	'esquina' => [
 		'es' => 'Vista de una ciudad a orillas del río, tomada desde el agua',
 		'en' => 'View of a riverside city, taken from the water',
@@ -199,9 +209,9 @@ foreach ( $usos as $att => $lista ) {
 	}
 	WP_CLI::log( "#$att $clave | " . get_post_meta( $att, '_wp_attached_file', true ) . ' | título «' . $corto( $post->post_title ) . '» | descr «' . $corto( $post->post_content ) . '» | credito=' . pm_campo( 'foto_autor', $att ) . '/' . pm_campo( 'foto_origen', $att ) );
 	WP_CLI::log( "   usos: " . implode( ', ', $lista ) );
-	WP_CLI::log( "   _wp_attachment_image_alt=«$wpalt»" );
+	WP_CLI::log( "   _wp_attachment_image_alt=«{$wpalt}»" );
 	foreach ( $ex as $l => $v ) {
-		WP_CLI::log( "   ANTES _pm_alt_$l=«$v»" );
+		WP_CLI::log( "   ANTES _pm_alt_{$l}=«{$v}»" );
 	}
 	$t = $textos[ $clave ] ?? null;
 	if ( ! $t ) {
@@ -225,7 +235,7 @@ foreach ( $usos as $att => $lista ) {
 		continue;
 	}
 	foreach ( $nuevo as $l => $v ) {
-		WP_CLI::log( "   DESPUÉS _pm_alt_$l=«$v»" );
+		WP_CLI::log( "   DESPUÉS _pm_alt_{$l}=«{$v}»" );
 	}
 	if ( $poner_wp ) {
 		WP_CLI::log( "   DESPUÉS _wp_attachment_image_alt=«{$t['es']}»" );
