@@ -131,7 +131,7 @@ Pendiente: otras vistas (guías, notas) siguen con `--paper` plano y tarjetas co
 | Cita de una entrevista | `.cita` | Guías |
 | Cita dentro de un texto | `blockquote` en `.prose` (cita destacada: cursiva Playfair con filete forest) | Notas, guías |
 | Tarjeta de prestador | `.prestador` | Guías |
-| Tarjeta "más para hacer" | `.mas` (+ `.sello-pago` si es publicidad); `.mas-fila` es la tarjeta de texto sin enlace; solo la publicidad paga lleva `<a>` (17/11/2026) | Guías |
+| Tarjeta "más para hacer" | `.mas` (+ `.sello-pago` si es publicidad); el título de la tarjeta enlaza al sitio del negocio (`rel="noopener nofollow"`; paga: `rel="sponsored noopener"` + sello). Se quitó `.mas-fila` (18/11/2026). «Más para hacer» = actividades de terceros, con enlace; las pagas llevan sello y rel=sponsored; fichas de prestadores de pesca: sin enlace al sitio del lugar. | Guías |
 | Nota general de fuentes | `<p class="note nota-fuentes">` bajo el título de la sección de prestadores: una por sección, nunca una leyenda de fuente por ficha (17/11/2026) | Ficha del destino, guía de la ciudad |
 | Aviso | `.aviso.ok` / `.aviso.error` | Formularios |
 | Fuentes | `.fuentes` + `.ofi` | Guías, notas |

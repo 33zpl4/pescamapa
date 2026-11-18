@@ -2,21 +2,10 @@
 # Las líneas con # y las vacías se ignoran. Lo lee wordpress/scripts/leer-vivo.php (solo lectura).
 # Las URLs anteriores ya fueron verificadas o descartadas: están en el historial de git.
 
-# 18/11/2026, lectura final tras copy-operadores-cta-2026-11-18 y la alineación del modelo de negocio (ui.json, legal.json, llms.txt), después del merge y de Deploy WordPress verde.
-# Cadena 1 = frase nueva de cada idioma (presente); el contexto muestra qué queda de «operador(es)», «agencia», «Cheyenne» y «comisión» en cada página (Nosotros todavía nombra a Cheyenne y a Bitácora: es el punto 3, en propuesta).
-https://pescamapa.com/quienes-somos/ | no vendemos el viaje ; no vende el viaje || contexto: operador ; operators ; agencia ; Cheyenne ; comisión
-https://pescamapa.com/en/about/ | we do not sell the trip ; does not sell the trip || contexto: operador ; operators ; agencia ; Cheyenne ; comisión
-https://pescamapa.com/pt/quem-somos/ | não vendemos a viagem ; não vende a viagem || contexto: operador ; operators ; agencia ; Cheyenne ; comisión
-https://pescamapa.com/armar-viaje/ | no vendemos el viaje ; no vende el viaje || contexto: operador ; operators ; agencia ; Cheyenne ; comisión
-https://pescamapa.com/en/plan-your-trip/ | we do not sell the trip ; does not sell the trip || contexto: operador ; operators ; agencia ; Cheyenne ; comisión
-https://pescamapa.com/pt/planejar-viagem/ | não vendemos a viagem ; não vende a viagem || contexto: operador ; operators ; agencia ; Cheyenne ; comisión
-https://pescamapa.com/ | no vendemos el viaje ; no vende el viaje || contexto: operador ; operators ; agencia ; Cheyenne ; comisión
-https://pescamapa.com/en/ | we do not sell the trip ; does not sell the trip || contexto: operador ; operators ; agencia ; Cheyenne ; comisión
-https://pescamapa.com/pt/ | não vendemos a viagem ; não vende a viagem || contexto: operador ; operators ; agencia ; Cheyenne ; comisión
-https://pescamapa.com/terminos/ | no vendemos el viaje ; no vende el viaje || contexto: operador ; operators ; agencia ; Cheyenne ; comisión
-https://pescamapa.com/en/terms/ | we do not sell the trip ; does not sell the trip || contexto: operador ; operators ; agencia ; Cheyenne ; comisión
-https://pescamapa.com/pt/termos/ | não vendemos a viagem ; não vende a viagem || contexto: operador ; operators ; agencia ; Cheyenne ; comisión
-https://pescamapa.com/privacidad/ | no vendemos el viaje ; no vende el viaje || contexto: operador ; operators ; agencia ; Cheyenne ; comisión
-https://pescamapa.com/en/privacy/ | we do not sell the trip ; does not sell the trip || contexto: operador ; operators ; agencia ; Cheyenne ; comisión
-https://pescamapa.com/pt/privacidade/ | não vendemos a viagem ; não vende a viagem || contexto: operador ; operators ; agencia ; Cheyenne ; comisión
-https://pescamapa.com/llms.txt | lugares y guías que encajan ; no vende el viaje ; lugar o guía con acuerdo ; operador con acuerdo || contexto: operador ; operators ; agencia ; Cheyenne ; comisión
+# 18/11/2026, tras «Más para hacer» con enlace y sin divulgación de Bitácora en Nosotros (después del merge y de Deploy WordPress verde).
+https://pescamapa.com/litoral/corrientes/pesca-en-goya/ | rel="noopener nofollow" ; bitacoragoya.com.ar ; nofollow ; Bitácora de Viajes ; Más para hacer ; vinculado a una de las personas
+https://pescamapa.com/en/litoral/corrientes/fishing-in-goya/ | rel="noopener nofollow" ; bitacoragoya.com.ar ; nofollow ; More to do in Goya ; linked to one of the people
+https://pescamapa.com/pt/litoral/corrientes/pesca-em-goya/ | rel="noopener nofollow" ; bitacoragoya.com.ar ; nofollow ; Mais para fazer ; vinculado a uma ; ligado a uma
+https://pescamapa.com/quienes-somos/ | no vende el viaje ; vinculad ; Bitácora
+https://pescamapa.com/en/about/ | does not sell the trip ; linked to ; Bitácora
+https://pescamapa.com/pt/quem-somos/ | não vende a viagem ; vinculad ; Bitácora
