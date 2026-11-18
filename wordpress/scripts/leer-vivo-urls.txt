@@ -2,11 +2,11 @@
 # Las líneas con # y las vacías se ignoran. Lo lee wordpress/scripts/leer-vivo.php (solo lectura).
 # Las URLs anteriores ya fueron verificadas o descartadas: están en el historial de git.
 
-# 18/11/2026: prensa y CARU sobre la reapertura, la concesión y la veda de La Zona (Salto Grande).
-https://www.elentrerios.com/actualidad/pesca-deportiva-internacional-la-ldquozonardquo-vuelve-a-operar-tras-despejarse-la-incertidumbre-regulatoria-sobre-su-concesin.htm || contexto: veda ; reabri ; concesi ; permisionario ; 2026 ; temporada ; lodge
-https://dosflorines.com.ar/tras-dos-anos-reabrio-la-zona-tradicional-lodge-de-pesca-internacional-de-concordia-es-turismo-divisas-y-empleo/ || contexto: veda ; reabri ; concesi ; permisionario ; 2026 ; temporada ; lodge
-https://www.revista-airelibre.com/2026/07/02/reabrio-en-concordia-el-lodge-de-pesca-internacional-la-zona/ || contexto: veda ; reabri ; concesi ; permisionario ; 2026 ; temporada ; lodge
-https://www.elentrerios.com/actualidad/pesca-internacional-ldquola-zonardquo-encara-una-segunda-etapa-ldquoa-fondordquo.htm || contexto: veda ; reabri ; concesi ; permisionario ; 2026 ; temporada ; lodge
-https://www.elentrerios.com/actualidad/la-zona-y-turismo-de-concordia-avanzan-en-acciones-conjuntas-para-la-temporada-primavera-verano.htm || contexto: veda ; reabri ; concesi ; permisionario ; 2026 ; temporada ; lodge
-https://revistaelpato.com/2026/09/30/la-zona-de-los-grandes/ || contexto: veda ; reabri ; concesi ; permisionario ; 2026 ; temporada ; lodge
-https://caru.org.uy/nuevositio/2026/10/07/veda-del-dorado-2026-1-09-31-12/ || contexto: veda ; reabri ; concesi ; permisionario ; 2026 ; temporada ; lodge
+# 18/11/2026, lectura final tras la-zona-normas-2026-11-18: presentes 'art. 5' / 'Monday to Thursday' / 'segunda a quinta' y la frase del permiso; ausentes enlaces al sitio y a Instagram del lugar, el nombre de la empresa y el 'listing … listing'.
+https://pescamapa.com/litoral/entre-rios/pesca-en-concordia/ | art. 5 ; lunes a jueves ; Concurso ; 10/12/2026 ; 46/09 ; La Zona Lodge ; href="https://lazonalodge ; href="https://www.instagram ; instagram.com ; Untamed
+https://pescamapa.com/en/litoral/entre-rios/fishing-in-concordia/ | art. 5 ; Monday to Thursday ; 10/12/2026 ; 46/09 ; La Zona Lodge ; href="https://lazonalodge ; href="https://www.instagram ; instagram.com ; Untamed
+https://pescamapa.com/pt/litoral/entre-rios/pesca-em-concordia/ | art. 5 ; segunda a quinta ; 10/12/2026 ; 46/09 ; La Zona Lodge ; href="https://lazonalodge ; href="https://www.instagram ; instagram.com ; Untamed
+https://pescamapa.com/guias-de-pesca/concordia/ | La Zona Lodge ; dorado ; surubí ; tararira ; href="https://lazonalodge ; href="https://www.instagram ; Untamed
+https://pescamapa.com/notas/la-zona-salto-grande-pesca-dorado/ | art. 5 ; lunes a jueves ; No está publicado quién tiene hoy ; 10/12/2026 ; 46/09 ; reapertura ; href="https://lazonalodge ; href="https://www.instagram ; Untamed
+https://pescamapa.com/en/notes/la-zona-salto-grande-golden-dorado/ | art. 5 ; Monday to Thursday ; It is not published who holds ; 10/12/2026 ; 46/09 ; the Concordia guide ; public-information entry ; as a public-information listing ; href="https://lazonalodge ; href="https://www.instagram ; Untamed
+https://pescamapa.com/pt/notas/la-zona-salto-grande-pesca-dourado/ | art. 5 ; segunda a quinta ; Não está publicado quem tem hoje ; 10/12/2026 ; 46/09 ; href="https://lazonalodge ; href="https://www.instagram ; Untamed
