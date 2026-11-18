@@ -163,11 +163,11 @@ get_header(); ?>
 						<?php foreach ( $d['mas'] as $m ) :
 							$pago = ! empty( $m['patrocinado'] ); ?>
 							<li>
-								<?php // Sin enlace al sitio del operador (dueño, 17/11/2026); solo la publicidad paga lleva enlace, con rel=sponsored. ?>
-								<?php if ( $pago ) : ?><a href="<?php echo esc_url( $m['url'] ); ?>" rel="sponsored noopener"><?php else : ?><div class="mas-fila"><?php endif; ?>
+								<?php // «Más para hacer» = actividades de terceros, con enlace al sitio del negocio (dueño, 18/11/2026). Las pagas: sello + rel=sponsored. Las fichas de prestadores de pesca NO enlazan (parciales/prestador.php). ?>
+								<a href="<?php echo esc_url( $m['url'] ); ?>" rel="<?php echo $pago ? 'sponsored noopener' : 'noopener nofollow'; ?>">
 									<strong><?php echo esc_html( $m['nombre'] ); ?></strong>
 									<?php if ( ! empty( $m['texto'] ) ) : ?><span class="texto"><?php echo esc_html( $m['texto'] ); ?></span><?php endif; ?>
-								<?php if ( $pago ) : ?></a><?php else : ?></div><?php endif; ?>
+								</a>
 								<?php if ( $pago ) : ?><span class="sello-pago"><?php pm_e( 'ficha.mas.patrocinado' ); ?></span><?php endif; ?>
 							</li>
 						<?php endforeach; ?>
