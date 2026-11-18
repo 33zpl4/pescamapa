@@ -13,7 +13,8 @@ $aplicar = false;
 
 // clave de la nota => clave de destino. Solo notas de UN destino, con guía publicada, y campo vacío.
 $asignar = [
-	'la-zona-salto-grande' => 'concordia',
+	'la-zona-salto-grande'         => 'concordia', // nota única de La Zona Lodge / Concordia
+	'precio-pesca-bariloche-limay' => 'bariloche', // un día de pesca con mosca en Bariloche y el Limay (una sola ciudad, guía propia)
 ];
 
 $destinos = []; // clave => [ idioma => post ]
@@ -131,5 +132,5 @@ foreach ( $plan as $nota => $x ) {
 		$h  = $por_clave[ $nota ][ $i ] ?? null;
 		$ok = $ok && $h && $x['dest'] === pm_nota( $h->ID )['destino'];
 	}
-	WP_CLI::log( ( $ok ? 'VERIFIED' : 'FALLÓ' ) . ": {$nota} nota_destino={$n['destino']} (es; en y pt lo leen por clave) especie={$n['especie']}" );
+	WP_CLI::log( ( $ok ? 'VERIFIED' : 'FALLÓ' ) . ": {$nota} nota_destino={$n['destino']} (es; en y pt lo leen por clave) especie={$n['especie']} " . get_permalink( $x['id'] ) );
 }
