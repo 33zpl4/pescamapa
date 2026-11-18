@@ -907,7 +907,7 @@ jobs:
           # Special condition: only for an outfitter we work with.
           check /litoral/corrientes/pesca-en-esquina/ 200 'Con Pescamapa: OFERTA-DE-PRUEBA' 'OFERTA-NO-ACORDADA'
           # Two-level cards (29/10/2026): the agreement badge shows only with consent + state 'acuerdo'; the guide form asks the country.
-          check /litoral/corrientes/pesca-en-esquina/ 200 'Operador con acuerdo con Pescamapa'
+          check /litoral/corrientes/pesca-en-esquina/ 200 'Con acuerdo con Pescamapa'
           check /litoral/corrientes/pesca-en-esquina/ 200 'name="pais"'
           check /llms.txt 200 'Prestadores con condición especial por Pescamapa'
           # Languages and accessibility on the card ("no" is never shown).

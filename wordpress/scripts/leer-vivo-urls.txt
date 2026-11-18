@@ -2,20 +2,16 @@
 # Las líneas con # y las vacías se ignoran. Lo lee wordpress/scripts/leer-vivo.php (solo lectura).
 # Las URLs anteriores ya fueron verificadas o descartadas: están en el historial de git.
 
-# 18/11/2026, lectura final tras concordia-municipalidad-normas-2026-11-18 (run de aplicar 44253925833), después del merge.
-# Guía de Concordia es/en/pt: presentes el crédito de la foto («Municipalidad de Concordia» dentro del figcaption, enlace a concordia.gob.ar, <img>), las dos fechas de veda y la FAQ; ausentes enlaces a sitios comerciales, Instagram, teléfonos y el aviso viejo de 46/09 y 46/16.
-https://pescamapa.com/litoral/entre-rios/pesca-en-concordia/ | <figure class="foto portada ; >Municipalidad de Concordia</a> ; href="https://www.concordia.gob.ar" ; <img ; Lo que dice la Municipalidad de Concordia ; 16 de octubre ; 14 de enero ; 1 de septiembre ; 31 de diciembre ; no coinciden ; ¿Cuándo es la veda del dorado en Concordia? ; salvo en los concursos de pesca ; 46/09 y 46/16 ; href="https://lazonalodge ; href="https://www.instagram ; Untamed ; +54 ; tel: ; whatsapp ; FAQPage
-https://pescamapa.com/en/litoral/entre-rios/fishing-in-concordia/ | <figure class="foto portada ; >Municipalidad de Concordia</a> ; href="https://www.concordia.gob.ar" ; <img ; What the Municipality of Concordia says ; 16 October ; 14 January ; 1 September ; 31 December ; do not match ; When is the dorado closed season in Concordia? ; except in fishing contests ; 46/09 and 46/16 ; href="https://lazonalodge ; href="https://www.instagram ; Untamed ; +54 ; tel: ; whatsapp ; FAQPage
-https://pescamapa.com/pt/litoral/entre-rios/pesca-em-concordia/ | <figure class="foto portada ; >Municipalidad de Concordia</a> ; href="https://www.concordia.gob.ar" ; <img ; O que diz a Prefeitura de Concordia ; 16 de outubro ; 14 de janeiro ; 1.º de setembro ; 31 de dezembro ; não coincidem ; Quando é o defeso do dourado em Concordia? ; salvo nos concursos de pesca ; 46/09 e 46/16 ; href="https://lazonalodge ; href="https://www.instagram ; Untamed ; +54 ; tel: ; whatsapp ; FAQPage
-# Páginas de guías (ciudad): la ficha de La Zona Lodge con las fechas de veda.
-https://pescamapa.com/guias-de-pesca/concordia/ | Municipalidad de Concordia ; 16 de octubre ; 1 de septiembre ; La Zona Lodge ; href="https://lazonalodge ; href="https://www.instagram ; Untamed ; +54 ; tel: ; whatsapp
-https://pescamapa.com/en/fishing-guides/concordia/ | Municipalidad de Concordia ; 16 October ; 1 September ; La Zona Lodge ; href="https://lazonalodge ; href="https://www.instagram ; Untamed ; +54 ; tel: ; whatsapp
-https://pescamapa.com/pt/guias-de-pesca/concordia/ | Municipalidad de Concordia ; 16 de outubro ; 1.º de setembro ; La Zona Lodge ; href="https://lazonalodge ; href="https://www.instagram ; Untamed ; +54 ; tel: ; whatsapp
-# Nota de La Zona es/en/pt: 46/09 y 46/16 leídas, 1/2023 y 63/2026 sin leer; ausente el aviso viejo.
-https://pescamapa.com/notas/la-zona-salto-grande-pesca-dorado/ | 46/09 (17/12/2009 ; salvo en los concursos de pesca ; Boletín Oficial del 7/10/2016 ; 46/09 y 46/16 ; no leímos su texto propio
-https://pescamapa.com/en/notes/la-zona-salto-grande-golden-dorado/ | 46/09 (17/12/2009 ; except in fishing contests ; Boletín Oficial of 7/10/2016 ; 46/09 and 46/16 ; did not read their own text
-https://pescamapa.com/pt/notas/la-zona-salto-grande-pesca-dourado/ | 46/09 (17/12/2009 ; salvo nos concursos de pesca ; Boletim Oficial de 7/10/2016 ; 46/09 e 46/16 ; não lemos o texto próprio
-# Nota del permiso: cada versión con UNA sola aparición de «Qué llevar y qué guardar» (cada extracto es una aparición).
-https://pescamapa.com/notas/permiso-de-pesca-argentina-paso-a-paso/ || contexto: Qué llevar y qué guardar
-https://pescamapa.com/en/notes/argentina-fishing-license-step-by-step/ || contexto: What to carry and what to keep
-https://pescamapa.com/pt/notas/licenca-de-pesca-argentina-passo-a-passo/ || contexto: O que levar e o que guardar
+# 18/11/2026, lectura final tras notas-destino-2026-11-18 (nota_destino de La Zona) y la limpieza de «operador(es)» en ui.json, después del merge y de Deploy WordPress verde.
+# Botón de la nota de La Zona: debe llevar destino=concordia (en cualquiera de los dos órdenes); una nota de varios destinos sigue sin destino.
+https://pescamapa.com/notas/la-zona-salto-grande-pesca-dorado/ | especie=dorado&amp;destino=concordia ; destino=concordia&amp;especie=dorado ; especie=dorado&destino=concordia ; destino=concordia&especie=dorado ; cta-nota
+https://pescamapa.com/en/notes/la-zona-salto-grande-golden-dorado/ | especie=dorado&amp;destino=concordia ; destino=concordia&amp;especie=dorado ; especie=dorado&destino=concordia ; destino=concordia&especie=dorado ; cta-nota
+https://pescamapa.com/pt/notas/la-zona-salto-grande-pesca-dourado/ | especie=dorado&amp;destino=concordia ; destino=concordia&amp;especie=dorado ; especie=dorado&destino=concordia ; destino=concordia&especie=dorado ; cta-nota
+# Nota de Bariloche y el Limay (una sola ciudad, también completada): el botón lleva destino=bariloche.
+https://pescamapa.com/notas/cuanto-cuesta-pesca-con-mosca-bariloche/ | especie=trucha&amp;destino=bariloche ; destino=bariloche&amp;especie=trucha ; especie=trucha&destino=bariloche ; destino=bariloche&especie=trucha
+# Nota de varios destinos (permiso paso a paso): el botón no lleva destino.
+https://pescamapa.com/notas/permiso-de-pesca-argentina-paso-a-paso/ | destino=concordia || contexto: cta-nota
+# Las tres páginas del formulario: sin «operador(es)» dirigido al visitante (los extractos muestran lo que quede).
+https://pescamapa.com/armar-viaje/ | operador || contexto: operador ; operadores ; operators ; lugares
+https://pescamapa.com/en/plan-your-trip/ | operator || contexto: operador ; operadores ; operators ; lugares
+https://pescamapa.com/pt/planejar-viagem/ | operador || contexto: operador ; operadores ; operators ; lugares
