@@ -871,7 +871,7 @@ jobs:
           check / 200 'Más de [0-9.,]* fuentes consultadas · actualizado el'
           check / 200 'Recibí pedidos ya calificados, con fechas, grupo y presupuesto. Pagás solo si se concreta la reserva.'
           check / 200 'class="negocio"'
-          check / 200 'pagás lo mismo que si reservaras directo. Algunos operadores nos pagan una comisión por las reservas que llegan por Pescamapa'
+          check / 200 'pagás lo mismo que si reservaras directo. Algunos lugares y guías nos pagan una comisión por los pescadores que llegan por Pescamapa'
           check / 200 'quienes-somos/#como-funciona'
           for h in / /en/ /pt/; do
             check "$h" 200 'id="pedido"'
@@ -880,12 +880,12 @@ jobs:
           check /en/ 200 'Tell us what you want to catch'
           check /en/ 200 'plan-your-trip/?especie=dorado'
           check /en/ 200 'Everything in one place'
-          check /en/ 200 'Some operators pay us a commission on bookings that come through Pescamapa'
+          check /en/ 200 'Some places and guides pay us a commission for the anglers who come through Pescamapa'
           check /en/ 200 'plan-your-trip'
           check /pt/ 200 'Diga o que você quer pescar'
           check /pt/ 200 'planejar-viagem/?especie=dorado'
           check /pt/ 200 'Tudo em um só lugar'
-          check /pt/ 200 'Alguns operadores nos pagam uma comissão pelas reservas que chegam pela Pescamapa'
+          check /pt/ 200 'Alguns lugares e guias nos pagam uma comissão pelos pescadores que chegam pela Pescamapa'
           check /mapa/ 200
           check /litoral/corrientes/pesca-en-esquina/ 200 'TouristDestination' 'PENDIENTE'
           check /litoral/corrientes/pesca-en-esquina/ 200 'CITA-DE-PRUEBA' 'CITA-SIN-PERMISO'

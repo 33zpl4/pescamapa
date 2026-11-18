@@ -43,6 +43,7 @@ get_header(); ?>
 		<section id="como-funciona" aria-labelledby="plata-h">
 			<h2 id="plata-h"><?php pm_e( 'ns.plata.h' ); ?></h2>
 			<p><?php pm_e( 'ns.plata.p' ); ?></p>
+			<p><?php pm_e( 'ns.plata.p2' ); ?></p>
 		</section>
 		<section class="respuesta" aria-labelledby="contacto-h">
 			<h2 id="contacto-h"><?php pm_e( 'ns.contacto.h' ); ?></h2>

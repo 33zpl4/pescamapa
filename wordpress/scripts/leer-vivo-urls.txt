@@ -1,17 +1,22 @@
-# Una URL por línea. Opcional: "url | cadena uno ; cadena dos" (presente/ausente) y "|| contexto: palabra1 ; palabra2" (extractos, fecha, <main>).
+# Una URL por línea. Opcional: "url | cadena1 ; cadena2" (presente/ausente) y "|| contexto: palabra1 ; palabra2" (extractos, fecha, <main>).
 # Las líneas con # y las vacías se ignoran. Lo lee wordpress/scripts/leer-vivo.php (solo lectura).
 # Las URLs anteriores ya fueron verificadas o descartadas: están en el historial de git.
 
-# 18/11/2026, lectura final tras notas-destino-2026-11-18 (nota_destino de La Zona) y la limpieza de «operador(es)» en ui.json, después del merge y de Deploy WordPress verde.
-# Botón de la nota de La Zona: debe llevar destino=concordia (en cualquiera de los dos órdenes); una nota de varios destinos sigue sin destino.
-https://pescamapa.com/notas/la-zona-salto-grande-pesca-dorado/ | especie=dorado&amp;destino=concordia ; destino=concordia&amp;especie=dorado ; especie=dorado&destino=concordia ; destino=concordia&especie=dorado ; cta-nota
-https://pescamapa.com/en/notes/la-zona-salto-grande-golden-dorado/ | especie=dorado&amp;destino=concordia ; destino=concordia&amp;especie=dorado ; especie=dorado&destino=concordia ; destino=concordia&especie=dorado ; cta-nota
-https://pescamapa.com/pt/notas/la-zona-salto-grande-pesca-dourado/ | especie=dorado&amp;destino=concordia ; destino=concordia&amp;especie=dorado ; especie=dorado&destino=concordia ; destino=concordia&especie=dorado ; cta-nota
-# Nota de Bariloche y el Limay (una sola ciudad, también completada): el botón lleva destino=bariloche.
-https://pescamapa.com/notas/cuanto-cuesta-pesca-con-mosca-bariloche/ | especie=trucha&amp;destino=bariloche ; destino=bariloche&amp;especie=trucha ; especie=trucha&destino=bariloche ; destino=bariloche&especie=trucha
-# Nota de varios destinos (permiso paso a paso): el botón no lleva destino.
-https://pescamapa.com/notas/permiso-de-pesca-argentina-paso-a-paso/ | destino=concordia || contexto: cta-nota
-# Las tres páginas del formulario: sin «operador(es)» dirigido al visitante (los extractos muestran lo que quede).
-https://pescamapa.com/armar-viaje/ | operador || contexto: operador ; operadores ; operators ; lugares
-https://pescamapa.com/en/plan-your-trip/ | operator || contexto: operador ; operadores ; operators ; lugares
-https://pescamapa.com/pt/planejar-viagem/ | operador || contexto: operador ; operadores ; operators ; lugares
+# 18/11/2026, lectura final tras copy-operadores-cta-2026-11-18 y la alineación del modelo de negocio (ui.json, legal.json, llms.txt), después del merge y de Deploy WordPress verde.
+# Cadena 1 = frase nueva de cada idioma (presente); el contexto muestra qué queda de «operador(es)», «agencia», «Cheyenne» y «comisión» en cada página (Nosotros todavía nombra a Cheyenne y a Bitácora: es el punto 3, en propuesta).
+https://pescamapa.com/quienes-somos/ | no vendemos el viaje ; no vende el viaje || contexto: operador ; operators ; agencia ; Cheyenne ; comisión
+https://pescamapa.com/en/about/ | we do not sell the trip ; does not sell the trip || contexto: operador ; operators ; agencia ; Cheyenne ; comisión
+https://pescamapa.com/pt/quem-somos/ | não vendemos a viagem ; não vende a viagem || contexto: operador ; operators ; agencia ; Cheyenne ; comisión
+https://pescamapa.com/armar-viaje/ | no vendemos el viaje ; no vende el viaje || contexto: operador ; operators ; agencia ; Cheyenne ; comisión
+https://pescamapa.com/en/plan-your-trip/ | we do not sell the trip ; does not sell the trip || contexto: operador ; operators ; agencia ; Cheyenne ; comisión
+https://pescamapa.com/pt/planejar-viagem/ | não vendemos a viagem ; não vende a viagem || contexto: operador ; operators ; agencia ; Cheyenne ; comisión
+https://pescamapa.com/ | no vendemos el viaje ; no vende el viaje || contexto: operador ; operators ; agencia ; Cheyenne ; comisión
+https://pescamapa.com/en/ | we do not sell the trip ; does not sell the trip || contexto: operador ; operators ; agencia ; Cheyenne ; comisión
+https://pescamapa.com/pt/ | não vendemos a viagem ; não vende a viagem || contexto: operador ; operators ; agencia ; Cheyenne ; comisión
+https://pescamapa.com/terminos/ | no vendemos el viaje ; no vende el viaje || contexto: operador ; operators ; agencia ; Cheyenne ; comisión
+https://pescamapa.com/en/terms/ | we do not sell the trip ; does not sell the trip || contexto: operador ; operators ; agencia ; Cheyenne ; comisión
+https://pescamapa.com/pt/termos/ | não vendemos a viagem ; não vende a viagem || contexto: operador ; operators ; agencia ; Cheyenne ; comisión
+https://pescamapa.com/privacidad/ | no vendemos el viaje ; no vende el viaje || contexto: operador ; operators ; agencia ; Cheyenne ; comisión
+https://pescamapa.com/en/privacy/ | we do not sell the trip ; does not sell the trip || contexto: operador ; operators ; agencia ; Cheyenne ; comisión
+https://pescamapa.com/pt/privacidade/ | não vendemos a viagem ; não vende a viagem || contexto: operador ; operators ; agencia ; Cheyenne ; comisión
+https://pescamapa.com/llms.txt | lugares y guías que encajan ; no vende el viaje ; lugar o guía con acuerdo ; operador con acuerdo || contexto: operador ; operators ; agencia ; Cheyenne ; comisión
