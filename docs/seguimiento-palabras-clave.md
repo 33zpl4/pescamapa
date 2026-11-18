@@ -33,6 +33,8 @@ Intención: **C** = comercial (el visitante puede acabar pidiendo una propuesta)
 - **Mayor volumen del día:** altura del río en Zárate (8 impresiones), informativa. Conviene comprobar la página en vivo antes de tocarla.
 - Las impresiones son diminutas (1 a 8): sirven para ver qué aparece, no para decidir por volumen. Cada fila se mira por tendencia entre fechas.
 
+- **Entre Ríos (18/11/2026):** el permiso de 5 días para extranjeros ($24.251,60, octubre de 2026) y la pregunta «¿se puede pescar dorado en Entre Ríos?» (Ley 11.174, Decreto 726/25) están ahora en la nota del permiso, el hub, y las guías de La Paz y Concordia (es/en/pt), con FAQ visible = JSON-LD. Consultas a mirar en Search Console desde ≈27/11: «permiso de pesca entre ríos», «licencia de pesca entre ríos extranjeros», «se puede pescar dorado en entre ríos», «pesca dorado concordia», «pesca la paz entre ríos», «entre rios fishing license». Sin medición todavía: no se verificó cómo salen en Google.
+
 ## Registro por fecha
 
 | Fecha | Qué se pegó | Observaciones |
