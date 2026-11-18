@@ -96,7 +96,7 @@ get_header(); ?>
 				<?php foreach ( $destinos as $d ) : ?>
 					<a class="card live" href="<?php echo esc_url( $d['url'] ); ?>" hreflang="<?php echo esc_attr( pm_meta_idioma( $d['idioma'] )['html'] ); ?>">
 						<div class="img river">
-							<?php echo pm_foto( $d['foto'], $d['nombre'], '(max-width: 700px) 100vw, 380px', [ 'clase' => 'cover', 'prioridad' => true, 'enlaces' => false ] ); // phpcs:ignore ?>
+							<?php echo pm_foto( $d['foto'], pm_alt_foto( (int) $d['foto'], $idioma, $d['nombre'] ), '(max-width: 700px) 100vw, 380px', [ 'clase' => 'cover', 'prioridad' => true, 'enlaces' => false ] ); // phpcs:ignore ?>
 							<span class="pill"><?php echo esc_html( pm_pill( $d['region'], $d['provincia'] ) ); ?></span>
 						</div>
 						<div class="body">
@@ -115,7 +115,7 @@ get_header(); ?>
 				<?php foreach ( $proximos as $p ) : ?>
 					<article class="card soon">
 						<div class="img <?php echo esc_attr( $p['region'] ); ?>">
-							<?php echo pm_foto( $p['foto'], "{$p['nombre']}, {$p['provincia']}", '(max-width: 700px) 100vw, 380px', [ 'clase' => 'cover' ] ); // phpcs:ignore ?>
+							<?php echo pm_foto( $p['foto'], pm_alt_foto( (int) $p['foto'], $idioma, "{$p['nombre']}, {$p['provincia']}" ), '(max-width: 700px) 100vw, 380px', [ 'clase' => 'cover' ] ); // phpcs:ignore ?>
 							<span class="pill"><?php echo esc_html( mb_strtoupper( ( PM_REGIONES[ $p['region'] ][ $idioma ] ?? '' ) . ' · ' . $p['provincia'] ) ); ?></span>
 						</div>
 						<div class="body">

@@ -187,7 +187,7 @@ get_header(); ?>
 			</div>
 
 			<aside class="aside">
-				<?php echo pm_foto( $d['foto'], "{$d['nombre']}, {$provincia}", '(max-width: 960px) 100vw, 400px', [ 'clase' => 'portada', 'prioridad' => true ] ); // phpcs:ignore ?>
+				<?php echo pm_foto( $d['foto'], pm_alt_foto( (int) $d['foto'], $idioma, "{$d['nombre']}, {$provincia}" ), '(max-width: 960px) 100vw, 400px', [ 'clase' => 'portada', 'prioridad' => true ] ); // phpcs:ignore ?>
 				<h2 class="visually-hidden"><?php pm_e( 'ficha.mapa' ); ?></h2>
 				<?php echo pm_mapa_interactivo( $pins, pm_t( 'ficha.mapa.de' ) . ' ' . $d['nombre'], [ 'centro' => $d['coordenadas'], 'zoom' => 10, 'alto' => '420px' ] ); // phpcs:ignore ?>
 				<p class="note"><?php pm_e( 'mapa.orientativo' ); ?></p>

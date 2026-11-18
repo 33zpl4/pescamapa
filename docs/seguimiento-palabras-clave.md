@@ -35,8 +35,46 @@ Intención: **C** = comercial (el visitante puede acabar pidiendo una propuesta)
 
 - **Entre Ríos (18/11/2026):** el permiso de 5 días para extranjeros ($24.251,60, octubre de 2026) y la pregunta «¿se puede pescar dorado en Entre Ríos?» (Ley 11.174, Decreto 726/25) están ahora en la nota del permiso, el hub, y las guías de La Paz y Concordia (es/en/pt), con FAQ visible = JSON-LD. Consultas a mirar en Search Console desde ≈27/11: «permiso de pesca entre ríos», «licencia de pesca entre ríos extranjeros», «se puede pescar dorado en entre ríos», «pesca dorado concordia», «pesca la paz entre ríos», «entre rios fishing license». Sin medición todavía: no se verificó cómo salen en Google.
 
+## Apariciones en funciones de IA de Google (Search Console → Performance → Generative AI features)
+
+Línea de base pegada por el dueño el 18/11/2026. **Período no indicado**; **111 páginas en total** con apariciones; abajo el top 25 por impresiones (apariciones en funciones de IA).
+
+| # | Página | Apariciones |
+|---|---|---|
+| 1 | `/pampa/buenos-aires/pesca-chascomus/` | 37 |
+| 2 | `/mapa/` | 23 |
+| 3 | `/patagonia/rio-negro/pesca-en-bariloche/` | 18 |
+| 4 | `/patagonia/santa-cruz/pesca-en-rio-gallegos/` | 15 |
+| 5 | `/en/river-levels/` | 14 |
+| 6 | `/litoral/corrientes/pesca-en-goya/` | 12 |
+| 7 | `/notas/reglas-equipo-pesca-patagonia/` | 12 |
+| 8 | `/patagonia/neuquen/pesca-san-martin-junin-de-los-andes/` | 12 |
+| 9 | `/pt/especies/dourado/` | 12 |
+| 10 | `/litoral/corrientes/pesca-en-esquina/` | 11 |
+| 11 | `/en/notes/golden-dorado-fishing-argentina/` | 10 |
+| 12 | `/notas/licencia-pesca-patagonia-2026-27/` | 10 |
+| 13 | `/en/litoral/corrientes/fishing-in-paso-de-la-patria/` | 9 |
+| 14 | `/notas/la-zona-salto-grande-pesca-dorado/` | 9 |
+| 15 | `/pt/calendario-de-pesca/` | 8 |
+| 16 | `/calendario-de-pesca/` | 7 |
+| 17 | `/litoral/entre-rios/pesca-en-la-paz/` | 7 |
+| 18 | `/notas/cuando-pescar-surubi/` | 7 |
+| 19 | `/pique/` | 7 |
+| 20 | `/` | 6 |
+| 21 | `/en/patagonia/santa-cruz/fishing-in-jurassic-lake/` | 6 |
+| 22 | `/patagonia/santa-cruz/pesca-en-el-calafate/` | 6 |
+| 23 | `/en/species/golden-dorado/` | 5 |
+| 24 | `/especies/trucha/` | 5 |
+| 25 | `/notas/tallas-cupos-vedas/` | 5 |
+
+- Es la **medición directa de Google**: reemplaza, para Google, el pegado manual de respuestas de asistentes. **ChatGPT, Perplexity y Grok siguen midiéndose a mano** (`docs/preguntas-llm.md`).
+- **Falta el período y las consultas** que dispararon cada aparición: sin ellos no se puede comparar ni saber qué pregunta respondía cada página.
+- **Repetir junto con `gsc-consultas` (≈27/11/2026)**, con el período anotado, y comparar contra esta línea de base.
+- Lectura rápida (sin período, solo orden): lideran una guía de Buenos Aires (Chascomús, 37), el mapa (23) y las guías de Bariloche, Río Gallegos, Goya, San Martín/Junín y Esquina; también aparecen notas, fichas de especie y páginas en inglés y portugués.
+
 ## Registro por fecha
 
 | Fecha | Qué se pegó | Observaciones |
 |---|---|---|
 | 17/11/2026 | Top queries del día (incompleto) | Primera fila de la tabla |
+| 18/11/2026 | Apariciones en funciones de IA de Google (top 25 de 111 páginas, período no indicado) | Línea de base de la sección nueva; repetir con `gsc-consultas` (≈27/11) |
