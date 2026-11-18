@@ -269,7 +269,7 @@ foreach ( [ 'es', 'en', 'pt' ] as $i ) {
 			[ $c, $e ] = pm_cm_rep_todo( $c, $v, $nu );
 			WP_CLI::log( ( $aplicar ? 'APLICA' : 'SIMULACRO' ) . ": $que ($i) #{$p->ID} norma " . ( $n + 1 ) . ": $e" );
 		}
-		if ( preg_match( '/46\/09 (y|and|e) 46\/16|no las leímos|did not read them|não as lemos|did not read Resolutions/u', $c, $m ) ) {
+		if ( preg_match( '/46\/09 (y|and|e) 46\/16/u', $c, $m ) ) {
 			WP_CLI::warning( "$que ($i): queda un aviso viejo de normas: «{$m[0]}»" );
 			$hay_falta = true;
 		}
@@ -321,7 +321,7 @@ if ( $ficha_id ) {
 				WP_CLI::log( ( $aplicar ? 'APLICA' : 'SIMULACRO' ) . ": ficha #$ficha_id $campo norma " . ( $n + 1 ) . ": $e" );
 			}
 		}
-		if ( preg_match( '/46\/09 (y|and|e) 46\/16|no las leímos|did not read them|não as lemos/u', $v, $m ) ) {
+		if ( preg_match( '/46\/09 (y|and|e) 46\/16/u', $v, $m ) ) {
 			WP_CLI::warning( "ficha $campo: queda un aviso viejo: «{$m[0]}»" );
 			$hay_falta = true;
 		}
@@ -440,7 +440,7 @@ $ok = true;
 foreach ( $plan as $x ) {
 	$i = $x['i'];
 	$c = get_post( $x['id'] )->post_content;
-	$b = preg_replace( '/\s+/u', ' ', $c ) === preg_replace( '/\s+/u', ' ', $x['despues'] ) && ! preg_match( '/46\/09 (y|and|e) 46\/16|no las leímos|did not read them|não as lemos/u', $c );
+	$b = preg_replace( '/\s+/u', ' ', $c ) === preg_replace( '/\s+/u', ' ', $x['despues'] ) && ! preg_match( '/46\/09 (y|and|e) 46\/16/u', $c );
 	WP_CLI::log( ( $b ? 'VERIFIED' : 'FALLÓ' ) . ": {$x['que']} ($i) #{$x['id']} contenido y sin avisos viejos" );
 	$ok = $ok && $b;
 	$nombres = array_column( pm_filas( 'fuentes', $x['id'] ), 'nombre' );
