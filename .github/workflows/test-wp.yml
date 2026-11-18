@@ -940,11 +940,11 @@ jobs:
           check /en/for-guides-and-lodges/ 200 'Add your listing'
           check / 200 'para-guias-y-lodges'
           # About page (docs/revision-negocio-2026-11-09.md): 3 languages, footer link, sitemap, llms.txt, structured data.
-          check /quienes-somos/ 200 'Quiénes hacen Pescamapa'
+          check /quienes-somos/ 200 'Qué es Pescamapa y por qué existe'
           check /quienes-somos/ 200 '"AboutPage"'
-          check /quienes-somos/ 200 'No es guía de pesca'
-          check /pt/quem-somos/ 200 'Quem faz a Pescamapa'
-          check /en/about/ 200 'Who makes Pescamapa'
+          check /quienes-somos/ 200 'Lo difícil de un viaje de pesca no es pescar'
+          check /pt/quem-somos/ 200 'O que é a Pescamapa e por que existe'
+          check /en/about/ 200 'What Pescamapa is and why it exists'
           check /en/about/ 200 'hreflang="pt-BR"'
           check / 200 '/quienes-somos/'
           check /llms.txt 200 'quienes-somos'
@@ -1054,10 +1054,10 @@ jobs:
           check /llms.txt 200 'Pescamapa reúne en un solo lugar lo que está disperso en cientos de webs y PDFs oficiales'
           check /llms.txt 200 'Todo para pescar en la Argentina, en un solo lugar.'
           check /llms.txt 200 'Hoy las guías y notas publicadas citan [0-9]* fuentes distintas'
-          check /quienes-somos/ 200 'Qué es Pescamapa'
+          check /quienes-somos/ 200 'Cómo empezó'
           check /quienes-somos/ 200 'id="como-funciona"'
-          check /quienes-somos/ 200 'servicio gratuito para pescadores'
-          check /en/about/ 200 'Pescamapa is a free service for anglers travelling to Argentina'
+          check /quienes-somos/ 200 'no vende el viaje'
+          check /en/about/ 200 'The hard part of a fishing trip is not the fishing'
           # Inquiry through the real form (pm_t in the past: passes the timing check).
           loc=$(curl -sS -o /dev/null -w '%{http_code} %{redirect_url}' \
             -d action=pm_consulta -d pm_tipo=viaje -d pm_idioma=es -d pm_destino=esquina \

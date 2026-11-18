@@ -176,7 +176,10 @@ function pm_seo(): array {
 				'url'     => pm_url_inicio( pm_lang() ),
 				'email'   => PM_EMAIL_PUBLICO,
 				'description' => pm_t( 'marca.definicion' ),
-				'founder' => array_map( fn( $n ) => [ '@type' => 'Person', 'name' => pm_t( "ns.p$n.nombre" ), 'description' => pm_t( "ns.p$n.texto" ) ], [ 1, 2 ] ),
+				'founder' => [
+					[ '@type' => 'Person', 'name' => pm_t( 'ns.p1.nombre' ) ],
+					[ '@type' => 'Person', 'name' => pm_t( 'ns.p2.nombre' ), 'jobTitle' => pm_t( 'ns.p2.rol' ) ],
+				],
 			],
 		];
 	} elseif ( 'paraguias' === $vista ) {
