@@ -2,16 +2,8 @@
 # Las líneas con # y las vacías se ignoran. Lo lee wordpress/scripts/leer-vivo.php (solo lectura).
 # Las URLs anteriores ya fueron verificadas o descartadas: están en el historial de git.
 
-# 19/11/2026, lectura final de las decisiones del dueño (corrección iAhorro): sin la negación «no vendemos el viaje» fuera de legal y FAQ,
-# oferta en positivo («armamos la propuesta junto con…»), sin «lo lee una persona», sin personas en el JSON-LD de la portada,
-# alt de Goya y Esquina, meta de Itatí sin «operador». Ausentes: Ayala, Justiniano, no vendemos / no vende / do not sell / não vendemos.
-https://pescamapa.com/ | Ayala ; Justiniano ; Armamos la propuesta junto con ellos ; No vendemos ; ni cobramos la reserva
-https://pescamapa.com/en/ | Ayala ; Justiniano ; We put the proposal together with them ; We do not sell ; take the booking payment
-https://pescamapa.com/pt/ | Ayala ; Justiniano ; Montamos a proposta junto com eles ; Não vendemos ; nem cobramos a reserva
-https://pescamapa.com/armar-viaje/ | Armamos la propuesta junto con ; lo lee una persona ; No vendemos
-https://pescamapa.com/quienes-somos/ | Qué no hacemos ; No vendemos ; Cuando elegís reservás directo ; reservás directo con el que prefieras
-https://pescamapa.com/paquetes-de-pesca/esquina/ | armadas junto con lugares y guías de la zona ; reservás y pagás directo con ellos ; las salidas que armamos ; No vendemos
-https://pescamapa.com/llms.txt | se paga directo con el lugar ; No vende ; Ayala ; Justiniano
-https://pescamapa.com/litoral/corrientes/pesca-en-goya/ | alt="Lancha de pesca con un guía en un riacho de Goya" ; alt="Goya, Corrientes"
-https://pescamapa.com/litoral/corrientes/pesca-en-esquina/ | alt="Dos botes de pesca en la orilla del río, en Esquina" ; alt="Esquina, Corrientes"
-https://pescamapa.com/litoral/corrientes/pesca-en-itati/ | lo que publica cada operador ; lo que publica cada uno || contexto: publica cada
+# 19/11/2026, fondo del embudo (g): lectura final, SOLO presentes/ausentes, sin `contexto:`. «+54» sale presente por el placeholder del campo de WhatsApp del formulario corto (no es un contacto de una ficha).
+https://pescamapa.com/guias-de-pesca/goya/ | Qué le preguntamos a cada lugar por vos ; En una mirada ; En el listado de pesca de Turismo de Corrientes ; Comparar también con ; ¿Cómo sé si un guía o un lugar está habilitado? ; operador ; +54 ; tel: ; Cómo elegir guía ; no le cobra al pescador ; El Gordo y el Flaco ; Campamento La Amistad
+https://pescamapa.com/guias-de-pesca/esquina/ | Qué le preguntamos a cada lugar por vos ; En una mirada ; En el listado de pesca de Turismo de Corrientes ; Comparar también con ; ¿Cómo sé si un guía o un lugar está habilitado? ; operador ; +54 ; tel: ; Cómo elegir guía ; no le cobra al pescador ; Posada del Muelle ; Posada Hambaré
+https://pescamapa.com/guias-de-pesca/paso-de-la-patria/ | Qué le preguntamos a cada lugar por vos ; En una mirada ; En el listado de pesca de Turismo de Corrientes ; Comparar también con ; ¿Cómo sé si un guía o un lugar está habilitado? ; operador ; +54 ; tel: ; Cómo elegir guía ; no le cobra al pescador ; Hotel Spa Jardín del Paraná
+https://pescamapa.com/armar-viaje/?destino=goya&tambien=esquina,paso-de-la-patria | Qué le preguntamos a cada lugar por vos ; También me sirven ; Marcá los que te sirven además del primero ; name="destinos_extra[]" ; value="esquina" checked ; operador
