@@ -23,7 +23,7 @@ $hoy     = '20261024';
 
 $desc = 'Apart hotel en Goya (Av. Millán Medina 7410), con vistas al río según su ficha de Booking, donde figura entre los mejor valorados (octubre de 2026). Organizan excursiones de pesca. Departamentos con cocina equipada, aire acondicionado, baño privado, terraza o balcón y jardín; piscina al aire libre (de temporada), estacionamiento privado y wifi gratis, desayuno disponible; admite mascotas bajo petición. Atienden en español, inglés y portugués.';
 $notas = "Listado con información pública a partir de la ficha de Booking pegada por el dueño (24/10/2026); Pescamapa no abrió el enlace (el entorno no llega a booking.com).\n"
-	. "Contacto INTERNO (no se imprime): +54 3777 74-4653.\n"
+	. "Contacto INTERNO (no se imprime): (contacto interno fuera del repo)\n"
 	. "Confirmado por el dueño de Pescamapa (24/10/2026): hacen excursiones de pesca; \"uno de los mejor valorados en Booking\" (se publica sin cifra). Fotos cedidas por el prestador (3 recibidas en el chat; subirlas en wp-admin con su autor). Falta hablar con ellos: cómo organizan las salidas (lancha propia o guía), especies, precios (hoy 'a consultar'), condición especial por Pescamapa.\n"
 	. "Puntaje y reseñas de Booking: no se copian (ni el 9,9). La foto 'pic-2' de la carpeta parece de una web: usar solo las que el prestador cedió.\n"
 	. 'Accesibilidad: Booking dice unidad accesible en silla de ruedas pero plantas superiores solo por escalera: ambiguo, no se marca.';
