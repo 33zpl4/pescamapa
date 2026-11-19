@@ -1266,7 +1266,17 @@ jobs:
           check /guias-de-pesca/esquina/ 200 'class="tabla-mirada"'
           check /guias-de-pesca/esquina/ 200 'PROGRAMA-DE-PRUEBA'
           check /guias-de-pesca/esquina/ 200 'En el listado de pesca de <a href="https://corrientes.tur.ar/tour/experiencia-de-pesca-esquina/" rel="noopener">Turismo de Corrientes</a> (consultado el 19 de noviembre de 2026)'
-          check /guias-de-pesca/esquina/ 200 'Figuran en el listado de pesca de Turismo de Corrientes: 1 de '
+          check /guias-de-pesca/esquina/ 200 'v-guias' 'Figuran en el listado de pesca'   # the short answer no longer counts listed cards (20/11/2026)
+          # "En una mirada" (20/11/2026): only places with data, only columns with data, one row per place; cards without the request button.
+          check /guias-de-pesca/esquina/ 200 'data-label="Formato"'
+          check /guias-de-pesca/esquina/ 200 'data-label="Qué incluye"'
+          check /guias-de-pesca/esquina/ 200 'v-guias' 'data-label="Temporada"'
+          check /guias-de-pesca/esquina/ 200 'v-guias' 'data-label="Lugar"'
+          check /guias-de-pesca/esquina/ 200 'href="#prestador-[0-9]*">PRESTADOR-DE-PRUEBA</a></th>'
+          ! grep -q 'href="#prestador-[0-9]*">PRESTADOR-NO-PUBLICO</a></th>\|href="#prestador-[0-9]*">PRESTADOR-CON-ACUERDO</a></th>' page.html && echo "✓ la tabla deja afuera a los lugares sin datos" || { echo "✖ la tabla incluye lugares sin datos"; fail=1; }
+          check /guias-de-pesca/esquina/ 200 'v-guias' 'data-prestador="'
+          check /litoral/corrientes/pesca-en-esquina/ 200 'data-prestador="'
+          check /llms.txt 200 'guias-de-pesca/esquina/#prestador-' ': ; '
           check /guias-de-pesca/esquina/ 200 'class="button primary" href="[^"]*/armar-viaje/?destino=esquina"'
           check /guias-de-pesca/esquina/ 200 '¿Cómo sé si un guía o un lugar está habilitado?'
           check /guias-de-pesca/esquina/ 200 'En Corrientes, Turismo de la provincia publica un listado de pesca por localidad'

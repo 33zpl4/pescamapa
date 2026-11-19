@@ -3,6 +3,7 @@
 defined( 'ABSPATH' ) || exit;
 
 $r     = $args;
+$pedir = $r['pedir'] ?? true; // false on the city page: the request button is not repeated on every card
 $es    = fn( string $campo ) => in_array( $campo, $r['en_espanol'] ?? [], true ) ? ' lang="es"' : ''; // text still in Spanish on a pt/en page
 // 'vista-previa' cards only reach logged-in editors (pm_prestadores_destino).
 $filas = [
@@ -42,7 +43,7 @@ $filas = [
 		<?php if ( $r['acuerdo'] && $r['consentimiento'] ) : ?>
 			<p class="acuerdo"><strong><?php pm_e( 'prest.acuerdo' ); ?></strong> <span><?php pm_e( 'prest.acuerdo_nota' ); ?></span></p>
 		<?php endif; ?>
-		<p class="tipo"><?php echo esc_html( implode( ' · ', array_map( fn( $k ) => pm_opcion( 'tipo', $k ), $r['tipo'] ) ) ); ?></p>
+		<?php if ( $r['tipo'] ) : ?><p class="tipo"><?php echo esc_html( implode( ' · ', array_map( fn( $k ) => pm_opcion( 'tipo', $k ), $r['tipo'] ) ) ); ?></p><?php endif; ?>
 		<h3><?php echo esc_html( $r['nombre'] ); ?></h3>
 		<?php if ( $listado = pm_prestador_listado( $r ) ) : ?><p class="listado-oficial"><span aria-hidden="true">&#10003;</span> <?php echo $listado; // phpcs:ignore -- escaped and filtered inside ?></p><?php endif; ?>
 		<?php if ( $r['descripcion'] ) : ?><p<?php echo $es( 'descripcion' ); // phpcs:ignore ?>><?php echo esc_html( $r['descripcion'] ); ?></p><?php endif; ?>
@@ -74,6 +75,6 @@ $filas = [
 				<a href="mailto:<?php echo esc_attr( PM_EMAIL_PUBLICO ); ?>?subject=<?php echo $asunto; // phpcs:ignore -- encoded above ?>"><?php pm_e( 'prest.corregir' ); ?></a>
 			</p>
 		<?php endif; ?>
-		<a class="button dark" href="#consulta" data-prestador="<?php echo (int) $r['id']; ?>" data-nombre="<?php echo esc_attr( $r['nombre'] ); ?>"><?php pm_e( 'prest.consultar', [ 'lugar' => $r['lugar'] ?? '' ] ); ?></a>
+		<?php if ( $pedir ) : ?><a class="button dark" href="#consulta" data-prestador="<?php echo (int) $r['id']; ?>" data-nombre="<?php echo esc_attr( $r['nombre'] ); ?>"><?php pm_e( 'prest.consultar', [ 'lugar' => $r['lugar'] ?? '' ] ); ?></a><?php endif; ?>
 	</div>
 </article>

@@ -24,17 +24,47 @@ foreach ( $prestadores as $r ) {
 }
 $tipos   = implode( ' · ', array_map( fn( $t, $n ) => $n . ' × ' . pm_opcion( 'tipo', $t ), array_keys( $por_tipo ), $por_tipo ) );
 $precios = array_values( array_filter( $prestadores, fn( $r ) => $r['precio'] && $r['precio_fecha'] ) );
-// Places that appear in an official listing (the mark on each card): how many, and from which source.
-$en_listado = array_values( array_filter( $prestadores, fn( $r ) => $r['listado'] ) );
 // Request links: the main one preselects this destination; the second adds the neighbours that make sense to compare (?tambien=).
 $vecinas   = pm_destinos_para_comparar( $clave, $idioma );
 $url_pedir = add_query_arg( 'destino', $clave, pm_url_viaje( $idioma ) );
 $sep       = pm_t( 'guias.cta.y' );
 $otras     = count( $vecinas ) > 1 ? implode( ', ', array_slice( array_column( $vecinas, 'nombre' ), 0, -1 ) ) . $sep . end( $vecinas )['nombre'] : ( $vecinas ? $vecinas[0]['nombre'] : '' );
-// "En una mirada": at most six rows, the same order as the cards; what is not published says "a consultar".
-$mirada    = array_slice( $prestadores, 0, 6 );
-$consultar = pm_t( 'guias.mirada.consultar' );
-$es_attr   = fn( array $r, string $campo ) => in_array( $campo, $r['en_espanol'] ?? [], true ) ? ' lang="es"' : '';
+// "En una mirada" (20/11/2026): each row is built only from what the card already shows. A place with nothing besides its name
+// is left out (it stays in the cards); a column with no data in any row disappears; fewer than two rows: no table.
+$fmt_lancha = function ( array $r ): string {
+	if ( ! $r['capacidad'] ) {
+		return '';
+	}
+	return 'lancha' === $r['capacidad_unidad'] ? pm_t( 'guias.mirada.lancha', [ 'n' => (string) $r['capacidad'] ] ) : pm_prestador_capacidad( $r );
+};
+$mirada = [];
+foreach ( $prestadores as $r ) {
+	$formato = array_filter( [
+		$r['programa'] ?: implode( ' · ', array_map( fn( $k ) => pm_opcion( 'modalidad', $k ), $r['modalidades'] ) ),
+		$fmt_lancha( $r ),
+	] );
+	$incluye = array_values( array_unique( array_merge(
+		array_map( fn( $k ) => pm_opcion( 'incluye', $k ), $r['incluye'] ),
+		array_map( fn( $k ) => pm_opcion( 'equipo', $k ), $r['equipo'] )
+	) ) );
+	$fila = [
+		'r'         => $r,
+		'formato'   => implode( ' · ', $formato ),
+		'incluye'   => implode( ', ', $incluye ),
+		'temporada' => (string) $r['temporada'],
+		'precio'    => ( $r['precio'] && $r['precio_fecha'] ) ? $r['precio'] : '',
+		'en_es'     => [ 'formato' => (bool) $r['programa'], 'temporada' => in_array( 'temporada', $r['en_espanol'] ?? [], true ), 'precio' => in_array( 'precio', $r['en_espanol'] ?? [], true ) ],
+	];
+	if ( $fila['formato'] || $fila['incluye'] || $fila['temporada'] || $fila['precio'] ) {
+		$mirada[] = $fila;
+	}
+}
+$mirada   = array_slice( $mirada, 0, 6 );
+$columnas = array_values( array_filter( [ 'formato', 'incluye', 'temporada', 'precio' ], fn( $c ) => array_filter( array_column( $mirada, $c ) ) ) );
+if ( count( $mirada ) < 2 ) {
+	$mirada = [];
+}
+$consultar = pm_t( 'guias.mirada.consultar' ); // read aloud by screen readers where a cell has no data
 
 get_header(); ?>
 <div class="v-destino v-paquetes v-guias">
@@ -73,7 +103,6 @@ get_header(); ?>
 					<li><?php pm_e( 'guias.resumen.sinprecio' ); ?></li>
 				<?php endif; ?>
 				<li><?php pm_e( 'guias.resumen.licencia', $a ); ?> <a href="<?php echo esc_url( $d['url'] . '#reglamento' ); ?>"><?php pm_e( 'paquetes.guia.intro', $a ); ?></a></li>
-				<?php if ( $en_listado ) : ?><li><?php pm_e( 'guias.resumen.listado', [ 'fuente' => $en_listado[0]['listado']['fuente'], 'n' => (string) count( $en_listado ), 'total' => (string) count( $prestadores ) ] ); ?></li><?php endif; ?>
 				<li><?php pm_e( 'guias.resumen.como' ); ?></li>
 			</ul>
 		</section>
@@ -84,24 +113,23 @@ get_header(); ?>
 			<div class="tabla-mirada">
 				<table>
 					<thead><tr>
-						<?php foreach ( [ 'lugar', 'formato', 'incluye', 'temporada', 'precio' ] as $col ) : ?><th scope="col"><?php pm_e( "guias.mirada.$col" ); ?></th><?php endforeach; ?>
+						<th scope="col"><?php pm_e( 'guias.mirada.lugar' ); ?></th>
+						<?php foreach ( $columnas as $col ) : ?><th scope="col"><?php pm_e( "guias.mirada.$col" ); ?></th><?php endforeach; ?>
 					</tr></thead>
 					<tbody>
-						<?php foreach ( $mirada as $r ) :
-							$formato = $r['programa'] ?: implode( ' · ', array_map( fn( $k ) => pm_opcion( 'modalidad', $k ), $r['modalidades'] ) );
-							$incluye = implode( ', ', array_map( fn( $k ) => pm_opcion( 'incluye', $k ), $r['incluye'] ) );
-							?>
+						<?php foreach ( $mirada as $f ) : $r = $f['r']; ?>
 							<tr>
-								<th scope="row" data-label="<?php pm_e( 'guias.mirada.lugar' ); ?>"><a href="#prestador-<?php echo (int) $r['id']; ?>"><?php echo esc_html( $r['nombre'] ); ?></a></th>
-								<td data-label="<?php pm_e( 'guias.mirada.formato' ); ?>"<?php echo $r['programa'] ? $es_attr( $r, 'programa' ) : ''; // phpcs:ignore ?>><?php echo esc_html( $formato ?: $consultar ); ?></td>
-								<td data-label="<?php pm_e( 'guias.mirada.incluye' ); ?>"><?php echo esc_html( $incluye ?: $consultar ); ?></td>
-								<td data-label="<?php pm_e( 'guias.mirada.temporada' ); ?>"<?php echo $es_attr( $r, 'temporada' ); // phpcs:ignore ?>><?php echo esc_html( $r['temporada'] ?: $consultar ); ?></td>
-								<td data-label="<?php pm_e( 'guias.mirada.precio' ); ?>"><?php
-									if ( $r['precio'] && $r['precio_fecha'] ) {
-										echo wp_kses( pm_t( 'prest.precio', [ 'precio' => '<span' . $es_attr( $r, 'precio' ) . '>' . esc_html( $r['precio'] ) . '</span>', 'cuando' => esc_html( pm_fecha_relativa( $r['precio_fecha'] ) ) ] ), [ 'span' => [ 'lang' => true ] ] );
-									} else {
-										echo esc_html( $consultar );
-									} ?></td>
+								<th scope="row"><a href="#prestador-<?php echo (int) $r['id']; ?>"><?php echo esc_html( $r['nombre'] ); ?></a></th>
+								<?php foreach ( $columnas as $col ) :
+									$lang = ! empty( $f['en_es'][ $col ] ) ? ' lang="es"' : ''; ?>
+									<?php if ( '' === $f[ $col ] ) : ?>
+										<td class="vacio" data-label="<?php pm_e( "guias.mirada.$col" ); ?>"><span aria-hidden="true">&mdash;</span><span class="visually-hidden"><?php echo esc_html( $consultar ); ?></span></td>
+									<?php elseif ( 'precio' === $col ) : ?>
+										<td data-label="<?php pm_e( 'guias.mirada.precio' ); ?>"><?php echo wp_kses( pm_t( 'prest.precio', [ 'precio' => '<span' . $lang . '>' . esc_html( $f['precio'] ) . '</span>', 'cuando' => esc_html( pm_fecha_relativa( $r['precio_fecha'] ) ) ] ), [ 'span' => [ 'lang' => true ] ] ); ?></td>
+									<?php else : ?>
+										<td data-label="<?php pm_e( "guias.mirada.$col" ); ?>"<?php echo $lang; // phpcs:ignore ?>><?php echo esc_html( $f[ $col ] ); ?></td>
+									<?php endif; ?>
+								<?php endforeach; ?>
 							</tr>
 						<?php endforeach; ?>
 					</tbody>
@@ -121,7 +149,7 @@ get_header(); ?>
 			<p><?php pm_e( 'guias.lista.p' ); ?></p>
 			<?php if ( $consultada = pm_prestadores_consultada( $prestadores ) ) : ?><p class="note nota-fuentes"><?php pm_e( 'ficha.prestadores.nota', [ 'fecha' => pm_mes_anio( $consultada, $idioma ) ] ); ?></p><?php endif; ?>
 			<?php foreach ( $prestadores as $r ) {
-				get_template_part( 'parciales/prestador', null, $r + [ 'lugar' => $d['nombre'] ] );
+				get_template_part( 'parciales/prestador', null, $r + [ 'lugar' => $d['nombre'], 'pedir' => false ] ); // the request buttons are the one on top and the one after the cards
 			} ?>
 		</section>
 		<section class="armadas" aria-labelledby="armadas-h">
@@ -145,7 +173,7 @@ get_header(); ?>
 </div>
 <a class="barra-pedir" href="#consulta"><?php pm_e( 'guias.barra' ); ?></a>
 <script>
-// The card buttons are wired by the inquiry partial itself. The mobile bar disappears once the form is on screen.
+// The mobile bar disappears once the form is on screen.
 const barra = document.querySelector('.barra-pedir'), form = document.querySelector('#consulta');
 if (barra && form && 'IntersectionObserver' in window) {
 	new IntersectionObserver((e) => barra.classList.toggle('oculta', e[0].isIntersecting)).observe(form);
