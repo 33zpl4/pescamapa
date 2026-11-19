@@ -42,6 +42,7 @@ get_header(); ?>
 					<div>
 						<h3><a href="<?php echo esc_url( $d['url'] ); ?>"><?php echo esc_html( $d['nombre'] ); ?></a></h3>
 						<?php if ( $d['bajada'] ) : ?><p><?php echo esc_html( $d['bajada'] ); ?></p><?php endif; ?>
+						<?php $esp_linea = pm_especies_linea( $d ); if ( '' !== $esp_linea ) : ?><p class="especies-linea"><?php echo esc_html( $esp_linea ); ?></p><?php endif; ?>
 						<p class="enlaces">
 							<a href="<?php echo esc_url( $d['url'] ); ?>"><?php pm_e( 'prov.guia', [ 'lugar' => $d['nombre'] ] ); ?></a>
 							<?php if ( pm_destino_guias( $d['clave'], $idioma ) ) : ?><a href="<?php echo esc_url( pm_url_guias( $d['clave'], $idioma ) ); ?>"><?php pm_e( 'prov.guias', [ 'lugar' => $d['nombre'], 'n' => (string) $np ] ); ?></a><?php endif; ?>

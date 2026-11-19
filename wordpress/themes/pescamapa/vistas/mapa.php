@@ -7,7 +7,7 @@ $destinos = pm_destinos_lista( $idioma );
 $proximos = pm_proximos_lista( $idioma );
 $pins     = [];
 foreach ( $destinos as $d ) {
-	$pins[] = [ 'nombre' => $d['nombre'], 'coordenadas' => $d['coordenadas'], 'url' => $d['url'], 'detalle' => PM_PROVINCIAS[ $d['provincia'] ] ?? '', 'tipo' => 'destino' ];
+	$pins[] = [ 'nombre' => $d['nombre'], 'coordenadas' => $d['coordenadas'], 'url' => $d['url'], 'detalle' => implode( ' · ', array_filter( [ PM_PROVINCIAS[ $d['provincia'] ] ?? '', pm_especies_linea( $d ) ] ) ), 'tipo' => 'destino' ];
 }
 foreach ( $proximos as $p ) {
 	$pins[] = [ 'nombre' => $p['nombre'], 'coordenadas' => $p['coordenadas'], 'detalle' => $p['provincia'], 'tipo' => 'proximo' ];

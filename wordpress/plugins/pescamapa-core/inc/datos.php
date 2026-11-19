@@ -429,3 +429,23 @@ function pm_provincias_lista(): array {
 function pm_destinos_con_especie( string $clave_especie, string $idioma ): array {
 	return array_values( array_filter( pm_destinos_lista( $idioma ), fn( $d ) => in_array( $clave_especie, $d['especies'], true ) ) );
 }
+
+/**
+ * Short species line of a destination card ("Dorado, Surubí"): the first $max species of the guide, named in this language
+ * (the Spanish name when the species has no translation). Species without a published page are skipped, never printed as a key.
+ * Empty string when the guide has none; the caller prints nothing then. Plain text: escape on output.
+ */
+function pm_especies_linea( array $d, int $max = 2, ?string $idioma = null ): string {
+	$i      = $idioma ?? ( $d['idioma'] ?? pm_lang() );
+	$nombres = [];
+	foreach ( (array) ( $d['especies'] ?? [] ) as $clave ) {
+		$e = is_string( $clave ) && '' !== $clave ? pm_especie_en( $clave, $i ) : null;
+		if ( $e && '' !== trim( (string) ( $e['nombre'] ?? '' ) ) ) {
+			$nombres[] = trim( (string) $e['nombre'] );
+		}
+		if ( count( $nombres ) >= max( 1, $max ) ) {
+			break;
+		}
+	}
+	return implode( ', ', $nombres );
+}
