@@ -163,7 +163,7 @@ get_header(); ?>
 <?php if ( 'ok' !== $resultado ) : ?>
 <div class="v-viaje v-viaje-mas">
 	<div class="shell">
-		<?php get_template_part( 'parciales/contraste', null, [ 'id' => 'contraste-h' ] ); ?>
+		<?php get_template_part( 'parciales/contraste', null, [ 'id' => 'contraste-h', 'cta' => 'form' ] ); ?>
 		<section class="faq" aria-labelledby="faq-h">
 			<h2 id="faq-h"><?php pm_e( 'viaje.faq.h' ); ?></h2>
 			<?php foreach ( [ 1, 2, 3, 4 ] as $n ) : ?>
