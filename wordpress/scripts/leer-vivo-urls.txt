@@ -2,14 +2,16 @@
 # Las líneas con # y las vacías se ignoran. Lo lee wordpress/scripts/leer-vivo.php (solo lectura).
 # Las URLs anteriores ya fueron verificadas o descartadas: están en el historial de git.
 
-
-# 19/11/2026, fondo del embudo: listado oficial de Turismo de Corrientes (páginas por zona) y páginas propias. Solo presencia de nombres/palabras (sin contexto en las oficiales: sin contactos en el log).
-https://corrientes.tur.ar/tour/experiencia-de-pesca-paso-de-la-patria/ | Jardín del Paraná ; Jardin del Parana ; Posada del Paso ; Tatá ; FansFishing ; medio día ; jornada completa ; combustible ; carnada ; licencia ; almuerzo ; traslado ; paquete ; tarifa ; precio ; actualiz
-https://corrientes.tur.ar/tour/experiencia-de-pesca-goya/ | Gordo y el Flaco ; La Amistad ; Ogaraity ; Isoró ; medio día ; jornada completa ; combustible ; carnada ; licencia ; almuerzo ; traslado ; paquete ; tarifa ; precio
-https://corrientes.tur.ar/tour/excursiones-de-pesca/ | Gordo y el Flaco ; La Amistad ; Jardín del Paraná ; Posada del Muelle ; Hambar ; Ambar ; medio día ; jornada completa ; combustible ; carnada ; licencia ; almuerzo ; paquete ; tarifa ; precio
-https://corrientes.tur.ar/tour/experiencia-de-pesca-esquina/ | Hambar ; Ambar ; Posada del Muelle ; Matute ; Don Joaquín ; Rebo ; medio día ; jornada completa ; combustible ; carnada ; licencia ; almuerzo ; traslado ; paquete ; tarifa ; precio
-https://corrientes.tur.ar/experiencia/pesca-deportiva-parana-medio/ | Gordo y el Flaco ; Dorado Cua ; Jetu ; Don Joaquín ; Matute ; Hambar ; Posada del Muelle ; La Amistad ; tarifa ; precio
-https://corrientes.tur.ar/experiencia/pesca-deportiva-en-el-alto-parana/ | Jardín del Paraná ; Posada del Paso ; Tatá ; Hambar ; tarifa ; precio
-https://www.posadadelpaso.com/pesca/ || contexto: incluye ; jornada ; temporada ; tarifa ; USD ; precio
-https://pousadahambare.com.br/ || contexto: incluye ; inclui ; temporada ; pacote ; diária
-https://www.jardindelparana.com.ar/ || contexto: pesca ; Paso de la Patria
+# 19/11/2026, lectura final de las decisiones del dueño (corrección iAhorro): sin la negación «no vendemos el viaje» fuera de legal y FAQ,
+# oferta en positivo («armamos la propuesta junto con…»), sin «lo lee una persona», sin personas en el JSON-LD de la portada,
+# alt de Goya y Esquina, meta de Itatí sin «operador». Ausentes: Ayala, Justiniano, no vendemos / no vende / do not sell / não vendemos.
+https://pescamapa.com/ | Ayala ; Justiniano ; Armamos la propuesta junto con ellos ; No vendemos ; ni cobramos la reserva
+https://pescamapa.com/en/ | Ayala ; Justiniano ; We put the proposal together with them ; We do not sell ; take the booking payment
+https://pescamapa.com/pt/ | Ayala ; Justiniano ; Montamos a proposta junto com eles ; Não vendemos ; nem cobramos a reserva
+https://pescamapa.com/armar-viaje/ | Armamos la propuesta junto con ; lo lee una persona ; No vendemos
+https://pescamapa.com/quienes-somos/ | Qué no hacemos ; No vendemos ; Cuando elegís reservás directo ; reservás directo con el que prefieras
+https://pescamapa.com/paquetes-de-pesca/esquina/ | armadas junto con lugares y guías de la zona ; reservás y pagás directo con ellos ; las salidas que armamos ; No vendemos
+https://pescamapa.com/llms.txt | se paga directo con el lugar ; No vende ; Ayala ; Justiniano
+https://pescamapa.com/litoral/corrientes/pesca-en-goya/ | alt="Lancha de pesca con un guía en un riacho de Goya" ; alt="Goya, Corrientes"
+https://pescamapa.com/litoral/corrientes/pesca-en-esquina/ | alt="Dos botes de pesca en la orilla del río, en Esquina" ; alt="Esquina, Corrientes"
+https://pescamapa.com/litoral/corrientes/pesca-en-itati/ | lo que publica cada operador ; lo que publica cada uno || contexto: publica cada
