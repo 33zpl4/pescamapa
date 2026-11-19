@@ -205,7 +205,7 @@ foreach ( $lineas as $linea ) {
 }
 
 // Registro de PHP (19/11/2026): últimas 20 entradas de la última hora que mencionen el tema o pescamapa-core. Solo lectura.
-// El registro es wp-content/pm-logs/errores-php.php (PM_ERROR_LOG; primer renglón `<?php exit; ?>`, que aquí se salta). Si no se puede leer, lo dice.
+// El registro es wp-content/pm-logs/errores-php.php (PM_ERROR_LOG; su primer renglón es la cabecera de salida, que aquí se salta). Si no se puede leer, lo dice.
 echo "\n== Registro de PHP (última hora, tema y pescamapa-core)\n";
 $pm_log = defined( 'PM_ERROR_LOG' ) ? PM_ERROR_LOG : '';
 $pm_est = get_option( 'pm_registro_estado', '(sin dato)' );
