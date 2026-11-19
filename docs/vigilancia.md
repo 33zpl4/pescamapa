@@ -52,3 +52,33 @@ Solo lo cierto: "revisamos cada semana las fuentes oficiales de las que depende 
 - **Certificado incompleto (22/10/2026, resuelto):** el Boletín Oficial y `recursosnaturales.corrientes.gob.ar` no mandan el certificado intermedio y el informe los daba por caídos aunque el sitio andaba. `vigilar.mjs` ahora hace lo que un navegador: lee en el certificado del servidor la dirección del intermedio ("CA Issuers"), lo descarga y reintenta **con la verificación activada** contra las raíces del sistema más ese intermedio. No se saltea nunca la verificación: si la cadena no cierra con una raíz de confianza, sigue figurando como caída. Probado en local con una cadena armada a propósito; falta ver el efecto en el próximo informe real.
 
 - **Segundo informe (22/10/2026), con el arreglo del certificado:** el Boletín Oficial (portada, decretos y Disposición 853/22) ya responde y quedó en línea base; las páginas de ejemplo de WordPress salieron del sitemap (24 páginas, 22 indexadas). Se quitó `licenciasrecursosnaturales.gob.ar` (dominio inexistente, 3 semanas en rojo). `recursosnaturales.corrientes.gob.ar` responde 404 en la raíz: el dominio existe pero esa ruta no.
+
+## 7. Limpieza de fuentes y recorte por fuente (19/11/2026)
+
+El informe del 16/11 marcaba 7 fuentes caídas (tres de hace 7 a 9 semanas) y nueve «cambios», casi todos ruido (noticias y contadores de las páginas municipales). Cambios:
+
+**Capacidad nueva de `vigilar.mjs`** (`scripts/vigilar-recorte.mjs`, prueba: `node scripts/vigilar-recorte.test.mjs`). Campos opcionales por fuente en `vigilancia/fuentes.json`, solo para `"vigilar": "texto"`:
+- `desde` / `hasta`: se compara solo el texto desde la primera aparición de una frase ancla hasta la primera aparición de otra (sin distinguir mayúsculas). Si el ancla no está, no se recorta (el cambio de estructura de la página se ve como cambio de texto, no se esconde).
+- `ignorar`: lista de expresiones regulares que se quitan antes de comparar (contadores, fechas de «hoy»).
+- `contiene`: lista de palabras; se comparan solo las frases que contienen alguna. Es lo que corta el ruido de noticias en páginas que mezclan avisos con novedades.
+- `conocida`: en una fuente que cae de forma ya sabida, el informe la pone en una línea de «Caídas ya conocidas (sin acción)» en vez de en «No responden». El estado sigue contando los fallos semana a semana.
+- El texto guardado la semana pasada se vuelve a recortar con las reglas de hoy antes de comparar: agregar un recorte nunca figura como cambio de la página.
+
+**Fuentes corregidas o cambiadas (cada una con su motivo):**
+| Fuente | Cambio | Motivo |
+|---|---|---|
+| `goya-surubi` | URL `goyasurubi.com.ar` → `https://www.goyasurubi.com/index/` | el `.com.ar` no resolvía (EAI_AGAIN); el sitio oficial de la Fiesta es `goyasurubi.com` |
+| `er-boletin` | URL `boletinoficial.entrerios.gov.ar` → `https://www.entrerios.gov.ar/boletin/` | el dominio viejo daba ENOTFOUND 7 semanas; el oficial que usamos es el nuevo. Sigue en `estado` |
+| `er-tramites` | quitada | 404 (URL adivinada); su reemplazo ya estaba en la lista: `er-licencia-tramite` (portal de trámites, trámite 708), vigilado con texto |
+| `recnat-oficial` | pasa a `estado` + `conocida` | 502 desde hace 9 semanas; no hay ruta vigente conocida (es el enlace que cita Turismo). No se borra: es oficial. El sitio que sí responde y se vigila con texto es `recnat-home` |
+| `lapaz-municipio` | `conocida` | certificado autofirmado (`DEPTH_ZERO_SELF_SIGNED_CERT`); no se desactiva la verificación TLS. La información de La Paz se sigue por `lapaz-turismo` y `er-licencia-tramite` |
+| `nqn-permisos` | `conocida` | la prensa de octubre de 2026 cita `cazaypesca.neuquen.gob.ar/permisos` como el portal vigente de compra; da timeout desde los runners de GitHub, así que no prueba que el enlace de la guía esté roto. Los valores se leen en `reglamento-patagonico` y `nqn-prensa-permisos` |
+
+**Ruido recortado:** `pdlp-normativa`, `pdlp-vedas` y `pdlp-torneos` (misma portada municipal) con `contiene` distinto por tema (náutica y reglamento, vedas y dorado, torneos e inscripción); `turismo-pdlp` con `hasta: "Información reciente"` (la lista de novedades) y `acuerdo-regional` con `hasta: "Publicación anterior"` (enlaces a otras notas). `paso-internacional` con `ignorar` de «(última actualización …)» (el sello de fecha de Prefectura y del SMN cambiaba cada semana). Las frases clave son una elección razonable, no un recorte medido: si una página cambia de estructura y el informe deja de ver lo pertinente, se ajustan en el JSON.
+
+**Fuentes nuevas** (hoy sostienen guías): `caru-veda-dorado` (aviso de la CARU de la veda 2026 del dorado, 1/9 al 31/12) y `concordia-pesca` (página municipal de pesca deportiva de Concordia). El sitio oficial de la Fiesta es la corrección de `goya-surubi`, no una fuente aparte.
+
+**Costo del informe:** el paso de Search Console inspeccionaba 60 URL del sitemap una por una (la mayor parte de los ~9 minutos); ahora son seis a la vez (`scripts/informe-gsc.mjs`), mismo resultado. Sin verificar en vivo hasta el próximo informe (ver `docs/estado.md`).
+
+
+**Resultado del informe del 19/11/2026** (run 44567979657 en la rama, issue «Informe semanal — 19/11/2026»; el anterior se cerró solo): 49 fuentes, **2 sin respuesta** (antes 7) más 3 caídas ya conocidas en una línea, **2 cambios** (antes 9) y 2 fuentes nuevas registradas. Los dos cambios que quedaron eran del propio ajuste: `goya-surubi` (cambió la URL, se compara con el texto viejo del `.com.ar`) y `paso-internacional` (sello de fecha, ya ignorado). Las dos caídas son `boletin-decretos` (TIMEOUT, primera semana) y el listado de Chubut (429, 2 semanas; el sitio solo abre bien desde un navegador).

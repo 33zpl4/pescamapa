@@ -17,6 +17,7 @@ on:
 jobs:
   rio:
     runs-on: ubuntu-latest
+    timeout-minutes: 6
     env:
       WP: ${{ secrets.WP_PATH }}
       APLICAR: ${{ github.event.inputs.aplicar || 'true' }}

@@ -5,11 +5,12 @@
 // and, for pages that changed, the few sentences added or removed. The first
 // time a source is seen it is only recorded (baseline), never flagged.
 //
-// "texto": compares the page text; "pdf": compares the file; "estado": only checks
+// "texto": compares the page text (optionally trimmed per source: desde/hasta/ignorar/contiene, see vigilar-recorte.mjs); "pdf": compares the file; "estado": only checks
 // that it still responds (outfitter sites and live dashboards change all the time).
 
 import { createHash } from 'node:crypto';
 import { readFileSync, writeFileSync, existsSync } from 'node:fs';
+import { recortar } from './vigilar-recorte.mjs';
 
 const [rutaFuentes, rutaEstado, rutaSalida] = process.argv.slice(2);
 const fuentes = JSON.parse(readFileSync(rutaFuentes, 'utf8'));
@@ -43,7 +44,7 @@ export function normalizar(html) {
 
 /** Sentences present in only one of the two texts. */
 export function diferencias(antes, despues) {
-	const frases = (t) => new Set(t.split(/(?<=[.!?])\s+|\s{2,}/).map((f) => f.trim()).filter((f) => f.length > 25));
+	const frases = (t) => new Set(t.split(/\s+¶\s+|(?<=[.!?])\s+|\s{2,}/).map((f) => f.trim()).filter((f) => f.length > 25));
 	const a = frases(antes);
 	const d = frases(despues);
 	return {
@@ -152,6 +153,7 @@ async function traerBasico(url) {
 }
 
 const caidas = [];
+const conocidas = []; // known, accepted outages ("conocida" in the source): one line each, no action
 const cambios = [];
 const nuevas = [];
 const sin_cambios = [];
@@ -162,7 +164,7 @@ for (const f of fuentes) {
 	if (r.status === 0 || r.status >= 400) {
 		const veces = (previo?.fallos ?? 0) + 1;
 		estado[f.id] = { ...(previo ?? {}), fallos: veces, ultimoEstado: r.status || r.error, visto: hoy };
-		caidas.push({ f, detalle: r.status || r.error, veces });
+		(f.conocida ? conocidas : caidas).push({ f, detalle: r.status || r.error, veces });
 		await dormir(500);
 		continue;
 	}
@@ -171,15 +173,15 @@ for (const f of fuentes) {
 		estado[f.id] = registro;
 		sin_cambios.push(f);
 	} else {
-		const texto = f.vigilar === 'pdf' ? '' : normalizar(r.buf.toString('utf8'));
+		const texto = f.vigilar === 'pdf' ? '' : recortar(normalizar(r.buf.toString('utf8')), f);
 		const huella = f.vigilar === 'pdf' ? sha(r.buf) : sha(texto);
 		if (!previo?.huella) {
 			estado[f.id] = { ...registro, huella, texto: texto.slice(0, MAX_GUARDADO), primeraVez: hoy };
 			nuevas.push(f);
-		} else if ((f.vigilar === 'pdf' || !previo.texto ? previo.huella : sha(normalizar(previo.texto))) !== huella) {
+		} else if ((f.vigilar === 'pdf' || !previo.texto ? previo.huella : sha(recortar(normalizar(previo.texto), f))) !== huella) {
 			// (text sources: the stored copy is re-normalized with today's rules, so a
 			// change in the normalizer itself never shows up as a change in the page)
-			const d = f.vigilar === 'pdf' ? { nuevas: [], quitadas: [] } : diferencias(previo.texto ?? '', texto);
+			const d = f.vigilar === 'pdf' ? { nuevas: [], quitadas: [] } : diferencias(recortar(normalizar(previo.texto ?? ''), f), texto);
 			cambios.push({ f, d, antes: previo.visto });
 			estado[f.id] = { ...registro, huella, texto: texto.slice(0, MAX_GUARDADO), cambiado: hoy };
 		} else {
@@ -193,7 +195,7 @@ for (const f of fuentes) {
 const corto = (s) => (s.length > 220 ? s.slice(0, 217) + '…' : s);
 const L = [];
 L.push(`## Vigilancia de fuentes — ${hoy}`, '');
-L.push(`${fuentes.length} fuentes revisadas: ${caidas.length} sin respuesta, ${cambios.length} con cambios, ${nuevas.length} registradas por primera vez, ${sin_cambios.length} sin cambios.`, '');
+L.push(`${fuentes.length} fuentes revisadas: ${caidas.length} sin respuesta${conocidas.length ? ` (y ${conocidas.length} caídas ya conocidas)` : ''}, ${cambios.length} con cambios, ${nuevas.length} registradas por primera vez, ${sin_cambios.length} sin cambios.`, '');
 if (caidas.length) {
 	L.push('### ❌ No responden', '');
 	for (const c of caidas) L.push(`- **${c.f.nombre}** (${c.f.url}): ${c.detalle}${c.veces > 1 ? `, ${c.veces} semanas seguidas` : ''}. Afecta: ${c.f.afecta}. ${c.f.accion}`);
@@ -213,6 +215,11 @@ if (cambios.length) {
 if (nuevas.length) {
 	L.push('### 🆕 Registradas hoy (desde la próxima semana se comparan)', '');
 	for (const f of nuevas) L.push(`- ${f.nombre}`);
+	L.push('');
+}
+if (conocidas.length) {
+	L.push('### Caídas ya conocidas (sin acción)', '');
+	for (const c of conocidas) L.push(`- ${c.f.nombre}: ${c.detalle}. ${c.f.conocida}.`);
 	L.push('');
 }
 if (!caidas.length && !cambios.length) L.push('Nada para hacer esta semana en las fuentes.', '');

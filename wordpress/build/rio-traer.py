@@ -9,6 +9,7 @@ Read-only towards both services. A station that fails is left out with a warning
 only when nothing at all could be read (so a broken source is never published as 'all fine').
 """
 import json, sys, time, datetime as dt
+from concurrent.futures import ThreadPoolExecutor
 from urllib.request import Request, urlopen
 from urllib.parse import urlencode
 
@@ -18,13 +19,19 @@ CONFIG = "wordpress/plugins/pescamapa-core/data/rio.json"
 UMBRAL_TENDENCIA = 0.05  # m in 3 days: below this the river is "stable"
 
 
-def get_json(url, intentos=3):
+LENTAS = []  # (seconds, attempts, short url) of every request, to show the slowest in the log
+
+
+def get_json(url, intentos=3, timeout=45):
     ultimo = None
+    t0 = time.time()
     for i in range(intentos):
         try:
             req = Request(url, headers={"User-Agent": "pescamapa-rio/1.0 (+https://pescamapa.com)"})
-            with urlopen(req, timeout=90) as r:
-                return json.loads(r.read().decode("utf-8"))
+            with urlopen(req, timeout=timeout) as r:
+                datos = json.loads(r.read().decode("utf-8"))
+            LENTAS.append((time.time() - t0, i + 1, url.split("?")[0].replace(INA, "ina").replace(METEO, "meteo")))
+            return datos
         except Exception as e:  # noqa: BLE001 - report and retry
             ultimo = e
             time.sleep(2 * (i + 1))
@@ -56,7 +63,8 @@ def tendencia(serie):
     return "estable", delta
 
 
-def altura(estacion, niveles, hoy):
+def altura(estacion, hoy, niveles=None):
+    niveles = niveles or {}
     desde = (hoy - dt.timedelta(days=10)).isoformat()
     filas = get_json(f"{INA}/obs/puntual/series/{estacion}/observaciones?" + urlencode({"timestart": desde, "timeend": hoy.isoformat(), "format": "json"}))
     serie = sorted((fecha_local(f["timestart"]), float(f["valor"])) for f in filas if f.get("valor") is not None)
@@ -70,34 +78,78 @@ def altura(estacion, niveles, hoy):
     }
 
 
-def clima(lat, lon):
-    q = {"latitude": lat, "longitude": lon, "past_days": 3, "forecast_days": 3, "timezone": "America/Argentina/Buenos_Aires",
-         "daily": "wind_speed_10m_max,precipitation_sum"}
-    d = get_json(f"{METEO}?{urlencode(q)}")["daily"]
+def _clima_filas(d):
     return [{"fecha": f, "viento_max": v, "lluvia": l} for f, v, l in zip(d["time"], d["wind_speed_10m_max"], d["precipitation_sum"])]
+
+
+def _clima_q(lat, lon):
+    return {"latitude": lat, "longitude": lon, "past_days": 3, "forecast_days": 3, "timezone": "America/Argentina/Buenos_Aires",
+            "daily": "wind_speed_10m_max,precipitation_sum"}
+
+
+def clima(lat, lon):
+    return _clima_filas(get_json(f"{METEO}?{urlencode(_clima_q(lat, lon))}", intentos=2, timeout=20)["daily"])
+
+
+def clima_lote(cfg):
+    """One Open-Meteo request for every destination (it answers a list, in the order of the coordinates).
+    19 separate calls kept stalling for 45 s each on the shared runner IP. Returns {clave: filas}; empty on any
+    problem, and the caller then asks one by one as before."""
+    claves = list(cfg)
+    try:
+        r = get_json(f"{METEO}?{urlencode(_clima_q(','.join(str(cfg[k]['lat']) for k in claves), ','.join(str(cfg[k]['lon']) for k in claves)))}", intentos=2, timeout=30)
+        if not isinstance(r, list) or len(r) != len(claves):
+            return {}
+        return {k: _clima_filas(d["daily"]) for k, d in zip(claves, r)}
+    except Exception as e:  # noqa: BLE001
+        print(f"AVISO clima en lote no disponible ({e}); se pide uno por uno", file=sys.stderr)
+        return {}
 
 
 def main(salida):
     cfg = json.load(open(CONFIG))["destinos"]
     hoy = dt.datetime.now(dt.timezone.utc).astimezone(dt.timezone(dt.timedelta(hours=-3))).date()
-    estaciones = {e["id"]: e for e in get_json(f"{INA}/obs/puntual/estaciones?format=json")}
-    out, leidos = {}, 0
-    for clave, c in cfg.items():
-        item = {}
+    t0 = time.time()
+    tiempos = {}
+    # Requests run in parallel threads: the ~36 calls are independent and the time went to waiting on INA
+    # (24 s on a quiet day, 3.5 min on a slow one, sequentially). Results are collected in config order.
+    lote = clima_lote(cfg)
+
+    def leer(item):
+        clave, c = item
+        res, avisos = {}, []
         if c.get("estacion"):
             try:
-                niveles = estaciones.get(c["estacion"], {})
-                item["rio"] = {"estacion": c["estacion_nombre"], "curso": c["rio"], **altura(c["estacion"], niveles, hoy)}
-                leidos += 1
+                res["rio"] = {"estacion": c["estacion_nombre"], "curso": c["rio"], **altura(c["estacion"], hoy)}
             except Exception as e:  # noqa: BLE001
-                print(f"AVISO {clave}: altura no disponible ({e})", file=sys.stderr)
+                avisos.append(f"AVISO {clave}: altura no disponible ({e})")
         try:
-            item["clima"] = clima(c["lat"], c["lon"])
-            leidos += 1
+            res["clima"] = lote.get(clave) or clima(c["lat"], c["lon"])
         except Exception as e:  # noqa: BLE001
-            print(f"AVISO {clave}: clima no disponible ({e})", file=sys.stderr)
-        if item:
-            out[clave] = item
+            avisos.append(f"AVISO {clave}: clima no disponible ({e})")
+        return clave, res, avisos
+
+    out, leidos = {}, 0
+    with ThreadPoolExecutor(max_workers=8) as ex:
+        # The station catalogue (alert levels) is big: fetched in parallel with the readings, not before them.
+        catalogo = ex.submit(lambda: {e["id"]: e for e in get_json(f"{INA}/obs/puntual/estaciones?format=json")})
+        for clave, item, avisos in ex.map(leer, cfg.items()):
+            for a in avisos:
+                print(a, file=sys.stderr)
+            leidos += len(item)
+            if item:
+                out[clave] = item
+        tiempos["lecturas"] = time.time() - t0
+        estaciones = catalogo.result()  # no catalogue: the run fails as before (alert levels would be missing)
+        tiempos["catalogo"] = time.time() - t0
+    for clave, item in out.items():
+        r = item.get("rio")
+        if r:
+            n = estaciones.get(cfg[clave]["estacion"], {})
+            r["alerta"], r["evacuacion"] = n.get("nivel_alerta"), n.get("nivel_evacuacion")
+    for seg, n, u in sorted(LENTAS, reverse=True)[:4]:
+        print(f"  lenta: {seg:.1f} s ({n} intento(s)) {u}")
+    print(f"TIEMPOS: lecturas {tiempos['lecturas']:.1f} s, con catálogo {tiempos['catalogo']:.1f} s")
     if not leidos:
         sys.exit("ERROR: no se pudo leer nada (ni altura ni clima); no se publica.")
     datos = {"capturado": dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"), "destinos": out}
