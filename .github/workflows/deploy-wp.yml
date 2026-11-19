@@ -119,6 +119,8 @@ jobs:
             if [[ "$code" == 404 && "$2" == 200 && "${CONTENIDO:-}" == 1 ]]; then echo "⚠ 404 $1 (contenido todavía no importado)"; return; fi
             if [[ "$code" != "$2" ]]; then echo "✖ $code $1 (esperado $2)"; fail=1; return; fi
             if [[ -n "${3:-}" ]] && ! grep -q "$3" page.html; then echo "✖ $1 no contiene: $3"; fail=1; return; fi
+            # A PHP warning/notice printed into the page (19/11/2026: one reached the home page unseen).
+            if grep -qE '<b>(Warning|Notice|Deprecated|Fatal error|Parse error)</b>:' page.html; then echo "✖ $1 muestra un error de PHP: $(grep -oE '<b>(Warning|Notice|Deprecated|Fatal error|Parse error)</b>:[^<]*<b>[^<]*</b>' page.html | head -1)"; fail=1; return; fi
             echo "✓ $code $1"
           }
           check / 200 'PESCAMAPA'
@@ -127,6 +129,7 @@ jobs:
           check /en/ 200 'lang="en"'
           check /mapa/ 200 'class="mapa"'
           check /en/map/ 200 'class="mapa"'
+          check /armar-viaje/ 200 'contraste'
           check /creditos/ 301
           # Staging is not indexable, and WordPress turns its sitemap off then.
           if [[ "$WP_URL" == *"://nuevo."* ]]; then check /wp-sitemap.xml 404; else check /wp-sitemap.xml 200; fi

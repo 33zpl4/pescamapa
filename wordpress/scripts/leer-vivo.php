@@ -89,6 +89,11 @@ foreach ( $lineas as $linea ) {
 	if ( $status >= 400 || '' === $html ) {
 		$fallos++;
 	}
+	// Always: a PHP warning/notice printed into the page (19/11/2026: one reached the home page unseen).
+	if ( preg_match( '#<b>(Warning|Notice|Deprecated|Fatal error|Parse error)</b>:\s*([^<]*)#', $html, $err ) ) {
+		echo '  ALERTA PHP: ' . $err[1] . ': ' . trim( $err[2] ) . "\n";
+		$fallos++;
+	}
 
 	$titulo = preg_match( '#<title[^>]*>(.*?)</title>#is', $html, $m ) ? trim( html_entity_decode( wp_strip_all_tags( $m[1] ), ENT_QUOTES, 'UTF-8' ) ) : '(sin title)';
 	echo "  title: {$titulo}\n";

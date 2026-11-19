@@ -6,7 +6,8 @@
 defined( 'ABSPATH' ) || exit;
 
 $id    = sanitize_key( $args['id'] ?? 'contraste' );
-$nivel = in_array( $args['nivel'] ?? 'h2', [ 'h2', 'h3' ], true ) ? $args['nivel'] : 'h2';
+$nivel = $args['nivel'] ?? 'h2';
+$nivel = in_array( $nivel, [ 'h2', 'h3' ], true ) ? $nivel : 'h2';
 ?>
 <div class="contraste" role="group" aria-labelledby="<?php echo esc_attr( $id ); ?>">
 	<<?php echo $nivel; ?> id="<?php echo esc_attr( $id ); ?>"><?php pm_e( 'contraste.h' ); ?></<?php echo $nivel; ?>>
