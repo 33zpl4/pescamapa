@@ -110,7 +110,10 @@
 		"url": "https://www.argentina.gob.ar/seguridad/pasosinternacionales/detalle/rio/76/Puerto-Paso-de-la-Patria-Paso-de-la-Patria",
 		"vigilar": "texto",
 		"afecta": "Cruce a Paraguay",
-		"accion": "Revisar la FAQ de Brasil."
+		"accion": "Revisar la FAQ de Brasil.",
+		"ignorar": [
+			"\\(última actualización[^)]*\\)"
+		]
 	},
 	{
 		"id": "ina-pdlp",
