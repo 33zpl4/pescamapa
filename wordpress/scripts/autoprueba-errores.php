@@ -38,6 +38,15 @@ if ( is_wp_error( $r ) ) {
 	}
 }
 
+// Diagnóstico temporal: opcache del PHP web (php.ini de aaPanel; solo líneas opcache.*) y fecha del archivo del plugin.
+foreach ( (array) glob( '/www/server/php/*/etc/php.ini' ) as $ini ) {
+	foreach ( (array) file( $ini, FILE_IGNORE_NEW_LINES ) as $l ) {
+		if ( preg_match( '/^\s*opcache\.(enable|validate_timestamps|revalidate_freq|restrict_api|file_update_protection)\s*=/', $l ) ) {
+			echo '  ' . basename( dirname( dirname( $ini ) ) ) . ' php.ini: ' . trim( $l ) . "\n";
+		}
+	}
+}
+echo '  plugin pescamapa-core.php modificado: ' . gmdate( 'Y-m-d H:i:s', (int) filemtime( PM_DIR . 'pescamapa-core.php' ) ) . " UTC; ahora " . gmdate( 'Y-m-d H:i:s' ) . " UTC\n";
 // Diagnóstico temporal: ¿el manejador corre en otras rutas (distingue caché de origen de un fallo del manejador)?
 $cab_nombres = ! is_wp_error( $r ) ? implode( ',', array_keys( (array) wp_remote_retrieve_headers( $r )->getAll() ) ) : '';
 echo "Nombres de cabeceras de la portada: {$cab_nombres}\n";
