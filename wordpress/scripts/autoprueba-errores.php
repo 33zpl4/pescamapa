@@ -38,8 +38,57 @@ if ( is_wp_error( $r ) ) {
 	}
 }
 
+// Diagnóstico temporal: ¿la petición web recibe la query string y es este mismo WordPress?
+$sonda = 'PMSONDA' . wp_generate_password( 8, false, false );
+$rs    = wp_remote_get( home_url( '/?s=' . $sonda ), [ 'timeout' => 20, 'redirection' => 0 ] );
+echo '  query string llega a WordPress (búsqueda devuelve el término)=' . ( ! is_wp_error( $rs ) && false !== strpos( (string) wp_remote_retrieve_body( $rs ), $sonda ) ? 'sí' : 'no' ) . ' (status ' . ( is_wp_error( $rs ) ? 'error' : wp_remote_retrieve_response_code( $rs ) ) . ")\n";
+$rj = wp_remote_get( home_url( '/wp-json/' ), [ 'timeout' => 20 ] );
+$jj = is_wp_error( $rj ) ? [] : (array) json_decode( (string) wp_remote_retrieve_body( $rj ), true );
+echo '  REST home=' . ( $jj['home'] ?? '?' ) . ' ; home_url CLI=' . home_url() . ' ; plugins namespaces=' . implode( ',', array_slice( (array) ( $jj['namespaces'] ?? [] ), 0, 12 ) ) . "\n";
+// Diagnóstico temporal: opcache del PHP web (php.ini de aaPanel; solo líneas opcache.*) y fecha del archivo del plugin.
+foreach ( (array) glob( '/www/server/php/*/etc/php.ini' ) as $ini ) {
+	foreach ( (array) file( $ini, FILE_IGNORE_NEW_LINES ) as $l ) {
+		if ( preg_match( '/^\s*opcache\.(enable|validate_timestamps|revalidate_freq|restrict_api|file_update_protection)\s*=/', $l ) ) {
+			echo '  ' . basename( dirname( dirname( $ini ) ) ) . ' php.ini: ' . trim( $l ) . "\n";
+		}
+	}
+}
+echo '  plugin pescamapa-core.php modificado: ' . gmdate( 'Y-m-d H:i:s', (int) filemtime( PM_DIR . 'pescamapa-core.php' ) ) . " UTC; ahora " . gmdate( 'Y-m-d H:i:s' ) . " UTC\n";
+// Diagnóstico temporal: ¿el manejador corre en otras rutas (distingue caché de origen de un fallo del manejador)?
+$cab_nombres = ! is_wp_error( $r ) ? implode( ',', array_keys( (array) wp_remote_retrieve_headers( $r )->getAll() ) ) : '';
+echo "Nombres de cabeceras de la portada: {$cab_nombres}\n";
+foreach ( [ '/wp-json/', '/llms.txt', '/?pm_x=' . time(), '/wp-login.php' ] as $ruta ) {
+	$t2 = wp_generate_password( 32, false, false );
+	set_transient( 'pm_autoprueba', $t2, 300 );
+	$r2 = wp_remote_get( add_query_arg( [ 'pm_autoprueba' => $t2 ], home_url( $ruta ) ), [ 'timeout' => 20, 'redirection' => 0, 'headers' => [ 'Cache-Control' => 'no-cache', 'Pragma' => 'no-cache' ], 'user-agent' => 'Pescamapa-autoprueba/1.0' ] );
+	$c2 = is_wp_error( $r2 ) ? 'error: ' . $r2->get_error_message() : (string) wp_remote_retrieve_response_code( $r2 );
+	echo "  ruta {$ruta}: status {$c2}, token consumido=" . ( false === get_transient( 'pm_autoprueba' ) ? 'sí' : 'no' ) . "\n";
+	delete_transient( 'pm_autoprueba' );
+}
+// Diagnóstico (sin rutas de otros sitios): qué pudo impedir que el manejador corriera o que el registro se escribiera.
+if ( ! is_wp_error( $r ) ) {
+	$cab = [];
+	foreach ( [ 'server', 'cf-cache-status', 'age', 'x-cache', 'x-fastcgi-cache', 'cache-control', 'x-powered-by' ] as $h ) {
+		$v = wp_remote_retrieve_header( $r, $h );
+		if ( '' !== $v && ! is_array( $v ) ) {
+			$cab[] = "$h: $v";
+		}
+	}
+	echo 'Cabeceras: ' . ( $cab ? implode( ' | ', $cab ) : '(ninguna de interés)' ) . "\n";
+}
+$dir_log = '' !== $log ? dirname( $log ) : '';
+echo 'Diagnóstico: caché de objetos externa=' . ( wp_using_ext_object_cache() ? 'sí' : 'no' )
+	. '; directorio del registro existe=' . ( $dir_log && is_dir( $dir_log ) ? 'sí' : 'no' )
+	. ', escribible=' . ( $dir_log && is_writable( $dir_log ) ? 'sí' : 'no' )
+	. '; registro existe=' . ( $log && file_exists( $log ) ? 'sí' : 'no' )
+	. '; el plugin desplegado trae el manejador=' . ( false !== strpos( (string) file_get_contents( PM_DIR . 'pescamapa-core.php' ), 'pm_autoprueba' ) ? 'sí' : 'no' )
+	. '; portada trae el comentario de caché=' . ( preg_match( '#<!--[^>]*(cache|caché)[^>]*-->#i', $html, $mc ) ? mb_substr( $mc[0], 0, 120 ) : 'no' ) . "\n";
+
 // El transient se usa y se borra solo en el manejador; si sigue ahí, el manejador no corrió.
-$sigue = get_transient( 'pm_autoprueba' );
+$sigue  = get_transient( 'pm_autoprueba' );
+$motivo = get_transient( 'pm_autoprueba_motivo' );
+delete_transient( 'pm_autoprueba_motivo' );
+echo 'Manejador del plugin: ' . ( false === $motivo ? 'no dejó rastro (el código web no lo ejecutó)' : $motivo ) . "\n";
 delete_transient( 'pm_autoprueba' );
 if ( false !== $sigue ) {
 	$fallas[] = 'el manejador no consumió el token (¿el plugin desplegado no tiene la autoprueba?)';

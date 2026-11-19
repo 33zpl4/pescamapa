@@ -54,9 +54,14 @@ add_action( 'init', function () {
 	}
 	$token  = (string) wp_unslash( $_GET['pm_autoprueba'] ); // phpcs:ignore WordPress.Security.NonceVerification
 	$vigente = get_transient( 'pm_autoprueba' );
-	if ( '' === $token || ! is_string( $vigente ) || '' === $vigente || ! hash_equals( $vigente, $token ) ) {
+	if ( '' === $token || ! is_string( $vigente ) || '' === $vigente ) {
+		return; // sin autoprueba armada: no hace nada (ni escribe)
+	}
+	if ( ! hash_equals( $vigente, $token ) ) {
+		set_transient( 'pm_autoprueba_motivo', 'token distinto', 300 ); // solo con una autoprueba armada: ayuda a diagnosticar
 		return;
 	}
+	set_transient( 'pm_autoprueba_motivo', 'manejador alcanzado', 300 );
 	delete_transient( 'pm_autoprueba' ); // de un solo uso
 	trigger_error( 'Pescamapa autoprueba controlada', E_USER_WARNING ); // phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_trigger_error
 }, 1 );
