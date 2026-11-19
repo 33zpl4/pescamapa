@@ -85,7 +85,10 @@ echo 'Diagnóstico: caché de objetos externa=' . ( wp_using_ext_object_cache() 
 	. '; portada trae el comentario de caché=' . ( preg_match( '#<!--[^>]*(cache|caché)[^>]*-->#i', $html, $mc ) ? mb_substr( $mc[0], 0, 120 ) : 'no' ) . "\n";
 
 // El transient se usa y se borra solo en el manejador; si sigue ahí, el manejador no corrió.
-$sigue = get_transient( 'pm_autoprueba' );
+$sigue  = get_transient( 'pm_autoprueba' );
+$motivo = get_transient( 'pm_autoprueba_motivo' );
+delete_transient( 'pm_autoprueba_motivo' );
+echo 'Manejador del plugin: ' . ( false === $motivo ? 'no dejó rastro (el código web no lo ejecutó)' : $motivo ) . "\n";
 delete_transient( 'pm_autoprueba' );
 if ( false !== $sigue ) {
 	$fallas[] = 'el manejador no consumió el token (¿el plugin desplegado no tiene la autoprueba?)';
