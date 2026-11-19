@@ -2,9 +2,8 @@
 # Las líneas con # y las vacías se ignoran. Lo lee wordpress/scripts/leer-vivo.php (solo lectura).
 # Las URLs anteriores ya fueron verificadas o descartadas: están en el historial de git.
 
-# 19/11/2026, fondo del embudo (e/f): SOLO presentes/ausentes, sin `contexto:` (estas páginas llevan contactos). Los nombres de las fichas existentes los cruza el script
-# listado-corrientes-fichas-2026-11-19 dentro del servidor; aquí se confirman los seis lugares nuevos y se relee la portada de Hambaré para decidir el precio.
-https://corrientes.tur.ar/tour/experiencia-de-pesca-paso-de-la-patria/ | Jardín del Paraná ; Jardin del Parana ; Posada del Paso ; actualiz
-https://corrientes.tur.ar/tour/excursiones-de-pesca/ | El Gordo y el Flaco ; La Amistad ; medio día ; jornada completa
-https://corrientes.tur.ar/tour/experiencia-de-pesca-esquina/ | Hambaré ; Hambare ; Posada del Muelle ; jornada completa
-https://pousadahambare.com.br/ | 605 ; 705 ; US$ ; temporada ; alta temporada ; baixa temporada ; 2026 ; 2027 ; combustível ; iscas ; licença ; bebidas ; guia ; lancha ; equipamento ; pacote ; tabela
+# 19/11/2026, fondo del embudo (g): lectura final, SOLO presentes/ausentes, sin `contexto:`. «+54» sale presente por el placeholder del campo de WhatsApp del formulario corto (no es un contacto de una ficha).
+https://pescamapa.com/guias-de-pesca/goya/ | Qué le preguntamos a cada lugar por vos ; En una mirada ; En el listado de pesca de Turismo de Corrientes ; Comparar también con ; ¿Cómo sé si un guía o un lugar está habilitado? ; operador ; +54 ; tel: ; Cómo elegir guía ; no le cobra al pescador ; El Gordo y el Flaco ; Campamento La Amistad
+https://pescamapa.com/guias-de-pesca/esquina/ | Qué le preguntamos a cada lugar por vos ; En una mirada ; En el listado de pesca de Turismo de Corrientes ; Comparar también con ; ¿Cómo sé si un guía o un lugar está habilitado? ; operador ; +54 ; tel: ; Cómo elegir guía ; no le cobra al pescador ; Posada del Muelle ; Posada Hambaré
+https://pescamapa.com/guias-de-pesca/paso-de-la-patria/ | Qué le preguntamos a cada lugar por vos ; En una mirada ; En el listado de pesca de Turismo de Corrientes ; Comparar también con ; ¿Cómo sé si un guía o un lugar está habilitado? ; operador ; +54 ; tel: ; Cómo elegir guía ; no le cobra al pescador ; Hotel Spa Jardín del Paraná
+https://pescamapa.com/armar-viaje/?destino=goya&tambien=esquina,paso-de-la-patria | Qué le preguntamos a cada lugar por vos ; También me sirven ; Marcá los que te sirven además del primero ; name="destinos_extra[]" ; value="esquina" checked ; operador
