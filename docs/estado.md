@@ -71,6 +71,13 @@ Las listas «Fuentes» de guías, especies y notas enlazan solo si `oficial=1` o
 
 > **19/11/2026, errores de PHP fuera de la página:** `pescamapa-core` apaga `display_errors` en peticiones web y registra en `/www/wwwlogs/pescamapa-php-errors.log` (fuera de la web); `deploy-wp` falla si el registro tiene errores del tema o del plugin escritos durante el deploy; `leer-vivo` imprime el bloque del registro. Detalle y diagnóstico: `docs/wordpress.md` → «Errores de PHP».
 
+## Pendientes del 19/11/2026 (repo público temporal)
+
+- **Datos personales:** el contacto privado de la nota interna de `experiencia-isoro-2026-10-24.php` se reemplazó por «(contacto interno fuera del repo)»; el historial de git conserva lo anterior (decisión del dueño: no se reescribe). El resto de teléfonos y correos hallados en `docs/` y `wordpress/scripts/` son de organismos oficiales y se dejaron.
+- **Autoprueba de errores de PHP:** plugin + `autoprueba-errores.php`; cómo correrla, en `docs/wordpress.md` («Errores de PHP»). Resultado de la primera corrida: ver el PR.
+- **«Operador» en las bajadas de Itatí, Iberá y río Santa Cruz (es/en/pt):** el origen era el campo `bajada` de cada guía (no `ui.json`); script `copy-operadores-bajada-2026-11-19`. En `ui.json` quedan «operadores» solo en las páginas de prestadores (dirigidas a ellos), a propósito.
+- **Lectura final:** `leer-vivo` sobre portada es/en/pt, `/llms.txt` y tres guías, tras el deploy y el script aplicado.
+
 ## Control de gasto de Actions (19/11/2026)
 
 El 19/11/2026 se llegó a los 2.000 minutos del plan (vuelven el 1/12). Umbral del dueño: **un día de más de US$ 0,50 es alto y se revisa** (≈ 100 minutos estimados). Herramienta: `python3 -I scripts/uso-actions.py [desde]` (lee los runs con `gh` desde el sandbox, no gasta minutos; marca ⚠ los días altos con los workflows que más gastaron).

@@ -42,6 +42,25 @@ if ( 'cli' !== PHP_SAPI && ! ( defined( 'WP_CLI' ) && WP_CLI ) ) {
 	unset( $pm_dir_log );
 }
 
+/*
+ * Autoprueba de errores de PHP (19/11/2026). Comprueba de punta a punta que un aviso de PHP NO sale en la página y SÍ queda en PM_ERROR_LOG.
+ * Solo actúa si la petición web trae ?pm_autoprueba=<token> y el token coincide con el transient 'pm_autoprueba' vigente, que crea el
+ * wp-script autoprueba-errores (un solo uso: se borra al usarse; vence a los 5 minutos). Sin token válido no hace nada.
+ * Emite un E_USER_WARNING controlado y la página sigue rindiendo normal. Ver docs/wordpress.md, «Errores de PHP».
+ */
+add_action( 'init', function () {
+	if ( ! isset( $_GET['pm_autoprueba'] ) || ! is_string( $_GET['pm_autoprueba'] ) || 'cli' === PHP_SAPI ) { // phpcs:ignore WordPress.Security.NonceVerification
+		return;
+	}
+	$token  = (string) wp_unslash( $_GET['pm_autoprueba'] ); // phpcs:ignore WordPress.Security.NonceVerification
+	$vigente = get_transient( 'pm_autoprueba' );
+	if ( '' === $token || ! is_string( $vigente ) || '' === $vigente || ! hash_equals( $vigente, $token ) ) {
+		return;
+	}
+	delete_transient( 'pm_autoprueba' ); // de un solo uso
+	trigger_error( 'Pescamapa autoprueba controlada', E_USER_WARNING ); // phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_trigger_error
+}, 1 );
+
 require PM_DIR . 'inc/i18n.php';
 require PM_DIR . 'inc/tipos.php';
 require PM_DIR . 'inc/campos.php';

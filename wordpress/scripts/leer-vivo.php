@@ -222,6 +222,9 @@ if ( '' === $pm_log || ! is_file( $pm_log ) || ! is_readable( $pm_log ) ) {
 		if ( ! preg_match( '#wp-content/(themes/pescamapa|plugins/pescamapa-core)/#', $m[3] ) ) {
 			continue;
 		}
+		if ( false !== strpos( $m[3], 'Pescamapa autoprueba controlada' ) ) {
+			continue; // aviso provocado a propósito por autoprueba-errores: no cuenta como error
+		}
 		$t = strtotime( $m[1] . ' UTC' );
 		if ( $t && $t < $desde ) {
 			continue;

@@ -353,7 +353,7 @@ $D = json_decode( <<<'JSON'
    ],
    "campos": {
     "h1": "Pesca de dorado en los Esteros del Iberá, Corrientes: lodges, reglas y licencia",
-    "bajada": "Tres lodges que encontramos pescan dorado en los Esteros del Iberá y el río Corriente. Qué publica cada página, qué podés llevarte, qué licencia hace falta y cuándo, según cada operador.",
+    "bajada": "Tres lodges que encontramos pescan dorado en los Esteros del Iberá y el río Corriente. Qué publica cada página, qué podés llevarte, qué licencia hace falta y cuándo, según cada lugar.",
     "modalidades": "Embarcada con guía\nMosca (flycast)\nBaitcasting y spinning (según el lodge)",
     "epoca": "Entre septiembre u octubre y abril o mayo según el operador; Pirá dice que todo el año.",
     "seo_title": "Pesca de dorado en los Esteros del Iberá: lodges y reglas",
@@ -691,7 +691,7 @@ $D = json_decode( <<<'JSON'
    ],
    "campos": {
     "h1": "Golden dorado fishing in the Iberá Wetlands, Corrientes: lodges, rules and licence",
-    "bajada": "Three lodges we found fish dorado in the Iberá Wetlands and the Corriente River. What each page publishes, what you can keep, which licence you need and when, according to each operator.",
+    "bajada": "Three lodges we found fish dorado in the Iberá Wetlands and the Corriente River. What each page publishes, what you can keep, which licence you need and when, according to each place.",
     "modalidades": "Guided boat fishing\nFly fishing (flycast)\nBaitcasting and spinning (depending on the lodge)",
     "epoca": "Between September or October and April or May according to the operator; Pirá says year-round.",
     "seo_title": "Golden dorado fishing in the Iberá Wetlands: lodges, rules",
@@ -1029,7 +1029,7 @@ $D = json_decode( <<<'JSON'
    ],
    "campos": {
     "h1": "Pesca de dourado nos Esteros do Iberá, Corrientes: lodges, regras e licença",
-    "bajada": "Três lodges que encontramos pescam dourado nos Esteros do Iberá e no rio Corriente. O que cada página publica, o que pode levar, que licença é preciso e quando, segundo cada operador.",
+    "bajada": "Três lodges que encontramos pescam dourado nos Esteros do Iberá e no rio Corriente. O que cada página publica, o que pode levar, que licença é preciso e quando, segundo cada lugar.",
     "modalidades": "Embarcada com guia\nFly (flycast)\nBaitcasting e spinning (conforme o lodge)",
     "epoca": "Entre setembro ou outubro e abril ou maio conforme o operador; o Pirá diz o ano todo.",
     "seo_title": "Pesca de dourado nos Esteros do Iberá: lodges e regras",
