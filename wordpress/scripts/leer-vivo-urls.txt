@@ -2,12 +2,10 @@
 # Las líneas con # y las vacías se ignoran. Lo lee wordpress/scripts/leer-vivo.php (solo lectura).
 # Las URLs anteriores ya fueron verificadas o descartadas: están en el historial de git.
 
-
-# 20/11/2026, lectura final: «operador» fuera de portada y bajadas (script copy-operadores-bajada-2026-11-19 aplicado) y registro de PHP nuevo.
-# Se espera «ausente» en operador/operators; en llms.txt se informa si queda alguno (los de la página para prestadores pg.* pueden quedar).
-https://pescamapa.com/ | operador ; operators
-https://pescamapa.com/en/ | operador ; operators
-https://pescamapa.com/pt/ | operador ; operators
-https://pescamapa.com/llms.txt | operador ; operators || contexto: operador ; operators
-https://pescamapa.com/litoral/corrientes/pesca-en-itati/ | cada operador ; Qué dice la página de cada lugar y guía
-https://pescamapa.com/litoral/corrientes/pesca-en-los-esteros-del-ibera/ | según cada operador ; según cada lugar
+# 19/11/2026, lectura final del rediseño del bloque «Una sola consulta» (portada y formulario, es/en/pt).
+https://pescamapa.com/ | 10 consultas ; 1 consulta ; Pedir opciones ; opciones disponibles
+https://pescamapa.com/en/ | 10 inquiries ; 1 inquiry ; Request options
+https://pescamapa.com/pt/ | 10 consultas ; 1 consulta ; Pedir opções
+https://pescamapa.com/armar-viaje/ | 10 consultas ; 1 consulta ; Completar el pedido ; id="consulta"
+https://pescamapa.com/en/plan-your-trip/ | 10 inquiries ; 1 inquiry ; Complete the request
+https://pescamapa.com/pt/planejar-viagem/ | 10 consultas ; 1 consulta ; Completar o pedido
