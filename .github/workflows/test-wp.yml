@@ -1037,7 +1037,7 @@ jobs:
           check /especies/dorado/ 200 'Paquetes de pesca en Esquina'
           check /paquetes-de-pesca/esquina/ 200 'Antes de viajar' 'BLOQUE-SIN-TITULO'
           check /paquetes-de-pesca/esquina/ 200 'Segundo párrafo de prueba'
-          check /paquetes-de-pesca/esquina/ 200 'href="https://example.com/info"'
+          check /paquetes-de-pesca/esquina/ 200 'FUENTE-INFO' 'href="https://example.com/info"'  # fuente como texto, sin enlace (dueño, 17/11/2026)
           check /paquetes-de-pesca/esquina/ 200 'consultada el 28 de octubre de 2026'
           check /paquetes-de-pesca/esquina/ 200 'Desde \$ 150.000 por lancha'
           check /paquetes-de-pesca/esquina/ 200 'Precio de referencia al 28 de octubre de 2026'
