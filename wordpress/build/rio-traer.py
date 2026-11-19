@@ -57,7 +57,8 @@ def tendencia(serie):
     return "estable", delta
 
 
-def altura(estacion, niveles, hoy):
+def altura(estacion, hoy, niveles=None):
+    niveles = niveles or {}
     desde = (hoy - dt.timedelta(days=10)).isoformat()
     filas = get_json(f"{INA}/obs/puntual/series/{estacion}/observaciones?" + urlencode({"timestart": desde, "timeend": hoy.isoformat(), "format": "json"}))
     serie = sorted((fecha_local(f["timestart"]), float(f["valor"])) for f in filas if f.get("valor") is not None)
@@ -81,7 +82,8 @@ def clima(lat, lon):
 def main(salida):
     cfg = json.load(open(CONFIG))["destinos"]
     hoy = dt.datetime.now(dt.timezone.utc).astimezone(dt.timezone(dt.timedelta(hours=-3))).date()
-    estaciones = {e["id"]: e for e in get_json(f"{INA}/obs/puntual/estaciones?format=json")}
+    t0 = time.time()
+    tiempos = {}
     # Requests run in parallel threads: the ~36 calls are independent and the time went to waiting on INA
     # (24 s on a quiet day, 3.5 min on a slow one, sequentially). Results are collected in config order.
     def leer(item):
@@ -89,8 +91,7 @@ def main(salida):
         res, avisos = {}, []
         if c.get("estacion"):
             try:
-                niveles = estaciones.get(c["estacion"], {})
-                res["rio"] = {"estacion": c["estacion_nombre"], "curso": c["rio"], **altura(c["estacion"], niveles, hoy)}
+                res["rio"] = {"estacion": c["estacion_nombre"], "curso": c["rio"], **altura(c["estacion"], hoy)}
             except Exception as e:  # noqa: BLE001
                 avisos.append(f"AVISO {clave}: altura no disponible ({e})")
         try:
@@ -101,12 +102,23 @@ def main(salida):
 
     out, leidos = {}, 0
     with ThreadPoolExecutor(max_workers=8) as ex:
+        # The station catalogue (alert levels) is big: fetched in parallel with the readings, not before them.
+        catalogo = ex.submit(lambda: {e["id"]: e for e in get_json(f"{INA}/obs/puntual/estaciones?format=json")})
         for clave, item, avisos in ex.map(leer, cfg.items()):
             for a in avisos:
                 print(a, file=sys.stderr)
             leidos += len(item)
             if item:
                 out[clave] = item
+        tiempos["lecturas"] = time.time() - t0
+        estaciones = catalogo.result()  # no catalogue: the run fails as before (alert levels would be missing)
+        tiempos["catalogo"] = time.time() - t0
+    for clave, item in out.items():
+        r = item.get("rio")
+        if r:
+            n = estaciones.get(cfg[clave]["estacion"], {})
+            r["alerta"], r["evacuacion"] = n.get("nivel_alerta"), n.get("nivel_evacuacion")
+    print(f"TIEMPOS: lecturas {tiempos['lecturas']:.1f} s, con catálogo {tiempos['catalogo']:.1f} s")
     if not leidos:
         sys.exit("ERROR: no se pudo leer nada (ni altura ni clima); no se publica.")
     datos = {"capturado": dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"), "destinos": out}
