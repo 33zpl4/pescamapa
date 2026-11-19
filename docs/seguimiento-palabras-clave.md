@@ -35,6 +35,27 @@ Intención: **C** = comercial (el visitante puede acabar pidiendo una propuesta)
 
 - **Entre Ríos (18/11/2026):** el permiso de 5 días para extranjeros ($24.251,60, octubre de 2026) y la pregunta «¿se puede pescar dorado en Entre Ríos?» (Ley 11.174, Decreto 726/25) están ahora en la nota del permiso, el hub, y las guías de La Paz y Concordia (es/en/pt), con FAQ visible = JSON-LD. Consultas a mirar en Search Console desde ≈27/11: «permiso de pesca entre ríos», «licencia de pesca entre ríos extranjeros», «se puede pescar dorado en entre ríos», «pesca dorado concordia», «pesca la paz entre ríos», «entre rios fishing license». Sin medición todavía: no se verificó cómo salen en Google.
 
+## Dato intermedio de Search Console: 3 al 17/11/2026 (corrida de `gsc-consultas.yml`, 19/11/2026)
+
+**Es un dato intermedio, no una comparación.** Período de 14 días (`dias=14`, 2026-11-03 a 2026-11-17, web; Search Console entrega con unos dos días de retraso), run 44567972936, `top=80`: el log lista solo las 80 búsquedas con más impresiones (las de 2 o más; las de 1 impresión no entran). En total hubo 229 búsquedas distintas, 716 impresiones y 4 clics. La comparación de dos semanas contra dos semanas sigue **el 27/11/2026**; hasta entonces no se saca ninguna conclusión de tendencia.
+
+Resumen por familia de la lista seguida (suma de las búsquedas de esa familia que aparecen en el top 80; posición = promedio ponderado por impresiones de la posición media de cada búsqueda):
+
+| Familia | Búsquedas en el top 80 | Impresiones | Clics | Posición | Qué se ve |
+|---|---:|---:|---:|---:|---|
+| Licencia | 5 | 94 | 1 | 57,3 | «argentina fishing license» concentra 79 impresiones en la posición 64 (la nota del permiso patagónico en inglés sale en 38, la portada en inglés en 87); «fishing license» (8) sale en la 8. El único clic es «licencia pesca corrientes» (2 impresiones, posición 15) |
+| Trucha en la Patagonia | 20 | 138 | 0 | 36,8 | Las formas largas («patagonia brown trout fishing» 4, «trout fishing patagonia» 7, «trout fishing in patagonia» 11) ya salen entre la 4 y la 18 con el pilar; las cortas («trout patagonia» 16, «rainbow trout patagonia» 14, «patagonia brook trout» 13) quedan en la 59 a 65. «Tipos de truchas en la patagonia» (18) sale en la 7 con la ficha de la trucha |
+| Dorado | 5 | 30 | 1 | 37,4 | «world record golden dorado» (6 impresiones, 1 clic, posición 6) y «dorado record» (2, posición 4); «golden dorado argentina» en la 62 |
+| La Zona | 4 | 29 | 0 | 44,3 | «golden dorado la zona argentina» (15, posición 55), «la zona dorado fishing» (5, 26), «la zona fishing lodge» (5, 34), «la zona lodge argentina» (4, 40); salen con la nota de La Zona en inglés. La guía de Concordia (publicada el 18/11) todavía no cuenta |
+| Concordia | 0 | 0 | 0 | | Ninguna búsqueda con «concordia» llegó a 2 impresiones; la guía es del 18/11 y el período termina el 17/11 |
+| Altura del río | 21 | 88 | 0 | 19,8 | Zárate y Baradero («hoy») 11 cada una, San Pedro 9 + 5 + 4 + 4 + 3; salen en la 8 a 10. «Altura del río de la plata» (7 + 3 + 2) y Tigre quedan en la 67 a 87 |
+
+Notas de lectura:
+- «Golden dorado la zona argentina» está en las dos familias (dorado y La Zona); en el total de arriba cuenta en cada una, no se suman entre sí.
+- «Altura del río» tiene el mayor volumen y las mejores posiciones, y ningún clic: es consulta informativa que se responde en el resultado.
+- Todavía no se miró la columna «Páginas que Google muestra» contra las páginas que deberían responder cada consulta (la tabla de arriba pide esa lectura); el log las trae y está en la corrida citada.
+- **No se verificó** que estos números coincidan con la interfaz de Search Console; vienen del script `scripts/gsc-consultas.mjs`.
+
 ## Apariciones en funciones de IA de Google (Search Console → Performance → Generative AI features)
 
 Línea de base pegada por el dueño el 18/11/2026. **Período no indicado**; **111 páginas en total** con apariciones; abajo el top 25 por impresiones (apariciones en funciones de IA).
@@ -78,3 +99,4 @@ Línea de base pegada por el dueño el 18/11/2026. **Período no indicado**; **1
 |---|---|---|
 | 17/11/2026 | Top queries del día (incompleto) | Primera fila de la tabla |
 | 18/11/2026 | Apariciones en funciones de IA de Google (top 25 de 111 páginas, período no indicado) | Línea de base de la sección nueva; repetir con `gsc-consultas` (≈27/11) |
+| 19/11/2026 | `gsc-consultas.yml` de 14 días (3 al 17/11), top 80 | Dato intermedio por familia (sección nueva); la comparación de dos semanas sigue el 27/11 |

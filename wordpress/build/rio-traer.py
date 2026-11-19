@@ -19,13 +19,19 @@ CONFIG = "wordpress/plugins/pescamapa-core/data/rio.json"
 UMBRAL_TENDENCIA = 0.05  # m in 3 days: below this the river is "stable"
 
 
+LENTAS = []  # (seconds, attempts, short url) of every request, to show the slowest in the log
+
+
 def get_json(url, intentos=3):
     ultimo = None
+    t0 = time.time()
     for i in range(intentos):
         try:
             req = Request(url, headers={"User-Agent": "pescamapa-rio/1.0 (+https://pescamapa.com)"})
             with urlopen(req, timeout=45) as r:
-                return json.loads(r.read().decode("utf-8"))
+                datos = json.loads(r.read().decode("utf-8"))
+            LENTAS.append((time.time() - t0, i + 1, url.split("?")[0].replace(INA, "ina").replace(METEO, "meteo")))
+            return datos
         except Exception as e:  # noqa: BLE001 - report and retry
             ultimo = e
             time.sleep(2 * (i + 1))
@@ -118,6 +124,8 @@ def main(salida):
         if r:
             n = estaciones.get(cfg[clave]["estacion"], {})
             r["alerta"], r["evacuacion"] = n.get("nivel_alerta"), n.get("nivel_evacuacion")
+    for seg, n, u in sorted(LENTAS, reverse=True)[:4]:
+        print(f"  lenta: {seg:.1f} s ({n} intento(s)) {u}")
     print(f"TIEMPOS: lecturas {tiempos['lecturas']:.1f} s, con catálogo {tiempos['catalogo']:.1f} s")
     if not leidos:
         sys.exit("ERROR: no se pudo leer nada (ni altura ni clima); no se publica.")
