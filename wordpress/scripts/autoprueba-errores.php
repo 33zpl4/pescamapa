@@ -38,6 +38,17 @@ if ( is_wp_error( $r ) ) {
 	}
 }
 
+// Diagnóstico temporal: ¿el manejador corre en otras rutas (distingue caché de origen de un fallo del manejador)?
+$cab_nombres = ! is_wp_error( $r ) ? implode( ',', array_keys( (array) wp_remote_retrieve_headers( $r )->getAll() ) ) : '';
+echo "Nombres de cabeceras de la portada: {$cab_nombres}\n";
+foreach ( [ '/wp-json/', '/llms.txt', '/?pm_x=' . time(), '/wp-login.php' ] as $ruta ) {
+	$t2 = wp_generate_password( 32, false, false );
+	set_transient( 'pm_autoprueba', $t2, 300 );
+	$r2 = wp_remote_get( add_query_arg( [ 'pm_autoprueba' => $t2 ], home_url( $ruta ) ), [ 'timeout' => 20, 'redirection' => 0, 'headers' => [ 'Cache-Control' => 'no-cache', 'Pragma' => 'no-cache' ], 'user-agent' => 'Pescamapa-autoprueba/1.0' ] );
+	$c2 = is_wp_error( $r2 ) ? 'error: ' . $r2->get_error_message() : (string) wp_remote_retrieve_response_code( $r2 );
+	echo "  ruta {$ruta}: status {$c2}, token consumido=" . ( false === get_transient( 'pm_autoprueba' ) ? 'sí' : 'no' ) . "\n";
+	delete_transient( 'pm_autoprueba' );
+}
 // Diagnóstico (sin rutas de otros sitios): qué pudo impedir que el manejador corriera o que el registro se escribiera.
 if ( ! is_wp_error( $r ) ) {
 	$cab = [];
