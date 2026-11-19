@@ -613,3 +613,8 @@ footer .negocio a { color: var(--white); text-decoration: underline; text-underl
 	.prose .wp-block-table.pm-estilo td { border-bottom: 0; padding: 4px 12px; }
 	.prose .wp-block-table.pm-estilo td:first-child { font-size: 1.05em; }
 }
+/* 20/11/2026: cards on the city page. `.v-paquetes .cuerpo` (40px 80px) is the page body, not the card body: it left a gap above and below every card. */
+.v-paquetes .prestador .cuerpo { padding-block: 0; }
+.prestador { padding: 14px 16px; margin: 12px 0; }
+.tabla-mirada td.vacio { color: var(--muted); }
+@media (max-width: 720px) { .tabla-mirada td.vacio { display: none; } }

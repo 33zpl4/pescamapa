@@ -136,7 +136,7 @@ function pm_llms_txt(): string {
 		}
 		$ciudades[] = pm_llms_item( 'Guías de pesca en ' . $d['nombre'], pm_url_guias( $d['clave'], 'es' ), count( $lista ) . ' fichas (guías, alojamientos y salidas), qué incluye cada una y las tarifas que el propio prestador publica, con fecha. Las consultas van por el formulario de Pescamapa.', pm_alternas_guias( $d['clave'] ) );
 		foreach ( $lista as $r ) {
-			$partes = [ implode( ', ', array_map( fn( $t ) => pm_opcion( 'tipo', $t, 'es' ), $r['tipo'] ) ) ];
+			$partes = array_filter( [ implode( ', ', array_map( fn( $t ) => pm_opcion( 'tipo', $t, 'es' ), $r['tipo'] ) ) ] ); // no empty first part: a card without type must not start with "; "
 			if ( $r['modalidades'] ) {
 				$partes[] = implode( ', ', array_map( fn( $k ) => pm_opcion( 'modalidad', $k, 'es' ), $r['modalidades'] ) );
 			}
