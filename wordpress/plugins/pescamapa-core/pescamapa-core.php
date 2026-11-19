@@ -18,6 +18,30 @@ const PM_VERSION = '1.0.0';
 define( 'PM_DIR', plugin_dir_path( __FILE__ ) );
 define( 'PM_URL', plugin_dir_url( __FILE__ ) );
 
+/*
+ * Errores de PHP (19/11/2026): nunca a la página, siempre al registro.
+ * El servidor tiene display_errors=On (php.ini de aaPanel); un aviso llegó a la portada con rutas internas.
+ * Solo para peticiones web (no WP-CLI: ahí los errores deben verse en la salida de wp-script y deploy-wp).
+ * El registro va fuera de la raíz pública (/www/wwwlogs, el de nginx/Apache de aaPanel) y deploy-wp lo lee tras cada deploy.
+ * Si ese directorio no existe o no es escribible no se toca error_log: queda el de PHP del servidor.
+ * error_reporting E_ALL: con WP_DEBUG=false WordPress deja afuera notices y deprecations; aquí se registran (sin mostrarse).
+ */
+if ( ! defined( 'PM_ERROR_LOG' ) ) {
+	define( 'PM_ERROR_LOG', '/www/wwwlogs/pescamapa-php-errors.log' );
+}
+if ( 'cli' !== PHP_SAPI && ! ( defined( 'WP_CLI' ) && WP_CLI ) ) {
+	@ini_set( 'display_errors', '0' ); // phpcs:ignore WordPress.PHP.IniSet
+	@ini_set( 'html_errors', '0' ); // phpcs:ignore WordPress.PHP.IniSet
+	@ini_set( 'log_errors', '1' ); // phpcs:ignore WordPress.PHP.IniSet
+	error_reporting( E_ALL ); // phpcs:ignore WordPress.PHP.DevelopmentFunctions
+	$pm_dir_log = dirname( PM_ERROR_LOG );
+	// Respeta WP_DEBUG_LOG si alguien lo activó (ya fijó su propio error_log).
+	if ( ! ( defined( 'WP_DEBUG_LOG' ) && WP_DEBUG_LOG ) && is_dir( $pm_dir_log ) && is_writable( $pm_dir_log ) && ( ! file_exists( PM_ERROR_LOG ) || is_writable( PM_ERROR_LOG ) ) ) {
+		@ini_set( 'error_log', PM_ERROR_LOG ); // phpcs:ignore WordPress.PHP.IniSet
+	}
+	unset( $pm_dir_log );
+}
+
 require PM_DIR . 'inc/i18n.php';
 require PM_DIR . 'inc/tipos.php';
 require PM_DIR . 'inc/campos.php';

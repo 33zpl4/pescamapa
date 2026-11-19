@@ -52,6 +52,18 @@ jobs:
           URL="${{ secrets.WP_URL }}"; [[ -n "$URL" ]] || URL="https://$(basename "$WP")"
           echo "WP_URL=${URL%/}" >> "$GITHUB_ENV"
 
+      - name: Mark the PHP error log (before the deploy)
+        run: |
+          # Registro de PHP fuera de la web (pescamapa-core/pescamapa-core.php: PM_ERROR_LOG). Se guarda el tamaño actual:
+          # el paso "Check the PHP error log" lee solo lo escrito después (independiente de la zona horaria del registro).
+          LOG=/www/wwwlogs/pescamapa-php-errors.log
+          OFF=$(ssh wp "if [ -f '$LOG' ]; then stat -c %s '$LOG'; else echo 0; fi")
+          [[ "$OFF" =~ ^[0-9]+$ ]] || OFF=0
+          echo "PM_LOG=$LOG" >> "$GITHUB_ENV"
+          echo "PM_LOG_OFFSET=$OFF" >> "$GITHUB_ENV"
+          echo "PM_LOG_SINCE=$(date -u +%Y-%m-%dT%H:%M:%SZ)" >> "$GITHUB_ENV"
+          echo "Registro $LOG: $OFF bytes antes del deploy"
+
       - name: Upload plugin and theme
         run: |
           echo "$(date -u +%Y-%m-%dT%H:%M:%SZ) ${GITHUB_SHA::7}" > wordpress/themes/pescamapa/build.txt
@@ -141,3 +153,24 @@ jobs:
           check /especies/surubi/ 200
           check /en/species/golden-dorado/ 200
           exit $fail
+
+      - name: Check the PHP error log (written since the start of the job)
+        run: |
+          # Segunda red (19/11/2026): el HTML solo muestra lo que se imprime; el registro tiene lo que PHP anota aunque la página no lo muestre.
+          # Falla con PHP Warning/Notice/Deprecated/Fatal/Parse que nombren el tema o pescamapa-core; los de otros plugins o del core solo se informan.
+          nuevo=$(ssh wp "LOG='$PM_LOG' OFF='$PM_LOG_OFFSET' bash -s" <<'EOS'
+          if [ -f "$LOG" ]; then
+            s=$(stat -c %s "$LOG"); o=$OFF
+            [ "$s" -lt "$o" ] && o=0
+            tail -c +$((o+1)) "$LOG"
+          fi
+          EOS
+          )
+          lineas=$(printf '%s' "$nuevo" | grep -c . || true)
+          echo "Registro leído: $lineas líneas escritas desde $PM_LOG_SINCE (offset $PM_LOG_OFFSET bytes; $PM_LOG)"
+          err='PHP (Warning|Notice|Deprecated|Fatal error|Parse error)'
+          propios=$(printf '%s\n' "$nuevo" | grep -E "$err" | grep -E 'wp-content/(themes/pescamapa|plugins/pescamapa-core)/' || true)
+          otros=$(printf '%s\n' "$nuevo" | grep -E "$err" | grep -vE 'wp-content/(themes/pescamapa|plugins/pescamapa-core)/' || true)
+          if [[ -n "$otros" ]]; then echo "⚠ Avisos de otros plugins o del core (solo se informan, $(printf '%s\n' "$otros" | grep -c .)):"; printf '%s\n' "$otros" | head -10 | cut -c1-300; fi
+          if [[ -n "$propios" ]]; then echo "✖ PHP anotó errores en el tema o en pescamapa-core:"; printf '%s\n' "$propios" | head -20 | cut -c1-400; exit 1; fi
+          echo "✓ Sin errores de PHP del tema ni de pescamapa-core en el registro"

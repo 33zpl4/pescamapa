@@ -13,6 +13,7 @@
  * Se leen como máximo 1,5 MB por página, timeout 15 s.
  * wp-script.yml copia ese txt al servidor junto con el script (/tmp/pm-script-urls.txt).
  * Por URL imprime: status, redirección final, <title>, meta description, nº de h1, tipos de JSON-LD y las cadenas pedidas.
+ * Al final imprime el registro de PHP (últimas 20 entradas de la última hora del tema o pescamapa-core; ver docs/wordpress.md).
  * Uso: Run wp-script con script = leer-vivo (no hace falta `aplicar`: no escribe).
  */
 $candidatos = [ '/tmp/pm-script-urls.txt', __DIR__ . '/leer-vivo-urls.txt' ];
@@ -200,6 +201,40 @@ foreach ( $lineas as $linea ) {
 				echo "    (sin coincidencias)\n";
 			}
 		}
+	}
+}
+
+// Registro de PHP (19/11/2026): últimas 20 entradas de la última hora que mencionen el tema o pescamapa-core. Solo lectura.
+// El registro está fuera de la web (PM_ERROR_LOG, ver docs/wordpress.md). Si no se puede leer desde PHP, lo dice.
+echo "\n== Registro de PHP (última hora, tema y pescamapa-core)\n";
+$pm_log = defined( 'PM_ERROR_LOG' ) ? PM_ERROR_LOG : '';
+if ( '' === $pm_log || ! is_file( $pm_log ) || ! is_readable( $pm_log ) ) {
+	echo '  (registro no legible o todavía no existe: ' . ( '' === $pm_log ? 'PM_ERROR_LOG sin definir' : $pm_log ) . ")\n";
+} else {
+	$tam   = filesize( $pm_log );
+	$cola  = (string) file_get_contents( $pm_log, false, null, max( 0, $tam - 524288 ) );
+	$desde = time() - 3600;
+	$hits  = [];
+	foreach ( preg_split( '/\R/', $cola ) as $l ) {
+		if ( ! preg_match( '#^\[(\d{2}-\w{3}-\d{4} \d{2}:\d{2}:\d{2}) UTC\] PHP (Warning|Fatal error|Notice|Deprecated|Parse error):\s*(.*)$#', $l, $m ) ) {
+			continue;
+		}
+		if ( ! preg_match( '#wp-content/(themes/pescamapa|plugins/pescamapa-core)/#', $m[3] ) ) {
+			continue;
+		}
+		$t = strtotime( $m[1] . ' UTC' );
+		if ( $t && $t < $desde ) {
+			continue;
+		}
+		// Sin la ruta del servidor: desde wp-content en adelante.
+		$hits[] = '  [' . $m[1] . ' UTC] ' . $m[2] . ': ' . preg_replace( '#/[^\s]*?(wp-content/)#', '$1', $m[3] );
+	}
+	echo '  ' . $pm_log . ' (' . $tam . " bytes). Entradas del tema o del plugin en la última hora: " . count( $hits ) . "\n";
+	foreach ( array_slice( $hits, -20 ) as $h ) {
+		echo mb_substr( $h, 0, 400 ) . "\n";
+	}
+	if ( $hits ) {
+		$fallos++;
 	}
 }
 
