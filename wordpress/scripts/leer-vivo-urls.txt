@@ -2,10 +2,14 @@
 # Las líneas con # y las vacías se ignoran. Lo lee wordpress/scripts/leer-vivo.php (solo lectura).
 # Las URLs anteriores ya fueron verificadas o descartadas: están en el historial de git.
 
-# 19/11/2026, lectura final del rediseño del bloque «Una sola consulta» (portada y formulario, es/en/pt).
-https://pescamapa.com/ | 10 consultas ; 1 consulta ; Pedir opciones ; opciones disponibles
-https://pescamapa.com/en/ | 10 inquiries ; 1 inquiry ; Request options
-https://pescamapa.com/pt/ | 10 consultas ; 1 consulta ; Pedir opções
-https://pescamapa.com/armar-viaje/ | 10 consultas ; 1 consulta ; Completar el pedido ; id="consulta"
-https://pescamapa.com/en/plan-your-trip/ | 10 inquiries ; 1 inquiry ; Complete the request
-https://pescamapa.com/pt/planejar-viagem/ | 10 consultas ; 1 consulta ; Completar o pedido
+# 19/11/2026, lectura final de las decisiones del dueño: modelo («lo armamos junto con los lugares y guías…»), sin personas en el JSON-LD de la portada,
+# sin «lo lee una persona», alt de Goya y Esquina, meta de Itatí sin «operador». Ausentes: Ayala, Justiniano; presente: la frase nueva del modelo.
+https://pescamapa.com/ | Ayala ; Justiniano ; lo armamos junto con los lugares y guías con los que trabajamos
+https://pescamapa.com/en/ | Ayala ; Justiniano ; we put it together with the places and guides we work with
+https://pescamapa.com/pt/ | Ayala ; Justiniano ; montamos junto com os lugares e guias com os quais trabalhamos
+https://pescamapa.com/armar-viaje/ | lo armamos junto con los lugares y guías con los que trabajamos ; lo lee una persona
+https://pescamapa.com/paquetes-de-pesca/esquina/ | armadas junto con lugares y guías de la zona ; reservás y pagás directo con ellos ; las salidas que armamos
+https://pescamapa.com/llms.txt | No vende el viaje ; lo arma junto con los lugares y guías ; Ayala ; Justiniano ; No vende viajes
+https://pescamapa.com/litoral/corrientes/pesca-en-goya/ | alt="Lancha de pesca con un guía en un riacho de Goya" ; alt="Goya, Corrientes"
+https://pescamapa.com/litoral/corrientes/pesca-en-esquina/ | alt="Dos botes de pesca en la orilla del río, en Esquina" ; alt="Esquina, Corrientes"
+https://pescamapa.com/litoral/corrientes/pesca-en-itati/ | lo que publica cada operador ; lo que publica cada uno || contexto: publica cada

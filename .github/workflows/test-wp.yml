@@ -955,9 +955,9 @@ jobs:
           check / 200 '/quienes-somos/'
           check /llms.txt 200 'quienes-somos'
           # 18/11/2026: llms.txt sin nombres de persona (owner ruling)
-          check /llms.txt 200 'No vende viajes' 'Hecho por'
-          check /llms.txt 200 'No vende viajes' 'Ayala'
-          check /llms.txt 200 'No vende viajes' 'Justiniano'
+          check /llms.txt 200 'No vende el viaje' 'Hecho por'
+          check /llms.txt 200 'No vende el viaje' 'Ayala'
+          check /llms.txt 200 'No vende el viaje' 'Justiniano'
           check /wp-sitemap-vistas-1.xml 200 'quienes-somos'
           check /llms.txt 200 'Qué se pesca cada mes y qué está vedado'
           check /llms.txt 200 'Para guías y lodges: sumar o reclamar una ficha'
