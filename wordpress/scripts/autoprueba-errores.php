@@ -38,6 +38,25 @@ if ( is_wp_error( $r ) ) {
 	}
 }
 
+// Diagnóstico (sin rutas de otros sitios): qué pudo impedir que el manejador corriera o que el registro se escribiera.
+if ( ! is_wp_error( $r ) ) {
+	$cab = [];
+	foreach ( [ 'server', 'cf-cache-status', 'age', 'x-cache', 'x-fastcgi-cache', 'cache-control', 'x-powered-by' ] as $h ) {
+		$v = wp_remote_retrieve_header( $r, $h );
+		if ( '' !== $v && ! is_array( $v ) ) {
+			$cab[] = "$h: $v";
+		}
+	}
+	echo 'Cabeceras: ' . ( $cab ? implode( ' | ', $cab ) : '(ninguna de interés)' ) . "\n";
+}
+$dir_log = '' !== $log ? dirname( $log ) : '';
+echo 'Diagnóstico: caché de objetos externa=' . ( wp_using_ext_object_cache() ? 'sí' : 'no' )
+	. '; directorio del registro existe=' . ( $dir_log && is_dir( $dir_log ) ? 'sí' : 'no' )
+	. ', escribible=' . ( $dir_log && is_writable( $dir_log ) ? 'sí' : 'no' )
+	. '; registro existe=' . ( $log && file_exists( $log ) ? 'sí' : 'no' )
+	. '; el plugin desplegado trae el manejador=' . ( false !== strpos( (string) file_get_contents( PM_DIR . 'pescamapa-core.php' ), 'pm_autoprueba' ) ? 'sí' : 'no' )
+	. '; portada trae el comentario de caché=' . ( preg_match( '#<!--[^>]*(cache|caché)[^>]*-->#i', $html, $mc ) ? mb_substr( $mc[0], 0, 120 ) : 'no' ) . "\n";
+
 // El transient se usa y se borra solo en el manejador; si sigue ahí, el manejador no corrió.
 $sigue = get_transient( 'pm_autoprueba' );
 delete_transient( 'pm_autoprueba' );
