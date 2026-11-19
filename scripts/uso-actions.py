@@ -4,6 +4,10 @@
 Se corre desde el sandbox con `gh` (no gasta minutos de Actions):
     python3 -I scripts/uso-actions.py            # mes en curso
     python3 -I scripts/uso-actions.py 2026-11-01 # desde una fecha
+    python3 -I scripts/uso-actions.py 2026-11-01 pescamapa,design-momuto  # varios repos privados
+
+Los minutos del plan (2.000/mes) son de la cuenta y los comparten los repos
+privados; los repos públicos (p. ej. momuto-api) no consumen minutos del plan.
 
 Minutos estimados = duración de cada run redondeada hacia arriba al minuto
 (incluye algo de cola, así que sobrestima). Calibración con la facturación
@@ -13,16 +17,20 @@ equivale a ~100 minutos estimados: los días por encima salen marcados.
 """
 import collections, datetime as dt, json, math, subprocess, sys
 
-REPO = "33zpl4/pescamapa"
+REPOS = (sys.argv[2] if len(sys.argv) > 2 else "pescamapa,design-momuto").split(",")
 USD_POR_MIN = 3.21 / 620  # facturado 15–19/11/2026 ÷ minutos estimados de esos días
 UMBRAL_USD = 0.50
 
 desde = sys.argv[1] if len(sys.argv) > 1 else dt.date.today().replace(day=1).isoformat()
-salida = subprocess.run(
-    ["gh", "run", "list", "-R", REPO, "-L", "2000", "--created", f">={desde}",
-     "--json", "workflowName,createdAt,startedAt,updatedAt,conclusion"],
-    capture_output=True, text=True, check=True).stdout
-runs = json.loads(salida)
+runs = []
+for repo in REPOS:
+    salida = subprocess.run(
+        ["gh", "run", "list", "-R", f"33zpl4/{repo}", "-L", "2000", "--created", f">={desde}",
+         "--json", "workflowName,createdAt,startedAt,updatedAt,conclusion"],
+        capture_output=True, text=True, check=True).stdout
+    for r in json.loads(salida):
+        r["workflowName"] = f"{repo}: {r['workflowName']}"
+        runs.append(r)
 fecha = lambda s: dt.datetime.fromisoformat(s.replace("Z", "+00:00"))
 
 dias = collections.defaultdict(lambda: collections.defaultdict(lambda: [0, 0, 0]))
