@@ -88,6 +88,7 @@ get_header(); ?>
 						pm_campos_fechas( true );
 						pm_chips( 'estadia', 'estadia', pm_t( 'viaje.estadia' ), $v( 'estadia' ) );
 						pm_campos_personas();
+						pm_chips( 'presupuesto', 'presupuesto', pm_t( 'viaje.presupuesto' ), $v( 'presupuesto' ), false, pm_t( 'viaje.presupuesto.ayuda' ) );
 						pm_chips( 'traeequipo', 'equipo_propio', pm_t( 'viaje.equipo' ), $v( 'equipo_propio' ) );
 						?>
 						<?php // Optional questions: closed by default, open when one has a value (data restored after an error). ?>
@@ -149,16 +150,7 @@ get_header(); ?>
 		</section>
 
 		<?php if ( 'ok' !== $resultado ) : ?>
-		<aside class="viaje-como" aria-labelledby="como-h">
-			<h2 id="como-h"><?php pm_e( 'viaje.como.h' ); ?></h2>
-			<ol>
-				<?php foreach ( [ 1, 2, 3 ] as $n ) : ?>
-					<li>
-						<strong><?php pm_e( "viaje.como.{$n}.t" ); ?></strong>
-						<span><?php pm_e( "viaje.como.{$n}.d" ); ?></span>
-					</li>
-				<?php endforeach; ?>
-			</ol>
+		<aside class="viaje-como">
 			<?php get_template_part( 'parciales/preguntas', null, [ 'id' => 'preguntas-h', 'nivel' => 'h3' ] ); ?>
 		</aside>
 		<?php endif; ?>

@@ -31,6 +31,7 @@ const PM_CONSULTA_CAMPOS = [
 	'duracion'  => [ 'Duración', 40 ],
 	'experiencia' => [ 'Experiencia', 40 ],
 	'alojamiento' => [ 'Alojamiento', 40 ],
+	'presupuesto' => [ 'Presupuesto por pescador y por día', 40 ],
 	'pais'      => [ 'País desde el que viaja', 60 ],
 	'fijo'      => [ 'Fijo (lo demás es flexible)', 120 ],
 	'equipo_propio' => [ 'Equipo propio', 80 ],
@@ -144,7 +145,7 @@ function pm_recibir_consulta(): void {
 		$clave = sanitize_key( wp_unslash( $_POST[ $campo ] ?? '' ) );
 		return isset( pm_ui()['opciones'][ $lista ][ $clave ] ) ? [ $clave, pm_opcion( $lista, $clave, 'es' ) ] : [ '', '' ];
 	};
-	foreach ( [ 'duracion' => 'duracion', 'experiencia' => 'experiencia', 'alojamiento' => 'alojamiento', 'equipo_propio' => 'traeequipo' ] as $campo => $lista ) {
+	foreach ( [ 'duracion' => 'duracion', 'experiencia' => 'experiencia', 'alojamiento' => 'alojamiento', 'presupuesto' => 'presupuesto', 'equipo_propio' => 'traeequipo' ] as $campo => $lista ) {
 		$datos[ $campo ] = $etiqueta_es( $campo, $lista )[1];
 	}
 	[ $estadia, $datos['estadia'] ]           = $etiqueta_es( 'estadia', 'estadia' );

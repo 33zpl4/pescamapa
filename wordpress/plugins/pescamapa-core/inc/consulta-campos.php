@@ -17,7 +17,7 @@ const PM_CONSULTA_MAX_TAMBIEN = 5;
 // --- What was typed before an error ---------------------------------------------------
 
 /** Posted names kept to refill the form after a validation error. */
-const PM_CONSULTA_PREVIO = [ 'nombre', 'contacto', 'contacto_via', 'contacto_email', 'contacto_tel', 'cuando', 'personas', 'pescadores', 'acompanantes', 'fecha_desde', 'fecha_hasta', 'flexibilidad', 'estadia', 'equipo_propio', 'duracion', 'experiencia', 'alojamiento', 'modalidad', 'especie', 'pais', 'mensaje', 'pm_destino' ];
+const PM_CONSULTA_PREVIO = [ 'nombre', 'contacto', 'contacto_via', 'contacto_email', 'contacto_tel', 'cuando', 'personas', 'pescadores', 'acompanantes', 'fecha_desde', 'fecha_hasta', 'flexibilidad', 'estadia', 'presupuesto', 'equipo_propio', 'duracion', 'experiencia', 'alojamiento', 'modalidad', 'especie', 'pais', 'mensaje', 'pm_destino' ];
 
 /** Keeps what was typed (no spam fields, nothing internal) for 30 minutes; returns the token for the redirect. */
 function pm_consulta_guardar_previo( array $errores ): string {

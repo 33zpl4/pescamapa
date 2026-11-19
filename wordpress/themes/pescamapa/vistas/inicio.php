@@ -48,13 +48,13 @@ get_header(); ?>
 		</div>
 	</div>
 
-	<?php get_template_part( 'parciales/destinos-mes', null, [ 'idioma' => $idioma ] ); ?>
-
 	<section class="section contraste-sec">
 		<div class="shell">
 			<?php get_template_part( 'parciales/contraste', null, [ 'id' => 'contraste-h' ] ); ?>
 		</div>
 	</section>
+
+	<?php get_template_part( 'parciales/destinos-mes', null, [ 'idioma' => $idioma ] ); ?>
 
 	<section class="section beneficios">
 		<div class="shell">

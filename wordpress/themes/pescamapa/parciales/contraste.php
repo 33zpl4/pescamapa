@@ -2,6 +2,7 @@
 /**
  * "Today / With Pescamapa" contrast block (owner, 18/11/2026; redesigned 19/11/2026): sells the utility (one inquiry instead of ten),
  * the number is the hook. Dimmed "today" box (10 inquiries, three crosses) vs. forest "with Pescamapa" box (1 inquiry, three ticks).
+ * The "with" column doubles as the how-it-works steps (19/11/2026: numbered, one phrase each), so the trip page has no separate steps block.
  * Shared by the home and the trip request page.
  * Args: `id` (heading id, unique per page), `nivel` (heading tag, h2 by default),
  * `cta` ('pedir' = button to the request form, default; 'form' = link to the #consulta anchor of the form on the same page).
@@ -30,11 +31,11 @@ $href  = 'form' === $cta ? '#consulta' : pm_url_viaje( pm_lang() );
 		<article class="con">
 			<p class="rotulo"><?php pm_e( 'contraste.con.t' ); ?></p>
 			<p class="gancho"><?php pm_e( 'contraste.con.n' ); ?></p>
-			<ul>
+			<ol>
 				<?php foreach ( [ 1, 2, 3 ] as $n ) : ?>
-					<li><span class="marca" aria-hidden="true">✓</span><span><?php pm_e( "contraste.con.$n" ); ?></span></li>
+					<li><span class="marca" aria-hidden="true"><?php echo (int) $n; ?></span><span><strong><?php pm_e( "contraste.con.$n" ); ?></strong><small><?php pm_e( "contraste.con.$n.d" ); ?></small></span></li>
 				<?php endforeach; ?>
-			</ul>
+			</ol>
 		</article>
 		<p class="contraste-cta"><a class="button primary" href="<?php echo esc_url( $href ); ?>"><?php pm_e( 'form' === $cta ? 'contraste.cta.form' : 'contraste.cta.pedir' ); ?></a></p>
 	</div>

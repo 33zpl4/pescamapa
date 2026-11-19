@@ -857,7 +857,7 @@ jobs:
           # Home repositioned 14/11/2026 (SABER + IR, written from the visitor): headline, question with buttons at the top and
           # at the end, three benefits, "what we do for you", the business in the small print, the sources count.
           check / 200 'Decinos qué querés pescar.'
-          check / 200 'Gratis y sin compromiso. Respuesta en 48 horas.'
+          check / 200 'Gratis y sin compromiso. Respuesta en 24–48 horas.'
           grep -c 'class="pregunta"' page.html | grep -qx 2 && echo "✓ la pregunta con botones está dos veces" || { echo "✖ la pregunta con botones no está exactamente dos veces"; fail=1; }
           awk '/id="pedido"/{f=1} f&&/class="pregunta"/{ok=1} END{exit !ok}' page.html && echo "✓ la pregunta se repite al final (después de #pedido)" || { echo "✖ falta la pregunta al final de la home"; fail=1; }
           grep -q '¿Qué querés pescar?' page.html || { echo "✖ falta ¿Qué querés pescar?"; fail=1; }
@@ -1082,7 +1082,7 @@ jobs:
           # Trip request page (/armar-viaje/): renders in 3 languages, preselects from the URL, saves the new fields as Spanish labels.
           check /armar-viaje/ 200 'Decinos qué querés pescar. Nosotros encontramos dónde.' 'PENDIENTE'
           check /armar-viaje/ 200 'name="fijo\[\]"'
-          check /armar-viaje/ 200 'Preguntamos y comparamos'
+          check /armar-viaje/ 200 'Les preguntamos a los lugares' 'Preguntamos y comparamos'
           check /armar-viaje/ 200 'sin tu nombre ni tu contacto'
           check /armar-viaje/ 200 'name="contacto_email"'
           check /armar-viaje/ 200 'Una sola consulta, en vez de diez' 'operadores'
@@ -1137,9 +1137,26 @@ jobs:
             check $r 200 'data-meses' 'data-meses hidden'
             grep -o '<input[^>]*name="contacto_email"[^>]*>' page.html | grep -qv required && echo "✓ $r: contacto_email sin required (sin JS lo valida el servidor)" || { echo "✖ $r: contacto_email con required"; fail=1; }
             check $r 200 'name="nombre" required'
+            check $r 200 'name="presupuesto"'
+            n=$(grep -o 'name="presupuesto"' page.html | wc -l); [[ "$n" == "5" ]] && echo "✓ $r: 5 opciones de presupuesto" || { echo "✖ $r: $n opciones de presupuesto (esperado 5)"; fail=1; }
+            ! grep -o '<input[^>]*name="presupuesto"[^>]*>' page.html | grep -q required && echo "✓ $r: presupuesto no es obligatorio" || { echo "✖ $r: presupuesto con required"; fail=1; }
+            # The how-it-works steps live in the contraste block (3 numbered steps), not in a separate block.
+            [[ "$(sed -n '/<article class="con">/,/<\/article>/p' page.html | grep -c '<li>')" == "3" ]] && echo "✓ $r: 3 pasos en el bloque contraste" || { echo "✖ $r: pasos del contraste"; fail=1; }
+            check $r 200 'class="contraste"' 'id="como-h"'
           done
+          check /armar-viaje/ 200 'Presupuesto por pescador y por día'
+          check /armar-viaje/ 200 'Hasta US\$ 150'
+          check /armar-viaje/ 200 'Más de US\$ 500'
+          check /pt/planejar-viagem/ 200 'Orçamento por pescador e por dia'
+          check /en/plan-your-trip/ 200 'Budget per angler per day'
+          check /en/plan-your-trip/ 200 'More than US\$ 500'
+          check /armar-viaje/ 200 'Contanos tu viaje'
+          check /armar-viaje/ 200 'Te mandamos las opciones comparadas en 24–48 horas'
+          check /pt/planejar-viagem/ 200 'Enviamos as opções comparadas em 24–48 horas'
+          check /en/plan-your-trip/ 200 'We send you the options, compared, within 24–48 hours'
+          check / 200 'Te mandamos las opciones comparadas en 24–48 horas'
           check /armar-viaje/ 200 'Cuándo y quiénes'
-          check /armar-viaje/ 200 'Te respondemos en 48 horas'
+          check /armar-viaje/ 200 'Te mandamos las opciones en 24–48 horas. Tus datos quedan con nosotros hasta que elegís un lugar; ahí te conectamos. Pagás lo mismo que reservando directo.'
           check /armar-viaje/ 200 'Acompañantes (no pescan)'
           check /armar-viaje/ 200 'Pedir mis opciones'
           check /en/plan-your-trip/ 200 'Request my options'
@@ -1167,11 +1184,11 @@ jobs:
           check /litoral/corrientes/pesca-en-esquina/ 200 'Pedir opciones'
           check /armar-viaje/ 200 'incluidos los waders'
           check /pt/planejar-viagem/ 200 'Quando e quem'
-          check /pt/planejar-viagem/ 200 'Respondemos em 48 horas'
+          check /pt/planejar-viagem/ 200 'Enviamos as opções em 24–48 horas. Seus dados ficam conosco até você escolher um lugar'
           check /en/plan-your-trip/ 200 'When and who'
           check /en/plan-your-trip/ 200 'Do you bring your own tackle?'
           check /en/plan-your-trip/ 200 'waders included'
-          check /en/plan-your-trip/ 200 'We reply within 48 hours'
+          check /en/plan-your-trip/ 200 'We send you the options within 24–48 hours. Your details stay with us until you choose a place'
           # "What is fixed" now offers species and place (dates and stay have their own fields).
           check /en/plan-your-trip/ 200 'value="lugar"' 'viaje-fijo-estadia'
           check /armar-viaje/ 200 'name="nombre"' 'name="cuando"'
@@ -1189,6 +1206,20 @@ jobs:
           for par in "fecha_desde:$D1" "fecha_hasta:$D2" "flexibilidad:± una semana" "estadia:2–3 días" "pescadores:1" "acompanantes:1" "equipo_propio:No, necesito todo (incluidos los waders)" "fijo:Especie, Lugar" "contacto_via:whatsapp" "contacto:+1 (555) 123-4567"; do
             igual "meta ${par%%:*}" "$(meta "$n1" "${par%%:*}")" "${par#*:}"
           done
+          # Budget per angler per day (19/11/2026): optional, whitelisted, stored as the Spanish label, in the notice and the admin box.
+          loc=$(enviar -d nombre=Presu -d contacto_via=email -d contacto_email=presu@example.com -d presupuesto=150-300 -d pm_destino=goya)
+          [[ "$loc" == *"consulta=ok"* ]] && echo "✓ presupuesto → ok" || { echo "✖ presupuesto: $loc"; fail=1; }
+          n8=$(wp --path="$WP" post list --post_type=pm_consulta --post_status=private --s=Presu --format=ids | head -n1)
+          igual "presupuesto guardado" "$(meta "$n8" presupuesto)" "US\$ 150–300"
+          igual "presupuesto en el aviso y la caja del admin" "$(wp --path="$WP" eval '$d = pm_consulta_datos( '"$n8"' ); echo $d["Presupuesto por pescador y por día"] ?? "";')" "US\$ 150–300"
+          loc=$(enviar -d nombre=PresuMala -d contacto_via=email -d contacto_email=presumala@example.com -d presupuesto=gratis)
+          [[ "$loc" == *"consulta=ok"* ]] && echo "✓ presupuesto inventado no rechaza el pedido" || { echo "✖ presupuesto inventado: $loc"; fail=1; }
+          n9=$(wp --path="$WP" post list --post_type=pm_consulta --post_status=private --s=PresuMala --format=ids | head -n1)
+          igual "presupuesto inventado ignorado" "$(meta "$n9" presupuesto)" ""
+          igual "sin presupuesto: el pedido sigue sin el campo" "$(meta "$n1" presupuesto)" ""
+          loc=$(enviar -d nombre=PresuError -d contacto_via=whatsapp -d contacto_tel=abc -d presupuesto=mas-500)
+          curl -sS -o page.html "$loc"
+          grep -q 'value="mas-500" checked' page.html && echo "✓ tras el error se conserva el presupuesto" || { echo "✖ el presupuesto no volvió tras el error"; fail=1; }
           # "I do not know yet": months instead of dates; a month outside the next 12 is ignored.
           M1=$(date -d "$(date +%Y-%m-01) +2 month" +%Y-%m); M2=$(date -d "$(date +%Y-%m-01) +3 month" +%Y-%m)
           loc=$(enviar -d nombre=Meses -d contacto_via=email -d contacto_email=meses@example.com -d contacto_tel= -d flexibilidad=nose -d "meses[]=$M2" -d "meses[]=$M1" -d "meses[]=1999-01" -d pescadores=3)
@@ -1247,7 +1278,7 @@ jobs:
           ! grep -q 'id="viaje-tambien-esquina"' page.html && echo "✓ el destino elegido no se ofrece como «también»" || { echo "✖ se ofrece el destino elegido"; fail=1; }
           ! grep -q 'value="inventada"' page.html && echo "✓ una clave inventada en ?tambien= se ignora" || { echo "✖ clave inventada en la página"; fail=1; }
           check /armar-viaje/ 200 'Qué le preguntamos a cada lugar por vos'
-          check /armar-viaje/ 200 'Las respuestas llegan juntas, en hasta 48 horas, y reservás directo con el que elijas.'
+          check /armar-viaje/ 200 'Las respuestas llegan juntas, en 24–48 horas, y reservás directo con el que elijas.'
           check /en/plan-your-trip/ 200 'What we ask each place for you'
           check /pt/planejar-viagem/ 200 'O que perguntamos a cada lugar por você'
           loc=$(enviar -d nombre=Tambien -d contacto_via=email -d contacto_email=tambien@example.com -d pm_destino=esquina -d "destinos_extra[]=$otro" -d 'destinos_extra[]=esquina' -d 'destinos_extra[]=inventada' -d "destinos_extra[]=$otro")
@@ -1322,6 +1353,8 @@ jobs:
           check /litoral/corrientes/pesca-en-esquina/ 200 'id="preguntas"' 'barra-meses'
           # Species line on destination cards (province hub, 19/11/2026): the guide's first two species, named from the species posts.
           check /litoral/corrientes/ 200 'class="especies-linea">Dorado, Surubí<'
+          # Province list: the photo link never contains another link (a credit with links nested in <a class="foto"> broke the layout).
+          perl -0777 -ne 'exit( /<a class="foto"[^>]*>(?:(?!<\/a>).)*?<a /s ? 1 : 0 )' page.html && echo "✓ provincia: sin enlaces anidados en la foto" || { echo "✖ provincia: <a> dentro de <a class=\"foto\">"; fail=1; }
           # "Where to go this month" on the home (19/11/2026): needs two guides in season today; dates are relative to today so the test never goes stale.
           wp --path="$WP" eval '
             $hoy = new DateTimeImmutable( "now", new DateTimeZone( "America/Argentina/Buenos_Aires" ) );
@@ -1336,6 +1369,8 @@ jobs:
           wp --path="$WP" transient delete --all >/dev/null
           mes=$(wp --path="$WP" eval '$m = (int) ( new DateTimeImmutable( "now", new DateTimeZone( "America/Argentina/Buenos_Aires" ) ) )->format( "n" ); echo pm_mes_nombre( $m, "es" ) . "|" . pm_mes_nombre( $m, "pt" ) . "|" . pm_mes_nombre( $m, "en" );')
           check / 200 'id="este-mes"'
+          # Home order (19/11/2026): the «Una sola consulta» contraste block comes first after the strip, the month block right after it.
+          [[ $(grep -n 'id="contraste-h"' page.html | head -n1 | cut -d: -f1) -lt $(grep -n 'id="este-mes"' page.html | head -n1 | cut -d: -f1) ]] && echo "✓ home: contraste antes de «Dónde conviene ir»" || { echo "✖ home: el bloque del mes va antes del contraste"; fail=1; }
           check / 200 "Dónde conviene ir en ${mes%%|*}"
           check / 200 'Mejor época, según Operador de prueba'
           check / 200 'Temporada abierta'
