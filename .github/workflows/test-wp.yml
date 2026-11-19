@@ -1066,7 +1066,7 @@ jobs:
           check /llms.txt 200 'Hoy las guías y notas publicadas citan [0-9]* fuentes distintas'
           check /quienes-somos/ 200 'Cómo empezó'
           check /quienes-somos/ 200 'id="como-funciona"'
-          check /quienes-somos/ 200 'no vende el viaje'
+          check /quienes-somos/ 200 'Reservás y pagás directo con el lugar o el guía que elijas' 'no vende el viaje'
           check /en/about/ 200 'The hard part of a fishing trip is not the fishing'
           # Inquiry through the real form (pm_t in the past: passes the timing check).
           loc=$(curl -sS -o /dev/null -w '%{http_code} %{redirect_url}' \
