@@ -375,17 +375,18 @@ footer .negocio a { color: var(--white); text-decoration: underline; text-underl
 .v-guias .mirada > .note { margin: 0 0 12px; max-width: 72ch; }
 .tabla-mirada { overflow-x: auto; }
 .tabla-mirada table { width: 100%; border-collapse: collapse; font-size: var(--fs-small); background: var(--white); border: 1px solid var(--line-strong); border-radius: var(--radius); }
-.tabla-mirada th, .tabla-mirada td { text-align: left; vertical-align: top; padding: 10px 12px; border-bottom: 1px solid var(--line); }
-.tabla-mirada thead th { background: var(--cream); font-weight: 700; }
-.tabla-mirada tbody th { font-weight: 700; }
-.tabla-mirada tbody th a { color: var(--moss); }
+.tabla-mirada table th, .tabla-mirada table td { text-align: left; vertical-align: top; padding: 10px 12px; border-bottom: 1px solid var(--line); font: 400 var(--fs-small)/1.45 var(--font-body); text-transform: none; letter-spacing: normal; }
+.tabla-mirada table td:nth-child(n+4) { min-width: 8.5em; }
+.tabla-mirada table thead th { background: var(--cream); font-weight: 700; color: var(--ink); }
+.tabla-mirada table tbody th { font-weight: 700; }
+.tabla-mirada table tbody th a { color: var(--moss); text-decoration: underline; text-underline-offset: 3px; }
 .tabla-mirada tbody tr:last-child > * { border-bottom: 0; }
 @media (max-width: 720px) {
 	.tabla-mirada thead { position: absolute; inline-size: 1px; block-size: 1px; overflow: hidden; clip-path: inset(50%); }
 	.tabla-mirada table, .tabla-mirada tbody, .tabla-mirada tr, .tabla-mirada th, .tabla-mirada td { display: block; }
 	.tabla-mirada tr { padding: 8px 0; border-bottom: 1px solid var(--line-strong); }
 	.tabla-mirada tbody tr:last-child { border-bottom: 0; }
-	.tabla-mirada th, .tabla-mirada td { border: 0; padding: 4px 12px; }
+	.tabla-mirada table th, .tabla-mirada table td { border: 0; padding: 4px 12px; }
 	.tabla-mirada td::before { content: attr(data-label) ': '; font-weight: 700; }
 }
 .v-guias .cta-opciones { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; margin: 0 0 24px; }
@@ -405,7 +406,6 @@ footer .negocio a { color: var(--white); text-decoration: underline; text-underl
 .v-viaje .viaje-como .preguntas-lugar li::before { content: none; }
 .v-viaje .viaje-como .preguntas-lugar li strong { font-size: inherit; }
 .v-viaje .viaje-como .preguntas-lugar .cierre { font-size: var(--fs-small); }
-@media (min-width: 901px) { .v-viaje .viaje-como { max-height: calc(100vh - 40px); overflow-y: auto; } }
 .pm-form .chips-radio > span[hidden] { display: none; }
 .v-viaje .tambien small { font-weight: 400; color: var(--muted); font-size: var(--fs-caption); }
 
