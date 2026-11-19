@@ -54,9 +54,9 @@ jobs:
 
       - name: Mark the PHP error log (before the deploy)
         run: |
-          # Registro de PHP fuera de la web (pescamapa-core/pescamapa-core.php: PM_ERROR_LOG). Se guarda el tamaño actual:
+          # Registro de PHP en wp-content/pm-logs/errores-php.php (primer renglón `<?php exit; ?>`; pescamapa-core.php: PM_ERROR_LOG). Se guarda el tamaño actual:
           # el paso "Check the PHP error log" lee solo lo escrito después (independiente de la zona horaria del registro).
-          LOG=/www/wwwlogs/pescamapa-php-errors.log
+          LOG="$WP/wp-content/pm-logs/errores-php.php"
           OFF=$(ssh wp "if [ -f '$LOG' ]; then stat -c %s '$LOG'; else echo 0; fi")
           [[ "$OFF" =~ ^[0-9]+$ ]] || OFF=0
           echo "PM_LOG=$LOG" >> "$GITHUB_ENV"
@@ -162,7 +162,7 @@ jobs:
           if [ -f "$LOG" ]; then
             s=$(stat -c %s "$LOG"); o=$OFF
             [ "$s" -lt "$o" ] && o=0
-            tail -c +$((o+1)) "$LOG"
+            if [ "$o" -eq 0 ]; then tail -n +2 "$LOG"; else tail -c +$((o+1)) "$LOG"; fi  # sin la línea de cabecera
           fi
           EOS
           )
@@ -174,3 +174,16 @@ jobs:
           if [[ -n "$otros" ]]; then echo "⚠ Avisos de otros plugins o del core (solo se informan, $(printf '%s\n' "$otros" | grep -c .)):"; printf '%s\n' "$otros" | head -10 | cut -c1-300; fi
           if [[ -n "$propios" ]]; then echo "✖ PHP anotó errores en el tema o en pescamapa-core:"; printf '%s\n' "$propios" | head -20 | cut -c1-400; exit 1; fi
           echo "✓ Sin errores de PHP del tema ni de pescamapa-core en el registro"
+
+      - name: Check the PHP error log is not readable from the web
+        run: |
+          # El registro vive bajo wp-content (visible para la web): solo es seguro porque el archivo es un .php que sale en el primer renglón.
+          # Debe dar vacío (200 sin cuerpo), 403 o 404; cualquier texto de log en la respuesta falla.
+          URL="$WP_URL/wp-content/pm-logs/errores-php.php"
+          code=$(curl -sS -o /tmp/pm-log-http.txt -w '%{http_code}' --max-time 20 "$URL?pm_t=$(date +%s)")
+          bytes=$(wc -c < /tmp/pm-log-http.txt)
+          echo "GET registro: HTTP $code, $bytes bytes"
+          if grep -qE '\] PHP |PHP (Warning|Notice|Deprecated|Fatal error|Parse error)|<\?php' /tmp/pm-log-http.txt; then echo "✖ la respuesta contiene texto de log o código PHP"; exit 1; fi
+          if [[ "$code" == 200 && "$bytes" -gt 0 ]]; then echo "✖ 200 con $bytes bytes: el registro muestra contenido"; exit 1; fi
+          [[ "$code" == 200 || "$code" == 403 || "$code" == 404 ]] || { echo "✖ respuesta inesperada ($code)"; exit 1; }
+          echo "✓ El registro no es legible desde la web"

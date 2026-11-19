@@ -2,12 +2,12 @@
 # Las líneas con # y las vacías se ignoran. Lo lee wordpress/scripts/leer-vivo.php (solo lectura).
 # Las URLs anteriores ya fueron verificadas o descartadas: están en el historial de git.
 
-# 19/11/2026, «operador» fuera de las bajadas de guías (script copy-operadores-bajada-2026-11-19). Tras merge, Deploy WordPress verde y el wp-script aplicado.
-# Ausentes en portada y llms.txt: operador/operators. Presentes: la bajada nueva de Itatí, Iberá y río Santa Cruz.
-https://pescamapa.com/ | operador ; Qué dice la página de cada lugar y guía ; cuándo se sale a pescar
-https://pescamapa.com/en/ | operators ; operator ; What each place’s and guide’s page says ; when trips run
-https://pescamapa.com/pt/ | operador ; O que diz a página de cada lugar e guia ; quando se sai para pescar
-https://pescamapa.com/llms.txt | operador ; operators ; Qué dice la página de cada lugar y guía ; cuándo se sale a pescar ; What each place’s and guide’s page says
-https://pescamapa.com/litoral/corrientes/pesca-en-itati/ | Qué dice la página de cada lugar y guía ; cada operador
-https://pescamapa.com/en/litoral/corrientes/fishing-in-the-ibera-wetlands/ | according to each place ; according to each operator
-https://pescamapa.com/pt/patagonia/santa-cruz/pesca-no-rio-santa-cruz/ | quando se sai para pescar ; quando vão os operadores
+
+# 20/11/2026, lectura final: «operador» fuera de portada y bajadas (script copy-operadores-bajada-2026-11-19 aplicado) y registro de PHP nuevo.
+# Se espera «ausente» en operador/operators; en llms.txt se informa si queda alguno (los de la página para prestadores pg.* pueden quedar).
+https://pescamapa.com/ | operador ; operators
+https://pescamapa.com/en/ | operador ; operators
+https://pescamapa.com/pt/ | operador ; operators
+https://pescamapa.com/llms.txt | operador ; operators || contexto: operador ; operators
+https://pescamapa.com/litoral/corrientes/pesca-en-itati/ | cada operador ; Qué dice la página de cada lugar y guía
+https://pescamapa.com/litoral/corrientes/pesca-en-los-esteros-del-ibera/ | según cada operador ; según cada lugar

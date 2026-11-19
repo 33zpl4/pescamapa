@@ -16,6 +16,11 @@ $marca  = 'Pescamapa autoprueba controlada';
 $token = wp_generate_password( 32, false, false );
 set_transient( 'pm_autoprueba', $token, 300 );
 
+$estado_reg = get_option( 'pm_registro_estado', '(sin dato)' );
+echo "Estado del registro (opción pm_registro_estado): {$estado_reg}\n";
+if ( 0 !== strpos( (string) $estado_reg, 'ok' ) ) {
+	$fallas[] = 'el plugin no pudo preparar el registro: ' . $estado_reg;
+}
 $offset = ( '' !== $log && is_file( $log ) ) ? (int) filesize( $log ) : 0;
 $url    = add_query_arg( [ 'pm_autoprueba' => $token, 'pm_t' => time() ], home_url( '/' ) );
 $r      = wp_remote_get( $url, [ 'timeout' => 20, 'redirection' => 3, 'user-agent' => 'Pescamapa-autoprueba/1.0', 'sslverify' => true ] );
@@ -102,6 +107,28 @@ if ( '' === $log || ! is_file( $log ) || ! is_readable( $log ) ) {
 			echo "El paso del deploy la detectaría (PHP Warning + ruta de pescamapa-core).\n";
 		}
 		echo 'Línea del registro: ' . mb_substr( preg_replace( '#/[^\s]*?(wp-content/)#', '$1', $linea ), 0, 300 ) . "\n";
+	}
+}
+
+// 4) El registro (que ya tiene la línea de la autoprueba) no debe poder leerse desde la web: vacío, 403 o 404.
+if ( '' !== $log ) {
+	$url_log = content_url( 'pm-logs/' . basename( $log ) );
+	$rl      = wp_remote_get( add_query_arg( 'pm_t', time(), $url_log ), [ 'timeout' => 20, 'redirection' => 0, 'user-agent' => 'Pescamapa-autoprueba/1.0', 'sslverify' => true ] );
+	if ( is_wp_error( $rl ) ) {
+		$fallas[] = 'no se pudo pedir la URL pública del registro: ' . $rl->get_error_message();
+	} else {
+		$cl = (int) wp_remote_retrieve_response_code( $rl );
+		$bl = (string) wp_remote_retrieve_body( $rl );
+		echo "URL pública del registro: HTTP {$cl}, " . strlen( $bl ) . " bytes\n";
+		if ( preg_match( '#\] PHP |PHP (Warning|Notice|Deprecated|Fatal error|Parse error)|<\?php|autoprueba controlada#i', $bl ) ) {
+			$fallas[] = 'la URL pública del registro MUESTRA texto del registro';
+		} elseif ( 200 === $cl && '' !== $bl ) {
+			$fallas[] = 'la URL pública del registro responde 200 con contenido';
+		} elseif ( ! in_array( $cl, [ 200, 403, 404 ], true ) ) {
+			$fallas[] = "la URL pública del registro respondió {$cl} (se esperaba vacío, 403 o 404)";
+		} else {
+			echo "OK: la URL pública del registro no muestra contenido.\n";
+		}
 	}
 }
 
