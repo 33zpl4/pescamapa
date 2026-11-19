@@ -9,6 +9,7 @@ Read-only towards both services. A station that fails is left out with a warning
 only when nothing at all could be read (so a broken source is never published as 'all fine').
 """
 import json, sys, time, datetime as dt
+from concurrent.futures import ThreadPoolExecutor
 from urllib.request import Request, urlopen
 from urllib.parse import urlencode
 
@@ -23,7 +24,7 @@ def get_json(url, intentos=3):
     for i in range(intentos):
         try:
             req = Request(url, headers={"User-Agent": "pescamapa-rio/1.0 (+https://pescamapa.com)"})
-            with urlopen(req, timeout=90) as r:
+            with urlopen(req, timeout=45) as r:
                 return json.loads(r.read().decode("utf-8"))
         except Exception as e:  # noqa: BLE001 - report and retry
             ultimo = e
@@ -81,23 +82,31 @@ def main(salida):
     cfg = json.load(open(CONFIG))["destinos"]
     hoy = dt.datetime.now(dt.timezone.utc).astimezone(dt.timezone(dt.timedelta(hours=-3))).date()
     estaciones = {e["id"]: e for e in get_json(f"{INA}/obs/puntual/estaciones?format=json")}
-    out, leidos = {}, 0
-    for clave, c in cfg.items():
-        item = {}
+    # Requests run in parallel threads: the ~36 calls are independent and the time went to waiting on INA
+    # (24 s on a quiet day, 3.5 min on a slow one, sequentially). Results are collected in config order.
+    def leer(item):
+        clave, c = item
+        res, avisos = {}, []
         if c.get("estacion"):
             try:
                 niveles = estaciones.get(c["estacion"], {})
-                item["rio"] = {"estacion": c["estacion_nombre"], "curso": c["rio"], **altura(c["estacion"], niveles, hoy)}
-                leidos += 1
+                res["rio"] = {"estacion": c["estacion_nombre"], "curso": c["rio"], **altura(c["estacion"], niveles, hoy)}
             except Exception as e:  # noqa: BLE001
-                print(f"AVISO {clave}: altura no disponible ({e})", file=sys.stderr)
+                avisos.append(f"AVISO {clave}: altura no disponible ({e})")
         try:
-            item["clima"] = clima(c["lat"], c["lon"])
-            leidos += 1
+            res["clima"] = clima(c["lat"], c["lon"])
         except Exception as e:  # noqa: BLE001
-            print(f"AVISO {clave}: clima no disponible ({e})", file=sys.stderr)
-        if item:
-            out[clave] = item
+            avisos.append(f"AVISO {clave}: clima no disponible ({e})")
+        return clave, res, avisos
+
+    out, leidos = {}, 0
+    with ThreadPoolExecutor(max_workers=8) as ex:
+        for clave, item, avisos in ex.map(leer, cfg.items()):
+            for a in avisos:
+                print(a, file=sys.stderr)
+            leidos += len(item)
+            if item:
+                out[clave] = item
     if not leidos:
         sys.exit("ERROR: no se pudo leer nada (ni altura ni clima); no se publica.")
     datos = {"capturado": dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"), "destinos": out}

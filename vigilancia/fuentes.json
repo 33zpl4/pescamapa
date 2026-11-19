@@ -21,7 +21,8 @@
 		"url": "https://corrientes.tur.ar/corrientes-suscribio-el-acuerdo-regional-para-el-reconocimiento-de-licencias-de-pesca-deportiva-con-devolucion-en-el-litoral/",
 		"vigilar": "texto",
 		"afecta": "Qué licencias se reconocen (FAQ de licencia)",
-		"accion": "Revisar la FAQ '¿Me sirve la licencia de otra provincia?'."
+		"accion": "Revisar la FAQ '¿Me sirve la licencia de otra provincia?'.",
+		"hasta": "Publicación anterior"
 	},
 	{
 		"id": "ley-6730",
@@ -37,7 +38,16 @@
 		"url": "https://www.pasodelapatria.gob.ar/?q=taxonomy%2Fterm%2F745",
 		"vigilar": "texto",
 		"afecta": "Documentación náutica y ROL (Paso de la Patria)",
-		"accion": "Revisar la sección de reglamento de la guía."
+		"accion": "Revisar la sección de reglamento de la guía.",
+		"contiene": [
+			"náutic",
+			"prefectura",
+			"embarcaci",
+			"documentaci",
+			"reglament",
+			"habilitaci",
+			"pesca"
+		]
 	},
 	{
 		"id": "pdlp-vedas",
@@ -45,7 +55,13 @@
 		"url": "https://www.pasodelapatria.gob.ar/?q=taxonomy%2Fterm%2F593",
 		"vigilar": "texto",
 		"afecta": "Vedas (línea genérica de la guía)",
-		"accion": "Si hay un aviso nuevo, confirmar con Recursos Naturales; la guía no lleva fechas ni km."
+		"accion": "Si hay un aviso nuevo, confirmar con Recursos Naturales; la guía no lleva fechas ni km.",
+		"contiene": [
+			"veda",
+			"pesca",
+			"dorado",
+			"recursos naturales"
+		]
 	},
 	{
 		"id": "pdlp-torneos",
@@ -53,7 +69,15 @@
 		"url": "https://pasodelapatria.gob.ar/?q=taxonomy%2Fterm%2F2326",
 		"vigilar": "texto",
 		"afecta": "Fecha de la próxima Fiesta del Dorado y Torneo Apertura",
-		"accion": "Si publican fecha, actualizar la FAQ y el calendario."
+		"accion": "Si publican fecha, actualizar la FAQ y el calendario.",
+		"contiene": [
+			"torneo",
+			"fiesta del dorado",
+			"fiesta nacional",
+			"inscripci",
+			"apertura",
+			"dorado"
+		]
 	},
 	{
 		"id": "turismo-pdlp",
@@ -61,7 +85,8 @@
 		"url": "https://corrientes.tur.ar/destinos/paso-de-la-patria/",
 		"vigilar": "texto",
 		"afecta": "Datos del destino y cómo llegar",
-		"accion": "Revisar el cuadro de datos."
+		"accion": "Revisar el cuadro de datos.",
+		"hasta": "Información reciente"
 	},
 	{
 		"id": "turismo-llegar",
@@ -186,10 +211,26 @@
 	{
 		"id": "goya-surubi",
 		"nombre": "Fiesta Nacional del Surubí (Goya)",
-		"url": "https://goyasurubi.com.ar/",
+		"url": "https://www.goyasurubi.com/index/",
 		"vigilar": "texto",
 		"afecta": "Torneos de Goya",
-		"accion": "Actualizar fechas y reglamento del torneo en la guía de Goya."
+		"accion": "Actualizar fechas y reglamento del torneo en la guía de Goya. (19/11/2026: la URL era goyasurubi.com.ar, que no es el sitio oficial; el oficial es goyasurubi.com.)"
+	},
+	{
+		"id": "caru-veda-dorado",
+		"nombre": "CARU: aviso de veda del dorado 2026 (1/9 al 31/12)",
+		"url": "https://caru.org.uy/nuevositio/2026/10/07/veda-del-dorado-2026-1-09-31-12/",
+		"vigilar": "texto",
+		"afecta": "Veda del dorado en el río Uruguay: guía de Concordia y notas de La Zona",
+		"accion": "Si cambian las fechas o el alcance, actualizar la guía de Concordia, la nota de La Zona y el pilar del dorado (hoy citan 1/9 al 31/12, Res. CARU 111/2023)."
+	},
+	{
+		"id": "concordia-pesca",
+		"nombre": "Municipalidad de Concordia: pesca deportiva (turismo)",
+		"url": "https://www.concordia.gob.ar/turismo/atractivos/pesca-deportiva",
+		"vigilar": "texto",
+		"afecta": "Guía de Concordia: sección «Lo que dice la Municipalidad» y veda del dorado (16/10 al 14/1 según la Municipalidad)",
+		"accion": "Comparar con la sección municipal de la guía; si cambia la fecha de la veda, revisar la FAQ «¿Cuándo es la veda del dorado en Concordia?»."
 	},
 	{
 		"id": "goya-municipio",
@@ -211,9 +252,10 @@
 		"id": "recnat-oficial",
 		"nombre": "Recursos Naturales de Corrientes (enlace oficial desde Turismo)",
 		"url": "https://recursosnaturales.corrientes.gob.ar/",
-		"vigilar": "texto",
+		"vigilar": "estado",
 		"afecta": "Reglamento, vedas y licencia de las tres guías",
-		"accion": "Responde con 404 en la raíz (22/10/2026): el sitio existe pero esa ruta no. Si sigue así, buscar la ruta vigente con Gemini/ChatGPT o quitarla."
+		"accion": "Solo avisa si cae. Es el enlace oficial que cita Turismo; da 502/404 desde que lo vigilamos y no hay reemplazo conocido: el sitio que sí responde y se vigila con texto es recnat-home (recnaturalesctes.gob.ar). Si vuelve a responder, pasar a texto.",
+		"conocida": "502 desde hace 9 semanas; no se encontró una ruta vigente"
 	},
 	{
 		"id": "lapaz-turismo",
@@ -229,23 +271,16 @@
 		"url": "https://lapaz.gob.ar/",
 		"vigilar": "estado",
 		"afecta": "La Paz: torneos y habilitaciones",
-		"accion": "Confirmar si responde; si sí, pasar a 'texto'."
+		"accion": "Solo avisa si cae. El servidor manda un certificado que no cierra con ninguna raíz de confianza; los navegadores también lo marcan. La información de La Paz se sigue por lapaz-turismo y er-licencia-tramite.",
+		"conocida": "certificado autofirmado (DEPTH_ZERO_SELF_SIGNED_CERT); no se desactiva la verificación TLS"
 	},
 	{
 		"id": "er-boletin",
 		"nombre": "Boletín Oficial de Entre Ríos",
-		"url": "https://boletinoficial.entrerios.gov.ar/",
+		"url": "https://www.entrerios.gov.ar/boletin/",
 		"vigilar": "estado",
 		"afecta": "La Paz: reglamento y vedas",
-		"accion": "Solo avisa si cae. Las normas nuevas se buscan con Gemini/ChatGPT."
-	},
-	{
-		"id": "er-tramites",
-		"nombre": "Entre Ríos: trámites",
-		"url": "https://www.entrerios.gov.ar/tramites",
-		"vigilar": "estado",
-		"afecta": "La Paz: licencia de pesca",
-		"accion": "URL sin confirmar (adivinada por el agente). Si responde, buscar el trámite de licencia."
+		"accion": "Solo avisa si cae. Las normas nuevas se buscan con Gemini/ChatGPT. (19/11/2026: boletinoficial.entrerios.gov.ar no existe, ENOTFOUND; el oficial que usamos es entrerios.gov.ar/boletin/.)"
 	},
 	{
 		"id": "er-noticias",
@@ -285,7 +320,8 @@
 		"url": "https://cazaypesca.neuquen.gob.ar/permisos",
 		"vigilar": "estado",
 		"afecta": "San Martín y Junín: permiso, valores y enlace de compra",
-		"accion": "Si responde, pasar a 'texto', leer los valores 2026-2027 y publicarlos en la guía (ronda 1, pregunta 1). Si no responde, el enlace de la guía está roto."
+		"accion": "Solo avisa si cae. La URL es la vigente (la prensa de octubre de 2026 la cita como el portal de compra de permisos 2026-2027), pero no responde desde los runners de GitHub: no es señal de que el enlace de la guía esté roto. Los valores 2026-2027 se leen en el reglamento patagónico (reglamento-patagonico) y en la prensa (nqn-prensa-permisos).",
+		"conocida": "timeout de conexión desde los runners (2+ semanas); la URL es la vigente según la prensa de octubre de 2026"
 	},
 	{
 		"id": "nqn-folleto-pesca",
