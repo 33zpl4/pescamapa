@@ -87,6 +87,16 @@ Días altos de noviembre (facturado según el panel del dueño; minutos estimado
 | 15/11 | US$ 0,87 | 19 Test WordPress con 11 fallidos: aserciones frágiles repetidas sin arreglar la causa |
 | 16/11 | US$ 1,63 | Programa del dorado: 29 Test WordPress con 15 fallidos (11 pushes en 25 min), 25 Investigar, 32 wp-script |
 
+**Reglas de operación sin desperdicio (dueño, 19/11/2026).** Los 2.000 minutos del plan son de la cuenta y los comparten los repos privados del dueño (pescamapa y design-momuto; momuto-api es público y no consume). En noviembre, pescamapa fue casi todo el consumo (~1.880 min estimados de ~1.980). El dueño acepta pagar excedente para no frenar, pero sin gasto inútil:
+- **Meta de pescamapa: ≤ 1.200 min por mes (~40 por día)**, para dejar margen al resto. Día de más de US$ 0,50 (~100 min) = alto: se explica qué pasó.
+- **Al empezar cada sesión de trabajo**, correr `python3 -I scripts/uso-actions.py` y mirar los días desde la última sesión.
+- **Por tarea:** un simulacro y una aplicación por script; una sola lectura `leer-vivo` con todas las URLs juntas; nada de corridas «por las dudas».
+- **Test WordPress solo para cambios de plugin o tema, una vez por PR.** Si falla: leer el log completo, arreglar todo y recién ahí volver a correrlo. Máximo dos corridas por PR; si hace falta una tercera, parar y revisar la causa.
+- **Fallas de infraestructura** (apt, red, SSH): un solo reintento.
+- **Cambios de solo documentación:** no disparan workflows; se agrupan con el resto del trabajo.
+- **Fijos a revisar:** River conditions (~4 min por día) y el informe semanal (~9 min): ver si se pueden acortar o si el informe se usa.
+- **En GitHub (dueño):** presupuesto de Actions con tope y alertas al 75 % y 90 %.
+
 Desde el recorte del 17/11 (Test WordPress solo por dispatch, `leer-vivo` en vez de Investigar, input `aplicar`, topes de tiempo), días de mucho trabajo quedaron en US$ 0,15 a 0,31. Lo que más gastaba: Test WordPress en cada push (y sus fallas en bucle), Investigar sitios con navegador, runs colgados sin tope y fallas de infraestructura sin tope de tiempo. Lo que queda fijo cada mes: River conditions (~4 min/día, ~120 min/mes), informe semanal (~9 min) y verify-live (~3 min/semana). Test WordPress obligatorio antes de mergear cambios de plugin o tema: ~8 a 10 min por PR.
 
 ## Minutos de Actions hasta el 1/12 (17/11/2026; fecha corregida el 19/11)
