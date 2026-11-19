@@ -2,14 +2,16 @@
 # Las líneas con # y las vacías se ignoran. Lo lee wordpress/scripts/leer-vivo.php (solo lectura).
 # Las URLs anteriores ya fueron verificadas o descartadas: están en el historial de git.
 
-# 19/11/2026, lectura final de las decisiones del dueño: modelo («lo armamos junto con los lugares y guías…»), sin personas en el JSON-LD de la portada,
-# sin «lo lee una persona», alt de Goya y Esquina, meta de Itatí sin «operador». Ausentes: Ayala, Justiniano; presente: la frase nueva del modelo.
-https://pescamapa.com/ | Ayala ; Justiniano ; lo armamos junto con los lugares y guías con los que trabajamos
-https://pescamapa.com/en/ | Ayala ; Justiniano ; we put it together with the places and guides we work with
-https://pescamapa.com/pt/ | Ayala ; Justiniano ; montamos junto com os lugares e guias com os quais trabalhamos
-https://pescamapa.com/armar-viaje/ | lo armamos junto con los lugares y guías con los que trabajamos ; lo lee una persona
-https://pescamapa.com/paquetes-de-pesca/esquina/ | armadas junto con lugares y guías de la zona ; reservás y pagás directo con ellos ; las salidas que armamos
-https://pescamapa.com/llms.txt | No vende el viaje ; lo arma junto con los lugares y guías ; Ayala ; Justiniano ; No vende viajes
+# 19/11/2026, lectura final de las decisiones del dueño (corrección iAhorro): sin la negación «no vendemos el viaje» fuera de legal y FAQ,
+# oferta en positivo («armamos la propuesta junto con…»), sin «lo lee una persona», sin personas en el JSON-LD de la portada,
+# alt de Goya y Esquina, meta de Itatí sin «operador». Ausentes: Ayala, Justiniano, no vendemos / no vende / do not sell / não vendemos.
+https://pescamapa.com/ | Ayala ; Justiniano ; Armamos la propuesta junto con ellos ; No vendemos ; ni cobramos la reserva
+https://pescamapa.com/en/ | Ayala ; Justiniano ; We put the proposal together with them ; We do not sell ; take the booking payment
+https://pescamapa.com/pt/ | Ayala ; Justiniano ; Montamos a proposta junto com eles ; Não vendemos ; nem cobramos a reserva
+https://pescamapa.com/armar-viaje/ | Armamos la propuesta junto con ; lo lee una persona ; No vendemos
+https://pescamapa.com/quienes-somos/ | Qué no hacemos ; No vendemos ; Cuando elegís reservás directo ; reservás directo con el que prefieras
+https://pescamapa.com/paquetes-de-pesca/esquina/ | armadas junto con lugares y guías de la zona ; reservás y pagás directo con ellos ; las salidas que armamos ; No vendemos
+https://pescamapa.com/llms.txt | se paga directo con el lugar ; No vende ; Ayala ; Justiniano
 https://pescamapa.com/litoral/corrientes/pesca-en-goya/ | alt="Lancha de pesca con un guía en un riacho de Goya" ; alt="Goya, Corrientes"
 https://pescamapa.com/litoral/corrientes/pesca-en-esquina/ | alt="Dos botes de pesca en la orilla del río, en Esquina" ; alt="Esquina, Corrientes"
 https://pescamapa.com/litoral/corrientes/pesca-en-itati/ | lo que publica cada operador ; lo que publica cada uno || contexto: publica cada
