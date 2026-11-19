@@ -24,10 +24,6 @@ get_header(); ?>
 			<h2 id="como-h"><?php pm_e( 'ns.como.h' ); ?></h2>
 			<p><?php pm_e( 'ns.como.p' ); ?></p>
 		</section>
-		<section aria-labelledby="no-h">
-			<h2 id="no-h"><?php pm_e( 'ns.no.h' ); ?></h2>
-			<p><?php pm_e( 'ns.no.p' ); ?></p>
-		</section>
 		<section id="como-funciona" aria-labelledby="plata-h">
 			<h2 id="plata-h"><?php pm_e( 'ns.plata.h' ); ?></h2>
 			<p><?php pm_e( 'ns.plata.p' ); ?></p>

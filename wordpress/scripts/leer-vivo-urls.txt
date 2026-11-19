@@ -2,10 +2,16 @@
 # Las líneas con # y las vacías se ignoran. Lo lee wordpress/scripts/leer-vivo.php (solo lectura).
 # Las URLs anteriores ya fueron verificadas o descartadas: están en el historial de git.
 
-# 19/11/2026, lectura final del rediseño del bloque «Una sola consulta» (portada y formulario, es/en/pt).
-https://pescamapa.com/ | 10 consultas ; 1 consulta ; Pedir opciones ; opciones disponibles
-https://pescamapa.com/en/ | 10 inquiries ; 1 inquiry ; Request options
-https://pescamapa.com/pt/ | 10 consultas ; 1 consulta ; Pedir opções
-https://pescamapa.com/armar-viaje/ | 10 consultas ; 1 consulta ; Completar el pedido ; id="consulta"
-https://pescamapa.com/en/plan-your-trip/ | 10 inquiries ; 1 inquiry ; Complete the request
-https://pescamapa.com/pt/planejar-viagem/ | 10 consultas ; 1 consulta ; Completar o pedido
+# 19/11/2026, lectura final de las decisiones del dueño (corrección iAhorro): sin la negación «no vendemos el viaje» fuera de legal y FAQ,
+# oferta en positivo («armamos la propuesta junto con…»), sin «lo lee una persona», sin personas en el JSON-LD de la portada,
+# alt de Goya y Esquina, meta de Itatí sin «operador». Ausentes: Ayala, Justiniano, no vendemos / no vende / do not sell / não vendemos.
+https://pescamapa.com/ | Ayala ; Justiniano ; Armamos la propuesta junto con ellos ; No vendemos ; ni cobramos la reserva
+https://pescamapa.com/en/ | Ayala ; Justiniano ; We put the proposal together with them ; We do not sell ; take the booking payment
+https://pescamapa.com/pt/ | Ayala ; Justiniano ; Montamos a proposta junto com eles ; Não vendemos ; nem cobramos a reserva
+https://pescamapa.com/armar-viaje/ | Armamos la propuesta junto con ; lo lee una persona ; No vendemos
+https://pescamapa.com/quienes-somos/ | Qué no hacemos ; No vendemos ; Cuando elegís reservás directo ; reservás directo con el que prefieras
+https://pescamapa.com/paquetes-de-pesca/esquina/ | armadas junto con lugares y guías de la zona ; reservás y pagás directo con ellos ; las salidas que armamos ; No vendemos
+https://pescamapa.com/llms.txt | se paga directo con el lugar ; No vende ; Ayala ; Justiniano
+https://pescamapa.com/litoral/corrientes/pesca-en-goya/ | alt="Lancha de pesca con un guía en un riacho de Goya" ; alt="Goya, Corrientes"
+https://pescamapa.com/litoral/corrientes/pesca-en-esquina/ | alt="Dos botes de pesca en la orilla del río, en Esquina" ; alt="Esquina, Corrientes"
+https://pescamapa.com/litoral/corrientes/pesca-en-itati/ | lo que publica cada operador ; lo que publica cada uno || contexto: publica cada

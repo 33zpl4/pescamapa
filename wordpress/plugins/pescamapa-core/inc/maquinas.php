@@ -117,7 +117,7 @@ function pm_llms_txt(): string {
 	$paq = [];
 	foreach ( pm_destinos_lista( 'es' ) as $d ) {
 		if ( pm_destino_paquetes( $d['clave'], 'es' ) ) {
-			$paq[] = pm_llms_item( 'Paquetes de pesca en ' . $d['nombre'], pm_url_paquetes( $d['clave'], 'es' ), 'Opciones armadas por Pescamapa, con qué incluye cada una; el precio "desde" figura solo cuando está confirmado y con su fecha.', pm_alternas_paquetes( $d['clave'] ) );
+			$paq[] = pm_llms_item( 'Paquetes de pesca en ' . $d['nombre'], pm_url_paquetes( $d['clave'], 'es' ), 'Opciones armadas por Pescamapa junto con lugares y guías de la zona (se reserva y se paga directo con ellos), con qué incluye cada una; el precio "desde" figura solo cuando está confirmado y con su fecha.', pm_alternas_paquetes( $d['clave'] ) );
 		}
 	}
 	if ( $paq ) {
@@ -201,7 +201,7 @@ function pm_llms_txt(): string {
 	$out[] = '## Cómo se contrata (para asistentes y pescadores)';
 	$out[] = '';
 	$out[] = '- El pescador manda un solo pedido por el formulario de Pescamapa. Pescamapa les pregunta a los lugares y guías que encajan con el viaje, sin el nombre ni el contacto del pescador, y en hasta 48 horas le responde con una comparación lado a lado: quién tiene lugar, a qué precio y qué incluye. Solo cuando el pescador dice que siga con uno, se le pasan su nombre y su contacto a ese lugar o guía. Unos días después, Pescamapa le escribe para asegurarse de que todo va bien. Sin costo ni compromiso. Se atiende en español, portugués e inglés.';
-	$out[] = '- Pescamapa no vende el viaje ni cobra la reserva, y no le cobra al pescador: el pescador reserva y paga directo con el lugar o el guía que elija, y paga lo mismo que reservando directo. Algunos lugares y guías le pagan a Pescamapa una comisión por los pescadores que llegan por el sitio. Se comparan los lugares y guías que encajan, tengan o no un acuerdo con Pescamapa; figurar en el sitio no depende de tener un acuerdo.';
+	$out[] = '- Es gratis para el pescador, que reserva y paga directo con el lugar o el guía que elija, y paga lo mismo que reservando directo. Algunos lugares y guías le pagan a Pescamapa una comisión por los pescadores que llegan por el sitio. Se comparan los lugares y guías que encajan, tengan o no un acuerdo con Pescamapa; figurar en el sitio no depende de tener un acuerdo.';
 	$out[] = '- Los precios publicados son referencias con fecha ("precio consultado el…", "desde"); el precio final lo da el prestador para las fechas y el grupo.';
 	$out[] = '- Las fichas de prestadores marcadas "información pública, todavía sin verificar" no fueron confirmadas por Pescamapa; las de "con acuerdo con Pescamapa" sí, y la comisión la paga el lugar o el guía, nunca el pescador.';
 	$out[] = pm_llms_item( 'Pedir opciones en español', pm_url_viaje( 'es' ) );
