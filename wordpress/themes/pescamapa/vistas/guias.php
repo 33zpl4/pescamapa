@@ -15,14 +15,11 @@ $a           = [ 'lugar' => $d['nombre'] ];
 $modificado  = get_post_modified_time( 'Y-m-d', true, $dp );
 $hay_paq     = (bool) pm_destino_paquetes( $clave, $idioma );
 
-// Short answer: how many of each type, and the dated rates the providers publish (at most three).
-$por_tipo = [];
-foreach ( $prestadores as $r ) {
-	foreach ( $r['tipo'] as $t ) {
-		$por_tipo[ $t ] = ( $por_tipo[ $t ] ?? 0 ) + 1;
-	}
-}
-$tipos   = implode( ' · ', array_map( fn( $t, $n ) => $n . ' × ' . pm_opcion( 'tipo', $t ), array_keys( $por_tipo ), $por_tipo ) );
+// Short answer: how many places, how many have an agreement with Pescamapa (consent cards), and the dated rates the providers publish (at most three).
+$n_lugares = count( $prestadores );
+$n_acuerdo = count( array_filter( $prestadores, fn( $r ) => ! empty( $r['consentimiento'] ) ) );
+$lugares   = pm_t( 1 === $n_lugares ? 'guias.resumen.lugares.uno' : 'guias.resumen.lugares.otros', [ 'n' => (string) $n_lugares ] );
+$con_acuerdo = $n_acuerdo > 0 ? pm_t( 1 === $n_acuerdo ? 'guias.resumen.acuerdo.uno' : 'guias.resumen.acuerdo.otros', [ 'a' => (string) $n_acuerdo ] ) : '';
 $precios = array_values( array_filter( $prestadores, fn( $r ) => $r['precio'] && $r['precio_fecha'] ) );
 // Request links: the main one preselects this destination; the second adds the neighbours that make sense to compare (?tambien=).
 $vecinas   = pm_destinos_para_comparar( $clave, $idioma );
@@ -90,12 +87,12 @@ get_header(); ?>
 		<section class="respuesta" aria-labelledby="respuesta-h">
 			<h2 id="respuesta-h"><?php pm_e( 'guias.resumen.h' ); ?></h2>
 			<ul>
-				<li><?php pm_e( 'guias.resumen.n', $a + [ 'n' => (string) count( $prestadores ), 'tipos' => $tipos ] ); ?></li>
+				<li><?php pm_e( 'guias.resumen.n', $a + [ 'lugares' => $lugares, 'acuerdo' => $con_acuerdo ] ); ?></li>
 				<?php if ( $precios ) : ?>
 					<li><?php pm_e( 'guias.resumen.precios' ); ?>
 						<ul>
 							<?php foreach ( array_slice( $precios, 0, 3 ) as $r ) : ?>
-								<li><a href="#prestador-<?php echo (int) $r['id']; ?>"><?php pm_e( 'guias.resumen.precio', [ 'precio' => $r['precio'], 'nombre' => $r['nombre'], 'cuando' => pm_fecha_relativa( $r['precio_fecha'], $idioma ) ] ); ?></a></li>
+								<li><a href="#prestador-<?php echo (int) $r['id']; ?>"><?php echo esc_html( $r['nombre'] ); ?></a>: <?php pm_e( 'guias.resumen.precio', [ 'precio' => pm_precio_corto( (string) $r['precio'] ), 'cuando' => pm_fecha_relativa( $r['precio_fecha'], $idioma ) ] ); ?></li>
 							<?php endforeach; ?>
 						</ul>
 					</li>
@@ -152,17 +149,19 @@ get_header(); ?>
 				get_template_part( 'parciales/prestador', null, $r + [ 'lugar' => $d['nombre'], 'pedir' => false ] ); // the request buttons are the one on top and the one after the cards
 			} ?>
 		</section>
+		<?php if ( $hay_paq ) : // Only when the destination has trips put together: no intro and lone link otherwise. ?>
 		<section class="armadas" aria-labelledby="armadas-h">
 			<h2 id="armadas-h"><?php pm_e( 'guias.paquetes.h' ); ?></h2>
 			<p><?php pm_e( 'guias.paquetes.p', $a ); ?></p>
 			<p>
-				<?php if ( $hay_paq ) : ?><a class="button dark" href="<?php echo esc_url( pm_url_paquetes( $clave, $idioma ) ); ?>"><?php pm_e( 'guias.paquetes.link', $a ); ?></a><?php endif; ?>
+				<a class="button dark" href="<?php echo esc_url( pm_url_paquetes( $clave, $idioma ) ); ?>"><?php pm_e( 'guias.paquetes.link', $a ); ?></a>
 				<a class="button" href="#consulta"><?php pm_e( 'guias.paquetes.pedir', $a ); ?></a>
 			</p>
 		</section>
+		<?php endif; ?>
 		<section class="faq" aria-labelledby="faq-h">
 			<h2 id="faq-h"><?php pm_e( 'guias.faq.h', $a ); ?></h2>
-			<?php foreach ( pm_guias_faqs( $d, $clave ) as $f ) : ?>
+			<?php foreach ( pm_guias_faqs( $d, $clave, $prestadores ) as $f ) : ?>
 				<h3><?php echo esc_html( $f['pregunta'] ); ?></h3>
 				<p><?php echo esc_html( $f['respuesta'] ); ?></p>
 			<?php endforeach; ?>

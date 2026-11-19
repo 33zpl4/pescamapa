@@ -268,6 +268,61 @@ function pm_prestadores_destino( string $destino, bool $con_borradores = false )
 	return $out;
 }
 
+/**
+ * A price text cut for the short answer (20/11/2026): up to the first sentence end or opening parenthesis. A period between two digits
+ * ("US$ 9.990") is part of the figure, not a sentence end. Trailing punctuation is trimmed; very long texts are cut at 110 characters.
+ */
+function pm_precio_corto( string $precio ): string {
+	$partes = preg_split( '/\s*\(|(?<!\d)\.(?!\d)/u', trim( $precio ), 2 );
+	$corto  = rtrim( (string) ( $partes[0] ?? '' ), " \t\n\r,;:." );
+	return mb_strlen( $corto ) > 110 ? rtrim( mb_substr( $corto, 0, 107 ), " ,;:." ) . '…' : $corto;
+}
+
+/**
+ * Is this card a weekly lodge programme? Rule (documented in docs/prestadores.md, "Preguntas de la guía por ciudad"): the card's capacity unit is
+ * "semana", or its programme, minimum stay, companion rate or price text names a week (semana / week; "semanas completas", "per week", "por semana").
+ */
+function pm_prestador_semanal( array $r ): bool {
+	if ( 'semana' === ( $r['capacidad_unidad'] ?? '' ) ) {
+		return true;
+	}
+	foreach ( [ 'programa', 'estadia', 'acompanante', 'precio' ] as $k ) {
+		if ( preg_match( '/\b(semanas?|weeks?|week-long|s[áa]bado a s[áa]bado|saturday to saturday)\b/iu', (string) ( $r[ $k ] ?? '' ) ) ) {
+			return true;
+		}
+	}
+	return false;
+}
+
+/**
+ * Does the city page talk about lodges by the week (true) or about boat and day outings (false)? Lodge version when at least one public card is a weekly
+ * programme and the weekly cards are at least as many as the cards that describe a boat (a boat text, or a capacity per boat). Mixed or no data: the
+ * boat and day version, which is the historical one.
+ * @param array<int, array<string, mixed>> $prestadores pm_prestadores_destino() rows
+ */
+function pm_guias_es_lodge( array $prestadores ): bool {
+	$semanales = 0;
+	$lanchas   = 0;
+	foreach ( $prestadores as $r ) {
+		if ( pm_prestador_semanal( $r ) ) {
+			++$semanales;
+		} elseif ( ! empty( $r['lancha'] ) || ( 'lancha' === ( $r['capacidad_unidad'] ?? '' ) && ! empty( $r['capacidad'] ) ) ) {
+			++$lanchas;
+		}
+	}
+	return $semanales > 0 && $semanales >= $lanchas;
+}
+
+/** The first card with a dated price, as "Place: short price (checked …)" in plain text for a FAQ answer; '' when none has one. */
+function pm_guias_ejemplo_precio( array $prestadores, string $idioma ): string {
+	foreach ( $prestadores as $r ) {
+		if ( ! empty( $r['precio'] ) && ! empty( $r['precio_fecha'] ) ) {
+			return ( $r['nombre'] ?? '' ) . ': ' . pm_t( 'guias.resumen.precio', [ 'precio' => pm_precio_corto( (string) $r['precio'] ), 'cuando' => pm_fecha_relativa( (string) $r['precio_fecha'], $idioma ) ], $idioma );
+		}
+	}
+	return '';
+}
+
 /** Most recent check date (Y-m-d) among the public cards: "verificado" or the price date. '' when none has one. */
 function pm_prestadores_consultada( array $prestadores ): string {
 	$max = '';

@@ -60,6 +60,8 @@ $resultado = pm_consulta_resultado();
 			// Same fields as the long form (/armar-viaje/): dates with the system calendar, how flexible, anglers and companions.
 			pm_campos_fechas( false, 'consulta' );
 			pm_campos_personas( 'consulta', false );
+			// Optional budget per angler per day: same list, same server whitelist and same meta as the long form (pm_consulta in consultas.php).
+			pm_chips( 'presupuesto', 'presupuesto', pm_t( 'viaje.presupuesto' ), pm_previo( 'presupuesto' ), false, pm_t( 'viaje.presupuesto.ayuda' ), null, 'consulta' );
 			?>
 			<label><?php pm_e( 'consulta.mensaje' ); ?> <textarea name="mensaje" rows="3" maxlength="2000"><?php echo esc_textarea( pm_previo( 'mensaje' ) ); ?></textarea></label>
 			<button class="button dark" type="submit"><?php pm_e( $boutique ? 'consulta.boutique.enviar' : 'consulta.enviar' ); ?></button>
