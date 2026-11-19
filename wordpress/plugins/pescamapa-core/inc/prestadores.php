@@ -93,6 +93,10 @@ add_action( 'acf/include_fields', function () {
 			[ 'key' => 'field_pm_r_publico', 'name' => 'prest_publico', 'label' => 'Listado con información pública (todavía sin su permiso)', 'type' => 'true_false', 'ui' => 1, 'wrapper' => [ 'width' => 50 ], 'instructions' => 'Se publica marcado como "sin verificar", con enlace para corregir o pedir la baja. Solo datos públicos y con nuestras palabras; fotos solo si las tenemos con permiso.' ],
 			[ 'key' => 'field_pm_r_fuente', 'name' => 'prest_fuente', 'label' => 'Fuente de los datos (su web o publicación)', 'type' => 'url', 'wrapper' => [ 'width' => 50 ], 'instructions' => 'No se muestra en la web (dueño, 17/11/2026): queda como registro interno. Anotá la fecha en "Datos verificados el".' ],
 			[ 'key' => 'field_pm_r_verificado', 'name' => 'verificado', 'label' => 'Datos verificados el', 'type' => 'date_picker', 'display_format' => 'd/m/Y', 'return_format' => 'Y-m-d', 'wrapper' => [ 'width' => 50 ] ],
+			[ 'key' => 'field_pm_r_listado_msg', 'label' => '', 'type' => 'message', 'message' => '<strong>Marca de listado oficial (se publica).</strong> Solo si el lugar figura en un listado de un organismo de turismo (gobierno), leído por nosotros. La tarjeta dice "En el listado de pesca de &lt;fuente&gt; (consultado el &lt;fecha&gt;)" y enlaza a la página oficial. Las tres partes son necesarias; si falta una, no se muestra. Reglas: <code>docs/prestadores.md</code>.' ],
+			[ 'key' => 'field_pm_r_listado_fuente', 'name' => 'prest_listado_fuente', 'label' => 'Listado oficial: nombre de la fuente', 'type' => 'text', 'wrapper' => [ 'width' => 50 ], 'instructions' => 'Ej. "Turismo de Corrientes".' ],
+			[ 'key' => 'field_pm_r_listado_fecha', 'name' => 'prest_listado_fecha', 'label' => 'Listado oficial: fecha de consulta', 'type' => 'date_picker', 'display_format' => 'd/m/Y', 'return_format' => 'Y-m-d', 'wrapper' => [ 'width' => 50 ] ],
+			[ 'key' => 'field_pm_r_listado_url', 'name' => 'prest_listado_url', 'label' => 'Listado oficial: página del organismo', 'type' => 'url', 'instructions' => 'La página oficial donde figura (dominio de gobierno o del ente de turismo). Sin teléfonos ni datos de contacto.' ],
 			[ 'key' => 'field_pm_r_notas', 'name' => 'notas', 'label' => 'Notas internas', 'type' => 'textarea', 'rows' => 4 ],
 		],
 	] );
@@ -190,7 +194,36 @@ function pm_prestador( int $post_id ): array {
 		'publico'        => (bool) pm_campo( 'prest_publico', $post_id ),
 		'fuente'         => (string) pm_campo( 'prest_fuente', $post_id ),
 		'ejemplo'        => (bool) pm_campo( 'datos_ejemplo', $post_id ),
+		// Official listing mark: all three parts or nothing (pm_prestador_listado()).
+		'listado'        => pm_prestador_listado_datos( $post_id ),
 	];
+}
+
+/**
+ * Official listing a card appears in (a tourism body of a province, e.g. "Turismo de Corrientes"): [ fuente, url, fecha ]
+ * when the three are set, else []. The URL must be a page we may link (official or government domain).
+ */
+function pm_prestador_listado_datos( int $post_id ): array {
+	$fuente = trim( (string) pm_campo( 'prest_listado_fuente', $post_id ) );
+	$fecha  = (string) pm_campo( 'prest_listado_fecha', $post_id );
+	$url    = trim( (string) pm_campo( 'prest_listado_url', $post_id ) );
+	if ( '' === $fuente || '' === $fecha || '' === $url ) {
+		return [];
+	}
+	return [ 'fuente' => $fuente, 'url' => $url, 'fecha' => $fecha ];
+}
+
+/** Escaped HTML of the listing sentence ("En el listado de pesca de <a>Turismo de Corrientes</a> (consultado el …)"); '' when the card has none. */
+function pm_prestador_listado( array $r ): string {
+	$l = $r['listado'] ?? [];
+	if ( ! $l ) {
+		return '';
+	}
+	$fuente = esc_html( $l['fuente'] );
+	if ( pm_fuente_enlazable( [ 'url' => $l['url'], 'oficial' => false ] ) ) {
+		$fuente = '<a href="' . esc_url( $l['url'] ) . '" rel="noopener">' . $fuente . '</a>';
+	}
+	return wp_kses( pm_t( 'prest.listado', [ 'fuente' => $fuente, 'fecha' => esc_html( pm_fecha( $l['fecha'] ) ) ] ), [ 'a' => [ 'href' => true, 'rel' => true ] ] );
 }
 
 /** The capacity sentence in the current language; the default unit ("lancha") is the original wording. */

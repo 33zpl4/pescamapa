@@ -1235,6 +1235,44 @@ jobs:
           n5=$(wp --path="$WP" post list --post_type=pm_consulta --post_status=private --s=Antiguo --format=ids | head -n1)
           igual "viejo cuando" "$(meta "$n5" cuando)" "del 3 al 10 de marzo"; igual "viejo personas" "$(meta "$n5" personas)" "4"; igual "viejo duracion" "$(meta "$n5" duracion)" "5 a 7 días"
           igual "viejo sin pescadores" "$(meta "$n5" pescadores)" ""
+          # "También me sirven" (19/11/2026): other published guides, validated server-side, in the notice and in "Lo que nos escribió".
+          otro=$(wp --path="$WP" eval 'foreach ( pm_destinos_lista( "es" ) as $d ) { if ( "esquina" !== $d["clave"] ) { echo $d["clave"]; break; } }')
+          [[ -n "$otro" ]] && echo "✓ segundo destino publicado para la prueba: $otro" || { echo "✖ no hay un segundo destino publicado para probar «También me sirven»"; fail=1; }
+          nombre_otro=$(wp --path="$WP" eval "echo pm_consulta_destinos_extra_linea( [ '$otro' ] );")
+          [[ -n "$nombre_otro" ]] && echo "✓ nombre del segundo destino: $nombre_otro" || { echo "✖ sin nombre para $otro"; fail=1; }
+          for r in /armar-viaje/ /pt/planejar-viagem/ /en/plan-your-trip/; do check "$r?destino=esquina" 200 'name="destinos_extra\[\]"'; done
+          check '/armar-viaje/?destino=esquina' 200 'También me sirven'
+          check '/armar-viaje/?destino=esquina' 200 'Marcá los que te sirven además del primero; los vemos todos y te comparamos.'
+          check "/armar-viaje/?destino=esquina&tambien=$otro,esquina,inventada" 200 "value=\"$otro\" checked"
+          ! grep -q 'id="viaje-tambien-esquina"' page.html && echo "✓ el destino elegido no se ofrece como «también»" || { echo "✖ se ofrece el destino elegido"; fail=1; }
+          ! grep -q 'value="inventada"' page.html && echo "✓ una clave inventada en ?tambien= se ignora" || { echo "✖ clave inventada en la página"; fail=1; }
+          check /armar-viaje/ 200 'Qué le preguntamos a cada lugar por vos'
+          check /armar-viaje/ 200 'Las respuestas llegan juntas, en hasta 48 horas, y reservás directo con el que elijas.'
+          check /en/plan-your-trip/ 200 'What we ask each place for you'
+          check /pt/planejar-viagem/ 200 'O que perguntamos a cada lugar por você'
+          loc=$(enviar -d nombre=Tambien -d contacto_via=email -d contacto_email=tambien@example.com -d pm_destino=esquina -d "destinos_extra[]=$otro" -d 'destinos_extra[]=esquina' -d 'destinos_extra[]=inventada' -d "destinos_extra[]=$otro")
+          [[ "$loc" == *"consulta=ok"* ]] && echo "✓ pedido con «también me sirven» → ok" || { echo "✖ pedido con «también»: $loc"; fail=1; }
+          n7=$(wp --path="$WP" post list --post_type=pm_consulta --post_status=private --s=Tambien --format=ids | head -n1)
+          igual "también sirven: solo la guía válida, sin repetidos ni la elegida" "$(meta "$n7" destinos_extra)" "$nombre_otro"
+          igual "la caja del admin y el aviso leen «También sirven»" "$(wp --path="$WP" eval '$d = pm_consulta_datos( '"$n7"' ); echo $d["También sirven"] ?? "";')" "$nombre_otro"
+          igual "sin «también»: el pedido viejo no trae el campo" "$(meta "$n5" destinos_extra)" ""
+          loc=$(enviar -d nombre=Tambien2 -d contacto_via=email -d contacto_email=a@b -d pm_destino=esquina -d "destinos_extra[]=$otro")
+          curl -sS -o page.html "$loc"
+          grep -q "value=\"$otro\" checked" page.html && echo "✓ tras el error se conservan las casillas «también»" || { echo "✖ tras el error se perdieron las casillas"; fail=1; }
+          # City page (19/11/2026): the block of questions, "En una mirada", the request links and the official-listing mark.
+          wp --path="$WP" eval '$p = get_posts( [ "post_type" => "pm_prestador", "title" => "PRESTADOR-PUBLICO", "numberposts" => 1, "post_status" => "any" ] )[0]; update_field( "prest_listado_fuente", "Turismo de Corrientes", $p->ID ); update_field( "prest_listado_fecha", "20261119", $p->ID ); update_field( "prest_listado_url", "https://corrientes.tur.ar/tour/experiencia-de-pesca-esquina/", $p->ID ); update_field( "prest_programa", "PROGRAMA-DE-PRUEBA", $p->ID ); wp_cache_flush();'
+          check /guias-de-pesca/esquina/ 200 'Qué le preguntamos a cada lugar por vos' 'Cómo elegir guía'
+          check /guias-de-pesca/esquina/ 200 'En una mirada'
+          check /guias-de-pesca/esquina/ 200 'class="tabla-mirada"'
+          check /guias-de-pesca/esquina/ 200 'PROGRAMA-DE-PRUEBA'
+          check /guias-de-pesca/esquina/ 200 'En el listado de pesca de <a href="https://corrientes.tur.ar/tour/experiencia-de-pesca-esquina/" rel="noopener">Turismo de Corrientes</a> (consultado el 19 de noviembre de 2026)'
+          check /guias-de-pesca/esquina/ 200 'Figuran en el listado de pesca de Turismo de Corrientes: 1 de '
+          check /guias-de-pesca/esquina/ 200 'class="button primary" href="[^"]*/armar-viaje/?destino=esquina"'
+          check /guias-de-pesca/esquina/ 200 '¿Cómo sé si un guía o un lugar está habilitado?'
+          check /guias-de-pesca/esquina/ 200 'En Corrientes, Turismo de la provincia publica un listado de pesca por localidad'
+          check /guias-de-pesca/esquina/ 200 'v-guias' 'operador'
+          check /guias-de-pesca/esquina/ 200 'v-guias' 'tel:'
+          check /guias-de-pesca/esquina/ 200 'v-guias' 'Pescamapa no le cobra al pescador'
           # The admin box and the notice read the summaries.
           wp --path="$WP" eval '$d = pm_consulta_datos( '"$n1"' ); echo $d["Cuándo"] . " | " . $d["Personas"] . " | " . $d["Equipo propio"];' | grep -q "al .* · ± una semana · 2–3 días de pesca | 1 pescador + 1 acompañante que no pesca | No, necesito todo" && echo "✓ la caja del admin lee los resúmenes" || { echo "✖ caja del admin"; fail=1; }
           # Anti-spam still works: honeypot, minimum fill time, per-IP limit.

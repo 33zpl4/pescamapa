@@ -25,6 +25,8 @@ $v       = 'pm_previo';
 // Species / destination: what came back after an error wins over the URL preselection.
 $destino = $v( 'pm_destino' ) ?: $destino;
 $especie = $v( 'especie' ) ?: $especie;
+// "También me sirven": what came back after an error wins over ?tambien=a,b from the city pages.
+$tambien = pm_previo_lista( 'destinos_extra' ) ?: pm_consulta_destinos_extra( is_string( $_GET['tambien'] ?? null ) ? sanitize_text_field( wp_unslash( $_GET['tambien'] ) ) : '', $destino );
 $via     = 'whatsapp' === $v( 'contacto_via' ) ? 'whatsapp' : 'email';
 
 get_header(); ?>
@@ -75,6 +77,7 @@ get_header(); ?>
 							</div>
 						</div>
 						<?php
+						pm_campo_tambien( $destino, $tambien );
 						pm_chips( 'fijo', 'fijo', pm_t( 'viaje.fijo' ), pm_previo_lista( 'fijo' ), true, pm_t( 'viaje.fijo.ayuda' ), [ 'especie', 'lugar' ] );
 						?>
 					</fieldset>
@@ -156,6 +159,7 @@ get_header(); ?>
 					</li>
 				<?php endforeach; ?>
 			</ol>
+			<?php get_template_part( 'parciales/preguntas', null, [ 'id' => 'preguntas-h', 'nivel' => 'h3' ] ); ?>
 		</aside>
 		<?php endif; ?>
 	</div>

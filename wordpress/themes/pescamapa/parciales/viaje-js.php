@@ -25,6 +25,16 @@ document.querySelectorAll('form.pm-form').forEach((f) => {
 		s.insertBefore(mk('−', s.dataset.menos, -1), i);
 		s.appendChild(mk('+', s.dataset.mas, 1));
 	});
+	// "These also work for me": the destination chosen above is not offered again (the server drops it anyway).
+	const sel = f.querySelector('#viaje-destino'), tam = f.querySelector('[data-tambien]');
+	if (sel && tam) {
+		const ver = () => tam.querySelectorAll('[data-clave]').forEach((s) => {
+			const igual = s.dataset.clave === sel.value;
+			s.hidden = igual;
+			if (igual) s.querySelector('input').checked = false;
+		});
+		sel.addEventListener('change', ver); ver();
+	}
 	// Dates: "to" never before "from".
 	const desde = f.querySelector('[name="fecha_desde"]'), hasta = f.querySelector('[name="fecha_hasta"]');
 	if (desde && hasta) {

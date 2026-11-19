@@ -11,6 +11,8 @@ defined( 'ABSPATH' ) || exit;
 
 const PM_CONSULTA_MAX_PESCADORES   = 99;
 const PM_CONSULTA_MAX_ACOMPANANTES = 30;
+/** "También me sirven": other guides the angler would also take (besides the main destination). */
+const PM_CONSULTA_MAX_TAMBIEN = 5;
 
 // --- What was typed before an error ---------------------------------------------------
 
@@ -23,7 +25,7 @@ function pm_consulta_guardar_previo( array $errores ): string {
 	foreach ( PM_CONSULTA_PREVIO as $k ) {
 		$datos[ $k ] = mb_substr( sanitize_textarea_field( wp_unslash( (string) ( $_POST[ $k ] ?? '' ) ) ), 0, 2000 );
 	}
-	foreach ( [ 'fijo', 'meses' ] as $k ) {
+	foreach ( [ 'fijo', 'meses', 'destinos_extra' ] as $k ) {
 		$datos[ $k ] = array_slice( array_map( fn( $c ) => sanitize_key( is_string( $c ) ? $c : '' ), (array) wp_unslash( $_POST[ $k ] ?? [] ) ), 0, 20 );
 	}
 	$token = strtolower( wp_generate_password( 16, false ) );
@@ -64,6 +66,103 @@ function pm_consulta_tiene_error( string $e ): bool {
 /** Inline error under a field: "<p>" with an id the input points at through aria-describedby. */
 function pm_error_campo( string $error, string $id ): string {
 	return pm_consulta_tiene_error( $error ) ? '<p class="error-campo" id="' . esc_attr( $id ) . '">' . esc_html( pm_t( 'viaje.err.' . ( [ 'contacto_email' => 'email', 'contacto_tel' => 'whatsapp' ][ $error ] ?? $error ) ) ) . '</p>' : '';
+}
+
+// --- "También me sirven" (other destinations) ----------------------------------------------
+
+/**
+ * Keys of published guides from a posted or query-string list: only real, published destinations, no repeats, never the
+ * main one, at most PM_CONSULTA_MAX_TAMBIEN. $crudo: an array (destinos_extra[]) or a comma-separated string (?tambien=a,b).
+ */
+function pm_consulta_destinos_extra( $crudo, string $principal ): array {
+	$validas = array_column( pm_destinos_lista( 'es' ), 'clave' );
+	$lista   = is_string( $crudo ) ? explode( ',', $crudo ) : (array) $crudo;
+	$out     = [];
+	foreach ( $lista as $c ) {
+		$c = sanitize_key( is_string( $c ) ? $c : '' );
+		if ( '' !== $c && $c !== $principal && in_array( $c, $validas, true ) && ! in_array( $c, $out, true ) ) {
+			$out[] = $c;
+		}
+	}
+	return array_slice( $out, 0, PM_CONSULTA_MAX_TAMBIEN );
+}
+
+/** Neighbouring guides worth comparing together (same trip area, same kind of trip): each group is a list of destination keys. */
+const PM_GRUPOS_COMPARAR = [
+	[ 'paso-de-la-patria', 'goya', 'esquina' ], // Litoral, Corrientes: the three towns of the first city pages
+];
+
+/** The other published guides of the comparison group this destination belongs to: [ [ 'clave' => …, 'nombre' => … ], … ] in the language; [] when it has none. */
+function pm_destinos_para_comparar( string $clave, string $idioma ): array {
+	foreach ( PM_GRUPOS_COMPARAR as $grupo ) {
+		if ( ! in_array( $clave, $grupo, true ) ) {
+			continue;
+		}
+		$nombres = array_column( pm_destinos_lista( $idioma ), 'nombre', 'clave' );
+		$out     = [];
+		foreach ( $grupo as $c ) {
+			if ( $c !== $clave && isset( $nombres[ $c ] ) ) {
+				$out[] = [ 'clave' => $c, 'nombre' => $nombres[ $c ] ];
+			}
+		}
+		return $out;
+	}
+	return [];
+}
+
+/** The line the team reads: Spanish names of those guides, "Goya, Esquina". */
+function pm_consulta_destinos_extra_linea( array $claves ): string {
+	$nombres = array_column( pm_destinos_lista( 'es' ), 'nombre', 'clave' );
+	return implode( ', ', array_filter( array_map( fn( $c ) => $nombres[ $c ] ?? '', $claves ) ) );
+}
+
+/**
+ * "También me sirven": checkboxes (chips) with up to PM_CONSULTA_MAX_TAMBIEN + 1 other published guides, the ones closest to
+ * the chosen destination first (same province, then the publication order). The chip of the destination chosen in the
+ * select is left out here and hidden by the theme script when the person changes the select (the server drops it anyway).
+ * $marcadas: keys ticked (what came back after an error, or ?tambien=).
+ */
+function pm_campo_tambien( string $principal, array $marcadas, string $prefijo = 'viaje' ): void {
+	$todas = pm_destinos_lista( pm_lang() );
+	$prov  = '';
+	foreach ( $todas as $d ) {
+		if ( $d['clave'] === $principal ) {
+			$prov = $d['provincia'];
+		}
+	}
+	$otras = array_values( array_filter( $todas, fn( $d ) => $d['clave'] !== $principal ) );
+	if ( $prov ) {
+		usort( $otras, fn( $a, $b ) => ( $b['provincia'] === $prov ) <=> ( $a['provincia'] === $prov ) ); // stable since PHP 8: keeps the publication order inside each group
+	}
+	// Whatever is ticked is always shown (so it is kept after an error), then the closest ones up to the limit.
+	$por_clave = array_column( $otras, null, 'clave' );
+	$elegidas  = [];
+	foreach ( $marcadas as $c ) {
+		if ( isset( $por_clave[ $c ] ) ) {
+			$elegidas[ $c ] = $por_clave[ $c ];
+		}
+	}
+	foreach ( $otras as $d ) {
+		if ( count( $elegidas ) >= PM_CONSULTA_MAX_TAMBIEN + 1 ) {
+			break;
+		}
+		$elegidas[ $d['clave'] ] = $elegidas[ $d['clave'] ] ?? $d;
+	}
+	if ( ! $elegidas ) {
+		return;
+	}
+	echo '<fieldset class="opciones tambien" data-tambien data-campo="destinos_extra"><legend>' . esc_html( pm_t( 'viaje.tambien' ) ) . '</legend><div class="chips-radio">';
+	foreach ( $elegidas as $k => $d ) {
+		$id = "{$prefijo}-tambien-{$k}";
+		printf(
+			'<span data-clave="%1$s"><input type="checkbox" name="destinos_extra[]" id="%2$s" value="%1$s"%4$s><label for="%2$s">%3$s</label></span>',
+			esc_attr( $k ),
+			esc_attr( $id ),
+			esc_html( $d['nombre'] ),
+			in_array( $k, $marcadas, true ) ? ' checked' : ''
+		);
+	}
+	echo '</div><small>' . esc_html( pm_t( 'viaje.tambien.ayuda' ) ) . '</small></fieldset>';
 }
 
 // --- Renderers ----------------------------------------------------------------------
