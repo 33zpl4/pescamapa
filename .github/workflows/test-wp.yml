@@ -865,8 +865,11 @@ jobs:
           grep -q 'Todavía no sé' page.html && grep -q 'Solo quiero saber las reglas' page.html && grep -q 'calendario-de-pesca' page.html && echo "✓ segundo camino: reglas" || { echo "✖ falta el camino 'Solo quiero saber las reglas'"; fail=1; }
           check / 200 'Un solo pedido'
           check / 200 'Una sola consulta, en vez de diez' 'opciones disponibles'
+          check / 200 '10 consultas'
           check /en/ 200 'One inquiry instead of ten'
+          check /en/ 200 '10 inquiries'
           check /pt/ 200 'Uma só consulta, em vez de dez'
+          check /pt/ 200 '10 consultas'
           check / 200 'Todo en un lugar'
           check / 200 'Sin sorpresas'
           check / 200 'Qué hacemos por vos'

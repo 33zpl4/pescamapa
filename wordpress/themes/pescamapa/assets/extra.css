@@ -513,14 +513,29 @@ footer .negocio a { color: var(--white); text-decoration: underline; text-underl
 .v-inicio .purpose h3 { font-size: var(--fs-h3); margin: 0 0 8px; }
 .v-inicio .purpose p { margin: 0; font-size: var(--fs-lead); line-height: 1.55; color: var(--muted); }
 
-/* "Today / With Pescamapa" contrast (18/11/2026), shared by the home and /armar-viaje/: two bordered cards, the second one edged in forest. Tokens only */
+/* "Today / With Pescamapa" contrast (18/11/2026, redesigned 19/11/2026), shared by the home and /armar-viaje/: the number is the hook.
+   "Today" is a dimmed neutral box; "With Pescamapa" is forest with lime accents (like the lime strip). Equal heights on desktop
+   (grid stretch), stacked on mobile with a decorative arrow between; the button sits under the forest box. Tokens only */
 .contraste h2, .contraste h3 { margin: 0 0 clamp(16px, 2.4vw, 24px); font-size: var(--fs-h2); max-width: var(--measure); }
-.contraste-par { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: clamp(14px, 2vw, 22px); }
-.contraste article { background: var(--white); border: 1px solid var(--line-strong); border-radius: var(--radius); padding: clamp(20px, 2.4vw, 28px); }
-.contraste article.con { border: 2px solid var(--forest); }
-.contraste .rotulo { margin: 0 0 12px; font: 400 var(--fs-label)/1 var(--font-label); letter-spacing: 0.1em; text-transform: uppercase; color: var(--olive); }
-.contraste article p:not(.rotulo) { margin: 0; font-size: var(--fs-lead); line-height: 1.55; color: var(--muted); }
-.contraste article.con p:not(.rotulo) { color: var(--ink); }
+.contraste-par { display: grid; grid-template-columns: minmax(0, 1fr); gap: 10px; }
+.contraste article { border-radius: var(--radius); padding: clamp(20px, 2.4vw, 28px); }
+.contraste article.hoy { background: var(--cream); border: 1px solid var(--line); color: var(--muted); }
+.contraste article.con { background: var(--forest); border: 1px solid var(--forest); border-top: 4px solid var(--lime); color: var(--on-dark); }
+.contraste .rotulo { margin: 0 0 4px; font: 400 var(--fs-label)/1 var(--font-label); letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+.contraste .con .rotulo { color: var(--lime); }
+.contraste .gancho { margin: 0 0 clamp(14px, 2vw, 20px); font: 400 calc(var(--fs-h1) * 1.25)/1 var(--font-label); letter-spacing: 0.02em; color: var(--muted); }
+.contraste .con .gancho { color: var(--lime); }
+.contraste ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+.contraste li { display: grid; grid-template-columns: 1.4em minmax(0, 1fr); gap: 8px; font-size: var(--fs-lead); line-height: 1.4; }
+.contraste .marca { font-weight: 700; }
+.contraste .con .marca { color: var(--lime); }
+.contraste .flecha { justify-self: center; font: 400 var(--fs-h2)/1 var(--font-label); color: var(--moss); }
+.contraste .contraste-cta { margin: 0; justify-self: start; }
+@media (min-width: 760px) {
+	.contraste-par { grid-template-columns: minmax(0, 1fr) 40px minmax(0, 1fr); gap: 0 6px; align-items: stretch; }
+	.contraste .flecha { align-self: center; transform: rotate(-90deg); }
+	.contraste .contraste-cta { grid-column: 3; margin-top: 14px; }
+}
 .v-inicio .contraste-sec { background: var(--paper); }
 
 /* "What we do for you": forest band, two columns, lime icons */
