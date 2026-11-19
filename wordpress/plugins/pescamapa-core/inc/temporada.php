@@ -95,6 +95,9 @@ function pm_guias_faqs( array $d, string $clave ): array {
 	foreach ( [ 1, 2, 3, 4 ] as $n ) {
 		$out[] = [ 'pregunta' => pm_t( "guias.faq.$n.q", $a, $i ), 'respuesta' => pm_t( "guias.faq.$n.a", $a, $i ) ];
 	}
+	// Who is authorised: the same advice everywhere; the sentence about the provincial listing only where we read one (Corrientes).
+	$hab = pm_t( 'guias.faq.5.a', $a, $i ) . ( 'corrientes' === ( $d['provincia'] ?? '' ) ? ' ' . pm_t( 'guias.faq.5.corrientes', $a, $i ) : '' );
+	$out[] = [ 'pregunta' => pm_t( 'guias.faq.5.q', $a, $i ), 'respuesta' => $hab ];
 	if ( pm_temporada_hay( $d ) ) {
 		$resp = pm_t( 'guias.faq.temp.a', $a + [ 'abre' => pm_fecha( $d['abre'], $i ), 'cierra' => pm_fecha( $d['cierra'], $i ) ], $i );
 		if ( $d['temporada_nota'] ) {

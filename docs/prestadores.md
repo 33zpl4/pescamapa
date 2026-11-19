@@ -280,3 +280,20 @@ El 17/11 no había ficha (ninguna página propia con fecha de 2026). El 18/11 el
 ### Foto de la guía de Concordia: página municipal sin licencia declarada (18/11/2026)
 
 La foto de portada de la guía `concordia` (es/en/pt; un pescador al atardecer) la eligió el dueño de la página «Pesca deportiva» de la Subsecretaría de Turismo de la Municipalidad de Concordia (`concordia.gob.ar/turismo/atractivos/pesca-deportiva`). **Esa página no declara licencia de sus fotos.** El dueño decidió usarla con el crédito «Foto: Municipalidad de Concordia», que enlaza a `https://www.concordia.gob.ar` (sitio de gobierno: se puede enlazar); es un **riesgo conocido** que asume el dueño, y si la Municipalidad pide el retiro, se saca (cambiar la imagen destacada de la guía es; en/pt la heredan). Mecanismo: el archivo vive en `wordpress/fotos/concordia-pescador-atardecer.jpg` (700 x 700, JPG), `wp-script.yml` lo copia a `/tmp/pm-fotos` y el script `concordia-municipalidad-normas-2026-11-18` lo carga con `foto_origen = cedida`, `foto_autor = Municipalidad de Concordia` y `foto_pagina` (patrón de `la-paz-foto-2026-10-31`). Nada de lo que dice la página municipal se publica sin atribución: ver la sección «Lo que dice la Municipalidad de Concordia» de la guía.
+
+## Marca de listado oficial (dueño, 19/11/2026)
+
+Cuando un lugar figura en un listado de un organismo de turismo (en Corrientes, las páginas «Experiencia de pesca» de `corrientes.tur.ar`, una por localidad), la tarjeta lo dice: «En el listado de pesca de Turismo de Corrientes (consultado el 19 de noviembre de 2026)», con el nombre de la fuente enlazado a la página oficial (gobierno: se puede enlazar). Es **«listado»**, no «registro» ni «habilitado»: lo leído no dice que sea una habilitación, y la frase inferida «muestra que el lugar existe y que la provincia lo conoce» se quitó (decisión del director: sin inferencias).
+
+- **Campos** (pestaña «Referencias y estado», se publican): `prest_listado_fuente` (texto, ej. «Turismo de Corrientes»), `prest_listado_fecha` (fecha de consulta) y `prest_listado_url` (página oficial donde figura). Las tres o ninguna: si falta una, no se muestra. Genérico para otras provincias: se cambia el texto de la fuente y la URL.
+- **Quién la carga:** un script que lee la página oficial y compara el **nombre** de cada ficha pública (solo presente/ausente; la ausencia de un nombre no prueba que no esté listado con otra grafía, así que no se marca ni se desmarca por ausencia). La fecha es la de la lectura.
+- **Dónde se ve:** tarjeta de prestador (`parciales/prestador.php`, guía y página de la ciudad) y una línea en la «Respuesta corta» de la página de la ciudad («Figuran en el listado de pesca de …: N de M fichas»).
+- **La FAQ de habilitación** (`guias.faq.5.*`, JSON-LD incluido) dice que se pida el número de inscripción como prestador de turismo de la provincia y, si sale en lancha, la documentación de la embarcación; la frase sobre el listado de Turismo solo sale en las guías de Corrientes.
+
+### Regla de lectura con `contexto:` (19/11/2026)
+
+`leer-vivo` con `|| contexto:` imprime extractos de la página. **No se usa sobre páginas que tengan contactos** (sitios de lugares, páginas del listado oficial): el 19/11 una corrida imprimió el teléfono del pie de la web de un hotel (logs borrados por la API a los pocos minutos). Para esas páginas, solo presentes/ausentes por cadena. El repo es público de forma temporal: ni teléfonos, ni correos, ni datos de pedidos en archivos, PRs o logs.
+
+### Fichas nuevas desde el listado (19/11/2026)
+
+Fichas «información pública» sin contacto ni foto ajena. Para los lugares que solo tenemos por el listado, se publica únicamente lo que el listado dice (tipo de servicio y localidad), con la marca. Precio solo con fecha en una tabla clara de la propia página; si el sitio muestra dos tablas distintas, «a consultar».

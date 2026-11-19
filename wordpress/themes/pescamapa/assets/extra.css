@@ -369,6 +369,46 @@ footer .negocio a { color: var(--white); text-decoration: underline; text-underl
 .v-guias .portada-ciudad { max-width: 760px; margin: 0 0 24px; }
 .v-guias .portada-ciudad .portada { aspect-ratio: 16 / 9; border-radius: var(--radius); overflow: hidden; }
 
+/* City page, fund of the funnel (19/11/2026): "En una mirada" table, request links, official-listing mark, the questions block. */
+.v-guias .mirada { margin: 0 0 24px; }
+.v-guias .mirada h2 { margin: 0 0 6px; }
+.v-guias .mirada > .note { margin: 0 0 12px; max-width: 72ch; }
+.tabla-mirada { overflow-x: auto; }
+.tabla-mirada table { width: 100%; border-collapse: collapse; font-size: var(--fs-small); background: var(--white); border: 1px solid var(--line-strong); border-radius: var(--radius); }
+.tabla-mirada th, .tabla-mirada td { text-align: left; vertical-align: top; padding: 10px 12px; border-bottom: 1px solid var(--line); }
+.tabla-mirada thead th { background: var(--cream); font-weight: 700; }
+.tabla-mirada tbody th { font-weight: 700; }
+.tabla-mirada tbody th a { color: var(--moss); }
+.tabla-mirada tbody tr:last-child > * { border-bottom: 0; }
+@media (max-width: 720px) {
+	.tabla-mirada thead { position: absolute; inline-size: 1px; block-size: 1px; overflow: hidden; clip-path: inset(50%); }
+	.tabla-mirada table, .tabla-mirada tbody, .tabla-mirada tr, .tabla-mirada th, .tabla-mirada td { display: block; }
+	.tabla-mirada tr { padding: 8px 0; border-bottom: 1px solid var(--line-strong); }
+	.tabla-mirada tbody tr:last-child { border-bottom: 0; }
+	.tabla-mirada th, .tabla-mirada td { border: 0; padding: 4px 12px; }
+	.tabla-mirada td::before { content: attr(data-label) ': '; font-weight: 700; }
+}
+.v-guias .cta-opciones { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; margin: 0 0 24px; }
+.v-guias .cta-opciones .enlace-comparar { color: var(--moss); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+.prestador .listado-oficial { margin: 4px 0 8px; font-size: var(--fs-small); font-weight: 600; color: var(--moss); }
+.prestador .listado-oficial a { color: var(--moss); text-decoration: underline; text-underline-offset: 3px; }
+.preguntas-lugar { max-width: 760px; margin: 0 0 24px; }
+.preguntas-lugar h2, .preguntas-lugar h3 { margin: 0 0 8px; font-size: var(--fs-h3); }
+.preguntas-lugar .intro { margin: 0 0 10px; }
+.preguntas-lugar .cierre { margin: 12px 0 0; font-weight: 600; }
+/* Inside the "how it works" side box of the trip form the block drops its own surface and the numbered circles. */
+.v-viaje .viaje-como .preguntas-lugar { background: none; padding: 20px 0 0; margin: 24px 0 0; border-top: 1px solid var(--line-strong); border-radius: 0; }
+.v-viaje .viaje-como .preguntas-lugar h3 { font-size: var(--fs-lead); }
+.v-viaje .viaje-como .preguntas-lugar .intro { font-size: var(--fs-small); color: var(--muted); }
+.v-viaje .viaje-como .preguntas-lugar ol { display: block; list-style: decimal; counter-reset: none; padding-left: 20px; }
+.v-viaje .viaje-como .preguntas-lugar li { display: list-item; counter-increment: none; position: static; padding-left: 0; margin-bottom: 8px; font-size: var(--fs-small); }
+.v-viaje .viaje-como .preguntas-lugar li::before { content: none; }
+.v-viaje .viaje-como .preguntas-lugar li strong { font-size: inherit; }
+.v-viaje .viaje-como .preguntas-lugar .cierre { font-size: var(--fs-small); }
+@media (min-width: 901px) { .v-viaje .viaje-como { max-height: calc(100vh - 40px); overflow-y: auto; } }
+.pm-form .chips-radio > span[hidden] { display: none; }
+.v-viaje .tambien small { font-weight: 400; color: var(--muted); font-size: var(--fs-caption); }
+
 /* Calendar + for-guides pages (1/11/2026) */
 .v-calendario .respuesta, .v-paraguias .respuesta { background: var(--cream); border-left: 3px solid var(--moss); border-radius: var(--radius); padding: 18px 22px; margin: 0 0 24px; max-width: 760px; }
 .v-calendario .respuesta h2, .v-paraguias .respuesta h2 { margin: 0 0 8px; font-size: var(--fs-h3); }

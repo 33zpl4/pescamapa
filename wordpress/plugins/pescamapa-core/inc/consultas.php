@@ -35,6 +35,7 @@ const PM_CONSULTA_CAMPOS = [
 	'fijo'      => [ 'Fijo (lo demás es flexible)', 120 ],
 	'equipo_propio' => [ 'Equipo propio', 80 ],
 	'especie'   => [ 'Especie', 40 ],
+	'destinos_extra' => [ 'También sirven', 200 ],
 	'localidad' => [ 'Localidad', 80 ],
 	'ofrece'    => [ 'Qué ofrece', 200 ],
 	'mensaje'   => [ 'Mensaje', 2000 ],
@@ -189,6 +190,9 @@ function pm_recibir_consulta(): void {
 		$fallar( $errores );
 	}
 	$destino   = sanitize_key( $_POST['pm_destino'] ?? '' );
+	// "También me sirven": other published guides the person would take too (validated, never the main one, at most five); '' when none.
+	$extra = pm_consulta_destinos_extra( wp_unslash( $_POST['destinos_extra'] ?? [] ), $destino );
+	$datos['destinos_extra'] = $extra ? pm_consulta_destinos_extra_linea( $extra ) : '';
 	$prestador = (int) ( $_POST['pm_prestador'] ?? 0 );
 	if ( $prestador && 'pm_prestador' !== get_post_type( $prestador ) ) {
 		$prestador = 0;

@@ -44,6 +44,7 @@ $filas = [
 		<?php endif; ?>
 		<p class="tipo"><?php echo esc_html( implode( ' · ', array_map( fn( $k ) => pm_opcion( 'tipo', $k ), $r['tipo'] ) ) ); ?></p>
 		<h3><?php echo esc_html( $r['nombre'] ); ?></h3>
+		<?php if ( $listado = pm_prestador_listado( $r ) ) : ?><p class="listado-oficial"><span aria-hidden="true">&#10003;</span> <?php echo $listado; // phpcs:ignore -- escaped and filtered inside ?></p><?php endif; ?>
 		<?php if ( $r['descripcion'] ) : ?><p<?php echo $es( 'descripcion' ); // phpcs:ignore ?>><?php echo esc_html( $r['descripcion'] ); ?></p><?php endif; ?>
 		<dl>
 			<?php foreach ( $filas as $clave => $valores ) :

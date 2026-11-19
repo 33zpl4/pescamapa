@@ -24,6 +24,17 @@ foreach ( $prestadores as $r ) {
 }
 $tipos   = implode( ' · ', array_map( fn( $t, $n ) => $n . ' × ' . pm_opcion( 'tipo', $t ), array_keys( $por_tipo ), $por_tipo ) );
 $precios = array_values( array_filter( $prestadores, fn( $r ) => $r['precio'] && $r['precio_fecha'] ) );
+// Places that appear in an official listing (the mark on each card): how many, and from which source.
+$en_listado = array_values( array_filter( $prestadores, fn( $r ) => $r['listado'] ) );
+// Request links: the main one preselects this destination; the second adds the neighbours that make sense to compare (?tambien=).
+$vecinas   = pm_destinos_para_comparar( $clave, $idioma );
+$url_pedir = add_query_arg( 'destino', $clave, pm_url_viaje( $idioma ) );
+$sep       = pm_t( 'guias.cta.y' );
+$otras     = count( $vecinas ) > 1 ? implode( ', ', array_slice( array_column( $vecinas, 'nombre' ), 0, -1 ) ) . $sep . end( $vecinas )['nombre'] : ( $vecinas ? $vecinas[0]['nombre'] : '' );
+// "En una mirada": at most six rows, the same order as the cards; what is not published says "a consultar".
+$mirada    = array_slice( $prestadores, 0, 6 );
+$consultar = pm_t( 'guias.mirada.consultar' );
+$es_attr   = fn( array $r, string $campo ) => in_array( $campo, $r['en_espanol'] ?? [], true ) ? ' lang="es"' : '';
 
 get_header(); ?>
 <div class="v-destino v-paquetes v-guias">
@@ -62,9 +73,49 @@ get_header(); ?>
 					<li><?php pm_e( 'guias.resumen.sinprecio' ); ?></li>
 				<?php endif; ?>
 				<li><?php pm_e( 'guias.resumen.licencia', $a ); ?> <a href="<?php echo esc_url( $d['url'] . '#reglamento' ); ?>"><?php pm_e( 'paquetes.guia.intro', $a ); ?></a></li>
+				<?php if ( $en_listado ) : ?><li><?php pm_e( 'guias.resumen.listado', [ 'fuente' => $en_listado[0]['listado']['fuente'], 'n' => (string) count( $en_listado ), 'total' => (string) count( $prestadores ) ] ); ?></li><?php endif; ?>
 				<li><?php pm_e( 'guias.resumen.como' ); ?></li>
 			</ul>
 		</section>
+		<?php if ( $mirada ) : ?>
+		<section class="mirada" aria-labelledby="mirada-h">
+			<h2 id="mirada-h"><?php pm_e( 'guias.mirada.h' ); ?></h2>
+			<p class="note"><?php pm_e( 'guias.mirada.p' ); ?></p>
+			<div class="tabla-mirada">
+				<table>
+					<thead><tr>
+						<?php foreach ( [ 'lugar', 'formato', 'incluye', 'temporada', 'precio' ] as $col ) : ?><th scope="col"><?php pm_e( "guias.mirada.$col" ); ?></th><?php endforeach; ?>
+					</tr></thead>
+					<tbody>
+						<?php foreach ( $mirada as $r ) :
+							$formato = $r['programa'] ?: implode( ' · ', array_map( fn( $k ) => pm_opcion( 'modalidad', $k ), $r['modalidades'] ) );
+							$incluye = implode( ', ', array_map( fn( $k ) => pm_opcion( 'incluye', $k ), $r['incluye'] ) );
+							?>
+							<tr>
+								<th scope="row" data-label="<?php pm_e( 'guias.mirada.lugar' ); ?>"><a href="#prestador-<?php echo (int) $r['id']; ?>"><?php echo esc_html( $r['nombre'] ); ?></a></th>
+								<td data-label="<?php pm_e( 'guias.mirada.formato' ); ?>"<?php echo $r['programa'] ? $es_attr( $r, 'programa' ) : ''; // phpcs:ignore ?>><?php echo esc_html( $formato ?: $consultar ); ?></td>
+								<td data-label="<?php pm_e( 'guias.mirada.incluye' ); ?>"><?php echo esc_html( $incluye ?: $consultar ); ?></td>
+								<td data-label="<?php pm_e( 'guias.mirada.temporada' ); ?>"<?php echo $es_attr( $r, 'temporada' ); // phpcs:ignore ?>><?php echo esc_html( $r['temporada'] ?: $consultar ); ?></td>
+								<td data-label="<?php pm_e( 'guias.mirada.precio' ); ?>"><?php
+									if ( $r['precio'] && $r['precio_fecha'] ) {
+										echo wp_kses( pm_t( 'prest.precio', [ 'precio' => '<span' . $es_attr( $r, 'precio' ) . '>' . esc_html( $r['precio'] ) . '</span>', 'cuando' => esc_html( pm_fecha_relativa( $r['precio_fecha'] ) ) ] ), [ 'span' => [ 'lang' => true ] ] );
+									} else {
+										echo esc_html( $consultar );
+									} ?></td>
+							</tr>
+						<?php endforeach; ?>
+					</tbody>
+				</table>
+			</div>
+		</section>
+		<?php endif; ?>
+		<p class="cta-opciones">
+			<a class="button primary" href="<?php echo esc_url( $url_pedir ); ?>"><?php pm_e( 'guias.cta.pedir', $a ); ?></a>
+			<?php if ( $vecinas ) : ?>
+				<a class="enlace-comparar" href="<?php echo esc_url( add_query_arg( 'tambien', implode( ',', array_column( $vecinas, 'clave' ) ), $url_pedir ) ); ?>"><?php pm_e( 'guias.cta.comparar', [ 'otras' => $otras ] ); ?></a>
+			<?php endif; ?>
+		</p>
+		<?php get_template_part( 'parciales/preguntas', null, [ 'id' => 'preguntas-h' ] ); ?>
 		<section class="lista-prestadores" aria-labelledby="lista-h">
 			<h2 id="lista-h"><?php pm_e( 'guias.lista.h', $a ); ?></h2>
 			<p><?php pm_e( 'guias.lista.p' ); ?></p>
@@ -81,13 +132,6 @@ get_header(); ?>
 				<a class="button" href="#consulta"><?php pm_e( 'guias.paquetes.pedir', $a ); ?></a>
 			</p>
 		</section>
-		<div class="elegir">
-			<h3><?php pm_e( 'ficha.elegir.h3' ); ?></h3>
-			<ol>
-				<?php for ( $n = 1; $n <= 6; $n++ ) : ?><li><?php pm_e( "ficha.elegir.$n" ); ?></li><?php endfor; ?>
-			</ol>
-			<p class="note"><?php pm_e( 'ficha.elegir.fuente' ); ?></p>
-		</div>
 		<section class="faq" aria-labelledby="faq-h">
 			<h2 id="faq-h"><?php pm_e( 'guias.faq.h', $a ); ?></h2>
 			<?php foreach ( pm_guias_faqs( $d, $clave ) as $f ) : ?>
