@@ -38,6 +38,13 @@ if ( is_wp_error( $r ) ) {
 	}
 }
 
+// Diagnóstico temporal: ¿la petición web recibe la query string y es este mismo WordPress?
+$sonda = 'PMSONDA' . wp_generate_password( 8, false, false );
+$rs    = wp_remote_get( home_url( '/?s=' . $sonda ), [ 'timeout' => 20, 'redirection' => 0 ] );
+echo '  query string llega a WordPress (búsqueda devuelve el término)=' . ( ! is_wp_error( $rs ) && false !== strpos( (string) wp_remote_retrieve_body( $rs ), $sonda ) ? 'sí' : 'no' ) . ' (status ' . ( is_wp_error( $rs ) ? 'error' : wp_remote_retrieve_response_code( $rs ) ) . ")\n";
+$rj = wp_remote_get( home_url( '/wp-json/' ), [ 'timeout' => 20 ] );
+$jj = is_wp_error( $rj ) ? [] : (array) json_decode( (string) wp_remote_retrieve_body( $rj ), true );
+echo '  REST home=' . ( $jj['home'] ?? '?' ) . ' ; home_url CLI=' . home_url() . ' ; plugins namespaces=' . implode( ',', array_slice( (array) ( $jj['namespaces'] ?? [] ), 0, 12 ) ) . "\n";
 // Diagnóstico temporal: opcache del PHP web (php.ini de aaPanel; solo líneas opcache.*) y fecha del archivo del plugin.
 foreach ( (array) glob( '/www/server/php/*/etc/php.ini' ) as $ini ) {
 	foreach ( (array) file( $ini, FILE_IGNORE_NEW_LINES ) as $l ) {
