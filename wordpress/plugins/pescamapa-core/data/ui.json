@@ -793,7 +793,7 @@
 			"contraste.con.2.d": "Solo a los que encajan con tu pedido.",
 			"contraste.con.3.d": "Elegís y reservás directo, al mismo precio.",
 			"viaje.presupuesto": "Presupuesto por pescador y por día",
-			"viaje.presupuesto.ayuda": "Opcional: así consultamos solo a los lugares que entran en tu rango."
+			"viaje.presupuesto.ayuda": "Opcional. Contá alojamiento, comidas y guía, sin vuelos: así consultamos solo a los lugares que entran en tu rango."
 		},
 		"pt": {
 			"marca.lema": "Tudo para pescar na Argentina, em um só lugar.",
@@ -1495,7 +1495,7 @@
 			"contraste.con.2.d": "Só aos que combinam com o seu pedido.",
 			"contraste.con.3.d": "Você escolhe e reserva direto, pelo mesmo preço.",
 			"viaje.presupuesto": "Orçamento por pescador e por dia",
-			"viaje.presupuesto.ayuda": "Opcional: assim consultamos só os lugares dentro da sua faixa."
+			"viaje.presupuesto.ayuda": "Opcional. Conte hospedagem, refeições e guia, sem voos: assim consultamos só os lugares dentro da sua faixa."
 		},
 		"en": {
 			"marca.lema": "Everything for fishing in Argentina, in one place.",
@@ -2198,7 +2198,7 @@
 			"contraste.con.2.d": "Only the ones that fit your request.",
 			"contraste.con.3.d": "You choose and book direct, at the same price.",
 			"viaje.presupuesto": "Budget per angler per day",
-			"viaje.presupuesto.ayuda": "Optional: so we only ask the places within your range."
+			"viaje.presupuesto.ayuda": "Optional. Count lodging, meals and guide, not flights: so we only ask the places within your range."
 		}
 	},
 	"opciones": {
@@ -2534,25 +2534,25 @@
 			}
 		},
 		"presupuesto": {
-			"hasta-150": {
-				"es": "Hasta US$ 150",
-				"pt": "Até US$ 150",
-				"en": "Up to US$ 150"
+			"hasta-300": {
+				"es": "Hasta US$ 300",
+				"pt": "Até US$ 300",
+				"en": "Up to US$ 300"
 			},
-			"150-300": {
-				"es": "US$ 150–300",
-				"pt": "US$ 150–300",
-				"en": "US$ 150–300"
+			"300-600": {
+				"es": "US$ 300–600",
+				"pt": "US$ 300–600",
+				"en": "US$ 300–600"
 			},
-			"300-500": {
-				"es": "US$ 300–500",
-				"pt": "US$ 300–500",
-				"en": "US$ 300–500"
+			"600-1000": {
+				"es": "US$ 600–1.000",
+				"pt": "US$ 600–1.000",
+				"en": "US$ 600–1,000"
 			},
-			"mas-500": {
-				"es": "Más de US$ 500",
-				"pt": "Mais de US$ 500",
-				"en": "More than US$ 500"
+			"mas-1000": {
+				"es": "Más de US$ 1.000",
+				"pt": "Mais de US$ 1.000",
+				"en": "More than US$ 1,000"
 			},
 			"nose": {
 				"es": "Todavía no sé",

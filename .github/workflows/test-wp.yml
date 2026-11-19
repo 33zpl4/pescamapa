@@ -1145,11 +1145,11 @@ jobs:
             check $r 200 'class="contraste"' 'id="como-h"'
           done
           check /armar-viaje/ 200 'Presupuesto por pescador y por día'
-          check /armar-viaje/ 200 'Hasta US\$ 150'
-          check /armar-viaje/ 200 'Más de US\$ 500'
+          check /armar-viaje/ 200 'Hasta US\$ 300'
+          check /armar-viaje/ 200 'Más de US\$ 1.000'
           check /pt/planejar-viagem/ 200 'Orçamento por pescador e por dia'
           check /en/plan-your-trip/ 200 'Budget per angler per day'
-          check /en/plan-your-trip/ 200 'More than US\$ 500'
+          check /en/plan-your-trip/ 200 'More than US\$ 1,000'
           check /armar-viaje/ 200 'Contanos tu viaje'
           check /armar-viaje/ 200 'Te mandamos las opciones comparadas en 24–48 horas'
           check /pt/planejar-viagem/ 200 'Enviamos as opções comparadas em 24–48 horas'
@@ -1207,19 +1207,19 @@ jobs:
             igual "meta ${par%%:*}" "$(meta "$n1" "${par%%:*}")" "${par#*:}"
           done
           # Budget per angler per day (19/11/2026): optional, whitelisted, stored as the Spanish label, in the notice and the admin box.
-          loc=$(enviar -d nombre=Presu -d contacto_via=email -d contacto_email=presu@example.com -d presupuesto=150-300 -d pm_destino=goya)
+          loc=$(enviar -d nombre=Presu -d contacto_via=email -d contacto_email=presu@example.com -d presupuesto=300-600 -d pm_destino=goya)
           [[ "$loc" == *"consulta=ok"* ]] && echo "✓ presupuesto → ok" || { echo "✖ presupuesto: $loc"; fail=1; }
           n8=$(wp --path="$WP" post list --post_type=pm_consulta --post_status=private --s=Presu --format=ids | head -n1)
-          igual "presupuesto guardado" "$(meta "$n8" presupuesto)" "US\$ 150–300"
-          igual "presupuesto en el aviso y la caja del admin" "$(wp --path="$WP" eval '$d = pm_consulta_datos( '"$n8"' ); echo $d["Presupuesto por pescador y por día"] ?? "";')" "US\$ 150–300"
+          igual "presupuesto guardado" "$(meta "$n8" presupuesto)" "US\$ 300–600"
+          igual "presupuesto en el aviso y la caja del admin" "$(wp --path="$WP" eval '$d = pm_consulta_datos( '"$n8"' ); echo $d["Presupuesto por pescador y por día"] ?? "";')" "US\$ 300–600"
           loc=$(enviar -d nombre=PresuMala -d contacto_via=email -d contacto_email=presumala@example.com -d presupuesto=gratis)
           [[ "$loc" == *"consulta=ok"* ]] && echo "✓ presupuesto inventado no rechaza el pedido" || { echo "✖ presupuesto inventado: $loc"; fail=1; }
           n9=$(wp --path="$WP" post list --post_type=pm_consulta --post_status=private --s=PresuMala --format=ids | head -n1)
           igual "presupuesto inventado ignorado" "$(meta "$n9" presupuesto)" ""
           igual "sin presupuesto: el pedido sigue sin el campo" "$(meta "$n1" presupuesto)" ""
-          loc=$(enviar -d nombre=PresuError -d contacto_via=whatsapp -d contacto_tel=abc -d presupuesto=mas-500)
+          loc=$(enviar -d nombre=PresuError -d contacto_via=whatsapp -d contacto_tel=abc -d presupuesto=mas-1000)
           curl -sS -o page.html "$loc"
-          grep -q 'value="mas-500" checked' page.html && echo "✓ tras el error se conserva el presupuesto" || { echo "✖ el presupuesto no volvió tras el error"; fail=1; }
+          grep -q 'value="mas-1000" checked' page.html && echo "✓ tras el error se conserva el presupuesto" || { echo "✖ el presupuesto no volvió tras el error"; fail=1; }
           # "I do not know yet": months instead of dates; a month outside the next 12 is ignored.
           M1=$(date -d "$(date +%Y-%m-01) +2 month" +%Y-%m); M2=$(date -d "$(date +%Y-%m-01) +3 month" +%Y-%m)
           loc=$(enviar -d nombre=Meses -d contacto_via=email -d contacto_email=meses@example.com -d contacto_tel= -d flexibilidad=nose -d "meses[]=$M2" -d "meses[]=$M1" -d "meses[]=1999-01" -d pescadores=3)
