@@ -297,3 +297,7 @@ Cuando un lugar figura en un listado de un organismo de turismo (en Corrientes, 
 ### Fichas nuevas desde el listado (19/11/2026)
 
 Fichas «información pública» sin contacto ni foto ajena. Para los lugares que solo tenemos por el listado, se publica únicamente lo que el listado dice (tipo de servicio y localidad), con la marca. Precio solo con fecha en una tabla clara de la propia página; si el sitio muestra dos tablas distintas, «a consultar».
+
+### Resultado de la primera carga (19/11/2026)
+
+Cruce por nombre contra las tres páginas oficiales: de las 13 fichas públicas que había en Paso de la Patria (8), Goya (2) y Esquina (3), **ninguna** aparece por nombre (ni como palabra distintiva: no hubo «POSIBLE»). Fichas nuevas (#850 a #854): Posada Hambaré (Esquina, con lo que dice su página sobre el paquete de 2 días de pesca y 3 noches, leído el 4/11/2026, «Datos al 4 de noviembre de 2026»; sin marca porque su nombre no está como texto visible en el listado; precio «a consultar»), Hotel Spa Jardín del Paraná (Paso de la Patria), El Gordo y el Flaco y Campamento La Amistad (Goya) y Posada del Muelle (Esquina): estas cuatro con la marca. Las tres de solo-listado no tienen tipo de servicio (el listado trae nombre y contacto, nada más) y su texto dice «a consultar».
