@@ -618,3 +618,13 @@ footer .negocio a { color: var(--white); text-decoration: underline; text-underl
 .prestador { padding: 14px 16px; margin: 12px 0; }
 .tabla-mirada td.vacio { color: var(--muted); }
 @media (max-width: 720px) { .tabla-mirada td.vacio { display: none; } }
+
+/* Species line of a destination card (one line, muted) and the home block "Where to go this month". */
+.especies-linea { font-size: var(--fs-small); color: var(--muted); margin: 0; }
+.mes-destinos { background: var(--cream); }
+.mes-lista { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr)); gap: 17px; }
+.mes-lista a { display: flex; flex-direction: column; gap: 4px; height: 100%; box-sizing: border-box; padding: 18px 19px; background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); color: var(--ink); text-decoration: none; }
+.mes-lista a:hover { border-color: var(--forest); }
+.mes-lista a:focus-visible { outline: 2px solid var(--forest); outline-offset: 2px; }
+.mes-lista strong { font: 700 var(--fs-h3)/1.2 var(--font-head); }
+.mes-lista .nivel { margin-top: auto; padding-top: 8px; font-size: var(--fs-caption); color: var(--moss); }

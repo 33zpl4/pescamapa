@@ -15,7 +15,7 @@ foreach ( $destinos as $d ) {
 }
 $pins = [];
 foreach ( $destinos as $d ) {
-	$pins[] = [ 'nombre' => $d['nombre'], 'coordenadas' => $d['coordenadas'], 'url' => $d['url'], 'detalle' => PM_PROVINCIAS[ $d['provincia'] ] ?? '', 'tipo' => 'destino' ];
+	$pins[] = [ 'nombre' => $d['nombre'], 'coordenadas' => $d['coordenadas'], 'url' => $d['url'], 'detalle' => implode( ' · ', array_filter( [ PM_PROVINCIAS[ $d['provincia'] ] ?? '', pm_especies_linea( $d ) ] ) ), 'tipo' => 'destino' ];
 }
 foreach ( $proximos as $p ) {
 	$pins[] = [ 'nombre' => $p['nombre'], 'coordenadas' => $p['coordenadas'], 'detalle' => $p['provincia'], 'tipo' => 'proximo' ];
@@ -47,6 +47,8 @@ get_header(); ?>
 			<span>✳ <?php pm_e( 'inicio.strip3' ); ?></span>
 		</div>
 	</div>
+
+	<?php get_template_part( 'parciales/destinos-mes', null, [ 'idioma' => $idioma ] ); ?>
 
 	<section class="section contraste-sec">
 		<div class="shell">

@@ -112,3 +112,63 @@ function pm_guias_faqs( array $d, string $clave ): array {
 	}
 	return $out;
 }
+
+/** Month name (1..12) in the page language, for headings: "noviembre", "novembro", "November". */
+function pm_mes_nombre( int $m, string $idioma ): string {
+	$n = [
+		'es' => [ 'enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre' ],
+		'pt' => [ 'janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro' ],
+		'en' => [ 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December' ],
+	];
+	return ( $n[ $idioma ] ?? $n['es'] )[ $m - 1 ] ?? '';
+}
+
+/**
+ * Home block "Where to go this month" (19/11/2026): published guides whose own season data says today is inside the season.
+ * Only data already published with its source is used: the official opening/closing dates (temporada_abre / temporada_cierra) and,
+ * for the best months, pico_meses only when pico_quien names who says so. Levels: 'pico' (open and named best by a source)
+ * before 'abierto' (open by the rule); inside a level, the guides' usual order. Up to $max; [] when fewer than 2 qualify,
+ * so the block is not rendered. Cached per language and day in a transient; the version option is bumped when a guide or species
+ * is saved, so edits show at once.
+ * @return array<int, array{clave: string, nombre: string, url: string, idioma: string, especies: string, nivel: string, quien: string}>
+ */
+function pm_destinos_del_mes( string $idioma, int $max = 6, ?string $hoy = null ): array {
+	$idioma = pm_idioma_valido( $idioma );
+	$hoy    = $hoy ?: wp_date( 'Y-m-d', null, new DateTimeZone( 'America/Argentina/Buenos_Aires' ) );
+	$clave  = 'pm_mes_' . (int) get_option( 'pm_mes_ver', 1 ) . "_{$idioma}_{$hoy}_{$max}";
+	$cache  = get_transient( $clave );
+	if ( is_array( $cache ) ) {
+		return $cache;
+	}
+	$mes = (int) substr( $hoy, 5, 2 );
+	$out = [];
+	foreach ( pm_destinos_lista( $idioma ) as $d ) {
+		if ( ! pm_temporada_hay( $d ) || 'abierta' !== pm_temporada_estado( $d, $hoy ) ) {
+			continue;
+		}
+		$nivel = pm_temporada_meses( $d )[ $mes ] ?? 'cerrado';
+		if ( 'cerrado' === $nivel ) {
+			continue;
+		}
+		$out[] = [
+			'clave'    => (string) ( $d['clave'] ?? '' ),
+			'nombre'   => (string) ( $d['nombre'] ?? '' ),
+			'url'      => (string) ( $d['url'] ?? '' ),
+			'idioma'   => (string) ( $d['idioma'] ?? $idioma ),
+			'especies' => pm_especies_linea( $d, 2, $idioma ),
+			'nivel'    => $nivel,
+			'quien'    => 'pico' === $nivel ? (string) ( $d['pico_quien'] ?? '' ) : '',
+		];
+	}
+	usort( $out, fn( $a, $b ) => ( 'pico' === $b['nivel'] ) <=> ( 'pico' === $a['nivel'] ) );
+	$out = count( $out ) >= 2 ? array_slice( $out, 0, max( 2, $max ) ) : [];
+	set_transient( $clave, $out, 6 * HOUR_IN_SECONDS );
+	return $out;
+}
+
+/** A guide or a species changed: the month block recomputes on the next visit. */
+add_action( 'save_post', function ( $post_id, $post ) {
+	if ( $post instanceof WP_Post && in_array( $post->post_type, [ 'pm_destino', 'pm_especie' ], true ) ) {
+		update_option( 'pm_mes_ver', (int) get_option( 'pm_mes_ver', 1 ) + 1, false );
+	}
+}, 20, 2 );

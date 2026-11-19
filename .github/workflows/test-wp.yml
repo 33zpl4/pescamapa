@@ -1320,6 +1320,37 @@ jobs:
           [[ "$fq" == "abierta|antes|cerrada|abierto,pico,pico,abierto,abierto,cerrado,cerrado,cerrado,cerrado,abierto,abierto,abierto" ]] && echo "✓ estados y meses de la temporada" || { echo "✖ estados y meses de la temporada: $fq"; fail=1; }
           wp --path="$WP" eval '$p = pm_buscar( "pm_destino", "esquina", "es" ); foreach ( [ "temporada_abre", "temporada_cierra", "pico_meses", "pico_quien" ] as $c ) { update_field( $c, "", $p->ID ); } update_field( "temporada_nota", "", pm_buscar( "pm_destino", "esquina", "es" )->ID ); wp_cache_flush();'
           check /litoral/corrientes/pesca-en-esquina/ 200 'id="preguntas"' 'barra-meses'
+          # Species line on destination cards (province hub, 19/11/2026): the guide's first two species, named from the species posts.
+          check /litoral/corrientes/ 200 'class="especies-linea">Dorado, Surubí<'
+          # "Where to go this month" on the home (19/11/2026): needs two guides in season today; dates are relative to today so the test never goes stale.
+          wp --path="$WP" eval '
+            $hoy = new DateTimeImmutable( "now", new DateTimeZone( "America/Argentina/Buenos_Aires" ) );
+            foreach ( [ "esquina" => true, "paso-de-la-patria" => false ] as $c => $pico ) {
+              $p = pm_buscar( "pm_destino", $c, "es" );
+              update_field( "temporada_abre", $hoy->modify( "first day of last month" )->format( "Ymd" ), $p->ID );
+              update_field( "temporada_cierra", $hoy->modify( "last day of next month" )->format( "Ymd" ), $p->ID );
+              update_field( "pico_meses", $pico ? $hoy->format( "n" ) : "", $p->ID );
+              update_field( "pico_quien", $pico ? "Operador de prueba" : "", $p->ID );
+            }
+            wp_cache_flush();'
+          wp --path="$WP" transient delete --all >/dev/null
+          mes=$(wp --path="$WP" eval '$m = (int) ( new DateTimeImmutable( "now", new DateTimeZone( "America/Argentina/Buenos_Aires" ) ) )->format( "n" ); echo pm_mes_nombre( $m, "es" ) . "|" . pm_mes_nombre( $m, "pt" ) . "|" . pm_mes_nombre( $m, "en" );')
+          check / 200 'id="este-mes"'
+          check / 200 "Dónde conviene ir en ${mes%%|*}"
+          check / 200 'Mejor época, según Operador de prueba'
+          check / 200 'Temporada abierta'
+          check / 200 'class="especies-linea">Dorado, Surubí<'
+          check /pt/ 200 "Para onde ir em $(echo "$mes" | cut -d'|' -f2)"
+          check /en/ 200 "Where to go in ${mes##*|}"
+          check /en/ 200 'Season open'
+          ord=$(wp --path="$WP" eval 'echo implode( ",", array_column( pm_destinos_del_mes( "es" ), "clave" ) );')
+          [[ "$ord" == esquina,paso-de-la-patria ]] && echo "✓ el mes: primero la mejor época con fuente" || { echo "✖ el mes: orden inesperado: $ord"; fail=1; }
+          # One guide in season is not enough: the block disappears. Then clean up.
+          wp --path="$WP" eval '$p = pm_buscar( "pm_destino", "paso-de-la-patria", "es" ); foreach ( [ "temporada_abre", "temporada_cierra" ] as $c ) { update_field( $c, "", $p->ID ); } wp_cache_flush();'
+          wp --path="$WP" transient delete --all >/dev/null
+          check / 200 'class="hero-map"' 'id="este-mes"'
+          wp --path="$WP" eval '$p = pm_buscar( "pm_destino", "esquina", "es" ); foreach ( [ "temporada_abre", "temporada_cierra", "pico_meses", "pico_quien" ] as $c ) { update_field( $c, "", $p->ID ); } wp_cache_flush();'
+          wp --path="$WP" transient delete --all >/dev/null
           # Outgoing mail (Resend): the payload is built correctly, and with no key wp_mail is left alone.
           pl=$(wp --path="$WP" eval 'echo wp_json_encode( pm_correo_payload( [ "to" => "Alguien <a@example.com>", "subject" => "S", "message" => "M", "headers" => [ "Reply-To: Otra <r@example.com>" ] ] ) );')
           [[ "$pl" == *'"from":"Pescamapa <info@pescamapa.com>"'* && "$pl" == *'"to":["a@example.com"]'* && "$pl" == *'"reply_to":"r@example.com"'* && "$pl" == *'"text":"M"'* ]] && echo "✓ payload de Resend" || { echo "✖ payload de Resend: $pl"; fail=1; }
