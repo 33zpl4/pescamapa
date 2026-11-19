@@ -183,9 +183,9 @@ jobs:
           // Season FAQ of the guides page: composed from the guide's own fields, with its source and check date.
           $d = [ 'idioma' => 'en', 'nombre' => 'Esquel', 'abre' => '2026-11-01', 'cierra' => '2027-05-01', 'temporada_nota' => 'Futaleufú until 30 June 2027.', 'reglamento' => [ 'autoridad' => 'AUTORIDAD-DE-PRUEBA', 'verificado' => '2026-11-04' ] ];
           $q = pm_guias_faqs( $d, 'esquel-trevelin' );
-          ( 5 === count( $q ) && 'When is the fly fishing season in Esquel and Trevelin?' === $q[4]['pregunta'] && false !== strpos( $q[4]['respuesta'], '1 November 2026 to 1 May 2027' ) && false !== strpos( $q[4]['respuesta'], 'AUTORIDAD-DE-PRUEBA' ) && false !== strpos( $q[4]['respuesta'], '4 November 2026' ) ) || WP_CLI::error( 'pm_guias_faqs: ' . wp_json_encode( $q ) );
+          ( 6 === count( $q ) && 'When is the fly fishing season in Esquel and Trevelin?' === $q[5]['pregunta'] && false !== strpos( $q[5]['respuesta'], '1 November 2026 to 1 May 2027' ) && false !== strpos( $q[5]['respuesta'], 'AUTORIDAD-DE-PRUEBA' ) && false !== strpos( $q[5]['respuesta'], '4 November 2026' ) && false === strpos( $q[4]['respuesta'], 'Corrientes' ) ) || WP_CLI::error( 'pm_guias_faqs: ' . wp_json_encode( $q ) );
           $d['abre'] = '';
-          ( 4 === count( pm_guias_faqs( $d, 'esquel-trevelin' ) ) ) || WP_CLI::error( 'sin fechas no hay pregunta de temporada' );
+          ( 5 === count( pm_guias_faqs( $d, 'esquel-trevelin' ) ) ) || WP_CLI::error( 'sin fechas no hay pregunta de temporada' );
           WP_CLI::success( 'SEO consultas: helpers ok' );
           PHP
           sed -i 's/^          //' /tmp/seo-consultas.php
