@@ -205,11 +205,17 @@ foreach ( $lineas as $linea ) {
 }
 
 // Registro de PHP (19/11/2026): últimas 20 entradas de la última hora que mencionen el tema o pescamapa-core. Solo lectura.
-// El registro está fuera de la web (PM_ERROR_LOG, ver docs/wordpress.md). Si no se puede leer desde PHP, lo dice.
+// El registro es wp-content/pm-logs/errores-php.php (PM_ERROR_LOG; primer renglón `<?php exit; ?>`, que aquí se salta). Si no se puede leer, lo dice.
 echo "\n== Registro de PHP (última hora, tema y pescamapa-core)\n";
 $pm_log = defined( 'PM_ERROR_LOG' ) ? PM_ERROR_LOG : '';
+$pm_est = get_option( 'pm_registro_estado', '(sin dato)' );
+echo '  estado del registro (opción pm_registro_estado): ' . $pm_est . "\n";
+if ( 0 !== strpos( (string) $pm_est, 'ok' ) ) {
+	echo "  ALERTA: el plugin no pudo preparar el registro\n";
+	$fallos++;
+}
 if ( '' === $pm_log || ! is_file( $pm_log ) || ! is_readable( $pm_log ) ) {
-	echo '  (registro no legible o todavía no existe: ' . ( '' === $pm_log ? 'PM_ERROR_LOG sin definir' : $pm_log ) . ")\n";
+	echo '  (registro no legible o todavía no existe: ' . ( '' === $pm_log ? 'PM_ERROR_LOG sin definir' : preg_replace( '#^.*?(wp-content/)#', '$1', $pm_log ) ) . ")\n";
 } else {
 	$tam   = filesize( $pm_log );
 	$cola  = (string) file_get_contents( $pm_log, false, null, max( 0, $tam - 524288 ) );
@@ -232,7 +238,7 @@ if ( '' === $pm_log || ! is_file( $pm_log ) || ! is_readable( $pm_log ) ) {
 		// Sin la ruta del servidor: desde wp-content en adelante.
 		$hits[] = '  [' . $m[1] . ' UTC] ' . $m[2] . ': ' . preg_replace( '#/[^\s]*?(wp-content/)#', '$1', $m[3] );
 	}
-	echo '  ' . $pm_log . ' (' . $tam . " bytes). Entradas del tema o del plugin en la última hora: " . count( $hits ) . "\n";
+	echo '  ' . preg_replace( '#^.*?(wp-content/)#', '$1', $pm_log ) . ' (' . $tam . " bytes). Entradas del tema o del plugin en la última hora: " . count( $hits ) . "\n";
 	foreach ( array_slice( $hits, -20 ) as $h ) {
 		echo mb_substr( $h, 0, 400 ) . "\n";
 	}

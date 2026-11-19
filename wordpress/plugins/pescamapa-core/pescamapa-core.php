@@ -21,26 +21,57 @@ define( 'PM_URL', plugin_dir_url( __FILE__ ) );
 /*
  * Errores de PHP (19/11/2026): nunca a la página, siempre al registro.
  * El servidor tiene display_errors=On (php.ini de aaPanel); un aviso llegó a la portada con rutas internas.
- * Solo para peticiones web (no WP-CLI: ahí los errores deben verse en la salida de wp-script y deploy-wp).
- * El registro va fuera de la raíz pública (/www/wwwlogs, el de nginx/Apache de aaPanel) y deploy-wp lo lee tras cada deploy.
- * Si ese directorio no existe o no es escribible no se toca error_log: queda el de PHP del servidor.
+ * Solo peticiones web (no WP-CLI: ahí los errores deben verse en la salida de wp-script y deploy-wp).
+ * Registro (20/11/2026): wp-content/pm-logs/errores-php.php. El primer renglón es `<?php exit; ?>`: si alguien pide el archivo por la web,
+ * PHP lo ejecuta y sale sin mostrar nada. /www/wwwlogs NO sirve: el pool web de PHP-FPM no lo ve (open_basedir/aislamiento de aaPanel),
+ * así que los avisos iban al stderr de FPM y el paso del deploy leía un archivo al que la web nunca escribía.
+ * El archivo se crea con esa cabecera si no existe (web o WP-CLI). Si no se puede crear o escribir, NO se calla: la opción
+ * 'pm_registro_estado' queda en «falla: motivo» y la leen la autoprueba y leer-vivo. No usa uploads. No se toca wp-config ni el servidor.
  * error_reporting E_ALL: con WP_DEBUG=false WordPress deja afuera notices y deprecations; aquí se registran (sin mostrarse).
  */
 if ( ! defined( 'PM_ERROR_LOG' ) ) {
-	define( 'PM_ERROR_LOG', '/www/wwwlogs/pescamapa-php-errors.log' );
+	define( 'PM_ERROR_LOG', WP_CONTENT_DIR . '/pm-logs/errores-php.php' );
+}
+$pm_registro_ok     = false;
+$pm_registro_motivo = '';
+$pm_dir_log         = dirname( PM_ERROR_LOG );
+if ( ! is_dir( $pm_dir_log ) ) {
+	@wp_mkdir_p( $pm_dir_log ); // phpcs:ignore WordPress.PHP.NoSilencedErrors
+}
+if ( is_dir( $pm_dir_log ) && is_writable( $pm_dir_log ) ) {
+	if ( ! file_exists( $pm_dir_log . '/index.php' ) ) {
+		@file_put_contents( $pm_dir_log . '/index.php', "<?php\n" ); // phpcs:ignore WordPress.PHP.NoSilencedErrors, WordPress.WP.AlternativeFunctions
+	}
+	if ( ! file_exists( PM_ERROR_LOG ) ) {
+		@file_put_contents( PM_ERROR_LOG, "<?php exit; ?>\n" ); // phpcs:ignore WordPress.PHP.NoSilencedErrors, WordPress.WP.AlternativeFunctions
+	}
+	if ( ! is_file( PM_ERROR_LOG ) ) {
+		$pm_registro_motivo = 'no se pudo crear el archivo del registro';
+	} elseif ( ! is_writable( PM_ERROR_LOG ) ) {
+		$pm_registro_motivo = 'el archivo del registro existe pero este usuario no puede escribirlo';
+	} elseif ( 0 !== strpos( (string) file_get_contents( PM_ERROR_LOG, false, null, 0, 14 ), '<?php exit; ?>' ) ) { // phpcs:ignore WordPress.WP.AlternativeFunctions
+		$pm_registro_motivo = 'el registro no empieza con la cabecera <?php exit; ?> (se leería desde la web)';
+	} else {
+		$pm_registro_ok = true;
+	}
+} else {
+	$pm_registro_motivo = 'wp-content/pm-logs no existe o no es escribible para este usuario';
+}
+$pm_registro_estado = $pm_registro_ok ? 'ok' : 'falla: ' . $pm_registro_motivo;
+if ( get_option( 'pm_registro_estado' ) !== $pm_registro_estado ) {
+	update_option( 'pm_registro_estado', $pm_registro_estado, false ); // solo cuando cambia: no escribe en cada petición
 }
 if ( 'cli' !== PHP_SAPI && ! ( defined( 'WP_CLI' ) && WP_CLI ) ) {
 	@ini_set( 'display_errors', '0' ); // phpcs:ignore WordPress.PHP.IniSet
 	@ini_set( 'html_errors', '0' ); // phpcs:ignore WordPress.PHP.IniSet
 	@ini_set( 'log_errors', '1' ); // phpcs:ignore WordPress.PHP.IniSet
 	error_reporting( E_ALL ); // phpcs:ignore WordPress.PHP.DevelopmentFunctions
-	$pm_dir_log = dirname( PM_ERROR_LOG );
 	// Respeta WP_DEBUG_LOG si alguien lo activó (ya fijó su propio error_log).
-	if ( ! ( defined( 'WP_DEBUG_LOG' ) && WP_DEBUG_LOG ) && is_dir( $pm_dir_log ) && is_writable( $pm_dir_log ) && ( ! file_exists( PM_ERROR_LOG ) || is_writable( PM_ERROR_LOG ) ) ) {
+	if ( $pm_registro_ok && ! ( defined( 'WP_DEBUG_LOG' ) && WP_DEBUG_LOG ) ) {
 		@ini_set( 'error_log', PM_ERROR_LOG ); // phpcs:ignore WordPress.PHP.IniSet
 	}
-	unset( $pm_dir_log );
 }
+unset( $pm_dir_log, $pm_registro_ok, $pm_registro_motivo, $pm_registro_estado );
 
 /*
  * Autoprueba de errores de PHP (19/11/2026). Comprueba de punta a punta que un aviso de PHP NO sale en la página y SÍ queda en PM_ERROR_LOG.
@@ -65,7 +96,7 @@ add_action( 'init', function () {
 	$pm_ini = 'manejador alcanzado; error_log=' . var_export( ini_get( 'error_log' ), true ) . ' log_errors=' . var_export( ini_get( 'log_errors' ), true )
 		. ' display_errors=' . var_export( ini_get( 'display_errors' ), true ) . ' error_reporting=' . error_reporting()
 		. ' sapi=' . PHP_SAPI . ' usuario=' . ( function_exists( 'posix_geteuid' ) && function_exists( 'posix_getpwuid' ) ? ( posix_getpwuid( posix_geteuid() )['name'] ?? '?' ) : get_current_user() )
-		. ' dir_escribible=' . var_export( is_writable( dirname( PM_ERROR_LOG ) ), true ) . ' dir_existe=' . var_export( is_dir( dirname( PM_ERROR_LOG ) ), true )
+		. ' registro_estado=' . var_export( get_option( 'pm_registro_estado' ), true ) . ' dir_escribible=' . var_export( is_writable( dirname( PM_ERROR_LOG ) ), true ) . ' dir_existe=' . var_export( is_dir( dirname( PM_ERROR_LOG ) ), true )
 		. ' ini_set_habilitado=' . var_export( function_exists( 'ini_set' ) && false === strpos( (string) ini_get( 'disable_functions' ), 'ini_set' ), true );
 	set_transient( 'pm_autoprueba_motivo', $pm_ini, 300 );
 	delete_transient( 'pm_autoprueba' ); // de un solo uso
