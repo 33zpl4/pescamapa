@@ -19,7 +19,7 @@ $aplicar = false;
 
 $fotos = [
 	'goya'    => [
-		'patron' => '/experiencia[-_ ]?isoro/i',
+		'patron' => '/experiencia[-_ ]?isoro[-_ ]?\(?1\)?(?!\d)/i',
 		'texto'  => [
 			'es' => 'Lancha de pesca con un guía en un riacho de Goya',
 			'en' => 'Fishing boat with a guide on a backwater channel in Goya',
@@ -78,7 +78,7 @@ foreach ( $fotos as $clave => $c ) {
 	foreach ( $cand[ $clave ] ?? [] as $att => $usos ) {
 		$f = (string) get_post_meta( $att, '_wp_attached_file', true );
 		$t = (string) get_post( $att )->post_title;
-		WP_CLI::log( "#$att ($clave) archivo=$f | título «$t» | usos: " . implode( ', ', $usos ) );
+		WP_CLI::log( "#$att ($clave) archivo=$f | título «{$t}» | usos: " . implode( ', ', $usos ) );
 		if ( ! preg_match( $c['patron'], basename( $f ) ) && ! preg_match( $c['patron'], $t ) ) {
 			WP_CLI::log( '   NO COINCIDE con la foto indicada por el dueño: no se toca' );
 			continue;
@@ -86,7 +86,7 @@ foreach ( $fotos as $clave => $c ) {
 		$cambios = [];
 		foreach ( [ 'es', 'en', 'pt' ] as $l ) {
 			$v = trim( (string) get_post_meta( $att, "_pm_alt_$l", true ) );
-			WP_CLI::log( "   ANTES _pm_alt_$l=«$v»" );
+			WP_CLI::log( "   ANTES _pm_alt_$l=«{$v}»" );
 			if ( '' === $v || preg_match( $c['respaldo'], $v ) ) {
 				$cambios[ "_pm_alt_$l" ] = $c['texto'][ $l ];
 			} else {
@@ -94,14 +94,14 @@ foreach ( $fotos as $clave => $c ) {
 			}
 		}
 		$w = trim( (string) get_post_meta( $att, '_wp_attachment_image_alt', true ) );
-		WP_CLI::log( "   ANTES _wp_attachment_image_alt=«$w»" );
+		WP_CLI::log( "   ANTES _wp_attachment_image_alt=«{$w}»" );
 		if ( '' === $w || preg_match( $c['respaldo'], $w ) ) {
 			$cambios['_wp_attachment_image_alt'] = $c['texto']['es'];
 		} else {
 			WP_CLI::log( '   _wp_attachment_image_alt ya tiene un texto propio: no se pisa' );
 		}
 		foreach ( $cambios as $k => $v ) {
-			WP_CLI::log( "   DESPUÉS $k=«$v»" );
+			WP_CLI::log( "   DESPUÉS $k=«{$v}»" );
 		}
 		if ( $aplicar ) {
 			foreach ( $cambios as $k => $v ) {
@@ -118,7 +118,7 @@ if ( $aplicar ) {
 	foreach ( $escritos as $att => $cambios ) {
 		foreach ( $cambios as $k => $v ) {
 			$ok = (string) get_post_meta( $att, $k, true ) === $v;
-			WP_CLI::log( ( $ok ? 'VERIFIED' : 'FALLÓ' ) . ": #$att $k=«$v»" );
+			WP_CLI::log( ( $ok ? 'VERIFIED' : 'FALLÓ' ) . ": #$att $k=«{$v}»" );
 			$ok || WP_CLI::error( "#$att $k: la lectura de vuelta no coincide." );
 		}
 	}
