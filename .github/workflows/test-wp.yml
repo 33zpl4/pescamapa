@@ -464,6 +464,33 @@ jobs:
           chk /guias-de-pesca/rio-gallegos/ 'Alquila el equipo completo' '10 % pagado|pagado por el lodge|INTERNO'
           [[ "$(grep -o '"@type":"LocalBusiness"' page-rh.html | wc -l)" == 2 ]] && echo "✓ LocalBusiness solo para los dos operadores con acuerdo" || { echo "✖ LocalBusiness: $(grep -o '"@type":"LocalBusiness"' page-rh.html | wc -l) (esperado 2)"; fail=1; }
           grep -q 'Precio: a consultar\|Price: on request\|Preço: a consultar' page-rh.html && echo "✓ la ficha dice «a consultar»" || { echo "✖ falta «a consultar»"; fail=1; }
+          # City page (20/11/2026), Río Gallegos seeded with 3 cards (2 with consent): short answer as a sentence, no "Salidas armadas" without trips,
+          # boat FAQ while no card is a weekly programme, and the old CTA label / negative line gone.
+          chk /guias-de-pesca/rio-gallegos/ 'En Río Gallegos listamos 3 lugares, 2 con acuerdo con Pescamapa\.' 'fichas:| × |Consultar disponibilidad|No hay cargo|No te cobramos nada|\(sin tu nombre'
+          chk /guias-de-pesca/rio-gallegos/ 'Pedís por el formulario, les preguntamos a los lugares y guías que encajan y en 24–48 horas te mandamos las opciones comparadas\.' 'Salidas armadas por Pescamapa|class="armadas"'
+          chk /guias-de-pesca/rio-gallegos/ 'casi todos cobran por lancha y por jornada' 'Los lodges cobran'
+          chk /guias-de-pesca/rio-gallegos/ 'Pagás lo mismo que reservando directo\.' 'presupuesto\)'
+          chk /guias-de-pesca/rio-gallegos/ 'name="presupuesto"'
+          # River House structured fields: dry run writes nothing, apply fills only empty fields, second run changes nothing, price stays empty.
+          rhc=river-house-campos-2026-11-19
+          sed 's/^\$aplicar = [a-z]*;/$aplicar = false;/' "wordpress/scripts/$rhc.php" > "/tmp/$rhc-dry.php"
+          wp --path="$WP" eval-file "/tmp/$rhc-dry.php" | tee "/tmp/$rhc-dry.log"
+          grep -q 'SIMULACRO: no se escribió nada' "/tmp/$rhc-dry.log" || { echo "✖ $rhc: el simulacro no terminó como tal"; exit 1; }
+          grep -q 'WARNING\|Warning:\|Notice:' "/tmp/$rhc-dry.log" && { echo "✖ $rhc: el simulacro avisó de algo"; exit 1; }
+          [[ "$(w eval '$p = get_posts( [ "post_type" => "pm_prestador", "title" => "River House", "numberposts" => 1, "post_status" => "any" ] )[0]; echo (string) get_post_meta( $p->ID, "prest_programa", true );')" == "" ]] && echo "✓ el simulacro no escribió el programa" || { echo "✖ el simulacro escribió el programa"; exit 1; }
+          sed 's/^\$aplicar = [a-z]*;/$aplicar = true;/' "wordpress/scripts/$rhc.php" > "/tmp/$rhc.php"
+          wp --path="$WP" eval-file "/tmp/$rhc.php" | tee "/tmp/$rhc-1.log"
+          grep -q 'FALLÓ\|Warning:\|Notice:' "/tmp/$rhc-1.log" && { echo "✖ $rhc: la lectura de vuelta falló"; exit 1; }
+          grep -q 'VERIFIED: todo leído de vuelta' "/tmp/$rhc-1.log" || { echo "✖ $rhc: la primera corrida no terminó"; exit 1; }
+          wp --path="$WP" eval-file "/tmp/$rhc.php" | tee "/tmp/$rhc-2.log"
+          grep -q '^  + ' "/tmp/$rhc-2.log" && { echo "✖ $rhc: la segunda corrida volvió a escribir"; exit 1; }
+          grep -q 'VERIFIED: todo leído de vuelta' "/tmp/$rhc-2.log" || { echo "✖ $rhc: la segunda corrida no terminó"; exit 1; }
+          [[ "$(w eval '$p = get_posts( [ "post_type" => "pm_prestador", "title" => "River House", "numberposts" => 1, "post_status" => "any" ] )[0]; echo count( (array) get_field( "incluye", $p->ID ) ) . "|" . implode( ",", (array) get_field( "prest_modalidades", $p->ID ) ) . "|" . get_field( "precio", $p->ID ) . "|";')" == "1|mosca||" ]] && echo "✓ River House: incluye=trámite de licencia, modalidad mosca, precio vacío" || { echo "✖ River House: campos inesperados"; exit 1; }
+          # Now one card is a weekly programme: lodge FAQ (visible and in the JSON-LD, so twice) and the lodge "what is included" answer.
+          chk /guias-de-pesca/rio-gallegos/ 'Los lodges cobran por pescador y por semana' 'casi todos cobran por lancha'
+          [[ "$(grep -o 'Los lodges cobran por pescador y por semana' page-rh.html | wc -l)" == 2 ]] && echo "✓ la FAQ de lodge está en la página y en el JSON-LD" || { echo "✖ la FAQ de lodge no coincide entre página y JSON-LD"; fail=1; }
+          chk /guias-de-pesca/rio-gallegos/ 'Una semana en un lodge incluye alojamiento, comidas y guía' 'Lo habitual es lancha'
+          chk /guias-de-pesca/rio-gallegos/ 'Tocá .*Pedir opciones en Río Gallegos' 'Consultar disponibilidad|No hay cargo'
           w eval '
             foreach ( get_posts( [ "post_type" => "pm_destino", "post_status" => "any", "meta_key" => "_prueba_rh", "meta_value" => 1, "numberposts" => -1 ] ) as $x ) { echo get_permalink( $x->ID ), "\n"; }' > /tmp/rh-urls.txt
           cat /tmp/rh-urls.txt
@@ -1314,6 +1341,33 @@ jobs:
           check /guias-de-pesca/esquina/ 200 'v-guias' 'operador'
           check /guias-de-pesca/esquina/ 200 'v-guias' 'tel:'
           check /guias-de-pesca/esquina/ 200 'v-guias' 'Pescamapa no le cobra al pescador'
+          # City page copy (20/11/2026): short answer as a sentence, dated rates as "place: short price", positive wording, trips section only with trips,
+          # form with the budget chips, boat FAQ (Esquina has no weekly programme) whose text also sits in the JSON-LD, current CTA label.
+          check /guias-de-pesca/esquina/ 200 'En Esquina listamos [0-9]* lugares, [0-9]* con acuerdo con Pescamapa\.' 'fichas:| × '
+          check /guias-de-pesca/esquina/ 200 '>PRESTADOR-DE-PRUEBA</a>: Desde \$ 1 (revisado '
+          check /guias-de-pesca/esquina/ 200 'Pedís por el formulario, les preguntamos a los lugares y guías que encajan y en 24–48 horas te mandamos las opciones comparadas\.' '(sin tu nombre'
+          check /guias-de-pesca/esquina/ 200 'class="armadas"'   # Esquina has trips put together
+          check /guias-de-pesca/esquina/ 200 'Pagás lo mismo que reservando directo\.' 'No te cobramos nada|Sin costo y sin compromiso'
+          check /guias-de-pesca/esquina/ 200 'Algo más (experiencia, alojamiento)' 'presupuesto)'
+          n=$(grep -o '<input[^>]*name="presupuesto"[^>]*>' page.html | wc -l); [[ "$n" == "5" ]] && echo "✓ la tarjeta de la guía tiene 5 opciones de presupuesto" || { echo "✖ la tarjeta de la guía: $n opciones de presupuesto (esperado 5)"; fail=1; }
+          ! grep -o '<input[^>]*name="presupuesto"[^>]*>' page.html | grep -q required && echo "✓ presupuesto de la guía no es obligatorio" || { echo "✖ presupuesto de la guía con required"; fail=1; }
+          check /guias-de-pesca/esquina/ 200 'Tocá .*Pedir opciones en Esquina' 'Consultar disponibilidad|No hay cargo'
+          [[ "$(grep -o 'casi todos cobran por lancha y por jornada, no por persona' page.html | wc -l)" == 2 ]] && echo "✓ la FAQ de lancha está en la página y en el JSON-LD" || { echo "✖ la FAQ de lancha no coincide entre página y JSON-LD"; fail=1; }
+          # Lodge version of the FAQ (rule in pm_guias_es_lodge) and the short price, unit-tested without data.
+          wp --path="$WP" eval '
+            $sem = [ "nombre" => "LODGE-A", "programa" => "Semanas completas", "precio" => "US$ 9.990 por pescador por semana completa (habitación doble). Incluye todo.", "precio_fecha" => "20261110", "lancha" => "", "capacidad_unidad" => "lancha", "capacidad" => 0 ];
+            $lan = [ "nombre" => "GUIA-B", "programa" => "", "precio" => "", "precio_fecha" => "", "lancha" => "Lancha de 5 m", "capacidad_unidad" => "lancha", "capacidad" => 3 ];
+            ( "US$ 9.990 por pescador por semana completa" === pm_precio_corto( $sem["precio"] ) ) || WP_CLI::error( "pm_precio_corto: " . pm_precio_corto( $sem["precio"] ) );
+            ( "Desde \$ 1" === pm_precio_corto( "Desde \$ 1" ) && "" === pm_precio_corto( "" ) ) || WP_CLI::error( "pm_precio_corto simple" );
+            ( pm_guias_es_lodge( [ $sem ] ) && pm_guias_es_lodge( [ $sem, $lan ] ) && ! pm_guias_es_lodge( [ $lan ] ) && ! pm_guias_es_lodge( [ $sem, $lan, $lan ] ) && ! pm_guias_es_lodge( [] ) ) || WP_CLI::error( "pm_guias_es_lodge" );
+            $d = pm_destino( pm_buscar( "pm_destino", "esquina", "es" )->ID );
+            $q = pm_guias_faqs( $d, "esquina", [ $sem ] );
+            ( false !== strpos( $q[0]["respuesta"], "Los lodges cobran por pescador y por semana" ) && false !== strpos( $q[0]["respuesta"], "Por ejemplo, LODGE-A: US$ 9.990 por pescador por semana completa (revisado " ) && false === strpos( $q[0]["respuesta"], "%ejemplo%" ) && false !== strpos( $q[1]["respuesta"], "Una semana en un lodge incluye" ) ) || WP_CLI::error( "FAQ de lodge: " . wp_json_encode( $q ) );
+            $q = pm_guias_faqs( $d, "esquina", [ array_merge( $sem, [ "precio" => "", "precio_fecha" => "" ] ) ] );
+            ( false === strpos( $q[0]["respuesta"], "Por ejemplo" ) && false === strpos( $q[0]["respuesta"], "%" ) ) || WP_CLI::error( "FAQ de lodge sin precio fechado: " . $q[0]["respuesta"] );
+            $q = pm_guias_faqs( $d, "esquina", [ $lan ] );
+            ( false !== strpos( $q[0]["respuesta"], "casi todos cobran por lancha" ) && false !== strpos( $q[1]["respuesta"], "Lo habitual es lancha" ) ) || WP_CLI::error( "FAQ de lancha" );
+            echo "FAQ de guías: lodge y lancha OK\n";' | grep -q 'FAQ de guías: lodge y lancha OK' && echo "✓ FAQ de guías: versión lodge y versión lancha" || { echo "✖ FAQ de guías por tipo de oferta"; fail=1; }
           # The admin box and the notice read the summaries.
           wp --path="$WP" eval '$d = pm_consulta_datos( '"$n1"' ); echo $d["Cuándo"] . " | " . $d["Personas"] . " | " . $d["Equipo propio"];' | grep -q "al .* · ± una semana · 2–3 días de pesca | 1 pescador + 1 acompañante que no pesca | No, necesito todo" && echo "✓ la caja del admin lee los resúmenes" || { echo "✖ caja del admin"; fail=1; }
           # Anti-spam still works: honeypot, minimum fill time, per-IP limit.

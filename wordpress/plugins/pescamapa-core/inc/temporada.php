@@ -88,12 +88,20 @@ function pm_faqs_destino( array $d ): array {
  * per guide in ui.json (`guias.faq.temp.q.<clave>`), e.g. fly fishing in Esquel or the sea-run brown trout of the Río Grande.
  * @return array<int, array{pregunta: string, respuesta: string}>
  */
-function pm_guias_faqs( array $d, string $clave ): array {
-	$i   = $d['idioma'];
-	$a   = [ 'lugar' => $d['nombre'] ];
+function pm_guias_faqs( array $d, string $clave, ?array $prestadores = null ): array {
+	$i   = $d['idioma'] ?? 'es';
+	$a   = [ 'lugar' => $d['nombre'] ?? '' ];
 	$out = [];
+	// Cost and "what is included" depend on the city's own cards (20/11/2026): weekly lodge programmes (Río Gallegos) vs boat-and-day guides.
+	$cards = $prestadores ?? pm_prestadores_destino( $clave );
+	$lodge = pm_guias_es_lodge( $cards );
 	foreach ( [ 1, 2, 3, 4 ] as $n ) {
-		$out[] = [ 'pregunta' => pm_t( "guias.faq.$n.q", $a, $i ), 'respuesta' => pm_t( "guias.faq.$n.a", $a, $i ) ];
+		$resp = pm_t( "guias.faq.$n.a" . ( $lodge && in_array( $n, [ 1, 2 ], true ) ? '.lodge' : '' ), $a, $i );
+		if ( $lodge && 1 === $n ) {
+			$ej    = pm_guias_ejemplo_precio( $cards, $i );
+			$resp = strtr( $resp, [ '%ejemplo%' => '' !== $ej ? pm_t( 'guias.faq.1.ejemplo', [ 'ejemplo' => $ej ], $i ) : '' ] );
+		}
+		$out[] = [ 'pregunta' => pm_t( "guias.faq.$n.q", $a, $i ), 'respuesta' => $resp ];
 	}
 	// Who is authorised: the same advice everywhere; the sentence about the provincial listing only where we read one (Corrientes).
 	$hab = pm_t( 'guias.faq.5.a', $a, $i ) . ( 'corrientes' === ( $d['provincia'] ?? '' ) ? ' ' . pm_t( 'guias.faq.5.corrientes', $a, $i ) : '' );
