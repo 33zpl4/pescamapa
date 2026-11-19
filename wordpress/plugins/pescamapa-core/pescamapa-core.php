@@ -61,7 +61,13 @@ add_action( 'init', function () {
 		set_transient( 'pm_autoprueba_motivo', 'token distinto', 300 ); // solo con una autoprueba armada: ayuda a diagnosticar
 		return;
 	}
-	set_transient( 'pm_autoprueba_motivo', 'manejador alcanzado', 300 );
+	// Diagnóstico (solo con una autoprueba armada): cómo ve PHP-web su configuración de errores y si puede escribir el registro.
+	$pm_ini = 'manejador alcanzado; error_log=' . var_export( ini_get( 'error_log' ), true ) . ' log_errors=' . var_export( ini_get( 'log_errors' ), true )
+		. ' display_errors=' . var_export( ini_get( 'display_errors' ), true ) . ' error_reporting=' . error_reporting()
+		. ' sapi=' . PHP_SAPI . ' usuario=' . ( function_exists( 'posix_geteuid' ) && function_exists( 'posix_getpwuid' ) ? ( posix_getpwuid( posix_geteuid() )['name'] ?? '?' ) : get_current_user() )
+		. ' dir_escribible=' . var_export( is_writable( dirname( PM_ERROR_LOG ) ), true ) . ' dir_existe=' . var_export( is_dir( dirname( PM_ERROR_LOG ) ), true )
+		. ' ini_set_habilitado=' . var_export( function_exists( 'ini_set' ) && false === strpos( (string) ini_get( 'disable_functions' ), 'ini_set' ), true );
+	set_transient( 'pm_autoprueba_motivo', $pm_ini, 300 );
 	delete_transient( 'pm_autoprueba' ); // de un solo uso
 	trigger_error( 'Pescamapa autoprueba controlada', E_USER_WARNING ); // phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_trigger_error
 }, 1 );
