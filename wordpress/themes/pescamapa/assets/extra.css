@@ -565,10 +565,12 @@ footer .negocio a { color: var(--white); text-decoration: underline; text-underl
 .contraste .con .rotulo { color: var(--lime); }
 .contraste .gancho { margin: 0 0 clamp(14px, 2vw, 20px); font: 400 calc(var(--fs-h1) * 1.25)/1 var(--font-label); letter-spacing: 0.02em; color: var(--muted); }
 .contraste .con .gancho { color: var(--lime); }
-.contraste ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+.contraste ul, .contraste ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
 .contraste li { display: grid; grid-template-columns: 1.4em minmax(0, 1fr); gap: 8px; font-size: var(--fs-lead); line-height: 1.4; }
 .contraste .marca { font-weight: 700; }
 .contraste .con .marca { color: var(--lime); }
+.contraste .con li strong { display: block; font-weight: 600; }
+.contraste .con li small { display: block; margin-top: 2px; font-size: var(--fs-small); line-height: 1.4; color: var(--on-dark); opacity: 0.85; }
 .contraste .flecha { justify-self: center; font: 400 var(--fs-h2)/1 var(--font-label); color: var(--moss); }
 .contraste .contraste-cta { margin: 0; justify-self: start; }
 @media (min-width: 760px) {

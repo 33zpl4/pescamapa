@@ -6,7 +6,7 @@ Decidido el 26/10/2026: no enlazamos guías ni lodges concretos en las notas. To
 - Mismo endpoint y misma bandeja que el formulario de las guías (`inc/consultas.php`, Consultas en wp-admin, aviso por email). Las opciones de elección se guardan con la etiqueta en español para que el email se lea natural. Los campos están en la sección "Formulario (UX del 13/11/2026)" de abajo.
 - Se preselecciona con `?destino=<clave>&especie=<clave>`: las notas enlazan así ("Armá tu viaje a Goya").
 - Obligatorios: nombre y contacto. Anti-spam: honeypot `pm_web`, tiempo mínimo y límite por IP (igual que el resto).
-- Plazo de respuesta prometido (dueño, 13/11/2026): **48 horas**, en `viaje.como.2.d`, `viaje.gracias.p` y `acuse.viaje` (es/pt/en). `acuse.prestador` y `consulta.ok.prestador` (alta de prestadores) no lo llevan; la confirmación del pescador en las fichas es `consulta.ok.pescador` (con 48 horas). La clave compartida `consulta.ok` ya no existe (13/11/2026).
+- Plazo de respuesta prometido: **24–48 horas** (dueño, 19/11/2026; antes 48 horas, 13/11/2026), en `viaje.garantia`, `viaje.gracias.p`, `acuse.viaje`, `contraste.con.3` y las demás claves del plazo (es/pt/en, más `llms.txt`). `acuse.prestador` y `consulta.ok.prestador` (alta de prestadores) no lo llevan; la confirmación del pescador en las fichas es `consulta.ok.pescador` (con 48 horas). La clave compartida `consulta.ok` ya no existe (13/11/2026).
 - Falta enlazar desde la navegación, el pie y el sitemap: se hace después de mirar la captura (`capturas.yml`) y dar el visto bueno de diseño.
 - Qué mirar en las consultas: país, época, experiencia y modalidad; de ahí sale qué contenido escribir (ver `docs/estrategia-contenido.md`).
 - **Origen de la consulta (9/11/2026):** el pie de página guarda en `sessionStorage` la primera página de la visita, el sitio de origen y el `utm_source`, y los formularios los envían en `pm_entrada`, `pm_referente` y `pm_campana`. La consulta guarda además `canal` (lista `PM_CANALES` en `inc/consultas.php`; sumar ahí un asistente o buscador nuevo). Quien deja un email recibe un acuse de texto fijo (`acuse.*` en `data/ui.json`).
@@ -42,7 +42,7 @@ Pendiente (no hecho): el envío automático del correo de registro al operador (
 
 1. **Qué y dónde:** destino, especie, `fijo` (casillas), modalidad, alojamiento.
 2. **Cuándo y quiénes:** fechas, flexibilidad, meses, días de pesca, pescadores, acompañantes, experiencia, equipo propio.
-3. **Cómo te escribimos:** nombre, país, canal de contacto (email o WhatsApp), mensaje. Al lado del botón: "48 horas, gratis, no compartimos tu contacto hasta que vos elijas" (`viaje.garantia`).
+3. **Cómo te escribimos:** nombre, país, canal de contacto (email o WhatsApp), mensaje. Al lado del botón, una sola línea (`viaje.garantia`, ver «Hechos confirmados el 19/11/2026»).
 
 **Campos y metas** (vista `vistas/viaje.php`; renderers compartidos en `pescamapa-core/inc/consulta-campos.php`; la tarjeta corta de cada guía, `parciales/consulta.php`, usa los mismos: fechas, flexibilidad, pescadores, acompañantes):
 
@@ -73,3 +73,14 @@ Pendiente (no hecho): el envío automático del correo de registro al operador (
 **Más liviano en el teléfono (13/11/2026, pedido del dueño):** (1) meses en grilla de 4 columnas (6 desde 600 px), nombres cortos (`viaje.mes.corto.N`) con el año una vez como etiqueta Bebas (`.anio`); el nombre completo "enero 2027" va en texto oculto dentro del `label` y es lo que se guarda y se compone en `cuando`; (2) chips más densos (alto 44 px, relleno 9 px, hueco 6 px, texto 14 px); (3) modalidad, alojamiento y experiencia viven en un `<details class="afinar">` cerrado por defecto ("Afinar el pedido (opcional)") al final del paso 2; se abre solo si algún campo trae valor, hoy solo al volver de un error (ninguno se preselecciona por la URL); (4) botón "Pedir mis opciones" (y el de la tarjeta de paquetes), barra fija `viaje.barra` "Pedir opciones", "Acompañantes (no pescan)"; a ≤ 420 px cada contador va en su bloque (etiqueta en una línea, contador y ayuda debajo). La opción de flexibilidad "mes" ahora dice "Dentro del mes" (es/pt/en) para que las cinco quepan en dos filas a 390 px. Alto del formulario a 390 px: 2811 → 2192 px (es).
 
 **Qué no se verificó:** los selectores de fecha reales de iOS/Android, lectores de pantalla, el comportamiento de `:has()` en navegadores viejos, y el correo (el aviso con los resúmenes se prueba leyendo "Lo que nos escribió", no el email enviado).
+
+## Hechos confirmados por el dueño (19/11/2026) y cambios
+
+- Mandamos las opciones en **24–48 horas**.
+- El teléfono y el email del visitante **no** se pasan enseguida a los lugares: le mandamos las opciones nosotros y recién cuando elige un lugar lo conectamos.
+- El visitante **paga lo mismo** que reservando directo.
+- **Presupuesto (opcional)** por pescador y por día, en US$ (los lodges y guías cotizan en dólares): lista `opciones.presupuesto` de `ui.json` (`hasta-300`, `300-600`, `600-1000`, `mas-1000`, `nose`; rangos ajustados el 19/11/2026 por el dueño: una semana de lodge en Patagonia ronda US$ 5.000 y más, un paquete en Corrientes unos US$ 285 por día), campo `presupuesto` en el paso 2 (visible, no dentro de «Afinar»). Mismo recorrido que `alojamiento`: chips → lista blanca en `consultas.php` (una clave inventada se ignora, nunca rechaza el pedido) → meta `presupuesto` con la etiqueta en español (p. ej. «US$ 150–300») → aviso por email y caja del admin (`PM_CONSULTA_CAMPOS`) → se conserva tras un error (`PM_CONSULTA_PREVIO`). Sin precarga por URL. La tarjeta corta de las guías no lo lleva.
+- **Línea junto al botón** (`viaje.garantia`, la única; reemplaza «Te respondemos en 48 horas. Es gratis…»). `viaje.privacidad` perdió la cláusula repetida de «le damos tu nombre… únicamente al lugar».
+- **Cómo funciona:** tres pasos numerados dentro de la columna «Con Pescamapa» del bloque `parciales/contraste.php` (home y formulario). Se quitó el bloque «Cómo funciona» aparte de la página del formulario (`viaje.como.*`) para no decir lo mismo dos veces; la columna lateral conserva solo «Qué le preguntamos a cada lugar».
+- Home: el bloque «Dónde conviene ir en <mes>» va después del contraste.
+- Tests: `.github/workflows/test-wp.yml` (render en 3 idiomas, envío con presupuesto, valor inventado, conservación tras error, orden de la home). No se corrió en Actions.

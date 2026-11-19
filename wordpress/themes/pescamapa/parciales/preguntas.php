@@ -2,7 +2,7 @@
 /**
  * "What we ask each place for you": the same questions Pescamapa puts to every place and guide that fits a request.
  * Reusable block (city guides page, trip form). $args: id (heading id), nivel ('h2' | 'h3', default h2).
- * Text in ui.json (preguntas.*), three languages; the closing line carries the 48 hours the site already promises (viaje.garantia).
+ * Text in ui.json (preguntas.*), three languages; the closing line carries the 24–48 hours the site promises (viaje.garantia).
  */
 defined( 'ABSPATH' ) || exit;
 
