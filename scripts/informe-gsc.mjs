@@ -74,16 +74,28 @@ try {
 	urls = [...new Set(urls)].slice(0, 60);
 	const por = {};
 	const noIndexadas = [];
-	for (const u of urls) {
+	// Six at a time (the 60 inspections one after another were most of the report's ~9 minutes; the quota is 600 per minute).
+	const inspeccionar = async (u) => {
 		try {
 			const j = await api('https://searchconsole.googleapis.com/v1/urlInspection/index:inspect', { inspectionUrl: u, siteUrl: SITE });
-			const est = j.inspectionResult?.indexStatusResult?.coverageState ?? 'sin dato';
-			por[est] = (por[est] ?? 0) + 1;
-			if (!/^Submitted and indexed|^Indexed|Enviada e indexada|indexada/i.test(est)) noIndexadas.push(`${u.replace(SITIO_WEB, '')}: ${est}`);
+			return { u, est: j.inspectionResult?.indexStatusResult?.coverageState ?? 'sin dato' };
 		} catch (e) {
-			por['error al consultar'] = (por['error al consultar'] ?? 0) + 1;
+			return { u, est: null };
 		}
-		await new Promise((r) => setTimeout(r, 400));
+	};
+	const resultados = new Array(urls.length);
+	let siguiente = 0;
+	await Promise.all(Array.from({ length: 6 }, async () => {
+		while (siguiente < urls.length) {
+			const i = siguiente++;
+			resultados[i] = await inspeccionar(urls[i]);
+			await new Promise((r) => setTimeout(r, 300));
+		}
+	}));
+	for (const { u, est } of resultados) {
+		if (est === null) { por['error al consultar'] = (por['error al consultar'] ?? 0) + 1; continue; }
+		por[est] = (por[est] ?? 0) + 1;
+		if (!/^Submitted and indexed|^Indexed|Enviada e indexada|indexada/i.test(est)) noIndexadas.push(`${u.replace(SITIO_WEB, '')}: ${est}`);
 	}
 	L.push(`${urls.length} páginas del sitemap revisadas:`, '');
 	for (const [k, v] of Object.entries(por)) L.push(`- ${k}: ${v}`);

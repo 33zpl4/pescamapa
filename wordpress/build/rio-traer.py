@@ -22,13 +22,13 @@ UMBRAL_TENDENCIA = 0.05  # m in 3 days: below this the river is "stable"
 LENTAS = []  # (seconds, attempts, short url) of every request, to show the slowest in the log
 
 
-def get_json(url, intentos=3):
+def get_json(url, intentos=3, timeout=45):
     ultimo = None
     t0 = time.time()
     for i in range(intentos):
         try:
             req = Request(url, headers={"User-Agent": "pescamapa-rio/1.0 (+https://pescamapa.com)"})
-            with urlopen(req, timeout=45) as r:
+            with urlopen(req, timeout=timeout) as r:
                 datos = json.loads(r.read().decode("utf-8"))
             LENTAS.append((time.time() - t0, i + 1, url.split("?")[0].replace(INA, "ina").replace(METEO, "meteo")))
             return datos
@@ -78,11 +78,32 @@ def altura(estacion, hoy, niveles=None):
     }
 
 
-def clima(lat, lon):
-    q = {"latitude": lat, "longitude": lon, "past_days": 3, "forecast_days": 3, "timezone": "America/Argentina/Buenos_Aires",
-         "daily": "wind_speed_10m_max,precipitation_sum"}
-    d = get_json(f"{METEO}?{urlencode(q)}")["daily"]
+def _clima_filas(d):
     return [{"fecha": f, "viento_max": v, "lluvia": l} for f, v, l in zip(d["time"], d["wind_speed_10m_max"], d["precipitation_sum"])]
+
+
+def _clima_q(lat, lon):
+    return {"latitude": lat, "longitude": lon, "past_days": 3, "forecast_days": 3, "timezone": "America/Argentina/Buenos_Aires",
+            "daily": "wind_speed_10m_max,precipitation_sum"}
+
+
+def clima(lat, lon):
+    return _clima_filas(get_json(f"{METEO}?{urlencode(_clima_q(lat, lon))}", intentos=2, timeout=20)["daily"])
+
+
+def clima_lote(cfg):
+    """One Open-Meteo request for every destination (it answers a list, in the order of the coordinates).
+    19 separate calls kept stalling for 45 s each on the shared runner IP. Returns {clave: filas}; empty on any
+    problem, and the caller then asks one by one as before."""
+    claves = list(cfg)
+    try:
+        r = get_json(f"{METEO}?{urlencode(_clima_q(','.join(str(cfg[k]['lat']) for k in claves), ','.join(str(cfg[k]['lon']) for k in claves)))}", intentos=2, timeout=30)
+        if not isinstance(r, list) or len(r) != len(claves):
+            return {}
+        return {k: _clima_filas(d["daily"]) for k, d in zip(claves, r)}
+    except Exception as e:  # noqa: BLE001
+        print(f"AVISO clima en lote no disponible ({e}); se pide uno por uno", file=sys.stderr)
+        return {}
 
 
 def main(salida):
@@ -92,6 +113,8 @@ def main(salida):
     tiempos = {}
     # Requests run in parallel threads: the ~36 calls are independent and the time went to waiting on INA
     # (24 s on a quiet day, 3.5 min on a slow one, sequentially). Results are collected in config order.
+    lote = clima_lote(cfg)
+
     def leer(item):
         clave, c = item
         res, avisos = {}, []
@@ -101,7 +124,7 @@ def main(salida):
             except Exception as e:  # noqa: BLE001
                 avisos.append(f"AVISO {clave}: altura no disponible ({e})")
         try:
-            res["clima"] = clima(c["lat"], c["lon"])
+            res["clima"] = lote.get(clave) or clima(c["lat"], c["lon"])
         except Exception as e:  # noqa: BLE001
             avisos.append(f"AVISO {clave}: clima no disponible ({e})")
         return clave, res, avisos
