@@ -288,7 +288,7 @@ $G['es'] = [
 	],
 	'campos' => [
 		'h1' => 'Pesca de steelhead en el río Santa Cruz (Piedra Buena): reglas, permiso y lodge',
-		'bajada' => 'La trucha arco iris que sube del mar por el río Santa Cruz. Qué dice el Anexo I 2026/27, cuándo van los operadores, qué permiso hace falta y lo que publica el único lodge que encontramos.',
+		'bajada' => 'La trucha arco iris que sube del mar por el río Santa Cruz. Qué dice el Anexo I 2026/27, cuándo se sale a pescar, qué permiso hace falta y lo que publica el único lodge que encontramos.',
 		'modalidades' => "Mosca (flycast)\nSpinning y baitcasting\nTrolling (solo guías R.P.A.T.)",
 		'epoca' => 'Fines de febrero o marzo a mayo para el steelhead, según los operadores; el río está abierto todo el año.',
 		'seo_title' => 'Pesca de steelhead en el río Santa Cruz: reglas y permiso',
@@ -426,7 +426,7 @@ $G['en'] = [
 	],
 	'campos' => [
 		'h1' => 'Steelhead fishing on the Santa Cruz River (Piedra Buena): rules, permit and lodge',
-		'bajada' => 'The rainbow trout that runs up the Santa Cruz River from the sea. What Annex I 2026/27 says, when operators go, which permit you need and what the only lodge we found publishes.',
+		'bajada' => 'The rainbow trout that runs up the Santa Cruz River from the sea. What Annex I 2026/27 says, when trips run, which permit you need and what the only lodge we found publishes.',
 		'modalidades' => "Fly fishing (flycast)\nSpinning and baitcasting\nTrolling (R.P.A.T. guides only)",
 		'epoca' => 'Late February or March to May for steelhead, according to the operators; the river is open all year.',
 		'seo_title' => 'Steelhead fishing on the Santa Cruz River: rules, permit',
@@ -564,7 +564,7 @@ $G['pt'] = [
 	],
 	'campos' => [
 		'h1' => 'Pesca de steelhead no rio Santa Cruz (Piedra Buena): regras, licença e lodge',
-		'bajada' => 'A truta arco-íris que sobe do mar pelo rio Santa Cruz. O que diz o Anexo I 2026/27, quando vão os operadores, que licença é preciso e o que publica o único lodge que encontramos.',
+		'bajada' => 'A truta arco-íris que sobe do mar pelo rio Santa Cruz. O que diz o Anexo I 2026/27, quando se sai para pescar, que licença é preciso e o que publica o único lodge que encontramos.',
 		'modalidades' => "Fly (flycast)\nSpinning e baitcasting\nTrolling (só guias R.P.A.T.)",
 		'epoca' => 'Do fim de fevereiro ou março a maio para o steelhead, segundo os operadores; o rio está aberto o ano todo.',
 		'seo_title' => 'Pesca de steelhead no rio Santa Cruz: regras e licença',

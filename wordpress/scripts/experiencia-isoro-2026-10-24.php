@@ -22,7 +22,7 @@ $nombre  = 'Experiencia Isoró';
 
 $desc = 'Pesca deportiva con devolución y paseos náuticos por la Reserva Natural Isoró y el río Paraná, con base en Goya (la boca del Isoró queda 4 km aguas abajo del puerto). En la reserva, dorado con flycast, baitcast y spinning; en el Paraná, pesca con carnada anclada o a garete, también de noche. Media jornada o jornada completa (11 a 12 horas de pesca). Packs de un día de pesca, o de 1 a 7 noches de alojamiento con días de pesca. Paseos náuticos de hasta 5 personas para observar aves y fotografiar, de media jornada o de 8 a 10 horas.';
 $notas = "Fuente: folleto 'Experiencia Isoró | Pesca & Naturaleza' (2026), enviado por el dueño el 24/10/2026. Material del propio prestador; todavía NO hablamos con ellos para el listado.\n"
-	. "CONTACTO INTERNO (no se imprime): Tomás Frattini, WhatsApp +54 3777 603774; Augusto Frattini, WhatsApp +54 11 53840108; tomasfraa@gmail.com; Instagram @tomasfrattini.pesca. ('Agus' = Augusto, según el dueño.)\n"
+	. "CONTACTO INTERNO: (contacto interno fuera del repo). ('Agus' = Augusto, según el dueño.)\n"
 	. "Lancha: Astillero La Paz (ALP), modelo Guaycurú 630; butacas o back to back, parabrisas, plataformas de casteo en proa y popa, cajones, luces de navegación. Motor: el folleto no lo dice.\n"
 	. "Aliados que muestra el folleto ('Nos acompañan'): Condado Hotel Casino, Costa Apart & Hotel, Ogaraity Apart Hotel, Cabañas Refugio del Río, Coleman, ALP. Candidatos para más alojamientos.\n"
 	. "Packs (sin precio): 1 día de pesca; 1+1, 2+1, 3+2, 4+3, 5+4 y 7+6 (días de alojamiento + días de pesca). Pedirles precios, temporada, idiomas y capacidad por lancha.\n"

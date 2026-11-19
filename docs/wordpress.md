@@ -211,6 +211,13 @@ desactualizadas; las propagamos con un script.
 - **Cómo se revisa:** (1) `wp-script` con `leer-vivo`: al final imprime el registro y las últimas 20 entradas de la última hora que mencionen el tema o `pescamapa-core` (sin rutas del servidor; cuenta como error si hay alguna); (2) por SSH, `tail -n 50 /www/wwwlogs/pescamapa-php-errors.log` (el registro no tiene rotación: si crece, vaciarlo a mano o pedir logrotate en aaPanel).
 - **Qué falla el deploy** (`deploy-wp.yml`): el paso «Verify the served site» sigue fallando si una página muestra `<b>Warning</b>:` (etc.). Nuevo paso **«Check the PHP error log»**: antes de subir se guarda el tamaño del registro y la hora; después lee solo lo escrito desde entonces, imprime «Registro leído: N líneas escritas desde <hora UTC> (offset …)» y **falla** ante `PHP Warning|Notice|Deprecated|Fatal error|Parse error` cuya línea mencione `wp-content/themes/pescamapa/` o `wp-content/plugins/pescamapa-core/`; los de otros plugins o del core solo se informan (⚠). No se verificó provocando un error en producción.
 
+### Autoprueba de errores de PHP (19/11/2026)
+
+- **Para qué:** comprobar de punta a punta, sin esperar un error real, que PHP **no** muestra un aviso en la página y **sí** lo deja en `PM_ERROR_LOG`, y que el paso «Check the PHP error log» de `deploy-wp.yml` lo detectaría. Cuándo: una vez al mes y siempre que cambie el servidor (`php.ini`, aaPanel, versión de PHP, ruta del registro).
+- **Cómo funciona:** el plugin (`pescamapa-core.php`, hook `init`) atiende `?pm_autoprueba=<token>` solo si el token coincide con el transient `pm_autoprueba` (lo crea el wp-script; un solo uso: se borra al usarse; vence a los 5 minutos). Entonces hace `trigger_error('Pescamapa autoprueba controlada', E_USER_WARNING)` y la página sigue normal. Sin token válido no hace nada.
+- **Cómo correrla:** Run wp-script con `script = autoprueba-errores` (no necesita `aplicar`). Pide la portada con el token y comprueba: HTML sin `<b>Warning</b>` ni «autoprueba controlada»; línea nueva en el registro con la marca; esa línea cumple la expresión del deploy (`PHP Warning` + ruta `wp-content/plugins/pescamapa-core/`). Imprime `OK` o `FALLA` y la línea del registro sin rutas del servidor. Solo escribe el transient.
+- **Ruido en el registro:** la línea queda en el registro (no hay rotación) y `leer-vivo` la ignora a propósito; los deploys posteriores solo leen lo escrito después de su marca.
+
 ## Cambio de dominio (hecho el 20/10/2026)
 
 1. aaPanel → WP Toolkit → el sitio → agregar el dominio `pescamapa.com`.

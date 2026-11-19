@@ -348,7 +348,7 @@ $D = json_decode( <<<'JSON'
    ],
    "campos": {
     "h1": "Pesca de dorado en Itatí y el Alto Paraná, Corrientes: lodges, reglas y licencia",
-    "bajada": "Itatí, sobre el Alto Paraná, tiene lodges de dorado con guía que encontramos. Qué dice la página de cada operador, qué podés llevarte, qué licencia hace falta y qué pasó con las vedas de 2026.",
+    "bajada": "Itatí, sobre el Alto Paraná, tiene lodges de dorado con guía que encontramos. Qué dice la página de cada lugar y guía, qué podés llevarte, qué licencia hace falta y qué pasó con las vedas de 2026.",
     "modalidades": "Embarcada con guía\nMosca (flycast)\nBaitcasting y spinning (según el lodge)",
     "epoca": "De septiembre u octubre a mayo según los operadores; no coinciden en enero y febrero.",
     "seo_title": "Pesca de dorado en Itatí: lodges, reglas y licencia",
@@ -668,7 +668,7 @@ $D = json_decode( <<<'JSON'
    ],
    "campos": {
     "h1": "Golden dorado fishing in Itatí and the Upper Paraná, Corrientes: lodges, rules and licence",
-    "bajada": "Itatí, on the Upper Paraná, has guided dorado lodges. What each operator’s page says, what you can keep, which licence you need and what happened with the 2026 closures.",
+    "bajada": "Itatí, on the Upper Paraná, has guided dorado lodges. What each place’s and guide’s page says, what you can keep, which licence you need and what happened with the 2026 closures.",
     "modalidades": "Guided boat fishing\nFly fishing (flycast)\nBaitcasting and spinning (depending on the lodge)",
     "epoca": "From September or October to May according to the operators; they differ on January and February.",
     "seo_title": "Golden dorado fishing in Itatí: lodges, rules, licence",
@@ -988,7 +988,7 @@ $D = json_decode( <<<'JSON'
    ],
    "campos": {
     "h1": "Pesca de dourado em Itatí e no Alto Paraná, Corrientes: lodges, regras e licença",
-    "bajada": "Itatí, no Alto Paraná, tem lodges de dourado com guia. O que diz a página de cada operador, o que pode levar, que licença é preciso e o que houve com os defesos de 2026.",
+    "bajada": "Itatí, no Alto Paraná, tem lodges de dourado com guia. O que diz a página de cada lugar e guia, o que pode levar, que licença é preciso e o que houve com os defesos de 2026.",
     "modalidades": "Embarcada com guia\nFly (flycast)\nBaitcasting e spinning (conforme o lodge)",
     "epoca": "De setembro ou outubro a maio segundo os operadores; divergem em janeiro e fevereiro.",
     "seo_title": "Pesca de dourado em Itatí: lodges, regras e licença",
