@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900" role="img" aria-labelledby="t d" font-family="Outfit, 'Helvetica Neue', Arial, sans-serif">
+<title id="t">US$ por pescador y por día de pesca</title>
+<desc id="d">Puntos: cada precio publicado, en US$ por pescador y por día de pesca. Día con guía, Bariloche: 7 precios de 260 a 345; Posada, Esquina: 6 precios de 276 a 352; Delta y Santa Fe: 3 precios de 480 a 900; Lodges, paquetes: 23 precios de 1250 a 2025; Semana, Corrientes: 7 precios de 1067 a 1325; Semana, Patagonia norte: 5 precios de 967 a 1533; Semana, Patagonia sur: 4 precios de 1231 a 2300</desc>
+<rect width="1200" height="900" fill="#fbfaf6"/>
+<text x="40" y="58" font-family="'Bebas Neue', Impact, 'Arial Narrow', sans-serif" font-size="34" letter-spacing="2" fill="#5e6b33">PESCAMAPA</text>
+<text x="40" y="116" font-family="'Playfair Display', Georgia, 'Times New Roman', serif" font-size="50" font-weight="700" fill="#14251f">US$ por pescador y por día de pesca</text>
+<text x="40" y="160" font-size="32" fill="#344a3d">Precios publicados por cada lugar, por formato</text>
+<text x="40" y="204" font-size="34" font-weight="700" fill="#11251f">Leídos entre el 31/10 y el 13/11/2026</text>
+<line x1="500.0" x2="500.0" y1="248" y2="688" stroke="#d9ddd2" stroke-width="2"/>
+<text x="500.0" y="724" font-size="28" text-anchor="middle" fill="#5f685e">0</text>
+<line x1="597.0" x2="597.0" y1="248" y2="688" stroke="#d9ddd2" stroke-width="2"/>
+<text x="597.0" y="724" font-size="28" text-anchor="middle" fill="#5f685e">500</text>
+<line x1="694.0" x2="694.0" y1="248" y2="688" stroke="#d9ddd2" stroke-width="2"/>
+<text x="694.0" y="724" font-size="28" text-anchor="middle" fill="#5f685e">1.000</text>
+<line x1="791.0" x2="791.0" y1="248" y2="688" stroke="#d9ddd2" stroke-width="2"/>
+<text x="791.0" y="724" font-size="28" text-anchor="middle" fill="#5f685e">1.500</text>
+<line x1="888.0" x2="888.0" y1="248" y2="688" stroke="#d9ddd2" stroke-width="2"/>
+<text x="888.0" y="724" font-size="28" text-anchor="middle" fill="#5f685e">2.000</text>
+<line x1="985.0" x2="985.0" y1="248" y2="688" stroke="#d9ddd2" stroke-width="2"/>
+<text x="985.0" y="724" font-size="28" text-anchor="middle" fill="#5f685e">2.500</text>
+<rect x="24" y="248" width="1152" height="58" rx="12" fill="#f4f2e9" fill-opacity="0.8"/>
+<text x="40" y="280" font-size="30" font-weight="700" fill="#14251f">Día con guía, Bariloche</text>
+<text x="40" y="306" font-size="26" fill="#5f685e">dos pescadores en el bote</text>
+<line x1="550.4" x2="566.9" y1="282" y2="282" stroke="#344a3d" stroke-width="4" stroke-opacity="0.35"/>
+<circle cx="550.4" cy="282" r="9" fill="#344a3d" fill-opacity="0.8" stroke="#fbfaf6" stroke-width="2.5"/>
+<circle cx="551.4" cy="282" r="9" fill="#344a3d" fill-opacity="0.8" stroke="#fbfaf6" stroke-width="2.5"/>
+<circle cx="564.0" cy="282" r="9" fill="#344a3d" fill-opacity="0.8" stroke="#fbfaf6" stroke-width="2.5"/>
+<circle cx="553.4" cy="282" r="9" fill="#344a3d" fill-opacity="0.8" stroke="#fbfaf6" stroke-width="2.5"/>
+<circle cx="553.4" cy="282" r="9" fill="#344a3d" fill-opacity="0.8" stroke="#fbfaf6" stroke-width="2.5"/>
+<circle cx="556.3" cy="282" r="9" fill="#344a3d" fill-opacity="0.8" stroke="#fbfaf6" stroke-width="2.5"/>
+<circle cx="566.9" cy="282" r="9" fill="#344a3d" fill-opacity="0.8" stroke="#fbfaf6" stroke-width="2.5"/>
+<text x="1007" y="279" font-size="29" font-weight="700" fill="#14251f">n = 7</text>
+<text x="1007" y="307" font-size="26" fill="#5f685e">260–345</text>
+<text x="40" y="342" font-size="30" font-weight="700" fill="#14251f">Posada, Esquina</text>
+<text x="40" y="368" font-size="26" fill="#5f685e">paquete de 2 a 4 días</text>
+<line x1="553.6" x2="568.4" y1="344" y2="344" stroke="#344a3d" stroke-width="4" stroke-opacity="0.35"/>
+<circle cx="568.4" cy="344" r="9" fill="#344a3d" fill-opacity="0.8" stroke="#fbfaf6" stroke-width="2.5"/>
+<circle cx="565.3" cy="344" r="9" fill="#344a3d" fill-opacity="0.8" stroke="#fbfaf6" stroke-width="2.5"/>
+<circle cx="563.3" cy="344" r="9" fill="#344a3d" fill-opacity="0.8" stroke="#fbfaf6" stroke-width="2.5"/>
+<circle cx="558.7" cy="344" r="9" fill="#344a3d" fill-opacity="0.8" stroke="#fbfaf6" stroke-width="2.5"/>
+<circle cx="555.3" cy="344" r="9" fill="#344a3d" fill-opacity="0.8" stroke="#fbfaf6" stroke-width="2.5"/>
+<circle cx="553.6" cy="344" r="9" fill="#344a3d" fill-opacity="0.8" stroke="#fbfaf6" stroke-width="2.5"/>
+<text x="1007" y="341" font-size="29" font-weight="700" fill="#14251f">n = 6</text>
+<text x="1007" y="369" font-size="26" fill="#5f685e">276–352</text>
+<rect x="24" y="372" width="1152" height="58" rx="12" fill="#f4f2e9" fill-opacity="0.8"/>
+<text x="40" y="404" font-size="30" font-weight="700" fill="#14251f">Delta y Santa Fe</text>
+<text x="40" y="430" font-size="26" fill="#5f685e">barco-hotel y lodge, «desde»</text>
+<line x1="593.1" x2="674.6" y1="406" y2="406" stroke="#344a3d" stroke-width="4" stroke-opacity="0.35"/>
+<circle cx="674.6" cy="406" r="9" fill="#344a3d" fill-opacity="0.8" stroke="#fbfaf6" stroke-width="2.5"/>
+<circle cx="597.8" cy="406" r="9" fill="#344a3d" fill-opacity="0.8" stroke="#fbfaf6" stroke-width="2.5"/>
+<circle cx="593.1" cy="406" r="9" fill="#344a3d" fill-opacity="0.8" stroke="#fbfaf6" stroke-width="2.5"/>
+<text x="1007" y="403" font-size="29" font-weight="700" fill="#14251f">n = 3</text>
+<text x="1007" y="431" font-size="26" fill="#5f685e">480–900</text>
+<text x="40" y="466" font-size="30" font-weight="700" fill="#14251f">Lodges, paquetes</text>
+<text x="40" y="492" font-size="26" fill="#5f685e">de 2 a 5 días de pesca</text>
+<line x1="742.5" x2="892.9" y1="468" y2="468" stroke="#5e6b33" stroke-width="4" stroke-opacity="0.35"/>
+<circle cx="794.7" cy="468" r="9" fill="#5e6b33" fill-opacity="0.8" stroke="#fbfaf6" stroke-width="2.5"/>
+<circle cx="815.0" cy="468" r="9" fill="#5e6b33" fill-opacity="0.8" stroke="#fbfaf6" stroke-width="2.5"/>
+<circle cx="846.0" cy="468" r="9" fill="#5e6b33" fill-opacity="0.8" stroke="#fbfaf6" stroke-width="2.5"/>
+<circle cx="892.9" cy="468" r="9" fill="#5e6b33" fill-opacity="0.8" stroke="#fbfaf6" stroke-width="2.5"/>
+<circle cx="794.7" cy="468" r="9" fill="#5e6b33" fill-opacity="0.8" stroke="#fbfaf6" stroke-width="2.5"/>
+<circle cx="815.0" cy="468" r="9" fill="#5e6b33" fill-opacity="0.8" stroke="#fbfaf6" stroke-width="2.5"/>
+<circle cx="846.0" cy="468" r="9" fill="#5e6b33" fill-opacity="0.8" stroke="#fbfaf6" stroke-width="2.5"/>
+<circle cx="892.9" cy="468" r="9" fill="#5e6b33" fill-opacity="0.8" stroke="#fbfaf6" stroke-width="2.5"/>
+<circle cx="761.9" cy="468" r="9" fill="#5e6b33" fill-opacity="0.8" stroke="#fbfaf6" stroke-width="2.5"/>
+<circle cx="742.5" cy="468" r="9" fill="#5e6b33" fill-opacity="0.8" stroke="#fbfaf6" stroke-width="2.5"/>
+<circle cx="747.4" cy="468" r="9" fill="#5e6b33" fill-opacity="0.8" stroke="#fbfaf6" stroke-width="2.5"/>
+<circle cx="774.8" cy="468" r="9" fill="#5e6b33" fill-opacity="0.8" stroke="#fbfaf6" stroke-width="2.5"/>
+<circle cx="769.7" cy="468" r="9" fill="#5e6b33" fill-opacity="0.8" stroke="#fbfaf6" stroke-width="2.5"/>
+<circle cx="788.6" cy="468" r="9" fill="#5e6b33" fill-opacity="0.8" stroke="#fbfaf6" stroke-width="2.5"/>
+<circle cx="820.1" cy="468" r="9" fill="#5e6b33" fill-opacity="0.8" stroke="#fbfaf6" stroke-width="2.5"/>
+<circle cx="883.2" cy="468" r="9" fill="#5e6b33" fill-opacity="0.8" stroke="#fbfaf6" stroke-width="2.5"/>
+<circle cx="791.0" cy="468" r="9" fill="#5e6b33" fill-opacity="0.8" stroke="#fbfaf6" stroke-width="2.5"/>
+<circle cx="746.4" cy="468" r="9" fill="#5e6b33" fill-opacity="0.8" stroke="#fbfaf6" stroke-width="2.5"/>
+<circle cx="778.9" cy="468" r="9" fill="#5e6b33" fill-opacity="0.8" stroke="#fbfaf6" stroke-width="2.5"/>
+<circle cx="820.1" cy="468" r="9" fill="#5e6b33" fill-opacity="0.8" stroke="#fbfaf6" stroke-width="2.5"/>
+<circle cx="883.2" cy="468" r="9" fill="#5e6b33" fill-opacity="0.8" stroke="#fbfaf6" stroke-width="2.5"/>
+<circle cx="788.2" cy="468" r="9" fill="#5e6b33" fill-opacity="0.8" stroke="#fbfaf6" stroke-width="2.5"/>
+<circle cx="825.9" cy="468" r="9" fill="#5e6b33" fill-opacity="0.8" stroke="#fbfaf6" stroke-width="2.5"/>
+<text x="1007" y="465" font-size="29" font-weight="700" fill="#14251f">n = 23</text>
+<text x="1007" y="493" font-size="26" fill="#5f685e">1.250–2.025</text>
+<rect x="24" y="496" width="1152" height="58" rx="12" fill="#f4f2e9" fill-opacity="0.8"/>
+<text x="40" y="528" font-size="30" font-weight="700" fill="#14251f">Semana, Corrientes</text>
+<text x="40" y="554" font-size="26" fill="#5f685e">7 noches, 6 días de pesca</text>
+<line x1="706.9" x2="757.0" y1="530" y2="530" stroke="#11251f" stroke-width="4" stroke-opacity="0.35"/>
+<circle cx="757.0" cy="530" r="9" fill="#11251f" fill-opacity="0.8" stroke="#fbfaf6" stroke-width="2.5"/>
+<circle cx="757.0" cy="530" r="9" fill="#11251f" fill-opacity="0.8" stroke="#fbfaf6" stroke-width="2.5"/>
+<circle cx="706.9" cy="530" r="9" fill="#11251f" fill-opacity="0.8" stroke="#fbfaf6" stroke-width="2.5"/>
+<circle cx="753.8" cy="530" r="9" fill="#11251f" fill-opacity="0.8" stroke="#fbfaf6" stroke-width="2.5"/>
+<circle cx="726.3" cy="530" r="9" fill="#11251f" fill-opacity="0.8" stroke="#fbfaf6" stroke-width="2.5"/>
+<circle cx="757.0" cy="530" r="9" fill="#11251f" fill-opacity="0.8" stroke="#fbfaf6" stroke-width="2.5"/>
+<circle cx="753.8" cy="530" r="9" fill="#11251f" fill-opacity="0.8" stroke="#fbfaf6" stroke-width="2.5"/>
+<text x="1007" y="527" font-size="29" font-weight="700" fill="#14251f">n = 7</text>
+<text x="1007" y="555" font-size="26" fill="#5f685e">1.067–1.325</text>
+<text x="40" y="590" font-size="30" font-weight="700" fill="#14251f">Semana, Patagonia norte</text>
+<text x="40" y="616" font-size="26" fill="#5f685e">7 noches, 6 días de pesca</text>
+<line x1="687.5" x2="797.5" y1="592" y2="592" stroke="#11251f" stroke-width="4" stroke-opacity="0.35"/>
+<circle cx="724.7" cy="592" r="9" fill="#11251f" fill-opacity="0.8" stroke="#fbfaf6" stroke-width="2.5"/>
+<circle cx="797.5" cy="592" r="9" fill="#11251f" fill-opacity="0.8" stroke="#fbfaf6" stroke-width="2.5"/>
+<circle cx="782.9" cy="592" r="9" fill="#11251f" fill-opacity="0.8" stroke="#fbfaf6" stroke-width="2.5"/>
+<circle cx="711.6" cy="592" r="9" fill="#11251f" fill-opacity="0.8" stroke="#fbfaf6" stroke-width="2.5"/>
+<circle cx="687.5" cy="592" r="9" fill="#11251f" fill-opacity="0.8" stroke="#fbfaf6" stroke-width="2.5"/>
+<text x="1007" y="589" font-size="29" font-weight="700" fill="#14251f">n = 5</text>
+<text x="1007" y="617" font-size="26" fill="#5f685e">967–1.533</text>
+<rect x="24" y="620" width="1152" height="58" rx="12" fill="#f4f2e9" fill-opacity="0.8"/>
+<text x="40" y="652" font-size="30" font-weight="700" fill="#14251f">Semana, Patagonia sur</text>
+<text x="40" y="678" font-size="26" fill="#5f685e">7 noches, 6 o 6,5 días</text>
+<line x1="738.8" x2="946.2" y1="654" y2="654" stroke="#11251f" stroke-width="4" stroke-opacity="0.35"/>
+<circle cx="738.8" cy="654" r="9" fill="#11251f" fill-opacity="0.8" stroke="#fbfaf6" stroke-width="2.5"/>
+<circle cx="823.0" cy="654" r="9" fill="#11251f" fill-opacity="0.8" stroke="#fbfaf6" stroke-width="2.5"/>
+<line x1="886.5" x2="946.2" y1="654" y2="654" stroke="#11251f" stroke-width="12" stroke-linecap="round"/>
+<line x1="886.5" x2="946.2" y1="654" y2="654" stroke="#11251f" stroke-width="12" stroke-linecap="round"/>
+<text x="1007" y="651" font-size="29" font-weight="700" fill="#14251f">n = 4</text>
+<text x="1007" y="679" font-size="26" fill="#5f685e">1.231–2.300</text>
+<text x="40" y="764" font-size="29" fill="#5f685e">Cuenta: precio ÷ pescadores ÷ días de pesca publicados (día con guía: dos en el bote).</text>
+<text x="40" y="800" font-size="29" fill="#5f685e">Barra gruesa: el lugar publica precios por fecha. Escala en US$.</text>
+<text x="40" y="836" font-size="29" fill="#5f685e">Sin conversión de monedas: los precios en pesos y euros quedan fuera.</text>
+<text x="40" y="872" font-size="29" fill="#344a3d">Fuente: precios publicados por cada lugar (ver nota). Elaboración: Pescamapa.</text>
+</svg>

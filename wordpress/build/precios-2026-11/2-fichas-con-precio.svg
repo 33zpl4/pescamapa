@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900" role="img" aria-labelledby="t d" font-family="Outfit, 'Helvetica Neue', Arial, sans-serif">
+<title id="t">Cuántas fichas publican su precio</title>
+<desc id="d">Barras por zona: fichas con precio fechado y sin precio. Corrientes: 4 de 24; Patagonia sur: 4 de 13; Bariloche: 5 de 9; Chubut y Neuquén: 0 de 6; Entre Ríos y Buenos Aires: 0 de 6; Todas las fichas: 13 de 58</desc>
+<rect width="1200" height="900" fill="#fbfaf6"/>
+<text x="40" y="58" font-family="'Bebas Neue', Impact, 'Arial Narrow', sans-serif" font-size="34" letter-spacing="2" fill="#5e6b33">PESCAMAPA</text>
+<text x="40" y="116" font-family="'Playfair Display', Georgia, 'Times New Roman', serif" font-size="50" font-weight="700" fill="#14251f">Cuántas fichas publican su precio</text>
+<text x="40" y="160" font-size="32" fill="#344a3d">Fichas de lugares con precio fechado, por zona</text>
+<text x="40" y="204" font-size="34" font-weight="700" fill="#11251f">13 de 58 fichas, a noviembre de 2026</text>
+<text x="40" y="302" font-size="31" font-weight="700" fill="#14251f">Corrientes</text>
+<rect x="440" y="270" width="580.0" height="46" fill="#fbfaf6" stroke="#344a3d" stroke-width="3" stroke-dasharray="10 6"/>
+<rect x="440" y="270" width="96.7" height="46" fill="#344a3d" stroke="#11251f" stroke-width="3"/>
+<text x="1034.0" y="306" font-size="31" font-weight="700" fill="#11251f">4 de 24</text>
+<text x="40" y="382" font-size="31" font-weight="700" fill="#14251f">Patagonia sur</text>
+<rect x="440" y="350" width="314.2" height="46" fill="#fbfaf6" stroke="#344a3d" stroke-width="3" stroke-dasharray="10 6"/>
+<rect x="440" y="350" width="96.7" height="46" fill="#344a3d" stroke="#11251f" stroke-width="3"/>
+<text x="768.2" y="386" font-size="31" font-weight="700" fill="#11251f">4 de 13</text>
+<text x="40" y="462" font-size="31" font-weight="700" fill="#14251f">Bariloche</text>
+<rect x="440" y="430" width="217.5" height="46" fill="#fbfaf6" stroke="#344a3d" stroke-width="3" stroke-dasharray="10 6"/>
+<rect x="440" y="430" width="120.8" height="46" fill="#344a3d" stroke="#11251f" stroke-width="3"/>
+<text x="671.5" y="466" font-size="31" font-weight="700" fill="#11251f">5 de 9</text>
+<text x="40" y="542" font-size="31" font-weight="700" fill="#14251f">Chubut y Neuquén</text>
+<rect x="440" y="510" width="145.0" height="46" fill="#fbfaf6" stroke="#344a3d" stroke-width="3" stroke-dasharray="10 6"/>
+<text x="599.0" y="546" font-size="31" font-weight="700" fill="#11251f">0 de 6</text>
+<text x="40" y="622" font-size="31" font-weight="700" fill="#14251f">Entre Ríos y Buenos Aires</text>
+<rect x="440" y="590" width="145.0" height="46" fill="#fbfaf6" stroke="#344a3d" stroke-width="3" stroke-dasharray="10 6"/>
+<text x="599.0" y="626" font-size="31" font-weight="700" fill="#11251f">0 de 6</text>
+<rect x="24" y="666" width="1152" height="76" rx="12" fill="#f4f2e9"/>
+<text x="40" y="726" font-size="31" font-weight="700" fill="#14251f">Todas las fichas</text>
+<rect x="440" y="694" width="580.0" height="46" fill="#f4f2e9" stroke="#344a3d" stroke-width="3" stroke-dasharray="10 6"/>
+<rect x="440" y="694" width="130.0" height="46" fill="#d8e46a" stroke="#11251f" stroke-width="3"/>
+<text x="1034.0" y="730" font-size="31" font-weight="700" fill="#11251f">13 de 58</text>
+<rect x="440" y="770" width="34" height="24" fill="#344a3d" stroke="#11251f" stroke-width="3"/><text x="486" y="790" font-size="28" fill="#14251f">con precio fechado</text>
+<rect x="770" y="770" width="34" height="24" fill="none" stroke="#344a3d" stroke-width="3" stroke-dasharray="6 4"/><text x="816" y="790" font-size="28" fill="#14251f">sin precio</text>
+<text x="40" y="818" font-size="29" fill="#5f685e">Recuento de fichas públicas de lugares registradas en el repositorio al 19/11/2026.</text>
+<text x="40" y="854" font-size="29" fill="#5f685e">«Con precio»: ficha con tarifa y fecha de lectura. No cuenta las notas de precios.</text>
+<text x="40" y="890" font-size="29" fill="#344a3d">Fuente: fichas de Pescamapa (ver nota). Elaboración: Pescamapa.</text>
+</svg>
