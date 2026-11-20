@@ -1039,6 +1039,35 @@ jobs:
           # Same phone bar on the destination guide (to its own form) and on notes (to the trip form).
           check /litoral/corrientes/pesca-en-esquina/ 200 'class="barra-pedir" href="#consulta"'
           check /notas/nota-de-prueba/ 200 'class="barra-pedir" href="[^"]*/armar-viaje/'
+          # Informative pieces (owner, 20/11/2026): nota_informativa on the Spanish row hides every commercial CTA in es/en/pt;
+          # flag off = as before (regression). Fixtures: two notes (flag on / off) x 3 languages, removed right after.
+          cat > /tmp/info-fixtures.php <<'PHP'
+          <?php
+          foreach ( [ 'info-on' => 1, 'info-off' => 0 ] as $c => $flag ) {
+              foreach ( [ 'es' => 'notas', 'en' => 'notes', 'pt' => 'notas' ] as $i => $x ) {
+                  $id = wp_insert_post( [ 'post_type' => 'pm_nota', 'post_status' => 'publish', 'post_title' => "Prueba {$c} {$i}", 'post_name' => "prueba-{$c}-{$i}", 'post_content' => '<!-- wp:paragraph --><p>CUERPO-' . $c . '</p><!-- /wp:paragraph -->' ], true );
+                  is_wp_error( $id ) && WP_CLI::error( $id->get_error_message() );
+                  update_post_meta( $id, '_prueba_info', 1 );
+                  $campos = [ 'idioma' => $i, 'clave' => "prueba-{$c}" ];
+                  if ( 'es' === $i ) { $campos += [ 'nota_tipo' => 'datos', 'nota_destino' => 'esquina', 'nota_especie' => 'dorado', 'nota_fecha' => '20261120', 'nota_informativa' => $flag ]; }
+                  foreach ( $campos as $k => $v ) { update_field( $k, $v, $id ); }
+              }
+          }
+          PHP
+          wp --path="$WP" eval-file /tmp/info-fixtures.php
+          for par in "/notas/prueba-info-on-es/" "/en/notes/prueba-info-on-en/" "/pt/notas/prueba-info-on-pt/"; do
+            check "$par" 200 'class="prose"'
+            for m in 'class="cta-nota"' 'class="barra-pedir"' 'class="guias-especie"' 'cta-gratis' 'banda-gratis' 'Pedir opciones' 'Request options' 'Pedir opções'; do
+              grep -q -- "$m" page.html && { echo "✖ $par (flag activo) contiene $m"; fail=1; }
+            done
+            echo "✓ $par sin CTA comerciales (flag activo)"
+          done
+          for par in "/notas/prueba-info-off-es/" "/en/notes/prueba-info-off-en/" "/pt/notas/prueba-info-off-pt/"; do
+            check "$par" 200 'class="cta-nota"'
+            grep -q 'class="barra-pedir"' page.html || { echo "✖ $par (flag apagado) sin barra-pedir"; fail=1; }
+          done
+          check /notas/prueba-info-on-es/ 200 'DATO-CLAVE-DE-PRUEBA\|CUERPO-info-on'
+          wp --path="$WP" eval 'foreach ( get_posts( [ "post_type" => "pm_nota", "post_status" => "any", "meta_key" => "_prueba_info", "meta_value" => 1, "numberposts" => -1 ] ) as $x ) { wp_delete_post( $x->ID, true ); }'
           # City page (1/11/2026): every public outfitter of the destination, short answer, FAQ, agreements first; no contact data, no example data.
           check /guias-de-pesca/esquina/ 200 'v-guias' 'CONTACTO-INTERNO-123'
           check /guias-de-pesca/esquina/ 200 'Guías de pesca en Esquina'
