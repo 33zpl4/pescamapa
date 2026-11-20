@@ -51,3 +51,7 @@ automatice, cada fila pasa a ser un registro y los hechos extraídos llevan
 ## Fotos (regla del dueño, 29/10/2026)
 
 Solo se cargan fotos que el dueño aporta como disponibles o permitidas, **siempre con el crédito del fotógrafo** (`foto_autor` y `foto_origen`: propia, cedida o licencia). No se marca la licencia como pendiente ni se busca otra fuente cada vez; si una foto tiene condiciones especiales, el dueño lo avisa al pasarla. Las fotos viven en `wordpress/fotos/` (máx. 1600 px de ancho) y se cargan con un script de `wordpress/scripts/` (simulacro primero).
+
+## Notas con datos propios (20/11/2026)
+
+Una nota fechada con números calculados por nosotros (no una página que se actualiza sola) lleva: los números exactos de `wordpress/build/rio-historia.py` (copia en una carpeta de `wordpress/build/` para que la nota se pueda reproducir), infografías en 4:3 (la portada se recorta a 4:3) generadas desde esos archivos, la fecha de lectura y la fuente en la nota y en cada gráfico, el CSV para descargar, y la frase «Podés usar estos gráficos y números citando a Pescamapa con enlace a esta nota». Sin pronóstico ni efecto sobre la pesca. Primera: `nota-parana-goya-2026-11-20`.
