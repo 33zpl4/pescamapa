@@ -7,6 +7,10 @@ name: River history
 
 on:
   workflow_dispatch:
+    inputs:
+      desde:
+        description: "First year of the reference period (default 1990; INA keeps some Paraná series from 1901-1903). Other values push to branch rio-historia-desde-<year>."
+        default: "1990"
 
 permissions:
   contents: write
@@ -14,23 +18,26 @@ permissions:
 jobs:
   historia:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
       - name: Self-test, then read the INA history
         run: |
           python3 -I wordpress/build/rio-historia.py --autotest
-          python3 wordpress/build/rio-historia.py salida
+          python3 wordpress/build/rio-historia.py salida --desde "${{ inputs.desde || '1990' }}"
       - name: resumen.md
         run: cat salida/resumen.md
       - name: Push to branch rio-historia
+        env:
+          DESDE: ${{ inputs.desde || '1990' }}
         run: |
+          RAMA=rio-historia; [ "$DESDE" = "1990" ] || RAMA="rio-historia-desde-$DESDE"
           URL="https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git"
-          if git clone -q --branch rio-historia --single-branch "$URL" rama 2>/dev/null; then :; else mkdir rama && cd rama && git init -q && git checkout -q -b rio-historia && cd ..; fi
+          if git clone -q --branch "$RAMA" --single-branch "$URL" rama 2>/dev/null; then :; else mkdir rama && cd rama && git init -q && git checkout -q -b "$RAMA" && cd ..; fi
           find rama -mindepth 1 -maxdepth 1 -not -name .git -exec rm -rf {} +
           cp salida/* rama/
           cd rama
           git config user.name "Claude" && git config user.email "noreply@anthropic.com"
           git add -A && git commit -qm "Histórico del río $(date -u +%Y-%m-%d)" || echo "nada nuevo"
           git remote get-url origin >/dev/null 2>&1 || git remote add origin "$URL"
-          git push -q origin rio-historia
+          git push -q origin "$RAMA"

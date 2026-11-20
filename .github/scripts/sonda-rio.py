@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Read-only probe of official river sources (20/11/2026). Run by .github/workflows/sonda-rio.yml. Prints short extracts only."""
+"""Read-only probe of official river sources (20/11/2026, round 2: forecasts, INA directories, notices). Run by .github/workflows/sonda-rio.yml. Prints short extracts only."""
 import datetime as dt, json, re, subprocess, sys, tempfile, time, os, html
 from urllib.request import Request, urlopen
 from urllib.parse import urljoin, urlparse
@@ -82,126 +82,162 @@ def seccion(t):
     print(f"\n===== {t} =====", flush=True)
 
 
-# ------------------------------------------------------------------ 1. INA a5 API
-INA = "https://alerta.ina.gob.ar/a5"
-seccion("1. a5 API: catálogo de estaciones (niveles)")
-st, ct, b, e = get(f"{INA}/obs/puntual/estaciones?format=json", 120)
-cat = {}
-if st == 200:
-    cat = {x["id"]: x for x in json.loads(b)}
-    print(f"catálogo: {len(cat)} estaciones, {len(b)/1e6:.1f} MB")
-    for i in (23, 19, 25, 26, 30, 18, 17):
-        x = cat.get(i)
-        if x:
-            print(i, json.dumps({k: v for k, v in x.items() if k not in ("geom", "rio_id") and not isinstance(v, (dict, list))}, ensure_ascii=False)[:600])
-else:
-    print("ERROR", st, e)
-
-seccion("1b. a5 API: series de la estación y pronósticos")
-for est in (23, 19):
-    for url in (f"{INA}/obs/puntual/series?estacion_id={est}&format=json", f"{INA}/obs/puntual/series?estacion_id={est}&proc_id=2&format=json"):
-        st, ct, b, e = get(url, 60)
-        print(f"GET {url.replace(INA, 'a5')} -> {st} {e or ''} {len(b)} B")
-        if st == 200:
-            try:
-                d = json.loads(b)
-                d = d if isinstance(d, list) else d.get("rows", d)
-                for x in d[:12]:
-                    print("   ", json.dumps({k: x.get(k) for k in ("id", "tipo", "proc_id", "var_id", "unit_id", "estacion_id", "fuentes_id", "date_range") if k in x}, ensure_ascii=False)[:260])
-            except Exception as ex:  # noqa: BLE001
-                print("   no JSON", str(ex)[:80], texto(b)[:200])
-for url in (f"{INA}/sim/calibrados?format=json", f"{INA}/sim/calibrados?estacion_id=23&format=json", f"{INA}/sim/calibrados?var_id=2&format=json", f"{INA}/sim/pronosticos?format=json",
-            f"{INA}/sim/corridas?format=json", f"{INA}/obs/puntual/series/23?format=json"):
-    st, ct, b, e = get(url, 60)
-    print(f"GET {url.replace(INA, 'a5')} -> {st} {e or ''} {len(b)} B", "|", scrub(texto(b))[:420])
-
-seccion("1c. a5 API: observaciones de 23 con timeend a futuro (¿hay valores posteriores a hoy?)")
 hoy = dt.date.today()
-for sid in (23, 19):
-    st, ct, b, e = get(f"{INA}/obs/puntual/series/{sid}/observaciones?timestart={hoy - dt.timedelta(days=6)}&timeend={hoy + dt.timedelta(days=20)}&format=json", 60)
+INA = "https://alerta.ina.gob.ar/a5"
+
+
+def jget(url, timeout=60):
+    st, ct, b, e = get(url, timeout)
+    try:
+        return st, json.loads(b), e
+    except Exception:  # noqa: BLE001
+        return st, None, e or texto(b)[:150]
+
+
+# ------------------------------------------------------------------ A. daily report, full text of the river part
+seccion("A. Reporte diario del INA: texto completo del tramo Paraná (20/11 y 13/11)")
+for dia in (hoy, hoy - dt.timedelta(days=7)):
+    url = f"https://alerta.ina.gob.ar/ina/06-INFORMES/diario/pdf/reporte_diario_{dia.isoformat()}.pdf"
+    st, ct, b, e = get(url, 60)
+    print(f"--- {url} -> {st}")
     if st == 200:
-        d = json.loads(b)
-        d = d if isinstance(d, list) else d.get("rows", [])
-        print(sid, [(str(x.get("timestart"))[:10], x.get("valor")) for x in d][-9:])
-    else:
-        print(sid, "ERROR", st, e)
+        t = pdf_texto(b)
+        lineas = [l.rstrip() for l in t.splitlines() if l.strip()]
+        ini = next((k for k, l in enumerate(lineas) if re.search(r"Estaci[oó]n\s+R[ií]o\s+Nivel", l)), 0)
+        print("\n".join(lineas[max(0, ini - 3):ini + 75]))
+        if dia == hoy:
+            print("...[resto: líneas con pronóstico/previsión/Goya]")
+            for l in lineas[ini + 75:]:
+                if re.search(r"Goya|Corrientes|La Paz|pron[oó]stic|previs|actualiz|escenario", l, re.I):
+                    print("  ", l[:230])
 
-# ------------------------------------------------------------------ 2. INA daily report PDF
-seccion("2. Reporte diario del INA (PDF, columna Perspectiva)")
-bases = ["https://alerta.ina.gob.ar/ina/06-INFORMES/diario/pdf/", "https://alerta.ina.gob.ar/06-INFORMES/diario/pdf/", "https://alerta.ina.gob.ar/pub/06-INFORMES/diario/pdf/",
-         "https://www.ina.gob.ar/ina/06-INFORMES/diario/pdf/", "https://alerta.ina.gob.ar/ina/06-INFORMES/diario/"]
-hallado = None
-for back in range(0, 6):
-    d = hoy - dt.timedelta(days=back)
-    for base in bases:
-        url = f"{base}reporte_diario_{d.isoformat()}.pdf"
-        st, ct, b, e = get(url, 40)
-        print(f"{url} -> {st} {ct[:30]} {len(b)} B {e or ''}")
-        if st == 200 and b[:4] == b"%PDF":
-            hallado = (url, b)
+# ------------------------------------------------------------------ B. a5 forecasts (tabprono and others) for the Paraná stations
+seccion("B. a5 API: calibrados con salida en 23 / 19 / 25 / 26 y sus pronósticos")
+vistos = {}
+for est in (23, 19, 25):
+    st, d, e = jget(f"{INA}/sim/calibrados?estacion_id={est}&format=json")
+    print(f"estacion {est}: {st} {e or ''} -> {len(d) if isinstance(d, list) else d}")
+    for c in (d or []):
+        vistos[c["id"]] = c
+        print("  ", json.dumps({k: c.get(k) for k in ("id", "nombre", "modelo", "activar", "out_id", "dt", "t_offset")}, ensure_ascii=False)[:300])
+for cid, c in list(vistos.items())[:8]:
+    for sub in (f"sim/calibrados/{cid}?format=json", f"sim/calibrados/{cid}/corridas_guardadas?format=json", f"sim/calibrados/{cid}/corridas?format=json"):
+        st, ct, b, e = get(f"{INA}/{sub}", 60)
+        print(f"GET a5/{sub} -> {st} {len(b)} B |", scrub(texto(b))[:500])
+seccion("B2. a5 API: observaciones/pronósticos de las series simuladas (ventana hoy-3 a hoy+30)")
+sids = set()
+for c in vistos.values():
+    for o in c.get("outputs") or []:
+        sids.add(o.get("series_id"))
+for sid in (23, 3524, 3382, 26265, 872, 19, 868, 1540, 1541, 26261, 26616) + tuple(sorted(x for x in sids if x))[:30]:
+    for sub in ("observaciones", "pronosticos"):
+        st, d, e = jget(f"{INA}/obs/puntual/series/{sid}/{sub}?timestart={hoy - dt.timedelta(days=3)}&timeend={hoy + dt.timedelta(days=30)}&format=json", 60)
+        if st == 200 and d:
+            rows = d if isinstance(d, list) else d.get("rows", d)
+            if isinstance(rows, list) and rows:
+                print(f"serie {sid}/{sub}: {len(rows)} filas; claves {sorted(rows[0].keys())[:8]}; primeras/últimas:", [(str(x.get("timestart"))[:10], x.get("valor")) for x in rows[:3]], "...", [(str(x.get("timestart"))[:10], x.get("valor")) for x in rows[-8:]])
+                continue
+        if sub == "observaciones":
+            print(f"serie {sid}/{sub}: {st} {str(e)[:60] if e else 'sin filas'}")
+
+# ------------------------------------------------------------------ C. INA directories
+seccion("C. Directorios del INA (alerta.ina.gob.ar/ina/...)")
+
+
+def listar(url, n=40):
+    st, ct, b, e = get(url, 40)
+    if st != 200:
+        print(f"{url} -> {st} {e or ''}")
+        return []
+    h = texto(b)
+    filas = re.findall(r"<a href=\"([^\"]+)\">([^<]+)</a>\s*([^<\n]*)", h)
+    print(f"{url} -> {len(filas)} entradas")
+    for href, nom, resto in filas[-n:]:
+        print("   ", nom, "|", scrub(resto)[:60])
+    return [(urljoin(url, href), nom) for href, nom, _ in filas]
+
+
+for d in ("08-PRONOSTICOS/", "06-INFORMES/", "mapa_informe_semanal/"):
+    sub = listar("https://alerta.ina.gob.ar/ina/" + d, 30)
+    for href, nom in sub:
+        if nom.endswith("/") and re.search(r"seman|escenar|pronost|perspect|parana|plata|mensual|boletin", nom, re.I) and nom != "../":
+            listar(href, 12)
+
+# ------------------------------------------------------------------ D. INA site, Prefectura, Itaipú, Goya, others
+seccion("D1. www.ina.gob.ar: enlaces relevantes")
+st, ct, b, e = get("https://www.ina.gob.ar/", 30)
+if st == 200:
+    for href, txt in enlaces(texto(b), "https://www.ina.gob.ar/"):
+        if re.search(r"hidrol|escenari|pron[oó]stic|informe|alerta|cuenca|semanal|crecida|perspectiv", txt + href, re.I):
+            print("  ", repr(txt[:80]), href[:140])
+for u in ("https://ina.gob.ar/alerta/index.php?seccion=10", "https://www.ina.gob.ar/alerta/index.php?seccion=10"):
+    st, ct, b, e = get(u, 30)
+    print(u, "->", st, e or "", titulo(texto(b)) if st == 200 else "")
+    if st == 200:
+        for href, txt in enlaces(texto(b), u)[:60]:
+            if re.search(r"pron[oó]stic|informe|escenari|semanal|perspectiv|parana|paraná", txt + href, re.I):
+                print("    ", repr(txt[:70]), href[:140])
+
+seccion("D2. Prefectura (reintento con plazo largo) y su portada")
+for u in ("https://contenidosweb.prefecturanaval.gob.ar/alturas/", "http://contenidosweb.prefecturanaval.gob.ar/alturas/", "https://contenidosweb.prefecturanaval.gob.ar/alturas/index.php"):
+    st, ct, b, e = get(u, 60)
+    print(u, "->", st, e or "", len(b), "B")
+    if st == 200:
+        t = sin_html(texto(b))
+        for m in re.finditer(r"Goya", t):
+            print("   ", t[max(0, m.start() - 100):m.start() + 200])
             break
-    if hallado:
         break
-if hallado:
-    url, b = hallado
-    t = pdf_texto(b)
-    print("PDF:", url, "|", len(t), "caracteres de texto")
-    lineas = t.splitlines()
-    for ln in lineas[:14]:
-        if ln.strip():
-            print("  [cabecera]", scrub(ln)[:200])
-    for ln in lineas:
-        if re.search(r"Estaci[oó]n|Perspectiva|Corrientes|Goya|Esquina|La Paz|Santa Fe|Paso de la Patria|Barranqueras|Rosario|Paran[aá]\b|Fecha", ln):
-            print("  ", scrub(ln)[:230])
-else:
-    print("no se pudo descargar ningún reporte diario con esas URL")
+st, ct, b, e = get("https://www.argentina.gob.ar/prefecturanaval", 30)
+if st == 200:
+    for href, txt in enlaces(texto(b), "https://www.argentina.gob.ar/prefecturanaval"):
+        if re.search(r"inundaci|crecida|r[ií]o|isle[nñ]|creciente|altura", txt, re.I):
+            print("  portada:", repr(txt[:120]), href[:150])
+            st2, ct2, b2, e2 = get(href, 30)
+            if st2 == 200:
+                h2 = texto(b2)
+                m = re.search(r"<h1[^>]*>(.*?)</h1>", h2, re.S)
+                f = re.search(r"(\d{1,2} de \w+ de 20\d\d)", sin_html(h2))
+                cuerpo = sin_html(h2[m.end():]) if m else ""
+                print("     ", f.group(1) if f else "-", "|", cuerpo[:700])
 
-# ------------------------------------------------------------------ 3. official pages
-SEMILLAS = {
-    "INA alerta": ["https://alerta.ina.gob.ar/", "https://alerta.ina.gob.ar/ina/", "https://alerta.ina.gob.ar/pub/", "https://www.ina.gob.ar/", "https://www.argentina.gob.ar/ina", "https://www.argentina.gob.ar/ina/alerta"],
-    "Prefectura": ["https://contenidosweb.prefecturanaval.gob.ar/alturas/", "https://contenidosweb.prefecturanaval.gob.ar/alturas/index.php", "https://www.argentina.gob.ar/prefecturanaval"],
-    "Yacyretá": ["https://www.eby.org.ar/", "https://www.eby.org.ar/es/", "https://eby.org.ar/"],
-    "Itaipú": ["https://www.itaipu.gov.br/", "https://www.itaipu.gov.py/", "https://www.itaipu.gov.br/es"],
-    "Goya": ["https://www.goya.gob.ar/", "https://goya.gob.ar/", "https://www.municipalidadgoya.gob.ar/"],
-    "Corrientes": ["https://www.corrientes.gob.ar/", "https://corrientes.gob.ar/", "https://www.corrientes.gob.ar/noticias"],
-    "Protección civil": ["https://www.argentina.gob.ar/seguridad/proteccion-civil", "https://www.argentina.gob.ar/interior/proteccion-civil"],
-}
-for sitio, urls in SEMILLAS.items():
-    seccion(f"3. {sitio}")
-    seguir = []
-    for u in urls:
-        st, ct, b, e = get(u, 25)
-        if st == 200 and "html" in ct.lower() or (st == 200 and b[:5].lower() in (b"<!doc", b"<html")):
-            h = texto(b)
-            li = enlaces(h, u)
-            print(f"{u} -> {st}, {len(b)} B, título: {titulo(h)}, enlaces {len(li)}")
-            dom = urlparse(u).netloc.split(".", 1)[-1]
-            for href, txt in li:
-                if KEY.search(txt + " " + href) and dom in urlparse(href).netloc and href not in [s[0] for s in seguir] and len(seguir) < 40:
-                    seguir.append((href, txt))
-            tz = trozos(sin_html(h), 2)
-            for s in tz:
-                print("   texto:", s)
-        else:
-            print(f"{u} -> {st} {ct[:25]} {e or ''}")
-    print(f"  enlaces con palabras clave ({len(seguir)}):")
-    for href, txt in seguir[:25]:
-        print(f"    {txt[:70]!r} {href[:150]}")
-    # follow the most promising ones (pdf/pages), short extracts
-    prior = sorted(seguir, key=lambda s: -len(re.findall(r"pron[oó]stic|perspectiv|escenario|semanal|informe|alturas|crecida|caudal", s[0] + s[1], re.I)))[:6]
-    for href, txt in prior:
-        st, ct, b, e = get(href, 30)
-        if st != 200:
-            print(f"  -> {href[:120]} {st} {e or ''}")
-            continue
-        if b[:4] == b"%PDF":
-            t = pdf_texto(b)
-            print(f"  PDF {href[:140]} ({len(t)} car.) inicio: {scrub(t[:240])}")
-            for s in trozos(scrub(t), 3):
-                print("     extracto:", s)
-        else:
-            h = texto(b)
-            print(f"  {href[:140]} título: {titulo(h)}")
-            for s in trozos(sin_html(h), 3):
-                print("     extracto:", s)
+seccion("D3. Itaipú (artículo y páginas del río)")
+for u in ("https://www.itaipu.gov.br/noticias/sala-de-imprensa/nivel-do-rio-parana-deve-seguir-estavel-no-feriadao-preve-itaipu", "https://www.itaipu.gov.py/energia/embalse/rio-parana", "https://www.itaipu.gov.py/energia/hidrologia/boletin"):
+    st, ct, b, e = get(u, 40)
+    if st == 200:
+        h = texto(b)
+        m = re.search(r"<h1[^>]*>(.*?)</h1>", h, re.S)
+        cuerpo = sin_html(h[m.end():]) if m else sin_html(h)
+        f = re.search(r"(\d{1,2}/\d{1,2}/20\d\d|\d{1,2} de \w+ de 20\d\d|20\d\d-\d\d-\d\d)", cuerpo[:600])
+        print(u[:110], "->", titulo(h), "| fecha:", f.group(1) if f else "-")
+        print("    ", cuerpo[:1400])
+        for href, txt in enlaces(h, u):
+            if re.search(r"boletin|boletim|\.pdf|hidrol", href + txt, re.I) and "itaipu" in href:
+                print("     enlace:", repr(txt[:60]), href[:140])
+    else:
+        print(u[:110], "->", st, e or "")
+
+seccion("D4. Goya: portada, defensa civil, noticias del río")
+for u in ("https://www.goya.gob.ar/",):
+    st, ct, b, e = get(u, 30)
+    if st == 200:
+        h = texto(b)
+        for href, txt in enlaces(h, u):
+            if re.search(r"defensa|r[ií]o|crecida|altura|paran|emergencia|creciente|inunda|evacua", txt + href, re.I):
+                print("  ", repr(txt[:110]), href[:140])
+        t = sin_html(h)
+        for m in re.finditer(r"r[ií]o Paran|crecida|Defensa Civil|evacua", t, re.I):
+            print("  texto:", t[max(0, m.start() - 120):m.start() + 240])
+for u in ("https://www.goya.gob.ar/?q=defensa-civil", "https://www.goya.gob.ar/?q=boletin-prensa&page=0"):
+    st, ct, b, e = get(u, 30)
+    print(u, "->", st, e or "", len(b), "B")
+    if st == 200:
+        for href, txt in enlaces(texto(b), u):
+            if re.search(r"r[ií]o|crecida|altura|paran|defensa|emergencia|creciente", txt, re.I):
+                print("    ", repr(txt[:120]), href[:140])
+
+seccion("D5. Corrientes y Yacyretá: otros hosts (sin desactivar la verificación TLS)")
+for u in ("https://defensacivil.corrientes.gob.ar/", "https://www.defensacivil.corrientes.gob.ar/", "https://proteccioncivil.corrientes.gob.ar/", "https://www.eby.gob.ar/", "https://eby.org.ar/hidrologia", "https://www.corrientes.gov.ar/", "https://www.mapaweb.corrientes.gob.ar/"):
+    st, ct, b, e = get(u, 25)
+    print(u, "->", st, e or "", len(b), "B", titulo(texto(b)) if st == 200 else "")
 print("\nfin de la sonda", dt.datetime.now(dt.timezone.utc).isoformat()[:19])

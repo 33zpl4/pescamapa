@@ -3,6 +3,7 @@
 (1990 -> today) of the river stations from the INA a5 API and writes the raw material for an editorial note:
 
   python3 -I wordpress/build/rio-historia.py SALIDA/      fetch, clean, compute, write the files below
+  python3 -I wordpress/build/rio-historia.py SALIDA/ --desde 1903   same, with a longer reference period (default 1990)
   python3 -I wordpress/build/rio-historia.py --autotest   offline self-check on a synthetic fixture (no network)
 
 Output directory:
@@ -551,7 +552,7 @@ def md(estaciones, nombres):
     o += ["## Reglas", "",
           "- Un valor por día local (UTC−3): el promedio de las lecturas del día, al centímetro.",
           "- Se descarta lo que no es número o queda fuera de −2 a 60 m. Una racha de 0,00 exacto se descarta si la lectura anterior o la siguiente está a más de 1 m de 0; si está a menos, se conserva.",
-          "- Referencia: años completos desde 1990; cada día se compara con el mismo día del calendario (el 29 de febrero tiene su propio lugar, con menos años). Percentiles por interpolación lineal.",
+          f"- Referencia: años completos desde {PRIMER_ANIO}; cada día se compara con el mismo día del calendario (el 29 de febrero tiene su propio lugar, con menos años). Percentiles por interpolación lineal.",
           "- Percentil de la lectura: parte de los años de referencia con ese día por debajo de la lectura (empates cuentan la mitad).",
           "- Año más bajo / más alto: el de menor / mayor altura media entre los años de referencia con al menos 300 días de datos.",
           "- Puesto de la media: se compara la media del 1 de enero a esa fecha de cada año con al menos el 80 % de esos días.",
@@ -882,7 +883,12 @@ def autotest():
 
 
 if __name__ == "__main__":
-    if len(sys.argv) > 1 and sys.argv[1] in ("--autotest", "--test"):
+    args = sys.argv[1:]
+    if "--desde" in args:  # first year of the reference period and of the INA download (default 1990); INA keeps some series from 1901-1903
+        k = args.index("--desde")
+        PRIMER_ANIO = int(args[k + 1])
+        del args[k:k + 2]
+    if args and args[0] in ("--autotest", "--test"):
         autotest()
     else:
-        main(sys.argv[1] if len(sys.argv) > 1 else "rio-historia-salida")
+        main(args[0] if args else "rio-historia-salida")
