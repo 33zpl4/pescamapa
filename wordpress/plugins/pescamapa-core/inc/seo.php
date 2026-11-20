@@ -114,6 +114,30 @@ function pm_seo(): array {
 		if ( 'ok' !== pm_consulta_resultado() ) {
 			$s['jsonld'][] = pm_jsonld_faq( array_map( fn( $n ) => [ 'pregunta' => pm_t( "viaje.faq.$n.q" ), 'respuesta' => pm_t( "viaje.faq.$n.a" ) ], [ 1, 2, 3, 4 ] ) );
 		}
+	} elseif ( 'presupuesto' === $vista ) {
+		$s['title']       = pm_t( 'pres.title' );
+		$s['description'] = pm_t( 'pres.description' );
+		$s['alternas']    = pm_alternas_fijas( 'pm_url_presupuesto' );
+		$s['jsonld'][]    = [
+			'@context'    => 'https://schema.org',
+			'@type'       => 'WebPage',
+			'name'        => pm_t( 'pres.h1' ),
+			'description' => pm_t( 'pres.description' ),
+			'url'         => pm_url_presupuesto( pm_lang() ),
+			'inLanguage'  => pm_meta_idioma()['html'],
+			'isPartOf'    => [ '@type' => 'WebSite', 'name' => 'Pescamapa', 'url' => pm_url_inicio( pm_lang() ) ],
+			'publisher'   => [ '@type' => 'Organization', 'name' => 'Pescamapa', 'url' => pm_url_inicio( pm_lang() ) ],
+		];
+		// Visible FAQ of the page (vistas/presupuesto.php) = this JSON-LD: both read pm_presupuesto_faqs().
+		$s['jsonld'][]    = pm_jsonld_faq( pm_presupuesto_faqs() );
+		$s['jsonld'][]    = [
+			'@context'        => 'https://schema.org',
+			'@type'           => 'BreadcrumbList',
+			'itemListElement' => [
+				[ '@type' => 'ListItem', 'position' => 1, 'name' => 'Pescamapa', 'item' => pm_url_inicio( pm_lang() ) ],
+				[ '@type' => 'ListItem', 'position' => 2, 'name' => pm_t( 'pres.h1' ), 'item' => pm_url_presupuesto( pm_lang() ) ],
+			],
+		];
 	} elseif ( 'rio' === $vista ) {
 		$s['title']       = pm_t( 'rio.title' );
 		$s['description'] = pm_t( 'rio.description' );
