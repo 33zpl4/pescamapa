@@ -1322,7 +1322,7 @@ jobs:
           check /guias-de-pesca/esquina/ 200 'Qué le preguntamos a cada lugar por vos' 'Cómo elegir guía'
           check /guias-de-pesca/esquina/ 200 'En una mirada'
           # 20/11/2026: dedupe of equipo/incluye, table order, generic questions, list text.
-          wp --path="$WP" eval '$p = wp_insert_post( [ "post_type" => "pm_prestador", "post_status" => "publish", "post_title" => "PRESTADOR-DUPLICADO" ] ); foreach ( [ "tipo" => [ "guia" ], "prest_destino" => "esquina", "prest_publico" => 1, "prest_fuente" => "https://example.com/dup", "equipo" => [ "equipos" ], "incluye" => [ "equipos", "licencia" ], "prest_programa" => "PROGRAMA-DUP", "prest_temporada" => "TEMPORADA-DUP" ] as $k => $v ) { update_field( $k, $v, $p ); } wp_cache_flush();'
+          wp --path="$WP" eval '$p = wp_insert_post( [ "post_type" => "pm_prestador", "post_status" => "publish", "post_title" => "PRESTADOR-DUPLICADO" ] ); foreach ( [ "tipo" => [ "guia" ], "prest_destino" => "esquina", "prest_publico" => 1, "prest_fuente" => "https://example.com/dup", "equipo" => [ "equipos" ], "incluye" => [ "equipos", "licencia" ], "prest_programa" => "PROGRAMA-DUP" ] as $k => $v ) { update_field( $k, $v, $p ); } wp_cache_flush();'
           curl -sS -o page.html "$URL/guias-de-pesca/esquina/"
           python3 - <<'PY'
           import re, sys
@@ -1340,7 +1340,7 @@ jobs:
           rows = re.findall(r'<th scope="row"><a href="#prestador-\d+">([^<]+)</a></th>(.*?)</tr>', t, re.S)
           names = [n for n, _ in rows]
           print("filas:", names)
-          # Seeded: PRESTADOR-DE-PRUEBA has a dated price; PRESTADOR-DUPLICADO has 3 columns but no price; PRESTADOR-PUBLICO has only a programme.
+          # Seeded: PRESTADOR-DE-PRUEBA has a dated price; PRESTADOR-DUPLICADO has 2 columns (programme, includes) but no price; no season, so the Temporada column stays hidden; PRESTADOR-PUBLICO has only a programme.
           if "PRESTADOR-DE-PRUEBA" in names and "PRESTADOR-DUPLICADO" in names and names.index("PRESTADOR-DE-PRUEBA") > names.index("PRESTADOR-DUPLICADO"):
               print("✖ la fila con precio fechado debe ir antes que la de más columnas sin precio"); ok = False
           else: print("✓ precio fechado primero")
