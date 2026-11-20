@@ -97,7 +97,7 @@ $N['es'] = [
 	'h3' => 'Un año de dos mitades',
 	'p3' => 'Hasta mitad de año, 2026 estuvo bajo: del 1 de enero al 20 de noviembre la altura media en Goya fue 3,28 m, el 8.º puesto entre los 37 años de la serie ordenados de menor a mayor (los tres más bajos del mismo tramo: 2021, con 1,76 m; 2020, con 1,98 m; y 2022, con 2,18 m). Después el río subió. Para medir el contraste: el 20 de noviembre de 2021, el año de menor altura media de la referencia (1,72 m), Goya midió 1,45 m; en 1998, el de mayor (5,22 m), 4,08 m. Este año, 5,68 m.',
 	'h4' => 'Qué significa para quien va a pescar a Goya',
-	'p4' => 'Esta nota no dice cómo pesca el río a esta altura: no tenemos una fuente para eso, y la altura de escala no es profundidad. Lo que sí podés mirar es {r|la altura del río en Goya hoy}, que se actualiza todos los días, y {g|la guía de Goya}, con la sección sobre cómo cambia la pesca con la altura del río.',
+	'p4' => 'Antes de salir, mirá {r|la altura del río en Goya hoy}, que se actualiza todos los días, y {g|la guía de Goya}, con la sección sobre cómo cambia la pesca con la altura del río. La altura de escala mide el nivel en ese punto, no la profundidad.',
 	'h5' => 'Cómo lo calculamos',
 	'l5' => [
 		'<strong>Fuente:</strong> la altura de la escala de Goya que publica el {ina|Instituto Nacional del Agua} (INA), de las escalas de Prefectura Naval Argentina. Las lecturas de 2026 son del INA y no están validadas.',
@@ -143,7 +143,7 @@ $N['en'] = [
 	'h3' => 'A year of two halves',
 	'p3' => 'Until mid-year, 2026 was low: from 1 January to 20 November the average level at Goya was 3.28 m, 8th of the 37 years in the series ranked from lowest to highest (the three lowest for the same stretch: 2021, 1.76 m; 2020, 1.98 m; and 2022, 2.18 m). Then the river rose. For the contrast: on 20 November 2021, the lowest-average year of the reference (1.72 m), Goya read 1.45 m; in 1998, the highest (5.22 m), 4.08 m. This year, 5.68 m.',
 	'h4' => 'What it means if you are going to fish at Goya',
-	'p4' => 'This note does not say how the river fishes at this level: we have no source for that, and gauge height is not depth. What you can check is {r|today’s river level at Goya}, updated every day, and {g|the Goya guide}, with its section on how fishing changes with the river level.',
+	'p4' => 'Before you go, check {r|today’s river level at Goya}, updated every day, and {g|the Goya guide}, with its section on how fishing changes with the river level. Gauge height measures the level at that point, not the depth.',
 	'h5' => 'How we calculated it',
 	'l5' => [
 		'<strong>Source:</strong> the Goya gauge height published by the {ina|National Water Institute} (INA), from the Argentine Naval Prefecture gauges. The 2026 readings come from INA and are not validated.',
@@ -188,7 +188,7 @@ $N['pt'] = [
 	'h3' => 'Um ano de duas metades',
 	'p3' => 'Até meados do ano, 2026 esteve baixo: de 1.º de janeiro a 20 de novembro o nível médio em Goya foi 3,28 m, o 8.º lugar entre os 37 anos da série ordenados do menor para o maior (os três mais baixos do mesmo trecho: 2021, com 1,76 m; 2020, com 1,98 m; e 2022, com 2,18 m). Depois o rio subiu. Para medir o contraste: em 20 de novembro de 2021, o ano de menor nível médio da referência (1,72 m), Goya marcou 1,45 m; em 1998, o de maior (5,22 m), 4,08 m. Este ano, 5,68 m.',
 	'h4' => 'O que significa para quem vai pescar em Goya',
-	'p4' => 'Esta nota não diz como o rio pesca neste nível: não temos fonte para isso, e a altura de escala não é profundidade. O que você pode consultar é {r|o nível do rio em Goya hoje}, atualizado todos os dias, e {g|o guia de Goya}, com a seção sobre como a pesca muda com o nível do rio.',
+	'p4' => 'Antes de sair, consulte {r|o nível do rio em Goya hoje}, atualizado todos os dias, e {g|o guia de Goya}, com a seção sobre como a pesca muda com o nível do rio. A altura de escala mede o nível naquele ponto, não a profundidade.',
 	'h5' => 'Como calculamos',
 	'l5' => [
 		'<strong>Fonte:</strong> a altura da escala de Goya publicada pelo {ina|Instituto Nacional da Água} (INA), das escalas da Prefeitura Naval Argentina. As leituras de 2026 são do INA e não estão validadas.',
