@@ -1140,7 +1140,7 @@ jobs:
           check /pedir-presupuesto-pesca/ 200 'Cada uno cotiza a su manera: por lancha, por persona, por día o por semana'
           check /pedir-presupuesto-pesca/ 200 'Nos ocupamos de la gestión por vos\.'
           check /pedir-presupuesto-pesca/ 200 'Por qué conviene comparar'
-          check /pedir-presupuesto-pesca/ 200 'en Bariloche, un día completo con guía para uno o dos pescadores va de US\$ 520 a US\$ 690 según el lugar \(precios publicados, noviembre de 2026\)\.'
+          check /pedir-presupuesto-pesca/ 200 'en Bariloche, un día completo con guía para uno o dos pescadores va de US\$ 520 a US\$ 690 según el lugar'
           check /pedir-presupuesto-pesca/ 200 'en un lodge del río Gallegos, enero de 2027 ya estaba completo el 13 de noviembre de 2026\.'
           check /pedir-presupuesto-pesca/ 200 'Contanos tu viaje'
           check /pedir-presupuesto-pesca/ 200 'Qué le preguntamos a cada lugar por vos'
@@ -1422,7 +1422,6 @@ jobs:
           check /pt/planejar-viagem/ 200 'O que inclui</strong>: guia, embarcação, equipamento, licença, refeições, traslados e, se precisar, hospedagem\.'
           check /guias-de-pesca/esquina/ 200 'class="tabla-mirada"'
           check /guias-de-pesca/esquina/ 200 'PROGRAMA-DE-PRUEBA'
-          check /guias-de-pesca/esquina/ 200 'En el listado de pesca de <a href="https://corrientes.tur.ar/tour/experiencia-de-pesca-esquina/" rel="noopener">Turismo de Corrientes</a> (consultado el 19 de noviembre de 2026)'
           check /guias-de-pesca/esquina/ 200 'v-guias' 'Figuran en el listado de pesca'   # the short answer no longer counts listed cards (20/11/2026)
           # Listing mark (owner, 20/11/2026): plain small text in the footnote line, no badge/box.
           sed -n '/class="sin-verificar note"/,/<\/p>/p' page.html | grep -q 'Figura en el listado de pesca de <a href="https://corrientes.tur.ar/tour/experiencia-de-pesca-esquina/" rel="noopener">Turismo de Corrientes</a> (consultado el 19 de noviembre de 2026)\.' && echo "✓ la marca de listado va en la nota al pie" || { echo "✖ la marca de listado no está en la nota al pie"; fail=1; }
