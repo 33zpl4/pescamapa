@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""Read-only probe of official river sources (20/11/2026, round 6: bulletin paragraphs). Run by .github/workflows/sonda-rio.yml. Prints short extracts only."""
+"""Read-only probe of the official outlook for the Paraná at Goya (20/11/2026): the INA daily report paragraph and the INA a5 numeric forecast.
+Run by .github/workflows/sonda-rio.yml. Prints short extracts only."""
 import datetime as dt, json, re, subprocess, sys, tempfile, time, os, html
 from urllib.request import Request, urlopen
 from urllib.parse import urljoin, urlparse
@@ -82,11 +83,50 @@ def seccion(t):
     print(f"\n===== {t} =====", flush=True)
 
 
-BASE = "https://www.ina.gov.ar/archivos/alerta/"
-st, ct, b, e = get(BASE + "boletin_hidroclim_2026_11.pdf", 120, 40_000_000)
-print(st, len(b), "B", e or "")
-L = [l.rstrip() for l in pdf_texto(b).splitlines() if l.strip()] if st == 200 else []
-for a, z in ((0, 36), (105, 124), (418, 455)):
-    print(f"--- líneas {a}-{z}")
-    print("\n".join(l[:200] for l in L[a:z]))
+hoy = dt.date.today()
+INA = "https://alerta.ina.gob.ar/a5"
+
+
+def pdf_url(url, desde=None, hasta=None, solo=None):
+    st, ct, b, e = get(url, 60)
+    print(f"--- {url} -> {st} {e or ''}")
+    if st != 200 or b[:4] != b"%PDF":
+        return []
+    lineas = [l.rstrip() for l in pdf_texto(b).splitlines() if l.strip()]
+    return lineas
+
+
+seccion("A. Reporte diario INA 20/11 y 13/11: texto del tramo Corrientes - Santa Fe - Rosario")
+for dia in (hoy, hoy - dt.timedelta(days=7)):
+    L = pdf_url(f"https://alerta.ina.gob.ar/ina/06-INFORMES/diario/pdf/reporte_diario_{dia.isoformat()}.pdf")
+    for l in L[:4]:
+        print("  [cab]", l[:160])
+    k = next((n for n, l in enumerate(L) if re.search(r"El r[ií]o Paran[aá] en Corrientes", l)), None)
+    if k is None:
+        print("  (no se halló el párrafo Corrientes)")
+        continue
+    print("\n".join(L[k:k + 62]))
+
+
+seccion("A. a5: pronósticos numéricos de la corrida 289 (tabprono_central) para Goya y Corrientes")
+st, ct, b, e = get(f"{INA}/sim/calibrados/289/corridas?includeProno=true&format=json", 90)
+d = json.loads(b)
+cor = d[0]
+print("corrida", cor.get("id"), "forecast_date", cor.get("forecast_date"))
+for se in cor["series"]:
+    pr = se.get("pronosticos") or []
+    if se.get("series_id") in (3524, 1540, 1542, 3523, 3526, 3527, 3408, 3412):
+        print("serie", se.get("series_id"), "n", len(pr))
+        if pr:
+            print("   fila0", json.dumps(pr[0], ensure_ascii=False)[:260])
+            print("   filas", [(str(x.get("timestart"))[:10], x.get("valor"), x.get("qualifier")) for x in pr])
+for sid in (3524, 1540):
+    st, ct, b, e = get(f"{INA}/obs/puntual/series/{sid}?format=json", 60)
+    try:
+        x = json.loads(b)
+        est = x.get("estacion", {})
+        print("serie", sid, "-> estacion", est.get("id"), est.get("nombre"), "| var", (x.get("var") or {}).get("nombre"), "| proc", (x.get("procedimiento") or {}).get("nombre"))
+    except Exception as ex:  # noqa: BLE001
+        print("serie", sid, st, str(ex)[:80])
+
 print("\nfin de la sonda", dt.datetime.now(dt.timezone.utc).isoformat()[:19])

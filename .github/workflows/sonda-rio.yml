@@ -1,8 +1,8 @@
 name: Probe river data
-# Read-only probe (20/11/2026). 1) INA a5 API: catalogue entries (alert / evacuation levels) and which series exist, forecasts included,
-# for the Paraná stations; 2) the INA daily report PDF (Perspectiva column); 3) official pages that may publish outlooks or notices
-# (INA, Prefectura, Yacyretá, Itaipú, Goya, Corrientes). Prints short extracts only; phone numbers and e-mails are scrubbed.
-# No secrets, nothing is written anywhere. Manual only.
+# Read-only probe (20/11/2026): the official outlook for the Paraná between Corrientes and Santa Fe. Prints (1) the paragraph of
+# today's INA daily report PDF about Corrientes-La Paz / Santa Fe-Rosario (and the one of 7 days ago), (2) the INA a5 numeric forecast
+# (calibrado 289 tabprono_central: Goya, Corrientes and neighbours, +4 and +11 days, with the probable range). No secrets, nothing is
+# written anywhere. Manual only. Sources and findings of 20/11/2026: docs/rio.md, "Proyecciones oficiales".
 on: workflow_dispatch
 jobs:
   sonda:
