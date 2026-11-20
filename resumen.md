@@ -36,6 +36,53 @@ Categoría: descripción por percentil (menos de 10 muy bajo, hasta 25 bajo, 25 
 
 **Baradero**: 2,10 m el 20 de noviembre de 2026. Para el 20 de noviembre, 28 años con dato (1990–2025): mínimo 0,50 m (2021), percentil 10 0,93 m, percentil 25 1,09 m, mediana 1,61 m, percentil 75 1,97 m, percentil 90 2,19 m, máximo 2,65 m (1990). La lectura queda en el percentil 89: más bajo que el 11 % de esos años y más alto que el 89 %; diferencia con la mediana +0,49 m. Cambio: +0,45 m en 30 días y +0,25 m en 90 días. El año de menor altura media de la referencia fue 2021 (media 0,53 m); el mismo día midió 0,50 m. El año de mayor altura media de la referencia fue 2016 (media 2,62 m); el mismo día midió 1,67 m. Récords de la serie (1990–2026): mínimo -0,35 m el 2021-08-18, máximo 5,16 m el 1992-07-17. La media del 1 de enero al 20 de noviembre de 2026 es 1,19 m: puesto 10 de 29 años con datos suficientes, ordenados de menor a mayor. Las tres medias más bajas del mismo tramo: 2021 (0,55 m), 2022 (0,61 m), 2020 (0,66 m). Datos: 29 años con lecturas (desde 1990), 10472 días limpios.
 
+
+## Mes en curso, umbrales y antecedentes
+
+Todo en metros de escala. El mes en curso está incompleto: se compara de dos maneras, contra los meses completos de cada año y contra el mismo tramo (1 al N) de cada año. Los puestos cuentan la posición de este año entre los años de referencia más él mismo; 1 = el más alto. Los niveles de alerta y evacuación vienen del catálogo del INA, no se escriben a mano.
+
+| Estación | Mes (hasta el día) | Media (m) | Máximo (m) | Puesto media: meses completos | Puesto máximo: meses completos | Puesto media: mismo tramo | Puesto máximo: mismo tramo | Alerta (m) | Evacuación (m) | Días ≥ alerta en el mes | Días ≥ evacuación en el mes |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| Paso de la Patria | noviembre de 2026 (1–20) | 6,88 | 7,38 | 1 de 36 | 2 de 36 | 1 de 37 | 2 de 37 | 6,50 | 7,00 | 16 | 11 |
+| Corrientes | noviembre de 2026 (1–20) | 6,74 | 7,16 | 1 de 37 | 1 de 37 | 1 de 37 | 1 de 37 | 6,50 | 7,00 | 16 | 7 |
+| Goya | noviembre de 2026 (1–20) | 5,93 | 6,10 | 1 de 37 | 1 de 37 | 1 de 37 | 1 de 37 | 5,20 | 5,70 | 20 | 19 |
+| Esquina | noviembre de 2026 (1–20) | 5,51 | 5,60 | 1 de 36 | 1 de 36 | 1 de 36 | 1 de 36 | 5,00 | 5,40 | 20 | 18 |
+| La Paz | noviembre de 2026 (1–20) | 6,11 | 6,30 | 1 de 37 | 1 de 37 | 1 de 37 | 1 de 37 | 5,80 | 6,15 | 20 | 11 |
+| Santa Fe | noviembre de 2026 (1–20) | 5,15 | 5,88 | 3 de 37 | 1 de 37 | 4 de 37 | 1 de 37 | 5,30 | 5,70 | 9 | 6 |
+| San Nicolás | noviembre de 2026 (1–20) | 3,14 | 3,50 | 7 de 37 | 6 de 37 | 7 de 37 | 5 de 37 | 4,20 | 5,00 | 0 | 0 |
+| San Pedro | noviembre de 2026 (1–20) | 2,11 | 2,37 | 7 de 37 | 10 de 37 | 7 de 37 | 9 de 37 | 3,40 | 3,60 | 0 | 0 |
+| Baradero | noviembre de 2026 (1–20) | 1,87 | 2,10 | 8 de 29 | 12 de 29 | 6 de 29 | 9 de 29 | 2,70 | 3,10 | 0 | 0 |
+
+### Goya
+
+**Mes en curso: noviembre de 2026** (lecturas del 1 al 20 de noviembre: 20 de 30 días; el mes está incompleto). Media 5,93 m, máximo 6,10 m el 2026-11-05, mínimo 5,68 m. El primer día midió 6,07 m (2026-11-01); cambio en el mes −0,39 m. Mayor subida de un día en el mes: +0,02 m el 2026-11-02. El mínimo de los últimos 90 días fue 2,57 m el 2026-09-04.
+
+Contra los meses de noviembre completos de cada año (36 años, 1990–2025): la media de 2026 queda en el puesto 1 de 37 (1 = la más alta) y el máximo en el puesto 1. Medias más altas: 1997 (5,51 m), 2023 (5,40 m), 1992 (5,30 m), 2009 (5,18 m), 1996 (5,15 m). Máximos más altos: 1998 (5,80 m), 1997 (5,67 m), 2023 (5,67 m), 2009 (5,49 m), 1992 (5,45 m). Años con media mayor: ninguno. Años con máximo mayor: ninguno.
+
+Contra el mismo tramo, del 1 al 20 de noviembre, de cada año (36 años, 1990–2025): la media de 2026 queda en el puesto 1 de 37 (1 = la más alta) y el máximo en el puesto 1. Medias más altas: 1997 (5,44 m), 1992 (5,34 m), 2023 (5,30 m), 1996 (5,24 m), 1998 (5,20 m). Máximos más altos: 1998 (5,80 m), 1997 (5,63 m), 2023 (5,57 m), 2009 (5,49 m), 1992 (5,45 m). Años con media mayor: ninguno. Años con máximo mayor: ninguno.
+
+Mediana de la media de noviembre (años completos): 4,00 m.
+
+Valor diario más alto de un noviembre en toda la serie (incluido 2026): 6,10 m el 2026-11-05. Media mensual más alta de un noviembre completo: 5,51 m (1997).
+
+Pico de 2026 hasta ahora: 6,10 m el 2026-11-05. Pico de los últimos 90 días: 6,10 m el 2026-11-05.
+
+**Umbrales** (niveles de alerta y evacuación del catálogo de estaciones del INA): alerta 5,20 m, evacuación 5,70 m.
+
+Nivel de alerta (5,20 m): la última lectura (5,68 m) está en o sobre ese nivel. Días en o sobre el nivel: 20 en noviembre de 2026 (de 20 leídos), 34 en 2026. Racha actual: desde el 18 de octubre de 2026, 34 días seguidos (máximo 6,10 m el 2026-11-05). Rachas de al menos un día desde 1990: 49. Días por año en o sobre el nivel: 1990: 85, 1991: 9, 1992: 147, 1993: 31, 1994: 12, 1995: 68, 1996: 39, 1997: 140, 1998: 224, 2001: 9, 2005: 10, 2007: 57, 2009: 46, 2010: 76, 2011: 57, 2012: 4, 2013: 24, 2014: 64, 2015: 53, 2016: 130, 2017: 31, 2018: 20, 2019: 13, 2023: 26, 2026: 34.
+
+Nivel de evacuación (5,70 m): la última lectura (5,68 m) está por debajo de ese nivel. Días en o sobre el nivel: 19 en noviembre de 2026 (de 20 leídos), 22 en 2026. Última racha ya terminada: del 29 de octubre de 2026 al 19 de noviembre de 2026 (22 días, máximo 6,10 m el 2026-11-05). Rachas de al menos un día desde 1990: 16. Días por año en o sobre el nivel: 1990: 14, 1992: 64, 1995: 26, 1997: 30, 1998: 107, 2007: 12, 2010: 33, 2013: 11, 2014: 25, 2015: 17, 2016: 61, 2026: 22.
+
+**Antecedentes** (episodio = días consecutivos en o sobre el valor)
+
+Para la lectura de hoy (5,68 m): el episodio que lo contiene fue del 28 de octubre de 2026 al 20 de noviembre de 2026 (24 días, máximo 6,10 m el 2026-11-05). La vez anterior en o sobre 5,68 m terminó el 31 de marzo de 2016: fue del 8 de marzo de 2016 al 31 de marzo de 2016 (24 días, máximo 6,07 m el 2016-03-18). Pasaron 3863 días entre el fin de aquel episodio y el comienzo de este. Episodios desde 1990 (con el actual): 15; anteriores: 14. Anteriores más recientes: 2010-02-18 (5,84 m); 2013-07-17 (5,97 m); 2014-07-15 (5,86 m); 2016-02-07 (6,46 m); 2016-02-13 (5,85 m); 2016-03-31 (6,07 m).
+
+Para el pico de los últimos 90 días (6,10 m): el episodio que lo contiene fue del 3 de noviembre de 2026 al 5 de noviembre de 2026 (3 días, máximo 6,10 m el 2026-11-05). La vez anterior en o sobre 6,10 m terminó el 2 de febrero de 2016: fue del 24 de diciembre de 2015 al 2 de febrero de 2016 (41 días, máximo 6,46 m el 2015-12-30). Pasaron 3927 días entre el fin de aquel episodio y el comienzo de este. Episodios desde 1990 (con el actual): 6; anteriores: 5. Anteriores más recientes: 1990-02-12 (6,38 m); 1992-06-28 (7,20 m); 1997-03-03 (6,44 m); 1998-05-28 (7,07 m); 2016-02-02 (6,46 m).
+
+Para el nivel de alerta (5,20 m): la racha vigente o más reciente fue del 18 de octubre de 2026 al 20 de noviembre de 2026 (34 días, máximo 6,10 m el 2026-11-05); la anterior terminó el 1 de diciembre de 2023 y fue del 6 de noviembre de 2023 al 1 de diciembre de 2023 (26 días, máximo 5,67 m el 2023-11-24).
+
+Para el nivel de evacuación (5,70 m): la racha vigente o más reciente fue del 29 de octubre de 2026 al 19 de noviembre de 2026 (22 días, máximo 6,10 m el 2026-11-05); la anterior terminó el 27 de marzo de 2016 y fue del 9 de marzo de 2016 al 27 de marzo de 2016 (19 días, máximo 6,07 m el 2016-03-18).
+
 ## Reglas
 
 - Un valor por día local (UTC−3): el promedio de las lecturas del día, al centímetro.
@@ -44,5 +91,7 @@ Categoría: descripción por percentil (menos de 10 muy bajo, hasta 25 bajo, 25 
 - Percentil de la lectura: parte de los años de referencia con ese día por debajo de la lectura (empates cuentan la mitad).
 - Año más bajo / más alto: el de menor / mayor altura media entre los años de referencia con al menos 300 días de datos.
 - Puesto de la media: se compara la media del 1 de enero a esa fecha de cada año con al menos el 80 % de esos días.
+- Mes en curso: meses completos de años pasados = al menos el 90 % de los días con dato; el tramo 1 al N exige el 80 % de esos N días. Máximo y mínimo son de los valores diarios (promedio del día), no de cada lectura.
+- Episodio = días seguidos del calendario en o sobre un valor; un día sin dato corta la racha. El pico del año es el máximo de lo leído en el año.
 - Las bandas y la mediana de los gráficos van suavizadas con promedio móvil de 15 días; las tablas y los CSV no.
 - Lo que no se afirma: pronóstico, profundidad real, comparación entre estaciones, ni efecto sobre la pesca.
