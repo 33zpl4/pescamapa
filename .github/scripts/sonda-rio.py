@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Read-only probe of official river sources (20/11/2026, round 2: forecasts, INA directories, notices). Run by .github/workflows/sonda-rio.yml. Prints short extracts only."""
+"""Read-only probe of official river sources (20/11/2026, round 3: report narrative, a5 forecast runs, INA sections, Itaipú, Goya). Run by .github/workflows/sonda-rio.yml. Prints short extracts only."""
 import datetime as dt, json, re, subprocess, sys, tempfile, time, os, html
 from urllib.request import Request, urlopen
 from urllib.parse import urljoin, urlparse
@@ -86,7 +86,7 @@ hoy = dt.date.today()
 INA = "https://alerta.ina.gob.ar/a5"
 
 
-def jget(url, timeout=60):
+def jget(url, timeout=90):
     st, ct, b, e = get(url, timeout)
     try:
         return st, json.loads(b), e
@@ -94,150 +94,123 @@ def jget(url, timeout=60):
         return st, None, e or texto(b)[:150]
 
 
-# ------------------------------------------------------------------ A. daily report, full text of the river part
-seccion("A. Reporte diario del INA: texto completo del tramo Paraná (20/11 y 13/11)")
-for dia in (hoy, hoy - dt.timedelta(days=7)):
-    url = f"https://alerta.ina.gob.ar/ina/06-INFORMES/diario/pdf/reporte_diario_{dia.isoformat()}.pdf"
+def pdf_url(url, desde=None, hasta=None, solo=None):
     st, ct, b, e = get(url, 60)
-    print(f"--- {url} -> {st}")
-    if st == 200:
-        t = pdf_texto(b)
-        lineas = [l.rstrip() for l in t.splitlines() if l.strip()]
-        ini = next((k for k, l in enumerate(lineas) if re.search(r"Estaci[oó]n\s+R[ií]o\s+Nivel", l)), 0)
-        print("\n".join(lineas[max(0, ini - 3):ini + 75]))
-        if dia == hoy:
-            print("...[resto: líneas con pronóstico/previsión/Goya]")
-            for l in lineas[ini + 75:]:
-                if re.search(r"Goya|Corrientes|La Paz|pron[oó]stic|previs|actualiz|escenario", l, re.I):
-                    print("  ", l[:230])
-
-# ------------------------------------------------------------------ B. a5 forecasts (tabprono and others) for the Paraná stations
-seccion("B. a5 API: calibrados con salida en 23 / 19 / 25 / 26 y sus pronósticos")
-vistos = {}
-for est in (23, 19, 25):
-    st, d, e = jget(f"{INA}/sim/calibrados?estacion_id={est}&format=json")
-    print(f"estacion {est}: {st} {e or ''} -> {len(d) if isinstance(d, list) else d}")
-    for c in (d or []):
-        vistos[c["id"]] = c
-        print("  ", json.dumps({k: c.get(k) for k in ("id", "nombre", "modelo", "activar", "out_id", "dt", "t_offset")}, ensure_ascii=False)[:300])
-for cid, c in list(vistos.items())[:8]:
-    for sub in (f"sim/calibrados/{cid}?format=json", f"sim/calibrados/{cid}/corridas_guardadas?format=json", f"sim/calibrados/{cid}/corridas?format=json"):
-        st, ct, b, e = get(f"{INA}/{sub}", 60)
-        print(f"GET a5/{sub} -> {st} {len(b)} B |", scrub(texto(b))[:500])
-seccion("B2. a5 API: observaciones/pronósticos de las series simuladas (ventana hoy-3 a hoy+30)")
-sids = set()
-for c in vistos.values():
-    for o in c.get("outputs") or []:
-        sids.add(o.get("series_id"))
-for sid in (23, 3524, 3382, 26265, 872, 19, 868, 1540, 1541, 26261, 26616) + tuple(sorted(x for x in sids if x))[:30]:
-    for sub in ("observaciones", "pronosticos"):
-        st, d, e = jget(f"{INA}/obs/puntual/series/{sid}/{sub}?timestart={hoy - dt.timedelta(days=3)}&timeend={hoy + dt.timedelta(days=30)}&format=json", 60)
-        if st == 200 and d:
-            rows = d if isinstance(d, list) else d.get("rows", d)
-            if isinstance(rows, list) and rows:
-                print(f"serie {sid}/{sub}: {len(rows)} filas; claves {sorted(rows[0].keys())[:8]}; primeras/últimas:", [(str(x.get("timestart"))[:10], x.get("valor")) for x in rows[:3]], "...", [(str(x.get("timestart"))[:10], x.get("valor")) for x in rows[-8:]])
-                continue
-        if sub == "observaciones":
-            print(f"serie {sid}/{sub}: {st} {str(e)[:60] if e else 'sin filas'}")
-
-# ------------------------------------------------------------------ C. INA directories
-seccion("C. Directorios del INA (alerta.ina.gob.ar/ina/...)")
-
-
-def listar(url, n=40):
-    st, ct, b, e = get(url, 40)
-    if st != 200:
-        print(f"{url} -> {st} {e or ''}")
+    print(f"--- {url} -> {st} {e or ''}")
+    if st != 200 or b[:4] != b"%PDF":
         return []
-    h = texto(b)
-    filas = re.findall(r"<a href=\"([^\"]+)\">([^<]+)</a>\s*([^<\n]*)", h)
-    print(f"{url} -> {len(filas)} entradas")
-    for href, nom, resto in filas[-n:]:
-        print("   ", nom, "|", scrub(resto)[:60])
-    return [(urljoin(url, href), nom) for href, nom, _ in filas]
+    lineas = [l.rstrip() for l in pdf_texto(b).splitlines() if l.strip()]
+    return lineas
 
 
-for d in ("08-PRONOSTICOS/", "06-INFORMES/", "mapa_informe_semanal/"):
-    sub = listar("https://alerta.ina.gob.ar/ina/" + d, 30)
-    for href, nom in sub:
-        if nom.endswith("/") and re.search(r"seman|escenar|pronost|perspect|parana|plata|mensual|boletin", nom, re.I) and nom != "../":
-            listar(href, 12)
+seccion("A. Reporte diario INA 20/11 y 13/11: texto del tramo Corrientes - Santa Fe - Rosario")
+for dia in (hoy, hoy - dt.timedelta(days=7)):
+    L = pdf_url(f"https://alerta.ina.gob.ar/ina/06-INFORMES/diario/pdf/reporte_diario_{dia.isoformat()}.pdf")
+    for l in L[:4]:
+        print("  [cab]", l[:160])
+    k = next((n for n, l in enumerate(L) if re.search(r"El r[ií]o Paran[aá] en Corrientes", l)), None)
+    if k is None:
+        print("  (no se halló el párrafo Corrientes)")
+        continue
+    print("\n".join(L[k:k + 62]))
 
-# ------------------------------------------------------------------ D. INA site, Prefectura, Itaipú, Goya, others
-seccion("D1. www.ina.gob.ar: enlaces relevantes")
-st, ct, b, e = get("https://www.ina.gob.ar/", 30)
-if st == 200:
-    for href, txt in enlaces(texto(b), "https://www.ina.gob.ar/"):
-        if re.search(r"hidrol|escenari|pron[oó]stic|informe|alerta|cuenca|semanal|crecida|perspectiv", txt + href, re.I):
-            print("  ", repr(txt[:80]), href[:140])
-for u in ("https://ina.gob.ar/alerta/index.php?seccion=10", "https://www.ina.gob.ar/alerta/index.php?seccion=10"):
-    st, ct, b, e = get(u, 30)
-    print(u, "->", st, e or "", titulo(texto(b)) if st == 200 else "")
+seccion("B. a5 API: corridas de pronóstico (289 tabprono_central, 434 media semanal, 499 estacional) para Goya (23) y Corrientes (19)")
+for cid in (289, 434, 499):
+    for variante in (f"sim/calibrados/{cid}/corridas?includeProno=true&format=json", f"sim/calibrados/{cid}/corridas?format=json&includeProno=true&qualifier=all"):
+        st, d, e = jget(f"{INA}/{variante}")
+        print(f"GET a5/{variante} -> {st} {e or ''}", type(d).__name__, len(d) if isinstance(d, list) else "")
+        if isinstance(d, list):
+            for cor in d[:3]:
+                print("  corrida", cor.get("id"), "forecast_date", cor.get("forecast_date"), "series:", len(cor.get("series", [])))
+                for se in cor.get("series", []):
+                    if se.get("estacion_id") in (23, 19):
+                        pr = se.get("pronosticos") or []
+                        print("    estacion", se.get("estacion_id"), "serie", se.get("series_id"), "var", se.get("var_id"), "qualifiers", se.get("qualifiers"), "begin", se.get("begin_date"), "end", se.get("end_date"), "n", se.get("count"), "pronosticos", len(pr))
+                        if pr:
+                            print("      fila0:", json.dumps(pr[0], ensure_ascii=False)[:200])
+                            print("      filas:", [(str(x.get("timestart"))[:10], x.get("valor"), x.get("qualifier")) for x in pr[:40]])
+            break
+for cid in (289,):
+    st, d, e = jget(f"{INA}/sim/calibrados/{cid}/corridas_guardadas?format=json")
+    if isinstance(d, list) and d:
+        ult = d[-1]
+        print("última corrida guardada:", ult)
+        st, d2, e = jget(f"{INA}/sim/calibrados/{cid}/corridas/{ult['cor_id']}?includeProno=true&format=json")
+        print(f"corrida {ult['cor_id']} -> {st} {e or ''}", type(d2).__name__)
+        if isinstance(d2, dict):
+            for se in d2.get("series", []):
+                if se.get("estacion_id") in (23, 19):
+                    pr = se.get("pronosticos") or []
+                    print("    estacion", se.get("estacion_id"), "serie", se.get("series_id"), "qualifiers", se.get("qualifiers"), "n", len(pr), [(str(x.get("timestart"))[:10], x.get("valor"), x.get("qualifier")) for x in pr[:40]])
+
+seccion("C. INA: a5/secciones, alerta/index.php y directorios")
+for u in ("https://alerta.ina.gob.ar/a5/secciones", "https://www.ina.gov.ar/alerta/index.php", "https://ina.gob.ar/alerta/index.php"):
+    st, ct, b, e = get(u, 40)
+    print(u, "->", st, e or "", len(b), "B", titulo(texto(b)) if st == 200 else "")
     if st == 200:
-        for href, txt in enlaces(texto(b), u)[:60]:
-            if re.search(r"pron[oó]stic|informe|escenari|semanal|perspectiv|parana|paraná", txt + href, re.I):
-                print("    ", repr(txt[:70]), href[:140])
+        for href, txt in enlaces(texto(b), u)[:120]:
+            if re.search(r"pron[oó]stic|informe|escenari|semanal|perspectiv|parana|paraná|estacional|seccion", txt + href, re.I):
+                print("    ", repr(txt[:80]), href[:140])
+for n in (1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 13):
+    u = f"https://ina.gob.ar/alerta/index.php?seccion={n}"
+    st, ct, b, e = get(u, 25)
+    if st == 200:
+        h = texto(b)
+        m = re.search(r"<h[12][^>]*>(.*?)</h[12]>", h, re.S)
+        print(f"seccion={n}: {titulo(h)[:90]} | {scrub(re.sub('<[^>]+>', ' ', m.group(1)))[:80] if m else '-'}")
+for d in ("06-INFORMES/", "08-PRONOSTICOS/", "mapa_informe_semanal/"):
+    u = "https://alerta.ina.gob.ar/ina/" + d
+    st, ct, b, e = get(u, 40)
+    print(u, "->", st, len(b), "B")
+    if st == 200:
+        li = [(h, t) for h, t in enlaces(texto(b), u) if h.rstrip("/") != u.rstrip("/") and "~" not in t and not h.rstrip("/").endswith("/ina")]
+        for h, t in li[-25:]:
+            print("    ", t[:70], h[-90:])
+        for h, t in li:
+            if re.search(r"seman|escenar|pronost|perspect|mensual|estacional|boletin", h, re.I) and h.endswith("/"):
+                st2, ct2, b2, e2 = get(h, 40)
+                if st2 == 200:
+                    l2 = [(hh, tt) for hh, tt in enlaces(texto(b2), h) if hh.rstrip("/") != h.rstrip("/") and "~" not in tt and not hh.rstrip("/").endswith("/ina")]
+                    print("    >>", h[-60:], len(l2), "entradas; últimas:")
+                    for hh, tt in l2[-10:]:
+                        print("        ", tt[:70], hh[-80:])
 
-seccion("D2. Prefectura (reintento con plazo largo) y su portada")
-for u in ("https://contenidosweb.prefecturanaval.gob.ar/alturas/", "http://contenidosweb.prefecturanaval.gob.ar/alturas/", "https://contenidosweb.prefecturanaval.gob.ar/alturas/index.php"):
-    st, ct, b, e = get(u, 60)
-    print(u, "->", st, e or "", len(b), "B")
+seccion("D. Itaipú: artículo completo (19/11) y boletín hidrológico (PDF)")
+u = "https://www.itaipu.gov.br/noticias/sala-de-imprensa/nivel-do-rio-parana-deve-seguir-estavel-no-feriadao-preve-itaipu"
+st, ct, b, e = get(u, 40)
+if st == 200:
+    h = texto(b)
+    m = re.search(r"Publicado em", sin_html(h))
+    t = sin_html(h)
+    print(t[m.start():m.start() + 2600] if m else t[:200])
+st, ct, b, e = get("https://www.itaipu.gov.br/wp-content/uploads/2026/11/BH.pdf", 60)
+print("BH.pdf ->", st, e or "", len(b), "B")
+if st == 200 and b[:4] == b"%PDF":
+    for l in [l.rstrip() for l in pdf_texto(b).splitlines() if l.strip()][:70]:
+        print("   ", l[:200])
+
+seccion("E. Goya: COE, noticias")
+for u in ("https://www.goya.gob.ar/?q=coe-comite-operativo-emergencia", "https://www.goya.gob.ar/?q=boletin-prensa"):
+    st, ct, b, e = get(u, 30)
+    print(u, "->", st, e or "")
     if st == 200:
         t = sin_html(texto(b))
-        for m in re.finditer(r"Goya", t):
-            print("   ", t[max(0, m.start() - 100):m.start() + 200])
-            break
-        break
-st, ct, b, e = get("https://www.argentina.gob.ar/prefecturanaval", 30)
+        k = t.find("Contenido principal")
+        print("   ", t[k:k + 1800])
+st, ct, b, e = get("https://www.goya.gob.ar/", 30)
 if st == 200:
-    for href, txt in enlaces(texto(b), "https://www.argentina.gob.ar/prefecturanaval"):
-        if re.search(r"inundaci|crecida|r[ií]o|isle[nñ]|creciente|altura", txt, re.I):
-            print("  portada:", repr(txt[:120]), href[:150])
-            st2, ct2, b2, e2 = get(href, 30)
-            if st2 == 200:
-                h2 = texto(b2)
-                m = re.search(r"<h1[^>]*>(.*?)</h1>", h2, re.S)
-                f = re.search(r"(\d{1,2} de \w+ de 20\d\d)", sin_html(h2))
-                cuerpo = sin_html(h2[m.end():]) if m else ""
-                print("     ", f.group(1) if f else "-", "|", cuerpo[:700])
+    vistos = set()
+    for href, txt in enlaces(texto(b), "https://www.goya.gob.ar/"):
+        if len(txt) > 28 and href not in vistos and "goya.gob.ar" in href:
+            vistos.add(href)
+            print("   portada:", repr(txt[:110]), href[:120])
 
-seccion("D3. Itaipú (artículo y páginas del río)")
-for u in ("https://www.itaipu.gov.br/noticias/sala-de-imprensa/nivel-do-rio-parana-deve-seguir-estavel-no-feriadao-preve-itaipu", "https://www.itaipu.gov.py/energia/embalse/rio-parana", "https://www.itaipu.gov.py/energia/hidrologia/boletin"):
-    st, ct, b, e = get(u, 40)
-    if st == 200:
-        h = texto(b)
-        m = re.search(r"<h1[^>]*>(.*?)</h1>", h, re.S)
-        cuerpo = sin_html(h[m.end():]) if m else sin_html(h)
-        f = re.search(r"(\d{1,2}/\d{1,2}/20\d\d|\d{1,2} de \w+ de 20\d\d|20\d\d-\d\d-\d\d)", cuerpo[:600])
-        print(u[:110], "->", titulo(h), "| fecha:", f.group(1) if f else "-")
-        print("    ", cuerpo[:1400])
-        for href, txt in enlaces(h, u):
-            if re.search(r"boletin|boletim|\.pdf|hidrol", href + txt, re.I) and "itaipu" in href:
-                print("     enlace:", repr(txt[:60]), href[:140])
-    else:
-        print(u[:110], "->", st, e or "")
-
-seccion("D4. Goya: portada, defensa civil, noticias del río")
-for u in ("https://www.goya.gob.ar/",):
-    st, ct, b, e = get(u, 30)
-    if st == 200:
-        h = texto(b)
-        for href, txt in enlaces(h, u):
-            if re.search(r"defensa|r[ií]o|crecida|altura|paran|emergencia|creciente|inunda|evacua", txt + href, re.I):
-                print("  ", repr(txt[:110]), href[:140])
-        t = sin_html(h)
-        for m in re.finditer(r"r[ií]o Paran|crecida|Defensa Civil|evacua", t, re.I):
-            print("  texto:", t[max(0, m.start() - 120):m.start() + 240])
-for u in ("https://www.goya.gob.ar/?q=defensa-civil", "https://www.goya.gob.ar/?q=boletin-prensa&page=0"):
-    st, ct, b, e = get(u, 30)
-    print(u, "->", st, e or "", len(b), "B")
-    if st == 200:
-        for href, txt in enlaces(texto(b), u):
-            if re.search(r"r[ií]o|crecida|altura|paran|defensa|emergencia|creciente", txt, re.I):
-                print("    ", repr(txt[:120]), href[:140])
-
-seccion("D5. Corrientes y Yacyretá: otros hosts (sin desactivar la verificación TLS)")
-for u in ("https://defensacivil.corrientes.gob.ar/", "https://www.defensacivil.corrientes.gob.ar/", "https://proteccioncivil.corrientes.gob.ar/", "https://www.eby.gob.ar/", "https://eby.org.ar/hidrologia", "https://www.corrientes.gov.ar/", "https://www.mapaweb.corrientes.gob.ar/"):
-    st, ct, b, e = get(u, 25)
-    print(u, "->", st, e or "", len(b), "B", titulo(texto(b)) if st == 200 else "")
+seccion("F. Prefectura: alturas (curl, 90 s)")
+r = subprocess.run(["curl", "-sS", "-m", "90", "-o", "/tmp/pna.html", "-w", "%{http_code} %{size_download} B %{time_total}s", "-A", UA, "https://contenidosweb.prefecturanaval.gob.ar/alturas/"], capture_output=True, text=True)
+print("curl:", r.stdout, r.stderr[:200])
+if os.path.exists("/tmp/pna.html") and os.path.getsize("/tmp/pna.html") > 0:
+    t = sin_html(texto(open("/tmp/pna.html", "rb").read()))
+    for m in re.finditer(r"Goya", t):
+        print("   ", t[max(0, m.start() - 150):m.start() + 250])
+        break
 print("\nfin de la sonda", dt.datetime.now(dt.timezone.utc).isoformat()[:19])
