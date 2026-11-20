@@ -38,6 +38,7 @@ add_action( 'acf/include_fields', function () {
 				[ 'key' => 'field_pm_t_destino', 'name' => 'nota_destino', 'label' => 'Destino (si es de un lugar)', 'type' => 'select', 'choices' => [], 'allow_null' => 1, 'conditional_logic' => $solo_es, 'wrapper' => [ 'width' => 50 ] ],
 				[ 'key' => 'field_pm_t_especie', 'name' => 'nota_especie', 'label' => 'Especie (si habla de una)', 'type' => 'select', 'choices' => [], 'allow_null' => 1, 'conditional_logic' => $solo_es, 'wrapper' => [ 'width' => 50 ], 'instructions' => 'La nota aparece en las guías de los destinos de esa especie y en su ficha.' ],
 				[ 'key' => 'field_pm_t_fecha', 'name' => 'nota_fecha', 'label' => 'Fecha de publicación', 'type' => 'date_picker', 'display_format' => 'd/m/Y', 'return_format' => 'Y-m-d', 'conditional_logic' => $solo_es, 'wrapper' => [ 'width' => 50 ] ],
+				[ 'key' => 'field_pm_t_informativa', 'name' => 'nota_informativa', 'label' => 'Pieza informativa (sin llamados a pedir opciones)', 'type' => 'true_false', 'ui' => 1, 'default_value' => 0, 'conditional_logic' => $solo_es, 'instructions' => 'Para notas de datos hechas para indexar y ganar enlaces: la nota no muestra el cuadro «Pedir opciones», la barra fija del celular ni el bloque de guías con precios. Vale para los tres idiomas.' ],
 				[ 'key' => 'field_pm_t_origen', 'name' => 'nota_origen', 'label' => 'Material de origen (interno, no se publica)', 'type' => 'textarea', 'rows' => 5, 'conditional_logic' => $solo_es, 'instructions' => 'De dónde salió cada dato: entrevista, video, quién lo contó, qué falta confirmar. Los enlaces públicos van en "Fuentes".' ],
 
 				[ 'key' => 'field_pm_t_tab_textos', 'label' => 'Textos', 'type' => 'tab' ],
@@ -91,6 +92,7 @@ function pm_nota( int $post_id ): array {
 		'tipo'            => (string) pm_campo( 'nota_tipo', $fid ),
 		'destino'         => (string) pm_campo( 'nota_destino', $fid ),
 		'especie'         => (string) pm_campo( 'nota_especie', $fid ),
+		'informativa'     => (bool) pm_campo( 'nota_informativa', $fid ), // shared by clave, read from the Spanish row (20/11/2026)
 		'fecha'           => $fecha,
 		'foto'            => (int) get_post_thumbnail_id( $fid ),
 		'bajada'          => (string) pm_campo( 'bajada', $post_id ),

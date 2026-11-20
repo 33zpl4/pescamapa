@@ -55,3 +55,11 @@ Solo se cargan fotos que el dueño aporta como disponibles o permitidas, **siemp
 ## Notas con datos propios (20/11/2026)
 
 Una nota fechada con números calculados por nosotros (no una página que se actualiza sola) lleva: los números exactos de `wordpress/build/rio-historia.py` (copia en una carpeta de `wordpress/build/` para que la nota se pueda reproducir), infografías en 4:3 (la portada se recorta a 4:3) generadas desde esos archivos, la fecha de lectura y la fuente en la nota y en cada gráfico, el CSV para descargar, y la frase «Podés usar estos gráficos y números citando a Pescamapa con enlace a esta nota». Sin pronóstico ni efecto sobre la pesca. Primera: `nota-parana-goya-2026-11-20`.
+
+## Piezas informativas (sin llamados comerciales) (20/11/2026)
+
+Regla del dueño: hay notas hechas **solo para indexar y ganar enlaces**, no para vender. Se marcan en la fila en español con la casilla **«Pieza informativa (sin llamados a pedir opciones)»** (campo `nota_informativa`, vale para es/en/pt por `clave`, como `nota_destino`). Usarla en notas de datos propios (ver arriba) cuando el objetivo es que la citen; no en notas que deberían llevar al lector a pedir opciones.
+
+**Qué oculta** (`vistas/nota.php`): el cuadro «¿Querés pescar esto? … Pedir opciones» (`.cta-nota`), la barra fija del celular «Pedir opciones» (`.barra-pedir`) y el bloque «Guías que pescan…» con precios (`.guias-especie`). Esta vista no trae formulario, «Gratis para vos» (`.cta-gratis`) ni banda de mitad de página; si alguna vez se agregan, deben respetar el mismo flag. **Qué queda:** el menú (con «Armá tu viaje»: navegación global), migas, datos clave, cuerpo con sus enlaces a la guía del destino y a la página del río, fuentes, FAQ, el botón final a la guía del destino y el pie.
+
+Primera: `nota-parana-goya-2026-11-20`, marcada con `wordpress/scripts/nota-informativa-parana-goya-2026-11-20.php` (simulacro primero). Prueba en `test-wp.yml` (flag activo: sin marcadores en los tres idiomas; apagado: igual que antes).
