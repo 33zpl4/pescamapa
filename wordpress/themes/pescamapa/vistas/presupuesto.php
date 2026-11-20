@@ -1,8 +1,8 @@
 <?php
 /**
  * Answer page: "Pedir presupuesto a varios lodges de pesca a la vez" (20/11/2026; docs/investigacion/fondo-embudo-2026-11-19.md).
- * The question people ask an assistant after "recomendame lugares": short answer first, the three steps (same keys as the
- * home contrast block), where it works today (computed from the city pages), what comes back (the `preguntas.*` block),
+ * The question people ask an assistant after "recomendame lugares": short answer first, the usual frictions vs our three steps (the home contrast
+ * partial, no separate steps block), why comparing pays (two dated facts), where it works today (names only, computed from the city pages), what comes back (the `preguntas.*` block),
  * who it suits, FAQ (= FAQPage JSON-LD, inc/seo.php) and the one CTA to the trip form, at the top and at the end.
  * /pedir-presupuesto-pesca/, /pt/pedir-orcamento-pesca/, /en/get-fishing-lodge-quotes/.
  */
@@ -29,13 +29,12 @@ get_header(); ?>
 		</section>
 		<p class="cta-fila"><a class="button primary" href="<?php echo esc_url( $viaje ); ?>"><?php pm_e( 'contraste.cta.pedir' ); ?></a></p>
 
-		<section aria-labelledby="pasos-h">
-			<h2 id="pasos-h"><?php pm_e( 'pres.pasos.h' ); ?></h2>
-			<ol class="pasos">
-				<?php foreach ( [ 1, 2, 3 ] as $n ) : ?>
-					<li><strong><?php pm_e( "contraste.con.$n" ); ?></strong><small><?php pm_e( "contraste.con.$n.d" ); ?></small></li>
-				<?php endforeach; ?>
-			</ol>
+		<?php get_template_part( 'parciales/contraste', null, [ 'id' => 'contraste-h', 'cta' => 'pedir' ] ); ?>
+
+		<section class="porque" aria-labelledby="porque-h">
+			<h2 id="porque-h"><?php pm_e( 'pres.porque.h' ); ?></h2>
+			<p><?php pm_e( 'pres.porque.1' ); ?></p>
+			<p><?php pm_e( 'pres.porque.2' ); ?></p>
 		</section>
 
 		<?php if ( $destinos ) : ?>
@@ -43,13 +42,8 @@ get_header(); ?>
 			<h2 id="donde-h"><?php pm_e( 'pres.donde.h' ); ?></h2>
 			<p><?php pm_e( 'pres.donde.p' ); ?></p>
 			<ul>
-				<?php foreach ( $destinos as $d ) :
-					$detalle = pm_t( 1 === $d['lugares'] ? 'guias.resumen.lugares.uno' : 'guias.resumen.lugares.otros', [ 'n' => (string) $d['lugares'] ] );
-					if ( $d['precios'] > 0 ) {
-						$detalle .= ', ' . pm_t( 'pres.donde.precios', [ 'n' => (string) $d['precios'] ] );
-					}
-					?>
-					<li><a href="<?php echo esc_url( $d['url'] ); ?>"><?php echo esc_html( $d['nombre'] . ( $d['provincia'] ? ', ' . $d['provincia'] : '' ) ); ?></a> <span><?php echo esc_html( $detalle ); ?></span></li>
+				<?php foreach ( $destinos as $d ) : ?>
+					<li><a href="<?php echo esc_url( $d['url'] ); ?>"><?php echo esc_html( $d['nombre'] . ( $d['provincia'] ? ', ' . $d['provincia'] : '' ) ); ?></a></li>
 				<?php endforeach; ?>
 			</ul>
 			<p class="note"><?php pm_e( 'pres.donde.nose' ); ?></p>

@@ -466,7 +466,7 @@ jobs:
           grep -q 'Precio: a consultar\|Price: on request\|Preço: a consultar' page-rh.html && echo "✓ la ficha dice «a consultar»" || { echo "✖ falta «a consultar»"; fail=1; }
           # City page (20/11/2026), Río Gallegos seeded with 3 cards (2 with consent): short answer as a sentence, no "Salidas armadas" without trips,
           # boat FAQ while no card is a weekly programme, and the old CTA label / negative line gone.
-          chk /guias-de-pesca/rio-gallegos/ 'En Río Gallegos listamos 3 lugares, 2 con acuerdo con Pescamapa\.' 'fichas:| × |Consultar disponibilidad|No hay cargo|No te cobramos nada|\(sin tu nombre'
+          chk /guias-de-pesca/rio-gallegos/ 'En Río Gallegos te pedimos opciones a los lugares y guías que encajan con tu viaje: nos ocupamos de escribirles' 'listamos|fichas:| × |Consultar disponibilidad|No hay cargo|No te cobramos nada|\(sin tu nombre'
           chk /guias-de-pesca/rio-gallegos/ 'Pedís por el formulario, les preguntamos a los lugares y guías que encajan y en 24–48 horas te mandamos las opciones comparadas\.' 'Salidas armadas por Pescamapa|class="armadas"'
           chk /guias-de-pesca/rio-gallegos/ 'casi todos cobran por lancha y por jornada' 'Los lodges cobran'
           chk /guias-de-pesca/rio-gallegos/ 'Pagás lo mismo que reservando directo\.' 'presupuesto\)'
@@ -1132,14 +1132,26 @@ jobs:
           check /pedir-presupuesto-pesca/ 200 '<h1>Pedir presupuesto a varios lodges de pesca a la vez</h1>' 'content="noindex'
           check /pedir-presupuesto-pesca/ 200 '<title>Pedir presupuesto a varios lodges de pesca a la vez | Pescamapa</title>'
           check /pedir-presupuesto-pesca/ 200 'Mandás un solo pedido a Pescamapa y les preguntamos por vos a los lodges y guías de pesca que encajan con tu viaje'
-          check /pedir-presupuesto-pesca/ 200 'Cómo funciona, en tres pasos'
+          # 20/11/2026: no separate steps section; the contraste partial (usual frictions vs our 3 steps) + "Por qué conviene comparar" with two dated facts.
+          check /pedir-presupuesto-pesca/ 200 'class="contraste"' 'Cómo funciona, en tres pasos'
+          check /pedir-presupuesto-pesca/ 200 'Le escribís a cada lugar, uno por uno' 'Esperás, y algunos no contestan'
+          check /pedir-presupuesto-pesca/ 200 'Muchos no publican precio'
+          check /pedir-presupuesto-pesca/ 200 'Tardan en contestar o no tienen lugar en tus fechas'
+          check /pedir-presupuesto-pesca/ 200 'Cada uno cotiza a su manera: por lancha, por persona, por día o por semana'
+          check /pedir-presupuesto-pesca/ 200 'Nos ocupamos de la gestión por vos\.'
+          check /pedir-presupuesto-pesca/ 200 'Por qué conviene comparar'
+          check /pedir-presupuesto-pesca/ 200 'en Bariloche, un día completo con guía para uno o dos pescadores va de US\$ 520 a US\$ 690 según el lugar'
+          check /pedir-presupuesto-pesca/ 200 'en un lodge del río Gallegos, enero de 2027 ya estaba completo el 13 de noviembre de 2026\.'
           check /pedir-presupuesto-pesca/ 200 'Contanos tu viaje'
           check /pedir-presupuesto-pesca/ 200 'Qué le preguntamos a cada lugar por vos'
           check /pedir-presupuesto-pesca/ 200 'Para quién sirve'
           check /pedir-presupuesto-pesca/ 200 'Te acompaña alguien que no pesca'
           check /pedir-presupuesto-pesca/ 200 'Dónde funciona hoy'
           check /pedir-presupuesto-pesca/ 200 'href="[^"]*/guias-de-pesca/esquina/">Esquina'
-          check /pedir-presupuesto-pesca/ 200 '1 lugar\|[0-9]* lugares'
+          # Destinations: name + province, linked, no counts (owner 20/11/2026).
+          curl -sS -o page.html "$URL/pedir-presupuesto-pesca/"
+          grep -qE 'guias-de-pesca/esquina/">[^<]*</a></li>' page.html && ! grep -qE 'guias-de-pesca/esquina/">[^<]*</a> <span>|[0-9]+ lugares?[,<]' page.html && echo "✓ presupuesto: «Dónde funciona hoy» solo nombre y provincia, sin conteos" || { echo "✖ presupuesto: la lista de destinos lleva conteos"; fail=1; }
+          ! grep -q 'con precio con fecha' page.html && echo "✓ presupuesto: sin «con precio con fecha»" || { echo "✖ presupuesto: quedó «con precio con fecha»"; fail=1; }
           check /pedir-presupuesto-pesca/ 200 'Dónde funciona hoy' 'CONTACTO-INTERNO-123'
           check /pedir-presupuesto-pesca/ 200 'Dónde funciona hoy' 'PRESTADOR-NO-PUBLICO'
           for r in /pedir-presupuesto-pesca/ /pt/pedir-orcamento-pesca/ /en/get-fishing-lodge-quotes/; do
@@ -1222,6 +1234,8 @@ jobs:
             # The how-it-works steps live in the contraste block (3 numbered steps), not in a separate block.
             [[ "$(sed -n '/<article class="con">/,/<\/article>/p' page.html | grep -c '<li>')" == "3" ]] && echo "✓ $r: 3 pasos en el bloque contraste" || { echo "✖ $r: pasos del contraste"; fail=1; }
             check $r 200 'class="contraste"' 'id="como-h"'
+            # 20/11/2026: the «Hoy» side lists the four usual frictions (crosses).
+            [[ "$(sed -n '/<article class="hoy">/,/<\/article>/p' page.html | grep -c '<li>')" == "4" ]] && echo "✓ $r: 4 fricciones en el lado «Hoy»" || { echo "✖ $r: fricciones del contraste"; fail=1; }
           done
           check /armar-viaje/ 200 'Presupuesto por pescador y por día'
           check /armar-viaje/ 200 'Hasta US\$ 300'
@@ -1230,6 +1244,7 @@ jobs:
           check /en/plan-your-trip/ 200 'Budget per angler per day'
           check /en/plan-your-trip/ 200 'More than US\$ 1,000'
           check /armar-viaje/ 200 'Contanos tu viaje'
+          check / 200 'Muchos no publican precio'
           check /armar-viaje/ 200 'Te mandamos las opciones comparadas en 24–48 horas'
           check /pt/planejar-viagem/ 200 'Enviamos as opções comparadas em 24–48 horas'
           check /en/plan-your-trip/ 200 'We send you the options, compared, within 24–48 hours'
@@ -1407,8 +1422,10 @@ jobs:
           check /pt/planejar-viagem/ 200 'O que inclui</strong>: guia, embarcação, equipamento, licença, refeições, traslados e, se precisar, hospedagem\.'
           check /guias-de-pesca/esquina/ 200 'class="tabla-mirada"'
           check /guias-de-pesca/esquina/ 200 'PROGRAMA-DE-PRUEBA'
-          check /guias-de-pesca/esquina/ 200 'En el listado de pesca de <a href="https://corrientes.tur.ar/tour/experiencia-de-pesca-esquina/" rel="noopener">Turismo de Corrientes</a> (consultado el 19 de noviembre de 2026)'
           check /guias-de-pesca/esquina/ 200 'v-guias' 'Figuran en el listado de pesca'   # the short answer no longer counts listed cards (20/11/2026)
+          # Listing mark (owner, 20/11/2026): plain small text in the footnote line, no badge/box.
+          sed -n '/class="sin-verificar note"/,/<\/p>/p' page.html | grep -q 'Figura en el listado de pesca de <a href="https://corrientes.tur.ar/tour/experiencia-de-pesca-esquina/" rel="noopener">Turismo de Corrientes</a> (consultado el 19 de noviembre de 2026)\.' && echo "✓ la marca de listado va en la nota al pie" || { echo "✖ la marca de listado no está en la nota al pie"; fail=1; }
+          ! grep -q '<p class="listado-oficial"\|En el listado de pesca de <a' page.html && echo "✓ la marca de listado no es un cartel" || { echo "✖ la marca de listado sigue como cartel"; fail=1; }
           # "En una mirada" (20/11/2026): only places with data, only columns with data, one row per place; cards without the request button.
           check /guias-de-pesca/esquina/ 200 'data-label="Formato"'
           check /guias-de-pesca/esquina/ 200 'data-label="Qué incluye"'
@@ -1427,7 +1444,7 @@ jobs:
           check /guias-de-pesca/esquina/ 200 'v-guias' 'Pescamapa no le cobra al pescador'
           # City page copy (20/11/2026): short answer as a sentence, dated rates as "place: short price", positive wording, trips section only with trips,
           # form with the budget chips, boat FAQ (Esquina has no weekly programme) whose text also sits in the JSON-LD, current CTA label.
-          check /guias-de-pesca/esquina/ 200 'En Esquina listamos [0-9]* lugares, [0-9]* con acuerdo con Pescamapa\.' 'fichas:| × '
+          check /guias-de-pesca/esquina/ 200 'En Esquina te pedimos opciones a los lugares y guías que encajan con tu viaje: nos ocupamos de escribirles, comparar lo que incluye cada uno y traerte los que tienen lugar en tus fechas\.' 'fichas:| × |listamos'
           check /guias-de-pesca/esquina/ 200 '>PRESTADOR-DE-PRUEBA</a>: Desde \$ 1 (revisado '
           check /guias-de-pesca/esquina/ 200 'Pedís por el formulario, les preguntamos a los lugares y guías que encajan y en 24–48 horas te mandamos las opciones comparadas\.' '(sin tu nombre'
           check /guias-de-pesca/esquina/ 200 'class="armadas"'   # Esquina has trips put together

@@ -15,11 +15,7 @@ $a           = [ 'lugar' => $d['nombre'] ];
 $modificado  = get_post_modified_time( 'Y-m-d', true, $dp );
 $hay_paq     = (bool) pm_destino_paquetes( $clave, $idioma );
 
-// Short answer: how many places, how many have an agreement with Pescamapa (consent cards), and the dated rates the providers publish (at most three).
-$n_lugares = count( $prestadores );
-$n_acuerdo = count( array_filter( $prestadores, fn( $r ) => ! empty( $r['consentimiento'] ) ) );
-$lugares   = pm_t( 1 === $n_lugares ? 'guias.resumen.lugares.uno' : 'guias.resumen.lugares.otros', [ 'n' => (string) $n_lugares ] );
-$con_acuerdo = $n_acuerdo > 0 ? pm_t( 1 === $n_acuerdo ? 'guias.resumen.acuerdo.uno' : 'guias.resumen.acuerdo.otros', [ 'a' => (string) $n_acuerdo ] ) : '';
+// Short answer: what Pescamapa does for the visitor (no counts of places, owner 20/11/2026) and the dated rates the providers publish (at most three).
 $precios = array_values( array_filter( $prestadores, fn( $r ) => $r['precio'] && $r['precio_fecha'] ) );
 // Request links: the main one preselects this destination; the second adds the neighbours that make sense to compare (?tambien=).
 $vecinas   = pm_destinos_para_comparar( $clave, $idioma );
@@ -97,7 +93,7 @@ get_header(); ?>
 		<section class="respuesta" aria-labelledby="respuesta-h">
 			<h2 id="respuesta-h"><?php pm_e( 'guias.resumen.h' ); ?></h2>
 			<ul>
-				<li><?php pm_e( 'guias.resumen.n', $a + [ 'lugares' => $lugares, 'acuerdo' => $con_acuerdo ] ); ?></li>
+				<li><?php pm_e( 'guias.resumen.n', $a ); ?></li>
 				<?php if ( $precios ) : ?>
 					<li><?php pm_e( 'guias.resumen.precios' ); ?>
 						<ul>
