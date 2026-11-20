@@ -40,9 +40,11 @@ foreach ( $prestadores as $r ) {
 		$r['programa'] ?: implode( ' · ', array_map( fn( $k ) => pm_opcion( 'modalidad', $k ), $r['modalidades'] ) ),
 		$fmt_lancha( $r ),
 	] );
+	// "Equipos de pesca" + "Equipos de pesca prestados" say the same: keep the more specific one (prestados).
+	$claves_inc = in_array( 'equipos', $r['equipo'] ?? [], true ) ? array_values( array_diff( $r['incluye'] ?? [], [ 'equipos' ] ) ) : ( $r['incluye'] ?? [] );
 	$incluye = array_values( array_unique( array_merge(
-		array_map( fn( $k ) => pm_opcion( 'incluye', $k ), $r['incluye'] ),
-		array_map( fn( $k ) => pm_opcion( 'equipo', $k ), $r['equipo'] )
+		array_map( fn( $k ) => pm_opcion( 'incluye', $k ), $claves_inc ),
+		array_map( fn( $k ) => pm_opcion( 'equipo', $k ), $r['equipo'] ?? [] )
 	) ) );
 	$fila = [
 		'r'         => $r,
@@ -56,6 +58,14 @@ foreach ( $prestadores as $r ) {
 		$mirada[] = $fila;
 	}
 }
+// Table order (20/11/2026, docs/prestadores.md): agreement first (as in the cards), then dated price, then more filled columns
+// (formato, incluye, temporada), then card order. Only the table; the card list keeps its own order.
+foreach ( $mirada as $i => $f ) {
+	$mirada[ $i ]['idx']    = $i;
+	$mirada[ $i ]['llenas'] = count( array_filter( [ $f['formato'], $f['incluye'], $f['temporada'] ] ) );
+	$mirada[ $i ]['arriba'] = ! empty( $f['r']['acuerdo'] ) && ! empty( $f['r']['consentimiento'] );
+}
+usort( $mirada, fn( $a, $b ) => [ $b['arriba'], '' !== $b['precio'], $b['llenas'], $a['idx'] ] <=> [ $a['arriba'], '' !== $a['precio'], $a['llenas'], $b['idx'] ] );
 $mirada   = array_slice( $mirada, 0, 6 );
 $columnas = array_values( array_filter( [ 'formato', 'incluye', 'temporada', 'precio' ], fn( $c ) => array_filter( array_column( $mirada, $c ) ) ) );
 if ( count( $mirada ) < 2 ) {

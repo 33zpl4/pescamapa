@@ -1321,6 +1321,38 @@ jobs:
           wp --path="$WP" eval '$p = get_posts( [ "post_type" => "pm_prestador", "title" => "PRESTADOR-PUBLICO", "numberposts" => 1, "post_status" => "any" ] )[0]; update_field( "prest_listado_fuente", "Turismo de Corrientes", $p->ID ); update_field( "prest_listado_fecha", "20261119", $p->ID ); update_field( "prest_listado_url", "https://corrientes.tur.ar/tour/experiencia-de-pesca-esquina/", $p->ID ); update_field( "prest_programa", "PROGRAMA-DE-PRUEBA", $p->ID ); wp_cache_flush();'
           check /guias-de-pesca/esquina/ 200 'Qué le preguntamos a cada lugar por vos' 'Cómo elegir guía'
           check /guias-de-pesca/esquina/ 200 'En una mirada'
+          # 20/11/2026: dedupe of equipo/incluye, table order, generic questions, list text.
+          wp --path="$WP" eval '$p = wp_insert_post( [ "post_type" => "pm_prestador", "post_status" => "publish", "post_title" => "PRESTADOR-DUPLICADO" ] ); foreach ( [ "tipo" => [ "guia" ], "prest_destino" => "esquina", "prest_publico" => 1, "prest_fuente" => "https://example.com/dup", "equipo" => [ "equipos" ], "incluye" => [ "equipos", "licencia" ], "prest_programa" => "PROGRAMA-DUP", "prest_temporada" => "TEMPORADA-DUP" ] as $k => $v ) { update_field( $k, $v, $p ); } wp_cache_flush();'
+          curl -sS -o page.html "$URL/guias-de-pesca/esquina/"
+          python3 - <<'PY'
+          import re, sys
+          h = open("page.html", encoding="utf-8").read()
+          t = re.search(r'<section class="mirada".*?</section>', h, re.S)
+          if not t: print("✖ sin tabla En una mirada"); sys.exit(1)
+          t = t.group(0)
+          ok = True
+          if "Equipos de pesca prestados" not in t or re.search(r"Equipos de pesca(?! prestados)", t):
+              print("✖ el equipo se repite en la tabla"); ok = False
+          else: print("✓ la tabla no repite «Equipos de pesca»")
+          if re.search(r"Equipos de pesca(?! prestados)", h.split('class="lista-prestadores"')[1]):
+              print("✖ el equipo se repite en las tarjetas"); ok = False
+          else: print("✓ las tarjetas no repiten «Equipos de pesca»")
+          rows = re.findall(r'<th scope="row"><a href="#prestador-\d+">([^<]+)</a></th>(.*?)</tr>', t, re.S)
+          names = [n for n, _ in rows]
+          print("filas:", names)
+          # Seeded: PRESTADOR-DE-PRUEBA has a dated price; PRESTADOR-DUPLICADO has 3 columns but no price; PRESTADOR-PUBLICO has only a programme.
+          if "PRESTADOR-DE-PRUEBA" in names and "PRESTADOR-DUPLICADO" in names and names.index("PRESTADOR-DE-PRUEBA") > names.index("PRESTADOR-DUPLICADO"):
+              print("✖ la fila con precio fechado debe ir antes que la de más columnas sin precio"); ok = False
+          else: print("✓ precio fechado primero")
+          if "PRESTADOR-DUPLICADO" in names and "PRESTADOR-PUBLICO" in names and names.index("PRESTADOR-DUPLICADO") > names.index("PRESTADOR-PUBLICO"):
+              print("✖ más columnas llenas antes que menos"); ok = False
+          else: print("✓ más columnas llenas antes")
+          if not ok: sys.exit(1)
+          PY
+          check /guias-de-pesca/esquina/ 200 'Qué incluye</strong>: guía, embarcación, equipo, licencia, comidas, traslados y, si hace falta, alojamiento\.' 'combustible, carnada, licencia, comidas, traslados y equipo'
+          check /guias-de-pesca/esquina/ 200 'La consulta va por Pescamapa: te mandamos las opciones comparadas\.' 'Sin datos de contacto'
+          check /en/plan-your-trip/ 200 'What is included</strong>: guide, boat, gear, licence, meals, transfers and, if needed, lodging\.'
+          check /pt/planejar-viagem/ 200 'O que inclui</strong>: guia, embarcação, equipamento, licença, refeições, traslados e, se precisar, hospedagem\.'
           check /guias-de-pesca/esquina/ 200 'class="tabla-mirada"'
           check /guias-de-pesca/esquina/ 200 'PROGRAMA-DE-PRUEBA'
           check /guias-de-pesca/esquina/ 200 'En el listado de pesca de <a href="https://corrientes.tur.ar/tour/experiencia-de-pesca-esquina/" rel="noopener">Turismo de Corrientes</a> (consultado el 19 de noviembre de 2026)'

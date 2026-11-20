@@ -12,7 +12,7 @@ $filas = [
 	'prest.capacidad_fila' => 'lancha' === $r['capacidad_unidad'] ? [] : array_filter( [ pm_prestador_capacidad( $r ) ] ),
 	'prest.motor'       => array_filter( [ $r['motor'] ] ),
 	'prest.equipo'      => array_map( fn( $k ) => pm_opcion( 'equipo', $k ), $r['equipo'] ),
-	'prest.incluye'     => array_map( fn( $k ) => pm_opcion( 'incluye', $k ), $r['incluye'] ),
+	'prest.incluye'     => array_map( fn( $k ) => pm_opcion( 'incluye', $k ), in_array( 'equipos', $r['equipo'] ?? [], true ) ? array_diff( $r['incluye'] ?? [], [ 'equipos' ] ) : ( $r['incluye'] ?? [] ) ), // "Equipos de pesca" is said, more precisely, by "prestados"
 	'prest.programa'    => array_filter( [ $r['programa'] ] ),
 	'prest.estadia'     => array_filter( [ $r['estadia'] ] ),
 	'prest.acompanante' => array_filter( [ $r['acompanante'] ] ), // price-like: dated or "a consultar", see below
