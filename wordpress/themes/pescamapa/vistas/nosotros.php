@@ -35,7 +35,7 @@ get_header(); ?>
 		<section class="respuesta" aria-labelledby="contacto-h">
 			<h2 id="contacto-h"><?php pm_e( 'ns.contacto.h' ); ?></h2>
 			<p><?php pm_e( 'ns.contacto.p' ); ?> <a href="mailto:<?php echo esc_attr( PM_EMAIL_PUBLICO ); ?>"><?php echo esc_html( PM_EMAIL_PUBLICO ); ?></a></p>
-			<p><a class="button dark" href="<?php echo esc_url( pm_url_viaje( $idioma ) ); ?>"><?php pm_e( 'ns.contacto.viaje' ); ?></a></p>
+			<p><a class="button dark" href="<?php echo esc_url( pm_url_viaje( $idioma ) ); ?>"><?php pm_e( 'ns.contacto.viaje' ); ?></a><?php pm_cta_nota(); ?></p>
 		</section>
 	</div>
 </div>

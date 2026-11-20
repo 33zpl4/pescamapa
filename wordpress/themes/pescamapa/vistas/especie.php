@@ -21,7 +21,7 @@ get_header(); ?>
 		</div>
 	</header>
 	<div class="shell body">
-		<p class="cta-nota"><?php pm_e( 'especie.cta', [ 'especie' => mb_strtolower( $e['nombre'] ) ] ); ?> <a class="button dark" href="<?php echo esc_url( $url_pedir ); ?>"><?php pm_e( 'inicio.armar' ); ?></a></p>
+		<p class="cta-nota"><?php pm_e( 'especie.cta', [ 'especie' => mb_strtolower( $e['nombre'] ) ] ); ?> <a class="button dark" href="<?php echo esc_url( $url_pedir ); ?>"><?php pm_e( 'inicio.armar' ); ?></a><?php pm_cta_nota(); ?></p>
 		<div class="prose"><?php while ( have_posts() ) : the_post(); the_content(); endwhile; ?></div>
 		<?php if ( $e['fuentes'] ) : ?>
 			<details id="fuentes" class="fuentes-det">

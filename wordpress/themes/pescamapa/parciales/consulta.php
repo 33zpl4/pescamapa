@@ -65,6 +65,7 @@ $resultado = pm_consulta_resultado();
 			?>
 			<label><?php pm_e( 'consulta.mensaje' ); ?> <textarea name="mensaje" rows="3" maxlength="2000"><?php echo esc_textarea( pm_previo( 'mensaje' ) ); ?></textarea></label>
 			<button class="button dark" type="submit"><?php pm_e( $boutique ? 'consulta.boutique.enviar' : 'consulta.enviar' ); ?></button>
+			<?php pm_cta_nota(); ?>
 			<p class="note"><?php pm_e( 'consulta.privacidad' ); ?> <?php echo pm_enlace_privacidad(); // phpcs:ignore -- escaped inside ?></p>
 		</form>
 	<?php endif; ?>

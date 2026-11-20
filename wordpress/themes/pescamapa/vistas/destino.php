@@ -131,6 +131,8 @@ get_header(); ?>
 					</p>
 				</div>
 
+				<?php get_template_part( 'parciales/banda-gratis' ); ?>
+
 				<h2 id="prestadores"><?php pm_e( 'ficha.prestadores.h2' ); ?></h2>
 				<p><?php pm_e( 'ficha.prestadores.p', [ 'lugar' => $d['nombre'] ] ); ?></p>
 				<?php if ( $consultada = pm_prestadores_consultada( $prestadores ) ) : ?><p class="note nota-fuentes"><?php pm_e( 'ficha.prestadores.nota', [ 'fecha' => pm_mes_anio( $consultada ) ] ); ?></p><?php endif; ?>

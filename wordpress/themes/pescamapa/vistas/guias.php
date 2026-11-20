@@ -93,7 +93,7 @@ get_header(); ?>
 		<section class="respuesta" aria-labelledby="respuesta-h">
 			<h2 id="respuesta-h"><?php pm_e( 'guias.resumen.h' ); ?></h2>
 			<ul>
-				<li><?php pm_e( 'guias.resumen.n', $a ); ?></li>
+				<li><?php pm_e( 'guias.resumen.n', $a ); ?> <strong><?php pm_e( 'guias.resumen.gratis' ); ?></strong></li>
 				<?php if ( $precios ) : ?>
 					<li><?php pm_e( 'guias.resumen.precios' ); ?>
 						<ul>
@@ -146,6 +146,7 @@ get_header(); ?>
 				<a class="enlace-comparar" href="<?php echo esc_url( add_query_arg( 'tambien', implode( ',', array_column( $vecinas, 'clave' ) ), $url_pedir ) ); ?>"><?php pm_e( 'guias.cta.comparar', [ 'otras' => $otras ] ); ?></a>
 			<?php endif; ?>
 		</p>
+		<?php pm_cta_nota(); ?>
 		<?php get_template_part( 'parciales/preguntas', null, [ 'id' => 'preguntas-h' ] ); ?>
 		<section class="lista-prestadores" aria-labelledby="lista-h">
 			<h2 id="lista-h"><?php pm_e( 'guias.lista.h', $a ); ?></h2>
@@ -155,6 +156,7 @@ get_header(); ?>
 				get_template_part( 'parciales/prestador', null, $r + [ 'lugar' => $d['nombre'], 'pedir' => false ] ); // the request buttons are the one on top and the one after the cards
 			} ?>
 		</section>
+		<?php get_template_part( 'parciales/banda-gratis' ); ?>
 		<?php if ( $hay_paq ) : // Only when the destination has trips put together: no intro and lone link otherwise. ?>
 		<section class="armadas" aria-labelledby="armadas-h">
 			<h2 id="armadas-h"><?php pm_e( 'guias.paquetes.h' ); ?></h2>

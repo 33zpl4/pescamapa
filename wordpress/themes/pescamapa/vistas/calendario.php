@@ -77,7 +77,7 @@ get_header(); ?>
 				<p><?php pm_e( "cal.faq.$n.a" ); ?></p>
 			<?php endforeach; ?>
 		</section>
-		<p class="cta-nota"><a class="button dark" href="<?php echo esc_url( pm_url_viaje( $idioma ) ); ?>"><?php pm_e( 'nav.viaje' ); ?></a></p>
+		<p class="cta-nota"><a class="button dark" href="<?php echo esc_url( pm_url_viaje( $idioma ) ); ?>"><?php pm_e( 'nav.viaje' ); ?></a><?php pm_cta_nota(); ?></p>
 	</div>
 </div>
 <?php get_footer();

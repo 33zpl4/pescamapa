@@ -647,3 +647,15 @@ footer .negocio a { color: var(--white); text-decoration: underline; text-underl
 .v-presupuesto .faq p { margin: 0; }
 .v-presupuesto .fin .cta-fila { margin: 0 0 12px; }
 .v-presupuesto .fin .note { margin: 0; }
+
+/* Free-for-you microcopy (owner, 20/11/2026): lime «Gratis para vos» pill + one small line under every button to the trip form;
+   the same pill leads the slim mid-page band of long guides. Component: docs/marca.md. */
+.gratis-pill { display: inline-block; background: var(--lime); color: var(--forest); font: 400 var(--fs-label)/1 var(--font-label); letter-spacing: 0.08em; text-transform: uppercase; padding: 5px 10px 3px; border-radius: 99px; vertical-align: 1px; }
+.cta-gratis { display: block; margin: 10px 0 0; font: 400 var(--fs-small)/1.4 var(--font-body); color: var(--muted); }
+.hero .cta-gratis, .on-dark .cta-gratis { color: var(--on-dark); }
+.v-inicio .pedido .cta-gratis { color: var(--muted); }
+.cta-nota .cta-gratis { margin-top: 8px; }
+.v-guias .cta-opciones + .cta-gratis { margin: -12px 0 24px; }
+.banda-gratis { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 20px; background: var(--cream); border-left: 3px solid var(--moss); border-radius: var(--radius); padding: 14px 18px; margin: 1.6em 0; }
+.banda-gratis p { margin: 0; flex: 1 1 320px; }
+.banda-gratis .button { flex: none; }

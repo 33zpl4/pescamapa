@@ -17,5 +17,6 @@ $viaje  = pm_url_viaje( $idioma );
 		<?php endforeach; ?>
 		<li><a class="button primary" href="<?php echo esc_url( $viaje ); ?>"><?php pm_e( 'inicio.q.nose' ); ?></a></li>
 	</ul>
+	<?php pm_cta_nota(); ?>
 	<p class="solo"><a href="<?php echo esc_url( pm_url_calendario( $idioma ) ); ?>"><?php pm_e( 'inicio.q.reglas' ); ?></a> <span><?php pm_e( 'inicio.q.reglas.d' ); ?></span></p>
 </div>

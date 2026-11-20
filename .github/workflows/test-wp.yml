@@ -1181,6 +1181,32 @@ jobs:
           check /pt/planejar-viagem/ 200 'href="[^"]*/pt/pedir-orcamento-pesca/"'
           check /en/plan-your-trip/ 200 'href="[^"]*/en/get-fishing-lodge-quotes/"'
           check /guias-de-pesca/esquina/ 200 'href="[^"]*/pedir-presupuesto-pesca/"'
+          # "Free for you" microcopy (owner, 20/11/2026): pill + one line under every button to the form; one mid-page band per long guide;
+          # no CTA right after the short answer on the answer page. PHP warnings: the debug.log check at the end of the job covers these renders.
+          gratis() { # path "pill" "rest of the line"
+            check "$1" 200 "class=\"gratis-pill\">$2</span>" && grep -q -- "class=\"gratis-resto\">$3</span>" page.html && echo "✓ $1 microcopy gratis" || { echo "✖ $1 sin la microcopy «$2»"; fail=1; }
+          }
+          gratis /guias-de-pesca/esquina/ 'Gratis para vos' 'Respuesta en 24–48 horas · Pagás lo mismo que reservando directo'
+          gratis /litoral/corrientes/pesca-en-esquina/ 'Gratis para vos' 'Respuesta en 24–48 horas · Pagás lo mismo que reservando directo'
+          gratis / 'Gratis para vos' 'Respuesta en 24–48 horas · Pagás lo mismo que reservando directo'
+          gratis /pedir-presupuesto-pesca/ 'Gratis para vos' 'Respuesta en 24–48 horas · Pagás lo mismo que reservando directo'
+          gratis /pt/ 'Grátis para você' 'Resposta em 24–48 horas · Você paga o mesmo que reservando direto'
+          gratis /pt/pedir-orcamento-pesca/ 'Grátis para você' 'Resposta em 24–48 horas · Você paga o mesmo que reservando direto'
+          gratis /en/ 'Free for you' 'Reply within 24–48 hours · You pay the same as booking direct'
+          gratis /en/get-fishing-lodge-quotes/ 'Free for you' 'Reply within 24–48 hours · You pay the same as booking direct'
+          for r in /guias-de-pesca/esquina/ /litoral/corrientes/pesca-en-esquina/; do
+            n=$(curl -sS "$URL$r" | grep -c 'class="banda-gratis"')
+            [[ "$n" == 1 ]] && echo "✓ $r la banda «gratis» aparece una vez" || { echo "✖ $r banda «gratis»: $n (esperado 1)"; fail=1; }
+          done
+          check /guias-de-pesca/esquina/ 200 '<strong>Es gratis para vos\.</strong>'
+          check /guias-de-pesca/esquina/ 200 '¿Preferís que les preguntemos nosotros? Es gratis para vos: te mandamos las opciones comparadas en 24–48 horas\.'
+          curl -sS "$URL/pedir-presupuesto-pesca/" -o page.html
+          python3 - <<'PY' && echo "✓ presupuesto: sin botón justo después de la respuesta corta" || { echo "✖ presupuesto: hay un botón justo después de la respuesta corta"; fail=1; }
+          import re
+          t = open('page.html', encoding='utf-8').read()
+          m = re.search(r'id="respuesta-h".*?</section>\s*(<[^>]+>)', t, re.S)
+          assert m and 'cta-fila' not in m.group(1) and 'class="contraste"' in m.group(1), m and m.group(1)
+          PY
           check /llms.txt 200 '## Pedir opciones a varios lugares a la vez'
           check /llms.txt 200 'pedir-presupuesto-pesca/'
           check /llms.txt 200 'pt/pedir-orcamento-pesca/'

@@ -27,8 +27,6 @@ get_header(); ?>
 			<h2 id="respuesta-h"><?php pm_e( 'guias.resumen.h' ); ?></h2>
 			<p><?php pm_e( 'pres.resp.p' ); ?></p>
 		</section>
-		<p class="cta-fila"><a class="button primary" href="<?php echo esc_url( $viaje ); ?>"><?php pm_e( 'contraste.cta.pedir' ); ?></a></p>
-
 		<?php get_template_part( 'parciales/contraste', null, [ 'id' => 'contraste-h', 'cta' => 'pedir' ] ); ?>
 
 		<section class="porque" aria-labelledby="porque-h">
@@ -72,7 +70,7 @@ get_header(); ?>
 		<section class="fin" aria-labelledby="fin-h">
 			<h2 id="fin-h"><?php pm_e( 'pres.fin.h' ); ?></h2>
 			<p class="cta-fila"><a class="button primary" href="<?php echo esc_url( $viaje ); ?>"><?php pm_e( 'contraste.cta.pedir' ); ?></a></p>
-			<p class="note"><?php pm_e( 'viaje.garantia' ); ?></p>
+			<p class="note"><span class="gratis-pill"><?php pm_e( 'cta.gratis' ); ?></span> <?php pm_e( 'viaje.garantia' ); ?></p>
 		</section>
 	</div>
 </div>

@@ -55,7 +55,7 @@ get_header(); ?>
 			<?php endforeach; ?>
 		</div>
 		<?php get_template_part( 'parciales/notas-relacionadas', null, [ 'notas' => $notas, 'h2' => 'prov.notas.h2', 'vars' => $a ] ); ?>
-		<p class="cta-nota"><a class="button dark" href="<?php echo esc_url( pm_url_viaje( $idioma ) ); ?>"><?php pm_e( 'prov.cta', $a ); ?></a></p>
+		<p class="cta-nota"><a class="button dark" href="<?php echo esc_url( pm_url_viaje( $idioma ) ); ?>"><?php pm_e( 'prov.cta', $a ); ?></a><?php pm_cta_nota(); ?></p>
 	</div>
 </div>
 <?php get_footer();
