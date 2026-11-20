@@ -1,41 +1,16 @@
 name: Probe river data
-# Read-only probe of the INA a5 API: how many years of daily river heights each station keeps (for the Paraná monitor, 20/11/2026).
+# Read-only probe (20/11/2026). 1) INA a5 API: catalogue entries (alert / evacuation levels) and which series exist, forecasts included,
+# for the Paraná stations; 2) the INA daily report PDF (Perspectiva column); 3) official pages that may publish outlooks or notices
+# (INA, Prefectura, Yacyretá, Itaipú, Goya, Corrientes). Prints short extracts only; phone numbers and e-mails are scrubbed.
+# No secrets, nothing is written anywhere. Manual only.
 on: workflow_dispatch
 jobs:
   sonda:
     runs-on: ubuntu-latest
-    timeout-minutes: 8
+    timeout-minutes: 14
     steps:
-      - name: INA history depth per station (read-only)
-        run: |
-          python3 - <<'PY'
-          import json, urllib.request, time, collections
-          B = "https://alerta.ina.gob.ar/a5/obs/puntual/series/{}/observaciones?timestart={}&timeend={}&format=json"
-          def get(sid, a, b):
-              t = time.time()
-              try:
-                  req = urllib.request.Request(B.format(sid, a, b), headers={"User-Agent": "pescamapa-sonda/1.0 (+https://pescamapa.com)"})
-                  raw = urllib.request.urlopen(req, timeout=120).read()
-                  d = json.loads(raw)
-                  d = d if isinstance(d, list) else d.get("rows", d.get("observaciones", []))
-                  return d, len(raw), time.time() - t, None
-              except Exception as e:
-                  return [], 0, time.time() - t, str(e)[:120]
-          est = {"Goya": 23, "Paso de la Patria": 18, "Corrientes": 19, "Esquina": 25, "La Paz": 26, "Itati": 17, "Santa Fe": 30, "San Nicolas": 36, "San Pedro": 38, "Baradero": 39, "Zarate": 40, "Concordia": 79}
-          for n, sid in est.items():
-              d, size, s, err = get(sid, "1990-01-01", "2026-11-21")
-              if err or not d:
-                  print(f"{n} ({sid}): rango completo ERROR {err} en {s:.0f}s; pruebo por decadas")
-                  d = []
-                  for a, b in [("1990-01-01", "1999-12-31"), ("2000-01-01", "2009-12-31"), ("2010-01-01", "2019-12-31"), ("2020-01-01", "2026-11-21")]:
-                      x, sz, s2, e2 = get(sid, a, b); d += x
-                      print(f"   {a[:4]}s: {len(x)} obs, {sz/1e6:.1f} MB, {s2:.0f}s {e2 or ''}")
-              por = collections.Counter(str(o.get("timestart", ""))[:4] for o in d)
-              anios = sorted(k for k in por if k)
-              vals = [o.get("valor") for o in d if isinstance(o.get("valor"), (int, float))]
-              print(f"{n} ({sid}): {len(d)} obs, {size/1e6:.1f} MB, {s:.0f}s; años {anios[0] if anios else '-'} a {anios[-1] if anios else '-'}; min {min(vals) if vals else '-'} max {max(vals) if vals else '-'}")
-              print("   por año:", " ".join(f"{k}:{por[k]}" for k in anios))
-              if d:
-                  print("   claves:", sorted(d[0].keys()), "| ejemplo:", {k: d[0][k] for k in list(d[0])[:6]})
-              time.sleep(1)
-          PY
+      - name: Install pdftotext
+        run: sudo apt-get install -y -qq poppler-utils >/dev/null 2>&1; pdftotext -v 2>&1 | head -1
+      - uses: actions/checkout@v4
+      - name: Probe
+        run: python3 -u .github/scripts/sonda-rio.py
