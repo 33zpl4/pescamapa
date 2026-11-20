@@ -61,7 +61,7 @@ def grafico_precios():
     ct1 = fila("Corrientes", "extranjero (domicilio fuera de la Argentina)", "1 día", "Licencia de turista extranjero")
     ct6 = fila("Corrientes", "extranjero (domicilio fuera de la Argentina)", "6 días", "Licencia de turista extranjero")
     fechas = sorted({r["consultada"] for _, r in dia + temp} | {er["consultada"]})
-    titulo = "Cuánto cuesta pescar en Argentina"
+    titulo = "Cuánto cuesta la licencia de pesca"
     sub = "Permiso para extranjeros no residentes, 2026/27, en pesos"
     linea = f"Leído entre el {fechas[0][8:10].lstrip('0')} y el {fechas[-1][8:10].lstrip('0')} de noviembre de 2026"
     desc = ("Barras con el valor del permiso de un extranjero no residente en pesos argentinos. Un día: " + "; ".join(f"{n} {peso(r['valor'])}" for n, r in dia)
