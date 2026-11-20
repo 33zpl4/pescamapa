@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900" role="img" aria-labelledby="t d" font-family="Outfit, 'Helvetica Neue', Arial, sans-serif">
+<title id="t">El 20 de noviembre en Goya</title>
+<desc id="d">Altura del Paraná en Goya cada 20 de noviembre de 1990 a 2025: mínimo 1,20 m (2020), percentiles 10 a 90 de 2,33 a 5,06 m, 25 a 75 de 3,13 a 4,76 m, mediana 3,93 m, máximo 5,63 m (1997). El 20 de noviembre de 2026: 5,68 m, por encima de todos. Mismo día en 2021 (año de menor altura media): 1,45 m; en 1998 (mayor): 4,08 m.</desc>
+<rect width="1200" height="900" fill="#fbfaf6"/>
+<text x="40" y="58" font-family="'Bebas Neue', Impact, 'Arial Narrow', sans-serif" font-size="34" letter-spacing="2" fill="#5e6b33">PESCAMAPA</text>
+<text x="40" y="118" font-family="'Playfair Display', Georgia, 'Times New Roman', serif" font-size="56" font-weight="700" fill="#14251f">El 20 de noviembre en Goya</text>
+<text x="40" y="164" font-size="34" fill="#344a3d">2026 contra los 36 años de 1990 a 2025</text>
+<text x="40" y="212" font-size="38" font-weight="700" fill="#11251f">5,68 m: más alto que los 36 años anteriores</text>
+<line x1="60.0" x2="60.0" y1="248" y2="702" stroke="#d9ddd2" stroke-width="2"/><text x="60.0" y="738" font-size="30" text-anchor="middle" fill="#5f685e">0</text>
+<line x1="226.2" x2="226.2" y1="248" y2="702" stroke="#d9ddd2" stroke-width="2"/><text x="226.2" y="738" font-size="30" text-anchor="middle" fill="#5f685e">1</text>
+<line x1="392.3" x2="392.3" y1="248" y2="702" stroke="#d9ddd2" stroke-width="2"/><text x="392.3" y="738" font-size="30" text-anchor="middle" fill="#5f685e">2</text>
+<line x1="558.5" x2="558.5" y1="248" y2="702" stroke="#d9ddd2" stroke-width="2"/><text x="558.5" y="738" font-size="30" text-anchor="middle" fill="#5f685e">3</text>
+<line x1="724.6" x2="724.6" y1="248" y2="702" stroke="#d9ddd2" stroke-width="2"/><text x="724.6" y="738" font-size="30" text-anchor="middle" fill="#5f685e">4</text>
+<line x1="890.8" x2="890.8" y1="248" y2="702" stroke="#d9ddd2" stroke-width="2"/><text x="890.8" y="738" font-size="30" text-anchor="middle" fill="#5f685e">5</text>
+<line x1="1056.9" x2="1056.9" y1="248" y2="702" stroke="#d9ddd2" stroke-width="2"/><text x="1056.9" y="738" font-size="30" text-anchor="middle" fill="#5f685e">6 m</text>
+<text x="60" y="288" font-size="32" font-weight="700" fill="#14251f">Mínimo y máximo de los 36 años</text>
+<rect x="259.4" y="302" width="736.1" height="34" rx="4" fill="#344a3d" fill-opacity="0.16"/>
+<text x="259.4" y="368" font-size="30" text-anchor="middle" fill="#344a3d">1,20 (2020)</text>
+<text x="995.4" y="368" font-size="30" text-anchor="end" fill="#344a3d">5,63 (1997)</text>
+<text x="60" y="396" font-size="32" font-weight="700" fill="#14251f">Percentiles 10 a 90: ocho de cada diez años</text>
+<rect x="447.1" y="410" width="453.6" height="34" rx="4" fill="#344a3d" fill-opacity="0.34"/>
+<text x="447.1" y="476" font-size="30" text-anchor="middle" fill="#344a3d">2,33</text>
+<text x="900.7" y="476" font-size="30" text-anchor="middle" fill="#344a3d">5,06</text>
+<text x="60" y="504" font-size="32" font-weight="700" fill="#14251f">Percentiles 25 a 75: la mitad de los años</text>
+<rect x="580.1" y="518" width="270.8" height="34" rx="4" fill="#344a3d" fill-opacity="0.62"/>
+<text x="580.1" y="584" font-size="30" text-anchor="middle" fill="#344a3d">3,13</text>
+<text x="850.9" y="584" font-size="30" text-anchor="middle" fill="#344a3d">4,76</text>
+<line x1="713.0" x2="713.0" y1="512" y2="558" stroke="#11251f" stroke-width="6"/>
+<text x="713.0" y="584" font-size="30" font-weight="700" text-anchor="middle" fill="#11251f">mediana 3,93</text>
+<text x="60" y="612" font-size="32" font-weight="700" fill="#14251f">El mismo día en dos años extremos</text>
+<rect x="286.9" y="629.0" width="28" height="28" fill="#5e6b33"/>
+<text x="300.9" y="692" font-size="30" text-anchor="middle" fill="#344a3d">2021: 1,45</text>
+<path d="M737.9 624.0 L756.9 643.0 L737.9 662.0 L718.9 643.0Z" fill="#5f685e"/>
+<text x="737.9" y="692" font-size="30" text-anchor="middle" fill="#344a3d">1998: 4,08</text>
+<line x1="1003.8" x2="1003.8" y1="248" y2="702" stroke="#11251f" stroke-width="6"/>
+<circle cx="1003.8" cy="248" r="13" fill="#d8e46a" stroke="#11251f" stroke-width="5"/>
+<text x="979.8" y="258" font-size="34" font-weight="700" text-anchor="end" fill="#11251f">2026: 5,68 m</text>
+<text x="40" y="778" font-size="30" fill="#5f685e">Lectura del 20 de noviembre de 2026. Años de comparación: 1990 a 2025.</text>
+<text x="40" y="814" font-size="30" fill="#5f685e">Años de menor y mayor altura media: 2021 y 1998.</text>
+<text x="40" y="850" font-size="30" fill="#344a3d">Datos: Instituto Nacional del Agua (escalas de Prefectura Naval Argentina).</text>
+<text x="40" y="886" font-size="30" fill="#344a3d">Elaboración: Pescamapa.</text>
+</svg>

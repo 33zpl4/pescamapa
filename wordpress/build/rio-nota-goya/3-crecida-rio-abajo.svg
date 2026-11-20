@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900" role="img" aria-labelledby="t d" font-family="Outfit, 'Helvetica Neue', Arial, sans-serif">
+<title id="t">La crecida viaja río abajo</title>
+<desc id="d">Cambio de la altura del río Paraná en los últimos 30 días, de norte a sur: Paso de la Patria −1,77 m (baja); Corrientes −1,43 m (baja); Goya +0,17 m (sube); Esquina +0,69 m (sube); La Paz +0,88 m (sube); Santa Fe +2,03 m (sube). Al 20 de noviembre de 2026. Río arriba baja; río abajo sube. Cada escala tiene su propio cero.</desc>
+<rect width="1200" height="900" fill="#fbfaf6"/>
+<text x="40" y="58" font-family="'Bebas Neue', Impact, 'Arial Narrow', sans-serif" font-size="34" letter-spacing="2" fill="#5e6b33">PESCAMAPA</text>
+<text x="40" y="118" font-family="'Playfair Display', Georgia, 'Times New Roman', serif" font-size="56" font-weight="700" fill="#14251f">La crecida viaja río abajo</text>
+<text x="40" y="164" font-size="34" fill="#344a3d">Cambio de la altura del Paraná en 30 días</text>
+<text x="40" y="212" font-size="38" font-weight="700" fill="#11251f">Al 20 de noviembre de 2026</text>
+<defs><pattern id="r" width="14" height="14" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="14" height="14" fill="#fbfaf6"/><rect width="7" height="14" fill="#5e6b33"/></pattern></defs>
+<text x="60" y="258" font-size="30" fill="#5f685e">↑ río arriba (norte)</text>
+<text x="60" y="312" font-size="34" font-weight="500" fill="#14251f">Paso de la Patria</text>
+<rect x="146.0" y="320" width="354.0" height="30" fill="url(#r)" stroke="#11251f" stroke-width="2.5"/>
+<text x="514" y="346" font-size="32" font-weight="700" fill="#11251f">−1,77 m · baja</text>
+<text x="60" y="388" font-size="34" font-weight="500" fill="#14251f">Corrientes</text>
+<rect x="214.0" y="396" width="286.0" height="30" fill="url(#r)" stroke="#11251f" stroke-width="2.5"/>
+<text x="514" y="422" font-size="32" font-weight="700" fill="#11251f">−1,43 m · baja</text>
+<rect x="20" y="430" width="1160" height="72" rx="10" fill="#f4f2e9"/>
+<text x="60" y="464" font-size="34" font-weight="800" fill="#14251f">Goya</text>
+<rect x="500.0" y="472" width="34.0" height="30" fill="#d8e46a" stroke="#11251f" stroke-width="4"/>
+<text x="546.0" y="498" font-size="32" font-weight="700" fill="#11251f">+0,17 m · sube</text>
+<text x="60" y="540" font-size="34" font-weight="500" fill="#14251f">Esquina</text>
+<rect x="500.0" y="548" width="138.0" height="30" fill="#344a3d" stroke="#11251f" stroke-width="2.5"/>
+<text x="650.0" y="574" font-size="32" font-weight="700" fill="#11251f">+0,69 m · sube</text>
+<text x="60" y="616" font-size="34" font-weight="500" fill="#14251f">La Paz</text>
+<rect x="500.0" y="624" width="176.0" height="30" fill="#344a3d" stroke="#11251f" stroke-width="2.5"/>
+<text x="688.0" y="650" font-size="32" font-weight="700" fill="#11251f">+0,88 m · sube</text>
+<text x="60" y="692" font-size="34" font-weight="500" fill="#14251f">Santa Fe</text>
+<rect x="500.0" y="700" width="406.0" height="30" fill="#344a3d" stroke="#11251f" stroke-width="2.5"/>
+<text x="918.0" y="726" font-size="32" font-weight="700" fill="#11251f">+2,03 m · sube</text>
+<line x1="500.0" x2="500.0" y1="272" y2="732" stroke="#11251f" stroke-width="3"/>
+<text x="60" y="762" font-size="30" fill="#5f685e">↓ río abajo (sur)</text>
+<text x="514" y="762" font-size="30" fill="#5f685e">0 = sin cambio</text>
+<text x="40" y="810" font-size="30" fill="#5f685e">Cada escala tiene su propio cero: se comparan los cambios, no las alturas.</text>
+<text x="40" y="846" font-size="30" fill="#344a3d">Datos: Instituto Nacional del Agua (escalas de Prefectura Naval Argentina).</text>
+<text x="40" y="882" font-size="30" fill="#344a3d">Elaboración: Pescamapa.</text>
+</svg>
