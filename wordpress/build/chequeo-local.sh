@@ -21,6 +21,9 @@ node wordpress/build/revisar-marca.mjs || fallo=1
 echo "· node --check sobre wordpress/build/*.mjs"
 for f in wordpress/build/*.mjs; do node --check "$f" || fallo=1; done
 
+echo "· Autoprueba del histórico del río (offline)"
+TMPDIR="${TMPDIR:-/tmp}" python3 -I wordpress/build/rio-historia.py --autotest || fallo=1
+
 echo "· Workflows: YAML válido"
 if command -v python3 >/dev/null && python3 -c 'import yaml' 2>/dev/null; then
 	for f in .github/workflows/*.yml; do

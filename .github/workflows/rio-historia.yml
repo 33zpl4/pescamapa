@@ -1,0 +1,36 @@
+name: River history
+
+# Histórico del río para notas (20/11/2026). Manual only. Reads the whole daily history (1990 -> today) of the river stations from the
+# INA a5 API (read-only), runs wordpress/build/rio-historia.py (cleaning, statistics, CSV, SVG charts, resumen.md/json), prints
+# resumen.md in the log and pushes the output files to the scratch branch `rio-historia` (the way capturas.yml does with `capturas`),
+# so they can be read from a sandbox that cannot reach INA. No secrets, nothing is written to the site. See docs/rio.md.
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  historia:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Self-test, then read the INA history
+        run: |
+          python3 -I wordpress/build/rio-historia.py --autotest
+          python3 wordpress/build/rio-historia.py salida
+      - name: resumen.md
+        run: cat salida/resumen.md
+      - name: Push to branch rio-historia
+        run: |
+          URL="https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git"
+          if git clone -q --branch rio-historia --single-branch "$URL" rama 2>/dev/null; then :; else mkdir rama && cd rama && git init -q && git checkout -q -b rio-historia && cd ..; fi
+          find rama -mindepth 1 -maxdepth 1 -not -name .git -exec rm -rf {} +
+          cp salida/* rama/
+          cd rama
+          git config user.name "Claude" && git config user.email "noreply@anthropic.com"
+          git add -A && git commit -qm "Histórico del río $(date -u +%Y-%m-%d)" || echo "nada nuevo"
+          git remote get-url origin >/dev/null 2>&1 || git remote add origin "$URL"
+          git push -q origin rio-historia
