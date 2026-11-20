@@ -8,8 +8,7 @@
 defined( 'ABSPATH' ) || exit;
 
 /**
- * Destinations that have a city page ("Guías de pesca en <lugar>") in this language, with the number of public places listed
- * and how many of them publish a dated price. Nothing is invented: a destination without public places is not listed.
+ * Destinations that have a city page ("Guías de pesca en <lugar>") in this language, name and province only (no counts: owner 20/11/2026). Nothing is invented: a destination without public places is not listed.
  */
 function pm_presupuesto_destinos( string $idioma ): array {
 	static $cache = [];
@@ -31,8 +30,6 @@ function pm_presupuesto_destinos( string $idioma ): array {
 			'nombre'    => (string) ( $d['nombre'] ?? $clave ),
 			'provincia' => (string) ( PM_PROVINCIAS[ $d['provincia'] ?? '' ] ?? '' ),
 			'url'       => pm_url_guias( $clave, $idioma ),
-			'lugares'   => count( $lugares ),
-			'precios'   => count( array_filter( $lugares, fn( $r ) => ! empty( $r['precio'] ) && ! empty( $r['precio_fecha'] ) ) ),
 		];
 	}
 	return $cache[ $idioma ] = $out;

@@ -45,7 +45,6 @@ $filas = [
 		<?php endif; ?>
 		<?php if ( $r['tipo'] ) : ?><p class="tipo"><?php echo esc_html( implode( ' · ', array_map( fn( $k ) => pm_opcion( 'tipo', $k ), $r['tipo'] ) ) ); ?></p><?php endif; ?>
 		<h3><?php echo esc_html( $r['nombre'] ); ?></h3>
-		<?php if ( $listado = pm_prestador_listado( $r ) ) : ?><p class="listado-oficial"><span aria-hidden="true">&#10003;</span> <?php echo $listado; // phpcs:ignore -- escaped and filtered inside ?></p><?php endif; ?>
 		<?php if ( $r['descripcion'] ) : ?><p<?php echo $es( 'descripcion' ); // phpcs:ignore ?>><?php echo esc_html( $r['descripcion'] ); ?></p><?php endif; ?>
 		<dl>
 			<?php foreach ( $filas as $clave => $valores ) :
@@ -66,13 +65,20 @@ $filas = [
 		<?php if ( $oferta = pm_prestador_oferta( $r ) ) : ?>
 			<p class="oferta"><?php pm_e( 'prest.oferta', [ 'oferta' => $oferta ] ); ?></p>
 		<?php endif; ?>
-		<?php if ( ! $r['consentimiento'] && pm_prestador_publico( $r ) ) :
-			$asunto = rawurlencode( pm_t( 'prest.baja_asunto', [ 'nombre' => $r['nombre'] ] ) ); ?>
-			<?php $verificado = (string) pm_campo( 'verificado', $r['id'] ); // Sin fuente ni dominio en la ficha: una nota por sección y aquí solo la fecha del dato (dueño, 17/11/2026). ?>
+		<?php // Footnote line (owner, 20/11/2026): the official-listing mark is plain small text here, not a badge. ?>
+		<?php $sin_verificar = ! $r['consentimiento'] && pm_prestador_publico( $r );
+		$listado = pm_prestador_listado( $r );
+		if ( $sin_verificar || $listado ) :
+			$asunto    = rawurlencode( pm_t( 'prest.baja_asunto', [ 'nombre' => $r['nombre'] ] ) );
+			$verificado = (string) pm_campo( 'verificado', $r['id'] ); // Sin fuente ni dominio en la ficha: una nota por sección y aquí solo la fecha del dato (dueño, 17/11/2026). ?>
 			<p class="sin-verificar note">
-				<?php pm_e( 'prest.sin_verificar' ); ?>
-				<?php if ( $verificado ) { pm_e( 'prest.al', [ 'fecha' => pm_fecha( $verificado ) ] ); } ?>
-				<a href="mailto:<?php echo esc_attr( PM_EMAIL_PUBLICO ); ?>?subject=<?php echo $asunto; // phpcs:ignore -- encoded above ?>"><?php pm_e( 'prest.corregir' ); ?></a>
+				<?php if ( $sin_verificar ) : ?>
+					<?php pm_e( 'prest.sin_verificar' ); ?>
+					<?php if ( $verificado ) { pm_e( 'prest.al', [ 'fecha' => pm_fecha( $verificado ) ] ); } ?>
+				<?php endif; ?>
+				<?php if ( $listado ) { echo '<span class="listado-oficial">' . $listado . '</span>'; // phpcs:ignore -- escaped and filtered inside ?>
+				<?php } ?>
+				<?php if ( $sin_verificar ) : ?><a href="mailto:<?php echo esc_attr( PM_EMAIL_PUBLICO ); ?>?subject=<?php echo $asunto; // phpcs:ignore -- encoded above ?>"><?php pm_e( 'prest.corregir' ); ?></a><?php endif; ?>
 			</p>
 		<?php endif; ?>
 		<?php if ( $pedir ) : ?><a class="button dark" href="#consulta" data-prestador="<?php echo (int) $r['id']; ?>" data-nombre="<?php echo esc_attr( $r['nombre'] ); ?>"><?php pm_e( 'prest.consultar', [ 'lugar' => $r['lugar'] ?? '' ] ); ?></a><?php endif; ?>
