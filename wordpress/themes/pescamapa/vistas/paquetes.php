@@ -73,7 +73,6 @@ get_header(); ?>
 						<?php endif; ?>
 					</div>
 					<a class="button dark pedir" href="#consulta" data-titulo="<?php echo esc_attr( $p['titulo'] ); ?>" data-mensaje="<?php echo esc_attr( pm_t( 'paquetes.msg', [ 'titulo' => $p['titulo'] ] ) ); ?>"><?php pm_e( 'paquetes.cta' ); ?></a>
-					<?php pm_cta_nota(); ?>
 				</article>
 			<?php endforeach; ?>
 		</div>

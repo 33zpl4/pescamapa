@@ -17,6 +17,6 @@ $viaje  = pm_url_viaje( $idioma );
 		<?php endforeach; ?>
 		<li><a class="button primary" href="<?php echo esc_url( $viaje ); ?>"><?php pm_e( 'inicio.q.nose' ); ?></a></li>
 	</ul>
-	<?php pm_cta_nota(); ?>
+	<?php if ( 'arriba' !== ( $args['id'] ?? '' ) ) { pm_cta_nota(); } // the hero already says «Gratis y sin compromiso» (inicio.copy) ?>
 	<p class="solo"><a href="<?php echo esc_url( pm_url_calendario( $idioma ) ); ?>"><?php pm_e( 'inicio.q.reglas' ); ?></a> <span><?php pm_e( 'inicio.q.reglas.d' ); ?></span></p>
 </div>
