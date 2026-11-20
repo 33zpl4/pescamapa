@@ -124,6 +124,7 @@ require PM_DIR . 'inc/correo.php';
 require PM_DIR . 'inc/pique.php';
 require PM_DIR . 'inc/legal.php';
 require PM_DIR . 'inc/rio.php';
+require PM_DIR . 'inc/presupuesto.php';
 require PM_DIR . 'inc/maquinas.php';
 
 register_activation_hook( __FILE__, function () {

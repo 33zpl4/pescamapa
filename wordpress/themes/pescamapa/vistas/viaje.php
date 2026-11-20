@@ -167,6 +167,7 @@ get_header(); ?>
 				<p><?php pm_e( "viaje.faq.$n.a" ); ?></p>
 			<?php endforeach; ?>
 		</section>
+		<p class="mas-info"><?php pm_e( 'pres.enlace.p' ); ?> <a href="<?php echo esc_url( pm_url_presupuesto( $idioma ) ); ?>"><?php pm_e( 'pres.enlace' ); ?></a></p>
 	</div>
 </div>
 <?php endif; ?>

@@ -110,7 +110,7 @@ get_header(); ?>
 					<li><?php pm_e( 'guias.resumen.sinprecio' ); ?></li>
 				<?php endif; ?>
 				<li><?php pm_e( 'guias.resumen.licencia', $a ); ?> <a href="<?php echo esc_url( $d['url'] . '#reglamento' ); ?>"><?php pm_e( 'paquetes.guia.intro', $a ); ?></a></li>
-				<li><?php pm_e( 'guias.resumen.como' ); ?></li>
+				<li><?php pm_e( 'guias.resumen.como' ); ?> <a href="<?php echo esc_url( pm_url_presupuesto( $idioma ) ); ?>"><?php pm_e( 'pres.enlace.corto' ); ?></a></li>
 			</ul>
 		</section>
 		<?php if ( $mirada ) : ?>

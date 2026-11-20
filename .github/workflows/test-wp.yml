@@ -1127,6 +1127,58 @@ jobs:
           check /en/ 200 'plan-your-trip'
           check /llms.txt 200 'Pedí opciones para tu viaje'
           check /wp-sitemap-vistas-1.xml 200 'armar-viaje'
+          # Answer page "Pedir presupuesto a varios lodges a la vez" (20/11/2026): 3 languages, H1, short answer, destinations from data,
+          # FAQPage JSON-LD that parses and matches the visible FAQ, hreflang, indexable, links from the form and the city page, llms.txt, sitemap.
+          check /pedir-presupuesto-pesca/ 200 '<h1>Pedir presupuesto a varios lodges de pesca a la vez</h1>' 'content="noindex'
+          check /pedir-presupuesto-pesca/ 200 '<title>Pedir presupuesto a varios lodges de pesca a la vez | Pescamapa</title>'
+          check /pedir-presupuesto-pesca/ 200 'Mandás un solo pedido a Pescamapa y les preguntamos por vos a los lodges y guías de pesca que encajan con tu viaje'
+          check /pedir-presupuesto-pesca/ 200 'Cómo funciona, en tres pasos'
+          check /pedir-presupuesto-pesca/ 200 'Contanos tu viaje'
+          check /pedir-presupuesto-pesca/ 200 'Qué le preguntamos a cada lugar por vos'
+          check /pedir-presupuesto-pesca/ 200 'Para quién sirve'
+          check /pedir-presupuesto-pesca/ 200 'Te acompaña alguien que no pesca'
+          check /pedir-presupuesto-pesca/ 200 'Dónde funciona hoy'
+          check /pedir-presupuesto-pesca/ 200 'href="[^"]*/guias-de-pesca/esquina/">Esquina'
+          check /pedir-presupuesto-pesca/ 200 '1 lugar\|[0-9]* lugares'
+          check /pedir-presupuesto-pesca/ 200 'Dónde funciona hoy' 'CONTACTO-INTERNO-123'
+          check /pedir-presupuesto-pesca/ 200 'Dónde funciona hoy' 'PRESTADOR-NO-PUBLICO'
+          for r in /pedir-presupuesto-pesca/ /pt/pedir-orcamento-pesca/ /en/get-fishing-lodge-quotes/; do
+            curl -sS "$URL$r" -o page.html
+            python3 - "$r" <<'PY' && echo "✓ $r FAQPage parsea y coincide con la lista visible" || { echo "✖ $r: FAQPage JSON-LD"; fail=1; }
+          import html, json, re, sys
+          t = open('page.html', encoding='utf-8').read()
+          bloques = re.findall(r'<script type="application/ld\+json">(.*?)</script>', t, re.S)
+          faq = [j for j in (json.loads(b) for b in bloques) if j.get('@type') == 'FAQPage']
+          assert len(faq) == 1, 'FAQPage: %d' % len(faq)
+          qs = [q['name'] for q in faq[0]['mainEntity']]
+          assert 5 <= len(qs) <= 6, 'preguntas: %d' % len(qs)
+          for q in qs:
+              assert '<h3>' + html.escape(q, quote=False) + '</h3>' in t, 'sin h3 visible: ' + q
+          assert 'WebPage' in t and 'BreadcrumbList' in t
+          PY
+            grep -q 'hreflang="es"' page.html && grep -q 'hreflang="pt-BR"' page.html && grep -q 'hreflang="en"' page.html && echo "✓ $r hreflang es/pt-BR/en" || { echo "✖ $r sin los tres hreflang"; fail=1; }
+            grep -q 'href="[^"]*/armar-viaje/\|href="[^"]*/planejar-viagem/\|href="[^"]*/plan-your-trip/' page.html && echo "✓ $r enlaza al formulario" || { echo "✖ $r sin enlace al formulario"; fail=1; }
+            n=$(grep -c 'class="button primary" href="[^"]*\(armar-viaje\|planejar-viagem\|plan-your-trip\)/"' page.html); [[ "$n" -ge 2 ]] && echo "✓ $r CTA arriba y abajo ($n)" || { echo "✖ $r CTA: $n (esperado ≥ 2)"; fail=1; }
+          done
+          check /pt/pedir-orcamento-pesca/ 200 '<h1>Pedir orçamento para várias pousadas de pesca de uma vez</h1>' 'content="noindex'
+          check /pt/pedir-orcamento-pesca/ 200 'Você envia um só pedido à Pescamapa'
+          check /pt/pedir-orcamento-pesca/ 200 'Brasileiros são bem-vindos'
+          check /en/get-fishing-lodge-quotes/ 200 '<h1>Get quotes from several fishing lodges at once</h1>' 'content="noindex'
+          check /en/get-fishing-lodge-quotes/ 200 'You send one request to Pescamapa'
+          check /armar-viaje/ 200 'href="[^"]*/pedir-presupuesto-pesca/"'
+          check /pt/planejar-viagem/ 200 'href="[^"]*/pt/pedir-orcamento-pesca/"'
+          check /en/plan-your-trip/ 200 'href="[^"]*/en/get-fishing-lodge-quotes/"'
+          check /guias-de-pesca/esquina/ 200 'href="[^"]*/pedir-presupuesto-pesca/"'
+          check /llms.txt 200 '## Pedir opciones a varios lugares a la vez'
+          check /llms.txt 200 'pedir-presupuesto-pesca/'
+          check /llms.txt 200 'pt/pedir-orcamento-pesca/'
+          check /llms.txt 200 'en/get-fishing-lodge-quotes/'
+          check /llms.txt 200 'Em português: a Pescamapa recebe um só pedido'
+          check /llms.txt 200 'In English: Pescamapa takes one request'
+          awk '/^## Pedir opciones a varios lugares a la vez/{a=NR} /^## Guías de destino/{b=NR} END{exit !(a && b && a < b)}' page.html && echo "✓ llms.txt: la sección va antes de las guías" || { echo "✖ llms.txt: la sección no va antes de las guías"; fail=1; }
+          check /wp-sitemap-vistas-1.xml 200 'pedir-presupuesto-pesca'
+          check /wp-sitemap-vistas-1.xml 200 'pedir-orcamento-pesca'
+          check /wp-sitemap-vistas-1.xml 200 'get-fishing-lodge-quotes'
           loc=$(curl -sS -o /dev/null -w '%{http_code} %{redirect_url}' \
             -d action=pm_consulta -d pm_tipo=viaje -d pm_idioma=en -d pm_destino=goya \
             -d pm_volver="$URL/en/plan-your-trip/" -d pm_t=$(( $(date +%s) - 60 )) \
