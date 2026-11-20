@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Read-only probe of official river sources (20/11/2026, round 4: TabProno, weekly and monthly INA reports). Run by .github/workflows/sonda-rio.yml. Prints short extracts only."""
+"""Read-only probe of official river sources (20/11/2026, round 5: numeric forecast series, weekly forecast table, monthly bulletin). Run by .github/workflows/sonda-rio.yml. Prints short extracts only."""
 import datetime as dt, json, re, subprocess, sys, tempfile, time, os, html
 from urllib.request import Request, urlopen
 from urllib.parse import urljoin, urlparse
@@ -17,12 +17,12 @@ def scrub(t):
     return re.sub(r"\s+", " ", t).strip()
 
 
-def get(url, timeout=25):
+def get(url, timeout=25, maxb=6_000_000):
     if time.time() > FIN:
         return 0, "", b"", "deadline"
     try:
         with urlopen(Request(url, headers={"User-Agent": UA, "Accept-Language": "es"}), timeout=timeout) as r:
-            return r.status, r.headers.get("content-type", ""), r.read(6_000_000), None
+            return r.status, r.headers.get("content-type", ""), r.read(maxb), None
     except HTTPError as e:
         return e.code, "", b"", str(e)[:80]
     except Exception as e:  # noqa: BLE001
@@ -86,55 +86,40 @@ hoy = dt.date.today()
 INA = "https://alerta.ina.gob.ar/a5"
 BASE = "https://www.ina.gov.ar/archivos/alerta/"
 
-
-def lineas_pdf(url):
-    st, ct, b, e = get(url, 90)
-    print(f"--- {url} -> {st} {e or ''} {len(b)} B")
-    if st != 200 or b[:4] != b"%PDF":
-        return []
-    return [l.rstrip() for l in pdf_texto(b).splitlines() if l.strip()]
-
-
-seccion("A. TabProno (pronóstico río Paraná) del 20/11 y del 17/11")
-for u in (BASE + "TabProno20261120_.pdf", BASE + "TabProno20261117_.pdf"):
-    L = lineas_pdf(u)
-    print("\n".join(l[:200] for l in L[:80]))
-
-seccion("B. Informe semanal INA (18/11): fecha y párrafos del Paraná")
-L = lineas_pdf(BASE + "2026Nov18_10480mapat.pdf")
-print("\n".join(l[:200] for l in L[:12]))
-for n, l in enumerate(L):
-    if re.search(r"Corrientes|Goya|Paran[aá] (medio|inferior)|tramo medio|Alto Paran|Yacyret", l):
-        print(f"[{n}]", l[:220])
-
-seccion("C. Boletín hidroclimático mensual (noviembre 2026)")
-L = lineas_pdf(BASE + "boletin_hidroclim_2026_11.pdf")
-print("\n".join(l[:200] for l in L[:10]))
-for n, l in enumerate(L):
-    if re.search(r"Corrientes|Goya|tramo medio|Paran[aá]\b.*(altura|nivel|crecida)|perspectiv|trimestr|pron[oó]stic|El Ni[nñ]o", l, re.I):
-        print(f"[{n}]", l[:220])
-
-seccion("D. Cuadro hidrométrico del INA (20/11): filas Corrientes a Rosario")
-L = lineas_pdf(BASE + "Cuadro_2026nov20.pdf")
-for l in L[:6]:
-    print("  ", l[:200])
-for l in L:
-    if re.search(r"Corrientes|Goya|Esquina|La Paz|Santa Fe|Reconquista|Barranqueras|Paso de la Patria|Fecha|Estaci", l):
-        print("  ", l[:220])
-
-seccion("E. a5: forma de la corrida 289 con includeProno (primeros bytes)")
+seccion("A. a5: pronósticos numéricos de la corrida 289 (tabprono_central) para Goya y Corrientes")
 st, ct, b, e = get(f"{INA}/sim/calibrados/289/corridas?includeProno=true&format=json", 90)
-print(st, len(b), "B")
-try:
-    d = json.loads(b)
-    cor = d[0]
-    print("claves corrida:", sorted(cor.keys()))
-    for se in cor["series"]:
-        print("  serie", se.get("series_id"), "est", se.get("estacion_id"), "var", se.get("var_id"), "claves", sorted(se.keys())[:14], "n pron", len(se.get("pronosticos") or []))
-        pr = se.get("pronosticos") or []
-        if pr and se.get("estacion_id") in (23, 19):
-            print("     fila0", json.dumps(pr[0])[:240])
-            print("     todas", [(str(x.get("timestart"))[:10], x.get("valor"), x.get("qualifier")) for x in pr][:40])
-except Exception as ex:  # noqa: BLE001
-    print("no JSON:", str(ex)[:100], texto(b)[:400])
+d = json.loads(b)
+cor = d[0]
+print("corrida", cor.get("id"), "forecast_date", cor.get("forecast_date"))
+for se in cor["series"]:
+    pr = se.get("pronosticos") or []
+    if se.get("series_id") in (3524, 1540, 1542, 3523, 3526, 3527, 3408, 3412):
+        print("serie", se.get("series_id"), "n", len(pr))
+        if pr:
+            print("   fila0", json.dumps(pr[0], ensure_ascii=False)[:260])
+            print("   filas", [(str(x.get("timestart"))[:10], x.get("valor"), x.get("qualifier")) for x in pr])
+for sid in (3524, 1540):
+    st, ct, b, e = get(f"{INA}/obs/puntual/series/{sid}?format=json", 60)
+    try:
+        x = json.loads(b)
+        est = x.get("estacion", {})
+        print("serie", sid, "-> estacion", est.get("id"), est.get("nombre"), "| var", (x.get("var") or {}).get("nombre"), "| proc", (x.get("procedimiento") or {}).get("nombre"))
+    except Exception as ex:  # noqa: BLE001
+        print("serie", sid, st, str(ex)[:80])
+
+seccion("B. Informe semanal INA (18/11): párrafo Corrientes-La Paz y tabla de previsión")
+st, ct, b, e = get(BASE + "2026Nov18_10480mapat.pdf", 90, 20_000_000)
+L = [l.rstrip() for l in pdf_texto(b).splitlines() if l.strip()] if st == 200 else []
+print("\n".join(l[:200] for l in L[236:300]))
+
+seccion("C. Boletín hidroclimático mensual (noviembre 2026), descarga completa")
+st, ct, b, e = get(BASE + "boletin_hidroclim_2026_11.pdf", 120, 40_000_000)
+print(st, len(b), "B", e or "")
+if st == 200 and b[:4] == b"%PDF":
+    L = [l.rstrip() for l in pdf_texto(b).splitlines() if l.strip()]
+    print(len(L), "líneas")
+    print("\n".join(l[:200] for l in L[:8]))
+    for n, l in enumerate(L):
+        if re.search(r"Corrientes|Goya|tramo medio|perspectiv|trimestr|pron[oó]stic|El Ni[nñ]o|Paran[aá]", l, re.I):
+            print(f"[{n}]", l[:230])
 print("\nfin de la sonda", dt.datetime.now(dt.timezone.utc).isoformat()[:19])
