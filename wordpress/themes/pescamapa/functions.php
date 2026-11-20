@@ -51,6 +51,15 @@ function pm_e( string $clave, array $vars = [] ): void {
 	echo esc_html( pm_t( $clave, $vars ) );
 }
 
+/**
+ * Microcopy under every primary button that leads to the trip form (owner, 20/11/2026): the lime «Gratis para vos» pill
+ * plus "reply in 24-48 h, same price as booking direct". One helper so the wording lives in ui.json (cta.gratis / cta.resto).
+ * $texto: ui key for the second part (the answer page closing passes viaje.garantia, which already says it all).
+ */
+function pm_cta_nota( string $texto = 'cta.resto' ): void {
+	echo '<span class="cta-gratis"><span class="gratis-pill">' . esc_html( pm_t( 'cta.gratis' ) ) . '</span> <span class="gratis-resto">' . esc_html( pm_t( $texto ) ) . '</span></span>';
+}
+
 /** Region · province pill text. */
 function pm_pill( string $region, string $provincia ): string {
 	$r = PM_REGIONES[ $region ][ pm_lang() ] ?? $region;

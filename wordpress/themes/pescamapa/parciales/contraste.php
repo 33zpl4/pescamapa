@@ -38,6 +38,6 @@ $href  = 'form' === $cta ? '#consulta' : pm_url_viaje( pm_lang() );
 				<?php endforeach; ?>
 			</ol>
 		</article>
-		<p class="contraste-cta"><a class="button primary" href="<?php echo esc_url( $href ); ?>"><?php pm_e( 'form' === $cta ? 'contraste.cta.form' : 'contraste.cta.pedir' ); ?></a></p>
+		<p class="contraste-cta"><a class="button primary" href="<?php echo esc_url( $href ); ?>"><?php pm_e( 'form' === $cta ? 'contraste.cta.form' : 'contraste.cta.pedir' ); ?></a><?php pm_cta_nota(); ?></p>
 	</div>
 </div>

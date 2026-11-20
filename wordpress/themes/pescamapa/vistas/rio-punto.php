@@ -28,6 +28,7 @@ get_header(); ?>
 			<p class="rio-siguiente">
 				<?php if ( $guia ) : ?><a class="button primary" href="<?php echo esc_url( get_permalink( $guia ) ); ?>"><?php echo esc_html( pm_t( 'rio.p.guia', [ 'lugar' => $lugar ] ) ); ?></a><?php endif; ?>
 				<a class="button secondary" href="<?php echo esc_url( add_query_arg( array_filter( [ 'destino' => $guia ? $clave : '' ] ), pm_url_viaje( $idioma ) ) ); ?>"><?php pm_e( 'nota.cta.boton' ); ?></a>
+				<?php pm_cta_nota(); ?>
 			</p>
 			<?php if ( ! $guia ) :
 				$especies_sig = array_filter( [ 'dorado', 'surubi', 'pejerrey' ], fn( $k ) => pm_buscar( 'pm_especie', $k, $idioma ) );
@@ -99,7 +100,7 @@ get_header(); ?>
 					<?php endforeach; ?>
 				</ul>
 			<?php endif; ?>
-			<p><a class="button dark" href="<?php echo esc_url( pm_url_viaje( $idioma ) ); ?>"><?php pm_e( 'rio.cta' ); ?></a></p>
+			<p><a class="button dark" href="<?php echo esc_url( pm_url_viaje( $idioma ) ); ?>"><?php pm_e( 'rio.cta' ); ?></a><?php pm_cta_nota(); ?></p>
 		</div>
 	</div>
 </div>
