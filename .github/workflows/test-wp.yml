@@ -1244,6 +1244,7 @@ jobs:
           check /en/plan-your-trip/ 200 'Budget per angler per day'
           check /en/plan-your-trip/ 200 'More than US\$ 1,000'
           check /armar-viaje/ 200 'Contanos tu viaje'
+          check / 200 'Muchos no publican precio'
           check /armar-viaje/ 200 'Te mandamos las opciones comparadas en 24–48 horas'
           check /pt/planejar-viagem/ 200 'Enviamos as opções comparadas em 24–48 horas'
           check /en/plan-your-trip/ 200 'We send you the options, compared, within 24–48 hours'
