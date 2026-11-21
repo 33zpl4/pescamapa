@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900" role="img" aria-labelledby="t d" font-family="Outfit, 'Helvetica Neue', Arial, sans-serif">
+<title id="t">La misma agua, río abajo</title>
+<desc id="d">Línea de tiempo con el pico de cada escala, de norte a sur: Corrientes 7,42 m el 23/10; Goya 6,10 m el 3/11 al 5/11; Esquina 5,60 m el 6/11 al 7/11; La Paz 6,30 m el 14/11; Santa Fe 5,88 m el 20/11. Las cinco superaron su propio nivel de evacuación; cada escala tiene su propio cero, así que se comparan las fechas, no las alturas. En Santa Fe el 20 de noviembre es la lectura más alta hasta ahora.</desc>
+<rect width="1200" height="900" fill="#fbfaf6"/>
+<text x="40" y="56" font-family="'Bebas Neue', Impact, 'Arial Narrow', sans-serif" font-size="34" letter-spacing="2" fill="#5e6b33">PESCAMAPA</text>
+<text x="40" y="116" font-family="'Playfair Display', Georgia, 'Times New Roman', serif" font-size="50" font-weight="700" fill="#14251f">La misma agua, río abajo</text>
+<text x="40" y="160" font-size="32" fill="#344a3d">Cresta de la crecida del Paraná: de Corrientes (23/10) a Santa Fe (20/11)</text>
+<text x="40" y="206" font-size="34" font-weight="700" fill="#11251f">Las cinco escalas pasaron su propio nivel de evacuación</text>
+<line x1="422.1" x2="422.1" y1="240" y2="718" stroke="#d9ddd2" stroke-width="2"/>
+<text x="422.1" y="752" font-size="28" text-anchor="middle" fill="#5f685e">25/10</text>
+<line x1="592.9" x2="592.9" y1="240" y2="718" stroke="#d9ddd2" stroke-width="2"/>
+<text x="592.9" y="752" font-size="28" text-anchor="middle" fill="#5f685e">1/11</text>
+<line x1="763.8" x2="763.8" y1="240" y2="718" stroke="#d9ddd2" stroke-width="2"/>
+<text x="763.8" y="752" font-size="28" text-anchor="middle" fill="#5f685e">8/11</text>
+<line x1="934.7" x2="934.7" y1="240" y2="718" stroke="#d9ddd2" stroke-width="2"/>
+<text x="934.7" y="752" font-size="28" text-anchor="middle" fill="#5f685e">15/11</text>
+<line x1="1105.6" x2="1105.6" y1="240" y2="718" stroke="#d9ddd2" stroke-width="2"/>
+<text x="1105.6" y="752" font-size="28" text-anchor="middle" fill="#5f685e">22/11</text>
+<line x1="300" x2="1140" y1="718" y2="718" stroke="#5f685e" stroke-width="2.5"/>
+<line x1="300" x2="1130" y1="292" y2="292" stroke="#344a3d" stroke-opacity="0.35" stroke-width="2.5" stroke-dasharray="3 8"/>
+<text x="40" y="294" font-size="36" font-weight="700" fill="#11251f">Corrientes</text>
+<circle cx="373.2" cy="292" r="16" fill="#d8e46a" stroke="#11251f" stroke-width="5"/>
+<text x="403.2" y="278.0" font-size="34" font-weight="700" text-anchor="start" fill="#11251f" stroke="#fbfaf6" stroke-width="7" stroke-linejoin="round" paint-order="stroke">7,42 m · 23/10</text>
+<text x="403.2" y="326.0" font-size="28" font-weight="400" text-anchor="start" fill="#5f685e" stroke="#fbfaf6" stroke-width="7" stroke-linejoin="round" paint-order="stroke">alerta 6,50 · evacuación 7,00 m</text>
+<line x1="300" x2="1130" y1="384" y2="384" stroke="#344a3d" stroke-opacity="0.35" stroke-width="2.5" stroke-dasharray="3 8"/>
+<text x="40" y="386" font-size="36" font-weight="700" fill="#11251f">Goya</text>
+<text x="40" y="418" font-size="28" fill="#5f685e">+11 a 13 días</text>
+<rect x="627.8" y="369" width="76.8" height="30" rx="15" fill="#d8e46a" stroke="#11251f" stroke-width="5"/>
+<text x="720.6" y="370.0" font-size="34" font-weight="700" text-anchor="start" fill="#11251f" stroke="#fbfaf6" stroke-width="7" stroke-linejoin="round" paint-order="stroke">6,10 m · 3/11–5/11</text>
+<text x="720.6" y="418.0" font-size="28" font-weight="400" text-anchor="start" fill="#5f685e" stroke="#fbfaf6" stroke-width="7" stroke-linejoin="round" paint-order="stroke">alerta 5,20 · evacuación 5,70 m</text>
+<line x1="300" x2="1130" y1="476" y2="476" stroke="#344a3d" stroke-opacity="0.35" stroke-width="2.5" stroke-dasharray="3 8"/>
+<text x="40" y="478" font-size="36" font-weight="700" fill="#11251f">Esquina</text>
+<text x="40" y="510" font-size="28" fill="#5f685e">+14 a 15 días</text>
+<rect x="701.0" y="461" width="52.4" height="30" rx="15" fill="#d8e46a" stroke="#11251f" stroke-width="5"/>
+<text x="769.4" y="462.0" font-size="34" font-weight="700" text-anchor="start" fill="#11251f" stroke="#fbfaf6" stroke-width="7" stroke-linejoin="round" paint-order="stroke">5,60 m · 6/11–7/11</text>
+<text x="769.4" y="510.0" font-size="28" font-weight="400" text-anchor="start" fill="#5f685e" stroke="#fbfaf6" stroke-width="7" stroke-linejoin="round" paint-order="stroke">alerta 5,00 · evacuación 5,40 m</text>
+<line x1="300" x2="1130" y1="568" y2="568" stroke="#344a3d" stroke-opacity="0.35" stroke-width="2.5" stroke-dasharray="3 8"/>
+<text x="40" y="570" font-size="36" font-weight="700" fill="#11251f">La Paz</text>
+<text x="40" y="602" font-size="28" fill="#5f685e">+22 días</text>
+<circle cx="910.3" cy="568" r="16" fill="#d8e46a" stroke="#11251f" stroke-width="5"/>
+<text x="880.3" y="554.0" font-size="34" font-weight="700" text-anchor="end" fill="#11251f" stroke="#fbfaf6" stroke-width="7" stroke-linejoin="round" paint-order="stroke">6,30 m · 14/11</text>
+<text x="880.3" y="602.0" font-size="28" font-weight="400" text-anchor="end" fill="#5f685e" stroke="#fbfaf6" stroke-width="7" stroke-linejoin="round" paint-order="stroke">alerta 5,80 · evacuación 6,15 m</text>
+<line x1="300" x2="1130" y1="660" y2="660" stroke="#344a3d" stroke-opacity="0.35" stroke-width="2.5" stroke-dasharray="3 8"/>
+<text x="40" y="662" font-size="36" font-weight="700" fill="#11251f">Santa Fe</text>
+<text x="40" y="694" font-size="28" fill="#5f685e">+28 días y sigue</text>
+<circle cx="1056.8" cy="660" r="16" fill="#fbfaf6" stroke="#11251f" stroke-width="5"/>
+<text x="1026.8" y="646.0" font-size="34" font-weight="700" text-anchor="end" fill="#11251f" stroke="#fbfaf6" stroke-width="7" stroke-linejoin="round" paint-order="stroke">5,88 m · 20/11</text>
+<text x="1026.8" y="694.0" font-size="28" font-weight="400" text-anchor="end" fill="#5f685e" stroke="#fbfaf6" stroke-width="7" stroke-linejoin="round" paint-order="stroke">alerta 5,30 · evacuación 5,70 m</text>
+<text x="40" y="794" font-size="28" fill="#14251f">Cada escala tiene su propio cero: se comparan las fechas, no las alturas.</text>
+<text x="40" y="828" font-size="28" fill="#5f685e">Lecturas hasta el 20 de noviembre de 2026. Santa Fe: la más alta hasta ahora.</text>
+<text x="40" y="862" font-size="28" fill="#344a3d">Datos: INA (escalas de Prefectura Naval Argentina) · Elaboración: Pescamapa</text>
+</svg>
