@@ -11,6 +11,9 @@
  * parana-crecida-rio-abajo.png, parana-goya-historico-20-noviembre.csv. Attachments are reused by _pm_archivo_origen; credit "Pescamapa", own work.
  * Idempotent: an existing note (same clave and language) is not touched. Dry run first ($aplicar = false).
  * Run with wp-script.yml (script = nota-parana-goya-2026-11-20).
+ *
+ * 21/11/2026: the note was REPLACED in place by nota-parana-goya-reemplazo-2026-11-21.php (story of the month). The three PNG and the CSV
+ * named above were removed from wordpress/fotos/ then, so this script can no longer be re-run; it is kept as the record of the first version.
  */
 if ( ! function_exists( 'pm_pg_p' ) ) {
 	function pm_pg_h2( string $t ): string {

@@ -3,6 +3,7 @@
 (1990 -> today) of the river stations from the INA a5 API and writes the raw material for an editorial note:
 
   python3 -I wordpress/build/rio-historia.py SALIDA/      fetch, clean, compute, write the files below
+  python3 -I wordpress/build/rio-historia.py SALIDA/ --desde 1903   same, with a longer reference period (default 1990)
   python3 -I wordpress/build/rio-historia.py --autotest   offline self-check on a synthetic fixture (no network)
 
 Output directory:
@@ -26,7 +27,7 @@ Statistics: reference period = 1990 .. last complete year; days are aligned by c
 the share of reference years below it (ties count half). Chart bands and median are smoothed with a centred 15-day
 moving average (the statistics, CSV and resumen are not). Years for "lowest / highest year" need >= 300 days of data.
 """
-import csv, io, json, os, sys, time, datetime as dt
+import calendar, csv, io, json, os, sys, time, datetime as dt
 from concurrent.futures import ThreadPoolExecutor
 from urllib.request import Request, urlopen
 from urllib.parse import urlencode
@@ -160,8 +161,9 @@ def suave(v, r=7):
     return out
 
 
-def resumen_estacion(serie):
-    """serie: cleaned [(date, m)] ascending. Returns every number of the station (metres)."""
+def resumen_estacion(serie, niveles=None):
+    """serie: cleaned [(date, m)] ascending; niveles: {"alerta": m, "evacuacion": m} from the INA catalogue (or None).
+    Returns every number of the station (metres)."""
     por_fecha = dict(serie)
     fecha, valor = serie[-1]
     anio = int(fecha[:4])
@@ -227,6 +229,164 @@ def resumen_estacion(serie):
         "anios_con_datos": len(por_anio), "primer_anio": min(por_anio), "dias_leidos": len(serie),
         # not in the json: the arrays the charts and the CSV need
         "_tabla": tabla, "_actual": actual, "_refs": refs,
+        **extras(serie, por_anio, niveles),
+    }
+
+
+# ---------------------------------------------------------------- month, thresholds, antecedents (20/11/2026)
+MIN_FRAC_MES = 0.9      # a "complete" month of a past year: at least 90 % of its days with data
+MIN_FRAC_VENTANA = 0.8  # the 1..N window of the same month: at least 80 % of those N days
+
+
+def ndias_mes(a, m):
+    return calendar.monthrange(a, m)[1]
+
+
+def nivel_valido(x):
+    try:
+        x = float(x)
+    except (TypeError, ValueError):
+        return None
+    return round(x, 2) if x > 0 else None
+
+
+def mensual_de(por_anio):
+    """{year: {month: {media, max, min, dias}}} from the daily means (max/min of the daily means, not of raw readings)."""
+    out = {}
+    for a, dias in sorted(por_anio.items()):
+        mm = {}
+        for d, v in dias.items():
+            mm.setdefault(int(d[5:7]), []).append(v)
+        out[str(a)] = {str(m): {"media": round(sum(vs) / len(vs), 2), "max": max(vs), "min": min(vs), "dias": len(vs)} for m, vs in sorted(mm.items())}
+    return out
+
+
+def puesto_alto(x, valores):
+    """Rank of x among the values plus itself, 1 = the highest; ties favour the other years (counted only when strictly above)."""
+    return 1 + sum(1 for v in valores if v > x)
+
+
+def episodios(serie, t):
+    """Runs of consecutive calendar days at or above t: [{inicio, fin, dias, max, fecha_max}]. A missing day breaks a run."""
+    t = round(t, 2)
+    eps, cur, fin = [], None, None
+    for d, v in serie:
+        if v >= t:
+            f = dt.date.fromisoformat(d)
+            if cur is not None and fin == f - dt.timedelta(days=1):
+                cur["fin"], cur["dias"] = d, cur["dias"] + 1
+                if v >= cur["max"]:
+                    cur["max"], cur["fecha_max"] = v, d
+            else:
+                cur = {"inicio": d, "fin": d, "dias": 1, "max": v, "fecha_max": d}
+                eps.append(cur)
+            fin = f
+        else:
+            cur = None
+    return eps
+
+
+def umbral_de(serie, t, por_anio, mes_ym):
+    """Days at or above the level (this month, this year, per year) and the current / last run."""
+    fecha = serie[-1][0]
+    eps = episodios(serie, t)
+    por = {str(a): sum(1 for v in dias.values() if v >= t) for a, dias in sorted(por_anio.items())}
+    actual = eps[-1] if eps and eps[-1]["fin"] == fecha else None
+    return {
+        "nivel": t, "ahora_sobre": serie[-1][1] >= t,
+        "dias_mes": sum(1 for d, v in serie if d[:7] == mes_ym and v >= t), "dias_anio": por.get(fecha[:4], 0), "dias_por_anio": por,
+        "racha_actual": actual, "ultima_racha": eps[-1] if eps else None, "episodios_desde_1990": len(eps),
+    }
+
+
+def antecedente(serie, t, fecha_ref):
+    """The episode at or above t that contains fecha_ref, and the previous ones: when was it last this high before this event."""
+    eps = episodios(serie, t)
+    cur = next((e for e in eps if e["inicio"] <= fecha_ref <= e["fin"]), None)
+    if cur is None:
+        return {"umbral": round(t, 2), "episodio": None}
+    prev = [e for e in eps if e["fin"] < cur["inicio"]]
+    ult = prev[-1] if prev else None
+    return {"umbral": round(t, 2), "episodio": cur, "episodios_total": len(eps), "previos": len(prev), "ultimo_previo": ult,
+            "dias_desde_ultimo": None if ult is None else (dt.date.fromisoformat(cur["inicio"]) - dt.date.fromisoformat(ult["fin"])).days,
+            "previos_recientes": prev[-6:]}
+
+
+def mes_de(por_anio, serie):
+    """The month of the last reading: partial stats, rank among complete same months and among the same 1..N window."""
+    fecha, valor = serie[-1]
+    a, m, n = int(fecha[:4]), int(fecha[5:7]), int(fecha[8:10])
+    dias = [(d, v) for d, v in serie if d[:7] == fecha[:7]]
+    vs = [v for _, v in dias]
+    completos, ventana = {}, {}
+    for y, dd in por_anio.items():
+        if not (PRIMER_ANIO <= y < a):
+            continue
+        xs = [v for d, v in dd.items() if int(d[5:7]) == m]
+        if len(xs) >= MIN_FRAC_MES * ndias_mes(y, m):
+            completos[y] = {"media": round(sum(xs) / len(xs), 2), "max": max(xs)}
+        xw = [v for d, v in dd.items() if int(d[5:7]) == m and int(d[8:10]) <= n]
+        if len(xw) >= MIN_FRAC_VENTANA * n:
+            ventana[y] = {"media": round(sum(xw) / len(xw), 2), "max": max(xw)}
+    media, mx = round(sum(vs) / len(vs), 2), max(vs)
+    fmax = max(d for d, v in dias if v == mx)
+    sub = [(round(dias[i][1] - dias[i - 1][1], 2), dias[i][0]) for i in range(1, len(dias)) if dt.date.fromisoformat(dias[i][0]) - dt.date.fromisoformat(dias[i - 1][0]) == dt.timedelta(days=1)]
+    ult90 = [(v, d) for d, v in serie if (dt.date.fromisoformat(fecha) - dt.date.fromisoformat(d)).days <= 90]
+
+    def rango(tabla):
+        if not tabla:
+            return None
+        top = lambda k: [{"anio": y, "valor": x[k]} for y, x in sorted(tabla.items(), key=lambda kv: (-kv[1][k], kv[0]))[:5]]  # noqa: E731
+        return {"n_anios": len(tabla), "puesto_media": puesto_alto(media_cmp, [x["media"] for x in tabla.values()]), "puesto_max": puesto_alto(max_cmp, [x["max"] for x in tabla.values()]),
+                "mayores_medias": top("media"), "mayores_maximos": top("max"),
+                "anios_con_media_mayor": sorted(y for y, x in tabla.items() if x["media"] > media_cmp), "anios_con_max_mayor": sorted(y for y, x in tabla.items() if x["max"] > max_cmp)}
+
+    media_cmp, max_cmp = media, mx
+    r_comp = rango(completos)
+    r_vent = rango(ventana)
+    return {
+        "anio": a, "mes": m, "nombre_mes": MESES[m - 1], "ultimo_dia": n, "dias_del_mes": ndias_mes(a, m), "dias_leidos": len(dias),
+        "media": media, "max": mx, "fecha_max": fmax, "min": min(vs), "primer_valor": {"fecha": dias[0][0], "valor": dias[0][1]},
+        "cambio_en_el_mes": round(dias[-1][1] - dias[0][1], 2),
+        "mayor_subida_diaria": None if not sub else {"m": max(sub)[0], "fecha": max(sub)[1]},
+        "minimo_90d": {"valor": min(ult90)[0], "fecha": min(ult90)[1]} if ult90 else None,
+        "mediana_medias_de_ese_mes": r2(percentil(sorted(x["media"] for x in completos.values()), 50)) if completos else None,
+        "meses_completos": completos, "ventana_1_a_n": ventana, "rango_meses_completos": r_comp, "rango_ventana": r_vent,
+        "serie_mes": [[d, v] for d, v in dias], "ultimos_45d": [[d, v] for d, v in serie[-45:]],
+    }
+
+
+def extras(serie, por_anio, niveles):
+    """Everything added on 20/11/2026: monthly table, month in course, thresholds, antecedents, monthly records."""
+    fecha, valor = serie[-1]
+    anio = int(fecha[:4])
+    ym = fecha[:7]
+    niveles = {k: nivel_valido((niveles or {}).get(k)) for k in ("alerta", "evacuacion")}
+    mes = mes_de(por_anio, serie)
+    pico = max((v, d) for d, v in serie if d[:4] == str(anio))
+    pico_anual = {str(a): {"valor": max((v, d) for d, v in dd.items())[0], "fecha": max((v, d) for d, v in dd.items())[1]} for a, dd in sorted(por_anio.items())}
+    rec_valor, rec_media = {}, {}
+    for d, v in serie:
+        k = str(int(d[5:7]))
+        if k not in rec_valor or (v, d) > (rec_valor[k]["valor"], rec_valor[k]["fecha"]):
+            rec_valor[k] = {"valor": v, "fecha": d}
+    men = mensual_de(por_anio)
+    for a, mm in men.items():
+        for k, x in mm.items():
+            if x["dias"] >= MIN_FRAC_MES * ndias_mes(int(a), int(k)) and (k not in rec_media or x["media"] > rec_media[k]["media"]):
+                rec_media[k] = {"media": x["media"], "anio": int(a)}
+    u90 = [(v, d) for d, v in serie if (dt.date.fromisoformat(fecha) - dt.date.fromisoformat(d)).days <= 90]
+    pico90 = max(u90)  # the event's crest: the highest daily value of the last 90 days (latest date on a tie)
+    ant = {"valor_actual": antecedente(serie, valor, fecha), "pico_90d": antecedente(serie, pico90[0], pico90[1]), "pico_del_anio": antecedente(serie, pico[0], pico[1])}
+    for k, t in niveles.items():
+        if t is not None:
+            sobre = [d for d, v in serie if v >= t]
+            ant["sobre_" + k] = antecedente(serie, t, fecha if valor >= t else sobre[-1]) if sobre else {"umbral": t, "episodio": None}
+    return {
+        "niveles": niveles, "mensual": men, "mes_en_curso": mes,
+        "pico_del_anio": {"valor": pico[0], "fecha": pico[1]}, "pico_90d": {"valor": pico90[0], "fecha": pico90[1]}, "pico_anual": pico_anual,
+        "umbrales": {k: umbral_de(serie, t, por_anio, ym) for k, t in niveles.items() if t is not None},
+        "antecedentes": ant, "record_alto_por_mes": rec_valor, "record_media_por_mes": rec_media,
     }
 
 
@@ -242,6 +402,110 @@ def fs(x, d=2):
 
 def fecha_larga(ymd):
     return f"{int(ymd[8:10])} de {MESES[int(ymd[5:7]) - 1]} de {ymd[:4]}"
+
+
+def f_ep(e):
+    rango = f"el {fecha_larga(e['inicio'])}" if e["inicio"] == e["fin"] else f"del {fecha_larga(e['inicio'])} al {fecha_larga(e['fin'])}"
+    return f"{rango} ({e['dias']} {'día' if e['dias'] == 1 else 'días'}, máximo {fm(e['max'])} m el {e['fecha_max']})"
+
+
+def md_mes(clave, r, nombre):
+    """Detailed sections for one station: month in course, thresholds, antecedents. Plain sentences, no interpretation."""
+    mes = r["mes_en_curso"]
+    nm, a = mes["nombre_mes"], mes["anio"]
+    o = [f"### {nombre}", ""]
+    s = [f"**Mes en curso: {nm} de {a}** (lecturas del 1 al {mes['ultimo_dia']} de {nm}: {mes['dias_leidos']} de {mes['dias_del_mes']} días; el mes está incompleto)."
+         f" Media {fm(mes['media'])} m, máximo {fm(mes['max'])} m el {mes['fecha_max']}, mínimo {fm(mes['min'])} m."
+         f" El primer día midió {fm(mes['primer_valor']['valor'])} m ({mes['primer_valor']['fecha']}); cambio en el mes {fs(mes['cambio_en_el_mes'])} m."]
+    if mes["mayor_subida_diaria"]:
+        s.append(f"Mayor subida de un día en el mes: {fs(mes['mayor_subida_diaria']['m'])} m el {mes['mayor_subida_diaria']['fecha']}.")
+    if mes["minimo_90d"]:
+        s.append(f"El mínimo de los últimos 90 días fue {fm(mes['minimo_90d']['valor'])} m el {mes['minimo_90d']['fecha']}.")
+    o += [" ".join(s), ""]
+    for et, k, ref in ((f"Contra los meses de {nm} completos de cada año", "rango_meses_completos", "completos"), (f"Contra el mismo tramo, del 1 al {mes['ultimo_dia']} de {nm}, de cada año", "rango_ventana", "ventana")):
+        g = mes[k]
+        if not g:
+            o += [f"{et}: sin años comparables.", ""]
+            continue
+        top_m = ", ".join(f"{x['anio']} ({fm(x['valor'])} m)" for x in g["mayores_medias"])
+        top_x = ", ".join(f"{x['anio']} ({fm(x['valor'])} m)" for x in g["mayores_maximos"])
+        sup_m = g["anios_con_media_mayor"]
+        sup_x = g["anios_con_max_mayor"]
+        o += [f"{et} ({g['n_anios']} años, {r['ref'][0]}–{r['ref'][1]}): la media de {a} queda en el puesto {g['puesto_media']} de {g['n_anios'] + 1} (1 = la más alta) y el máximo en el puesto {g['puesto_max']}. "
+              f"Medias más altas: {top_m}. Máximos más altos: {top_x}. "
+              f"Años con media mayor: {', '.join(map(str, sup_m)) if sup_m else 'ninguno'}. Años con máximo mayor: {', '.join(map(str, sup_x)) if sup_x else 'ninguno'}.", ""]
+    if mes.get("mediana_medias_de_ese_mes") is not None:
+        o += [f"Mediana de la media de {nm} (años completos): {fm(mes['mediana_medias_de_ese_mes'])} m.", ""]
+    m = str(mes["mes"])
+    rv, rm = r["record_alto_por_mes"].get(m), r["record_media_por_mes"].get(m)
+    if rv:
+        o += [f"Valor diario más alto de un {nm} en toda la serie (incluido {a}): {fm(rv['valor'])} m el {rv['fecha']}." + (f" Media mensual más alta de un {nm} completo: {fm(rm['media'])} m ({rm['anio']})." if rm else ""), ""]
+    pk, p90 = r["pico_del_anio"], r["pico_90d"]
+    o += [f"Pico de {a} hasta ahora: {fm(pk['valor'])} m el {pk['fecha']}. Pico de los últimos 90 días: {fm(p90['valor'])} m el {p90['fecha']}.", ""]
+    # thresholds
+    nv = r["niveles"]
+    if r["umbrales"]:
+        o += [f"**Umbrales** (niveles de alerta y evacuación del catálogo de estaciones del INA): alerta {fm(nv.get('alerta'))} m, evacuación {fm(nv.get('evacuacion'))} m.", ""]
+        for k, et in (("alerta", "alerta"), ("evacuacion", "evacuación")):
+            u = r["umbrales"].get(k)
+            if not u:
+                o += [f"Nivel de {et}: el INA no publica un valor para esta estación.", ""]
+                continue
+            s = [f"Nivel de {et} ({fm(u['nivel'])} m): la última lectura ({fm(r['valor'])} m) está {'en o sobre' if u['ahora_sobre'] else 'por debajo de'} ese nivel.",
+                 f"Días en o sobre el nivel: {u['dias_mes']} en {nm} de {a} (de {mes['dias_leidos']} leídos), {u['dias_anio']} en {a}."]
+            if u["racha_actual"]:
+                e = u["racha_actual"]
+                s.append(f"Racha actual: desde el {fecha_larga(e['inicio'])}, {e['dias']} {'día' if e['dias'] == 1 else 'días'} seguidos (máximo {fm(e['max'])} m el {e['fecha_max']}).")
+            elif u["ultima_racha"]:
+                s.append(f"Última racha ya terminada: {f_ep(u['ultima_racha'])}.")
+            s.append(f"Rachas de al menos un día desde {r['primer_anio']}: {u['episodios_desde_1990']}.")
+            con = {y: d for y, d in u["dias_por_anio"].items() if d}
+            s.append("Días por año en o sobre el nivel: " + (", ".join(f"{y}: {d}" for y, d in con.items()) if con else "ningún año") + ".")
+            o += [" ".join(s), ""]
+    else:
+        o += ["**Umbrales**: el INA no publica nivel de alerta ni de evacuación para esta estación.", ""]
+    # antecedents
+    o += ["**Antecedentes** (episodio = días consecutivos en o sobre el valor)", ""]
+    for k, et in (("valor_actual", f"la lectura de hoy ({fm(r['valor'])} m)"), ("pico_90d", f"el pico de los últimos 90 días ({fm(p90['valor'])} m)"), ("pico_del_anio", f"el pico de {a} ({fm(pk['valor'])} m)")):
+        an = r["antecedentes"][k]
+        if not an.get("episodio") or (k == "pico_del_anio" and pk["fecha"] == p90["fecha"]):
+            continue
+        s = [f"Para {et}: el episodio que lo contiene fue {f_ep(an['episodio'])}."]
+        if an.get("ultimo_previo"):
+            u = an["ultimo_previo"]
+            s.append(f"La vez anterior en o sobre {fm(an['umbral'])} m terminó el {fecha_larga(u['fin'])}: fue {f_ep(u)}. Pasaron {an['dias_desde_ultimo']} días entre el fin de aquel episodio y el comienzo de este.")
+        else:
+            s.append(f"No hubo un episodio anterior en o sobre {fm(an['umbral'])} m desde {r['primer_anio']}.")
+        s.append(f"Episodios desde {r['primer_anio']} (con el actual): {an['episodios_total']}; anteriores: {an['previos']}.")
+        if an.get("previos_recientes"):
+            s.append("Anteriores más recientes: " + "; ".join(f"{e['fin']} ({fm(e['max'])} m)" for e in an["previos_recientes"]) + ".")
+        o += [" ".join(s), ""]
+    for k in ("sobre_alerta", "sobre_evacuacion"):
+        an = r["antecedentes"].get(k)
+        if an and an.get("episodio") and an.get("ultimo_previo"):
+            u = an["ultimo_previo"]
+            o += [f"Para el nivel de {k[6:].replace('evacuacion', 'evacuación')} ({fm(an['umbral'])} m): la racha vigente o más reciente fue {f_ep(an['episodio'])}; la anterior terminó el {fecha_larga(u['fin'])} y fue {f_ep(u)}.", ""]
+    return o
+
+
+def md_mensual(estaciones, nombres):
+    o = ["", "## Mes en curso, umbrales y antecedentes", "",
+         "Todo en metros de escala. El mes en curso está incompleto: se compara de dos maneras, contra los meses completos de cada año y contra el mismo tramo (1 al N) de cada año. "
+         "Los puestos cuentan la posición de este año entre los años de referencia más él mismo; 1 = el más alto. Los niveles de alerta y evacuación vienen del catálogo del INA, no se escriben a mano.", "",
+         "| Estación | Mes (hasta el día) | Media (m) | Máximo (m) | Puesto media: meses completos | Puesto máximo: meses completos | Puesto media: mismo tramo | Puesto máximo: mismo tramo | Alerta (m) | Evacuación (m) | Días ≥ alerta en el mes | Días ≥ evacuación en el mes |",
+         "|---|---|---|---|---|---|---|---|---|---|---|---|"]
+    for clave, r in estaciones.items():
+        mes, nv = r["mes_en_curso"], r["niveles"]
+        c, v = mes["rango_meses_completos"], mes["rango_ventana"]
+        pu = lambda g, k: "—" if not g else f"{g[k]} de {g['n_anios'] + 1}"  # noqa: E731
+        ua, ue = r["umbrales"].get("alerta"), r["umbrales"].get("evacuacion")
+        o.append(f"| {nombres[clave]} | {mes['nombre_mes']} de {mes['anio']} (1–{mes['ultimo_dia']}) | {fm(mes['media'])} | {fm(mes['max'])} | {pu(c, 'puesto_media')} | {pu(c, 'puesto_max')} | {pu(v, 'puesto_media')} | {pu(v, 'puesto_max')} | "
+                 f"{fm(nv.get('alerta'))} | {fm(nv.get('evacuacion'))} | {'—' if not ua else ua['dias_mes']} | {'—' if not ue else ue['dias_mes']} |")
+    o.append("")
+    detalle = [k for k in estaciones if k == "goya"] or list(estaciones)[:1]
+    for k in detalle:
+        o += md_mes(k, estaciones[k], nombres[k])
+    return o
 
 
 def md(estaciones, nombres):
@@ -284,13 +548,16 @@ def md(estaciones, nombres):
             s.append(f"La media del 1 de enero al {r['dia']} de {r['anio']} es {fm(vm['media'])} m: puesto {vm['puesto']} de {vm['de']} años con datos suficientes, ordenados de menor a mayor. Las tres medias más bajas del mismo tramo: {masb}.")
         s.append(f"Datos: {r['anios_con_datos']} años con lecturas (desde {r['primer_anio']}), {r['dias_leidos']} días limpios.")
         o += [" ".join(s), ""]
+    o += md_mensual(estaciones, nombres)
     o += ["## Reglas", "",
           "- Un valor por día local (UTC−3): el promedio de las lecturas del día, al centímetro.",
           "- Se descarta lo que no es número o queda fuera de −2 a 60 m. Una racha de 0,00 exacto se descarta si la lectura anterior o la siguiente está a más de 1 m de 0; si está a menos, se conserva.",
-          "- Referencia: años completos desde 1990; cada día se compara con el mismo día del calendario (el 29 de febrero tiene su propio lugar, con menos años). Percentiles por interpolación lineal.",
+          f"- Referencia: años completos desde {PRIMER_ANIO}; cada día se compara con el mismo día del calendario (el 29 de febrero tiene su propio lugar, con menos años). Percentiles por interpolación lineal.",
           "- Percentil de la lectura: parte de los años de referencia con ese día por debajo de la lectura (empates cuentan la mitad).",
           "- Año más bajo / más alto: el de menor / mayor altura media entre los años de referencia con al menos 300 días de datos.",
           "- Puesto de la media: se compara la media del 1 de enero a esa fecha de cada año con al menos el 80 % de esos días.",
+          "- Mes en curso: meses completos de años pasados = al menos el 90 % de los días con dato; el tramo 1 al N exige el 80 % de esos N días. Máximo y mínimo son de los valores diarios (promedio del día), no de cada lectura.",
+          "- Episodio = días seguidos del calendario en o sobre un valor; un día sin dato corta la racha. El pico del año es el máximo de lo leído en el año.",
           "- Las bandas y la mediana de los gráficos van suavizadas con promedio móvil de 15 días; las tablas y los CSV no.",
           "- Lo que no se afirma: pronóstico, profundidad real, comparación entre estaciones, ni efecto sobre la pesca."]
     return "\n".join(o) + "\n"
@@ -315,6 +582,18 @@ def csv_estacion(r):
         fila = [mmdd(i)] + ([d["n"], f(d["min"]), f(d["p10"]), f(d["p25"]), f(d["mediana"]), f(d["p75"]), f(d["p90"]), f(d["max"]), d["anio_min"], d["anio_max"]] if d else [0, "", "", "", "", "", "", "", "", ""])
         fila += [f(refs[tipo]["v"][i]) for tipo in ("bajo", "alto") if tipo in refs] + [f(act[i])]
         w.writerow(fila)
+    return buf.getvalue()
+
+
+def csv_mensual(r):
+    """Year x month: monthly mean and monthly max of the daily means (empty = no data)."""
+    cab = ["anio"] + [f"media_{x}_m" for x in MES3] + [f"max_{x}_m" for x in MES3] + [f"dias_{x}" for x in MES3]
+    buf = io.StringIO()
+    w = csv.writer(buf, lineterminator="\n")
+    w.writerow(cab)
+    for a, mm in r["mensual"].items():
+        g = lambda k: [("%.2f" % mm[str(m)][k]) if str(m) in mm else "" for m in range(1, 13)]  # noqa: E731
+        w.writerow([a] + g("media") + g("max") + [mm[str(m)]["dias"] if str(m) in mm else "" for m in range(1, 13)])
     return buf.getvalue()
 
 
@@ -486,6 +765,7 @@ def escribir(estaciones, nombres, cursos, salida):
     open(f"{salida}/resumen.md", "w").write(md(estaciones, nombres))
     for k, r in estaciones.items():
         open(f"{salida}/datos-{k}.csv", "w").write(csv_estacion(r))
+        open(f"{salida}/datos-{k}-mensual.csv", "w").write(csv_mensual(r))
         open(f"{salida}/grafico-{k}.svg", "w").write(grafico(r, nombres[k], cursos[k]))
     open(f"{salida}/panel.svg", "w").write(panel(estaciones, nombres))
 
@@ -497,6 +777,12 @@ def main(salida):
     hoy = dt.datetime.now(dt.timezone.utc).astimezone(dt.timezone(dt.timedelta(hours=-3))).date()
     orden = sorted(todas, key=lambda k: -todas[k][3])  # north to south = upstream to downstream
     estaciones, avisos = {}, []
+    # alert / evacuation levels: the INA station catalogue (the same source rio-traer.py reads), never typed by hand
+    catalogo = {}
+    try:
+        catalogo = {e["id"]: e for e in get_json(f"{INA}/obs/puntual/estaciones?format=json")}
+    except Exception as e:  # noqa: BLE001
+        avisos.append(f"AVISO catálogo de estaciones no disponible, sin niveles: {e}")
     with ThreadPoolExecutor(max_workers=4) as ex:
         futuros = [(k, ex.submit(leer, (k, todas[k][0]), hoy)) for k in orden]
         for k, f in futuros:
@@ -504,7 +790,10 @@ def main(salida):
                 _, bruta, limpia = f.result()
                 if not limpia:
                     raise RuntimeError("sin observaciones")
-                r = resumen_estacion(limpia)
+                n = catalogo.get(todas[k][0], {})
+                niv = {"alerta": n.get("nivel_alerta"), "evacuacion": n.get("nivel_evacuacion")}
+                print(f"{k}: catálogo INA '{n.get('nombre')}' nivel_alerta={n.get('nivel_alerta')} nivel_evacuacion={n.get('nivel_evacuacion')}")
+                r = resumen_estacion(limpia, niv)
                 estaciones[k] = r
                 print(f"{k} (est. {todas[k][0]}): {len(bruta)} días leídos, {len(bruta) - len(limpia)} quitados por la regla del cero, {r['anios_con_datos']} años desde {r['primer_anio']}, último {r['fecha']} = {r['valor']:.2f} m")
             except Exception as e:  # noqa: BLE001
@@ -548,7 +837,33 @@ def autotest():
     assert r["anio_bajo"]["anio"] == 2000 and r["anio_alto"]["anio"] == 2019 and r["anio_alto"]["mismo_dia"] == 2.95
     assert r["record_bajo"] == {"valor": 1.0, "fecha": "2000-01-01"} and r["anual"]["2020"]["dias"] == 324
     assert r["ventana_media"]["puesto"] == 21 and r["ventana_media"]["de"] == 21   # 2020 has the highest 1 Jan -> 19 Nov mean
-    est = {"a": r, "b": r}
+    # month in course, thresholds, antecedents (synthetic: 2020 is flat 3.00 until June, 3.05 from July; 2019 peaks at 2.95)
+    rn = resumen_estacion(serie, {"alerta": 3.0, "evacuacion": "3.05"})
+    assert rn["niveles"] == {"alerta": 3.0, "evacuacion": 3.05}
+    me = rn["mes_en_curso"]
+    assert (me["anio"], me["mes"], me["ultimo_dia"], me["dias_leidos"], me["media"], me["max"]) == (2020, 11, 19, 19, 3.05, 3.05)
+    assert me["rango_meses_completos"]["n_anios"] == 20 and me["rango_meses_completos"]["puesto_media"] == 1 and me["rango_ventana"]["puesto_max"] == 1
+    assert me["rango_meses_completos"]["anios_con_media_mayor"] == [] and me["rango_meses_completos"]["mayores_medias"][0] == {"anio": 2019, "valor": 2.95}
+    assert rn["mensual"]["2019"]["11"] == {"media": 2.95, "max": 2.95, "min": 2.95, "dias": 30} and rn["mensual"]["2020"]["11"]["dias"] == 19
+    ua, ue = rn["umbrales"]["alerta"], rn["umbrales"]["evacuacion"]
+    assert ua["ahora_sobre"] and ua["dias_anio"] == 324 and ua["dias_mes"] == 19 and ua["racha_actual"]["inicio"] == "2020-01-01" and ua["racha_actual"]["dias"] == 324
+    assert ue["dias_anio"] == 142 and ue["racha_actual"]["inicio"] == "2020-07-01" and ue["dias_por_anio"]["2019"] == 0 and ue["episodios_desde_1990"] == 1
+    assert rn["pico_del_anio"] == {"valor": 3.05, "fecha": "2020-11-19"} and rn["pico_anual"]["2019"]["valor"] == 2.95
+    assert rn["antecedentes"]["valor_actual"]["episodio"]["inicio"] == "2020-07-01" and rn["antecedentes"]["valor_actual"]["ultimo_previo"] is None
+    assert rn["antecedentes"]["pico_del_anio"]["previos"] == 0 and rn["pico_90d"] == {"valor": 3.05, "fecha": "2020-11-19"} and rn["antecedentes"]["pico_90d"]["episodio"]["inicio"] == "2020-07-01"
+    assert rn["record_alto_por_mes"]["11"] == {"valor": 3.05, "fecha": "2020-11-19"} and rn["record_media_por_mes"]["11"] == {"media": 2.95, "anio": 2019}
+    # episodes: a gap day breaks a run; ties and thresholds are inclusive; the previous episode is found
+    mini = [("2020-01-01", 5.0), ("2020-01-02", 5.5), ("2020-01-04", 5.2), ("2020-01-05", 4.0), ("2020-01-10", 6.0), ("2020-01-11", 6.0)]
+    eps = episodios(mini, 5.0)
+    assert [(e["inicio"], e["fin"], e["dias"], e["max"], e["fecha_max"]) for e in eps] == [("2020-01-01", "2020-01-02", 2, 5.5, "2020-01-02"), ("2020-01-04", "2020-01-04", 1, 5.2, "2020-01-04"), ("2020-01-10", "2020-01-11", 2, 6.0, "2020-01-11")]
+    an = antecedente(mini, 6.0, "2020-01-11")
+    assert an["previos"] == 0 and an["ultimo_previo"] is None
+    an = antecedente(mini, 5.0, "2020-01-11")
+    assert an["previos"] == 2 and an["ultimo_previo"]["fin"] == "2020-01-04" and an["dias_desde_ultimo"] == 6 and an["episodios_total"] == 3
+    assert puesto_alto(3.0, [1, 2, 3, 4]) == 2 and puesto_alto(9, [1, 2]) == 1 and nivel_valido(None) is None and nivel_valido("0") is None and nivel_valido("4,5") is None
+    sin = resumen_estacion(serie)   # no catalogue: no thresholds, still works
+    assert sin["umbrales"] == {} and sin["niveles"] == {"alerta": None, "evacuacion": None}
+    est = {"a": rn, "b": r}
     nom = {"a": "Estación A", "b": "Estación B"}
     texto = md(est, nom)
     assert "Estación A" in texto and "puesto 21 de 21" in texto and "| Estación |" in texto and "percentil 100" in texto
@@ -559,13 +874,21 @@ def autotest():
         assert 'role="img"' in svg and "<title" in svg and "Elaboración: Pescamapa." in svg and 'viewBox="0 0 1200 ' in svg
     out = os.path.join(os.environ.get("TMPDIR", "/tmp"), "rio-historia-autotest")
     escribir(est, nom, {"a": "Paraná", "b": "Paraná"}, out)
-    assert sorted(os.listdir(out)) == sorted(["resumen.json", "resumen.md", "datos-a.csv", "datos-b.csv", "grafico-a.svg", "grafico-b.svg", "panel.svg"])
+    assert sorted(os.listdir(out)) == sorted(["resumen.json", "resumen.md", "datos-a.csv", "datos-b.csv", "datos-a-mensual.csv", "datos-b-mensual.csv", "grafico-a.svg", "grafico-b.svg", "panel.svg"])
+    mcsv = list(csv.reader(open(f"{out}/datos-a-mensual.csv")))
+    assert mcsv[0][0] == "anio" and len(mcsv) == 22 and len(set(map(len, mcsv))) == 1 and mcsv[-1][0] == "2020" and mcsv[-1][11] == "3.05" and mcsv[-1][12] == ""
+    assert "Mes en curso, umbrales y antecedentes" in texto and "Racha actual: desde el 1 de enero de 2020" in texto and "puesto 1 de 21" in texto
     json.load(open(f"{out}/resumen.json"))
     print("autotest ok")
 
 
 if __name__ == "__main__":
-    if len(sys.argv) > 1 and sys.argv[1] in ("--autotest", "--test"):
+    args = sys.argv[1:]
+    if "--desde" in args:  # first year of the reference period and of the INA download (default 1990); INA keeps some series from 1901-1903
+        k = args.index("--desde")
+        PRIMER_ANIO = int(args[k + 1])
+        del args[k:k + 2]
+    if args and args[0] in ("--autotest", "--test"):
         autotest()
     else:
-        main(sys.argv[1] if len(sys.argv) > 1 else "rio-historia-salida")
+        main(args[0] if args else "rio-historia-salida")

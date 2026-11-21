@@ -1,0 +1,10 @@
+{
+  "_nota": "Copiado a mano de docs/borradores/parana-goya-noviembre-2026.md (lectura de las fuentes oficiales el 20/11/2026). No sale de resumen.json: es el pronostico numerico del INA, que se actualiza martes y viernes (proxima actualizacion 24/11/2026). Si hay un pronostico nuevo, la nota se actualiza con su fecha; no se extrapola.",
+  "fuente": "INA, pronostico numerico (API a5, calibrado 289 tabprono_central, corrida 1249932), emitido el 20/11/2026",
+  "url": "https://alerta.ina.gob.ar/a5/sim/calibrados/289/corridas?includeProno=true&format=json",
+  "emitido": "2026-11-20",
+  "goya": [
+    {"fecha": "2026-11-24", "medio": 5.39, "inferior": 5.00, "superior": 5.70},
+    {"fecha": "2026-12-01", "medio": 5.45, "inferior": 5.00, "superior": 5.70}
+  ]
+}

@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900" role="img" aria-labelledby="t d" font-family="Outfit, 'Helvetica Neue', Arial, sans-serif">
+<title id="t">Dónde se saca la licencia</title>
+<desc id="d">Seis regiones con su organismo emisor y el sitio oficial donde se tramita: Patagonia (Neuquén, Río Negro, Chubut y Parques): cazaypesca.neuquen.gob.ar y permisosdepesca.com.ar; Santa Cruz: pesca.santacruz.gob.ar, en línea; Tierra del Fuego: siped.ar y puntos de venta; Corrientes: recnaturalesctes.gob.ar, en línea; Entre Ríos: portal.entrerios.gov.ar, trámite 708; Buenos Aires: gba.gob.ar, Desarrollo Agrario</desc>
+<rect width="1200" height="900" fill="#fbfaf6"/>
+<text x="40" y="58" font-family="'Bebas Neue', Impact, 'Arial Narrow', sans-serif" font-size="34" letter-spacing="2" fill="#5e6b33">PESCAMAPA</text>
+<text x="40" y="118" font-family="'Playfair Display', Georgia, 'Times New Roman', serif" font-size="56" font-weight="700" fill="#14251f">Dónde se saca la licencia</text>
+<text x="40" y="164" font-size="34" fill="#344a3d">Cada región tiene la suya: el organismo y su sitio</text>
+<text x="40" y="208" font-size="32" font-weight="700" fill="#11251f">Páginas leídas entre el 27/10 y el 18/11 de 2026</text>
+<rect x="20" y="240" width="1160" height="82" rx="10" fill="#f4f2e9"/>
+<text x="40" y="280" font-size="34" font-weight="700" fill="#14251f">Patagonia (Neuquén, Río Negro, Chubut y Parques)</text>
+<text x="40" y="314" font-size="30" fill="#344a3d">cazaypesca.neuquen.gob.ar y permisosdepesca.com.ar</text>
+<text x="1160" y="314" font-size="30" text-anchor="end" fill="#5f685e">leído 16/11</text>
+<text x="40" y="368" font-size="34" font-weight="700" fill="#14251f">Santa Cruz</text>
+<text x="40" y="402" font-size="30" fill="#344a3d">pesca.santacruz.gob.ar, en línea</text>
+<text x="1160" y="402" font-size="30" text-anchor="end" fill="#5f685e">leído 4/11</text>
+<rect x="20" y="416" width="1160" height="82" rx="10" fill="#f4f2e9"/>
+<text x="40" y="456" font-size="34" font-weight="700" fill="#14251f">Tierra del Fuego</text>
+<text x="40" y="490" font-size="30" fill="#344a3d">siped.ar y puntos de venta</text>
+<text x="1160" y="490" font-size="30" text-anchor="end" fill="#5f685e">leído 4/11</text>
+<text x="40" y="544" font-size="34" font-weight="700" fill="#14251f">Corrientes</text>
+<text x="40" y="578" font-size="30" fill="#344a3d">recnaturalesctes.gob.ar, en línea</text>
+<text x="1160" y="578" font-size="30" text-anchor="end" fill="#5f685e">leído 6/11</text>
+<rect x="20" y="592" width="1160" height="82" rx="10" fill="#f4f2e9"/>
+<text x="40" y="632" font-size="34" font-weight="700" fill="#14251f">Entre Ríos</text>
+<text x="40" y="666" font-size="30" fill="#344a3d">portal.entrerios.gov.ar, trámite 708</text>
+<text x="1160" y="666" font-size="30" text-anchor="end" fill="#5f685e">leído 18/11</text>
+<text x="40" y="720" font-size="34" font-weight="700" fill="#14251f">Buenos Aires</text>
+<text x="40" y="754" font-size="30" fill="#344a3d">gba.gob.ar, Desarrollo Agrario</text>
+<text x="1160" y="754" font-size="30" text-anchor="end" fill="#5f685e">leído 27/10</text>
+<text x="40" y="872" font-size="30" fill="#344a3d">Fuentes: organismos provinciales (ver nota). Elaboración: Pescamapa.</text>
+</svg>
