@@ -55,8 +55,8 @@ if ( ! function_exists( 'pm_pr_p' ) ) {
 	}
 }
 
-$aplicar        = false;
-$cambiar_slugs  = true;
+$aplicar = false;
+$cambiar_slugs = true;
 $clave          = 'parana-goya-20-noviembre-2026';
 $hoy            = '20261121';
 $lectura        = '20261120';
