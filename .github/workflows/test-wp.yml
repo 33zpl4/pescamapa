@@ -1324,7 +1324,7 @@ jobs:
           assert '%pat1%' not in t and '%n%' not in t, 'marcador de ui.json sin reemplazar'
           PY
             grep -q 'hreflang="es"' page.html && grep -q 'hreflang="pt-BR"' page.html && grep -q 'hreflang="en"' page.html && grep -q 'hreflang="x-default"' page.html && echo "✓ $r hreflang es/pt-BR/en/x-default" || { echo "✖ $r sin los hreflang"; fail=1; }
-            grep -q '<select id="lic-donde"' page.html && grep -q 'class="tabla-rio"' page.html && ! grep -q 'class="lic-res"' page.html && echo "✓ $r sin parámetros: formulario + tabla de referencia, sin resultado" || { echo "✖ $r sin parámetros: falta el formulario o la tabla, o hay resultado"; fail=1; }
+            grep -q '<select id="lic-donde"' page.html && grep -q 'class="tabla-rio' page.html && ! grep -q 'class="lic-res"' page.html && echo "✓ $r sin parámetros: formulario + tabla de referencia, sin resultado" || { echo "✖ $r sin parámetros: falta el formulario o la tabla, o hay resultado"; fail=1; }
             n=$(grep -c 'class="button primary" href="[^"]*\(armar-viaje\|planejar-viagem\|plan-your-trip\)/"' page.html); [[ "$n" == 1 ]] && echo "✓ $r un solo botón al formulario sin resultado" || { echo "✖ $r botones al formulario: $n (esperado 1)"; fail=1; }
             grep -q 'Los valores cambian cada temporada: confirmá en el enlace oficial antes de pagar\.\|Os valores mudam a cada temporada: confirme no link oficial antes de pagar\.\|Prices change every season: confirm on the official link before you pay\.' page.html && echo "✓ $r aviso de que los valores cambian" || { echo "✖ $r sin el aviso"; fail=1; }
           done
@@ -1518,7 +1518,7 @@ jobs:
           assert 'US$ 520' in html.unescape(t), 'cifra de Bariloche en la FAQ'
           PY
             grep -q 'hreflang="es"' page.html && grep -q 'hreflang="pt-BR"' page.html && grep -q 'hreflang="en"' page.html && grep -q 'hreflang="x-default"' page.html && echo "✓ $r hreflang es/pt-BR/en/x-default" || { echo "✖ $r sin los hreflang"; fail=1; }
-            grep -q '<select id="est-donde"' page.html && grep -q 'class="tabla-rio tabla-apilada"' page.html && ! grep -q 'class="lic-res' page.html && echo "✓ $r sin parámetros: formulario + tabla de referencia, sin resultado" || { echo "✖ $r sin parámetros: falta el formulario o la tabla, o hay resultado"; fail=1; }
+            grep -q '<select id="est-donde"' page.html && grep -q 'class="tabla-rio tabla-apilada"' page.html && ! grep -q 'est-res' page.html && echo "✓ $r sin parámetros: formulario + tabla de referencia, sin resultado" || { echo "✖ $r sin parámetros: falta el formulario o la tabla, o hay resultado"; fail=1; }
             n=$(grep -c 'class="button primary" href="[^"]*\(armar-viaje\|planejar-viagem\|plan-your-trip\)/"' page.html); [[ "$n" == 1 ]] && echo "✓ $r un solo botón al formulario sin resultado" || { echo "✖ $r botones al formulario: $n (esperado 1)"; fail=1; }
             grep -q 'content="noindex' page.html && { echo "✖ $r lleva noindex"; fail=1; } || echo "✓ $r indexable"
           done
@@ -1592,7 +1592,7 @@ jobs:
           PY
           # Invalid input: the form, no result, no error; a format the zone lacks → noted.
           resultado /cuanto-cuesta-viaje-de-pesca/ --data-urlencode 'donde=zzz' -d 'formato=%00' -d pescadores=abc -d 'dias[]=x' -d 'acompanantes[][]=y'
-          ! grep -q 'class="lic-res' page.html && grep -q '<select id="est-donde"' page.html && echo "✓ estimador: parámetros inválidos → el formulario, sin resultado" || { echo "✖ estimador: parámetros inválidos"; fail=1; }
+          ! grep -q 'est-res' page.html && grep -q '<select id="est-donde"' page.html && echo "✓ estimador: parámetros inválidos → el formulario, sin resultado" || { echo "✖ estimador: parámetros inválidos"; fail=1; }
           resultado /cuanto-cuesta-viaje-de-pesca/ --data-urlencode 'donde=zona:el-calafate' -d formato=semana -d pescadores=99 -d dias=1
           grep -q 'no hay precios publicados de «Semana en un lodge (7 noches)»' page.html && grep -q 'Para 8 pescadores, 1 día en El Calafate' page.html && echo "✓ estimador: formato que la zona no tiene → aviso y primer formato; 99 pescadores → 8" || { echo "✖ estimador: ajuste de formato"; fail=1; }
           resultado /cuanto-cuesta-viaje-de-pesca/ --data-urlencode 'donde=zona:corrientes' -d formato=paquete -d pescadores=1 -d dias=1
@@ -1621,7 +1621,7 @@ jobs:
           # No provider name of the internal dataset reaches the rendered pages or the data file.
           for u in /cuanto-cuesta-viaje-de-pesca/ '/cuanto-cuesta-viaje-de-pesca/?donde=zona:corrientes&formato=semana&pescadores=2&semanas=1' '/cuanto-cuesta-viaje-de-pesca/?donde=zona:patagonia-norte&formato=paquete' '/cuanto-cuesta-viaje-de-pesca/?donde=zona:bariloche&formato=dia' /en/fishing-trip-cost-estimator/ /pt/quanto-custa-viagem-de-pesca/; do
             curl -sS "$URL$u" -o page.html
-            ! grep -qiE 'Suinda|Pira Lodge|Chime|Kau Tapen|Trout Bariloche|Southern Rivers|Patagonia in the Loop|Drift Fly|Outfitters|Guides Patagonia|Rebo Pesca|Hambar|Uguay|Karku|River House|Nervous|TripAdvisor|Viator|Challhuaquen|4tourists|Rio Bravo|Las Buitreras|pescar\.pro' page.html && echo "✓ estimador $u: sin nombres de lugares ni plataformas" || { echo "✖ estimador $u: aparece un nombre del dataset interno"; fail=1; }
+            ! grep -qiE 'Suinda|Pira Lodge|Chime|Kau Tapen|Trout Bariloche|Southern Rivers|Patagonia in the Loop|Drift Fly|Outfitters Patagonia|Guides Patagonia|Rebo Pesca|Hambar|Uguay|Karku|River House|Nervous|TripAdvisor|Viator|Challhuaquen|4tourists|Rio Bravo|Las Buitreras|pescar\.pro' page.html && echo "✓ estimador $u: sin nombres de lugares ni plataformas" || { echo "✖ estimador $u: aparece un nombre del dataset interno"; fail=1; }
           done
           ! grep -qiE 'Suinda|Chime|Kau Tapen|Trout Bariloche|Southern Rivers|Hambar|Uguay|Karku|River House|Nervous|TripAdvisor|Viator|lugar_interno|fuente_interna' wordpress/plugins/pescamapa-core/data/precios.json && echo "✓ data/precios.json: sin nombres" || { echo "✖ data/precios.json con nombres"; fail=1; }
           # Entry points and machine surfaces.
