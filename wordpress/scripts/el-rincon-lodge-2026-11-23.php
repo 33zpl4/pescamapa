@@ -226,7 +226,7 @@ foreach ( pm_prestadores_destino( 'rio-gallegos' ) as $x ) {
 	}
 }
 WP_CLI::log( 'Orden de la lista de rio-gallegos: ' . implode( ' > ', $orden ) );
-$sin_tipo = $r ? array_diff_key( $r, [ 'tipo' => 1 ] ) : []; // the key "operador" of the type is not public text
+$sin_tipo = $r ? array_intersect_key( $r, array_flip( [ 'nombre', 'descripcion', 'localidad', 'programa', 'temporada', 'no_incluye', 'estadia_minima', 'capacidad', 'precio' ] ) ) : []; // only the texts the card shows (internal notes and photo URLs are not public copy)
 $volcado  = wp_json_encode( $sin_tipo, JSON_UNESCAPED_UNICODE );
 $b = $r && pm_prestador_publico( $r ) && ! $r['acuerdo'] && $r['consentimiento'] && '' === $r['precio'] && '' === (string) $r['precio_fecha'] && 3 <= count( $r['fotos'] ) && array_slice( $r['fotos'], 0, 3 ) === $adjuntos
 	&& ! preg_match( $prohibido, (string) $volcado );
