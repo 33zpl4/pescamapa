@@ -232,7 +232,7 @@ todas a nosotros (centralizar datos y cobrar comisión más adelante).
 
 ## Al 23/11/2026: El Rincón Lodge (Río Gallegos)
 
-- Ficha nueva con el material que el lodge mandó para figurar (PDF + 3 fotos cedidas), sin tarifa (la pidió oculta), estado «Contactado» + Aceptó aparecer, sin comisión cargada hasta que el dueño la confirme: `wordpress/scripts/el-rincon-lodge-2026-11-23.php` (simulacro por defecto, `VERIFIED`). Detalle en `docs/prestadores.md`. El texto guardado de la guía de Río Gallegos nombra a los otros lodges y no a este: revisar.
+- Ficha nueva con el material que el lodge mandó para figurar (PDF + 3 fotos cedidas), sin tarifa (la pidió oculta), estado «Contactado» + Aceptó aparecer, sin comisión cargada hasta que el dueño la confirme: `wordpress/scripts/el-rincon-lodge-2026-11-23.php` (simulacro por defecto, `VERIFIED`). Detalle en `docs/prestadores.md`. Guía de Río Gallegos (es/en/pt): `wordpress/scripts/rio-gallegos-el-rincon-2026-11-23.php` suma El Rincón al texto y al «¿Cómo llego?» y reemplaza las frases de tarifa por lo que hacemos nosotros (simulacro por defecto; aplicar a cargo del orquestador).
 
 ## Al 13/11/2026: Karku acordó 20 % y pidió no publicar su tarifa
 
