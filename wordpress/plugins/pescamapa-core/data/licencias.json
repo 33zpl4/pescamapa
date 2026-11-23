@@ -2,6 +2,54 @@
  "titulo": "Licencias de pesca deportiva en Argentina, temporada 2026-27: valores por región",
  "elaboracion": "Pescamapa",
  "moneda": "pesos argentinos (ARS) salvo donde la unidad dice litros de nafta súper",
+ "donde": {
+  "patagonia": [
+   {
+    "nombre": "Dirección Provincial de Fauna de Neuquén",
+    "url": "https://cazaypesca.neuquen.gob.ar/permisos"
+   },
+   {
+    "nombre": "Mesa Directiva de Pesca Deportiva Zona Andina (Río Negro)",
+    "url": "https://www.permisosdepesca.com.ar/"
+   }
+  ],
+  "santa-cruz": [
+   {
+    "nombre": "Pesca y Acuicultura de Santa Cruz",
+    "url": "https://pesca.santacruz.gob.ar/valores/"
+   }
+  ],
+  "tierra-del-fuego": [
+   {
+    "nombre": "SIPED, Tierra del Fuego",
+    "url": "https://siped.ar/pesca-deportiva"
+   }
+  ],
+  "corrientes": [
+   {
+    "nombre": "Dirección de Recursos Naturales de Corrientes",
+    "url": "https://www.recnaturalesctes.gob.ar/"
+   }
+  ],
+  "entre-rios": [
+   {
+    "nombre": "Gobierno de Entre Ríos: portal de trámites (trámite 708)",
+    "url": "https://portal.entrerios.gov.ar/pf/tramite/708/obtener-licencia-y-permiso-de-caza-o-pesca-deportiva"
+   }
+  ],
+  "buenos-aires": [
+   {
+    "nombre": "Ministerio de Desarrollo Agrario de Buenos Aires",
+    "url": "https://www.gba.gob.ar/desarrollo_agrario/pesca/articulos/obtenga_su_licencia_de_pesca_deportiva"
+   }
+  ],
+  "santa-fe": [
+   {
+    "nombre": "Gobierno de Santa Fe",
+    "url": "https://www.santafe.gob.ar/noticias/noticia/287531/"
+   }
+  ]
+ },
  "filas": [
   {
    "id": 1,
@@ -18,7 +66,14 @@
    "fuente_url": "https://reglamentodepesca.org.ar/reglamento/",
    "fuente_oficial": 1,
    "consultada": "2026-11-06",
-   "observacion": "Mismos valores en los portales de Neuquén y Río Negro (16/11/2026)"
+   "observacion": "Mismos valores en los portales de Neuquén y Río Negro (16/11/2026)",
+   "region_clave": "patagonia",
+   "quien_clave": "extranjero",
+   "dias": 1,
+   "tipo": "permiso",
+   "extra_clave": "",
+   "aplica_a": [],
+   "solo_en": ""
   },
   {
    "id": 2,
@@ -35,7 +90,14 @@
    "fuente_url": "https://reglamentodepesca.org.ar/reglamento/",
    "fuente_oficial": 1,
    "consultada": "2026-11-06",
-   "observacion": "Mismos valores en los portales de Neuquén y Río Negro (16/11/2026)"
+   "observacion": "Mismos valores en los portales de Neuquén y Río Negro (16/11/2026)",
+   "region_clave": "patagonia",
+   "quien_clave": "extranjero",
+   "dias": 10,
+   "tipo": "permiso",
+   "extra_clave": "",
+   "aplica_a": [],
+   "solo_en": ""
   },
   {
    "id": 3,
@@ -52,7 +114,14 @@
    "fuente_url": "https://reglamentodepesca.org.ar/reglamento/",
    "fuente_oficial": 1,
    "consultada": "2026-11-06",
-   "observacion": "Mismos valores en los portales de Neuquén y Río Negro (16/11/2026)"
+   "observacion": "Mismos valores en los portales de Neuquén y Río Negro (16/11/2026)",
+   "region_clave": "patagonia",
+   "quien_clave": "extranjero",
+   "dias": "temporada",
+   "tipo": "permiso",
+   "extra_clave": "",
+   "aplica_a": [],
+   "solo_en": ""
   },
   {
    "id": 4,
@@ -69,7 +138,14 @@
    "fuente_url": "https://reglamentodepesca.org.ar/reglamento/",
    "fuente_oficial": 1,
    "consultada": "2026-11-06",
-   "observacion": "Argentinos y extranjeros residentes"
+   "observacion": "Argentinos y extranjeros residentes",
+   "region_clave": "patagonia",
+   "quien_clave": "residente-pais",
+   "dias": 1,
+   "tipo": "permiso",
+   "extra_clave": "",
+   "aplica_a": [],
+   "solo_en": ""
   },
   {
    "id": 5,
@@ -86,7 +162,14 @@
    "fuente_url": "https://reglamentodepesca.org.ar/reglamento/",
    "fuente_oficial": 1,
    "consultada": "2026-11-06",
-   "observacion": "Argentinos y extranjeros residentes"
+   "observacion": "Argentinos y extranjeros residentes",
+   "region_clave": "patagonia",
+   "quien_clave": "residente-pais",
+   "dias": 10,
+   "tipo": "permiso",
+   "extra_clave": "",
+   "aplica_a": [],
+   "solo_en": ""
   },
   {
    "id": 6,
@@ -103,7 +186,14 @@
    "fuente_url": "https://reglamentodepesca.org.ar/reglamento/",
    "fuente_oficial": 1,
    "consultada": "2026-11-06",
-   "observacion": "Argentinos y extranjeros residentes"
+   "observacion": "Argentinos y extranjeros residentes",
+   "region_clave": "patagonia",
+   "quien_clave": "residente-pais",
+   "dias": "temporada",
+   "tipo": "permiso",
+   "extra_clave": "",
+   "aplica_a": [],
+   "solo_en": ""
   },
   {
    "id": 7,
@@ -120,7 +210,14 @@
    "fuente_url": "https://reglamentodepesca.org.ar/reglamento/",
    "fuente_oficial": 1,
    "consultada": "2026-11-06",
-   "observacion": ""
+   "observacion": "",
+   "region_clave": "patagonia",
+   "quien_clave": "joven",
+   "dias": "temporada",
+   "tipo": "permiso",
+   "extra_clave": "",
+   "aplica_a": [],
+   "solo_en": ""
   },
   {
    "id": 8,
@@ -137,7 +234,14 @@
    "fuente_url": "https://reglamentodepesca.org.ar/reglamento/",
    "fuente_oficial": 1,
    "consultada": "2026-11-06",
-   "observacion": "Sin cargo"
+   "observacion": "Sin cargo",
+   "region_clave": "patagonia",
+   "quien_clave": "exento",
+   "dias": "temporada",
+   "tipo": "gratis",
+   "extra_clave": "",
+   "aplica_a": [],
+   "solo_en": ""
   },
   {
    "id": 9,
@@ -154,7 +258,14 @@
    "fuente_url": "https://www.permisosdepesca.com.ar/ofertas.php",
    "fuente_oficial": 1,
    "consultada": "2026-11-06",
-   "observacion": "Chubut lo lista en una publicación de prensa, no en una fuente oficial leída: no se cuenta"
+   "observacion": "Chubut lo lista en una publicación de prensa, no en una fuente oficial leída: no se cuenta",
+   "region_clave": "patagonia",
+   "quien_clave": "limitrofe",
+   "dias": 10,
+   "tipo": "permiso",
+   "extra_clave": "",
+   "aplica_a": [],
+   "solo_en": "Río Negro"
   },
   {
    "id": 10,
@@ -171,7 +282,17 @@
    "fuente_url": "https://reglamentodepesca.org.ar/reglamento/",
    "fuente_oficial": 1,
    "consultada": "2026-11-06",
-   "observacion": ""
+   "observacion": "",
+   "region_clave": "patagonia",
+   "quien_clave": "extranjero",
+   "dias": 1,
+   "tipo": "extra",
+   "extra_clave": "trolling",
+   "aplica_a": [
+    "extranjero",
+    "residente-pais"
+   ],
+   "solo_en": ""
   },
   {
    "id": 11,
@@ -188,7 +309,17 @@
    "fuente_url": "https://reglamentodepesca.org.ar/reglamento/",
    "fuente_oficial": 1,
    "consultada": "2026-11-06",
-   "observacion": ""
+   "observacion": "",
+   "region_clave": "patagonia",
+   "quien_clave": "extranjero",
+   "dias": 10,
+   "tipo": "extra",
+   "extra_clave": "trolling",
+   "aplica_a": [
+    "extranjero",
+    "residente-pais"
+   ],
+   "solo_en": ""
   },
   {
    "id": 12,
@@ -205,7 +336,17 @@
    "fuente_url": "https://reglamentodepesca.org.ar/reglamento/",
    "fuente_oficial": 1,
    "consultada": "2026-11-06",
-   "observacion": ""
+   "observacion": "",
+   "region_clave": "patagonia",
+   "quien_clave": "extranjero",
+   "dias": "temporada",
+   "tipo": "extra",
+   "extra_clave": "trolling",
+   "aplica_a": [
+    "extranjero",
+    "residente-pais"
+   ],
+   "solo_en": ""
   },
   {
    "id": 13,
@@ -222,7 +363,14 @@
    "fuente_url": "https://pesca.santacruz.gob.ar/valores/",
    "fuente_oficial": 1,
    "consultada": "2026-11-04",
-   "observacion": ""
+   "observacion": "",
+   "region_clave": "santa-cruz",
+   "quien_clave": "extranjero",
+   "dias": 1,
+   "tipo": "permiso",
+   "extra_clave": "",
+   "aplica_a": [],
+   "solo_en": ""
   },
   {
    "id": 14,
@@ -239,7 +387,14 @@
    "fuente_url": "https://pesca.santacruz.gob.ar/valores/",
    "fuente_oficial": 1,
    "consultada": "2026-11-04",
-   "observacion": ""
+   "observacion": "",
+   "region_clave": "santa-cruz",
+   "quien_clave": "extranjero",
+   "dias": 7,
+   "tipo": "permiso",
+   "extra_clave": "",
+   "aplica_a": [],
+   "solo_en": ""
   },
   {
    "id": 15,
@@ -256,7 +411,14 @@
    "fuente_url": "https://pesca.santacruz.gob.ar/valores/",
    "fuente_oficial": 1,
    "consultada": "2026-11-04",
-   "observacion": ""
+   "observacion": "",
+   "region_clave": "santa-cruz",
+   "quien_clave": "extranjero",
+   "dias": "temporada",
+   "tipo": "permiso",
+   "extra_clave": "",
+   "aplica_a": [],
+   "solo_en": ""
   },
   {
    "id": 16,
@@ -273,7 +435,14 @@
    "fuente_url": "https://pesca.santacruz.gob.ar/valores/",
    "fuente_oficial": 1,
    "consultada": "2026-11-04",
-   "observacion": ""
+   "observacion": "",
+   "region_clave": "santa-cruz",
+   "quien_clave": "residente-pais",
+   "dias": 1,
+   "tipo": "permiso",
+   "extra_clave": "",
+   "aplica_a": [],
+   "solo_en": ""
   },
   {
    "id": 17,
@@ -290,7 +459,14 @@
    "fuente_url": "https://pesca.santacruz.gob.ar/valores/",
    "fuente_oficial": 1,
    "consultada": "2026-11-04",
-   "observacion": ""
+   "observacion": "",
+   "region_clave": "santa-cruz",
+   "quien_clave": "residente-pais",
+   "dias": "fin-de-semana",
+   "tipo": "permiso",
+   "extra_clave": "",
+   "aplica_a": [],
+   "solo_en": ""
   },
   {
    "id": 18,
@@ -307,7 +483,14 @@
    "fuente_url": "https://pesca.santacruz.gob.ar/valores/",
    "fuente_oficial": 1,
    "consultada": "2026-11-04",
-   "observacion": ""
+   "observacion": "",
+   "region_clave": "santa-cruz",
+   "quien_clave": "residente-pais",
+   "dias": 7,
+   "tipo": "permiso",
+   "extra_clave": "",
+   "aplica_a": [],
+   "solo_en": ""
   },
   {
    "id": 19,
@@ -324,7 +507,14 @@
    "fuente_url": "https://pesca.santacruz.gob.ar/valores/",
    "fuente_oficial": 1,
    "consultada": "2026-11-04",
-   "observacion": ""
+   "observacion": "",
+   "region_clave": "santa-cruz",
+   "quien_clave": "residente-pais",
+   "dias": "temporada",
+   "tipo": "permiso",
+   "extra_clave": "",
+   "aplica_a": [],
+   "solo_en": ""
   },
   {
    "id": 20,
@@ -341,7 +531,14 @@
    "fuente_url": "https://pesca.santacruz.gob.ar/valores/",
    "fuente_oficial": 1,
    "consultada": "2026-11-04",
-   "observacion": "Sin cargo"
+   "observacion": "Sin cargo",
+   "region_clave": "santa-cruz",
+   "quien_clave": "exento",
+   "dias": "temporada",
+   "tipo": "gratis",
+   "extra_clave": "",
+   "aplica_a": [],
+   "solo_en": ""
   },
   {
    "id": 21,
@@ -358,7 +555,17 @@
    "fuente_url": "https://pesca.santacruz.gob.ar/valores/",
    "fuente_oficial": 1,
    "consultada": "2026-11-04",
-   "observacion": ""
+   "observacion": "",
+   "region_clave": "santa-cruz",
+   "quien_clave": "extranjero",
+   "dias": 1,
+   "tipo": "extra",
+   "extra_clave": "trolling",
+   "aplica_a": [
+    "extranjero",
+    "residente-pais"
+   ],
+   "solo_en": ""
   },
   {
    "id": 22,
@@ -375,7 +582,17 @@
    "fuente_url": "https://pesca.santacruz.gob.ar/valores/",
    "fuente_oficial": 1,
    "consultada": "2026-11-04",
-   "observacion": ""
+   "observacion": "",
+   "region_clave": "santa-cruz",
+   "quien_clave": "extranjero",
+   "dias": 7,
+   "tipo": "extra",
+   "extra_clave": "trolling",
+   "aplica_a": [
+    "extranjero",
+    "residente-pais"
+   ],
+   "solo_en": ""
   },
   {
    "id": 23,
@@ -392,7 +609,17 @@
    "fuente_url": "https://pesca.santacruz.gob.ar/valores/",
    "fuente_oficial": 1,
    "consultada": "2026-11-04",
-   "observacion": ""
+   "observacion": "",
+   "region_clave": "santa-cruz",
+   "quien_clave": "extranjero",
+   "dias": "temporada",
+   "tipo": "extra",
+   "extra_clave": "trolling",
+   "aplica_a": [
+    "extranjero",
+    "residente-pais"
+   ],
+   "solo_en": ""
   },
   {
    "id": 24,
@@ -409,7 +636,14 @@
    "fuente_url": "https://prodyambiente.tierradelfuego.gob.ar/wp-content/uploads/2026/10/Resolucion-N259-Temporada-pesca-2026.pdf",
    "fuente_oficial": 1,
    "consultada": "2026-11-04",
-   "observacion": ""
+   "observacion": "",
+   "region_clave": "tierra-del-fuego",
+   "quien_clave": "extranjero",
+   "dias": 1,
+   "tipo": "permiso",
+   "extra_clave": "",
+   "aplica_a": [],
+   "solo_en": ""
   },
   {
    "id": 25,
@@ -426,7 +660,14 @@
    "fuente_url": "https://prodyambiente.tierradelfuego.gob.ar/wp-content/uploads/2026/10/Resolucion-N259-Temporada-pesca-2026.pdf",
    "fuente_oficial": 1,
    "consultada": "2026-11-04",
-   "observacion": ""
+   "observacion": "",
+   "region_clave": "tierra-del-fuego",
+   "quien_clave": "extranjero",
+   "dias": 3,
+   "tipo": "permiso",
+   "extra_clave": "",
+   "aplica_a": [],
+   "solo_en": ""
   },
   {
    "id": 26,
@@ -443,7 +684,14 @@
    "fuente_url": "https://prodyambiente.tierradelfuego.gob.ar/wp-content/uploads/2026/10/Resolucion-N259-Temporada-pesca-2026.pdf",
    "fuente_oficial": 1,
    "consultada": "2026-11-04",
-   "observacion": ""
+   "observacion": "",
+   "region_clave": "tierra-del-fuego",
+   "quien_clave": "extranjero",
+   "dias": 7,
+   "tipo": "permiso",
+   "extra_clave": "",
+   "aplica_a": [],
+   "solo_en": ""
   },
   {
    "id": 27,
@@ -460,7 +708,14 @@
    "fuente_url": "https://prodyambiente.tierradelfuego.gob.ar/wp-content/uploads/2026/10/Resolucion-N259-Temporada-pesca-2026.pdf",
    "fuente_oficial": 1,
    "consultada": "2026-11-04",
-   "observacion": ""
+   "observacion": "",
+   "region_clave": "tierra-del-fuego",
+   "quien_clave": "extranjero",
+   "dias": "temporada",
+   "tipo": "permiso",
+   "extra_clave": "",
+   "aplica_a": [],
+   "solo_en": ""
   },
   {
    "id": 28,
@@ -477,7 +732,14 @@
    "fuente_url": "https://prodyambiente.tierradelfuego.gob.ar/wp-content/uploads/2026/10/Resolucion-N259-Temporada-pesca-2026.pdf",
    "fuente_oficial": 1,
    "consultada": "2026-11-04",
-   "observacion": ""
+   "observacion": "",
+   "region_clave": "tierra-del-fuego",
+   "quien_clave": "residente-pais",
+   "dias": 1,
+   "tipo": "permiso",
+   "extra_clave": "",
+   "aplica_a": [],
+   "solo_en": ""
   },
   {
    "id": 29,
@@ -494,7 +756,14 @@
    "fuente_url": "https://prodyambiente.tierradelfuego.gob.ar/wp-content/uploads/2026/10/Resolucion-N259-Temporada-pesca-2026.pdf",
    "fuente_oficial": 1,
    "consultada": "2026-11-04",
-   "observacion": ""
+   "observacion": "",
+   "region_clave": "tierra-del-fuego",
+   "quien_clave": "residente-pais",
+   "dias": 3,
+   "tipo": "permiso",
+   "extra_clave": "",
+   "aplica_a": [],
+   "solo_en": ""
   },
   {
    "id": 30,
@@ -511,7 +780,14 @@
    "fuente_url": "https://prodyambiente.tierradelfuego.gob.ar/wp-content/uploads/2026/10/Resolucion-N259-Temporada-pesca-2026.pdf",
    "fuente_oficial": 1,
    "consultada": "2026-11-04",
-   "observacion": ""
+   "observacion": "",
+   "region_clave": "tierra-del-fuego",
+   "quien_clave": "residente-pais",
+   "dias": 7,
+   "tipo": "permiso",
+   "extra_clave": "",
+   "aplica_a": [],
+   "solo_en": ""
   },
   {
    "id": 31,
@@ -528,7 +804,14 @@
    "fuente_url": "https://prodyambiente.tierradelfuego.gob.ar/wp-content/uploads/2026/10/Resolucion-N259-Temporada-pesca-2026.pdf",
    "fuente_oficial": 1,
    "consultada": "2026-11-04",
-   "observacion": ""
+   "observacion": "",
+   "region_clave": "tierra-del-fuego",
+   "quien_clave": "residente-pais",
+   "dias": "temporada",
+   "tipo": "permiso",
+   "extra_clave": "",
+   "aplica_a": [],
+   "solo_en": ""
   },
   {
    "id": 32,
@@ -545,7 +828,14 @@
    "fuente_url": "https://prodyambiente.tierradelfuego.gob.ar/wp-content/uploads/2026/10/Resolucion-N259-Temporada-pesca-2026.pdf",
    "fuente_oficial": 1,
    "consultada": "2026-11-04",
-   "observacion": ""
+   "observacion": "",
+   "region_clave": "tierra-del-fuego",
+   "quien_clave": "joven",
+   "dias": "temporada",
+   "tipo": "permiso",
+   "extra_clave": "",
+   "aplica_a": [],
+   "solo_en": ""
   },
   {
    "id": 33,
@@ -562,7 +852,14 @@
    "fuente_url": "https://prodyambiente.tierradelfuego.gob.ar/wp-content/uploads/2026/10/Resolucion-N259-Temporada-pesca-2026.pdf",
    "fuente_oficial": 1,
    "consultada": "2026-11-04",
-   "observacion": "Sin cargo, solo para pesca con devolución"
+   "observacion": "Sin cargo, solo para pesca con devolución",
+   "region_clave": "tierra-del-fuego",
+   "quien_clave": "exento",
+   "dias": "temporada",
+   "tipo": "gratis",
+   "extra_clave": "",
+   "aplica_a": [],
+   "solo_en": ""
   },
   {
    "id": 34,
@@ -579,7 +876,16 @@
    "fuente_url": "https://prodyambiente.tierradelfuego.gob.ar/wp-content/uploads/2026/10/Resolucion-N259-Temporada-pesca-2026.pdf",
    "fuente_oficial": 1,
    "consultada": "2026-11-04",
-   "observacion": ""
+   "observacion": "",
+   "region_clave": "tierra-del-fuego",
+   "quien_clave": "extranjero",
+   "dias": 1,
+   "tipo": "extra",
+   "extra_clave": "zona-grande",
+   "aplica_a": [
+    "extranjero"
+   ],
+   "solo_en": ""
   },
   {
    "id": 35,
@@ -596,7 +902,16 @@
    "fuente_url": "https://prodyambiente.tierradelfuego.gob.ar/wp-content/uploads/2026/10/Resolucion-N259-Temporada-pesca-2026.pdf",
    "fuente_oficial": 1,
    "consultada": "2026-11-04",
-   "observacion": ""
+   "observacion": "",
+   "region_clave": "tierra-del-fuego",
+   "quien_clave": "extranjero",
+   "dias": 3,
+   "tipo": "extra",
+   "extra_clave": "zona-grande",
+   "aplica_a": [
+    "extranjero"
+   ],
+   "solo_en": ""
   },
   {
    "id": 36,
@@ -613,7 +928,16 @@
    "fuente_url": "https://prodyambiente.tierradelfuego.gob.ar/wp-content/uploads/2026/10/Resolucion-N259-Temporada-pesca-2026.pdf",
    "fuente_oficial": 1,
    "consultada": "2026-11-04",
-   "observacion": ""
+   "observacion": "",
+   "region_clave": "tierra-del-fuego",
+   "quien_clave": "extranjero",
+   "dias": 7,
+   "tipo": "extra",
+   "extra_clave": "zona-grande",
+   "aplica_a": [
+    "extranjero"
+   ],
+   "solo_en": ""
   },
   {
    "id": 37,
@@ -630,7 +954,16 @@
    "fuente_url": "https://prodyambiente.tierradelfuego.gob.ar/wp-content/uploads/2026/10/Resolucion-N259-Temporada-pesca-2026.pdf",
    "fuente_oficial": 1,
    "consultada": "2026-11-04",
-   "observacion": ""
+   "observacion": "",
+   "region_clave": "tierra-del-fuego",
+   "quien_clave": "extranjero",
+   "dias": "temporada",
+   "tipo": "extra",
+   "extra_clave": "zona-grande",
+   "aplica_a": [
+    "extranjero"
+   ],
+   "solo_en": ""
   },
   {
    "id": 38,
@@ -647,7 +980,16 @@
    "fuente_url": "https://prodyambiente.tierradelfuego.gob.ar/wp-content/uploads/2026/10/Resolucion-N259-Temporada-pesca-2026.pdf",
    "fuente_oficial": 1,
    "consultada": "2026-11-04",
-   "observacion": "El diario ($ 65.000) figura más caro que el del extranjero general ($ 59.000): es lo que dice la resolución; confirmar con la Secretaría de Ambiente"
+   "observacion": "El diario ($ 65.000) figura más caro que el del extranjero general ($ 59.000): es lo que dice la resolución; confirmar con la Secretaría de Ambiente",
+   "region_clave": "tierra-del-fuego",
+   "quien_clave": "limitrofe",
+   "dias": 1,
+   "tipo": "extra",
+   "extra_clave": "zona-grande",
+   "aplica_a": [
+    "limitrofe"
+   ],
+   "solo_en": ""
   },
   {
    "id": 39,
@@ -664,7 +1006,16 @@
    "fuente_url": "https://prodyambiente.tierradelfuego.gob.ar/wp-content/uploads/2026/10/Resolucion-N259-Temporada-pesca-2026.pdf",
    "fuente_oficial": 1,
    "consultada": "2026-11-04",
-   "observacion": "El diario ($ 65.000) figura más caro que el del extranjero general ($ 59.000): es lo que dice la resolución; confirmar con la Secretaría de Ambiente"
+   "observacion": "El diario ($ 65.000) figura más caro que el del extranjero general ($ 59.000): es lo que dice la resolución; confirmar con la Secretaría de Ambiente",
+   "region_clave": "tierra-del-fuego",
+   "quien_clave": "limitrofe",
+   "dias": 3,
+   "tipo": "extra",
+   "extra_clave": "zona-grande",
+   "aplica_a": [
+    "limitrofe"
+   ],
+   "solo_en": ""
   },
   {
    "id": 40,
@@ -681,7 +1032,16 @@
    "fuente_url": "https://prodyambiente.tierradelfuego.gob.ar/wp-content/uploads/2026/10/Resolucion-N259-Temporada-pesca-2026.pdf",
    "fuente_oficial": 1,
    "consultada": "2026-11-04",
-   "observacion": "El diario ($ 65.000) figura más caro que el del extranjero general ($ 59.000): es lo que dice la resolución; confirmar con la Secretaría de Ambiente"
+   "observacion": "El diario ($ 65.000) figura más caro que el del extranjero general ($ 59.000): es lo que dice la resolución; confirmar con la Secretaría de Ambiente",
+   "region_clave": "tierra-del-fuego",
+   "quien_clave": "limitrofe",
+   "dias": 7,
+   "tipo": "extra",
+   "extra_clave": "zona-grande",
+   "aplica_a": [
+    "limitrofe"
+   ],
+   "solo_en": ""
   },
   {
    "id": 41,
@@ -698,7 +1058,16 @@
    "fuente_url": "https://prodyambiente.tierradelfuego.gob.ar/wp-content/uploads/2026/10/Resolucion-N259-Temporada-pesca-2026.pdf",
    "fuente_oficial": 1,
    "consultada": "2026-11-04",
-   "observacion": "El diario ($ 65.000) figura más caro que el del extranjero general ($ 59.000): es lo que dice la resolución; confirmar con la Secretaría de Ambiente"
+   "observacion": "El diario ($ 65.000) figura más caro que el del extranjero general ($ 59.000): es lo que dice la resolución; confirmar con la Secretaría de Ambiente",
+   "region_clave": "tierra-del-fuego",
+   "quien_clave": "limitrofe",
+   "dias": "temporada",
+   "tipo": "extra",
+   "extra_clave": "zona-grande",
+   "aplica_a": [
+    "limitrofe"
+   ],
+   "solo_en": ""
   },
   {
    "id": 42,
@@ -715,7 +1084,16 @@
    "fuente_url": "https://prodyambiente.tierradelfuego.gob.ar/wp-content/uploads/2026/10/Resolucion-N259-Temporada-pesca-2026.pdf",
    "fuente_oficial": 1,
    "consultada": "2026-11-04",
-   "observacion": ""
+   "observacion": "",
+   "region_clave": "tierra-del-fuego",
+   "quien_clave": "extranjero",
+   "dias": 1,
+   "tipo": "extra",
+   "extra_clave": "zona-ewan",
+   "aplica_a": [
+    "extranjero"
+   ],
+   "solo_en": ""
   },
   {
    "id": 43,
@@ -732,7 +1110,16 @@
    "fuente_url": "https://prodyambiente.tierradelfuego.gob.ar/wp-content/uploads/2026/10/Resolucion-N259-Temporada-pesca-2026.pdf",
    "fuente_oficial": 1,
    "consultada": "2026-11-04",
-   "observacion": ""
+   "observacion": "",
+   "region_clave": "tierra-del-fuego",
+   "quien_clave": "extranjero",
+   "dias": 3,
+   "tipo": "extra",
+   "extra_clave": "zona-ewan",
+   "aplica_a": [
+    "extranjero"
+   ],
+   "solo_en": ""
   },
   {
    "id": 44,
@@ -749,7 +1136,16 @@
    "fuente_url": "https://prodyambiente.tierradelfuego.gob.ar/wp-content/uploads/2026/10/Resolucion-N259-Temporada-pesca-2026.pdf",
    "fuente_oficial": 1,
    "consultada": "2026-11-04",
-   "observacion": ""
+   "observacion": "",
+   "region_clave": "tierra-del-fuego",
+   "quien_clave": "extranjero",
+   "dias": 7,
+   "tipo": "extra",
+   "extra_clave": "zona-ewan",
+   "aplica_a": [
+    "extranjero"
+   ],
+   "solo_en": ""
   },
   {
    "id": 45,
@@ -766,7 +1162,16 @@
    "fuente_url": "https://prodyambiente.tierradelfuego.gob.ar/wp-content/uploads/2026/10/Resolucion-N259-Temporada-pesca-2026.pdf",
    "fuente_oficial": 1,
    "consultada": "2026-11-04",
-   "observacion": ""
+   "observacion": "",
+   "region_clave": "tierra-del-fuego",
+   "quien_clave": "extranjero",
+   "dias": "temporada",
+   "tipo": "extra",
+   "extra_clave": "zona-ewan",
+   "aplica_a": [
+    "extranjero"
+   ],
+   "solo_en": ""
   },
   {
    "id": 46,
@@ -783,7 +1188,16 @@
    "fuente_url": "https://prodyambiente.tierradelfuego.gob.ar/wp-content/uploads/2026/10/Resolucion-N259-Temporada-pesca-2026.pdf",
    "fuente_oficial": 1,
    "consultada": "2026-11-04",
-   "observacion": ""
+   "observacion": "",
+   "region_clave": "tierra-del-fuego",
+   "quien_clave": "limitrofe",
+   "dias": 1,
+   "tipo": "extra",
+   "extra_clave": "zona-ewan",
+   "aplica_a": [
+    "limitrofe"
+   ],
+   "solo_en": ""
   },
   {
    "id": 47,
@@ -800,7 +1214,16 @@
    "fuente_url": "https://prodyambiente.tierradelfuego.gob.ar/wp-content/uploads/2026/10/Resolucion-N259-Temporada-pesca-2026.pdf",
    "fuente_oficial": 1,
    "consultada": "2026-11-04",
-   "observacion": ""
+   "observacion": "",
+   "region_clave": "tierra-del-fuego",
+   "quien_clave": "limitrofe",
+   "dias": 3,
+   "tipo": "extra",
+   "extra_clave": "zona-ewan",
+   "aplica_a": [
+    "limitrofe"
+   ],
+   "solo_en": ""
   },
   {
    "id": 48,
@@ -817,7 +1240,16 @@
    "fuente_url": "https://prodyambiente.tierradelfuego.gob.ar/wp-content/uploads/2026/10/Resolucion-N259-Temporada-pesca-2026.pdf",
    "fuente_oficial": 1,
    "consultada": "2026-11-04",
-   "observacion": ""
+   "observacion": "",
+   "region_clave": "tierra-del-fuego",
+   "quien_clave": "limitrofe",
+   "dias": 7,
+   "tipo": "extra",
+   "extra_clave": "zona-ewan",
+   "aplica_a": [
+    "limitrofe"
+   ],
+   "solo_en": ""
   },
   {
    "id": 49,
@@ -834,7 +1266,16 @@
    "fuente_url": "https://prodyambiente.tierradelfuego.gob.ar/wp-content/uploads/2026/10/Resolucion-N259-Temporada-pesca-2026.pdf",
    "fuente_oficial": 1,
    "consultada": "2026-11-04",
-   "observacion": ""
+   "observacion": "",
+   "region_clave": "tierra-del-fuego",
+   "quien_clave": "limitrofe",
+   "dias": "temporada",
+   "tipo": "extra",
+   "extra_clave": "zona-ewan",
+   "aplica_a": [
+    "limitrofe"
+   ],
+   "solo_en": ""
   },
   {
    "id": 50,
@@ -851,7 +1292,14 @@
    "fuente_url": "https://www.aicacyp.ar/wp-content/uploads/2025/02/Disposicion-1144.pdf",
    "fuente_oficial": 1,
    "consultada": "2026-11-06",
-   "observacion": "El valor en pesos del anexo era $ 18.160 con la nafta a $ 1.135 el litro (octubre de 2024): no es el valor de hoy"
+   "observacion": "El valor en pesos del anexo era $ 18.160 con la nafta a $ 1.135 el litro (octubre de 2024): no es el valor de hoy",
+   "region_clave": "corrientes",
+   "quien_clave": "extranjero",
+   "dias": 1,
+   "tipo": "permiso",
+   "extra_clave": "",
+   "aplica_a": [],
+   "solo_en": ""
   },
   {
    "id": 51,
@@ -868,7 +1316,14 @@
    "fuente_url": "https://www.aicacyp.ar/wp-content/uploads/2025/02/Disposicion-1144.pdf",
    "fuente_oficial": 1,
    "consultada": "2026-11-06",
-   "observacion": "El valor en pesos del anexo era $ 22.700 con la nafta a $ 1.135 el litro (octubre de 2024): no es el valor de hoy"
+   "observacion": "El valor en pesos del anexo era $ 22.700 con la nafta a $ 1.135 el litro (octubre de 2024): no es el valor de hoy",
+   "region_clave": "corrientes",
+   "quien_clave": "extranjero",
+   "dias": 2,
+   "tipo": "permiso",
+   "extra_clave": "",
+   "aplica_a": [],
+   "solo_en": ""
   },
   {
    "id": 52,
@@ -885,7 +1340,14 @@
    "fuente_url": "https://www.aicacyp.ar/wp-content/uploads/2025/02/Disposicion-1144.pdf",
    "fuente_oficial": 1,
    "consultada": "2026-11-06",
-   "observacion": "El valor en pesos del anexo era $ 27.240 con la nafta a $ 1.135 el litro (octubre de 2024): no es el valor de hoy"
+   "observacion": "El valor en pesos del anexo era $ 27.240 con la nafta a $ 1.135 el litro (octubre de 2024): no es el valor de hoy",
+   "region_clave": "corrientes",
+   "quien_clave": "extranjero",
+   "dias": 3,
+   "tipo": "permiso",
+   "extra_clave": "",
+   "aplica_a": [],
+   "solo_en": ""
   },
   {
    "id": 53,
@@ -902,7 +1364,14 @@
    "fuente_url": "https://www.aicacyp.ar/wp-content/uploads/2025/02/Disposicion-1144.pdf",
    "fuente_oficial": 1,
    "consultada": "2026-11-06",
-   "observacion": "El valor en pesos del anexo era $ 31.780 con la nafta a $ 1.135 el litro (octubre de 2024): no es el valor de hoy"
+   "observacion": "El valor en pesos del anexo era $ 31.780 con la nafta a $ 1.135 el litro (octubre de 2024): no es el valor de hoy",
+   "region_clave": "corrientes",
+   "quien_clave": "extranjero",
+   "dias": 4,
+   "tipo": "permiso",
+   "extra_clave": "",
+   "aplica_a": [],
+   "solo_en": ""
   },
   {
    "id": 54,
@@ -919,7 +1388,14 @@
    "fuente_url": "https://www.aicacyp.ar/wp-content/uploads/2025/02/Disposicion-1144.pdf",
    "fuente_oficial": 1,
    "consultada": "2026-11-06",
-   "observacion": "El valor en pesos del anexo era $ 40.860 con la nafta a $ 1.135 el litro (octubre de 2024): no es el valor de hoy"
+   "observacion": "El valor en pesos del anexo era $ 40.860 con la nafta a $ 1.135 el litro (octubre de 2024): no es el valor de hoy",
+   "region_clave": "corrientes",
+   "quien_clave": "extranjero",
+   "dias": 6,
+   "tipo": "permiso",
+   "extra_clave": "",
+   "aplica_a": [],
+   "solo_en": ""
   },
   {
    "id": 55,
@@ -936,7 +1412,14 @@
    "fuente_url": "https://www.aicacyp.ar/wp-content/uploads/2025/02/Disposicion-1144.pdf",
    "fuente_oficial": 1,
    "consultada": "2026-11-06",
-   "observacion": "Hay categorías de costa y embarcada para correntinos, resto del país y extranjeros (portal), pero no leímos sus valores"
+   "observacion": "Hay categorías de costa y embarcada para correntinos, resto del país y extranjeros (portal), pero no leímos sus valores",
+   "region_clave": "corrientes",
+   "quien_clave": "residente-pais",
+   "dias": null,
+   "tipo": "sin_valor",
+   "extra_clave": "",
+   "aplica_a": [],
+   "solo_en": ""
   },
   {
    "id": 56,
@@ -953,7 +1436,14 @@
    "fuente_url": "https://portal.entrerios.gov.ar/pf/tramite/708/obtener-licencia-y-permiso-de-caza-o-pesca-deportiva",
    "fuente_oficial": 1,
    "consultada": "2026-11-18",
-   "observacion": ""
+   "observacion": "",
+   "region_clave": "entre-rios",
+   "quien_clave": "extranjero",
+   "dias": 5,
+   "tipo": "permiso",
+   "extra_clave": "",
+   "aplica_a": [],
+   "solo_en": ""
   },
   {
    "id": 57,
@@ -970,7 +1460,14 @@
    "fuente_url": "https://portal.entrerios.gov.ar/pf/tramite/708/obtener-licencia-y-permiso-de-caza-o-pesca-deportiva",
    "fuente_oficial": 1,
    "consultada": "2026-11-18",
-   "observacion": ""
+   "observacion": "",
+   "region_clave": "entre-rios",
+   "quien_clave": "residente-otra",
+   "dias": 4,
+   "tipo": "permiso",
+   "extra_clave": "",
+   "aplica_a": [],
+   "solo_en": ""
   },
   {
    "id": 58,
@@ -987,7 +1484,14 @@
    "fuente_url": "https://portal.entrerios.gov.ar/pf/tramite/708/obtener-licencia-y-permiso-de-caza-o-pesca-deportiva",
    "fuente_oficial": 1,
    "consultada": "2026-11-18",
-   "observacion": "Cuadro leído el 22/10/2026 en la guía de La Paz; mismo importe que el permiso de 5 días para extranjeros, tal como figura"
+   "observacion": "Cuadro leído el 22/10/2026 en la guía de La Paz; mismo importe que el permiso de 5 días para extranjeros, tal como figura",
+   "region_clave": "entre-rios",
+   "quien_clave": "residente-otra",
+   "dias": "temporada",
+   "tipo": "permiso",
+   "extra_clave": "",
+   "aplica_a": [],
+   "solo_en": ""
   },
   {
    "id": 59,
@@ -1004,7 +1508,14 @@
    "fuente_url": "https://portal.entrerios.gov.ar/pf/tramite/708/obtener-licencia-y-permiso-de-caza-o-pesca-deportiva",
    "fuente_oficial": 1,
    "consultada": "2026-11-18",
-   "observacion": "Cuadro leído el 22/10/2026 en la guía de La Paz"
+   "observacion": "Cuadro leído el 22/10/2026 en la guía de La Paz",
+   "region_clave": "entre-rios",
+   "quien_clave": "residente-prov",
+   "dias": "temporada",
+   "tipo": "permiso",
+   "extra_clave": "",
+   "aplica_a": [],
+   "solo_en": ""
   },
   {
    "id": 60,
@@ -1021,7 +1532,14 @@
    "fuente_url": "https://www.gba.gob.ar/desarrollo_agrario/pesca/articulos/obtenga_su_licencia_de_pesca_deportiva",
    "fuente_oficial": 1,
    "consultada": "2026-10-27",
-   "observacion": "Hay que tramitarla igual"
+   "observacion": "Hay que tramitarla igual",
+   "region_clave": "buenos-aires",
+   "quien_clave": "menor14",
+   "dias": "temporada",
+   "tipo": "gratis",
+   "extra_clave": "",
+   "aplica_a": [],
+   "solo_en": ""
   },
   {
    "id": 61,
@@ -1038,7 +1556,14 @@
    "fuente_url": "https://www.gba.gob.ar/desarrollo_agrario/pesca/articulos/obtenga_su_licencia_de_pesca_deportiva",
    "fuente_oficial": 1,
    "consultada": "2026-10-27",
-   "observacion": "También quien tenga más de 65 años (varones) o 60 (mujeres) y acredite residencia en la provincia (Resolución 46/05)"
+   "observacion": "También quien tenga más de 65 años (varones) o 60 (mujeres) y acredite residencia en la provincia (Resolución 46/05)",
+   "region_clave": "buenos-aires",
+   "quien_clave": "jubilado",
+   "dias": "temporada",
+   "tipo": "gratis",
+   "extra_clave": "",
+   "aplica_a": [],
+   "solo_en": ""
   },
   {
    "id": 62,
@@ -1055,7 +1580,14 @@
    "fuente_url": "https://www.gba.gob.ar/desarrollo_agrario/pesca/articulos/obtenga_su_licencia_de_pesca_deportiva",
    "fuente_oficial": 1,
    "consultada": "2026-10-27",
-   "observacion": "El valor no figura en la página ni en el Decreto 3237/95"
+   "observacion": "El valor no figura en la página ni en el Decreto 3237/95",
+   "region_clave": "buenos-aires",
+   "quien_clave": "general",
+   "dias": null,
+   "tipo": "sin_valor",
+   "extra_clave": "",
+   "aplica_a": [],
+   "solo_en": ""
   },
   {
    "id": 63,
@@ -1072,7 +1604,14 @@
    "fuente_url": "https://www.santafe.gob.ar/noticias/noticia/287531/",
    "fuente_oficial": 1,
    "consultada": "2026-10-20",
-   "observacion": "Solo leímos el acuerdo de reconocimiento recíproco de licencias (Santa Fe, Entre Ríos, Chaco y Corrientes); sin valores ni categorías"
+   "observacion": "Solo leímos el acuerdo de reconocimiento recíproco de licencias (Santa Fe, Entre Ríos, Chaco y Corrientes); sin valores ni categorías",
+   "region_clave": "santa-fe",
+   "quien_clave": "general",
+   "dias": null,
+   "tipo": "sin_valor",
+   "extra_clave": "",
+   "aplica_a": [],
+   "solo_en": ""
   }
  ]
 }

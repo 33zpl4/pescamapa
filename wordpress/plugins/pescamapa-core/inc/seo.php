@@ -138,6 +138,36 @@ function pm_seo(): array {
 				[ '@type' => 'ListItem', 'position' => 2, 'name' => pm_t( 'pres.h1' ), 'item' => pm_url_presupuesto( pm_lang() ) ],
 			],
 		];
+	} elseif ( 'licencia' === $vista ) {
+		// Indexable tool page; a result URL (?donde=…) canonicalises to this bare page in wp_head (the query string is stripped).
+		$s['title']       = pm_t( 'lic.title' );
+		$s['description'] = pm_t( 'lic.description' );
+		$s['alternas']    = pm_alternas_fijas( 'pm_url_licencia' );
+		$s['jsonld'][]    = array_filter( [
+			'@context'            => 'https://schema.org',
+			'@type'               => 'WebApplication',
+			'name'                => pm_t( 'lic.h1' ),
+			'description'         => pm_t( 'lic.description' ),
+			'url'                 => pm_url_licencia( pm_lang() ),
+			'inLanguage'          => pm_meta_idioma()['html'],
+			'applicationCategory' => 'UtilitiesApplication',
+			'operatingSystem'     => 'Any (web browser)',
+			'isAccessibleForFree' => true,
+			'offers'              => [ '@type' => 'Offer', 'price' => '0', 'priceCurrency' => 'ARS' ],
+			'dateModified'        => pm_licencia_fechas()[1],
+			'isPartOf'            => [ '@type' => 'WebSite', 'name' => 'Pescamapa', 'url' => pm_url_inicio( pm_lang() ) ],
+			'publisher'           => [ '@type' => 'Organization', 'name' => 'Pescamapa', 'url' => pm_url_inicio( pm_lang() ) ],
+		] );
+		// Visible FAQ of the page (vistas/licencia.php) = this JSON-LD: both read pm_licencia_faqs().
+		$s['jsonld'][]    = pm_jsonld_faq( pm_licencia_faqs() );
+		$s['jsonld'][]    = [
+			'@context'        => 'https://schema.org',
+			'@type'           => 'BreadcrumbList',
+			'itemListElement' => [
+				[ '@type' => 'ListItem', 'position' => 1, 'name' => 'Pescamapa', 'item' => pm_url_inicio( pm_lang() ) ],
+				[ '@type' => 'ListItem', 'position' => 2, 'name' => pm_t( 'lic.h1' ), 'item' => pm_url_licencia( pm_lang() ) ],
+			],
+		];
 	} elseif ( 'rio' === $vista ) {
 		$s['title']       = pm_t( 'rio.title' );
 		$s['description'] = pm_t( 'rio.description' );

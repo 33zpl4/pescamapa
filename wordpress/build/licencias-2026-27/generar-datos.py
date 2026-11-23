@@ -3,7 +3,7 @@
 
   python3 -I wordpress/build/licencias-2026-27/generar-datos.py
 
-Writes licencias.json and licencias.csv next to this file. One row per region x category x period. EVERY value below was
+Writes ../../plugins/pescamapa-core/data/licencias.json (the ONE copy of the data: the calculator page reads it there) and licencias.csv next to this file. One row per region x category x period. EVERY value below was
 copied from a page or script already in this repo that names its official source and the date it was read (the script that
 carries each one is in `repo`); nothing is estimated, converted or filled from memory. A missing value is left empty and the
 row says so in `observacion`. Prices change every season: the dates are the dates WE read them.
@@ -11,6 +11,7 @@ row says so in `observacion`. Prices change every season: the dates are the date
 import csv
 import json
 import os
+import re
 
 AQUI = os.path.dirname(os.path.abspath(__file__))
 
@@ -109,9 +110,79 @@ add(SF, "Licencia de pesca deportiva", "—", "no leído", None, "", "", "sf", "
 
 for i, r in enumerate(rows, 1):
     r["id"] = i
+
+# ---- machine keys for the calculator (docs/wordpress.md, "Calculadora de licencia de pesca"). Derived from the text columns above, never typed per row. ----
+REGION = {"Patagonia: permiso unificado": "patagonia", "Río Negro": "patagonia", "Santa Cruz": "santa-cruz", "Tierra del Fuego": "tierra-del-fuego",
+          "Corrientes": "corrientes", "Entre Ríos": "entre-rios", "Buenos Aires": "buenos-aires", "Santa Fe": "santa-fe"}
+EXTRA = {"Trolling": "trolling", "Zona preferencial ríos Grande": "zona-grande", "Zona preferencial ríos Ewan": "zona-ewan"}
+
+
+def quien_clave(q):
+    if q.startswith("extranjero no residente de país limítrofe") or q.startswith("extranjero de país limítrofe"):
+        return "limitrofe"
+    if q.startswith("extranjero"):
+        return "extranjero"
+    if q in ("residente en el país", "residente de Corrientes, resto del país"):
+        return "residente-pais"
+    if q == "residente de 13 a 17 años":
+        return "joven"
+    if q.startswith("residente ("):
+        return "exento"
+    if q == "residente de otra provincia":
+        return "residente-otra"
+    if q == "residente de Entre Ríos":
+        return "residente-prov"
+    if q == "menor de 14 años":
+        return "menor14"
+    if q.startswith("jubilado"):
+        return "jubilado"
+    return "general"
+
+
+def dias_de(per):
+    m = re.match(r"^(\d+) días?$", per)
+    if m:
+        return int(m.group(1))
+    if per in ("temporada", "anual", "sin vencimiento", "—"):
+        return "temporada"
+    if per == "fin de semana":
+        return "fin-de-semana"
+    return None  # "no leído"
+
+
+for r in rows:
+    r["region_clave"] = REGION[r["region"]]
+    r["quien_clave"] = quien_clave(r["quien"])
+    r["dias"] = dias_de(r["periodo"])
+    r["extra_clave"] = next((v for k, v in EXTRA.items() if r["categoria"].startswith(k)), "")
+    if r["valor"] == "":
+        r["tipo"] = "sin_valor"
+    elif r["extra_clave"]:
+        r["tipo"] = "extra"
+    elif r["valor"] == 0:
+        r["tipo"] = "gratis"
+    else:
+        r["tipo"] = "permiso"
+    # Which buyers an add-on can be added to (the Patagonia and Santa Cruz rows say "extranjero no residente y residente").
+    r["aplica_a"] = ["extranjero", "residente-pais"] if r["extra_clave"] == "trolling" else ([r["quien_clave"]] if r["extra_clave"] else [])
+    # A category that only holds in one jurisdiction (Río Negro's limítrofe permit).
+    r["solo_en"] = "Río Negro" if r["region"] == "Río Negro" else ""
+
 cols = ["id", "region", "jurisdicciones", "categoria", "quien", "periodo", "valor", "unidad", "valor_texto", "vigencia", "fuente", "fuente_url", "fuente_oficial", "consultada", "observacion"]
-with open(os.path.join(AQUI, "licencias.json"), "w", encoding="utf-8") as f:
-    json.dump({"titulo": "Licencias de pesca deportiva en Argentina, temporada 2026-27: valores por región", "elaboracion": "Pescamapa", "moneda": "pesos argentinos (ARS) salvo donde la unidad dice litros de nafta súper", "filas": [{c: r[c] for c in cols} for r in rows]}, f, ensure_ascii=False, indent=1)
+claves = ["region_clave", "quien_clave", "dias", "tipo", "extra_clave", "aplica_a", "solo_en"]
+# Where each region's licence is bought: official organisms and their pages (the same links the note uses; names are proper nouns, the "how" is text in ui.json).
+DONDE = {
+    "patagonia": [("Dirección Provincial de Fauna de Neuquén", S["nqn"][1]), ("Mesa Directiva de Pesca Deportiva Zona Andina (Río Negro)", S["rn"][1])],
+    "santa-cruz": [("Pesca y Acuicultura de Santa Cruz", S["sc"][1])],
+    "tierra-del-fuego": [("SIPED, Tierra del Fuego", "https://siped.ar/pesca-deportiva")],
+    "corrientes": [("Dirección de Recursos Naturales de Corrientes", "https://www.recnaturalesctes.gob.ar/")],
+    "entre-rios": [("Gobierno de Entre Ríos: portal de trámites (trámite 708)", S["er"][1])],
+    "buenos-aires": [("Ministerio de Desarrollo Agrario de Buenos Aires", S["ba"][1])],
+    "santa-fe": [("Gobierno de Santa Fe", S["sf"][1])],
+}
+DESTINO = os.path.join(AQUI, "..", "..", "plugins", "pescamapa-core", "data", "licencias.json")
+with open(DESTINO, "w", encoding="utf-8") as f:
+    json.dump({"titulo": "Licencias de pesca deportiva en Argentina, temporada 2026-27: valores por región", "elaboracion": "Pescamapa", "moneda": "pesos argentinos (ARS) salvo donde la unidad dice litros de nafta súper", "donde": {k: [{"nombre": n, "url": u} for n, u in v] for k, v in DONDE.items()}, "filas": [{c: r[c] for c in cols + claves} for r in rows]}, f, ensure_ascii=False, indent=1)
 with open(os.path.join(AQUI, "licencias.csv"), "w", encoding="utf-8", newline="") as f:
     w = csv.writer(f)
     w.writerow(cols)

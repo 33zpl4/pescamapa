@@ -4,7 +4,7 @@
  * es + en + pt), 20/11/2026. Content piece made to be cited (link-earning), not to sell: marked `nota_informativa` = 1 by this same script (the
  * field lives on the Spanish row and covers the three languages: no «¿Querés pescar esto?» box, no sticky «Pedir opciones» bar). Type «datos»,
  * no destination (national piece).
- * Every figure comes from wordpress/build/licencias-2026-27/licencias.json (generar-datos.py): values already published on this site WITH their
+ * Every figure comes from wordpress/plugins/pescamapa-core/data/licencias.json (generar-datos.py): values already published on this site WITH their
  * official source and the date we read it (Patagonian regulation read 6/11, Neuquén and Río Negro portals 16/11, Santa Cruz portal 4/11, Tierra del
  * Fuego Resolución 259/26 4/11, Corrientes Disposición 1144/2024 6/11, Entre Ríos «Costos Permisos y Licencias Oct2026» 18/11, Buenos Aires 27/10,
  * Santa Fe agreement 20/10). Nothing is estimated, converted or typed from memory; what was not read is said so (Buenos Aires prices, Santa Fe, Chaco,

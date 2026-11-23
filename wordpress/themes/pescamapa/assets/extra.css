@@ -659,3 +659,48 @@ footer .negocio a { color: var(--white); text-decoration: underline; text-underl
 .banda-gratis { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 20px; background: var(--cream); border-left: 3px solid var(--moss); border-radius: var(--radius); padding: 14px 18px; margin: 1.6em 0; }
 .banda-gratis p { margin: 0; flex: 1 1 320px; }
 .banda-gratis .button { flex: none; }
+
+/* Calculadora de licencia de pesca (23/11/2026): la herramienta va primero; resultado en una tarjeta cream con el monto grande. Solo tokens. */
+.v-licencia .cuerpo { padding-block: 32px 72px; }
+.v-licencia .cuerpo > section, .v-licencia .lic-resultado > section { max-width: 820px; margin: 0 0 32px; }
+.v-licencia .lic-form form { display: grid; gap: 16px; background: var(--white); border: 1px solid var(--line-strong); border-radius: var(--radius); padding: 20px; }
+.v-licencia .lic-form h2, .v-licencia .lic-res h2 { margin: 0 0 14px; font-size: var(--fs-h3); }
+.v-licencia .grilla { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 14px; align-items: start; }
+.v-licencia .campo { display: grid; gap: 6px; align-content: start; min-width: 0; }
+.v-licencia .campo > label { font-size: var(--fs-small); font-weight: 600; }
+.v-licencia select { font: 400 var(--fs-body) var(--font-body); min-height: 48px; padding: 10px 12px; border: 1px solid var(--line-strong); border-radius: 10px; background: var(--paper); color: var(--ink); width: 100%; box-sizing: border-box; }
+.v-licencia select:focus-visible, .v-licencia input:focus-visible, .v-licencia button:focus-visible { outline: 2px solid var(--forest); outline-offset: 2px; }
+.v-licencia .lic-extras { border: 0; padding: 0; margin: 0; min-width: 0; }
+.v-licencia .lic-extras legend { padding: 0; margin-bottom: 8px; font: 600 var(--fs-small)/1.4 var(--font-body); }
+.v-licencia .lic-extras legend small { font-weight: 400; color: var(--muted); font-size: var(--fs-caption); }
+.v-licencia .lic-extra { display: flex; align-items: center; gap: 10px; min-height: 44px; font-size: var(--fs-small); }
+.v-licencia .lic-extra input { width: 20px; height: 20px; flex: none; margin: 0; accent-color: var(--forest); }
+.v-licencia .lic-extra[hidden] { display: none; }
+.v-licencia .lic-enviar { margin: 0; }
+.v-licencia .lic-enviar .button { min-height: 52px; padding-inline: 32px; border: 0; cursor: pointer; font: 700 var(--fs-body) var(--font-body); }
+.v-licencia .lic-resultado { scroll-margin-top: 80px; }
+.v-licencia .lic-res { background: var(--cream); border-left: 3px solid var(--moss); border-radius: var(--radius); padding: 20px 22px; }
+.v-licencia .lic-resumen { margin: 0 0 12px; color: var(--muted); font-size: var(--fs-small); }
+.v-licencia .lic-rotulo { margin: 0; font: 400 var(--fs-label)/1.2 var(--font-label); letter-spacing: 0.04em; text-transform: uppercase; color: var(--olive); }
+.v-licencia .lic-total { margin: 2px 0 6px; font: 700 var(--fs-h1)/1.1 var(--font-head); color: var(--ink); overflow-wrap: anywhere; }
+.v-licencia .lic-plan { margin: 0 0 8px; }
+.v-licencia .lic-ahorro { margin: 0 0 12px; font-weight: 600; }
+.v-licencia .lic-res h3 { margin: 18px 0 8px; font-size: var(--fs-lead); }
+.v-licencia .lic-planes { margin: 0 0 12px; padding-left: 20px; }
+.v-licencia .lic-planes li { margin-bottom: 6px; }
+.v-licencia .lic-pill { display: inline-block; margin-left: 6px; padding: 2px 10px; border-radius: 99px; background: var(--lime); color: var(--forest); font: 400 var(--fs-caption)/1.4 var(--font-label); letter-spacing: 0.04em; text-transform: uppercase; }
+.v-licencia .lic-notas { margin: 12px 0; padding-left: 20px; color: var(--muted); font-size: var(--fs-small); }
+.v-licencia .lic-nota { margin: 0 0 12px; padding: 8px 12px; border-left: 3px solid var(--warn-line); background: var(--warn-bg); border-radius: 0 10px 10px 0; font-size: var(--fs-small); font-weight: 600; }
+.v-licencia .lic-fuente { margin: 14px 0 8px; display: grid; gap: 8px; }
+.v-licencia .lic-fuente dt { font: 400 var(--fs-label)/1.2 var(--font-label); letter-spacing: 0.04em; text-transform: uppercase; color: var(--olive); }
+.v-licencia .lic-fuente dd { margin: 2px 0 0; overflow-wrap: anywhere; }
+.v-licencia .lic-vig { margin: 0 0 8px; font-size: var(--fs-small); color: var(--muted); }
+.v-licencia .lic-aviso { margin: 12px 0 0; }
+.v-licencia .lic-cta { margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--line-strong); }
+.v-licencia .lic-cta p { margin: 0 0 12px; }
+.v-licencia .lic-como ul { padding-left: 20px; }
+.v-licencia .lic-como li { margin-bottom: 8px; }
+.v-licencia .lic-tabla { max-width: none; }
+.v-licencia .lic-tabla .tabla-rio td small { display: block; }
+.v-licencia .faq h3 { font-size: var(--fs-lead); margin: 18px 0 6px; }
+.v-licencia .cta-fila { margin: 12px 0 0; }
