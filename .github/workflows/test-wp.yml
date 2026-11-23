@@ -1318,7 +1318,7 @@ jobs:
           tipos = [j.get('@type') for j in js]
           assert tipos.count('FAQPage') == 1 and 'WebApplication' in tipos and 'BreadcrumbList' in tipos, tipos
           qs = [q['name'] for q in [j for j in js if j.get('@type') == 'FAQPage'][0]['mainEntity']]
-          assert len(qs) == 4, len(qs)
+          assert len(qs) == 5, len(qs)
           for q in qs:
               assert '<h3>' + html.escape(q, quote=False) + '</h3>' in t, 'sin h3 visible: ' + q
           assert '%pat1%' not in t and '%n%' not in t, 'marcador de ui.json sin reemplazar'
@@ -1330,7 +1330,7 @@ jobs:
           done
           check /calculadora-licencia-de-pesca/ 200 '<h1>Calculadora de licencia de pesca en Argentina</h1>' 'content="noindex'
           check /calculadora-licencia-de-pesca/ 200 '<title>Calculadora de licencia de pesca en Argentina | Pescamapa</title>'
-          check /calculadora-licencia-de-pesca/ 200 'Elegí dónde pescás, quién sos y cuántos días\. Te mostramos el permiso más barato con su valor oficial, la fuente y la fecha en que la leímos\.'
+          check /calculadora-licencia-de-pesca/ 200 'Elegí dónde pescás, quién sos y cuántos días\. Te mostramos el permiso más barato en pesos \(ARS\) con un equivalente aproximado en dólares, la fuente y la fecha en que la leímos\.'
           check /calculadora-licencia-de-pesca/ 200 'value="destino:esquina"'
           check /calculadora-licencia-de-pesca/ 200 'Cómo lo calculamos'
           check /calculadora-licencia-de-pesca/ 200 '¿Cuánto cuesta la licencia de pesca para un extranjero?'
@@ -1351,9 +1351,10 @@ jobs:
           m = re.search(r'id="resultado".*?class="lic-como"', t, re.S)
           assert m, 'sin caja de resultado'
           r = m.group(0)
-          assert 'class="lic-total"><strong>$ 140.000</strong>' in r, 'total'
-          assert '10 días = $ 140.000' in r and '3 × 1 día = $ 150.000' in r, 'aritmética'
-          assert 'Frente a 3 × 1 día ($ 150.000), ahorrás $ 10.000.' in r, 'ahorro'
+          assert 'class="lic-total"><strong>ARS $ 140.000</strong></p>' in r, 'total'
+          assert '10 días = ARS $ 140.000' in r and '3 × 1 día = ARS $ 150.000' in r, 'aritmética'
+          assert 'Frente a 3 × 1 día (ARS $ 150.000), ahorrás ARS $ 10.000.' in r, 'ahorro'
+          assert '≈' not in r and 'Dólar oficial' not in r, 'sin cotización guardada no hay aproximaciones'
           assert 'href="https://reglamentodepesca.org.ar/reglamento/"' in r and 'href="https://cazaypesca.neuquen.gob.ar/permisos"' in r, 'enlaces oficiales'
           assert 'Leído el 6 de noviembre de 2026' in r, 'fecha de lectura'
           assert 'Los valores cambian cada temporada: confirmá en el enlace oficial antes de pagar.' in r, 'aviso'
@@ -1363,7 +1364,7 @@ jobs:
           resultado /calculadora-licencia-de-pesca/ --data-urlencode 'donde=region:patagonia' -d quien=extranjero -d dias=12 -d 'extra[]=trolling'
           python3 - <<'PY' && echo "✓ calculadora: 12 días + trolling → combinación 10 + 2 × 1 (\$ 240.000) + trolling de temporada (\$ 100.000) = \$ 340.000" || { echo "✖ calculadora: 12 días con trolling"; fail=1; }
           t = open('page.html', encoding='utf-8').read()
-          assert '$ 340.000' in t and '10 días + 2 × 1 día = $ 140.000 + $ 100.000 = $ 240.000' in t and 'temporada = $ 100.000' in t
+          assert 'ARS $ 340.000' in t and '10 días + 2 × 1 día = ARS $ 140.000 + ARS $ 100.000 = ARS $ 240.000' in t and 'temporada = ARS $ 100.000' in t
           PY
           resultado /calculadora-licencia-de-pesca/ --data-urlencode 'donde=destino:esquina' -d quien=extranjero -d dias=1
           python3 - <<'PY' && echo "✓ calculadora: destino Esquina → Corrientes en litros, sin pesos, CTA con el destino" || { echo "✖ calculadora: destino Esquina"; fail=1; }
@@ -1371,7 +1372,8 @@ jobs:
           t = open('page.html', encoding='utf-8').read()
           r = re.search(r'id="resultado".*?class="lic-como"', t, re.S).group(0)
           assert '16 litros de nafta súper' in r and '$' not in re.sub(r'<[^>]+>', '', r), 'litros / pesos'
-          assert 'portal oficial los pasa a pesos al comprar' in r
+          assert 'Corrientes cobra la licencia según el precio de la nafta: son 16 litros de nafta súper. El portal oficial te dice el importe en pesos al comprar.' in r, 'texto sin precio de la nafta'
+          assert 'Corrientes fija la licencia en litros' not in r, 'sin precio de la nafta no hay explicación de la cuenta'
           assert re.search(r'class="button primary" href="[^"]*/armar-viaje/\?destino=esquina"', r), 'CTA con destino'
           PY
           resultado /calculadora-licencia-de-pesca/ --data-urlencode 'donde=region:buenos-aires' -d quien=general -d dias=3
@@ -1384,9 +1386,9 @@ jobs:
           resultado /calculadora-licencia-de-pesca/ --data-urlencode 'donde=zzz' -d 'quien=%00' -d dias=abc -d 'extra[]=x' -d 'extra[][]=y'
           ! grep -q 'class="lic-res"' page.html && grep -q '<select id="lic-donde"' page.html && echo "✓ calculadora: parámetros inválidos → el formulario, sin resultado" || { echo "✖ calculadora: parámetros inválidos"; fail=1; }
           resultado /pt/calculadora-licenca-de-pesca/ --data-urlencode 'donde=region:santa-cruz' -d quien=extranjero -d dias=7
-          grep -q 'class="lic-total"><strong>\$ 300.000</strong>' page.html && grep -q 'Lido em 4 de novembro de 2026' page.html && echo "✓ calculadora pt: Santa Cruz 7 dias = \$ 300.000, data de leitura" || { echo "✖ calculadora pt: Santa Cruz"; fail=1; }
+          grep -q 'class="lic-total"><strong>ARS 300.000</strong>' page.html && grep -q 'Lido em 4 de novembro de 2026' page.html && echo "✓ calculadora pt: Santa Cruz 7 dias = ARS 300.000, data de leitura" || { echo "✖ calculadora pt: Santa Cruz"; fail=1; }
           resultado /en/fishing-licence-calculator/ --data-urlencode 'donde=region:santa-cruz' -d quien=extranjero -d dias=7
-          grep -q 'class="lic-total"><strong>\$ 300,000</strong>' page.html && grep -q 'Read on 4 November 2026' page.html && echo "✓ calculadora en: Santa Cruz 7 days = \$ 300,000, read date" || { echo "✖ calculadora en: Santa Cruz"; fail=1; }
+          grep -q 'class="lic-total"><strong>ARS 300,000</strong>' page.html && grep -q 'Read on 4 November 2026' page.html && echo "✓ calculadora en: Santa Cruz 7 days = ARS 300,000, read date" || { echo "✖ calculadora en: Santa Cruz"; fail=1; }
           check / 200 'href="[^"]*/calculadora-licencia-de-pesca/"'
           check /pt/ 200 'href="[^"]*/calculadora-licenca-de-pesca/"'
           check /en/ 200 'href="[^"]*/fishing-licence-calculator/"'
@@ -1586,7 +1588,7 @@ jobs:
           r = re.search(r'id="resultado".*?class="lic-como"', t, re.S).group(0)
           txt = re.sub(r'<[^>]+>', '', r)
           assert '$ 2.880.000' in txt and 'US$' not in txt, 'solo pesos'
-          assert '2 pescadores × 2 días × $ 720.000 por pescador y por día = $ 2.880.000' in txt
+          assert '2 pescadores × 2 días × ARS $ 720.000 por pescador y por día = ARS $ 2.880.000' in txt and '≈' not in txt, 'sin cotización guardada no hay aproximaciones'
           h = html.unescape(re.search(r'class="button primary" href="([^"]*armar-viaje[^"]*)"', r).group(1))
           assert 'presupuesto=' not in h and 'destino=el-calafate' in h and 'estadia=dos-tres' in h, h
           PY
@@ -1637,6 +1639,220 @@ jobs:
           check /wp-sitemap-vistas-1.xml 200 'cuanto-cuesta-viaje-de-pesca'
           check /wp-sitemap-vistas-1.xml 200 'quanto-custa-viagem-de-pesca'
           check /wp-sitemap-vistas-1.xml 200 'fishing-trip-cost-estimator'
+          # --- Reference values (23/11/2026, owner decision: approximate conversions in these two tools): the weekly dollar rate (BCRA) and the nafta súper price
+          # (Secretaría de Energía) behind «≈ US$» and Corrientes' peso figures. Everything above ran WITHOUT the option pm_cotizaciones (no approximations, no warnings);
+          # now: the fetch script's parsing, the pure helpers, the guardar script (dry run, apply, bad values, older values), then the pages with known values. ---
+          python3 wordpress/build/cotizaciones-traer.py --test && echo "✓ cotizaciones-traer.py: prueba de lectura (BCRA, CSV de la Secretaría de Energía)" || { echo "✖ cotizaciones-traer.py --test"; fail=1; }
+          wp --path="$WP" option delete pm_cotizaciones >/dev/null 2>&1 || true
+          fecha_es() { python3 -c 'import sys, datetime; m = ["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"]; d = datetime.date.fromisoformat(sys.argv[1]); print(f"{d.day} de {m[d.month-1]} de {d.year}")' "$1"; }
+          F_DOLAR=$(date -u -d '2 days ago' +%F)
+          F_NAFTA=$(date -u -d '3 days ago' +%F)
+          escribir_cot() { # dolar_valor dolar_fecha nafta_precio nafta_fecha ("-" = leave the block out) -> /tmp/pm-cotizaciones.json
+            python3 - "$@" <<'PY'
+          import json, sys
+          dv, df, nv, nf = sys.argv[1:5]
+          out = {"capturado": df}
+          if dv != "-":
+              out["dolar"] = {"valor": float(dv), "fecha": df, "fuente_url": "https://api.bcra.gob.ar/estadisticascambiarias/v1.0/Cotizaciones/USD", "nombre": "BCRA", "capturado": df}
+          if nv != "-":
+              out["nafta"] = {"precio": float(nv), "fecha": nf, "fuente_url": "https://datos.energia.gob.ar/dataset/1c181390-5045-475e-94dc-410429be4b17", "bandera": "YPF", "localidad": "Corrientes", "producto": "Nafta (súper) entre 92 y 95 Ron", "estaciones": 5, "nombre": "SE", "capturado": nf}
+          json.dump(out, open("/tmp/pm-cotizaciones.json", "w"))
+          PY
+          }
+          guardar_cot() { # true = apply, false = dry run
+            if [[ "$1" == true ]]; then sed 's/^\$aplicar = false;/$aplicar = true;/' wordpress/scripts/cotizaciones-guardar.php > /tmp/cot-guardar.php; else cp wordpress/scripts/cotizaciones-guardar.php /tmp/cot-guardar.php; fi
+            wp --path="$WP" eval-file /tmp/cot-guardar.php
+          }
+          valores_cot() { wp --path="$WP" eval '$g = pm_cot_guardado(); echo ( $g["dolar"]["valor"] ?? "-" ) . "|" . ( $g["nafta"]["precio"] ?? "-" );'; }
+          escribir_cot 1450 "$F_DOLAR" 2000 "$F_NAFTA"
+          guardar_cot false > cot.log 2>&1; cat cot.log
+          grep -q 'SIMULACRO: dolar' cot.log && grep -q 'SIMULACRO: nafta' cot.log && [[ "$(valores_cot)" == "-|-" ]] && echo "✓ guardar cotizaciones: el simulacro lee los valores y no guarda nada" || { echo "✖ guardar cotizaciones: simulacro"; fail=1; }
+          guardar_cot true > cot.log 2>&1; cat cot.log
+          grep -q '^VERIFIED: pm_cotizaciones guardado' cot.log && [[ "$(valores_cot)" == "1450|2000" ]] && echo "✓ guardar cotizaciones: aplicado con VERIFIED (dólar 1450, nafta 2000), autoload sí" || { echo "✖ guardar cotizaciones: aplicar"; fail=1; }
+          guardar_cot true > cot.log 2>&1 && [[ "$(valores_cot)" == "1450|2000" ]] && echo "✓ guardar cotizaciones: idempotente" || { echo "✖ guardar cotizaciones: idempotencia"; fail=1; }
+          escribir_cot 99999999 "$F_DOLAR" 2100 "$(date -u -d '1 day ago' +%F)"
+          guardar_cot true > cot.log 2>&1; cat cot.log
+          grep -q 'CONSERVA dolar anterior: dolar: valor fuera de rango' cot.log && [[ "$(valores_cot)" == "1450|2100" ]] && echo "✓ guardar cotizaciones: un dólar fuera de rango se rechaza y queda el anterior; la nafta nueva sí entra" || { echo "✖ guardar cotizaciones: valor fuera de rango"; fail=1; }
+          escribir_cot 5 "$F_DOLAR" 5 "$F_NAFTA"
+          if guardar_cot true > cot.log 2>&1; then echo "✖ guardar cotizaciones: con todo inválido debía fallar"; fail=1; else [[ "$(valores_cot)" == "1450|2100" ]] && echo "✓ guardar cotizaciones: nada válido → falla y lo guardado queda igual" || { echo "✖ guardar cotizaciones: lo guardado cambió"; fail=1; }; fi
+          escribir_cot 1500 "$(date -u -d '8 days ago' +%F)" - -
+          guardar_cot true > cot.log 2>&1; cat cot.log
+          grep -q 'CONSERVA dolar anterior: el guardado' cot.log && [[ "$(valores_cot)" == "1450|2100" ]] && echo "✓ guardar cotizaciones: un valor más viejo que el guardado no lo pisa" || { echo "✖ guardar cotizaciones: valor más viejo"; fail=1; }
+          escribir_cot 1500 "$(date -u -d '4 days' +%F)" - -
+          if guardar_cot true > cot.log 2>&1; then echo "✖ guardar cotizaciones: fecha futura debía rechazarse"; fail=1; else grep -q 'fecha inválida o futura' cot.log && echo "✓ guardar cotizaciones: fecha futura rechazada" || { echo "✖ guardar cotizaciones: fecha futura sin aviso"; fail=1; }; fi
+          echo '[1' > /tmp/pm-cotizaciones.json
+          guardar_cot true > cot.log 2>&1 && { echo "✖ guardar cotizaciones: JSON roto debía fallar"; fail=1; } || echo "✓ guardar cotizaciones: JSON roto → falla"
+          wp --path="$WP" eval '
+            $fallos = [];
+            $t = function ( $nombre, $cond ) use ( &$fallos ) { if ( ! $cond ) { $fallos[] = $nombre; } };
+            pm_lang( "es" );
+            // Rounding. Dollars: whole, half up (140000 / 1450 = 96,55 → 97). Fuel: pesos to the nearest 100 (24 × 2177 = 52248 → 52200).
+            $t( "usd: 140000 / 1450 = 97", 97 === pm_cot_usd( 140000, 1450 ) && 100 === pm_cot_usd( 145000, 1450 ) );
+            $t( "usd: .5 sube (725 / 1450), 724 baja", 1 === pm_cot_usd( 725, 1450 ) && 0 === pm_cot_usd( 724, 1450 ) );
+            $t( "nafta: 24 × 2000 = 48000; 24 × 2177 = 52200; 16 × 2177 = 34800; 16 × 2178,5 = 34900", 48000 === pm_cot_nafta_pesos( 24, 2000 ) && 52200 === pm_cot_nafta_pesos( 24, 2177 ) && 34800 === pm_cot_nafta_pesos( 16, 2177 ) && 34900 === pm_cot_nafta_pesos( 16, 2178.5 ) );
+            // Staleness: the rate is used up to 21 days old, the fuel price up to 45; a date one day ahead passes (clock skew), two do not; garbage never.
+            $h = "2026-11-23";
+            $t( "dólar: 21 días sí, 22 no", pm_cot_fresca( "2026-11-02", $h, 21 ) && ! pm_cot_fresca( "2026-11-01", $h, 21 ) );
+            $t( "nafta: 45 días sí, 46 no", pm_cot_fresca( "2026-10-09", $h, 45 ) && ! pm_cot_fresca( "2026-10-08", $h, 45 ) );
+            $t( "fecha de mañana sí, pasado mañana no, texto/vacío no", pm_cot_fresca( "2026-11-24", $h, 21 ) && ! pm_cot_fresca( "2026-11-25", $h, 21 ) && ! pm_cot_fresca( "ayer", $h, 21 ) && ! pm_cot_fresca( "", $h, 21 ) );
+            $bd = [ "valor" => 1450, "fecha" => "2026-11-20", "fuente_url" => "https://api.bcra.gob.ar/x", "nombre" => "BCRA" ];
+            $bn = [ "precio" => 2000, "fecha" => "2026-11-20", "fuente_url" => "https://datos.energia.gob.ar/x", "bandera" => "YPF", "localidad" => "Corrientes", "producto" => "Nafta", "estaciones" => 5 ];
+            $c = pm_cotizaciones( [ "dolar" => $bd, "nafta" => $bn ], $h );
+            $t( "cotizaciones: ambos frescos", $c["dolar"] && $c["nafta"] && 1450.0 === $c["dolar"]["valor"] && 2000.0 === $c["nafta"]["precio"] );
+            $c = pm_cotizaciones( [ "dolar" => [ "fecha" => "2026-10-01" ] + $bd, "nafta" => [ "fecha" => "2026-09-01" ] + $bn ], $h );
+            $t( "cotizaciones: vencidos (dólar 53 días, nafta 83) → ninguno", null === $c["dolar"] && null === $c["nafta"] );
+            $c = pm_cotizaciones( [ "dolar" => $bd, "nafta" => [ "fecha" => "2026-09-20" ] + $bn ], $h );
+            $t( "cotizaciones: dólar fresco y nafta vencida (64 días) → solo el dólar", $c["dolar"] && null === $c["nafta"] );
+            foreach ( [ "texto", 5, [], [ "dolar" => "x", "nafta" => 5 ], [ "dolar" => [ "valor" => "abc", "fecha" => "2026-11-20", "fuente_url" => "https://a.b/c" ] ], [ "dolar" => [ "valor" => 99999999 ] + $bd ], [ "dolar" => [ "valor" => 1450, "fecha" => "2026-11-20" ] ], [ "nafta" => [ "precio" => 3 ] + $bn ], [ "dolar" => [ "fecha" => "2099-01-01" ] + $bd ] ] as $malo ) {
+              $c = pm_cotizaciones( $malo, $h );
+              $t( "cotizaciones: entrada rara → ninguno, sin avisos (" . json_encode( $malo ) . ")", null === $c["dolar"] && null === $c["nafta"] );
+            }
+            // Money text: one convention per language, used in both tools.
+            $t( "ars es/pt/en", "ARS $ 140.000" === pm_cot_ars( 140000, "es" ) && "ARS 140.000" === pm_cot_ars( 140000, "pt" ) && "ARS 140,000" === pm_cot_ars( 140000, "en" ) );
+            $t( "ars con centavos (Entre Ríos): 24251,6", "ARS $ 24.251,60" === pm_cot_ars( 24251.6, "es" ) && "ARS 24,251.60" === pm_cot_ars( 24251.6, "en" ) );
+            $t( "usd: US$ 97 / US$ 1.986 (es) / US$ 1,986 (en)", "US$ 97" === pm_cot_usd_txt( 97, "es" ) && "US$ 1.986" === pm_cot_usd_txt( 1986, "es" ) && "US$ 1,986" === pm_cot_usd_txt( 1986, "en" ) );
+            $cot = [ "dolar" => $bd, "nafta" => $bn ];
+            $t( "monto en pesos con y sin cotización", "ARS $ 140.000" === pm_licencia_monto( 140000, "ARS", $cot ) && "ARS $ 140.000" === pm_licencia_monto( 140000, "ARS" ) );
+            $t( "monto en litros: con precio de la nafta = pesos aproximados; sin él = litros", "≈ ARS $ 48.000" === pm_licencia_monto( 24, "litros", $cot ) && "24 litros de nafta súper" === pm_licencia_monto( 24, "litros", [ "dolar" => $bd, "nafta" => null ] ) && "24 litros de nafta súper" === pm_licencia_monto( 24, "litros" ) );
+            $t( "usd: pesos y litros con precio; vacío sin dólar o sin precio de la nafta", "≈ US$ 97" === pm_licencia_usd( 140000, "ARS", $cot ) && "≈ US$ 33" === pm_licencia_usd( 24, "litros", $cot ) && "" === pm_licencia_usd( 140000, "ARS", [ "dolar" => null, "nafta" => $bn ] ) && "" === pm_licencia_usd( 24, "litros", [ "dolar" => $bd, "nafta" => null ] ) && "" === pm_licencia_usd( 140000, "ARS" ) );
+            $r = pm_licencia_calcular( "patagonia", "extranjero", 3 );
+            $t( "titular Patagonia: ARS $ 140.000 + ≈ US$ 97 (modo ars)", [ "monto" => "ARS $ 140.000", "usd" => "≈ US$ 97", "modo" => "ars" ] === pm_licencia_titular( $r, $cot ) && "" === pm_licencia_titular( $r, null )["usd"] );
+            $r = pm_licencia_calcular( "corrientes", "extranjero", 3 );
+            $t( "titular Corrientes 3 días: ≈ ARS $ 48.000 + ≈ US$ 33 (modo aprox); sin precio: 24 litros (modo litros)", [ "monto" => "≈ ARS $ 48.000", "usd" => "≈ US$ 33", "modo" => "aprox" ] === pm_licencia_titular( $r, $cot ) && [ "monto" => "24 litros de nafta súper", "usd" => "", "modo" => "litros" ] === pm_licencia_titular( $r, [ "dolar" => $bd, "nafta" => null ] ) );
+            $t( "el cálculo en litros no cambia con la cotización", 24 === $r["total"] && "litros" === $r["unidad"] && 24 === pm_licencia_calcular( "corrientes", "extranjero", 3 )["mejor"]["total"] );
+            $t( "plan Patagonia: 10 días = ARS $ 140.000 (≈ US$ 97)", "10 días = ARS $ 140.000 (≈ US$ 97)" === pm_licencia_plan_txt( pm_licencia_calcular( "patagonia", "extranjero", 3 )["mejor"], "ARS", $cot ) );
+            $t( "plan Corrientes: 3 días = ≈ ARS $ 48.000 (24 litros · ≈ US$ 33)", "3 días = ≈ ARS $ 48.000 (24 litros · ≈ US$ 33)" === pm_licencia_plan_txt( pm_licencia_calcular( "corrientes", "extranjero", 3 )["mejor"], "litros", $cot ) );
+            $dos = [ "items" => [ [ "periodo" => "6 días", "cant" => 1, "subtotal" => 36 ], [ "periodo" => "1 día", "cant" => 1, "subtotal" => 16 ] ], "total" => 52 ];
+            $t( "plan Corrientes con dos permisos: litros que suman, pesos y US$ al final", "6 días + 1 día = ≈ ARS $ 104.000 (36 + 16 = 52 litros · ≈ US$ 72)" === pm_licencia_plan_txt( $dos, "litros", $cot ) );
+            $dos = [ "items" => [ [ "periodo" => "10 días", "cant" => 1, "subtotal" => 140000 ], [ "periodo" => "1 día", "cant" => 2, "subtotal" => 100000 ] ], "total" => 240000 ];
+            $t( "plan en pesos con dos tramos: ARS en cada suma, US$ solo tras el total", "10 días + 2 × 1 día = ARS $ 140.000 + ARS $ 100.000 = ARS $ 240.000 (≈ US$ 166)" === pm_licencia_plan_txt( $dos, "ARS", $cot ) && "10 días + 2 × 1 día = ARS $ 140.000 + ARS $ 100.000 = ARS $ 240.000" === pm_licencia_plan_txt( $dos, "ARS" ) );
+            $t( "nafta línea: litros × precio, fuente y fecha", "Corrientes fija la licencia en litros de nafta súper: 24 litros × $ 2.000 el litro (precio en surtidor de YPF en Corrientes capital, Secretaría de Energía, 20 de noviembre de 2026). El portal oficial calcula el importe final al comprar." === pm_licencia_nafta_linea( 24, $bn ) && false === strpos( pm_licencia_nafta_linea( 24, [ "bandera" => "" ] + $bn ), "de YPF" ) );
+            // Estimator: «≈ US$» range, the headline that names the zone.
+            $t( "estimador usd: un valor y un rango", "≈ US$ 1.986" === pm_estimador_usd_rango( 2880000, 2880000, $bd ) && "≈ US$ 690–1.000" === pm_estimador_usd_rango( 1000000, 1450000, $bd ) && "" === pm_estimador_usd_rango( 1000000, 1450000, null ) );
+            $t( "estimador: pesos con ARS, dólares sin cambios", "ARS $ 666.000" === pm_estimador_monto( 666000, "ARS" ) && "US$ 520" === pm_estimador_monto( 520, "USD" ) );
+            $t( "estimador: Río Gallegos nombra la zona", "lodges de la Patagonia sur (zona de Río Gallegos)" === pm_estimador_donde_txt( "patagonia-sur", "Río Gallegos" ) && pm_estimador_es_de_zona( "patagonia-sur", "Río Gallegos" ) );
+            $t( "estimador: Bariloche y El Calafate (una guía) conservan el nombre; sin destino, la zona", "Bariloche" === pm_estimador_donde_txt( "bariloche", "Bariloche" ) && "El Calafate" === pm_estimador_donde_txt( "el-calafate", "El Calafate" ) && "lodges de la Patagonia sur" === pm_estimador_donde_txt( "patagonia-sur", "" ) && ! pm_estimador_es_de_zona( "bariloche", "Bariloche" ) );
+            $t( "estimador: Corrientes con Itatí → zona; con la guía «Corrientes» (el nombre ya está en la zona) queda «Corrientes»", "lodges de Corrientes (zona de Itatí)" === pm_estimador_donde_txt( "corrientes", "Itatí" ) && "Corrientes" === pm_estimador_donde_txt( "corrientes", "Corrientes" ) && ! pm_estimador_es_de_zona( "corrientes", "Corrientes" ) );
+            $fallos ? WP_CLI::error( "cotizaciones: " . implode( " | ", $fallos ) ) : WP_CLI::success( "cotizaciones: los ayudantes cumplen todo" );
+          '
+          # The pages with known values: rate 1450 (2 days old), fuel 2000 (3 days old).
+          wp --path="$WP" option delete pm_cotizaciones >/dev/null 2>&1 || true
+          escribir_cot 1450 "$F_DOLAR" 2000 "$F_NAFTA"
+          guardar_cot true > cot.log 2>&1 && grep -q '^VERIFIED' cot.log && echo "✓ cotizaciones sembradas: dólar 1450, nafta 2000" || { echo "✖ cotizaciones: no se pudieron sembrar"; fail=1; }
+          resultado /calculadora-licencia-de-pesca/ --data-urlencode 'donde=region:patagonia' -d quien=extranjero -d dias=3
+          python3 - "$(fecha_es "$F_DOLAR")" <<'PY' && echo "✓ calculadora: Patagonia 3 días → ARS \$ 140.000 ≈ US\$ 97, opciones con US\$, línea del dólar con fecha y «aproximado»" || { echo "✖ calculadora: Patagonia con cotización"; fail=1; }
+          import re, sys
+          t = open('page.html', encoding='utf-8').read()
+          r = re.search(r'id="resultado".*?class="lic-como"', t, re.S).group(0)
+          assert 'class="lic-total"><strong>ARS $ 140.000</strong> <span class="lic-usd">≈ US$ 97</span></p>' in r, 'total'
+          assert '10 días = ARS $ 140.000 (≈ US$ 97)' in r and '3 × 1 día = ARS $ 150.000 (≈ US$ 103)' in r, 'opciones con US$'
+          assert 'Dólar oficial (BCRA) del ' + sys.argv[1] + ': $ 1.450 por US$. Valor aproximado; lo actualizamos cada semana.' in r, 'línea del dólar'
+          assert r.count('class="lic-dolar"') == 1, 'una sola línea del dólar'
+          tabla = re.search(r'class="lic-tabla".*?</section>', t, re.S).group(0)
+          assert 'Dólar oficial (BCRA)' in tabla and '≈' not in tabla, 'tabla: solo valores publicados + una línea con el dólar'
+          como = re.search(r'class="lic-como".*?</section>', t, re.S).group(0)
+          assert 'Los dólares son aproximados' in como and 'no convertimos' not in como and 'sin convertir' not in t, 'Cómo lo calculamos: aproximaciones, sin la frase vieja'
+          PY
+          resultado /calculadora-licencia-de-pesca/ --data-urlencode 'donde=region:corrientes' -d quien=extranjero -d dias=3
+          python3 - "$(fecha_es "$F_NAFTA")" "$(fecha_es "$F_DOLAR")" <<'PY' && echo "✓ calculadora: Corrientes 3 días → ≈ ARS \$ 48.000 ≈ US\$ 33 con la cuenta (24 litros × \$ 2.000), nunca litros como titular" || { echo "✖ calculadora: Corrientes con cotización"; fail=1; }
+          import re, sys
+          t = open('page.html', encoding='utf-8').read()
+          r = re.search(r'id="resultado".*?class="lic-como"', t, re.S).group(0)
+          assert 'class="lic-total"><strong>≈ ARS $ 48.000</strong> <span class="lic-usd">≈ US$ 33</span></p>' in r, 'titular en pesos aproximados'
+          assert 'class="lic-total"><strong>24 litros' not in r and 'Corrientes cobra la licencia según' not in r, 'el titular no son litros'
+          assert 'Corrientes fija la licencia en litros de nafta súper: 24 litros × $ 2.000 el litro (precio en surtidor de YPF en Corrientes capital, Secretaría de Energía, ' + sys.argv[1] + '). El portal oficial calcula el importe final al comprar.' in r, 'explicación en una línea'
+          assert '3 días = ≈ ARS $ 48.000 (24 litros · ≈ US$ 33)' in r, 'opciones en pesos con los litros entre paréntesis'
+          assert 'Dólar oficial (BCRA) del ' + sys.argv[2] + ': $ 1.450 por US$.' in r and 'los pasa a pesos al comprar' not in r
+          PY
+          resultado /pt/calculadora-licenca-de-pesca/ --data-urlencode 'donde=region:patagonia' -d quien=extranjero -d dias=3
+          grep -q 'class="lic-total"><strong>ARS 140.000</strong> <span class="lic-usd">≈ US\$ 97</span>' page.html && grep -q 'Dólar oficial (BCRA) de [0-9]* de [a-zç]* de 2026: ARS 1.450 por US\$. Valor aproximado; atualizamos toda semana\.' page.html && echo "✓ calculadora pt: ARS 140.000 ≈ US\$ 97 + linha do dólar" || { echo "✖ calculadora pt: com cotação"; fail=1; }
+          resultado /pt/calculadora-licenca-de-pesca/ --data-urlencode 'donde=region:corrientes' -d quien=extranjero -d dias=3
+          grep -q 'class="lic-total"><strong>≈ ARS 48.000</strong>' page.html && grep -q 'Corrientes fixa a licença em litros de nafta súper: 24 litros × ARS 2.000 o litro (preço na bomba de YPF em Corrientes capital, Secretaría de Energía, ' page.html && echo "✓ calculadora pt: Corrientes ≈ ARS 48.000 com a conta" || { echo "✖ calculadora pt: Corrientes"; fail=1; }
+          resultado /en/fishing-licence-calculator/ --data-urlencode 'donde=region:patagonia' -d quien=extranjero -d dias=3
+          grep -q 'class="lic-total"><strong>ARS 140,000</strong> <span class="lic-usd">≈ US\$ 97</span>' page.html && grep -q 'Official dollar rate (BCRA) of [0-9]* [A-Z][a-z]* 2026: ARS 1,450 per US\$. Approximate value; we update it every week\.' page.html && echo "✓ calculadora en: ARS 140,000 ≈ US\$ 97 + rate line" || { echo "✖ calculadora en: with rate"; fail=1; }
+          resultado /en/fishing-licence-calculator/ --data-urlencode 'donde=region:corrientes' -d quien=extranjero -d dias=3
+          grep -q 'class="lic-total"><strong>≈ ARS 48,000</strong>' page.html && grep -q 'Corrientes sets the licence in litres of nafta súper: 24 litres × ARS 2,000 a litre (pump price at YPF in Corrientes city, Secretaría de Energía, ' page.html && echo "✓ calculadora en: Corrientes ≈ ARS 48,000 with the working" || { echo "✖ calculadora en: Corrientes"; fail=1; }
+          # Estimator: the headline names the zone when the destination is one of several in it (a guide for Río Gallegos is created if the test site has none).
+          wp --path="$WP" eval '
+            if ( ! pm_buscar( "pm_destino", "rio-gallegos", "es" ) ) {
+              $id = wp_insert_post( [ "post_type" => "pm_destino", "post_status" => "publish", "post_title" => "Río Gallegos", "post_name" => "prueba-cot-rio-gallegos", "post_content" => "Ficha de prueba." ], true );
+              update_field( "idioma", "es", $id ); update_field( "clave", "rio-gallegos", $id ); update_post_meta( $id, "_prueba_cot", 1 );
+              update_field( "region", "patagonia", $id ); update_field( "provincia", "santa-cruz", $id ); update_field( "lat", -51.62, $id ); update_field( "lon", -69.21, $id ); update_field( "especies", [ "trucha" ], $id );
+            }
+          '
+          resultado /cuanto-cuesta-viaje-de-pesca/ --data-urlencode 'donde=destino:rio-gallegos' -d formato=semana -d pescadores=2 -d semanas=1
+          python3 - <<'PY' && echo "✓ estimador: Río Gallegos → «en lodges de la Patagonia sur (zona de Río Gallegos)» y «de la zona» en la línea de precios" || { echo "✖ estimador: titular de la zona"; fail=1; }
+          import re
+          t = open('page.html', encoding='utf-8').read()
+          r = re.search(r'id="resultado".*?class="lic-como"', t, re.S).group(0)
+          assert re.search(r'Para 2 pescadores, 1 semana en lodges de la Patagonia sur \(zona de Río Gallegos\): entre <strong>US\$ [\d.]+</strong> y <strong>US\$ [\d.]+</strong>', r), 'titular con la zona'
+          assert re.search(r'Sale de \d+ precios publicados de \d+ lugares de la zona, ', r), 'de la zona'
+          assert '≈ ARS' not in r, 'a los dólares no se les suman pesos'
+          PY
+          resultado /cuanto-cuesta-viaje-de-pesca/ --data-urlencode 'donde=zona:patagonia-sur' -d formato=semana -d pescadores=2 -d semanas=1
+          python3 - <<'PY' && echo "✓ estimador: la zona elegida directamente conserva «lodges de la Patagonia sur» y no dice «de la zona»" || { echo "✖ estimador: zona directa"; fail=1; }
+          import re
+          t = open('page.html', encoding='utf-8').read()
+          r = re.search(r'id="resultado".*?class="lic-como"', t, re.S).group(0)
+          assert 'Para 2 pescadores, 1 semana en lodges de la Patagonia sur: entre' in r and 'lugares de la zona' not in r
+          PY
+          resultado /cuanto-cuesta-viaje-de-pesca/ --data-urlencode 'donde=zona:el-calafate' -d formato=dia -d pescadores=2 -d dias=2
+          python3 - "$(fecha_es "$F_DOLAR")" <<'PY' && echo "✓ estimador: El Calafate en pesos → ARS \$ 2.880.000 ≈ US\$ 1.986 y la línea del dólar con fecha" || { echo "✖ estimador: pesos con ≈ US\$"; fail=1; }
+          import re, sys
+          t = open('page.html', encoding='utf-8').read()
+          r = re.search(r'id="resultado".*?class="lic-como"', t, re.S).group(0)
+          txt = re.sub(r'<[^>]+>', '', r)
+          assert 'ARS $ 2.880.000' in txt and 'class="est-usd">≈ US$ 1.986</p>' in r, 'pesos y su aproximación'
+          assert '(≈ US$ 1.986)' in txt, 'la cuenta de la lista también'
+          assert 'Dólar oficial (BCRA) del ' + sys.argv[1] + ': $ 1.450 por US$. Valor aproximado; lo actualizamos cada semana.' in txt and r.count('est-dolar') == 1
+          PY
+          resultado /cuanto-cuesta-viaje-de-pesca/ --data-urlencode 'donde=zona:bariloche' -d formato=dia -d pescadores=3 -d dias=3
+          python3 - <<'PY' && echo "✓ estimador: Bariloche → los dólares quedan como se publicaron (sin pesos); la serie en pesos lleva su ≈ US\$ 2.756 y una sola línea del dólar" || { echo "✖ estimador: Bariloche con cotización"; fail=1; }
+          import re
+          t = open('page.html', encoding='utf-8').read()
+          r = re.search(r'id="resultado".*?class="lic-como"', t, re.S).group(0)
+          assert 'entre <strong>US$ 3.120</strong> y <strong>US$ 4.140</strong>' in r and '≈ ARS' not in r
+          assert 'ARS $ 3.996.000' in r and '≈ US$ 2.756' in r and r.count('est-dolar') == 1
+          PY
+          resultado /en/fishing-trip-cost-estimator/ --data-urlencode 'donde=zona:el-calafate' -d formato=dia -d pescadores=2 -d dias=2
+          grep -q 'ARS 2,880,000' page.html && grep -q '≈ US\$ 1,986' page.html && grep -q 'Official dollar rate (BCRA) of ' page.html && echo "✓ estimador en: ARS 2,880,000 ≈ US\$ 1,986" || { echo "✖ estimador en: ARS con ≈ US\$"; fail=1; }
+          # Stale or broken stored values: no approximation at all, no warning, the tools show what the sources publish.
+          wp --path="$WP" eval '
+            $viejo = fn( $dias ) => gmdate( "Y-m-d", time() - $dias * 86400 );
+            $b = get_option( "pm_cotizaciones" );
+            $b["dolar"]["fecha"] = $viejo( 25 );   // 25 days: past the 21 of the rate
+            $b["nafta"]["fecha"] = $viejo( 50 );   // 50 days: past the 45 of the fuel
+            update_option( "pm_cotizaciones", $b );
+          '
+          resultado /calculadora-licencia-de-pesca/ --data-urlencode 'donde=region:patagonia' -d quien=extranjero -d dias=3
+          grep -q 'class="lic-total"><strong>ARS $ 140.000</strong></p>' page.html && ! grep -q '≈' page.html && ! grep -q 'Dólar oficial' page.html && echo "✓ calculadora: dólar de 25 días → ARS \$ 140.000 sin ≈ US\$ ni línea del dólar" || { echo "✖ calculadora: dólar vencido"; fail=1; }
+          resultado /calculadora-licencia-de-pesca/ --data-urlencode 'donde=region:corrientes' -d quien=extranjero -d dias=3
+          python3 - <<'PY' && echo "✓ calculadora: nafta de 50 días → «24 litros de nafta súper» con la línea en lenguaje llano primero, sin pesos ni US\$" || { echo "✖ calculadora: nafta vencida"; fail=1; }
+          import re
+          t = open('page.html', encoding='utf-8').read()
+          r = re.search(r'id="resultado".*?class="lic-como"', t, re.S).group(0)
+          assert 'class="lic-total"><strong>24 litros de nafta súper</strong></p>' in r and '≈' not in r
+          assert r.index('Corrientes cobra la licencia según el precio de la nafta: son 24 litros de nafta súper. El portal oficial te dice el importe en pesos al comprar.') < r.index('class="lic-total"'), 'la línea llana va primero'
+          PY
+          resultado /cuanto-cuesta-viaje-de-pesca/ --data-urlencode 'donde=zona:el-calafate' -d formato=dia -d pescadores=2 -d dias=2
+          ! grep -q '≈' page.html && ! grep -q 'est-usd' page.html && echo "✓ estimador: dólar vencido → sin ≈ US\$" || { echo "✖ estimador: dólar vencido"; fail=1; }
+          wp --path="$WP" eval '
+            $viejo = fn( $dias ) => gmdate( "Y-m-d", time() - $dias * 86400 );
+            $b = get_option( "pm_cotizaciones" );
+            $b["dolar"]["fecha"] = $viejo( 2 );    // the rate fresh again, the fuel still stale
+            update_option( "pm_cotizaciones", $b );
+          '
+          resultado /calculadora-licencia-de-pesca/ --data-urlencode 'donde=region:corrientes' -d quien=extranjero -d dias=3
+          grep -q 'class="lic-total"><strong>24 litros de nafta súper</strong></p>' page.html && ! grep -q '≈' page.html && echo "✓ calculadora: dólar fresco y nafta vencida → Corrientes sigue en litros (sin US\$: no hay pesos de los que partir)" || { echo "✖ calculadora: nafta vencida con dólar"; fail=1; }
+          wp --path="$WP" option update pm_cotizaciones 'basura' >/dev/null
+          resultado /calculadora-licencia-de-pesca/ --data-urlencode 'donde=region:patagonia' -d quien=extranjero -d dias=3
+          grep -q 'ARS $ 140.000' page.html && ! grep -q '≈' page.html && echo "✓ calculadora: opción corrupta → sin aproximaciones" || { echo "✖ calculadora: opción corrupta"; fail=1; }
+          wp --path="$WP" option delete pm_cotizaciones >/dev/null 2>&1 || true
+          resultado /calculadora-licencia-de-pesca/ --data-urlencode 'donde=region:corrientes' -d quien=extranjero -d dias=3
+          grep -q 'class="lic-total"><strong>24 litros de nafta súper</strong></p>' page.html && ! grep -q '≈' page.html && ! grep -q 'Dólar oficial' page.html && echo "✓ calculadora: sin la opción → litros en lenguaje llano, sin aproximaciones" || { echo "✖ calculadora: sin la opción"; fail=1; }
+          resultado /cuanto-cuesta-viaje-de-pesca/ --data-urlencode 'donde=destino:rio-gallegos' -d formato=semana -d pescadores=2 -d semanas=1
+          grep -q 'en lodges de la Patagonia sur (zona de Río Gallegos)' page.html && ! grep -q '≈' page.html && echo "✓ estimador: sin la opción → el titular sigue nombrando la zona, sin aproximaciones" || { echo "✖ estimador: sin la opción"; fail=1; }
+          wp --path="$WP" post list --post_type=pm_destino --meta_key=_prueba_cot --format=ids | xargs -r wp --path="$WP" post delete --force >/dev/null
           # The trip form takes what the estimator carries: anglers, companions, days of fishing and budget chip, plus the destination; a bad value is ignored.
           curl -sS "$URL/armar-viaje/?destino=esquina&pescadores=3&acompanantes=1&estadia=cuatro-cinco&presupuesto=300-600" -o page.html
           python3 - <<'PY' && echo "✓ armar-viaje: viene cargado con destino, pescadores, acompañantes, días de pesca y presupuesto de la URL" || { echo "✖ armar-viaje: precarga desde la URL"; fail=1; }

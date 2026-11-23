@@ -684,6 +684,9 @@ footer .negocio a { color: var(--white); text-decoration: underline; text-underl
 .v-licencia .lic-rotulo { margin: 0; font: 400 var(--fs-label)/1.2 var(--font-label); letter-spacing: 0.04em; text-transform: uppercase; color: var(--olive); }
 .v-licencia .lic-total { margin: 2px 0 6px; font: 700 var(--fs-h1)/1.1 var(--font-head); color: var(--ink); overflow-wrap: anywhere; }
 .v-licencia .lic-plan { margin: 0 0 8px; }
+.v-licencia .lic-usd { display: inline-block; margin-left: 4px; font: 600 var(--fs-lead)/1.2 var(--font-body); color: var(--muted); white-space: nowrap; }
+.v-licencia .lic-dolar { margin: 10px 0 0; font-size: var(--fs-caption); color: var(--muted); }
+.v-licencia .est-usd { margin: -2px 0 8px; font-size: var(--fs-small); color: var(--muted); }
 .v-licencia .lic-ahorro { margin: 0 0 12px; font-weight: 600; }
 .v-licencia .lic-res h3 { margin: 18px 0 8px; font-size: var(--fs-lead); }
 .v-licencia .lic-planes { margin: 0 0 12px; padding-left: 20px; }

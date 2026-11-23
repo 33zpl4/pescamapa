@@ -125,6 +125,7 @@ require PM_DIR . 'inc/pique.php';
 require PM_DIR . 'inc/legal.php';
 require PM_DIR . 'inc/rio.php';
 require PM_DIR . 'inc/presupuesto.php';
+require PM_DIR . 'inc/cotizaciones.php';
 require PM_DIR . 'inc/licencia.php';
 require PM_DIR . 'inc/precios.php';
 require PM_DIR . 'inc/maquinas.php';

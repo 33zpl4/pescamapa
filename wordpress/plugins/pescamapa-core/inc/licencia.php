@@ -4,7 +4,10 @@
  * (theme view vistas/licencia.php). A free tool: where you fish + who you are + how many days → the permit options with the price AS PUBLISHED
  * and the cheapest valid combination, computed from data/licencias.json (ONE copy, written by wordpress/build/licencias-2026-27/generar-datos.py).
  *
- * Rules (owner): never convert currency, never estimate. Corrientes stays in litres of nafta súper; a value the source does not give is said so.
+ * Rules (owner): the published values are never altered; a value the source does not give is said so. Since 23/11/2026 (owner) the RESULT also shows
+ * approximations, always labelled approximate, dated and sourced (inc/cotizaciones.php): the amount in US$ at the BCRA's official rate, and Corrientes'
+ * litres of nafta súper as pesos at the pump price in Corrientes capital. They are a presentation layer on top of the calculation; without a fresh
+ * reference value the tool shows what the sources publish, as before.
  * The calculation is a pure function (pm_licencia_calcular) with no WordPress calls, so it is unit-tested with `wp eval`.
  * Amounts are handled in integer cents (Entre Ríos has 24251.60) and handed back as int when whole, float otherwise.
  */
@@ -376,26 +379,93 @@ function pm_licencia_periodo_txt( string $periodo ): string {
 	return '' !== $k ? pm_t( 'lic.periodo.' . $k ) : $periodo;
 }
 
-/** "$ 50.000" / "16 litros de nafta súper" with the separators of the page's language (the site's money helper); never a conversion. */
-function pm_licencia_monto( $valor, string $unidad ): string {
-	$i = pm_lang();
+/**
+ * An amount as the page shows it. Pesos: "ARS $ 140.000" (one convention per language, pm_cot_ars). Litres of nafta súper: with a fresh fuel price in `$cot`
+ * the approximate peso amount "≈ ARS $ 52.200" (litres × price, nearest 100); without it "24 litros de nafta súper" as the source publishes.
+ * `$cot` = pm_cotizaciones() or null (null = no approximation, what the reference table and the FAQ use).
+ */
+function pm_licencia_monto( $valor, string $unidad, ?array $cot = null ): string {
 	if ( 'litros' === $unidad ) {
-		return ( 'en' === $i ? number_format( (float) $valor, 0, '.', ',' ) : number_format( (float) $valor, 0, ',', '.' ) ) . ' ' . pm_t( 'lic.unidad.litros' );
+		$n = $cot['nafta'] ?? null;
+		if ( $n ) {
+			return '≈ ' . pm_cot_ars( pm_cot_nafta_pesos( $valor, (float) $n['precio'] ) );
+		}
+		return pm_cot_num( $valor ) . ' ' . pm_t( 'lic.unidad.litros' );
 	}
-	return pm_paquete_precio_txt( [ 'monto' => $valor, 'moneda' => 'ARS' ], $i );
+	return pm_cot_ars( $valor );
 }
 
-/** One plan as a line of arithmetic: "10 días + 2 × 1 día = $ 140.000 + $ 100.000 = $ 240.000" (a single permit: "10 días = $ 140.000"). */
-function pm_licencia_plan_txt( array $plan, string $unidad ): string {
+/** The amount in pesos (int|float) a total stands for, or null when it is in litres and there is no fresh fuel price. Pesos pass through. */
+function pm_licencia_pesos( $valor, string $unidad, ?array $cot = null ) {
+	if ( 'litros' !== $unidad ) {
+		return $valor;
+	}
+	$n = $cot['nafta'] ?? null;
+	return $n ? pm_cot_nafta_pesos( $valor, (float) $n['precio'] ) : null;
+}
+
+/** "≈ US$ 97" for a total (pesos, or litres with a fresh fuel price) when the rate is fresh; '' otherwise. */
+function pm_licencia_usd( $valor, string $unidad, ?array $cot = null ): string {
+	$pesos = pm_licencia_pesos( $valor, $unidad, $cot );
+	return null === $pesos ? '' : pm_cot_aprox_usd( $pesos, $cot['dolar'] ?? null );
+}
+
+/** Headline of a priced result: [ 'monto' => "ARS $ 140.000" | "≈ ARS $ 52.200" | "24 litros de nafta súper", 'usd' => "≈ US$ 97" | '', 'modo' => 'ars'|'aprox'|'litros' ]. */
+function pm_licencia_titular( array $res, ?array $cot = null ): array {
+	$u = (string) $res['unidad'];
+	return [
+		'monto' => pm_licencia_monto( $res['total'], $u, $cot ),
+		'usd'   => pm_licencia_usd( $res['total'], $u, $cot ),
+		'modo'  => 'litros' !== $u ? 'ars' : ( ( $cot['nafta'] ?? null ) ? 'aprox' : 'litros' ),
+	];
+}
+
+/** "24 litros" (the short form used in parentheses). */
+function pm_licencia_litros_txt( $n ): string {
+	return pm_t( 'lic.litros.n', [ 'n' => pm_cot_num( $n ) ] );
+}
+
+/** The one-line explanation under a Corrientes result with a fresh fuel price: litres × price per litre, where the price comes from, that the portal sets the final amount. */
+function pm_licencia_nafta_linea( $litros, array $nafta ): string {
+	return pm_t( '' !== (string) ( $nafta['bandera'] ?? '' ) ? 'lic.res.nafta' : 'lic.res.nafta.sinbandera', [
+		'litros'  => pm_cot_num( $litros ),
+		'precio'  => pm_cot_num( $nafta['precio'] ),
+		'bandera' => (string) ( $nafta['bandera'] ?? '' ),
+		'fecha'   => pm_fecha( (string) $nafta['fecha'] ),
+	] );
+}
+
+/** Will the result show any US$ figure? (Then the rate line goes under it.) */
+function pm_licencia_usa_dolar( array $res, ?array $cot = null ): bool {
+	return 'ok' === $res['estado'] && '' !== pm_licencia_usd( $res['total'], (string) $res['unidad'], $cot );
+}
+
+/**
+ * One plan as a line of arithmetic: "10 días + 2 × 1 día = ARS $ 140.000 + ARS $ 100.000 = ARS $ 240.000 (≈ US$ 166)" (a single permit: "10 días = ARS $ 140.000 (≈ US$ 97)").
+ * Corrientes with a fresh fuel price: "3 días = ≈ ARS $ 48.000 (24 litros · ≈ US$ 33)"; several permits list their litres: "(36 + 32 = 68 litros · ≈ US$ 94)".
+ * The US$ figure only goes after the plan's total, never on the parts.
+ */
+function pm_licencia_plan_txt( array $plan, string $unidad, ?array $cot = null ): string {
 	$partes = [];
 	$sumas  = [];
+	$litros = [];
 	foreach ( (array) ( $plan['items'] ?? [] ) as $it ) {
 		$p        = pm_licencia_periodo_txt( (string) $it['periodo'] );
 		$partes[] = $it['cant'] > 1 ? $it['cant'] . ' × ' . $p : $p;
-		$sumas[]  = pm_licencia_monto( $it['subtotal'], $unidad );
+		$sumas[]  = pm_licencia_monto( $it['subtotal'], $unidad, $cot );
+		$litros[] = pm_cot_num( $it['subtotal'] );
 	}
-	$total = pm_licencia_monto( $plan['total'] ?? 0, $unidad );
-	return implode( ' + ', $partes ) . ' = ' . ( count( $sumas ) > 1 ? implode( ' + ', $sumas ) . ' = ' : '' ) . $total;
+	$total_v = $plan['total'] ?? 0;
+	$total   = pm_licencia_monto( $total_v, $unidad, $cot );
+	$usd     = pm_licencia_usd( $total_v, $unidad, $cot );
+	if ( 'litros' === $unidad && ( $cot['nafta'] ?? null ) ) {
+		$det = [ ( count( $litros ) > 1 ? implode( ' + ', $litros ) . ' = ' : '' ) . pm_licencia_litros_txt( $total_v ) ];
+		if ( '' !== $usd ) {
+			$det[] = $usd;
+		}
+		return implode( ' + ', $partes ) . ' = ' . $total . ' (' . implode( ' · ', $det ) . ')';
+	}
+	return implode( ' + ', $partes ) . ' = ' . ( count( $sumas ) > 1 ? implode( ' + ', $sumas ) . ' = ' : '' ) . $total . ( '' !== $usd ? ' (' . $usd . ')' : '' );
 }
 
 /** Validity text of a region in the language of the page (ui.json carries it for the three languages; the data row has the Spanish original, and a test keeps them equal).
@@ -435,7 +505,7 @@ function pm_licencia_faqs(): array {
 		'ctes6' => pm_licencia_valor_txt( 'corrientes', 'extranjero', 6 ),
 	];
 	$faqs = [];
-	foreach ( [ 1, 2, 3, 4 ] as $n ) {
+	foreach ( [ 1, 2, 3, 4, 5 ] as $n ) {
 		$faqs[] = [ 'pregunta' => pm_t( "lic.faq.$n.q" ), 'respuesta' => pm_t( "lic.faq.$n.a", $v ) ];
 	}
 	return $faqs;
