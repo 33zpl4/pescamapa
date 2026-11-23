@@ -26,9 +26,13 @@ $fuentes     = pm_estimador_fuentes();
 $n_precios   = array_sum( $fuentes );
 $n_lugares   = count( array_unique( array_column( pm_estimador_datos()['filas'], 'lugar' ) ) );
 $donde_t     = '';
+$de_zona     = false;
+$dolar       = pm_cotizaciones()['dolar']; // fresh BCRA rate or null (inc/cotizaciones.php): peso amounts get an approximate US$ only with it
+$usa_dolar   = false;
 if ( $res ) {
 	$destino_nombre = $e['destino'] ? ( array_column( $destinos, 'nombre', 'clave' )[ $e['destino'] ] ?? '' ) : '';
 	$donde_t        = pm_estimador_donde_txt( $res['zona'], $res['zona'] === $e['zona'] ? $destino_nombre : '' );
+	$de_zona        = $res['zona'] === $e['zona'] && pm_estimador_es_de_zona( $res['zona'], $destino_nombre );
 	$viaje          = pm_estimador_viaje_url( $res, $res['zona'] === $e['zona'] ? $e['destino'] : '' );
 	$licencia_url   = pm_estimador_licencia_url( $res['zona'], $res['zona'] === $e['zona'] ? $e['destino'] : '' );
 	$cant_t         = pm_estimador_cantidad_txt( $res['formato'], $res['cantidad'] );
@@ -138,12 +142,14 @@ get_header(); ?>
 					<?php endif; ?>
 					<?php if ( 'rango' === $s['modo'] ) : ?>
 						<p class="est-titular"><?php echo wp_kses( pm_t( 'est.res.titular', $vars + [ 'min' => '<strong>' . esc_html( pm_estimador_monto( $s['total_min'], $moneda ) ) . '</strong>', 'max' => '<strong>' . esc_html( pm_estimador_monto( $s['total_max'], $moneda ) ) . '</strong>' ] ), [ 'strong' => [] ] ); ?></p>
+						<?php if ( 'ARS' === $moneda && ( $u = pm_estimador_usd_rango( $s['total_min'], $s['total_max'], $dolar ) ) ) : $usa_dolar = true; ?><p class="est-usd"><?php echo esc_html( $u ); ?></p><?php endif; ?>
 						<p class="lic-plan est-cuenta"><span class="est-rotulo"><?php pm_e( 'est.res.cuenta' ); ?></span> <?php echo esc_html( pm_estimador_aritmetica( $s, $res['formato'], $res['pescadores'], $res['cantidad'] ) ); ?></p>
 						<p class="lic-plan est-pordia"><?php echo esc_html( pm_t( 'est.res.pordia', [ 'rango' => pm_estimador_rango( $s['por_dia_min'], $s['por_dia_max'], $moneda ) ] ) ); ?></p>
-						<p class="lic-vig est-base"><?php echo esc_html( pm_t( 'est.res.base', [ 'n' => (string) $s['n'], 'lugares' => (string) $s['lugares'], 'leido' => pm_estimador_leido( $s['desde'], $s['hasta'] ) ] ) ); ?></p>
+						<p class="lic-vig est-base"><?php echo esc_html( pm_t( $de_zona ? 'est.res.base.zona' : 'est.res.base', [ 'n' => (string) $s['n'], 'lugares' => (string) $s['lugares'], 'leido' => pm_estimador_leido( $s['desde'], $s['hasta'] ) ] ) ); ?></p>
 					<?php elseif ( 1 === $s['n'] ) :
 						$it = $s['items'][0]; ?>
 						<p class="est-titular"><?php echo wp_kses( pm_t( 'est.res.titular.uno', $vars + [ 'total' => '<strong>' . esc_html( pm_estimador_rango( $it['total_min'], $it['total_max'], $moneda ) ) . '</strong>' ] ), [ 'strong' => [] ] ); ?></p>
+						<?php if ( 'ARS' === $moneda && ( $u = pm_estimador_usd_rango( $it['total_min'], $it['total_max'], $dolar ) ) ) : $usa_dolar = true; ?><p class="est-usd"><?php echo esc_html( $u ); ?></p><?php endif; ?>
 						<p class="lic-plan est-cuenta"><span class="est-rotulo"><?php pm_e( 'est.res.cuenta' ); ?></span> <?php echo esc_html( pm_estimador_item_cuenta( $it, $s, $res['formato'], $res['pescadores'], $res['cantidad'] ) ); ?></p>
 						<p class="lic-plan est-pordia"><?php echo esc_html( pm_t( 'est.res.pordia', [ 'rango' => pm_estimador_monto( $it['por_dia'], $moneda ) ] ) ); ?></p>
 						<p class="lic-vig est-base"><?php echo esc_html( pm_t( 'est.item', [ 'etiqueta' => pm_estimador_item_etiqueta( $it['fila'], $res['formato'] ), 'monto' => ( ! empty( $it['fila']['desde'] ) ? pm_t( 'est.desde' ) . ' ' : '' ) . pm_estimador_rango( $it['fila']['monto'], (float) ( $it['fila']['monto_max'] ?? 0 ) > 0 ? $it['fila']['monto_max'] : $it['fila']['monto'], $moneda ), 'unidad' => pm_estimador_unidad_txt( $s['calc'], $res['formato'] ), 'fecha' => pm_fecha( (string) $it['fila']['fecha'] ) ] ) ); ?> <?php pm_e( 'est.res.unico' ); ?></p>
@@ -151,7 +157,7 @@ get_header(); ?>
 						<p class="est-titular est-titular-lista"><?php echo esc_html( 'paquete' === $res['formato'] ? pm_t( 'est.res.titular.paquetes', $vars ) : pm_t( 'est.res.titular.lista', $vars ) ); ?></p>
 						<ul class="lic-planes est-lista">
 							<?php foreach ( $s['items'] as $it ) : ?>
-								<li><?php echo esc_html( pm_estimador_item_txt( $it, $s, $res['formato'] ) ); ?><br><strong><?php echo esc_html( pm_estimador_item_cuenta( $it, $s, $res['formato'], $res['pescadores'], $res['cantidad'] ) ); ?></strong></li>
+								<li><?php echo esc_html( pm_estimador_item_txt( $it, $s, $res['formato'] ) ); ?><br><strong><?php echo esc_html( pm_estimador_item_cuenta( $it, $s, $res['formato'], $res['pescadores'], $res['cantidad'], $dolar ) ); ?></strong><?php if ( 'ARS' === $moneda && $dolar ) { $usa_dolar = true; } ?></li>
 							<?php endforeach; ?>
 						</ul>
 						<p class="lic-vig est-base"><?php echo esc_html( pm_t( 'est.res.base.lista', [ 'n' => (string) $s['n'], 'lugares' => (string) $s['lugares'], 'min' => (string) PM_EST_MIN_LUGARES ] ) ); ?><?php echo 'paquete' === $res['formato'] ? ' ' . esc_html( pm_t( 'est.res.paquete.fijo' ) ) : ''; ?></p>
@@ -159,6 +165,7 @@ get_header(); ?>
 					<?php if ( $k > 0 ) : ?></div><?php endif; ?>
 				<?php endforeach; ?>
 
+				<?php if ( $usa_dolar ) : ?><p class="lic-dolar est-dolar"><?php echo esc_html( pm_cot_linea_dolar( $dolar ) ); ?></p><?php endif; ?>
 				<?php if ( $res['acompanantes'] > 0 ) : ?>
 					<p class="lic-nota"><?php echo esc_html( pm_t( 'est.res.acomp', [ 'n' => (string) $res['acompanantes'] ] ) ); ?></p>
 				<?php endif; ?>

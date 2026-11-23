@@ -9,6 +9,7 @@ defined( 'ABSPATH' ) || exit;
 
 $idioma   = pm_lang();
 $e        = pm_licencia_entrada();
+$cot      = pm_cotizaciones(); // fresh reference values only (inc/cotizaciones.php): [dolar, nafta], each null when missing or stale
 $res      = $e['enviado'] ? pm_licencia_calcular( $e['region'], $e['quien'], $e['dias'], $e['extras'] ) : null;
 $destinos = pm_licencia_destinos( $idioma );
 $faqs     = pm_licencia_faqs();
@@ -101,23 +102,26 @@ get_header(); ?>
 					<p class="lic-nota"><?php echo esc_html( pm_t( 'lic.res.ajuste', [ 'donde' => pm_t( 'lic.region.' . $res['region'] ), 'quien' => pm_t( 'lic.quien.' . $res['quien'] ) ] ) ); ?></p>
 				<?php endif; ?>
 
-				<?php if ( 'ok' === $res['estado'] ) : ?>
+				<?php if ( 'ok' === $res['estado'] ) :
+					$tit = pm_licencia_titular( $res, $cot ); ?>
+					<?php if ( 'litros' === $tit['modo'] ) : ?><p class="lic-plan lic-nafta"><?php pm_e( 'lic.res.nafta.sinprecio', [ 'litros' => pm_cot_num( $res['total'] ) ] ); ?></p><?php endif; ?>
 					<p class="lic-rotulo"><?php pm_e( $hay_ex ? ( $res['completo'] ? 'lic.res.total' : 'lic.res.total.parcial' ) : 'lic.res.barato' ); ?></p>
-					<p class="lic-total"><strong><?php echo esc_html( pm_licencia_monto( $res['total'], $unidad ) ); ?></strong></p>
-					<p class="lic-plan"><?php echo $hay_ex ? '<strong>' . esc_html( pm_t( 'lic.res.ordinario' ) ) . ':</strong> ' : ''; ?><?php echo esc_html( pm_licencia_plan_txt( $res['mejor'], $unidad ) ); ?></p>
+					<p class="lic-total"><strong><?php echo esc_html( $tit['monto'] ); ?></strong><?php if ( '' !== $tit['usd'] ) : ?> <span class="lic-usd"><?php echo esc_html( $tit['usd'] ); ?></span><?php endif; ?></p>
+					<?php if ( 'aprox' === $tit['modo'] ) : ?><p class="lic-plan lic-nafta"><?php echo esc_html( pm_licencia_nafta_linea( $res['total'], $cot['nafta'] ) ); ?></p><?php endif; ?>
+					<p class="lic-plan"><?php echo $hay_ex ? '<strong>' . esc_html( pm_t( 'lic.res.ordinario' ) ) . ':</strong> ' : ''; ?><?php echo esc_html( pm_licencia_plan_txt( $res['mejor'], $unidad, $cot ) ); ?></p>
 					<?php foreach ( $res['extras'] as $x ) : ?>
 						<p class="lic-plan"><?php if ( 'ok' === $x['estado'] ) : ?>
-							<strong><?php pm_e( 'lic.extra.' . $x['clave'] ); ?>:</strong> <?php echo esc_html( pm_licencia_plan_txt( $x['mejor'], $unidad ) ); ?>
+							<strong><?php pm_e( 'lic.extra.' . $x['clave'] ); ?>:</strong> <?php echo esc_html( pm_licencia_plan_txt( $x['mejor'], $unidad, $cot ) ); ?>
 						<?php else : echo esc_html( pm_t( 'lic.res.extra.sincob', [ 'extra' => pm_t( 'lic.extra.' . $x['clave'] ) ] ) ); endif; ?></p>
 					<?php endforeach; ?>
 					<?php if ( $res['ahorro'] && $res['referencia'] ) : ?>
-						<p class="lic-ahorro"><?php echo esc_html( pm_t( 'lic.res.vs', [ 'ref' => pm_licencia_plan_corto( $res['referencia'] ), 'total' => pm_licencia_monto( $res['referencia']['total'], $unidad ), 'ahorro' => pm_licencia_monto( $res['ahorro'], $unidad ) ] ) ); ?></p>
+						<p class="lic-ahorro"><?php echo esc_html( pm_t( 'lic.res.vs', [ 'ref' => pm_licencia_plan_corto( $res['referencia'] ), 'total' => pm_licencia_monto( $res['referencia']['total'], $unidad, $cot ), 'ahorro' => pm_licencia_monto( $res['ahorro'], $unidad, $cot ) ] ) ); ?></p>
 					<?php endif; ?>
 					<?php if ( count( $res['planes'] ) > 1 ) : ?>
 						<h3><?php pm_e( 'lic.res.opciones.h' ); ?></h3>
 						<ul class="lic-planes">
 							<?php foreach ( $res['planes'] as $k => $p ) : ?>
-								<li<?php echo 0 === $k ? ' class="mejor"' : ''; ?>><?php echo esc_html( pm_licencia_plan_txt( $p, $unidad ) ); ?><?php if ( 0 === $k ) : ?> <span class="lic-pill"><?php pm_e( 'lic.res.mejor' ); ?></span><?php endif; ?></li>
+								<li<?php echo 0 === $k ? ' class="mejor"' : ''; ?>><?php echo esc_html( pm_licencia_plan_txt( $p, $unidad, $cot ) ); ?><?php if ( 0 === $k ) : ?> <span class="lic-pill"><?php pm_e( 'lic.res.mejor' ); ?></span><?php endif; ?></li>
 							<?php endforeach; ?>
 						</ul>
 					<?php endif; ?>
@@ -132,7 +136,7 @@ get_header(); ?>
 
 				<?php
 				$notas = [];
-				if ( 'litros' === $unidad ) { $notas[] = pm_t( 'lic.res.litros' ); }
+				if ( 'litros' === $unidad && 'ok' !== $res['estado'] ) { $notas[] = pm_t( 'lic.res.litros' ); } // a priced result already says it above (explanation line, or the plain-language line without a fuel price)
 				if ( $res['solo_en'] ) { $notas[] = pm_t( 'lic.res.soloen', [ 'lugar' => $res['solo_en'] ] ); }
 				foreach ( [ $res['solo_en'] ? '' : 'lic.nota.region.' . $res['region'], 'lic.nota.' . $res['quien'] . '.' . $res['region'] ] as $k ) { // the unified-permit line does not fit a Río Negro-only category
 					if ( '' !== $k && pm_t_existe( $k ) ) { $notas[] = pm_t( $k ); }
@@ -141,6 +145,7 @@ get_header(); ?>
 				if ( 'ok' === $res['estado'] ) { $notas[] = pm_t( 'lic.res.supuesto' ); }
 				if ( $notas ) : ?><ul class="lic-notas"><?php foreach ( array_unique( $notas ) as $n ) : ?><li><?php echo esc_html( $n ); ?></li><?php endforeach; ?></ul><?php endif; ?>
 
+				<?php if ( pm_licencia_usa_dolar( $res, $cot ) ) : ?><p class="lic-dolar"><?php echo esc_html( pm_cot_linea_dolar( $cot['dolar'] ) ); ?></p><?php endif; ?>
 				<dl class="lic-fuente">
 					<?php if ( $res['donde'] ) : ?>
 						<div><dt><?php pm_e( 'lic.res.donde.h' ); ?></dt><dd><?php echo esc_html( pm_t( 'lic.como.' . $res['region'] ) ); ?>
@@ -162,14 +167,14 @@ get_header(); ?>
 			<h2 id="como-h"><?php pm_e( 'lic.como.h' ); ?></h2>
 			<ul>
 				<li><?php pm_e( 'lic.como.1', [ 'desde' => $fecha( $desde ), 'hasta' => $fecha( $hasta ) ] ); ?></li>
-				<?php foreach ( [ 2, 3, 4 ] as $n ) : ?><li><?php pm_e( "lic.como.$n" ); ?></li><?php endforeach; ?>
+				<?php foreach ( [ 2, 3, 4, 5 ] as $n ) : ?><li><?php pm_e( "lic.como.$n" ); ?></li><?php endforeach; ?>
 			</ul>
 			<p class="lic-aviso"><strong><?php pm_e( 'lic.aviso' ); ?></strong></p>
 		</section>
 
 		<section class="lic-tabla" aria-labelledby="tabla-h">
 			<h2 id="tabla-h"><?php pm_e( 'lic.tabla.h' ); ?></h2>
-			<p class="note"><?php pm_e( 'lic.tabla.i' ); ?></p>
+			<p class="note"><?php pm_e( 'lic.tabla.i' ); ?><?php if ( $cot['dolar'] ) : ?> <?php echo esc_html( pm_cot_linea_dolar( $cot['dolar'] ) ); ?><?php endif; ?></p>
 			<div class="tabla-rio tabla-apilada">
 				<table>
 					<thead><tr><th scope="col"><?php pm_e( 'lic.col.region' ); ?></th><th scope="col"><?php pm_e( 'lic.col.quien' ); ?></th><th scope="col"><?php pm_e( 'lic.col.valores' ); ?></th><th scope="col"><?php pm_e( 'lic.col.leido' ); ?></th></tr></thead>

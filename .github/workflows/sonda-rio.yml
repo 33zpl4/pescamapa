@@ -12,5 +12,11 @@ jobs:
       - name: Install pdftotext
         run: sudo apt-get install -y -qq poppler-utils >/dev/null 2>&1; pdftotext -v 2>&1 | head -1
       - uses: actions/checkout@v4
+      - name: Reference values (read-only; 23/11/2026) - prints the BCRA rate and tries the Secretaría de Energía fuel price
+        continue-on-error: true
+        run: |
+          python3 -u wordpress/build/cotizaciones-traer.py /tmp/pm-cotizaciones.json
+          cat /tmp/pm-cotizaciones.json
       - name: Probe
         run: python3 -u .github/scripts/sonda-rio.py
+

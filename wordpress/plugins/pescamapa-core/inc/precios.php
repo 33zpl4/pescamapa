@@ -9,6 +9,8 @@
  * average for Argentina; n is stated for every range; no currency conversion (USD stays USD, pesos stay pesos in their own series); no provider names
  * (the data only carries a place CODE to count how many places a range comes from); a group with fewer than PM_EST_MIN_LUGARES places lists the
  * individual published prices instead of a range.
+ * Since 23/11/2026 (owner) a peso amount also gets an APPROXIMATE «≈ US$» next to it at the BCRA's official rate (inc/cotizaciones.php: weekly, dated, sourced,
+ * hidden when stale); the published prices themselves are never converted, and USD prices get no peso figure (a lodge's dollar price is not paid at the official rate).
  *
  * The calculation is a pure function (pm_estimador_calcular), no WordPress calls, unit-tested with `wp eval` (see test-wp.yml). Whole-dollar rounding:
  * the unit figures shown in the arithmetic line are the ones multiplied, so the line can be checked by hand.
@@ -343,9 +345,19 @@ function pm_estimador_num( $v ): string {
 	return 'en' === pm_lang() ? number_format( (float) $v, $dec, '.', ',' ) : number_format( (float) $v, $dec, ',', '.' );
 }
 
-/** "US$ 3.120" / "$ 666.000" (the site's money helper; never a conversion). */
+/** "US$ 3.120" / "ARS $ 666.000" (the site's money helper for dollars; pesos with the licence tool's convention, pm_cot_ars). Never a conversion. */
 function pm_estimador_monto( $v, string $moneda ): string {
-	return pm_paquete_precio_txt( [ 'monto' => $v, 'moneda' => $moneda ], pm_lang() );
+	return 'ARS' === $moneda ? pm_cot_ars( $v ) : pm_paquete_precio_txt( [ 'monto' => $v, 'moneda' => $moneda ], pm_lang() );
+}
+
+/** "≈ US$ 2.050–2.760" (or "≈ US$ 97" when both ends are the same) for a range in pesos at the fresh rate; '' without a rate. Each end is rounded to whole dollars. */
+function pm_estimador_usd_rango( $lo, $hi, ?array $dolar ): string {
+	if ( ! $dolar ) {
+		return '';
+	}
+	$a = pm_cot_usd( $lo, (float) $dolar['valor'] );
+	$b = pm_cot_usd( $hi, (float) $dolar['valor'] );
+	return '≈ ' . pm_cot_usd_txt( $a ) . ( $a === $b ? '' : '–' . pm_cot_num( $b ) );
 }
 
 /** "US$ 520–690" (one symbol, the en dash between the numbers) or "US$ 520" when both ends are equal. */
@@ -415,7 +427,7 @@ function pm_estimador_item_txt( array $it, array $s, string $formato ): string {
 }
 
 /** The arithmetic of one published price in list mode: "2 botes × 3 días × $ 666.000 = $ 3.996.000" (a package: "2 pescadores × US$ 1.260 = US$ 2.520"). */
-function pm_estimador_item_cuenta( array $it, array $s, string $formato, int $pescadores, int $cantidad ): string {
+function pm_estimador_item_cuenta( array $it, array $s, string $formato, int $pescadores, int $cantidad, ?array $dolar = null ): string {
 	$f = $it['fila'];
 	$v = [
 		'barcos'     => pm_estimador_botes_txt( (int) $s['barcos'] ),
@@ -425,12 +437,29 @@ function pm_estimador_item_cuenta( array $it, array $s, string $formato, int $pe
 		'total'      => pm_estimador_rango( $it['total_min'], $it['total_max'], $f['moneda'] ),
 	];
 	$clave = 'bote' === $s['calc'] ? 'bote' : ( 'paquete' === $s['calc'] ? 'paquete' : ( 'semana' === $formato ? 'semana' : 'dia' ) );
-	return pm_t( "est.ar.item.$clave", $v );
+	$usd   = 'ARS' === $f['moneda'] ? pm_estimador_usd_rango( $it['total_min'], $it['total_max'], $dolar ) : '';
+	return pm_t( "est.ar.item.$clave", $v ) . ( '' !== $usd ? " ($usd)" : '' );
 }
 
-/** Where, for the headline: the destination guide's name, else the short name of the zone. */
+/**
+ * Where, for the headline. A destination guide that is the ONLY one of its zone (Bariloche, El Calafate) keeps its name. A destination whose zone has several
+ * (Río Gallegos → southern Patagonia) names the zone the prices come from: "lodges de la Patagonia sur (zona de Río Gallegos)" — the range is the zone's, not the town's.
+ * No destination: the short name of the zone.
+ */
 function pm_estimador_donde_txt( string $zona, string $destino_nombre = '' ): string {
-	return '' !== $destino_nombre ? $destino_nombre : pm_t( "est.zona.$zona.corto" );
+	$corto = pm_t( "est.zona.$zona.corto" );
+	if ( '' === $destino_nombre ) {
+		return $corto;
+	}
+	if ( '' !== pm_estimador_destino_unico( $zona ) || false !== mb_stripos( $corto, $destino_nombre ) ) {
+		return $destino_nombre; // one guide in the zone, or the zone's own name already says it
+	}
+	return pm_t( 'est.donde.zona', [ 'zona' => $corto, 'destino' => $destino_nombre ] );
+}
+
+/** True when the headline names a zone because the chosen destination is one of several in it (the "sale de N precios" line then says "de la zona"). */
+function pm_estimador_es_de_zona( string $zona, string $destino_nombre ): bool {
+	return '' !== $destino_nombre && '' === pm_estimador_destino_unico( $zona ) && false === mb_stripos( pm_t( "est.zona.$zona.corto" ), $destino_nombre );
 }
 
 /**

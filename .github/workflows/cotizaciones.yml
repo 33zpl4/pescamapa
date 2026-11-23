@@ -1,0 +1,58 @@
+name: Reference values (dollar and fuel)
+
+# Every Monday: reads the official USD/ARS rate (Banco Central de la República Argentina, Estadísticas Cambiarias API) and the price of nafta súper
+# in Corrientes capital (Secretaría de Energía open data, Resolución 314/2016) with wordpress/build/cotizaciones-traer.py and stores them in the site
+# (option pm_cotizaciones) with wordpress/scripts/cotizaciones-guardar.php. They feed the APPROXIMATE «≈ US$» figures of the licence calculator and the
+# cost estimator (owner decision 23/11/2026; docs/wordpress.md → «Cotizaciones de referencia»). A value that cannot be read keeps the previous one, and the
+# site stops using it when it is stale (rate older than 21 days, fuel older than 45). Read-only towards both services. Manual run: Actions -> Reference
+# values (aplicar=false shows what was read without saving it).
+
+on:
+  schedule:
+    - cron: "41 12 * * 1"
+  workflow_dispatch:
+    inputs:
+      aplicar:
+        description: "Guardar en el sitio (false = solo mostrar lo que se leyó)"
+        default: "true"
+      nafta_precio:
+        description: "Opcional: precio del litro de nafta súper en Corrientes capital (pesos), copiado de la Secretaría de Energía, si el servidor de datos no responde desde Actions"
+        default: ""
+      nafta_fecha:
+        description: "Opcional: fecha de ese precio (AAAA-MM-DD), obligatoria si se carga el precio"
+        default: ""
+
+jobs:
+  cotizaciones:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    env:
+      WP: ${{ secrets.WP_PATH }}
+      APLICAR: ${{ github.event.inputs.aplicar || 'true' }}
+      NAFTA_PRECIO: ${{ github.event.inputs.nafta_precio }}
+      NAFTA_FECHA: ${{ github.event.inputs.nafta_fecha }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check the parsing, then read the BCRA and the Secretaría de Energía
+        run: |
+          python3 wordpress/build/cotizaciones-traer.py --test
+          python3 wordpress/build/cotizaciones-traer.py /tmp/pm-cotizaciones.json
+      - name: SSH setup
+        run: |
+          mkdir -p ~/.ssh
+          printf '%s\n' "${{ secrets.WP_SSH_KEY }}" | tr -d '\r' > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          cat > ~/.ssh/config <<EOF
+          Host wp
+            HostName ${{ secrets.WP_SSH_HOST }}
+            Port ${{ secrets.WP_SSH_PORT }}
+            User ${{ secrets.WP_SSH_USER }}
+            IdentityFile ~/.ssh/deploy_key
+            StrictHostKeyChecking accept-new
+          EOF
+      - name: Store in the site
+        run: |
+          if [ "$APLICAR" = "true" ]; then sed 's/^\$aplicar = false;/$aplicar = true;/' wordpress/scripts/cotizaciones-guardar.php > /tmp/cotizaciones-guardar.php; else cp wordpress/scripts/cotizaciones-guardar.php /tmp/cotizaciones-guardar.php; fi
+          scp -q /tmp/cotizaciones-guardar.php wp:/tmp/pm-script.php
+          scp -q /tmp/pm-cotizaciones.json wp:/tmp/pm-cotizaciones.json
+          ssh wp "chown www:www /tmp/pm-script.php /tmp/pm-cotizaciones.json && cd '$WP' && runuser -u www -- env HOME=/tmp WP_CLI_CACHE_DIR=/tmp/wp-cli-cache-www wp --path='$WP' eval-file /tmp/pm-script.php; s=\$?; rm -f /tmp/pm-script.php /tmp/pm-cotizaciones.json; exit \$s"
