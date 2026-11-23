@@ -37,7 +37,7 @@ get_header(); ?>
 				<ul>
 					<?php foreach ( $vedas['grupos'][ $g ] as $v ) : ?>
 						<li class="vm--<?php echo esc_attr( $v['estado'] ); ?>">
-							<strong><a href="#<?php echo esc_attr( $v['clave'] ); ?>"><?php echo esc_html( $v['nombre'] ); ?></a><?php echo $v['provincia'] ? ' (' . esc_html( $v['provincia'] ) . ')' : ''; ?>:</strong>
+							<strong><a href="#<?php echo esc_attr( $v['clave'] ); ?>"><?php echo esc_html( $v['nombre'] ); ?></a><?php echo $v['provincia'] && false === mb_stripos( $v['nombre'], $v['provincia'] ) ? ' (' . esc_html( $v['provincia'] ) . ')' : ''; ?>:</strong>
 							<?php echo esc_html( pm_t( 'cal.vm.fila.' . ( 'antes' === $v['estado'] || 'abierta' === $v['estado'] ? $v['estado'] : 'cerrada' ), [ 'abre' => pm_fecha( $v['abre'], $idioma ), 'cierra' => pm_fecha( $v['cierra'], $idioma ) ] ) ); ?>
 							<?php if ( $v['autoridad'] ) : ?><?php pm_e( 'cal.vm.fuente' ); ?>: <?php if ( $v['fuente_url'] ) : ?><a href="<?php echo esc_url( $v['fuente_url'] ); ?>" rel="noopener"><?php echo esc_html( $v['autoridad'] ); ?></a><?php else : ?><?php echo esc_html( $v['autoridad'] ); ?><?php endif; ?>,
 							<?php endif; ?>
