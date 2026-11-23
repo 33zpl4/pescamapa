@@ -38,7 +38,7 @@ $guias = [
 	'es' => [
 		'cuerpo' => [
 			[ 'Karku Fly Fishing pidió no publicar la suya y la da a quien consulta por una cotización. Solid Adventures ofrece además',
-			  'Karku Fly Fishing, River House y El Rincón Lodge, que aceptaron figurar en esta guía y trabajan con nosotros, pidieron no publicar su tarifa: se la pedimos nosotros para tus fechas. Solid Adventures ofrece además' ],
+			  'Karku Fly Fishing, River House y El Rincón Lodge trabajan con nosotros: te pedimos su tarifa para tus fechas y te la mandamos junto con las otras opciones. Solid Adventures ofrece además' ],
 			[ '(cañas, reels, líneas, waders y botas), según el operador.',
 			  '(cañas, reels, líneas, waders y botas), según el operador. El Rincón Lodge está en la Estancia Rincón de los Morros, a 1 h 40 min en vehículo de la ciudad de Río Gallegos. Según el lodge, da acceso a 20 km del río Gallegos y 35 km del río Penitente, en ambas márgenes, y su casa principal original, de 1902, está sobre el Penitente, con 4 habitaciones individuales y 2 dobles; ubica la entrada principal de trucha marina de mediados de diciembre a fines de abril.' ],
 			[ 'Son los datos de cada operador o directorio; no verificamos las distancias.',
@@ -46,7 +46,7 @@ $guias = [
 		],
 		'faqs' => [
 			$P_COSTO['es'] => [ 'Karku Fly Fishing pidió no publicar su tarifa: la da a quien consulta por una cotización.',
-				'Las tarifas de Karku Fly Fishing, River House y El Rincón Lodge, que pidieron no publicarlas, te las pedimos nosotros para tus fechas.' ],
+				'Las tarifas de Karku Fly Fishing, River House y El Rincón Lodge te las pedimos nosotros para tus fechas.' ],
 			$P_LLEGO['es'] => [ 'Los Morros Lodge figura en un directorio local',
 				'El Rincón Lodge informa que su estancia está a 1 h 40 min en vehículo de la ciudad de Río Gallegos. Los Morros Lodge figura en un directorio local' ],
 		],
@@ -55,7 +55,7 @@ $guias = [
 	'en' => [
 		'cuerpo' => [
 			[ 'Karku Fly Fishing asked us not to publish its own and gives it to anglers who ask for a quote. Solid Adventures also offers',
-			  'Karku Fly Fishing, River House and El Rincón Lodge, which agreed to be listed in this guide and work with us, asked us not to publish their rates: we ask them for you, for your dates. Solid Adventures also offers' ],
+			  'Karku Fly Fishing, River House and El Rincón Lodge work with us: we ask for their rates for your dates and send them to you with the other options. Solid Adventures also offers' ],
 			[ '(rods, reels, lines, waders and boots), according to the operator.',
 			  '(rods, reels, lines, waders and boots), according to the operator. El Rincón Lodge is at Estancia Rincón de los Morros, 1 h 40 min by vehicle from the city of Río Gallegos. According to the lodge, it gives access to 20 km of the Río Gallegos and 35 km of the Río Penitente, on both banks, and its original 1902 main house stands on the Penitente, with 4 single rooms and 2 doubles; it places the main sea-trout run from mid-December to the end of April.' ],
 			[ 'These are each operator\'s or directory\'s figures; we have not verified the distances.',
@@ -63,7 +63,7 @@ $guias = [
 		],
 		'faqs' => [
 			$P_COSTO['en'] => [ 'Karku Fly Fishing asked us not to publish its rate: it gives it to anglers who ask for a quote.',
-				'We ask for the rates of Karku Fly Fishing, River House and El Rincón Lodge, which asked not to publish them, for your dates.' ],
+				'We ask Karku Fly Fishing, River House and El Rincón Lodge for their rates for your dates.' ],
 			$P_LLEGO['en'] => [ 'Los Morros Lodge appears in a local directory',
 				'El Rincón Lodge reports that its estancia is 1 h 40 min by vehicle from the city of Río Gallegos. Los Morros Lodge appears in a local directory' ],
 		],
@@ -72,7 +72,7 @@ $guias = [
 	'pt' => [
 		'cuerpo' => [
 			[ 'a Karku Fly Fishing pediu que não publiquemos a sua e informa a quem pede uma cotação. A Solid Adventures oferece também',
-			  'a Karku Fly Fishing, a River House e o El Rincón Lodge, que aceitaram figurar neste guia e trabalham conosco, pediram que não publiquemos a tarifa: nós a pedimos para as suas datas. A Solid Adventures oferece também' ],
+			  'a Karku Fly Fishing, a River House e o El Rincón Lodge trabalham conosco: pedimos a tarifa deles para as suas datas e enviamos junto com as outras opções. A Solid Adventures oferece também' ],
 			[ '(varas, reels, linhas, waders e botas), segundo o operador.',
 			  '(varas, reels, linhas, waders e botas), segundo o operador. O El Rincón Lodge fica na Estancia Rincón de los Morros, a 1 h 40 min de veículo da cidade de Río Gallegos. Segundo o lodge, dá acesso a 20 km do rio Gallegos e 35 km do rio Penitente, nas duas margens, e sua casa principal original, de 1902, fica no Penitente, com 4 quartos individuais e 2 duplos; situa a entrada principal de truta marinha de meados de dezembro ao fim de abril.' ],
 			[ 'São os dados de cada operador ou diretório; não verificamos as distâncias.',
@@ -80,7 +80,7 @@ $guias = [
 		],
 		'faqs' => [
 			$P_COSTO['pt'] => [ 'A Karku Fly Fishing pediu que não publiquemos a sua tarifa: informa a quem pede uma cotação.',
-				'As tarifas da Karku Fly Fishing, da River House e do El Rincón Lodge, que pediram que não as publiquemos, nós as pedimos para as suas datas.' ],
+				'As tarifas da Karku Fly Fishing, da River House e do El Rincón Lodge nós pedimos para as suas datas.' ],
 			$P_LLEGO['pt'] => [ 'O Los Morros Lodge consta num diretório local',
 				'O El Rincón Lodge informa que sua estância fica a 1 h 40 min de veículo da cidade de Río Gallegos. O Los Morros Lodge consta num diretório local' ],
 		],
