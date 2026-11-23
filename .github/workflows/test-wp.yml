@@ -1324,7 +1324,7 @@ jobs:
           assert '%pat1%' not in t and '%n%' not in t, 'marcador de ui.json sin reemplazar'
           PY
             grep -q 'hreflang="es"' page.html && grep -q 'hreflang="pt-BR"' page.html && grep -q 'hreflang="en"' page.html && grep -q 'hreflang="x-default"' page.html && echo "✓ $r hreflang es/pt-BR/en/x-default" || { echo "✖ $r sin los hreflang"; fail=1; }
-            grep -q '<select id="lic-donde"' page.html && grep -q 'class="tabla-rio"' page.html && ! grep -q 'class="lic-res"' page.html && echo "✓ $r sin parámetros: formulario + tabla de referencia, sin resultado" || { echo "✖ $r sin parámetros: falta el formulario o la tabla, o hay resultado"; fail=1; }
+            grep -q '<select id="lic-donde"' page.html && grep -q 'class="tabla-rio' page.html && ! grep -q 'class="lic-res"' page.html && echo "✓ $r sin parámetros: formulario + tabla de referencia, sin resultado" || { echo "✖ $r sin parámetros: falta el formulario o la tabla, o hay resultado"; fail=1; }
             n=$(grep -c 'class="button primary" href="[^"]*\(armar-viaje\|planejar-viagem\|plan-your-trip\)/"' page.html); [[ "$n" == 1 ]] && echo "✓ $r un solo botón al formulario sin resultado" || { echo "✖ $r botones al formulario: $n (esperado 1)"; fail=1; }
             grep -q 'Los valores cambian cada temporada: confirmá en el enlace oficial antes de pagar\.\|Os valores mudam a cada temporada: confirme no link oficial antes de pagar\.\|Prices change every season: confirm on the official link before you pay\.' page.html && echo "✓ $r aviso de que los valores cambian" || { echo "✖ $r sin el aviso"; fail=1; }
           done
@@ -1397,6 +1397,271 @@ jobs:
           check /wp-sitemap-vistas-1.xml 200 'calculadora-licencia-de-pesca'
           check /wp-sitemap-vistas-1.xml 200 'calculadora-licenca-de-pesca'
           check /wp-sitemap-vistas-1.xml 200 'fishing-licence-calculator'
+          # --- Licence calculator, 23/11/2026 (second round): the line before the CTA depends on the destination; the reference table stacks on phones. ---
+          resultado /calculadora-licencia-de-pesca/ --data-urlencode 'donde=destino:esquina' -d quien=extranjero -d dias=1
+          python3 - <<'PY' && echo "✓ calculadora: con destino, «falta elegir con quién pescar en <destino>»; sin la frase de «dónde pescar»" || { echo "✖ calculadora: línea previa al CTA con destino"; fail=1; }
+          import re
+          t = open('page.html', encoding='utf-8').read()
+          r = re.search(r'id="resultado".*?class="lic-como"', t, re.S).group(0)
+          assert re.search(r'Con la licencia resuelta, falta elegir con quién pescar en [^<.]+\. Contanos qué buscás y te armamos las opciones\.', r), 'frase con destino'
+          assert 'falta elegir dónde pescar' not in r, 'frase sin destino con destino elegido'
+          PY
+          resultado /calculadora-licencia-de-pesca/ --data-urlencode 'donde=region:patagonia' -d quien=extranjero -d dias=3
+          grep -q 'Con la licencia resuelta, falta elegir dónde pescar\. Contanos qué buscás y te armamos las opciones\.' page.html && ! grep -q 'falta elegir con quién pescar' page.html && echo "✓ calculadora: sin destino se conserva «falta elegir dónde pescar»" || { echo "✖ calculadora: línea previa al CTA sin destino"; fail=1; }
+          resultado /pt/calculadora-licenca-de-pesca/ --data-urlencode 'donde=destino:esquina' -d quien=extranjero -d dias=1
+          grep -q 'Com a licença resolvida, falta escolher com quem pescar em ' page.html && echo "✓ calculadora pt: con destino" || { echo "✖ calculadora pt: línea con destino"; fail=1; }
+          resultado /en/fishing-licence-calculator/ --data-urlencode 'donde=destino:esquina' -d quien=extranjero -d dias=1
+          grep -q 'With the licence sorted, the next step is choosing who to fish with in ' page.html && echo "✓ calculadora en: con destino" || { echo "✖ calculadora en: línea con destino"; fail=1; }
+          curl -sS "$URL/calculadora-licencia-de-pesca/" -o page.html
+          [[ "$(grep -c 'data-label="Valores"' page.html)" -gt 5 ]] && grep -q 'class="tabla-rio tabla-apilada"' page.html && grep -q 'href="[^"]*/cuanto-cuesta-viaje-de-pesca/"' page.html && echo "✓ calculadora: tabla con rótulos por celda (tarjetas en el teléfono) y enlace al estimador en el cierre" || { echo "✖ calculadora: tabla apilada o enlace al estimador"; fail=1; }
+          grep -q '\.v-licencia \.tabla-apilada td::before { content: attr(data-label)' wordpress/themes/pescamapa/assets/extra.css && grep -q '@media (max-width: 720px)' wordpress/themes/pescamapa/assets/extra.css && echo "✓ extra.css: regla de tarjetas para .tabla-apilada a 720 px" || { echo "✖ extra.css: falta la regla de .tabla-apilada"; fail=1; }
+
+          # --- Trip cost estimator (23/11/2026): the data file, the pure function (hand-computed cases), then the rendered page in three languages. ---
+          # The numbers are those of wordpress/plugins/pescamapa-core/data/precios.json (precios-2026-11/generar.py); when the dataset is refreshed, update the expected amounts here.
+          python3 -I wordpress/build/precios-2026-11/verificar.py | tail -1 | grep -q '^OK' && echo "✓ estimador: verificar.py (sin nombres, sin las filas excluidas, series = resumen.json)" || { echo "✖ estimador: verificar.py"; fail=1; }
+          wp --path="$WP" eval '
+            $fallos = [];
+            $t = function ( $nombre, $cond ) use ( &$fallos ) { if ( ! $cond ) { $fallos[] = $nombre; } };
+            pm_lang( "es" );
+            $c = fn( ...$a ) => pm_estimador_calcular( ...$a );
+            $d = pm_estimador_datos();
+            $t( "seis zonas con datos", [ "bariloche", "el-calafate", "corrientes", "patagonia-norte", "patagonia-sur", "delta-santa-fe" ] === pm_estimador_zonas() );
+            $t( "50 precios publicados tras las exclusiones", 50 === count( $d["filas"] ) );
+            $t( "sin Hambaré (ESQ-B) ni Uguay (COR-C) y sin euros ni reales", ! array_filter( $d["filas"], fn( $f ) => in_array( $f["lugar"], [ "ESQ-B", "COR-C" ], true ) || ! in_array( $f["moneda"], [ "USD", "ARS" ], true ) ) );
+            $t( "ninguna fila lleva nombres ni fuentes internas", ! array_filter( $d["filas"], fn( $f ) => isset( $f["lugar_interno"] ) || isset( $f["fuente_interna"] ) || isset( $f["nota_interna"] ) ) );
+            // Bariloche, día con guía, 3 pescadores, 3 días. Precios por bote para 1 o 2: 7 precios de 5 lugares, de 520 a 690. Botes = ceil(3 / 2) = 2; unidades = 2 botes × 3 días = 6;
+            // total = 6 × 520 = 3120 a 6 × 690 = 4140. Por pescador y por día = 2 × 520 / 3 = 346,67 → 347 y 2 × 690 / 3 = 460.
+            $r = $c( "bariloche", "dia", 3, 1, 3 );
+            $s = $r["series"][0];
+            $t( "bariloche 3 pescadores: 2 botes", "USD" === $s["moneda"] && "rango" === $s["modo"] && 2 === $s["barcos"] && 6 === $s["unidades"] );
+            $t( "bariloche 3 pescadores × 3 días = US$ 3120–4140 (7 precios, 5 lugares)", 520 === $s["min"] && 690 === $s["max"] && 3120 === $s["total_min"] && 4140 === $s["total_max"] && 7 === $s["n"] && 5 === $s["lugares"] );
+            $t( "bariloche: por pescador y por día 347–460", 347 === $s["por_dia_min"] && 460 === $s["por_dia_max"] && "2026-10-31" === $s["desde"] && "2026-11-11" === $s["hasta"] );
+            // El mismo formato publica un precio en pesos: 666000 por día para hasta 2. Serie aparte, sin convertir: 2 botes × 3 días × 666000 = 3996000.
+            $t( "bariloche: el precio en pesos va aparte (lista, n = 1): 3996000", 2 === count( $r["series"] ) && "ARS" === $r["series"][1]["moneda"] && "lista" === $r["series"][1]["modo"] && 3996000 === $r["series"][1]["total_min"] );
+            // 2 pescadores, 1 día: 1 bote × 1 día = 520–690; por pescador 260–345 (las cifras de la nota de precios).
+            $r = $c( "bariloche", "dia", 2, 0, 1 );
+            $t( "bariloche 2 pescadores, 1 día: 1 bote, 520–690, 260–345 por pescador", 1 === $r["series"][0]["barcos"] && 520 === $r["series"][0]["total_min"] && 690 === $r["series"][0]["total_max"] && 260 === $r["series"][0]["por_dia_min"] && 345 === $r["series"][0]["por_dia_max"] );
+            // 8 pescadores: 4 botes; 9 se acota a 8.
+            $t( "8 pescadores = 4 botes; 9 → 8", 4 === $c( "bariloche", "dia", 8, 0, 1 )["series"][0]["barcos"] && 8 === $c( "bariloche", "dia", 9, 0, 1 )["pescadores"] );
+            // Semana en un lodge, Corrientes, 2 pescadores, 1 semana: 6 precios de 6 lugares, de 7000 a 7950 por persona. Total = 2 × 1 × 7000 = 14000 a 2 × 7950 = 15900.
+            // Por día de pesca: 7000 / 6 = 1166,67 → 1167 y 7950 / 6 = 1325.
+            $r = $c( "corrientes", "semana", 2, 0, 1 );
+            $s = $r["series"][0];
+            $t( "corrientes semana 2 pescadores = US$ 14000–15900 (6 precios, 6 lugares)", 14000 === $s["total_min"] && 15900 === $s["total_max"] && 6 === $s["n"] && 6 === $s["lugares"] && 2 === $s["unidades"] );
+            $t( "corrientes semana: por día de pesca 1167–1325, leído el 2026-11-13", 1167 === $s["por_dia_min"] && 1325 === $s["por_dia_max"] && "2026-11-13" === $s["desde"] && "2026-11-13" === $s["hasta"] );
+            // Patagonia sur, semana: 4 lugares; 8000 a 14950 (un lugar publica «según la fecha», hasta 14950). 3 pescadores × 2 semanas = 6 unidades: 48000 a 89700.
+            $r = $c( "patagonia-sur", "semana", 3, 0, 2 );
+            $t( "patagonia sur semana 3 pescadores × 2 semanas = US$ 48000–89700", 6 === $r["series"][0]["unidades"] && 48000 === $r["series"][0]["total_min"] && 89700 === $r["series"][0]["total_max"] && 4 === $r["series"][0]["n"] );
+            // Paquete corto en Corrientes, 2 pescadores, 4 días: 17 precios de 6 lugares; precio del paquete ÷ sus días de pesca va de 1250 (6 noches, 5 días: 6250 / 5) a 2025 (3 noches, 2 días: 4050 / 2).
+            // Total = 2 × 4 × 1250 = 10000 a 2 × 4 × 2025 = 16200.
+            $r = $c( "corrientes", "paquete", 2, 0, 4 );
+            $s = $r["series"][0];
+            $t( "corrientes paquete 2 pescadores × 4 días = US$ 10000–16200 (17 precios, 6 lugares)", "rango" === $s["modo"] && 1250 === $s["min"] && 2025 === $s["max"] && 10000 === $s["total_min"] && 16200 === $s["total_max"] && 17 === $s["n"] && 6 === $s["lugares"] );
+            // Un grupo con menos de 3 lugares (n < 3): Delta y Santa Fe, paquetes de 2 lugares. Se listan los 3 precios, sin rango. 2 pescadores: 2 × 1260 = 2520; 2 × 1680 = 3360; 2 × 3600 = 7200.
+            // Por día de pesca: 1260 / 2,5 = 504; 1680 / 3,5 = 480; 3600 / 4 = 900.
+            $r = $c( "delta-santa-fe", "paquete", 2, 0, 3 );
+            $s = $r["series"][0];
+            $t( "delta-santa-fe: 2 lugares → lista de 3 precios, sin rango", "lista" === $s["modo"] && 2 === $s["lugares"] && 3 === count( $s["items"] ) && ! isset( $s["min"] ) );
+            $t( "delta-santa-fe: totales 2520, 3360 y 7200 (los días no cambian un paquete)", [ 2520, 3360, 7200 ] === array_column( $s["items"], "total_min" ) && [ 504, 480, 900 ] === array_column( $s["items"], "por_dia" ) );
+            // Un solo lugar con 4 paquetes (Patagonia norte): también lista; 2 pescadores: 2 × 3950 = 7900 … 2 × 6350 = 12700.
+            $s = $c( "patagonia-norte", "paquete", 2, 0, 3 )["series"][0];
+            $t( "patagonia norte paquete: 1 lugar → lista, de 7900 a 12700", "lista" === $s["modo"] && 4 === $s["n"] && 1 === $s["lugares"] && 7900 === $s["total_min"] && 12700 === $s["total_max"] );
+            // Solo en pesos: El Calafate, un precio, 720000 por pescador y por día. 2 pescadores × 2 días = 4 unidades = 2880000. Sin dólares.
+            $r = $c( "el-calafate", "dia", 2, 0, 2 );
+            $t( "el calafate: solo pesos, 2 × 2 × 720000 = 2880000, sin serie en dólares", 1 === count( $r["series"] ) && "ARS" === $r["series"][0]["moneda"] && "lista" === $r["series"][0]["modo"] && 4 === $r["series"][0]["unidades"] && 2880000 === $r["series"][0]["total_min"] && 720000 === $r["series"][0]["por_dia_min"] );
+            $t( "el calafate: sin dólares, el presupuesto del formulario queda vacío", "" === pm_estimador_presupuesto( $r ) );
+            // Entrada inválida: zona desconocida → la primera zona; formato inexistente → dia; "a" → 1 pescador; array → 0 acompañantes; 99 días → 14 (ajustado).
+            $r = $c( "zzz", "x", "a", [ 1 ], 99 );
+            $t( "inválido: zona, formato, pescadores, acompañantes y días a valores seguros", "bariloche" === $r["zona"] && "dia" === $r["formato"] && 1 === $r["pescadores"] && 0 === $r["acompanantes"] && 14 === $r["cantidad"] && $r["ajustes"]["zona"] && $r["ajustes"]["formato"] && $r["ajustes"]["cantidad"] );
+            $t( "inválido: 14 días × 1 bote × 520 = 7280", 7280 === $r["series"][0]["total_min"] );
+            $r = $c( "corrientes", "dia", 1, 0, 1 );
+            $t( "formato que la zona no tiene → su primer formato (paquete), avisado", "paquete" === $r["formato"] && $r["ajustes"]["formato"] );
+            $r = $c( "corrientes", "paquete", 1, 0, 1 );
+            $t( "paquete con 1 día → 2 (rango 2–5), avisado", 2 === $r["cantidad"] && $r["ajustes"]["cantidad"] );
+            $r = $c( "corrientes", "semana", -3, 9, "x" );
+            $t( "pescadores negativo → 1; acompañantes 9 → 4; semanas \"x\" → 1 sin aviso", 1 === $r["pescadores"] && 4 === $r["acompanantes"] && 1 === $r["cantidad"] && ! $r["ajustes"]["cantidad"] );
+            // Entrada GET: destino → zona; destino sin precios (esquina) → no enviado; tipos raros → no enviado.
+            $e = pm_estimador_entrada( [ "donde" => "destino:itati", "formato" => "semana", "pescadores" => "3", "acompanantes" => "1", "semanas" => "2" ] );
+            $t( "entrada por destino → zona corrientes", $e["enviado"] && "corrientes" === $e["zona"] && "itati" === $e["destino"] && 3 === $e["pescadores"] && 1 === $e["acompanantes"] && "2" === pm_estimador_cantidad_pedida( $e ) );
+            $e = pm_estimador_entrada( [ "donde" => "destino:esquina", "formato" => "dia" ] );
+            $t( "esquina no tiene precios publicados usables → no hay resultado", ! $e["enviado"] && "" === $e["zona"] );
+            $e = pm_estimador_entrada( [ "donde" => [ "x" ], "formato" => [ "y" ], "pescadores" => [ "z" ], "dias" => [ 1 ] ] );
+            $t( "entrada con tipos raros → no enviado y valores por defecto", ! $e["enviado"] && 1 === $e["pescadores"] && 0 === $e["acompanantes"] );
+            $e = pm_estimador_entrada( [ "donde" => "zona:bariloche" ] );
+            $t( "solo la zona (enlace desde una guía) → formulario, sin resultado", ! $e["enviado"] && "bariloche" === $e["zona"] );
+            // Lo que se lleva al formulario: Bariloche, 3 pescadores, 1 acompañante, 3 días → destino único de la zona, estadía 2–3 días, y el presupuesto del punto medio
+            // de 347–460 (403,5) = 300–600.
+            $r = $c( "bariloche", "dia", 3, 1, 3 );
+            $t( "viaje: destino, pescadores, acompañantes, estadía y presupuesto", [ "destino" => "bariloche", "pescadores" => 3, "acompanantes" => 1, "estadia" => "dos-tres", "presupuesto" => "300-600" ] === pm_estimador_viaje_params( $r ) );
+            // Corrientes, 2 semanas: 12 días de pesca → "más de una semana"; punto medio de 1167–1325 = 1246 → más de 1000; sin acompañantes no viaja el campo; Corrientes tiene 3 guías: sin destino.
+            $r = $c( "corrientes", "semana", 2, 0, 2 );
+            $t( "viaje: semanas → estadía mas, presupuesto mas-1000, sin destino (zona con varias guías) ni acompañantes", [ "pescadores" => 2, "estadia" => "mas", "presupuesto" => "mas-1000" ] === pm_estimador_viaje_params( $r ) );
+            $t( "viaje: con destino elegido (itati) viaja el destino", "itati" === pm_estimador_viaje_params( $r, "itati" )["destino"] );
+            $t( "estadía por días: 1 uno, 2–3, 4–5, 6–7 semana, 8 mas", [ "uno", "dos-tres", "dos-tres", "cuatro-cinco", "cuatro-cinco", "semana", "semana", "mas" ] === array_map( "pm_estimador_estadia", [ 1, 2, 3, 4, 5, 6, 7, 8 ] ) );
+            $t( "licencia: Bariloche → región Patagonia; Patagonia sur → sin región", str_contains( pm_estimador_licencia_url( "bariloche" ), "donde=region:patagonia" ) && ! str_contains( pm_estimador_licencia_url( "patagonia-sur" ), "donde=" ) );
+            $t( "destinos: bariloche → bariloche; itati → corrientes; esquina → sin zona", "bariloche" === pm_estimador_zona_de_destino( "bariloche" ) && "corrientes" === pm_estimador_zona_de_destino( "itati" ) && "" === pm_estimador_zona_de_destino( "esquina" ) );
+            $fallos ? WP_CLI::error( "estimador: " . implode( " | ", $fallos ) ) : WP_CLI::success( "estimador: la función pura cumple todo" );
+          '
+          for r in /cuanto-cuesta-viaje-de-pesca/ /pt/quanto-custa-viagem-de-pesca/ /en/fishing-trip-cost-estimator/; do
+            curl -sS "$URL$r" -o page.html
+            python3 - "$r" <<'PY' && echo "✓ $r FAQPage + WebApplication + BreadcrumbList; FAQ visible = JSON-LD" || { echo "✖ $r: JSON-LD del estimador"; fail=1; }
+          import html, json, re, sys
+          t = open('page.html', encoding='utf-8').read()
+          js = [json.loads(b) for b in re.findall(r'<script type="application/ld\+json">(.*?)</script>', t, re.S)]
+          tipos = [j.get('@type') for j in js]
+          assert tipos.count('FAQPage') == 1 and 'WebApplication' in tipos and 'BreadcrumbList' in tipos, tipos
+          qs = [q['name'] for q in [j for j in js if j.get('@type') == 'FAQPage'][0]['mainEntity']]
+          assert len(qs) == 4, len(qs)
+          for q in qs:
+              assert '<h3>' + html.escape(q, quote=False) + '</h3>' in t, 'sin h3 visible: ' + q
+          assert not re.search(r'%[a-z_]+%', re.sub(r'<script.*?</script>', '', t, flags=re.S)), 'marcador de ui.json sin reemplazar'
+          assert 'US$ 520' in html.unescape(t), 'cifra de Bariloche en la FAQ'
+          PY
+            grep -q 'hreflang="es"' page.html && grep -q 'hreflang="pt-BR"' page.html && grep -q 'hreflang="en"' page.html && grep -q 'hreflang="x-default"' page.html && echo "✓ $r hreflang es/pt-BR/en/x-default" || { echo "✖ $r sin los hreflang"; fail=1; }
+            grep -q '<select id="est-donde"' page.html && grep -q 'class="tabla-rio tabla-apilada"' page.html && ! grep -q 'est-res' page.html && echo "✓ $r sin parámetros: formulario + tabla de referencia, sin resultado" || { echo "✖ $r sin parámetros: falta el formulario o la tabla, o hay resultado"; fail=1; }
+            n=$(grep -c 'class="button primary" href="[^"]*\(armar-viaje\|planejar-viagem\|plan-your-trip\)/"' page.html); [[ "$n" == 1 ]] && echo "✓ $r un solo botón al formulario sin resultado" || { echo "✖ $r botones al formulario: $n (esperado 1)"; fail=1; }
+            grep -q 'content="noindex' page.html && { echo "✖ $r lleva noindex"; fail=1; } || echo "✓ $r indexable"
+          done
+          check /cuanto-cuesta-viaje-de-pesca/ 200 '<h1>¿Cuánto cuesta un viaje de pesca en Argentina?</h1>' 'content="noindex'
+          check /cuanto-cuesta-viaje-de-pesca/ 200 'Elegí dónde, cuántos van y cuántos días\. Te mostramos el rango de costo con los precios publicados que leímos, la cuenta en una línea y la fecha de cada lectura\.'
+          check /cuanto-cuesta-viaje-de-pesca/ 200 'Cómo lo calculamos'
+          check /pt/quanto-custa-viagem-de-pesca/ 200 '<h1>Quanto custa uma viagem de pesca na Argentina?</h1>' 'content="noindex'
+          check /pt/quanto-custa-viagem-de-pesca/ 200 'Escolha onde, quantos vão e quantos dias\. Mostramos a faixa de custo com os preços publicados que lemos, a conta em uma linha e a data de cada leitura\.'
+          check /en/fishing-trip-cost-estimator/ 200 '<h1>How much does a fishing trip to Argentina cost?</h1>' 'content="noindex'
+          check /en/fishing-trip-cost-estimator/ 200 'Pick where, how many go and how many days\. We show the cost range from the published prices we read, the arithmetic in one line and the date of every reading\.'
+          # A result: Bariloche, 3 anglers, 1 companion, 3 days.
+          resultado /cuanto-cuesta-viaje-de-pesca/ --data-urlencode 'donde=destino:bariloche' -d formato=dia -d pescadores=3 -d acompanantes=1 -d dias=3
+          grep -q '<link rel="canonical" href="[^"?]*/cuanto-cuesta-viaje-de-pesca/">' page.html && ! grep -q 'content="noindex' page.html && echo "✓ estimador: canonical de un resultado = la página sin parámetros, sin noindex" || { echo "✖ estimador: canonical o noindex del resultado"; fail=1; }
+          python3 - <<'PY' && echo "✓ estimador: Bariloche, 3 pescadores, 3 días → US\$ 3.120–4.140 con la cuenta, por pescador, n, fechas, aviso fijo, CTA con lo elegido" || { echo "✖ estimador: resultado de Bariloche"; fail=1; }
+          import html, re
+          t = open('page.html', encoding='utf-8').read()
+          m = re.search(r'id="resultado".*?class="lic-como"', t, re.S)
+          assert m, 'sin caja de resultado'
+          r = m.group(0)
+          assert 'Para 3 pescadores, 3 días en Bariloche: entre <strong>US$ 3.120</strong> y <strong>US$ 4.140</strong>' in r, 'titular'
+          assert '2 botes × 3 días × US$ 520–690 por bote y por día = US$ 3.120–4.140' in r, 'aritmética'
+          assert 'Equivale a US$ 347–460 por pescador y por día de pesca.' in r, 'por pescador y por día'
+          assert 'Sale de 7 precios publicados de 5 lugares, leídos entre 31 de octubre de 2026 y 11 de noviembre de 2026.' in r, 'n y fechas'
+          assert 'Son precios publicados, leídos entre 31 de octubre de 2026 y 11 de noviembre de 2026. El precio final depende de tus fechas y de cuántos van: te lo confirmamos al pedir opciones.' in r, 'aviso fijo'
+          assert 'También publicado en pesos' in r and '$ 3.996.000' in r, 'serie en pesos aparte'
+          assert 'Acompañantes que no pescan (1): ninguna fuente que leímos publica una tarifa para acompañantes, así que su precio se consulta.' in r, 'acompañante'
+          assert 'equipo en 5 de 5' in r and 'traslados en 4 de 5' in r and 'Ninguna dice incluir: licencia de pesca.' in r, 'qué suele incluir (contado de los datos)'
+          assert 'Con el estimado en la mano, te traemos los precios reales para tus fechas: les preguntamos a los lugares que encajan y te mandamos las opciones comparadas.' in r, 'copy del CTA'
+          hrefs = [html.unescape(h) for h in re.findall(r'class="button primary" href="([^"]*armar-viaje[^"]*)"', t)]
+          assert len(hrefs) == 2 and hrefs[0] == hrefs[1], hrefs
+          assert hrefs[0].endswith('/armar-viaje/?destino=bariloche&pescadores=3&acompanantes=1&estadia=dos-tres&presupuesto=300-600'), hrefs[0]
+          assert r.count('class="button primary"') == 1 and 'class="cta-gratis"' in r, 'CTA en el resultado + nota'
+          assert re.search(r'href="[^"]*/calculadora-licencia-de-pesca/\?donde=region:patagonia#calculadora"', r), 'enlace a la licencia con la región'
+          PY
+          # Lodge week, Corrientes (a zone chosen, not a destination): 2 anglers, 1 week.
+          resultado /cuanto-cuesta-viaje-de-pesca/ --data-urlencode 'donde=zona:corrientes' -d formato=semana -d pescadores=2 -d semanas=1
+          python3 - <<'PY' && echo "✓ estimador: semana en Corrientes, 2 pescadores → US\$ 14.000–15.900 (6 precios), por día 1.167–1.325, sin destino en el CTA" || { echo "✖ estimador: semana en Corrientes"; fail=1; }
+          import html, re
+          t = open('page.html', encoding='utf-8').read()
+          r = re.search(r'id="resultado".*?class="lic-como"', t, re.S).group(0)
+          assert 'Para 2 pescadores, 1 semana en lodges de Corrientes: entre <strong>US$ 14.000</strong> y <strong>US$ 15.900</strong>' in r
+          assert '2 pescadores × 1 semana × US$ 7.000–7.950 por pescador y por semana = US$ 14.000–15.900' in r
+          assert 'Equivale a US$ 1.167–1.325' in r and 'Sale de 6 precios publicados de 6 lugares, leídos el 13 de noviembre de 2026.' in r
+          assert 'alojamiento en 7 de 7' in r and 'licencia de pesca en 3 de 7' in r
+          assert 'También publicado' not in r
+          h = html.unescape(re.search(r'class="button primary" href="([^"]*armar-viaje[^"]*)"', r).group(1))
+          assert h.endswith('/armar-viaje/?pescadores=2&estadia=semana&presupuesto=mas-1000'), h
+          assert re.search(r'href="[^"]*/calculadora-licencia-de-pesca/\?donde=region:corrientes#calculadora"', r)
+          PY
+          # Fewer than 3 places (n < 3): the published prices one by one, no range.
+          resultado /cuanto-cuesta-viaje-de-pesca/ --data-urlencode 'donde=zona:delta-santa-fe' -d formato=paquete -d pescadores=2 -d dias=3
+          python3 - <<'PY' && echo "✓ estimador: Delta y Santa Fe (2 lugares) → precios publicados uno por uno, sin «entre … y …»" || { echo "✖ estimador: grupo con n < 3"; fail=1; }
+          import re
+          t = open('page.html', encoding='utf-8').read()
+          r = re.search(r'id="resultado".*?class="lic-como"', t, re.S).group(0)
+          assert 'estos son los paquetes publicados que leímos' in r and 'entre <strong>' not in r
+          assert '2 pescadores × US$ 1.260 por persona = US$ 2.520' in r and 'US$ 3.360' in r and 'US$ 7.200' in r
+          assert 'Con menos de 3 lugares que publiquen precio no armamos un rango' in r
+          PY
+          # Pesos only.
+          resultado /cuanto-cuesta-viaje-de-pesca/ --data-urlencode 'donde=zona:el-calafate' -d formato=dia -d pescadores=2 -d dias=2
+          python3 - <<'PY' && echo "✓ estimador: El Calafate → solo pesos (\$ 2.880.000), sin dólares ni conversión, presupuesto fuera del enlace al formulario" || { echo "✖ estimador: solo pesos"; fail=1; }
+          import html, re
+          t = open('page.html', encoding='utf-8').read()
+          r = re.search(r'id="resultado".*?class="lic-como"', t, re.S).group(0)
+          txt = re.sub(r'<[^>]+>', '', r)
+          assert '$ 2.880.000' in txt and 'US$' not in txt, 'solo pesos'
+          assert '2 pescadores × 2 días × $ 720.000 por pescador y por día = $ 2.880.000' in txt
+          h = html.unescape(re.search(r'class="button primary" href="([^"]*armar-viaje[^"]*)"', r).group(1))
+          assert 'presupuesto=' not in h and 'destino=el-calafate' in h and 'estadia=dos-tres' in h, h
+          PY
+          # Invalid input: the form, no result, no error; a format the zone lacks → noted.
+          resultado /cuanto-cuesta-viaje-de-pesca/ --data-urlencode 'donde=zzz' -d 'formato=%00' -d pescadores=abc -d 'dias[]=x' -d 'acompanantes[][]=y'
+          ! grep -q 'est-res' page.html && grep -q '<select id="est-donde"' page.html && echo "✓ estimador: parámetros inválidos → el formulario, sin resultado" || { echo "✖ estimador: parámetros inválidos"; fail=1; }
+          resultado /cuanto-cuesta-viaje-de-pesca/ --data-urlencode 'donde=zona:el-calafate' -d formato=semana -d pescadores=99 -d dias=1
+          grep -q 'no hay precios publicados de «Semana en un lodge (7 noches)»' page.html && grep -q 'Para 8 pescadores, 1 día en El Calafate' page.html && echo "✓ estimador: formato que la zona no tiene → aviso y primer formato; 99 pescadores → 8" || { echo "✖ estimador: ajuste de formato"; fail=1; }
+          resultado /cuanto-cuesta-viaje-de-pesca/ --data-urlencode 'donde=zona:corrientes' -d formato=paquete -d pescadores=1 -d dias=1
+          grep -q 'Los paquetes cortos cubren de 2 a 5 días de pesca: usamos 2\.' page.html && echo "✓ estimador: paquete con 1 día → usa 2 y lo avisa" || { echo "✖ estimador: ajuste de días del paquete"; fail=1; }
+          # pt and en
+          resultado /pt/quanto-custa-viagem-de-pesca/ --data-urlencode 'donde=zona:bariloche' -d formato=dia -d pescadores=3 -d dias=3
+          python3 - <<'PY' && echo "✓ estimador pt: Bariloche 3 pescadores × 3 dias, data de leitura, CTA em /pt/" || { echo "✖ estimador pt: resultado"; fail=1; }
+          import html, re
+          t = open('page.html', encoding='utf-8').read()
+          r = re.search(r'id="resultado".*?class="lic-como"', t, re.S).group(0)
+          assert 'Para 3 pescadores, 3 dias em Bariloche: entre <strong>US$ 3.120</strong> e <strong>US$ 4.140</strong>' in r
+          assert '2 barcos × 3 dias × US$ 520–690 por barco e por dia = US$ 3.120–4.140' in r
+          assert 'lidos entre 31 de outubro de 2026 e 11 de novembro de 2026' in r
+          assert re.search(r'class="button primary" href="[^"]*/pt/planejar-viagem/\?', html.unescape(r))
+          PY
+          resultado /en/fishing-trip-cost-estimator/ --data-urlencode 'donde=zona:bariloche' -d formato=dia -d pescadores=3 -d dias=3
+          python3 - <<'PY' && echo "✓ estimador en: Bariloche 3 anglers × 3 days, read dates, CTA to /en/plan-your-trip/" || { echo "✖ estimador en: resultado"; fail=1; }
+          import html, re
+          t = open('page.html', encoding='utf-8').read()
+          r = re.search(r'id="resultado".*?class="lic-como"', t, re.S).group(0)
+          assert 'For 3 anglers, 3 days in Bariloche: between <strong>US$ 3,120</strong> and <strong>US$ 4,140</strong>' in r
+          assert '2 boats × 3 days × US$ 520–690 per boat per day = US$ 3,120–4,140' in r
+          assert 'read between 31 October 2026 and 11 November 2026' in r
+          assert re.search(r'class="button primary" href="[^"]*/en/plan-your-trip/\?', html.unescape(r))
+          PY
+          # No provider name of the internal dataset reaches the rendered pages or the data file.
+          for u in /cuanto-cuesta-viaje-de-pesca/ '/cuanto-cuesta-viaje-de-pesca/?donde=zona:corrientes&formato=semana&pescadores=2&semanas=1' '/cuanto-cuesta-viaje-de-pesca/?donde=zona:patagonia-norte&formato=paquete' '/cuanto-cuesta-viaje-de-pesca/?donde=zona:bariloche&formato=dia' /en/fishing-trip-cost-estimator/ /pt/quanto-custa-viagem-de-pesca/; do
+            curl -sS "$URL$u" -o page.html
+            ! grep -qiE 'Suinda|Pira Lodge|Chime|Kau Tapen|Trout Bariloche|Southern Rivers|Patagonia in the Loop|Drift Fly|Outfitters Patagonia|Guides Patagonia|Rebo Pesca|Hambar|Uguay|Karku|River House|Nervous|TripAdvisor|Viator|Challhuaquen|4tourists|Rio Bravo|Las Buitreras|pescar\.pro' page.html && echo "✓ estimador $u: sin nombres de lugares ni plataformas" || { echo "✖ estimador $u: aparece un nombre del dataset interno"; fail=1; }
+          done
+          ! grep -qiE 'Suinda|Chime|Kau Tapen|Trout Bariloche|Southern Rivers|Hambar|Uguay|Karku|River House|Nervous|TripAdvisor|Viator|lugar_interno|fuente_interna' wordpress/plugins/pescamapa-core/data/precios.json && echo "✓ data/precios.json: sin nombres" || { echo "✖ data/precios.json con nombres"; fail=1; }
+          # Entry points and machine surfaces.
+          check / 200 'href="[^"]*/cuanto-cuesta-viaje-de-pesca/"'
+          check /pt/ 200 'href="[^"]*/quanto-custa-viagem-de-pesca/"'
+          check /en/ 200 'href="[^"]*/fishing-trip-cost-estimator/"'
+          check /calculadora-licencia-de-pesca/ 200 'Estimador de costo de un viaje de pesca'
+          check /litoral/corrientes/pesca-en-esquina/ 200 'href="[^"]*/calculadora-licencia-de-pesca/' 'cuanto-cuesta-viaje-de-pesca/?donde=destino:esquina'
+          check /guias-de-pesca/esquina/ 200 '' 'cuanto-cuesta-viaje-de-pesca/?donde=destino:esquina'
+          check /llms.txt 200 'Cuánto cuesta un viaje de pesca en Argentina'
+          check /llms.txt 200 'cuanto-cuesta-viaje-de-pesca/'
+          check /llms.txt 200 'fishing-trip-cost-estimator/'
+          check /wp-sitemap-vistas-1.xml 200 'cuanto-cuesta-viaje-de-pesca'
+          check /wp-sitemap-vistas-1.xml 200 'quanto-custa-viagem-de-pesca'
+          check /wp-sitemap-vistas-1.xml 200 'fishing-trip-cost-estimator'
+          # The trip form takes what the estimator carries: anglers, companions, days of fishing and budget chip, plus the destination; a bad value is ignored.
+          curl -sS "$URL/armar-viaje/?destino=esquina&pescadores=3&acompanantes=1&estadia=cuatro-cinco&presupuesto=300-600" -o page.html
+          python3 - <<'PY' && echo "✓ armar-viaje: viene cargado con destino, pescadores, acompañantes, días de pesca y presupuesto de la URL" || { echo "✖ armar-viaje: precarga desde la URL"; fail=1; }
+          import re
+          t = open('page.html', encoding='utf-8').read()
+          tag = lambda name: re.search(r'<input[^>]*name="' + name + r'"[^>]*>', t).group(0)
+          assert 'value="3"' in tag('pescadores') and 'value="1"' in tag('acompanantes')
+          assert re.search(r'<input[^>]*name="estadia"[^>]*value="cuatro-cinco"[^>]* checked', t)
+          assert re.search(r'<input[^>]*name="presupuesto"[^>]*value="300-600"[^>]* checked', t)
+          assert re.search(r'<option value="esquina" selected', t)
+          PY
+          curl -sS -G "$URL/armar-viaje/" -d pescadores=500 -d acompanantes=zz -d estadia=nada -d 'presupuesto[]=x' -o page.html
+          python3 - <<'PY' && echo "✓ armar-viaje: valores inválidos de la URL se ignoran (pescadores acotado a 99, el resto vacío)" || { echo "✖ armar-viaje: valores inválidos"; fail=1; }
+          import re
+          t = open('page.html', encoding='utf-8').read()
+          assert 'value="99"' in re.search(r'<input[^>]*name="pescadores"[^>]*>', t).group(0) and 'value="0"' in re.search(r'<input[^>]*name="acompanantes"[^>]*>', t).group(0)
+          assert not re.search(r'<input[^>]*name="(estadia|presupuesto)"[^>]* checked', t)
+          PY
+          curl -sS "$URL/armar-viaje/" -o page.html
+          python3 - <<'PY' && echo "✓ armar-viaje: sin parámetros conserva 1 pescador, 0 acompañantes y nada elegido" || { echo "✖ armar-viaje: valores por defecto"; fail=1; }
+          import re
+          t = open('page.html', encoding='utf-8').read()
+          assert 'value="1"' in re.search(r'<input[^>]*name="pescadores"[^>]*>', t).group(0) and 'value="0"' in re.search(r'<input[^>]*name="acompanantes"[^>]*>', t).group(0)
+          assert not re.search(r'<input[^>]*name="(estadia|presupuesto)"[^>]* checked', t)
+          PY
           loc=$(curl -sS -o /dev/null -w '%{http_code} %{redirect_url}' \
             -d action=pm_consulta -d pm_tipo=viaje -d pm_idioma=en -d pm_destino=goya \
             -d pm_volver="$URL/en/plan-your-trip/" -d pm_t=$(( $(date +%s) - 60 )) \

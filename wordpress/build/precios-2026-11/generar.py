@@ -152,6 +152,53 @@ res["incluye_dia_bariloche"] = dict(fichas=5, traslados=4, equipo=5, comida=5, b
 res["pesos"] = {r["id"]: (r["monto"], r["unidad_publicada"], r["fecha_de_lectura"]) for r in FILAS if r["moneda"] == "ARS"}
 res["no_filas"] = NO_FILAS
 
+# ---------------------------------------------------------------- Datos de la herramienta "Estimador de costo de un viaje de pesca" (23/11/2026)
+# UNICA fuente de wordpress/plugins/pescamapa-core/data/precios.json (el plugin lo lee tal cual; nunca se edita a mano).
+# Solo precios publicados con fecha, USD o ARS (jamas se convierte), que dicen por cuantas personas son y, si es por dia de pesca, cuantos dias.
+# Sin nombres de lugares, plataformas ni fuentes internas: solo el codigo del lugar (para contar oferentes). Exclusiones decididas el 23/11/2026:
+# Hambare (su portada ya no mostraba tarifas el 19/11) y Uguay (precio de la pagina de una agencia, marcado "a revisar"). Karku y River House no
+# tienen filas (tarifas confidenciales). La nota del 20/11 sigue contando estas dos filas: sus cifras son otras (ver docs/wordpress.md).
+EXCLUIR_HERRAMIENTA = {"ESQ-B": "Hambare: la portada del lugar ya no mostraba tarifas el 19/11/2026",
+                       "COR-C": "Uguay: precio de la pagina de una agencia, marcado a revisar"}
+ZONAS = [  # clave, region de la calculadora de licencia cuando es inequivoca (None = varias provincias)
+    ("bariloche", "patagonia"), ("el-calafate", "santa-cruz"), ("corrientes", "corrientes"), ("patagonia-norte", "patagonia"),
+    ("patagonia-sur", None), ("delta-santa-fe", None)]
+PREFIJO_ZONA = {"BAR": "bariloche", "CAL": "el-calafate", "COR": "corrientes", "PAN": "patagonia-norte", "PAS": "patagonia-sur", "SFE": "delta-santa-fe", "DEL": "delta-santa-fe"}
+FORMATO_DE = {"dia_flotada_mosca": "dia", "dia_guiado_bote": "dia", "dia_guiado_pescador": "dia", "semana_lodge": "semana", "paquete_noches": "paquete"}
+CALC_DE = {"dia_flotada_mosca": "bote", "dia_guiado_bote": "bote", "dia_guiado_pescador": "pescador", "semana_lodge": "pescador", "paquete_noches": "paquete"}
+num = lambda x: None if x is None else (int(x) if float(x).is_integer() else x)
+HERR = []
+for r in FILAS:
+    if not r["entra_en_la_comparacion"] or r["moneda"] not in ("USD", "ARS") or r["dias_de_pesca"] is None or r["lugar_codigo"] in EXCLUIR_HERRAMIENTA:
+        continue
+    cal = CALC_DE[r["tipo_oferta"]]
+    HERR.append(dict(id=r["id"], zona=PREFIJO_ZONA[r["lugar_codigo"][:3]], formato=FORMATO_DE[r["tipo_oferta"]], calc=cal, lugar=r["lugar_codigo"],
+                     monto=num(r["monto"]), monto_max=num(r["monto_maximo"]), moneda=r["moneda"], noches=r["noches"] or None, dias=num(r["dias_de_pesca"]),
+                     capacidad=2 if cal == "bote" else 1, desde=r["unidad_publicada"].startswith("desde"), habitacion=r["habitacion"] or None,
+                     fecha=r["fecha_de_lectura"], fuente=r["fuente_tipo"]))
+destinos = {}
+for r in FILAS:
+    h = next((x for x in HERR if x["id"] == r["id"]), None)
+    if h:
+        destinos.setdefault(r["destino_clave"], set()).add(h["zona"])
+assert all(len(v) == 1 for v in destinos.values()), {k: v for k, v in destinos.items() if len(v) > 1}  # un destino solo mapea si es inequivoco
+ORDEN_F = ["dia", "paquete", "semana"]
+zonas = {z: dict(licencia=lic, formatos=[f for f in ORDEN_F if any(x["zona"] == z and x["formato"] == f for x in HERR)]) for z, lic in ZONAS}
+assert all(z["formatos"] for z in zonas.values()), "una zona sin datos"
+SERIES = {}
+for h in HERR:
+    SERIES.setdefault((h["zona"], h["formato"], h["moneda"], h["calc"]), []).append(h)
+res["herramienta"] = dict(
+    filas=len(HERR), lugares=len({h["lugar"] for h in HERR}), fechas=[min(h["fecha"] for h in HERR), max(h["fecha"] for h in HERR)],
+    excluidas=EXCLUIR_HERRAMIENTA,
+    series={f"{z}/{f}/{m}/{c}": dict(n=len(v), lugares=len({x["lugar"] for x in v}), min=min(x["monto"] for x in v), max=max(x["monto_max"] or x["monto"] for x in v)) for (z, f, m, c), v in sorted(SERIES.items())})
+herr = dict(version=1, generado="2026-11-23", fechas=res["herramienta"]["fechas"], zonas=zonas, destinos={k: sorted(v)[0] for k, v in sorted(destinos.items())},
+            incluye=dict(semana=res["incluye_semana"], dia_bote=res["incluye_dia_bariloche"]), filas=HERR)
+RUTA_HERR = os.path.join(AQUI, "..", "..", "plugins", "pescamapa-core", "data", "precios.json")
+with open(RUTA_HERR, "w", encoding="utf-8") as f:
+    json.dump(herr, f, ensure_ascii=False, indent=1)
+    f.write("\n")
+
 json.dump(dict(filas=FILAS), open(os.path.join(AQUI, "precios.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
 json.dump(res, open(os.path.join(AQUI, "resumen.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
 PUB = ["id", "destino", "tipo_oferta", "formato", "lugar_codigo", "monto", "monto_maximo", "moneda", "unidad_publicada", "pescadores_cubiertos", "noches", "dias_de_pesca", "habitacion",

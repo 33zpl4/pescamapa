@@ -106,6 +106,9 @@ get_header(); ?>
 					<li><?php pm_e( 'guias.resumen.sinprecio' ); ?></li>
 				<?php endif; ?>
 				<li><?php pm_e( 'guias.resumen.licencia', $a ); ?> <a href="<?php echo esc_url( $d['url'] . '#reglamento' ); ?>"><?php pm_e( 'paquetes.guia.intro', $a ); ?></a></li>
+				<?php if ( '' !== pm_estimador_zona_de_destino( (string) $clave ) ) : // only where the dataset has an unambiguous price zone for this destination ?>
+					<li><?php pm_e( 'est.guias.estimador' ); ?> <a href="<?php echo esc_url( pm_estimador_url( '', (string) $clave ) ); ?>"><?php pm_e( 'est.guias.estimador.enlace' ); ?></a></li>
+				<?php endif; ?>
 				<li><?php pm_e( 'guias.resumen.como' ); ?> <a href="<?php echo esc_url( pm_url_presupuesto( $idioma ) ); ?>"><?php pm_e( 'pres.enlace.corto' ); ?></a></li>
 			</ul>
 		</section>

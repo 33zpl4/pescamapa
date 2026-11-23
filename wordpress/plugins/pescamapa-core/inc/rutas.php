@@ -15,6 +15,7 @@
  *   /armar-viaje/  /pt/planejar-viagem/  /en/plan-your-trip/   trip request form (inc/consultas.php)
  *   /pedir-presupuesto-pesca/  /pt/pedir-orcamento-pesca/  /en/get-fishing-lodge-quotes/   answer page: one request, quotes from several places compared (inc/presupuesto.php)
  *   /calculadora-licencia-de-pesca/  /pt/calculadora-licenca-de-pesca/  /en/fishing-licence-calculator/   licence calculator tool (inc/licencia.php)
+ *   /cuanto-cuesta-viaje-de-pesca/  /pt/quanto-custa-viagem-de-pesca/  /en/fishing-trip-cost-estimator/   trip cost estimator tool (inc/precios.php)
  *   /  /pt/  /en/                            home
  * Views without a post (home, map, credits) are rendered by the theme's
  * vistas/<name>.php.
@@ -47,6 +48,7 @@ function pm_registrar_rutas(): void {
 		add_rewrite_rule( "^{$pre}{$seg['nosotros']}/?$", "index.php?pm_vista=nosotros&pm_lang={$i}", 'top' );
 		add_rewrite_rule( "^{$pre}{$seg['presupuesto']}/?$", "index.php?pm_vista=presupuesto&pm_lang={$i}", 'top' );
 		add_rewrite_rule( "^{$pre}{$seg['licencia']}/?$", "index.php?pm_vista=licencia&pm_lang={$i}", 'top' );
+		add_rewrite_rule( "^{$pre}{$seg['estimador']}/?$", "index.php?pm_vista=estimador&pm_lang={$i}", 'top' );
 		add_rewrite_rule( "^{$pre}{$seg['rio']}/?$", "index.php?pm_vista=rio&pm_lang={$i}", 'top' );
 		add_rewrite_rule( "^{$pre}{$seg['rio']}/([a-z0-9-]+)/?$", "index.php?pm_vista=rio-punto&pm_rio_clave=\$matches[1]&pm_lang={$i}", 'top' );
 		add_rewrite_rule( "^{$pre}{$seg['notas']}/?$", "index.php?pm_vista=notas&pm_lang={$i}", 'top' );
@@ -179,7 +181,7 @@ add_filter( 'template_include', function ( $plantilla ) {
 
 // The virtual views are not "not found" just because no post matched.
 add_filter( 'pre_handle_404', function ( $corto, $query ) {
-	if ( in_array( $query->get( 'pm_vista' ), [ 'inicio', 'mapa', 'creditos', 'entrevistas', 'notas', 'especies', 'pique', 'viaje', 'terminos', 'privacidad', 'rio', 'rio-punto', 'paquetes', 'guias', 'calendario', 'paraguias', 'nosotros', 'provincia', 'presupuesto', 'licencia' ], true ) ) {
+	if ( in_array( $query->get( 'pm_vista' ), [ 'inicio', 'mapa', 'creditos', 'entrevistas', 'notas', 'especies', 'pique', 'viaje', 'terminos', 'privacidad', 'rio', 'rio-punto', 'paquetes', 'guias', 'calendario', 'paraguias', 'nosotros', 'provincia', 'presupuesto', 'licencia', 'estimador' ], true ) ) {
 		status_header( 200 );
 		return true;
 	}

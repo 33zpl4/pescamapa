@@ -3,7 +3,9 @@
  * Trip request: /armar-viaje/, /pt/planejar-viagem/, /en/plan-your-trip/.
  * Posts to the same handler as the guide forms (pescamapa-core/inc/consultas.php):
  * every request comes to Pescamapa and nothing here links to a named outfitter.
- * ?destino=<clave>&especie=<clave> preselect the fields (links from notes and guides).
+ * ?destino=<clave>&especie=<clave> preselect the fields (links from notes and guides). The trip cost estimator (/cuanto-cuesta-viaje-de-pesca/)
+ * also sends ?pescadores=<1-99>&acompanantes=<0-30>&estadia=<key>&presupuesto=<key>; each is whitelisted like a posted value and never wins over
+ * what came back after a validation error.
  */
 defined( 'ABSPATH' ) || exit;
 
@@ -19,6 +21,18 @@ foreach ( pm_especies_lista( $idioma ) as $e ) {
 }
 $especie = sanitize_key( $_GET['especie'] ?? '' );
 $especie = isset( $especies[ $especie ] ) ? $especie : '';
+
+// Prefill from the URL (estimator): numbers inside the form's limits, option keys that exist in ui.json "opciones". Anything else is ignored.
+$get_opcion = function ( string $lista ) {
+	$k = sanitize_key( $_GET[ $lista ] ?? '' ); // phpcs:ignore WordPress.Security.NonceVerification -- read-only prefill, nothing is saved
+	return isset( pm_ui()['opciones'][ $lista ][ $k ] ) ? $k : '';
+};
+$inicial = [
+	'pescadores'   => (string) pm_consulta_entero( $_GET['pescadores'] ?? null, 1, PM_CONSULTA_MAX_PESCADORES, 1 ), // phpcs:ignore WordPress.Security.NonceVerification
+	'acompanantes' => (string) pm_consulta_entero( $_GET['acompanantes'] ?? null, 0, PM_CONSULTA_MAX_ACOMPANANTES, 0 ), // phpcs:ignore WordPress.Security.NonceVerification
+];
+$estadia_url      = $get_opcion( 'estadia' );
+$presupuesto_url  = $get_opcion( 'presupuesto' );
 
 $errores = pm_consulta_previo()['errores'];
 $v       = 'pm_previo';
@@ -86,9 +100,9 @@ get_header(); ?>
 						<legend><span class="num" aria-hidden="true">2</span> <?php pm_e( 'viaje.paso2' ); ?></legend>
 						<?php
 						pm_campos_fechas( true );
-						pm_chips( 'estadia', 'estadia', pm_t( 'viaje.estadia' ), $v( 'estadia' ) );
-						pm_campos_personas();
-						pm_chips( 'presupuesto', 'presupuesto', pm_t( 'viaje.presupuesto' ), $v( 'presupuesto' ), false, pm_t( 'viaje.presupuesto.ayuda' ) );
+						pm_chips( 'estadia', 'estadia', pm_t( 'viaje.estadia' ), $v( 'estadia' ) ?: $estadia_url );
+						pm_campos_personas( 'viaje', true, $inicial );
+						pm_chips( 'presupuesto', 'presupuesto', pm_t( 'viaje.presupuesto' ), $v( 'presupuesto' ) ?: $presupuesto_url, false, pm_t( 'viaje.presupuesto.ayuda' ) );
 						pm_chips( 'traeequipo', 'equipo_propio', pm_t( 'viaje.equipo' ), $v( 'equipo_propio' ) );
 						?>
 						<?php // Optional questions: closed by default, open when one has a value (data restored after an error). ?>

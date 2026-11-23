@@ -151,7 +151,7 @@ get_header(); ?>
 				<?php if ( $vig = pm_licencia_vigencia_txt( $res['region'], $res['vigencia'] ) ) : ?><p class="lic-vig"><?php echo esc_html( pm_t( 'lic.res.vigencia', [ 'texto' => $vig ] ) ); ?></p><?php endif; ?>
 				<p class="lic-aviso"><strong><?php pm_e( 'lic.aviso' ); ?></strong></p>
 				<div class="lic-cta">
-					<p><?php pm_e( 'lic.cta.res' ); ?></p>
+					<p><?php echo esc_html( $e['destino'] ? pm_t( 'lic.cta.res.destino', [ 'destino' => $donde_t ] ) : pm_t( 'lic.cta.res' ) ); ?></p>
 					<p class="cta-fila"><a class="button primary" href="<?php echo esc_url( $viaje ); ?>"><?php pm_e( 'lic.cta.boton' ); ?></a><?php pm_cta_nota(); ?></p>
 				</div>
 			</section>
@@ -170,16 +170,16 @@ get_header(); ?>
 		<section class="lic-tabla" aria-labelledby="tabla-h">
 			<h2 id="tabla-h"><?php pm_e( 'lic.tabla.h' ); ?></h2>
 			<p class="note"><?php pm_e( 'lic.tabla.i' ); ?></p>
-			<div class="tabla-rio">
+			<div class="tabla-rio tabla-apilada">
 				<table>
 					<thead><tr><th scope="col"><?php pm_e( 'lic.col.region' ); ?></th><th scope="col"><?php pm_e( 'lic.col.quien' ); ?></th><th scope="col"><?php pm_e( 'lic.col.valores' ); ?></th><th scope="col"><?php pm_e( 'lic.col.leido' ); ?></th></tr></thead>
 					<tbody>
 					<?php foreach ( pm_licencia_tabla() as $f ) : ?>
 						<tr>
 							<th scope="row"><?php pm_e( 'lic.region.' . $f['region'] ); ?></th>
-							<td><?php echo esc_html( $f['quien'] ); ?></td>
-							<td><?php echo esc_html( $f['valores'] ); ?></td>
-							<td><?php echo esc_html( $fecha( $f['consultada'] ) ); ?><?php if ( $f['fuente_url'] ) : ?><small><a href="<?php echo esc_url( $f['fuente_url'] ); ?>" rel="noopener"><?php pm_e( 'lic.tabla.fuente' ); ?></a></small><?php endif; ?></td>
+							<td data-label="<?php echo esc_attr( pm_t( 'lic.col.quien' ) ); ?>"><?php echo esc_html( $f['quien'] ); ?></td>
+							<td data-label="<?php echo esc_attr( pm_t( 'lic.col.valores' ) ); ?>"><?php echo esc_html( $f['valores'] ); ?></td>
+							<td data-label="<?php echo esc_attr( pm_t( 'lic.col.leido' ) ); ?>"><?php echo esc_html( $fecha( $f['consultada'] ) ); ?><?php if ( $f['fuente_url'] ) : ?><small><a href="<?php echo esc_url( $f['fuente_url'] ); ?>" rel="noopener"><?php pm_e( 'lic.tabla.fuente' ); ?></a></small><?php endif; ?></td>
 						</tr>
 					<?php endforeach; ?>
 					</tbody>
@@ -198,6 +198,7 @@ get_header(); ?>
 		<section class="fin" aria-labelledby="fin-h">
 			<h2 id="fin-h"><?php pm_e( 'lic.cta.h' ); ?></h2>
 			<p><?php pm_e( 'lic.cta.p' ); ?></p>
+			<p><?php pm_e( 'lic.cta.viaje' ); ?> <a href="<?php echo esc_url( pm_estimador_url( '', '' !== pm_estimador_zona_de_destino( (string) $e['destino'] ) ? (string) $e['destino'] : '' ) ); ?>"><?php pm_e( 'lic.cta.viaje.enlace' ); ?></a></p>
 			<p class="cta-fila"><a class="button primary" href="<?php echo esc_url( $viaje ); ?>"><?php pm_e( 'lic.cta.boton' ); ?></a><?php pm_cta_nota(); ?></p>
 		</section>
 	</div>

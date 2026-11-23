@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 """Compara el arreglo $D de wordpress/scripts/nota-precios-pesca-guiada-2026-11-20.php con resumen.json y busca nombres en el CSV publico.
+Tambien revisa los datos del estimador (wordpress/plugins/pescamapa-core/data/precios.json): sin nombres, sin las filas excluidas el 23/11,
+solo USD/ARS con fecha, cada serie igual a resumen.json["herramienta"], cada zona con formatos y cada destino mapeado a una zona que existe.
   python3 -I wordpress/build/precios-2026-11/verificar.py   (sale con 1 si algo no coincide)"""
 import json, os, re, sys, statistics as st
 A = os.path.dirname(os.path.abspath(__file__))
@@ -33,5 +35,28 @@ nombres = [r["lugar_interno"].lower() for r in F if r["lugar_interno"] and not r
 for n in nombres + ["tripadvisor", "viator", "hooked", "karku", "river house", "nervous", "pescar.pro"]:
     if n in csv or (n in php.lower() and n not in ("tripadvisor", "viator", "hooked")):
         print("NOMBRE EN PUBLICO:", n); mal.append(n)
-print("OK" if not mal else "FALLA", len(E), "cifras")
+# --- Estimador de costo de un viaje de pesca (plugin data/precios.json) ---
+raw = open(os.path.join(A, "../../plugins/pescamapa-core/data/precios.json"), encoding="utf-8").read()
+H = json.loads(raw)
+Hres = R["herramienta"]
+for n in nombres + ["tripadvisor", "viator", "hooked", "karku", "river house", "nervous", "pescar.pro", "hambare", "uguay", "lugar_interno", "fuente_interna", "nota_interna"]:
+    if n in raw.lower():
+        print("NOMBRE EN EL ESTIMADOR:", n); mal.append(n)
+excl = set(Hres["excluidas"])
+for f in H["filas"]:
+    if f["lugar"] in excl or f["moneda"] not in ("USD", "ARS") or not f["fecha"] or f["dias"] is None:
+        print("FILA NO PERMITIDA EN EL ESTIMADOR", f["id"]); mal.append(f["id"])
+series = {}
+for f in H["filas"]:
+    series.setdefault(f"{f['zona']}/{f['formato']}/{f['moneda']}/{f['calc']}", []).append(f)
+sres = {k: dict(n=len(v), lugares=len({x["lugar"] for x in v}), min=min(x["monto"] for x in v), max=max(x["monto_max"] or x["monto"] for x in v)) for k, v in series.items()}
+if sres != Hres["series"]:
+    print("LAS SERIES DEL ESTIMADOR NO COINCIDEN CON resumen.json"); mal.append("series")
+for z, c in H["zonas"].items():
+    if not c["formatos"] or any(not any(f["zona"] == z and f["formato"] == fo for f in H["filas"]) for fo in c["formatos"]):
+        print("ZONA SIN DATOS PARA UN FORMATO:", z); mal.append(z)
+for d, z in H["destinos"].items():
+    if z not in H["zonas"]:
+        print("DESTINO A UNA ZONA INEXISTENTE:", d, z); mal.append(d)
+print("OK" if not mal else "FALLA", len(E), "cifras;", len(H["filas"]), "filas del estimador en", len(series), "series")
 sys.exit(1 if mal else 0)
