@@ -182,7 +182,7 @@ add_action( 'save_post', function ( $post_id, $post ) {
 }, 20, 2 );
 
 /**
- * «Vedas y temporadas, en una mirada» of the calendar page (23/11/2026): one row per published guide that carries BOTH official
+ * «Temporadas, en una mirada» of the calendar page (23/11/2026): one row per published guide that carries BOTH official
  * season dates (temporada_abre / temporada_cierra), grouped by region in the page's order, with the authority, its link and the
  * date the regulation was verified. The data model has no separate closed-season (veda) field, so nothing is inferred: a row says
  * «season from … to …» and, against today (Argentina), «open today», «closed today: opens on …» or «closed today: the season ended on …».

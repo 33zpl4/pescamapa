@@ -2227,7 +2227,7 @@ jobs:
           check / 200 'class="hero-map"' 'id="este-mes"'
           wp --path="$WP" eval '$p = pm_buscar( "pm_destino", "esquina", "es" ); foreach ( [ "temporada_abre", "temporada_cierra", "pico_meses", "pico_quien" ] as $c ) { update_field( $c, "", $p->ID ); } wp_cache_flush();'
           wp --path="$WP" transient delete --all >/dev/null
-          # «Vedas y temporadas, en una mirada» on the calendar (23/11/2026): built only from the guides' season dates, authority and verification date.
+          # «Temporadas, en una mirada» on the calendar (23/11/2026): built only from the guides' season dates, authority and verification date.
           # One guide open today (esquina), one closed with a future opening (paso-de-la-patria), one with no dates (goya). Dates relative to today.
           wp --path="$WP" eval '
             $hoy = new DateTimeImmutable( "now", new DateTimeZone( "America/Argentina/Buenos_Aires" ) );
