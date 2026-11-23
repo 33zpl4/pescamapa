@@ -2228,11 +2228,14 @@ jobs:
           wp --path="$WP" eval '$p = pm_buscar( "pm_destino", "esquina", "es" ); foreach ( [ "temporada_abre", "temporada_cierra", "pico_meses", "pico_quien" ] as $c ) { update_field( $c, "", $p->ID ); } wp_cache_flush();'
           wp --path="$WP" transient delete --all >/dev/null
           # «Temporadas, en una mirada» on the calendar (23/11/2026): built only from the guides' season dates, authority and verification date.
-          # One guide open today (esquina), one closed with a future opening (paso-de-la-patria), one with no dates (goya). Dates relative to today.
+          # One guide open today (esquina), one closed with a future opening (paso-de-la-patria), one with no dates (the first other guide of the calendar, $sin). Dates relative to today.
+          check /calendario-de-pesca/ 200 'v-calendario'
+          sin=$(grep -o 'class="cal-destino" id="[a-z0-9-]*"' page.html | sed 's/.*id="//; s/"$//' | grep -vxE 'esquina|paso-de-la-patria' | head -n1)
+          [[ -n "$sin" ]] && echo "✓ vedas: guía sin fechas de prueba = $sin" || { echo "✖ vedas: no hay una tercera guía en el calendario"; fail=1; sin=esquina; }
           wp --path="$WP" eval '
             $hoy = new DateTimeImmutable( "now", new DateTimeZone( "America/Argentina/Buenos_Aires" ) );
             $orig = [];
-            foreach ( [ "esquina", "paso-de-la-patria", "goya" ] as $c ) {
+            foreach ( [ "esquina", "paso-de-la-patria", "'"$sin"'" ] as $c ) {
               $p = pm_buscar( "pm_destino", $c, "es" );
               foreach ( [ "temporada_abre", "temporada_cierra", "reglamento_autoridad", "reglamento_url", "reglamento_verificado" ] as $f ) { $orig[ $c ][ $f ] = (string) get_post_meta( $p->ID, $f, true ); }
             }
@@ -2249,7 +2252,7 @@ jobs:
             update_field( "reglamento_autoridad", "Autoridad Paso de Prueba", $p->ID );
             update_field( "reglamento_url", "https://example.com/paso-prueba", $p->ID );
             update_field( "reglamento_verificado", "20261102", $p->ID );
-            $p = pm_buscar( "pm_destino", "goya", "es" );
+            $p = pm_buscar( "pm_destino", "'"$sin"'", "es" );
             foreach ( [ "temporada_abre", "temporada_cierra" ] as $f ) { update_field( $f, "", $p->ID ); }
             wp_cache_flush();'
           wp --path="$WP" transient delete --all >/dev/null
@@ -2268,8 +2271,8 @@ jobs:
             grep -q 'Paso de la Patria' <<< "$lead" && echo "✓ vedas $l: la próxima temporada es Paso de la Patria" || { echo "✖ vedas $l: lead sin Paso de la Patria: $lead"; fail=1; }
             [[ $(grep -n 'id="vedas"' page.html | head -n1 | cut -d: -f1) -lt $(grep -n 'class="cal-destino"' page.html | head -n1 | cut -d: -f1) ]] && echo "✓ vedas $l: antes de las tablas" || { echo "✖ vedas $l: después de las tablas"; fail=1; }
             # Dateless guide: absent from the block, present in the table below.
-            grep -q 'href="#goya"' vedas.html && { echo "✖ vedas $l: Goya (sin fechas) aparece en el bloque"; fail=1; } || echo "✓ vedas $l: Goya fuera del bloque"
-            grep -q 'id="goya"' page.html && echo "✓ vedas $l: Goya sigue en las tablas" || { echo "✖ vedas $l: Goya falta en las tablas"; fail=1; }
+            grep -q "href=\"#$sin\"" vedas.html && { echo "✖ vedas $l: $sin (sin fechas) aparece en el bloque"; fail=1; } || echo "✓ vedas $l: $sin fuera del bloque"
+            grep -q "id=\"$sin\"" page.html && echo "✓ vedas $l: $sin sigue en las tablas" || { echo "✖ vedas $l: $sin falta en las tablas"; fail=1; }
             # FAQ: visible and in the JSON-LD with the same answer.
             grep -qF -- "$faqq" page.html && echo "✓ vedas $l: pregunta visible" || { echo "✖ vedas $l: falta la pregunta «$faqq»"; fail=1; }
             perl -0777 -ne 'print $1 while /<script type="application\/ld\+json">(.*?)<\/script>/sg' page.html | grep -qF -- "$faqq" && echo "✓ vedas $l: pregunta en JSON-LD" || { echo "✖ vedas $l: pregunta fuera del JSON-LD"; fail=1; }
