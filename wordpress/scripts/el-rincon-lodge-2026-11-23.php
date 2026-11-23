@@ -23,6 +23,15 @@ $nombre  = 'El Rincón Lodge';
 $carpeta = '/tmp/pm-fotos';
 
 $fotos = [
+	[ // first = main photo; the owner confirmed on 23/11/2026 that it can be published (it shows an angler and a guide)
+		'archivo' => 'el-rincon-lodge-trucha.jpg',
+		'titulo'  => 'Trucha marrón de mar en El Rincón Lodge',
+		'alt'     => [
+			'es' => 'Pescador y guía de El Rincón Lodge sostienen una trucha marrón de mar antes de devolverla, en un río de la Patagonia sur.',
+			'en' => 'An angler and an El Rincón Lodge guide hold a sea-run brown trout before releasing it, on a river in southern Patagonia.',
+			'pt' => 'Pescador e guia do El Rincón Lodge seguram uma truta marrom anádroma antes de soltá-la, em um rio do sul da Patagônia.',
+		],
+	],
 	[
 		'archivo' => 'el-rincon-lodge-casa.jpg',
 		'titulo'  => 'Casa principal de El Rincón Lodge',
@@ -228,7 +237,7 @@ foreach ( pm_prestadores_destino( 'rio-gallegos' ) as $x ) {
 WP_CLI::log( 'Orden de la lista de rio-gallegos: ' . implode( ' > ', $orden ) );
 $sin_tipo = $r ? array_intersect_key( $r, array_flip( [ 'nombre', 'descripcion', 'localidad', 'programa', 'temporada', 'no_incluye', 'estadia_minima', 'capacidad', 'precio' ] ) ) : []; // only the texts the card shows (internal notes and photo URLs are not public copy)
 $volcado  = wp_json_encode( $sin_tipo, JSON_UNESCAPED_UNICODE );
-$b = $r && pm_prestador_publico( $r ) && ! $r['acuerdo'] && $r['consentimiento'] && '' === $r['precio'] && '' === (string) $r['precio_fecha'] && 3 <= count( $r['fotos'] ) && array_slice( $r['fotos'], 0, 3 ) === $adjuntos
+$b = $r && pm_prestador_publico( $r ) && ! $r['acuerdo'] && $r['consentimiento'] && '' === $r['precio'] && '' === (string) $r['precio_fecha'] && count( $fotos ) <= count( $r['fotos'] ) && array_slice( $r['fotos'], 0, count( $fotos ) ) === $adjuntos
 	&& ! preg_match( $prohibido, (string) $volcado );
 WP_CLI::log( ( $b ? 'VERIFIED' : 'FALLÓ' ) . ": «{$nombre}» aparece en pm_prestadores_destino('rio-gallegos') | posición=" . ( array_search( $nombre, $orden, true ) === false ? 'no está' : array_search( $nombre, $orden, true ) + 1 ) . ' consentimiento=' . (int) ( $r['consentimiento'] ?? 0 ) . ' acuerdo=' . (int) ( $r['acuerdo'] ?? 0 ) . ' precio="' . ( $r['precio'] ?? '?' ) . '" fotos=' . count( $r['fotos'] ?? [] ) . ' sin precio, enlace, contacto ni «operador» en el texto público=' . (int) ( $r && ! preg_match( $prohibido, (string) $volcado ) ) );
 $ok = $ok && $b;
