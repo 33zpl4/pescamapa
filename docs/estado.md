@@ -230,6 +230,10 @@ todas a nosotros (centralizar datos y cobrar comisión más adelante).
   sigue como notas PENDIENTE (no se ven). Investigación:
   `docs/investigacion/esquina.md`.
 
+## Al 23/11/2026: El Rincón Lodge (Río Gallegos)
+
+- Ficha nueva con el material que el lodge mandó para figurar (PDF + 3 fotos cedidas), sin tarifa (la pidió oculta), estado «Contactado» + Aceptó aparecer, sin comisión cargada hasta que el dueño la confirme: `wordpress/scripts/el-rincon-lodge-2026-11-23.php` (simulacro por defecto, `VERIFIED`). Detalle en `docs/prestadores.md`. El texto guardado de la guía de Río Gallegos nombra a los otros lodges y no a este: revisar.
+
 ## Al 13/11/2026: Karku acordó 20 % y pidió no publicar su tarifa
 
 - **Acuerdo por correo (13/11):** 20 % sobre reservas de pescadores que llegan por Pescamapa; reconoce a quien nombre a Pescamapa; podemos encargarnos de la venta. Tabla de los tres acuerdos: `docs/prestadores.md` → "Acuerdos con operadores".
