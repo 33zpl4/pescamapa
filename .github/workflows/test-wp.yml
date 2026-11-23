@@ -2288,6 +2288,7 @@ jobs:
           # Outgoing mail (Resend): the payload is built correctly, and with no key wp_mail is left alone.
           pl=$(wp --path="$WP" eval 'echo wp_json_encode( pm_correo_payload( [ "to" => "Alguien <a@example.com>", "subject" => "S", "message" => "M", "headers" => [ "Reply-To: Otra <r@example.com>" ] ] ) );')
           [[ "$pl" == *'"from":"Pescamapa <info@pescamapa.com>"'* && "$pl" == *'"to":["a@example.com"]'* && "$pl" == *'"reply_to":"r@example.com"'* && "$pl" == *'"text":"M"'* ]] && echo "✓ payload de Resend" || { echo "✖ payload de Resend: $pl"; fail=1; }
+          sin=$(wp --path="$WP" eval 'var_dump( apply_filters( "pre_wp_mail", null, [ "to" => "a@example.com", "subject" => "S", "message" => "M" ] ) );')
           [[ "$sin" == "NULL" ]] && echo "✓ sin clave, wp_mail no se toca" || { echo "✖ sin clave el filtro respondió: $sin"; fail=1; }
           # Inquiry emails (no network): the subject is plain text, the acknowledgement links follow the language, and the send result is recorded on the Consulta.
           wp --path="$WP" eval '
