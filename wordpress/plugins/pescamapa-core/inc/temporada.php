@@ -232,7 +232,7 @@ function pm_vedas_resumen( string $idioma, ?string $hoy = null ): array {
 	$total = $abiertas + $cerradas;
 	$lead  = '';
 	if ( $total ) {
-		$lead = pm_t( 'cal.vm.lead', [ 'hoy' => pm_fecha( $hoy, $idioma ), 'a' => (string) $abiertas, 'c' => (string) $cerradas, 't' => (string) $total ], $idioma );
+		$lead = pm_t( 0 === (int) $cerradas ? 'cal.vm.lead.todas' : 'cal.vm.lead', [ 'hoy' => pm_fecha( $hoy, $idioma ), 'a' => (string) $abiertas, 'c' => (string) $cerradas, 't' => (string) $total ], $idioma );
 		if ( $proxima ) {
 			$lead .= ' ' . pm_t( 'cal.vm.proxima', [ 'lugar' => $proxima['lugar'], 'fecha' => pm_fecha( $proxima['ymd'], $idioma ) ], $idioma );
 		}
