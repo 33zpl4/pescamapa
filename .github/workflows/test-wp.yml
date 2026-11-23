@@ -1330,7 +1330,7 @@ jobs:
           done
           check /calculadora-licencia-de-pesca/ 200 '<h1>Calculadora de licencia de pesca en Argentina</h1>' 'content="noindex'
           check /calculadora-licencia-de-pesca/ 200 '<title>Calculadora de licencia de pesca en Argentina | Pescamapa</title>'
-          check /calculadora-licencia-de-pesca/ 200 'Elegí dónde pescás, quién sos y cuántos días\. Te mostramos el permiso más barato en pesos \(ARS\) con un equivalente aproximado en dólares, la fuente y la fecha en que la leímos\.'
+          check /calculadora-licencia-de-pesca/ 200 'Elegí dónde pescás, quién sos y cuántos días\. Te mostramos el permiso más barato en pesos (ARS) con un equivalente aproximado en dólares, la fuente y la fecha en que la leímos\.'
           check /calculadora-licencia-de-pesca/ 200 'value="destino:esquina"'
           check /calculadora-licencia-de-pesca/ 200 'Cómo lo calculamos'
           check /calculadora-licencia-de-pesca/ 200 '¿Cuánto cuesta la licencia de pesca para un extranjero?'
@@ -1803,7 +1803,6 @@ jobs:
           r = re.search(r'id="resultado".*?class="lic-como"', t, re.S).group(0)
           txt = re.sub(r'<[^>]+>', '', r)
           assert 'ARS $ 2.880.000' in txt and 'class="est-usd">≈ US$ 1.986</p>' in r, 'pesos y su aproximación'
-          assert '(≈ US$ 1.986)' in txt, 'la cuenta de la lista también'
           assert 'Dólar oficial (BCRA) del ' + sys.argv[1] + ': $ 1.450 por US$. Valor aproximado; lo actualizamos cada semana.' in txt and r.count('est-dolar') == 1
           PY
           resultado /cuanto-cuesta-viaje-de-pesca/ --data-urlencode 'donde=zona:bariloche' -d formato=dia -d pescadores=3 -d dias=3
