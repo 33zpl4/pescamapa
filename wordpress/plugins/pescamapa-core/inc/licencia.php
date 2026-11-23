@@ -442,7 +442,7 @@ function pm_licencia_usa_dolar( array $res, ?array $cot = null ): bool {
 
 /**
  * One plan as a line of arithmetic: "10 días + 2 × 1 día = ARS $ 140.000 + ARS $ 100.000 = ARS $ 240.000 (≈ US$ 166)" (a single permit: "10 días = ARS $ 140.000 (≈ US$ 97)").
- * Corrientes with a fresh fuel price: "3 días = ≈ ARS $ 48.000 (24 litros · ≈ US$ 33)"; several permits list their litres: "(36 + 32 = 68 litros · ≈ US$ 94)".
+ * Corrientes with a fresh fuel price: "3 días ≈ ARS $ 48.000 (24 litros · ≈ US$ 33)"; several permits list their litres: "(36 + 32 = 68 litros · ≈ US$ 94)".
  * The US$ figure only goes after the plan's total, never on the parts.
  */
 function pm_licencia_plan_txt( array $plan, string $unidad, ?array $cot = null ): string {
@@ -463,7 +463,7 @@ function pm_licencia_plan_txt( array $plan, string $unidad, ?array $cot = null )
 		if ( '' !== $usd ) {
 			$det[] = $usd;
 		}
-		return implode( ' + ', $partes ) . ' = ' . $total . ' (' . implode( ' · ', $det ) . ')';
+		return implode( ' + ', $partes ) . ' ' . $total . ' (' . implode( ' · ', $det ) . ')'; // the total already starts with «≈»: no «= ≈»
 	}
 	return implode( ' + ', $partes ) . ' = ' . ( count( $sumas ) > 1 ? implode( ' + ', $sumas ) . ' = ' : '' ) . $total . ( '' !== $usd ? ' (' . $usd . ')' : '' );
 }
@@ -476,10 +476,10 @@ function pm_licencia_vigencia_txt( string $region, string $es ): string {
 }
 
 /** The single published value of a permit (for the FAQ and the reference table): '' when there is none. */
-function pm_licencia_valor_txt( string $region, string $quien, $dias ): string {
+function pm_licencia_valor_txt( string $region, string $quien, $dias, ?array $cot = null ): string {
 	foreach ( pm_licencia_filas( $region ) as $f ) {
 		if ( ( $f['quien_clave'] ?? '' ) === $quien && 'permiso' === ( $f['tipo'] ?? '' ) && ( $f['dias'] ?? null ) === $dias ) {
-			return pm_licencia_monto( $f['valor'], false !== strpos( (string) ( $f['unidad'] ?? '' ), 'litros' ) ? 'litros' : 'ARS' );
+			return pm_licencia_monto( $f['valor'], false !== strpos( (string) ( $f['unidad'] ?? '' ), 'litros' ) ? 'litros' : 'ARS', $cot );
 		}
 	}
 	return '';
@@ -493,6 +493,8 @@ function pm_licencia_fechas(): array {
 
 /** FAQ as [pregunta, respuesta] pairs. The amounts come from the data, so the answers follow the next season's values. */
 function pm_licencia_faqs(): array {
+	$cot = function_exists( 'pm_cotizaciones' ) ? pm_cotizaciones() : null;
+	$cot = is_array( $cot ) && ( $cot['nafta'] ?? null ) ? [ 'nafta' => $cot['nafta'] ] : null; // only Corrientes changes: the other amounts stay as published
 	$v = [
 		'pat1'  => pm_licencia_valor_txt( 'patagonia', 'extranjero', 1 ),
 		'pat'   => pm_licencia_valor_txt( 'patagonia', 'extranjero', 'temporada' ),
@@ -501,8 +503,8 @@ function pm_licencia_faqs(): array {
 		'tdf1'  => pm_licencia_valor_txt( 'tierra-del-fuego', 'extranjero', 1 ),
 		'tdf'   => pm_licencia_valor_txt( 'tierra-del-fuego', 'extranjero', 'temporada' ),
 		'er5'   => pm_licencia_valor_txt( 'entre-rios', 'extranjero', 5 ),
-		'ctes1' => pm_licencia_valor_txt( 'corrientes', 'extranjero', 1 ),
-		'ctes6' => pm_licencia_valor_txt( 'corrientes', 'extranjero', 6 ),
+		'ctes1' => pm_licencia_valor_txt( 'corrientes', 'extranjero', 1, $cot ), // pesos (≈) with a fresh fuel price, litres without
+		'ctes6' => pm_licencia_valor_txt( 'corrientes', 'extranjero', 6, $cot ),
 	];
 	$faqs = [];
 	foreach ( [ 1, 2, 3, 4, 5 ] as $n ) {

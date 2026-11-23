@@ -1721,9 +1721,9 @@ jobs:
             $t( "titular Corrientes 3 días: ≈ ARS $ 48.000 + ≈ US$ 33 (modo aprox); sin precio: 24 litros (modo litros)", [ "monto" => "≈ ARS $ 48.000", "usd" => "≈ US$ 33", "modo" => "aprox" ] === pm_licencia_titular( $r, $cot ) && [ "monto" => "24 litros de nafta súper", "usd" => "", "modo" => "litros" ] === pm_licencia_titular( $r, [ "dolar" => $bd, "nafta" => null ] ) );
             $t( "el cálculo en litros no cambia con la cotización", 24 === $r["total"] && "litros" === $r["unidad"] && 24 === pm_licencia_calcular( "corrientes", "extranjero", 3 )["mejor"]["total"] );
             $t( "plan Patagonia: 10 días = ARS $ 140.000 (≈ US$ 97)", "10 días = ARS $ 140.000 (≈ US$ 97)" === pm_licencia_plan_txt( pm_licencia_calcular( "patagonia", "extranjero", 3 )["mejor"], "ARS", $cot ) );
-            $t( "plan Corrientes: 3 días = ≈ ARS $ 48.000 (24 litros · ≈ US$ 33)", "3 días = ≈ ARS $ 48.000 (24 litros · ≈ US$ 33)" === pm_licencia_plan_txt( pm_licencia_calcular( "corrientes", "extranjero", 3 )["mejor"], "litros", $cot ) );
+            $t( "plan Corrientes: 3 días ≈ ARS $ 48.000 (24 litros · ≈ US$ 33)", "3 días ≈ ARS $ 48.000 (24 litros · ≈ US$ 33)" === pm_licencia_plan_txt( pm_licencia_calcular( "corrientes", "extranjero", 3 )["mejor"], "litros", $cot ) );
             $dos = [ "items" => [ [ "periodo" => "6 días", "cant" => 1, "subtotal" => 36 ], [ "periodo" => "1 día", "cant" => 1, "subtotal" => 16 ] ], "total" => 52 ];
-            $t( "plan Corrientes con dos permisos: litros que suman, pesos y US$ al final", "6 días + 1 día = ≈ ARS $ 104.000 (36 + 16 = 52 litros · ≈ US$ 72)" === pm_licencia_plan_txt( $dos, "litros", $cot ) );
+            $t( "plan Corrientes con dos permisos: litros que suman, pesos y US$ al final", "6 días + 1 día ≈ ARS $ 104.000 (36 + 16 = 52 litros · ≈ US$ 72)" === pm_licencia_plan_txt( $dos, "litros", $cot ) );
             $dos = [ "items" => [ [ "periodo" => "10 días", "cant" => 1, "subtotal" => 140000 ], [ "periodo" => "1 día", "cant" => 2, "subtotal" => 100000 ] ], "total" => 240000 ];
             $t( "plan en pesos con dos tramos: ARS en cada suma, US$ solo tras el total", "10 días + 2 × 1 día = ARS $ 140.000 + ARS $ 100.000 = ARS $ 240.000 (≈ US$ 166)" === pm_licencia_plan_txt( $dos, "ARS", $cot ) && "10 días + 2 × 1 día = ARS $ 140.000 + ARS $ 100.000 = ARS $ 240.000" === pm_licencia_plan_txt( $dos, "ARS" ) );
             $t( "nafta línea: litros × precio, fuente y fecha", "Corrientes fija la licencia en litros de nafta súper: 24 litros × $ 2.000 el litro (precio en surtidor de YPF en Corrientes capital, Secretaría de Energía, 20 de noviembre de 2026). El portal oficial calcula el importe final al comprar." === pm_licencia_nafta_linea( 24, $bn ) && false === strpos( pm_licencia_nafta_linea( 24, [ "bandera" => "" ] + $bn ), "de YPF" ) );
@@ -1761,7 +1761,7 @@ jobs:
           assert 'class="lic-total"><strong>≈ ARS $ 48.000</strong> <span class="lic-usd">≈ US$ 33</span></p>' in r, 'titular en pesos aproximados'
           assert 'class="lic-total"><strong>24 litros' not in r and 'Corrientes cobra la licencia según' not in r, 'el titular no son litros'
           assert 'Corrientes fija la licencia en litros de nafta súper: 24 litros × $ 2.000 el litro (precio en surtidor de YPF en Corrientes capital, Secretaría de Energía, ' + sys.argv[1] + '). El portal oficial calcula el importe final al comprar.' in r, 'explicación en una línea'
-          assert '3 días = ≈ ARS $ 48.000 (24 litros · ≈ US$ 33)' in r, 'opciones en pesos con los litros entre paréntesis'
+          assert '3 días ≈ ARS $ 48.000 (24 litros · ≈ US$ 33)' in r, 'opciones en pesos con los litros entre paréntesis'
           assert 'Dólar oficial (BCRA) del ' + sys.argv[2] + ': $ 1.450 por US$.' in r and 'los pasa a pesos al comprar' not in r
           PY
           resultado /pt/calculadora-licenca-de-pesca/ --data-urlencode 'donde=region:patagonia' -d quien=extranjero -d dias=3
