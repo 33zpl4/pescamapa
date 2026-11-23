@@ -256,8 +256,11 @@ function pm_campos_fechas( bool $largo, string $prefijo = 'viaje' ): void {
 	echo '</div>';
 }
 
-/** Anglers (default 1) and companions who do not fish (default 0): plain number inputs; JS adds the - / + buttons. */
-function pm_campos_personas( string $prefijo = 'viaje', bool $ayudas = true ): void {
+/**
+ * Anglers (default 1) and companions who do not fish (default 0): plain number inputs; JS adds the - / + buttons.
+ * $inicial: starting values by field name (the estimator's link); what came back after an error always wins.
+ */
+function pm_campos_personas( string $prefijo = 'viaje', bool $ayudas = true, array $inicial = [] ): void {
 	echo '<div class="grilla grilla-2 personas">';
 	$campos = [
 		'pescadores'   => [ 1, PM_CONSULTA_MAX_PESCADORES, '1' ],
@@ -265,7 +268,7 @@ function pm_campos_personas( string $prefijo = 'viaje', bool $ayudas = true ): v
 	];
 	foreach ( $campos as $campo => [ $min, $max, $def ] ) {
 		$id  = "{$prefijo}-{$campo}";
-		$val = pm_previo( $campo, $def );
+		$val = pm_previo( $campo, (string) ( $inicial[ $campo ] ?? $def ) );
 		printf(
 			'<div class="campo"><label for="%1$s">%2$s</label><div class="stepper" data-menos="%3$s" data-mas="%4$s"><input type="number" id="%1$s" name="%5$s" min="%6$d" max="%7$d" step="1" value="%8$s" inputmode="numeric"%9$s></div>%10$s</div>',
 			esc_attr( $id ),

@@ -4,7 +4,7 @@ Decidido el 26/10/2026: no enlazamos guías ni lodges concretos en las notas. To
 
 - URLs: `/armar-viaje/`, `/pt/planejar-viagem/`, `/en/plan-your-trip/`. Vista `themes/pescamapa/vistas/viaje.php`, textos `viaje.*` en `data/ui.json`.
 - Mismo endpoint y misma bandeja que el formulario de las guías (`inc/consultas.php`, Consultas en wp-admin, aviso por email). Las opciones de elección se guardan con la etiqueta en español para que el email se lea natural. Los campos están en la sección "Formulario (UX del 13/11/2026)" de abajo.
-- Se preselecciona con `?destino=<clave>&especie=<clave>`: las notas enlazan así ("Armá tu viaje a Goya").
+- Se preselecciona con `?destino=<clave>&especie=<clave>`: las notas enlazan así ("Armá tu viaje a Goya"). El estimador de costo (`docs/wordpress.md`) agrega `&pescadores=<1-99>&acompanantes=<0-30>&estadia=<clave>&presupuesto=<clave>` (lista blanca; lo que vuelve de un error de validación gana).
 - Obligatorios: nombre y contacto. Anti-spam: honeypot `pm_web`, tiempo mínimo y límite por IP (igual que el resto).
 - Plazo de respuesta prometido: **24–48 horas** (dueño, 19/11/2026; antes 48 horas, 13/11/2026), en `viaje.garantia`, `viaje.gracias.p`, `acuse.viaje`, `contraste.con.3` y las demás claves del plazo (es/pt/en, más `llms.txt`). `acuse.prestador` y `consulta.ok.prestador` (alta de prestadores) no lo llevan; la confirmación del pescador en las fichas es `consulta.ok.pescador` (con 48 horas). La clave compartida `consulta.ok` ya no existe (13/11/2026).
 - Falta enlazar desde la navegación, el pie y el sitemap: se hace después de mirar la captura (`capturas.yml`) y dar el visto bueno de diseño.

@@ -126,6 +126,7 @@ require PM_DIR . 'inc/legal.php';
 require PM_DIR . 'inc/rio.php';
 require PM_DIR . 'inc/presupuesto.php';
 require PM_DIR . 'inc/licencia.php';
+require PM_DIR . 'inc/precios.php';
 require PM_DIR . 'inc/maquinas.php';
 
 register_activation_hook( __FILE__, function () {

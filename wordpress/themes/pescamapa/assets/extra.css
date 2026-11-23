@@ -704,3 +704,31 @@ footer .negocio a { color: var(--white); text-decoration: underline; text-underl
 .v-licencia .lic-tabla .tabla-rio td small { display: block; }
 .v-licencia .faq h3 { font-size: var(--fs-lead); margin: 18px 0 6px; }
 .v-licencia .cta-fila { margin: 12px 0 0; }
+
+/* Estimador de costo de un viaje de pesca (23/11/2026): usa el aspecto de la calculadora de licencia (clase v-licencia); aquí solo lo propio. Solo tokens. */
+.v-estimador .est-titular { margin: 0 0 10px; font: 400 var(--fs-lead)/1.4 var(--font-body); color: var(--ink); }
+.v-estimador .est-titular strong { font: 700 var(--fs-h3)/1.2 var(--font-head); color: var(--ink); white-space: nowrap; }
+.v-estimador .est-titular-lista { font-weight: 600; }
+.v-estimador .est-rotulo { font: 400 var(--fs-label)/1.2 var(--font-label); letter-spacing: 0.04em; text-transform: uppercase; color: var(--olive); }
+.v-estimador .est-cuenta { overflow-wrap: anywhere; }
+.v-estimador .est-lista strong { font-weight: 600; overflow-wrap: anywhere; }
+.v-estimador .est-otra { margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--line-strong); }
+.v-estimador .est-otra h3 { margin: 0 0 10px; }
+.v-estimador .est-ayuda { margin: 0; }
+.v-estimador .est-fijo { margin: 4px 0 0; }
+.v-estimador .est-incluye { margin: 0 0 8px; }
+.v-estimador .est-aparte { margin-top: 0; }
+.v-estimador .campo[hidden] { display: none; }
+
+/* Tablas de referencia de la calculadora de licencia y del estimador (23/11/2026): en el teléfono cada fila pasa a ser una tarjeta (como «En una mirada»)
+   en vez de una tabla ancha cuya última columna queda cortada. Cada celda lleva su rótulo en data-label. */
+@media (max-width: 720px) {
+	.v-licencia .tabla-apilada { overflow-x: visible; }
+	.v-licencia .tabla-apilada thead { position: absolute; inline-size: 1px; block-size: 1px; overflow: hidden; clip-path: inset(50%); }
+	.v-licencia .tabla-apilada table, .v-licencia .tabla-apilada tbody, .v-licencia .tabla-apilada tr, .v-licencia .tabla-apilada th, .v-licencia .tabla-apilada td { display: block; width: auto; }
+	.v-licencia .tabla-apilada tr { padding: 10px 0; border-bottom: 1px solid var(--line-strong); }
+	.v-licencia .tabla-apilada tbody tr:last-child { border-bottom: 0; }
+	.v-licencia .tabla-apilada th, .v-licencia .tabla-apilada td { border: 0; padding: 4px 4px; font: 400 var(--fs-small)/1.45 var(--font-body); text-transform: none; letter-spacing: normal; overflow-wrap: anywhere; }
+	.v-licencia .tabla-apilada tbody th { font: 700 var(--fs-lead)/1.3 var(--font-body); }
+	.v-licencia .tabla-apilada td::before { content: attr(data-label) ': '; font-weight: 700; }
+}
