@@ -1246,6 +1246,157 @@ jobs:
           check /wp-sitemap-vistas-1.xml 200 'pedir-presupuesto-pesca'
           check /wp-sitemap-vistas-1.xml 200 'pedir-orcamento-pesca'
           check /wp-sitemap-vistas-1.xml 200 'get-fishing-lodge-quotes'
+          # Licence calculator (23/11/2026): pure function (wp eval), then the rendered page in three languages. The numbers are the ones of
+          # wordpress/plugins/pescamapa-core/data/licencias.json (generar-datos.py); when next season's values replace them, update the expected amounts here.
+          wp --path="$WP" eval '
+            $fallos = [];
+            $t = function ( $nombre, $cond ) use ( &$fallos ) { if ( ! $cond ) { $fallos[] = $nombre; } };
+            $c = fn( ...$a ) => pm_licencia_calcular( ...$a );
+            $r = $c( "patagonia", "extranjero", 1 );
+            $t( "patagonia 1 día = 50000", "ok" === $r["estado"] && 50000 === $r["total"] && "ARS" === $r["unidad"] );
+            $r = $c( "patagonia", "extranjero", 3 );
+            $t( "patagonia 3 días: el de 10 días (140000)", 140000 === $r["total"] && "10 días" === $r["mejor"]["items"][0]["periodo"] && 1 === $r["mejor"]["items"][0]["cant"] );
+            $t( "patagonia 3 días: 3 × 1 día = 150000 figura como opción", in_array( 150000, array_column( $r["planes"], "total" ), true ) && 10000 === $r["ahorro"] );
+            // 12 días, extranjero, Patagonia (1 día 50000; 10 días 140000; temporada 280000). Válidas: 10 días + 2 × 1 día = 140000 + 100000 = 240000;
+            // 2 × 10 días = 280000; temporada = 280000; 12 × 1 día = 600000. La más barata es la combinación, 240000: gana a la temporada por 40000.
+            $r = $c( "patagonia", "extranjero", 12 );
+            $t( "patagonia 12 días = 240000 (10 + 2 × 1)", 240000 === $r["total"] && 2 === count( $r["mejor"]["items"] ) && 10 === $r["mejor"]["items"][0]["dias"] && 2 === $r["mejor"]["items"][1]["cant"] );
+            $t( "patagonia 12 días: la temporada (280000) y 12 × 1 día (600000) figuran como opciones", [ 240000, 280000, 280000, 600000 ] === array_column( $r["planes"], "total" ) );
+            // 13 días: 10 + 3 × 1 = 290000 supera la temporada (280000).
+            $r = $c( "patagonia", "extranjero", 13 );
+            $t( "patagonia 13 días: gana la temporada (280000)", 280000 === $r["total"] && "temporada" === $r["mejor"]["items"][0]["dias"] );
+            $r = $c( "patagonia", "extranjero", "temporada" );
+            $t( "patagonia toda la temporada = 280000", 280000 === $r["total"] );
+            $r = $c( "santa-cruz", "extranjero", 7 );
+            $t( "santa-cruz 7 días = 300000", 300000 === $r["total"] );
+            $r = $c( "tierra-del-fuego", "extranjero", 1, [ "zona-grande" ] );
+            $t( "tierra-del-fuego 1 día + zona preferencial = 78000 + 59000", 137000 === $r["total"] && 78000 === $r["mejor"]["total"] && "zona-grande" === $r["extras"][0]["clave"] && 59000 === $r["extras"][0]["mejor"]["total"] );
+            $r = $c( "patagonia", "extranjero", 3, [ "zona-grande" ] );
+            $t( "un adicional que no existe en la región se descarta", [] === $r["extras_ok"] && 140000 === $r["total"] );
+            $r = $c( "corrientes", "extranjero", 1 );
+            $t( "corrientes 1 día = 16 litros (sin pesos)", 16 === $r["total"] && "litros" === $r["unidad"] );
+            pm_lang( "es" );
+            $t( "corrientes: el monto va en litros, nunca en $", false !== strpos( pm_licencia_monto( 16, "litros" ), "litros de nafta súper" ) && false === strpos( pm_licencia_monto( 16, "litros" ), "$" ) );
+            $r = $c( "corrientes", "extranjero", 5 );
+            $t( "corrientes 5 días = el de 6 días (36 litros)", 36 === $r["total"] );
+            $r = $c( "corrientes", "extranjero", "temporada" );
+            $t( "corrientes sin permiso de temporada", "sin_cobertura" === $r["estado"] && null === $r["total"] );
+            $r = $c( "buenos-aires", "general", 3 );
+            $t( "buenos-aires general = sin valor, con enlace oficial", "sin_valor" === $r["estado"] && null === $r["total"] && 0 === strpos( $r["fuente"]["url"], "https://" ) );
+            $r = $c( "buenos-aires", "jubilado", 3 );
+            $t( "buenos-aires jubilado = sin cargo", "gratis" === $r["estado"] && 0 === $r["total"] );
+            $r = $c( "corrientes", "residente-pais", 1 );
+            $t( "corrientes residente = sin valor", "sin_valor" === $r["estado"] );
+            $r = $c( "santa-fe", "general", 1 );
+            $t( "santa-fe = sin valor", "sin_valor" === $r["estado"] );
+            $r = $c( "entre-rios", "extranjero", 1 );
+            $t( "entre-rios conserva los centavos (24251.6)", 24251.6 === $r["total"] );
+            // Invalid input: safe defaults, no warning (the debug.log check at the end of the job fails on any PHP warning).
+            $r = $c( "zzz", "???", -5, [ "x", [ "y" ], "zona-grande" ] );
+            $t( "región/quien/días inválidos → Patagonia, extranjero, 1 día", "patagonia" === $r["region"] && "extranjero" === $r["quien"] && 1 === $r["dias"] && [] === $r["extras_ok"] && 50000 === $r["total"] );
+            $r = $c( "santa-fe", "extranjero", "x" );
+            $t( "quien que la región no tiene → el primero de la región, avisado", $r["ajustes"]["quien"] && "general" === $r["quien"] );
+            $t( "días: 0, 31, texto → 1; temporada se conserva", 1 === pm_licencia_dias( "0" ) && 1 === pm_licencia_dias( "31" ) && 1 === pm_licencia_dias( [ 2 ] ) && 30 === pm_licencia_dias( "30" ) && "temporada" === pm_licencia_dias( "temporada" ) );
+            $e = pm_licencia_entrada( [ "donde" => [ "x" ], "quien" => [ "y" ], "dias" => [ "z" ], "extra" => "w" ] );
+            $t( "entrada con tipos raros → no enviado", false === $e["enviado"] && "" === $e["region"] && 1 === $e["dias"] && [] === $e["extras"] );
+            $e = pm_licencia_entrada( [ "donde" => "destino:esquina", "quien" => "extranjero", "dias" => "temporada", "extra" => [ "trolling", "zzz", [ "q" ] ] ] );
+            $t( "entrada por destino → región del destino", $e["enviado"] && "corrientes" === $e["region"] && "esquina" === $e["destino"] && "temporada" === $e["dias"] && [ "trolling" ] === $e["extras"] );
+            $e = pm_licencia_entrada( [ "donde" => "destino:esquina" ] );
+            $t( "solo el destino (enlace desde la guía) → formulario, sin resultado", ! $e["enviado"] && "corrientes" === $e["region"] );
+            // The Spanish validity texts in ui.json equal the ones in the data (the pt/en versions translate those).
+            foreach ( [ "patagonia", "santa-cruz", "tierra-del-fuego", "entre-rios" ] as $reg ) {
+              foreach ( pm_licencia_filas( $reg ) as $f ) { if ( "" === $f["solo_en"] ) { $t( "vigencia $reg igual en ui.json y datos", $f["vigencia"] === pm_t( "lic.vig.$reg", [], "es" ) ); break; } }
+            }
+            $fallos ? WP_CLI::error( "licencia: " . implode( " | ", $fallos ) ) : WP_CLI::success( "licencia: la función pura cumple todo" );
+          '
+          for r in /calculadora-licencia-de-pesca/ /pt/calculadora-licenca-de-pesca/ /en/fishing-licence-calculator/; do
+            curl -sS "$URL$r" -o page.html
+            python3 - "$r" <<'PY' && echo "✓ $r FAQPage + WebApplication + BreadcrumbList; FAQ visible = JSON-LD" || { echo "✖ $r: JSON-LD de la calculadora"; fail=1; }
+          import html, json, re, sys
+          t = open('page.html', encoding='utf-8').read()
+          js = [json.loads(b) for b in re.findall(r'<script type="application/ld\+json">(.*?)</script>', t, re.S)]
+          tipos = [j.get('@type') for j in js]
+          assert tipos.count('FAQPage') == 1 and 'WebApplication' in tipos and 'BreadcrumbList' in tipos, tipos
+          qs = [q['name'] for q in [j for j in js if j.get('@type') == 'FAQPage'][0]['mainEntity']]
+          assert len(qs) == 4, len(qs)
+          for q in qs:
+              assert '<h3>' + html.escape(q, quote=False) + '</h3>' in t, 'sin h3 visible: ' + q
+          assert '%pat1%' not in t and '%n%' not in t, 'marcador de ui.json sin reemplazar'
+          PY
+            grep -q 'hreflang="es"' page.html && grep -q 'hreflang="pt-BR"' page.html && grep -q 'hreflang="en"' page.html && grep -q 'hreflang="x-default"' page.html && echo "✓ $r hreflang es/pt-BR/en/x-default" || { echo "✖ $r sin los hreflang"; fail=1; }
+            grep -q '<select id="lic-donde"' page.html && grep -q 'class="tabla-rio"' page.html && ! grep -q 'class="lic-res"' page.html && echo "✓ $r sin parámetros: formulario + tabla de referencia, sin resultado" || { echo "✖ $r sin parámetros: falta el formulario o la tabla, o hay resultado"; fail=1; }
+            n=$(grep -c 'class="button primary" href="[^"]*\(armar-viaje\|planejar-viagem\|plan-your-trip\)/"' page.html); [[ "$n" == 1 ]] && echo "✓ $r un solo botón al formulario sin resultado" || { echo "✖ $r botones al formulario: $n (esperado 1)"; fail=1; }
+            grep -q 'Los valores cambian cada temporada: confirmá en el enlace oficial antes de pagar\.\|Os valores mudam a cada temporada: confirme no link oficial antes de pagar\.\|Prices change every season: confirm on the official link before you pay\.' page.html && echo "✓ $r aviso de que los valores cambian" || { echo "✖ $r sin el aviso"; fail=1; }
+          done
+          check /calculadora-licencia-de-pesca/ 200 '<h1>Calculadora de licencia de pesca en Argentina</h1>' 'content="noindex'
+          check /calculadora-licencia-de-pesca/ 200 '<title>Calculadora de licencia de pesca en Argentina | Pescamapa</title>'
+          check /calculadora-licencia-de-pesca/ 200 'Elegí dónde pescás, quién sos y cuántos días\. Te mostramos el permiso más barato con su valor oficial, la fuente y la fecha en que la leímos\.'
+          check /calculadora-licencia-de-pesca/ 200 'value="destino:esquina"'
+          check /calculadora-licencia-de-pesca/ 200 'Cómo lo calculamos'
+          check /calculadora-licencia-de-pesca/ 200 '¿Cuánto cuesta la licencia de pesca para un extranjero?'
+          check /pt/calculadora-licenca-de-pesca/ 200 '<h1>Calculadora de licença de pesca na Argentina</h1>' 'content="noindex'
+          check /pt/calculadora-licenca-de-pesca/ 200 'Escolha onde você pesca, quem você é e quantos dias\.'
+          check /en/fishing-licence-calculator/ 200 '<h1>Fishing licence calculator for Argentina</h1>' 'content="noindex'
+          check /en/fishing-licence-calculator/ 200 'Pick where you fish, who you are and how many days\.'
+          # A result URL: the box with the amount and the official link, canonical to the bare page, one CTA after the result (+ the closing one).
+          resultado() { # path-with-query-as-G-params... : writes page.html
+            curl -sS -G -o page.html "$URL$1" "${@:2}"
+          }
+          resultado /calculadora-licencia-de-pesca/ --data-urlencode 'donde=region:patagonia' -d quien=extranjero -d dias=3
+          grep -q '<link rel="canonical" href="[^"?]*/calculadora-licencia-de-pesca/">' page.html && echo "✓ calculadora: canonical de un resultado = la página sin parámetros" || { echo "✖ calculadora: canonical con parámetros"; fail=1; }
+          ! grep -q 'content="noindex' page.html && echo "✓ calculadora: el resultado no lleva noindex" || { echo "✖ calculadora: noindex en el resultado"; fail=1; }
+          python3 - <<'PY' && echo "✓ calculadora: Patagonia, extranjero, 3 días → \$ 140.000 (10 días) frente a \$ 150.000, enlace oficial, fecha, un CTA" || { echo "✖ calculadora: resultado de Patagonia 3 días"; fail=1; }
+          import re
+          t = open('page.html', encoding='utf-8').read()
+          m = re.search(r'id="resultado".*?class="lic-como"', t, re.S)
+          assert m, 'sin caja de resultado'
+          r = m.group(0)
+          assert 'class="lic-total"><strong>$ 140.000</strong>' in r, 'total'
+          assert '10 días = $ 140.000' in r and '3 × 1 día = $ 150.000' in r, 'aritmética'
+          assert 'Frente a 3 × 1 día ($ 150.000), ahorrás $ 10.000.' in r, 'ahorro'
+          assert 'href="https://reglamentodepesca.org.ar/reglamento/"' in r and 'href="https://cazaypesca.neuquen.gob.ar/permisos"' in r, 'enlaces oficiales'
+          assert 'Leído el 6 de noviembre de 2026' in r, 'fecha de lectura'
+          assert 'Los valores cambian cada temporada: confirmá en el enlace oficial antes de pagar.' in r, 'aviso'
+          assert r.count('class="lic-cta"') == 1 and r.count('class="button primary"') == 1, 'CTA'
+          assert len(re.findall(r'class="button primary" href="[^"]*/armar-viaje/"', t)) == 2, 'CTA total (resultado + cierre)'
+          PY
+          resultado /calculadora-licencia-de-pesca/ --data-urlencode 'donde=region:patagonia' -d quien=extranjero -d dias=12 -d 'extra[]=trolling'
+          python3 - <<'PY' && echo "✓ calculadora: 12 días + trolling → combinación 10 + 2 × 1 (\$ 240.000) + trolling de temporada (\$ 100.000) = \$ 340.000" || { echo "✖ calculadora: 12 días con trolling"; fail=1; }
+          t = open('page.html', encoding='utf-8').read()
+          assert '$ 340.000' in t and '10 días + 2 × 1 día = $ 140.000 + $ 100.000 = $ 240.000' in t and 'temporada = $ 100.000' in t
+          PY
+          resultado /calculadora-licencia-de-pesca/ --data-urlencode 'donde=destino:esquina' -d quien=extranjero -d dias=1
+          python3 - <<'PY' && echo "✓ calculadora: destino Esquina → Corrientes en litros, sin pesos, CTA con el destino" || { echo "✖ calculadora: destino Esquina"; fail=1; }
+          import re
+          t = open('page.html', encoding='utf-8').read()
+          r = re.search(r'id="resultado".*?class="lic-como"', t, re.S).group(0)
+          assert '16 litros de nafta súper' in r and '$' not in re.sub(r'<[^>]+>', '', r), 'litros / pesos'
+          assert 'portal oficial los pasa a pesos al comprar' in r
+          assert re.search(r'class="button primary" href="[^"]*/armar-viaje/\?destino=esquina"', r), 'CTA con destino'
+          PY
+          resultado /calculadora-licencia-de-pesca/ --data-urlencode 'donde=region:buenos-aires' -d quien=general -d dias=3
+          python3 - <<'PY' && echo "✓ calculadora: Buenos Aires general → sin valor + enlace oficial" || { echo "✖ calculadora: Buenos Aires general"; fail=1; }
+          import re
+          t = open('page.html', encoding='utf-8').read()
+          r = re.search(r'id="resultado".*?class="lic-como"', t, re.S).group(0)
+          assert 'El valor no figura en la fuente que leímos.' in r and 'href="https://www.gba.gob.ar/' in r and 'class="lic-total"' not in r
+          PY
+          resultado /calculadora-licencia-de-pesca/ --data-urlencode 'donde=zzz' -d 'quien=%00' -d dias=abc -d 'extra[]=x' -d 'extra[][]=y'
+          ! grep -q 'class="lic-res"' page.html && grep -q '<select id="lic-donde"' page.html && echo "✓ calculadora: parámetros inválidos → el formulario, sin resultado" || { echo "✖ calculadora: parámetros inválidos"; fail=1; }
+          resultado /pt/calculadora-licenca-de-pesca/ --data-urlencode 'donde=region:santa-cruz' -d quien=extranjero -d dias=7
+          grep -q 'class="lic-total"><strong>\$ 300.000</strong>' page.html && grep -q 'Lido em 4 de novembro de 2026' page.html && echo "✓ calculadora pt: Santa Cruz 7 dias = \$ 300.000, data de leitura" || { echo "✖ calculadora pt: Santa Cruz"; fail=1; }
+          resultado /en/fishing-licence-calculator/ --data-urlencode 'donde=region:santa-cruz' -d quien=extranjero -d dias=7
+          grep -q 'class="lic-total"><strong>\$ 300,000</strong>' page.html && grep -q 'Read on 4 November 2026' page.html && echo "✓ calculadora en: Santa Cruz 7 days = \$ 300,000, read date" || { echo "✖ calculadora en: Santa Cruz"; fail=1; }
+          check / 200 'href="[^"]*/calculadora-licencia-de-pesca/"'
+          check /pt/ 200 'href="[^"]*/calculadora-licenca-de-pesca/"'
+          check /en/ 200 'href="[^"]*/fishing-licence-calculator/"'
+          check /litoral/corrientes/pesca-en-esquina/ 200 'href="[^"]*/calculadora-licencia-de-pesca/?donde=destino:esquina#calculadora"'
+          check /llms.txt 200 'Calculadora de licencia de pesca en Argentina'
+          check /llms.txt 200 'calculadora-licencia-de-pesca/'
+          check /llms.txt 200 'fishing-licence-calculator/'
+          check /wp-sitemap-vistas-1.xml 200 'calculadora-licencia-de-pesca'
+          check /wp-sitemap-vistas-1.xml 200 'calculadora-licenca-de-pesca'
+          check /wp-sitemap-vistas-1.xml 200 'fishing-licence-calculator'
           loc=$(curl -sS -o /dev/null -w '%{http_code} %{redirect_url}' \
             -d action=pm_consulta -d pm_tipo=viaje -d pm_idioma=en -d pm_destino=goya \
             -d pm_volver="$URL/en/plan-your-trip/" -d pm_t=$(( $(date +%s) - 60 )) \

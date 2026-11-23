@@ -125,6 +125,7 @@ get_header(); ?>
 					<p><strong><?php pm_e( 'ficha.autoridad' ); ?>:</strong>
 						<?php if ( $d['reglamento']['url'] ) : ?><a href="<?php echo esc_url( $d['reglamento']['url'] ); ?>" rel="noopener"><?php echo esc_html( $d['reglamento']['autoridad'] ); ?></a><?php else : echo esc_html( $d['reglamento']['autoridad'] ); endif; ?>
 					</p>
+					<?php if ( pm_licencia_region_de_destino( $d['clave'] ) ) : ?><p><a href="<?php echo esc_url( pm_licencia_url( '', $d['clave'] ) ); ?>"><?php pm_e( 'ficha.licencia.calc' ); ?></a></p><?php endif; ?>
 					<p class="note">
 						<?php if ( $d['reglamento']['verificado'] ) { echo esc_html( pm_t( 'ficha.ultima' ) . ' ' . pm_fecha( $d['reglamento']['verificado'] ) . '.' ); } ?>
 						<?php pm_e( 'ficha.cambian' ); ?>

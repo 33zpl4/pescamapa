@@ -3,7 +3,7 @@
 
   python3 -I wordpress/build/licencias-2026-27/graficos.py
 
-Reads licencias.json (generar-datos.py) and writes 1-licencias-precios.svg and 2-licencias-donde-se-saca.svg next to it
+Reads plugins/pescamapa-core/data/licencias.json (generar-datos.py) and writes 1-licencias-precios.svg and 2-licencias-donde-se-saca.svg next to it
 (1200 x 900, 4:3, text >= 30 units). Every number is read from the dataset. PNGs: node wordpress/build/licencias-2026-27/png.mjs.
 """
 import json
@@ -16,7 +16,7 @@ F_TXT = "Outfit, 'Helvetica Neue', Arial, sans-serif"
 F_TIT = "'Playfair Display', Georgia, 'Times New Roman', serif"
 F_MARCA = "'Bebas Neue', Impact, 'Arial Narrow', sans-serif"
 W, H = 1200, 900
-D = json.load(open(os.path.join(AQUI, "licencias.json"), encoding="utf-8"))["filas"]
+D = json.load(open(os.path.join(AQUI, "..", "..", "plugins", "pescamapa-core", "data", "licencias.json"), encoding="utf-8"))["filas"]
 
 
 def peso(v):
