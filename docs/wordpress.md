@@ -230,6 +230,17 @@ Herramienta gratuita e indexable (pedido del dueño: «el estimador de costes es
 - **Enlaces de entrada:** pie de página (`nav.estimador`), el cierre de la calculadora de licencia («¿Y cuánto cuesta el viaje?») y, en la página «Guías y precios» de cada destino que el dataset mapea a una zona (`vistas/guias.php`, una línea en la respuesta corta), `?donde=destino:<clave>#calculadora`. Hoy mapean Bariloche, El Calafate, Itatí, Esteros del Iberá, Junín de los Andes, Esquel y Trevelin, Jurassic Lake, Río Gallegos y Río Grande (los destinos que existan como guía); Esquina no tiene precios usables. No se tocó contenido guardado. Desde el resultado, la licencia se enlaza con la región preseleccionada cuando es inequívoca (Patagonia norte y Bariloche → Patagonia; El Calafate → Santa Cruz; Corrientes; la Patagonia sur y el Delta, varias provincias → calculadora sin región).
 - **No se verificó:** el renderizado real (lo corre Test WordPress sobre la rama), las capturas a 390 px, ni la carga de la herramienta en navegadores reales; las cifras de «qué suele incluir» tras excluir Uguay; cómo se posiciona frente a la nota de costo.
 
+## «Vedas y temporadas, en una mirada» en el calendario (23/11/2026)
+
+Bloque al tope de `/calendario-de-pesca/` (pt, en), ancla `#vedas` y chip en la navegación, antes de las tablas. Lo arma
+`pm_vedas_resumen()` (`inc/temporada.php`) solo con lo que ya usa la página: `temporada_abre` / `temporada_cierra` de cada guía publicada,
+la autoridad, su enlace y `reglamento_verificado`. **El modelo no tiene un campo de veda aparte**, así que nunca se infiere una veda:
+cada línea dice «temporada del … al …» y, contra hoy (Argentina), «abierta hoy», «cerrada hoy: abre el …» o «cerrada hoy: terminó el …».
+La frase guía cuenta esas líneas y nombra la próxima temporada que abre. Las guías sin las dos fechas no entran (siguen en las tablas).
+La pregunta «¿Cuándo se levanta la veda de pesca?» (visible + JSON-LD) repite la frase guía. Textos `cal.vm.*` en `ui.json`; caché en transient
+por idioma y día (clave con `pm_mes_ver`). Prueba: bloque «Vedas y temporadas» en `test-wp.yml`. Si algún día se carga un campo de veda por fechas,
+sumarlo acá y a `pm_vedas_resumen()` antes de escribir «se levanta el …».
+
 ## Panel del editor (rol "Editor de Pescamapa")
 
 `inc/editor.php`: el editor ve solo las fichas en español, sin campos de

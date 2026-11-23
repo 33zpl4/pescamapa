@@ -180,3 +180,73 @@ add_action( 'save_post', function ( $post_id, $post ) {
 		update_option( 'pm_mes_ver', (int) get_option( 'pm_mes_ver', 1 ) + 1, false );
 	}
 }, 20, 2 );
+
+/**
+ * «Vedas y temporadas, en una mirada» of the calendar page (23/11/2026): one row per published guide that carries BOTH official
+ * season dates (temporada_abre / temporada_cierra), grouped by region in the page's order, with the authority, its link and the
+ * date the regulation was verified. The data model has no separate closed-season (veda) field, so nothing is inferred: a row says
+ * «season from … to …» and, against today (Argentina), «open today», «closed today: opens on …» or «closed today: the season ended on …».
+ * The lead sentence counts those rows and names the next season that opens. Guides without both dates are left out of the block.
+ * Cached per language and day in a transient (key carries the pm_mes_ver option, bumped when a guide is saved).
+ * @return array{hoy: string, grupos: array<string, array<int, array<string, mixed>>>, abiertas: int, cerradas: int, total: int, proxima: array<string, string>, lead: string, faq: array<string, string>}
+ */
+function pm_vedas_resumen( string $idioma, ?string $hoy = null ): array {
+	$idioma = pm_idioma_valido( $idioma );
+	$hoy    = $hoy ?: wp_date( 'Y-m-d', null, new DateTimeZone( 'America/Argentina/Buenos_Aires' ) );
+	$clave  = 'pm_vedas_' . (int) get_option( 'pm_mes_ver', 1 ) . "_{$idioma}_{$hoy}";
+	$cache  = get_transient( $clave );
+	if ( is_array( $cache ) ) {
+		return $cache;
+	}
+	$grupos   = [];
+	$abiertas = 0;
+	$cerradas = 0;
+	$proxima  = [];
+	foreach ( pm_destinos_lista( $idioma ) as $d ) {
+		if ( ! pm_temporada_hay( $d ) ) {
+			continue;
+		}
+		$estado = pm_temporada_estado( $d, $hoy );
+		$r      = (array) ( $d['reglamento'] ?? [] );
+		if ( 'abierta' === $estado ) {
+			$abiertas++;
+		} else {
+			$cerradas++;
+		}
+		if ( 'antes' === $estado && ( ! $proxima || $d['abre'] < $proxima['ymd'] ) ) {
+			$proxima = [ 'ymd' => $d['abre'], 'lugar' => (string) ( $d['nombre'] ?? '' ), 'clave' => (string) ( $d['clave'] ?? '' ) ];
+		}
+		$grupos[ ( $d['region'] ?? '' ) ?: 'otros' ][] = [
+			'clave'      => (string) ( $d['clave'] ?? '' ),
+			'nombre'     => (string) ( $d['nombre'] ?? '' ),
+			'url'        => (string) ( $d['url'] ?? '' ),
+			'provincia'  => (string) ( PM_PROVINCIAS[ $d['provincia'] ?? '' ] ?? ( $d['provincia'] ?? '' ) ),
+			'estado'     => $estado,
+			'abre'       => (string) $d['abre'],
+			'cierra'     => (string) $d['cierra'],
+			'autoridad'  => (string) ( $r['autoridad'] ?? '' ),
+			'fuente_url' => (string) ( $r['url'] ?? '' ),
+			'verificado' => (string) ( $r['verificado'] ?? '' ),
+		];
+	}
+	$total = $abiertas + $cerradas;
+	$lead  = '';
+	if ( $total ) {
+		$lead = pm_t( 'cal.vm.lead', [ 'hoy' => pm_fecha( $hoy, $idioma ), 'a' => (string) $abiertas, 'c' => (string) $cerradas, 't' => (string) $total ], $idioma );
+		if ( $proxima ) {
+			$lead .= ' ' . pm_t( 'cal.vm.proxima', [ 'lugar' => $proxima['lugar'], 'fecha' => pm_fecha( $proxima['ymd'], $idioma ) ], $idioma );
+		}
+	}
+	$out = [
+		'hoy'      => $hoy,
+		'grupos'   => $grupos,
+		'abiertas' => $abiertas,
+		'cerradas' => $cerradas,
+		'total'    => $total,
+		'proxima'  => $proxima,
+		'lead'     => $lead,
+		'faq'      => $lead ? [ 'pregunta' => pm_t( 'cal.vm.faq.q', [], $idioma ), 'respuesta' => $lead . ' ' . pm_t( 'cal.vm.faq.a', [], $idioma ) ] : [],
+	];
+	set_transient( $clave, $out, 6 * HOUR_IN_SECONDS );
+	return $out;
+}

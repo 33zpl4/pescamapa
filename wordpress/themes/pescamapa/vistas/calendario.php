@@ -16,6 +16,7 @@ $orden  = array_merge( array_keys( PM_REGIONES ), [ 'otros' ] );
 $tabla  = pm_buscar( 'pm_nota', 'tallas-cupos-vedas', $idioma ) ?? pm_buscar( 'pm_nota', 'tallas-cupos-vedas', 'es' );
 $fechas = array_filter( array_map( fn( $d ) => $d['reglamento']['verificado'], $destinos ) );
 $ultima = $fechas ? max( $fechas ) : '';
+$vedas  = pm_vedas_resumen( $idioma );
 get_header(); ?>
 <div class="v-destino v-rio v-calendario">
 	<header class="top">
@@ -27,6 +28,27 @@ get_header(); ?>
 		</div>
 	</header>
 	<div class="shell cuerpo">
+		<?php if ( ! empty( $vedas['total'] ) ) : ?>
+		<section class="vedas-mirada" id="vedas" aria-labelledby="vedas-h">
+			<h2 id="vedas-h"><?php pm_e( 'cal.vm.h' ); ?></h2>
+			<p class="lead"><?php echo esc_html( $vedas['lead'] ); ?></p>
+			<?php foreach ( $orden as $g ) : if ( empty( $vedas['grupos'][ $g ] ) ) { continue; } ?>
+				<h3><?php echo esc_html( PM_REGIONES[ $g ][ $idioma ] ?? $g ); ?></h3>
+				<ul>
+					<?php foreach ( $vedas['grupos'][ $g ] as $v ) : ?>
+						<li class="vm--<?php echo esc_attr( $v['estado'] ); ?>">
+							<strong><a href="#<?php echo esc_attr( $v['clave'] ); ?>"><?php echo esc_html( $v['nombre'] ); ?></a><?php echo $v['provincia'] ? ' (' . esc_html( $v['provincia'] ) . ')' : ''; ?>:</strong>
+							<?php echo esc_html( pm_t( 'cal.vm.fila.' . ( 'antes' === $v['estado'] || 'abierta' === $v['estado'] ? $v['estado'] : 'cerrada' ), [ 'abre' => pm_fecha( $v['abre'], $idioma ), 'cierra' => pm_fecha( $v['cierra'], $idioma ) ] ) ); ?>
+							<?php if ( $v['autoridad'] ) : ?><?php pm_e( 'cal.vm.fuente' ); ?>: <?php if ( $v['fuente_url'] ) : ?><a href="<?php echo esc_url( $v['fuente_url'] ); ?>" rel="noopener"><?php echo esc_html( $v['autoridad'] ); ?></a><?php else : ?><?php echo esc_html( $v['autoridad'] ); ?><?php endif; ?>,
+							<?php endif; ?>
+							<?php echo esc_html( $v['verificado'] ? pm_t( 'cal.vm.revisado', [ 'fecha' => pm_fecha( $v['verificado'], $idioma ) ] ) : pm_t( 'cal.vm.sinrev' ) ); ?>.
+						</li>
+					<?php endforeach; ?>
+				</ul>
+			<?php endforeach; ?>
+			<p class="note"><?php pm_e( 'cal.vm.aviso' ); ?></p>
+		</section>
+		<?php endif; ?>
 		<section class="respuesta" aria-labelledby="respuesta-h">
 			<h2 id="respuesta-h"><?php pm_e( 'cal.resumen.h' ); ?></h2>
 			<ul>
@@ -36,6 +58,7 @@ get_header(); ?>
 			</ul>
 		</section>
 		<nav class="chips" aria-label="<?php pm_e( 'cal.eyebrow' ); ?>">
+			<?php if ( ! empty( $vedas['total'] ) ) : ?><a class="chip" href="#vedas"><?php pm_e( 'cal.vm.h' ); ?></a><?php endif; ?>
 			<?php foreach ( $orden as $g ) : if ( empty( $grupos[ $g ] ) ) { continue; } ?>
 				<a class="chip" href="#<?php echo esc_attr( $g ); ?>"><?php echo esc_html( PM_REGIONES[ $g ][ $idioma ] ?? $g ); ?></a>
 			<?php endforeach; ?>
@@ -72,6 +95,10 @@ get_header(); ?>
 		<?php endforeach; ?>
 		<section class="faq" aria-labelledby="faq-h">
 			<h2 id="faq-h"><?php pm_e( 'cal.faq.h' ); ?></h2>
+			<?php if ( ! empty( $vedas['faq'] ) ) : ?>
+				<h3><?php echo esc_html( $vedas['faq']['pregunta'] ); ?></h3>
+				<p><?php echo esc_html( $vedas['faq']['respuesta'] ); ?></p>
+			<?php endif; ?>
 			<?php foreach ( [ 1, 2, 3 ] as $n ) : ?>
 				<h3><?php pm_e( "cal.faq.$n.q" ); ?></h3>
 				<p><?php pm_e( "cal.faq.$n.a" ); ?></p>
