@@ -85,7 +85,7 @@ get_header(); ?>
 					?>
 					<article class="cal-card<?php echo '' !== $que ? ' cal-card--que' : ''; ?>" id="<?php echo esc_attr( $t['clave'] ); ?>" data-region="<?php echo esc_attr( $t['region'] ); ?>" data-especies="<?php echo esc_attr( implode( ' ', $t['especies'] ) ); ?>"<?php echo $coincide ? '' : ' hidden'; ?>>
 						<h3><a href="<?php echo esc_url( $t['url'] ); ?>"><?php echo esc_html( $t['nombre'] ); ?></a></h3>
-						<?php if ( $t['provincia'] ) : ?><p class="cal-prov"><?php echo esc_html( $t['provincia'] ); ?></p><?php endif; ?>
+						<?php if ( $t['provincia'] && false === mb_stripos( (string) $t['nombre'], (string) $t['provincia'] ) ) : ?><p class="cal-prov"><?php echo esc_html( $t['provincia'] ); ?></p><?php endif; ?>
 						<?php
 						$estado_pill = '' !== $que ? ( $t['estados'][ $que ] ?? 'sin' ) : $t['estado'];
 						$texto_pill  = $t['pill'];
