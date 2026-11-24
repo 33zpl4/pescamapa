@@ -2256,7 +2256,7 @@ jobs:
           for l in es pt en; do
             case $l in es) u=/calendario-de-pesca/;; pt) u=/pt/calendario-de-pesca/;; en) u=/en/fishing-calendar/;; esac
             pesca=$(wp --path="$WP" eval "echo pm_t( 'cal.pill.pesca', [], '$l' );")
-            veda=$(wp --path="$WP" eval "echo pm_t( 'cal.veda.pendiente', [], '$l' );")
+            veda=$(wp --path="$WP" eval "echo pm_calendario_datos()['esquina'][0]['veda_txt']['$l'];")
             fuentes=$(wp --path="$WP" eval "echo pm_t( 'cal.fuentes', [ 'fecha' => '' ], '$l' );" | sed 's/ *$//')
             faq4=$(wp --path="$WP" eval "echo pm_t( 'cal.faq.4.q', [], '$l' );")
             check $u 200 'id="cal-g-donde"' 'Su página dice'
@@ -2265,7 +2265,7 @@ jobs:
             grep -q 'class="barra-meses cal-barra"' card.html && grep -q 'data-abre="20' card.html && echo "✓ calendario $l: tarjeta de Esquina con barra de 12 meses y fechas oficiales" || { echo "✖ calendario $l: la tarjeta de Esquina no tiene la barra"; fail=1; }
             [[ $(grep -o '<li class="mes ' card.html | wc -l) -ge 12 ]] && echo "✓ calendario $l: 12 meses por barra" || { echo "✖ calendario $l: menos de 12 meses"; fail=1; }
             grep -q 'cal-pill--pesca" data-pill>'"$pesca" card.html && echo "✓ calendario $l: hoy se pesca" || { echo "✖ calendario $l: falta la etiqueta de hoy «$pesca»"; fail=1; }
-            grep -qF -- "$veda" card.html && echo "✓ calendario $l: veda por confirmar" || { echo "✖ calendario $l: falta «$veda»"; fail=1; }
+            grep -qF -- "$veda" card.html && echo "✓ calendario $l: texto de veda de la ficha" || { echo "✖ calendario $l: falta «$veda»"; fail=1; }
             grep -q '<details class="cal-fuentes">' card.html && grep -qF -- "$fuentes" card.html && echo "✓ calendario $l: fuentes plegadas" || { echo "✖ calendario $l: sin el desplegable de fuentes"; fail=1; }
             grep -q 'href="https://example.com/esquina-prueba"[^>]*>Autoridad Esquina de Prueba</a>' card.html && echo "✓ calendario $l: autoridad enlazada en el desplegable" || { echo "✖ calendario $l: falta la autoridad enlazada"; fail=1; }
             grep -q 'Ver la guía\|See the guide\|Ver o guia' card.html && grep -q 'class="button dark cal-btn"' card.html && echo "✓ calendario $l: los dos botones" || { echo "✖ calendario $l: faltan los botones"; fail=1; }

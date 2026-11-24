@@ -320,6 +320,7 @@ function pm_calendario_tarjetas( string $idioma, ?string $hoy = null ): array {
 				'nota'     => (string) ( $e['nota_fuentes'][ $idioma ] ?? $e['nota_fuentes']['es'] ?? '' ),
 				'revisado' => (string) ( $e['revisado'] ?? '' ),
 				'veda_pendiente' => ! array_key_exists( 'veda', $e ) || null === $e['veda'],
+				'veda_txt' => (string) ( $e['veda_txt'][ $idioma ] ?? $e['veda_txt']['es'] ?? '' ),
 			];
 			$estados[ $esp ] = $hoy_e;
 		}
@@ -363,7 +364,8 @@ function pm_calendario_tarjetas( string $idioma, ?string $hoy = null ): array {
 	usort( $tarjetas, function ( $a, $b ) use ( $orden ) {
 		$ra = array_search( $a['region'], $orden, true );
 		$rb = array_search( $b['region'], $orden, true );
-		return ( false === $ra ? 99 : $ra ) <=> ( false === $rb ? 99 : $rb );
+		// Inside a region, cards with no months go last: the ones that answer come first.
+		return [ false === $ra ? 99 : $ra, empty( $a['filas'] ) ? 1 : 0 ] <=> [ false === $rb ? 99 : $rb, empty( $b['filas'] ) ? 1 : 0 ];
 	} );
 	$regiones = [];
 	foreach ( array_merge( $orden, [ 'otros' ] ) as $g ) {

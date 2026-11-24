@@ -67,3 +67,9 @@ mismos filtros queda para una segunda entrega.
 - **Veda**: solo se pinta con las fechas declaradas en la guía y una autoridad (hoy Chascomús, pejerrey, 1/9 al 30/11, y Concordia, dorado, 1/9 al 31/12;
   ambas son vedas anuales fijas, no de esta temporada: **decisión pendiente del dueño**; para quitarlas, `veda: null`). Con `veda: null` la tarjeta dice «Veda: fecha por confirmar».
 - **Lo que no hace**: no nombra prestadores ni fuentes en el cuerpo, no escribe «se pesca todo el año» sin matiz, no pinta una veda del año pasado.
+
+**Vedas cargadas el 24/11/2026** (normas que el dueño reunió ese día; van en `nota_fuentes`, plegadas): Corrientes no tiene veda por
+fechas (Disposición 853/22: devolución obligatoria de dorado y surubí todo el año; pacú con talla y cupo) y se muestra con el campo
+`veda_txt` en vez de «fecha por confirmar»; dorado en el río Uruguay 1/9–31/12 (CARU 111/2023, Concordia); dorado en Entre Ríos
+1/9–31/12 (Resolución 687/18, La Paz); pejerrey bonaerense 1/9–30/11 (Disposición 483/2019 modificada por 116/2021). Los cierres
+extraordinarios por tramo no se dibujan. Pendiente: la guía de Chascomús cita todavía la Disposición 89/08.
