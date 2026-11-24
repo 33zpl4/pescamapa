@@ -266,6 +266,7 @@ function pm_seo(): array {
 				'url'     => pm_url_inicio( pm_lang() ),
 				'email'   => PM_EMAIL_PUBLICO,
 				'description' => pm_t( 'marca.definicion' ),
+				'sameAs'  => [ 'https://www.trustpilot.com/review/pescamapa.com' ],
 				'founder' => [
 					[ '@type' => 'Person', 'name' => pm_t( 'ns.p1.nombre' ) ],
 					[ '@type' => 'Person', 'name' => pm_t( 'ns.p2.nombre' ), 'jobTitle' => pm_t( 'ns.p2.rol' ) ],
