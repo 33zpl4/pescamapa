@@ -123,7 +123,7 @@ get_header(); ?>
 									</ol>
 								</div>
 								<?php if ( $f['frase'] ) : ?><p class="cal-frase"><?php echo esc_html( $f['frase'] ); ?></p><?php endif; ?>
-								<?php if ( $f['veda_pendiente'] ) : ?><p class="cal-veda"><?php pm_e( 'cal.veda.pendiente' ); ?></p><?php endif; ?>
+								<?php if ( ! empty( $f['veda_txt'] ) ) : ?><p class="cal-veda"><?php echo esc_html( $f['veda_txt'] ); ?></p><?php elseif ( $f['veda_pendiente'] ) : ?><p class="cal-veda"><?php pm_e( 'cal.veda.pendiente' ); ?></p><?php endif; ?>
 							</div>
 						<?php endforeach; ?>
 						<p class="cal-sin"<?php echo ( $nfilas && ( '' === $que || in_array( $que, array_column( $t['filas'], 'especie' ), true ) ) ) ? ' hidden' : ''; ?>><?php pm_e( 'cal.sin.meses' ); ?></p>

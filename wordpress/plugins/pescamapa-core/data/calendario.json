@@ -20,13 +20,23 @@
         3,
         4
       ],
-      "veda": null,
+      "veda": [],
       "frase": {
         "es": "Dorado de octubre a abril, con aguas templadas; las épocas cambian con la altura del río.",
         "pt": "Dourado de outubro a abril, com águas mornas; as épocas mudam com o nível do rio.",
         "en": "Dorado from October to April in warm water; the seasons shift with the river level."
       },
-      "revisado": "2026-11-13"
+      "revisado": "2026-11-13",
+      "veda_txt": {
+        "es": "Sin veda por fechas en Corrientes: se pesca todo el año con devolución obligatoria.",
+        "pt": "Sem defeso por datas em Corrientes: pesca o ano todo com soltura obrigatória.",
+        "en": "No fixed closed season in Corrientes: catch and release only, all year."
+      },
+      "nota_fuentes": {
+        "es": "Veda: Dirección de Recursos Naturales de Corrientes, Disposición 853/22 (20/12/2022). No fija una veda por fechas; la Dirección puede dictar cierres extraordinarios por tramo. Revisado el 24/11/2026.",
+        "pt": "Defeso: Dirección de Recursos Naturales de Corrientes, Disposición 853/22 (20/12/2022). Não fixa defeso por datas; a Direção pode decretar fechamentos extraordinários por trecho. Revisado em 24/11/2026.",
+        "en": "Closed season: Dirección de Recursos Naturales of Corrientes, Disposición 853/22 (20 December 2022). It sets no fixed closed season; the authority may order extraordinary closures by stretch. Checked on 24 November 2026."
+      }
     },
     {
       "especie": "surubi",
@@ -39,13 +49,23 @@
         7,
         8
       ],
-      "veda": null,
+      "veda": [],
       "frase": {
         "es": "Surubí de marzo a agosto, en pozones y veriles del Paraná; las épocas cambian con el río.",
         "pt": "Surubi de março a agosto, em poços e barrancos do Paraná; as épocas mudam com o rio.",
         "en": "Surubí from March to August, in the deep pools and drop-offs of the Paraná; seasons shift with the river."
       },
-      "revisado": "2026-11-13"
+      "revisado": "2026-11-13",
+      "veda_txt": {
+        "es": "Sin veda por fechas en Corrientes: se pesca todo el año con devolución obligatoria.",
+        "pt": "Sem defeso por datas em Corrientes: pesca o ano todo com soltura obrigatória.",
+        "en": "No fixed closed season in Corrientes: catch and release only, all year."
+      },
+      "nota_fuentes": {
+        "es": "Veda: Dirección de Recursos Naturales de Corrientes, Disposición 853/22 (20/12/2022). No fija una veda por fechas; la Dirección puede dictar cierres extraordinarios por tramo. Revisado el 24/11/2026.",
+        "pt": "Defeso: Dirección de Recursos Naturales de Corrientes, Disposición 853/22 (20/12/2022). Não fixa defeso por datas; a Direção pode decretar fechamentos extraordinários por trecho. Revisado em 24/11/2026.",
+        "en": "Closed season: Dirección de Recursos Naturales of Corrientes, Disposición 853/22 (20 December 2022). It sets no fixed closed season; the authority may order extraordinary closures by stretch. Checked on 24 November 2026."
+      }
     },
     {
       "especie": "pacu",
@@ -56,13 +76,23 @@
         2,
         3
       ],
-      "veda": null,
+      "veda": [],
       "frase": {
         "es": "Pacú en verano, de diciembre a marzo, cerca de camalotales y barrancas con árboles.",
         "pt": "Pacu no verão, de dezembro a março, perto de camalotes e barrancos com árvores.",
         "en": "Pacú in summer, December to March, near floating islands and tree-lined banks."
       },
-      "revisado": "2026-11-13"
+      "revisado": "2026-11-13",
+      "veda_txt": {
+        "es": "Sin veda por fechas en Corrientes: talla mínima de 45 cm y un pacú por licencia.",
+        "pt": "Sem defeso por datas em Corrientes: tamanho mínimo de 45 cm e um pacu por licença.",
+        "en": "No fixed closed season in Corrientes: 45 cm minimum size and one pacú per licence."
+      },
+      "nota_fuentes": {
+        "es": "Veda: Dirección de Recursos Naturales de Corrientes, Disposición 853/22 (20/12/2022). No fija una veda por fechas; la Dirección puede dictar cierres extraordinarios por tramo. Revisado el 24/11/2026.",
+        "pt": "Defeso: Dirección de Recursos Naturales de Corrientes, Disposición 853/22 (20/12/2022). Não fixa defeso por datas; a Direção pode decretar fechamentos extraordinários por trecho. Revisado em 24/11/2026.",
+        "en": "Closed season: Dirección de Recursos Naturales of Corrientes, Disposición 853/22 (20 December 2022). It sets no fixed closed season; the authority may order extraordinary closures by stretch. Checked on 24 November 2026."
+      }
     }
   ],
   "esquina": [
@@ -78,13 +108,23 @@
         3,
         4
       ],
-      "veda": null,
+      "veda": [],
       "frase": {
         "es": "Dorado de octubre a abril, con aguas templadas; las épocas cambian con la altura del río.",
         "pt": "Dourado de outubro a abril, com águas mornas; as épocas mudam com o nível do rio.",
         "en": "Dorado from October to April in warm water; the seasons shift with the river level."
       },
-      "revisado": "2026-11-13"
+      "revisado": "2026-11-13",
+      "veda_txt": {
+        "es": "Sin veda por fechas en Corrientes: se pesca todo el año con devolución obligatoria.",
+        "pt": "Sem defeso por datas em Corrientes: pesca o ano todo com soltura obrigatória.",
+        "en": "No fixed closed season in Corrientes: catch and release only, all year."
+      },
+      "nota_fuentes": {
+        "es": "Veda: Dirección de Recursos Naturales de Corrientes, Disposición 853/22 (20/12/2022). No fija una veda por fechas; la Dirección puede dictar cierres extraordinarios por tramo. Revisado el 24/11/2026.",
+        "pt": "Defeso: Dirección de Recursos Naturales de Corrientes, Disposición 853/22 (20/12/2022). Não fixa defeso por datas; a Direção pode decretar fechamentos extraordinários por trecho. Revisado em 24/11/2026.",
+        "en": "Closed season: Dirección de Recursos Naturales of Corrientes, Disposición 853/22 (20 December 2022). It sets no fixed closed season; the authority may order extraordinary closures by stretch. Checked on 24 November 2026."
+      }
     },
     {
       "especie": "surubi",
@@ -97,13 +137,23 @@
         7,
         8
       ],
-      "veda": null,
+      "veda": [],
       "frase": {
         "es": "Surubí de marzo a agosto como referencia; el río manda y los grandes salen también fuera de esos meses.",
         "pt": "Surubi de março a agosto como referência; o rio manda e os grandes saem também fora desses meses.",
         "en": "Surubí from March to August as a guide; the river decides and big fish also show up outside those months."
       },
-      "revisado": "2026-11-13"
+      "revisado": "2026-11-13",
+      "veda_txt": {
+        "es": "Sin veda por fechas en Corrientes: se pesca todo el año con devolución obligatoria.",
+        "pt": "Sem defeso por datas em Corrientes: pesca o ano todo com soltura obrigatória.",
+        "en": "No fixed closed season in Corrientes: catch and release only, all year."
+      },
+      "nota_fuentes": {
+        "es": "Veda: Dirección de Recursos Naturales de Corrientes, Disposición 853/22 (20/12/2022). No fija una veda por fechas; la Dirección puede dictar cierres extraordinarios por tramo. Revisado el 24/11/2026.",
+        "pt": "Defeso: Dirección de Recursos Naturales de Corrientes, Disposición 853/22 (20/12/2022). Não fixa defeso por datas; a Direção pode decretar fechamentos extraordinários por trecho. Revisado em 24/11/2026.",
+        "en": "Closed season: Dirección de Recursos Naturales of Corrientes, Disposición 853/22 (20 December 2022). It sets no fixed closed season; the authority may order extraordinary closures by stretch. Checked on 24 November 2026."
+      }
     },
     {
       "especie": "pacu",
@@ -114,13 +164,23 @@
         2,
         3
       ],
-      "veda": null,
+      "veda": [],
       "frase": {
         "es": "Pacú en verano, de diciembre a marzo, cerca de camalotales y barrancas con árboles.",
         "pt": "Pacu no verão, de dezembro a março, perto de camalotes e barrancos com árvores.",
         "en": "Pacú in summer, December to March, near floating islands and tree-lined banks."
       },
-      "revisado": "2026-11-13"
+      "revisado": "2026-11-13",
+      "veda_txt": {
+        "es": "Sin veda por fechas en Corrientes: talla mínima de 45 cm y un pacú por licencia.",
+        "pt": "Sem defeso por datas em Corrientes: tamanho mínimo de 45 cm e um pacu por licença.",
+        "en": "No fixed closed season in Corrientes: 45 cm minimum size and one pacú per licence."
+      },
+      "nota_fuentes": {
+        "es": "Veda: Dirección de Recursos Naturales de Corrientes, Disposición 853/22 (20/12/2022). No fija una veda por fechas; la Dirección puede dictar cierres extraordinarios por tramo. Revisado el 24/11/2026.",
+        "pt": "Defeso: Dirección de Recursos Naturales de Corrientes, Disposición 853/22 (20/12/2022). Não fixa defeso por datas; a Direção pode decretar fechamentos extraordinários por trecho. Revisado em 24/11/2026.",
+        "en": "Closed season: Dirección de Recursos Naturales of Corrientes, Disposición 853/22 (20 December 2022). It sets no fixed closed season; the authority may order extraordinary closures by stretch. Checked on 24 November 2026."
+      }
     }
   ],
   "itati": [
@@ -141,18 +201,23 @@
         4,
         5
       ],
-      "veda": null,
+      "veda": [],
       "frase": {
         "es": "Lo mejor, octubre y noviembre. En enero y febrero el calor aprieta: no todos recomiendan salir.",
         "pt": "O melhor é outubro e novembro. Em janeiro e fevereiro o calor aperta: nem todos recomendam sair.",
         "en": "Best in October and November. January and February are very hot, so not everyone recommends going."
       },
       "nota_fuentes": {
-        "es": "Las fuentes que leímos no coinciden: el comienzo va de septiembre a octubre y, en enero y febrero, unas incluyen esos meses y otras los desaconsejan por el calor. Tomamos como temporada la suma (septiembre a mayo) y como mejor época lo que ambas comparten: octubre y noviembre, antes del desove.",
-        "pt": "As fontes que lemos divergem: o começo vai de setembro a outubro e, em janeiro e fevereiro, umas incluem esses meses e outras os desaconselham pelo calor. Tomamos como temporada a soma (setembro a maio) e como melhor época o que ambas compartilham: outubro e novembro, antes da desova.",
-        "en": "The sources we read disagree: the start runs from September to October and, in January and February, some include those months and others advise against them because of the heat. We take the sum as the season (September to May) and what both share as the best time: October and November, before the spawn."
+        "es": "Las fuentes que leímos no coinciden: el comienzo va de septiembre a octubre y, en enero y febrero, unas incluyen esos meses y otras los desaconsejan por el calor. Tomamos como temporada la suma (septiembre a mayo) y como mejor época lo que ambas comparten: octubre y noviembre, antes del desove. Veda: Dirección de Recursos Naturales de Corrientes, Disposición 853/22 (20/12/2022). No fija una veda por fechas; la Dirección puede dictar cierres extraordinarios por tramo. Revisado el 24/11/2026.",
+        "pt": "As fontes que lemos divergem: o começo vai de setembro a outubro e, em janeiro e fevereiro, umas incluem esses meses e outras os desaconselham pelo calor. Tomamos como temporada a soma (setembro a maio) e como melhor época o que ambas compartilham: outubro e novembro, antes da desova. Defeso: Dirección de Recursos Naturales de Corrientes, Disposición 853/22 (20/12/2022). Não fixa defeso por datas; a Direção pode decretar fechamentos extraordinários por trecho. Revisado em 24/11/2026.",
+        "en": "The sources we read disagree: the start runs from September to October and, in January and February, some include those months and others advise against them because of the heat. We take the sum as the season (September to May) and what both share as the best time: October and November, before the spawn. Closed season: Dirección de Recursos Naturales of Corrientes, Disposición 853/22 (20 December 2022). It sets no fixed closed season; the authority may order extraordinary closures by stretch. Checked on 24 November 2026."
       },
-      "revisado": "2026-11-14"
+      "revisado": "2026-11-14",
+      "veda_txt": {
+        "es": "Sin veda por fechas en Corrientes: se pesca todo el año con devolución obligatoria.",
+        "pt": "Sem defeso por datas em Corrientes: pesca o ano todo com soltura obrigatória.",
+        "en": "No fixed closed season in Corrientes: catch and release only, all year."
+      }
     }
   ],
   "esteros-del-ibera": [
@@ -175,18 +240,23 @@
         4,
         5
       ],
-      "veda": null,
+      "veda": [],
       "frase": {
         "es": "Temporada de septiembre a mayo; lo mejor, octubre y noviembre y de marzo a abril.",
         "pt": "Temporada de setembro a maio; o melhor é outubro e novembro e de março a abril.",
         "en": "Season runs September to May; best in October–November and March–April."
       },
       "nota_fuentes": {
-        "es": "Las fuentes no coinciden: una dice todo el año (y de septiembre a mayo en su encabezado), otra de septiembre a mayo y otra de octubre a abril. Tomamos septiembre a mayo como temporada; de junio a agosto quedan dorados residentes, pero no lo contamos como temporada. La mejor época sale de una sola fuente (octubre hasta fines de noviembre, y de mediados de febrero a abril): marcamos solo los meses enteros.",
-        "pt": "As fontes divergem: uma diz o ano todo (e setembro a maio no cabeçalho), outra setembro a maio e outra outubro a abril. Tomamos setembro a maio como temporada; de junho a agosto ficam dourados residentes, mas não os contamos como temporada. A melhor época vem de uma única fonte (outubro até o fim de novembro, e de meados de fevereiro a abril): marcamos só os meses inteiros.",
-        "en": "The sources disagree: one says all year (and September to May in its header), another September to May and another October to April. We take September to May as the season; from June to August resident dorado stay, but we do not count that as season. The best time comes from a single source (October to the end of November, and mid-February to April): we mark whole months only."
+        "es": "Las fuentes no coinciden: una dice todo el año (y de septiembre a mayo en su encabezado), otra de septiembre a mayo y otra de octubre a abril. Tomamos septiembre a mayo como temporada; de junio a agosto quedan dorados residentes, pero no lo contamos como temporada. La mejor época sale de una sola fuente (octubre hasta fines de noviembre, y de mediados de febrero a abril): marcamos solo los meses enteros. Veda: Dirección de Recursos Naturales de Corrientes, Disposición 853/22 (20/12/2022). No fija una veda por fechas; la Dirección puede dictar cierres extraordinarios por tramo. Revisado el 24/11/2026.",
+        "pt": "As fontes divergem: uma diz o ano todo (e setembro a maio no cabeçalho), outra setembro a maio e outra outubro a abril. Tomamos setembro a maio como temporada; de junho a agosto ficam dourados residentes, mas não os contamos como temporada. A melhor época vem de uma única fonte (outubro até o fim de novembro, e de meados de fevereiro a abril): marcamos só os meses inteiros. Defeso: Dirección de Recursos Naturales de Corrientes, Disposición 853/22 (20/12/2022). Não fixa defeso por datas; a Direção pode decretar fechamentos extraordinários por trecho. Revisado em 24/11/2026.",
+        "en": "The sources disagree: one says all year (and September to May in its header), another September to May and another October to April. We take September to May as the season; from June to August resident dorado stay, but we do not count that as season. The best time comes from a single source (October to the end of November, and mid-February to April): we mark whole months only. Closed season: Dirección de Recursos Naturales of Corrientes, Disposición 853/22 (20 December 2022). It sets no fixed closed season; the authority may order extraordinary closures by stretch. Checked on 24 November 2026."
       },
-      "revisado": "2026-11-14"
+      "revisado": "2026-11-14",
+      "veda_txt": {
+        "es": "Sin veda por fechas en Corrientes: se pesca todo el año con devolución obligatoria.",
+        "pt": "Sem defeso por datas em Corrientes: pesca o ano todo com soltura obrigatória.",
+        "en": "No fixed closed season in Corrientes: catch and release only, all year."
+      }
     }
   ],
   "chascomus": [
@@ -215,11 +285,11 @@
         "en": "Closed season 1 September to 30 November: weekends and public holidays only, with a bag limit."
       },
       "nota_fuentes": {
-        "es": "La veda es la de toda la provincia (Disposición 89/08, página de vedas del Ministerio): en Chascomús se pesca en ese período solo sábados, domingos y feriados, hasta 10 piezas por pescador y por día. El resto del año se pesca con licencia y talla mínima de 25 cm.",
-        "pt": "O defeso é o de toda a província (Disposição 89/08, página de defesos do Ministério): em Chascomús, nesse período, pesca-se só aos sábados, domingos e feriados, até 10 peças por pescador e por dia. No resto do ano pesca-se com licença e tamanho mínimo de 25 cm.",
-        "en": "The closed season covers the whole province (Disposición 89/08, the Ministry's closed-season page): in Chascomús, during that period, fishing is allowed only on Saturdays, Sundays and public holidays, up to 10 fish per angler per day. The rest of the year you fish with a licence and a 25 cm minimum size."
+        "es": "Veda del pejerrey en las aguas interiores de la provincia: Dirección Provincial de Pesca, Disposición 483/2019, modificada por la Disposición 116/2021, del 1 de septiembre al 30 de noviembre. En ese período se pesca solo sábados, domingos y feriados, dentro del cupo. Chascomús no figura entre las excepciones. Revisado el 24/11/2026.",
+        "pt": "Defeso do peixe-rei nas águas interiores da província: Dirección Provincial de Pesca, Disposição 483/2019, modificada pela Disposição 116/2021, de 1º de setembro a 30 de novembro. Nesse período pesca-se só aos sábados, domingos e feriados, dentro da cota. Chascomús não consta entre as exceções. Revisado em 24/11/2026.",
+        "en": "Pejerrey closed season in the province's inland waters: Dirección Provincial de Pesca, Disposición 483/2019, amended by Disposición 116/2021, from 1 September to 30 November. In that period fishing is allowed only on Saturdays, Sundays and public holidays, within the bag limit. Chascomús is not among the exceptions. Checked on 24 November 2026."
       },
-      "revisado": "2026-10-28"
+      "revisado": "2026-11-24"
     }
   ],
   "concordia": [
@@ -234,16 +304,16 @@
         12
       ],
       "frase": {
-        "es": "El dorado tiene veda en el río Uruguay del 1 de septiembre al 31 de diciembre; confirmá si rige en tu tramo.",
-        "pt": "O dourado tem defeso no rio Uruguai de 1º de setembro a 31 de dezembro; confirme se vale no seu trecho.",
-        "en": "Dorado is closed on the Uruguay River from 1 September to 31 December; check whether it applies to your stretch."
+        "es": "El dorado tiene veda en el río Uruguay del 1 de septiembre al 31 de diciembre.",
+        "pt": "O dourado tem defeso no rio Uruguai de 1º de setembro a 31 de dezembro.",
+        "en": "Dorado is closed on the Uruguay River from 1 September to 31 December."
       },
       "nota_fuentes": {
-        "es": "La veda es la del río Uruguay (CARU, Resolución 111/2023). No encontramos un texto que confirme si rige dentro de La Zona: preguntalo por escrito antes de ir. No tenemos meses de temporada confirmados, por eso solo se dibuja la veda.",
-        "pt": "O defeso é o do rio Uruguai (CARU, Resolução 111/2023). Não encontramos um texto que confirme se vale dentro de La Zona: pergunte por escrito antes de ir. Não temos meses de temporada confirmados, por isso só se desenha o defeso.",
-        "en": "The closed season is the Uruguay River's (CARU, Resolución 111/2023). We found no text confirming whether it applies inside La Zona: ask in writing before you go. We have no confirmed season months, so only the closed season is drawn."
+        "es": "Veda del dorado en el río Uruguay: CARU, Resolución 111/2023 (1/8/2023), del 1 de septiembre al 31 de diciembre de cada año; una captura accidental se devuelve. La Resolución 63/2026 de CARU cambia el límite de la zona de seguridad aguas abajo de Salto Grande y no establece una excepción a esa veda. No tenemos meses de temporada confirmados: por eso solo se dibuja la veda. Revisado el 24/11/2026.",
+        "pt": "Defeso do dourado no rio Uruguai: CARU, Resolução 111/2023 (1/8/2023), de 1º de setembro a 31 de dezembro de cada ano; uma captura acidental deve ser solta. A Resolução 63/2026 da CARU altera o limite da zona de segurança a jusante de Salto Grande e não estabelece exceção a esse defeso. Não temos meses de temporada confirmados: por isso só o defeso é desenhado. Revisado em 24/11/2026.",
+        "en": "Dorado closed season on the Uruguay River: CARU, Resolution 111/2023 (1 August 2023), from 1 September to 31 December each year; an accidental catch must be released. CARU Resolution 63/2026 changes the limit of the safety zone downstream of Salto Grande and sets no exception to that closure. We have no confirmed season months, so only the closure is drawn. Checked on 24 November 2026."
       },
-      "revisado": "2026-11-18"
+      "revisado": "2026-11-24"
     }
   ],
   "bariloche": [
@@ -414,6 +484,30 @@
         "en": "Dates from the Tierra del Fuego regulations for the whole province. The Palacios River, the Milna, Tuerto and Turbio rivers and the Subiabre creek open on 1 January, with compulsory release. A month counts as open if any day falls inside the season."
       },
       "revisado": "2026-11-11"
+    }
+  ],
+  "la-paz": [
+    {
+      "especie": "dorado",
+      "mejor": [],
+      "pesca": null,
+      "veda": [
+        9,
+        10,
+        11,
+        12
+      ],
+      "frase": {
+        "es": "El dorado tiene veda en Entre Ríos del 1 de septiembre al 31 de diciembre; el resto del año, con devolución.",
+        "pt": "O dourado tem defeso em Entre Ríos de 1º de setembro a 31 de dezembro; no resto do ano, com soltura.",
+        "en": "Dorado is closed in Entre Ríos from 1 September to 31 December; the rest of the year, catch and release."
+      },
+      "nota_fuentes": {
+        "es": "Veda provincial del dorado: Dirección de Recursos Naturales de Entre Ríos, Resolución 687/18, del 1 de septiembre al 31 de diciembre. La Ley 11.174 (20/12/2024) exige la devolución en la pesca deportiva. La Paz está sobre el Paraná: no le corresponden las normas de CARU. No tenemos meses de temporada confirmados: por eso solo se dibuja la veda. Revisado el 24/11/2026.",
+        "pt": "Defeso provincial do dourado: Dirección de Recursos Naturales de Entre Ríos, Resolução 687/18, de 1º de setembro a 31 de dezembro. A Lei 11.174 (20/12/2024) exige a soltura na pesca esportiva. La Paz fica no Paraná: as normas da CARU não se aplicam. Não temos meses de temporada confirmados: por isso só o defeso é desenhado. Revisado em 24/11/2026.",
+        "en": "Provincial dorado closed season: Dirección de Recursos Naturales of Entre Ríos, Resolution 687/18, from 1 September to 31 December. Law 11.174 (20 December 2024) requires release in sport fishing. La Paz is on the Paraná: CARU rules do not apply. We have no confirmed season months, so only the closure is drawn. Checked on 24 November 2026."
+      },
+      "revisado": "2026-11-24"
     }
   ]
 }
