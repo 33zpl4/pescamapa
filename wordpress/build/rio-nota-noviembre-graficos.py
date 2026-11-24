@@ -6,7 +6,7 @@
 entrada (default wordpress/build/rio-nota-noviembre): the files rio-historia.py wrote on the branch `rio-historia-desde-1903`
 on 20/11/2026 (resumen.json, datos-goya.csv, datos-goya-mensual.csv and the daily files of the other four stations) plus
 pronostico-ina-2026-11-20.json (the INA numeric forecast, typed once from the draft with its source). salida (default the
-same folder): 1-nunca-en-noviembre.svg, 2-el-rio-dia-por-dia.svg, 3-la-misma-agua-rio-abajo.svg. Every number comes from
+same folder; optional third argument, a file-name prefix such as `2`, writes only that one): 1-nunca-en-noviembre.svg, 2-el-rio-dia-por-dia.svg, 3-la-misma-agua-rio-abajo.svg. Every number comes from
 those files; the script asserts the figures the note quotes (34 and 22 days, 6,10 m, 5,80 m, the five peaks) and stops if
 one differs. 1200 x 900 (4:3, the crop of the note's cover); PNGs: node wordpress/build/rio-nota-noviembre-png.mjs.
 """
@@ -149,15 +149,21 @@ def grafico_noviembres(res, mens):
 
 # ------------------------------------------------------------------ 2. the river, day by day
 def grafico_dias(res, diarios, pron):
+    """Infographic 2. Since 24/11/2026 it runs to the LAST day in the Goya daily file (the figures are asserted against resumen.json)."""
     g = res["goya"]
     niv = g["niveles"]
-    serie = {f: v for f, v in diarios["goya"].items() if "2026-09-01" <= f <= "2026-11-20"}
-    assert len(serie) == 81 and min(serie.values()) >= 2.5, len(serie)
+    ultimo = max(f for f in diarios["goya"] if f.startswith("2026-11"))
+    mes_c = g["mes_en_curso"]
+    assert ultimo == f"2026-11-{mes_c['ultimo_dia']:02d}", (ultimo, mes_c["ultimo_dia"])
+    serie = {f: v for f, v in diarios["goya"].items() if "2026-09-01" <= f <= ultimo}
+    assert len(serie) == (d(ultimo) - d("2026-09-01")).days + 1 and min(serie.values()) >= 2.5, len(serie)
     al, ev = niv["alerta"], niv["evacuacion"]
     dias_al = sum(1 for v in diarios["goya"].values() if v >= al)
-    assert g["umbrales"]["alerta"]["dias_anio"] == dias_al == 34, dias_al
+    assert g["umbrales"]["alerta"]["dias_anio"] == dias_al, dias_al
+    assert g["umbrales"]["alerta"]["racha_actual"]["dias"] == dias_al and g["umbrales"]["alerta"]["ahora_sobre"], "the alert streak must still be running"
     dias_ev = sum(1 for v in diarios["goya"].values() if v >= ev)
-    assert g["umbrales"]["evacuacion"]["dias_anio"] == dias_ev == 22, dias_ev
+    ult_ev = max(f for f, v in serie.items() if v >= ev)
+    assert g["umbrales"]["evacuacion"]["dias_anio"] == dias_ev == 22 and ult_ev == "2026-11-19", (dias_ev, ult_ev)
     fechas = sorted(serie)
     cruza_al = next(f for f in fechas if serie[f] >= al)
     cruza_ev = next(f for f in fechas if serie[f] >= ev)
@@ -165,7 +171,8 @@ def grafico_dias(res, diarios, pron):
     pico = max(serie.values())
     f_pico = [f for f in fechas if serie[f] == pico]
     assert pico == 6.10 and (f_pico[0], f_pico[-1]) == ("2026-11-03", "2026-11-05"), f_pico
-    assert serie["2026-11-20"] == 5.68 and serie["2026-09-04"] == 2.57
+    assert serie["2026-09-04"] == 2.57
+    v_ult = serie[ultimo]
     pg = {p["fecha"]: p for p in pron["goya"]}
     assert pg["2026-11-24"]["medio"] == 5.39 and pg["2026-12-01"]["medio"] == 5.45 and pron["emitido"] == "2026-11-20"
     L, R, T, B = 96, 1150, 332, 700
@@ -173,17 +180,18 @@ def grafico_dias(res, diarios, pron):
     f0, f1 = d("2026-09-01"), d("2026-12-01")
     X = lambda f: L + (d(f) - f0).days / (f1 - f0).days * (R - L) if isinstance(f, str) else L + (f - f0).days / (f1 - f0).days * (R - L)  # noqa: E731
     Y = lambda m: B - (m - ymin) / (ymax - ymin) * (B - T)  # noqa: E731
-    titulo = "Goya: 34 días sobre el nivel de alerta"
-    sub = "Altura diaria del Paraná, del 1 de septiembre al 20 de noviembre de 2026"
-    desc = (f"Altura diaria del río Paraná en Goya del 1 de septiembre al 20 de noviembre de 2026: sube de {fm(serie['2026-09-04'])} m el 4 de septiembre, "
-            f"cruza el nivel de alerta ({fm(al)} m) el 18 de octubre, el de evacuación ({fm(ev)} m) el 29 de octubre, marca {fm(pico)} m del 3 al 5 de noviembre "
-            f"y baja a {fm(serie['2026-11-20'])} m el 20 de noviembre: {dias_al} días sobre el alerta y {dias_ev} sobre el de evacuación. "
+    dl = f"{int(ultimo[8:10])} de noviembre"
+    titulo = f"Goya: {dias_al} días sobre el nivel de alerta"
+    sub = f"Altura diaria del Paraná, del 1 de septiembre al {dl} de 2026"
+    desc = (f"Altura diaria del río Paraná en Goya del 1 de septiembre al {dl} de 2026: sube de {fm(serie['2026-09-04'])} m el 4 de septiembre, "
+            f"cruza el nivel de alerta ({fm(al)} m) el 18 de octubre, el de evacuación ({fm(ev)} m) el 29 de octubre, marca {fm(pico)} m del 3 al 5 de noviembre, "
+            f"vuelve por debajo del de evacuación el 20 de noviembre y baja a {fm(v_ult)} m el {dl}: {dias_al} días seguidos sobre el alerta y {dias_ev} sobre el de evacuación (29/10 al 19/11). "
             f"Aparte, el pronóstico del INA emitido el 20 de noviembre: {fm(pg['2026-11-24']['medio'])} m el 24/11 y {fm(pg['2026-12-01']['medio'])} m el 1/12, "
             f"con rango probable de {fm(pg['2026-11-24']['inferior'])} a {fm(pg['2026-11-24']['superior'])} m.")
     s = abrir(titulo, desc)
     cabecera(s, titulo, sub)
     # counters
-    for x0, num, l1, l2, color in ((40, dias_al, "días seguidos sobre el", f"nivel de alerta ({fm(al)} m)", C["lime"]), (620, dias_ev, "días seguidos sobre el", f"nivel de evacuación ({fm(ev)} m)", C["olive"])):
+    for x0, num, l1, l2, color in ((40, dias_al, "días seguidos sobre el", f"nivel de alerta ({fm(al)} m)", C["lime"]), (620, dias_ev, "días (29/10 al 19/11) sobre el", f"nivel de evacuación ({fm(ev)} m)", C["olive"])):
         s.append(f'<rect x="{x0}" y="196" width="26" height="82" rx="6" fill="{color}"/>')
         s.append(f'<text x="{x0 + 40}" y="262" font-family="{F_TIT}" font-size="74" font-weight="700" fill="{C["forest"]}">{num}</text>')
         s.append(f'<text x="{x0 + 148}" y="228" font-size="30" fill="{C["moss"]}">{esc(l1)}</text>')
@@ -199,13 +207,12 @@ def grafico_dias(res, diarios, pron):
         s.append(f'<line x1="{X(f):.1f}" x2="{X(f):.1f}" y1="{B}" y2="{B + 9}" stroke="{C["muted"]}" stroke-width="2"/>')
         s.append(f'<text x="{X(f) + (-8 if mes == 12 else 8):.1f}" y="{B + 40}" font-size="30" text-anchor="{"end" if mes == 12 else "start"}" fill="{C["muted"]}">{MESES3[mes - 1]}</text>')
     s.append(f'<line x1="{L}" x2="{R}" y1="{B}" y2="{B}" stroke="{C["muted"]}" stroke-width="2.5"/>')
-    # forecast zone (a different thing: a band, hollow points, dashed range)
-    xz = X("2026-11-20")
-    s.append(f'<rect x="{xz:.1f}" y="{T}" width="{R - xz:.1f}" height="{B - T}" fill="{C["cream"]}"/>')
+    # the days after the last reading: light band (only the INA forecast for 1/12 lives there)
+    xz = X(ultimo)
+    s.append(f'<rect x="{xz:.1f}" y="{T}" width="{R - xz + 30:.1f}" height="{B - T}" fill="{C["cream"]}"/>')
     s.append(f'<line x1="{xz:.1f}" x2="{xz:.1f}" y1="{T}" y2="{B}" stroke="{C["muted"]}" stroke-width="2" stroke-dasharray="6 7"/>')
     # shading above the thresholds
     def area(nivel, color, op):
-        pts, ant = [], None
         trozos, cur = [], []
         for f in fechas:
             v = serie[f]
@@ -247,22 +254,24 @@ def grafico_dias(res, diarios, pron):
     guia(xp, yp, Y(pico))
     texto(s, 778, yp, f"{int(f_pico[0][8:10])}–{dm(f_pico[-1])}: pico {fm(pico)} m", 30, C["forest"], 700, "start")
     s.append(f'<circle cx="{xp:.1f}" cy="{Y(pico):.1f}" r="13" fill="{C["lime"]}" stroke="{C["forest"]}" stroke-width="6"/>')
-    x20, y20 = X("2026-11-20"), Y(serie["2026-11-20"])
-    s.append(f'<circle cx="{x20:.1f}" cy="{y20:.1f}" r="11" fill="{C["forest"]}"/>')
-    texto(s, x20 - 16, Y(4.55), "20/11: 5,68 m", 30, C["forest"], 700, "end")
-    s.append(f'<line x1="{x20:.1f}" x2="{x20:.1f}" y1="{y20 + 12:.1f}" y2="{Y(4.55) - 28:.1f}" stroke="{C["forest"]}" stroke-width="2.5"/>')
-    # forecast: hollow points, dashed range bars
-    for f in ("2026-11-24", "2026-12-01"):
+    # last reading
+    xu, yu = X(ultimo), Y(v_ult)
+    s.append(f'<circle cx="{xu:.1f}" cy="{yu:.1f}" r="11" fill="{C["forest"]}"/>')
+    texto(s, xu - 16, Y(4.55) + 10, f"{dm(ultimo)}: {fm(v_ult)} m", 30, C["forest"], 700, "end")
+    s.append(f'<line x1="{xu:.1f}" x2="{xu:.1f}" y1="{yu + 12:.1f}" y2="{Y(4.55) - 18:.1f}" stroke="{C["forest"]}" stroke-width="2.5"/>')
+    # INA forecast (issued 20/11): hollow points, dashed range bars; the 24/11 one is drawn beside the reading of that day
+    for f, dx, lado in (("2026-11-24", 30, "arriba"), ("2026-12-01", 0, "abajo")):
         p = pg[f]
-        x = X(f)
+        x = X(f) + dx
         s.append(f'<rect x="{x - 13:.1f}" y="{Y(p["superior"]):.1f}" width="26" height="{Y(p["inferior"]) - Y(p["superior"]):.1f}" rx="13" fill="{C["olive"]}" fill-opacity="0.18" stroke="{C["olive"]}" stroke-width="3" stroke-dasharray="7 6"/>')
         s.append(f'<circle cx="{x:.1f}" cy="{Y(p["medio"]):.1f}" r="9" fill="{C["paper"]}" stroke="{C["olive"]}" stroke-width="5"/>')
-        texto(s, x, Y(p["inferior"]) + 36, fm(p["medio"]), 30, C["olive"], 700, "middle")
-    y_c = Y(3.85)
+        ty = Y(p["superior"]) - 14 if lado == "arriba" else Y(p["inferior"]) + 36
+        texto(s, x, ty, fm(p["medio"]), 30, C["olive"], 700, "middle")
+    y_c = Y(3.55)
     texto(s, R, y_c, "Pronóstico del INA", 30, C["olive"], 700, "end")
-    texto(s, R, y_c + 34, "emitido el 20/11/2026,", 30, C["olive"], 700, "end")
+    texto(s, R, y_c + 34, "emitido el 20/11/2026 (círculos huecos),", 28, C["olive"], 700, "end")
     texto(s, R, y_c + 68, f"rango probable {fm(pg['2026-11-24']['inferior'])}–{fm(pg['2026-11-24']['superior'])} m", 28, C["olive"], 400, "end")
-    pie(s, [(f"{LECTURA} Franja clara: pronóstico del INA, no una lectura.", C["muted"]),
+    pie(s, [(f"Lecturas hasta el {dl} de 2026. Círculos huecos: pronóstico del INA, no lectura.", C["muted"]),
             ("Los niveles de alerta y evacuación son referencias de la escala, no una orden.", C["muted"]),
             (FUENTE, C["moss"])], B + 92)
     s.append("</svg>")
@@ -339,12 +348,16 @@ def grafico_rio_abajo(res, diarios):
     return "\n".join(s) + "\n"
 
 
-def main(entrada, salida):
+def main(entrada, salida, solo=None):
     res, mens, pron, diarios = leer(entrada)
     os.makedirs(salida, exist_ok=True)
-    for nombre, svg in (("1-nunca-en-noviembre.svg", grafico_noviembres(res, mens)),
-                        ("2-el-rio-dia-por-dia.svg", grafico_dias(res, diarios, pron)),
-                        ("3-la-misma-agua-rio-abajo.svg", grafico_rio_abajo(res, diarios))):
+    todos = (("1-nunca-en-noviembre.svg", lambda: grafico_noviembres(res, mens)),
+             ("2-el-rio-dia-por-dia.svg", lambda: grafico_dias(res, diarios, pron)),
+             ("3-la-misma-agua-rio-abajo.svg", lambda: grafico_rio_abajo(res, diarios)))
+    for nombre, fn in todos:
+        if solo and not nombre.startswith(solo):
+            continue
+        svg = fn()
         with open(os.path.join(salida, nombre), "w", encoding="utf-8") as f:
             f.write(svg)
         print("escrito", nombre, len(svg), "bytes")
@@ -352,4 +365,4 @@ def main(entrada, salida):
 
 if __name__ == "__main__":
     ent = sys.argv[1] if len(sys.argv) > 1 else os.path.join(AQUI, "rio-nota-noviembre")
-    main(ent, sys.argv[2] if len(sys.argv) > 2 else ent)
+    main(ent, sys.argv[2] if len(sys.argv) > 2 else ent, sys.argv[3] if len(sys.argv) > 3 else None)

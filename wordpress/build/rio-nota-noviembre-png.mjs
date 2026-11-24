@@ -24,7 +24,7 @@ const css = `
 html,body{margin:0;background:#fbfaf6}svg{display:block}`;
 const nombres = {
   '1-nunca-en-noviembre.svg': 'parana-goya-nunca-en-noviembre.png',
-  '2-el-rio-dia-por-dia.svg': 'parana-goya-el-rio-dia-por-dia.png',
+  '2-el-rio-dia-por-dia.svg': 'parana-goya-el-rio-dia-por-dia-24-nov.png',
   '3-la-misma-agua-rio-abajo.svg': 'parana-la-misma-agua-rio-abajo.png',
 };
 const b = await chromium.launch(process.env.CHROME_PATH ? { executablePath: process.env.CHROME_PATH } : {});

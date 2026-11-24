@@ -118,3 +118,32 @@ Datos y método: la nota incluye el CSV descargable y cómo se calculó. Aclarac
 | Municipalidad de Goya | https://www.goya.gob.ar/?q=coe-comite-operativo-emergencia | sin fecha | página fija del COE; ningún aviso fechado del río |
 
 Notas de método de la consulta: las identidades de serie 3524 = Goya y 1540 = Corrientes se verificaron con el catálogo de la API; La Paz (3527) y Reconquista (3526) se identificaron por coincidencia del valor del día 0 con el reporte diario. Sin fuentes de prensa para ningún número.
+
+## Actualización del 24/11/2026 (lecturas del INA hasta el 24/11)
+
+Estado: **propuesta para revisar con el dueño; se aplica con `wp-script` (`nota-parana-goya-actualiza-2026-11-24`, simulacro primero).** Misma nota (clave `parana-goya-20-noviembre-2026`, mismas URL, mismo titular): cambian cifras, «Qué se espera», FAQ, «Para medios», gráfico 2 y los dos CSV.
+
+**Datos.** `rio-historia.yml` con `desde=1903` (run 45477169062, 24/11/2026), rama `rio-historia-desde-1903`; copiados a `wordpress/build/rio-nota-noviembre/` (`resumen.json`, `datos-goya.csv`, `datos-goya-mensual.csv` y los diarios de Corrientes, Esquina, La Paz y Santa Fe). Serie diaria de Goya con lectura hasta el 24/11 (`mes_en_curso.ultimo_dia` = 24, 24 días leídos). La lectura del 24/11 es la del INA al momento de la consulta (promedio de las lecturas del día disponibles): sin validar, y si el día estuviera incompleto el promedio puede moverse unos centímetros.
+
+| Cifra | Antes (al 20/11) | Ahora (al 24/11) | Cómo sale |
+|---|---|---|---|
+| Última lectura | 5,68 m (20/11) | 5,47 m (24/11) | `datos-goya.csv`, columna `2026_m` |
+| Pico | 6,10 m (3–5/11) | igual | máximo de la serie 2026; no puede bajar |
+| Baja desde el pico | 0,42 m | 0,63 m | 6,10 − 5,47 |
+| Media del 1 al N de noviembre | 5,93 m (N = 20) | 5,87 m (N = 24) | suma 1–24 = 140,88 m; 140,88 / 24 |
+| Mayor media de un noviembre completo | 5,51 m (1997) | igual | `rango_meses_completos.mayores_medias` (119 años) |
+| Misma ventana 1–24 de cada año | — | 2026 primero; 1997 5,47 m | `rango_ventana` (122 años) |
+| Días sobre el alerta (5,20 m) | 34 | 38 (siguen: racha desde el 18/10) | `umbrales.alerta.racha_actual` |
+| Días sobre la evacuación (5,70 m) | 22 (29/10–19/11) | 22, terminó el 19/11 (19/11 = 5,72 m; 20/11 = 5,68 m) | `umbrales.evacuacion.ultima_racha`; `racha_actual` = null |
+| Días de noviembre sobre alerta / evacuación | 20 de 20 / 19 de 20 | 24 de 24 / 19 de 24 | `dias_mes` |
+| Margen sobre el alerta | 0,48 m | 0,27 m | 5,47 − 5,20 |
+| Ritmo de bajada | — | unos 5 cm por día desde el 19/11 | (5,72 − 5,47) / 5 días = 0,05 |
+| Pronóstico INA (emitido 20/11) para el 24/11 | 5,39 m (5,00–5,70) | lectura 5,47 m: +0,08 m sobre el valor central, dentro del rango | 5,47 − 5,39 |
+
+**¿Sigue en pie el récord del mes?** Sí para el máximo (6,10 m ya supera 5,80 m de 1998 y un máximo no baja). Para la media no está cerrado hasta el 30 y la nota lo dice: para que la media de noviembre baje de 5,51 m hacen falta 5,51 × 30 = 165,3 m de suma; llevamos 140,88 m, así que los 6 días que faltan (25–30) deberían sumar menos de 24,42 m, un promedio menor de 4,07 m, o sea más de 1,40 m por debajo de la última lectura (5,47 m). Con 5,00 m todos los días (el piso del rango del INA al 24/11 y al 1/12) la media del mes sería (140,88 + 30,00) / 30 = 5,70 m. La mayor caída diaria de 2026 fue 0,28 m; las últimas diez bajaron entre 0 y 0,07 m. La nota no extrapola: solo dice qué haría falta para perder el récord de la media. **El titular se mantiene** («en su nivel más alto para el mes»): el máximo ya lo sostiene con certeza y la media con un margen de 0,36 m sobre 1997; no se escribe «va camino a».
+
+**Otras estaciones (para la frase de «río abajo»).** Con lecturas 1–24/11: Esquina (media 5,47 m) y La Paz (6,11 m) primeras en media contra noviembres completos y contra la misma ventana; Corrientes (6,57 m) primera contra completos y **segunda** contra la ventana 1–24 (el 20/11 era primera en las dos: la frase cambió); Santa Fe (media 5,26 m) cuarta, con el máximo (5,88 m, 20/11) primero. Los picos de las cinco escalas no cambiaron (7,42 / 6,10 / 5,60 / 6,30 / 5,88 m); por eso los gráficos 1 y 3 siguen siendo los del 20/11 (la portada es el gráfico 1) y no se subieron de nuevo.
+
+**Qué dice el INA el 24/11.** Reporte diario del 24/11 (`reporte_diario_2026-11-24.pdf`), cita literal del tramo: «en Goya/Reconquista - La Paz se registran marcas en aguas medias altas, con excedencia del nivel de Alerta en Goya y La Paz, y excedencia de los niveles de Alerta y Evacuación en Reconquista. Este sector del tramo se espera que persista oscilante/leve descenso en aguas medias altas, estabilizando progresivamente hacia plazo extendido y con chances de nuevos repuntes hacia mayor plazo, todavía con elevada probabilidad de sostenerse por encima de los niveles de Alerta». Río arriba (Corrientes), a 7 días: gradual estabilización en aguas medias altas, con perspectiva de al menos persistir estable o ascenso gradual, todavía con posibilidad de nuevos repuntes (parafraseado: el PDF trae erratas). El pronóstico numérico (API a5, calibrado 289) **no se reemitió**: la última corrida sigue siendo del 20/11 (Goya 5,39 m el 24/11 y 5,45 m el 1/12, rango 5,00–5,70 m); se cita con su fecha. Se quitan de la nota el informe semanal n.º 10480 (18/11) y el boletín INA–SMN (19/11): quedaron viejos frente al reporte del 24/11.
+
+**Archivos.** Gráfico 2 nuevo `wordpress/fotos/parana-goya-el-rio-dia-por-dia-24-nov.png` (generador `rio-nota-noviembre-graficos.py … 2`, 81 → 85 días, 38/22 días comprobados contra `resumen.json`; reemplaza `parana-goya-el-rio-dia-por-dia.png`); CSV `parana-goya-estadistica-diaria-1903-2026-24-nov.csv` y `parana-goya-mensual-1903-2026-24-nov.csv` (el pipeline los regeneró con lecturas al 24/11; reemplazan los del 20/11). Los adjuntos viejos quedan en la biblioteca, sin uso.
