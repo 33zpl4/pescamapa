@@ -1,0 +1,419 @@
+{
+ "_meta": "Calendario de pesca: meses por destino y especie (24/11/2026). Cada clave es la de una guía publicada. Para los destinos con fechas oficiales (campos temporada_abre / temporada_cierra de la guía) los meses NO salen de este archivo: el render los toma de esos campos y pico_meses (mejor época) solo cuando pico_quien lo respalda; aquí van solo la frase, la nota y la fecha (mejor, pesca y veda en null). Para los demás, los meses salen únicamente de lo que la guía ya publica (filas «temporada» y época; ver wordpress/scripts/leer-calendario-2026-11-24.php). Si dos fuentes de la guía no coinciden decidimos una lectura: pesca = unión de los meses que dicen; mejor = meses que ambas comparten (o la única que lo dice, marcado en la nota); el desacuerdo va en nota_fuentes. Nunca un mes sin respaldo. veda: null = fecha por confirmar (la tarjeta dice «Veda: fecha por confirmar»); solo se pinta cuando la guía declara las fechas con una autoridad (hoy: Chascomús, pejerrey, 1/9 al 30/11; Concordia, dorado, 1/9 al 31/12). pesca: null = sin meses confirmados (solo se dibuja la veda). Meses: números 1 a 12. frase: una oración (máx. ~110 caracteres, sin nombres de fuentes ni de prestadores); %abre% y %cierra% se reemplazan con las fechas oficiales de la guía. etiqueta (opcional) reemplaza el nombre de la especie en la barra. revisado = fecha de la guía de la que se leyó. Destinos sin entrada (La Paz, Paso de la Patria, Itá Ibaté): la guía no da meses por especie; la tarjeta dice «meses por confirmar».",
+ "_especies": {
+  "pacu": {
+   "es": "Pacú",
+   "pt": "Pacu",
+   "en": "Pacú"
+  }
+ },
+ "goya": [
+  {
+   "especie": "dorado",
+   "mejor": [],
+   "pesca": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3,
+    4
+   ],
+   "veda": null,
+   "frase": {
+    "es": "Dorado de octubre a abril, con aguas templadas; las épocas cambian con la altura del río.",
+    "pt": "Dourado de outubro a abril, com águas mornas; as épocas mudam com o nível do rio.",
+    "en": "Dorado from October to April in warm water; the seasons shift with the river level."
+   },
+   "revisado": "2026-11-13"
+  },
+  {
+   "especie": "surubi",
+   "mejor": [],
+   "pesca": [
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+   ],
+   "veda": null,
+   "frase": {
+    "es": "Surubí de marzo a agosto, en pozones y veriles del Paraná; las épocas cambian con el río.",
+    "pt": "Surubi de março a agosto, em poços e barrancos do Paraná; as épocas mudam com o rio.",
+    "en": "Surubí from March to August, in the deep pools and drop-offs of the Paraná; seasons shift with the river."
+   },
+   "revisado": "2026-11-13"
+  },
+  {
+   "especie": "pacu",
+   "mejor": [],
+   "pesca": [
+    12,
+    1,
+    2,
+    3
+   ],
+   "veda": null,
+   "frase": {
+    "es": "Pacú en verano, de diciembre a marzo, cerca de camalotales y barrancas con árboles.",
+    "pt": "Pacu no verão, de dezembro a março, perto de camalotes e barrancos com árvores.",
+    "en": "Pacú in summer, December to March, near floating islands and tree-lined banks."
+   },
+   "revisado": "2026-11-13"
+  }
+ ],
+ "esquina": [
+  {
+   "especie": "dorado",
+   "mejor": [],
+   "pesca": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3,
+    4
+   ],
+   "veda": null,
+   "frase": {
+    "es": "Dorado de octubre a abril, con aguas templadas; las épocas cambian con la altura del río.",
+    "pt": "Dourado de outubro a abril, com águas mornas; as épocas mudam com o nível do rio.",
+    "en": "Dorado from October to April in warm water; the seasons shift with the river level."
+   },
+   "revisado": "2026-11-13"
+  },
+  {
+   "especie": "surubi",
+   "mejor": [],
+   "pesca": [
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+   ],
+   "veda": null,
+   "frase": {
+    "es": "Surubí de marzo a agosto como referencia; el río manda y los grandes salen también fuera de esos meses.",
+    "pt": "Surubi de março a agosto como referência; o rio manda e os grandes saem também fora desses meses.",
+    "en": "Surubí from March to August as a guide; the river decides and big fish also show up outside those months."
+   },
+   "revisado": "2026-11-13"
+  },
+  {
+   "especie": "pacu",
+   "mejor": [],
+   "pesca": [
+    12,
+    1,
+    2,
+    3
+   ],
+   "veda": null,
+   "frase": {
+    "es": "Pacú en verano, de diciembre a marzo, cerca de camalotales y barrancas con árboles.",
+    "pt": "Pacu no verão, de dezembro a março, perto de camalotes e barrancos com árvores.",
+    "en": "Pacú in summer, December to March, near floating islands and tree-lined banks."
+   },
+   "revisado": "2026-11-13"
+  }
+ ],
+ "itati": [
+  {
+   "especie": "dorado",
+   "mejor": [
+    10,
+    11
+   ],
+   "pesca": [
+    9,
+    10,
+    11,
+    12,
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "veda": null,
+   "frase": {
+    "es": "Lo mejor, octubre y noviembre. En enero y febrero el calor aprieta: no todos recomiendan salir.",
+    "pt": "O melhor é outubro e novembro. Em janeiro e fevereiro o calor aperta: nem todos recomendam sair.",
+    "en": "Best in October and November. January and February are very hot, so not everyone recommends going."
+   },
+   "nota_fuentes": {
+    "es": "Las fuentes que leímos no coinciden: el comienzo va de septiembre a octubre y, en enero y febrero, unas incluyen esos meses y otras los desaconsejan por el calor. Tomamos como temporada la suma (septiembre a mayo) y como mejor época lo que ambas comparten: octubre y noviembre, antes del desove.",
+    "pt": "As fontes que lemos divergem: o começo vai de setembro a outubro e, em janeiro e fevereiro, umas incluem esses meses e outras os desaconselham pelo calor. Tomamos como temporada a soma (setembro a maio) e como melhor época o que ambas compartilham: outubro e novembro, antes da desova.",
+    "en": "The sources we read disagree: the start runs from September to October and, in January and February, some include those months and others advise against them because of the heat. We take the sum as the season (September to May) and what both share as the best time: October and November, before the spawn."
+   },
+   "revisado": "2026-11-14"
+  }
+ ],
+ "esteros-del-ibera": [
+  {
+   "especie": "dorado",
+   "mejor": [
+    3,
+    4,
+    10,
+    11
+   ],
+   "pesca": [
+    9,
+    10,
+    11,
+    12,
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "veda": null,
+   "frase": {
+    "es": "Temporada de septiembre a mayo; lo mejor, octubre y noviembre y de marzo a abril.",
+    "pt": "Temporada de setembro a maio; o melhor é outubro e novembro e de março a abril.",
+    "en": "Season runs September to May; best in October–November and March–April."
+   },
+   "nota_fuentes": {
+    "es": "Las fuentes no coinciden: una dice todo el año (y de septiembre a mayo en su encabezado), otra de septiembre a mayo y otra de octubre a abril. Tomamos septiembre a mayo como temporada; de junio a agosto quedan dorados residentes, pero no lo contamos como temporada. La mejor época sale de una sola fuente (octubre hasta fines de noviembre, y de mediados de febrero a abril): marcamos solo los meses enteros.",
+    "pt": "As fontes divergem: uma diz o ano todo (e setembro a maio no cabeçalho), outra setembro a maio e outra outubro a abril. Tomamos setembro a maio como temporada; de junho a agosto ficam dourados residentes, mas não os contamos como temporada. A melhor época vem de uma única fonte (outubro até o fim de novembro, e de meados de fevereiro a abril): marcamos só os meses inteiros.",
+    "en": "The sources disagree: one says all year (and September to May in its header), another September to May and another October to April. We take September to May as the season; from June to August resident dorado stay, but we do not count that as season. The best time comes from a single source (October to the end of November, and mid-February to April): we mark whole months only."
+   },
+   "revisado": "2026-11-14"
+  }
+ ],
+ "chascomus": [
+  {
+   "especie": "pejerrey",
+   "mejor": [],
+   "pesca": [
+    12,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+   ],
+   "veda": [
+    9,
+    10,
+    11
+   ],
+   "frase": {
+    "es": "Del 1 de septiembre al 30 de noviembre hay veda: solo sábados, domingos y feriados, con cupo.",
+    "pt": "De 1º de setembro a 30 de novembro há defeso: só sábados, domingos e feriados, com cota.",
+    "en": "Closed season 1 September to 30 November: weekends and public holidays only, with a bag limit."
+   },
+   "nota_fuentes": {
+    "es": "La veda es la de toda la provincia (Disposición 89/08, página de vedas del Ministerio): en Chascomús se pesca en ese período solo sábados, domingos y feriados, hasta 10 piezas por pescador y por día. El resto del año se pesca con licencia y talla mínima de 25 cm.",
+    "pt": "O defeso é o de toda a província (Disposição 89/08, página de defesos do Ministério): em Chascomús, nesse período, pesca-se só aos sábados, domingos e feriados, até 10 peças por pescador e por dia. No resto do ano pesca-se com licença e tamanho mínimo de 25 cm.",
+    "en": "The closed season covers the whole province (Disposición 89/08, the Ministry's closed-season page): in Chascomús, during that period, fishing is allowed only on Saturdays, Sundays and public holidays, up to 10 fish per angler per day. The rest of the year you fish with a licence and a 25 cm minimum size."
+   },
+   "revisado": "2026-10-28"
+  }
+ ],
+ "concordia": [
+  {
+   "especie": "dorado",
+   "mejor": [],
+   "pesca": null,
+   "veda": [
+    9,
+    10,
+    11,
+    12
+   ],
+   "frase": {
+    "es": "El dorado tiene veda en el río Uruguay del 1 de septiembre al 31 de diciembre; confirmá si rige en tu tramo.",
+    "pt": "O dourado tem defeso no rio Uruguai de 1º de setembro a 31 de dezembro; confirme se vale no seu trecho.",
+    "en": "Dorado is closed on the Uruguay River from 1 September to 31 December; check whether it applies to your stretch."
+   },
+   "nota_fuentes": {
+    "es": "La veda es la del río Uruguay (CARU, Resolución 111/2023). No encontramos un texto que confirme si rige dentro de La Zona: preguntalo por escrito antes de ir. No tenemos meses de temporada confirmados, por eso solo se dibuja la veda.",
+    "pt": "O defeso é o do rio Uruguai (CARU, Resolução 111/2023). Não encontramos um texto que confirme se vale dentro de La Zona: pergunte por escrito antes de ir. Não temos meses de temporada confirmados, por isso só se desenha o defeso.",
+    "en": "The closed season is the Uruguay River's (CARU, Resolución 111/2023). We found no text confirming whether it applies inside La Zona: ask in writing before you go. We have no confirmed season months, so only the closed season is drawn."
+   },
+   "revisado": "2026-11-18"
+  }
+ ],
+ "bariloche": [
+  {
+   "especie": "trucha",
+   "mejor": null,
+   "pesca": null,
+   "veda": null,
+   "frase": {
+    "es": "Abre el %abre% y cierra el %cierra% en el lago; el Limay dentro del Parque cierra el 31 de mayo.",
+    "pt": "Abre em %abre% e fecha em %cierra% no lago; o Limay dentro do Parque fecha em 31 de maio.",
+    "en": "Opens %abre% and closes %cierra% on the lake; the Limay inside the Park closes 31 May."
+   },
+   "revisado": "2026-10-30"
+  }
+ ],
+ "san-martin-junin": [
+  {
+   "especie": "trucha",
+   "mejor": null,
+   "pesca": null,
+   "veda": null,
+   "frase": {
+    "es": "Abre el %abre%; los ríos cierran el %cierra% y algunos ambientes el 1 de mayo.",
+    "pt": "Abre em %abre%; os rios fecham em %cierra% e alguns ambientes em 1º de maio.",
+    "en": "Opens %abre%; the rivers close %cierra% and some waters 1 May."
+   },
+   "revisado": "2026-10-30"
+  }
+ ],
+ "jurassic-lake": [
+  {
+   "especie": "trucha",
+   "mejor": null,
+   "pesca": null,
+   "veda": null,
+   "frase": {
+    "es": "El lago Strobel está abierto todo el año; el río Barrancoso, del 1 de octubre al 3 de mayo.",
+    "pt": "O lago Strobel está aberto o ano todo; o rio Barrancoso, de 1º de outubro a 3 de maio.",
+    "en": "Lake Strobel is open all year; the Barrancoso River runs from 1 October to 3 May."
+   },
+   "revisado": "2026-11-13"
+  }
+ ],
+ "rio-grande": [
+  {
+   "especie": "trucha",
+   "mejor": null,
+   "pesca": null,
+   "veda": null,
+   "frase": {
+    "es": "Abre el %abre% y cierra el %cierra% en el río Grande; lo mejor, de febrero a abril.",
+    "pt": "Abre em %abre% e fecha em %cierra% no rio Grande; o melhor é de fevereiro a abril.",
+    "en": "Opens %abre% and closes %cierra% on the Río Grande; best from February to April."
+   },
+   "revisado": "2026-11-13"
+  }
+ ],
+ "rio-gallegos": [
+  {
+   "especie": "trucha",
+   "mejor": null,
+   "pesca": null,
+   "veda": null,
+   "frase": {
+    "es": "Abre el %abre% y cierra el %cierra%; lo mejor, enero y febrero, para los ejemplares más grandes.",
+    "pt": "Abre em %abre% e fecha em %cierra%; o melhor é janeiro e fevereiro, para os exemplares maiores.",
+    "en": "Opens %abre% and closes %cierra%; best in January and February for the biggest fish."
+   },
+   "revisado": "2026-11-23"
+  }
+ ],
+ "esquel-trevelin": [
+  {
+   "especie": "trucha",
+   "mejor": null,
+   "pesca": null,
+   "veda": null,
+   "frase": {
+    "es": "Del %abre% al %cierra%; lo mejor, enero y febrero. El Futaleufú llega hasta el 30 de junio.",
+    "pt": "De %abre% a %cierra%; o melhor é janeiro e fevereiro. O Futaleufú vai até 30 de junho.",
+    "en": "From %abre% to %cierra%; best in January and February. The Futaleufú runs to 30 June."
+   },
+   "revisado": "2026-11-04"
+  }
+ ],
+ "rio-santa-cruz": [
+  {
+   "especie": "trucha",
+   "etiqueta": {
+    "es": "Trucha steelhead",
+    "pt": "Truta steelhead",
+    "en": "Steelhead trout"
+   },
+   "mejor": [
+    4
+   ],
+   "pesca": [
+    3,
+    4,
+    5
+   ],
+   "veda": null,
+   "frase": {
+    "es": "La corrida de steelhead va de marzo a mayo, con lo mejor en abril; el río está abierto todo el año.",
+    "pt": "A corrida de steelhead vai de março a maio, com o melhor em abril; o rio está aberto o ano todo.",
+    "en": "The steelhead run goes from March to May, best in April; the river is open all year."
+   },
+   "nota_fuentes": {
+    "es": "Dos fuentes dicen marzo a mayo y fines de marzo a principios de mayo, con el pico en abril; una agrega que desde fines de febrero entran los peces del océano. Tomamos marzo a mayo como temporada del steelhead y abril como mejor época. Por norma el río está abierto todo el año (Anexo I, Disposición 241/2026): los meses vacíos son los de la corrida, no un cierre.",
+    "pt": "Duas fontes dizem março a maio e fim de março a começo de maio, com o pico em abril; uma acrescenta que desde o fim de fevereiro entram os peixes do oceano. Tomamos março a maio como temporada do steelhead e abril como melhor época. Pela norma o rio está aberto o ano todo (Anexo I, Disposição 241/2026): os meses vazios são os de fora da corrida, não um fechamento.",
+    "en": "Two sources say March to May and late March to early May, with the peak in April; one adds that fish enter from the ocean from late February. We take March to May as the steelhead season and April as the best time. By regulation the river is open all year (Anexo I, Disposición 241/2026): the empty months are outside the run, not a closure."
+   },
+   "revisado": "2026-11-14"
+  }
+ ],
+ "el-calafate": [
+  {
+   "especie": "trucha",
+   "mejor": [],
+   "pesca": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "veda": null,
+   "frase": {
+    "es": "Los ambientes abren de octubre a principios de mayo; el lago Argentino y el río Santa Cruz, todo el año.",
+    "pt": "Os ambientes abrem de outubro ao começo de maio; o lago Argentino e o rio Santa Cruz, o ano todo.",
+    "en": "The waters open from October to early May; Lake Argentino and the Santa Cruz River, all year."
+   },
+   "nota_fuentes": {
+    "es": "La Leona, el arroyo Calafate y el río Bote van del 1 de octubre de 2026 al 3 de mayo de 2027; el lago Argentino y el río Santa Cruz están habilitados todo el año, con sus límites. Dibujamos octubre a mayo, cuando están abiertos todos los ambientes. Una fuente sitúa las salidas guiadas de noviembre a abril; no marcamos mejor época.",
+    "pt": "La Leona, o arroio Calafate e o rio Bote vão de 1º de outubro de 2026 a 3 de maio de 2027; o lago Argentino e o rio Santa Cruz estão liberados o ano todo, com seus limites. Desenhamos outubro a maio, quando todos os ambientes estão abertos. Uma fonte situa os passeios guiados de novembro a abril; não marcamos melhor época.",
+    "en": "La Leona, the Calafate creek and the Bote River run from 1 October 2026 to 3 May 2027; Lake Argentino and the Santa Cruz River are open all year, within their limits. We draw October to May, when every water is open. One source places guided outings from November to April; we mark no best time."
+   },
+   "revisado": "2026-11-14"
+  }
+ ],
+ "ushuaia": [
+  {
+   "especie": "trucha",
+   "mejor": [],
+   "pesca": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "veda": null,
+   "frase": {
+    "es": "Abre el 30 de octubre y cierra el 2 de mayo; desde el 1 de marzo, la devolución es obligatoria.",
+    "pt": "Abre em 30 de outubro e fecha em 2 de maio; desde 1º de março, a devolução é obrigatória.",
+    "en": "Opens 30 October and closes 2 May; from 1 March, catch and release is compulsory."
+   },
+   "nota_fuentes": {
+    "es": "Fechas del reglamento de Tierra del Fuego para toda la provincia. El río Palacios y los ríos Milna, Tuerto y Turbio y el arroyo Subiabre se habilitan el 1 de enero, con devolución obligatoria. Un mes figura abierto si algún día cae dentro de la temporada.",
+    "pt": "Datas do regulamento da Terra do Fogo para toda a província. O rio Palacios e os rios Milna, Tuerto e Turbio e o arroio Subiabre abrem em 1º de janeiro, com devolução obrigatória. Um mês aparece aberto se algum dia cai dentro da temporada.",
+    "en": "Dates from the Tierra del Fuego regulations for the whole province. The Palacios River, the Milna, Tuerto and Turbio rivers and the Subiabre creek open on 1 January, with compulsory release. A month counts as open if any day falls inside the season."
+   },
+   "revisado": "2026-11-11"
+  }
+ ]
+}

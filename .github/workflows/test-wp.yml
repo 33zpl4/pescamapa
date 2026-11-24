@@ -959,14 +959,14 @@ jobs:
           check /calendario-de-pesca/ 200 'id="esquina"' 'CONTACTO-INTERNO-123'
           check /calendario-de-pesca/ 200 '"FAQPage"'
           check /en/fishing-calendar/ 200 'v-calendario'
-          # Season year in the calendar's title, H1 and description (15/11/2026); revised every season (docs/estado.md).
+          # Season year in the calendar's title and description (15/11/2026); revised every season (docs/estado.md). The H1 is the visitor's question since 24/11/2026.
           check /calendario-de-pesca/ 200 '<title>Calendario de pesca 2026/27 por mes y destino, con vedas</title>'
-          check /calendario-de-pesca/ 200 'Calendario de pesca 2026/27: qué se pesca cada mes en la Argentina y qué está vedado'
+          check /calendario-de-pesca/ 200 '<h1>¿Cuándo ir a pescar a la Argentina?</h1>' 'Su página dice'
           check /calendario-de-pesca/ 200 'name="description" content="Qué se pesca cada mes en 2026/27'
           check /en/fishing-calendar/ 200 '<title>Argentina fishing calendar 2026/27 by month, with closures</title>'
-          check /en/fishing-calendar/ 200 'Argentina fishing calendar 2026/27: what you can fish each month, and what is closed'
+          check /en/fishing-calendar/ 200 '<h1>When to go fishing in Argentina?</h1>'
           check /pt/calendario-de-pesca/ 200 '<title>Melhor época para pescar na Argentina 2026/27, com defesos</title>'
-          check /pt/calendario-de-pesca/ 200 'Melhor época para pescar na Argentina em 2026/27: o que se pesca em cada mês e o que está em defeso'
+          check /pt/calendario-de-pesca/ 200 '<h1>Quando ir pescar na Argentina?</h1>'
           check /pt/calendario-de-pesca/ 200 'hreflang="x-default"'
           check /para-guias-y-lodges/ 200 'v-paraguias'
           check /para-guias-y-lodges/ 200 'name="pm_tipo" value="prestador"'
@@ -2227,8 +2227,9 @@ jobs:
           check / 200 'class="hero-map"' 'id="este-mes"'
           wp --path="$WP" eval '$p = pm_buscar( "pm_destino", "esquina", "es" ); foreach ( [ "temporada_abre", "temporada_cierra", "pico_meses", "pico_quien" ] as $c ) { update_field( $c, "", $p->ID ); } wp_cache_flush();'
           wp --path="$WP" transient delete --all >/dev/null
-          # «Temporadas, en una mirada» on the calendar (23/11/2026): built only from the guides' season dates, authority and verification date.
-          # One guide open today (esquina), one closed with a future opening (paso-de-la-patria); then the second one with its dates removed. Dates relative to today.
+          # Calendar cards (24/11/2026, docs/ux-paginas.md): filters, one card per guide with a 12-month bar, the state of today,
+          # the sources folded in a <details>, «Veda: fecha por confirmar», no source quoted in the body. Dates relative to today.
+          # Only `esquina` and `paso-de-la-patria` exist in this seed: nothing else is referenced.
           wp --path="$WP" eval '
             $hoy = new DateTimeImmutable( "now", new DateTimeZone( "America/Argentina/Buenos_Aires" ) );
             $orig = [];
@@ -2251,36 +2252,37 @@ jobs:
             update_field( "reglamento_verificado", "20261102", $p->ID );
             wp_cache_flush();'
           wp --path="$WP" transient delete --all >/dev/null
-          vm() { wp --path="$WP" eval "\$h = ( new DateTimeImmutable( 'now', new DateTimeZone( 'America/Argentina/Buenos_Aires' ) ) ); \$a = pm_vedas_resumen( '$1' ); \$ab = \$h->modify( '+20 days' )->format( 'Y-m-d' ); \$ci = \$h->modify( '+60 days' )->format( 'Y-m-d' ); echo \$a['abiertas'] . '|' . \$a['cerradas'] . '|' . \$a['total'] . '|' . \$a['lead'] . '|' . pm_t( 'cal.vm.fila.antes', [ 'abre' => pm_fecha( \$ab, '$1' ), 'cierra' => pm_fecha( \$h->modify( '+120 days' )->format( 'Y-m-d' ), '$1' ) ], '$1' ) . '|' . pm_t( 'cal.vm.fila.abierta', [ 'abre' => pm_fecha( \$h->modify( '-30 days' )->format( 'Y-m-d' ), '$1' ), 'cierra' => pm_fecha( \$ci, '$1' ) ], '$1' ) . '|' . pm_t( 'cal.vm.revisado', [ 'fecha' => pm_fecha( '2026-11-01', '$1' ) ], '$1' ) . '|' . \$a['faq']['pregunta'];"; }
+          wp --path="$WP" transient delete --all >/dev/null
           for l in es pt en; do
             case $l in es) u=/calendario-de-pesca/;; pt) u=/pt/calendario-de-pesca/;; en) u=/en/fishing-calendar/;; esac
-            IFS='|' read -r na nc nt lead fila_antes fila_abierta revisado faqq <<< "$(vm $l)"
-            [[ "$na" == 1 && "$nc" == 1 && "$nt" == 2 && -n "$lead" ]] && echo "✓ vedas $l: 1 abierta, 1 cerrada, 2 con fechas" || { echo "✖ vedas $l: contadores $na/$nc/$nt"; fail=1; }
-            check $u 200 'id="vedas"'
-            perl -0777 -ne 'print $1 if /(<section class="vedas-mirada".*?<\/section>)/s' page.html > vedas.html
-            for frag in "$lead" "$fila_antes" "$fila_abierta" "$revisado"; do
-              grep -qF -- "$frag" vedas.html && echo "✓ vedas $l: $frag" || { echo "✖ vedas $l: falta «$frag»"; fail=1; }
-            done
-            grep -q 'class="vedas-mirada"' vedas.html && echo "✓ vedas $l: bloque presente" || { echo "✖ vedas $l: sin bloque"; fail=1; }
-            # The lead names the next season to open, and the block comes before the first destination table.
-            grep -q 'Paso de la Patria' <<< "$lead" && echo "✓ vedas $l: la próxima temporada es Paso de la Patria" || { echo "✖ vedas $l: lead sin Paso de la Patria: $lead"; fail=1; }
-            [[ $(grep -n 'id="vedas"' page.html | head -n1 | cut -d: -f1) -lt $(grep -n 'class="cal-destino"' page.html | head -n1 | cut -d: -f1) ]] && echo "✓ vedas $l: antes de las tablas" || { echo "✖ vedas $l: después de las tablas"; fail=1; }
-            # FAQ: visible and in the JSON-LD with the same answer.
-            grep -qF -- "$faqq" page.html && echo "✓ vedas $l: pregunta visible" || { echo "✖ vedas $l: falta la pregunta «$faqq»"; fail=1; }
-            perl -0777 -ne 'print $1 while /<script type="application\/ld\+json">(.*?)<\/script>/sg' page.html | grep -qF -- "$faqq" && echo "✓ vedas $l: pregunta en JSON-LD" || { echo "✖ vedas $l: pregunta fuera del JSON-LD"; fail=1; }
+            pesca=$(wp --path="$WP" eval "echo pm_t( 'cal.pill.pesca', [], '$l' );")
+            veda=$(wp --path="$WP" eval "echo pm_t( 'cal.veda.pendiente', [], '$l' );")
+            fuentes=$(wp --path="$WP" eval "echo pm_t( 'cal.fuentes', [ 'fecha' => '' ], '$l' );" | sed 's/ *$//')
+            faq4=$(wp --path="$WP" eval "echo pm_t( 'cal.faq.4.q', [], '$l' );")
+            check $u 200 'id="cal-g-donde"' 'Su página dice'
+            grep -q 'id="cal-g-que"' page.html && grep -q 'data-filtro="donde" data-valor="litoral"' page.html && grep -q 'data-filtro="que" data-valor="pacu"' page.html && echo "✓ calendario $l: los dos filtros, con chips" || { echo "✖ calendario $l: faltan los filtros o sus chips"; fail=1; }
+            perl -0777 -ne 'print $1 if /(<article class="cal-card[^"]*" id="esquina".*?<\/article>)/s' page.html > card.html
+            grep -q 'class="barra-meses cal-barra"' card.html && grep -q 'data-abre="20' card.html && echo "✓ calendario $l: tarjeta de Esquina con barra de 12 meses y fechas oficiales" || { echo "✖ calendario $l: la tarjeta de Esquina no tiene la barra"; fail=1; }
+            [[ $(grep -o '<li class="mes ' card.html | wc -l) -ge 12 ]] && echo "✓ calendario $l: 12 meses por barra" || { echo "✖ calendario $l: menos de 12 meses"; fail=1; }
+            grep -q 'cal-pill--pesca" data-pill>'"$pesca" card.html && echo "✓ calendario $l: hoy se pesca" || { echo "✖ calendario $l: falta la etiqueta de hoy «$pesca»"; fail=1; }
+            grep -qF -- "$veda" card.html && echo "✓ calendario $l: veda por confirmar" || { echo "✖ calendario $l: falta «$veda»"; fail=1; }
+            grep -q '<details class="cal-fuentes">' card.html && grep -qF -- "$fuentes" card.html && echo "✓ calendario $l: fuentes plegadas" || { echo "✖ calendario $l: sin el desplegable de fuentes"; fail=1; }
+            grep -q 'href="https://example.com/esquina-prueba"[^>]*>Autoridad Esquina de Prueba</a>' card.html && echo "✓ calendario $l: autoridad enlazada en el desplegable" || { echo "✖ calendario $l: falta la autoridad enlazada"; fail=1; }
+            grep -q 'Ver la guía\|See the guide\|Ver o guia' card.html && grep -q 'class="button dark cal-btn"' card.html && echo "✓ calendario $l: los dos botones" || { echo "✖ calendario $l: faltan los botones"; fail=1; }
+            # Nothing is quoted line by line, no source named in the body, no tables of the old page.
+            grep -qE 'Su página dice|Entre las dos fuentes|class="cal-destino"|vedas-mirada|Temporadas, en una mirada|Respuesta corta' page.html && { echo "✖ calendario $l: quedó texto de la página vieja"; fail=1; } || echo "✓ calendario $l: sin citas de fuentes ni bloques viejos"
+            # FAQ: visible and in the JSON-LD.
+            grep -qF -- "$faq4" page.html && echo "✓ calendario $l: pregunta visible" || { echo "✖ calendario $l: falta la pregunta «$faq4»"; fail=1; }
+            perl -0777 -ne 'print $1 while /<script type="application\/ld\+json">(.*?)<\/script>/sg' page.html | grep -qF -- "$faq4" && echo "✓ calendario $l: pregunta en JSON-LD" || { echo "✖ calendario $l: pregunta fuera del JSON-LD"; fail=1; }
           done
-          check /calendario-de-pesca/ 200 'href="#vedas"'
-          perl -0777 -ne 'print $1 if /(<section class="vedas-mirada".*?<\/section>)/s' page.html > vedas.html
-          grep -q 'href="https://example.com/esquina-prueba"[^>]*>Autoridad Esquina de Prueba</a>' vedas.html && grep -q 'href="https://example.com/paso-prueba"[^>]*>Autoridad Paso de Prueba</a>' vedas.html && echo "✓ vedas es: autoridad enlazada en cada fila" || { echo "✖ vedas es: falta la autoridad enlazada"; fail=1; }
-          grep -q 'abierta hoy' vedas.html && grep -q 'cerrada hoy: abre el' vedas.html && echo "✓ vedas es: abierta hoy / abre el" || { echo "✖ vedas es: faltan los estados"; fail=1; }
-          grep -qi 'confirmalas con la autoridad' vedas.html && echo "✓ vedas es: aviso fijo" || { echo "✖ vedas es: falta el aviso"; fail=1; }
-          # A guide without dates leaves the block and stays in the tables below.
+          # A guide without dates and without months in the file says so; the filter in the URL works without JavaScript.
           wp --path="$WP" eval '$p = pm_buscar( "pm_destino", "paso-de-la-patria", "es" ); foreach ( [ "temporada_abre", "temporada_cierra" ] as $f ) { update_field( $f, "", $p->ID ); } wp_cache_flush();'
           wp --path="$WP" transient delete --all >/dev/null
-          check /calendario-de-pesca/ 200 'id="vedas"'
-          perl -0777 -ne 'print $1 if /(<section class="vedas-mirada".*?<\/section>)/s' page.html > vedas.html
-          grep -q 'href="#paso-de-la-patria"' vedas.html && { echo "✖ vedas es: una guía sin fechas aparece en el bloque"; fail=1; } || echo "✓ vedas es: la guía sin fechas queda fuera del bloque"
-          grep -q 'id="paso-de-la-patria"' page.html && echo "✓ vedas es: la guía sin fechas sigue en las tablas" || { echo "✖ vedas es: la guía sin fechas falta en las tablas"; fail=1; }
+          check '/calendario-de-pesca/?que=pacu' 200 'id="paso-de-la-patria"'
+          grep -q 'id="paso-de-la-patria"[^>]* hidden' page.html && ! grep -q 'id="esquina"[^>]* hidden' page.html && grep -q 'Pacú: 1 destino' page.html && echo "✓ calendario: ?que=pacu deja solo Esquina" || { echo "✖ calendario: el filtro ?que=pacu no filtró en el servidor"; fail=1; }
+          check /calendario-de-pesca/ 200 'Todavía no tenemos los meses confirmados' 'Su página dice'
+          check /calendario-de-pesca/ 200 'Meses por confirmar'
+          grep -q 'id="paso-de-la-patria"' page.html && echo "✓ calendario: la guía sin fechas sigue con su ancla" || { echo "✖ calendario: falta la tarjeta de Paso de la Patria"; fail=1; }
           # Clean up: restore the guides' own values.
           wp --path="$WP" eval '$orig = json_decode( (string) file_get_contents( sys_get_temp_dir() . "/pm-vedas-orig.json" ), true ); foreach ( $orig as $c => $campos ) { $p = pm_buscar( "pm_destino", $c, "es" ); foreach ( $campos as $f => $v ) { update_field( $f, $v, $p->ID ); } } wp_cache_flush();'
           wp --path="$WP" transient delete --all >/dev/null
