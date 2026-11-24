@@ -566,7 +566,7 @@ foreach ( [ 'es', 'en', 'pt' ] as $i ) {
 }
 $nota_es = pm_nota( $filas['es']->ID );
 $ok_es   = $antes_es['destino'] === $nota_es['destino'] && 'goya' === $nota_es['destino'] && $antes_es['tipo'] === $nota_es['tipo'] && 'datos' === $nota_es['tipo'] && true === $nota_es['informativa']
-	&& (int) $nota_es['foto'] === $antes_es['foto'] && $antes_es['fecha'] === (string) pm_campo( 'nota_fecha', $filas['es']->ID ) && '20261124' === (string) pm_campo( 'actualizado', $filas['es']->ID );
+	&& (int) $nota_es['foto'] === $antes_es['foto'] && $antes_es['fecha'] === (string) pm_campo( 'nota_fecha', $filas['es']->ID ) && '20261124' === str_replace( '-', '', (string) pm_campo( 'actualizado', $filas['es']->ID ) );
 $todo_ok = $todo_ok && $ok_es;
 WP_CLI::log( ( $ok_es ? 'VERIFIED' : 'FALLÓ' ) . ": fila es sin cambios en destino {$nota_es['destino']}, tipo {$nota_es['tipo']}, informativa " . ( $nota_es['informativa'] ? 'sí' : 'NO' ) . ", fecha {$nota_es['fecha']}, portada #{$nota_es['foto']}; actualizado " . pm_campo( 'actualizado', $filas['es']->ID ) );
 
