@@ -235,10 +235,7 @@ function pm_seo(): array {
 		$s['jsonld'][]    = [
 			'@context'   => 'https://schema.org',
 			'@type'      => 'FAQPage',
-			'mainEntity' => array_merge(
-				( $vedas_faq = pm_vedas_resumen( pm_lang() )['faq'] ?? [] ) ? [ [ '@type' => 'Question', 'name' => $vedas_faq['pregunta'], 'acceptedAnswer' => [ '@type' => 'Answer', 'text' => $vedas_faq['respuesta'] ] ] ] : [],
-				array_map( fn( $n ) => [ '@type' => 'Question', 'name' => pm_t( "cal.faq.$n.q" ), 'acceptedAnswer' => [ '@type' => 'Answer', 'text' => pm_t( "cal.faq.$n.a" ) ] ], [ 1, 2, 3 ] )
-			),
+			'mainEntity' => array_map( fn( $n ) => [ '@type' => 'Question', 'name' => pm_t( "cal.faq.$n.q" ), 'acceptedAnswer' => [ '@type' => 'Answer', 'text' => pm_t( "cal.faq.$n.a" ) ] ], [ 1, 2, 3, 4 ] ),
 		];
 		$s['jsonld'][]    = [
 			'@context'        => 'https://schema.org',
@@ -266,6 +263,7 @@ function pm_seo(): array {
 				'url'     => pm_url_inicio( pm_lang() ),
 				'email'   => PM_EMAIL_PUBLICO,
 				'description' => pm_t( 'marca.definicion' ),
+				'sameAs'  => [ 'https://www.trustpilot.com/review/pescamapa.com' ],
 				'founder' => [
 					[ '@type' => 'Person', 'name' => pm_t( 'ns.p1.nombre' ) ],
 					[ '@type' => 'Person', 'name' => pm_t( 'ns.p2.nombre' ), 'jobTitle' => pm_t( 'ns.p2.rol' ) ],

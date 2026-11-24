@@ -410,17 +410,8 @@ footer .negocio a { color: var(--white); text-decoration: underline; text-underl
 .v-viaje .tambien small { font-weight: 400; color: var(--muted); font-size: var(--fs-caption); }
 
 /* Calendar + for-guides pages (1/11/2026) */
-.v-calendario .respuesta, .v-paraguias .respuesta { background: var(--cream); border-left: 3px solid var(--moss); border-radius: var(--radius); padding: 18px 22px; margin: 0 0 24px; max-width: 760px; }
-.v-calendario .respuesta h2, .v-paraguias .respuesta h2 { margin: 0 0 8px; font-size: var(--fs-h3); }
-.v-calendario .respuesta ul { margin: 0; padding-left: 20px; }
-.v-calendario .chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 24px; }
-.v-calendario .chips .chip { display: inline-block; padding: 6px 14px; border: 1px solid var(--line); border-radius: var(--radius); text-decoration: none; }
-.v-calendario .cal-destino { max-width: 760px; margin: 0 0 36px; padding-bottom: 24px; border-bottom: 1px solid var(--line); }
-.v-calendario .cal-destino h3 { margin: 0 0 10px; }
-.v-calendario .cal-destino h3 small { font-family: var(--font-body); font-weight: 400; font-size: 0.8em; opacity: 0.7; margin-left: 6px; }
-.v-calendario .cal-destino h4 { margin: 16px 0 6px; font-size: 1rem; }
-.v-calendario .cal-destino table { width: 100%; margin: 0 0 8px; }
-.v-calendario .cal-destino .enlaces { display: flex; flex-wrap: wrap; gap: 8px 20px; }
+.v-paraguias .respuesta { background: var(--cream); border-left: 3px solid var(--moss); border-radius: var(--radius); padding: 18px 22px; margin: 0 0 24px; max-width: 760px; }
+.v-paraguias .respuesta h2 { margin: 0 0 8px; font-size: var(--fs-h3); }
 .v-paraguias .columnas { display: grid; gap: 24px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); max-width: 980px; margin: 0 0 24px; }
 .v-paraguias .cuerpo > section { max-width: 760px; margin: 0 0 28px; }
 .v-paraguias .consulta .grid { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
@@ -736,11 +727,61 @@ footer .negocio a { color: var(--white); text-decoration: underline; text-underl
 	.v-licencia .tabla-apilada td::before { content: attr(data-label) ': '; font-weight: 700; }
 }
 
-/* Calendar: «Vedas y temporadas, en una mirada» (23/11/2026) */
-.v-calendario .vedas-mirada { background: var(--cream); border-left: 3px solid var(--moss); border-radius: var(--radius); padding: 18px 22px; margin: 0 0 24px; max-width: 760px; scroll-margin-top: 80px; }
-.v-calendario .vedas-mirada h2 { margin: 0 0 8px; font-size: var(--fs-h3); }
-.v-calendario .vedas-mirada .lead { margin: 0 0 12px; font-weight: 500; }
-.v-calendario .vedas-mirada h3 { margin: 16px 0 6px; font-size: 1rem; }
-.v-calendario .vedas-mirada ul { margin: 0; padding-left: 20px; }
-.v-calendario .vedas-mirada li { margin: 0 0 8px; overflow-wrap: anywhere; }
-.v-calendario .vedas-mirada .note { margin: 14px 0 0; font-size: 0.9em; }
+/* Calendar (rebuilt 24/11/2026, docs/ux-paginas.md): filters, cards with a 12-month bar per species, the state of today in a pill. */
+.v-calendario .cal { max-width: 1100px; }
+.v-calendario .cal-filtros { display: grid; gap: 14px; background: var(--white); border: 1px solid var(--line-strong); border-radius: var(--radius); padding: 16px; margin: 0 0 18px; }
+.v-calendario .cal-gl { margin: 0 0 8px; font-weight: 700; font-size: var(--fs-small); }
+.v-calendario .cal-chips { display: flex; flex-wrap: wrap; gap: 6px; list-style: none; margin: 0; padding: 0; }
+.v-calendario .cal-chip { display: inline-flex; align-items: center; min-height: 40px; padding: 8px 14px; border: 1px solid var(--line-strong); border-radius: 99px; background: var(--paper); color: var(--ink); font: 400 var(--fs-small)/1.2 var(--font-body); text-decoration: none; cursor: pointer; }
+.v-calendario .cal-chip:hover { background: var(--cream); }
+.v-calendario .cal-chip[aria-pressed="true"], .v-calendario .cal-chip[aria-current="true"] { background: var(--forest); border-color: var(--forest); color: var(--white); font-weight: 600; }
+.v-calendario .cal-chip:focus-visible, .v-calendario .cal-mas:focus-visible { outline: 3px solid var(--ink); outline-offset: 2px; }
+.v-calendario .cal-res { margin: 0 0 10px; font-size: var(--fs-body); font-weight: 600; min-height: 1.6em; }
+.v-calendario .cal-ley { display: flex; flex-wrap: wrap; gap: 6px 16px; list-style: none; margin: 0 0 16px; padding: 0; font-size: var(--fs-caption); color: var(--muted); }
+.v-calendario .cal-ley .mes { display: inline-block; width: 14px; height: 14px; padding: 0; vertical-align: -2px; margin-right: 4px; border: 1px solid var(--line); border-radius: 4px; opacity: 1; }
+.v-calendario .cal-ley .mes--pico { background: var(--moss); border-color: var(--moss); }
+.v-calendario .cal-ley .mes--abierto { background: var(--cream); border-color: var(--moss); }
+.v-calendario .cal-ley .mes--actual { box-shadow: 0 0 0 2px var(--ink); }
+.v-calendario .cal-lista { display: grid; gap: 12px; grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 1000px) { .v-calendario .cal-lista { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; } }
+.v-calendario .cal-card { background: var(--white); border: 1px solid var(--line-strong); border-radius: var(--radius); padding: 16px; scroll-margin-top: 80px; min-width: 0; }
+.v-calendario .cal-card[hidden], .v-calendario .cal-esp[hidden], .v-calendario .cal-sin[hidden], .v-calendario .cal-mas[hidden] { display: none; }
+.v-calendario .cal-card h3 { margin: 0; font-size: var(--fs-h3); line-height: 1.2; }
+.v-calendario .cal-card h3 a { color: var(--ink); text-decoration: none; }
+.v-calendario .cal-card h3 a:hover { text-decoration: underline; }
+.v-calendario .cal-prov { margin: 2px 0 0; font-size: var(--fs-caption); color: var(--muted); }
+.v-calendario .cal-pill { display: inline-block; margin: 8px 0 2px; padding: 4px 12px; border-radius: 99px; border: 1px solid var(--line-strong); background: var(--cream); color: var(--ink); font: 600 var(--fs-small)/1.3 var(--font-body); }
+.v-calendario .cal-pill--pesca, .v-calendario .cal-pill--mejor { background: var(--lime); border-color: var(--forest); color: var(--forest); }
+.v-calendario .cal-pill--veda { background: var(--warn-bg); border-color: var(--warn-line); color: var(--ink); }
+.v-calendario .cal-pill--sin, .v-calendario .cal-pill--cerrado { color: var(--muted); }
+.v-calendario .cal-esp { margin: 12px 0 0; }
+.v-calendario .cal-esp-n { margin: 0 0 6px; font-weight: 700; font-size: var(--fs-small); }
+.v-calendario .cal--js .cal-esp--mas { display: none; }
+.v-calendario .cal--js .cal-card--abierta .cal-esp--mas, .v-calendario .cal--js .cal-card--que .cal-esp--mas { display: block; }
+.v-calendario .cal-card--que .cal-esp--mas[hidden] { display: none; }
+.v-calendario .cal-barra { margin: 0; max-width: none; }
+.v-calendario .cal-barra .meses { gap: 2px; }
+.v-calendario .cal-barra .mes { padding: 9px 0; font-size: var(--fs-caption); opacity: 1; color: var(--muted); background: var(--paper); }
+.v-calendario .cal-barra .mes--abierto { background: var(--cream); border-color: var(--moss); color: var(--ink); }
+.v-calendario .cal-barra .mes--pico { background: var(--moss); border-color: var(--moss); color: var(--white); }
+.v-calendario .mes--veda { background: repeating-linear-gradient(135deg, var(--warn-bg) 0 3px, var(--white) 3px 6px); border: 1px dashed var(--ink); color: var(--ink); }
+.v-calendario .cal-ley .mes--veda { border: 1px dashed var(--ink); }
+.v-calendario .cal-barra .mes--actual { box-shadow: 0 0 0 2px var(--ink); font-weight: 700; }
+.v-calendario .cal-barra .mes-n { display: none; }
+@media (min-width: 521px) { .v-calendario .cal-barra .mes-i { display: none; } .v-calendario .cal-barra .mes-n { display: inline; } }
+.v-calendario .cal-frase { margin: 10px 0 0; font-size: var(--fs-small); line-height: 1.5; }
+.v-calendario .cal-veda { margin: 4px 0 0; font-size: var(--fs-caption); color: var(--muted); }
+.v-calendario .cal-sin { margin: 12px 0 0; font-size: var(--fs-small); color: var(--muted); }
+.v-calendario .cal-mas { margin: 10px 0 0; padding: 8px 0; border: 0; background: none; color: var(--moss); font: 600 var(--fs-small)/1.2 var(--font-body); text-decoration: underline; cursor: pointer; }
+.v-calendario .cal-acc { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 12px 0 0; }
+.v-calendario .cal-btn { justify-content: center; text-align: center; min-height: 44px; padding: 10px 8px; font-size: var(--fs-small); line-height: 1.2; border: 1px solid var(--forest); color: var(--forest); }
+.v-calendario .cal-btn.dark { color: var(--white); }
+.v-calendario .cal-fuentes { margin: 10px 0 0; padding: 0; border: 0; font-size: var(--fs-caption); color: var(--muted); }
+.v-calendario .cal-fuentes summary { font-weight: 400; padding: 6px 0; }
+.v-calendario .cal-fuentes p { margin: 6px 0 0; }
+.v-calendario .cal-fuentes a { color: var(--moss); }
+.v-calendario .cal-tabla { margin: 24px 0 0; font-size: var(--fs-small); }
+.v-calendario .faq { max-width: 760px; margin: 28px 0 24px; }
+.v-calendario .faq h2 { font-size: var(--fs-h2); margin: 0 0 8px; }
+.v-calendario .faq h3 { font-size: var(--fs-lead); margin: 18px 0 6px; }
+.v-calendario .faq p { margin: 0; }

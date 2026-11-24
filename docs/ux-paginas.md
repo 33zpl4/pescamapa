@@ -49,9 +49,21 @@ y que un asistente o un buscador confíe en la página) y ninguna de las tres ex
 - Las notas informativas con datos propios (`docs/contenido.md`) sí explican de dónde sale cada cifra: ahí la fuente
   es parte de la historia.
 
-## Primer caso: el calendario (en curso, 24/11/2026)
+## Primer caso: el calendario (construido el 24/11/2026, rama `claude/confident-feynman-4oj6zh`, sin mergear)
 
-Maqueta aprobada por el dueño: dos filtros (dónde / qué), una tarjeta por destino con barra de 12 meses (mejor época,
-se pesca, veda, hoy), frase corta, dos botones y fuentes plegadas. Las tablas «época / qué esperar» y el resumen del
-reglamento salen de esa página. El mapa con los mismos filtros queda para una segunda entrega. Requiere cargar los
-meses por destino y especie como dato (hoy solo 6 destinos de Patagonia tienen fechas).
+Maqueta aprobada por el dueño y construida: dos filtros (dónde / qué, combinables y reflejados en la URL), una tarjeta por destino con
+etiqueta de hoy, barra de 12 meses por especie (mejor época, se pesca, veda, mes de hoy), una frase con nuestra lectura, dos botones y
+las fuentes plegadas («De dónde sale · revisado el …»). Salieron de esa página las tablas «época / qué esperar», el resumen del
+reglamento, «Temporadas, en una mirada» y «Respuesta corta»; quedan una FAQ corta (con su FAQPage) y el cierre `cta-nota`. El mapa con los
+mismos filtros queda para una segunda entrega.
+
+- **Dónde viven los datos**: las fechas oficiales de cada guía (`temporada_abre` / `temporada_cierra`, `pico_meses` + `pico_quien`) y
+  `wordpress/plugins/pescamapa-core/data/calendario.json` para el resto. Código: `inc/temporada.php` (`pm_calendario_tarjetas()`),
+  `vistas/calendario.php`, `assets/calendario.js`, estilos `.cal-*` en `extra.css`. Detalle y cómo se prueba: `docs/wordpress.md` → «El calendario».
+- **Cómo cargar meses o una veda de un destino**: agregar (o editar) la lista de la clave de la guía en `calendario.json`: por especie,
+  `mejor`, `pesca`, `veda` (números de mes), `frase` en los tres idiomas, `nota_fuentes` si las fuentes no coinciden, `revisado`. Si la guía
+  tiene fechas oficiales, los meses salen de esos campos y el JSON solo aporta la frase y la nota. **Los meses salen solo de lo que la guía ya dice**; si dos fuentes
+  no coinciden, decidimos una lectura (pesca = unión, mejor = lo que comparten) y la discrepancia va en `nota_fuentes`, nunca en el cuerpo.
+- **Veda**: solo se pinta con las fechas declaradas en la guía y una autoridad (hoy Chascomús, pejerrey, 1/9 al 30/11, y Concordia, dorado, 1/9 al 31/12;
+  ambas son vedas anuales fijas, no de esta temporada: **decisión pendiente del dueño**; para quitarlas, `veda: null`). Con `veda: null` la tarjeta dice «Veda: fecha por confirmar».
+- **Lo que no hace**: no nombra prestadores ni fuentes en el cuerpo, no escribe «se pesca todo el año» sin matiz, no pinta una veda del año pasado.

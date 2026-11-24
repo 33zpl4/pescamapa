@@ -26,6 +26,7 @@ add_action( 'wp_enqueue_scripts', function () {
 	wp_register_script( 'pm-mapa', "$uri/assets/mapa.js", [ 'leaflet' ], $ver( 'assets/mapa.js' ), [ 'in_footer' => true, 'strategy' => 'defer' ] );
 
 	wp_register_script( 'pm-pique', "$uri/assets/pique.js", [ 'leaflet' ], $ver( 'assets/pique.js' ), [ 'in_footer' => true, 'strategy' => 'defer' ] );
+	wp_register_script( 'pm-calendario', "$uri/assets/calendario.js", [], $ver( 'assets/calendario.js' ), [ 'in_footer' => true, 'strategy' => 'defer' ] );
 
 	if ( function_exists( 'pm_vista' ) && in_array( pm_vista(), [ 'inicio', 'mapa', 'destino' ], true ) ) {
 		wp_enqueue_style( 'leaflet' );
