@@ -3,6 +3,12 @@
 > Regla del dueño, 24/11/2026, a raíz del calendario de pesca. Vale para toda página y herramienta nueva, y para
 > las que se rehagan. Leer antes de diseñar una página.
 
+## El objetivo (dueño, 25/11/2026)
+
+> «Nuestro objetivo de verdad tiene que ser: hacerle las cosas más fáciles y cómodas a quien planifica su viaje… más eficiente, más rápido (que le lleve menos tiempo), mejor experiencia… y entonces vamos a tener éxito.»
+
+Hacerle las cosas más fáciles y cómodas a quien planifica su viaje de pesca: más eficiente, con menos tiempo y mejor experiencia. La escala la decide el mercado: no se persigue como meta, llega si lo anterior se cumple. **Prueba para cualquier página o herramienta: «¿esto le ahorra tiempo o pasos a quien planifica?»** Si la respuesta es no (o solo nos sirve a nosotros), se acorta, se reordena o se saca. Por eso una nota que compara caminos dice cuándo otro camino es mejor que el nuestro.
+
 ## Qué pasó
 
 `/calendario-de-pesca/` mostraba, destino por destino, lo que dice cada fuente: «Su página dice "octubre a mayo"…»,
