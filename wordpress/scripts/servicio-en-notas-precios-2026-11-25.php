@@ -255,11 +255,11 @@ foreach ( $plan as $clave => $quiere ) {
 			}
 		}
 		$v2 = 200 === $st
-			&& ( empty( $quiere['a'] ) || ( false !== strpos( $html, 'class="pm-servicio"' ) && false !== strpos( $html, esc_url( pm_url_presupuesto( $i ) ) ) ) )
-			&& ( empty( $quiere['b'] ) || ( $T[ $i ]['q'] === $ld_q && false !== strpos( $html, esc_html( $T[ $i ]['q'] ) ) ) )
+			&& ( empty( $quiere['a'] ) || ( 1 === preg_match( '#<p class="[^"]*\bpm-servicio\b#', $html ) && false !== strpos( $html, esc_url( pm_url_presupuesto( $i ) ) ) ) )
+			&& ( empty( $quiere['b'] ) || ( false !== strpos( implode( ' ', $mm[1] ?? [] ), trim( wp_json_encode( $T[ $i ]['q'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES ), '"' ) ) && false !== strpos( $html, esc_html( $T[ $i ]['q'] ) ) ) )
 			&& 1 === substr_count( $html, 'class="cta-nota"' )
 			&& false !== strpos( $html, 'barra-pedir' );
-		WP_CLI::log( ( $v1 && $v2 ? 'VERIFIED' : 'FALLÓ' ) . ": $clave ($i) #$id contenido=" . ( $v1 ? 'ok' : 'NO' ) . " render=" . ( $v2 ? 'ok' : "NO (status $st, primera pregunta del JSON-LD «$ld_q»)" ) . ' ' . get_permalink( $id ) );
+		WP_CLI::log( ( $v1 && $v2 ? 'VERIFIED' : 'FALLÓ' ) . ": $clave ($i) #$id contenido=" . ( $v1 ? 'ok' : 'NO' ) . " render=" . ( $v2 ? 'ok' : "NO (status $st, primera pregunta del JSON-LD «{$ld_q}»)" ) . ' ' . get_permalink( $id ) );
 		if ( ! ( $v1 && $v2 ) ) {
 			$fallos++;
 		}
