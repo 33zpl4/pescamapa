@@ -119,40 +119,40 @@ $N = [
 	'h_lado' => 'Los cuatro caminos, lado a lado',
 	'tarjetas' => [
 		[ 'Escribirle directo a cada lodge o guía', [
-			[ 'Sirve para', 'ir a un lugar que ya elegiste.' ],
-			[ 'Qué ves antes de pagar', 'lo que cada uno te responde. Muchos no publican precio y cada uno cotiza a su manera: por lancha, por persona, por día o por semana.' ],
-			[ 'Tu tiempo', 'un mensaje por lugar y una espera por cada respuesta.' ],
+			[ 'Sirve para', 'un lugar que ya elegiste.' ],
+			[ 'Qué ves antes de pagar', 'lo que cada uno te responda, cada uno a su manera.' ],
+			[ 'Tu tiempo', 'un mensaje y una espera por cada lugar.' ],
 			[ 'Quién ve tus datos', 'cada lugar al que escribís.' ],
-			[ 'Costo para vos', 'pedir es gratis; pagás el precio del lugar.' ],
+			[ 'Costo para vos', 'el precio del lugar.' ],
 		] ],
 		[ 'Reservar un guía en una plataforma: <a href="https://hooked.com.ar/" rel="noopener">Hooked</a> y <a href="https://pesqa.ar/" rel="noopener">Pesqa</a>', [
-			[ 'Sirve para', 'un día o medio día con guía, reservado ya. Elegís un guía y la salida. Hooked: guías por especie, destino y modalidad. Pesqa: salidas con guías y estadías (lodges, cabañas, camping) de todo el país.' ],
-			[ 'Qué ves antes de pagar', 'el precio publicado (en Pesqa, «Consultar» si el lugar no lo cargó), qué incluye y qué no, la duración, el tamaño del grupo y las reseñas (en Pesqa, de pescadores que fueron).' ],
-			[ 'Tu tiempo', 'minutos: elegís salida y fecha y reservás. En Hooked, con reserva online confirmás y pagás ahí (Mercado Pago); si el guía trabaja por consulta, mandás fecha y personas y él confirma. En Pesqa pagás una seña con Mercado Pago o consultás sin pagar.' ],
-			[ 'Quién ve tus datos', 'el guía o el lugar que elegís y la plataforma.' ],
-			[ 'Costo para vos', 'el precio publicado por el guía; los términos de cada plataforma cobran su comisión al guía y no publican un cargo extra para vos.' ],
+			[ 'Sirve para', 'un día o medio día con guía, reservado ya.' ],
+			[ 'Qué ves antes de pagar', 'el precio publicado, qué incluye y las reseñas.' ],
+			[ 'Tu tiempo', 'minutos: elegís guía y fecha, y reservás o consultás.' ],
+			[ 'Quién ve tus datos', 'el guía que elegís y la plataforma.' ],
+			[ 'Costo para vos', 'el precio publicado del guía; pagás online la salida o una seña.' ],
 		] ],
 		[ 'Una agencia que arma el paquete', [
-			[ 'Sirve para', 'tener todo en un solo trato: lodge, traslados y, según la agencia, vuelos desde tu país. Algunas venden solo a grupos de cuatro o más.' ],
-			[ 'Qué ves antes de pagar', 'la propuesta del paquete completo; en los sitios de agencias que leímos el precio no estaba publicado y se pide por consulta.' ],
-			[ 'Tu tiempo', 'una consulta a la agencia, que gestiona el resto.' ],
-			[ 'Quién ve tus datos', 'consultalo en la política de cada agencia.' ],
-			[ 'Costo para vos', 'pagás el paquete completo; preguntá qué parte del precio es de la agencia y qué es del lugar.' ],
+			[ 'Sirve para', 'tener lodge, traslados y, según la agencia, vuelos en un solo trato.' ],
+			[ 'Qué ves antes de pagar', 'la propuesta del paquete, que se pide por consulta.' ],
+			[ 'Tu tiempo', 'una consulta; la agencia gestiona el resto.' ],
+			[ 'Quién ve tus datos', 'la agencia.' ],
+			[ 'Costo para vos', 'el precio del paquete; preguntá el mínimo de personas.' ],
 		] ],
 		[ '<a href="{p:presupuesto}">Pescamapa: un pedido, opciones comparadas</a>', [
-			[ 'Sirve para', 'comparar varios lugares en un viaje de varios días; viajás solo, con alguien que no pesca o con fechas que podés mover.' ],
-			[ 'Qué ves antes de pagar', 'las opciones lado a lado: el total para tu grupo, qué incluye y qué fechas tienen lugar.' ],
+			[ 'Sirve para', 'comparar varios lugares para un viaje de varios días.' ],
+			[ 'Qué ves antes de pagar', 'las opciones lado a lado: total para tu grupo, qué incluye y fechas con lugar.' ],
 			[ 'Tu tiempo', 'un solo pedido; las opciones llegan en 24 a 48 horas.' ],
-			[ 'Quién ve tus datos', 'los lugares reciben tu pedido sin tu nombre ni tu contacto; tus datos quedan con nosotros hasta que elegís un lugar, y ahí te conectamos.' ],
-			[ 'Costo para vos', 'gratis. Reservás y pagás directo con el lugar que elijas, al mismo precio.' ],
+			[ 'Quién ve tus datos', 'nosotros; los lugares reciben tu pedido sin tu nombre ni tu contacto.' ],
+			[ 'Costo para vos', 'gratis. Reservás directo con el lugar que elijas, al mismo precio.' ],
 		] ],
 	],
 	'lado_pie' => '<em>Lo de Hooked y Pesqa sale de sus páginas, leídas el 25/11/2026. Los sitios cambian: confirmalo en cada uno antes de reservar.</em>',
 	'h_cual' => 'Cuál te conviene según tu viaje',
 	'casos' => [
-		'<strong>Un día con guía la semana que viene.</strong> Una plataforma (Hooked o Pesqa): elegís la salida y la fecha, reservás en minutos y ves el precio, qué incluye y las reseñas antes de pagar. Es el camino más rápido. Para comparar varios guías o lugares con un solo pedido, <a href="{viaje}">pedinos opciones</a>.',
+		'<strong>Un día con guía la semana que viene.</strong> Una plataforma (Hooked o Pesqa): elegís la salida y la fecha, reservás en minutos y ves el precio, qué incluye y las reseñas antes de pagar. Es el camino más rápido.',
 		'<strong>Una semana en un lodge para cuatro.</strong> Pescamapa: un solo pedido con las fechas y los cuatro, y recibís el total del grupo de cada lugar lado a lado, sin escribirle a uno por uno. <a href="{viaje}">Pedir opciones</a>, gratis. Cómo es una semana por dentro: <a href="{n:semana-de-pesca-en-lodge-argentina}">cómo funciona una semana de pesca en un lodge</a>.',
-		'<strong>Voy solo o con alguien que no pesca.</strong> Pescamapa: en el pedido indicás cuántos pescan y cuántos te acompañan, y el total que te mandamos cuenta a todos. También preguntamos qué pasa si el clima no deja salir. <a href="{viaje}">Armar el viaje</a>.',
+		'<strong>Voy solo o con alguien que no pesca.</strong> Pescamapa: en el pedido indicás cuántos pescan y cuántos te acompañan, y el total que te mandamos cuenta a todos. <a href="{viaje}">Armar el viaje</a>.',
 		'<strong>Quiero todo resuelto, con vuelos desde mi país.</strong> Una agencia: un solo trato para el paquete completo. Si salís de España, mirá antes <a href="{n:viaje-pesca-argentina-desde-espana}">el viaje de pesca a la Argentina desde España</a>.',
 		'<strong>Ya sé a qué lodge quiero ir.</strong> Escribile directo, que es el camino más corto. Con la lista de abajo, tu pedido sale completo en un solo mensaje.',
 	],
@@ -226,12 +226,12 @@ $origen    = 'Cómo pedir presupuestos de pesca en la Argentina, 25/11/2026 (ped
 
 $armar = function ( array $n ): string {
 	// The four 'datos' (stored as nota_datos) are the short answer: the note template shows them first in the «Datos clave» box, followed by its own «Pedir opciones» button.
-	$c = pm_sc_h2( $n['h_lado'] );
+	// The cases come first (the answer for the reader's own trip), then the four routes side by side.
+	$c = pm_sc_h2( $n['h_cual'] ) . implode( '', array_map( 'pm_sc_p', $n['casos'] ) ) . pm_sc_h2( $n['h_lado'] );
 	foreach ( $n['tarjetas'] as [ $titulo, $filas ] ) {
 		$c .= pm_cc_tarjeta( $titulo, $filas );
 	}
 	return $c . pm_sc_p( $n['lado_pie'] )
-		. pm_sc_h2( $n['h_cual'] ) . implode( '', array_map( 'pm_sc_p', $n['casos'] ) )
 		. pm_sc_h2( $n['h_pedir'] ) . pm_sc_p( $n['pedir_p'] ) . pm_cc_lista_ord( $n['pedir_l'] ) . pm_sc_p( $n['pedir_p2'] )
 		. pm_sc_h2( $n['h_como'] ) . pm_cc_lista_ord( $n['como_l'] ) . pm_sc_p( $n['como_p'] )
 		. pm_sc_h2( $n['faq_h'] ) . pm_sc_faq( $n['faq'] )
