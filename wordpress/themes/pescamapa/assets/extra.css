@@ -785,3 +785,6 @@ footer .negocio a { color: var(--white); text-decoration: underline; text-underl
 .v-calendario .faq h2 { font-size: var(--fs-h2); margin: 0 0 8px; }
 .v-calendario .faq h3 { font-size: var(--fs-lead); margin: 18px 0 6px; }
 .v-calendario .faq p { margin: 0; }
+
+/* Price notes: what we do for the visitor, right under the short answer (25/11/2026). */
+.pm-servicio { background: var(--cream); border-left: 3px solid var(--moss); border-radius: var(--radius); padding: 16px 20px; margin: 0 0 28px; max-width: 760px; }
