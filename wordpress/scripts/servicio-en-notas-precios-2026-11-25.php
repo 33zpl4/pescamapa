@@ -123,14 +123,20 @@ if ( ! function_exists( 'pm_sv_texto' ) ) {
 			} else {
 				$grupo = "<!-- wp:heading -->\n<h2 class=\"wp-block-heading\">" . $T[ $i ]['h'] . "</h2>\n<!-- /wp:heading -->\n\n"
 					. "<!-- wp:group {\"className\":\"pm-faq\"} -->\n<div class=\"wp-block-group pm-faq\">" . rtrim( pm_sv_bloque_q( $i, $T ) ) . "</div>\n<!-- /wp:group -->\n\n";
-				$par   = pm_sv_parrafos( $c );
-				$ult   = $par ? end( $par ) : null;
-				$cola  = $ult ? trim( substr( $c, $ult[0] + $ult[1] ) ) : '?';
-				if ( $ult && '' === $cola && 0 === strpos( ltrim( $ult[3] ), '<em>' ) ) {
-					$c = substr( $c, 0, $ult[0] ) . $grupo . substr( $c, $ult[0] );
+				// Antes del último cierre en cursiva (<em>…) si lo que viene después son solo párrafos (p. ej. «Para planificar tu viaje: …»); si no, al final.
+				$par = pm_sv_parrafos( $c );
+				$cie = null;
+				foreach ( $par as $x ) {
+					if ( 0 === strpos( ltrim( $x[3] ), '<em>' ) ) {
+						$cie = $x;
+					}
+				}
+				$resto = $cie ? preg_replace( '#<!-- wp:paragraph[^>]*-->\s*<p[^>]*>.*?</p>\s*<!-- /wp:paragraph -->\s*#su', '', substr( $c, $cie[0] + $cie[1] ) ) : '?';
+				if ( $cie && '' === trim( $resto ) ) {
+					$c       = substr( $c, 0, $cie[0] ) . $grupo . substr( $c, $cie[0] );
 					$hecho[] = 'b: sección de FAQ nueva (una pregunta) antes del cierre en cursiva';
 				} else {
-					$c = rtrim( $c ) . "\n\n" . rtrim( $grupo ) . "\n";
+					$c       = rtrim( $c ) . "\n\n" . $grupo;
 					$hecho[] = 'b: sección de FAQ nueva (una pregunta) al final';
 				}
 			}
@@ -208,8 +214,8 @@ foreach ( $plan as $clave => $quiere ) {
 		WP_CLI::log( '   contenido: ' . strlen( $antes ) . ' → ' . strlen( $despues ) . ' bytes; tablas ' . substr_count( $antes, '<table' ) . ' → ' . substr_count( $despues, '<table' ) );
 		// Comprobaciones que valen también en simulacro.
 		$ok = substr_count( $antes, '<table' ) === substr_count( $despues, '<table' )
-			&& pm_sv_sin_agregado( $despues, $i, $T ) === $antes                                  // solo se agregó lo nuestro: nada más cambió
-			&& pm_sv_aplicar( $despues, $i, $quiere, $T )[0] === $despues                          // idempotente: una segunda corrida no cambia nada
+			&& rtrim( pm_sv_sin_agregado( $despues, $i, $T ) ) === rtrim( $antes )                 // solo se agregó lo nuestro: nada más cambió
+			&& pm_sv_aplicar( $despues, $i, $quiere, $T )[0] === $despues                         // idempotente: una segunda corrida no cambia nada
 			&& substr_count( $despues, 'class="pm-servicio"' ) <= 1
 			&& ( empty( $quiere['b'] ) || ( $faq_despues && $T[ $i ]['q'] === $faq_despues[0]['pregunta'] ) );
 		WP_CLI::log( '   ' . ( $ok ? 'CHECK ok: solo lo agregado cambia, una segunda corrida no cambia nada, la pregunta es la primera.' : 'CHECK FALLÓ' ) );
@@ -231,7 +237,7 @@ foreach ( $plan as $clave => $quiere ) {
 		$v1       = ( empty( $quiere['a'] ) || ( 1 === substr_count( $guardado, 'class="pm-servicio"' ) && false !== strpos( $guardado, esc_url( pm_url_presupuesto( $i ) ) ) ) )
 			&& ( empty( $quiere['b'] ) || ( $gf && $T[ $i ]['q'] === $gf[0]['pregunta'] && false !== strpos( $guardado, esc_url( pm_url_viaje( $i ) ) ) ) )
 			&& substr_count( $guardado, '<table' ) === substr_count( $antes, '<table' )
-			&& pm_sv_sin_agregado( $guardado, $i, $T ) === $antes
+			&& rtrim( pm_sv_sin_agregado( $guardado, $i, $T ) ) === rtrim( $antes )
 			&& get_post_field( 'post_name', $id ) === $p->post_name;
 		// VERIFIED 2: la página renderizada.
 		$resp = wp_remote_get( add_query_arg( 'pm_v', time(), get_permalink( $id ) ), [ 'timeout' => 25, 'redirection' => 3, 'user-agent' => 'Pescamapa-lector/1.0 (solo lectura)' ] );
