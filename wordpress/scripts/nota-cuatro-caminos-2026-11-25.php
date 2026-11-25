@@ -108,7 +108,7 @@ $N = [
 	'titulo' => 'Cómo pedir presupuestos de pesca en la Argentina: cuatro caminos y cuál te conviene',
 	'slug' => 'como-pedir-presupuestos-de-pesca-en-argentina',
 	'seo_title' => 'Cómo pedir presupuestos de pesca en Argentina: 4 caminos',
-	'seo_description' => 'Escribir al lodge, reservar un guía en una plataforma (Hooked, Pesqa), una agencia o pedir opciones a Pescamapa: cuál sirve para cada viaje y qué pedir para comparar.',
+	'seo_description' => 'Escribir al lodge, reservar un guía en una plataforma (Hooked, Pesqa), una agencia o pedir opciones a Pescamapa: cuál sirve a cada viaje y qué pedir.',
 	'bajada' => 'Cuatro formas de conseguir precios para un viaje de pesca a la Argentina, lado a lado, y cuál te conviene según tu viaje.',
 	'datos' => [
 		'Escribirle directo al lodge o al guía: el mejor si ya sabés a qué lugar querés ir.',

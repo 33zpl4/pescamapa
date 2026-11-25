@@ -1,6 +1,6 @@
 # Borrador: Cómo pedir presupuestos de pesca en la Argentina: cuatro caminos y cuál te conviene
 
-Estado: para revisar por el dueño. Nota **solo en español** (en/pt después). Slug `como-pedir-presupuestos-de-pesca-en-argentina`, clave `como-pedir-presupuestos-pesca-argentina`, `nota_tipo` como. Script: `wordpress/scripts/nota-cuatro-caminos-2026-11-25.php` (`$aplicar = false`). Portada: la de `precio-pesca-patagonia-sur` (provisoria). SEO title: Cómo pedir presupuestos de pesca en Argentina: 4 caminos / description: Escribir al lodge, reservar un guía en una plataforma (Hooked, Pesqa), una agencia o pedir opciones a Pescamapa: cuál sirve para cada viaje y qué pedir para comparar.
+Estado: para revisar por el dueño. Nota **solo en español** (en/pt después). Slug `como-pedir-presupuestos-de-pesca-en-argentina`, clave `como-pedir-presupuestos-pesca-argentina`, `nota_tipo` como. Script: `wordpress/scripts/nota-cuatro-caminos-2026-11-25.php` (`$aplicar = false`). Portada: la de `precio-pesca-patagonia-sur` (provisoria). SEO title: Cómo pedir presupuestos de pesca en Argentina: 4 caminos / description: Escribir al lodge, reservar un guía en una plataforma (Hooked, Pesqa), una agencia o pedir opciones a Pescamapa: cuál sirve a cada viaje y qué pedir.
 
 ---
 
