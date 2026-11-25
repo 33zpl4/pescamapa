@@ -125,7 +125,7 @@ $N = [
 			[ 'Quién ve tus datos', 'cada lugar al que escribís.' ],
 			[ 'Costo para vos', 'el precio del lugar.' ],
 		] ],
-		[ 'Reservar un guía en una plataforma: <a href="https://hooked.com.ar/" rel="noopener">Hooked</a> y <a href="https://pesqa.ar/" rel="noopener">Pesqa</a>', [
+		[ 'Reservar un guía en una plataforma: Hooked y Pesqa', [
 			[ 'Sirve para', 'un día o medio día con guía, reservado ya.' ],
 			[ 'Qué ves antes de pagar', 'el precio publicado, qué incluye y las reseñas.' ],
 			[ 'Tu tiempo', 'minutos: elegís guía y fecha, y reservás o consultás.' ],
