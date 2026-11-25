@@ -955,6 +955,13 @@ jobs:
           check /entrevistas/prueba-el-rio-manda/ 200 '"Article"'
           check /entrevistas/sin-permiso/ 404
           check /wp-sitemap.xml 200 'pm_entrevista'
+          # A note URL that is almost a real one (an assistant linked a slug with one short word missing, 25/11/2026) gets a 301 to the real note; nonsense stays 404.
+          nota=$(wp --path="$WP" eval 'foreach ( get_posts( [ "post_type" => "pm_nota", "post_status" => "publish", "numberposts" => -1 ] ) as $p ) { if ( "es" === pm_idioma_de( $p->ID ) && strlen( $p->post_name ) > 25 && "" === pm_nota_parecida( substr( $p->post_name, 0, -2 ) . "zzzzzzzz", "es" ) ) { echo $p->post_name; break; } }')
+          if [[ -n "$nota" ]]; then
+            r=$(curl -sS -o /dev/null -w '%{http_code} %{redirect_url}' "$URL/notas/${nota:2}/")
+            [[ "$r" == "301 "*"/notas/$nota/" ]] && echo "✓ nota casi igual: 301 a la real" || { echo "✖ nota casi igual (/notas/${nota:2}/): $r"; fail=1; }
+            check "/notas/${nota:0:-2}zzzzzzzz/" 404
+          else echo "✖ no hay una nota es para probar el 301 de slug parecido"; fail=1; fi
           check /calendario-de-pesca/ 200 'v-calendario' 'PENDIENTE'
           check /calendario-de-pesca/ 200 'id="esquina"' 'CONTACTO-INTERNO-123'
           check /calendario-de-pesca/ 200 '"FAQPage"'
