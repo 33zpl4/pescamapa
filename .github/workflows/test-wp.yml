@@ -955,6 +955,10 @@ jobs:
           check /entrevistas/prueba-el-rio-manda/ 200 '"Article"'
           check /entrevistas/sin-permiso/ 404
           check /wp-sitemap.xml 200 'pm_entrevista'
+          # A note URL that is almost a real one (an assistant linked a slug with one short word missing, 25/11/2026) gets a 301 to the real note; nonsense stays 404.
+          r=$(curl -sS -o /dev/null -w '%{http_code} %{redirect_url}' "$URL/notas/nota-prueba/")
+          [[ "$r" == "301 "*"/notas/nota-de-prueba/" ]] && echo "✓ nota casi igual: 301 a la real" || { echo "✖ nota casi igual (/notas/nota-prueba/): $r"; fail=1; }
+          check /notas/esta-nota-no-existe-en-ningun-lado/ 404
           check /calendario-de-pesca/ 200 'v-calendario' 'PENDIENTE'
           check /calendario-de-pesca/ 200 'id="esquina"' 'CONTACTO-INTERNO-123'
           check /calendario-de-pesca/ 200 '"FAQPage"'

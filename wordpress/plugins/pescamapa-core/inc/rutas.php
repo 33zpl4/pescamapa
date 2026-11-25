@@ -118,12 +118,47 @@ function pm_destino_ruta( int $post_id ): ?array {
 	return ( $region && $prov ) ? [ 'region' => $region, 'provincia' => $prov ] : null;
 }
 
+/**
+ * Permalink of the published note of this language whose slug (or clave) is closest to a slug that returned 404, or '' when none is
+ * close enough. "Close" = the clave itself, or an edit distance of at most 3 with a single best candidate (a dropped or added short
+ * word, a typo). Anything looser stays a 404: a wrong redirect is worse than an honest "not found".
+ */
+function pm_nota_parecida( string $slug, string $idioma ): string {
+	$slug = sanitize_title( $slug );
+	if ( '' === $slug || strlen( $slug ) > 200 ) {
+		return '';
+	}
+	$mejor = [ 99, 0, 0 ]; // distance, post id, how many share that distance
+	foreach ( get_posts( [ 'post_type' => 'pm_nota', 'post_status' => 'publish', 'numberposts' => -1, 'fields' => 'ids', 'no_found_rows' => true ] ) as $id ) {
+		if ( pm_idioma_de( $id ) !== $idioma ) {
+			continue;
+		}
+		$nombre = (string) get_post_field( 'post_name', $id );
+		$d      = min( levenshtein( $slug, substr( $nombre, 0, 200 ) ), $slug === pm_clave_de( $id ) ? 0 : 99 );
+		if ( $d < $mejor[0] ) {
+			$mejor = [ $d, $id, 1 ];
+		} elseif ( $d === $mejor[0] ) {
+			$mejor[2]++;
+		}
+	}
+	return ( $mejor[0] <= 3 && 1 === $mejor[2] ) ? (string) get_permalink( $mejor[1] ) : '';
+}
+
 // Decide the language and the view, and keep URLs canonical.
 add_action( 'template_redirect', function () {
 	// The photo-credits page is gone (each photo carries its own credit); the old URL goes home.
 	if ( 'creditos' === get_query_var( 'pm_vista' ) ) {
 		wp_safe_redirect( pm_url_inicio( get_query_var( 'pm_lang' ) ?: 'es' ), 301 );
 		exit;
+	}
+	// A note URL that does not exist but is almost one that does (25/11/2026: an assistant linked /notas/cuanto-cuesta-viaje-pesca-argentina-2026-27/,
+	// without the «de» of the real slug) goes to the real note with a 301 instead of a 404. See pm_nota_parecida().
+	if ( is_404() && '' !== (string) get_query_var( 'pm_nota' ) ) {
+		$real = pm_nota_parecida( (string) get_query_var( 'pm_nota' ), pm_idioma_valido( get_query_var( 'pm_lang' ) ?: 'es' ) );
+		if ( $real ) {
+			wp_safe_redirect( $real, 301 );
+			exit;
+		}
 	}
 	if ( is_singular( PM_TIPOS_IDIOMA ) ) {
 		$id = get_queried_object_id();
