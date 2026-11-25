@@ -7,7 +7,7 @@ Estado: para revisar por el dueño. Nota **solo en español** (en/pt después). 
 **Datos clave** (caja que la nota muestra primero, seguida del botón «Pedir opciones» de toda nota):
 
 - Escribirle directo al lodge o al guía: el mejor si ya sabés a qué lugar querés ir.
-- Reservar un guía en una plataforma (Hooked, Pesqa): el más rápido para un día con guía, cuando el guía ofrece reserva online.
+- Reservar un guía en una plataforma (Hooked, Pesqa): el más rápido para un día con guía, reservado en minutos.
 - Una agencia que arma el paquete: el que resuelve todo junto, con vuelos y traslados, desde tu país.
 - Pescamapa: un solo pedido para comparar varios lugares en un viaje de varios días, sobre todo si viajás solo, con alguien que no pesca o con fechas que podés mover. Es gratis.
 
@@ -23,11 +23,11 @@ Estado: para revisar por el dueño. Nota **solo en español** (en/pt después). 
 
 ### Reservar un guía en una plataforma: [Hooked](https://hooked.com.ar/) y [Pesqa](https://pesqa.ar/)
 
-- **Sirve para:** un día con guía o para ver los guías de una zona. Hooked: guías de salida de día, sobre todo de Buenos Aires y el Litoral (leído el 1/11/2026). Pesqa: fichas de guías, alojamientos y lodges de varias provincias (leído el 4/11/2026).
-- **Qué ves antes de pagar:** en Hooked, las fichas con reserva online muestran el precio por pescador, qué incluye y qué no, y la cancelación; si el guía no tiene reserva online, dice «consultá disponibilidad». En las fichas de Pesqa que leímos, el precio dice «Consultar».
-- **Tu tiempo:** con reserva online elegís fecha y horario y pagás en la misma página; si el guía pide consultar, esperás su confirmación. En Pesqa, consultalo en su sitio.
-- **Quién ve tus datos:** consultalo en la política de privacidad de cada plataforma.
-- **Costo para vos:** pagás el precio del guía. Hooked no le cobraba nada al pescador el 1/11/2026; en Pesqa, consultalo en su sitio.
+- **Sirve para:** un día o medio día con guía, reservado ya. Elegís un guía y la salida. Hooked: guías por especie, destino y modalidad. Pesqa: salidas con guías y estadías (lodges, cabañas, camping) de todo el país.
+- **Qué ves antes de pagar:** el precio publicado (en Pesqa, «Consultar» si el lugar no lo cargó), qué incluye y qué no, la duración, el tamaño del grupo y las reseñas (en Pesqa, de pescadores que fueron).
+- **Tu tiempo:** minutos: elegís salida y fecha y reservás. En Hooked, con reserva online confirmás y pagás ahí (Mercado Pago); si el guía trabaja por consulta, mandás fecha y personas y él confirma. En Pesqa pagás una seña con Mercado Pago o consultás sin pagar.
+- **Quién ve tus datos:** el guía o el lugar que elegís y la plataforma.
+- **Costo para vos:** el precio publicado por el guía; los términos de cada plataforma cobran su comisión al guía y no publican un cargo extra para vos.
 
 ### Una agencia que arma el paquete
 
@@ -45,11 +45,11 @@ Estado: para revisar por el dueño. Nota **solo en español** (en/pt después). 
 - **Quién ve tus datos:** los lugares reciben tu pedido sin tu nombre ni tu contacto; tus datos quedan con nosotros hasta que elegís un lugar, y ahí te conectamos.
 - **Costo para vos:** gratis. Reservás y pagás directo con el lugar que elijas, al mismo precio.
 
-*Lo de Hooked lo leímos en su sitio el 1/11/2026 y lo de Pesqa el 4/11/2026. Los sitios cambian: confirmalo en cada uno antes de decidir.*
+*Lo de Hooked y Pesqa sale de sus páginas, leídas el 25/11/2026. Los sitios cambian: confirmalo en cada uno antes de reservar.*
 
 ## Cuál te conviene según tu viaje
 
-**Un día con guía la semana que viene.** Una plataforma (Hooked o Pesqa): si el guía tiene reserva online, elegís la fecha y reservás en el momento; es el camino más rápido. Si no encontrás fecha, [pedinos opciones](/armar-viaje/).
+**Un día con guía la semana que viene.** Una plataforma (Hooked o Pesqa): elegís la salida y la fecha, reservás en minutos y ves el precio, qué incluye y las reseñas antes de pagar. Es el camino más rápido. Para comparar varios guías o lugares con un solo pedido, [pedinos opciones](/armar-viaje/).
 
 **Una semana en un lodge para cuatro.** Pescamapa: un solo pedido con las fechas y los cuatro, y recibís el total del grupo de cada lugar lado a lado, sin escribirle a uno por uno. [Pedir opciones](/armar-viaje/), gratis. Cómo es una semana por dentro: [cómo funciona una semana de pesca en un lodge](nota:semana-de-pesca-en-lodge-argentina).
 
@@ -88,7 +88,7 @@ Pedido por Pescamapa, les hacemos las mismas preguntas a todos los lugares. Para
 
 ### ¿Conviene escribirle directo al lodge o usar una plataforma?
 
-Depende de tu viaje. Si ya sabés a qué lodge querés ir, escribile directo. Si querés un día con guía y el guía ofrece reserva online, una plataforma es lo más rápido. Si querés comparar varios lugares para un viaje de varios días, pedí opciones a Pescamapa.
+Depende de tu viaje. Si ya sabés a qué lodge querés ir, escribile directo. Si querés un día con guía, una plataforma es lo más rápido: elegís y reservás. Si querés comparar varios lugares para un viaje de varios días, pedí opciones a Pescamapa.
 
 ### ¿Pescamapa cobra algo?
 
@@ -96,44 +96,45 @@ Es gratis para vos. Reservás y pagás directo con el lugar que elijas. Algunos 
 
 ### ¿Quién ve mis datos?
 
-Los lugares reciben tu pedido sin tu nombre ni tu contacto. Tus datos quedan con nosotros hasta que elegís un lugar; recién ahí te conectamos con él. En una plataforma o en una agencia, mirá su política de privacidad.
+Los lugares reciben tu pedido sin tu nombre ni tu contacto. Tus datos quedan con nosotros hasta que elegís un lugar; recién ahí te conectamos con él. En Hooked y en Pesqa, tus datos van al guía o al lugar que elegís y a la plataforma; en una agencia, mirá su política de privacidad.
 
 ### ¿Puedo reservar en Hooked o Pesqa y también pedirles opciones a ustedes?
 
-Sí. Pedirnos opciones es gratis y elegís vos: podés reservar un día con guía en una plataforma y, para el resto del viaje, pedirnos opciones.
+Sí, sirven para momentos distintos: en una plataforma elegís un guía y reservás; con nosotros mandás un pedido y te responden los lugares y guías que encajan, para que compares. Podés reservar un día con guía en una plataforma y, para el resto del viaje, pedirnos opciones.
 
 ### ¿Cuánto tardan en responder?
 
-Te mandamos las opciones en 24 a 48 horas. Con los otros caminos depende de cada lugar, guía o agencia; en una plataforma con reserva online, es el tiempo de completar la reserva.
+Te mandamos las opciones en 24 a 48 horas. Con los otros caminos depende de cada lugar, guía o agencia; en una plataforma son minutos si reservás, y lo que tarde el guía si consultás.
 
 ### ¿Sirve si viajo desde el exterior?
 
 Sí. Atendemos en español, portugués e inglés: en el pedido indicás desde dónde viajás y si llevás tus cañas. Si salís de España, mirá [el viaje de pesca a la Argentina desde España](nota:viaje-pesca-argentina-desde-espana).
 
-*Revisado el 25/11/2026. Lo que decimos de Hooked y de Pesqa sale de sus sitios, leídos el 1/11/2026 y el 4/11/2026; precios, condiciones y coberturas cambian: confirmalos con cada uno antes de reservar.*
+*Revisado el 25/11/2026. Lo que decimos de Hooked y de Pesqa sale de sus páginas y términos, leídos el 25/11/2026; precios y condiciones cambian: confirmalos con cada uno antes de reservar.*
 
 ---
 
 ## Afirmaciones sobre terceros: de dónde salen y qué hay que reverificar
 
-Fechas de lectura: Hooked 1/11/2026 (`docs/competencia-hooked-2026-11-01.md`), Pesqa 4/11/2026 (`docs/competencia-pesqa-2026-11-04.md`). Lo marcado «sí» lo tiene que mirar el dueño en el sitio antes de publicar.
+**Hooked y Pesqa:** todo sale de la lectura de sus páginas que hizo el dueño el 25/11/2026 (Hooked: `hooked.com.ar`, `hooked.com.ar/legal/terms`; Pesqa: `pesqa.ar`, `pesqa.ar/terminos`, `pesqa.ar/cancelaciones`), entregada al coordinador; no se usó ninguna frase de `competencia-hooked-2026-11-01.md` ni de `competencia-pesqa-2026-11-04.md`. Nada de ellos queda por reverificar mientras no se agregue algo fuera de esta lista. No se dice nada de cobertura por provincia ni de cantidades, ni de cancelación (queda fuera de la tabla), y no hay frase de debilidad.
 
-| Afirmación en la nota | De qué doc y fecha sale | Reverificar |
+| Afirmación en la nota | De dónde sale | Reverificar |
 | --- | --- | --- |
-| Hooked: guías de salida de día, sobre todo de Buenos Aires y el Litoral | Hooked §1, 1/11/2026 (101 perfiles, mayoría en Buenos Aires; Corrientes 7; Patagonia casi nada) | **Sí** (cobertura: el sitio es de 2026 y crece) |
-| Hooked: las fichas con reserva online muestran precio por pescador, qué incluye y qué no, y la cancelación | Hooked §1, ficha leída de un solo guía (Berisso), 1/11/2026 | **Sí** (se leyó una ficha; ver si vale para las demás con reserva online) |
-| Hooked: si el guía no tiene reserva online, dice «consultá disponibilidad» | Hooked §1, «cómo reserva el pescador», 1/11/2026 | **Sí** |
-| Hooked: con reserva online elegís fecha y horario y pagás en la misma página; si el guía pide consultar, esperás su confirmación | Hooked §1 (fecha, tipo de salida, horario, pescadores, extras, pago con Mercado Pago; «manda fecha y grupo, el guía confirma»), 1/11/2026 | **Sí** («en la misma página» es lectura de la caja de reserva de una ficha) |
-| Hooked no le cobraba nada al pescador el 1/11/2026 | Hooked §1, modelo: cobra suscripción al guía, «al pescador no le cobra nada», 1/11/2026 | **Sí** (tarifas y comisiones) |
-| Pesqa: fichas de guías, alojamientos y lodges de varias provincias | Pesqa «Qué es», 4/11/2026 (sitemap con `/guias`, `/alojamientos`, `/lodges`; portada con destinos de todo el país) | **Sí** (la lectura fue de dos páginas de lugar; que haya lodges listados no se vio en la lectura) |
-| Pesqa: en las fichas que leímos, el precio dice «Consultar» | Pesqa «Donde es débil», 4/11/2026 (sin precios, solo «Consultar», en Río Gallegos y Río Quilquihue) | **Sí** (dos páginas; puede haber fichas con precio) |
-| Pesqa y plataformas: «consultalo en su sitio» (tu tiempo en Pesqa, quién ve tus datos, costo en Pesqa) | Los docs no lo registran: no se afirma nada | No hay afirmación; si el dueño lo mira, puede completar las celdas |
-| Agencias: lodge, traslados y, según la agencia, vuelos desde tu país | **No está en nuestros docs.** Sale del pedido del dueño (las respuestas de los asistentes mencionaron agencias con vuelos); `prestadores-brasil-2026-11-15.md` solo habla de paquetes todo incluido y lanchas | **Sí** (vuelos y traslados sin fuente propia) |
-| Agencias: algunas venden solo a grupos de cuatro o más | `docs/sesion-2026-11-19-al-20.md` (competidores pegados por el dueño; BCA Fishing, «solo grupos de 4 o más»), 19–20/11/2026 | **Sí** (sin nombre en la nota; no es una lectura propia del sitio) |
-| Agencias: en los sitios que leímos el precio no estaba publicado | `docs/prestadores-brasil-2026-11-15.md`, 15/11/2026 (Pedrinho Pesca, Romani Pesca: sin precio) | **Sí** (solo agencias de Brasil; ninguna española leída) |
-| Agencias: una consulta, la agencia gestiona el resto; pagás el paquete completo y conviene preguntar qué es de la agencia y qué del lugar | Genérico; el doc de Brasil dice que falta saber «quién cobra: el operador, la agencia o los dos» | **Sí** (baja prioridad: es una recomendación de pregunta, no un dato) |
-| Qué ves/Cuánto cuesta en el camino «escribir directo» (muchos no publican precio, cada uno cotiza a su manera) | Texto propio del sitio (bloque «Hoy» del contraste, `ui.json`) | No (es nuestro texto ya publicado) |
+| Hooked: guías por especie, destino y modalidad; un día o medio día con guía, se reserva en minutos | Portada de Hooked, 25/11/2026 | No |
+| Hooked: precio publicado, qué incluye y qué no, duración, tamaño del grupo, reseñas | Página de Hooked, 25/11/2026 | No |
+| Hooked: con reserva online confirmás y pagás ahí (Mercado Pago); si el guía trabaja por consulta, mandás fecha y personas y él confirma | Página de Hooked, 25/11/2026 | No |
+| Hooked y Pesqa: tus datos van al guía o lugar que elegís y a la plataforma | Páginas de ambos, 25/11/2026 | No |
+| Hooked y Pesqa: comisión que cobra la plataforma al guía o proveedor, sin cargo extra publicado para el usuario | Términos de ambos, 25/11/2026 | No |
+| Pesqa: salidas con guías y estadías (lodges, cabañas, camping) de todo el país | Portada de Pesqa, 25/11/2026 | No |
+| Pesqa: precio publicado o «Consultar» si el lugar no lo cargó; reseñas de pescadores que fueron | Página de Pesqa, 25/11/2026 | No |
+| Pesqa: seña con Mercado Pago o consultar sin pagar | Página de Pesqa, 25/11/2026 | No |
+| «Elegís un guía y reservás» (plataformas) frente a «mandás un pedido y te responden los que encajan» (nosotros); sin pedido a varios a la vez en las plataformas | Páginas de ambos, 25/11/2026; solo se dice qué hace cada camino | No |
+| Agencias: lodge, traslados y, según la agencia, vuelos desde tu país | **No está en nuestros docs.** Sale del pedido del dueño (respuestas de los asistentes); `prestadores-brasil-2026-11-15.md` solo habla de paquetes todo incluido | **Sí** (vuelos y traslados sin fuente propia) |
+| Agencias: algunas venden solo a grupos de cuatro o más | `docs/sesion-2026-11-19-al-20.md` (competidores pegados por el dueño; «solo grupos de 4 o más»), 19–20/11/2026 | **Sí** (sin nombre; no es lectura propia del sitio) |
+| Agencias: en los sitios que leímos el precio no estaba publicado | `docs/prestadores-brasil-2026-11-15.md`, 15/11/2026 (solo agencias de Brasil) | **Sí** (ninguna española leída) |
+| Agencias: una consulta, la agencia gestiona el resto; preguntá qué parte del precio es de la agencia | Genérico; el doc de Brasil dice que falta saber «quién cobra» | **Sí** (baja prioridad: recomendación de pregunta) |
+| «Muchos no publican precio, cada uno cotiza a su manera» (escribir directo) | Texto propio ya publicado (bloque «Hoy» del contraste, `ui.json`) | No |
 
 ## Lo que dice de nosotros, y de dónde sale
 
-Todo sale de la página de pedir presupuesto (`ui.json`, claves `pres.*`, `contraste.*`, `viaje.garantia`): un solo pedido; 24–48 horas; gratis para vos; reservás y pagás directo, mismo precio; los lugares reciben el pedido sin nombre ni contacto y tus datos quedan con nosotros hasta que elegís; algunos lugares pagan comisión; solo o con alguien que no pesca (`pres.faq.5`); español, portugués e inglés (`pres.para.5`). **Dos frases sin respaldo textual en la página y que conviene que el dueño confirme:** «con fechas que podés mover» (el formulario tiene un campo de flexibilidad, la página no lo dice) y «Pedirnos opciones … elegís vos: podés reservar un día con guía en una plataforma y, para el resto del viaje, pedirnos opciones» (que no hay exclusividad).
+Todo sale de la página de pedir presupuesto (`ui.json`, claves `pres.*`, `contraste.*`, `viaje.garantia`): un solo pedido; 24–48 horas; gratis para vos; reservás y pagás directo, mismo precio; los lugares reciben el pedido sin nombre ni contacto y tus datos quedan con nosotros hasta que elegís; algunos lugares pagan comisión; solo o con alguien que no pesca (`pres.faq.5`); español, portugués e inglés (`pres.para.5`). **Una frase sin respaldo textual en la página, para que el dueño confirme:** «con fechas que podés mover» (el formulario tiene un campo de flexibilidad; la página no lo dice).

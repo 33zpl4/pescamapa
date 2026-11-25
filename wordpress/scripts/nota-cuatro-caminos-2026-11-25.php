@@ -4,7 +4,7 @@
  * Why: friends of the owner asked three AI assistants how to organise a fishing trip to Argentina and get quotes; the answers were: write to each lodge, book a guide on a platform
  * (Hooked, Pesqa) or use an agency that packages flights. Pescamapa was cited only for prices. The owner approved (25/11/2026) a page that answers that question with the four routes side by side.
  * Goal he set (docs/ux-paginas.md): make things easier and quicker for whoever plans the trip. So the note says when another route is the better one.
- * What it says about Hooked (read 1/11/2026) and Pesqa (read 4/11/2026) comes only from docs/competencia-hooked-2026-11-01.md and docs/competencia-pesqa-2026-11-04.md; about us, only what the quote page says.
+ * What it says about Hooked and Pesqa comes only from the owner's reading of their pages and terms on 25/11/2026 (listed in $fuentes_def); about us, only what the quote page says.
  * Every claim about third parties and where it comes from: docs/borradores/cuatro-caminos-presupuestos-2026-11-25.md.
  * The comparison is four cards (a `regla` group each with a list), not a table: it reads on a 390 px phone with the CSS the theme already has.
  * Spanish only for now; en/pt after the owner reads it. Cover photo: reuses the attachment of the note precio-pesca-patagonia-sur (provisional, see docs/estado.md); no new image.
@@ -112,7 +112,7 @@ $N = [
 	'bajada' => 'Cuatro formas de conseguir precios para un viaje de pesca a la Argentina, lado a lado, y cuál te conviene según tu viaje.',
 	'datos' => [
 		'Escribirle directo al lodge o al guía: el mejor si ya sabés a qué lugar querés ir.',
-		'Reservar un guía en una plataforma (Hooked, Pesqa): el más rápido para un día con guía, cuando el guía ofrece reserva online.',
+		'Reservar un guía en una plataforma (Hooked, Pesqa): el más rápido para un día con guía, reservado en minutos.',
 		'Una agencia que arma el paquete: el que resuelve todo junto, con vuelos y traslados, desde tu país.',
 		'Pescamapa: un solo pedido para comparar varios lugares en un viaje de varios días, sobre todo si viajás solo, con alguien que no pesca o con fechas que podés mover. Es gratis.',
 	],
@@ -126,11 +126,11 @@ $N = [
 			[ 'Costo para vos', 'pedir es gratis; pagás el precio del lugar.' ],
 		] ],
 		[ 'Reservar un guía en una plataforma: <a href="https://hooked.com.ar/" rel="noopener">Hooked</a> y <a href="https://pesqa.ar/" rel="noopener">Pesqa</a>', [
-			[ 'Sirve para', 'un día con guía o para ver los guías de una zona. Hooked: guías de salida de día, sobre todo de Buenos Aires y el Litoral (leído el 1/11/2026). Pesqa: fichas de guías, alojamientos y lodges de varias provincias (leído el 4/11/2026).' ],
-			[ 'Qué ves antes de pagar', 'en Hooked, las fichas con reserva online muestran el precio por pescador, qué incluye y qué no, y la cancelación; si el guía no tiene reserva online, dice «consultá disponibilidad». En las fichas de Pesqa que leímos, el precio dice «Consultar».' ],
-			[ 'Tu tiempo', 'con reserva online elegís fecha y horario y pagás en la misma página; si el guía pide consultar, esperás su confirmación. En Pesqa, consultalo en su sitio.' ],
-			[ 'Quién ve tus datos', 'consultalo en la política de privacidad de cada plataforma.' ],
-			[ 'Costo para vos', 'pagás el precio del guía. Hooked no le cobraba nada al pescador el 1/11/2026; en Pesqa, consultalo en su sitio.' ],
+			[ 'Sirve para', 'un día o medio día con guía, reservado ya. Elegís un guía y la salida. Hooked: guías por especie, destino y modalidad. Pesqa: salidas con guías y estadías (lodges, cabañas, camping) de todo el país.' ],
+			[ 'Qué ves antes de pagar', 'el precio publicado (en Pesqa, «Consultar» si el lugar no lo cargó), qué incluye y qué no, la duración, el tamaño del grupo y las reseñas (en Pesqa, de pescadores que fueron).' ],
+			[ 'Tu tiempo', 'minutos: elegís salida y fecha y reservás. En Hooked, con reserva online confirmás y pagás ahí (Mercado Pago); si el guía trabaja por consulta, mandás fecha y personas y él confirma. En Pesqa pagás una seña con Mercado Pago o consultás sin pagar.' ],
+			[ 'Quién ve tus datos', 'el guía o el lugar que elegís y la plataforma.' ],
+			[ 'Costo para vos', 'el precio publicado por el guía; los términos de cada plataforma cobran su comisión al guía y no publican un cargo extra para vos.' ],
 		] ],
 		[ 'Una agencia que arma el paquete', [
 			[ 'Sirve para', 'tener todo en un solo trato: lodge, traslados y, según la agencia, vuelos desde tu país. Algunas venden solo a grupos de cuatro o más.' ],
@@ -147,10 +147,10 @@ $N = [
 			[ 'Costo para vos', 'gratis. Reservás y pagás directo con el lugar que elijas, al mismo precio.' ],
 		] ],
 	],
-	'lado_pie' => '<em>Lo de Hooked lo leímos en su sitio el 1/11/2026 y lo de Pesqa el 4/11/2026. Los sitios cambian: confirmalo en cada uno antes de decidir.</em>',
+	'lado_pie' => '<em>Lo de Hooked y Pesqa sale de sus páginas, leídas el 25/11/2026. Los sitios cambian: confirmalo en cada uno antes de reservar.</em>',
 	'h_cual' => 'Cuál te conviene según tu viaje',
 	'casos' => [
-		'<strong>Un día con guía la semana que viene.</strong> Una plataforma (Hooked o Pesqa): si el guía tiene reserva online, elegís la fecha y reservás en el momento; es el camino más rápido. Si no encontrás fecha, <a href="{viaje}">pedinos opciones</a>.',
+		'<strong>Un día con guía la semana que viene.</strong> Una plataforma (Hooked o Pesqa): elegís la salida y la fecha, reservás en minutos y ves el precio, qué incluye y las reseñas antes de pagar. Es el camino más rápido. Para comparar varios guías o lugares con un solo pedido, <a href="{viaje}">pedinos opciones</a>.',
 		'<strong>Una semana en un lodge para cuatro.</strong> Pescamapa: un solo pedido con las fechas y los cuatro, y recibís el total del grupo de cada lugar lado a lado, sin escribirle a uno por uno. <a href="{viaje}">Pedir opciones</a>, gratis. Cómo es una semana por dentro: <a href="{n:semana-de-pesca-en-lodge-argentina}">cómo funciona una semana de pesca en un lodge</a>.',
 		'<strong>Voy solo o con alguien que no pesca.</strong> Pescamapa: en el pedido indicás cuántos pescan y cuántos te acompañan, y el total que te mandamos cuenta a todos. También preguntamos qué pasa si el clima no deja salir. <a href="{viaje}">Armar el viaje</a>.',
 		'<strong>Quiero todo resuelto, con vuelos desde mi país.</strong> Una agencia: un solo trato para el paquete completo. Si salís de España, mirá antes <a href="{n:viaje-pesca-argentina-desde-espana}">el viaje de pesca a la Argentina desde España</a>.',
@@ -179,13 +179,13 @@ $N = [
 	],
 	'como_p' => '<strong>Gratis para vos.</strong> <a href="{viaje}">Armar el viaje en el formulario</a> o ver <a href="{p:presupuesto}">cómo es el pedido de presupuesto</a>.',
 	'faq_h' => 'Preguntas frecuentes',
-	'cierre' => '<em>Revisado el 25/11/2026. Lo que decimos de Hooked y de Pesqa sale de sus sitios, leídos el 1/11/2026 y el 4/11/2026; precios, condiciones y coberturas cambian: confirmalos con cada uno antes de reservar.</em>',
+	'cierre' => '<em>Revisado el 25/11/2026. Lo que decimos de Hooked y de Pesqa sale de sus páginas y términos, leídos el 25/11/2026; precios y condiciones cambian: confirmalos con cada uno antes de reservar.</em>',
 	'faq' => [
-		[ '¿Conviene escribirle directo al lodge o usar una plataforma?', 'Depende de tu viaje. Si ya sabés a qué lodge querés ir, escribile directo. Si querés un día con guía y el guía ofrece reserva online, una plataforma es lo más rápido. Si querés comparar varios lugares para un viaje de varios días, pedí opciones a Pescamapa.' ],
+		[ '¿Conviene escribirle directo al lodge o usar una plataforma?', 'Depende de tu viaje. Si ya sabés a qué lodge querés ir, escribile directo. Si querés un día con guía, una plataforma es lo más rápido: elegís y reservás. Si querés comparar varios lugares para un viaje de varios días, pedí opciones a Pescamapa.' ],
 		[ '¿Pescamapa cobra algo?', 'Es gratis para vos. Reservás y pagás directo con el lugar que elijas. Algunos lugares y guías nos pagan una comisión por los pescadores que llegan por Pescamapa.' ],
-		[ '¿Quién ve mis datos?', 'Los lugares reciben tu pedido sin tu nombre ni tu contacto. Tus datos quedan con nosotros hasta que elegís un lugar; recién ahí te conectamos con él. En una plataforma o en una agencia, mirá su política de privacidad.' ],
-		[ '¿Puedo reservar en Hooked o Pesqa y también pedirles opciones a ustedes?', 'Sí. Pedirnos opciones es gratis y elegís vos: podés reservar un día con guía en una plataforma y, para el resto del viaje, pedirnos opciones.' ],
-		[ '¿Cuánto tardan en responder?', 'Te mandamos las opciones en 24 a 48 horas. Con los otros caminos depende de cada lugar, guía o agencia; en una plataforma con reserva online, es el tiempo de completar la reserva.' ],
+		[ '¿Quién ve mis datos?', 'Los lugares reciben tu pedido sin tu nombre ni tu contacto. Tus datos quedan con nosotros hasta que elegís un lugar; recién ahí te conectamos con él. En Hooked y en Pesqa, tus datos van al guía o al lugar que elegís y a la plataforma; en una agencia, mirá su política de privacidad.' ],
+		[ '¿Puedo reservar en Hooked o Pesqa y también pedirles opciones a ustedes?', 'Sí, sirven para momentos distintos: en una plataforma elegís un guía y reservás; con nosotros mandás un pedido y te responden los lugares y guías que encajan, para que compares. Podés reservar un día con guía en una plataforma y, para el resto del viaje, pedirnos opciones.' ],
+		[ '¿Cuánto tardan en responder?', 'Te mandamos las opciones en 24 a 48 horas. Con los otros caminos depende de cada lugar, guía o agencia; en una plataforma son minutos si reservás, y lo que tarde el guía si consultás.' ],
 		[ '¿Sirve si viajo desde el exterior?', 'Sí. Atendemos en español, portugués e inglés: en el pedido indicás desde dónde viajás y si llevás tus cañas. Si salís de España, mirá <a href="{n:viaje-pesca-argentina-desde-espana}">el viaje de pesca a la Argentina desde España</a>.' ],
 	],
 ];
@@ -209,17 +209,20 @@ $fn_pagina = function ( string $k ) {
 		return pm_url( PM_SEGMENTOS[ $i ][ $k ], $i );
 	};
 };
-// Sources: our own pages carry their own dates; Hooked and Pesqa are commercial sites, read on the dates of the two research docs (not official sources).
+// Sources: our own pages carry their own dates; Hooked and Pesqa pages were checked by the owner on 25/11/2026 (commercial sites, not official sources).
 $fuentes_def = [
 	[ 'Pescamapa: pedir presupuesto a varios lodges de pesca a la vez (cómo funciona, quién ve tus datos, cuánto cuesta)', $fn_pagina( 'presupuesto' ), 0, '20261125' ],
-	[ 'Hooked: marketplace de guías de pesca (sitio, leído el 1/11/2026)', 'https://hooked.com.ar/', 0, '20261101' ],
-	[ 'Pesqa: plataforma de pesca (sitio, leído el 4/11/2026)', 'https://pesqa.ar/', 0, '20261104' ],
+	[ 'Hooked: guías de pesca en Argentina (cómo reservar, precios publicados, qué incluye; leído el 25/11/2026)', 'https://hooked.com.ar/', 0, '20261125' ],
+	[ 'Hooked: términos y condiciones (comisión al guía, datos, cancelación; leído el 25/11/2026)', 'https://hooked.com.ar/legal/terms', 0, '20261125' ],
+	[ 'Pesqa: plataforma para planificar la salida de pesca (reserva con seña, precios, reseñas; leído el 25/11/2026)', 'https://pesqa.ar/', 0, '20261125' ],
+	[ 'Pesqa: términos y condiciones (comisión al proveedor, datos; leído el 25/11/2026)', 'https://pesqa.ar/terminos', 0, '20261125' ],
+	[ 'Pesqa: política de cancelaciones (flexible, moderada, estricta; leído el 25/11/2026)', 'https://pesqa.ar/cancelaciones', 0, '20261125' ],
 	[ 'Pescamapa: cuánto cuesta un viaje de pesca a la Argentina 2026/27 (precios por tipo de viaje)', $fn_nota( 'cuanto-cuesta-viaje-pesca-argentina' ), 0, '20261116' ],
 	[ 'Pescamapa: cómo preparar un viaje de pesca a la Argentina (los pasos en orden)', $fn_nota( 'como-preparar-viaje-pesca-argentina' ), 0, '20261116' ],
 ];
 
 $nota_tipo = 'como';
-$origen    = 'Cómo pedir presupuestos de pesca en la Argentina, 25/11/2026 (pedido del dueño: amigos preguntaron a ChatGPT, Gemini y Claude cómo organizar un viaje de pesca y conseguir presupuestos; las respuestas mandaban a escribir a cada lodge, a reservar un guía en una plataforma (Hooked, Pesqa) o a una agencia con vuelos, y citaban a Pescamapa solo por precios). Lo que dice de Hooked sale de docs/competencia-hooked-2026-11-01.md (leído el 1/11/2026) y de Pesqa de docs/competencia-pesqa-2026-11-04.md (leído el 4/11/2026); de nosotros, solo lo que dice la página de pedir presupuesto; de las agencias, lo genérico de docs/prestadores-brasil-2026-11-15.md. Tabla de cada afirmación sobre terceros y qué hay que reverificar: docs/borradores/cuatro-caminos-presupuestos-2026-11-25.md. Portada: la de precio-pesca-patagonia-sur (provisoria).';
+$origen    = 'Cómo pedir presupuestos de pesca en la Argentina, 25/11/2026 (pedido del dueño: amigos preguntaron a ChatGPT, Gemini y Claude cómo organizar un viaje de pesca y conseguir presupuestos; las respuestas mandaban a escribir a cada lodge, a reservar un guía en una plataforma (Hooked, Pesqa) o a una agencia con vuelos, y citaban a Pescamapa solo por precios). Lo que dice de Hooked y de Pesqa sale de la lectura de sus páginas y términos que hizo el dueño el 25/11/2026 (hooked.com.ar, hooked.com.ar/legal/terms, pesqa.ar, pesqa.ar/terminos, pesqa.ar/cancelaciones); de nosotros, solo lo que dice la página de pedir presupuesto; de las agencias, lo genérico de docs/prestadores-brasil-2026-11-15.md. Tabla de cada afirmación sobre terceros y qué hay que reverificar: docs/borradores/cuatro-caminos-presupuestos-2026-11-25.md. Portada: la de precio-pesca-patagonia-sur (provisoria).';
 
 $armar = function ( array $n ): string {
 	// The four 'datos' (stored as nota_datos) are the short answer: the note template shows them first in the «Datos clave» box, followed by its own «Pedir opciones» button.
