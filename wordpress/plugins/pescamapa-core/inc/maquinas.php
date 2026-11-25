@@ -59,6 +59,9 @@ function pm_llms_txt(): string {
 		'',
 		'> ' . $es( 'marca.definicion' ),
 		'',
+		// 25/11/2026 (owner: say clearly what we do, for people and for assistants): the page that explains the service, in the first lines, in the three languages.
+		pm_llms_item( $es( 'pres.h1' ), pm_url_presupuesto( 'es' ), 'un solo pedido: escribimos a los lodges y guías de pesca que encajan y en 24–48 horas mandamos sus opciones comparadas lado a lado. Gratis para el pescador, que reserva directo con el lugar que elige.', pm_alternas_fijas( 'pm_url_presupuesto' ) ),
+		'',
 		$es( 'marca.lema' ) . ' ' . $es( 'marca.saber' ) . pm_llms_fuentes_frase(),
 		'',
 		'Pescamapa (https://pescamapa.com) publica en español rioplatense, con versión en portugués (/pt/) e inglés (/en/) de las guías. Cada guía muestra la fecha de actualización y enlaza a la autoridad oficial del reglamento; los reglamentos y las vedas cambian cada año, así que conviene confirmarlos con esa autoridad antes de citar una fecha o una medida. No publicamos coordenadas de pesqueros, solo áreas generales. Las fichas de guías y alojamientos se arman con su consentimiento o con información pública (y están marcadas como sin verificar mientras el prestador no las confirme); se corrigen o se quitan a pedido. Los precios figuran solo con fecha. Contacto: ' . PM_EMAIL_PUBLICO . '.',

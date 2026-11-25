@@ -1247,6 +1247,7 @@ jobs:
           check /llms.txt 200 'Em português: a Pescamapa recebe um só pedido'
           check /llms.txt 200 'In English: Pescamapa takes one request'
           awk '/^## Pedir opciones a varios lugares a la vez/{a=NR} /^## Guías de destino/{b=NR} END{exit !(a && b && a < b)}' page.html && echo "✓ llms.txt: la sección va antes de las guías" || { echo "✖ llms.txt: la sección no va antes de las guías"; fail=1; }
+          awk '!a && /pedir-presupuesto-pesca\//{a=NR} !b && /^## /{b=NR} END{exit !(a && b && a < b)}' page.html && echo "✓ llms.txt: el enlace a la página del presupuesto va en las primeras líneas, antes del primer título" || { echo "✖ llms.txt: el enlace a la página del presupuesto no va antes del primer título"; fail=1; }
           check /wp-sitemap-vistas-1.xml 200 'pedir-presupuesto-pesca'
           check /wp-sitemap-vistas-1.xml 200 'pedir-orcamento-pesca'
           check /wp-sitemap-vistas-1.xml 200 'get-fishing-lodge-quotes'
