@@ -4,14 +4,12 @@ Estado: para revisar por el dueño. Nota **solo en español** (en/pt después). 
 
 ---
 
-**Respuesta corta.** Hay cuatro caminos para conseguir precios, y cada uno es el mejor para un tipo de viaje:
+**Datos clave** (caja que la nota muestra primero, seguida del botón «Pedir opciones» de toda nota):
 
 - Escribirle directo al lodge o al guía: el mejor si ya sabés a qué lugar querés ir.
 - Reservar un guía en una plataforma (Hooked, Pesqa): el más rápido para un día con guía, cuando el guía ofrece reserva online.
 - Una agencia que arma el paquete: el que resuelve todo junto, con vuelos y traslados, desde tu país.
 - Pescamapa: un solo pedido para comparar varios lugares en un viaje de varios días, sobre todo si viajás solo, con alguien que no pesca o con fechas que podés mover. Es gratis.
-
-**¿Querés comparar varios lugares sin escribirle a cada uno?** [Pedí opciones a Pescamapa](/armar-viaje/): las recibís lado a lado en 24 a 48 horas. Gratis para vos.
 
 ## Los cuatro caminos, lado a lado
 

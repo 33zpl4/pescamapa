@@ -110,14 +110,12 @@ $N = [
 	'seo_title' => 'Cómo pedir presupuestos de pesca en Argentina: 4 caminos',
 	'seo_description' => 'Escribir al lodge, reservar un guía en una plataforma (Hooked, Pesqa), una agencia o pedir opciones a Pescamapa: cuál sirve para cada viaje y qué pedir para comparar.',
 	'bajada' => 'Cuatro formas de conseguir precios para un viaje de pesca a la Argentina, lado a lado, y cuál te conviene según tu viaje.',
-	'p0' => '<strong>Respuesta corta.</strong> Hay cuatro caminos para conseguir precios, y cada uno es el mejor para un tipo de viaje:',
 	'datos' => [
 		'Escribirle directo al lodge o al guía: el mejor si ya sabés a qué lugar querés ir.',
 		'Reservar un guía en una plataforma (Hooked, Pesqa): el más rápido para un día con guía, cuando el guía ofrece reserva online.',
 		'Una agencia que arma el paquete: el que resuelve todo junto, con vuelos y traslados, desde tu país.',
 		'Pescamapa: un solo pedido para comparar varios lugares en un viaje de varios días, sobre todo si viajás solo, con alguien que no pesca o con fechas que podés mover. Es gratis.',
 	],
-	'comercial' => '<strong>¿Querés comparar varios lugares sin escribirle a cada uno?</strong> <a href="{viaje}">Pedí opciones a Pescamapa</a>: las recibís lado a lado en 24 a 48 horas. Gratis para vos.',
 	'h_lado' => 'Los cuatro caminos, lado a lado',
 	'tarjetas' => [
 		[ 'Escribirle directo a cada lodge o guía', [
@@ -224,7 +222,8 @@ $nota_tipo = 'como';
 $origen    = 'Cómo pedir presupuestos de pesca en la Argentina, 25/11/2026 (pedido del dueño: amigos preguntaron a ChatGPT, Gemini y Claude cómo organizar un viaje de pesca y conseguir presupuestos; las respuestas mandaban a escribir a cada lodge, a reservar un guía en una plataforma (Hooked, Pesqa) o a una agencia con vuelos, y citaban a Pescamapa solo por precios). Lo que dice de Hooked sale de docs/competencia-hooked-2026-11-01.md (leído el 1/11/2026) y de Pesqa de docs/competencia-pesqa-2026-11-04.md (leído el 4/11/2026); de nosotros, solo lo que dice la página de pedir presupuesto; de las agencias, lo genérico de docs/prestadores-brasil-2026-11-15.md. Tabla de cada afirmación sobre terceros y qué hay que reverificar: docs/borradores/cuatro-caminos-presupuestos-2026-11-25.md. Portada: la de precio-pesca-patagonia-sur (provisoria).';
 
 $armar = function ( array $n ): string {
-	$c = pm_sc_p( $n['p0'] ) . pm_sc_lista( $n['datos'] ) . pm_sc_p( $n['comercial'] ) . pm_sc_h2( $n['h_lado'] );
+	// The four 'datos' (stored as nota_datos) are the short answer: the note template shows them first in the «Datos clave» box, followed by its own «Pedir opciones» button.
+	$c = pm_sc_h2( $n['h_lado'] );
 	foreach ( $n['tarjetas'] as [ $titulo, $filas ] ) {
 		$c .= pm_cc_tarjeta( $titulo, $filas );
 	}
